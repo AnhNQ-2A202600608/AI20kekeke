@@ -1,94 +1,168 @@
-# VAIC Universal Starter
+# VAIC Universal Starter Template
 
-A domain-neutral full-stack starter template for VAIC competitions. Not tied to any specific problem type — works for AI agents, data analysis, optimization, document processing, and more.
+VAIC Universal Starter là bộ khung full-stack trung tính, được thiết kế chuyên biệt cho các đội thi cuộc thi VAIC.
 
-## Quick Start
+> [!WARNING]
+> **Bộ khung này không phải là lời giải sẵn cho bất kỳ đề thi nào.** Nhiệm vụ của nó là cung cấp cấu trúc thư mục chuẩn, giao diện Workspace trực quan, hệ thống quản lý dữ liệu, kiểm soát an toàn bảo mật và đánh giá hiệu năng để các đội thi có thể bắt tay vào phát triển giải pháp ngay lập tức mà không phải tốn thời gian xây dựng khung sườn.
 
-### Prerequisites
+---
 
+## 1. Tính năng cốt lõi
+
+- **Giao diện Workspace Động (Next.js)**: Tự động kết xuất form nhập tham số dựa trên mô tả schema của capability được chọn từ backend.
+- **Hệ thống Quản lý Tiến trình (Run & Artifact)**: Lưu vết toàn bộ dữ liệu đầu vào, tham số, trạng thái chạy (queued, running, completed, failed, cancelled) và artifacts đầu ra.
+- **Bảo mật mặc định**:
+  - Chống Path Traversal (ngăn chặn truy cập file ngoài phạm vi lưu trữ).
+  - Giới hạn định dạng tệp tải lên (File Allowlist).
+  - Tự động ẩn thông tin nhạy cảm như API Keys, Bearer Tokens trong log (`SecretRedactingFilter`).
+  - Toàn bộ lỗi được đóng gói trong phản hồi chuẩn (Envelope), không trả về stack trace của Python ra ngoài API.
+- **Cơ chế Module linh hoạt**: Các module hỗ trợ nâng cao (`agent`, `rag`, `computer_vision`,...) được cấu hình tắt mặc định để tránh cài đặt thư viện nặng không cần thiết.
+
+---
+
+## 2. Quick Start
+
+### Yêu cầu hệ thống
 - Python 3.11+
-- Node.js 22+
-- npm 10+
+- Node.js 20+
 
-### 1. Clone & Install
+### Các bước khởi động nhanh
+1. **Khởi tạo cấu hình và môi trường**:
+   ```bash
+   make bootstrap
+   ```
+2. **Cài đặt thư viện**:
+   ```bash
+   make install
+   ```
+3. **Chạy các máy chủ phát triển (Development)**:
+   - Trong terminal thứ nhất (Backend):
+     ```bash
+     make dev-backend
+     ```
+   - Trong terminal thứ hai (Frontend):
+     ```bash
+     make dev-frontend
+     ```
+4. Truy cập giao diện tại: `http://localhost:3000`.
 
+---
+
+## 3. Cấu trúc thư mục chính
+
+```
+vaic-universal-starter/
+├── backend/                  # Mã nguồn FastAPI Backend
+│   ├── src/
+│   │   ├── api/              # Định nghĩa API routes (health, files, runs)
+│   │   ├── core/             # Cơ chế module, data loaders, logging, security
+│   │   ├── modules/          # Các modules capabilities tùy chọn (agent, rag, CV,...)
+│   │   └── storage/          # Dịch vụ quản lý tệp tin và metadata local
+│   └── tests/                # Unit tests & smoke tests
+├── frontend/                 # Giao diện Next.js SPA
+│   ├── app/                  # Các trang (workspace, files, runs, results, settings)
+│   └── lib/                  # Helper gọi API
+├── scripts/                  # Các kịch bản CLI (list_modules, init_challenge,...)
+├── docs/                     # Tài liệu hướng dẫn kiến trúc & thiết kế
+└── Makefile                  # Trình điều khiển tự động hóa các tác vụ
+```
+
+---
+
+## 4. Quản lý Modules
+
+### Core và Optional Modules
+- **Core Module (`example_transform`)**: Luôn bật, thực hiện biến đổi văn bản để kiểm tra đường chạy dữ liệu.
+- **Optional Modules**: `agent`, `rag`, `computer_vision`, `prediction`, `optimization`, `analytics` (Tất cả đều tắt mặc định).
+
+### Cách bật/tắt module tùy chọn
+1. Xem danh sách module:
+   ```bash
+   python scripts/list_modules.py
+   ```
+2. Bật một module (Ví dụ: `rag`):
+   ```bash
+   python scripts/enable_module.py rag
+   ```
+   *Lưu ý: Hệ thống sẽ kiểm tra các gói thư viện Python bắt buộc và biến môi trường trước khi cho phép bật.*
+3. Tắt một module:
+   ```bash
+   python scripts/disable_module.py rag
+   ```
+4. Kiểm tra tính hợp lệ của toàn bộ module:
+   ```bash
+   python scripts/validate_modules.py
+   ```
+
+---
+
+## 5. Ingest Đề thi và Khởi tạo Workspace mới
+
+Khi nhận được đề bài chính thức, đội thi có thể nhập dữ liệu đề và tạo thư mục giải bài độc lập mà không ảnh hưởng tới code gốc.
+
+1. **Chuẩn bị file mô tả đề bài** (`problem.json` hoặc `.yaml`):
+   ```json
+   {
+     "title": "CV Shape Detector",
+     "description": "Detect shapes inside pictures using opencv and frames representation.",
+     "rubrics": {
+       "accuracy": 60,
+       "processing_time": 40
+     },
+     "data_sources": ["frames.zip"]
+   }
+   ```
+2. **Khởi tạo không gian giải đề**:
+   ```bash
+   python scripts/init_challenge.py "Shape Counter" problem.json
+   ```
+3. Thư mục độc lập sẽ được tạo tại `challenges/shape-counter/` chứa đầy đủ cấu hình riêng biệt, mẫu tài liệu kiến trúc, MVP, và kế hoạch demo.
+
+---
+
+## 6. Kiểm thử & Đánh giá
+
+### Chạy Unit Tests
 ```bash
-git clone <repo-url>
-cd AI20kekeke
-
-# Backend
-cd backend
-python -m venv .venv
-# Windows:
-.venv\Scripts\pip install -e ".[dev]"
-# Linux/Mac:
-# .venv/bin/pip install -e ".[dev]"
-cd ..
-
-# Frontend
-cd frontend
-npm install
-cd ..
+make test
 ```
-
-### 2. Run
-
+### Chạy Smoke Test (Kiểm tra đường chạy tích hợp)
 ```bash
-# Terminal 1: Backend
-cd backend
-.venv\Scripts\python -m uvicorn src.api.main:app --reload --port 8000
-
-# Terminal 2: Frontend
-cd frontend
-npm run dev
+make smoke
 ```
-
-- Backend: http://localhost:8000
-- Frontend: http://localhost:3000
-- API Docs: http://localhost:8000/docs
-
-### 3. Test
-
+### Chạy Đánh giá hiệu năng và xuất báo cáo
 ```bash
-cd backend
-.venv\Scripts\python -m pytest tests/ -v
+make eval
 ```
+Báo cáo đánh giá (Success rate, duration, error rate) sẽ được ghi nhận tại thư mục `data/evals/` dưới định dạng JSON và Markdown.
 
-## Architecture
+---
 
-```
-frontend/  → Next.js + TypeScript UI
-backend/   → FastAPI + Python API
-  src/
-    api/           → HTTP routes
-    core/          → Config, logging, errors
-    models/        → Response envelopes
-    storage/       → File, run, artifact storage
-    capabilities/  → Pluggable processing units
-    services/      → Business logic orchestration
-```
+## 7. Sử dụng Docker
 
-## API Endpoints
+Bộ khung hỗ trợ chạy toàn bộ ứng dụng qua Docker Compose để giả lập môi trường bàn giao:
 
-| Method | Path | Description |
-|--------|------|-------------|
-| GET | `/api/v1/health` | Health check |
-| GET | `/api/v1/ready` | Readiness check |
-| GET | `/api/v1/capabilities` | List registered capabilities |
-| POST | `/api/v1/files` | Upload a file |
-| GET | `/api/v1/files/{id}` | Get file metadata |
-| POST | `/api/v1/runs` | Create and execute a run |
-| GET | `/api/v1/runs/{id}` | Get run status |
-| GET | `/api/v1/artifacts/{id}` | Get artifact content |
+- Khởi động các container:
+  ```bash
+  make docker-up
+  ```
+- Dừng các container:
+  ```bash
+  make docker-down
+  ```
 
-## Adding a New Capability
+---
 
-1. Create `backend/src/capabilities/your_capability.py`
-2. Implement `BaseCapability` (name, description, execute)
-3. Register in `backend/src/api/main.py`
+## 8. Xử lý sự cố (Troubleshooting)
 
-No AI/ML dependencies are assumed. Add what your problem requires.
+- **Lỗi 422 khi Upload hoặc Run**:
+  - Kiểm tra định dạng tệp tin có nằm trong allowlist của `storage/local.py` hay không (mặc định chỉ cho phép các định dạng an toàn như `.txt`, `.csv`, `.json`, `.pdf`, `.png`, `.jpg`, `.md`).
+  - Đảm bảo tham số đầu vào khớp với schema mô tả của capability.
+- **Lỗi "ModuleNotFoundError"**:
+  - Đảm bảo bạn đã kích hoạt môi trường ảo: `backend\.venv\Scripts\activate`.
+  - Kiểm tra xem đã bật module tùy chọn nào mà chưa cài thư viện của nó hay không bằng cách chạy `make validate`.
 
-## Environment Variables
+---
 
-See `.env.example` for all available settings. No API keys required for development.
+## 9. Hạn chế
+- Hệ thống chạy đồng bộ (synchronous execution) trên tiến trình cục bộ, thích hợp cho các bài thi có thời gian xử lý nhanh dưới 1 phút. Đối với các tác vụ huấn luyện mô hình rất nặng, đội thi nên bổ sung hàng đợi Celery/Redis.
