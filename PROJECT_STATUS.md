@@ -1,7 +1,7 @@
 # PROJECT_STATUS.md — VAIC Universal Starter
 
-> Last updated: 2026-07-15T16:06+07:00
-> Current Gate: Gate 2 — Module System (PASS)
+> Last updated: 2026-07-15T16:10+07:00
+> Current Gate: Gate 3 — Problem Intake & Planning (PASS)
 
 ---
 
@@ -11,107 +11,88 @@ VAIC Universal Starter
 
 ## Current Phase
 
-Phase 2 — Capability Module System
+Phase 3 — Problem Intake & Solution Planning System
 
 ## Objective
 
-Design and implement a pluggable capability module registry that supports enabling/disabling individual modules dynamically, check environment dependencies, validate configurations, and build dynamic forms on the frontend.
+Build a solution planning scaffolding system: D-Day markdown templates under `docs/d-day/`, automated challenge initializer `init_challenge.py`, and module recommendation metrics checking.
 
 ## Completed
 
-- [x] Upgraded `BaseCapability` interface to implement expanded Capability Contract metadata and lifecycle checklist methods (`registry.py`).
-- [x] Developed `ModuleRegistry` dataclass loader checking Python import specs and environment variable keys before loading entrypoints.
-- [x] Configured modules config database mapping (`modules_config.json`).
-- [x] Developed dynamic parameter renderer in Next.js workspace UI, reading custom property forms on-the-fly.
-- [x] Created `example_transform` module complete with `module.json` manifest under `src/modules/example_transform/`.
-- [x] Created skeleton folders, manifests, capability entrypoints, and README documentation for:
-  - [x] `agent` (langgraph, langchain_core)
-  - [x] `rag` (chromadb)
-  - [x] `computer_vision` (cv2)
-  - [x] `prediction` (numpy, sklearn)
-  - [x] `optimization` (scipy)
-  - [x] `analytics` (pandas)
-- [x] Developed CLI scripts under `scripts/`:
-  - [x] `list_modules.py` (lists discovered modules and statuses)
-  - [x] `enable_module.py` (checks requirements and enables status)
-  - [x] `disable_module.py` (disables status)
-  - [x] `validate_modules.py` (validates all manifests and imports)
-- [x] Developed 6 comprehensive unit tests covering the pluggable system (`backend/tests/test_modules.py`).
-- [x] Verified build and execution. All 20 tests passed successfully.
+- [x] Reset repository successfully (Gate 0).
+- [x] Built core backend FastAPI endpoints and Next.js frontend pages (Gate 1).
+- [x] Implemented optional modular pluggable capability loader (Gate 2).
+- [x] Created 14 D-Day planning markdown templates under `docs/d-day/`.
+- [x] Developed automated workspace initiator script `scripts/init_challenge.py`:
+  - Check presence of `title`, `description`, `rubrics`, and `data_sources` in problem metadata.
+  - Calculate total rubric weights. Warn if total != 100%.
+  - Heuristically scores module requirements (e.g. `agent`, `rag`, `computer_vision`, `prediction`, `optimization`, `analytics`) based on keyword density.
+  - Generates isolated challenge slug directory (`challenges/<slug>/`) holding markdown files (`requirements.md`, `rubric.md`, `status.md`), configs (`challenge.yaml`), and dedicated local config overrides (`modules_config.json`).
+- [x] Developed unit tests for the challenge generator under [test_challenge_init.py](file:///d:/code/AI20kekeke/backend/tests/test_challenge_init.py).
+- [x] Ran full backend test suite. All 24 tests passed successfully.
 
 ## Commands Actually Run
 
 | # | Command | Result |
 |---|---------|--------|
-| 1 | `python scripts/list_modules.py` | Printed tabular status representing disabled modules and example_transform enabled. |
-| 2 | `python scripts/enable_module.py agent` | Blocked validation due to missing environment key `OPENAI_API_KEY`, proving safety validation checks work. |
-| 3 | `python scripts/validate_modules.py` | Completed validation audit for all discovered modules. |
-| 4 | `.venv\Scripts\python -m pytest tests/test_modules.py -v` | Ran modules registry unit tests. 6 tests passed. |
-| 5 | `.venv\Scripts\python -m pytest tests/ -v` | Ran full backend test suite. 20 tests passed. |
-| 6 | `npm run build` | Rebuilt Next.js client to verify dynamic form renderer compiles correctly. |
+| 1 | `python scripts/init_challenge.py "Document QA Solver" data/samples/mock_challenge.json` | Correctly recommended RAG module and populated isolated `challenges/document-qa-solver/` folder. |
+| 2 | `.venv\Scripts\python -m pytest tests/test_challenge_init.py -v` | Ran initializer tests. 4 tests passed. |
+| 3 | `.venv\Scripts\python -m pytest tests/ -v` | Ran entire backend test suite. All 24 tests passed. |
+| 4 | `npm run build` | Verified frontend TypeScript compile and production build passes without error. |
 
 ## Test Results
 
 ```
 platform win32 -- Python 3.11.4, pytest-9.1.1, pluggy-1.6.0
-collected 20 items
+collected 24 items
 
-tests/test_api.py::test_health PASSED                                    [  5%]
-tests/test_api.py::test_ready PASSED                                     [ 10%]
-tests/test_api.py::test_capabilities_list PASSED                         [ 15%]
-tests/test_api.py::test_upload_file PASSED                               [ 20%]
-tests/test_api.py::test_get_file_metadata PASSED                         [ 25%]
-tests/test_api.py::test_get_file_not_found PASSED                        [ 30%]
-tests/test_api.py::test_create_run_with_text PASSED                      [ 35%]
-tests/test_api.py::test_create_run_unknown_capability PASSED             [ 40%]
-tests/test_api.py::test_create_run_missing_capability PASSED             [ 45%]
-tests/test_api.py::test_get_run PASSED                                   [ 50%]
-tests/test_api.py::test_get_artifact PASSED                              [ 55%]
-tests/test_api.py::test_run_with_file_input PASSED                       [ 60%]
-tests/test_api.py::test_error_envelope_structure PASSED                  [ 65%]
-tests/test_modules.py::test_registry_load_manifest PASSED                [ 70%]
-tests/test_modules.py::test_module_disabled_by_default PASSED            [ 75%]
-tests/test_modules.py::test_enable_disable_module PASSED                 [ 80%]
-tests/test_modules.py::test_missing_dependency_validation PASSED         [ 85%]
-tests/test_modules.py::test_missing_environment_validation PASSED        [ 90%]
+tests/test_api.py::test_health PASSED                                    [  4%]
+tests/test_api.py::test_ready PASSED                                     [  8%]
+tests/test_api.py::test_capabilities_list PASSED                         [ 12%]
+tests/test_api.py::test_upload_file PASSED                               [ 16%]
+tests/test_api.py::test_get_file_metadata PASSED                         [ 20%]
+tests/test_api.py::test_get_file_not_found PASSED                        [ 25%]
+tests/test_api.py::test_create_run_with_text PASSED                      [ 29%]
+tests/test_api.py::test_create_run_unknown_capability PASSED             [ 33%]
+tests/test_api.py::test_create_run_missing_capability PASSED             [ 37%]
+tests/test_api.py::test_get_run PASSED                                   [ 41%]
+tests/test_api.py::test_get_artifact PASSED                              [ 45%]
+tests/test_api.py::test_run_with_file_input PASSED                       [ 50%]
+tests/test_api.py::test_error_envelope_structure PASSED                  [ 54%]
+tests/test_challenge_init.py::test_slugify PASSED                        [ 58%]
+tests/test_challenge_init.py::test_challenge_init_success PASSED         [ 62%]
+tests/test_challenge_init.py::test_challenge_init_rubrics_warning PASSED [ 66%]
+tests/test_challenge_init.py::test_challenge_init_override_modules PASSED [ 70%]
+tests/test_modules.py::test_registry_load_manifest PASSED                [ 75%]
+tests/test_modules.py::test_module_disabled_by_default PASSED            [ 79%]
+tests/test_modules.py::test_enable_disable_module PASSED                 [ 83%]
+tests/test_modules.py::test_missing_dependency_validation PASSED         [ 87%]
+tests/test_modules.py::test_missing_environment_validation PASSED        [ 91%]
 tests/test_modules.py::test_load_capability_checks_dependencies PASSED   [ 95%]
 tests/test_smoke.py::test_full_pipeline PASSED                           [100%]
 
-============================= 20 passed in 0.45s ==============================
+============================= 24 passed in 0.61s ==============================
 ```
 
 ## Files Changed
 
-- [MODIFY] [backend/src/capabilities/registry.py](file:///d:/code/AI20kekeke/backend/src/capabilities/registry.py) (Capability contract definition)
-- [MODIFY] [backend/src/api/main.py](file:///d:/code/AI20kekeke/backend/src/api/main.py) (Integrate ModuleRegistry loader)
-- [MODIFY] [frontend/app/workspace/page.tsx](file:///d:/code/AI20kekeke/frontend/app/workspace/page.tsx) (Dynamic option form generator)
-- [NEW] [backend/src/core/module.py](file:///d:/code/AI20kekeke/backend/src/core/module.py) (Pluggable Module loader)
-- [NEW] [backend/src/core/modules_config.json](file:///d:/code/AI20kekeke/backend/src/core/modules_config.json) (Enabled/disabled states)
-- [NEW] [backend/src/modules/example_transform/module.json](file:///d:/code/AI20kekeke/backend/src/modules/example_transform/module.json) (Example transform manifest)
-- [NEW] [backend/src/modules/example_transform/capability.py](file:///d:/code/AI20kekeke/backend/src/modules/example_transform/capability.py) (Example transform code)
-- [NEW] [backend/src/modules/agent/module.json](file:///d:/code/AI20kekeke/backend/src/modules/agent/module.json) (Agent manifest)
-- [NEW] [backend/src/modules/agent/capability.py](file:///d:/code/AI20kekeke/backend/src/modules/agent/capability.py) (Agent skeleton class)
-- [NEW] [backend/src/modules/agent/README.md](file:///d:/code/AI20kekeke/backend/src/modules/agent/README.md) (Agent module doc)
-- [NEW] [backend/src/modules/rag/module.json](file:///d:/code/AI20kekeke/backend/src/modules/rag/module.json) (RAG manifest)
-- [NEW] [backend/src/modules/rag/capability.py](file:///d:/code/AI20kekeke/backend/src/modules/rag/capability.py) (RAG skeleton class)
-- [NEW] [backend/src/modules/rag/README.md](file:///d:/code/AI20kekeke/backend/src/modules/rag/README.md) (RAG module doc)
-- [NEW] [backend/src/modules/computer_vision/module.json](file:///d:/code/AI20kekeke/backend/src/modules/computer_vision/module.json) (CV manifest)
-- [NEW] [backend/src/modules/computer_vision/capability.py](file:///d:/code/AI20kekeke/backend/src/modules/computer_vision/capability.py) (CV skeleton class)
-- [NEW] [backend/src/modules/computer_vision/README.md](file:///d:/code/AI20kekeke/backend/src/modules/computer_vision/README.md) (CV module doc)
-- [NEW] [backend/src/modules/prediction/module.json](file:///d:/code/AI20kekeke/backend/src/modules/prediction/module.json) (Prediction manifest)
-- [NEW] [backend/src/modules/prediction/capability.py](file:///d:/code/AI20kekeke/backend/src/modules/prediction/capability.py) (Prediction skeleton class)
-- [NEW] [backend/src/modules/prediction/README.md](file:///d:/code/AI20kekeke/backend/src/modules/prediction/README.md) (Prediction module doc)
-- [NEW] [backend/src/modules/optimization/module.json](file:///d:/code/AI20kekeke/backend/src/modules/optimization/module.json) (Optimization manifest)
-- [NEW] [backend/src/modules/optimization/capability.py](file:///d:/code/AI20kekeke/backend/src/modules/optimization/capability.py) (Optimization skeleton class)
-- [NEW] [backend/src/modules/optimization/README.md](file:///d:/code/AI20kekeke/backend/src/modules/optimization/README.md) (Optimization module doc)
-- [NEW] [backend/src/modules/analytics/module.json](file:///d:/code/AI20kekeke/backend/src/modules/analytics/module.json) (Analytics manifest)
-- [NEW] [backend/src/modules/analytics/capability.py](file:///d:/code/AI20kekeke/backend/src/modules/analytics/capability.py) (Analytics skeleton class)
-- [NEW] [backend/src/modules/analytics/README.md](file:///d:/code/AI20kekeke/backend/src/modules/analytics/README.md) (Analytics module doc)
-- [NEW] [backend/tests/test_modules.py](file:///d:/code/AI20kekeke/backend/tests/test_modules.py) (Capability modules unit tests)
-- [NEW] [scripts/list_modules.py](file:///d:/code/AI20kekeke/scripts/list_modules.py) (CLI script)
-- [NEW] [scripts/enable_module.py](file:///d:/code/AI20kekeke/scripts/enable_module.py) (CLI script)
-- [NEW] [scripts/disable_module.py](file:///d:/code/AI20kekeke/scripts/disable_module.py) (CLI script)
-- [NEW] [scripts/validate_modules.py](file:///d:/code/AI20kekeke/scripts/validate_modules.py) (CLI script)
+- [NEW] [docs/d-day/problem-intake.md](file:///d:/code/AI20kekeke/docs/d-day/problem-intake.md) (Intake template)
+- [NEW] [docs/d-day/requirement-matrix.md](file:///d:/code/AI20kekeke/docs/d-day/requirement-matrix.md) (Req matrix template)
+- [NEW] [docs/d-day/rubric-mapping.md](file:///d:/code/AI20kekeke/docs/d-day/rubric-mapping.md) (Rubric score template)
+- [NEW] [docs/d-day/data-inventory.md](file:///d:/code/AI20kekeke/docs/d-day/data-inventory.md) (Data template)
+- [NEW] [docs/d-day/api-inventory.md](file:///d:/code/AI20kekeke/docs/d-day/api-inventory.md) (API template)
+- [NEW] [docs/d-day/constraints.md](file:///d:/code/AI20kekeke/docs/d-day/constraints.md) (Constraint template)
+- [NEW] [docs/d-day/module-selection.md](file:///d:/code/AI20kekeke/docs/d-day/module-selection.md) (Module select template)
+- [NEW] [docs/d-day/mvp-definition.md](file:///d:/code/AI20kekeke/docs/d-day/mvp-definition.md) (MVP definition template)
+- [NEW] [docs/d-day/evaluation-plan.md](file:///d:/code/AI20kekeke/docs/d-day/evaluation-plan.md) (Evaluation plan template)
+- [NEW] [docs/d-day/demo-plan.md](file:///d:/code/AI20kekeke/docs/d-day/demo-plan.md) (Demo preparation template)
+- [NEW] [docs/d-day/risk-register.md](file:///d:/code/AI20kekeke/docs/d-day/risk-register.md) (Risk metrics template)
+- [NEW] [docs/d-day/team-plan.md](file:///d:/code/AI20kekeke/docs/d-day/team-plan.md) (Roles ownership template)
+- [NEW] [docs/d-day/mentor-questions.md](file:///d:/code/AI20kekeke/docs/d-day/mentor-questions.md) (Mentor check template)
+- [NEW] [docs/d-day/forty-eight-hour-plan.md](file:///d:/code/AI20kekeke/docs/d-day/forty-eight-hour-plan.md) (Execution timeline template)
+- [NEW] [scripts/init_challenge.py](file:///d:/code/AI20kekeke/scripts/init_challenge.py) (CLI initializer generator script)
+- [NEW] [backend/tests/test_challenge_init.py](file:///d:/code/AI20kekeke/backend/tests/test_challenge_init.py) (Generator validation unit tests)
+- [NEW] [data/samples/mock_challenge.json](file:///d:/code/AI20kekeke/data/samples/mock_challenge.json) (Sample challenge config file)
 
 ## Backup Information
 
@@ -132,7 +113,8 @@ None.
 | Gate 0 — Reset | **PASS** | 2026-07-15 |
 | Gate 1 — Universal Core | **PASS** | 2026-07-15 |
 | Gate 2 — Module System | **PASS** | 2026-07-15 |
+| Gate 3 — Problem Intake & Planning | **PASS** | 2026-07-15 |
 
 ## Next Exact Actions
 
-1. Proceed to next phase or complete.
+1. Review and approve Phase 3 outcomes.
