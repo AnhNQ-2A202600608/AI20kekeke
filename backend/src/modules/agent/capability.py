@@ -40,5 +40,5 @@ class AgentCapability(BaseCapability):
         # Skeleton implementation
         return CapabilityResult(
             success=False,
-            error="Agent capability is in skeleton status and has not been implemented yet."
+            error="Agent capability is in skeleton status and has not been implemented yet.",
         )

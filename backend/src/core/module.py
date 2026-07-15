@@ -9,14 +9,13 @@ from __future__ import annotations
 import importlib
 import json
 import os
-import sys
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
 from src.capabilities.registry import BaseCapability
 from src.core.config import get_settings
-from src.core.errors import AppError, ValidationError
+from src.core.errors import ValidationError
 from src.core.logging import get_logger
 
 logger = get_logger("core.module")
@@ -43,9 +42,20 @@ class ModuleManifest:
     def from_dict(cls, data: dict[str, Any]) -> ModuleManifest:
         # Filter fields matching manifest structure
         manifest_fields = {
-            "id", "name", "version", "category", "enabled_by_default", "description",
-            "dependencies", "environment_variables", "input_types", "output_types",
-            "evaluation_metrics", "frontend_component", "backend_entrypoint", "limitations"
+            "id",
+            "name",
+            "version",
+            "category",
+            "enabled_by_default",
+            "description",
+            "dependencies",
+            "environment_variables",
+            "input_types",
+            "output_types",
+            "evaluation_metrics",
+            "frontend_component",
+            "backend_entrypoint",
+            "limitations",
         }
         filtered = {k: v for k, v in data.items() if k in manifest_fields}
         return cls(**filtered)
@@ -59,7 +69,7 @@ class ModuleRegistry:
         # Default to backend/src/modules/
         self.modules_dir = modules_dir or Path(__file__).resolve().parent.parent / "modules"
         self.config_path = config_path or Path(__file__).resolve().parent / "modules_config.json"
-        
+
         # Ensure directories exist
         self.modules_dir.mkdir(parents=True, exist_ok=True)
         self._config = self._load_config()
@@ -75,11 +85,11 @@ class ModuleRegistry:
                 "computer_vision": False,
                 "prediction": False,
                 "optimization": False,
-                "analytics": False
+                "analytics": False,
             }
             self.config_path.write_text(json.dumps(default_config, indent=2), encoding="utf-8")
             return default_config
-        
+
         try:
             return json.loads(self.config_path.read_text(encoding="utf-8"))
         except Exception as exc:
@@ -92,7 +102,7 @@ class ModuleRegistry:
     def discover_modules(self) -> dict[str, ModuleManifest]:
         """Scan modules directory for module.json manifests."""
         self._manifests.clear()
-        
+
         # Also support finding the sample example_transform if it's placed in capabilities for Phase 1
         # but we will move it under modules/ shortly.
         for item in self.modules_dir.iterdir():
@@ -121,7 +131,7 @@ class ModuleRegistry:
         Returns list of validation errors (empty if completely valid).
         """
         errors = []
-        
+
         # 1. Check Python dependencies
         for dep in manifest.dependencies:
             try:
@@ -151,14 +161,18 @@ class ModuleRegistry:
             parts = manifest.backend_entrypoint.split(".")
             module_name = ".".join(parts[:-1])
             class_name = parts[-1]
-            
+
             # Dynamically import module
             mod = importlib.import_module(module_name)
             cap_class = getattr(mod, class_name)
-            
+
             # Instantiate capability
             cap = cap_class()
             return cap
         except Exception as exc:
-            logger.error("Failed to dynamically import entrypoint %s: %s", manifest.backend_entrypoint, exc)
-            raise ValidationError(f"Failed to load entrypoint for module '{manifest.id}': {exc}") from exc
+            logger.error(
+                "Failed to dynamically import entrypoint %s: %s", manifest.backend_entrypoint, exc
+            )
+            raise ValidationError(
+                f"Failed to load entrypoint for module '{manifest.id}': {exc}"
+            ) from exc

@@ -36,5 +36,5 @@ class PredictionCapability(BaseCapability):
         # Skeleton implementation
         return CapabilityResult(
             success=False,
-            error="Prediction capability is in skeleton status and has not been implemented yet."
+            error="Prediction capability is in skeleton status and has not been implemented yet.",
         )

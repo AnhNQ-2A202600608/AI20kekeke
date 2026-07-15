@@ -90,4 +90,4 @@ clean:
 	if exist challenges rmdir /s /q challenges
 
 package:
-	tar -czf vaic-starter-submission.tar.gz backend/ frontend/ docs/ scripts/ shared/ Makefile README.md PROJECT_STATUS.md
+	tar --exclude="node_modules" --exclude=".venv" --exclude=".next" --exclude="data" --exclude="challenges" -czf vaic-starter-submission.tar.gz backend frontend docs scripts shared Makefile README.md PROJECT_STATUS.md FINAL_AUDIT_REPORT.md KNOWN_LIMITATIONS.md RELEASE_CHECKLIST.md

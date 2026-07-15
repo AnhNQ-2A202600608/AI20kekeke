@@ -18,7 +18,7 @@ VALID_TRANSITIONS: dict[RunState, set[RunState]] = {
     "running": {"completed", "failed", "cancelled"},
     "completed": set(),
     "failed": set(),
-    "cancelled": set()
+    "cancelled": set(),
 }
 
 

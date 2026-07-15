@@ -60,4 +60,3 @@ class ProviderError(AppError):
             details={"provider": provider, "reason": reason},
             status_code=502,
         )
-

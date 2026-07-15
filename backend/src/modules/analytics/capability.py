@@ -36,5 +36,5 @@ class AnalyticsCapability(BaseCapability):
         # Skeleton implementation
         return CapabilityResult(
             success=False,
-            error="Analytics capability is in skeleton status and has not been implemented yet."
+            error="Analytics capability is in skeleton status and has not been implemented yet.",
         )

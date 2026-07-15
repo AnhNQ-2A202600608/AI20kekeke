@@ -66,7 +66,7 @@ class ExampleTransformCapability(BaseCapability):
                     "type": "string",
                     "description": "Text analysis markdown report.",
                 }
-            }
+            },
         }
 
     @property
@@ -85,10 +85,7 @@ class ExampleTransformCapability(BaseCapability):
         return errors
 
     def evaluate(self, run_result: CapabilityResult, expected_output: Any) -> dict[str, Any]:
-        return {
-            "success": run_result.success,
-            "score": 1.0 if run_result.success else 0.0
-        }
+        return {"success": run_result.success, "score": 1.0 if run_result.success else 0.0}
 
     def execute(self, parameters: dict[str, Any], input_file_ids: list[str]) -> CapabilityResult:
         # Get text from parameters or from first input file
@@ -129,4 +126,6 @@ class ExampleTransformCapability(BaseCapability):
             lines.extend(["", "## Uppercase", "", text.upper()[:500]])
 
         output = "\n".join(lines)
-        return CapabilityResult(success=True, artifacts=[{"filename": "analysis.md", "content": output}])
+        return CapabilityResult(
+            success=True, artifacts=[{"filename": "analysis.md", "content": output}]
+        )

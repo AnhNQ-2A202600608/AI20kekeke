@@ -7,7 +7,7 @@ Enables decoupling capabilities from specific concrete vendor services
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import Any
 
 
@@ -26,8 +26,7 @@ class BaseProvider(ABC):
 
     @property
     @abstractmethod
-    def provider_id(self) -> str:
-        ...
+    def provider_id(self) -> str: ...
 
     @property
     @abstractmethod
@@ -36,8 +35,7 @@ class BaseProvider(ABC):
         ...
 
     @abstractmethod
-    def health_check(self) -> bool:
-        ...
+    def health_check(self) -> bool: ...
 
 
 class ProviderRegistry:
@@ -85,5 +83,5 @@ class DeterministicMockProvider(BaseProvider):
             content=f"[MOCK_PROVIDER:{self.provider_id}] Echo payload: {payload}",
             data={"length": len(payload)},
             provider=self.provider_id,
-            model="deterministic-echo"
+            model="deterministic-echo",
         )

@@ -36,5 +36,5 @@ class CVCapability(BaseCapability):
         # Skeleton implementation
         return CapabilityResult(
             success=False,
-            error="CV capability is in skeleton status and has not been implemented yet."
+            error="CV capability is in skeleton status and has not been implemented yet.",
         )

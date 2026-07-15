@@ -36,5 +36,5 @@ class OptimizationCapability(BaseCapability):
         # Skeleton implementation
         return CapabilityResult(
             success=False,
-            error="Optimization capability is in skeleton status and has not been implemented yet."
+            error="Optimization capability is in skeleton status and has not been implemented yet.",
         )

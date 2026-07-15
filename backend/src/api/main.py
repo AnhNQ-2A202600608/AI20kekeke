@@ -6,7 +6,7 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
-from src.api import health, files, runs
+from src.api import files, health, runs
 from src.capabilities.registry import CapabilityRegistry
 from src.core.config import get_settings
 from src.core.errors import AppError

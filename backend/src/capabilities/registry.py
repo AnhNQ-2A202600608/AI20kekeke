@@ -140,4 +140,3 @@ class CapabilityRegistry:
 
     def names(self) -> list[str]:
         return [c.id for c in self._caps.values() if c.enabled]
-

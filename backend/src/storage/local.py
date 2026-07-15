@@ -22,7 +22,16 @@ logger = get_logger("storage")
 
 # Security Allowlist for file uploads/artifacts
 ALLOWED_EXTENSIONS = {
-    ".txt", ".csv", ".json", ".pdf", ".png", ".jpg", ".jpeg", ".zip", ".xlsx", ".md"
+    ".txt",
+    ".csv",
+    ".json",
+    ".pdf",
+    ".png",
+    ".jpg",
+    ".jpeg",
+    ".zip",
+    ".xlsx",
+    ".md",
 }
 
 
@@ -62,7 +71,7 @@ def save_upload(filename: str, content: bytes) -> dict[str, Any]:
 
     stored_name = f"{file_id}{ext}"
     dest = settings.uploads_dir / stored_name
-    
+
     # Assert path safety
     _assert_safe_path(dest, settings.uploads_dir)
     dest.write_bytes(content)
@@ -78,12 +87,14 @@ def save_upload(filename: str, content: bytes) -> dict[str, Any]:
         "checksum_sha256": checksum,
         "uploaded_at": _now_iso(),
     }
-    
+
     meta_path = settings.uploads_dir / f"{file_id}.json"
     _assert_safe_path(meta_path, settings.uploads_dir)
     meta_path.write_text(json.dumps(meta, indent=2), encoding="utf-8")
-    
-    logger.info("Saved upload: %s → %s (%d bytes) [sha256=%s]", filename, file_id, len(content), checksum)
+
+    logger.info(
+        "Saved upload: %s → %s (%d bytes) [sha256=%s]", filename, file_id, len(content), checksum
+    )
     return meta
 
 
@@ -91,7 +102,7 @@ def get_file_meta(file_id: str) -> dict[str, Any]:
     """Get file metadata by ID."""
     settings = get_settings()
     meta_path = settings.uploads_dir / f"{file_id}.json"
-    
+
     # Protect against path traversal (e.g. if file_id contains "../../")
     try:
         _assert_safe_path(meta_path, settings.uploads_dir)
@@ -126,7 +137,7 @@ def create_run(
     settings = get_settings()
     run_id = str(uuid.uuid4())
     run_dir = settings.runs_dir / run_id
-    
+
     _assert_safe_path(run_dir, settings.runs_dir)
     run_dir.mkdir(parents=True, exist_ok=True)
 
@@ -142,11 +153,11 @@ def create_run(
         "artifact_ids": [],
         "error": None,
     }
-    
+
     run_path = run_dir / "run.json"
     _assert_safe_path(run_path, settings.runs_dir)
     run_path.write_text(json.dumps(run_meta, indent=2), encoding="utf-8")
-    
+
     logger.info("Created run: %s (capability=%s)", run_id, capability)
     return run_meta
 
@@ -155,7 +166,7 @@ def get_run(run_id: str) -> dict[str, Any]:
     """Get run metadata."""
     settings = get_settings()
     run_path = settings.runs_dir / run_id / "run.json"
-    
+
     try:
         _assert_safe_path(run_path, settings.runs_dir)
     except ValidationError:
@@ -218,12 +229,14 @@ def save_artifact(
         "checksum_sha256": checksum,
         "created_at": _now_iso(),
     }
-    
+
     meta_path = settings.artifacts_dir / f"{artifact_id}.json"
     _assert_safe_path(meta_path, settings.artifacts_dir)
     meta_path.write_text(json.dumps(meta, indent=2), encoding="utf-8")
-    
-    logger.info("Saved artifact: %s for run %s (%d bytes) [sha256=%s]", artifact_id, run_id, size, checksum)
+
+    logger.info(
+        "Saved artifact: %s for run %s (%d bytes) [sha256=%s]", artifact_id, run_id, size, checksum
+    )
     return meta
 
 
@@ -231,7 +244,7 @@ def get_artifact_meta(artifact_id: str) -> dict[str, Any]:
     """Get artifact metadata."""
     settings = get_settings()
     meta_path = settings.artifacts_dir / f"{artifact_id}.json"
-    
+
     try:
         _assert_safe_path(meta_path, settings.artifacts_dir)
     except ValidationError:

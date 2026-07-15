@@ -43,9 +43,13 @@ def load_json(path: Path, required_keys: list[str] | None = None) -> Any:
                 if isinstance(item, dict):
                     missing = [k for k in required_keys if k not in item]
                     if missing:
-                        raise ValidationError(f"Missing required JSON keys in item index {i}: {', '.join(missing)}")
+                        raise ValidationError(
+                            f"Missing required JSON keys in item index {i}: {', '.join(missing)}"
+                        )
                 else:
-                    raise ValidationError(f"JSON data is a list containing non-object items at index {i}")
+                    raise ValidationError(
+                        f"JSON data is a list containing non-object items at index {i}"
+                    )
 
     return data
 
@@ -54,12 +58,12 @@ def load_csv(path: Path, required_headers: list[str] | None = None) -> list[dict
     """Load CSV file and validate mandatory columns."""
     if not path.exists():
         raise ValidationError(f"CSV file not found: {path}")
-    
+
     try:
         with open(path, mode="r", encoding="utf-8", newline="") as f:
             reader = csv.DictReader(f)
             headers = reader.fieldnames or []
-            
+
             if required_headers:
                 missing = [h for h in required_headers if h not in headers]
                 if missing:
@@ -76,16 +80,11 @@ def load_csv(path: Path, required_headers: list[str] | None = None) -> list[dict
 def profile_data(records: list[dict[str, Any]]) -> dict[str, Any]:
     """Generate basic profile statistics from a list of record dictionaries."""
     if not records:
-        return {
-            "row_count": 0,
-            "columns": [],
-            "missing_values": {},
-            "data_types": {}
-        }
+        return {"row_count": 0, "columns": [], "missing_values": {}, "data_types": {}}
 
     row_count = len(records)
     columns = list(records[0].keys())
-    
+
     missing_counts = {col: 0 for col in columns}
     type_samples = {col: set() for col in columns}
 
@@ -114,5 +113,5 @@ def profile_data(records: list[dict[str, Any]]) -> dict[str, Any]:
         "row_count": row_count,
         "columns": columns,
         "missing_values": missing_counts,
-        "data_types": data_types
+        "data_types": data_types,
     }

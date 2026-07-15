@@ -5,10 +5,9 @@ from __future__ import annotations
 import time
 import uuid
 
-from fastapi import APIRouter, UploadFile, File
+from fastapi import APIRouter, File, UploadFile
 
 from src.core.config import get_settings
-from src.core.errors import ValidationError
 from src.models.responses import error_response, success_response
 from src.storage import local as storage
 

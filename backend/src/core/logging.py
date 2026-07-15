@@ -13,7 +13,10 @@ class SecretRedactingFilter(logging.Filter):
     _PATTERNS = [
         re.compile(r"(sk-[a-zA-Z0-9_-]{20,})"),
         re.compile(r"(Bearer\s+[a-zA-Z0-9_\-\.\~]{10,})", re.IGNORECASE),
-        re.compile(r"(api[-_]key|secret|token|password)(?:\s*[:=]\s*)(?:\"|')?([a-zA-Z0-9_\-\.]{8,})(?:\"|')?", re.IGNORECASE)
+        re.compile(
+            r"(api[-_]key|secret|token|password)(?:\s*[:=]\s*)(?:\"|')?([a-zA-Z0-9_\-\.]{8,})(?:\"|')?",
+            re.IGNORECASE,
+        ),
     ]
 
     def filter(self, record: logging.LogRecord) -> bool:
@@ -46,10 +49,10 @@ def setup_logging(level: str = "INFO") -> logging.Logger:
     logger.setLevel(getattr(logging, level.upper(), logging.INFO))
     handler = logging.StreamHandler(sys.stdout)
     handler.setLevel(logger.level)
-    
+
     # Attach secret filter
     handler.addFilter(SecretRedactingFilter())
-    
+
     fmt = logging.Formatter(
         "%(asctime)s | %(levelname)-8s | %(name)s | %(message)s",
         datefmt="%Y-%m-%dT%H:%M:%S",
@@ -62,4 +65,3 @@ def setup_logging(level: str = "INFO") -> logging.Logger:
 def get_logger(name: str | None = None) -> logging.Logger:
     base = logging.getLogger("vaic")
     return base.getChild(name) if name else base
-

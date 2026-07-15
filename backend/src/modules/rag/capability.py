@@ -36,5 +36,5 @@ class RAGCapability(BaseCapability):
         # Skeleton implementation
         return CapabilityResult(
             success=False,
-            error="RAG capability is in skeleton status and has not been implemented yet."
+            error="RAG capability is in skeleton status and has not been implemented yet.",
         )

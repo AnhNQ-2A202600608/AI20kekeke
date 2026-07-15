@@ -12,8 +12,6 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Callable
 
-from src.capabilities.registry import CapabilityResult
-
 
 @dataclass
 class EvalReport:
@@ -62,13 +60,13 @@ class EvaluationRunner:
                 failed_runs=0,
                 success_rate=0.0,
                 average_duration_ms=0.0,
-                error_rate=0.0
+                error_rate=0.0,
             )
 
         total_runs = len(run_records)
         successful_runs = sum(1 for r in run_records if r.get("status") == "completed")
         failed_runs = sum(1 for r in run_records if r.get("status") == "failed")
-        
+
         success_rate = (successful_runs / total_runs) if total_runs > 0 else 0.0
         error_rate = (failed_runs / total_runs) if total_runs > 0 else 0.0
 
@@ -95,13 +93,15 @@ class EvaluationRunner:
             success_rate=success_rate,
             average_duration_ms=avg_duration,
             error_rate=error_rate,
-            individual_runs=run_records
+            individual_runs=run_records,
         )
 
-    def write_reports(self, report: EvalReport, output_dir: Path, filename_prefix: str = "eval") -> None:
+    def write_reports(
+        self, report: EvalReport, output_dir: Path, filename_prefix: str = "eval"
+    ) -> None:
         """Write report out to JSON and Markdown file formats."""
         output_dir.mkdir(parents=True, exist_ok=True)
-        
+
         # 1. JSON Report
         json_path = output_dir / f"{filename_prefix}_report.json"
         report_dict = {
@@ -113,14 +113,14 @@ class EvaluationRunner:
             "average_duration_ms": report.average_duration_ms,
             "error_rate": report.error_rate,
             "metrics": report.metrics,
-            "individual_runs_count": len(report.individual_runs)
+            "individual_runs_count": len(report.individual_runs),
         }
         json_path.write_text(json.dumps(report_dict, indent=2), encoding="utf-8")
 
         # 2. Markdown Report
         md_path = output_dir / f"{filename_prefix}_report.md"
         md_lines = [
-            f"# Evaluation Summary Report",
+            "# Evaluation Summary Report",
             "",
             f"- **Timestamp**: {report.timestamp}",
             f"- **Total Runs**: {report.total_runs}",
@@ -139,5 +139,5 @@ class EvaluationRunner:
             md_lines.append(
                 f"| {run.get('run_id')} | {run.get('capability')} | {run.get('status')} | {run.get('completed_at') or 'N/A'} |"
             )
-        
+
         md_path.write_text("\n".join(md_lines), encoding="utf-8")

@@ -1,11 +1,11 @@
-from datetime import datetime, timezone
 import time
+from datetime import datetime, timezone
 from typing import Any
 
 from src.capabilities.registry import CapabilityRegistry
-from src.core.errors import CapabilityError, NotFoundError, ValidationError
+from src.core.errors import NotFoundError, ValidationError
 from src.core.logging import get_logger
-from src.core.run_manager import RunStateManger, RunState
+from src.core.run_manager import RunState, RunStateManger
 from src.storage import local as storage
 
 logger = get_logger("services.run")
@@ -33,23 +33,31 @@ def execute_run(run_id: str, registry: CapabilityRegistry) -> dict[str, Any]:
     cap = registry.get(cap_name)
     if cap is None:
         RunStateManger.validate_transition("running", "failed")
-        updated = storage.update_run(run_id, {
-            "status": "failed",
-            "error": f"Unknown capability: {cap_name}",
-            "completed_at": datetime.now(timezone.utc).isoformat(),
-        })
+        updated = storage.update_run(
+            run_id,
+            {
+                "status": "failed",
+                "error": f"Unknown capability: {cap_name}",
+                "completed_at": datetime.now(timezone.utc).isoformat(),
+            },
+        )
         logger.info(
             "AUDIT LOG: Run ID: %s | Capability: %s | Input Artifacts: %s | Output Artifacts: [] | Status: failed | Duration: 0.00ms | Error: Unknown capability",
-            run_id, cap_name, run.get("input_file_ids", [])
+            run_id,
+            cap_name,
+            run.get("input_file_ids", []),
         )
         raise NotFoundError("capability", cap_name)
 
     # Mark as running
     t0 = time.perf_counter()
-    storage.update_run(run_id, {
-        "status": "running",
-        "started_at": datetime.now(timezone.utc).isoformat(),
-    })
+    storage.update_run(
+        run_id,
+        {
+            "status": "running",
+            "started_at": datetime.now(timezone.utc).isoformat(),
+        },
+    )
 
     try:
         # Validate dynamic capability inputs first
@@ -65,14 +73,21 @@ def execute_run(run_id: str, registry: CapabilityRegistry) -> dict[str, Any]:
         duration_ms = (time.perf_counter() - t0) * 1000.0
         logger.error("Capability '%s' raised: %s", cap_name, exc)
         RunStateManger.validate_transition("running", "failed")
-        updated = storage.update_run(run_id, {
-            "status": "failed",
-            "error": str(exc),
-            "completed_at": datetime.now(timezone.utc).isoformat(),
-        })
+        updated = storage.update_run(
+            run_id,
+            {
+                "status": "failed",
+                "error": str(exc),
+                "completed_at": datetime.now(timezone.utc).isoformat(),
+            },
+        )
         logger.info(
             "AUDIT LOG: Run ID: %s | Capability: %s | Input Artifacts: %s | Output Artifacts: [] | Status: failed | Duration: %.2fms | Error: %s",
-            run_id, cap_name, run.get("input_file_ids", []), duration_ms, exc
+            run_id,
+            cap_name,
+            run.get("input_file_ids", []),
+            duration_ms,
+            exc,
         )
         return updated
 
@@ -80,14 +95,21 @@ def execute_run(run_id: str, registry: CapabilityRegistry) -> dict[str, Any]:
 
     if not result.success:
         RunStateManger.validate_transition("running", "failed")
-        updated = storage.update_run(run_id, {
-            "status": "failed",
-            "error": result.error,
-            "completed_at": datetime.now(timezone.utc).isoformat(),
-        })
+        updated = storage.update_run(
+            run_id,
+            {
+                "status": "failed",
+                "error": result.error,
+                "completed_at": datetime.now(timezone.utc).isoformat(),
+            },
+        )
         logger.info(
             "AUDIT LOG: Run ID: %s | Capability: %s | Input Artifacts: %s | Output Artifacts: [] | Status: failed | Duration: %.2fms | Error: %s",
-            run_id, cap_name, run.get("input_file_ids", []), duration_ms, result.error
+            run_id,
+            cap_name,
+            run.get("input_file_ids", []),
+            duration_ms,
+            result.error,
         )
         return updated
 
@@ -103,14 +125,21 @@ def execute_run(run_id: str, registry: CapabilityRegistry) -> dict[str, Any]:
         artifact_ids.append(meta["artifact_id"])
 
     RunStateManger.validate_transition("running", "completed")
-    updated = storage.update_run(run_id, {
-        "status": "completed",
-        "artifact_ids": artifact_ids,
-        "completed_at": datetime.now(timezone.utc).isoformat(),
-    })
+    updated = storage.update_run(
+        run_id,
+        {
+            "status": "completed",
+            "artifact_ids": artifact_ids,
+            "completed_at": datetime.now(timezone.utc).isoformat(),
+        },
+    )
 
     logger.info(
         "AUDIT LOG: Run ID: %s | Capability: %s | Input Artifacts: %s | Output Artifacts: %s | Status: completed | Duration: %.2fms | Error: None",
-        run_id, cap_name, run.get("input_file_ids", []), artifact_ids, duration_ms
+        run_id,
+        cap_name,
+        run.get("input_file_ids", []),
+        artifact_ids,
+        duration_ms,
     )
     return updated
