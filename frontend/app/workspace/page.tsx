@@ -1,16 +1,23 @@
 'use client';
 
 import { useState, useEffect, useRef } from "react";
-import { fetchApi } from "../../lib/api";
+import {
+  ArtifactMeta,
+  Capability,
+  fetchApi,
+  getErrorMessage,
+  RunMeta,
+  UploadMeta,
+} from "../../lib/api";
 
 export default function WorkspacePage() {
-  const [capabilities, setCapabilities] = useState<any[]>([]);
+  const [capabilities, setCapabilities] = useState<Capability[]>([]);
   const [selectedCap, setSelectedCap] = useState<string>("");
   const [loadingCaps, setLoadingCaps] = useState(true);
   const [error, setError] = useState("");
 
-  // Dynamic parameters state
-  const [params, setParams] = useState<Record<string, any>>({});
+  // Form được dựng động theo schema capability trả về từ backend.
+  const [params, setParams] = useState<Record<string, unknown>>({});
   
   // File upload states
   const [uploadedFileId, setUploadedFileId] = useState("");
@@ -19,7 +26,7 @@ export default function WorkspacePage() {
 
   // Run execution states
   const [running, setRunning] = useState(false);
-  const [runResult, setRunResult] = useState<any>(null);
+  const [runResult, setRunResult] = useState<RunMeta | null>(null);
   const [runError, setRunError] = useState("");
 
   // Artifact display
@@ -30,15 +37,16 @@ export default function WorkspacePage() {
   useEffect(() => {
     async function loadCapabilities() {
       try {
-        const data = await fetchApi("/capabilities");
+        const data = await fetchApi<Capability[]>("/capabilities");
         setCapabilities(data || []);
         if (data && data.length > 0) {
+          // Chọn capability đầu tiên để UI có trạng thái khả dụng ngay sau khi load.
           const capId = data[0].id;
           setSelectedCap(capId);
           initializeParams(data[0]);
         }
-      } catch (err: any) {
-        setError(err.message || "Failed to load capabilities.");
+      } catch (error: unknown) {
+        setError(getErrorMessage(error, "Failed to load capabilities."));
       } finally {
         setLoadingCaps(false);
       }
@@ -46,11 +54,13 @@ export default function WorkspacePage() {
     loadCapabilities();
   }, []);
 
-  function initializeParams(cap: any) {
-    const initial: Record<string, any> = {};
-    if (cap?.input_schema?.properties) {
-      Object.keys(cap.input_schema.properties).forEach((key) => {
-        const prop = cap.input_schema.properties[key];
+  function initializeParams(cap: Capability) {
+    const initial: Record<string, unknown> = {};
+    const properties = cap.input_schema?.properties;
+    if (properties) {
+      Object.keys(properties).forEach((key) => {
+        const prop = properties[key];
+        // Tự suy ra giá trị khởi tạo cơ bản từ schema để tránh hardcode theo từng module.
         initial[key] = prop.default !== undefined ? prop.default : (prop.type === "boolean" ? false : "");
       });
     }
@@ -66,7 +76,7 @@ export default function WorkspacePage() {
     setRunError("");
     setArtifactContent("");
     const cap = capabilities.find(c => c.id === capId);
-    initializeParams(cap);
+    if (cap) initializeParams(cap);
   }
 
   async function handleFileUpload(e: React.ChangeEvent<HTMLInputElement>) {
@@ -81,21 +91,14 @@ export default function WorkspacePage() {
     formData.append("file", files[0]);
 
     try {
-      const response = await fetch("http://localhost:8000/api/v1/files", {
+      const result = await fetchApi<UploadMeta>("/files", {
         method: "POST",
         body: formData,
       });
-      if (!response.ok) {
-        throw new Error("Upload request failed");
-      }
-      const result = await response.json();
-      if (!result.success) {
-        throw new Error(result.error?.message || "Upload failed");
-      }
-      setUploadedFileId(result.data.file_id);
-      setUploadSuccess(`Uploaded: ${result.data.original_name} (${result.data.file_id})`);
-    } catch (err: any) {
-      setError(err.message || "Failed to upload file.");
+      setUploadedFileId(result.file_id);
+      setUploadSuccess(`Uploaded: ${result.original_name} (${result.file_id})`);
+    } catch (error: unknown) {
+      setError(getErrorMessage(error, "Failed to upload file."));
     } finally {
       setUploading(false);
     }
@@ -110,8 +113,8 @@ export default function WorkspacePage() {
 
     const inputFiles = uploadedFileId ? [uploadedFileId] : [];
 
-    // Filter out empty params
-    const payloadParams: Record<string, any> = {};
+    // Chỉ gửi những param thực sự có giá trị để payload gọn và tránh làm backend hiểu nhầm.
+    const payloadParams: Record<string, unknown> = {};
     Object.keys(params).forEach(key => {
       const val = params[key];
       if (val !== "" && val !== undefined) {
@@ -120,7 +123,7 @@ export default function WorkspacePage() {
     });
 
     try {
-      const data = await fetchApi("/runs", {
+      const data = await fetchApi<RunMeta>("/runs", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -133,11 +136,12 @@ export default function WorkspacePage() {
       if (data.status === "failed") {
         setRunError(data.error || "Run failed.");
       } else if (data.artifact_ids && data.artifact_ids.length > 0) {
-        const art = await fetchApi(`/artifacts/${data.artifact_ids[0]}`);
+        // MVP hiện tại hiển thị artifact đầu tiên để team kiểm tra luồng end-to-end nhanh.
+        const art = await fetchApi<ArtifactMeta>(`/artifacts/${data.artifact_ids[0]}`);
         setArtifactContent(art.content);
       }
-    } catch (err: any) {
-      setRunError(err.message || "Error running capability.");
+    } catch (error: unknown) {
+      setRunError(getErrorMessage(error, "Error running capability."));
     } finally {
       setRunning(false);
     }
@@ -151,6 +155,7 @@ export default function WorkspacePage() {
       const field = props[key];
       const fieldType = field.type;
       const desc = field.description || "";
+      const fieldValue = params[key];
       
       if (fieldType === "boolean") {
         return (
@@ -169,6 +174,7 @@ export default function WorkspacePage() {
         );
       }
       
+      // Một vài field thường chứa nội dung dài nên ưu tiên textarea cho dễ thao tác.
       const isTextArea = key === "text" || key === "payload" || key === "data";
       
       return (
@@ -179,7 +185,7 @@ export default function WorkspacePage() {
           {isTextArea ? (
             <textarea
               id={key}
-              value={params[key] || ""}
+              value={typeof fieldValue === "string" ? fieldValue : ""}
               onChange={(e) => setParams({ ...params, [key]: e.target.value })}
               placeholder={desc || `Enter ${key}...`}
               style={{ width: "100%", height: "100px", backgroundColor: "#0f172a", border: "1px solid #334155", borderRadius: "0.375rem", padding: "0.75rem", color: "#f8fafc", resize: "vertical" }}
@@ -188,7 +194,11 @@ export default function WorkspacePage() {
             <input
               type={fieldType === "integer" || fieldType === "number" ? "number" : "text"}
               id={key}
-              value={params[key] || ""}
+              value={
+                typeof fieldValue === "string" || typeof fieldValue === "number"
+                  ? fieldValue
+                  : ""
+              }
               onChange={(e) => setParams({
                 ...params,
                 [key]: fieldType === "integer" || fieldType === "number" ? Number(e.target.value) : e.target.value

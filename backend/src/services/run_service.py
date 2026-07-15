@@ -42,7 +42,9 @@ def execute_run(run_id: str, registry: CapabilityRegistry) -> dict[str, Any]:
             },
         )
         logger.info(
-            "AUDIT LOG: Run ID: %s | Capability: %s | Input Artifacts: %s | Output Artifacts: [] | Status: failed | Duration: 0.00ms | Error: Unknown capability",
+            "AUDIT LOG: Run ID: %s | Capability: %s | Input Artifacts: %s "
+            "| Output Artifacts: [] | Status: failed | Duration: 0.00ms "
+            "| Error: Unknown capability",
             run_id,
             cap_name,
             run.get("input_file_ids", []),
@@ -82,7 +84,8 @@ def execute_run(run_id: str, registry: CapabilityRegistry) -> dict[str, Any]:
             },
         )
         logger.info(
-            "AUDIT LOG: Run ID: %s | Capability: %s | Input Artifacts: %s | Output Artifacts: [] | Status: failed | Duration: %.2fms | Error: %s",
+            "AUDIT LOG: Run ID: %s | Capability: %s | Input Artifacts: %s "
+            "| Output Artifacts: [] | Status: failed | Duration: %.2fms | Error: %s",
             run_id,
             cap_name,
             run.get("input_file_ids", []),
@@ -104,7 +107,8 @@ def execute_run(run_id: str, registry: CapabilityRegistry) -> dict[str, Any]:
             },
         )
         logger.info(
-            "AUDIT LOG: Run ID: %s | Capability: %s | Input Artifacts: %s | Output Artifacts: [] | Status: failed | Duration: %.2fms | Error: %s",
+            "AUDIT LOG: Run ID: %s | Capability: %s | Input Artifacts: %s "
+            "| Output Artifacts: [] | Status: failed | Duration: %.2fms | Error: %s",
             run_id,
             cap_name,
             run.get("input_file_ids", []),
@@ -135,7 +139,8 @@ def execute_run(run_id: str, registry: CapabilityRegistry) -> dict[str, Any]:
     )
 
     logger.info(
-        "AUDIT LOG: Run ID: %s | Capability: %s | Input Artifacts: %s | Output Artifacts: %s | Status: completed | Duration: %.2fms | Error: None",
+        "AUDIT LOG: Run ID: %s | Capability: %s | Input Artifacts: %s "
+        "| Output Artifacts: %s | Status: completed | Duration: %.2fms | Error: None",
         run_id,
         cap_name,
         run.get("input_file_ids", []),

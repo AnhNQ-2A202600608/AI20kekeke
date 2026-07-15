@@ -10,13 +10,15 @@ from pathlib import Path
 _PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.append(str(_PROJECT_ROOT / "backend"))
 
-from src.core.module import ModuleRegistry
+from src.core.module import ModuleRegistry  # noqa: E402
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Enable an optional module.")
     parser.add_argument("module", help="ID of the module to enable (e.g. agent, rag)")
-    parser.add_argument("--force", action="store_true", help="Enable even if validation checks fail")
+    parser.add_argument(
+        "--force", action="store_true", help="Enable even if validation checks fail"
+    )
     args = parser.parse_args()
 
     registry = ModuleRegistry()
@@ -34,9 +36,12 @@ def main() -> None:
         print(f"\nValidation failed for '{args.module}':")
         for err in errors:
             print(f"  - {err}")
-        
+
         if not args.force:
-            print("\nError: Cannot enable module due to missing dependencies. Use --force to override.")
+            print(
+                "\nError: Cannot enable module due to missing dependencies. "
+                "Use --force to override."
+            )
             sys.exit(1)
         else:
             print("\nWarning: Forcing enablement despite validation failures.")

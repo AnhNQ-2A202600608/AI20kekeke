@@ -66,18 +66,20 @@ class ModuleRegistry:
 
     def __init__(self, modules_dir: Path | None = None, config_path: Path | None = None) -> None:
         settings = get_settings()
-        # Default to backend/src/modules/
+        # Mặc định đọc module từ backend/src/modules/, nhưng vẫn cho phép
+        # tiêm path khác để test hoặc trỏ sang workspace challenge riêng.
         self.modules_dir = modules_dir or Path(__file__).resolve().parent.parent / "modules"
-        self.config_path = config_path or Path(__file__).resolve().parent / "modules_config.json"
+        self.config_path = config_path or settings.modules_config_path
 
-        # Ensure directories exist
+        # Tạo sẵn thư mục để script init/validate không phải xử lý thêm case thiếu path.
         self.modules_dir.mkdir(parents=True, exist_ok=True)
         self._config = self._load_config()
         self._manifests: dict[str, ModuleManifest] = {}
 
     def _load_config(self) -> dict[str, bool]:
         if not self.config_path.exists():
-            # Initially, only example_transform is enabled, everything else is disabled by default
+            # Mặc định chỉ bật module mẫu an toàn, còn các module nặng/optional tắt sẵn
+            # để teammate clone repo về vẫn chạy được ngay.
             default_config = {
                 "example_transform": True,
                 "agent": False,
@@ -103,8 +105,8 @@ class ModuleRegistry:
         """Scan modules directory for module.json manifests."""
         self._manifests.clear()
 
-        # Also support finding the sample example_transform if it's placed in capabilities for Phase 1
-        # but we will move it under modules/ shortly.
+        # Giữ contract discovery đủ generic để challenge mới chỉ cần tuân theo
+        # schema module.json là backend có thể quét và nạp lại.
         for item in self.modules_dir.iterdir():
             if item.is_dir():
                 manifest_file = item / "module.json"
@@ -132,14 +134,14 @@ class ModuleRegistry:
         """
         errors = []
 
-        # 1. Check Python dependencies
+        # 1. Kiểm tra dependency Python trước khi import động để lỗi rõ ràng hơn.
         for dep in manifest.dependencies:
             try:
                 importlib.import_module(dep)
             except ImportError:
                 errors.append(f"Missing required python dependency: '{dep}'")
 
-        # 2. Check Environment variables
+        # 2. Kiểm tra env để tránh chạy module nửa chừng mới phát hiện thiếu API key.
         for env_var in manifest.environment_variables:
             if not os.getenv(env_var):
                 errors.append(f"Missing required environment variable: '{env_var}'")
@@ -162,11 +164,11 @@ class ModuleRegistry:
             module_name = ".".join(parts[:-1])
             class_name = parts[-1]
 
-            # Dynamically import module
+            # Import động để repo lõi không bị buộc phải cài toàn bộ optional stack.
             mod = importlib.import_module(module_name)
             cap_class = getattr(mod, class_name)
 
-            # Instantiate capability
+            # Mỗi capability được khởi tạo tại đây rồi đăng ký vào registry của app.
             cap = cap_class()
             return cap
         except Exception as exc:

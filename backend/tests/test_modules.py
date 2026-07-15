@@ -10,6 +10,7 @@ from pathlib import Path
 
 import pytest
 
+from src.core.config import Settings
 from src.core.errors import ValidationError
 from src.core.module import ModuleRegistry
 
@@ -33,7 +34,9 @@ def temp_modules_dir():
                 "description": "A valid test module",
                 "dependencies": [],
                 "environment_variables": [],
-                "backend_entrypoint": "src.modules.example_transform.capability.ExampleTransformCapability",
+                "backend_entrypoint": (
+                    "src.modules.example_transform.capability.ExampleTransformCapability"
+                ),
             }
         ),
         encoding="utf-8",
@@ -53,7 +56,9 @@ def temp_modules_dir():
                 "description": "Module with missing package",
                 "dependencies": ["nonexistent_package_xyz"],
                 "environment_variables": [],
-                "backend_entrypoint": "src.modules.example_transform.capability.ExampleTransformCapability",
+                "backend_entrypoint": (
+                    "src.modules.example_transform.capability.ExampleTransformCapability"
+                ),
             }
         ),
         encoding="utf-8",
@@ -73,7 +78,9 @@ def temp_modules_dir():
                 "description": "Module with missing environment variable",
                 "dependencies": [],
                 "environment_variables": ["NONEXISTENT_VAR_XYZ"],
-                "backend_entrypoint": "src.modules.example_transform.capability.ExampleTransformCapability",
+                "backend_entrypoint": (
+                    "src.modules.example_transform.capability.ExampleTransformCapability"
+                ),
             }
         ),
         encoding="utf-8",
@@ -147,3 +154,26 @@ def test_load_capability_checks_dependencies(temp_modules_dir):
     with pytest.raises(ValidationError) as exc:
         registry.load_capability(manifests["mod_missing_dep"])
     assert "validation failed" in str(exc.value)
+
+
+def test_active_challenge_selects_workspace_module_config(tmp_path, monkeypatch):
+    challenge_dir = tmp_path / "challenge"
+    challenge_dir.mkdir()
+    config_path = challenge_dir / "modules_config.json"
+    config_path.write_text('{"example_transform": false, "analytics": true}', encoding="utf-8")
+    monkeypatch.setenv("ACTIVE_CHALLENGE", str(challenge_dir))
+
+    settings = Settings()
+
+    assert settings.modules_config_path == config_path.resolve()
+    registry = ModuleRegistry(modules_dir=tmp_path / "modules")
+    assert registry.config_path == config_path.resolve()
+    assert registry.is_enabled("analytics") is True
+
+
+def test_active_challenge_requires_existing_module_config(tmp_path, monkeypatch):
+    missing_challenge = tmp_path / "missing-challenge"
+    monkeypatch.setenv("ACTIVE_CHALLENGE", str(missing_challenge))
+
+    with pytest.raises(ValueError, match="ACTIVE_CHALLENGE"):
+        Settings().modules_config_path

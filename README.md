@@ -29,22 +29,25 @@ VAIC Universal Starter là bộ khung full-stack trung tính, được thiết k
 ### Các bước khởi động nhanh
 1. **Khởi tạo cấu hình và môi trường**:
    ```bash
-   make bootstrap
+   python scripts/project_tasks.py bootstrap
    ```
 2. **Cài đặt thư viện**:
    ```bash
-   make install
+   python scripts/project_tasks.py install
    ```
 3. **Chạy các máy chủ phát triển (Development)**:
    - Trong terminal thứ nhất (Backend):
      ```bash
-     make dev-backend
+     python scripts/project_tasks.py dev-backend
      ```
    - Trong terminal thứ hai (Frontend):
      ```bash
-     make dev-frontend
+     python scripts/project_tasks.py dev-frontend
      ```
 4. Truy cập giao diện tại: `http://localhost:3000`.
+
+`Makefile` chỉ là wrapper tùy chọn cho máy đã cài `make`. CLI Python ở trên là cách chạy
+chuẩn trên Windows, Linux và macOS.
 
 ---
 
@@ -117,6 +120,12 @@ Khi nhận được đề bài chính thức, đội thi có thể nhập dữ l
    python scripts/init_challenge.py "Shape Counter" problem.json
    ```
 3. Thư mục độc lập sẽ được tạo tại `challenges/shape-counter/` chứa đầy đủ cấu hình riêng biệt, mẫu tài liệu kiến trúc, MVP, và kế hoạch demo.
+4. Kích hoạt workspace trong `.env` trước khi chạy backend:
+   ```dotenv
+   ACTIVE_CHALLENGE=shape-counter
+   ```
+   Có thể dùng slug trong `challenges/` hoặc đường dẫn tuyệt đối. Backend sẽ đọc
+   `modules_config.json` của workspace đang kích hoạt.
 
 ---
 
@@ -124,15 +133,15 @@ Khi nhận được đề bài chính thức, đội thi có thể nhập dữ l
 
 ### Chạy Unit Tests
 ```bash
-make test
+python scripts/project_tasks.py test
 ```
 ### Chạy Smoke Test (Kiểm tra đường chạy tích hợp)
 ```bash
-make smoke
+python scripts/project_tasks.py smoke
 ```
 ### Chạy Đánh giá hiệu năng và xuất báo cáo
 ```bash
-make eval
+python scripts/project_tasks.py eval
 ```
 Báo cáo đánh giá (Success rate, duration, error rate) sẽ được ghi nhận tại thư mục `data/evals/` dưới định dạng JSON và Markdown.
 
@@ -144,12 +153,26 @@ Bộ khung hỗ trợ chạy toàn bộ ứng dụng qua Docker Compose để gi
 
 - Khởi động các container:
   ```bash
-  make docker-up
+  python scripts/project_tasks.py docker-up
   ```
 - Dừng các container:
   ```bash
-  make docker-down
+  python scripts/project_tasks.py docker-down
   ```
+
+Frontend gọi API qua proxy same-origin `/api/v1`; trong Docker, proxy chuyển tiếp tới service
+`backend`, vì vậy không cần hardcode địa chỉ máy người dùng trong mã nguồn.
+
+### Clean và đóng gói an toàn
+
+```bash
+python scripts/project_tasks.py clean
+python scripts/project_tasks.py package
+```
+
+`clean` chỉ xóa dependency/cache/build/data sinh ra và luôn giữ `challenges/`. Gói
+`vaic-starter-submission.tar.gz` bao gồm toàn bộ workspace challenge nhưng loại `.env`, `.git`,
+dependency, cache và dữ liệu runtime.
 
 ---
 
@@ -159,8 +182,8 @@ Bộ khung hỗ trợ chạy toàn bộ ứng dụng qua Docker Compose để gi
   - Kiểm tra định dạng tệp tin có nằm trong allowlist của `storage/local.py` hay không (mặc định chỉ cho phép các định dạng an toàn như `.txt`, `.csv`, `.json`, `.pdf`, `.png`, `.jpg`, `.md`).
   - Đảm bảo tham số đầu vào khớp với schema mô tả của capability.
 - **Lỗi "ModuleNotFoundError"**:
-  - Đảm bảo bạn đã kích hoạt môi trường ảo: `backend\.venv\Scripts\activate`.
-  - Kiểm tra xem đã bật module tùy chọn nào mà chưa cài thư viện của nó hay không bằng cách chạy `make validate`.
+  - Chạy lại `python scripts/project_tasks.py install` để tạo đúng môi trường cho hệ điều hành.
+  - Kiểm tra module bằng `python scripts/project_tasks.py validate`.
 
 ---
 

@@ -136,8 +136,10 @@ class EvaluationRunner:
             "|--------|------------|--------|--------------|",
         ]
         for run in report.individual_runs:
+            completed_at = run.get("completed_at") or "N/A"
             md_lines.append(
-                f"| {run.get('run_id')} | {run.get('capability')} | {run.get('status')} | {run.get('completed_at') or 'N/A'} |"
+                f"| {run.get('run_id')} | {run.get('capability')} | "
+                f"{run.get('status')} | {completed_at} |"
             )
 
         md_path.write_text("\n".join(md_lines), encoding="utf-8")

@@ -15,7 +15,7 @@ os.environ["STORAGE_PATH"] = _TEST_DATA
 os.environ["APP_ENV"] = "test"
 os.environ["DEBUG"] = "false"
 
-from src.api.main import create_app
+from src.api.main import create_app  # noqa: E402
 
 
 @pytest.fixture

@@ -1,11 +1,11 @@
 'use client';
 
 import { useState } from "react";
-import { fetchApi } from "../../lib/api";
+import { ArtifactMeta, fetchApi, getErrorMessage } from "../../lib/api";
 
 export default function ResultsPage() {
   const [artifactId, setArtifactId] = useState("");
-  const [artifact, setArtifact] = useState<any>(null);
+  const [artifact, setArtifact] = useState<ArtifactMeta | null>(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -15,10 +15,10 @@ export default function ResultsPage() {
     setArtifact(null);
     setLoading(true);
     try {
-      const data = await fetchApi(`/artifacts/${artifactId}`);
+      const data = await fetchApi<ArtifactMeta>(`/artifacts/${artifactId}`);
       setArtifact(data);
-    } catch (err: any) {
-      setError(err.message || "Failed to find artifact metadata.");
+    } catch (error: unknown) {
+      setError(getErrorMessage(error, "Failed to find artifact metadata."));
     } finally {
       setLoading(false);
     }

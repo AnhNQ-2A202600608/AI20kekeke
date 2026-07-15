@@ -10,7 +10,7 @@ from pathlib import Path
 _PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.append(str(_PROJECT_ROOT / "backend"))
 
-from src.core.module import ModuleRegistry
+from src.core.module import ModuleRegistry  # noqa: E402
 
 
 def main() -> None:

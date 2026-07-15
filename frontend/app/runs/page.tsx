@@ -1,11 +1,11 @@
 'use client';
 
 import { useState } from "react";
-import { fetchApi } from "../../lib/api";
+import { fetchApi, getErrorMessage, RunMeta } from "../../lib/api";
 
 export default function RunsPage() {
   const [runId, setRunId] = useState("");
-  const [runMeta, setRunMeta] = useState<any>(null);
+  const [runMeta, setRunMeta] = useState<RunMeta | null>(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -15,10 +15,10 @@ export default function RunsPage() {
     setRunMeta(null);
     setLoading(true);
     try {
-      const data = await fetchApi(`/runs/${runId}`);
+      const data = await fetchApi<RunMeta>(`/runs/${runId}`);
       setRunMeta(data);
-    } catch (err: any) {
-      setError(err.message || "Failed to find run metadata.");
+    } catch (error: unknown) {
+      setError(getErrorMessage(error, "Failed to find run metadata."));
     } finally {
       setLoading(false);
     }
