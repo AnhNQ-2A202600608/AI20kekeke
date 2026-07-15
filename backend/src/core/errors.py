@@ -49,3 +49,15 @@ class CapabilityError(AppError):
             details={"capability": capability, "reason": reason},
             status_code=500,
         )
+
+
+class ProviderError(AppError):
+    def __init__(self, provider: str, reason: str, retryable: bool = True):
+        super().__init__(
+            code="PROVIDER_ERROR",
+            message=f"Integration provider '{provider}' failed: {reason}",
+            retryable=retryable,
+            details={"provider": provider, "reason": reason},
+            status_code=502,
+        )
+
