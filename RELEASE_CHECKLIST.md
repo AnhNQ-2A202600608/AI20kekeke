@@ -1,41 +1,47 @@
 # Release Checklist — VAIC Universal Starter
 
-Follow this checklist prior to packaging a release zip/tarball of the template.
+Thực hiện checklist này trước khi đóng gói bản nộp hoặc bàn giao cho thành viên khác.
 
----
+## 1. Bảo vệ workspace
 
-## 1. Clean Environment State
-- [ ] Spin down docker services:
+- [ ] Commit hoặc sao lưu thay đổi quan trọng theo quy trình Git của team.
+- [ ] Xác nhận lời giải nằm trong `challenges/<slug>/`.
+- [ ] Xác nhận `.env` và `frontend/.env.local` không chứa trong vùng staged.
+- [ ] Dừng Docker nếu đang chạy:
   ```bash
-  make docker-down
+  python scripts/project_tasks.py docker-down
   ```
-- [ ] Clean temporary files, logs, pycaches, and cached databases:
+- [ ] Xóa cache/build/runtime nhưng giữ nguyên `challenges/`:
   ```bash
-  make clean
-  ```
-- [ ] Confirm no `.env` or `frontend/.env.local` files containing secret credentials are present.
-
-## 2. Testing & Quality Checks
-- [ ] Check code formatting and syntax lints:
-  ```bash
-  make lint
-  ```
-- [ ] Validate optional modules configurations list:
-  ```bash
-  make validate
-  ```
-- [ ] Execute pytest testing suites:
-  ```bash
-  make test
-  ```
-- [ ] Confirm smoke test runs cleanly:
-  ```bash
-  make smoke
+  python scripts/project_tasks.py clean
   ```
 
-## 3. Package Verification
-- [ ] Confirm that `vaic-starter-submission.tar.gz` can be compiled using:
+## 2. Kiểm tra chất lượng
+
+- [ ] Chạy lint backend và frontend:
   ```bash
-  make package
+  python scripts/project_tasks.py lint
   ```
-- [ ] Decompress the package in a clean folder and check that both backend and frontend boot out of the box.
+- [ ] Chạy typecheck frontend:
+  ```bash
+  python scripts/project_tasks.py typecheck
+  ```
+- [ ] Kiểm tra module đang bật:
+  ```bash
+  python scripts/project_tasks.py validate
+  ```
+- [ ] Chạy test và smoke test:
+  ```bash
+  python scripts/project_tasks.py test
+  python scripts/project_tasks.py smoke
+  ```
+
+## 3. Đóng gói và kiểm tra lại
+
+- [ ] Tạo archive:
+  ```bash
+  python scripts/project_tasks.py package
+  ```
+- [ ] Mở `vaic-starter-submission.tar.gz` và xác nhận có `challenges/<slug>/`.
+- [ ] Xác nhận archive không có `.env`, `.git`, `node_modules`, `.venv`, cache hoặc dữ liệu runtime.
+- [ ] Giải nén vào thư mục sạch và chạy lại bootstrap, test và build trước khi nộp.

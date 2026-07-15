@@ -1,11 +1,11 @@
 'use client';
 
 import { useState } from "react";
-import { API_URL, fetchApi } from "../../lib/api";
+import { fetchApi, FileMeta, getErrorMessage } from "../../lib/api";
 
 export default function FilesPage() {
   const [fileId, setFileId] = useState("");
-  const [fileMeta, setFileMeta] = useState<any>(null);
+  const [fileMeta, setFileMeta] = useState<FileMeta | null>(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -15,10 +15,10 @@ export default function FilesPage() {
     setFileMeta(null);
     setLoading(true);
     try {
-      const data = await fetchApi(`/files/${fileId}`);
+      const data = await fetchApi<FileMeta>(`/files/${fileId}`);
       setFileMeta(data);
-    } catch (err: any) {
-      setError(err.message || "Failed to find file metadata.");
+    } catch (error: unknown) {
+      setError(getErrorMessage(error, "Failed to find file metadata."));
     } finally {
       setLoading(false);
     }

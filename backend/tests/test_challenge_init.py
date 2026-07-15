@@ -36,7 +36,10 @@ def test_challenge_init_success(temp_workspace):
     problem_file = temp_workspace / "problem.json"
     problem_data = {
         "title": "Predictive Sales modeling",
-        "description": "Model monthly sales volumes forecast. Uses pandas analysis and numpy arrays to predict.",
+        "description": (
+            "Model monthly sales volumes forecast. "
+            "Uses pandas analysis and numpy arrays to predict."
+        ),
         "rubrics": {"r2_score": 50, "mean_squared_error": 50},
         "data_sources": ["sales.csv"],
     }
@@ -70,6 +73,7 @@ def test_challenge_init_success(temp_workspace):
     assert conf["slug"] == "predictive-sales-modeling"
     assert "prediction" in conf["active_modules"]
     assert "analytics" in conf["active_modules"]
+    assert f"ACTIVE_CHALLENGE={output_dir}" in res.stdout
 
 
 def test_challenge_init_rubrics_warning(temp_workspace):

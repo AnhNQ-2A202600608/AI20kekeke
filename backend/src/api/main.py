@@ -19,6 +19,7 @@ def create_app() -> FastAPI:
     settings = get_settings()
     logger = setup_logging(settings.log_level)
 
+    # docs chỉ mở ở debug để tiện dev nhưng không lộ ra khi chạy môi trường demo/public.
     app = FastAPI(
         title=settings.app_name,
         version="0.1.0",
@@ -26,7 +27,8 @@ def create_app() -> FastAPI:
         redoc_url="/redoc" if settings.debug else None,
     )
 
-    # CORS
+    # CORS giới hạn theo frontend_origin để browser local/dev gọi được API
+    # mà không mở quá rộng bề mặt truy cập.
     app.add_middleware(
         CORSMiddleware,
         allow_origins=[settings.frontend_origin],
@@ -35,9 +37,11 @@ def create_app() -> FastAPI:
         allow_headers=["*"],
     )
 
-    # Load and register capabilities via ModuleRegistry
+    # CapabilityRegistry là nơi app thực sự expose các năng lực hiện đang bật.
+    # ModuleRegistry quyết định module nào được phép nạp theo cấu hình workspace.
     registry = CapabilityRegistry()
     module_registry = ModuleRegistry()
+    logger.info("Using module configuration: %s", module_registry.config_path)
     manifests = module_registry.discover_modules()
 
     for mod_id, manifest in manifests.items():
@@ -51,12 +55,12 @@ def create_app() -> FastAPI:
     app.state.capability_registry = registry
     app.state.module_registry = module_registry
 
-    # Routes
+    # Gom toàn bộ API dưới /api/v1 để frontend chỉ cần proxy một prefix duy nhất.
     app.include_router(health.router, prefix="/api/v1")
     app.include_router(files.router, prefix="/api/v1")
     app.include_router(runs.router, prefix="/api/v1")
 
-    # Global error handler
+    # Chuẩn hóa lỗi về cùng một envelope để frontend xử lý thống nhất.
     @app.exception_handler(AppError)
     async def app_error_handler(request: Request, exc: AppError):
         return JSONResponse(
@@ -66,6 +70,7 @@ def create_app() -> FastAPI:
 
     @app.exception_handler(Exception)
     async def generic_error_handler(request: Request, exc: Exception):
+        # Log đầy đủ ở server nhưng không trả stack trace raw ra client.
         logger.error("Unhandled error: %s", exc, exc_info=True)
         return JSONResponse(
             status_code=500,

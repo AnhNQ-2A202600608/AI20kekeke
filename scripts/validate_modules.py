@@ -9,27 +9,27 @@ from pathlib import Path
 _PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.append(str(_PROJECT_ROOT / "backend"))
 
-from src.core.module import ModuleRegistry
+from src.core.module import ModuleRegistry  # noqa: E402
 
 
 def main() -> None:
     registry = ModuleRegistry()
     manifests = registry.discover_modules()
-    
+
     print("=" * 60)
     print("Validating modules configuration status...")
     print("=" * 60)
-    
+
     invalid_enabled_modules = []
 
     for mod_id, manifest in sorted(manifests.items()):
         enabled = registry.is_enabled(mod_id)
         errors = registry.validate_module(manifest)
-        
+
         status_str = "ENABLED" if enabled else "disabled"
         print(f"\nModule: {mod_id} ({status_str})")
         print(f"  Description: {manifest.description}")
-        
+
         if manifest.dependencies:
             print(f"  Dependencies: {', '.join(manifest.dependencies)}")
         if manifest.environment_variables:
@@ -46,7 +46,10 @@ def main() -> None:
 
     print("\n" + "=" * 60)
     if invalid_enabled_modules:
-        print(f"Error: The following enabled modules failed validation: {', '.join(invalid_enabled_modules)}")
+        print(
+            "Error: The following enabled modules failed validation: "
+            f"{', '.join(invalid_enabled_modules)}"
+        )
         sys.exit(1)
     else:
         print("Success: All module configurations are valid.")
