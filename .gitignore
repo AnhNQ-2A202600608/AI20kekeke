@@ -1,0 +1,70 @@
+# ============================================================
+# VAIC AI Agent Starter Template — .gitignore
+# ============================================================
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+*.whl
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# --- Node.js ---
+node_modules/
+.next/
+out/
+.turbo/
+
+# --- IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# --- Environment ---
+.env
+.env.local
+.env.*.local
+
+# --- Database ---
+data/
+*.db
+*.sqlite
+*.sqlite3
+
+# --- Logs ---
+*.log
+logs/
+
+# --- Coverage ---
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+
+# --- pytest ---
+.pytest_cache/
+
+# --- mypy ---
+.mypy_cache/
+
+# --- ruff ---
+.ruff_cache/
+
+# --- OS ---
+Desktop.ini
+ehthumbs.db
