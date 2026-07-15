@@ -175,7 +175,7 @@ def run_command(command: str, root: Path = PROJECT_ROOT) -> None:
     elif command == "format":
         _run([python, "-m", "ruff", "format", "src", "tests", "../scripts"], backend)
     elif command == "typecheck":
-        _run(["npx", "tsc", "--noEmit"], frontend)
+        _run(["npm", "run", "typecheck"], frontend)
     elif command in {"test", "test-backend"}:
         _run([python, "-m", "pytest", "tests", "-v"], backend)
     elif command == "smoke":

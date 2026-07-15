@@ -55,5 +55,5 @@ jobs:
       - name: Frontend Lint & Compile
         run: |
           npm run lint --prefix frontend
-          npx tsc --noEmit --project frontend/tsconfig.json
+          npm run typecheck --prefix frontend
           npm run build --prefix frontend
