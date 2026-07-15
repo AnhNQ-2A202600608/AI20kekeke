@@ -1,4 +1,4 @@
-"""Example transform capability — deterministic text transformation.
+"""Example transform capability module — deterministic text transformation.
 
 This exists solely to validate the run/artifact infrastructure.
 It does NOT use any AI, ML, or external API.
@@ -14,11 +14,15 @@ from src.capabilities.registry import BaseCapability, CapabilityResult
 from src.core.logging import get_logger
 from src.storage import local as storage
 
-logger = get_logger("capabilities.example_transform")
+logger = get_logger("modules.example_transform")
 
 
 class ExampleTransformCapability(BaseCapability):
     """Deterministic text analysis and transformation."""
+
+    @property
+    def id(self) -> str:
+        return "example_transform"
 
     @property
     def name(self) -> str:
@@ -33,7 +37,11 @@ class ExampleTransformCapability(BaseCapability):
         )
 
     @property
-    def parameters_schema(self) -> dict[str, Any]:
+    def category(self) -> str:
+        return "transform"
+
+    @property
+    def input_schema(self) -> dict[str, Any]:
         return {
             "type": "object",
             "properties": {
@@ -47,6 +55,39 @@ class ExampleTransformCapability(BaseCapability):
                     "default": False,
                 },
             },
+        }
+
+    @property
+    def output_schema(self) -> dict[str, Any]:
+        return {
+            "type": "object",
+            "properties": {
+                "analysis.md": {
+                    "type": "string",
+                    "description": "Text analysis markdown report.",
+                }
+            }
+        }
+
+    @property
+    def supported_file_types(self) -> list[str]:
+        return [".txt", ".csv", ".json"]
+
+    def health_check(self) -> bool:
+        return True
+
+    def validate_input(self, parameters: dict[str, Any]) -> list[str]:
+        errors = []
+        if "text" in parameters and not isinstance(parameters["text"], str):
+            errors.append("text parameter must be a string")
+        if "uppercase" in parameters and not isinstance(parameters["uppercase"], bool):
+            errors.append("uppercase parameter must be a boolean")
+        return errors
+
+    def evaluate(self, run_result: CapabilityResult, expected_output: Any) -> dict[str, Any]:
+        return {
+            "success": run_result.success,
+            "score": 1.0 if run_result.success else 0.0
         }
 
     def execute(self, parameters: dict[str, Any], input_file_ids: list[str]) -> CapabilityResult:

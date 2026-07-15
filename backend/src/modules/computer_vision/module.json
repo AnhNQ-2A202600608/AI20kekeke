@@ -1,0 +1,16 @@
+{
+  "id": "computer_vision",
+  "name": "Computer Vision",
+  "version": "0.1.0",
+  "category": "computer_vision",
+  "enabled_by_default": false,
+  "description": "Image processing and object detection module using OpenCV.",
+  "dependencies": ["cv2"],
+  "environment_variables": [],
+  "input_types": ["image"],
+  "output_types": ["image", "json"],
+  "evaluation_metrics": ["detection_precision", "processing_fps"],
+  "frontend_component": "CVForm",
+  "backend_entrypoint": "src.modules.computer_vision.capability.CVCapability",
+  "limitations": "CPU execution fallback only."
+}

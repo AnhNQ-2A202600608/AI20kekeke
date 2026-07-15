@@ -1,0 +1,16 @@
+{
+  "id": "analytics",
+  "name": "Data Analytics",
+  "version": "0.1.0",
+  "category": "analytics",
+  "enabled_by_default": false,
+  "description": "Exploratory data analysis and profiling using Pandas.",
+  "dependencies": ["pandas"],
+  "environment_variables": [],
+  "input_types": ["csv", "json"],
+  "output_types": ["csv", "json", "text"],
+  "evaluation_metrics": ["profiling_coverage"],
+  "frontend_component": "AnalyticsForm",
+  "backend_entrypoint": "src.modules.analytics.capability.AnalyticsCapability",
+  "limitations": "In-memory pandas aggregation."
+}

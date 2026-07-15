@@ -1,0 +1,16 @@
+{
+  "id": "agent",
+  "name": "AI Agent",
+  "version": "0.1.0",
+  "category": "agent",
+  "enabled_by_default": false,
+  "description": "Multi-turn reasoning and tool use AI agent using LangGraph orchestration.",
+  "dependencies": ["langgraph", "langchain_core"],
+  "environment_variables": ["OPENAI_API_KEY"],
+  "input_types": ["text"],
+  "output_types": ["text"],
+  "evaluation_metrics": ["intent_match_accuracy", "response_coherence"],
+  "frontend_component": "AgentForm",
+  "backend_entrypoint": "src.modules.agent.capability.AgentCapability",
+  "limitations": "Requires a valid LLM API key. Not enabled by default."
+}

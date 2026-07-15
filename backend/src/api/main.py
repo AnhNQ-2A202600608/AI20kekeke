@@ -8,10 +8,10 @@ from fastapi.responses import JSONResponse
 
 from src.api import health, files, runs
 from src.capabilities.registry import CapabilityRegistry
-from src.capabilities.example_transform import ExampleTransformCapability
 from src.core.config import get_settings
 from src.core.errors import AppError
 from src.core.logging import setup_logging
+from src.core.module import ModuleRegistry
 from src.models.responses import error_response
 
 
@@ -35,10 +35,21 @@ def create_app() -> FastAPI:
         allow_headers=["*"],
     )
 
-    # Capability registry
+    # Load and register capabilities via ModuleRegistry
     registry = CapabilityRegistry()
-    registry.register(ExampleTransformCapability())
+    module_registry = ModuleRegistry()
+    manifests = module_registry.discover_modules()
+
+    for mod_id, manifest in manifests.items():
+        if module_registry.is_enabled(mod_id):
+            try:
+                cap = module_registry.load_capability(manifest)
+                registry.register(cap)
+            except Exception as exc:
+                logger.error("Failed to load enabled module '%s': %s", mod_id, exc)
+
     app.state.capability_registry = registry
+    app.state.module_registry = module_registry
 
     # Routes
     app.include_router(health.router, prefix="/api/v1")

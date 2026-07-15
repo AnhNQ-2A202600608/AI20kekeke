@@ -1,0 +1,16 @@
+{
+  "id": "prediction",
+  "name": "Prediction Engine",
+  "version": "0.1.0",
+  "category": "prediction",
+  "enabled_by_default": false,
+  "description": "Tabular prediction modeling and forecasting capability.",
+  "dependencies": ["numpy", "sklearn"],
+  "environment_variables": [],
+  "input_types": ["csv", "json"],
+  "output_types": ["json"],
+  "evaluation_metrics": ["mean_squared_error", "r2_score"],
+  "frontend_component": "PredictionForm",
+  "backend_entrypoint": "src.modules.prediction.capability.PredictionCapability",
+  "limitations": "CPU modeling fallback."
+}

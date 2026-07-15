@@ -9,9 +9,10 @@ export default function WorkspacePage() {
   const [loadingCaps, setLoadingCaps] = useState(true);
   const [error, setError] = useState("");
 
-  // Input states
-  const [inputText, setInputText] = useState("");
-  const [uppercase, setUppercase] = useState(false);
+  // Dynamic parameters state
+  const [params, setParams] = useState<Record<string, any>>({});
+  
+  // File upload states
   const [uploadedFileId, setUploadedFileId] = useState("");
   const [uploading, setUploading] = useState(false);
   const [uploadSuccess, setUploadSuccess] = useState("");
@@ -32,7 +33,9 @@ export default function WorkspacePage() {
         const data = await fetchApi("/capabilities");
         setCapabilities(data || []);
         if (data && data.length > 0) {
-          setSelectedCap(data[0].name);
+          const capId = data[0].id;
+          setSelectedCap(capId);
+          initializeParams(data[0]);
         }
       } catch (err: any) {
         setError(err.message || "Failed to load capabilities.");
@@ -42,6 +45,29 @@ export default function WorkspacePage() {
     }
     loadCapabilities();
   }, []);
+
+  function initializeParams(cap: any) {
+    const initial: Record<string, any> = {};
+    if (cap?.input_schema?.properties) {
+      Object.keys(cap.input_schema.properties).forEach((key) => {
+        const prop = cap.input_schema.properties[key];
+        initial[key] = prop.default !== undefined ? prop.default : (prop.type === "boolean" ? false : "");
+      });
+    }
+    setParams(initial);
+  }
+
+  const selectedDetails = capabilities.find(c => c.id === selectedCap);
+
+  function handleCapabilityChange(e: React.ChangeEvent<HTMLSelectElement>) {
+    const capId = e.target.value;
+    setSelectedCap(capId);
+    setRunResult(null);
+    setRunError("");
+    setArtifactContent("");
+    const cap = capabilities.find(c => c.id === capId);
+    initializeParams(cap);
+  }
 
   async function handleFileUpload(e: React.ChangeEvent<HTMLInputElement>) {
     const files = e.target.files;
@@ -82,13 +108,16 @@ export default function WorkspacePage() {
     setRunError("");
     setArtifactContent("");
 
-    const params: any = {};
-    if (inputText.trim()) {
-      params.text = inputText;
-    }
-    params.uppercase = uppercase;
-
     const inputFiles = uploadedFileId ? [uploadedFileId] : [];
+
+    // Filter out empty params
+    const payloadParams: Record<string, any> = {};
+    Object.keys(params).forEach(key => {
+      const val = params[key];
+      if (val !== "" && val !== undefined) {
+        payloadParams[key] = val;
+      }
+    });
 
     try {
       const data = await fetchApi("/runs", {
@@ -96,7 +125,7 @@ export default function WorkspacePage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           capability: selectedCap,
-          parameters: params,
+          parameters: payloadParams,
           input_file_ids: inputFiles,
         }),
       });
@@ -104,7 +133,6 @@ export default function WorkspacePage() {
       if (data.status === "failed") {
         setRunError(data.error || "Run failed.");
       } else if (data.artifact_ids && data.artifact_ids.length > 0) {
-        // Fetch first artifact automatically
         const art = await fetchApi(`/artifacts/${data.artifact_ids[0]}`);
         setArtifactContent(art.content);
       }
@@ -115,7 +143,64 @@ export default function WorkspacePage() {
     }
   }
 
-  const selectedDetails = capabilities.find(c => c.name === selectedCap);
+  const renderDynamicInputs = () => {
+    if (!selectedDetails?.input_schema?.properties) return null;
+    
+    const props = selectedDetails.input_schema.properties;
+    return Object.keys(props).map((key) => {
+      const field = props[key];
+      const fieldType = field.type;
+      const desc = field.description || "";
+      
+      if (fieldType === "boolean") {
+        return (
+          <div key={key} style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "1rem" }}>
+            <input
+              type="checkbox"
+              id={key}
+              checked={!!params[key]}
+              onChange={(e) => setParams({ ...params, [key]: e.target.checked })}
+              style={{ cursor: "pointer" }}
+            />
+            <label htmlFor={key} style={{ color: "#94a3b8", fontSize: "0.875rem", cursor: "pointer", userSelect: "none" }}>
+              {field.title || key} {desc && `(${desc})`}
+            </label>
+          </div>
+        );
+      }
+      
+      const isTextArea = key === "text" || key === "payload" || key === "data";
+      
+      return (
+        <div key={key} style={{ marginBottom: "1rem" }}>
+          <label htmlFor={key} style={{ display: "block", marginBottom: "0.5rem", color: "#94a3b8", fontWeight: "bold", fontSize: "0.875rem" }}>
+            {field.title || key}
+          </label>
+          {isTextArea ? (
+            <textarea
+              id={key}
+              value={params[key] || ""}
+              onChange={(e) => setParams({ ...params, [key]: e.target.value })}
+              placeholder={desc || `Enter ${key}...`}
+              style={{ width: "100%", height: "100px", backgroundColor: "#0f172a", border: "1px solid #334155", borderRadius: "0.375rem", padding: "0.75rem", color: "#f8fafc", resize: "vertical" }}
+            />
+          ) : (
+            <input
+              type={fieldType === "integer" || fieldType === "number" ? "number" : "text"}
+              id={key}
+              value={params[key] || ""}
+              onChange={(e) => setParams({
+                ...params,
+                [key]: fieldType === "integer" || fieldType === "number" ? Number(e.target.value) : e.target.value
+              })}
+              placeholder={desc || `Enter ${key}...`}
+              style={{ width: "100%", backgroundColor: "#0f172a", border: "1px solid #334155", borderRadius: "0.375rem", padding: "0.75rem", color: "#f8fafc" }}
+            />
+          )}
+        </div>
+      );
+    });
+  };
 
   return (
     <div className="container" style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
@@ -137,11 +222,11 @@ export default function WorkspacePage() {
             ) : (
               <select
                 value={selectedCap}
-                onChange={(e) => setSelectedCap(e.target.value)}
+                onChange={handleCapabilityChange}
                 style={{ width: "100%", backgroundColor: "#0f172a", border: "1px solid #334155", borderRadius: "0.375rem", padding: "0.75rem", color: "#f8fafc", cursor: "pointer" }}
               >
                 {capabilities.map((c) => (
-                  <option key={c.name} value={c.name}>{c.name}</option>
+                  <option key={c.id} value={c.id}>{c.name}</option>
                 ))}
               </select>
             )}
@@ -154,15 +239,7 @@ export default function WorkspacePage() {
           <div style={{ backgroundColor: "#1e293b", padding: "1.5rem", borderRadius: "0.5rem", border: "1px solid #334155", display: "flex", flexDirection: "column", gap: "1.25rem" }}>
             <h3 style={{ fontSize: "1rem", color: "#f8fafc", borderBottom: "1px solid #334155", paddingBottom: "0.5rem" }}>Execution Settings</h3>
             
-            <div>
-              <label style={{ display: "block", marginBottom: "0.5rem", color: "#94a3b8", fontWeight: "bold", fontSize: "0.875rem" }}>Direct Text Input</label>
-              <textarea
-                value={inputText}
-                onChange={(e) => setInputText(e.target.value)}
-                placeholder="Enter raw text payload..."
-                style={{ width: "100%", height: "100px", backgroundColor: "#0f172a", border: "1px solid #334155", borderRadius: "0.375rem", padding: "0.75rem", color: "#f8fafc", resize: "vertical" }}
-              />
-            </div>
+            {renderDynamicInputs()}
 
             <div>
               <label style={{ display: "block", marginBottom: "0.5rem", color: "#94a3b8", fontWeight: "bold", fontSize: "0.875rem" }}>Or Upload Input File</label>
@@ -191,17 +268,6 @@ export default function WorkspacePage() {
               {uploadSuccess && (
                 <div style={{ color: "#10b981", fontSize: "0.75rem", marginTop: "0.5rem" }}>{uploadSuccess}</div>
               )}
-            </div>
-
-            <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-              <input
-                type="checkbox"
-                id="uppercase"
-                checked={uppercase}
-                onChange={(e) => setUppercase(e.target.checked)}
-                style={{ cursor: "pointer" }}
-              />
-              <label htmlFor="uppercase" style={{ color: "#94a3b8", fontSize: "0.875rem", cursor: "pointer", userSelect: "none" }}>Uppercase outputs (Uppercase mode)</label>
             </div>
 
             <button
