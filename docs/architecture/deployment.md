@@ -29,3 +29,11 @@ graph TD
 ## Setup Guidelines
 - Local runs default to `./data/` directories.
 - Docker builds configure health checks between containers to ensure FastAPI is fully online before Next.js routes API calls.
+
+## CI/CD and Production Deployment
+For production, the project is configured with GitHub Actions to automate deployments:
+- **Backend (FastAPI)**: Deployed to [Render](https://render.com) using its Web Service via Docker.
+- **Frontend (Next.js)**: Deployed to [Vercel](https://vercel.com) using the Vercel CLI.
+
+Please refer to the detailed [Production Deployment Guide (Vietnamese)](../deployment_guide.md) for step-by-step configuration of accounts, deploy hooks, and GitHub Secrets.
+
