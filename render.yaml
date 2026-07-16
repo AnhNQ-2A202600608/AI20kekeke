@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: vaic-backend
+    runtime: docker
+    dockerContext: backend
+    dockerfilePath: Dockerfile
+    envVars:
+      - key: APP_NAME
+        value: vaic-universal-starter
+      - key: DEBUG
+        value: "true"
+      - key: STORAGE_PATH
+        value: /app/data
+      - key: LOG_LEVEL
+        value: info
+      - key: PORT
+        value: 8000
+    # Lưu ý: Ổ đĩa (disk) yêu cầu tài khoản trả phí trên Render.
+    # Nếu sử dụng gói Free, vui lòng xóa hoặc comment đoạn dưới đây.
+    # disk:
+    #   name: backend-data
+    #   mountPath: /app/data
+    #   sizeGB: 1

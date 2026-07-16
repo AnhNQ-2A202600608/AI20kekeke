@@ -39,26 +39,43 @@ Trong phương pháp này, chúng ta sẽ tạo các workflow tự động chạ
 
 ## 3. Hướng dẫn cấu hình Render (Backend)
 
-Render hỗ trợ deploy thông qua Dockerfile có sẵn trong thư mục `backend/Dockerfile`.
+Render hỗ trợ deploy thông qua Dockerfile có sẵn trong thư mục `backend/Dockerfile`. Bạn có thể cấu hình bằng 1 trong 2 cách dưới đây:
 
-### Bước 3.1: Tạo Web Service trên Render
+### Bước 3.1: Cách A - Sử dụng Blueprint (Tự động & Khuyên dùng)
+Dự án đã được cấu hình sẵn file `render.yaml` (Blueprint) ở thư mục gốc để tự động hóa toàn bộ việc cấu hình hạ tầng:
 1. Truy cập [dashboard.render.com](https://dashboard.render.com/) và đăng nhập.
-2. Nhấn **New +** và chọn **Web Service**.
-3. Chọn **Build and deploy from a Git repository**, chọn repo chứa dự án của bạn.
-4. Cấu hình các thông số cơ bản:
+2. Nhấn **New +** và chọn **Blueprint**.
+3. Chọn repo chứa dự án của bạn (nếu chưa liên kết GitHub, hãy liên kết tài khoản).
+4. Nhập tên nhóm dịch vụ (Service Group Name) (ví dụ: `vaic-app-group`).
+5. Render sẽ tự động đọc file `render.yaml` để cấu hình Web Service với các thông số:
+   * **Name**: `vaic-backend`
+   * **Docker Context**: `backend`
+   * **Dockerfile**: `backend/Dockerfile`
+   * **Port**: `8000`
+   * Các biến môi trường: `APP_NAME`, `DEBUG`, `STORAGE_PATH`, `LOG_LEVEL`...
+6. Nhấn **Apply** để Render tự động tạo và build Web Service.
+
+### Bước 3.2: Cách B - Cấu hình thủ công trên Render
+Nếu bạn không muốn sử dụng Blueprint, bạn có thể tạo dịch vụ thủ công theo các bước sau:
+1. Tại Dashboard Render, nhấn **New +** và chọn **Web Service**.
+2. Chọn **Build and deploy from a Git repository**, chọn repo chứa dự án của bạn.
+3. Cấu hình các thông số cơ bản:
    * **Name:** `vaic-backend` (hoặc tên tùy chọn)
-   * **Region:** Chọn khu vực gần người dùng của bạn nhất (ví dụ: Singapore)
+   * **Region:** Chọn khu vực gần bạn nhất (ví dụ: Singapore)
    * **Branch:** `master` hoặc `main` (hoặc nhánh bạn đang deploy)
    * **Root Directory:** `backend` (Rất quan trọng!)
    * **Runtime:** `Docker` (Render sẽ tự nhận diện và build từ `backend/Dockerfile`)
-5. Nhấn **Create Web Service**.
+4. Nhấn **Create Web Service**.
 
-### Bước 3.2: Lấy Deploy Hook URL
-1. Tại màn hình Dashboard dịch vụ của bạn trên Render, vào mục **Settings**.
-2. Cuộn xuống phần **Deploy Hook**.
-3. Copy đường dẫn webhook URL có dạng: 
-   `https://api.render.com/deploy/srv-xxxxxxxxxxxxx?key=yyyyyyyyyyyy`
-4. Chúng ta sẽ lưu đường dẫn này vào **GitHub Secrets** dưới tên `RENDER_DEPLOY_HOOK_URL`.
+### Bước 3.3: Lấy Deploy Hook URL
+Sau khi dịch vụ `vaic-backend` được khởi tạo thành công (từ Blueprint hoặc thủ công):
+1. Tại Dashboard Render, chọn dịch vụ **vaic-backend** vừa tạo.
+2. Nhấp vào mục **Settings** ở thanh menu bên trái dịch vụ.
+3. Cuộn xuống phần **Deploy Hook**.
+4. Sao chép webhook URL (ví dụ: `https://api.render.com/deploy/srv-xxxxxxxxxxxxx?key=yyyyyyyyyyyy`).
+5. Dán URL này vào **GitHub Secrets** dưới tên `RENDER_DEPLOY_HOOK_URL`.
+
+
 
 ---
 
