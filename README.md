@@ -1,5 +1,22 @@
 # VAIC Universal Starter Template
 
+## Spec Kit
+
+Repo này đã được gắn `Spec Kit` cho `Codex` ở chế độ `skills`.
+
+- Hướng dẫn: [docs/spec-kit-setup-vi.md](./docs/spec-kit-setup-vi.md)
+- Workflow và template nằm trong `.specify/`
+- Các skill `speckit-*` nằm trong `.agents/skills/`
+
+Trong môi trường Codex hỗ trợ local skills, có thể gọi:
+
+```text
+$speckit-specify
+$speckit-plan
+$speckit-tasks
+$speckit-implement
+```
+
 VAIC Universal Starter là bộ khung full-stack trung tính, được thiết kế chuyên biệt cho các đội thi cuộc thi VAIC.
 
 > [!WARNING]
