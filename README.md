@@ -20,7 +20,7 @@
 
 Repo này đã được gắn `Spec Kit` cho `Codex` ở chế độ `skills`.
 
-- Hướng dẫn: [docs/spec-kit-setup-vi.md](./docs/spec-kit-setup-vi.md)
+- Hướng dẫn: [docs/spec-kit-setup-vi.md](./docs/engineering/spec-kit-setup-vi.md)
 - Workflow và template nằm trong `.specify/`
 - Các skill `speckit-*` nằm trong `.agents/skills/`
 
