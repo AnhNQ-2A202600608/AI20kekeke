@@ -1,0 +1,210 @@
+{
+  "id": "day20-t2-pipeline",
+  "parent_id": "day20-rag-data",
+  "topic_title": "Day 20: Model Serving & Inference Optimization",
+  "title": "Phần 2: Tối Ưu KV Cache, Dynamic/Continuous Batching & So Sánh Serving Engines",
+  "description": "Đánh giá kiến thức về cơ chế PagedAttention, RadixAttention, FlashAttention 1-4, dynamic/continuous batching và so sánh 8 serving engines phổ biến.",
+  "difficulty": "bình thường",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Cơ chế PagedAttention trong vLLM giải quyết vấn đề gì của hệ thống phục vụ LLM truyền thống?",
+      "options": {
+        "A": "Tránh phân mảnh bộ nhớ đồ họa bằng cách lưu KV cache không liên tục.",
+        "B": "Tự động dịch mã nguồn của mô hình sang định dạng C++ chạy trên edge.",
+        "C": "Chuyển toàn bộ dữ liệu của người dùng vào cơ sở dữ liệu đồ thị.",
+        "D": "Loại bỏ hoàn toàn sự cố sập nguồn của các hệ thống máy chủ đám mây."
+      },
+      "answer": "A",
+      "explanation": "PagedAttention tổ chức lưu trữ KV cache dưới dạng các trang (pages) bộ nhớ ảo phi liên tục, tránh phân mảnh bộ nhớ đồ họa và tiết kiệm tới 60-80% VRAM bị lãng phí.",
+      "hints": [
+        "Traditional contiguous allocation yêu cầu các khối bộ nhớ liên tục rất lớn.",
+        "PagedAttention mượn ý tưởng phân trang bộ nhớ của các hệ điều hành máy tính.",
+        "Đáp án đúng là tránh phân mảnh bộ nhớ đồ họa bằng cách lưu KV cache không liên tục."
+      ],
+      "concepts": [
+        "d20-t2-model-serving"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Thuật toán RadixAttention trong SGLang mang lại lợi thế vượt trội nào cho hệ thống RAG hoặc Agents?",
+      "options": {
+        "A": "Tiết kiệm tài nguyên prefill bằng cách chia sẻ bộ nhớ đệm tiền tố chung.",
+        "B": "Bảo vệ thông tin cá nhân của khách hàng khi gọi API bên ngoài.",
+        "C": "Giảm kích thước file trọng số của mô hình ngôn ngữ lớn trên đĩa.",
+        "D": "Tự động phân bổ luồng tính toán song song trên các cụm máy chủ."
+      },
+      "answer": "A",
+      "explanation": "RadixAttention sử dụng cấu trúc cây tiền tố (radix tree) để tự động lưu trữ và chia sẻ KV cache của các cụm prompts trùng nhau (như system prompts hay tri thức RAG), giảm thiểu bước prefill trùng lặp.",
+      "hints": [
+        "Khi nhiều lượt chat sử dụng chung một ngữ cảnh hoặc tài liệu hướng dẫn dài.",
+        "Hệ thống không cần tính toán lại các tokens tiền tố đã được xử lý trước đó.",
+        "Đáp án chỉ ra việc tiết kiệm tài nguyên prefill bằng chia sẻ đệm tiền tố chung."
+      ],
+      "concepts": [
+        "d20-t2-model-serving"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Sự khác biệt cốt lõi giữa cơ chế Continuous Batching và Static Batching truyền thống là gì?",
+      "options": {
+        "A": "Static batching giúp giảm thời gian chờ đợi của token đầu tiên nhiều hơn.",
+        "B": "Continuous batching cho phép các request tham gia hoặc rời đi giữa mỗi bước.",
+        "C": "Static batching tự động nén bộ nhớ đồ họa VRAM hiệu quả hơn hẳn.",
+        "D": "Continuous batching bắt buộc phải sử dụng các dòng chip đồ họa thế hệ Blackwell."
+      },
+      "answer": "B",
+      "explanation": "Continuous Batching (hoặc In-flight Batching) hoạt động ở cấp độ token, cho phép ghép các requests mới vào batch hoặc trả các requests đã hoàn thành ra ngay sau mỗi bước suy luận.",
+      "hints": [
+        "Static batching bắt buộc phải chờ toàn bộ các requests trong batch hoàn thành xong.",
+        "Nó làm tăng đáng kể hàng chờ và gây trễ cho các requests ngắn.",
+        "Đáp án là continuous batching cho phép requests vào hoặc ra giữa mỗi bước."
+      ],
+      "concepts": [
+        "d20-t2-model-serving"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Cơ chế Giải mã suy đoán (Speculative Decoding) tăng tốc độ suy luận LLM theo nguyên lý nào?",
+      "options": {
+        "A": "Sử dụng một mô hình ngôn ngữ lớn để tự động sửa lỗi chính tả.",
+        "B": "Dùng draft model nhỏ sinh token trước rồi target model xác thực song song.",
+        "C": "Chạy song song nhiều mô hình khác nhau để lấy kết quả biểu quyết chung.",
+        "D": "Tự động nén kích thước của prompt đầu vào trước khi gọi API server."
+      },
+      "answer": "B",
+      "explanation": "Speculative Decoding sử dụng một mô hình nhỏ (draft model) chạy rất nhanh để sinh ra một chuỗi tokens ứng viên, sau đó dùng mô hình lớn (target model) để xác thực song song trong một forward pass duy nhất.",
+      "hints": [
+        "Pha decode của LLM bị giới hạn bởi băng thông bộ nhớ (memory-bandwidth bound).",
+        "Việc xác thực song song nhiều tokens giảm thiểu số lần phải đọc ghi trọng số mô hình lớn.",
+        "Đáp án đúng là dùng draft model nhỏ sinh trước rồi target model xác thực song song."
+      ],
+      "concepts": [
+        "d20-t2-model-serving"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Kỹ thuật Tiling và SRAM trong FlashAttention giúp tăng tốc tính toán dựa trên cơ chế nào?",
+      "options": {
+        "A": "Lưu trữ toàn bộ thông tin của mô hình vào bộ nhớ RAM hệ thống.",
+        "B": "Chia nhỏ ma trận đưa vào SRAM và tính toán softmax trực tiếp tại chỗ.",
+        "C": "Tự động thay đổi kích thước của các block dữ liệu đầu vào mô hình.",
+        "D": "Sử dụng giải thuật cây phân cấp để quản lý thông tin của mô hình."
+      },
+      "answer": "B",
+      "explanation": "FlashAttention tile ma trận Q, K, V thành các khối nhỏ, nạp vào bộ nhớ SRAM siêu nhanh của GPU, tính toán softmax online trực tiếp mà không cần ghi ma trận trung gian (N x N) ra HBM chậm chạp.",
+      "hints": [
+        "Giải thuật này tối ưu hóa việc đọc ghi dữ liệu thay vì chỉ giảm số phép tính toán học.",
+        "Nó giải quyết nút thắt cổ chai truyền dữ liệu giữa HBM và SRAM của GPU.",
+        "Đáp án đúng là chia nhỏ ma trận đưa vào SRAM và tính softmax trực tiếp tại chỗ."
+      ],
+      "concepts": [
+        "d20-t2-model-serving"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Điểm cải tiến cốt lõi của FlashAttention-3 so với các phiên bản tiền nhiệm là gì?",
+      "options": {
+        "A": "Hỗ trợ chạy suy luận trên các chip đồ họa của các đối thủ AMD.",
+        "B": "Tích hợp sẵn các cơ chế bảo mật chống chèn mã độc vào prompt.",
+        "C": "Tận dụng Hopper TMA không đồng bộ và tối ưu hóa cho định dạng FP8.",
+        "D": "Loại bỏ hoàn toàn pha tính toán prefill của các mô hình ngôn ngữ."
+      },
+      "answer": "C",
+      "explanation": "FlashAttention-3 tận dụng tính năng phần cứng Tensor Memory Accelerator (TMA) bất tuần tự của GPU Hopper và tối ưu hóa các kernel tính toán cho kiểu dữ liệu FP8.",
+      "hints": [
+        "Nó cho phép truyền tải dữ liệu chạy song song với phép tính toán GEMM trên GPU.",
+        "Giải thuật này giúp khai thác tối đa sức mạnh phần cứng của các dòng GPU như H100.",
+        "Đáp án chính xác là tận dụng Hopper TMA không đồng bộ và tối ưu hóa FP8."
+      ],
+      "concepts": [
+        "d20-t2-model-serving"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Kỹ thuật 'Chunked Prefill' trong vLLM được thiết kế nhằm mục đích gì?",
+      "options": {
+        "A": "Tự động chuyển đổi định dạng lưu trữ của KV cache sang dạng nén.",
+        "B": "Chia nhỏ mô hình thành nhiều phần để chạy trên các GPU nhỏ.",
+        "C": "Chia nhỏ prompt dài thành các chunks để xử lý xen kẽ với decode.",
+        "D": "Giải thuật tự động tìm kiếm và loại bỏ các từ vô nghĩa trong prompt."
+      },
+      "answer": "C",
+      "explanation": "Chunked Prefill chia các prompts dài thành các phân đoạn nhỏ (chunks) để xử lý xen kẽ với pha decoding của các requests khác, tránh việc một prefill request lớn làm nghẽn toàn bộ hệ thống.",
+      "hints": [
+        "Mục tiêu là giảm thiểu sự gia tăng đột biến của độ trễ TTFT và TPOT.",
+        "Nó phân bổ đều tài nguyên tính toán của GPU qua các bước suy luận liên tục.",
+        "Đáp án chỉ ra việc chia nhỏ prompt dài thành các chunks xử lý xen kẽ decode."
+      ],
+      "concepts": [
+        "d20-t2-model-serving"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Trong trường hợp nào nhà phát triển nên ưu tiên chọn llama.cpp làm serving engine?",
+      "options": {
+        "A": "Khi cần phục vụ hàng triệu người dùng đồng thời trên các cụm cloud.",
+        "B": "Khi phát triển các ứng dụng đa tác tử phức tạp cần nhiều tools.",
+        "C": "Khi chạy suy luận cục bộ trên CPU hoặc các thiết bị cấu hình thấp.",
+        "D": "Khi cần tự động lưu trữ dữ liệu vào hệ thống Delta Lake của doanh nghiệp."
+      },
+      "answer": "C",
+      "explanation": "llama.cpp được viết bằng C/C++ tối ưu hóa cho việc chạy suy luận trên CPU, Apple Silicon (Metal) và các thiết bị phần cứng không chuyên dụng của người dùng cuối.",
+      "hints": [
+        "Engine này hỗ trợ nén mô hình sang định dạng GGUF cực kỳ linh hoạt.",
+        "Nó cho phép phân bổ một phần mô hình đồ họa lên bộ nhớ RAM hệ thống.",
+        "Đáp án là khi chạy suy luận cục bộ trên CPU hoặc thiết bị cấu hình thấp."
+      ],
+      "concepts": [
+        "d20-t2-model-serving"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Lợi thế cạnh tranh lớn nhất của SGLang serving engine so với vLLM v0 là gì?",
+      "options": {
+        "A": "Tự động kiểm định và làm sạch dữ liệu trước khi train mô hình.",
+        "B": "Giảm thiểu chi phí mua sắm bản quyền phần mềm quản lý máy chủ.",
+        "C": "Hỗ trợ chạy suy luận song song trên các chip không phải của NVIDIA.",
+        "D": "Tối ưu cho hội thoại nhiều lượt nhờ RadixAttention và cơ chế sinh có cấu trúc."
+      },
+      "answer": "D",
+      "explanation": "SGLang tích hợp RadixAttention giúp cache tiền tố cực mạnh cùng với XGrammar giúp sinh cấu trúc (JSON Schema, Pydantic) nhanh gấp nhiều lần so với vLLM v0.",
+      "hints": [
+        "Nó rất phù hợp cho các luồng chat phức tạp, lặp lại ngữ cảnh hệ thống nhiều lần.",
+        "Nó cung cấp một bộ sinh JSON có cấu trúc tích hợp sâu vào compiler của engine.",
+        "Đáp án là tối ưu hội thoại nhiều lượt nhờ RadixAttention và sinh cấu trúc."
+      ],
+      "concepts": [
+        "d20-t2-model-serving"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Cơ chế quản lý tiền tố tự động APC (Automatic Prefix Caching) trên vLLM v1 hoạt động ra sao?",
+      "options": {
+        "A": "Lập trình viên phải cấu hình thủ công qua các tham số dòng lệnh.",
+        "B": "Yêu cầu hệ thống phải được kết nối trực tiếp với cơ sở dữ liệu.",
+        "C": "Chỉ hoạt động khi chạy trên các dòng máy chủ chuyên dụng đắt tiền.",
+        "D": "Tự động bật mặc định (APC ON) giúp tối ưu hóa bộ nhớ đệm."
+      },
+      "answer": "D",
+      "explanation": "Trong vLLM v1, APC được kích hoạt sẵn theo mặc định (ON by default), tự động nhận diện và tái sử dụng KV cache của các shared prefixes mà không cần cấu hình thủ công.",
+      "hints": [
+        "Cải tiến này giúp nâng hiệu năng của vLLM v1 lên gấp 1.7 lần phiên bản trước.",
+        "Hệ thống tự động quản lý vòng đời và thu hồi bộ nhớ của các trang cache tiền tố.",
+        "Đáp án chính xác là tự động bật mặc định giúp tối ưu hóa bộ nhớ đệm."
+      ],
+      "concepts": [
+        "d20-t2-model-serving"
+      ]
+    }
+  ]
+}

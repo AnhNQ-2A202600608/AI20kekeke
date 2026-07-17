@@ -1,0 +1,210 @@
+{
+  "id": "day19-t2-basics",
+  "parent_id": "day19-rag-data",
+  "topic_title": "Day 19: Vector Store & Feature Store",
+  "title": "Phần 1: Vector Embeddings, Khoảng Cách Ngữ Nghĩa & Multi-modal Embeddings",
+  "description": "Đánh giá kiến thức cơ bản về ánh xạ văn bản thành vector, công thức Cosine Similarity, mô hình bge-m3/e5 và embeddings đa phương thức (CLIP).",
+  "difficulty": "dễ",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Khái niệm Vector Embedding trong hệ thống AI được hiểu chính xác là gì?",
+      "options": {
+        "A": "Dãy số thực dense vector đại diện cho ý nghĩa ngữ nghĩa của văn bản.",
+        "B": "Tệp tin văn bản thô được lưu trữ trực tiếp trên đĩa cứng đám mây.",
+        "C": "Bảng dữ liệu quan hệ chứa thông tin chi tiết về người dùng hệ thống.",
+        "D": "Thuật toán nén tệp tin Parquet nhằm mục đích tiết kiệm dung lượng."
+      },
+      "answer": "A",
+      "explanation": "Vector embedding là một chuỗi các số thực (dense vector) biểu diễn toán học cho ý nghĩa ngữ nghĩa của từ hoặc đoạn văn bản trong không gian đa chiều.",
+      "hints": [
+        "Nó biến đổi các từ ngữ hoặc tài liệu phi cấu trúc thành các mảng số thực.",
+        "Mỗi chiều trong vector biểu thị một thuộc tính ngữ nghĩa trừu tượng nào đó.",
+        "Đáp án đúng là dãy số thực dense vector đại diện cho ngữ nghĩa."
+      ],
+      "concepts": [
+        "d19-t2-vector-feature-store"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Phạm vi giá trị và ý nghĩa của công thức Cosine Similarity trong tìm kiếm ngữ nghĩa là gì?",
+      "options": {
+        "A": "Từ âm một đến một; lớn hơn không chấm tám lăm là rất giống.",
+        "B": "Từ không đến vô cùng; càng nhỏ chứng tỏ hai câu càng giống.",
+        "C": "Từ một đến một trăm; đo lường số lượng từ trùng khớp nhau.",
+        "D": "Không giới hạn phạm vi; phụ thuộc trực tiếp vào kích thước file."
+      },
+      "answer": "A",
+      "explanation": "Cosine Similarity có khoảng giá trị từ -1 đến 1. Trong ứng dụng thực tế, giá trị lớn hơn 0.85 biểu thị hai văn bản có độ tương đồng ngữ nghĩa rất cao.",
+      "hints": [
+        "Đây là hàm toán học tính toán góc cosine giữa hai vector trong không gian.",
+        "Nếu hai vector song song cùng hướng, giá trị cosine của góc bằng một.",
+        "Đáp án chỉ ra khoảng giá trị từ âm một đến một và mốc phân tích 0.85."
+      ],
+      "concepts": [
+        "d19-t2-vector-feature-store"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Mô hình nhúng văn bản 'text-embedding-3-small' của OpenAI tạo ra các vector có kích thước bao nhiêu?",
+      "options": {
+        "A": "Mô hình này tạo ra các vector có kích thước là bảy trăm sáu mươi tám.",
+        "B": "Mô hình này tạo ra các vector có kích thước là một nghìn năm trăm ba sáu.",
+        "C": "Mô hình này tạo ra các vector có kích thước ba nghìn không trăm bảy hai.",
+        "D": "Mô hình này tạo ra các vector có kích thước một trăm hai mươi tám."
+      },
+      "answer": "B",
+      "explanation": "Mô hình text-embedding-3-small mặc định sinh ra các vector có chiều rộng là 1536 chiều (dimensions).",
+      "hints": [
+        "Đây là kích thước vector mặc định kế thừa từ phiên bản tiền nhiệm ada-002.",
+        "Kích thước này bằng một nửa kích thước tối đa của phiên bản 3-large.",
+        "Đáp án chính xác là kích thước một nghìn năm trăm ba mươi sáu chiều."
+      ],
+      "concepts": [
+        "d19-t2-vector-feature-store"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Đặc tính cốt lõi của mô hình nhúng đa phương thức (Multi-modal Embeddings như CLIP) là gì?",
+      "options": {
+        "A": "Chỉ cho phép biểu diễn các tệp tin âm thanh chất lượng cao.",
+        "B": "Ánh xạ ảnh và văn bản vào cùng một không gian vector chung.",
+        "C": "Tự động dịch chuyển toàn bộ tài liệu sang ngôn ngữ tiếng Anh.",
+        "D": "Yêu cầu phải sử dụng cơ sở dữ liệu quan hệ để lưu trữ."
+      },
+      "answer": "B",
+      "explanation": "Multi-modal Embeddings (như CLIP của OpenAI) ánh xạ đồng thời ảnh và văn bản vào cùng một không gian vector chung (shared embedding space), cho phép tìm ảnh bằng text và ngược lại.",
+      "hints": [
+        "Nó cho phép so sánh sự tương đồng giữa hai loại dữ liệu khác nhau.",
+        "Ví dụ: so khớp vector của ảnh chụp sản phẩm với mô tả bằng chữ.",
+        "Đáp án đúng là ánh xạ ảnh và chữ vào cùng một không gian chung."
+      ],
+      "concepts": [
+        "d19-t2-vector-feature-store"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Điều gì xảy ra nếu bạn sử dụng mô hình embedding khác nhau giữa lúc training và serving?",
+      "options": {
+        "A": "Hạ tầng đám mây sẽ bị quá tải và ngừng hoạt động ngay.",
+        "B": "Các vector không tương thích làm sụt giảm nghiêm trọng độ chính xác.",
+        "C": "Hệ thống tự động kích hoạt chế độ bảo mật mã hóa dữ liệu.",
+        "D": "Chi phí gọi API sẽ tăng vọt gấp mười lần so với trước."
+      },
+      "answer": "B",
+      "explanation": "Mỗi mô hình embedding xây dựng một không gian vector (latent space) hoàn toàn khác nhau. Sử dụng lệch mô hình khiến vector truy vấn không thể so khớp chính xác với database.",
+      "hints": [
+        "Hãy tưởng tượng bạn lưu dữ liệu bằng tiếng Pháp nhưng lại đi tìm bằng tiếng Đức.",
+        "Các vector của hai mô hình khác nhau không thể tính toán khoảng cách cosine.",
+        "Đáp án là sự không tương thích của vector làm giảm sụt độ chính xác hệ thống."
+      ],
+      "concepts": [
+        "d19-t2-vector-feature-store"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Đối với ứng dụng RAG tiếng Việt, mô hình embedding mã nguồn mở nào được khuyên dùng năm 2026?",
+      "options": {
+        "A": "text-embedding-3-small của OpenAI là lựa chọn duy nhất được hỗ trợ hiện nay.",
+        "B": "PhoBERT là mô hình duy nhất có khả năng hiểu được ngữ nghĩa.",
+        "C": "Mô hình bge-m3 nhờ khả năng hỗ trợ đa ngôn ngữ xuất sắc.",
+        "D": "Mô hình word2vec truyền thống nhờ tốc độ xử lý nhanh nhất hiện nay."
+      },
+      "answer": "C",
+      "explanation": "BGE-M3 (BAAI) là mô hình mã nguồn mở hỗ trợ đa ngôn ngữ cực tốt, được coi là chuẩn công nghiệp cho tiếng Việt khi tự vận hành (self-host).",
+      "hints": [
+        "Mô hình này hỗ trợ độ dài ngữ cảnh lớn và có hiệu năng MTEB đa ngôn ngữ rất cao.",
+        "Nó hỗ trợ cả trích xuất vector thưa (sparse) và dày (dense) đồng thời.",
+        "Đáp án là mô hình bge-m3 nhờ hỗ trợ đa ngôn ngữ xuất sắc."
+      ],
+      "concepts": [
+        "d19-t2-vector-feature-store"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Trong đo lường Cosine Similarity, điểm số bằng 1.0 thể hiện mối quan hệ gì giữa hai vector?",
+      "options": {
+        "A": "Hai đoạn văn bản có độ dài ký tự hoàn toàn khác biệt.",
+        "B": "Hai đoạn văn bản không chia sẻ bất kỳ từ khóa chung nào.",
+        "C": "Hướng của hai vector hoàn toàn trùng khít nhau trong không gian.",
+        "D": "Hai vector có độ dài vật lý bằng nhau trên đĩa cứng."
+      },
+      "answer": "C",
+      "explanation": "Cosine Similarity đo góc giữa hai vector. Điểm số bằng 1.0 nghĩa là góc giữa hai vector bằng 0, nghĩa là chúng hoàn toàn cùng hướng ngữ nghĩa.",
+      "hints": [
+        "Hãy nhớ lại bài học toán học về góc giữa hai đường thẳng.",
+        "Nếu góc bằng 0 độ, hai đường thẳng song song và cùng hướng.",
+        "Đáp án chỉ ra hướng của hai vector hoàn toàn trùng khít nhau."
+      ],
+      "concepts": [
+        "d19-t2-vector-feature-store"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Khi các vector đã được chuẩn hóa đơn vị (unit-normalized), phép đo khoảng cách nào được khuyến nghị sử dụng?",
+      "options": {
+        "A": "Euclidean Distance là lựa chọn mặc định tốt nhất cho mọi trường hợp.",
+        "B": "Manhattan Distance giúp tối ưu hóa tốc độ xử lý của GPU.",
+        "C": "Dot Product hoặc Cosine Similarity là lựa chọn mặc định phù hợp.",
+        "D": "Không sử dụng bất kỳ khoảng cách nào để tránh tốn CPU."
+      },
+      "answer": "C",
+      "explanation": "Khi vector đã được unit-normalized, phép tính Dot Product bằng chính giá trị Cosine Similarity, giúp bỏ qua phép chia căn thức phức tạp, tăng tốc độ tính toán.",
+      "hints": [
+        "Khi độ dài vector bằng 1, mẫu số của công thức cosine bằng 1.",
+        "Điều này giúp phép nhân dot product chạy cực nhanh trên phần cứng GPU.",
+        "Đáp án là Dot Product hoặc Cosine Similarity là lựa chọn phù hợp."
+      ],
+      "concepts": [
+        "d19-t2-vector-feature-store"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Quy trình tìm kiếm sản phẩm bằng hình ảnh (visual search) diễn ra như thế nào ở mức hạ tầng?",
+      "options": {
+        "A": "Hệ thống tự động chuyển đổi ảnh thành văn bản mô tả chi tiết.",
+        "B": "Hệ thống so sánh các pixel ảnh trực tiếp bằng thuật toán KNN.",
+        "C": "Hệ thống tự động dịch chuyển ảnh sang máy chủ đám mây.",
+        "D": "Hệ thống so sánh vector ảnh với các vector sản phẩm đã lưu."
+      },
+      "answer": "D",
+      "explanation": "Ảnh người dùng upload được mô hình đa phương thức (như CLIP) encode thành vector, sau đó so khớp độ tương đồng với các vector ảnh sản phẩm đã lưu sẵn trong Vector DB.",
+      "hints": [
+        "Hệ thống không cần dịch ảnh thành mô tả chữ rồi mới đi tìm kiếm.",
+        "Nó so sánh trực tiếp tọa độ của vector ảnh trong không gian nhúng chung.",
+        "Đáp án là so sánh vector ảnh đầu vào với các vector sản phẩm trong database."
+      ],
+      "concepts": [
+        "d19-t2-vector-feature-store"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Tại sao cơ sở dữ liệu quan hệ SQL truyền thống không phù hợp cho các truy vấn tìm kiếm ngữ nghĩa?",
+      "options": {
+        "A": "Vì SQL không hỗ trợ lưu trữ dữ liệu dưới định dạng Parquet.",
+        "B": "Vì SQL chỉ chạy trên CPU và không hỗ trợ xử lý song song.",
+        "C": "Vì SQL tiêu tốn quá nhiều dung lượng ổ đĩa của máy chủ.",
+        "D": "Vì SQL dựa trên khớp từ khóa chính xác thay vì ý nghĩa."
+      },
+      "answer": "D",
+      "explanation": "SQL truyền thống dựa trên khớp từ khóa chính xác (exact string match/LIKE). Nó không thể hiểu được các từ đồng nghĩa hoặc ngữ cảnh ngữ nghĩa (như 'món ăn' và 'ẩm thực').",
+      "hints": [
+        "SQL tìm kiếm các ký tự trùng nhau hoàn toàn trên văn bản.",
+        "Nó không có khái niệm về khoảng cách ngữ nghĩa hay vector hóa.",
+        "Đáp án chỉ ra việc SQL dựa vào khớp từ khóa chính xác thay vì ý nghĩa ngữ cảnh."
+      ],
+      "concepts": [
+        "d19-t2-vector-feature-store"
+      ]
+    }
+  ]
+}

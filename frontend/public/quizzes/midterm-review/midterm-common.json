@@ -1,0 +1,320 @@
+{
+  "id": "midterm-common",
+  "parent_id": "midterm-review",
+  "topic_title": "Ôn tập giữa kỳ: Cấu trúc bài thi",
+  "title": "Phần I - Chung",
+  "description": "15 câu trắc nghiệm về AI patterns, RAG, prompt engineering, agent, observability và security.",
+  "difficulty": "khó",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Một chatbot HR cần trả lời theo chính sách thay đổi hằng tháng và phải trích nguồn. Thiết kế nào phù hợp nhất?",
+      "options": {
+        "A": "RAG với tài liệu đã phân quyền",
+        "B": "Prompt dài chứa mọi chính sách",
+        "C": "Fine-tune toàn bộ mô hình mỗi tháng",
+        "D": "Cache câu trả lời theo nhân viên"
+      },
+      "answer": "A",
+      "explanation": "RAG phù hợp khi tri thức thay đổi và cần grounding theo nguồn có quyền truy cập.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-rag",
+        "midterm-grounding"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Trong ReAct agent, bước Observation nên được dùng để làm gì?",
+      "options": {
+        "A": "Bỏ qua bước kiểm tra lỗi",
+        "B": "Thay thế toàn bộ system prompt",
+        "C": "Tạo khóa API cho công cụ",
+        "D": "Lưu lại kết quả tool vừa gọi"
+      },
+      "answer": "D",
+      "explanation": "Observation là dữ liệu trả về từ tool, giúp agent quyết định bước tiếp theo.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-react",
+        "midterm-agent-patterns"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "RAG lấy đúng tài liệu nhưng câu trả lời bỏ qua đoạn bằng chứng ở giữa context dài. Failure mode nào khớp nhất?",
+      "options": {
+        "A": "Cold start của người dùng mới",
+        "B": "Cache stampede khi tải cao",
+        "C": "Schema drift của dữ liệu nguồn",
+        "D": "Lost in the Middle trong context"
+      },
+      "answer": "D",
+      "explanation": "Lost in the Middle xảy ra khi model ít chú ý thông tin nằm giữa prompt dài.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-rag",
+        "midterm-context-engineering"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Guardrail nào nên đặt trước retrieval để giảm rò rỉ tài liệu giữa phòng ban?",
+      "options": {
+        "A": "Lọc metadata theo quyền truy cập",
+        "B": "Ẩn citation khỏi câu trả lời",
+        "C": "Tăng nhiệt độ sinh văn bản",
+        "D": "Nối tất cả tài liệu liên quan"
+      },
+      "answer": "A",
+      "explanation": "Lọc quyền trước retrieval ngăn tài liệu sai phạm vi đi vào context ngay từ đầu.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-security",
+        "midterm-rag"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Prompt yêu cầu agent gọi tool xóa dữ liệu nếu người dùng nói 'khẩn cấp'. Rủi ro chính là gì?",
+      "options": {
+        "A": "Prompt quá ngắn để chạy tool",
+        "B": "Thiếu xác nhận trước hành động",
+        "C": "Tool thiếu giao diện người dùng",
+        "D": "Không đủ ví dụ few-shot an toàn"
+      },
+      "answer": "B",
+      "explanation": "Hành động phá hủy cần xác nhận, phân quyền và audit thay vì chỉ dựa vào prompt.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-agent-safety",
+        "midterm-security"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Bạn cần đo chất lượng RAG theo từng lần trả lời. Bộ log tối thiểu nên có gì?",
+      "options": {
+        "A": "Logo, màu nút và theme",
+        "B": "Prompt, chunks, citation và outcome",
+        "C": "Tên GPU, fan speed và RAM",
+        "D": "Email mentor, avatar và role"
+      },
+      "answer": "B",
+      "explanation": "Observability RAG cần thấy truy vấn, tài liệu lấy về, citation và kết quả để debug.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-observability",
+        "midterm-rag"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Khi prompt engineering cho tác vụ phân loại ticket, cách nào dễ kiểm soát nhất?",
+      "options": {
+        "A": "Yêu cầu trả lời tự do dài",
+        "B": "Đưa schema nhãn và ví dụ",
+        "C": "Ẩn tiêu chí phân loại khỏi prompt",
+        "D": "Tăng sáng tạo của model phân loại"
+      },
+      "answer": "B",
+      "explanation": "Schema nhãn và ví dụ giúp giảm mơ hồ, dễ validate và dễ theo dõi lỗi.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-prompt-engineering"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Agent liên tục gọi cùng một tool dù kết quả không đổi. Cách xử lý hợp lý nhất?",
+      "options": {
+        "A": "Tăng số vòng lặp tối đa",
+        "B": "Xóa toàn bộ memory phiên",
+        "C": "Thêm điều kiện dừng rõ ràng",
+        "D": "Bỏ logging khỏi tool call"
+      },
+      "answer": "C",
+      "explanation": "Điều kiện dừng, giới hạn vòng lặp và kiểm tra trạng thái giúp tránh loop tốn chi phí.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-agent-architecture"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Một câu trả lời RAG có citation đúng nhưng kết luận sai. Bạn nên debug điểm nào trước?",
+      "options": {
+        "A": "Kích thước avatar trong trang kết quả",
+        "B": "Màu giao diện trang kết quả",
+        "C": "Ranking và cách tổng hợp bằng chứng",
+        "D": "Tên nhánh git đang chạy thử"
+      },
+      "answer": "C",
+      "explanation": "Citation đúng chưa đủ; cần kiểm tra reranking, prompt tổng hợp và cách model suy luận.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-rag",
+        "midterm-observability"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Để chống indirect prompt injection trong tài liệu được retrieval, lớp nào quan trọng nhất?",
+      "options": {
+        "A": "Chỉ tin mọi nội dung trong chunk",
+        "B": "Phân tách instruction và data retrieval",
+        "C": "Tắt toàn bộ citation của RAG",
+        "D": "Nén chunk thành một dòng ngắn"
+      },
+      "answer": "B",
+      "explanation": "Model phải được hướng dẫn xem chunk là dữ liệu, không phải lệnh hệ thống.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-security",
+        "midterm-prompt-injection"
+      ]
+    },
+    {
+      "id": 11,
+      "question": "Bạn muốn so sánh hai prompt phiên bản A/B. Chỉ số nào nên ưu tiên cho tác vụ có đáp án chuẩn?",
+      "options": {
+        "A": "Số token trong prompt hiện tại",
+        "B": "Độ dài câu trả lời sinh",
+        "C": "Số lần reload trang học",
+        "D": "Độ chính xác theo bộ eval"
+      },
+      "answer": "D",
+      "explanation": "Bộ eval có đáp án chuẩn đo trực tiếp chất lượng thay vì chỉ đo độ dài hay chi phí.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-evaluation"
+      ]
+    },
+    {
+      "id": 12,
+      "question": "Một agent được phép đọc CRM và gửi email khách hàng. Kiểm soát nào nên có trước khi gửi?",
+      "options": {
+        "A": "Cho agent tự tạo danh sách nhận",
+        "B": "Ẩn preview email khỏi người dùng",
+        "C": "Human approval cho email nhạy cảm",
+        "D": "Bỏ kiểm tra quyền CRM nội bộ"
+      },
+      "answer": "C",
+      "explanation": "Tác vụ tác động khách hàng cần approval, preview và audit để giảm rủi ro vận hành.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-agent-safety"
+      ]
+    },
+    {
+      "id": 13,
+      "question": "Khi RAG trả lời chậm, thông tin nào giúp phân biệt lỗi retrieval và lỗi generation?",
+      "options": {
+        "A": "Latency theo từng stage pipeline",
+        "B": "Ảnh nền trong dashboard học tập",
+        "C": "Tên font trong giao diện",
+        "D": "Số ký tự trong tiêu đề"
+      },
+      "answer": "A",
+      "explanation": "Tracing theo retrieval, rerank, generation và streaming giúp khoanh vùng bottleneck.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-observability"
+      ]
+    },
+    {
+      "id": 14,
+      "question": "Câu hỏi người dùng yêu cầu model tiết lộ system prompt. Phản hồi đúng nên là gì?",
+      "options": {
+        "A": "Từ chối và chuyển hướng hợp lệ",
+        "B": "Tóm tắt toàn bộ system prompt",
+        "C": "Đưa prompt vào citation công khai",
+        "D": "Gọi tool đọc biến môi trường"
+      },
+      "answer": "A",
+      "explanation": "Không tiết lộ system prompt; nên từ chối ngắn và chuyển sang hỗ trợ nhu cầu hợp lệ.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-security",
+        "midterm-prompt-engineering"
+      ]
+    },
+    {
+      "id": 15,
+      "question": "Trong thiết kế AI feature, vì sao cần fallback khi model không tự tin?",
+      "options": {
+        "A": "Để tăng độ dài câu trả lời",
+        "B": "Để bỏ qua quyền người dùng",
+        "C": "Để tránh trả lời bịa chắc chắn",
+        "D": "Để giảm nhu cầu kiểm thử"
+      },
+      "answer": "C",
+      "explanation": "Fallback giúp chuyển sang hỏi thêm, tra cứu lại hoặc escalte thay vì hallucinate.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-ai-patterns",
+        "midterm-safety"
+      ]
+    }
+  ]
+}

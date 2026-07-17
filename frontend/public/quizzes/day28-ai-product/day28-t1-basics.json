@@ -1,0 +1,210 @@
+{
+  "id": "day28-t1-basics",
+  "parent_id": "day28-ai-product",
+  "topic_title": "Day 28: AI Pricing & GTM",
+  "title": "Phần 1: Chi Phí Biên AI vs SaaS Truyền Thống & Ma Trận Định Giá",
+  "description": "Đánh giá kiến thức cơ bản về chi phí biên của sản phẩm AI, 4 mô hình định giá (Seat, Usage, Outcome, Hybrid) và ma trận lựa chọn định giá dựa trên mức độ tự chủ (Autonomy) và khả năng quy chiếu giá trị (Attribution).",
+  "difficulty": "dễ",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Sự khác biệt cốt lõi về chi phí biên (marginal cost) giữa sản phẩm AI và SaaS truyền thống là gì?",
+      "options": {
+        "A": "SaaS truyền thống có chi phí biên tăng dần theo lượng người dùng.",
+        "B": "Sản phẩm AI có chi phí biên giảm dần về số không khi scale.",
+        "C": "Sản phẩm AI có chi phí biên tăng trực tiếp theo thời lượng usage.",
+        "D": "SaaS truyền thống có chi phí biên phụ thuộc vào tài nguyên GPU."
+      },
+      "answer": "C",
+      "explanation": "Chi phí biên của SaaS truyền thống gần như bằng 0 khi scale, trong khi sản phẩm AI có chi phí biên tăng theo usage (phí token, API, tele, hạ tầng inference).",
+      "hints": [
+        "Hãy so sánh chi phí vận hành khi có thêm một người dùng mới.",
+        "SaaS truyền thống chỉ tốn thêm rất ít tài nguyên lưu trữ database.",
+        "Đó chính là sản phẩm AI tốn thêm tiền cho mỗi cuộc gọi token hoặc API."
+      ],
+      "concepts": [
+        "d28-t1-pricing"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Tại sao việc áp dụng mô hình định giá Seat-based (phí cố định theo user) lại nguy hiểm cho sản phẩm AI có Autonomy cao?",
+      "options": {
+        "A": "Người dùng sẽ từ chối sử dụng vì giao diện quá phức tạp.",
+        "B": "Nhà phát triển bị âm biên lợi nhuận khi người dùng sử dụng nhiều.",
+        "C": "Hệ thống sẽ tự động ngắt kết nối nếu phát hiện truy cập ảo.",
+        "D": "Doanh nghiệp không thể kiểm soát quyền truy cập của các thành viên."
+      },
+      "answer": "B",
+      "explanation": "Với Autonomy cao, AI tự hoạt động nhiều, tiêu thụ lượng lớn token/API. Nếu thu phí cố định Seat-based, nhà phát triển dễ bị lỗ nếu user lạm dụng.",
+      "hints": [
+        "Hãy nghĩ về việc người dùng chạy Agent liên tục 24/7.",
+        "Chi phí token sẽ tăng vọt nhưng doanh thu từ seat vẫn giữ nguyên.",
+        "Đó là việc nhà phát triển có nguy cơ bị âm biên lợi nhuận."
+      ],
+      "concepts": [
+        "d28-t1-pricing"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Theo ma trận Attribution × Autonomy, mô hình định giá nào được coi là tối ưu nhất khi sản phẩm đạt Autonomy cao và Attribution cao?",
+      "options": {
+        "A": "Định giá Seat-based nhằm tối giản các quy trình tính toán.",
+        "B": "Định giá Usage-based để đảm bảo an toàn cho hạ tầng.",
+        "C": "Định giá Outcome-based dựa trên hiệu quả thực tế mang lại.",
+        "D": "Định giá Hybrid kết hợp giữa phí cố định và usage."
+      },
+      "answer": "C",
+      "explanation": "Autonomy cao (AI tự chạy) và Attribution cao (đo lường chính xác hiệu quả đóng góp) là điều kiện lý tưởng cho Outcome-based pricing (thu phí theo kết quả).",
+      "hints": [
+        "Attribution cao giúp xác định chính xác giá trị AI tạo ra.",
+        "Khách hàng sẵn sàng trả tiền nếu thấy rõ kết quả cụ thể.",
+        "Đó chính là định giá Outcome-based dựa trên kết quả đạt được."
+      ],
+      "concepts": [
+        "d28-t1-pricing"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Theo ma trận Attribution × Autonomy, nếu sản phẩm có Autonomy cao nhưng Attribution thấp thì nên chọn mô hình định giá nào?",
+      "options": {
+        "A": "Định giá Seat-based để thu hút nhóm khách hàng nhỏ.",
+        "B": "Định giá Usage-based nhằm đảm bảo an toàn cho chi phí.",
+        "C": "Định giá Outcome-based để tăng trưởng doanh thu nhanh chóng.",
+        "D": "Định giá Freemium nhằm tối ưu hóa lượng truy cập ban đầu."
+      },
+      "answer": "B",
+      "explanation": "Khi Autonomy cao (AI chạy nhiều, tốn tài nguyên) nhưng Attribution thấp (khó đo lường chính xác hiệu quả đóng góp), định giá Usage-based là giải pháp an toàn để tránh lỗ.",
+      "hints": [
+        "Autonomy cao nghĩa là chi phí vận hành phát sinh lớn.",
+        "Attribution thấp khiến ta khó thu phí theo hiệu quả đầu ra.",
+        "Lựa chọn an toàn nhất là tính phí Usage-based theo lượng dùng."
+      ],
+      "concepts": [
+        "d28-t1-pricing"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Sự kiện GitHub Copilot chịu lỗ trung bình $70/user/tháng trong giai đoạn đầu là ví dụ điển hình cho điều gì?",
+      "options": {
+        "A": "Sự thất bại của mô hình kinh doanh đối tác Partner-Led.",
+        "B": "Rủi ro biên lợi nhuận của mô hình Seat-based trong AI.",
+        "C": "Sự thiếu hiệu quả của hệ thống hạ tầng vLLM serving.",
+        "D": "Rủi ro khi định giá quá cao khiến khách hàng rời bỏ."
+      },
+      "answer": "B",
+      "explanation": "GitHub Copilot thu phí seat cố định $10 nhưng chi phí vận hành thực tế lên tới $80/user do người dùng truy vấn nhiều, là ví dụ cho rủi ro biên lợi nhuận của Seat-based.",
+      "hints": [
+        "Người dùng lập trình liên tục sinh ra lượng token cực lớn.",
+        "Mô hình seat cố định thu về số tiền không đổi bất kể lượng dùng.",
+        "Đó là rủi ro biên lợi nhuận khi áp dụng mô hình định giá Seat-based."
+      ],
+      "concepts": [
+        "d28-t1-pricing"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Sự khác biệt lớn nhất giữa việc tiếp cận 'ngân sách phần mềm' và 'ngân sách nhân sự' khi bán sản phẩm AI là gì?",
+      "options": {
+        "A": "Ngân sách phần mềm lớn hơn và dễ quyết định hơn nhiều.",
+        "B": "Ngân sách nhân sự lớn hơn và ít bị cạnh tranh gay gắt.",
+        "C": "Ngân sách nhân sự yêu cầu quy trình duyệt mua phức tạp hơn.",
+        "D": "Ngân sách phần mềm tập trung vào việc thay thế con người."
+      },
+      "answer": "B",
+      "explanation": "Ngân sách phần mềm thường nhỏ và chật chội (đầy CRM, ERP), trong khi ngân sách nhân sự lớn gấp 10x, ít cạnh tranh trực tiếp và khách hàng dễ ra quyết định khi thấy rẻ hơn thuê người.",
+      "hints": [
+        "Hãy nghĩ về số tiền doanh nghiệp chi trả cho nhân sự hàng tháng.",
+        "So sánh chi phí mua một công cụ phần mềm với chi phí trả lương.",
+        "Đó chính là ngân sách nhân sự lớn hơn và ít cạnh tranh hơn."
+      ],
+      "concepts": [
+        "d28-t1-pricing"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Trong trường hợp nào nhà phát triển sản phẩm AI nên ưu tiên lựa chọn mô hình định giá Hybrid?",
+      "options": {
+        "A": "Khi muốn loại bỏ hoàn toàn các yếu tố can thiệp HITL.",
+        "B": "Khi chưa chắc chắn về hành vi sử dụng của khách hàng.",
+        "C": "Khi hệ thống chỉ chạy offline và không tốn phí API.",
+        "D": "Khi khách hàng yêu cầu xuất hóa đơn theo dạng phí cố định."
+      },
+      "answer": "B",
+      "explanation": "Mô hình định giá Hybrid (phí nền cố định kèm usage) giúp cân bằng rủi ro và chi phí khi nhà phát triển chưa nắm chắc hành vi sử dụng thực tế của khách hàng.",
+      "hints": [
+        "Hybrid kết hợp tính an toàn của seat và tính linh hoạt của usage.",
+        "Nó giúp bảo vệ biên lợi nhuận khi lượng truy cập biến động.",
+        "Hãy chọn phương án liên quan đến việc chưa rõ hành vi sử dụng."
+      ],
+      "concepts": [
+        "d28-t1-pricing"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Mối liên hệ giữa hạ tầng đánh giá AI (Evals) và khả năng chứng minh Attribution để tính phí là gì?",
+      "options": {
+        "A": "Evals giúp tự động giảm chi phí token xuống mức tối thiểu.",
+        "B": "Evals giúp định cấu hình các cổng thanh toán quốc tế an toàn.",
+        "C": "Evals chứng minh độ chính xác làm cơ sở đo lường hiệu quả.",
+        "D": "Evals loại bỏ nhu cầu ghi nhận lịch sử giao dịch khách hàng."
+      },
+      "answer": "C",
+      "explanation": "Hạ tầng Evals đo lường độ chính xác (ví dụ 95%), làm cơ sở để chứng minh Attribution (đóng góp thực tế của AI), từ đó giúp doanh nghiệp tự tin định giá Outcome-based.",
+      "hints": [
+        "Làm sao khách hàng tin tưởng để trả tiền theo kết quả đầu ra?",
+        "Chúng ta cần số liệu kỹ thuật khách quan chứng minh AI hoạt động tốt.",
+        "Đó là việc Evals chứng minh độ chính xác làm cơ sở đo lường hiệu quả."
+      ],
+      "concepts": [
+        "d28-t1-pricing"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Lợi ích lớn nhất của việc áp dụng mô hình định giá Usage-based cho một sản phẩm AI là gì?",
+      "options": {
+        "A": "Giúp khách hàng dễ dự đoán ngân sách chi tiêu hàng năm.",
+        "B": "Đảm bảo an toàn biên lợi nhuận khi chi phí vận hành tăng.",
+        "C": "Loại bỏ hoàn toàn các yêu cầu tích hợp kỹ thuật phức tạp.",
+        "D": "Tăng tối đa tỷ lệ chuyển đổi khách hàng từ bản miễn phí."
+      },
+      "answer": "B",
+      "explanation": "Usage-based pricing giúp doanh thu tăng song hành cùng chi phí API/token thực tế, đảm bảo an toàn biên lợi nhuận cho nhà phát triển.",
+      "hints": [
+        "Mô hình này giúp tránh rủi ro 'dùng nhiều nhưng trả ít' của Seat-based.",
+        "Doanh thu sẽ tỷ lệ thuận với lượng token tiêu thụ thực tế.",
+        "Đó là việc đảm bảo an toàn biên lợi nhuận khi chi phí vận hành tăng."
+      ],
+      "concepts": [
+        "d28-t1-pricing"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Tại sao BIVA vẫn quyết định chọn định giá Usage-based thay vì Outcome-based dù Autonomy và Attribution đều cao?",
+      "options": {
+        "A": "Do hệ thống của BIVA chưa tích hợp thành công OpenLineage tracking.",
+        "B": "Do doanh nghiệp SME tại Việt Nam quen trả tiền theo lượng dùng.",
+        "C": "Do chi phí nhân công trực ca đêm tại Việt Nam quá thấp.",
+        "D": "Do BIVA không thể kiểm soát tỷ lệ cuộc gọi bị lỗi."
+      },
+      "answer": "B",
+      "explanation": "Mặc dù Autonomy và Attribution cao đủ điều kiện bán Outcome, BIVA vẫn chọn Usage-based vì thói quen thanh toán của các doanh nghiệp nhà xe SME Việt Nam là trả theo gói phút gọi.",
+      "hints": [
+        "Hãy xem xét thói quen tiêu dùng và chi trả của khách hàng mục tiêu.",
+        "SME Việt Nam thường ưu tiên sự đơn giản và dễ hiểu trong hóa đơn.",
+        "Đó chính là do khách hàng SME quen chi trả theo lượng sử dụng."
+      ],
+      "concepts": [
+        "d28-t1-pricing"
+      ]
+    }
+  ]
+}

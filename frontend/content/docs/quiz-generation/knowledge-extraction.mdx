@@ -1,0 +1,51 @@
+---
+title: Trích xuất Tri thức & Đồ thị khái niệm
+description: Đặc tả chi tiết quy trình OCR tài liệu, trích xuất đồ thị khái niệm (Prerequisite DAG) và ma trận ánh xạ đa kỹ năng Q-Matrix.
+---
+
+Quy trình bắt đầu bằng việc chuyển hóa các tài liệu giảng dạy phi cấu trúc của toàn bộ khóa học (Day 1 đến Day N) thành một đồ thị kiến thức nhất quán và chuẩn hóa.
+
+## 1. Trích xuất văn bản & Layout (Gemini OCR)
+
+Khi giảng viên tải lên slide bài giảng hoặc giáo trình học tập (PDF), hệ thống thực hiện:
+*   **Phân tích bố cục (Layout Analysis)**: Sử dụng Gemini Vision API để nhận dạng cấu trúc trang, phân tách vùng chứa chữ, mã nguồn (code snippet), bảng biểu và sơ đồ hình ảnh.
+*   **Chuyển đổi văn bản**: Trích xuất nội dung chữ thô kèm theo ngữ cảnh phân trang, giữ nguyên cấu trúc tiêu đề cấp bậc để hỗ trợ cho việc phân mảnh kiến thức.
+
+---
+
+## 2. Quy trình Xử lý Nhất quán liên ngày (Cross-Day Concept Seeding)
+
+Để giải quyết vấn đề **Trôi lệch thuật ngữ (Synonym Drift)** (ví dụ: Day 1 gọi là `React State`, Day 5 gọi là `Component State`), hệ thống không trích xuất độc lập từng tài liệu mà áp dụng quy trình **2 Pha Nhất quán**:
+
+### Pha 1: Khởi tạo Danh sách Khái niệm Hạt nhân (Global Seeding)
+Trước khi trích xuất câu hỏi hay lập quan hệ chi tiết, hệ thống quét toàn bộ giáo trình từ Day 1 đến Day N để lập bản đồ từ điển khái niệm chuẩn:
+1.  **Gom văn bản thô**: Tập hợp toàn bộ tiêu đề slide và tóm tắt nội dung của tất cả các ngày học.
+2.  **Trích xuất hạt nhân (LLM Global Sweep)**: Gọi LLM phân tích toàn cục để phân nhóm chủ đề và trả về danh sách thực thể hạt nhân cố định (ví dụ: 40-60 concepts nền tảng).
+3.  **Lưu trữ**: Lưu danh sách này vào bảng `app.concepts` làm từ điển neo (Concept Anchors) duy nhất của khóa học.
+
+### Pha 2: Trích xuất Cục bộ có ràng buộc (Local Extraction with Constraints)
+Khi xử lý tài liệu cụ thể của một ngày học (ví dụ: Slide Day 8):
+1.  **Đọc ngữ cảnh**: Trích xuất nội dung slide Day 8.
+2.  **Ràng buộc từ điển (Constraint Ingestion)**: Cung cấp danh sách Concept Anchors của Pha 1 vào Prompt của LLM Generator.
+3.  **Ánh xạ bắt buộc**: Ràng buộc LLM chỉ được phép gán các câu hỏi mới tạo vào các concepts có sẵn trong danh sách hạt nhân. Nếu xuất hiện kiến thức mới hoàn toàn, LLM đề xuất thêm concept mới dưới trạng thái nháp (`status = 'draft'`) để giảng viên duyệt thủ công.
+
+---
+
+## 3. Lập ma trận đa kỹ năng (Q-Matrix Mapping)
+
+Hệ thống thiết lập một ma trận ánh xạ nhị phân **Q-Matrix** giữa các câu hỏi ($i$) và các khái niệm kỹ năng ($j$):
+
+$$q_{ij} \in \{0, 1\}$$
+
+Trong đó:
+*   $q_{ij} = 1$: Câu hỏi $i$ có kiểm tra trực tiếp hoặc gián tiếp kiến thức của khái niệm $j$.
+*   $q_{ij} = 0$: Câu hỏi $i$ không liên quan đến khái niệm $j$.
+
+### Cơ chế Lan truyền Độ thông thạo Chéo (Cross-Skill Propagation)
+Khi học viên trả lời câu hỏi $i$ đạt điểm số $S_i \in [0.0, 1.0]$:
+1.  **Cập nhật trực tiếp**: Điểm Elo và xác suất nắm vững BKT của các khái niệm $j$ có $q_{ij} = 1$ được cập nhật trực tiếp trong transaction RPC `submit_attempt_v3`.
+2.  **Lan truyền gián tiếp**: Điểm số này tiếp tục lan truyền ngược về các kỹ năng tiền đề (Parents) trên đồ thị quan hệ khái niệm với hệ số suy giảm $\gamma \in (0, 1]$:
+    $$M(p)_{\text{new}} = M(p)_{\text{old}} + \gamma \cdot \Delta M(s) \cdot w_{p \rightarrow s}$$
+
+### Tối ưu hóa khảo sát đầu vào (Adaptive Onboarding)
+Nhờ Q-Matrix đa kỹ năng, hệ thống có thể chọn ra các câu hỏi onboarding mấu chốt (Anchor/Pivot Questions) có độ phủ lớn (nhiều liên kết $q_{ij} = 1$). Kết quả làm bài từ một câu hỏi sẽ cập nhật đồng thời nhiều kỹ năng liên quan, giúp hệ thống phác họa chính xác hồ sơ năng lực của học viên trên 500+ kỹ năng chi tiết chỉ sau **5 đến 8 câu hỏi thích ứng** thay vì phải kiểm tra tuần tự.

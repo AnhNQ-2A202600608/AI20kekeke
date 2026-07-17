@@ -1,0 +1,77 @@
+---
+title: Tiến hóa Câu hỏi & Đáp án nhiễu
+description: Ứng dụng phương pháp Evol-Instruct để nâng cao chiều sâu câu hỏi và thiết kế các đáp án nhiễu chất lượng cao dựa trên lỗi sai thường gặp.
+---
+
+Để đánh giá đúng mức độ hiểu bài thay vì khả năng học vẹt, hệ thống tự động thiết kế các câu hỏi có tính phân hóa cao. EduGap áp dụng phương pháp **Evol-Instruct** của bài báo **[WizardLM](/docs/academic-citations#7-wizardlm-evol-instruct-instruction-complication)** nhằm nâng cao độ phức tạp và tính thực tiễn của ngân hàng câu hỏi.
+
+## 1. Kỹ thuật Tiến hóa Độ khó (Evol-Instruct)
+
+Quy trình tiến hóa câu hỏi được thực hiện qua các vòng lặp nâng cấp độ khó (Evolving Epochs). Hệ thống sử dụng mô hình LLM làm **Instruction Evolver** với hai hình thức tiến hóa chính:
+
+![Mermaid Diagram](/docs/images/mermaid-85a13ddb215b7dcc47be3f3228a84c38.svg)
+
+### A. Tiến hóa Chiều sâu (In-Depth Evolving)
+
+In-Depth Evolving tập trung vào việc gia tăng độ phức tạp của câu hỏi gốc thông qua 5 hướng thao tác chính. Mỗi lượt tiến hóa chỉ được bổ sung tối đa 10 đến 20 từ nhằm đảm bảo tăng độ khó một cách tiệm cận:
+
+1.  **Thêm ràng buộc (Add Constraints)**: Bổ sung thêm các điều kiện biên hoặc ràng buộc tài nguyên thực tế.
+    *   *Prompt template*:
+        ```text
+        Your objective is to rewrite a given prompt into a more complex version to make those famous AI systems (e.g., ChatGPT and GPT4) a bit harder to handle... Please add one more constraints/requirements into #Given Prompt#.
+        ```
+2.  **Làm sâu sắc hơn (Deepening)**: Nâng cao độ sâu học thuật bằng cách truy vấn sâu vào nguyên lý hoạt động hoặc lý thuyết nền tảng.
+    *   *Prompt template*:
+        ```text
+        ... If #Given Prompt# contains inquiries about certain issues, the depth and breadth of the inquiry can be increased.
+        ```
+3.  **Cụ thể hóa (Concretizing)**: Thay thế khái niệm trừu tượng chung chung bằng một tình huống dự án/case study cụ thể.
+    *   *Prompt template*:
+        ```text
+        ... Please replace general concepts with more specific concepts.
+        ```
+4.  **Tăng bước lập luận (Increase Reasoning Steps)**: Yêu cầu học viên thực hiện suy luận đa bước trước khi có câu trả lời.
+    *   *Prompt template*:
+        ```text
+        ... If #Given Prompt# can be solved with just a few simple thinking processes, you can rewrite it to explicitly request multiple-step reasoning.
+        ```
+5.  **Phức tạp hóa đầu vào (Complicate Input)**: Chèn thêm dữ liệu thô hoặc mã nguồn có cấu trúc (XML, SQL, JSON, Python snippet) yêu cầu học viên phân tích.
+    *   *Prompt template*:
+        ```text
+        ... You must add [dataformat] format data/text as input data in [Rewritten Prompt].
+        ```
+
+### B. Tiến hóa Chiều rộng (In-Breadth Evolving)
+
+Nhằm mục đích tăng độ rộng bao phủ của kỹ năng và độ phong phú của ngân hàng đề, hệ thống áp dụng kỹ thuật **Mutation (Đột biến)** để tạo ra một câu hỏi hoàn toàn mới, độc lập nhưng cùng lĩnh vực chuyên môn của câu hỏi cũ và thuộc vùng kiến thức hiếm gặp (long-tail).
+
+*   *Prompt template*:
+    ```text
+    Your goal is to draw inspiration from the #Given Prompt# to create a brand new prompt. This new prompt should belong to the same domain as the #Given Prompt# but be even more rare...
+    ```
+
+---
+
+## 2. Bộ lọc loại trừ câu hỏi lỗi (Elimination Evolving)
+
+Do các câu hỏi tiến hóa được sinh ra tự động bằng LLM, đôi khi quá trình viết lại sẽ bị thất bại. EduGap áp dụng bộ lọc tự động dựa trên **4 quy tắc loại trừ** nghiêm ngặt:
+
+![Mermaid Diagram](/docs/images/mermaid-0d8749690cae96af3135150367ce34b6.svg)
+
+1.  **Thông tin không tăng thêm (No Information Gain)**: Sử dụng LLM đối chiếu câu hỏi gốc và câu hỏi mới. Nếu hai chỉ dẫn tương đương (Equal) về mặt yêu cầu và ràng buộc thì câu hỏi mới bị loại bỏ.
+2.  **LLM từ chối trả lời (LLM Struggle to Respond)**: Nếu câu trả lời sinh ra từ mô hình chứa từ khóa từ chối ("xin lỗi", "sorry", "không thể") và có độ dài quá ngắn (dưới 80 từ), chứng tỏ câu hỏi tiến hóa không hợp lý hoặc vượt quá khả năng xử lý.
+3.  **Câu hỏi/Trả lời vô nghĩa**: Câu hỏi hoặc câu trả lời sinh ra chỉ chứa ký tự đặc biệt, dấu câu hoặc stop words.
+4.  **Rò rỉ từ khóa điều khiển (Word Leakage)**: Loại bỏ các câu hỏi có chứa các cụm từ kỹ thuật của prompt tiến hóa như: `given prompt`, `rewritten prompt`, `#Rewritten Prompt#`, `created prompt`.
+
+---
+
+## 3. Thiết kế đáp án nhiễu chất lượng cao (Misconception-based Distractors)
+
+Sau khi vượt qua bộ lọc loại trừ, câu hỏi sẽ được chuyển sang cấu phần sinh đáp án tương tác. Các phương án sai (distractors) phải đánh trúng tâm lý ngộ nhận kiến thức của học viên thay vì tạo ngẫu nhiên.
+
+### Cấu trúc bài kiểm tra trắc nghiệm:
+Với mỗi câu hỏi trắc nghiệm MCQ, hệ thống sinh ra cấu trúc dữ liệu JSON gồm:
+*   `question`: Câu hỏi tiến hóa hoàn chỉnh.
+*   `options`: Gồm 4 lựa chọn (A, B, C, D) với duy nhất 1 phương án đúng.
+*   `correct_option`: Ký tự đáp án đúng (e.g., `"C"`).
+*   `explanation`: Cung cấp lời giải thích Socratic chi tiết cho từng phương án riêng biệt, giải thích rõ tại sao các đáp án sai lại dễ gây nhầm lẫn dựa trên lỗi sai thường gặp (misconceptions) của khái niệm học tập đó.

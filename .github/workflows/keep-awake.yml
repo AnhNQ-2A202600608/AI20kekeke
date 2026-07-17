@@ -1,0 +1,36 @@
+name: Keep Services Awake
+
+on:
+  schedule:
+    # Chạy mỗi 10 phút một lần để giảm khả năng backend/frontend bị ngủ
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Backend Health Endpoint
+        shell: bash
+        env:
+          RENDER_APP_URL: ${{ secrets.RENDER_APP_URL }}
+        run: |
+          if [ -z "$RENDER_APP_URL" ]; then
+            echo "::error::Missing repository secret RENDER_APP_URL"
+            exit 1
+          fi
+
+          health_url="${RENDER_APP_URL%/}/health"
+          echo "Pinging backend: $health_url"
+
+          status_code=$(curl -L -sS -o /dev/null -w "%{http_code}" \
+            --retry 2 \
+            --retry-delay 5 \
+            --max-time 30 \
+            "$health_url" || true)
+
+          echo "Backend response code: $status_code"
+
+          if [ "$status_code" != "200" ]; then
+            echo "::warning::Backend ping returned HTTP $status_code. Service may be booting or temporarily unavailable."
+          fi

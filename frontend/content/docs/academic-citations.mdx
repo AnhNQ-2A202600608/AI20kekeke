@@ -1,0 +1,209 @@
+---
+title: Academic Citations & Scientific Foundations
+description: Cơ sở khoa học, bài báo học thuật và nền tảng toán học của các thuật toán thích ứng trong EduGap.
+---
+
+Tài liệu này cung cấp các nguồn trích dẫn khoa học, các bài báo nghiên cứu học thuật và nền tảng toán học cho các thuật toán học tập thích ứng được triển khai trong công cụ **EduGap**. Đây là "Nguồn chân lý" (Source of Truth) cho cả cài đặt thực tế lẫn các kịch bản kiểm thử trong bộ công cụ đánh giá (Evaluation Suite).
+
+---
+
+## 1. Bayesian Knowledge Tracing (BKT)
+
+### Academic Citation
+*   **Paper:** Corbett, A. T., & Anderson, J. R. (1994). *Knowledge tracing: Modeling the acquisition of procedural knowledge.* User Modeling and User-Adapted Interaction, 4(4), 253-278.
+*   **DOI:** [10.1007/BF01099821](https://doi.org/10.1007/BF01099821)
+*   **Type:** Foundational Student Knowledge State Modeling.
+*   **BibTeX:**
+    ```bibtex
+    @article{corbett1994knowledge,
+      title={Knowledge tracing: Modeling the acquisition of procedural knowledge},
+      author={Corbett, Albert T and Anderson, John R},
+      journal={User modeling and user-adapted interaction},
+      volume={4},
+      number={4},
+      pages={253--278},
+      year={1994},
+      publisher={Springer}
+    }
+    ```
+
+### Implementation in EduGap
+*   **Production Code:** [bkt.py](file:///d:/CODE/AITHUCCHIEN/PROJECT/C2-App-125/src/services/adaptive/bkt.py)
+*   **Mathematics:** Cập nhật xác suất làm chủ ẩn $P(L_t)$ dựa trên kết quả quan sát nhị phân (đúng/sai):
+    *   *Posterior Update:*
+        $$P(L_t | \text{Correct}) = \frac{P(L_t)(1 - S)}{P(L_t)(1 - S) + (1 - P(L_t))G}$$
+        $$P(L_t | \text{Incorrect}) = \frac{P(L_t)S}{P(L_t)S + (1 - P(L_t))(1 - G)}$$
+    *   *Transition Chance:*
+        $$P(L_{t+1}) = P(L_t | \text{Observation}) + (1 - P(L_t | \text{Observation}))P(T)$$
+*   **Evaluation Suite:** Được xác thực trong [exp2_bkt_validation.py](file:///d:/CODE/AITHUCCHIEN/PROJECT/C2-App-125/eval/exp2_bkt_validation.py) bằng mô phỏng phản hồi thuần túy BKT và tính toán độ chính xác dự đoán trạng thái (ROC AUC).
+
+---
+
+## 2. Elo Rating System in Education
+
+### Academic Citation
+*   **Paper:** Pelánek, R. (2016). *Applications of the Elo rating system in education.* Computers & Education, 98, 191-208.
+*   **DOI:** [10.1016/j.compedu.2016.03.017](https://doi.org/10.1016/j.compedu.2016.03.017)
+*   **Type:** Dynamic Student Ability and Question Difficulty Estimation.
+*   **BibTeX:**
+    ```bibtex
+    @article{pelanek2016applications,
+      title={Applications of the Elo rating system in education},
+      author={Pel{\'a}nek, Radek},
+      journal={Computers \& Education},
+      volume={98},
+      pages={191--208},
+      year={2016},
+      publisher={Elsevier}
+    }
+    ```
+
+### Implementation in EduGap
+*   **Production Code:** [elo.py](file:///d:/CODE/AITHUCCHIEN/PROJECT/C2-App-125/src/services/adaptive/elo.py)
+*   **Mathematics:** Mô hình hóa xác suất trả lời đúng dự kiến bằng hàm logistic và cập nhật tham số đối xứng/bất đối xứng:
+    *   *Expected Success:*
+        $$P(\text{success}) = \frac{1}{1 + 10^{(\theta - \alpha)/400}}$$
+    *   *Parameter Update:*
+        $$\alpha_{\text{new}} = \alpha + K \cdot (\text{Score} - P(\text{success}))$$
+        $$\theta_{\text{new}} = \theta + K \cdot (P(\text{success}) - \text{Score})$$
+*   **Evaluation Suite:** Được xác thực trong [exp1_elo_convergence.py](file:///d:/CODE/AITHUCCHIEN/PROJECT/C2-App-125/eval/exp1_elo_convergence.py) bằng quần thể học sinh mô phỏng để đo tốc độ hội tụ (RMSE) của năng lực ước lượng so với năng lực ẩn thực tế.
+
+---
+
+## 3. Contextual Multi-Armed Bandits (LinUCB)
+
+### Academic Citation
+*   **Paper:** Li, L., Chu, W., Langford, J., & Schapire, R. E. (2010). *A contextual-bandit approach to personalized news article recommendation.* Proceedings of the 19th International Conference on World Wide Web, 291-300.
+*   **DOI:** [10.1145/1772690.1772758](https://doi.org/10.1145/1772690.1772758)
+*   **Educational Adaptations:** Clement, B., Roy, D., Oudeyer, P. Y., & Lopes, M. (2015). *Multi-armed bandits for intelligent tutoring systems.* Journal of Educational Technology & Society, 18(2), 268-281.
+*   **Type:** Personalized Question Recommendation under Exploration/Exploitation Trade-offs.
+*   **BibTeX:**
+    ```bibtex
+    @inproceedings{li2010contextual,
+      title={A contextual-bandit approach to personalized news article recommendation},
+      author={Li, Lihong and Chu, Wei and Langford, John and Schapire, Robert E},
+      booktitle={Proceedings of the 19th international conference on World Wide Web},
+      pages={291--300},
+      year={2010}
+    }
+    ```
+
+### Implementation in EduGap
+*   **Production Code:** [bandit.py](file:///d:/CODE/AITHUCCHIEN/PROJECT/C2-App-125/src/services/adaptive/bandit.py)
+*   **Mathematics:** Gợi ý câu hỏi (arms) sử dụng Upper Confidence Bound (UCB) trên các phép chiếu hồi quy tuyến tính:
+    $$a_t = \arg\max_{a \in \mathcal{A}_t} \left( x_{t,a}^\top \hat{\theta}_a + \alpha \sqrt{x_{t,a}^\top A_a^{-1} x_{t,a}} \right)$$
+*   **Evaluation Suite:** Được xác thực trong [exp3_bandit_comparison.py](file:///d:/CODE/AITHUCCHIEN/PROJECT/C2-App-125/eval/exp3_bandit_comparison.py) so sánh LinUCB với các baseline ngẫu nhiên và tham lam dưới phương pháp Số ngẫu nhiên chung (CRN), kiểm chứng đường cong phần thưởng và tỷ lệ trúng mục tiêu ZPD.
+
+---
+
+## 4. Concept Graph Mastery Propagation
+
+### Academic Citation
+*   **Paper:** Hwang, G. J. (2003). *A concept map model for developing intelligent tutoring systems.* Cognitive Systems Research, 4(3), 217-230.
+*   **DOI:** [10.1016/S0360-1315(02)00121-5](https://doi.org/10.1016/S0360-1315(02)00121-5)
+*   **Type:** Multi-concept Dependency & Graph Propagation.
+*   **BibTeX:**
+    ```bibtex
+    @article{hwang2003concept,
+      title={A concept map model for developing intelligent tutoring systems},
+      author={Hwang, Gwo-Jen},
+      journal={Cognitive Systems Research},
+      volume={4},
+      number={3},
+      pages={217--230},
+      year={2003},
+      publisher={Elsevier}
+    }
+    ```
+
+### Implementation in EduGap
+*   **Production Code:** [graph_propagation.py](file:///d:/CODE/AITHUCCHIEN/PROJECT/C2-App-125/src/services/adaptive/graph_propagation.py)
+*   **Mathematics:** Lan truyền các giá trị thay đổi delta đến các khái niệm phụ thuộc/tiên quyết một cách đệ quy với hệ số suy giảm hình học:
+    *   *Forward Propagation:*
+        $$\Delta M(c) = \beta \cdot \Delta M(p) \cdot W(p, c)$$
+    *   *Backward Propagation:*
+        $$\Delta M(p) = \gamma \cdot \Delta M(c) \cdot W(p, c)$$
+*   **Evaluation Suite:** Được xác thực trong [exp4_graph_propagation.py](file:///d:/CODE/AITHUCCHIEN/PROJECT/C2-App-125/eval/exp4_graph_propagation.py) kiểm thử các suy giảm trên đồ thị cyclic/stress và kiểm chứng cơ chế invalidation của write-through cache.
+
+---
+
+## 5. Spaced Repetition (Forgetting / FSRS)
+
+### Academic Citation
+*   **Paper:** Ye, J. (2022). *A Free Spaced Repetition Scheduler (FSRS) Algorithm.* 
+*   **Foundational Theory:** Woźniak, P. A., & Gorzelańczyk, E. J. (1994). *Optimization of repetition spacing in the practice of learning.* Acta Neurobiologiae Experimentalis, 54(1), 59-62.
+*   **DOI:** [10.55782/ane-1994-1003](https://doi.org/10.55782/ane-1994-1003)
+*   **Type:** Memory Retention Decay over Time.
+*   **BibTeX:**
+    ```bibtex
+    @article{wozniak1994optimization,
+      title={Optimization of repetition spacing in the practice of learning},
+      author={Wo{\'z}niak, Piotr A and Gorzela{\'n}czyk, Edward J},
+      journal={Acta Neurobiologiae Experimentalis},
+      volume={54},
+      number={1},
+      pages={59--62},
+      year={1994}
+    }
+    ```
+
+### Implementation in EduGap
+*   **Production Code:** [forgetting.py](file:///d:/CODE/AITHUCCHIEN/PROJECT/C2-App-125/src/services/adaptive/forgetting.py)
+*   **Mathematics:** Mô hình hóa suy giảm trí nhớ dựa trên số ngày ổn định:
+    $$P_{\text{effective}} = P_{\text{stored}} \cdot 2^{-\Delta t / S}$$
+    Cập nhật độ ổn định $S$ động dựa trên hiệu năng thực tế của học viên:
+    $$S_{\text{new}} = \begin{cases} 
+      S \cdot \text{ease\_factor} & \text{if Score} \ge 0.8 \\
+      \max(1.0, S \cdot 0.5) & \text{if Score} < 0.5 \\
+      S & \text{otherwise}
+    \end{cases}$$
+*   **Evaluation Suite:** Được xác thực trong [exp5_forgetting_decay.py](file:///d:/CODE/AITHUCCHIEN/PROJECT/C2-App-125/eval/exp5_forgetting_decay.py) kiểm chứng tính toán lazy decay của FSRS, cập nhật độ ổn định và mô phỏng duy trì trí nhớ dài hạn theo ngày.
+
+---
+
+## 6. Graphusion (Scientific Knowledge Graph Construction)
+
+### Academic Citation
+*   **Paper:** Rui Yang, Boming Yang, Xinjie Zhao, Fan Gao, Aosong Feng, Sixun Ouyang, Moritz Blum, Tianwei She, Yuang Jiang, Freddy Lecue, Jinghui Lu, and Irene Li. (2025). *Graphusion: A RAG Framework for Scientific Knowledge Graph Construction with a Global Perspective.* In Companion Proceedings of the ACM Web Conference 2025 (WWW Companion '25), April 28-May 2, 2025, Sydney, NSW, Australia. ACM, New York, NY, USA.
+*   **DOI:** [10.1145/3701716.3717821](https://doi.org/10.1145/3701716.3717821)
+*   **Type:** Scientific Knowledge Graph Construction and Educational QA.
+*   **BibTeX:**
+    ```bibtex
+    @inproceedings{yang2025graphusion,
+      title={Graphusion: A RAG Framework for Scientific Knowledge Graph Construction with a Global Perspective},
+      author={Yang, Rui and Yang, Boming and Zhao, Xinjie and Gao, Fan and
+              Feng, Aosong and Ouyang, Sixun and Blum, Moritz and She, Tianwei and
+              Jiang, Yuang and Lecue, Freddy and Lu, Jinghui and Li, Irene},
+      booktitle={Companion Proceedings of the ACM Web Conference 2025 (WWW Companion '25)},
+      year={2025},
+      publisher={ACM}
+    }
+    ```
+
+### Implementation in EduGap
+*   **Production Code:** Các mối quan hệ khái niệm được nạp vào schema cơ sở dữ liệu và duyệt qua hàm `propagate_mastery` trong [graph_propagation.py](file:///d:/CODE/AITHUCCHIEN/PROJECT/C2-App-125/src/services/adaptive/graph_propagation.py) được xây dựng dựa trên mô hình hóa khái niệm phân tầng (sử dụng tập dữ liệu LectureBankCD) và lộ trình học tập Socratic của Graphusion.
+*   **Evaluation Suite:** Được đánh giá trong [exp4_graph_propagation.py](file:///d:/CODE/AITHUCCHIEN/PROJECT/C2-App-125/eval/exp4_graph_propagation.py) qua các kịch bản kiểm thử đồ thị có hướng tuần hoàn và không tuần hoàn, mô phỏng các cấu trúc đồ thị con được thiết kế trong khung Graphusion.
+
+---
+
+## 7. WizardLM (Evol-Instruct Instruction Complication)
+
+### Academic Citation
+*   **Paper:** Can Xu, Qingfeng Sun, Kai Zheng, Xiubo Geng, Pu Zhao, Jiazhan Feng, Chongyang Tao, Qingwei Lin, and Daxin Jiang. (2023). *WizardLM: Empowering Large Pre-trained Language Models to Follow Complex Instructions.* arXiv preprint arXiv:2304.12244.
+*   **DOI:** [10.48550/arXiv.2304.12244](https://doi.org/10.48550/arXiv.2304.12244)
+*   **Type:** AI-driven Evolutionary Instruction Generation and Complexity Scaling.
+*   **BibTeX:**
+    ```bibtex
+    @article{xu2023wizardlm,
+      title={WizardLM: Empowering Large Pre-trained Language Models to Follow Complex Instructions},
+      author={Xu, Can and Sun, Qingfeng and Zheng, Kai and Geng, Xiubo and
+              Zhao, Pu and Feng, Jiazhan Glen and Tao, Chongyang and Lin, Qingwei and
+              Jiang, Daxin},
+      journal={arXiv preprint arXiv:2304.12244},
+      year={2023}
+    }
+    ```
+
+### Implementation in EduGap
+*   **Production Code:** Được cấu hình trong `config/prompts.yaml` và được phân tích thông qua [config.py](file:///d:/CODE/AITHUCCHIEN/PROJECT/C2-App-125/src/config.py) (ví dụ: `EvolInstructInDepth` và `EvolInstructElimination`). Hệ thống sử dụng 6 toán tử được định nghĩa trong khung **Evol-Instruct** của WizardLM (`add_constraints`, `deepening`, `concretizing`, `increase_reasoning`, `complicate_input`, `in_breadth`) để tiến hóa và đột biến các câu hỏi trắc nghiệm một cách động nhằm tăng độ khó nhận thức của chúng.
+*   **Evaluation Suite:** Các prompt và cấu hình này được kiểm thử trong các unit test đảm bảo sự tuân thủ vị trí hiển thị biến (`student_elo`, `student_bkt`, v.v.) để đảm bảo các chỉ dẫn tiến hóa có thể được phân tích an toàn bởi các AI agents.

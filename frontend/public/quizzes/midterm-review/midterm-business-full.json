@@ -1,0 +1,335 @@
+{
+  "id": "midterm-business-full",
+  "parent_id": "midterm-review",
+  "topic_title": "Ôn tập giữa kỳ: Cấu trúc bài thi",
+  "title": "Phần II - Business - Full practice",
+  "description": "15 câu gồm trắc nghiệm và tự luận ngắn về product management, ROI, AI roadmap, EU AI Act và luật AI Việt Nam.",
+  "difficulty": "khó",
+  "questions": [
+    {
+      "id": "midterm-business-1",
+      "question": "PM muốn ưu tiên use case AI đầu tiên cho doanh nghiệp. Tiêu chí nào nên đứng đầu?",
+      "options": {
+        "A": "ROI rõ và dữ liệu sẵn sàng",
+        "B": "Model mới nhất trên thị trường",
+        "C": "Demo nhiều hiệu ứng thị giác",
+        "D": "Tên dự án nghe hấp dẫn"
+      },
+      "answer": "A",
+      "explanation": "Use case đầu tiên nên cân bằng giá trị kinh doanh, dữ liệu, rủi ro và khả năng triển khai.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-business",
+        "midterm-roi"
+      ],
+      "source_set_id": "midterm-business"
+    },
+    {
+      "id": "midterm-business-2",
+      "question": "Một AI roadmap tốt cho 6 tháng đầu nên tránh điều gì?",
+      "options": {
+        "A": "Pilot nhỏ có tiêu chí đo",
+        "B": "Thiết lập governance cơ bản",
+        "C": "Chọn use case ít rủi ro",
+        "D": "Triển khai toàn công ty ngay"
+      },
+      "answer": "D",
+      "explanation": "Triển khai diện rộng khi chưa có eval, adoption và guardrail thường làm tăng rủi ro.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-ai-roadmap"
+      ],
+      "source_set_id": "midterm-business"
+    },
+    {
+      "id": "midterm-business-3",
+      "question": "Khi tính ROI cho chatbot hỗ trợ nội bộ, chỉ số nào đáng tin hơn vanity metric?",
+      "options": {
+        "A": "Giờ hỗ trợ tiết kiệm được",
+        "B": "Số lượt mở trang chủ",
+        "C": "Số màu trong giao diện",
+        "D": "Số slide trong proposal nội bộ"
+      },
+      "answer": "A",
+      "explanation": "ROI nên gắn với thời gian tiết kiệm, tỉ lệ giải quyết, chi phí giảm hoặc doanh thu tăng.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-roi"
+      ],
+      "source_set_id": "midterm-business"
+    },
+    {
+      "id": "midterm-business-4",
+      "question": "EU AI Act thường yêu cầu quản trị chặt hơn với nhóm hệ thống nào?",
+      "options": {
+        "A": "Hệ thống rủi ro cao",
+        "B": "Ứng dụng thay ảnh đại diện",
+        "C": "Bộ lọc màu cá nhân",
+        "D": "Trang FAQ tĩnh nội bộ"
+      },
+      "answer": "A",
+      "explanation": "Các hệ thống rủi ro cao cần quản trị, giám sát, tài liệu và kiểm soát nghiêm hơn.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-eu-ai-act"
+      ],
+      "source_set_id": "midterm-business"
+    },
+    {
+      "id": "midterm-business-5",
+      "question": "Một team muốn dùng AI chấm điểm tuyển dụng tự động. PM nên làm gì trước?",
+      "options": {
+        "A": "Bỏ human review để chạy nhanh",
+        "B": "Ẩn tiêu chí khỏi ứng viên",
+        "C": "Đánh giá rủi ro và bias",
+        "D": "Dùng điểm AI làm quyết định cuối"
+      },
+      "answer": "C",
+      "explanation": "Tuyển dụng là bối cảnh nhạy cảm; cần đánh giá rủi ro, bias, minh bạch và human oversight.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-ai-governance"
+      ],
+      "source_set_id": "midterm-business"
+    },
+    {
+      "id": "midterm-business-6",
+      "question": "Khi stakeholder yêu cầu AI 'thông minh hơn', PM nên chuyển yêu cầu thành gì?",
+      "options": {
+        "A": "Một model lớn hơn mặc định",
+        "B": "Một bộ metric đo được",
+        "C": "Một khẩu hiệu marketing mới",
+        "D": "Một sprint không tiêu chí"
+      },
+      "answer": "B",
+      "explanation": "Yêu cầu mơ hồ cần chuyển thành metric như accuracy, resolution rate, latency, CSAT.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-product-management"
+      ],
+      "source_set_id": "midterm-business"
+    },
+    {
+      "id": "midterm-business-7",
+      "question": "Luật/quy định AI Việt Nam còn đang phát triển. Cách quản trị thực tế nhất là gì?",
+      "options": {
+        "A": "Chờ luật hoàn chỉnh rồi làm",
+        "B": "Áp dụng nguyên tắc risk-based",
+        "C": "Không lưu bất kỳ audit nào",
+        "D": "Giao toàn bộ cho model"
+      },
+      "answer": "B",
+      "explanation": "Risk-based governance giúp kiểm soát dữ liệu, minh bạch, trách nhiệm và an toàn ngay từ đầu.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-vietnam-ai-law",
+        "midterm-ai-governance"
+      ],
+      "source_set_id": "midterm-business"
+    },
+    {
+      "id": "midterm-business-8",
+      "question": "Một pilot AI đạt accuracy cao nhưng nhân viên không dùng. Nguyên nhân cần kiểm tra trước?",
+      "options": {
+        "A": "Máy chủ thiếu ảnh nền",
+        "B": "Tên model chưa đủ dài",
+        "C": "Logo sản phẩm chưa nổi",
+        "D": "Workflow chưa khớp thói quen"
+      },
+      "answer": "D",
+      "explanation": "Adoption phụ thuộc workflow, niềm tin, training và cách tích hợp vào công việc thật.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-product-management",
+        "midterm-adoption"
+      ],
+      "source_set_id": "midterm-business"
+    },
+    {
+      "id": "midterm-business-9",
+      "question": "Khi chọn giữa build và buy giải pháp AI, yếu tố nào là trade-off chính?",
+      "options": {
+        "A": "Màu dashboard và logo thương hiệu",
+        "B": "Kiểm soát, chi phí và tốc độ",
+        "C": "Tên vendor có dễ đọc không",
+        "D": "Số emoji trong demo sản phẩm"
+      },
+      "answer": "B",
+      "explanation": "Build/buy cần so sánh kiểm soát dữ liệu, tốc độ ra mắt, chi phí, bảo trì và lock-in.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-ai-strategy"
+      ],
+      "source_set_id": "midterm-business"
+    },
+    {
+      "id": "midterm-business-10",
+      "question": "Use case AI nào nên bị loại sớm khỏi roadmap?",
+      "options": {
+        "A": "Có dữ liệu và owner rõ",
+        "B": "Có metric thành công cụ thể",
+        "C": "Không có dữ liệu kiểm chứng",
+        "D": "Có rủi ro thấp, giá trị vừa"
+      },
+      "answer": "C",
+      "explanation": "Không có dữ liệu, owner hoặc metric thì khó chứng minh giá trị và khó vận hành an toàn.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-ai-roadmap"
+      ],
+      "source_set_id": "midterm-business"
+    },
+    {
+      "id": "midterm-business-short-answer-1",
+      "question": "Hãy chọn một use case AI đầu tiên cho doanh nghiệp và nêu tiêu chí ưu tiên.",
+      "expected_answer": "Chọn use case có ROI đo được, dữ liệu sẵn, owner rõ, rủi ro thấp-vừa và có thể pilot trong thời gian ngắn.",
+      "evaluation_points": [
+        "Nêu giá trị kinh doanh cụ thể",
+        "Xét data readiness và owner",
+        "Xét rủi ro/compliance",
+        "Có tiêu chí pilot đo được"
+      ],
+      "sfia_level": "SFIA 4",
+      "competency": "Prioritize AI roadmap",
+      "hints": [
+        "Nêu quyết định chính trước, rồi giải thích trade-off.",
+        "Liên hệ câu trả lời với rủi ro hoặc chỉ số vận hành.",
+        "Kết luận bằng bước kiểm chứng hoặc tiêu chí nghiệm thu."
+      ],
+      "concepts": [
+        "midterm-business",
+        "midterm-roi"
+      ],
+      "source_set_id": "midterm-business-short-answer"
+    },
+    {
+      "id": "midterm-business-short-answer-2",
+      "question": "Một pilot AI accuracy cao nhưng adoption thấp. Bạn sẽ kiểm tra gì?",
+      "expected_answer": "Kiểm workflow thực tế, niềm tin người dùng, training, integration point, metric adoption và phản hồi định tính từ nhóm dùng thử.",
+      "evaluation_points": [
+        "Không chỉ nhìn accuracy",
+        "Có kiểm workflow và change management",
+        "Có dữ liệu adoption",
+        "Có hành động cải thiện pilot"
+      ],
+      "sfia_level": "SFIA 4",
+      "competency": "Diagnose AI adoption",
+      "hints": [
+        "Nêu quyết định chính trước, rồi giải thích trade-off.",
+        "Liên hệ câu trả lời với rủi ro hoặc chỉ số vận hành.",
+        "Kết luận bằng bước kiểm chứng hoặc tiêu chí nghiệm thu."
+      ],
+      "concepts": [
+        "midterm-product-management"
+      ],
+      "source_set_id": "midterm-business-short-answer"
+    },
+    {
+      "id": "midterm-business-short-answer-3",
+      "question": "Tóm tắt cách tính ROI cho chatbot nội bộ trong 3-4 chỉ số.",
+      "expected_answer": "Đo số ticket tự xử lý, giờ hỗ trợ tiết kiệm, giảm thời gian chờ, chi phí vận hành và mức hài lòng người dùng.",
+      "evaluation_points": [
+        "Có chỉ số chi phí/thời gian",
+        "Có chất lượng hoặc CSAT",
+        "Có baseline trước AI",
+        "Có cách đo sau rollout"
+      ],
+      "sfia_level": "SFIA 4",
+      "competency": "Measure AI ROI",
+      "hints": [
+        "Nêu quyết định chính trước, rồi giải thích trade-off.",
+        "Liên hệ câu trả lời với rủi ro hoặc chỉ số vận hành.",
+        "Kết luận bằng bước kiểm chứng hoặc tiêu chí nghiệm thu."
+      ],
+      "concepts": [
+        "midterm-roi"
+      ],
+      "source_set_id": "midterm-business-short-answer"
+    },
+    {
+      "id": "midterm-business-short-answer-4",
+      "question": "Một hệ thống AI hỗ trợ tuyển dụng cần guardrail gì trước khi production?",
+      "expected_answer": "Cần đánh giá bias, human oversight, minh bạch tiêu chí, audit log, bảo vệ dữ liệu ứng viên và quy trình khiếu nại.",
+      "evaluation_points": [
+        "Có bias/fairness review",
+        "Có human oversight",
+        "Có minh bạch và audit",
+        "Có bảo vệ dữ liệu cá nhân"
+      ],
+      "sfia_level": "SFIA 4",
+      "competency": "Govern high-risk AI",
+      "hints": [
+        "Nêu quyết định chính trước, rồi giải thích trade-off.",
+        "Liên hệ câu trả lời với rủi ro hoặc chỉ số vận hành.",
+        "Kết luận bằng bước kiểm chứng hoặc tiêu chí nghiệm thu."
+      ],
+      "concepts": [
+        "midterm-ai-governance",
+        "midterm-eu-ai-act"
+      ],
+      "source_set_id": "midterm-business-short-answer"
+    },
+    {
+      "id": "midterm-business-short-answer-5",
+      "question": "Khi luật AI Việt Nam chưa hoàn thiện, doanh nghiệp nên quản trị AI thế nào?",
+      "expected_answer": "Áp dụng quản trị risk-based: phân loại rủi ro use case, kiểm soát dữ liệu, audit, human oversight và cập nhật theo quy định mới.",
+      "evaluation_points": [
+        "Có phân loại rủi ro",
+        "Có kiểm soát dữ liệu và audit",
+        "Có trách nhiệm/human oversight",
+        "Có cơ chế cập nhật compliance"
+      ],
+      "sfia_level": "SFIA 4",
+      "competency": "Apply AI governance",
+      "hints": [
+        "Nêu quyết định chính trước, rồi giải thích trade-off.",
+        "Liên hệ câu trả lời với rủi ro hoặc chỉ số vận hành.",
+        "Kết luận bằng bước kiểm chứng hoặc tiêu chí nghiệm thu."
+      ],
+      "concepts": [
+        "midterm-vietnam-ai-law"
+      ],
+      "source_set_id": "midterm-business-short-answer"
+    }
+  ]
+}

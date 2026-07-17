@@ -1,0 +1,210 @@
+{
+  "id": "day11-advanced",
+  "parent_id": "day11",
+  "topic_title": "Day 11: Guardrails & AI Safety",
+  "title": "Phần 3: HITL, Trust UX & Quy trình Red Teaming",
+  "description": "Đánh giá nâng cao về quy trình Human-in-the-Loop, thiết kế giao diện minh bạch (Reasoning Trace, Confidence Score) và phương pháp Red Teaming.",
+  "difficulty": "khó",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Trong các mô hình tương tác HITL, mô hình 'Human-on-the-Loop' hoạt động theo cơ chế nào?",
+      "options": {
+        "A": "Con người trực tiếp thực hiện hành động, Agent chỉ đóng vai trò thu thập dữ liệu.",
+        "B": "Agent đề xuất phương án hành động, con người phê duyệt trước khi thực thi.",
+        "C": "Agent tự động hành động, con người giám sát và review kết quả sau khi thực thi.",
+        "D": "Con người chỉ tham gia giải quyết khi có tranh chấp quyết định giữa các Agent."
+      },
+      "answer": "C",
+      "explanation": "Slide 541-558: Human-on-the-loop là mô hình Agent tự động hành động, con người chỉ review sau (áp dụng cho các quyết định rủi ro thấp và có thể hoàn tác).",
+      "hints": [
+        "Hãy chú ý giới từ 'on' trong cụm từ 'Human-on-the-loop'. Con người đứng ngoài quan sát luồng chảy tự động.",
+        "Đọc kỹ sơ đồ và mô tả 3 mô hình HITL tại slide 541-558.",
+        "Chọn đáp án mô tả hành động giám sát và đánh giá sau khi Agent đã tự thực hiện xong."
+      ],
+      "concepts": [
+        "d11-guardrails-safety"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Đối với tác vụ hành động không thể hoàn tác (như xóa dữ liệu khách hàng hoặc chuyển khoản tiền), mô hình HITL nào là bắt buộc?",
+      "options": {
+        "A": "Mô hình Human on the loop.",
+        "B": "Mô hình Human in the loop.",
+        "C": "Mô hình tự động hoàn toàn.",
+        "D": "Cơ chế giới hạn tần suất."
+      },
+      "answer": "B",
+      "explanation": "Slide 564-570: Các hành động không thể hoàn tác (irreversible action) hoặc rủi ro cao bắt buộc phải dùng mô hình Human-in-the-loop (con người duyệt trước khi Agent bấm nút gửi/thực thi).",
+      "hints": [
+        "Hãy chú ý giới từ 'in' trong cụm từ 'Human-in-the-loop'. Con người đứng trực tiếp bên trong chặn luồng quyết định.",
+        "Xem bảng trigger các trường hợp cần human kiểm duyệt tại slide 564-570.",
+        "Loại trừ mô hình tự động hoàn toàn (Autonomous) và mô hình kiểm duyệt sau (On-the-loop) vì hành động này không thể đảo ngược."
+      ],
+      "concepts": [
+        "d11-guardrails-safety"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Đâu là hành vi thiết kế phản mẫu (Anti-pattern) phổ biến làm tắc nghẽn luồng xử lý của hệ thống HITL?",
+      "options": {
+        "A": "Bắt buộc con người phê duyệt cho tất cả các yêu cầu đầu vào bất kể rủi ro.",
+        "B": "Tự động gửi phản hồi trực tiếp khi điểm tự tin (Confidence score) lớn hơn 0.9.",
+        "C": "Cập nhật dữ liệu phản hồi của con người vào tập huấn luyện của Agent.",
+        "D": "Hiển thị giao diện cho phép quản trị viên xem vết suy nghĩ của Agent."
+      },
+      "answer": "A",
+      "explanation": "Slide 604: HITL Anti-pattern: \"Mọi request đều cần human approve -> bottleneck, user bỏ cuộc\". Hệ thống chỉ nên gửi những yêu cầu rủi ro cao hoặc độ tự tin thấp cho con người kiểm duyệt.",
+      "hints": [
+        "Thiết kế phản mẫu (Anti-pattern) là thiết kế gây ra lỗi thắt nút cổ chai (bottleneck) hoặc làm giảm trải nghiệm người dùng.",
+        "Tham khảo các HITL Anti-patterns được trình bày tại slide 601-606.",
+        "Tìm phương án bắt buộc con người phê duyệt mọi lúc mọi nơi làm mất đi tính tự động của AI."
+      ],
+      "concepts": [
+        "d11-guardrails-safety"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Trong kiến trúc định tuyến HITL, logic định tuyến thường kết hợp hai yếu tố nào để đưa ra quyết định gửi duyệt?",
+      "options": {
+        "A": "Thời gian phản hồi của LLM và kích thước tệp tin đầu vào.",
+        "B": "Tên phòng ban của người dùng và địa chỉ IP của máy khách.",
+        "C": "Số lượng từ trong câu trả lời và số tệp tin được đính kèm.",
+        "D": "Mức độ rủi ro của hành động và điểm số tự tin của Agent."
+      },
+      "answer": "D",
+      "explanation": "Slide 631: \"Kết hợp cả action type (risk-based) và confidence score để quyết định routing\".",
+      "hints": [
+        "Chúng ta cần xem xét mức độ nguy hiểm của hành động đó và mức độ tin cậy vào kết quả mà LLM vừa tạo ra.",
+        "Tham khảo đoạn mã Python ví dụ về HITL Implementation ở slide 615-631.",
+        "Lựa chọn đáp án chứa cả độ tự tin của mô hình và mức độ rủi ro của tác vụ."
+      ],
+      "concepts": [
+        "d11-guardrails-safety"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Trụ cột 'Transparency' (minh bạch) trong thiết kế Trust UX được đáp ứng tốt nhất bằng tính năng nào của giao diện?",
+      "options": {
+        "A": "Tạo ra các hiệu ứng hoạt hình sống động và chuyển trang mượt mà.",
+        "B": "Hiển thị vết suy nghĩ (Reasoning trace) và nguồn dẫn chứng (Citations) của Agent.",
+        "C": "Cung cấp nút ẩn hoàn toàn các phản hồi cũ của Agent khỏi màn hình chat.",
+        "D": "Thiết lập hệ thống bảo mật hai lớp khi đăng nhập vào Quiz App."
+      },
+      "answer": "B",
+      "explanation": "Slide 636-640 & 660: Transparency UX hiển thị quá trình suy nghĩ của Agent (reasoning trace, citation) giúp người dùng hiểu rõ tại sao Agent đưa ra câu trả lời đó và tự verify được.",
+      "hints": [
+        "Sự minh bạch đòi hỏi Agent phải giải thích rõ ràng 'tại sao' mình đưa ra quyết định đó và lấy thông tin từ đâu.",
+        "Tham khảo bảng các tính năng của Trust UX trong thực tế tại slide 647-655.",
+        "Chọn đáp án tập trung vào việc show nguồn dẫn và quá trình tư duy (reasoning)."
+      ],
+      "concepts": [
+        "d11-guardrails-safety"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Tại sao nút 'Undo' (hoàn tác) lại được coi là một tính năng cực kỳ quan trọng trong thiết kế Trust UX cho các tác vụ của Agent?",
+      "options": {
+        "A": "Vì nó cho phép sửa lại các lỗi cú pháp khi người dùng nhập câu hỏi bị sai.",
+        "B": "Vì nó giúp hệ thống tiết kiệm được số lượng token sử dụng cho mỗi phiên làm việc.",
+        "C": "Vì nó cho phép người dùng đảo ngược các hành động của Agent, từ đó tăng độ tin tưởng.",
+        "D": "Vì nó giúp Agent tự động tối ưu hóa điểm Elo của các câu hỏi trắc nghiệm."
+      },
+      "answer": "C",
+      "explanation": "Slide 636-641: \"Mọi hành động có thể hoàn tác. Ví dụ: Email đã được gửi. [Undo trong 30s]\" giúp giảm thiểu rủi ro khi Agent thực hiện hành động sai và tăng lòng tin của người dùng.",
+      "hints": [
+        "Người dùng sẽ cảm thấy an tâm hơn khi biết mình có quyền hủy bỏ một hành động sai lầm của AI.",
+        "Đọc kỹ phần 4 Trụ Cột của Trust UX tại slide 636-646.",
+        "Chọn đáp án nhấn mạnh tính năng đảo ngược hành động để giảm thiểu thiệt hại."
+      ],
+      "concepts": [
+        "d11-guardrails-safety"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Quy trình 'Red Teaming' đối với các hệ thống AI được thực hiện bằng cách thức nào sau đây?",
+      "options": {
+        "A": "Thiết lập các máy chủ dự phòng để đảm bảo hệ thống không bị gián đoạn.",
+        "B": "Tổ chức một chiến dịch marketing giới thiệu sản phẩm đến khách hàng mục tiêu.",
+        "C": "Nhờ các chuyên gia tối ưu hóa cấu trúc cơ sở dữ liệu và mã nguồn ứng dụng.",
+        "D": "Chủ động tấn công Agent bằng các câu lệnh độc hại để tìm lỗ hổng trước khi deploy."
+      },
+      "answer": "D",
+      "explanation": "Slide 487-493: Red Teaming là \"cố tình tấn công agent bằng adversarial prompts, thử mọi cách bypass guardrails... để fix lỗ hổng\".",
+      "hints": [
+        "Đây là một thuật ngữ quân sự, trong đó một nhóm đóng vai trò quân địch để kiểm tra khả năng phòng thủ của hệ thống.",
+        "Đọc phần định nghĩa và vai trò của Red Teaming tại slide 487-501.",
+        "Tìm đáp án liên quan đến việc giả lập tấn công (adversarial attack) để tìm lỗi bảo mật."
+      ],
+      "concepts": [
+        "d11-guardrails-safety"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Theo tài liệu học, khi phát hiện lỗi bảo mật của Agent trong vận hành, quy trình 'Responsible Disclosure' (công bố có trách nhiệm) khuyên chúng ta nên làm gì?",
+      "options": {
+        "A": "Giữ kín thông tin lỗi và âm thầm sửa để tránh gây khủng hoảng truyền thông.",
+        "B": "Ghi nhận lỗi, sửa nhanh guardrails, chạy lại adversarial suite và thông báo minh bạch cho các bên liên quan.",
+        "C": "Công bố công khai ngay lập tức lỗi bảo mật lên mạng xã hội để cảnh báo mọi người.",
+        "D": "Tạm thời tắt toàn bộ hệ thống Agent và chuyển sang sử dụng nhân sự thủ công vĩnh viễn."
+      },
+      "answer": "B",
+      "explanation": "Slide 527-534: Quy trình Responsible Disclosure gồm: 1. Phát hiện lỗi -> 2. Fix nhanh -> 3. Test lại -> 4. Communicate minh bạch với stakeholders để giữ vững lòng tin.",
+      "hints": [
+        "Việc che giấu lỗi hay làm quá lên đều không tốt. Con đường có trách nhiệm nhất là sửa nhanh và thông báo rõ ràng.",
+        "Tham khảo các bước của Responsible Disclosure tại slide 527-534.",
+        "Tìm phương án kết hợp giữa việc vá lỗi khẩn cấp và thông báo minh bạch (Transparent fix)."
+      ],
+      "concepts": [
+        "d11-guardrails-safety"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Một người dùng gửi một prompt đã mã hóa Base64 chứa nội dung độc hại. Bộ lọc Input Guardrail thông thường bị bỏ sót vì lý do gì?",
+      "options": {
+        "A": "Vì bộ lọc chỉ kiểm tra trực tiếp văn bản thô đầu vào mà không giải mã chuỗi.",
+        "B": "Vì độ dài ký tự của chuỗi mã hóa quá ngắn so với giới hạn của hệ thống.",
+        "C": "Vì Agent tự động chuyển đổi chuỗi Base64 đó thành một câu hỏi tiếng Anh.",
+        "D": "Vì cơ chế Rate Limiting đã bị kẻ tấn công vô hiệu hóa trước đó."
+      },
+      "answer": "A",
+      "explanation": "Slide 263-267: Khi người dùng gửi chuỗi Base64/ROT13 mã hóa, safety filter thông thường chỉ kiểm tra text gốc nên bỏ sót. Agent nhận được, giải mã và thực thi câu lệnh độc hại.",
+      "hints": [
+        "Nếu bộ lọc chỉ quét từ khóa thô (như regex match) thì nó sẽ không hiểu được ngữ nghĩa thực sự của một chuỗi ký tự đã được mã hóa.",
+        "Đọc kỹ ví dụ về Encoding Bypass tại slide 263-267.",
+        "Hãy chọn phương án nói về hạn chế của bộ lọc chỉ quét text thô mà không giải mã."
+      ],
+      "concepts": [
+        "d11-guardrails-safety"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Khi điểm tự tin (Confidence score) của phản hồi từ Agent thấp hơn mức 0.7, hành động tiếp tuyến tốt nhất trong định tuyến HITL là gì?",
+      "options": {
+        "A": "Chuyển tiếp câu trả lời cho con người xem xét phê duyệt khẩn cấp.",
+        "B": "Tự động gửi câu trả lời trực tiếp cho người dùng để giảm độ trễ.",
+        "C": "Tự động khởi động lại toàn bộ Agent và chạy lại pipeline từ đầu.",
+        "D": "Xóa bỏ hoàn toàn toàn bộ lịch sử hội thoại trước đó của người."
+      },
+      "answer": "A",
+      "explanation": "Slide 625-628: Trong code ví dụ, nếu confidence < 0.7, hệ thống sẽ thực hiện `escalate_to_human(response, priority=\"high\")` để con người kiểm duyệt, tránh gửi thông tin sai.",
+      "hints": [
+        "Khi AI không chắc chắn về kết quả của mình, nó cần tìm kiếm sự trợ giúp từ chuyên gia con người trước khi gửi cho khách hàng.",
+        "Xem lại logic định tuyến trong code ví dụ HITL Implementation tại slide 615-628.",
+        "Lựa chọn đáp án nói về việc chuyển duyệt (escalate) cho con người kiểm duyệt."
+      ],
+      "concepts": [
+        "d11-guardrails-safety"
+      ]
+    }
+  ]
+}

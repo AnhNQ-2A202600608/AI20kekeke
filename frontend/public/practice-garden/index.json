@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "description": "EduGap practice garden background assets for the skills practice page. Use these as subtle decorative backgrounds behind dense practice UI, not as foreground content.",
+  "basePath": "/practice-garden",
+  "runtimeFormat": "webp",
+  "usageRules": [
+    "Use as decorative background with alt=\"\" and aria-hidden=\"true\".",
+    "Keep opacity low behind text-heavy practice cards.",
+    "Use the mobile file below tablet widths and the default file for desktop layouts.",
+    "Do not place readable text directly on detailed image areas.",
+    "Reserve dimensions with an absolute background layer to avoid layout shift."
+  ],
+  "assets": [
+    {
+      "id": "skill-garden-bg",
+      "title": "Skill Garden Background",
+      "description": "Wide soft garden scene for the skills practice page background.",
+      "bestFor": ["skills practice page", "practice garden shell", "desktop garden backdrop"],
+      "avoidFor": ["small cards", "quiz answer cards", "error states"],
+      "file": "/practice-garden/skill-garden-bg.webp",
+      "recommendedOpacity": "0.08-0.14"
+    },
+    {
+      "id": "skill-garden-bg-mobile",
+      "title": "Skill Garden Background Mobile",
+      "description": "Mobile-optimized soft garden scene for narrow skills practice layouts.",
+      "bestFor": ["mobile skills practice page", "compact garden backdrop"],
+      "avoidFor": ["desktop wide panels", "small cards"],
+      "file": "/practice-garden/skill-garden-bg-mobile.webp",
+      "recommendedOpacity": "0.08-0.12"
+    }
+  ]
+}

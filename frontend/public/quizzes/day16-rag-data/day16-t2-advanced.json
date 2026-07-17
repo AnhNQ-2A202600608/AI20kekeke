@@ -1,0 +1,210 @@
+{
+  "id": "day16-t2-advanced",
+  "parent_id": "day16-rag-data",
+  "topic_title": "Day 16: Specialization Track Selection",
+  "title": "Phần 3: Docker, Kubernetes & Công Nghệ Serving Stack (vLLM/SGLang)",
+  "description": "Đánh giá kiến thức chuyên sâu về Containerization cho AI, điều phối cụm (Kubernetes GPU orchestration) và tối ưu hóa serving stack (vLLM, SGLang, PagedAttention).",
+  "difficulty": "khó",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Công nghệ cốt lõi nào giúp vLLM tăng hiệu năng phục vụ (throughput) lên gấp nhiều lần so với các thư viện chạy mô hình truyền thống?",
+      "options": {
+        "A": "PagedAttention (Giải quyết vấn đề phân mảnh bộ nhớ KV cache bằng cách cấp phát bộ nhớ động tương tự như trang ảo trong OS).",
+        "B": "Quantization (Giảm độ chính xác của các trọng số mô hình từ định dạng dấu phẩy động FP32 xuống định dạng số nguyên INT4).",
+        "C": "Model Parallelism (Tự động chia nhỏ các lớp của mạng nơ-ron để chạy song song trên nhiều CPU vật lý khác nhau).",
+        "D": "FlashAttention (Tối ưu hóa các phép tính toán ma trận trực tiếp trên bộ nhớ đệm SRAM của chip xử lý đồ họa GPU)."
+      },
+      "answer": "A",
+      "explanation": "PagedAttention là đóng góp cốt lõi của vLLM. Trong suy luận LLM, bộ nhớ KV cache cho các request rất lớn and biến động. Các thư viện cũ cấp phát bộ nhớ liên tục gây phân mảnh lên tới 60-80% VRAM. PagedAttention chia nhỏ KV cache thành các block không liên tục, cấp phát động khi cần, giúp tận dụng gần như 100% bộ nhớ GPU, từ đó tăng mạnh batch size và throughput.",
+      "hints": [
+        "Thuật toán này lấy cảm hứng từ kỹ thuật quản lý trang bộ nhớ ảo (Paging) trong hệ điều hành máy tính truyền thống.",
+        "Mục đích của nó là tối ưu hóa việc quản lý bộ nhớ đệm KV Cache để tăng số lượng request xử lý đồng thời (batch size).",
+        "Đáp án đúng là PagedAttention giúp giải quyết phân mảnh bộ nhớ KV cache bằng cách cấp phát bộ nhớ động."
+      ],
+      "concepts": [
+        "d16-t2-cloud-infra"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Khi đóng gói (Containerization) một ứng dụng AI bằng Docker, tại sao lập trình viên bắt buộc phải sử dụng thư viện 'NVIDIA Container Toolkit'?",
+      "options": {
+        "A": "Để tự động dịch chuyển mã nguồn Python của ứng dụng sang ngôn ngữ C++ giúp tăng tốc độ xử lý của mô hình.",
+        "B": "Để cho phép các ứng dụng chạy bên trong container Docker có thể truy cập và sử dụng trực tiếp phần cứng GPU vật lý của máy chủ.",
+        "C": "Để nén kích thước của file Docker Image xuống mức tối thiểu giúp tăng tốc độ triển khai trên Kubernetes.",
+        "D": "Để tự động cấu hình các tham số mạng ảo và tường lửa bảo mật cho container khi khởi chạy trên môi trường cloud."
+      },
+      "answer": "B",
+      "explanation": "Mặc định, các Docker container bị cô lập hoàn toàn với phần cứng của host machine. NVIDIA Container Toolkit cung cấp một runtime đặc biệt giúp container Docker có thể giao tiếp trực tiếp với driver NVIDIA trên máy chủ vật lý, cho phép ứng dụng AI trong container khai thác sức mạnh của card đồ họa GPU.",
+      "hints": [
+        "Container Docker thông thường có tự động nhìn thấy và gọi được các tập lệnh CUDA của GPU vật lý bên dưới không?",
+        "Cần một cầu nối trung gian giữa Docker daemon và driver NVIDIA trên máy host.",
+        "Đáp án đúng là để cho phép ứng dụng trong container truy cập và sử dụng trực tiếp phần cứng GPU vật lý."
+      ],
+      "concepts": [
+        "d16-t2-cloud-infra"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Trong điều phối cụm Kubernetes cho AI (GPU Orchestration), thuộc tính cấu hình nào trong tệp YAML được dùng để yêu cầu cấp phát chính xác 1 GPU cho container?",
+      "options": {
+        "A": "resources.limits.gpu: 1",
+        "B": "resources.requests.gpu: 1",
+        "C": "resources.limits.nvidia.com/gpu: 1",
+        "D": "gpu.allocation/limits: 1"
+      },
+      "answer": "C",
+      "explanation": "Trong Kubernetes, để yêu cầu và giới hạn tài nguyên GPU cho container, ta cấu hình trong khối `resources.limits` sử dụng vendor-specific resource name: `nvidia.com/gpu: 1` (yêu cầu K8s scheduler tìm worker node có GPU NVIDIA trống và cấp phát cho pod).",
+      "hints": [
+        "Kubernetes quản lý GPU thông qua cơ chế Device Plugin của NVIDIA.",
+        "Định dạng yêu cầu tài nguyên bắt buộc phải chứa tên miền định danh của vendor (NVIDIA).",
+        "Đáp án đúng là resources.limits.nvidia.com/gpu: 1."
+      ],
+      "concepts": [
+        "d16-t2-cloud-infra"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Tính năng 'Speculative Decoding' (Giải mã suy đoán) được tích hợp trong các serving engine hiện đại hoạt động theo cơ chế nào?",
+      "options": {
+        "A": "Tăng tốc độ suy luận bằng cách dự đoán và bỏ qua các lớp mạng nơ-ron không quan trọng của mô hình lớn.",
+        "B": "Tự động phân tích câu hỏi của người dùng để dự đoán trước câu trả lời và lấy kết quả từ bộ nhớ đệm cache nếu trùng khớp.",
+        "C": "Chạy đồng thời nhiều mô hình AI khác nhau và chọn câu trả lời có độ chính xác cao nhất dựa trên thuật toán bỏ phiếu.",
+        "D": "Sử dụng một mô hình nhỏ, chạy nhanh để dự đoán trước các token đầu ra, sau đó dùng mô hình lớn để xác thực song song trong một bước."
+      },
+      "answer": "D",
+      "explanation": "Speculative Decoding sử dụng một mô hình nhỏ hơn (draft model) chạy rất nhanh để tạo ra một chuỗi token dự kiến (draft tokens). Sau đó, mô hình lớn (target model) sẽ kiểm tra tính chính xác của toàn bộ chuỗi token này trong một lượt chạy duy nhất. Điều này giúp giảm số lần chạy tuần tự của mô hình lớn, trực tiếp giảm đáng kể chỉ số TPOT (Time Per Output Token).",
+      "hints": [
+        "Đây là sự kết hợp giữa hai mô hình: một mô hình nháp nhỏ (chạy cực nhanh) và một mô hình chính lớn (độ chính xác cao).",
+        "Thay vì chạy mô hình lớn từng bước một cách chậm chạp, ta dùng mô hình nhỏ chạy trước rồi mô hình lớn duyệt lại hàng loạt.",
+        "Đáp án đúng là sử dụng mô hình nhỏ chạy nhanh để dự đoán token, rồi dùng mô hình lớn xác thực song song."
+      ],
+      "concepts": [
+        "d16-t2-cloud-infra"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Trong cấu trúc hạ tầng Agent 8 lớp (Agent Infrastructure 8 Layers), lớp nào chịu trách nhiệm quản lý việc lưu trữ trạng thái phiên làm việc và lịch sử hội thoại của Agent?",
+      "options": {
+        "A": "Lớp điều phối (Orchestration Layer).",
+        "B": "Lớp bộ nhớ (Memory/State Layer).",
+        "C": "Lớp thực thi công cụ (Tool Execution Layer).",
+        "D": "Lớp mô hình nền tảng (Foundation Model Layer)."
+      },
+      "answer": "B",
+      "explanation": "Lớp bộ nhớ (Memory/State Layer) quản lý việc lưu trữ, truy xuất và cập nhật trạng thái hoạt động (state) cũng như lịch sử hội thoại (session history) của Agent qua các lượt tương tác, đảm bảo Agent có tính nhất quán về ngữ cảnh.",
+      "hints": [
+        "Hãy nghĩ về việc Agent cần nhớ những gì người dùng đã nói ở các bước trước đó.",
+        "Lớp nào trong kiến trúc chịu trách nhiệm quản lý bộ nhớ ngắn hạn và dài hạn?",
+        "Đáp án đúng là Lớp bộ nhớ (Memory/State Layer)."
+      ],
+      "concepts": [
+        "d16-t2-cloud-infra"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Điểm khác biệt nổi bật của SGLang so với vLLM trong việc tối ưu hóa hiệu năng phục vụ ứng dụng Agent là gì?",
+      "options": {
+        "A": "SGLang hỗ trợ cơ chế RadixAttention cho phép chia sẻ và tái sử dụng bộ nhớ đệm KV cache của các prompt hệ thống trùng nhau giữa các request.",
+        "B": "SGLang hoàn toàn không sử dụng bộ nhớ GPU VRAM mà chạy trực tiếp mô hình trên bộ nhớ RAM của máy chủ.",
+        "C": "SGLang tự động lượng tử hóa mô hình về định dạng INT2 giúp giảm 95% dung lượng lưu trữ trọng số.",
+        "D": "SGLang chỉ hỗ trợ triển khai các mô hình ngôn ngữ lớn nguồn đóng thông qua API trung gian."
+      },
+      "answer": "A",
+      "explanation": "SGLang giới thiệu RadixAttention. Trong các ứng dụng Agent/RAG, các request thường chia sẻ chung phần prompt hệ thống hoặc ngữ cảnh tài liệu (prefix). RadixAttention lưu trữ KV cache dưới dạng cấu trúc cây (trie), cho phép tự động chia sẻ và tái sử dụng KV cache của các tiền tố trùng nhau, giúp giảm thời gian prefill và tiết kiệm VRAM đáng kể so với vLLM.",
+      "hints": [
+        "Hãy nghĩ về việc nhiều lượt gọi Agent liên tục gửi kèm theo cùng một bộ hướng dẫn hệ thống (system prompt) hoặc cùng một tài liệu RAG.",
+        "Làm sao để không phải tính toán lại KV cache cho phần văn bản trùng lặp này ở mỗi request?",
+        "Đáp án đúng là SGLang hỗ trợ RadixAttention giúp chia sẻ và tái sử dụng bộ nhớ đệm KV cache của các prompt hệ thống trùng nhau."
+      ],
+      "concepts": [
+        "d16-t2-cloud-infra"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Khi cấu hình auto-scaling cho cụm máy chủ GPU chạy AI serving trên Kubernetes, chỉ số giám sát (metrics) nào dưới đây nên được ưu tiên sử dụng?",
+      "options": {
+        "A": "Tỷ lệ sử dụng CPU trung bình của worker node (CPU Utilization).",
+        "B": "Tỷ lệ sử dụng GPU VRAM và số lượng yêu cầu xếp hàng chờ xử lý (Concurrency / Queue Depth).",
+        "C": "Tổng lượng dung lượng đĩa cứng SSD còn trống trên các node lưu trữ dữ liệu.",
+        "D": "Tốc độ truyền tải dữ liệu qua cổng mạng vật lý của các máy chủ ảo."
+      },
+      "answer": "B",
+      "explanation": "Các ứng dụng AI serving thường bị nghẽn ở bộ nhớ GPU VRAM hoặc số lượng request đồng thời (concurrency). CPU utilization thường rất thấp và không phản ánh đúng tải của GPU. Sử dụng GPU VRAM và độ dài hàng đợi yêu cầu (Queue Depth) giúp auto-scaling chính xác hơn.",
+      "hints": [
+        "CPU có phải là tài nguyên chính bị cạn kiệt khi chạy suy luận LLM batch size lớn không?",
+        "Nếu hàng đợi yêu cầu (request queue) ngày càng dài ra, điều đó chứng tỏ số lượng GPU instance hiện tại có đáp ứng kịp tải hay không?",
+        "Đáp án đúng là tỷ lệ sử dụng GPU VRAM và số lượng yêu cầu xếp hàng chờ xử lý."
+      ],
+      "concepts": [
+        "d16-t2-cloud-infra"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Tại sao việc deploy mô hình AI trực tiếp từ các file trọng số thô (raw weights) bằng thư viện Transformers của Hugging Face lại KHÔNG phù hợp cho môi trường production lớn?",
+      "options": {
+        "A": "Vì thư viện Transformers không hỗ trợ nạp các mô hình AI có số lượng tham số lớn hơn 1 tỷ.",
+        "B": "Vì thư viện này chỉ có thể chạy được trên cấu hình phần cứng CPU và không tương thích với GPU NVIDIA.",
+        "C": "Vì nó thiếu các cơ chế tối ưu hóa hiệu năng quan trọng như continuous batching, tensor parallelism và paged KV cache.",
+        "D": "Vì Hugging Face bắt buộc máy chủ phải duy trì kết nối Internet liên tục để xác thực bản quyền mỗi khi chạy mô hình."
+      },
+      "answer": "C",
+      "explanation": "Chạy mô hình trực tiếp bằng code Transformers thô (như `pipeline('text-generation')`) chỉ xử lý tuần tự từng request (hoặc static batching rất kém hiệu quả), gây lãng phí cực lớn tài nguyên GPU và không thể đáp ứng throughput cao trong production. Các serving engines như vLLM/SGLang giải quyết vấn đề này bằng các kỹ thuật tối ưu hóa nâng cao.",
+      "hints": [
+        "Thư viện Transformers thô xử lý các yêu cầu đồng thời từ hàng trăm người dùng như thế nào?",
+        "Nó có tự động gộp các yêu cầu gửi đến lệch nhau vài mili giây vào cùng một batch (continuous batching) để xử lý song song trên GPU không?",
+        "Đáp án đúng là vì thiếu các cơ chế tối ưu hóa hiệu năng quan trọng như continuous batching, tensor parallelism và paged KV cache."
+      ],
+      "concepts": [
+        "d16-t2-cloud-infra"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Trong Kubernetes, cơ chế 'Node Affinity' giúp ích gì cho việc triển khai các pod ứng dụng AI chạy GPU?",
+      "options": {
+        "A": "Đảm bảo các pod ứng dụng AI chỉ được lập lịch chạy trên các worker node có trang bị phần cứng GPU phù hợp.",
+        "B": "Tự động sao lưu dữ liệu của container sang các máy chủ vật lý khác khi xảy ra sự cố sụt giảm nguồn điện.",
+        "C": "Tăng tốc độ tải Docker Image của ứng dụng bằng cách lưu trữ bản sao image trên tất cả các node trong cụm.",
+        "D": "Tự động cấu hình tường lửa để chỉ cho phép các máy chủ trong cùng một cụm được kết nối mạng với nhau."
+      },
+      "answer": "A",
+      "explanation": "Node Affinity cho phép thiết lập các quy tắc bắt buộc hoặc ưu tiên để Kubernetes scheduler lập lịch (schedule) các pod cụ thể lên các worker node có nhãn (labels) tương ứng (ví dụ: máy ảo có nhãn `accelerator=nvidia-l4`), đảm bảo pod cần GPU không bị xếp nhầm vào node chỉ có CPU.",
+      "hints": [
+        "Làm sao Kubernetes know which node has GPU accelerator to schedule?",
+        "Chúng ta dùng nhãn (labels) trên node và cơ chế ràng buộc lập lịch trên pod.",
+        "Đáp án đúng là đảm bảo pod ứng dụng AI chỉ được lập lịch chạy trên worker node có trang bị phần cứng GPU phù hợp."
+      ],
+      "concepts": [
+        "d16-t2-cloud-infra"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Khi đo lường hiệu năng của một hệ sinh thái AI serving, chỉ số 'TPOT' (Time Per Output Token) được định nghĩa là gì?",
+      "options": {
+        "A": "Tổng thời gian hệ thống cần để xử lý và hiển thị ký tự đầu tiên của câu trả lời tới người dùng cuối.",
+        "B": "Khoảng thời gian mô hình cần để trích xuất ngữ cảnh từ cơ sở dữ liệu vector trước khi bắt đầu sinh chữ.",
+        "C": "Tổng số lượng token đầu ra mà hệ thống có thể xử lý đồng thời trên một đơn vị thời gian một giây.",
+        "D": "Thời gian trung bình để mô hình sinh ra một token đầu ra tiếp theo sau khi đã tạo ra token đầu tiên."
+      },
+      "answer": "D",
+      "explanation": "TPOT (Time Per Output Token) là thời gian trung bình để sinh một token tiếp theo (sau token đầu tiên). Đây là chỉ số quyết định trải nghiệm đọc của người dùng (tốc độ chữ chạy trên màn hình). Nó khác với TTFT (Time to First Token) là thời gian từ khi gửi request đến khi chữ đầu tiên xuất hiện.",
+      "hints": [
+        "Hãy phân biệt thời gian nhận phản hồi đầu tiên (TTFT) và tốc độ sinh chữ tiếp theo của mô hình.",
+        "TPOT đo lường tốc độ sinh của từng token trong chuỗi kết quả đầu ra.",
+        "Đáp án đúng là thời gian trung bình để mô hình sinh ra một token đầu ra tiếp theo sau khi đã tạo ra token đầu tiên."
+      ],
+      "concepts": [
+        "d16-t2-cloud-infra"
+      ]
+    }
+  ]
+}

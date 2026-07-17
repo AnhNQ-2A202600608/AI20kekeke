@@ -1,0 +1,210 @@
+{
+  "id": "day16-t2-basics",
+  "parent_id": "day16-rag-data",
+  "topic_title": "Day 16: Specialization Track Selection",
+  "title": "Phần 1: Nền Tảng Cloud & Lựa Chọn Nhà Cung Cấp Hạ Tầng AI",
+  "description": "Đánh giá kiến thức cơ bản về các mô hình dịch vụ đám mây (IaaS, PaaS, AI-aaS) và khung quyết định lựa chọn Cloud Provider cho AI workloads.",
+  "difficulty": "dễ",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Khi triển khai một ứng dụng AI, điểm khác biệt lớn nhất giữa mô hình dịch vụ IaaS và PaaS là gì?",
+      "options": {
+        "A": "IaaS cung cấp hạ tầng máy chủ ảo và GPU thô; PaaS cung cấp môi trường lập trình và quản lý triển khai tự động.",
+        "B": "IaaS chỉ hỗ trợ các mô hình AI nguồn đóng; PaaS hỗ trợ toàn diện các mô hình ngôn ngữ lớn nguồn mở tự chạy.",
+        "C": "IaaS yêu cầu kết nối mạng cáp quang vật lý riêng biệt; PaaS hoạt động hoàn toàn dựa trên mạng Internet công cộng.",
+        "D": "IaaS có chi phí vận hành cố định theo tháng; PaaS tính toán chi phí linh hoạt dựa trên số lượng token đầu ra thực tế."
+      },
+      "answer": "A",
+      "explanation": "IaaS (Infrastructure as a Service) cung cấp các tài nguyên phần cứng thô như Compute (EC2, VM), Storage, Network. PaaS (Platform as a Service) cung cấp nền tảng quản lý sẵn (như GKE, SageMaker) giúp lập trình viên triển khai ứng dụng mà không cần quản lý hệ điều hành hay hạ tầng vật lý bên dưới.",
+      "hints": [
+        "Hãy nghĩ về mức độ kiểm soát hệ điều hành và cấu hình phần cứng của bạn đối với hai mô hình này.",
+        "Mô hình nào cho bạn thuê máy ảo thô và mô hình nào cung cấp sẵn môi trường chạy ứng dụng?",
+        "Đáp án đúng chỉ rõ IaaS cung cấp hạ tầng ảo thô, PaaS cung cấp môi trường quản lý triển khai tự động."
+      ],
+      "concepts": [
+        "d16-t2-cloud-infra"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Khi nào một doanh nghiệp nên ưu tiên lựa chọn nhà cung cấp đám mây chuyên dụng GPU (Specialized GPU Clouds) như RunPod hay Lambda Labs?",
+      "options": {
+        "A": "Khi doanh nghiệp yêu cầu hệ sinh thái dịch vụ đi kèm cực kỳ phong phú và các chứng chỉ bảo mật tuân thủ khắt khe nhất.",
+        "B": "Khi doanh nghiệp muốn sử dụng độc quyền các dịch vụ API của OpenAI tích hợp sâu vào hệ thống Microsoft.",
+        "C": "Khi doanh nghiệp cực kỳ nhạy cảm về chi phí thuê GPU thô và có sẵn đội ngũ nhân sự có năng lực quản trị hạ tầng tốt.",
+        "D": "Khi doanh nghiệp bắt buộc phải lưu trữ toàn bộ dữ liệu người dùng tại các máy chủ vật lý đặt trong nước."
+      },
+      "answer": "C",
+      "explanation": "Specialized GPU clouds như Lambda, RunPod cung cấp GPU thô rẻ hơn từ 40% đến 70% so với các nhà cung cấp đám mây lớn (AWS, GCP). Tuy nhiên, họ thiếu hệ sinh thái dịch vụ quản lý đi kèm và các tiêu chuẩn bảo mật doanh nghiệp khắt khe, do đó cần đội ngũ tự vận hành hạ tầng.",
+      "hints": [
+        "Ưu điểm lớn nhất của các specialized clouds là chi phí thuê GPU thô rất rẻ.",
+        "Nhược điểm của họ là thiếu các dịch vụ quản lý tự động (PaaS) và hệ sinh thái bảo mật đi kèm.",
+        "Đáp án đúng đề cập đến việc nhạy cảm chi phí thuê GPU thô và có sẵn đội ngũ quản trị hạ tầng."
+      ],
+      "concepts": [
+        "d16-t2-cloud-infra"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Trong khung quyết định (Decision Framework) lựa chọn cloud provider, trường hợp nào bắt buộc doanh nghiệp phải chọn Google Cloud Platform (GCP)?",
+      "options": {
+        "A": "Khi doanh nghiệp muốn tận dụng hệ sinh thái bảo mật và tích hợp sâu với các ứng dụng văn phòng của Microsoft Office.",
+        "B": "Khi doanh nghiệp có nhu cầu huấn luyện mô hình PyTorch cực lớn và muốn sử dụng chip chuyên dụng TPU của Google.",
+        "C": "Khi doanh nghiệp yêu cầu lưu trữ dữ liệu tại thị trường Việt Nam để tuân thủ nghị định bảo vệ dữ liệu cá nhân.",
+        "D": "Khi doanh nghiệp muốn sử dụng dịch vụ AWS Bedrock để truy cập nhanh vào nhiều mô hình ngôn ngữ lớn khác nhau."
+      },
+      "answer": "B",
+      "explanation": "GCP là lựa chọn hàng đầu cho các tác vụ huấn luyện (training) mô hình học sâu quy mô lớn nhờ chip chuyên dụng TPU (Tensor Processing Unit) hiệu năng cao và cơ chế Kubernetes Engine (GKE) hỗ trợ tự động cấp phát tài nguyên GPU xuất sắc.",
+      "hints": [
+        "Google sở hữu dòng chip phần cứng chuyên dụng nào cạnh tranh trực tiếp với GPU của NVIDIA trong huấn luyện AI?",
+        "Chip này hoạt động cực tốt với các thư viện học sâu như PyTorch hay JAX.",
+        "Đáp án đúng đề cập đến việc huấn luyện PyTorch lớn và sử dụng chip chuyên dụng TPU."
+      ],
+      "concepts": [
+        "d16-t2-cloud-infra"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Tại sao việc tuân thủ quy định về lưu trữ dữ liệu trong nước (Data Residency Compliance) lại là yếu tố quyết định khi chọn nhà cung cấp đám mây nội địa?",
+      "options": {
+        "A": "Vì các nhà cung cấp trong nước sở hữu các dòng chip GPU NVIDIA H100 với số lượng lớn nhất và chi phí rẻ nhất.",
+        "B": "Vì nó đảm bảo doanh nghiệp tuân thủ các quy định pháp luật như Nghị định 13 về bảo vệ dữ liệu cá nhân tại Việt Nam.",
+        "C": "Vì kết nối mạng từ các đám mây nội địa ra quốc tế luôn có độ trễ thấp hơn so với các nhà cung cấp toàn cầu.",
+        "D": "Vì các đám mây nội địa cung cấp sẵn dịch vụ API của tất cả các mô hình ngôn ngữ lớn nguồn đóng hàng đầu thế giới."
+      },
+      "answer": "B",
+      "explanation": "Đối với các ngành nhạy cảm hoặc để tuân thủ Nghị định 13 về bảo vệ dữ liệu cá nhân (GDPR của Việt Nam), dữ liệu người dùng bắt buộc phải được lưu trữ và xử lý trên máy chủ vật lý đặt tại Việt Nam. Đây là lý do chính để chọn các VN Cloud như Viettel, VNG, FPT.",
+      "hints": [
+        "Yếu tố pháp lý và bảo mật dữ liệu là rào cản bắt buộc đối với một số loại dữ liệu người dùng trong nước.",
+        "Nghị định 13 của Việt Nam quy định gì về vị trí lưu trữ dữ liệu cá nhân của công dân Việt Nam?",
+        "Đáp án đúng liên quan đến tuân thủ quy định pháp luật như Nghị định 13 về bảo vệ dữ liệu cá nhân."
+      ],
+      "concepts": [
+        "d16-t2-cloud-infra"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Mô hình dịch vụ 'AI-aaS' (AI as a Service) phù hợp nhất với nhóm đối tượng khách hàng nào sau đây?",
+      "options": {
+        "A": "Đội ngũ nghiên cứu muốn tự thiết kế và huấn luyện các kiến trúc mạng nơ-ron học sâu hoàn toàn mới từ đầu.",
+        "B": "Doanh nghiệp muốn tích hợp nhanh khả năng AI (như dịch thuật, nhận diện thực thể) thông qua API mà không cần tự chạy model.",
+        "C": "Các công ty khởi nghiệp muốn xây dựng hệ thống phần cứng máy chủ riêng biệt đặt tại văn phòng làm việc của mình.",
+        "D": "Các kỹ sư hạ tầng muốn tự cấu hình hệ thống mạng ảo VPC và tường lửa bảo mật cho cụm máy chủ GPU thô."
+      },
+      "answer": "B",
+      "explanation": "AI-aaS (như OpenAI API, Azure OpenAI Service, AWS Bedrock) cung cấp các mô hình AI đã huấn luyện sẵn dưới dạng dịch vụ gọi API. Khách hàng chỉ việc gọi API để tích hợp tính năng AI vào ứng dụng mà không cần quan tâm đến hạ tầng chạy mô hình hay huấn luyện.",
+      "hints": [
+        "Hãy nghĩ về việc gọi API của OpenAI để sử dụng GPT-4 thay vì tự tải mô hình về máy chủ để chạy.",
+        "Mô hình này giúp giảm thiểu tối đa thời gian phát triển và chi phí hạ tầng ban đầu.",
+        "Đáp án đúng mô tả việc tích hợp nhanh khả năng AI qua API mà không cần tự vận hành mô hình."
+      ],
+      "concepts": [
+        "d16-t2-cloud-infra"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Khi một doanh nghiệp áp dụng chiến lược 'Multi-cloud' (Đa đám mây) cho hệ thống AI của mình, mục tiêu lớn nhất của họ là gì?",
+      "options": {
+        "A": "Tận dụng thế mạnh riêng biệt của từng provider (như training trên GPU rẻ, serving ở độ trễ thấp) và tránh bị khóa chặt vào một nhà cung cấp.",
+        "B": "Giảm thiểu tối đa chi phí bản quyền phần mềm hệ điều hành thông qua việc sử dụng đồng thời nhiều loại đám mây khác nhau.",
+        "C": "Cho phép các kỹ sư phát triển phần mềm tự ý lựa chọn nhà cung cấp dịch vụ theo sở thích cá nhân của từng người.",
+        "D": "Đảm bảo tất cả các máy chủ vật lý lưu trữ cơ sở dữ liệu đều hoạt động ở trạng thái dự phòng nóng 24/7 trên toàn cầu."
+      },
+      "answer": "A",
+      "explanation": "Multi-cloud giúp doanh nghiệp tối ưu hóa hiệu năng và chi phí bằng cách chạy các tác vụ khác nhau trên các đám mây phù hợp nhất (ví dụ: huấn luyện trên Specialized GPU cloud giá rẻ, chạy suy luận/serving trên AWS/GCP để gần người dùng và bảo mật), đồng thời giảm rủi ro phụ thuộc vào một nhà cung cấp duy nhất (vendor lock-in).",
+      "hints": [
+        "Tại sao lại phải chia hệ thống ra chạy trên nhiều nhà cung cấp đám mây khác nhau thay vì gộp chung vào một chỗ?",
+        "Hãy liên kết điều này với việc tối ưu hóa chi phí huấn luyện so với chi phí phục vụ người dùng cuối.",
+        "Đáp án đúng là tận dụng thế mạnh riêng của từng provider và tránh bị khóa chặt vào một nhà cung cấp."
+      ],
+      "concepts": [
+        "d16-t2-cloud-infra"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Điểm mạnh nổi bật nhất của Microsoft Azure trong cuộc đua cung cấp dịch vụ đám mây cho các ứng dụng AI là gì?",
+      "options": {
+        "A": "Sở hữu hệ thống chip xử lý chuyên dụng TPU thế hệ mới nhất hỗ trợ cực tốt cho thư viện JAX.",
+        "B": "Cung cấp độc quyền dịch vụ Azure OpenAI Service tích hợp sâu hệ sinh thái bảo mật của doanh nghiệp.",
+        "C": "Mức giá thuê các dòng GPU NVIDIA H100 thô rẻ hơn từ 50% đến 70% so với các đối thủ cạnh tranh.",
+        "D": "Khả năng tự động cấp phát tài nguyên GPU thô cho cụm máy chủ Kubernetes mà không cần viết tệp cấu hình."
+      },
+      "answer": "B",
+      "explanation": "Nhờ mối quan hệ hợp tác chiến lược với OpenAI, Azure cung cấp độc quyền dịch vụ Azure OpenAI Service, cho phép doanh nghiệp truy cập các mô hình của OpenAI (như GPT-4) bên trong môi trường bảo mật, tuân thủ tiêu chuẩn doanh nghiệp của Microsoft.",
+      "hints": [
+        "Hãy nghĩ đến mối quan hệ đối tác chiến lược giữa Microsoft và công ty tạo ra ChatGPT.",
+        "Dịch vụ này cho phép doanh nghiệp gọi mô hình GPT của OpenAI nhưng dữ liệu không bị dùng để huấn luyện lại mô hình.",
+        "Đáp án đúng đề cập đến việc cung cấp độc quyền dịch vụ Azure OpenAI Service tích hợp bảo mật doanh nghiệp."
+      ],
+      "concepts": [
+        "d16-t2-cloud-infra"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Trong bối cảnh các ứng dụng AI doanh nghiệp, hệ sinh thái AWS Bedrock đóng vai trò cốt lõi như thế nào?",
+      "options": {
+        "A": "Là một dịch vụ serverless cho phép lập trình viên truy cập vào nhiều mô hình ngôn ngữ lớn hàng đầu qua một API duy nhất.",
+        "B": "Là hệ thống máy chủ vật lý siêu tính toán chuyên dụng dùng để huấn luyện các mô hình nền tảng từ đầu.",
+        "C": "Là công cụ tự động chuyển đổi mã nguồn Python viết cho thư viện PyTorch sang thư viện JAX của Google.",
+        "D": "Là hệ thống lưu trữ vector cơ sở dữ liệu chuyên dụng hỗ trợ tìm kiếm ngữ nghĩa với thời gian thực."
+      },
+      "answer": "A",
+      "explanation": "AWS Bedrock là một dịch vụ quản lý hoàn toàn (PaaS/serverless) cung cấp quyền truy cập vào các mô hình nền tảng hàng đầu (như Claude của Anthropic, Llama của Meta, AI21, v.v.) thông qua một API chung thống nhất, giúp đơn giản hóa việc phát triển ứng dụng multi-model.",
+      "hints": [
+        "AWS Bedrock là một dịch vụ PaaS của Amazon Web Services.",
+        "Nó cho phép bạn gọi nhiều mô hình của các hãng khác nhau (Anthropic, Meta, v.v.) mà không cần tự deploy hay cài đặt phần cứng.",
+        "Đáp án đúng chỉ ra AWS Bedrock là dịch vụ serverless cho phép truy cập nhiều mô hình qua một API duy nhất."
+      ],
+      "concepts": [
+        "d16-t2-cloud-infra"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Rủi ro lớn nhất khi doanh nghiệp lựa chọn giải pháp tự xây dựng hạ tầng phần cứng chạy AI trên máy chủ vật lý đặt tại văn phòng (On-premise) là gì?",
+      "options": {
+        "A": "Chi phí đầu tư ban đầu cực lớn (CapEx), rủi ro khấu hao nhanh và khó khăn trong việc mở rộng quy mô linh hoạt khi tải tăng đột biến.",
+        "B": "Không thể cài đặt được các thư viện nguồn mở phổ biến như Docker hay Kubernetes trên hệ điều hành của máy chủ vật lý.",
+        "C": "Độ trễ truyền tải thông tin từ máy chủ vật lý nội bộ tới các máy tính của nhân viên trong văn phòng thường rất cao.",
+        "D": "Mất đi quyền tự kiểm soát an toàn dữ liệu do hệ thống phần cứng phải chịu sự giám sát trực tiếp từ nhà cung cấp chip."
+      },
+      "answer": "A",
+      "explanation": "Tự xây dựng hạ tầng (On-premise) đòi hỏi chi phí mua sắm thiết bị ban đầu (CapEx) rất cao, đối mặt với rủi ro GPU bị lỗi thời nhanh chóng (khấu hao công nghệ) và không thể co giãn tài nguyên linh hoạt theo nhu cầu thực tế (elasticity) như đám mây.",
+      "hints": [
+        "Hãy nghĩ về việc mua đứt các máy chủ GPU đắt đỏ so với việc thuê theo giờ trên đám mây.",
+        "Điều gì xảy ra khi hệ thống cần gấp gấp 10 lần tài nguyên trong một chiến dịch quảng cáo ngắn hạn, và điều gì xảy ra sau khi chiến dịch kết thúc?",
+        "Đáp án đúng đề cập đến chi phí đầu tư ban đầu lớn, rủi ro khấu hao nhanh và khó mở rộng quy mô linh hoạt."
+      ],
+      "concepts": [
+        "d16-t2-cloud-infra"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Khái niệm 'Compute Elasticity' (Tính co giãn của tài nguyên tính toán) trên đám mây mang lại giá trị vận hành trực tiếp nào cho hệ thống AI?",
+      "options": {
+        "A": "Đảm bảo các mô hình ngôn ngữ lớn luôn trả về kết quả suy luận với độ trễ cố định dưới 100 mili giây.",
+        "B": "Tự động dịch dịch các câu hỏi đầu vào của người dùng sang nhiều ngôn ngữ khác nhau trước khi gửi đến mô hình.",
+        "C": "Cho phép thay đổi kích thước của không gian vector nhúng của mô hình mà không cần phải thực hiện lại việc nhúng dữ liệu.",
+        "D": "Tự động tắt hoặc bật các máy chủ GPU dựa trên lưu lượng tải thực tế để tối ưu hóa chi phí vận hành (OpEx)."
+      },
+      "answer": "D",
+      "explanation": "Tính co giãn (Elasticity) cho phép hệ thống tự động tăng quy mô (scale-out) khi lưu lượng yêu cầu tăng cao để đảm bảo hiệu năng và tự động giảm quy mô (scale-in) khi tải thấp để tránh lãng phí tiền thuê tài nguyên, trực tiếp tối ưu hóa chi phí OpEx.",
+      "hints": [
+        "Co giãn tài nguyên liên quan đến việc thích ứng số lượng máy chủ chạy với nhu cầu người dùng tại từng thời điểm.",
+        "Mục đích của việc này là gì khi lượng người dùng ban đêm cực kỳ ít so với ban ngày?",
+        "Đáp án đúng là tự động tắt hoặc bật máy chủ GPU dựa trên tải thực tế để tối ưu hóa chi phí vận hành."
+      ],
+      "concepts": [
+        "d16-t2-cloud-infra"
+      ]
+    }
+  ]
+}

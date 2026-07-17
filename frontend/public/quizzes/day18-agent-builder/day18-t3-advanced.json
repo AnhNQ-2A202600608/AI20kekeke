@@ -1,0 +1,210 @@
+{
+  "id": "day18-t3-advanced",
+  "parent_id": "day18-agent-builder",
+  "topic_title": "Day 18: Production RAG",
+  "title": "Phần 3: Kiến Trúc Agentic RAG, Gỡ Lỗi & Giới Hạn Của Embedding Space",
+  "description": "Đánh giá kiến thức nâng cao về Agentic RAG (Single/Multi-agent, Self-RAG), Semantic Cache, chẩn đoán lỗi RAGAS diagnostic tree và các điểm nghẽn vật lý của vector similarity.",
+  "difficulty": "khó",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Kiến trúc Agentic RAG (RAG tác nhân) có đặc điểm cốt lõi nào khác biệt so với RAG tĩnh?",
+      "options": {
+        "A": "Kiến trúc Agent tự điều khiển và quyết định luồng truy xuất dữ liệu.",
+        "B": "Quy trình thiết lập các bộ lọc tĩnh ở cấp độ cơ sở dữ liệu.",
+        "C": "Mô hình ngôn ngữ tự động sinh ra các đoạn mã SQL để truy cập.",
+        "D": "Phương pháp nén nhỏ kích thước tệp tin Parquet trước khi tải lên."
+      },
+      "answer": "A",
+      "explanation": "Agentic RAG trao quyền cho Agent tự quyết định khi nào cần tìm kiếm, tìm kiếm ở đâu, bao nhiêu lần, sử dụng những công cụ hay nguồn dữ liệu nào.",
+      "hints": [
+        "Hãy nghĩ đến việc thay thế luồng RAG tĩnh cố định bằng một tác nhân tự trị.",
+        "Nó sử dụng các cơ chế tự phản tỉnh (reflection) và lập kế hoạch (planning) để truy xuất dữ liệu.",
+        "Đáp án là kiến trúc Agent tự điều khiển và quyết định luồng truy xuất."
+      ],
+      "concepts": [
+        "d18-t3-production-rag"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Hiện tượng 'temporal blindness' (mù thời gian) của không gian vector embedding nghĩa là gì?",
+      "options": {
+        "A": "Vector similarity không phân biệt được mốc thời gian của hai tài liệu.",
+        "B": "Mô hình tự động bỏ qua các câu lệnh phủ định trong câu hỏi.",
+        "C": "Độ trễ truy xuất tăng cao khi cơ sở dữ liệu mở rộng.",
+        "D": "Các từ viết tắt chuyên ngành không được ánh xạ chính xác vào đó."
+      },
+      "answer": "A",
+      "explanation": "Các mô hình embedding thông thường chỉ encode nội dung ngữ nghĩa, không phân biệt được các mốc thời gian khác nhau (ví dụ chính sách năm 2022 và năm 2024), dẫn đến cosine similarity tương đương.",
+      "hints": [
+        "Hãy nghĩ đến việc hai văn bản có nội dung y hệt nhau nhưng của hai năm khác nhau.",
+        "Mô hình embedding không tự động gán trọng số thời gian cao hơn cho tài liệu mới.",
+        "Đáp án là vector similarity không phân biệt được mốc thời gian của hai tài liệu."
+      ],
+      "concepts": [
+        "d18-t3-production-rag"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Cơ chế hoạt động của bộ nhớ đệm ngữ nghĩa (Semantic Cache) trong RAG là gì?",
+      "options": {
+        "A": "Tự động xóa bỏ các câu hỏi trùng lặp trong cơ sở dữ liệu.",
+        "B": "Trả kết quả cache nếu query mới có độ tương đồng cosine cao.",
+        "C": "Huấn luyện lại mô hình embedding định kỳ hàng tháng để tránh lệch.",
+        "D": "Gộp tệp tin lưu trữ nhỏ thành tệp tin có kích thước lớn."
+      },
+      "answer": "B",
+      "explanation": "Semantic Cache lưu trữ các cặp Q&A trước đó, nếu câu hỏi mới có độ tương đồng cosine cao (>0.95) với câu hỏi trong cache, hệ thống sẽ trả kết quả ngay mà không cần gọi LLM.",
+      "hints": [
+        "Đây là kỹ thuật giúp tối ưu hóa chi phí API và giảm thời gian phản hồi.",
+        "Nó so khớp ngữ nghĩa của câu hỏi mới với các câu hỏi cũ đã được trả lời.",
+        "Đáp án là trả kết quả cache khi query mới có độ tương đồng cosine cao."
+      ],
+      "concepts": [
+        "d18-t3-production-rag"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Quy trình chẩn đoán lỗi bằng Diagnostic Tree của RAGAS được thực hiện như thế nào?",
+      "options": {
+        "A": "Tập trung sửa prompt ngay lập tức khi phát hiện điểm số trung bình.",
+        "B": "Đi ngược từ PostRAG sang PreRAG để tìm đúng bước đầu tiên lỗi.",
+        "C": "Tự động tăng số lượng chunk truy xuất lên tối đa có thể.",
+        "D": "Thay đổi mô hình LLM chính sang phiên bản có dung lượng lớn."
+      },
+      "answer": "B",
+      "explanation": "Diagnostic Tree chẩn đoán ngược luồng xử lý: kiểm tra chất lượng output ở PostRAG, sau đó lùi về kiểm tra R/A, PreRAG rồi đến Ingestion thô để tìm đúng mắt xích bị hỏng đầu tiên.",
+      "hints": [
+        "Để gỡ lỗi hiệu quả, bạn cần lần theo vết từ đầu ra cuối cùng lùi về nguồn.",
+        "Nếu lỗi phát sinh ngay từ bước truy xuất (retrieval), việc sửa prompt ở bước sinh sẽ vô nghĩa.",
+        "Đáp án là đi ngược từ PostRAG về PreRAG để tìm đúng bước bị lỗi trước tiên."
+      ],
+      "concepts": [
+        "d18-t3-production-rag"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Trong đánh giá RAGAS, nếu điểm số Faithfulness (Độ trung thực) thấp thì PM nên xử lý thế nào?",
+      "options": {
+        "A": "Đổi sang một mô hình embedding khác có số chiều lớn hơn.",
+        "B": "Siết chặt prompt yêu cầu chỉ dùng context và giảm temperature của LLM.",
+        "C": "Tăng số lượng chunk truy xuất lên tối đa để thêm thông tin.",
+        "D": "Thực hiện phân vùng lại cơ sở dữ liệu theo thời gian."
+      },
+      "answer": "B",
+      "explanation": "Điểm Faithfulness thấp chứng tỏ LLM đang bịa thêm thông tin ngoài context (hallucination). Sửa bằng cách siết prompt bắt buộc chỉ dùng context và giảm temperature để mô hình sinh câu deterministic hơn.",
+      "hints": [
+        "Faithfulness phản ánh lỗi ở bước sinh câu trả lời (generation) của mô hình LLM.",
+        "Chúng ta cần kiểm soát độ sáng tạo của LLM và đưa ra chỉ dẫn nghiêm ngặt hơn.",
+        "Đáp án là siết chặt prompt yêu cầu dùng context và giảm temperature của LLM."
+      ],
+      "concepts": [
+        "d18-t3-production-rag"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Cơ chế hoạt động của kiến trúc Skill-RAG (sử dụng router chẩn đoán lỗi) là gì?",
+      "options": {
+        "A": "Tự động thay đổi tham số suy luận của mô hình ngôn ngữ.",
+        "B": "Dùng các mô hình máy học phân tán để tối ưu hóa vector.",
+        "C": "Chẩn đoán lỗi trước khi sinh câu và điều hướng sang skill tương ứng.",
+        "D": "Yêu cầu người dùng tự động sửa đổi câu hỏi khi phát hiện lỗi."
+      },
+      "answer": "C",
+      "explanation": "Skill-RAG sử dụng một bộ dò lỗi (hidden-state prober) để chẩn đoán trạng thái lỗi trước khi sinh câu, sau đó điều phối truy vấn đến các kỹ năng phù hợp (như viết lại câu, tách câu).",
+      "hints": [
+        "Cơ chế này chủ động phát hiện lỗi tiềm ẩn trong không gian biểu diễn vector.",
+        "Nó phân loại lỗi thành các vùng riêng biệt và kích hoạt kỹ năng tương ứng để xử lý.",
+        "Đáp án là chẩn đoán lỗi trước khi sinh câu và điều hướng sang skill tương ứng."
+      ],
+      "concepts": [
+        "d18-t3-production-rag"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Mô hình Self-RAG thực hiện quá trình tự quyết định truy xuất thông tin như thế nào?",
+      "options": {
+        "A": "Tự động chạy các kịch bản kiểm thử chất lượng trước phát hành.",
+        "B": "Bắt buộc mô hình phải gọi API tìm kiếm trực tuyến mỗi lần.",
+        "C": "LLM tự quyết định retrieve nhờ fine-tune sinh các token đặc biệt.",
+        "D": "Tự động phân vùng lại dữ liệu ở cấp độ phần cứng máy chủ."
+      },
+      "answer": "C",
+      "explanation": "Self-RAG là mô hình được fine-tune để sinh ra các token kiểm soát đặc biệt (như [Retrieve], [IsRel]) giúp mô hình tự đánh giá khi nào cần gọi retriever và đánh giá chất lượng context.",
+      "hints": [
+        "Mô hình này tự nhúng các thẻ điều khiển (special tokens) vào quá trình sinh văn bản.",
+        "Nó biến khả năng truy xuất và đánh giá chất lượng thành một phần hành vi của LLM.",
+        "Đáp án là LLM tự quyết định retrieve nhờ fine-tune sinh các token đặc biệt."
+      ],
+      "concepts": [
+        "d18-t3-production-rag"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Trong đánh giá RAGAS, nếu điểm số Context Recall thấp thì PM nên ưu tiên cải tiến gì?",
+      "options": {
+        "A": "Thay đổi prompt mẫu để mô hình ngôn ngữ ít ảo tưởng hơn.",
+        "B": "Giảm nhiệt độ suy luận của mô hình xuống mức thấp nhất.",
+        "C": "Áp dụng hybrid search, tối ưu hóa chunking hoặc thử query rewrite.",
+        "D": "Mã hóa các trường thông tin nhạy cảm của người dùng trước đó."
+      },
+      "answer": "C",
+      "explanation": "Context Recall thấp chứng tỏ bộ tìm kiếm (retriever) đã bỏ sót thông tin liên quan. Khắc phục bằng cách chuyển sang hybrid search, đổi kích thước chunking hoặc chạy query rewrite (HyDE/Multi-query).",
+      "hints": [
+        "Context Recall phản ánh hiệu suất của quá trình tìm kiếm (retrieval), không phải bước sinh câu.",
+        "Bạn cần cải tiến khả năng khớp ngữ nghĩa và độ bao phủ của bộ tìm kiếm.",
+        "Đáp án là áp dụng hybrid search, tối ưu hóa chunking hoặc thử query rewrite."
+      ],
+      "concepts": [
+        "d18-t3-production-rag"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Hiện tượng 'negation insensitivity' (không nhạy cảm với phủ định) của embedding space là gì?",
+      "options": {
+        "A": "Mô hình tự động bỏ qua các câu hỏi chứa từ viết tắt.",
+        "B": "Vector similarity tăng cao khi chiều dài của văn bản tăng lên.",
+        "C": "Hai câu có nghĩa trái ngược hoàn toàn không thể nằm gần nhau.",
+        "D": "Các câu khẳng định và phủ định vẫn có điểm cosine rất gần."
+      },
+      "answer": "D",
+      "explanation": "Các mô hình embedding dựa trên cosine similarity thường không nhạy cảm với các từ phủ định ngắn (như 'không', 'chưa'), khiến câu khẳng định và phủ định có vector nằm rất gần nhau.",
+      "hints": [
+        "Ví dụ hai câu: 'Tài khoản đã được duyệt' và 'Tài khoản chưa được duyệt'.",
+        "Vì chia sẻ hầu hết các từ khóa, cosine similarity của hai câu này vẫn ở mức rất cao.",
+        "Đáp án là các câu khẳng định và phủ định vẫn có điểm cosine rất gần nhau."
+      ],
+      "concepts": [
+        "d18-t3-production-rag"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Cơ chế hoạt động cốt lõi của mô hình Corrective RAG (CRAG) là gì?",
+      "options": {
+        "A": "Tự động sửa lỗi chính tả trong câu hỏi của người dùng.",
+        "B": "Mã hóa toàn bộ các tệp tin dữ liệu trước khi nạp vào.",
+        "C": "Chỉ cho phép chạy mô hình ngôn ngữ cục bộ trên máy chủ.",
+        "D": "Đánh giá chất lượng retrieval, trigger web search nếu context không đạt."
+      },
+      "answer": "D",
+      "explanation": "CRAG đánh giá chất lượng của các chunks được lấy lên. Nếu chất lượng thấp hoặc không liên quan, nó sẽ kích hoạt tìm kiếm web bên ngoài (web search) làm fallback trước khi generate.",
+      "hints": [
+        "Cơ chế này đóng vai trò tự sửa lỗi (corrective) khi kết quả truy xuất từ database kém.",
+        "Nó sử dụng một bộ đánh giá chất lượng trung gian để quyết định hành động tiếp theo.",
+        "Đáp án là đánh giá chất lượng retrieval, trigger web search nếu context không đạt."
+      ],
+      "concepts": [
+        "d18-t3-production-rag"
+      ]
+    }
+  ]
+}

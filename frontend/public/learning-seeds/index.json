@@ -1,0 +1,62 @@
+{
+  "assetSet": "learning-seeds",
+  "description": "EduGap mastery seed stages for learning progress UI.",
+  "stages": [
+    {
+      "stage": "locked",
+      "label": "Sắp mở khóa",
+      "progressRange": "locked",
+      "png": "/learning-seeds/seed-locked.png",
+      "webp": "/learning-seeds/seed-locked.webp"
+    },
+    {
+      "stage": "empty",
+      "label": "Chưa học",
+      "progressRange": "0%",
+      "png": "/learning-seeds/seed-empty.png",
+      "webp": "/learning-seeds/seed-empty.webp"
+    },
+    {
+      "stage": "early",
+      "label": "Mới nảy mầm",
+      "progressRange": "1-24%",
+      "png": "/learning-seeds/seed-early.png",
+      "webp": "/learning-seeds/seed-early.webp"
+    },
+    {
+      "stage": "learning",
+      "label": "Đang học",
+      "progressRange": "25-49%",
+      "png": "/learning-seeds/seed-learning.png",
+      "webp": "/learning-seeds/seed-learning.webp"
+    },
+    {
+      "stage": "growing",
+      "label": "Đang lớn",
+      "progressRange": "50-69%",
+      "png": "/learning-seeds/seed-growing.png",
+      "webp": "/learning-seeds/seed-growing.webp"
+    },
+    {
+      "stage": "strong",
+      "label": "Gần thành thạo",
+      "progressRange": "70-89%",
+      "png": "/learning-seeds/seed-strong.png",
+      "webp": "/learning-seeds/seed-strong.webp"
+    },
+    {
+      "stage": "mastered",
+      "label": "Thành thạo",
+      "progressRange": "90-100%",
+      "png": "/learning-seeds/seed-mastered.png",
+      "webp": "/learning-seeds/seed-mastered.webp"
+    },
+    {
+      "stage": "review",
+      "label": "Cần ôn",
+      "progressRange": "review",
+      "png": "/learning-seeds/seed-review.png",
+      "webp": "/learning-seeds/seed-review.webp"
+    }
+  ]
+}

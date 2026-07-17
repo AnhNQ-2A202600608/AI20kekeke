@@ -1,0 +1,210 @@
+{
+  "id": "day15-basics",
+  "parent_id": "day15",
+  "topic_title": "Day 15: Real-World Deployment & Operating Cost",
+  "title": "Phần 1: Thách thức Triển khai Enterprise & Lựa chọn Mô hình Hạ tầng",
+  "description": "Đánh giá kiến thức cơ bản về thách thức bảo mật & tuân thủ trong doanh nghiệp, so sánh Cloud/On-Premise/Hybrid, và công cụ tự chạy mô hình (vLLM, Ollama).",
+  "difficulty": "dễ",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Một ngân hàng thương mại tại Việt Nam muốn xây dựng hệ thống AI Agent hỗ trợ khách hàng nội bộ. Theo luật an ninh mạng (ví dụ Luật bảo vệ dữ liệu cá nhân PDPA), yêu cầu bảo mật thông tin nào sau đây là quan trọng nhất?",
+      "options": {
+        "A": "Dữ liệu giao dịch của khách hàng phải được lưu trữ và xử lý tại máy chủ ở Việt Nam.",
+        "B": "Dữ liệu giao dịch của khách hàng phải được gửi trực tiếp đến cloud API bên ngoài nước.",
+        "C": "Dữ liệu giao dịch của khách hàng chỉ cần lưu dưới dạng tập tin văn bản không mã hóa.",
+        "D": "Dữ liệu giao dịch của khách hàng phải được hiển thị công khai trên giao diện người dùng."
+      },
+      "answer": "A",
+      "explanation": "Đối với các tổ chức tài chính hoặc cơ quan nhà nước tại Việt Nam, quy định tuân thủ (compliance như PDPA) yêu cầu dữ liệu nhạy cảm của người dùng (PII) phải được lưu trữ, mã hóa và xử lý trong lãnh thổ Việt Nam, không được tự ý gửi ra máy chủ nước ngoài.",
+      "hints": [
+        "Hãy chú ý đến yếu tố chủ quyền dữ liệu và các quy định pháp luật về bảo vệ dữ liệu cá nhân (PDPA) tại Việt Nam.",
+        "Khi làm việc với dữ liệu tài chính hoặc thông tin cá nhân nhạy cảm, việc gửi dữ liệu ra cloud nước ngoài có được phép tự do không?",
+        "Chọn phương án nhấn mạnh việc lưu trữ và xử lý dữ liệu ngay trong nước để đảm bảo tính tuân thủ pháp lý."
+      ],
+      "concepts": [
+        "d15-production-deployment-cost"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Khi so sánh các mô hình triển khai hạ tầng, mô hình Hybrid (Lai) thường được các doanh nghiệp lớn (Enterprise) tại Việt Nam ưu tiên lựa chọn vì lý do chính nào sau đây?",
+      "options": {
+        "A": "Giúp loại bỏ hoàn toàn việc sử dụng mạng Internet và chỉ hoạt động qua mạng nội bộ.",
+        "B": "Cho phép giữ dữ liệu nhạy cảm tại chỗ và định tuyến các tác vụ thông thường lên Cloud.",
+        "C": "Có chi phí thiết lập ban đầu rẻ hơn nhiều so với việc chỉ thuê các Cloud API.",
+        "D": "Không yêu cầu bất kỳ kỹ sư vận hành hoặc giám sát hệ thống nào trong doanh nghiệp."
+      },
+      "answer": "B",
+      "explanation": "Mô hình Hybrid cho phép doanh nghiệp lưu trữ dữ liệu nhạy cảm và chạy các tác vụ liên quan tại On-Premise, trong khi vẫn tận dụng được sức mạnh xử lý và tính linh hoạt của Cloud API cho các tác vụ không nhạy cảm.",
+      "hints": [
+        "Hãy phân tích từ khóa 'Hybrid' (Lai) - kết hợp giữa On-Premise và Cloud.",
+        "Làm thế nào để vừa bảo mật dữ liệu nội bộ tối đa vừa không phải đầu tư quá nhiều GPU đắt đỏ?",
+        "Phương án đúng sẽ đề cập đến sự cân bằng: xử lý dữ liệu nhạy cảm tại chỗ và tác vụ thường trên cloud."
+      ],
+      "concepts": [
+        "d15-production-deployment-cost"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Một dự án AI Agent ở giai đoạn thử nghiệm (MVP) với lưu lượng truy cập nhỏ dưới 100 yêu cầu mỗi ngày nên ưu tiên lựa chọn mô hình hạ tầng và chi phí nào để đạt hiệu quả tối ưu?",
+      "options": {
+        "A": "Đầu tư mua máy chủ GPU vật lý và thiết lập hệ thống tự vận hành trong nhiều tháng.",
+        "B": "Thuê đường truyền mạng riêng biệt chạy độc lập và không kết nối với bất kỳ dịch vụ nào.",
+        "C": "Thuê ngoài toàn bộ đội ngũ lập trình viên chuyên nghiệp để tự xây dựng một mô hình lớn.",
+        "D": "Thuê các Cloud API bên ngoài kết hợp với các nền tảng máy chủ ảo gọn nhẹ như Railway."
+      },
+      "answer": "D",
+      "explanation": "Đối với giai đoạn MVP với lưu lượng nhỏ, sử dụng Cloud API (như OpenAI, Anthropic) kết hợp dịch vụ cloud nhẹ như Railway là tối ưu nhất vì thời gian setup tính bằng phút và chi phí chỉ theo token thực tế ($50–200/tháng).",
+      "hints": [
+        "Hãy nhớ nguyên tắc 'Premature optimization is the root of all evil' (Tối ưu hóa sớm là nguồn cơn của mọi rắc rối).",
+        "Ở quy mô dưới 100 req/ngày, việc đầu tư mua sắm phần cứng GPU đắt đỏ (Capex) có hợp lý về mặt kinh tế không?",
+        "Hãy chọn giải pháp giúp sản phẩm chạy thử nhanh nhất với chi phí vận hành ban đầu thấp nhất."
+      ],
+      "concepts": [
+        "d15-production-deployment-cost"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Công cụ mã nguồn mở Ollama thường được khuyến nghị sử dụng tốt nhất trong trường hợp nào dưới đây khi phát triển ứng dụng Generative AI?",
+      "options": {
+        "A": "Khi cần triển khai hệ thống có throughput cực lớn cho hàng triệu người dùng cùng lúc.",
+        "B": "Khi cần quản lý nhiều cụm máy chủ GPU phân tán trên các môi trường cloud khác nhau.",
+        "C": "Khi cần chạy thử nghiệm mô hình ngôn ngữ cục bộ trên máy tính cá nhân của lập trình viên.",
+        "D": "Khi cần tự động dịch toàn bộ mã nguồn ứng dụng sang các ngôn ngữ máy tính khác nhau."
+      },
+      "answer": "C",
+      "explanation": "Ollama dễ cài đặt, giúp chạy các mô hình ngôn ngữ lớn (như Llama, Mistral) local bằng 1 dòng lệnh, rất phù hợp cho việc phát triển (development), chạy demo hoặc triển khai ở biên (edge deployment). Nó không tối ưu cho high throughput production như vLLM.",
+      "hints": [
+        "Hãy chú ý đến sự khác biệt giữa vLLM và Ollama. Công cụ nào nhẹ nhàng, dễ chạy trực tiếp trên laptop?",
+        "Ollama phù hợp nhất cho môi trường phát triển cục bộ (local development) hay môi trường production tải cao?",
+        "Tìm phương án chỉ ra công dụng chạy thử nghiệm mô hình cục bộ trên máy tính cá nhân để phát triển."
+      ],
+      "concepts": [
+        "d15-production-deployment-cost"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Trong các công cụ tự chạy mô hình (Self-hosted LLM), công cụ vLLM nổi bật và phù hợp cho môi trường Production quy mô lớn nhờ sở hữu công nghệ cốt lõi nào sau đây?",
+      "options": {
+        "A": "Khả năng lưu trữ dữ liệu vector trong bộ nhớ đệm RAM mà không cần dùng ổ đĩa SSD.",
+        "B": "Cơ chế quản lý bộ nhớ đệm KV Cache thông minh PagedAttention và continuous batching để tăng throughput.",
+        "C": "Khả năng tự động nén toàn bộ mã nguồn của hệ thống sang ngôn ngữ lập trình Assembly.",
+        "D": "Cơ chế kết nối trực tiếp với các hệ thống cơ sở dữ liệu quan hệ kiểu cũ."
+      },
+      "answer": "B",
+      "explanation": "vLLM được thiết kế cho production-grade inference nhờ thuật toán PagedAttention giúp quản lý bộ nhớ KV Cache hiệu quả, giảm phân mảnh và hỗ trợ continuous batching để tăng tối đa throughput (lượng request xử lý đồng thời).",
+      "hints": [
+        "Công nghệ nổi tiếng nhất của vLLM giúp giải quyết vấn đề nghẽn bộ nhớ GPU khi lưu trữ KV cache là gì?",
+        "Hãy tìm cụm từ kỹ thuật liên quan đến cách phân trang bộ nhớ tương tự như trong hệ điều hành máy tính.",
+        "Phương án đúng chứa thuật toán PagedAttention và tính năng xử lý hàng loạt liên tục (continuous batching)."
+      ],
+      "concepts": [
+        "d15-production-deployment-cost"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Khi một hệ thống AI của doanh nghiệp tăng trưởng lưu lượng vượt quá 1 triệu tokens mỗi ngày, yếu tố nào sau đây sẽ giúp quyết định việc chuyển từ Cloud API sang tự vận hành mô hình (Self-hosted)?",
+      "options": {
+        "A": "Việc tự chạy mô hình sẽ giúp loại bỏ hoàn toàn các lỗi về ảo giác thông tin.",
+        "B": "Chi phí thuê bao Cloud API của nhà cung cấp sẽ tự động tăng lên gấp mười lần.",
+        "C": "Tổng chi phí vận hành (gồm GPU, nhân sự ops) thấp hơn so với chi phí trả theo token.",
+        "D": "Nhà cung cấp Cloud API sẽ từ chối phục vụ nếu lượng truy cập vượt giới hạn đó."
+      },
+      "answer": "C",
+      "explanation": "Chuyển sang self-hosted (vLLM/Ollama) chỉ thực sự có lợi về kinh tế (break-even) khi chi phí trả theo token của Cloud API lớn hơn chi phí khấu hao GPU cộng với chi phí nhân sự vận hành (Ops/maintenance). Điểm hòa vốn thông thường là trên 1 triệu tokens/ngày.",
+      "hints": [
+        "Hãy xem xét bài toán tài chính tổng thể. Tự chạy mô hình có thực sự miễn phí hoàn toàn không?",
+        "Khi tự chạy, bạn phải trả tiền cho phần cứng GPU, tiền điện, và lương cho kỹ sư vận hành (Ops).",
+        "Điểm hòa vốn xảy ra khi tổng chi phí tự chạy (Capex + Opex vận hành) nhỏ hơn chi phí token thực tế."
+      ],
+      "concepts": [
+        "d15-production-deployment-cost"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Một kỹ sư AI đề xuất đầu tư mua hệ thống máy chủ GPU rất đắt tiền ngay khi dự án AI Agent của công ty vừa mới bắt đầu lên ý tưởng thiết kế. Lỗi này thuộc về nguyên tắc thiết kế nào?",
+      "options": {
+        "A": "Lựa chọn công nghệ lỗi thời không đáp ứng được các tiêu chuẩn kỹ thuật hiện đại.",
+        "B": "Thiết kế hệ thống thiếu các biện pháp bảo vệ an toàn thông tin của người dùng.",
+        "C": "Sử dụng quá nhiều mô hình ngôn ngữ lớn cùng một lúc trong một quy trình.",
+        "D": "Tối ưu hóa hệ thống quá sớm (Premature Optimization) khi chưa xác định rõ nhu cầu thực tế."
+      },
+      "answer": "D",
+      "explanation": "Đầu tư phần cứng đắt đỏ hoặc tối ưu hóa quá sâu khi chưa kiểm chứng được nhu cầu thị trường và lưu lượng traffic thực tế là lỗi Premature Optimization (tối ưu hóa sớm). Dự án nên bắt đầu từ MVP tier (Cloud API) để giảm rủi ro tài chính.",
+      "hints": [
+        "Hãy nhớ câu nói nổi tiếng của Donald Knuth về việc tối ưu hóa sớm trong khoa học máy tính.",
+        "Khi dự án mới chỉ là ý tưởng, việc mua sắm phần cứng lớn sẽ gây lãng phí nếu dự án thất bại hoặc thay đổi hướng đi.",
+        "Chọn phương án đề cập đến việc tối ưu hóa hệ thống quá sớm (Premature Optimization)."
+      ],
+      "concepts": [
+        "d15-production-deployment-cost"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Đối với các hệ thống AI chạy trong môi trường mạng nội bộ cô lập (air-gapped) của các cơ quan nhà nước, phương án triển khai hạ tầng nào sau đây là khả thi duy nhất?",
+      "options": {
+        "A": "Sử dụng kết nối Hybrid để truyền dữ liệu không nhạy cảm lên máy chủ nước ngoài.",
+        "B": "Triển khai hoàn toàn các dịch vụ thông qua các nhà cung cấp Cloud API công cộng.",
+        "C": "Triển khai mô hình tự vận hành (On-Premise / Self-hosted LLM) trên hệ thống máy chủ nội bộ.",
+        "D": "Tích hợp trực tiếp các thư viện mã nguồn mở chạy trên điện thoại di động cá nhân."
+      },
+      "answer": "C",
+      "explanation": "Môi trường air-gapped không có kết nối Internet ra bên ngoài, do đó không thể sử dụng Cloud API hay Hybrid. Bắt buộc phải triển khai mô hình tự vận hành (On-Premise) chạy local hoàn toàn trên hạ tầng máy chủ GPU đặt tại chỗ của doanh nghiệp.",
+      "hints": [
+        "'Air-gapped' nghĩa là hệ thống mạng bị cô lập hoàn toàn, không có bất kỳ kết nối vật lý hay không dây nào ra Internet.",
+        "Nếu không có Internet, các cuộc gọi API đến OpenAI hay Anthropic có hoạt động được không?",
+        "Do đó, hệ thống buộc phải chạy offline hoàn toàn trên máy chủ nội bộ (On-Premise)."
+      ],
+      "concepts": [
+        "d15-production-deployment-cost"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Theo khung phân loại ngân sách 3 cấp độ (3-Tier Model) cho ứng dụng AI, mức độ Growth (Tăng trưởng) thường có đặc điểm về lưu lượng truy cập và hạ tầng như thế nào?",
+      "options": {
+        "A": "Lưu lượng dưới 100 yêu cầu/ngày và chỉ dùng các dịch vụ chia sẻ tài nguyên rẻ.",
+        "B": "Lưu lượng từ 100 đến 5000 yêu cầu/ngày và chạy trên Docker kết hợp Cloud Run/ECS.",
+        "C": "Lưu lượng trên 10 triệu yêu cầu/ngày và bắt buộc phải sở hữu siêu máy tính GPU riêng.",
+        "D": "Lưu lượng không giới hạn và chạy hoàn toàn trên các máy chủ vật lý đặt tại văn phòng."
+      },
+      "answer": "B",
+      "explanation": "Cấp Growth ước tính lưu lượng khoảng 100–5000 requests/ngày, chi phí khoảng $200–$2000/tháng, hạ tầng dịch chuyển từ serverless đơn giản lên container hóa (Docker) chạy trên các dịch vụ đám mây có khả năng scale như AWS ECS hoặc Google Cloud Run.",
+      "hints": [
+        "Cấp MVP dành cho lưu lượng nhỏ dưới 100 req/ngày. Cấp Scale dành cho lưu lượng lớn hơn 5000 req/ngày.",
+        "Vậy cấp Growth nằm ở giữa hai khoảng này, và đòi hỏi hạ tầng container ổn định hơn.",
+        "Tìm phương án có lưu lượng 100-5000 req/ngày và sử dụng container (Docker) trên các dịch vụ đám mây tự động scale."
+      ],
+      "concepts": [
+        "d15-production-deployment-cost"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Trong một hệ thống AI doanh nghiệp, yêu cầu 'Audit trail' (Truy vết kiểm toán) đối với các quyết định của Agent nhằm mục đích chính nào sau đây?",
+      "options": {
+        "A": "Tự động ghi lại và giải trình mọi bước lập luận và kết quả đầu ra của mô hình.",
+        "B": "Tăng tốc độ phản hồi của mô hình ngôn ngữ lớn khi xử lý các truy vấn dài.",
+        "C": "Giảm thiểu tối đa chi phí tiêu hao token đầu vào bằng cách xóa bớt lịch sử chat.",
+        "D": "Tự động cập nhật các phiên bản mô hình mới nhất mà không cần kỹ sư can thiệp."
+      },
+      "answer": "A",
+      "explanation": "Yêu cầu 'Audit trail' là lưu lại toàn bộ vết quyết định (như Thought, Action, Tool call, Observation, Response) của Agent để phục vụ kiểm toán, tuân thủ pháp lý và giải trình lý do tại sao hệ thống đưa ra quyết định đó cho người dùng hoặc cơ quan quản lý.",
+      "hints": [
+        "Hãy nghĩ đến tình huống một AI Agent trong ngành tài chính duyệt sai một khoản vay của khách hàng.",
+        "Làm thế nào để thanh tra biết được Agent đã lập luận thế nào và gọi công cụ gì để ra quyết định đó?",
+        "Cần lưu lại lịch ký (log) chi tiết từng bước hoạt động của Agent để phục vụ cho việc kiểm tra, giải trình."
+      ],
+      "concepts": [
+        "d15-production-deployment-cost"
+      ]
+    }
+  ]
+}

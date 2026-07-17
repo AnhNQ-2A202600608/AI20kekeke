@@ -1,23 +1,54 @@
+# ============================================================
+# render.yaml — Infrastructure as Code cho Render
+#
+# Docs: https://render.com/docs/blueprint-spec
+# ============================================================
+
 services:
+  # ──────────────────────────────────────
+  # Backend Service — FastAPI (Python / Docker)
+  # ──────────────────────────────────────
   - type: web
-    name: vaic-backend
+    name: c2-app-backend
     runtime: docker
-    dockerContext: backend
-    dockerfilePath: Dockerfile
+    region: singapore
+    plan: free                # free | starter | standard | pro
+    healthCheckPath: /health
+    autoDeploy: false
     envVars:
-      - key: APP_NAME
-        value: vaic-universal-starter
-      - key: DEBUG
-        value: "true"
-      - key: STORAGE_PATH
-        value: /app/data
+      - key: APP_ENV
+        value: production
       - key: LOG_LEVEL
-        value: info
-      - key: PORT
-        value: 8000
-    # Lưu ý: Ổ đĩa (disk) yêu cầu tài khoản trả phí trên Render.
-    # Nếu sử dụng gói Free, vui lòng xóa hoặc comment đoạn dưới đây.
-    # disk:
-    #   name: backend-data
-    #   mountPath: /app/data
-    #   sizeGB: 1
+        value: INFO
+      - key: DATABASE_URL
+        sync: false           # Set Supabase connection string manually in Dashboard
+      - key: SUPABASE_URL
+        sync: false           # Set Supabase URL manually in Dashboard
+      - key: SUPABASE_SECRET_KEY
+        sync: false           # Server-only Supabase sb_secret_... key; never use publishable/anon here
+      - key: OPENAI_API_KEY
+        sync: false           # Set OpenAI API Key manually in Dashboard
+      - key: ANTHROPIC_API_KEY
+        sync: false           # Set Anthropic API Key manually in Dashboard
+      - key: GEMINI_API_KEY
+        sync: false           # Set Gemini API Key manually in Dashboard
+      - key: MODEL_NAME
+        value: gpt-4o-mini
+      - key: CACHE_TYPE
+        value: redis          # Use Redis for production scaling
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: c2-app-redis
+          property: connectionString
+      - key: CORS_ORIGINS
+        value: "http://localhost:3000" # Sẽ ghi đè bằng domain Vercel thật trên Render Dashboard
+
+  # ──────────────────────────────────────
+  # Redis Service (Dùng cho Rate Limiting & Caching)
+  # ──────────────────────────────────────
+  - type: redis
+    name: c2-app-redis
+    plan: free
+    ipAllowList: []           # Chỉ cho phép các service nội bộ kết nối
+

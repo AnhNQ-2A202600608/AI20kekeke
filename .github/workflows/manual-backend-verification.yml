@@ -1,0 +1,87 @@
+name: Backend Manual Verification
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_golden_eval:
+        description: Run golden AI evaluation with live provider and Supabase secrets
+        required: true
+        type: boolean
+        default: true
+      run_docker_build:
+        description: Build backend Docker image for deploy/release verification
+        required: true
+        type: boolean
+        default: false
+
+concurrency:
+  group: backend-manual-verification-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Backend Manual Verification
+    runs-on: self-hosted
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: uv pip install -r requirements.txt
+
+      - name: Check golden evaluation secrets
+        if: ${{ inputs.run_golden_eval }}
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: |
+          missing=()
+
+          if [ -z "$OPENAI_API_KEY" ] && [ -z "$OPENROUTER_API_KEY" ]; then
+            missing+=("OPENAI_API_KEY or OPENROUTER_API_KEY")
+          fi
+
+          for name in SUPABASE_URL SUPABASE_SECRET_KEY; do
+            if [ -z "${!name}" ]; then
+              missing+=("$name")
+            fi
+          done
+
+          if [ "${#missing[@]}" -gt 0 ]; then
+            printf 'Missing required secret(s) for golden evaluation:\n'
+            printf ' - %s\n' "${missing[@]}"
+            exit 1
+          fi
+
+      - name: Run Golden Test Cases Evaluation
+        if: ${{ inputs.run_golden_eval }}
+        run: uv run python scripts/run_golden_eval.py
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+
+      - name: Upload golden evaluation report
+        if: ${{ inputs.run_golden_eval && always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: golden-eval-report
+          path: outputs/golden_eval_report.md
+          if-no-files-found: ignore
+
+      - name: Build Docker image for verification
+        if: ${{ inputs.run_docker_build }}
+        run: docker build -t c2-app-backend:${{ github.sha }} .

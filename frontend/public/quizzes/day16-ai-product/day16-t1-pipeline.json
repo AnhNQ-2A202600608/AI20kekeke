@@ -1,0 +1,210 @@
+{
+  "id": "day16-t1-pipeline",
+  "parent_id": "day16-ai-product",
+  "topic_title": "Day 16: AI Product Strategy & Market Analysis",
+  "title": "Phần 2: Nhu Cầu Thực Tế & Công Thức Thiết Kế Giải Pháp JTBD",
+  "description": "Đánh giá kiến thức về phân tích nhu cầu thực tế của khách hàng doanh nghiệp, phân biệt nhu cầu thực và tín hiệu ảo (FOMO), viết Need theo cấu trúc JTBD.",
+  "difficulty": "bình thường",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Quy tắc vàng để kiểm chứng một nhu cầu thực tế (Real Need) của khách hàng doanh nghiệp là gì?",
+      "options": {
+        "A": "Đó phải là nỗi đau thực tế đã tồn tại và gây thiệt hại cho doanh nghiệp ngay cả khi công nghệ AI chưa xuất hiện.",
+        "B": "Đó phải là nhu cầu được phòng công nghệ thông tin của doanh nghiệp phê duyệt bằng văn bản chính thức gửi lên ban giám đốc.",
+        "C": "Đó phải là nhu cầu phát sinh trực tiếp sau khi doanh nghiệp được xem bản demo giới thiệu tính năng của mô hình AI.",
+        "D": "Đó phải là nỗi đau liên quan đến việc không có đủ hạ tầng phần cứng máy chủ để tự vận hành các mô hình ngôn ngữ lớn."
+      },
+      "answer": "A",
+      "explanation": "Theo tài liệu bài giảng, quy tắc vàng là: 'A real need hurts even before AI exists' (Nhu cầu thực sự phải là thứ gây đau đớn cho khách hàng ngay cả trước khi AI tồn tại). AI chỉ là giải pháp tối ưu hóa, không tự sinh ra nỗi đau mới.",
+      "hints": [
+        "Nỗi đau của doanh nghiệp có biến mất nếu chúng ta rút công nghệ AI đi không?",
+        "Hãy nghĩ về mối liên hệ giữa bản chất vấn đề vận hành kinh doanh và công nghệ giải quyết nó.",
+        "Đáp án đúng chỉ ra nỗi đau thực tế phải tồn tại độc lập trước khi có sự xuất hiện của AI."
+      ],
+      "concepts": [
+        "d16-t1-product-strategy"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Phát biểu nào sau đây thể hiện một nhu cầu ảo mang tính chất FOMO công nghệ (FOMO AI Signal) thay vì nhu cầu thực tế?",
+      "options": {
+        "A": "Chúng tôi cần tự động hóa quy trình phân loại email để giảm 50% thời gian chờ đợi phản hồi của khách hàng.",
+        "B": "Chúng tôi đang thất thoát khoảng 10% doanh thu mỗi tháng do không có nhân viên trực tổng đài điện thoại vào ban đêm.",
+        "C": "Chúng tôi muốn xây dựng một chatbot AI tích hợp vào website để bắt kịp xu hướng phát triển công nghệ hiện nay.",
+        "D": "Chúng tôi cần công cụ quét và tự động trích xuất thông tin hóa đơn để hạn chế tối đa các lỗi nhập liệu thủ công."
+      },
+      "answer": "C",
+      "explanation": "Phát biểu 'muốn xây dựng chatbot AI để bắt kịp xu hướng' là một FOMO signal điển hình, tập trung vào giải pháp công nghệ theo trào lưu hơn là giải quyết một nỗi đau hay tổn thất vận hành cụ thể.",
+      "hints": [
+        "Tìm phát biểu chỉ tập trung vào việc ứng dụng công nghệ cho hợp thời đại mà không nêu rõ thiệt hại hoặc mục tiêu vận hành cụ thể.",
+        "Nhu cầu thực phải gắn liền với kết quả kinh doanh hoặc hiệu suất vận hành.",
+        "Đáp án đúng thể hiện mong muốn dùng chatbot AI để bắt kịp xu hướng công nghệ."
+      ],
+      "concepts": [
+        "d16-t1-product-strategy"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Cấu trúc chuẩn của một Job-To-Be-Done (JTBD) dùng để ép rõ nhu cầu khách hàng được viết theo công thức nào?",
+      "options": {
+        "A": "When [bối cảnh vận hành], I want [mong muốn giải pháp công nghệ], so I can [tối ưu hóa cấu trúc chi phí hạ tầng].",
+        "B": "When [tình huống cụ thể], I want [động lực hành động], so I can [kết quả đầu ra mong muốn về mặt kinh doanh].",
+        "C": "When [ngân sách sẵn sàng], I want [thuê nhà cung cấp AI bên ngoài], so I can [hoàn thành chỉ tiêu chuyển đổi số].",
+        "D": "When [đối thủ ra sản phẩm mới], I want [phát triển tính năng tương tự], so I can [giữ vững thị phần hiện tại]."
+      },
+      "answer": "B",
+      "explanation": "Công thức viết JTBD chuẩn để định nghĩa nhu cầu rõ ràng là: When [situation - tình huống cụ thể], I want [motivation - động lực hành động], so I can [desired outcome - kết quả mong muốn].",
+      "hints": [
+        "Hãy chú ý đến ba thành phần cốt lõi của công thức: Bối cảnh tình huống, Động lực hành động, và Kết quả mong muốn đạt được.",
+        "Tránh đưa các công nghệ hoặc giải pháp cụ thể vào phần động lực.",
+        "Tìm phương án mô tả cấu trúc: tình huống cụ thể, động lực hành động, kết quả đầu ra mong muốn."
+      ],
+      "concepts": [
+        "d16-t1-product-strategy"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Khi áp dụng công thức JTBD cho trường hợp nhà xe BIVA, thành phần 'Situation' (Tình huống) được mô tả chính xác nhất là gì?",
+      "options": {
+        "A": "Khi tổng đài quá tải vào khung giờ cao điểm và nhân viên không thể tiếp nhận kịp thời tất cả các cuộc gọi đến.",
+        "B": "Khi nhà xe muốn ứng dụng công nghệ Voice AI tự động để cắt giảm toàn bộ chi phí thuê nhân viên trực tổng đài trực tiếp.",
+        "C": "Khi nhà xe nhận thấy các đối thủ cạnh tranh cùng tuyến đường bắt đầu triển khai hệ thống tổng đài thông minh.",
+        "D": "Khi ban giám đốc quyết định mở rộng quy mô đội xe và tăng tần suất các chuyến chạy trong ngày lên gấp hai lần."
+      },
+      "answer": "A",
+      "explanation": "Situation trong JTBD mô tả một tình huống vận hành cụ thể, thực tế và có thể quan sát được trong hoạt động hàng ngày của doanh nghiệp. Ở đây là tình trạng quá tải tổng đài cuộc gọi đến vào giờ cao điểm.",
+      "hints": [
+        "Situation must be actual context, not system setup intent.",
+        "Nó mô tả thời điểm phát sinh vấn đề cần giải quyết.",
+        "Đáp án đúng chỉ ra tình huống tổng đài quá tải vào giờ cao điểm làm nhân viên không nghe kịp."
+      ],
+      "concepts": [
+        "d16-t1-product-strategy"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Tại sao việc khách hàng yêu cầu 'Chúng tôi muốn một chatbot AI' lại được coi là một 'Feature request trá hình' thay vì nhu cầu thực?",
+      "options": {
+        "A": "Vì chatbot AI là công nghệ đã lỗi thời và không còn mang lại nhiều giá trị thực tiễn cho doanh nghiệp ở năm 2026.",
+        "B": "Vì phát biểu này đang tập trung mô tả giải pháp công nghệ thay vì mô tả nỗi đau vận hành cốt lõi cần được giải quyết.",
+        "C": "Vì chatbot AI yêu cầu chi phí tích hợp và bảo trì hệ thống quá lớn so với ngân sách vận hành của các doanh nghiệp vừa và nhỏ.",
+        "D": "Vì việc triển khai chatbot AI thường gặp phải sự phản đối mạnh mẽ từ đội ngũ nhân viên chăm sóc khách hàng nội bộ."
+      },
+      "answer": "B",
+      "explanation": "Khi khách hàng đòi hỏi một tính năng cụ thể (chatbot AI), họ đang tự đưa ra giải pháp (solution). Nhiệm vụ của người làm sản phẩm là đào sâu tìm ra nỗi đau thực sự đằng sau (ví dụ: nhân viên quá tải, khách chờ lâu dẫn tới bỏ đi).",
+      "hints": [
+        "Khách hàng có thực sự cần bản thân cái chatbot, hay họ cần kết quả mà cái chatbot mang lại?",
+        "Hãy nghĩ về sự phân biệt giữa 'Giải pháp' (Solution) và 'Nỗi đau' (Pain/Need).",
+        "Đáp án đúng chỉ ra rằng khách hàng đang nói về giải pháp công nghệ thay vì nỗi đau cốt lõi."
+      ],
+      "concepts": [
+        "d16-t1-product-strategy"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Tiêu chuẩn nào sau đây KHÔNG thuộc 5 tiêu chuẩn đánh giá một nhu cầu (Need) đủ mạnh của khách hàng doanh nghiệp?",
+      "options": {
+        "A": "Có bằng chứng thực tế chứng minh sự tồn tại của nỗi đau (evidence hoặc proxy evidence).",
+        "B": "Nỗi đau đó có tính chất lặp đi lặp lại nhiều lần trong quá trình vận hành hàng ngày của doanh nghiệp.",
+        "C": "Hiện tại khách hàng chưa tìm ra bất kỳ cách giải quyết tạm thời (workaround) nào cho vấn đề đó.",
+        "D": "Vấn đề đó khi được giải quyết xong phải trực tiếp thay đổi một outcome có ý nghĩa về mặt kinh doanh."
+      },
+      "answer": "C",
+      "explanation": "Ngược lại với đáp án C, một need mạnh thường là vấn đề mà khách hàng **đang phải dùng các cách giải quyết tạm bợ, thủ công (workarounds)** để xử lý. Việc có workaround chứng minh nỗi đau đó đủ lớn để họ phải tự tìm cách khắc phục tạm thời.",
+      "hints": [
+        "Hãy nhớ lại các tiêu chuẩn của need: không phải feature trá hình, có tính lặp lại, có workaround, có bằng chứng, thay đổi outcome.",
+        "Sự tồn tại của các giải pháp chắp vá (workarounds) hiện tại là tín hiệu tốt hay xấu về mức độ đau đớn?",
+        "Đáp án đúng chỉ ra tiêu chuẩn sai: 'Khách hàng chưa tìm ra bất kỳ cách giải quyết tạm thời nào'."
+      ],
+      "concepts": [
+        "d16-t1-product-strategy"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Điểm khác biệt lớn nhất giữa một 'Nhu cầu tồi' (Bad Need) và một 'Nhu cầu tốt' (Good Need) khi thiết kế sản phẩm AI là gì?",
+      "options": {
+        "A": "Nhu cầu tồi có thể giải quyết bằng các thuật toán đơn giản; nhu cầu tốt bắt buộc phải sử dụng các mô hình LLM lớn nhất.",
+        "B": "Nhu cầu tồi do nhân viên cấp dưới đề xuất; nhu cầu tốt phải do đích thân ban giám đốc điều hành trực tiếp yêu cầu.",
+        "C": "Nhu cầu tồi tập trung vào việc đòi hỏi ứng dụng AI; nhu cầu tốt tập trung vào hiệu quả vận hành và dòng tiền doanh nghiệp.",
+        "D": "Nhu cầu tồi chỉ xuất hiện ở các doanh nghiệp vừa và nhỏ; nhu cầu tốt chỉ có ở các tập đoàn đa quốc gia có quy mô lớn."
+      },
+      "answer": "C",
+      "explanation": "Nhu cầu tồi thường chỉ là mong muốn dùng AI theo phong trào (Technology-driven). Nhu cầu tốt đi sâu vào bài toán cốt lõi của doanh nghiệp như tối ưu hóa quy trình, giảm rủi ro, tăng doanh thu hoặc tiết kiệm chi phí vận hành thực tế.",
+      "hints": [
+        "Hãy so sánh mục tiêu hướng tới của hai loại nhu cầu này.",
+        "Một bên bị dẫn dắt bởi công nghệ (AI-driven), bên còn lại bị dẫn dắt bởi hiệu quả kinh tế và vận hành (business-driven).",
+        "Đáp án đúng chỉ ra nhu cầu tồi tập trung vào việc đòi hỏi dùng AI, còn nhu cầu tốt tập trung vào hiệu quả và dòng tiền."
+      ],
+      "concepts": [
+        "d16-t1-product-strategy"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Trong công thức JTBD của nhà xe BIVA, phần 'Desired Outcome' (Kết quả mong muốn) hướng tới mục tiêu cuối cùng nào?",
+      "options": {
+        "A": "Sở hữu một hệ thống Voice AI tự động chạy hoàn toàn trên máy chủ đám mây của doanh nghiệp.",
+        "B": "Không bị bỏ lỡ các cơ hội bán vé và tránh thất thoát doanh thu khi tổng đài điện thoại gặp tình trạng quá tải.",
+        "C": "Cắt giảm toàn bộ số lượng nhân sự trực tổng đài trực tiếp để thay thế bằng các tác nhân AI tự động hoàn toàn.",
+        "D": "Nâng cao uy tín thương hiệu của nhà xe thông qua việc ứng dụng công nghệ giao tiếp giọng nói tự động."
+      },
+      "answer": "B",
+      "explanation": "Desired Outcome trong JTBD của BIVA là kết quả kinh doanh thực tế: tránh thất thoát doanh thu do nhỡ cuộc gọi đặt vé của khách hàng vào giờ cao điểm.",
+      "hints": [
+        "Desired Outcome là mục tiêu kinh doanh hoặc vận hành cốt lõi sau khi giải quyết được tình huống khó khăn.",
+        "Mục tiêu này phải đo lường được bằng hiệu quả tài chính hoặc chất lượng dịch vụ của nhà xe.",
+        "Đáp án đúng đề cập đến việc không bỏ lỡ cơ hội bán vé và tránh thất thoát doanh thu."
+      ],
+      "concepts": [
+        "d16-t1-product-strategy"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Tại sao sự tồn tại của một giải pháp tạm bợ (Workaround) của khách hàng lại là bằng chứng mạnh mẽ cho một nhu cầu thực tế?",
+      "options": {
+        "A": "Nó chứng tỏ vấn đề đủ đau và cấp bách đến mức khách hàng phải chấp nhận tốn chi phí để tự khắc phục bằng cách thủ công.",
+        "B": "Nó chứng minh rằng khách hàng đã có đầy đủ kiến thức kỹ thuật để tự xây dựng giải pháp AI mà không cần bên thứ ba.",
+        "C": "Nó cho thấy quy trình vận hành hiện tại của doanh nghiệp đã cực kỳ tối ưu và không cần thay đổi cấu trúc cốt lõi.",
+        "D": "Nó giúp nhà phát triển sản phẩm tiết kiệm được thời gian thiết kế các luồng giao diện người dùng cho hệ thống mới."
+      },
+      "answer": "A",
+      "explanation": "Nếu khách hàng tự bỏ công sức, thời gian hoặc tiền bạc ra làm một giải pháp tạm bợ (workaround) dù rất cồng kềnh (như thuê thêm người trực chắp vá, ghi chép sổ tay thủ công), điều đó xác nhận nỗi đau đó cực kỳ cấp thiết và họ sẵn sàng trả tiền cho một giải pháp tốt hơn.",
+      "hints": [
+        "Tại sao người ta lại phải tự chế ra các công cụ tạm bợ để dùng khi hệ thống chính thức chưa có?",
+        "Điều đó phản ánh tính cấp bách của nỗi đau vận hành đối với sự sống còn của doanh nghiệp như thế nào?",
+        "Đáp án đúng chỉ ra vấn đề đủ đau và cấp bách đến mức khách hàng phải chấp nhận tự khắc phục thủ công."
+      ],
+      "concepts": [
+        "d16-t1-product-strategy"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Khi thu thập bằng chứng cho một nhu cầu (Evidence), loại dữ liệu nào dưới đây mang lại độ tin cậy cao nhất cho người làm sản phẩm?",
+      "options": {
+        "A": "Các số liệu thống kê vận hành thực tế ghi nhận thiệt hại trực tiếp (như nhật ký cuộc gọi nhỡ, doanh thu bị sụt giảm).",
+        "B": "Các câu trả lời khảo sát của nhân viên về việc họ cảm thấy hệ thống hiện tại hoạt động chưa thực sự mượt mà.",
+        "C": "Lời hứa của ban giám đốc về việc họ sẽ sẵn sàng đầu tư ngân sách lớn nếu sản phẩm AI được phát triển thành công.",
+        "D": "Báo cáo nghiên cứu thị trường vĩ mô về xu hướng tăng trưởng của ngành ứng dụng trí tuệ nhân tạo toàn cầu."
+      },
+      "answer": "A",
+      "explanation": "Dữ liệu vận hành thực tế (hard data) ghi nhận thiệt hại cụ thể như lịch sử cuộc gọi nhỡ, số lượng khách hủy đơn, doanh thu sụt giảm là bằng chứng thép (hard evidence) chứng minh sự tồn tại của nỗi đau, đáng tin cậy hơn nhiều so với các ý kiến khảo sát chủ quan hay lời hứa hẹn.",
+      "hints": [
+        "Hãy tìm loại bằng chứng mang tính định lượng, khách quan và gắn liền với số liệu vận hành thực tế.",
+        "Ý kiến khảo sát hoặc lời hứa hẹn tương lai thường có độ nhiễu rất cao.",
+        "Đáp án đúng là số liệu vận hành thực tế ghi nhận thiệt hại trực tiếp."
+      ],
+      "concepts": [
+        "d16-t1-product-strategy"
+      ]
+    }
+  ]
+}

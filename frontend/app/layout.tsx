@@ -1,71 +1,93 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import Link from "next/link";
+import type {Metadata} from 'next';
+import { Be_Vietnam_Pro, Fraunces } from 'next/font/google';
+import './globals.css'; // Global styles
+import 'katex/dist/katex.min.css'; // KaTeX styles for math formulas
+import { Analytics } from '@vercel/analytics/react';
+
+const beVietnamPro = Be_Vietnam_Pro({
+  subsets: ['vietnamese', 'latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  variable: '--font-be-vietnam-pro',
+  display: 'swap',
+});
+
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  variable: '--font-fraunces',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
-  title: "VAIC Universal Starter",
-  description: "Domain-neutral starter shell for VAIC competitions",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://edugap.ai'),
+  title: {
+    default: 'EduGap | Course-grounded AI tutor cho AI cohort',
+    template: '%s | EduGap',
+  },
+  description: 'EduGap giúp học viên AI cohort hiểu, luyện tập và biết nên ôn gì tiếp từ học liệu chính thức bằng Socratic hints có citation, quiz thích ứng và mastery map.',
+  keywords: [
+    'course-grounded AI tutor',
+    'gia sư AI cá nhân hóa',
+    'AI tutor Socratic',
+    'AI cohort learning',
+    'luyện tập AI thích ứng',
+    'adaptive quiz',
+    'RAG citation',
+    'mastery map',
+    'next review focus',
+    'học AI thực chiến',
+    'dashboard mentor',
+  ],
+  authors: [{ name: 'EduGap' }],
+  creator: 'EduGap',
+  publisher: 'EduGap',
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'vi_VN',
+    url: '/',
+    siteName: 'EduGap',
+    title: 'EduGap | Học AI để hiểu, không chỉ lấy đáp án',
+    description: 'Course-grounded AI tutor cho AI cohorts: cited Socratic hints, adaptive practice, mastery updates và next-review guidance từ học liệu chính thức.',
+    images: [
+      {
+        url: '/app-backgrounds/code-bay-app-shell-bg.webp',
+        width: 1200,
+        height: 630,
+        alt: 'EduGap AI learning workspace',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'EduGap | Course-grounded AI tutor',
+    description: 'Học AI để hiểu, luyện đúng điểm yếu và biết nên ôn gì tiếp từ học liệu chính thức.',
+    images: ['/app-backgrounds/code-bay-app-shell-bg.webp'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  icons: {
+    icon: [
+      { url: '/brand/edugap/favicon.ico', sizes: 'any' },
+      { url: '/brand/edugap/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/brand/edugap/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/brand/edugap/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
-    <html lang="en">
-      <body>
-        <div style={{ display: "flex", minHeight: "100vh" }}>
-          {/* Sidebar */}
-          <aside style={{
-            width: "260px",
-            backgroundColor: "#1e293b",
-            borderRight: "1px solid #334155",
-            display: "flex",
-            flexDirection: "column",
-            padding: "1.5rem"
-          }}>
-            <div style={{ marginBottom: "2rem" }}>
-              <h1 style={{ fontSize: "1.25rem", fontWeight: "bold", color: "#3b82f6", display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                <span>🛡️</span> VAIC Universal
-              </h1>
-              <span style={{ fontSize: "0.75rem", color: "#64748b" }}>v0.1.0 (Phase 1)</span>
-            </div>
-
-            <nav style={{ display: "flex", flexDirection: "column", gap: "0.5rem", flex: 1 }}>
-              <Link href="/" style={{ display: "flex", alignItems: "center", gap: "0.75rem", padding: "0.75rem", borderRadius: "0.375rem" }}>
-                <span>🏠</span> Home
-              </Link>
-              <Link href="/intake" style={{ display: "flex", alignItems: "center", gap: "0.75rem", padding: "0.75rem", borderRadius: "0.375rem" }}>
-                <span>📥</span> Problem Intake
-              </Link>
-              <Link href="/workspace" style={{ display: "flex", alignItems: "center", gap: "0.75rem", padding: "0.75rem", borderRadius: "0.375rem" }}>
-                <span>🛠️</span> Workspace
-              </Link>
-              <Link href="/files" style={{ display: "flex", alignItems: "center", gap: "0.75rem", padding: "0.75rem", borderRadius: "0.375rem" }}>
-                <span>📁</span> Data & Files
-              </Link>
-              <Link href="/runs" style={{ display: "flex", alignItems: "center", gap: "0.75rem", padding: "0.75rem", borderRadius: "0.375rem" }}>
-                <span>⚡</span> Runs
-              </Link>
-              <Link href="/results" style={{ display: "flex", alignItems: "center", gap: "0.75rem", padding: "0.75rem", borderRadius: "0.375rem" }}>
-                <span>📊</span> Results
-              </Link>
-              <Link href="/settings" style={{ display: "flex", alignItems: "center", gap: "0.75rem", padding: "0.75rem", borderRadius: "0.375rem" }}>
-                <span>⚙️</span> Settings
-              </Link>
-            </nav>
-
-            <div style={{ borderTop: "1px solid #334155", paddingTop: "1rem", fontSize: "0.875rem", color: "#64748b" }}>
-              Environment: <span style={{ color: "#10b981", fontWeight: "bold" }}>Local</span>
-            </div>
-          </aside>
-
-          {/* Main Content */}
-          <main style={{ flex: 1, backgroundColor: "#0f172a", overflowY: "auto" }}>
-            {children}
-          </main>
-        </div>
+    <html lang="vi" className={`${beVietnamPro.variable} ${fraunces.variable}`} suppressHydrationWarning>
+      <body className="font-be-vietnam-pro bg-background text-on-background min-h-screen">
+        {children}
+        <Analytics />
       </body>
     </html>
   );

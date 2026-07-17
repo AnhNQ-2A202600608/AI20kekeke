@@ -1,9 +1,0 @@
-{
-  "example_transform": true,
-  "agent": false,
-  "rag": false,
-  "computer_vision": false,
-  "prediction": false,
-  "optimization": false,
-  "analytics": false
-}

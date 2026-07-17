@@ -1,0 +1,220 @@
+{
+  "id": "ai-product-uncertainty-business-roi",
+  "parent_id": "day5",
+  "topic_title": "Day 5: Thiết kế sản phẩm AI cho sự không chắc chắn",
+  "title": "Phần 4: Quản lý Chi phí, ROI & Bánh đà Dữ liệu",
+  "description": "Kiểm tra khả năng thiết kế hệ thống tối ưu chi phí token, rate limits, tính ROI theo 3 kịch bản, AI Product Canvas và cách phân chia công việc trong dự án AI.",
+  "difficulty": "khó",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Tại sao khi lập kế hoạch tài chính cho sản phẩm AI, ta cần tính toán ROI theo 3 kịch bản khác nhau?",
+      "options": {
+        "A": "Vì chi phí phần cứng máy chủ thay đổi liên tục theo tỷ giá ngoại tệ và biến động thị trường.",
+        "B": "Vì các mô hình AI ngôn ngữ lớn (LLM) thường tự động thay đổi giá dịch vụ API hàng ngày.",
+        "C": "Vì chi phí vận hành AI tăng theo lượng dùng và chất lượng mô hình không có tính xác định tuyệt đối.",
+        "D": "Vì các nhà đầu tư dự án luôn yêu cầu phải có ít nhất ba báo cáo tài chính độc lập khác nhau."
+      },
+      "answer": "C",
+      "explanation": "Chi phí gọi API tỷ lệ thuận với số lượng yêu cầu (lượng dùng). Đồng thời, chất lượng mô hình thay đổi khiến tỷ lệ lỗi (và chi phí sửa lỗi) biến động, buộc nhóm phải dự trù 3 kịch bản ROI (thận trọng, thực tế, lạc quan).",
+      "hints": [
+        "Hãy nghĩ về cách mà các yếu tố không chắc chắn có thể ảnh hưởng đến lợi nhuận trong các kịch bản khác nhau.",
+        "Có những yếu tố nào có thể thay đổi theo thời gian và ảnh hưởng đến chi phí và doanh thu của sản phẩm AI?",
+        "Xem xét những gì có thể xảy ra trong các kịch bản khác nhau, và liệu có thể có yếu tố nào làm thay đổi kết quả cuối cùng không."
+      ],
+      "concepts": [
+        "d5-ai-product-kickoff",
+        "d18-t1-financial-roi"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Biện pháp thực tế nào giúp kiểm soát chi phí token API khi triển khai ứng dụng AI cho người dùng đại chúng?",
+      "options": {
+        "A": "Tăng nhiệt độ (temperature) của mô hình để mô hình tự động tạo ra phản hồi ngắn gọn và tiết kiệm hơn.",
+        "B": "Loại bỏ hoàn toàn cơ sở dữ liệu Supabase nhằm giảm thiểu số lượng kết nối mạng giữa các hệ thống con.",
+        "C": "Khóa vĩnh viễn tài khoản của những người dùng thường xuyên đặt câu hỏi quá dài hoặc dùng từ phức tạp.",
+        "D": "Thiết lập giới hạn lượt dùng (rate limit) như chỉ cho phép hỏi tối đa 10 câu trong vòng 10 phút."
+      },
+      "answer": "D",
+      "explanation": "Đặt giới hạn lượt gọi (rate limit, ví dụ: tối đa 10 câu hỏi/10 phút) giúp kiểm soát token sử dụng trực tiếp trên mỗi người dùng, tránh tình trạng bị spam gây đội chi phí API.",
+      "hints": [
+        "Tưởng tượng về cách mà giới hạn có thể giúp kiểm soát chi phí trong một môi trường sử dụng cao.",
+        "Có cách nào để đảm bảo rằng người dùng không tiêu tốn quá nhiều tài nguyên mà vẫn sử dụng được dịch vụ không?",
+        "Hãy nghĩ về những cách mà bạn có thể kiểm soát hành vi của người dùng để giảm thiểu chi phí."
+      ],
+      "concepts": [
+        "d5-ai-product-kickoff",
+        "d4-prompt-engineering"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Lời khuyên cốt lõi khi định hướng sản phẩm AI cho buổi báo cáo Demo trước hội đồng đánh giá là gì?",
+      "options": {
+        "A": "Chỉ nên tập trung hoàn thiện tốt 1 đến 2 tính năng cốt lõi thay vì làm quá nhiều hướng nửa vời.",
+        "B": "Cố gắng tích hợp càng nhiều mô hình AI khác nhau vào hệ thống càng tốt để thể hiện năng lực kỹ thuật.",
+        "C": "Dành toàn bộ thời gian để thiết kế giao diện với nhiều màu sắc và bỏ qua phần kiểm thử tính năng.",
+        "D": "Chỉ xây dựng một trang giới thiệu tĩnh và mô tả các ý tưởng công nghệ mà không cần viết logic code."
+      },
+      "answer": "A",
+      "explanation": "Khi demo, việc làm quá nhiều tính năng dễ dẫn đến sự thiếu chỉn chu và dễ bị bắt bẻ. Tập trung hoàn thành thật tốt 1-2 tính năng chính kết hợp với UI/UX rõ ràng giúp tạo sự tin cậy hơn.",
+      "hints": [
+        "Tập trung vào việc thể hiện giá trị cốt lõi của sản phẩm thay vì cố gắng làm quá nhiều thứ.",
+        "Điều gì quan trọng nhất mà bạn muốn truyền tải đến hội đồng đánh giá trong một buổi demo?",
+        "Xem xét các yếu tố nào có thể giúp cải thiện khả năng thuyết phục trong một buổi báo cáo."
+      ],
+      "concepts": [
+        "d5-ai-product-kickoff",
+        "d19-t1-stakeholder-pitch"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Chỉ số đánh giá (metric) thực sự thuyết phục cho một sản phẩm AI dưới góc độ kinh doanh hoặc người dùng là gì?",
+      "options": {
+        "A": "Số lượng các thư viện mã nguồn mở mà nhóm lập trình đã nhập vào để xây dựng hệ thống.",
+        "B": "Số tiền bạc hoặc thời gian thực tế mà sản phẩm AI giúp người dùng tiết kiệm được khi sử dụng.",
+        "C": "Chỉ số phần trăm số lượng dòng code (LOC) mà nhóm viết ra trong suốt thời gian làm dự án.",
+        "D": "Số lượng lỗi hệ thống phát sinh trong quá trình chạy thử nghiệm phiên bản nội bộ của sản phẩm."
+      },
+      "answer": "B",
+      "explanation": "Sản phẩm AI chỉ thực sự mang lại ROI cao khi nó giải quyết được nỗi đau thực tế của người dùng, đo lường bằng việc tiết kiệm chính xác bao nhiêu thời gian hay chi phí cho họ.",
+      "hints": [
+        "Hãy nghĩ về những gì thực sự có giá trị đối với người dùng khi họ sử dụng sản phẩm của bạn.",
+        "Có những cách nào để đo lường sự thành công của sản phẩm trong việc tiết kiệm thời gian hoặc chi phí cho người dùng?",
+        "Phân tích xem yếu tố nào có thể là dấu hiệu thực sự cho thấy sản phẩm của bạn mang lại lợi ích."
+      ],
+      "concepts": [
+        "d5-ai-product-kickoff",
+        "d14-ai-evaluation"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Cơ chế vận hành của 'Bánh đà dữ liệu' (Data Flywheel) trong một dự án sản phẩm AI được mô tả như thế nào?",
+      "options": {
+        "A": "AI tốt hơn giúp máy chủ hoạt động nhanh hơn, từ đó tiết kiệm chi phí thuê hạ tầng đám mây.",
+        "B": "Giao diện đẹp hơn giúp thu hút nhiều lập trình viên tham gia đóng góp mã nguồn mở cho dự án.",
+        "C": "Có người dùng giúp thu được nhiều dữ liệu phản hồi, từ đó cải tiến AI để thu hút thêm người dùng.",
+        "D": "Tăng chi phí token API giúp tăng chất lượng câu trả lời và làm hài lòng các nhà đầu tư dự án."
+      },
+      "answer": "C",
+      "explanation": "Data Flywheel tạo vòng lặp tự củng cố: Nhiều người dùng -> sinh nhiều dữ liệu thực tế -> dữ liệu giúp tối ưu và thích ứng mô hình AI tốt hơn -> thu hút thêm nhiều người dùng mới.",
+      "hints": [
+        "Hãy xem xét cách mà dữ liệu và người dùng có thể tương tác với nhau để tạo ra giá trị cho sản phẩm.",
+        "Có những vòng lặp nào trong quá trình phát triển sản phẩm AI mà bạn có thể nhận thấy?",
+        "Suy nghĩ về cách mà việc cải thiện mô hình có thể dẫn đến việc thu hút thêm người dùng và ngược lại."
+      ],
+      "concepts": [
+        "d5-ai-product-kickoff",
+        "d7-data-foundations"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Mục đích quan trọng nhất của bảng phân công công việc cụ thể (Owner Plan) trong nhóm làm dự án AI là gì?",
+      "options": {
+        "A": "Để báo cáo với giảng viên về tiến độ làm việc của từng thành viên và nâng cao điểm số.",
+        "B": "Để đảm bảo tất cả các thành viên trong nhóm đều phải tham gia viết tài liệu đặc tả dự án.",
+        "C": "Để tính toán chính xác chi phí token API phát sinh từ tài khoản của từng thành viên trong nhóm.",
+        "D": "Để tránh đè code giữa các thành viên và nhanh chóng xác định người chịu trách nhiệm debug khi lỗi."
+      },
+      "answer": "D",
+      "explanation": "Owner Plan giúp phân định rõ vai trò (documenter, system builder, tester, merge code) để tránh code bị chồng chéo (overlap) và dễ dàng debug khi hệ thống gặp lỗi logic.",
+      "hints": [
+        "Hãy nghĩ về cách mà việc phân công công việc có thể ảnh hưởng đến hiệu quả của nhóm.",
+        "Có những vấn đề gì có thể phát sinh nếu không rõ ràng về vai trò của từng thành viên trong nhóm?",
+        "Xem xét cách mà một kế hoạch rõ ràng có thể giúp tăng cường sự trách nhiệm và hiệu suất làm việc."
+      ],
+      "concepts": [
+        "d5-ai-product-kickoff",
+        "d19-t1-stakeholder-pitch"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Sự khác biệt cốt lõi giữa phản hồi trực tiếp (explicit) và phản hồi ngầm (implicit) trên giao diện sản phẩm AI là gì?",
+      "options": {
+        "A": "Phản hồi trực tiếp do user chủ động nhấn (like/dislike), phản hồi ngầm thu thập từ hành vi (time spent).",
+        "B": "Phản hồi trực tiếp do hệ thống tự đánh giá, phản hồi ngầm do lập trình viên nhập thủ công vào database.",
+        "C": "Phản hồi trực tiếp lưu trữ trong file JSON, phản hồi ngầm được lưu trực tiếp trên bộ nhớ đệm client.",
+        "D": "Phản hồi trực tiếp chỉ xuất hiện lúc demo, phản hồi ngầm chỉ hoạt động khi sản phẩm chạy thật."
+      },
+      "answer": "A",
+      "explanation": "Explicit feedback là hành động trực tiếp của user như nhấn thích, chê, hay sửa kết quả. Implicit feedback là các tín hiệu hành vi gián tiếp như thời gian dừng chân, tỷ lệ cuộn trang.",
+      "hints": [
+        "Suy nghĩ về sự khác biệt giữa phản hồi mà người dùng chủ động cung cấp và phản hồi mà bạn thu thập một cách thụ động.",
+        "Có những yếu tố nào giúp bạn phân biệt giữa hai loại phản hồi này trong sản phẩm của bạn?",
+        "Hãy nhớ rằng không phải mọi phản hồi đều được thể hiện một cách rõ ràng, đôi khi chúng ở dạng hành vi."
+      ],
+      "concepts": [
+        "d5-ai-product-kickoff",
+        "d4-prompt-engineering"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Tại sao nhóm dự án cần đánh giá kỹ tính khả thi (feasibility) trước khi tiến hành xây dựng bản thử nghiệm (demo)?",
+      "options": {
+        "A": "Để đảm bảo giao diện ứng dụng sử dụng đúng các font chữ và màu sắc HSL cao cấp nhất hiện nay.",
+        "B": "Để tránh lãng phí công sức xây dựng một công cụ đắt đỏ mà người dùng có thể làm thủ công dễ dàng.",
+        "C": "Để giúp Supabase có đủ thời gian khởi tạo cơ sở dữ liệu và đồng bộ thông tin khảo sát người dùng.",
+        "D": "Để thuyết phục các nhà cung cấp mô hình nền giảm giá phí dịch vụ gọi API trong suốt quá trình demo."
+      },
+      "answer": "B",
+      "explanation": "Nếu bài toán quá tốn kém để làm AI trong khi người dùng có thể làm thủ công hoặc dùng các phương án truyền thống hiệu quả hơn, dự án đó thiếu tính khả thi thực tế.",
+      "hints": [
+        "Hãy nghĩ về lý do tại sao việc đánh giá tính khả thi lại quan trọng trước khi bắt đầu một dự án.",
+        "Có những rủi ro gì có thể xảy ra nếu bạn không xem xét kỹ lưỡng khả năng thực hiện của dự án?",
+        "Xem xét cách mà việc đánh giá kỹ lưỡng có thể giúp tiết kiệm thời gian và nguồn lực."
+      ],
+      "concepts": [
+        "d5-ai-product-kickoff",
+        "d2-ai-problem-framing"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Lợi thế cạnh tranh thực tế và khó sao chép nhất của một sản phẩm AI trong thị trường hiện nay nằm ở đâu?",
+      "options": {
+        "A": "Việc áp dụng các mô hình nền tảng mới nhất và nổi tiếng nhất được phát hành bởi các hãng lớn.",
+        "B": "Thiết kế giao diện với nhiều hiệu ứng hoạt ảnh mượt mà cùng hệ thống phím tắt điều hướng nhanh gọn.",
+        "C": "Tập dữ liệu phản hồi độc quyền từ người dùng giúp mô hình tự tối ưu và thích ứng theo thời gian.",
+        "D": "Số lượng nhân sự trong nhóm lập trình cùng năng lực viết tài liệu đặc tả dự án của các thành viên."
+      },
+      "answer": "C",
+      "explanation": "Mô hình và giao diện rất dễ bị sao chép hoặc phổ biến hóa (commoditization). Dữ liệu phản hồi độc quyền tích lũy qua sử dụng thực tế mới là rào cản phòng thủ vững chắc nhất.",
+      "hints": [
+        "Tập trung vào cái gì làm cho sản phẩm của bạn trở nên độc đáo và không dễ sao chép.",
+        "Có những yếu tố nào có thể tạo ra lợi thế cạnh tranh bền vững cho sản phẩm AI của bạn?",
+        "Suy nghĩ về cách mà dữ liệu và trải nghiệm người dùng có thể tạo ra giá trị mà đối thủ không thể sao chép."
+      ],
+      "concepts": [
+        "d5-ai-product-kickoff",
+        "d7-data-foundations"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Thành phần 'Trust' (Sự tin cậy) trong AI Product Canvas tập trung giải quyết vấn đề cốt lõi nào của sản phẩm?",
+      "options": {
+        "A": "Định hình các mô hình nền tảng sẽ sử dụng và ước tính chi phí API phát sinh trong các kịch bản dùng.",
+        "B": "Thiết lập các giới hạn lượt dùng token và cấu hình Supabase để đồng bộ thông tin khảo sát người dùng.",
+        "C": "Phân chia vai trò cụ thể cho các thành viên trong nhóm nhằm hạn chế việc đè code khi làm việc chung.",
+        "D": "Thiết kế cách ứng phó khi AI dự đoán sai và lựa chọn chỉ số Precision hay Recall để tối ưu hóa mô hình."
+      },
+      "answer": "D",
+      "explanation": "Thành phần Trust buộc nhóm phát triển phải thiết kế sẵn kịch bản khi AI sai, xác định sai lệch nào đắt hơn (chọn tối ưu Precision hay Recall), và xây dựng các luồng phục hồi niềm tin.",
+      "hints": [
+        "Hãy nghĩ về những thách thức mà sản phẩm AI có thể gặp phải khi không hoạt động như mong đợi.",
+        "Có những cách nào để bạn có thể xây dựng niềm tin với người dùng khi sản phẩm không chính xác?",
+        "Suy nghĩ về các chỉ số nào có thể giúp bạn tối ưu hóa và cải thiện trải nghiệm người dùng."
+      ],
+      "concepts": [
+        "d5-ai-product-kickoff",
+        "d24-t1-responsible-ai"
+      ]
+    }
+  ]
+}

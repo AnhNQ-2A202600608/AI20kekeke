@@ -1,0 +1,210 @@
+{
+  "id": "day22-t3-advanced",
+  "parent_id": "day22-agent-builder",
+  "topic_title": "Day 22: DPO, ORPO & Alignment",
+  "title": "Phần 3: Các Phương Pháp Thay Thế SimPO/ORPO & Reinforcement Learning Cho Reasoning",
+  "description": "Đánh giá nâng cao về SimPO, ORPO, KTO, và sự trở lại của Reinforcement Learning (GRPO & RLVR) để tối ưu hóa khả năng suy luận logic.",
+  "difficulty": "khó",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Điểm cải tiến kỹ thuật nổi bật nhất của SimPO (Meng et al. 2024) so với DPO truyền thống là gì?",
+      "options": {
+        "A": "Nó loại bỏ hoàn toàn reference model và giảm thiểu đáng kể dung lượng bộ nhớ.",
+        "B": "Nó cho phép chạy trực tiếp trên các thiết bị di động không cần mạng.",
+        "C": "Nó giúp mô hình tự động sửa lỗi chính tả trong các tệp dữ liệu.",
+        "D": "Nó tự động mã hóa bảo mật toàn bộ dữ liệu cá nhân của người dùng."
+      },
+      "answer": "A",
+      "explanation": "SimPO là phương pháp reference-free, loại bỏ hoàn toàn mô hình tham chiếu (\u03c0ref) trong quá trình huấn luyện, giúp tiết kiệm bộ nhớ GPU và đẩy nhanh tốc độ chạy.",
+      "hints": [
+        "SimPO không yêu cầu nạp mô hình tham chiếu để tính toán KL Divergence.",
+        "Giảm bớt số lượng thực thể mô hình cần lưu trữ trong VRAM của GPU.",
+        "Đáp án đúng là loại bỏ hoàn toàn reference model và giảm đáng kể bộ nhớ."
+      ],
+      "concepts": [
+        "d22-t3-dpo-alignment"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Cơ chế nào được SimPO tích hợp vào hàm loss để giải quyết triệt để lỗi gian lận độ dài (length hacking)?",
+      "options": {
+        "A": "Sử dụng trung bình log-probability của phản hồi làm phần thưởng chuẩn hóa.",
+        "B": "Tự động giới hạn số lượng token tối đa của mỗi phản hồi sinh ra.",
+        "C": "Chặn toàn bộ các câu trả lời có độ dài vượt quá một trăm từ.",
+        "D": "Yêu cầu người dùng tự chọn độ dài mong muốn trước khi đặt câu hỏi."
+      },
+      "answer": "A",
+      "explanation": "SimPO chuẩn hóa điểm thưởng (implicit reward) bằng cách chia cho độ dài câu trả lời (length normalization), triệt tiêu xu hướng viết dài dòng của mô hình.",
+      "hints": [
+        "Chuẩn hóa giá trị xác suất dựa trên số lượng token sinh ra thực tế.",
+        "Tính toán điểm thưởng trung bình thay vì tích lũy tổng số log-probability.",
+        "Đáp án đúng là sử dụng trung bình log-probability làm phần thưởng chuẩn hóa."
+      ],
+      "concepts": [
+        "d22-t3-dpo-alignment"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Triết lý huấn luyện căn chỉnh của phương pháp ORPO (Hong et al. 2024) có điểm gì đặc trưng?",
+      "options": {
+        "A": "Nó chia quy trình huấn luyện thành năm giai đoạn độc lập cực kỳ phức tạp.",
+        "B": "Nó kết hợp SFT loss và preference loss trong một stage duy nhất.",
+        "C": "Nó chỉ dùng để tối ưu hóa khả năng suy luận toán học nâng cao.",
+        "D": "Nó yêu cầu một mô hình chấm điểm độc lập hoạt động song song."
+      },
+      "answer": "B",
+      "explanation": "ORPO (Odds Ratio Preference Optimization) thực hiện căn chỉnh trực tiếp từ base model sang aligned model trong 1 stage duy nhất, kết hợp hàm loss SFT và preference odds ratio.",
+      "hints": [
+        "Loại bỏ bước huấn luyện SFT riêng biệt trước khi chạy căn chỉnh hành vi.",
+        "Quy trình huấn luyện một bước tích hợp cả kỹ năng định dạng và giá trị.",
+        "Đáp án là kết hợp SFT loss và preference loss trong một stage duy nhất."
+      ],
+      "concepts": [
+        "d22-t3-dpo-alignment"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Thuật toán căn chỉnh KTO (Kahneman-Tversky Optimization) phù hợp nhất với loại dữ liệu phản hồi nào?",
+      "options": {
+        "A": "Các cặp so sánh chi tiết giữa hai câu trả lời của hai mô hình.",
+        "B": "Các phản hồi nhị phân dạng thích hoặc không thích từ phía người dùng.",
+        "C": "Các văn bản nhận xét viết bằng ngôn ngữ tự nhiên của chuyên gia.",
+        "D": "Các báo cáo lỗi hệ thống tự động sinh ra từ máy chủ vận hành."
+      },
+      "answer": "B",
+      "explanation": "KTO được thiết kế để học từ dữ liệu phản hồi nhị phân đơn lẻ (+1 hoặc -1, như thumbs up/down), không cần dữ liệu ghép cặp (chosen, rejected) đắt đỏ.",
+      "hints": [
+        "Dữ liệu dạng nhãn đánh giá đơn lập dễ thu thập từ nhật ký sử dụng thực tế.",
+        "Mô hình học máy áp dụng lý thuyết triển vọng (Prospect Theory) của Kahneman.",
+        "Đáp án là các phản hồi nhị phân dạng thích hoặc không thích từ người dùng."
+      ],
+      "concepts": [
+        "d22-t3-dpo-alignment"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Thuật toán GRPO giải quyết vấn đề bộ nhớ VRAM của PPO trong học tăng cường bằng cách nào?",
+      "options": {
+        "A": "Bằng cách giảm số lượng tham số huấn luyện xuống mức tối thiểu tuyệt đối.",
+        "B": "Bằng cách loại bỏ hoàn toàn Value Model trong kiến trúc PPO truyền thống.",
+        "C": "Bằng cách tự động đóng băng toàn bộ các lớp ẩn của mô hình.",
+        "D": "Bằng cách lưu trữ dữ liệu huấn luyện trên máy chủ đám mây bên ngoài."
+      },
+      "answer": "B",
+      "explanation": "GRPO (Group Relative Policy Optimization) loại bỏ mô hình ước lượng giá trị (Value Model), thay vào đó tính toán baseline từ điểm thưởng trung bình của nhóm G mẫu sinh ra.",
+      "hints": [
+        "Cơ chế ước lượng phần thưởng tương đối theo nhóm thay thế hàm giá trị.",
+        "Giúp tiết kiệm khoảng 50% dung lượng bộ nhớ VRAM của GPU khi huấn luyện.",
+        "Đáp án là loại bỏ hoàn toàn Value Model trong kiến trúc PPO truyền thống."
+      ],
+      "concepts": [
+        "d22-t3-dpo-alignment"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Trong cơ chế RLVR áp dụng cho mô hình suy luận (như DeepSeek-R1), điểm thưởng được xác định thế nào?",
+      "options": {
+        "A": "Dựa vào điểm số đánh giá từ một mô hình giám khảo GPT bốn o.",
+        "B": "Dựa vào kết quả bình chọn trực tiếp của cộng đồng người dùng.",
+        "C": "Kiểm tra bằng mã nguồn tự động thông qua unit tests hoặc regex.",
+        "D": "Tự động sinh điểm ngẫu nhiên dựa trên độ trễ của máy chủ."
+      },
+      "answer": "C",
+      "explanation": "RLVR (Reinforcement Learning from Verifiable Rewards) sử dụng các phần thưởng có thể kiểm chứng bằng chương trình (như chạy code qua bộ test, so khớp kết quả toán bằng regex).",
+      "hints": [
+        "Sử dụng các quy tắc kiểm tra logic lập trình có thể tự động hóa hoàn toàn.",
+        "Bỏ qua các mô hình giám khảo LLM-as-judge dễ bị lỗi đánh giá cảm tính.",
+        "Đáp án đúng là kiểm tra bằng mã nguồn tự động qua unit tests hoặc regex."
+      ],
+      "concepts": [
+        "d22-t3-dpo-alignment"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Quy trình Constitutional AI (CAI) sinh dữ liệu preference tự động dựa trên cơ chế nào?",
+      "options": {
+        "A": "Thuê hàng ngàn chuyên gia pháp lý để viết các hướng dẫn an toàn.",
+        "B": "Sử dụng các quy định của Luật AI Act Châu Âu làm dữ liệu.",
+        "C": "Mô hình tự phê bình phản hồi của mình theo hiến pháp xác định.",
+        "D": "Chạy các thuật toán mã hóa để ngăn chặn rò rỉ dữ liệu."
+      },
+      "answer": "C",
+      "explanation": "Constitutional AI cho mô hình tự sinh phản hồi, tự viết nhận xét phê bình dựa trên các quy tắc hiến pháp (constitution), tự chỉnh sửa và tạo ra cặp (gốc, sửa đổi).",
+      "hints": [
+        "Quá trình tự cải thiện hành vi thông qua tự phản hồi (self-critique).",
+        "Tạo ra các cặp dữ liệu so sánh mà không cần sự can thiệp của con người.",
+        "Đáp án là mô hình tự phê bình phản hồi của mình theo hiến pháp xác định."
+      ],
+      "concepts": [
+        "d22-t3-dpo-alignment"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Kỹ thuật merge mô hình SLERP có điểm gì khác biệt so với kỹ thuật nội suy tuyến tính?",
+      "options": {
+        "A": "Nó cho phép trộn các mô hình được huấn luyện trên các kiến trúc khác.",
+        "B": "Nó loại bỏ hoàn toàn các lỗi bảo mật thông tin cá nhân.",
+        "C": "Nó trộn trên đường cong quả cầu để giữ nguyên góc vector.",
+        "D": "Nó tự động giảm kích thước tệp tin trọng số xuống một nửa."
+      },
+      "answer": "C",
+      "explanation": "SLERP (Spherical Linear Interpolation) thực hiện nội suy trên bề mặt hình cầu của không gian nhiều chiều, giúp bảo toàn góc giữa các vector trọng số, tránh triệt tiêu tính năng.",
+      "hints": [
+        "Thực hiện phép toán hình học không gian nhiều chiều trên mặt cầu.",
+        "Ngăn chặn hiện tượng suy giảm hiệu năng khi trộn các mô hình tương đồng.",
+        "Đáp án là nó trộn trên đường cong quả cầu để giữ nguyên góc vector."
+      ],
+      "concepts": [
+        "d22-t3-dpo-alignment"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Kỹ thuật merge mô hình nào thực hiện loại bỏ ngẫu nhiên 90-99% các cập nhật delta trọng số?",
+      "options": {
+        "A": "Kỹ thuật Task Arithmetic cộng trừ các task vectors của mô hình.",
+        "B": "Kỹ thuật TIES thực hiện trim các delta nhỏ và bầu chọn sign.",
+        "C": "Kỹ thuật SLERP trộn mô hình dựa trên hình học không gian cầu.",
+        "D": "Kỹ thuật DARE loại bỏ ngẫu nhiên các delta cập nhật trọng số."
+      },
+      "answer": "D",
+      "explanation": "DARE (Drop and Rescale) chứng minh một cách kinh ngạc rằng có thể drop ngẫu nhiên đến 99% giá trị delta cập nhật trọng số và rescale lại mà vẫn giữ nguyên hiệu năng mô hình.",
+      "hints": [
+        "Một phương pháp lọc bỏ ngẫu nhiên các trọng số nhỏ và khôi phục tỷ lệ.",
+        "Tên viết tắt của phương pháp mang ý nghĩa loại bỏ và khôi phục thang đo.",
+        "Đáp án đúng là kỹ thuật DARE loại bỏ ngẫu nhiên các delta cập nhật trọng số."
+      ],
+      "concepts": [
+        "d22-t3-dpo-alignment"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Khi nào đội ngũ phát triển nên ưu tiên chọn phương pháp GRPO + RLVR thay vì DPO offline?",
+      "options": {
+        "A": "Khi cần cải thiện giọng điệu và tính hữu ích của phản hồi.",
+        "B": "Khi dự án chạy trên một GPU có dung lượng bộ nhớ nhỏ.",
+        "C": "Khi không có tập dữ liệu hướng dẫn SFT ban đầu của mô hình.",
+        "D": "Khi thực hiện các tác vụ suy luận logic, toán học và code."
+      },
+      "answer": "D",
+      "explanation": "GRPO + RLVR là sự kết hợp tối ưu cho các tác vụ suy luận (reasoning) có thể kiểm chứng khách quan bằng chương trình (như toán học, lập trình) thay vì các tác vụ cảm tính.",
+      "hints": [
+        "Các tác vụ yêu cầu khả năng giải quyết vấn đề chính xác từng bước.",
+        "Nơi có các tiêu chí kiểm tra đầu ra đúng sai rõ ràng bằng thuật toán.",
+        "Đáp án đúng là khi thực hiện các tác vụ suy luận logic, toán học và code."
+      ],
+      "concepts": [
+        "d22-t3-dpo-alignment"
+      ]
+    }
+  ]
+}

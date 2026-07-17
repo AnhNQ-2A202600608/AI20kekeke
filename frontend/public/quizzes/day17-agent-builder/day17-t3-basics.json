@@ -1,0 +1,210 @@
+{
+  "id": "day17-t3-basics",
+  "parent_id": "day17-agent-builder",
+  "topic_title": "Day 17: Agent Memory Systems",
+  "title": "Phần 1: Trạng Thái Stateless Của Agent & Mô Hình Cognitive Memory",
+  "description": "Đánh giá kiến thức cơ bản về lý do Agent quên, so sánh RAM vs Hard Drive trong kiến trúc Agent và phân loại 4 loại Memory (Short-term, Long-term, Episodic, Semantic).",
+  "difficulty": "dễ",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Tại sao các LLM Agent thông thường lại ở trạng thái 'Stateless' (không lưu trạng thái) mặc định?",
+      "options": {
+        "A": "Mỗi cuộc gọi API đến LLM là độc lập và LLM không lưu giữ lịch sử.",
+        "B": "Mô hình ngôn ngữ lớn tự xóa bộ nhớ sau mỗi mười giây để bảo mật.",
+        "C": "Nhà cung cấp dịch vụ LLM giới hạn số câu hỏi tài khoản có thể hỏi.",
+        "D": "Hệ điều hành của máy chủ Agent ngăn chặn ghi dữ liệu ra file text."
+      },
+      "answer": "A",
+      "explanation": "Các API của LLM hoạt động theo mô hình request-response độc lập; LLM không tự nhớ các cuộc gọi trước đó trừ khi lập trình viên chủ động truyền lại ngữ cảnh.",
+      "hints": [
+        "Hãy nghĩ về giao thức HTTP truyền thống cũng là stateless.",
+        "Để LLM nhớ được câu trước, ta bắt buộc phải gửi kèm lịch sử chat vào request tiếp theo.",
+        "Đáp án mô tả tính độc lập của các cuộc gọi API và việc LLM không tự lưu lịch sử."
+      ],
+      "concepts": [
+        "d17-t3-agent-memory"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Khi so sánh kiến trúc bộ nhớ Agent với máy tính, thành phần nào sau đây đóng vai trò tương đương với bộ nhớ RAM?",
+      "options": {
+        "A": "Context Window (Cửa sổ ngữ cảnh) chứa toàn bộ thông tin xử lý tức thời.",
+        "B": "Vector Database lưu trữ hàng triệu tài liệu tri thức nghiệp vụ của doanh nghiệp.",
+        "C": "Cơ sở dữ liệu PostgreSQL lưu thông tin tài khoản của toàn bộ người dùng.",
+        "D": "Các tệp cấu hình hệ thống lưu trữ địa chỉ IP máy chủ của bạn."
+      },
+      "answer": "A",
+      "explanation": "Context Window có tốc độ truy cập nhanh nhất nhưng bị giới hạn về dung lượng và chỉ tồn tại tạm thời trong lượt chạy, giống như RAM của máy tính.",
+      "hints": [
+        "RAM là nơi lưu trữ dữ liệu xử lý nhanh, tạm thời và sẽ mất đi khi tắt máy.",
+        "Cửa sổ ngữ cảnh của LLM cũng chỉ chứa thông tin của lượt query hiện tại.",
+        "Đáp án chính xác là cửa sổ ngữ cảnh (Context Window)."
+      ],
+      "concepts": [
+        "d17-t3-agent-memory"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Trong mô hình bộ nhớ nhận thức (Cognitive Memory Model) dành cho Agent, bộ nhớ 'Long-term Memory' (Dài hạn) thường lưu giữ thông tin nào?",
+      "options": {
+        "A": "Lịch sử trò chuyện thô của lượt hội thoại gần nhất trong năm phút qua.",
+        "B": "Thông tin hồ sơ, thói quen và các sự thật (facts) của khách hàng.",
+        "C": "Các đoạn code đang được biên dịch dở dang trên bộ nhớ máy chủ.",
+        "D": "Các kết quả trả về từ công cụ tìm kiếm bên ngoài hệ thống."
+      },
+      "answer": "B",
+      "explanation": "Long-term Memory lưu giữ thông tin có tính bền vững cao và xuyên suốt qua nhiều phiên làm việc khác nhau của một người dùng.",
+      "hints": [
+        "Hãy phân biệt với Short-term Memory chỉ chứa ngữ cảnh hội thoại hiện tại.",
+        "Bộ nhớ dài hạn giúp Agent nhận ra người quen và nhớ những sở thích cũ của họ.",
+        "Đáp án liên quan đến thông tin hồ sơ và sự thật về người dùng qua nhiều session."
+      ],
+      "concepts": [
+        "d17-t3-agent-memory"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Bộ nhớ 'Episodic Memory' (Bộ nhớ tình tiết) của Agent được thiết kế để giải quyết câu hỏi cốt lõi nào sau đây?",
+      "options": {
+        "A": "Địa chỉ IP và mật khẩu kết nối vào máy chủ Redis hiện tại là gì?",
+        "B": "Trong quá khứ, tôi đã thực hiện các hành động tuần tự nào cho task này?",
+        "C": "Định nghĩa chính xác của thuật toán tìm kiếm nhị phân trong khoa học máy tính?",
+        "D": "Làm thế nào để dịch đoạn văn bản tiếng Việt sang tiếng Anh tự nhiên?"
+      },
+      "answer": "B",
+      "explanation": "Episodic Memory lưu trữ chuỗi trải nghiệm có thứ tự thời gian (episodes), giúp Agent học hỏi từ các hành trình chạy task thành công hoặc thất bại trước đó.",
+      "hints": [
+        "Episodic liên quan đến các 'tập phim' hoặc trải nghiệm thực tế mà Agent đã trực tiếp trải qua.",
+        "Nó ghi nhớ chuỗi hành động và kết quả của các lượt chạy trước.",
+        "Đáp án mô tả việc nhớ lại các hành động tuần tự đã làm để giải quyết task tương tự trong quá khứ."
+      ],
+      "concepts": [
+        "d17-t3-agent-memory"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Bộ nhớ 'Semantic Memory' (Bộ nhớ ngữ nghĩa) của Agent thường được lưu trữ hiệu quả nhất bằng công nghệ nào?",
+      "options": {
+        "A": "Tệp tin văn bản thô cấu hình định dạng YAML lưu trữ trên đĩa cứng.",
+        "B": "Vector Database lưu trữ các embeddings của tài liệu tri thức miền chuyên môn này.",
+        "C": "Bộ nhớ cache tạm thời Redis lưu trữ lịch sử cuộc trò chuyện gần nhất đó.",
+        "D": "Bảng dữ liệu quan hệ PostgreSQL lưu danh sách các API key của hệ thống."
+      },
+      "answer": "B",
+      "explanation": "Semantic Memory đại diện cho kiến thức nền tảng, khái niệm, sự thật khách quan của thế giới, thường được lưu dạng vector embeddings để truy vấn tương đồng (RAG).",
+      "hints": [
+        "Hãy nghĩ về cách lưu trữ bách khoa toàn thư hoặc tài liệu hướng dẫn sử dụng sản phẩm cho Agent.",
+        "Nó cần được truy xuất nhanh dựa trên ý nghĩa ngữ nghĩa của câu hỏi.",
+        "Đáp án liên quan đến Vector DB lưu trữ embeddings tri thức chuyên môn."
+      ],
+      "concepts": [
+        "d17-t3-agent-memory"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Một hậu quả nghiêm trọng xảy ra khi một Agent hoàn toàn không có bộ nhớ ngoài (External Store) là gì?",
+      "options": {
+        "A": "Tốc độ xử lý của mô hình ngôn ngữ lớn sẽ bị giảm đi một nửa.",
+        "B": "Hệ thống sẽ tự động phát sinh các câu trả lời chứa mã độc gây hại.",
+        "C": "Agent sẽ quên sạch toàn bộ thông tin người dùng ngay khi session kết thúc.",
+        "D": "Người dùng không thể sử dụng tiếng Việt để trò chuyện với Agent được nữa."
+      },
+      "answer": "C",
+      "explanation": "Không có bộ nhớ ngoài lưu trữ persistent, Agent bắt buộc phải bắt đầu lại từ con số không trong phiên tiếp theo, gây ức chế cho người dùng.",
+      "hints": [
+        "Đây là vấn đề cốt lõi của tính stateless của LLM.",
+        "Nếu không ghi dữ liệu xuống đĩa cứng hoặc DB, mọi RAM (context window) sẽ bị giải phóng khi kết thúc cuộc gọi.",
+        "Đáp án mô tả việc quên sạch thông tin người dùng khi kết thúc session."
+      ],
+      "concepts": [
+        "d17-t3-agent-memory"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Sự tương đồng giữa bộ nhớ 'Short-term Memory' của Agent và 'Working Memory' của con người thể hiện ở điểm nào?",
+      "options": {
+        "A": "Cả hai đều có khả năng lưu trữ thông tin vĩnh viễn không bị mai một.",
+        "B": "Cả hai đều tự động mã hóa thông tin thành các vector toán học đa chiều.",
+        "C": "Cả hai có dung lượng giới hạn và chỉ tập trung vào thông tin hiện tại.",
+        "D": "Cả hai đều hoạt động độc lập hoàn toàn với các cơ chế ra quyết định."
+      },
+      "answer": "C",
+      "explanation": "Cả Short-term của Agent và Working Memory của người đều chỉ giữ được một lượng thông tin nhỏ đang được xử lý trực tiếp tại thời điểm hiện tại.",
+      "hints": [
+        "Hãy nghĩ về số lượng số điện thoại bạn có thể nhớ tạm thời trong đầu khi đang ghi chép.",
+        "Dung lượng của chúng đều nhỏ và thông tin sẽ bị đẩy ra ngoài khi có thông tin mới chèn vào.",
+        "Đáp án nhấn mạnh giới hạn dung lượng và sự tập trung vào thông tin hiện tại."
+      ],
+      "concepts": [
+        "d17-t3-agent-memory"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Trong bối cảnh Agent, tại sao việc chỉ sử dụng duy nhất 'Context Window' làm bộ nhớ là chưa đủ cho ứng dụng thực tế?",
+      "options": {
+        "A": "Vì context window chỉ cho phép đọc dữ liệu chứ không hỗ trợ hiển thị.",
+        "B": "Vì chi phí để duy trì dữ liệu trong context window rẻ hơn so với database.",
+        "C": "Vì context window sẽ nhanh chóng bị tràn và mất thông tin khi trò chuyện.",
+        "D": "Vì các thông tin lưu trong context window không thể tự động xuất ra file."
+      },
+      "answer": "C",
+      "explanation": "Hội thoại dài vượt quá giới hạn token (context limit) sẽ buộc hệ thống phải cắt bỏ các tin nhắn cũ, làm Agent mất đi các thông tin quan trọng đã trao đổi.",
+      "hints": [
+        "Hãy nghĩ về giới hạn token tối đa của các mô hình LLM hiện nay.",
+        "Mỗi tin nhắn gửi đi đều làm tăng tổng số token tích lũy và sẽ sớm chạm trần.",
+        "Đáp án liên quan đến việc tràn bộ nhớ và mất thông tin khi cuộc trò chuyện kéo dài."
+      ],
+      "concepts": [
+        "d17-t3-agent-memory"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Mối quan hệ giữa bộ nhớ 'Short-term Memory' và 'Long-term Memory' trong quá trình Consolidation (hợp nhất) của Agent là gì?",
+      "options": {
+        "A": "Long-term memory sẽ định kỳ xóa bỏ toàn bộ dữ liệu lưu trữ trong Short-term.",
+        "B": "Short-term memory sẽ trực tiếp ghi đè lên toàn bộ các file của Long-term.",
+        "C": "Hai loại bộ nhớ này hoạt động song song và không hề trao đổi dữ liệu.",
+        "D": "Các thông tin quan trọng từ Short-term được tóm tắt và lưu vào Long-term."
+      },
+      "answer": "D",
+      "explanation": "Consolidation là quá trình lọc và cô đọng các sự thật, sở thích thu nhận được từ cuộc trò chuyện ngắn hạn để lưu trữ lâu dài vào cơ sở dữ liệu.",
+      "hints": [
+        "Hãy nghĩ đến cách con người chuyển kiến thức từ trí nhớ tạm thời sang trí nhớ dài hạn khi ngủ.",
+        "Quá trình này giúp chắt lọc tinh hoa thông tin để giữ lại lâu dài.",
+        "Đáp án mô tả việc tóm tắt thông tin quan trọng từ Short-term để lưu vào Long-term."
+      ],
+      "concepts": [
+        "d17-t3-agent-memory"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Đặc trưng lớn nhất của 'Episodic Memory' giúp phân biệt nó với các loại bộ nhớ khác của Agent là gì?",
+      "options": {
+        "A": "Dữ liệu được lưu dưới dạng cặp khóa-giá trị tĩnh không bao giờ thay đổi.",
+        "B": "Khả năng tự động cập nhật tri thức mới từ internet không cần đến con người.",
+        "C": "Sử dụng các thuật toán nén ảnh tiên tiến để giảm dung lượng lưu trữ đĩa.",
+        "D": "Thông tin được lưu trữ đi kèm với trình tự thời gian và ngữ cảnh cụ thể."
+      },
+      "answer": "D",
+      "explanation": "Episodic Memory ghi nhận các trải nghiệm như một chuỗi sự kiện tuần tự (story-like) gắn liền với thời gian và tình huống cụ thể của Agent.",
+      "hints": [
+        "Episodic giống như một cuốn nhật ký ghi lại các cột mốc trải nghiệm thực tế.",
+        "Nó chứa đựng thông tin về thời gian, địa điểm và diễn biến cụ thể của hành động.",
+        "Đáp án nhấn mạnh trình tự thời gian và ngữ cảnh trải nghiệm cụ thể của thông tin."
+      ],
+      "concepts": [
+        "d17-t3-agent-memory"
+      ]
+    }
+  ]
+}

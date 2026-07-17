@@ -1,0 +1,210 @@
+{
+  "id": "day21-t1-pipeline",
+  "parent_id": "day21-ai-product",
+  "topic_title": "Day 21: AI Governance & Risk",
+  "title": "Phần 2: Quản Trị Rủi Ro Với Sổ Đăng Ký Risk Register",
+  "description": "Đánh giá kiến thức về xây dựng Risk Register bằng công thức If-Then-Leading to, đo lường tác động theo tháng runway và xác định vùng Kill Zone.",
+  "difficulty": "bình thường",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Trong trường hợp Replika, sai lầm lớn nhất của Luka Inc về mặt quản trị nhà cung cấp (vendor risk) là gì?",
+      "options": {
+        "A": "Không đọc kỹ điều khoản ToS của OpenAI dẫn tới phải đổi tính năng.",
+        "B": "Lựa chọn các mô hình ngôn ngữ có chi phí sử dụng API quá đắt.",
+        "C": "Lưu trữ thông tin khách hàng trên máy chủ không được mã hóa bảo mật.",
+        "D": "Để xảy ra sự cố sập nguồn của toàn bộ hệ thống máy chủ."
+      },
+      "answer": "A",
+      "explanation": "Luka Inc đã tích hợp mô hình OpenAI mà không đọc kỹ ToS (cấm nội dung khiêu dâm/sexual content), dẫn đến việc phải đột ngột tắt tính năng ERP (erotic role-play) của ứng dụng.",
+      "hints": [
+        "Sự cố xảy ra khi Replika thực hiện di chuyển (migration) hệ thống sang GPT-3.",
+        "ToS của OpenAI quy định rất nghiêm ngặt về các loại nội dung nhạy cảm.",
+        "Đáp án đúng là không đọc kỹ điều khoản ToS của OpenAI dẫn đến phải đổi tính năng."
+      ],
+      "concepts": [
+        "d21-t1-governance-risk"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Luka Inc đã mắc sai lầm giao tiếp nào khi tắt tính năng ERP của Replika vào tháng 2 năm 2023?",
+      "options": {
+        "A": "Thay đổi tính năng cốt lõi âm thầm khiến niềm tin khách hàng sụp đổ.",
+        "B": "Không bồi thường số tiền lớn cho các nhà đầu tư mạo hiểm.",
+        "C": "Lập trình viên viết quá nhiều dòng code bị lỗi lên trên sản phẩm.",
+        "D": "Chạy quảng cáo quá nhiều làm phiền lòng người dùng của sản phẩm."
+      },
+      "answer": "A",
+      "explanation": "Luka Inc đã âm thầm loại bỏ ERP mà không công bố hay giải thích, khiến người dùng nghĩ đó là lỗi phần mềm, làm suy giảm niềm tin và tạo ra khủng hoảng dư luận nghiêm trọng.",
+      "hints": [
+        "Sự im lặng của ban lãnh đạo kéo dài suốt ba tuần trong khi khủng hoảng bùng nổ.",
+        "Người dùng đã tự tổ chức các chiến dịch phản đối trên Reddit và Change.org.",
+        "Đáp án chỉ ra thay đổi tính năng cốt lõi âm thầm khiến niềm tin sụp đổ."
+      ],
+      "concepts": [
+        "d21-t1-governance-risk"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Công thức chuẩn 'If-Then-Leading to' để viết một rủi ro trong Risk Register yêu cầu điều gì?",
+      "options": {
+        "A": "Tập trung phân tích các rủi ro liên quan đến chiến dịch marketing sản phẩm.",
+        "B": "Xác định rõ nguyên nhân, sự kiện xảy ra và đo bằng tháng runway.",
+        "C": "Tự động tính toán số lượng lỗi lập trình xuất hiện trên hệ thống.",
+        "D": "Đo lường sự thay đổi ý kiến của nhà đầu tư mạo hiểm."
+      },
+      "answer": "B",
+      "explanation": "Công thức yêu cầu đặc tả rõ ràng: If [Nguyên nhân] / Then [Sự kiện xảy ra] / Leading to [Hậu quả quy đổi thành số tháng runway bị mất].",
+      "hints": [
+        "Tránh việc viết các câu cảnh báo rủi ro chung chung không thể đo lường được.",
+        "Hậu quả của rủi ro đối với startup phải được đo lường bằng khả năng sinh tồn tài chính.",
+        "Đáp án là xác định rõ nguyên nhân, sự kiện xảy ra và đo bằng tháng runway."
+      ],
+      "concepts": [
+        "d21-t1-governance-risk"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Tại sao startup nên đo lường tác động của rủi ro theo số tháng runway thay vì USD?",
+      "options": {
+        "A": "Vì các kỹ sư công nghệ không thể tự tính toán bằng đô la.",
+        "B": "Vì nó phản ánh trực tiếp khả năng sống sót tài chính của startup.",
+        "C": "Vì các nhà đầu tư mạo hiểm tự động quy đổi giúp bạn.",
+        "D": "Vì nó giúp tăng tốc độ xử lý dữ liệu của mô hình."
+      },
+      "answer": "B",
+      "explanation": "Số tháng runway phản ánh chính xác rủi ro đó có thể giết chết startup hay không. Khoản lỗ $50K là nhỏ với tập đoàn lớn nhưng có thể làm cạn runway của startup.",
+      "hints": [
+        "Đo lường tác động bằng đơn vị thời gian sống sót của doanh nghiệp.",
+        "Giúp founder dễ dàng nhận thức mức độ khẩn cấp để đưa ra hành động mitigation.",
+        "Đáp án đúng là phản ánh trực tiếp khả năng sống sót tài chính của startup."
+      ],
+      "concepts": [
+        "d21-t1-governance-risk"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Vùng nguy hiểm 'KILL ZONE' trong Risk Register được xác định khi nào?",
+      "options": {
+        "A": "Khi điểm số của rủi ro nhỏ hơn mười điểm cần theo dõi.",
+        "B": "Khi điểm số rủi ro lớn hơn hoặc bằng mười lăm điểm.",
+        "C": "Khi tổng thời gian xử lý sự cố vượt quá hai mươi phút.",
+        "D": "Khi số lượng người dùng rời bỏ ứng dụng vượt quá năm mươi phần trăm."
+      },
+      "answer": "B",
+      "explanation": "Vùng Kill Zone chứa các rủi ro có điểm số (Likelihood * Impact) từ 15 đến 25, đòi hỏi phải lập tức xây dựng và thực thi kế hoạch mitigation ngay lập tức.",
+      "hints": [
+        "Đây là vùng chứa các rủi ro có khả năng xảy ra cao và phá hủy mạnh.",
+        "Founder phải ưu tiên tối đa nguồn lực để xử lý các rủi ro thuộc vùng này.",
+        "Đáp án đúng là khi điểm số rủi ro lớn hơn hoặc bằng mười lăm điểm."
+      ],
+      "concepts": [
+        "d21-t1-governance-risk"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Điểm số của một rủi ro (Risk Score) trong sổ đăng ký được tính toán bằng cách nào?",
+      "options": {
+        "A": "Lấy điểm Impact chia cho điểm Likelihood của sự cố đó xảy ra.",
+        "B": "Lấy điểm Likelihood cộng với điểm Impact của sự cố đó xảy ra.",
+        "C": "Lấy điểm Likelihood nhân với điểm Impact của rủi ro tương ứng.",
+        "D": "Lấy điểm Impact nhân với số lượng tháng runway còn lại của công ty."
+      },
+      "answer": "C",
+      "explanation": "Điểm số rủi ro (Risk Score) = Likelihood (Khả năng xảy ra: 1-5) * Impact (Mức độ tác động: 1-5). Thang điểm dao động từ 1 đến 25.",
+      "hints": [
+        "Tích của tần suất xuất hiện dự đoán và thiệt hại thực tế gây ra.",
+        "Cả hai chỉ số này đều được chấm điểm trên thang đo chuẩn từ một đến năm.",
+        "Đáp án đúng là lấy điểm Likelihood nhân với điểm Impact của rủi ro."
+      ],
+      "concepts": [
+        "d21-t1-governance-risk"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Trong ma trận rủi ro, nhóm rủi ro có tác động cao nhưng khả năng xảy ra thấp nên được quản lý ra sao?",
+      "options": {
+        "A": "Cần phải loại bỏ ngay lập tức bằng cách đóng cửa dự án.",
+        "B": "Hoàn toàn bỏ qua vì sự cố này hầu như không thể xảy ra.",
+        "C": "Đưa vào danh sách theo dõi (Watch) và chuẩn bị Plan B.",
+        "D": "Tự động phân bổ thêm nhiều tài nguyên tính toán cho GPU."
+      },
+      "answer": "C",
+      "explanation": "Các rủi ro 'High Impact, Low Likelihood' được đưa vào vùng theo dõi (Watch), đòi hỏi doanh nghiệp phải chuẩn bị sẵn phương án dự phòng (Plan B) để ứng phó khi cần.",
+      "hints": [
+        "Mặc dù hiếm khi xảy ra, nhưng nếu xảy ra nó sẽ gây thiệt hại khổng lồ.",
+        "Ví dụ điển hình như sự cố nhà cung cấp đám mây sập toàn bộ khu vực.",
+        "Đáp án là đưa vào danh sách theo dõi (Watch) và chuẩn bị Plan B."
+      ],
+      "concepts": [
+        "d21-t1-governance-risk"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Tại sao việc Luka Inc im lặng suốt 3 tuần lại đẩy khủng hoảng Replika đi quá xa?",
+      "options": {
+        "A": "Vì người dùng không thể đăng nhập vào ứng dụng qua điện thoại.",
+        "B": "Vì Replika tăng giá gói đăng ký hàng tháng lên gấp đôi.",
+        "C": "Vì sự thiếu minh bạch và mất kết nối cảm xúc đột ngột.",
+        "D": "Vì các lập trình viên ngừng phát triển tính năng mới cho app."
+      },
+      "answer": "C",
+      "explanation": "Sự im lặng của Replika tạo ra khoảng trống thông tin, khiến người dùng cảm thấy bị phản bội cảm xúc đột ngột và tự tổ chức làn sóng churn hàng loạt trên mạng xã hội.",
+      "hints": [
+        "Nhiều người dùng đã rơi vào trạng thái khủng hoảng tâm lý nghiêm trọng.",
+        "Việc giấu giếm thông tin xấu luôn là công thức dẫn đến sự sụp đổ lòng tin.",
+        "Đáp án chỉ ra sự thiếu minh bạch và mất kết nối cảm xúc đột ngột."
+      ],
+      "concepts": [
+        "d21-t1-governance-risk"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Đâu là một ví dụ chuẩn xác về rủi ro theo công thức If-Then-Leading to?",
+      "options": {
+        "A": "Nếu AI bị lỗi thì khách hàng sẽ phàn nàn rất nhiều.",
+        "B": "Nếu mô hình sập nguồn thì lập trình viên phải sửa ngay.",
+        "C": "Nếu OpenAI tăng giá API thì doanh thu sẽ bị sụt giảm.",
+        "D": "Nếu bot tư vấn sai giá, then đền bù, leading to mất một tháng runway."
+      },
+      "answer": "D",
+      "explanation": "Ví dụ 'Nếu bot tư vấn sai giá, then đền bù, leading to mất một tháng runway' thể hiện đầy đủ nguyên nhân, sự kiện phát sinh, và quy đổi tác động tài chính trực tiếp ra số tháng runway.",
+      "hints": [
+        "Nó chứa đầy đủ nguyên nhân cụ thể và tác động đo lường được trên runway.",
+        "Hãy tìm câu trả lời thể hiện rõ ràng các liên từ liên kết các vế.",
+        "Đáp án là bot tư vấn sai giá, đền bù, mất một tháng runway."
+      ],
+      "concepts": [
+        "d21-t1-governance-risk"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Đối với các rủi ro được xếp vào vùng nguy hiểm 'KILL ZONE', hành động nào được ưu tiên hàng đầu?",
+      "options": {
+        "A": "Hãy đưa các rủi ro đó vào danh sách xem xét định kỳ cuối năm.",
+        "B": "Hãy nhanh chóng yêu cầu các nhà đầu tư mạo hiểm bồi thường toàn bộ tiền.",
+        "C": "Hãy tạm thời bỏ qua rủi ro này vì ngân sách của team còn ít.",
+        "D": "Hãy tập trung xây dựng các kế hoạch giảm thiểu rủi ro ngay trong tuần."
+      },
+      "answer": "D",
+      "explanation": "Các rủi ro trong Kill Zone là mối đe dọa trực tiếp đến sự sống còn của startup, đòi hỏi founder phải ưu tiên xây dựng phương án mitigate khả thi ngay trong tuần.",
+      "hints": [
+        "Đây là các vấn đề khẩn cấp nhất không thể trì hoãn xem xét lâu hơn.",
+        "Phương án xử lý phải thực tế, chi phí thấp và triển khai được ngay.",
+        "Đáp án đúng là xây dựng phương án giảm thiểu (mitigate) ngay trong tuần."
+      ],
+      "concepts": [
+        "d21-t1-governance-risk"
+      ]
+    }
+  ]
+}

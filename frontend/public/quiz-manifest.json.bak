@@ -1,0 +1,1532 @@
+{
+  "sets": [
+    {
+      "id": "day1-basics",
+      "parent_id": "day1",
+      "topic_title": "Day 1: AI & LLM Foundation",
+      "title": "Phần 1: Khái niệm cơ bản LLM",
+      "description": "Nắm nền tảng về Transformer, tokenization và cách mô hình ngôn ngữ lớn xử lý ngữ cảnh.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day1-tokenization",
+      "parent_id": "day1",
+      "topic_title": "Day 1: AI & LLM Foundation",
+      "title": "Phần 2: Tokenization & Kỹ thuật Embeddings",
+      "description": "Tìm hiểu thuật toán cắt từ BPE, WordPiece, SentencePiece, các Special Tokens và nguyên lý chuyển từ sang không gian Vector.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day1-llm-architecture",
+      "parent_id": "day1",
+      "topic_title": "Day 1: AI & LLM Foundation",
+      "title": "Phần 3: Kiến trúc LLM & Quản lý Ngữ cảnh",
+      "description": "Nghiên cứu kiến trúc Decoder-only, cơ chế nén KV Cache, mã hóa vị trí tương đối RoPE và các giới hạn về Context Window.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day1-inference-decoding",
+      "parent_id": "day1",
+      "topic_title": "Day 1: AI & LLM Foundation",
+      "title": "Phần 4: Tham số giải mã & Inference Dynamics",
+      "description": "Tìm hiểu về cơ chế tính Logits, lấy mẫu với Temperature, Top-k, Top-p, tối ưu hóa qua Penalty và tầm quan trọng của System Prompt.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day1-short-answer",
+      "parent_id": "day1",
+      "topic_title": "Day 1: AI & LLM Foundation",
+      "title": "Tự luận: Nền tảng AI & Kiến trúc LLM Thực chiến",
+      "description": "Câu hỏi tự luận ngắn theo SFIA-lite về tối ưu hóa token, cấu trúc self-attention và phân tích kiến trúc.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day2-basics",
+      "parent_id": "day2",
+      "topic_title": "Day 2: Xác định Bài toán cho AI",
+      "title": "Phần 1: Định hình bài toán & Tính khả thi",
+      "description": "Tìm hiểu cách phân tích tính khả thi kỹ thuật, tài chính, vận hành và phân biệt Automation vs Augmentation.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day2-model-selection",
+      "parent_id": "day2",
+      "topic_title": "Day 2: Xác định Bài toán cho AI",
+      "title": "Phần 2: Lựa chọn Mô hình & Đánh giá",
+      "description": "Nắm vững chiến lược Build vs Buy, so sánh mô hình Open-source & Commercial API, và các hệ thống Benchmark như MMLU, GSM8k.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day2-data-strategy",
+      "parent_id": "day2",
+      "topic_title": "Day 2: Xác định Bài toán cho AI",
+      "title": "Phần 3: Chiến lược dữ liệu & Grounding",
+      "description": "Nghiên cứu cấu trúc dữ liệu, kỹ thuật lọc nhiễu Deduplication, bảo mật thông tin PII và vai trò của Grounding tri thức thực tế.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day2-metrics-evaluation",
+      "parent_id": "day2",
+      "topic_title": "Day 2: Xác định Bài toán cho AI",
+      "title": "Phần 4: Đo lường chất lượng & Đánh giá",
+      "description": "Tìm hiểu về Precision, Recall, F1-score, xây dựng Golden Dataset và đánh giá mô hình bằng kỹ thuật LLM-as-a-judge.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "react-loop-basics",
+      "parent_id": "day3",
+      "topic_title": "Day 3: Design Pattern ReAct",
+      "title": "Phần 1: Nền tảng vòng lặp ReAct",
+      "description": "Ôn kiến thức nền về Thought, Action, Observation và khi nào cần dùng Agent thay vì chatbot tĩnh.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "react-tool-calling-patterns",
+      "parent_id": "day3",
+      "topic_title": "Day 3: Design Pattern ReAct",
+      "title": "Phần 2: Tool Calling & Function Schema",
+      "description": "Thực hành thiết kế schema gọi công cụ, validate tham số và xử lý Observation trong vòng lặp ReAct.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "react-agent-security",
+      "parent_id": "day3",
+      "topic_title": "Day 3: Design Pattern ReAct",
+      "title": "Phần 3: An ninh & Guardrails Agent",
+      "description": "Kiểm tra cách kiểm soát tool, chống prompt injection, bảo vệ dữ liệu nhạy cảm và yêu cầu phê duyệt người dùng.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "react-agent-debugging",
+      "parent_id": "day3",
+      "topic_title": "Day 3: Design Pattern ReAct",
+      "title": "Phần 4: Debug Trace & Quan sát Agent",
+      "description": "Phân tích trace Thought/Action/Observation để tìm nguyên nhân lỗi, dữ liệu cũ, tool sai và vòng lặp bất thường.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "week1-day1",
+      "parent_id": "week1",
+      "topic_title": "Week 1: Ôn Tập Tổng Hợp",
+      "title": "Ôn tập Day 1: AI & LLM Foundation",
+      "description": "10 câu trắc nghiệm lý thuyết trọng tâm về Transformer, Tokenization, Embeddings và các tham số suy luận.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "week1-day2",
+      "parent_id": "week1",
+      "topic_title": "Week 1: Ôn Tập Tổng Hợp",
+      "title": "Ôn tập Day 2: Xác Định Bài Toán Cho AI",
+      "description": "10 câu trắc nghiệm lý thuyết trọng tâm về bài toán Build vs Buy, chiến lược dữ liệu, grounding và hệ thống đánh giá metrics.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "week1-day3",
+      "parent_id": "week1",
+      "topic_title": "Week 1: Ôn Tập Tổng Hợp",
+      "title": "Ôn tập Day 3: Design Pattern ReAct",
+      "description": "10 câu trắc nghiệm lý thuyết trọng tâm về vòng lặp ReAct, Function Schema, an ninh Agent (Guardrails) và trace debugging.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "week1-day4",
+      "parent_id": "week1",
+      "topic_title": "Week 1: Ôn Tập Tổng Hợp",
+      "title": "Ôn tập Day 4: Prompt Engineering & Tool Calling",
+      "description": "10 câu trắc nghiệm lý thuyết trọng tâm về Prompt Engineering, quản lý Context, Token Budget, JIT context và vệ sinh kết quả Tool.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "week1-day5",
+      "parent_id": "week1",
+      "topic_title": "Week 1: Ôn Tập Tổng Hợp",
+      "title": "Ôn tập Day 5: Thiết Kế Sản Phẩm AI Cho Sự Không Chắc Chắn",
+      "description": "10 câu trắc nghiệm lý thuyết trọng tâm về thiết kế sản phẩm AI, Augmentation vs Automation, giao diện bất định (Uncertainty UI) và tối ưu hóa ROI.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "week1-day6",
+      "parent_id": "week1",
+      "topic_title": "Week 1: Ôn Tập Tổng Hợp",
+      "title": "Ôn tập Day 6: Hackathon Day & Prototyping",
+      "description": "10 câu trắc nghiệm lý thuyết trọng tâm về lộ trình xây dựng sản phẩm mẫu (Prototype), tài liệu đặc tả (SPEC) và kỹ năng Demo Pitch.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "week1-day7",
+      "parent_id": "week1",
+      "topic_title": "Week 1: Ôn Tập Tổng Hợp",
+      "title": "Ôn tập Day 7: Embedding & Vector Store",
+      "description": "10 câu trắc nghiệm lý thuyết trọng tâm về Embeddings, độ đo tương đồng, Vector Indexing (HNSW, IVF) và đánh giá chất lượng Retrieval.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "prompt-context-foundations",
+      "parent_id": "day4",
+      "topic_title": "Day 4: Prompt Engineering & Tool Calling",
+      "title": "Phần 1: Nền Tảng Prompt và Context",
+      "description": "Kiểm tra nền tảng về prompt, context, ranh giới chỉ dẫn, định dạng đầu ra và cách hỏi lại khi thiếu dữ kiện.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "context-engineering-practice",
+      "parent_id": "day4",
+      "topic_title": "Day 4: Prompt Engineering & Tool Calling",
+      "title": "Phần 2: Context Engineering Thực Hành",
+      "description": "Kiểm tra cách quản lý token budget, context rot, JIT context, compaction, memory và kiến trúc sub-agent.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "tool-calling-security-control",
+      "parent_id": "day4",
+      "topic_title": "Day 4: Prompt Engineering & Tool Calling",
+      "title": "Phần 3: Tool Calling, Bảo Mật và Kiểm Soát",
+      "description": "Kiểm tra định nghĩa công cụ, vòng lặp tool_use/tool_result, vệ sinh tool result, ranh giới tin cậy và guardrail cho agent.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "prompt-tool-calling-short-answer",
+      "parent_id": "day4",
+      "topic_title": "Day 4: Prompt Engineering & Tool Calling",
+      "title": "Tự Luận: Prompt, Context và Tool Calling Thực Chiến",
+      "description": "Câu hỏi tự luận ngắn theo SFIA-lite, tập trung vào case study doanh nghiệp, trade-off, context engineering, tool calling và kiểm soát rủi ro.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "ai-product-uncertainty-foundations",
+      "parent_id": "day5",
+      "topic_title": "Day 5: Thiết kế sản phẩm AI cho sự không chắc chắn",
+      "title": "Phần 1: Nền Tảng Thiết Kế Sản Phẩm AI",
+      "description": "Kiểm tra các khái niệm nền tảng về xác suất, độ tin cậy, augmentation, automation, eval, UX, feedback loop và ROI trong sản phẩm AI.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "ai-product-uncertainty-practice",
+      "parent_id": "day5",
+      "topic_title": "Day 5: Thiết kế sản phẩm AI cho sự không chắc chắn",
+      "title": "Phần 2: Thiết kế UX/UI cho sự bất định & Tự động hóa",
+      "description": "Luyện tập thiết kế giao diện (Confidence UI, editable plan, showing work), ranh giới giữa Augmentation & Automation, và 4-path user stories.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "ai-product-uncertainty-advanced",
+      "parent_id": "day5",
+      "topic_title": "Day 5: Thiết kế sản phẩm AI cho sự không chắc chắn",
+      "title": "Phần 3: Đo lường chất lượng, Quản lý sai số & Rủi ro",
+      "description": "Đánh giá nâng cao về Precision vs Recall trade-offs, Failure Mode Library, cách xử lý phản hồi phá hoại (sabotage), LLM Adaptation và rủi ro từ sự thay đổi mô hình bên ngoài.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "ai-product-uncertainty-business-roi",
+      "parent_id": "day5",
+      "topic_title": "Day 5: Thiết kế sản phẩm AI cho sự không chắc chắn",
+      "title": "Phần 4: Quản lý Chi phí, ROI & Bánh đà Dữ liệu",
+      "description": "Kiểm tra khả năng thiết kế hệ thống tối ưu chi phí token, rate limits, tính ROI theo 3 kịch bản, AI Product Canvas và cách phân chia công việc trong dự án AI.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "ai-product-uncertainty-short-answer",
+      "parent_id": "day5",
+      "topic_title": "Day 5: Thiết kế sản phẩm AI cho sự không chắc chắn",
+      "title": "Tự Luận: Thiết kế Sản phẩm AI Thực Chiến",
+      "description": "Câu hỏi tự luận ngắn theo SFIA-lite, tập trung vào thiết kế sản phẩm AI, ranh giới Augmentation/Automation, quản lý sai số, vòng lặp phản hồi và bài toán tối ưu ROI.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "hackathon-day-preview",
+      "parent_id": "day6",
+      "topic_title": "Day 6: Hackathon Day",
+      "title": "Phần 1: Trải nghiệm trước Hackathon Day",
+      "description": "Luyện tập các từ khóa cốt lõi về lộ trình sản phẩm mẫu (Prototype), tài liệu đặc tả (SPEC) và thuyết trình (Demo) cho ngày Hackathon.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day7-basics",
+      "parent_id": "day7",
+      "topic_title": "Day 7: Data Foundations - Embedding & Vector Store",
+      "title": "Phần 1: Nền tảng Embedding & Vector Store",
+      "description": "Nắm vững kiến thức nền tảng về chiến lược dữ liệu, kiến trúc bộ nhớ Agent, Embedding và Vector Store.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day7-pipeline",
+      "parent_id": "day7",
+      "topic_title": "Day 7: Data Foundations - Embedding & Vector Store",
+      "title": "Phần 2: Thiết lập Pipeline & Thực hành RAG",
+      "description": "Đánh giá khả năng xây dựng và tối ưu hóa quy trình truy xuất dữ liệu (chunking, metadata, ChromaDB, OpenAI API, sửa lỗi RAG).",
+      "difficulty": "trung bình"
+    },
+    {
+      "id": "day7-advanced",
+      "parent_id": "day7",
+      "topic_title": "Day 7: Data Foundations - Embedding & Vector Store",
+      "title": "Phần 3: Kỹ thuật Nâng cao & Đánh giá Retrieval",
+      "description": "Đánh giá chuyên sâu về các thuật toán Indexing (HNSW, IVF, PQ), các độ đo tương đồng, Vector DB và chỉ số đo lường (Precision, Recall, MRR, NDCG).",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day7-short-answer",
+      "parent_id": "day7",
+      "topic_title": "Day 7: Data Foundations - Embedding & Vector Store",
+      "title": "Tự Luận: Chiến lược Dữ liệu & Tối ưu hóa Vector Store",
+      "description": "Câu hỏi tự luận ngắn theo SFIA-lite, tập trung vào chiến lược dữ liệu, ẩn danh PII, thiết kế chunking và đánh giá chất lượng truy xuất RAG.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day8-basics",
+      "parent_id": "day8",
+      "topic_title": "Day 8: RAG Pipeline - Retrieval — Augmentation — Generation",
+      "title": "Phần 1: Nền tảng RAG Pipeline",
+      "description": "Nắm vững các khái niệm cơ bản về RAG, sự khác biệt giữa Retrieval và RAG, In-Context vs RAG vs Fine-Tuning, và các điểm mù cố hữu của LLM.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day8-pipeline",
+      "parent_id": "day8",
+      "topic_title": "Day 8: RAG Pipeline - Retrieval — Augmentation — Generation",
+      "title": "Phần 2: Thiết lập Pipeline & Thực hành RAG",
+      "description": "Đánh giá khả năng hiểu và thiết lập các thành phần Retrieval trong RAG bao gồm Hybrid Search, RRF, Reranking, Pre-filtering và Query Transformations.",
+      "difficulty": "trung bình"
+    },
+    {
+      "id": "day8-advanced",
+      "parent_id": "day8",
+      "topic_title": "Day 8: RAG Pipeline - Retrieval — Augmentation — Generation",
+      "title": "Phần 3: Kỹ thuật Nâng cao & Đánh giá RAG",
+      "description": "Đánh giá chuyên sâu về các kỹ thuật Context Management nâng cao, Agentic RAG, tự sửa lỗi, hệ thống chỉ số RAGAS và tích hợp CI/CD.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day8-short-answer",
+      "parent_id": "day8",
+      "topic_title": "Day 8: RAG Pipeline - Retrieval — Augmentation — Generation",
+      "title": "Tự Luận: Chiến lược và Tối ưu hóa RAG Pipeline",
+      "description": "Câu hỏi tự luận ngắn theo SFIA-lite, tập trung vào thiết kế hybrid search, chống Lost-in-the-Middle, đánh giá RAGAS Triad, Adaptive RAG và bảo mật hệ thống.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day9-basics",
+      "parent_id": "day9",
+      "topic_title": "Day 9: Multi-Agent & Kết Nối Hệ Thống",
+      "title": "Phần 1: Nền tảng Multi-Agent & Tư duy Hệ thống",
+      "description": "Nắm vững các khái niệm cơ bản về hệ thống Multi-Agent, giới hạn của Single-Agent và tư duy thiết kế hệ thống chia để trị.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day9-pipeline",
+      "parent_id": "day9",
+      "topic_title": "Day 9: Multi-Agent & Kết Nối Hệ Thống",
+      "title": "Phần 2: Mô hình Multi-Agent & Kỹ thuật LangGraph",
+      "description": "Đánh giá khả năng hiểu các mô hình thiết kế tác tử phổ biến và cách vận hành luồng đồ thị với LangGraph.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day9-advanced",
+      "parent_id": "day9",
+      "topic_title": "Day 9: Multi-Agent & Kết Nối Hệ Thống",
+      "title": "Phần 3: Giao thức MCP & Kỹ thuật Hệ thống",
+      "description": "Đánh giá kiến thức chuyên sâu về Model Context Protocol (MCP), tối ưu hóa chi phí, độ trễ và các cơ chế fail-safe.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day9-short-answer",
+      "parent_id": "day9",
+      "topic_title": "Day 9: Multi-Agent & Kết Nối Hệ Thống",
+      "title": "Tự Luận: Multi-Agent & Kết Nối Hệ Thống Thực Chiến",
+      "description": "Câu hỏi tự luận ngắn theo SFIA-lite, tập trung vào thiết kế Supervisor-Worker, ranh giới an toàn MCP và tối ưu hóa hệ thống.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day10-basics",
+      "parent_id": "day10",
+      "topic_title": "Day 10: Data Pipeline & Data Observability",
+      "title": "Phần 1: Nền tảng Data Pipeline & Data Quality",
+      "description": "Kiểm tra kiến thức cơ bản về luồng dữ liệu, sự khác biệt giữa ETL/ELT, kỹ thuật chunking, metadata và các khía cạnh chất lượng dữ liệu.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day10-pipeline",
+      "parent_id": "day10",
+      "topic_title": "Day 10: Data Pipeline & Data Observability",
+      "title": "Phần 2: Thu thập, Xử lý & Tự động hóa Pipeline",
+      "description": "Kiểm tra kiến thức về các phương pháp thu thập dữ liệu (CDC), làm sạch văn bản tiếng Việt, cơ chế Backpressure, các công cụ Orchestration (Airflow, Prefect, Dagster) và cách xử lý lỗi.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day10-advanced",
+      "parent_id": "day10",
+      "topic_title": "Day 10: Data Pipeline & Data Observability",
+      "title": "Phần 3: Data Observability, Lineage & Debugging",
+      "description": "Kiểm tra kiến thức nâng cao về 5 trụ cột Observability, quy trình gỡ lỗi 5 lớp, truy vết dữ liệu (Data Lineage) và xử lý lỗi âm thầm (silent failures).",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day10-short-answer",
+      "parent_id": "day10",
+      "topic_title": "Day 10: Data Pipeline & Data Observability",
+      "title": "Tự Luận: Data Pipeline & Data Observability Thực Chiến",
+      "description": "Câu hỏi tự luận ngắn theo SFIA-lite, tập trung vào thiết kế Quality Gates, ẩn danh hóa PII, xử lý trùng lặp và quy trình gỡ lỗi 5 lớp cho AI Agent.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day11-basics",
+      "parent_id": "day11",
+      "topic_title": "Day 11: Guardrails & AI Safety",
+      "title": "Phần 1: Nền tảng Guardrails & An toàn AI",
+      "description": "Đánh giá kiến thức cơ bản về các mối đe dọa AI (Prompt Injection, Jailbreaking, Leakage), thuật ngữ và phân loại rủi ro.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day11-pipeline",
+      "parent_id": "day11",
+      "topic_title": "Day 11: Guardrails & AI Safety",
+      "title": "Phần 2: Thiết lập Input/Output Guardrails Pipeline",
+      "description": "Kiểm tra kiến thức về thiết kế bộ lọc Input/Output, các frameworks bảo vệ (Llama Guard, NeMo) và nguyên tắc Defense in Depth.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day11-advanced",
+      "parent_id": "day11",
+      "topic_title": "Day 11: Guardrails & AI Safety",
+      "title": "Phần 3: HITL, Trust UX & Quy trình Red Teaming",
+      "description": "Đánh giá nâng cao về quy trình Human-in-the-Loop, thiết kế giao diện minh bạch (Reasoning Trace, Confidence Score) và phương pháp Red Teaming.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day12-basics",
+      "parent_id": "day12",
+      "topic_title": "Day 12: Cloud Infrastructure & Deployment",
+      "title": "Phần 1: Nền tảng Cloud & Môi trường Production",
+      "description": "Đánh giá kiến thức cơ bản về các mô hình dịch vụ cloud (IaaS/PaaS/SaaS), kiến trúc 6 lớp của AI app, và các nguyên tắc thu hẹp khoảng cách dev-to-prod.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day12-pipeline",
+      "parent_id": "day12",
+      "topic_title": "Day 12: Cloud Infrastructure & Deployment",
+      "title": "Phần 2: Docker, Containerization & API Gateway",
+      "description": "Kiểm tra kiến thức về thiết lập Dockerfile tối ưu, Docker Compose cho multi-service stack và cấu hình các chính sách bảo mật tại API Gateway.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day12-advanced",
+      "parent_id": "day12",
+      "topic_title": "Day 12: Cloud Infrastructure & Deployment",
+      "title": "Phần 3: Scaling, Reliability & Cloud Platforms",
+      "description": "Đánh giá chuyên sâu về các mô hình mở rộng hệ thống, các mẫu thiết kế tăng độ tin cậy (Resilience Patterns), các chỉ số SRE (SLI/SLO/SLA) và so sánh các tùy chọn triển khai Cloud.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day13-basics",
+      "parent_id": "day13",
+      "topic_title": "Day 13: Monitoring, Logging & Observability",
+      "title": "Phần 1: Nền tảng Observability & Hệ thống Metrics",
+      "description": "Kiểm tra kiến thức cơ bản về 3 pillars of observability, so sánh monitoring và observability, các metrics cơ bản của LLM (latency percentiles, TTFT, TPOT) và phân biệt SLI/SLO/SLA.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day13-pipeline",
+      "parent_id": "day13",
+      "topic_title": "Day 13: Monitoring, Logging & Observability",
+      "title": "Phần 2: Structured Logging & Distributed Tracing",
+      "description": "Đánh giá kỹ năng thiết lập structured logging với correlation ID, xử lý/redact dữ liệu PII nhạy cảm, log sampling và cấu hình distributed tracing bằng OpenTelemetry/Langfuse.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day13-advanced",
+      "parent_id": "day13",
+      "topic_title": "Day 13: Monitoring, Logging & Observability",
+      "title": "Phần 3: Cost Engineering, Drift & Thiết lập Alerting",
+      "description": "Đánh giá chuyên sâu về công thức tính toán và tối ưu hóa chi phí (FinOps for AI), giám sát data/model drift (PSI/KL-divergence), thiết kế dashboard và thiết lập alert rules dựa trên SLO.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day14-basics",
+      "parent_id": "day14",
+      "topic_title": "Day 14: AI Evaluation & Benchmarking",
+      "title": "Phần 1: Nền tảng Đánh giá & Thiết kế Golden Dataset",
+      "description": "Kiểm tra kiến thức nền tảng về sự khác biệt giữa đánh giá GenAI và ML truyền thống, 4 chiều chất lượng đầu ra (Correctness, Relevance, Completeness, Coherence) và cách xây dựng bộ Golden Dataset chuẩn.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day14-pipeline",
+      "parent_id": "day14",
+      "topic_title": "Day 14: AI Evaluation & Benchmarking",
+      "title": "Phần 2: LLM-as-a-Judge & Đánh giá với RAGAS",
+      "description": "Đánh giá kỹ năng thiết lập cơ chế tự động chấm điểm bằng LLM-as-a-judge, kiểm soát các thiên lệch (biases), và sử dụng framework RAGAS đo lường hiệu năng của hệ thống RAG.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day14-advanced",
+      "parent_id": "day14",
+      "topic_title": "Day 14: AI Evaluation & Benchmarking",
+      "title": "Phần 3: Statistical Rigor, Safety Eval & Failure Analysis",
+      "description": "Đánh giá chuyên sâu về kiểm định tính chặt chẽ thống kê (sample size, t-test, p-value), đánh giá an toàn & bảo mật (Red Teaming, jailbreak, PII leakage), và quy trình Failure Analysis chuyên nghiệp.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day15-basics",
+      "parent_id": "day15",
+      "topic_title": "Day 15: Real-World Deployment & Operating Cost",
+      "title": "Phần 1: Thách thức Triển khai Enterprise & Lựa chọn Mô hình Hạ tầng",
+      "description": "Đánh giá kiến thức cơ bản về thách thức bảo mật & tuân thủ trong doanh nghiệp, so sánh Cloud/On-Premise/Hybrid, và công cụ tự chạy mô hình (vLLM, Ollama).",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "midterm-common",
+      "parent_id": "midterm-review",
+      "topic_title": "Ôn tập giữa kỳ: Cấu trúc bài thi",
+      "title": "Phần I: Chung - Trắc nghiệm tổng hợp",
+      "description": "15 câu trắc nghiệm bắt buộc trong phần chung 50 điểm, bao phủ AI design patterns, RAG pipeline, prompt engineering, agent architecture, observability và bảo mật AI.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "midterm-common-short-answer",
+      "parent_id": "midterm-review",
+      "topic_title": "Ôn tập giữa kỳ: Cấu trúc bài thi",
+      "title": "Phần I: Chung - Tự luận tình huống",
+      "description": "5 câu trả lời ngắn bắt buộc về debug RAG, prompt/tool safety, observability và kiến trúc agent.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "midterm-business",
+      "parent_id": "midterm-review",
+      "topic_title": "Ôn tập giữa kỳ: Business",
+      "title": "Phần II: Business - Trắc nghiệm",
+      "description": "10 câu trắc nghiệm chuyên sâu về product management, ROI, AI roadmap, EU AI Act và Luật TTNT Việt Nam.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "midterm-business-short-answer",
+      "parent_id": "midterm-review",
+      "topic_title": "Ôn tập giữa kỳ: Business",
+      "title": "Phần II: Business - Tự luận tình huống",
+      "description": "5 câu trả lời ngắn về ROI, roadmap, governance, compliance và AI product decision.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "midterm-infrastructure",
+      "parent_id": "midterm-review",
+      "topic_title": "Ôn tập giữa kỳ: Infrastructure",
+      "title": "Phần III: Infrastructure - Trắc nghiệm",
+      "description": "10 câu trắc nghiệm chuyên sâu về data lakehouse, GPU FinOps, model serving, CI/CD và security cho AI.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "midterm-infrastructure-short-answer",
+      "parent_id": "midterm-review",
+      "topic_title": "Ôn tập giữa kỳ: Infrastructure",
+      "title": "Phần III: Infrastructure - Tự luận tình huống",
+      "description": "5 câu trả lời ngắn về vận hành hạ tầng AI, chi phí GPU, serving, CI/CD và security.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "midterm-app-build",
+      "parent_id": "midterm-review",
+      "topic_title": "Ôn tập giữa kỳ: App Build",
+      "title": "Phần IV: App Build - Trắc nghiệm",
+      "description": "10 câu trắc nghiệm chuyên sâu về advanced agent patterns, RAG nâng cao, LoRA, RAGAS metrics và code challenge.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "midterm-app-build-short-answer",
+      "parent_id": "midterm-review",
+      "topic_title": "Ôn tập giữa kỳ: App Build",
+      "title": "Phần IV: App Build - Tự luận tình huống",
+      "description": "5 câu trả lời ngắn về agent debugging, RAG nâng cao, LoRA, RAGAS và code challenge.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "midterm-common-full",
+      "parent_id": "midterm-review",
+      "topic_title": "Ôn tập giữa kỳ: Phần chung",
+      "title": "Part I: Common - Full practice",
+      "description": "20 questions combining MCQ and short-answer scenarios for AI design patterns, RAG, prompt engineering, agents, observability, and AI security.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "midterm-business-full",
+      "parent_id": "midterm-review",
+      "topic_title": "Ôn tập giữa kỳ: Business",
+      "title": "Part II: Business - Full practice",
+      "description": "15 questions combining MCQ and short-answer scenarios for product management, ROI, AI roadmap, EU AI Act, and Vietnam AI law.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "midterm-infrastructure-full",
+      "parent_id": "midterm-review",
+      "topic_title": "Ôn tập giữa kỳ: Infrastructure",
+      "title": "Part III: Infrastructure - Full practice",
+      "description": "15 questions combining MCQ and short-answer scenarios for data lakehouse, GPU FinOps, model serving, CI/CD, and AI security.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "midterm-app-build-full",
+      "parent_id": "midterm-review",
+      "topic_title": "Ôn tập giữa kỳ: App Build",
+      "title": "Part IV: App Build - Full practice",
+      "description": "15 questions combining MCQ and short-answer scenarios for advanced agents, advanced RAG, LoRA, RAGAS metrics, and code challenge.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "midterm-mix-all",
+      "parent_id": "midterm-review",
+      "topic_title": "Ôn tập giữa kỳ: Phần chung",
+      "title": "Mixed Midterm - All sections",
+      "description": "65 mixed questions across the common section and all three tracks: Business, Infrastructure, and App Build, including MCQ and short-answer scenarios.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day15-pipeline",
+      "parent_id": "day15",
+      "topic_title": "Day 15: Real-World Deployment & Operating Cost",
+      "title": "Phần 2: Cấu trúc Chi phí & Chiến lược Tối ưu hóa (Cost Optimization)",
+      "description": "Đánh giá kiến thức về cấu trúc chi phí (cost breakdown) của hệ thống AI, cách tính toán chi phí API, các chi phí ẩn và 4 chiến lược tối ưu hóa chi phí vận hành.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day15-advanced",
+      "parent_id": "day15",
+      "topic_title": "Day 15: Real-World Deployment & Operating Cost",
+      "title": "Phần 3: Thiết kế Hệ thống Tin cậy, Định hướng Chuyên sâu & Sự nghiệp",
+      "description": "Đánh giá chuyên sâu về các mẫu thiết kế tăng độ tin cậy (queues, circuit breaker, stateless scaling), SLA, và 3 specialization tracks của Giai đoạn 2.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day16-t1-basics",
+      "parent_id": "day16-ai-product",
+      "topic_title": "Day 16: AI Product Strategy & Market Analysis",
+      "title": "Phần 1: Insight Cốt Lõi & Reframing Ý Tưởng Sản Phẩm",
+      "description": "Đánh giá kiến thức cơ bản về sự khác biệt giữa Idea và Product Definition, cùng cách Reframing ý tưởng sản phẩm từ bối cảnh thực tế.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day16-t1-pipeline",
+      "parent_id": "day16-ai-product",
+      "topic_title": "Day 16: AI Product Strategy & Market Analysis",
+      "title": "Phần 2: Nhu Cầu Thực Tế & Công Thức Thiết Kế Giải Giải Pháp JTBD",
+      "description": "Đánh giá kiến thức về phân tích nhu cầu thực tế của khách hàng doanh nghiệp, phân biệt nhu cầu thực và tín hiệu ảo (FOMO), viết Need theo cấu trúc JTBD.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day16-t1-advanced",
+      "parent_id": "day16-ai-product",
+      "topic_title": "Day 16: AI Product Strategy & Market Analysis",
+      "title": "Phần 3: Thiết Kế Lợi Thế Cạnh Tranh (Moat) & Quy Quy Mô Thị Trường",
+      "description": "Đánh giá khả năng xây dựng Moat Hypothesis, viết Strategy Statement định vị sản phẩm và tính toán quy mô thị trường TAM/SAM/SOM bằng phương pháp Bottom-up.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day16-t2-basics",
+      "parent_id": "day16-rag-data",
+      "topic_title": "Day 16: Specialization Track Selection",
+      "title": "Phần 1: Nền Tảng Cloud & Lựa Chọn Nhà Cung Cấp Hạ Tầng AI",
+      "description": "Đánh giá kiến thức cơ bản về các mô hình dịch vụ đám mây (IaaS, PaaS, AI-aaS) và khung quyết định lựa chọn Cloud Provider cho AI workloads.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day16-t2-pipeline",
+      "parent_id": "day16-rag-data",
+      "topic_title": "Day 16: Specialization Track Selection",
+      "title": "Phần 2: Cấu Trúc GPU Instance, Tối Ưu Chi Phí & Terraform IaC",
+      "description": "Đánh giá khả năng hiểu các loại GPU instance (H100, A10G, T4), chiến lược tối ưu chi phí hạ tầng (Spot Instances) và thực hành viết Terraform IaC.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day16-t2-advanced",
+      "parent_id": "day16-rag-data",
+      "topic_title": "Day 16: Specialization Track Selection",
+      "title": "Phần 3: Docker, Kubernetes & Công Nghệ Serving Stack (vLLM/SGLang)",
+      "description": "Đánh giá kiến thức chuyên sâu về Containerization cho AI, điều phối cụm (Kubernetes GPU orchestration) và tối ưu hóa serving stack (vLLM, SGLang, PagedAttention).",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day16-t3-basics",
+      "parent_id": "day16-agent-builder",
+      "topic_title": "Day 16: Specialization Track Selection",
+      "title": "Phần 1: Điểm Yếu Của ReAct & Khi Nào Cần Hệ Thống Multi-Agent",
+      "description": "Đánh giá kiến thức về các lỗi vận hành phổ biến của mẫu thiết kế ReAct (Single-Agent) và ma trận quyết định chuyển dịch sang Multi-Agent.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day16-t3-pipeline",
+      "parent_id": "day16-agent-builder",
+      "topic_title": "Day 16: Specialization Track Selection",
+      "title": "Phần 2: Kiến Trúc Reflexion — Thêm Vòng Lặp Tự Phản Tỉnh Cho Agent",
+      "description": "Đánh giá khả năng hiểu kiến thức về mô hình Reflexion, cơ chế hoạt động của các thành phần Actor, Evaluator, Reflector và cách viết self-reflection prompt.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day16-t3-advanced",
+      "parent_id": "day16-agent-builder",
+      "topic_title": "Day 16: Specialization Track Selection",
+      "title": "Phần 3: Thuật Toán Duyệt Cây LATS & Học Tập Tự Trị Voyager",
+      "description": "Đánh giá kiến thức nâng cao về thuật toán LATS (Language Agent Tree Search), cơ chế học tập tự trị Voyager, và so sánh các mẫu thiết kế Agent.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day17-t1-basics",
+      "parent_id": "day17-ai-product",
+      "topic_title": "Day 17: PRD & Product-Market Fit",
+      "title": "Phần 1: Khái Niệm MVP & Lean Product Pyramid",
+      "description": "Đánh giá kiến thức cơ bản về MVP (Wizard of Oz, Explainer Video, Landing Page), mô hình Kim tự tháp sản phẩm tinh gọn (Lean Product Pyramid) và xác định Target Customer/Needs.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day17-t1-pipeline",
+      "parent_id": "day17-ai-product",
+      "topic_title": "Day 17: PRD & Product-Market Fit",
+      "title": "Phần 2: Xác Định Ranh Giới MVP & Kiểm Soát Scope Creep",
+      "description": "Đánh giá hiểu biết về việc xác định In-Scope, Out-of-Scope, Non-Goals của MVP, nguyên tắc cắt giảm tính năng và các case study từ startup nổi tiếng.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day17-t1-advanced",
+      "parent_id": "day17-ai-product",
+      "topic_title": "Day 17: PRD & Product-Market Fit",
+      "title": "Phần 3: Cấu Trúc PRD, Giả Thuyết PMF & Stress-test bằng AI",
+      "description": "Đánh giá kiến thức nâng cao về cấu trúc tài liệu PRD, lập bảng giả thuyết PMF Scorecard, đo lường chỉ số Sean Ellis và sử dụng AI để phản biện PRD.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day17-t2-basics",
+      "parent_id": "day17-rag-data",
+      "topic_title": "Day 17: AI Data Engineering Foundations",
+      "title": "Phần 1: Data-Centric AI Mindset & Kiến Trúc Medallion",
+      "description": "Đánh giá kiến thức nền tảng về tầm quan trọng của data pipeline đối với chất lượng model, so sánh ETL vs ELT và các tầng dữ liệu Bronze/Silver/Gold.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day17-t2-pipeline",
+      "parent_id": "day17-rag-data",
+      "topic_title": "Day 17: AI Data Engineering Foundations",
+      "title": "Phần 2: Phương Pháp Ingestion, Orchestration & Transform dữ liệu",
+      "description": "Đánh giá khả năng hiểu các kỹ thuật Ingestion (Batch, CDC, dlt), điều phối quy trình (Airflow 3, Dagster) và biến đổi dữ liệu bằng dbt với DuckDB.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day17-t2-advanced",
+      "parent_id": "day17-rag-data",
+      "topic_title": "Day 17: AI Data Engineering Foundations",
+      "title": "Phần 3: Data Contracts, Kiểm Định Dữ Liệu & Pipeline Đặc Thù Cho AI",
+      "description": "Đánh giá kiến thức chuyên sâu về Data Contracts, Pandera/GX validation suite, xử lý dữ liệu lỗi và các tối ưu hóa pipeline đặc thù cho AI (deduplication, feature skew, data flywheel).",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day17-t3-basics",
+      "parent_id": "day17-agent-builder",
+      "topic_title": "Day 17: Agent Memory Systems",
+      "title": "Phần 1: Trạng Thế Stateless Của Agent & Mô Hình Cognitive Memory",
+      "description": "Đánh giá kiến thức cơ bản về lý do Agent quên, so sánh RAM vs Hard Drive trong kiến trúc Agent và phân loại 4 loại Memory (Short-term, Long-term, Episodic, Semantic).",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day17-t3-pipeline",
+      "parent_id": "day17-agent-builder",
+      "topic_title": "Day 17: Agent Memory Systems",
+      "title": "Phần 2: Quản Lý Short-term, Long-term Redis & Bộ Nhớ Phân Cảnh/Ngữ Nghĩa",
+      "description": "Đánh giá khả năng thiết kế Sliding Window cho Short-term, lưu trữ Key-Value Redis cho Long-term, lưu trữ Episode (task-reflection) và Semantic memory với Vector DB.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day17-t3-advanced",
+      "parent_id": "day17-agent-builder",
+      "topic_title": "Day 17: Agent Memory Systems",
+      "title": "Phần 3: Context Engineering Framework, Token Budget & Xử Lý Xung Đột Bộ Nhớ",
+      "description": "Đánh giá kiến thức nâng cao về 7 tầng Context, quy tắc phân bổ token budget, độ ưu tiên khi cắt giảm ngữ cảnh và chiến lược giải quyết xung đột thông tin.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day18-t1-basics",
+      "parent_id": "day18-ai-product",
+      "topic_title": "Day 18: AI Financial Modeling & ROI",
+      "title": "Phần 1: Khái Niệm Tài Chính Khởi Nghiệp & 5 Nhóm Chi Phí Của AI Startup",
+      "description": "Đánh giá kiến thức cơ bản về Burn Rate, Runway, sự khác biệt giữa SaaS truyền thống và AI COGS, các chi phí ẩn (hidden costs) và MRR/Consumption models.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day18-t1-pipeline",
+      "parent_id": "day18-ai-product",
+      "topic_title": "Day 18: AI Financial Modeling & ROI",
+      "title": "Phần 2: Chỉ Số Hiệu Năng Kinh Doanh & Phân Tích Unit Economics",
+      "description": "Đánh giá hiểu biết về Customer Acquisition Cost (CAC), Customer Lifetime Value (LTV), Churn Rate, tỷ lệ vàng LTV/CAC và thời gian hồi vốn CAC Payback.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day18-t1-advanced",
+      "parent_id": "day18-ai-product",
+      "topic_title": "Day 18: AI Financial Modeling & ROI",
+      "title": "Phần 3: Phân Tích Độ Nhạy, 3 Kịch Bản & Chỉ Số Đầu Tư ROI",
+      "description": "Đánh giá kiến thức nâng cao về Net Present Value (NPV), Internal Rate of Return (IRR), Project Payback, phân tích độ nhạy (sensitivity analysis) và stress-testing qua 3 kịch bản.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day18-t2-basics",
+      "parent_id": "day18-rag-data",
+      "topic_title": "Day 18: Data Lakehouse Architecture",
+      "title": "Phần 1: Sự Tiến Hóa Hạ Tầng Dữ Liệu & Nền Tảng Lakehouse",
+      "description": "Đánh giá kiến thức nền tảng về 3 kỷ nguyên dữ liệu (Traditional, ML, LLM), kiến trúc Data Lakehouse, lưu trữ dạng dòng vs dạng cột (Avro vs Parquet).",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day18-t2-pipeline",
+      "parent_id": "day18-rag-data",
+      "topic_title": "Day 18: Data Lakehouse Architecture",
+      "title": "Phần 2: Định Dạng Bảng Mở & Cơ Cơ Chế Quản Lý Transactions",
+      "description": "Đánh giá hiểu biết về Delta Lake transaction log, cơ chế Time Travel (rollback), Deletion Vectors, Change Data Feed (CDF) và tính năng Hidden Partitioning của Apache Iceberg.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day18-t2-advanced",
+      "parent_id": "day18-rag-data",
+      "topic_title": "Day 18: Data Lakehouse Architecture",
+      "title": "Phần 3: Tối Ưu Hóa Storage, Data Contracts & Pipeline CDC Production",
+      "description": "Đánh giá kiến thức chuyên sâu về OPTIMIZE/Z-ORDER, Medallion layer cho LLM, dập tắt các anti-patterns, data quality tests (GX/dbt), và CDC pipeline từ Postgres sang Iceberg.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day18-t3-basics",
+      "parent_id": "day18-agent-builder",
+      "topic_title": "Day 18: Production RAG",
+      "title": "Phần 1: Điểm Yếu Của Basic RAG & Quy Trình Ingestion Phổ Thông",
+      "description": "Đánh giá kiến thức cơ bản về các nguyên nhân thất bại của RAG ở production, phân loại chunking (Fixed, Semantic, Hierarchical), lựa chọn embedding model và RAGAS metrics.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day18-t3-pipeline",
+      "parent_id": "day18-agent-builder",
+      "topic_title": "Day 18: Production RAG",
+      "title": "Phần 2: Kỹ Thuật Retrieval Nâng Cao & Tối Ưu Hóa Online Context",
+      "description": "Đánh giá khả năng xây dựng Contextual Embeddings, chuyển đổi truy vấn (HyDE, Multi-Query), tìm kiếm kết hợp Hybrid Search (BM25 + Dense RRF) và Reranking.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day18-t3-advanced",
+      "parent_id": "day18-agent-builder",
+      "topic_title": "Day 18: Production RAG",
+      "title": "Phần 3: Kiến Trúc Agentic RAG, Gỡ Lỗi & Giới Hạn Của Embedding Space",
+      "description": "Đánh giá kiến thức nâng cao về Agentic RAG (Single/Multi-agent, Self-RAG), Semantic Cache, chẩn đoán lỗi RAGAS diagnostic tree và các điểm nghẽn vật lý của vector similarity.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day19-t1-basics",
+      "parent_id": "day19-ai-product",
+      "topic_title": "Day 19: Investor Buy-in & Pitch",
+      "title": "Phần 1: Bản Đồ Hệ Sinh Thái Startup & Quản Lý Các Stakeholders",
+      "description": "Đánh giá kiến thức cơ bản về ma trận Mendelow (Power vs Interest), phân loại 8 nhóm stakeholder của startup AI, và quy tắc truyền thông 'No Surprises'.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day19-t1-pipeline",
+      "parent_id": "day19-ai-product",
+      "topic_title": "Day 19: Investor Buy-in & Pitch",
+      "title": "Phần 2: Thuyết Phục 100 Khách Hàng Đầu Tiên & Chiến Lược Build-in-Public",
+      "description": "Đánh giá hiểu biết về phương pháp vượt qua sự hoài nghi của Early Adopters, thiết lập kênh phản hồi riêng, và tận dụng Twitter/X để marketing không đồng.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day19-t1-advanced",
+      "parent_id": "day19-ai-product",
+      "topic_title": "Day 19: Investor Buy-in & Pitch",
+      "title": "Phần 3: Cấu Trúc Twitter Pitch YC/Sequoia & One-Pager Cho Nhà Đầu Tư",
+      "description": "Đánh giá kiến thức nâng cao về cấu trúc pitch ngắn gọn của YC và Sequoia, xây dựng Investor One-Pager và kỹ năng xử lý chất vấn từ quỹ đầu tư.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day19-t2-basics",
+      "parent_id": "day19-rag-data",
+      "topic_title": "Day 19: Vector Store & Feature Store",
+      "title": "Phần 1: Vector Embeddings, Khoảng Cách Ngữ Nghĩa & Multi-modal Embeddings",
+      "description": "Đánh giá kiến thức cơ bản về ánh xạ văn bản thành vector, công thức Cosine Similarity, mô hình bge-m3/e5 và embeddings đa phương thức (CLIP).",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day19-t2-pipeline",
+      "parent_id": "day19-rag-data",
+      "topic_title": "Day 19: Vector Store & Feature Store",
+      "title": "Phần 2: Giải Thuật ANN, Vector Databases & Kiến Trúc Feast Feature Store",
+      "description": "Đánh giá hiểu biết về giải thuật HNSW, IVF, DiskANN, so sánh Qdrant vs pgvector, và cấu trúc offline/online store của Feast Feature Store.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day19-t2-advanced",
+      "parent_id": "day19-rag-data",
+      "topic_title": "Day 19: Vector Store & Feature Store",
+      "title": "Phần 3: Tối Ưu Hóa Vector DB, Point-in-Time Join & Xử Lý Training-Serving Skew",
+      "description": "Đánh giá kiến thức nâng cao về kỹ thuật nén quantization (binary/int8), truy vấn PIT Join của Feast, xử lý lệch pha dữ liệu (skew) và streaming pipelines.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day19-t3-basics",
+      "parent_id": "day19-agent-builder",
+      "topic_title": "Day 19: GraphRAG & Knowledge Graphs",
+      "title": "Phần 1: Điểm Nghẽn Của Flat RAG & Nền Tảng Đồ Thị Tri Thức",
+      "description": "Đánh giá kiến thức cơ bản về các loại câu hỏi khiến flat RAG thất bại, cấu trúc bộ ba Triples (Subject-Predicate-Object), và so sánh GraphRAG vs Vector RAG.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day19-t3-pipeline",
+      "parent_id": "day19-agent-builder",
+      "topic_title": "Day 19: GraphRAG & Knowledge Graphs",
+      "title": "Phần 2: Xây Dựng Đồ Thị Tri Thức & Kỹ Thuật Duyệt Graph Traversal",
+      "description": "Đánh giá hiểu biết về các bước trích xuất NER, Entity Linking, Leiden community detection, và các thuật toán duyệt đồ thị (BFS, Cypher query).",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day19-t3-advanced",
+      "parent_id": "day19-agent-builder",
+      "topic_title": "Day 19: GraphRAG & Knowledge Graphs",
+      "title": "Phần 3: Kiến Trúc SOTA MS-GraphRAG, LightRAG & Bài Toán Tối Ưu Chi Phí",
+      "description": "Đánh giá kiến thức nâng cao về so sánh Microsoft GraphRAG vs LightRAG, hybrid retrieval, gỡ lỗi Agentic GraphRAG, và quản lý chi phí token suy luận.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day20-t1-basics",
+      "parent_id": "day20-ai-product",
+      "topic_title": "Day 20: Product Roadmap & Execution",
+      "title": "Phần 1: RICE Framework & Ma Trận Thứ Tự Ưu Tiên Value-Effort",
+      "description": "Đánh giá kiến thức cơ bản về RICE score, ma trận 2x2 Value-Effort và các sai lầm phổ biến khi chấm điểm độ tự tin (Confidence) và nỗ lực (Effort).",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day20-t1-pipeline",
+      "parent_id": "day20-ai-product",
+      "topic_title": "Day 20: Product Roadmap & Execution",
+      "title": "Phần 2: Lộ Trình Phân Kỳ Now/Next/Later & Thiết Lập Outcome-Focused OKRs",
+      "description": "Đánh giá kiến thức về phân vùng lộ trình Now/Next/Later thay thế cho Gantt Chart, và cách thiết lập OKRs dựa trên kết quả (outcome) thay vì đầu ra (output).",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day20-t1-advanced",
+      "parent_id": "day20-ai-product",
+      "topic_title": "Day 20: Product Roadmap & Execution",
+      "title": "Phần 3: Bản Đồ Ràng Buộc Dependency Map & Đường Găng Dự Án Critical Path",
+      "description": "Đánh giá nâng cao về 3 lớp ràng buộc (Tiers of Dependency), xây dựng kế hoạch dự phòng (Plan B) và xác định đường găng Critical Path trong dự án AI.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day20-t2-basics",
+      "parent_id": "day20-rag-data",
+      "topic_title": "Day 20: Model Serving & Inference Optimization",
+      "title": "Phần 1: Phân Loại Độ Trễ TTFT/TPOT, Throughput vs Goodput & Kỹ Thuật Quantization",
+      "description": "Đánh giá kiến thức cơ bản về các chỉ số độ trễ TTFT, TPOT, Goodput@SLO, các định dạng nén quantization (FP8, AWQ, GGUF) và so sánh sự đánh đổi.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day20-t2-pipeline",
+      "parent_id": "day20-rag-data",
+      "topic_title": "Day 20: Model Serving & Inference Optimization",
+      "title": "Phần 2: Tối Ưu KV Cache, Dynamic/Continuous Batching & So Sánh Serving Engines",
+      "description": "Đánh giá kiến thức về cơ chế PagedAttention, RadixAttention, FlashAttention 1-4, dynamic/continuous batching và so sánh 8 serving engines phổ biến.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day20-t2-advanced",
+      "parent_id": "day20-rag-data",
+      "topic_title": "Day 20: Model Serving & Inference Optimization",
+      "title": "Phần 3: Kiến Trúc Distributed Inference, Multi-LoRA Serving & Auto-scaling",
+      "description": "Đánh giá nâng cao về các chiến lược chạy song song (TP, PP, EP, DPA), routing cache-aware, multi-LoRA serving với Punica và auto-scaling sử dụng KEDA.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day20-t3-basics",
+      "parent_id": "day20-agent-builder",
+      "topic_title": "Day 20: Multi-Agent Systems (Advanced)",
+      "title": "Phần 1: Lý Do Sử Dụng Multi-Agent & 5 Nhóm Workflow Patterns Cơ Bản",
+      "description": "Đánh giá kiến thức cơ bản về 3 lý do sử dụng multi-agent, nguyên tắc 'Start simplest', và 5 nhóm mẫu thiết kế workflow của Anthropic.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day20-t3-pipeline",
+      "parent_id": "day20-agent-builder",
+      "topic_title": "Day 20: Multi-Agent Systems (Advanced)",
+      "title": "Phần 2: Kiến Trúc Supervisor Hub-Spoke & Mẫu Thiết Kế Tranh Luận Debate Agents",
+      "description": "Đánh giá kiến thức về thiết lập Supervisor pattern bằng LangGraph, cấu trúc shared state, và cơ chế debate/critique giữa các tác tử đa dạng.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day20-t3-advanced",
+      "parent_id": "day20-agent-builder",
+      "topic_title": "Day 20: Multi-Agent Systems (Advanced)",
+      "title": "Phần 3: Chạy Song Song Parallel Execution, Shared State Locks & Tracing Debugging",
+      "description": "Đánh giá nâng cao về map-reduce, cơ chế shared state locks vs message passing, xử lý lỗi concurrency pool, và tracing debugging qua LangSmith.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day21-t1-basics",
+      "parent_id": "day21-ai-product",
+      "topic_title": "Day 21: AI Governance & Risk",
+      "title": "Phần 1: Khái Niệm Startup Governance & Quy Tắc 3 R's",
+      "description": "Đánh giá kiến thức cơ bản về triết lý 'avoid death', phân biệt rules/rails/rituals và các rails tự động giá rẻ dưới 500 USD/tháng.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day21-t1-pipeline",
+      "parent_id": "day21-ai-product",
+      "topic_title": "Day 21: AI Governance & Risk",
+      "title": "Phần 2: Quản Trị Rủi Ro Với Sổ Đăng Ký Risk Register",
+      "description": "Đánh giá kiến thức về xây dựng Risk Register bằng công thức If-Then-Leading to, đo lường tác động theo tháng runway và xác định vùng Kill Zone.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day21-t1-advanced",
+      "parent_id": "day21-ai-product",
+      "topic_title": "Day 21: AI Governance & Risk",
+      "title": "Phần 3: Kế Hoạch Xử Lý Sự Cố Incident Playbook & Giao Tiếp Khủng Hoảng",
+      "description": "Đánh giá nâng cao về quy trình xử lý sự cố trong 30 phút đầu (Verify, Stop Bleeding, Communicate), cơ chế Soft/Hard Kill và viết thông điệp xin lỗi khách hàng.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day21-t2-basics",
+      "parent_id": "day21-rag-data",
+      "topic_title": "Day 21: CI/CD for AI Systems",
+      "title": "Phần 1: Experiment Tracking & Model Registry với MLflow",
+      "description": "Đánh giá kiến thức cơ bản về ghi nhận tham số, metrics, artifacts, signatures trong MLflow, autologging cho LLM và quản lý vòng đời model.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day21-t2-pipeline",
+      "parent_id": "day21-rag-data",
+      "topic_title": "Day 21: CI/CD for AI Systems",
+      "title": "Phần 2: Quản Lý Phiên Bản Dữ Liệu DVC & Xây Dựng Reproducible Pipelines",
+      "description": "Đánh giá kiến thức về Data Version Control (DVC), quản lý tệp con trỏ .dvc, cấu hình remote storage S3/GCS và thực thi dvc repro tái tạo pipeline.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day21-t2-advanced",
+      "parent_id": "day21-rag-data",
+      "topic_title": "Day 21: CI/CD for AI Systems",
+      "title": "Phần 3: Xây Dựng AI CI/CD Pipeline & Các Chiến Lược Deploy Model",
+      "description": "Đánh giá nâng cao về kiểm tra dữ liệu bằng Great Expectations, thiết lập Eval Gate trong GitHub Actions, và so sánh các chiến lược deploy model (Canary, Blue/Green, Shadow).",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day21-t3-basics",
+      "parent_id": "day21-agent-builder",
+      "topic_title": "Day 21: Fine-tuning LLMs (LoRA/QLoRA)",
+      "title": "Phần 1: Khi Nào Cần Fine-tune & So Sánh QLoRA vs LoRA",
+      "description": "Đánh giá kiến thức cơ bản về cây quyết định chọn prompt/RAG/fine-tune, cơ chế hoạt động của LoRA và các tham số rank r và alpha.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day21-t3-pipeline",
+      "parent_id": "day21-agent-builder",
+      "topic_title": "Day 21: Fine-tuning LLMs (LoRA/QLoRA)",
+      "title": "Phần 2: Chuẩn Bị Dataset & Tối Ưu Hóa Bộ Nhớ VRAM",
+      "description": "Đánh giá kiến thức về chuẩn bị dữ liệu chất lượng cao, chống rò rỉ dữ liệu kiểm thử (contamination), gradient checkpointing và tối ưu hóa FlashAttention.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day21-t3-advanced",
+      "parent_id": "day21-agent-builder",
+      "topic_title": "Day 21: Fine-tuning LLMs (LoRA/QLoRA)",
+      "title": "Phần 3: Huấn Luyện Unsloth SFTTrainer & Multi-tenant Serving",
+      "description": "Đánh giá nâng cao về huấn luyện mô hình 4-bit với Unsloth SFTTrainer, kỹ thuật sequence packing, gỡ lỗi OOM, và multi-tenant LoRA adapter serving.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day22-t1-basics",
+      "parent_id": "day22-ai-product",
+      "topic_title": "Day 22: AI Compliance",
+      "title": "Phần 1: Khái Niệm Tuân Thủ & Luật AI Việt Nam",
+      "description": "Đánh giá kiến thức cơ bản về triết lý phanh ngoài pháp luật, 3 tầng rủi ro theo Luật AI VN và nghĩa vụ đăng ký cổng thông tin Bộ KH&CN.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day22-t1-pipeline",
+      "parent_id": "day22-ai-product",
+      "topic_title": "Day 22: AI Compliance",
+      "title": "Phần 2: Case Study Vụ Kẹo Kera & Mr Pips",
+      "description": "Đánh giá kiến thức về tội lừa dối khách hàng (Điều 198) từ vụ kẹo Kera, tội rửa tiền (Điều 324) vụ Mr Pips và rà soát marketing claims.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day22-t1-advanced",
+      "parent_id": "day22-ai-product",
+      "topic_title": "Day 22: AI Compliance",
+      "title": "Phần 3: Luật Bảo Vệ Dữ Liệu PDPL & 5 Bộ Hồ Sơ Chứng Cứ Bảo Vệ Founder",
+      "description": "Đánh giá nâng cao về PDPL Điều 8 & 30, quy chuẩn phạt vi phạm theo doanh thu, và thiết lập 5 bộ hồ sơ chứng cứ bảo vệ founder.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day22-t2-basics",
+      "parent_id": "day22-rag-data",
+      "topic_title": "Day 22: LLMOps & Prompt Versioning",
+      "title": "Phần 1: LLMOps vs MLOps Truyền Thống & Các Metrics Vận Hành",
+      "description": "Đánh giá kiến thức cơ bản về sự khác biệt giữa LLMOps và MLOps truyền thống, các metrics vận hành (latency, cost, error rate, drift).",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day22-t2-pipeline",
+      "parent_id": "day22-rag-data",
+      "topic_title": "Day 22: LLMOps & Prompt Versioning",
+      "title": "Phần 2: Giám Sát Chi Tiết Với LangSmith Tracing & Prompt Versioning",
+      "description": "Đánh giá kiến thức về thiết lập auto-instrumentation, phân tích trace anatomy gỡ lỗi bottlenecks, và sử dụng Prompt Hub để quản lý phiên bản prompt.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day22-t2-advanced",
+      "parent_id": "day22-rag-data",
+      "topic_title": "Day 22: LLMOps & Prompt Versioning",
+      "title": "Phần 3: Kiểm Thử RAGAS, LLM-as-Judge & Guardrails An Toàn",
+      "description": "Đánh giá nâng cao về 4 chỉ số RAGAS, hiệu chỉnh LLM-as-Judge, xây dựng chốt chặn Input/Output Guardrails và lọc thông tin nhạy cảm PII.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day22-t3-basics",
+      "parent_id": "day22-agent-builder",
+      "topic_title": "Day 22: DPO, ORPO & Alignment",
+      "title": "Phần 1: Khái Niệm Alignment & So Sánh PPO vs DPO",
+      "description": "Đánh giá kiến thức cơ bản về sự khác biệt giữa SFT và Alignment, cấu trúc pipeline RLHF truyền thống và cơ chế Direct Preference Optimization (DPO).",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day22-t3-pipeline",
+      "parent_id": "day22-agent-builder",
+      "topic_title": "Day 22: DPO, ORPO & Alignment",
+      "title": "Phần 2: Phân Tích DPO Loss & Gỡ Lỗi Các Failure Modes",
+      "description": "Đánh giá kiến thức về DPO Loss, điều khiển hệ số beta, và xử lý các lỗi như likelihood displacement, length hacking và mode collapse.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day22-t3-advanced",
+      "parent_id": "day22-agent-builder",
+      "topic_title": "Day 22: DPO, ORPO & Alignment",
+      "title": "Phần 3: Các Phương Pháp Thay Thế SimPO/ORPO & Reinforcement Learning Cho Reasoning",
+      "description": "Đánh giá nâng cao về SimPO, ORPO, KTO, và sự trở lại của Reinforcement Learning (GRPO & RLVR) để tối ưu hóa khả năng suy luận logic.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day23-t1-basics",
+      "parent_id": "day23-ai-product",
+      "topic_title": "Day 23: Change Management & AI Adoption",
+      "title": "Phần 1: Khái Niệm Cơ Bản Về Quản Trị Thay Đổi & Lăng Kính Tiếp Nhận AI",
+      "description": "Đánh giá kiến thức nền tảng về sự chấp nhận AI trong tổ chức, câu nói cốt lõi của Blue, lăng kính và ADKAR framework.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day23-t1-pipeline",
+      "parent_id": "day23-ai-product",
+      "topic_title": "Day 23: Change Management & AI Adoption",
+      "title": "Phần 2: Xây Dựng Roadmap Áp Dụng & Thiết Kế Dashboard Hành Động",
+      "description": "Đánh giá kiến thức về thiết lập quy trình phản hồi, theo dõi chỉ số DAU/WAU, xây dựng roadmap 30/60/90 ngày.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day23-t1-advanced",
+      "parent_id": "day23-ai-product",
+      "topic_title": "Day 23: Change Management & AI Adoption",
+      "title": "Phần 3: Red-Teaming 4 Góc Nhìn & Vượt Qua Kháng Cự Doanh Nghiệp",
+      "description": "Đánh giá nâng cao về kỹ năng Red-Teaming từ góc nhìn CFO, User, Risk, Workflow Owner để tối ưu hóa chiến lược rollout AI.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day23-t2-basics",
+      "parent_id": "day23-rag-data",
+      "topic_title": "Day 23: Monitoring & Observability Stack",
+      "title": "Phần 1: Giám Sát vs Quan Sát & Các Tín Hiệu Vàng RED/USE",
+      "description": "Đánh giá kiến thức cơ bản về phân biệt Monitoring/Observability, cấu trúc ba trụ cột và các tín hiệu RED/USE.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day23-t2-pipeline",
+      "parent_id": "day23-rag-data",
+      "topic_title": "Day 23: Monitoring & Observability Stack",
+      "title": "Phần 2: OpenTelemetry Instrumentation & Loki/Grafana Dashboard",
+      "description": "Đánh giá kiến thức về cài đặt OpenTelemetry, thu thập log với Loki, vẽ dashboard và thiết lập alert rules.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day23-t2-advanced",
+      "parent_id": "day23-rag-data",
+      "topic_title": "Day 23: Monitoring & Observability Stack",
+      "title": "Phần 3: Sampling Math, Data Drift & Burn-Rate Alerting Nâng Cao",
+      "description": "Đánh giá nâng cao về tính toán sampling rate, phát hiện drift bằng Evidently, và thiết lập burn-rate alert theo error budget.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day23-t3-basics",
+      "parent_id": "day23-agent-builder",
+      "topic_title": "Day 23: Agent Evaluation",
+      "title": "Phần 1: Quy Tắc 80/5, Reference-Based vs Reference-Free & RAGAS Core Metrics",
+      "description": "Đánh giá kiến thức nền tảng về đo lường chất lượng hệ thống AI, 4 chỉ số RAGAS cốt lõi và sự hạn chế của vibe-check.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day23-t3-pipeline",
+      "parent_id": "day23-agent-builder",
+      "topic_title": "Day 23: Agent Evaluation",
+      "title": "Phần 2: Pipeline LLM-as-Judge & Xây Dựng Chốt Chặn Guardrails",
+      "description": "Đánh giá kiến thức về thiết lập LLM-as-Judge, xử lý 4 loại bias của quan tòa LLM, và cài đặt Presidio PII/Llama Guard 3.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day23-t3-advanced",
+      "parent_id": "day23-agent-builder",
+      "topic_title": "Day 23: Agent Evaluation",
+      "title": "Phần 3: Thiết Kế Eval Suite Đầu Cuối & Latency Budget Tối Ưu",
+      "description": "Đánh giá nâng cao về thiết kế eval suite toàn diện cho môi trường production, tối ưu hóa overhead guardrail <100ms P95.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day24-t1-basics",
+      "parent_id": "day24-ai-product",
+      "topic_title": "Day 24: Responsible AI",
+      "title": "Phần 1: Khái Niệm Responsible AI & 6 Câu Hỏi Trước Khi Launch",
+      "description": "Đánh giá kiến thức nền tảng về đạo đức AI vs Responsible AI vs đánh giá an toàn, 5 cách hiểu về AI an toàn và 6 câu hỏi trước khi ra mắt chatbot.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day24-t1-pipeline",
+      "parent_id": "day24-ai-product",
+      "topic_title": "Day 24: Responsible AI",
+      "title": "Phần 2: 8 Kiểu Lỗi Phổ Biến & Thiết Kế Bản Đồ Rủi Ro Risk Map",
+      "description": "Đánh giá khả năng nhận diện 8 failure modes của hệ thống GenAI và thiết kế Risk Map (Scenario, Failure, Layer, Harm).",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day24-t1-advanced",
+      "parent_id": "day24-ai-product",
+      "topic_title": "Day 24: Responsible AI",
+      "title": "Phần 3: Thiết Kế Test & Eval Plan Cho An Toàn Hệ Thống",
+      "description": "Đánh giá kiến thức nâng cao về thiết kế câu hỏi an toàn, xây dựng bộ kiểm thử (test set), và định nghĩa các thang đo/scoring rubrics.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day24-t2-basics",
+      "parent_id": "day24-rag-data",
+      "topic_title": "Day 24: Data Governance & Security",
+      "title": "Phần 1: Khung Quản Trị Dữ Liệu & Phân Cấp Bảo Mật Cho AI",
+      "description": "Đánh giá kiến thức cơ bản về Data Governance Framework (Catalog, Classification, Lineage), least-privilege access và phân cấp bảo mật.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day24-t2-pipeline",
+      "parent_id": "day24-rag-data",
+      "topic_title": "Day 24: Data Governance & Security",
+      "title": "Phần 2: Triển Khai RBAC, IAM & Pipeline Anonymization PII",
+      "description": "Đánh giá kiến thức về thiết lập RBAC/IAM trên nền tảng AI, mã hóa dữ liệu và xây dựng PII anonymization pipeline bằng Presidio.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day24-t2-advanced",
+      "parent_id": "day24-rag-data",
+      "topic_title": "Day 24: Data Governance & Security",
+      "title": "Phần 3: Tuân Thủ Luật Pháp GDPR/NĐ13 & Quản Lý Lỗ Hổng Bảo Mật",
+      "description": "Đánh giá kiến thức chuyên sâu về ánh xạ luật pháp (GDPR, Nghị định 13) sang các controls kỹ thuật, sử dụng truffleHog/git-secrets và quản lý lỗ hổng bảo mật.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day24-t3-basics",
+      "parent_id": "day24-agent-builder",
+      "topic_title": "Day 24: LangGraph & Agentic Orchestration",
+      "title": "Phần 1: LCEL Chain vs Stateful Graph & Core API LangGraph",
+      "description": "Đánh giá kiến thức cơ bản về sự giới hạn của chain một chiều, khái niệm stateful graph và cấu trúc State, Node, Edge, Reducer trong LangGraph.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day24-t3-pipeline",
+      "parent_id": "day24-agent-builder",
+      "topic_title": "Day 24: LangGraph & Agentic Orchestration",
+      "title": "Phần 2: Lập Trình Vòng Lặp Agent Loop & Cơ Chế Persistence Checkpointing",
+      "description": "Đánh giá khả năng lập trình workflow vòng lặp, thiết lập conditional routing và cấu hình Persistence Checkpointer cho agent.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day24-t3-advanced",
+      "parent_id": "day24-agent-builder",
+      "topic_title": "Day 24: LangGraph & Agentic Orchestration",
+      "title": "Phần 3: Gỡ Lỗi Time Travel, Human-in-the-Loop & Phục Hồi Lỗi Production",
+      "description": "Đánh giá kiến thức nâng cao về time travel debugging, thiết lập ngắt (interrupts) cho user-approval (HITL) và khôi phục lỗi sau crash.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day25-t1-basics",
+      "parent_id": "day25-ai-product",
+      "topic_title": "Day 25: Launch Readiness",
+      "title": "Phần 1: Product Roadmap & Lựa Chọn Độ Ưu Tiên RICE",
+      "description": "Đánh giá kiến thức về phân biệt Output vs Outcome, công thức tính điểm RICE (Reach, Impact, Confidence, Effort) và ma trận Value-Effort.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day25-t1-pipeline",
+      "parent_id": "day25-ai-product",
+      "topic_title": "Day 25: Launch Readiness",
+      "title": "Phần 2: Xây Dựng Roadmap Now/Next/Later & OKRs Cho Outcome",
+      "description": "Đánh giá khả năng xây dựng Now/Next/Later roadmap thay thế cho Gantt chart truyền thống và thiết lập OKRs hướng outcome.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day25-t1-advanced",
+      "parent_id": "day25-ai-product",
+      "topic_title": "Day 25: Launch Readiness",
+      "title": "Phần 3: Dependency Mapping, Critical Path & Investor Package",
+      "description": "Đánh giá kiến thức nâng cao về vẽ bản đồ phụ thuộc, phân tích đường Critical Path, chuẩn bị phương án Plan B cho rủi ro và đóng gói Investor Package.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day25-t2-basics",
+      "parent_id": "day25-rag-data",
+      "topic_title": "Day 25: GPU FinOps & Cost Optimization",
+      "title": "Phần 1: Khung Quản Trị Chi Phí GPU & Phân Bổ Ngân Sách",
+      "description": "Đánh giá kiến thức cơ bản về cấu trúc chi phí GPU cloud, cách đo lường utilization, và cơ chế phân bổ chi phí (cost allocation & chargeback).",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day25-t2-pipeline",
+      "parent_id": "day25-rag-data",
+      "topic_title": "Day 25: GPU FinOps & Cost Optimization",
+      "title": "Phần 2: Right-Sizing GPU & Tối Ưu Chi Phí Spot/Preemptible Instances",
+      "description": "Đánh giá khả năng right-sizing tài nguyên GPU/storage, triển khai Spot/Preemptible instances kèm chiến lược checkpointing chống ngắt đột ngột.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day25-t2-advanced",
+      "parent_id": "day25-rag-data",
+      "topic_title": "Day 25: GPU FinOps & Cost Optimization",
+      "title": "Phần 3: Kỹ Thuật Tối Ưu Inference & Các Chỉ Số Sustainable AI",
+      "description": "Đánh giá kiến thức chuyên sâu về tối ưu chi phí suy luận (batching, caching, cascading, quantization) và đo lường carbon footprint của AI.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day25-t3-basics",
+      "parent_id": "day25-agent-builder",
+      "topic_title": "Day 25: Circuit Breakers, Caching & Agent Reliability",
+      "title": "Phần 1: Failure Modes Của Agent Production & Chiến Lược Fallback",
+      "description": "Đánh giá kiến thức cơ bản về các lỗi hệ thống của agent (timeout, rate limit, loop, context inflation) và thiết kế cơ chế fallback tĩnh/động.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day25-t3-pipeline",
+      "parent_id": "day25-agent-builder",
+      "topic_title": "Day 25: Circuit Breakers, Caching & Agent Reliability",
+      "title": "Phần 2: Triển Khai Circuit Breaker, Semantic Caching & Quản Lý Budget",
+      "description": "Đánh giá khả năng thiết lập chốt chặn ngắt mạch (circuit breaker), lưu trữ bộ đệm ngữ nghĩa (semantic cache) và kiểm soát ngân sách token.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day25-t3-advanced",
+      "parent_id": "day25-agent-builder",
+      "topic_title": "Day 25: Circuit Breakers, Caching & Agent Reliability",
+      "title": "Phần 3: Giám Sát Độ Tin Cậy SLOs & Thiết Kế Chaos Testing Cho Agent",
+      "description": "Đánh giá kiến thức nâng cao về định nghĩa SLIs/SLOs cho Agent, theo dõi error budget và xây dựng kịch bản chaos testing tự động.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day26-t1-basics",
+      "parent_id": "day26-ai-product",
+      "topic_title": "Day 26: Fundraising",
+      "title": "Phần 1: Các Giai Đoạn Gọi Vốn & Phân Biệt Angel, VC vs PE",
+      "description": "Đánh giá kiến thức cơ bản về các giai đoạn gọi vốn (Pre-Seed, Seed, Series A-C) và mô hình hoạt động của các quỹ đầu tư.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day26-t1-pipeline",
+      "parent_id": "day26-ai-product",
+      "topic_title": "Day 26: Fundraising",
+      "title": "Phần 2: Phân Tích Term Sheet & Các Điều Khoản Bảo Vệ Nhà Đầu Tư",
+      "description": "Đánh giá khả năng đọc hiểu các điều khoản Term Sheet gồm định giá Pre/Post-money, ESOP pool, vesting schedule, cliff và liquidation preference.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day26-t1-advanced",
+      "parent_id": "day26-ai-product",
+      "topic_title": "Day 26: Fundraising",
+      "title": "Phần 3: Tính Toán Cap Table & Điều Khoản Veto/Anti-Dilution",
+      "description": "Đánh giá kiến thức nâng cao về tính toán pha loãng Cap Table, ảnh hưởng của liquidation multiplier, các quyền veto và bối cảnh gọi vốn Việt Nam.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day26-t2-basics",
+      "parent_id": "day26-rag-data",
+      "topic_title": "Day 26: MCP & A2A Infrastructure",
+      "title": "Phần 1: Kiến Trúc MCP Transports & Các Hướng Thiết Kế Routing",
+      "description": "Đánh giá kiến thức cơ bản về các giao thức truyền tải MCP (stdio, SSE, WebSockets) và so sánh mô hình Orchestrator-Worker vs Choreography.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day26-t2-pipeline",
+      "parent_id": "day26-rag-data",
+      "topic_title": "Day 26: MCP & A2A Infrastructure",
+      "title": "Phần 2: Thiết Kế Agent Registry & Xây Dựng Semantic Routing Layer",
+      "description": "Đánh giá khả năng xây dựng Agent Registry quản lý metadata và thiết lập bộ định tuyến ngữ nghĩa (semantic router) để phân phối task.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day26-t2-advanced",
+      "parent_id": "day26-rag-data",
+      "topic_title": "Day 26: MCP & A2A Infrastructure",
+      "title": "Phần 3: Multi-Agent Security, Audit Trace & Giám Sát Tracing",
+      "description": "Đánh giá kiến thức nâng cao về bảo mật đa tác nhân, ghi vết audit logs cho luồng A2A và thiết lập tracing chéo hệ thống bằng OpenTelemetry.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day26-t3-basics",
+      "parent_id": "day26-agent-builder",
+      "topic_title": "Day 26: Model Context Protocol (MCP)",
+      "title": "Phần 1: Vấn Đề N x M Connections & Khung Giao Thức MCP",
+      "description": "Đánh giá kiến thức cơ bản về vấn đề N x M adapters, mô hình giải quyết N + M của MCP và kiến trúc Host-Client-Server.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day26-t3-pipeline",
+      "parent_id": "day26-agent-builder",
+      "topic_title": "Day 26: Model Context Protocol (MCP)",
+      "title": "Phần 2: Phân Biệt Tools/Resources/Prompts & Viết MCP Server SDK",
+      "description": "Đánh giá khả năng phân biệt bốn trụ cột MCP và triển khai viết MCP Server sử dụng Python SDK.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day26-t3-advanced",
+      "parent_id": "day26-agent-builder",
+      "topic_title": "Day 26: Model Context Protocol (MCP)",
+      "title": "Phần 3: Bảo Mật Xác Thực, Versioning & Vận Hành Production MCP",
+      "description": "Đánh giá kiến thức chuyên sâu về cơ chế xác thực client, quản lý versioning, và so sánh vận hành stdio vs SSE trong môi trường production.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day27-t1-basics",
+      "parent_id": "day27-ai-product",
+      "topic_title": "Day 27: AI Team & Performance",
+      "title": "Phần 1: Bản Đồ Stakeholders & Chiến Lược Quản Lý Blockers",
+      "description": "Đánh giá kiến thức cơ bản về Power/Interest Grid, ma trận phân loại stakeholder của dự án AI, chiến lược giao tiếp và bài học kinh nghiệm từ sự cố Watson Health của IBM.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day27-t1-pipeline",
+      "parent_id": "day27-ai-product",
+      "topic_title": "Day 27: AI Team & Performance",
+      "title": "Phần 2: Phương Pháp Pitch Kết Luận Trước & Thiết Lập RACI Matrix",
+      "description": "Đánh giá hiểu biết về Minto Pyramid Principle, cấu trúc pitch Conclusion First, xử lý chất vấn phản biện và phân định trách nhiệm thông qua RACI Matrix.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day27-t1-advanced",
+      "parent_id": "day27-ai-product",
+      "topic_title": "Day 27: AI Team & Performance",
+      "title": "Phần 3: Cấu Trúc AI Squad Model & Vận Hành Agentic SDLC Competency",
+      "description": "Đánh giá kiến thức chuyên sâu về thiết kế team AI theo mô hình Squad, định nghĩa vai trò AI PM/ML Engineer, thiết lập kế hoạch Priority Hire và áp dụng Agentic SDLC Competency để nâng cao hiệu suất.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day27-t2-basics",
+      "parent_id": "day27-rag-data",
+      "topic_title": "Day 27: Data Observability & Lineage",
+      "title": "Phần 1: Phân Biệt Observability vs Monitoring & 7 Chiều Chất Lượng Dữ Liệu",
+      "description": "Đánh giá kiến thức cơ bản về khác biệt giữa System Monitoring và Data Observability, 7 chiều chất lượng dữ liệu, thống kê Monte Carlo về nguyên nhân sự cố.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day27-t2-pipeline",
+      "parent_id": "day27-rag-data",
+      "topic_title": "Day 27: Data Observability & Lineage",
+      "title": "Phần 2: Great Expectations, Soda & Thiết Lập Data Contracts chuẩn ODCS",
+      "description": "Đánh giá khả năng viết kiểm tra chất lượng dữ liệu bằng Great Expectations 1.0 và Soda 4.0, thiết lập Data Contracts theo chuẩn ODCS và vận hành OpenLineage/Marquez.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day27-t2-advanced",
+      "parent_id": "day27-rag-data",
+      "topic_title": "Day 27: Data Observability & Lineage",
+      "title": "Phần 3: Đo Lường Drift (PSI/KS) & Giám Sát Feature Store/RAG Embedding",
+      "description": "Đánh giá kiến thức nâng cao về đo lường Population Stability Index (PSI), Kolmogorov-Smirnov (KS) drift, giám sát serving skew trong Feature Store và embedding drift trong hệ thống RAG.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day27-t3-basics",
+      "parent_id": "day27-agent-builder",
+      "topic_title": "Day 27: Human-in-the-Loop UX",
+      "title": "Phần 1: Nguy Cơ Full Autonomy & Phân Loại 6 Interaction Patterns",
+      "description": "Đánh giá kiến thức cơ bản về rủi ro khi để Agent tự quyết hoàn toàn, mô hình Bounded Autonomy và 6 mẫu tương tác người-máy (HITL Taxonomy).",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day27-t3-pipeline",
+      "parent_id": "day27-agent-builder",
+      "topic_title": "Day 27: Human-in-the-Loop UX",
+      "title": "Phần 2: Thiết Kế Confidence Routing & State Interruption trong LangGraph",
+      "description": "Đánh giá khả năng xây dựng cơ chế Confidence Routing để phân luồng quyết định, thiết lập ngưỡng ngắt dựa trên rủi ro và sử dụng tính năng interrupt trong LangGraph.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day27-t3-advanced",
+      "parent_id": "day27-agent-builder",
+      "topic_title": "Day 27: Human-in-the-Loop UX",
+      "title": "Phần 3: Xây Dựng Approval Workflows & Tích Hợp Audit Trails",
+      "description": "Đánh giá kiến thức chuyên sâu về triển khai Interactive Approval Workflows (lưu/phục hồi state, sửa arguments động tại runtime) và ghi vết Audit Trails phục vụ cải tiến Agent.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day28-t1-basics",
+      "parent_id": "day28-ai-product",
+      "topic_title": "Day 28: AI Pricing & GTM",
+      "title": "Phần 1: Chi Phí Biên AI vs SaaS Truyền Thống & Ma Trận Định Giá",
+      "description": "Đánh giá kiến thức cơ bản về chi phí biên của sản phẩm AI, 4 mô hình định giá (Seat, Usage, Outcome, Hybrid) và ma trận lựa chọn định giá dựa trên mức độ tự chủ (Autonomy) và khả năng quy chiếu giá trị (Attribution).",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day28-t1-pipeline",
+      "parent_id": "day28-ai-product",
+      "topic_title": "Day 28: AI Pricing & GTM",
+      "title": "Phần 2: Tính Toán Cost/Job & Chiến Lược Neo Giá Trị Sản Phẩm",
+      "description": "Đánh giá hiểu biết về cách tính toán Cost/Job đầy đủ (API, Infra, HITL, Retry), quản lý biên lợi nhuận (Gross Margin) và chiến lược neo giá sản phẩm AI theo giá trị hoặc chi phí nhân công thay vì so sánh với ChatGPT.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day28-t1-advanced",
+      "parent_id": "day28-ai-product",
+      "topic_title": "Day 28: AI Pricing & GTM",
+      "title": "Phần 3: Thiết Kế Kênh Phân Phối GTM & Chu Kỳ Tinh Chỉnh Giá",
+      "description": "Đánh giá năng lực xây dựng chiến lược Go-To-Market (GTM) nhúng vào luồng thói quen hiện tại của khách hàng, lựa chọn kênh phân phối (PLG, Sales-led, Partner-led) và vận hành quy trình thử nghiệm điều chỉnh giá bán sản phẩm AI.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day28-t2-basics",
+      "parent_id": "day28-rag-data",
+      "topic_title": "Day 28: Platform Engineering & Documentation",
+      "title": "Phần 1: Kiến Trúc 5 Lớp AI Platform & Giao Tiếp Hướng Sự Kiện",
+      "description": "Đánh giá kiến thức cơ bản về kiến trúc 5 lớp của một AI platform hoàn chỉnh, cơ chế Event-Driven Architecture với Kafka và các mẫu thiết kế chống lỗi (Pattern vs Anti-pattern) trong tích hợp hệ thống hạ tầng AI.",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day28-t2-pipeline",
+      "parent_id": "day28-rag-data",
+      "topic_title": "Day 28: Platform Engineering & Documentation",
+      "title": "Phần 2: Request Audit Trail & Chiến Lược Kiểm Thử Tích Hợp",
+      "description": "Đánh giá khả năng thiết kế vết kiểm toán yêu cầu (Request Audit Trail), phân bổ ngân sách trễ đầu cuối (<1000ms), áp dụng Consumer-Driven Contracts và lập kịch bản smoke test sau triển khai hệ thống.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day28-t2-advanced",
+      "parent_id": "day28-rag-data",
+      "topic_title": "Day 28: Platform Engineering & Documentation",
+      "title": "Phần 3: Kiểm Thử Với Testcontainers & Profiling Hiệu Năng",
+      "description": "Đánh giá năng lực thiết lập môi trường kiểm thử tích hợp thực tế với Testcontainers, áp dụng Chaos Engineering để kiểm thử khả năng chịu lỗi và sử dụng các công cụ Jaeger, py-spy, tracemalloc để xác định điểm nghẽn hiệu năng.",
+      "difficulty": "khó"
+    },
+    {
+      "id": "day28-t3-basics",
+      "parent_id": "day28-agent-builder",
+      "topic_title": "Day 28: Real-World System Architecture",
+      "title": "Phần 1: Lăng Kính 6 Lớp Hệ Thống AI & Đánh Giá Bề Mặt Rủi Ro",
+      "description": "Đánh giá kiến thức nền tảng về lăng kính 6 lớp kiến trúc (Data, Perception, World State, Decision, Action, Ops/Safety) chung cho các hệ thống AI thực tế và phân tích bề mặt rủi ro (Risk Surface) cùng ràng buộc trễ (Latency).",
+      "difficulty": "dễ"
+    },
+    {
+      "id": "day28-t3-pipeline",
+      "parent_id": "day28-agent-builder",
+      "topic_title": "Day 28: Real-World System Architecture",
+      "title": "Phần 2: Kiến Trúc Xe Tự Hành ADAS & Social Navigation cho Robot",
+      "description": "Đánh giá hiểu biết về kiến trúc stack xe tự hành ADAS (on-vehicle runtime, offboard data flywheel), các hướng tiếp cận hiện đại (UniAD, DriveLM, World Model) và cơ chế dẫn đường xã hội (Social Navigation) của robot giao hàng.",
+      "difficulty": "bình thường"
+    },
+    {
+      "id": "day28-t3-advanced",
+      "parent_id": "day28-agent-builder",
+      "topic_title": "Day 28: Real-World System Architecture",
+      "title": "Phần 3: Thiết Kế Robot Humanoid, CCTV AI Edge & Ứng Dụng Ảnh Vệ Tinh GeoAI",
+      "description": "Đánh giá năng lực thiết kế hệ thống CCTV AI biên bảo vệ quyền riêng tư, Embodied AI cho humanoid robot (mô hình VLA, học tăng cường RL), xử lý phân tích ảnh vệ tinh GeoAI và vận hành data flywheel hỗ trợ bởi con người.",
+      "difficulty": "khó"
+    }
+  ]
+}

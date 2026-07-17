@@ -1,0 +1,58 @@
+\begin{thebibliography}{10}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Choi et~al.(2020)Choi, Lee, Cho, Rhee, Lee, Cho, Kim, Chang, and Cha]{choi2020ednet}
+Youngduck Choi, Youngnam Lee, Junghyun Cho, Baek~Hyeong Rhee, Hanbin Lee, Hyeseung Cho, Sungbae Kim, Yeonsu Chang, and Jaehyuk Cha.
+\newblock Ednet: A large-scale hierarchical dataset in education.
+\newblock \emph{arXiv preprint arXiv:1912.03072}, 2020.
+
+\bibitem[Clement et~al.(2015)Clement, Roy, Oudeyer, and Lopes]{clement2015multi}
+Benjamin Clement, Didier Roy, Pierre-Yves Oudeyer, and Manuel Lopes.
+\newblock Multi-armed bandits for intelligent tutoring systems.
+\newblock \emph{Journal of Educational Data Mining}, 7\penalty0 (2):\penalty0 20--48, 2015.
+
+\bibitem[Corbett and Anderson(1994)]{corbett1994knowledge}
+Albert~T Corbett and John~R Anderson.
+\newblock Knowledge tracing: Modeling the acquisition of procedural knowledge.
+\newblock \emph{User modeling and user-adapted interaction}, 4\penalty0 (4):\penalty0 253--278, 1994.
+
+\bibitem[Feng et~al.(2009)Feng, Heffernan, and Koedinger]{feng2009addressing}
+Mingyu Feng, Neil~T. Heffernan, and Kenneth~R. Koedinger.
+\newblock Addressing the assessment challenge in an {Intelligent Tutoring System} that tutors as it assesses.
+\newblock \emph{User Modeling and User-Adapted Interaction}, 19\penalty0 (3):\penalty0 243--266, 2009.
+
+\bibitem[Kleppmann(2017)]{kleppmann2017designing}
+Martin Kleppmann.
+\newblock \emph{Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems}.
+\newblock "O'Reilly Media, Inc.", 2017.
+
+\bibitem[Li et~al.(2010)Li, Chu, Langford, and Schapire]{li2010contextual}
+Lihong Li, Wei Chu, John Langford, and Robert~E Schapire.
+\newblock A contextual-bandit approach to personalized news article recommendation.
+\newblock In \emph{Proceedings of the 19th international conference on World Wide Web}, pages 661--670, 2010.
+
+\bibitem[Pel{\'a}nek(2016)]{pelanek2016applications}
+Radek Pel{\'a}nek.
+\newblock Applications of the elo rating system in education.
+\newblock \emph{Computers \& Education}, 98:\penalty0 169--179, 2016.
+
+\bibitem[Richardson(2018)]{richardson2018microservices}
+Chris Richardson.
+\newblock \emph{Microservices Patterns: With examples in Java}.
+\newblock Manning Publications, 2018.
+
+\bibitem[Settles and Meeder(2016)]{settles2016trainable}
+Burr Settles and Brendan Meeder.
+\newblock A trainable spaced repetition model for language learning.
+\newblock In \emph{Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)}, pages 1848--1858, 2016.
+
+\bibitem[Wo{\'z}niak and Gorzela{\'n}czyk(1994)]{wozniak1994optimization}
+Piotr~A Wo{\'z}niak and Edward~J Gorzela{\'n}czyk.
+\newblock Optimization of repetition spacing in the light of a biological model of memory.
+\newblock \emph{Acta Neurobiologiae Experimentalis}, 54\penalty0 (1):\penalty0 59--62, 1994.
+
+\end{thebibliography}

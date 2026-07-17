@@ -1,0 +1,210 @@
+{
+  "id": "day19-t3-pipeline",
+  "parent_id": "day19-agent-builder",
+  "topic_title": "Day 19: GraphRAG & Knowledge Graphs",
+  "title": "Phần 2: Xây Dựng Đồ Thị Tri Thức & Kỹ Thuật Duyệt Graph Traversal",
+  "description": "Đánh giá hiểu biết về các bước trích xuất NER, Entity Linking, Leiden community detection, và các thuật toán duyệt đồ thị (BFS, Cypher query).",
+  "difficulty": "bình thường",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Trong quá trình xây dựng đồ thị tri thức, bước Liên kết Thực thể (Entity Linking) có vai trò gì?",
+      "options": {
+        "A": "Xử lý đồng nhất các tên gọi khác nhau của cùng một thực thể.",
+        "B": "Tự động phân tách một câu phức tạp thành nhiều câu đơn giản.",
+        "C": "Mã hóa toàn bộ các cạnh liên kết giữa các node trong đồ thị.",
+        "D": "Tính toán khoảng cách cosine giữa hai câu văn bản thô trích xuất."
+      },
+      "answer": "A",
+      "explanation": "Entity Linking (Deduplication) giúp gộp các tên gọi khác nhau (ví dụ: 'Google', 'Alphabet Inc.') về cùng một node thực thể duy nhất để tránh phân mảnh đồ thị.",
+      "hints": [
+        "Hãy nghĩ đến việc nếu đồ thị có hai node riêng biệt cho cùng một thực thể.",
+        "Mối quan hệ giữa chúng sẽ bị đứt gãy và không thể duyệt qua lại.",
+        "Đáp án chỉ ra việc xử lý đồng nhất các tên gọi khác nhau về một thực thể."
+      ],
+      "concepts": [
+        "d19-t3-graphrag"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Ngôn ngữ truy vấn Cypher được sử dụng phổ biến nhất trong cơ sở dữ liệu đồ thị nào?",
+      "options": {
+        "A": "Ngôn ngữ truy vấn đồ thị chuyên dùng cho cơ sở dữ liệu Neo4j.",
+        "B": "Cú pháp lập trình hướng đối tượng dùng để huấn luyện mô hình.",
+        "C": "Định dạng tệp tin nén giúp tiết kiệm dung lượng lưu trữ Parquet.",
+        "D": "Giao thức truyền tin nhắn thời gian thực giữa các máy chủ đám mây."
+      },
+      "answer": "A",
+      "explanation": "Cypher là ngôn ngữ truy vấn đồ thị khai báo (declarative graph query language) được phát triển và sử dụng chính bởi Neo4j.",
+      "hints": [
+        "Nó sử dụng các ký tự ASCII art như (n:Node)-[r:REL]->(m:Node) để mô tả pattern.",
+        "Đây là công cụ tương tự như SQL nhưng tối ưu riêng cho việc duyệt đồ thị.",
+        "Đáp án là ngôn ngữ truy vấn đồ thị chuyên dùng cho Neo4j."
+      ],
+      "concepts": [
+        "d19-t3-graphrag"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Thuật toán Leiden (Leiden Algorithm) đóng vai trò gì trong pipeline xây dựng GraphRAG?",
+      "options": {
+        "A": "Trích xuất các thực thể và mối quan hệ từ văn bản thô.",
+        "B": "Phát hiện các phân nhóm cộng đồng và phân cụm cấu trúc đồ thị.",
+        "C": "Tính toán khoảng cách cosine giữa các vector trong cơ sở dữ liệu.",
+        "D": "Tự động nén toàn bộ tệp tin nhị phân thành dạng int8."
+      },
+      "answer": "B",
+      "explanation": "Thuật toán Leiden dùng để phát hiện cộng đồng (community detection), phân tách đồ thị lớn thành các phân cụm cấu trúc có mối liên kết chặt chẽ để tóm tắt thông tin.",
+      "hints": [
+        "Nó phân vùng đồ thị thành các nhóm nhỏ chứa các entities thường xuyên tương tác.",
+        "Microsoft GraphRAG sử dụng thuật toán này để xây dựng các community summaries.",
+        "Đáp án đúng là phát hiện các nhóm cộng đồng và phân cụm cấu trúc đồ thị."
+      ],
+      "concepts": [
+        "d19-t3-graphrag"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Giải thuật duyệt đồ thị theo chiều rộng (BFS - Breadth-First Search) hoạt động theo nguyên tắc nào?",
+      "options": {
+        "A": "Đi thẳng xuống các node lá sâu nhất của đồ thị trước.",
+        "B": "Quét qua toàn bộ các node kề bên trước khi xuống tầng sâu.",
+        "C": "Chỉ chọn ngẫu nhiên một vài liên kết để tìm kiếm thông tin.",
+        "D": "Không sử dụng cấu trúc cạnh mà chỉ tính khoảng cách cosine."
+      },
+      "answer": "B",
+      "explanation": "BFS duyệt qua tất cả các nodes kề cận (lân cận 1-hop) của node gốc trước khi di chuyển xuống các node ở khoảng cách xa hơn (2-hop, 3-hop).",
+      "hints": [
+        "Hãy liên tưởng đến làn sóng nước lan tỏa dần ra xung quanh từ tâm điểm.",
+        "Nó khám phá đồ thị theo từng tầng đồng tâm từ gần đến xa.",
+        "Đáp án là quét qua toàn bộ các node kề bên trước khi xuống tầng sâu hơn."
+      ],
+      "concepts": [
+        "d19-t3-graphrag"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Đặc điểm nổi bật của framework mã nguồn mở NodeRAG trong hệ sinh thái RAG là gì?",
+      "options": {
+        "A": "Là cơ sở dữ liệu đồ thị chuẩn công nghiệp chạy trên in-memory.",
+        "B": "Framework mã nguồn mở hỗ trợ xây dựng nhanh GraphRAG chạy trên NetworkX.",
+        "C": "Thuật toán tối ưu hóa chi phí gọi API của mô hình lớn.",
+        "D": "Công cụ trực quan hóa đồ thị tri thức bằng biểu đồ 3D."
+      },
+      "answer": "B",
+      "explanation": "NodeRAG là framework mã nguồn mở Python xây dựng trên NetworkX, giúp lập chỉ mục và chạy GraphRAG cục bộ mà không cần cài đặt đồ thị phức tạp.",
+      "hints": [
+        "Nó là một giải pháp đóng gói sẵn cho phép bạn chạy GraphRAG ngay trên bộ nhớ in-memory.",
+        "Nó giúp đơn giản hóa việc tích hợp logic GraphRAG vào các ứng dụng Python.",
+        "Đáp án đúng là framework mã nguồn mở xây dựng nhanh GraphRAG trên NetworkX."
+      ],
+      "concepts": [
+        "d19-t3-graphrag"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Tại sao việc trích xuất mối quan hệ (Relation Extraction) lại tối quan trọng khi xây dựng đồ thị?",
+      "options": {
+        "A": "Để nén nhỏ kích thước của các tệp tin dữ liệu thô.",
+        "B": "Để tự động thay đổi cấu trúc bảng trong cơ sở dữ liệu.",
+        "C": "Nó xác định chính xác kiểu liên kết và ý nghĩa giữa các node.",
+        "D": "Để giảm thiểu tối đa thời gian phản hồi của mô hình lớn."
+      },
+      "answer": "C",
+      "explanation": "Trích xuất mối quan hệ giúp gán nhãn ngữ nghĩa (như 'FOUNDED_BY', 'ACQUIRED') cho các cạnh kết nối, cung cấp ngữ cảnh chính xác cho LLM suy luận.",
+      "hints": [
+        "Nếu đồ thị chỉ có các node An và Bình nối với nhau mà không có nhãn.",
+        "LLM không thể biết An là bạn, là đối thủ hay là nhân viên của Bình.",
+        "Đáp án là xác định chính xác kiểu liên kết và ý nghĩa giữa các node."
+      ],
+      "concepts": [
+        "d19-t3-graphrag"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Thư viện Python NetworkX thường được ứng dụng tốt nhất trong tình huống nào?",
+      "options": {
+        "A": "Là cơ sở dữ liệu đồ thị chạy trên cụm máy chủ lớn.",
+        "B": "Mô hình ngôn ngữ tự động sinh ra các đoạn mã Cypher.",
+        "C": "Thư viện Python phù hợp để tạo prototype nghiên cứu đồ thị.",
+        "D": "Công cụ dùng để dán nhãn dữ liệu tự động cho mô hình."
+      },
+      "answer": "C",
+      "explanation": "NetworkX là thư viện Python in-memory hoàn hảo cho việc nghiên cứu cấu trúc mạng lưới, tính toán thuật toán đồ thị và tạo prototype GraphRAG nhanh chóng.",
+      "hints": [
+        "Thư viện này chạy hoàn toàn trên bộ nhớ đệm cục bộ và không yêu cầu cài đặt server.",
+        "Nó cung cấp các hàm toán học phong phú để phân tích cấu trúc đồ thị.",
+        "Đáp án là thư viện Python phù hợp để tạo prototype nghiên cứu đồ thị."
+      ],
+      "concepts": [
+        "d19-t3-graphrag"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Trong bước đầu tiên của Ingestion GraphRAG, kỹ thuật NER (Named Entity Recognition) đóng vai trò gì?",
+      "options": {
+        "A": "Để mã hóa các mối quan hệ thành dạng vector thưa thớt.",
+        "B": "Để nén kích thước file Parquet trước khi đưa vào đồ thị.",
+        "C": "Để trích xuất các danh từ chính đóng vai trò làm node.",
+        "D": "Để tự động gán nhãn cho các tệp tin hình ảnh thô."
+      },
+      "answer": "C",
+      "explanation": "NER (Nhận dạng thực thể có tên) giúp trích xuất các thực thể chính (người, địa điểm, tổ chức) từ văn bản thô để làm tiền đề khởi tạo các node trên đồ thị.",
+      "hints": [
+        "NER là bước lọc ra các danh từ riêng quan trọng trong văn bản.",
+        "Các danh từ này chính là hạt nhân để tạo dựng các nút thực thể.",
+        "Đáp án đúng là trích xuất các danh từ chính đóng vai trò làm node."
+      ],
+      "concepts": [
+        "d19-t3-graphrag"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Tại sao việc khử trùng lặp thực thể (Deduplication) lại tối quan trọng khi xây dựng đồ thị?",
+      "options": {
+        "A": "Để giảm tải dung lượng lưu trữ trên các máy chủ đám mây.",
+        "B": "Để tăng tốc độ huấn luyện lại mô hình embedding định kỳ.",
+        "C": "Để hệ thống tự động mã hóa các kết nối bảo mật.",
+        "D": "Tránh phân mảnh đồ thị khi một thực thể có nhiều tên."
+      },
+      "answer": "D",
+      "explanation": "Nếu không khử trùng lặp (ví dụ 'Apple' và 'Apple Inc.'), đồ thị sẽ tạo ra hai node riêng biệt, làm phân mảnh các liên kết và gãy luồng truy vấn duyệt đồ thị.",
+      "hints": [
+        "Hãy nghĩ đến việc bạn vẽ hai chấm tròn khác nhau cho cùng một công ty.",
+        "Các mũi tên quan hệ sẽ bị chia đôi, làm mất tính nhất quán ngữ nghĩa.",
+        "Đáp án là tránh phân mảnh đồ thị khi một thực thể được viết dưới nhiều tên gọi."
+      ],
+      "concepts": [
+        "d19-t3-graphrag"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Kỹ thuật 'Textualization' (Văn bản hóa) kết quả đồ thị trước khi gửi cho LLM nghĩa là gì?",
+      "options": {
+        "A": "Chuyển đổi văn bản thô thành các biểu thức chính quy phức tạp.",
+        "B": "Mã hóa toàn bộ các câu trả lời thành dạng vector nhị phân.",
+        "C": "Tự động phân tách câu hỏi của người dùng thành các phần.",
+        "D": "Gộp thông tin node/edge thành đoạn văn làm ngữ cảnh cho LLM."
+      },
+      "answer": "D",
+      "explanation": "LLM không thể đọc trực tiếp định dạng đồ thị nhị phân. Ta cần chuyển đổi các đường đi (traversal paths) hoặc cụm thông tin tìm được thành các câu văn xuôi để chèn vào prompt.",
+      "hints": [
+        "Đây là bước dịch từ cấu trúc đồ thị (A -> B) sang ngôn ngữ tự nhiên để LLM hiểu được.",
+        "Ví dụ dịch (Sam, CEO, OpenAI) thành câu 'Sam Altman là CEO của OpenAI'.",
+        "Đáp án là gộp thông tin node/edge thành đoạn văn làm ngữ cảnh cho LLM."
+      ],
+      "concepts": [
+        "d19-t3-graphrag"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+metric,score,target,status
+faithfulness,5.00,4.00,PASS
+relevance,5.00,4.00,PASS
+socratic,4.30,4.00,PASS

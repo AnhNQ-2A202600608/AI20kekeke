@@ -1,0 +1,121 @@
+{
+  "character": {
+    "id": "edo-main-character",
+    "src": "/mascot/edo/character.webp",
+    "name": "Edo Farmer Scholar",
+    "role": "learner-avatar",
+    "description": "Main Farmer Scholar learner character without Sofi."
+  },
+  "usage": {
+    "profileHero": "/mascot/edo/edo-sofi-shoulder-companion.webp",
+    "nextAction": "/mascot/edo/edo-sofi-next-path-lantern.webp",
+    "recovery": "/mascot/edo/edo-sofi-watering-recovery.webp",
+    "achievement": "/mascot/edo/edo-sofi-achievement-bloom.webp",
+    "skillMap": "/mascot/edo/edo-sofi-skill-map-planning.webp",
+    "skillGraph": "/mascot/edo/edo-sofi-skill-graph-guide.webp",
+    "hint": "/mascot/edo/edo-sofi-hint-leaf.webp",
+    "reflection": "/mascot/edo/edo-sofi-study-reflection.webp",
+    "weakSoil": "/mascot/edo/edo-sofi-weak-soil-diagnosis.webp",
+    "reviewError": "/mascot/edo/edo-sofi-error-review.webp",
+    "gardenGuide": "/mascot/edo/edo-sofi-garden-signpost.webp",
+    "profileReading": "/mascot/edo/edo-sofi-profile-reading.webp"
+  },
+  "poses": [
+    {
+      "order": 1,
+      "id": "profile-reading",
+      "src": "/mascot/edo/edo-sofi-profile-reading.webp",
+      "priority": "P2",
+      "uiStates": ["profile-summary", "reading", "reflection"],
+      "description": "Edo and Sofi read a book together; use for calm profile or study reflection."
+    },
+    {
+      "order": 2,
+      "id": "skill-map-planning",
+      "src": "/mascot/edo/edo-sofi-skill-map-planning.webp",
+      "priority": "P2",
+      "uiStates": ["skill-map", "planning", "path-selection"],
+      "description": "Edo and Sofi inspect a map; use for skill map and learning path planning."
+    },
+    {
+      "order": 3,
+      "id": "watering-recovery",
+      "src": "/mascot/edo/edo-sofi-watering-recovery.webp",
+      "priority": "P1",
+      "uiStates": ["recovery", "weak-soil", "review"],
+      "description": "Edo waters a weak plant while Sofi coaches; use for recovery and review states."
+    },
+    {
+      "order": 4,
+      "id": "study-reflection",
+      "src": "/mascot/edo/edo-sofi-study-reflection.webp",
+      "priority": "P2",
+      "uiStates": ["reflection", "study-note", "journal"],
+      "description": "Edo writes and Sofi reads; use for study reflection and notes."
+    },
+    {
+      "order": 5,
+      "id": "skill-graph-guide",
+      "src": "/mascot/edo/edo-sofi-skill-graph-guide.webp",
+      "priority": "P2",
+      "uiStates": ["skill-graph", "dag", "prerequisite"],
+      "description": "Edo and Sofi explain a prerequisite graph; use for DAG and concept graph surfaces."
+    },
+    {
+      "order": 6,
+      "id": "hint-leaf",
+      "src": "/mascot/edo/edo-sofi-hint-leaf.webp",
+      "priority": "P2",
+      "uiStates": ["hint", "socratic-help", "ai-tutor"],
+      "description": "Sofi offers a glowing hint leaf; use for Socratic hint and AI tutor help."
+    },
+    {
+      "order": 7,
+      "id": "garden-signpost",
+      "src": "/mascot/edo/edo-sofi-garden-signpost.webp",
+      "priority": "P3",
+      "uiStates": ["empty-state", "garden-guide", "onboarding"],
+      "description": "Edo and Sofi stand by a garden sign; use for garden onboarding or empty states."
+    },
+    {
+      "order": 8,
+      "id": "weak-soil-diagnosis",
+      "src": "/mascot/edo/edo-sofi-weak-soil-diagnosis.webp",
+      "priority": "P2",
+      "uiStates": ["weak-soil", "diagnosis", "decay-risk"],
+      "description": "Sofi inspects a dry plant while Edo observes; use for diagnosis and decay risk."
+    },
+    {
+      "order": 9,
+      "id": "achievement-bloom",
+      "src": "/mascot/edo/edo-sofi-achievement-bloom.webp",
+      "priority": "P1",
+      "uiStates": ["achievement", "level-up", "mastery-bloom"],
+      "description": "Edo and Sofi celebrate a blooming plant; use for achievement and level-up states."
+    },
+    {
+      "order": 10,
+      "id": "error-review",
+      "src": "/mascot/edo/edo-sofi-error-review.webp",
+      "priority": "P3",
+      "uiStates": ["incorrect-answer", "review-error", "mistake-analysis"],
+      "description": "Edo reviews mistakes while Sofi supports; use for gentle error review."
+    },
+    {
+      "order": 11,
+      "id": "next-path-lantern",
+      "src": "/mascot/edo/edo-sofi-next-path-lantern.webp",
+      "priority": "P1",
+      "uiStates": ["next-action", "daily-quest", "navigation"],
+      "description": "Sofi carries a lantern next to Edo; use for next best action and daily quest."
+    },
+    {
+      "order": 12,
+      "id": "shoulder-companion",
+      "src": "/mascot/edo/edo-sofi-shoulder-companion.webp",
+      "priority": "P1",
+      "uiStates": ["profile-hero", "identity", "companion"],
+      "description": "Sofi sits on Edo's shoulder; use as the main profile hero."
+    }
+  ]
+}

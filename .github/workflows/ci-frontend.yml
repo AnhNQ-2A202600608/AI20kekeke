@@ -1,13 +1,27 @@
-name: Frontend CI
+name: Frontend CI/CD (Vercel)
 
 on:
   push:
-    branches: [ main, master, universal-starter ]
+    branches:
+      - main
+      - dev
+      - 'blue/*fe*'
+      - 'blue/**/*fe*'
+      - 'blue/*frontend*'
+      - 'blue/**/*frontend*'
+      - trong/test-deploy-and-connect-db
     paths:
       - 'frontend/**'
       - '.github/workflows/ci-frontend.yml'
   pull_request:
-    branches: [ main, master, universal-starter ]
+    branches:
+      - main
+      - dev
+      - 'blue/*fe*'
+      - 'blue/**/*fe*'
+      - 'blue/*frontend*'
+      - 'blue/**/*frontend*'
+      - trong/test-deploy-and-connect-db
     paths:
       - 'frontend/**'
       - '.github/workflows/ci-frontend.yml'
@@ -17,74 +31,72 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  frontend-checks:
-    runs-on: ubuntu-latest
+  test-and-lint:
+    name: Frontend Test & Lint
+    runs-on: self-hosted
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
-          cache-dependency-path: frontend/package-lock.json
+          node-version: 22
 
-      - name: Install Dependencies
+      - name: Enable Corepack & pnpm
         run: |
-          npm ci --prefix frontend
+          corepack enable
+          corepack prepare pnpm@10.0.0 --activate
 
-      - name: Frontend Lint & Compile
-        run: |
-          npm run lint --prefix frontend
-          npm run typecheck --prefix frontend
-          npm run build --prefix frontend
+      - name: Install dependencies
+        working-directory: ./frontend
+        run: pnpm install --frozen-lockfile
 
-  deploy-frontend:
-    needs: frontend-checks
-    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master' || github.ref == 'refs/heads/universal-starter')
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: frontend
+      - name: Lint with ESLint
+        working-directory: ./frontend
+        run: pnpm lint
+
+      - name: Build Next.js (Local verification)
+        working-directory: ./frontend
+        run: pnpm build
+        env:
+          NEXT_PUBLIC_DEMO_MODE: ${{ github.event_name == 'pull_request' && 'true' || '' }}
+          BACKEND_API_URL: ${{ secrets.BACKEND_API_URL }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY }}
+
+
+
+  deploy:
+    name: Deploy to Vercel
+    needs: test-and-lint
+    runs-on: self-hosted
+    if: github.event_name == 'push' && (github.ref_name == 'main' || github.ref_name == 'dev' || startsWith(github.ref_name, 'blue/') || github.ref_name == 'trong/test-deploy-and-connect-db')
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-      - name: Install Vercel CLI
-        run: npm install --global vercel@latest
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
 
-      - name: Pull Vercel Environment Information
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+      - name: Enable Corepack & pnpm
         run: |
-          if [ -z "$VERCEL_TOKEN" ]; then
-            echo "Warning: VERCEL_TOKEN secret is not set. Skipping deployment."
-            exit 0
-          fi
-          vercel pull --yes --environment=production --token=$VERCEL_TOKEN
+          corepack enable
+          corepack prepare pnpm@10.0.0 --activate
 
-      - name: Build Project Artifacts
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+      # Set deployment environment variables
+      - name: Set Deployment Environment
         run: |
-          if [ -z "$VERCEL_TOKEN" ]; then
-            echo "Warning: VERCEL_TOKEN secret is not set. Skipping deployment."
-            exit 0
+          if [ "${{ github.ref_name }}" = "main" ] || [ "${{ github.ref_name }}" = "blue/main-frontend" ]; then
+            echo "VERCEL_ARGS=--prod" >> $GITHUB_ENV
+          else
+            echo "VERCEL_ARGS=" >> $GITHUB_ENV
           fi
-          vercel build --prod --token=$VERCEL_TOKEN
 
-      - name: Deploy Project Artifacts to Vercel
+      - name: Deploy to Vercel (Remote Cloud Build)
+        working-directory: ./frontend
+        run: pnpm dlx vercel deploy ${{ env.VERCEL_ARGS }} --yes --token=${{ secrets.VERCEL_TOKEN }}
         env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-        run: |
-          if [ -z "$VERCEL_TOKEN" ]; then
-            echo "Warning: VERCEL_TOKEN secret is not set. Skipping deployment."
-            exit 0
-          fi
-          vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN
-
+          VERCEL_ORG_ID: "team_9geAGj5trV0XkQz6U1eVTNFN"
+          VERCEL_PROJECT_ID: "prj_EUBA9eIkuKBEJAju2pdqA73xhQgI"

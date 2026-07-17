@@ -1,0 +1,210 @@
+{
+  "id": "day28-t3-pipeline",
+  "parent_id": "day28-agent-builder",
+  "topic_title": "Day 28: Real-World System Architecture",
+  "title": "Phần 2: Kiến Trúc Xe Tự Hành ADAS & Social Navigation cho Robot",
+  "description": "Đánh giá hiểu biết về kiến trúc stack xe tự hành ADAS (on-vehicle runtime, offboard data flywheel), các hướng tiếp cận hiện đại (UniAD, DriveLM, World Model) và cơ chế dẫn đường xã hội (Social Navigation) của robot giao hàng.",
+  "difficulty": "bình thường",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Thành phần nào sau đây thuộc lớp xử lý trên xe (On-Vehicle Runtime) của hệ thống ADAS tự hành?",
+      "options": {
+        "A": "Hệ thống tự động gán nhãn auto-labeling chạy offboard trên cloud.",
+        "B": "Mô hình nhận diện perception, world model BEV và bộ điều khiển Planning.",
+        "C": "Kho lưu trữ logs xe hard-case mining phục vụ huấn luyện mô hình.",
+        "D": "Các kịch bản mô phỏng sinh video GAIA-1 chạy trên server offline."
+      },
+      "answer": "B",
+      "explanation": "On-Vehicle Runtime gồm các thành phần chạy thời gian thực trên xe: Calibration, Perception, World Model (BEV), Planning & Control (MPC/PID) và Safety Shell.",
+      "hints": [
+        "Đây là các tác vụ bắt buộc phải chạy trực tiếp ở biên trên phần cứng xe.",
+        "Quyết định hành vi lái xe ngay lập tức dựa trên dữ liệu cảm biến thời gian thực.",
+        "Đó là Mô hình nhận diện perception, world model BEV và Planning/Control."
+      ],
+      "concepts": [
+        "d28-t3-real-world-architectures"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Phương pháp UniAD cải tiến quy trình lập kế hoạch hành động của xe tự hành như thế nào?",
+      "options": {
+        "A": "Sử dụng camera hồng ngoại để nâng tầm nhìn perception vào ban đêm.",
+        "B": "Gộp nhận diện, tracking và prediction vào query interface để planning tối ưu.",
+        "C": "Tăng tần số điều khiển cơ cấu chấp hành lên mức mười nghìn Hertz.",
+        "D": "Tự động hóa việc tải bản đồ HD map từ cloud vệ tinh về."
+      },
+      "answer": "B",
+      "explanation": "UniAD là mô hình End-to-End Planning, tích hợp các tác vụ trung gian (tracking, mapping, prediction) thông qua query interface hướng tới mục tiêu tối ưu cuối cùng: safe planning.",
+      "hints": [
+        "Thay vì thiết kế các mô hình modular độc lập dễ bị tích lũy sai số.",
+        "Mô hình này tối ưu hóa toàn bộ stack hướng về quyết định lái xe an toàn.",
+        "Đó là Gộp nhận diện, tracking và prediction vào query interface để planning."
+      ],
+      "concepts": [
+        "d28-t3-real-world-architectures"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Hướng tiếp cận DriveLM giải quyết bài toán giải thích quyết định lái xe (explainability) bằng cách nào?",
+      "options": {
+        "A": "Vẽ đường quỹ đạo di chuyển dự kiến lên màn hình kính lái HUD.",
+        "B": "Sử dụng Graph VQA hỏi đáp logic giữa các yếu tố trong scene lái xe.",
+        "C": "Ghi nhận toàn bộ vết logs kiểm toán gửi về máy chủ lưu Delta Lake.",
+        "D": "Tự động phân loại các hành vi vi phạm giao thông của tài xế phụ."
+      },
+      "answer": "B",
+      "explanation": "DriveLM ứng dụng mô hình ngôn ngữ lớn (VLM) kết hợp Graph VQA để sinh ra chuỗi câu hỏi-đáp logic (ví dụ: nhìn thấy gì -> dự đoán gì -> hành động gì), giúp con người hiểu và debug quyết định của xe.",
+      "hints": [
+        "Sử dụng ngôn ngữ tự nhiên để diễn giải tư duy lập kế hoạch lái xe.",
+        "Scene được mô tả dưới dạng đồ thị các mối quan hệ nhân quả.",
+        "Đó là Sử dụng Graph VQA hỏi đáp logic giữa các yếu tố trong scene lái xe."
+      ],
+      "concepts": [
+        "d28-t3-real-world-architectures"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Các mô hình thế giới (World Models) như GAIA-1/GAIA-2 đóng vai trò gì trong data flywheel của ADAS?",
+      "options": {
+        "A": "Định tuyến tự động các cuộc gọi API từ xe tự hành lên máy chủ cloud.",
+        "B": "Sinh video đa camera để tạo ra các kịch bản hiếm gặp phục vụ test.",
+        "C": "Mã hóa bảo vệ các thông tin cá nhân nhạy cảm ghi nhận từ camera.",
+        "D": "Giám sát hiệu năng sử dụng năng lượng của hệ thống pin xe tự hành."
+      },
+      "answer": "B",
+      "explanation": "World Models như GAIA sinh video mô phỏng chân thực các kịch bản hiếm gặp hoặc nguy hiểm (edge/critical scenarios) phục vụ đào tạo và validation mô hình lái xe mà không tốn chi phí chạy xe thật.",
+      "hints": [
+        "Huấn luyện xe xử lý các tình huống tai nạn suýt va chạm ngoài đời thực.",
+        "Mô phỏng hình ảnh chân thực từ nhiều góc camera của xe tự hành.",
+        "Đó chính là Sinh video đa camera để tạo ra các kịch bản hiếm gặp phục vụ test."
+      ],
+      "concepts": [
+        "d28-t3-real-world-architectures"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Phương pháp VAD (Vectorized Scene) mang lại cải tiến gì về mặt hiệu năng cho xe tự hành?",
+      "options": {
+        "A": "Hỗ trợ tự động cân hiệu chỉnh camera ngoại vi chỉ trong năm giây.",
+        "B": "Sử dụng biểu diễn vector cho map và agent giúp giảm trễ planning.",
+        "C": "Mã hóa toàn bộ luồng truyền dữ liệu điều khiển qua giao thức CAN.",
+        "D": "Tăng cường dung lượng lưu trữ của ổ đĩa cứng SSD đặt trên xe tự hành."
+      },
+      "answer": "B",
+      "explanation": "VAD biểu diễn trực tiếp các đối tượng (xe khác, người đi bộ) và bản đồ dưới dạng vector thay vì ảnh rasterization tấm lưới, giúp giảm chi phí tính toán và giảm đáng kể độ trễ lập kế hoạch (planning latency).",
+      "hints": [
+        "Giảm thiểu bước vẽ lại toàn bộ môi trường xung quanh thành hình ảnh pixel.",
+        "Chuyển scene sang dạng các vector hình học gọn nhẹ để xử lý nhanh.",
+        "Đó là Sử dụng biểu diễn vector cho map và agent giúp giảm trễ planning."
+      ],
+      "concepts": [
+        "d28-t3-real-world-architectures"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Hệ thống quản lý đội xe trên Cloud (Fleet Cloud) của robot giao hàng vỉa hè chịu trách nhiệm gì?",
+      "options": {
+        "A": "Thực hiện tính toán mô-men xoắn cho hệ thống bánh xe thời gian thực.",
+        "B": "Đồng bộ hóa trực tiếp các tín hiệu điều khiển cảm biến LiDAR ở edge.",
+        "C": "Ingest đơn hàng, điều phối route, theo dõi disengagement và hỗ trợ từ xa.",
+        "D": "Mã hóa luồng dữ liệu video truyền về từ camera trước khi lưu ổ cứng."
+      },
+      "answer": "C",
+      "explanation": "Fleet Cloud điều phối vĩ mô: nhận đơn hàng, chia lộ trình, theo dõi trạng thái kẹt, telemetry (battery, disengagements) và quản lý hàng chờ hỗ trợ từ xa (remote assist queue).",
+      "hints": [
+        "Đây là bộ não điều hành trung tâm cho hàng nghìn robot chạy ngoài đường.",
+        "Quản lý kết nối giữa khách hàng, cửa hàng, robot và người hỗ trợ từ xa.",
+        "Đó là Ingest đơn hàng, điều phối route, theo dõi disengagement và hỗ trợ từ xa."
+      ],
+      "concepts": [
+        "d28-t3-real-world-architectures"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Tại sao các robot giao hàng vỉa hè thương mại bắt buộc phải thiết kế cho các stuck cases (trường hợp bị kẹt)?",
+      "options": {
+        "A": "Vì pin của robot giao hàng thường xuyên bị cạn kiệt đột ngột giữa đường.",
+        "B": "Vì vỉa hè là môi trường biến động và phức tạp dễ gây cản trở di chuyển.",
+        "C": "Vì các quy định pháp luật yêu cầu robot phải dừng lại sau mỗi năm phút.",
+        "D": "Vì robot cần thời gian để đồng bộ hóa bản đồ HD map từ vệ tinh GeoAI."
+      },
+      "answer": "B",
+      "explanation": "Vỉa hè có nhiều chướng ngại vật bất định (công trình, hàng quán, xe đỗ, bậc thềm). Robot dễ bị rơi vào trạng thái kẹt (stuck state), đòi hỏi thiết kế cơ chế phát hiện kẹt, dừng an toàn và gọi remote assist.",
+      "hints": [
+        "Môi trường vỉa hè không có phân làn và luật giao thông rõ ràng như lòng đường.",
+        "Robot tốc độ thấp cần xử lý Graceful Fallback khi không thể tự đi tiếp.",
+        "Đó chính là vì vỉa hè là môi trường biến động và phức tạp dễ gây cản trở."
+      ],
+      "concepts": [
+        "d28-t3-real-world-architectures"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Yêu cầu kỹ thuật cốt lõi của tính năng Social Navigation trên robot giao hàng vỉa hè là gì?",
+      "options": {
+        "A": "Khả năng tự động phát video quảng cáo trên mạng xã hội khi di chuyển.",
+        "B": "Khả năng dự đoán ý định pedestrian và nhường đường lịch sự văn hóa.",
+        "C": "Khả năng kết nối trực tiếp với tài khoản mạng xã hội của khách hàng.",
+        "D": "Tự động tăng tốc độ di chuyển tối đa khi đi qua khu vực đông dân."
+      },
+      "answer": "B",
+      "explanation": "Social Navigation yêu cầu robot hiểu hành vi xã hội của con người trên vỉa hè: dự đoán hướng đi của người đi bộ, xe lăn, xe đạp và chủ động tránh, nhường đường để không gây phiền toái hoặc sợ hãi cho con người.",
+      "hints": [
+        "Robot đi chung không gian đi bộ với con người và vật nuôi.",
+        "Cần tuân thủ các quy tắc ứng xử xã hội không lời khi tránh né nhau.",
+        "Đó là Khả năng dự đoán ý định của pedestrian và nhường đường lịch sự."
+      ],
+      "concepts": [
+        "d28-t3-real-world-architectures"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Tại sao các robot giao hàng vỉa hè không dùng mô hình VLM trực tiếp để steer (điều khiển) real-time ở edge?",
+      "options": {
+        "A": "Do mô hình VLM không hỗ trợ phân tích các dữ liệu ảnh vệ tinh GeoAI.",
+        "B": "Do độ trễ tính toán lớn và rủi ro mất kết nối mạng truyền lên cloud.",
+        "C": "Do các quy định bảo mật thông tin PII không cho phép chạy VLM ngoài phố.",
+        "D": "Do VLM bắt buộc phải sử dụng cảm biến LiDAR để dựng bản đồ BEV."
+      },
+      "answer": "B",
+      "explanation": "Mô hình VLM quá lớn để chạy trực tiếp ở edge trên robot, nếu chạy trên cloud sẽ gặp rủi ro độ trễ mạng (latency) và mất kết nối (connectivity), không đảm bảo thời gian thực để tránh va chạm.",
+      "hints": [
+        "Điều khiển chuyển động động cơ yêu cầu phản hồi cực nhanh.",
+        "Đường truyền internet di động ngoài phố không thể đảm bảo ổn định 100%.",
+        "Đó chính là do độ trễ tính toán lớn và rủi ro mất kết nối mạng lên cloud."
+      ],
+      "concepts": [
+        "d28-t3-real-world-architectures"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Luồng Offboard Data Flywheel giúp cải tiến liên tục mô hình lái xe tự hành ADAS như thế nào?",
+      "options": {
+        "A": "Tự động sạc pin không dây cho đội xe khi di chuyển về nhà kho trung tâm.",
+        "B": "Thu logs ca khó -> gán nhãn -> train -> chạy shadow mode -> cập nhật OTA.",
+        "C": "Mã hóa toàn bộ lịch sử hành trình và xóa bỏ dữ liệu sau ba mươi ngày.",
+        "D": "Sử dụng thuật toán tc (traffic control) để điều tiết lưu lượng xe chạy."
+      },
+      "answer": "B",
+      "explanation": "Vòng lặp data flywheel: thu thập logs từ đội xe đang chạy -> lọc tìm các ca khó (hard cases) -> tự động gán nhãn offboard -> tái huấn luyện mô hình -> chạy thử shadow mode trên xe thật -> cập nhật OTA.",
+      "hints": [
+        "Quy trình tự động hóa khép kín từ thu thập dữ liệu lỗi tới cập nhật phần mềm.",
+        "Sử dụng shadow mode để kiểm chứng hiệu năng mô hình mới trước khi kích hoạt.",
+        "Đó là Thu logs ca khó -> gán nhãn -> train -> chạy shadow mode -> cập nhật OTA."
+      ],
+      "concepts": [
+        "d28-t3-real-world-architectures"
+      ]
+    }
+  ]
+}
