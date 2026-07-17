@@ -1,0 +1,2 @@
+Bin,Range,Count,Actual_Accuracy,Predicted_Accuracy,Error
+1,"[0.0, 2.0)",5,0.6,0.8622109634163027,0.2622109634163027

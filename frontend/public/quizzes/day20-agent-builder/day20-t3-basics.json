@@ -1,0 +1,210 @@
+{
+  "id": "day20-t3-basics",
+  "parent_id": "day20-agent-builder",
+  "topic_title": "Day 20: Multi-Agent Systems (Advanced)",
+  "title": "Phần 1: Lý Do Sử Dụng Multi-Agent & 5 Nhóm Workflow Patterns Cơ Bản",
+  "description": "Đánh giá kiến thức cơ bản về 3 lý do sử dụng multi-agent, nguyên tắc 'Start simplest', và 5 nhóm mẫu thiết kế workflow của Anthropic.",
+  "difficulty": "dễ",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Quy tắc quyết định chính để cân nhắc nâng cấp hệ thống từ tác tử đơn lẻ lên đa tác tử là gì?",
+      "options": {
+        "A": "Chỉ chuyển đổi khi mô hình đơn lẻ đạt độ chính xác dưới tám mươi phần trăm.",
+        "B": "Bắt buộc phải sử dụng cho tất cả các nhiệm vụ kỹ thuật của dự án.",
+        "C": "Khi nhà đầu tư mạo hiểm yêu cầu tích hợp thêm nhiều công nghệ mới.",
+        "D": "Khi hệ thống máy chủ của doanh nghiệp có nhiều bộ nhớ đồ họa."
+      },
+      "answer": "A",
+      "explanation": "Quy tắc quyết định (Decision Rule) nêu rõ: chỉ nâng cấp lên multi-agent khi single agent đạt độ chính xác dưới 80%. Nếu đã trên 80%, độ phức tạp bổ sung sẽ không đáng so với chi phí.",
+      "hints": [
+        "Hãy cân nhắc giữa độ phức tạp của hệ thống và hiệu quả thực tế mang lại.",
+        "Hệ thống đa tác tử sẽ mang lại overhead giao tiếp và chi phí vận hành lớn.",
+        "Đáp án chính xác là khi mô hình đơn lẻ đạt độ chính xác dưới tám mươi phần trăm."
+      ],
+      "concepts": [
+        "d20-t3-multi-agent"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Lợi thế chuyên môn hóa (Specialization) trong hệ thống đa tác tử (Multi-Agent) mang lại lợi ích gì?",
+      "options": {
+        "A": "Cho phép mỗi tác tử tập trung và làm chủ một nhiệm vụ chuyên biệt.",
+        "B": "Giúp tăng tốc độ xử lý dữ liệu đầu vào của hệ thống máy chủ.",
+        "C": "Tự động mã hóa toàn bộ dữ liệu truyền tải qua môi trường mạng.",
+        "D": "Loại bỏ hoàn toàn sự cố sập nguồn của các thiết bị phần cứng."
+      },
+      "answer": "A",
+      "explanation": "Specialization cho phép phân rã một tác vụ phức tạp thành nhiều nhiệm vụ nhỏ, trong đó mỗi tác tử làm chủ một chuyên môn hẹp (ví dụ: researcher, analyst, writer).",
+      "hints": [
+        "Nó tương tự như việc tổ chức một team dự án gồm nhiều chuyên gia.",
+        "Mỗi chuyên gia chỉ cần tập trung làm tốt nhất nhiệm vụ chuyên môn của mình.",
+        "Đáp án là cho phép mỗi tác tử tập trung làm chủ một nhiệm vụ chuyên biệt."
+      ],
+      "concepts": [
+        "d20-t3-multi-agent"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Nguyên tắc thiết kế hệ thống tác tử 'Start simplest' (Bắt đầu đơn giản nhất) được hiểu là gì?",
+      "options": {
+        "A": "Bắt đầu bằng việc sử dụng các framework đa tác tử phức tạp nhất.",
+        "B": "Bắt đầu bằng một prompt đơn lẻ trước khi thêm các tác tử mới.",
+        "C": "Tự phát triển một mô hình ngôn ngữ lớn từ đầu trong một tuần.",
+        "D": "Mua sắm thêm nhiều card đồ họa H100 để chạy thử nghiệm dự án."
+      },
+      "answer": "B",
+      "explanation": "Start simplest khuyến nghị tối ưu hóa bằng single prompt và prompt engineering trước. Chỉ tăng số lượng tác tử khi có bằng chứng đo lường thực tế chứng minh sự cần thiết.",
+      "hints": [
+        "Tránh việc over-engineering hệ thống ngay từ những bước đầu tiên của dự án.",
+        "Hãy đo lường hiệu năng của giải pháp đơn giản nhất làm mốc chuẩn baseline.",
+        "Đáp án đúng là bắt đầu bằng một prompt đơn lẻ trước khi thêm tác tử mới."
+      ],
+      "concepts": [
+        "d20-t3-multi-agent"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Mẫu thiết kế luồng công việc dạng 'Prompt Chaining' (Chuỗi Prompt) hoạt động theo cơ chế nào?",
+      "options": {
+        "A": "Chạy song song nhiều mô hình ngôn ngữ khác nhau trên cùng một prompt.",
+        "B": "Thực hiện chuỗi cuộc gọi LLM tuần tự, đầu ra bước trước làm đầu vào.",
+        "C": "Tự động phân loại câu hỏi của khách hàng để định tuyến xử lý.",
+        "D": "Gửi đồng thời câu hỏi đến hàng nghìn người dùng trên toàn thế giới."
+      },
+      "answer": "B",
+      "explanation": "Prompt Chaining thực hiện các cuộc gọi LLM nối tiếp nhau một cách tuần tự, trong đó output của bước trước được định dạng và làm đầu vào cho bước tiếp theo.",
+      "hints": [
+        "Đây là mẫu thiết kế đơn giản nhất để phân rã các bước thực thi.",
+        "Nó thích hợp khi mỗi bước cần cấu hình prompt hoặc kiểm định dữ liệu riêng biệt.",
+        "Đáp án là thực hiện chuỗi cuộc gọi tuần tự, đầu ra trước làm đầu vào sau."
+      ],
+      "concepts": [
+        "d20-t3-multi-agent"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Mẫu thiết kế luồng công việc dạng 'Routing' (Định tuyến) hoạt động theo cơ chế nào?",
+      "options": {
+        "A": "Chạy song song nhiều tác tử để lấy ý kiến đồng thuận từ họ.",
+        "B": "Phân loại đầu vào rồi định tuyến đến tác tử chuyên biệt phù hợp.",
+        "C": "Liên kết tất cả các máy chủ đồ họa trong cụm mạng nội bộ.",
+        "D": "Tự động lưu trữ thông tin của người dùng vào cơ sở dữ liệu."
+      },
+      "answer": "B",
+      "explanation": "Routing phân loại (classify) yêu cầu đầu vào từ người dùng rồi điều hướng nó đến nhóm xử lý chuyên biệt (specialized handler) phù hợp nhất.",
+      "hints": [
+        "Nó tương tự như bộ phận lễ tân định tuyến khách hàng đến phòng ban chuyên môn.",
+        "Giúp tối ưu hóa chi phí bằng cách route query dễ sang model rẻ hơn.",
+        "Đáp án là phân loại đầu vào rồi định tuyến đến tác tử chuyên biệt phù hợp."
+      ],
+      "concepts": [
+        "d20-t3-multi-agent"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Mẫu thiết kế luồng công việc dạng song song phân đoạn 'Parallel (Sectioning)' hoạt động thế nào?",
+      "options": {
+        "A": "Chạy song song nhiều mô hình để lấy ý kiến biểu quyết số đông.",
+        "B": "Thực hiện một chuỗi các cuộc gọi LLM tuần tự từ đầu đến cuối.",
+        "C": "Chia nhỏ nhiệm vụ thành các phần và xử lý song song bởi workers.",
+        "D": "Tự động sao lưu dữ liệu hệ thống sang một máy chủ dự phòng."
+      },
+      "answer": "C",
+      "explanation": "Parallel (Sectioning) chia nhỏ một tác vụ lớn (như viết báo cáo) thành các phần độc lập, xử lý song song bằng nhiều tác tử và gộp lại ở bước cuối.",
+      "hints": [
+        "Kỹ thuật này giúp giảm thiểu đáng kể tổng thời gian phản hồi (latency) của hệ thống.",
+        "Mỗi tác tử con chỉ đảm nhận viết một phần nội dung không trùng chéo nhau.",
+        "Đáp án là chia nhỏ nhiệm vụ thành các phần và xử lý song song bởi workers."
+      ],
+      "concepts": [
+        "d20-t3-multi-agent"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Mẫu thiết kế luồng công việc dạng 'Evaluator-Optimizer' (Đánh giá - Tối ưu) hoạt động thế nào?",
+      "options": {
+        "A": "Phân loại câu hỏi đầu vào để gửi đến các mô hình ngôn ngữ lớn.",
+        "B": "Chạy song song nhiều tác tử độc lập để so sánh tốc độ xử lý.",
+        "C": "Một tác tử tạo kết quả và tác tử khác đánh giá phản hồi đó.",
+        "D": "Tự động tối ưu hóa chi phí gọi API bằng cách nén prompt."
+      },
+      "answer": "C",
+      "explanation": "Evaluator-Optimizer thiết lập một vòng lặp phản hồi: một tác tử sinh kết quả (generator) và một tác tử đánh giá (evaluator/critic) để sửa đổi cho đến khi đạt chất lượng.",
+      "hints": [
+        "Đây là vòng lặp học hỏi tương tự như người viết và người duyệt biên tập.",
+        "Nó giúp nâng cao chất lượng câu trả lời thông qua cơ chế phản biện có điều kiện.",
+        "Đáp án là một tác tử tạo kết quả và tác tử khác đánh giá phản hồi đó."
+      ],
+      "concepts": [
+        "d20-t3-multi-agent"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Mẫu thiết kế luồng công việc dạng song song biểu quyết 'Parallel (Voting)' hoạt động ra sao?",
+      "options": {
+        "A": "Chia nhỏ nhiệm vụ lớn thành nhiều phần để chạy song song cùng lúc.",
+        "B": "Định tuyến câu hỏi của khách hàng đến các nhóm hỗ trợ kỹ thuật.",
+        "C": "Gửi cùng một prompt đến nhiều LLMs khác nhau để lấy consensus.",
+        "D": "Tự động phân bổ tài nguyên tính toán cho các GPU trong cụm."
+      },
+      "answer": "C",
+      "explanation": "Parallel (Voting) gửi cùng một yêu cầu đến nhiều tác tử hoặc mô hình khác nhau cùng lúc, sau đó tổng hợp và biểu quyết lấy ý kiến đồng thuận để giảm thiểu ảo tưởng (hallucination).",
+      "hints": [
+        "Kỹ thuật này giúp tăng độ tin cậy của câu trả lời cho các nhiệm vụ quan trọng.",
+        "Nó dựa trên sự đa dạng của các mô hình để loại bỏ sai sót cá nhân.",
+        "Đáp án là gửi cùng một prompt đến nhiều LLMs khác nhau để lấy consensus."
+      ],
+      "concepts": [
+        "d20-t3-multi-agent"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Tại sao hệ thống đa tác tử (Multi-Agent) lại gây ra overhead lớn hơn so với tác tử đơn lẻ?",
+      "options": {
+        "A": "Vì nó yêu cầu phải lập trình lại hệ điều hành của máy chủ.",
+        "B": "Vì nó làm giảm độ chính xác của các mô hình ngôn ngữ.",
+        "C": "Vì nó tự động ngăn chặn các cuộc gọi API từ bên ngoài.",
+        "D": "Vì nó tăng chi phí giao tiếp, độ trễ và khả năng miscommunication."
+      },
+      "answer": "D",
+      "explanation": "Hệ thống đa tác tử đòi hỏi nhiều bước truyền nhận thông điệp, gây trễ do gọi API nhiều lần, tăng chi phí token và có nguy cơ miscommunication giữa các tác tử.",
+      "hints": [
+        "Tương tự như việc một tổ chức có quá nhiều cuộc họp và quy trình bàn giao công việc.",
+        "Mỗi bước giao tiếp trung gian đều tiêu tốn thời gian và tài nguyên máy tính.",
+        "Đáp án chỉ ra việc tăng chi phí giao tiếp, độ trễ và miscommunication."
+      ],
+      "concepts": [
+        "d20-t3-multi-agent"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Trong trường hợp nào việc áp dụng định tuyến (Routing) cho chatbot hỗ trợ khách hàng giúp tiết kiệm chi phí?",
+      "options": {
+        "A": "Khi tất cả các câu hỏi của khách hàng đều cực kỳ khó.",
+        "B": "Khi doanh nghiệp sử dụng duy nhất một mô hình ngôn ngữ lớn.",
+        "C": "Khi hệ thống máy chủ tự động tắt nguồn vào ban đêm để nghỉ.",
+        "D": "Khi phần lớn câu hỏi đơn giản được xử lý bởi model nhỏ."
+      },
+      "answer": "D",
+      "explanation": "Bằng cách định tuyến các câu hỏi đơn giản (thường chiếm 70% traffic) sang các mô hình nhỏ rẻ tiền (như GPT-4o-mini), doanh nghiệp tiết kiệm đáng kể chi phí API.",
+      "hints": [
+        "Hãy tìm sự kết hợp thông minh giữa các mô hình lớn đắt tiền và mô hình nhỏ giá rẻ.",
+        "Chỉ gửi các yêu cầu thực sự phức tạp đến các mô hình hàng đầu để xử lý.",
+        "Đáp án là phần lớn câu hỏi đơn giản được xử lý bởi mô hình nhỏ."
+      ],
+      "concepts": [
+        "d20-t3-multi-agent"
+      ]
+    }
+  ]
+}

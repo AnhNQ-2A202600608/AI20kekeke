@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420">
+<rect width="100%" height="100%" fill="#fff"/>
+<text x="70" y="28" font-family="Arial" font-size="18" font-weight="700" fill="#172033">Chatbot Response Time by Scenario</text>
+<line x1="70" y1="340.0" x2="870" y2="340.0" stroke="#e8edf3"/>
+<text x="60" y="344.0" text-anchor="end" font-family="Arial" font-size="11" fill="#526070">0.0s</text>
+<line x1="70" y1="283.2" x2="870" y2="283.2" stroke="#e8edf3"/>
+<text x="60" y="287.2" text-anchor="end" font-family="Arial" font-size="11" fill="#526070">2.1s</text>
+<line x1="70" y1="226.4" x2="870" y2="226.4" stroke="#e8edf3"/>
+<text x="60" y="230.4" text-anchor="end" font-family="Arial" font-size="11" fill="#526070">4.1s</text>
+<line x1="70" y1="169.6" x2="870" y2="169.6" stroke="#e8edf3"/>
+<text x="60" y="173.6" text-anchor="end" font-family="Arial" font-size="11" fill="#526070">6.2s</text>
+<line x1="70" y1="112.8" x2="870" y2="112.8" stroke="#e8edf3"/>
+<text x="60" y="116.8" text-anchor="end" font-family="Arial" font-size="11" fill="#526070">8.3s</text>
+<line x1="70" y1="56.0" x2="870" y2="56.0" stroke="#e8edf3"/>
+<text x="60" y="60.0" text-anchor="end" font-family="Arial" font-size="11" fill="#526070">10.3s</text>
+<rect x="110.0" y="256.0" width="36.0" height="84.0" rx="3" fill="#2f80ed"/>
+<text x="128.0" y="252.0" text-anchor="middle" font-family="Arial" font-size="10" fill="#243044">3.1</text>
+<rect x="152.0" y="262.3" width="36.0" height="77.7" rx="3" fill="#27ae60"/>
+<text x="170.0" y="258.3" text-anchor="middle" font-family="Arial" font-size="10" fill="#243044">2.8</text>
+<rect x="194.0" y="273.1" width="36.0" height="66.9" rx="3" fill="#9b51e0"/>
+<text x="212.0" y="269.1" text-anchor="middle" font-family="Arial" font-size="10" fill="#243044">2.4</text>
+<text x="170.0" y="376" text-anchor="middle" font-family="Arial" font-size="12" fill="#243044">general</text>
+<rect x="310.0" y="172.5" width="36.0" height="167.5" rx="3" fill="#2f80ed"/>
+<text x="328.0" y="168.5" text-anchor="middle" font-family="Arial" font-size="10" fill="#243044">6.1</text>
+<rect x="352.0" y="251.7" width="36.0" height="88.3" rx="3" fill="#27ae60"/>
+<text x="370.0" y="247.7" text-anchor="middle" font-family="Arial" font-size="10" fill="#243044">3.2</text>
+<rect x="394.0" y="188.9" width="36.0" height="151.1" rx="3" fill="#9b51e0"/>
+<text x="412.0" y="184.9" text-anchor="middle" font-family="Arial" font-size="10" fill="#243044">5.5</text>
+<text x="370.0" y="376" text-anchor="middle" font-family="Arial" font-size="12" fill="#243044">academic_cached</text>
+<rect x="510.0" y="127.7" width="36.0" height="212.3" rx="3" fill="#2f80ed"/>
+<text x="528.0" y="123.7" text-anchor="middle" font-family="Arial" font-size="10" fill="#243044">7.7</text>
+<rect x="552.0" y="252.8" width="36.0" height="87.2" rx="3" fill="#27ae60"/>
+<text x="570.0" y="248.8" text-anchor="middle" font-family="Arial" font-size="10" fill="#243044">3.2</text>
+<rect x="594.0" y="144.5" width="36.0" height="195.5" rx="3" fill="#9b51e0"/>
+<text x="612.0" y="140.5" text-anchor="middle" font-family="Arial" font-size="10" fill="#243044">7.1</text>
+<text x="570.0" y="376" text-anchor="middle" font-family="Arial" font-size="12" fill="#243044">academic_cold</text>
+<rect x="710.0" y="62.1" width="36.0" height="277.9" rx="3" fill="#2f80ed"/>
+<text x="728.0" y="58.1" text-anchor="middle" font-family="Arial" font-size="10" fill="#243044">10.1</text>
+<rect x="752.0" y="252.9" width="36.0" height="87.1" rx="3" fill="#27ae60"/>
+<text x="770.0" y="248.9" text-anchor="middle" font-family="Arial" font-size="10" fill="#243044">3.2</text>
+<rect x="794.0" y="79.5" width="36.0" height="260.5" rx="3" fill="#9b51e0"/>
+<text x="812.0" y="75.5" text-anchor="middle" font-family="Arial" font-size="10" fill="#243044">9.5</text>
+<text x="770.0" y="376" text-anchor="middle" font-family="Arial" font-size="12" fill="#243044">long_history</text>
+<rect x="70" y="392" width="12" height="12" fill="#2f80ed"/>
+<text x="88" y="402" font-family="Arial" font-size="12" fill="#243044">Client p50</text>
+<rect x="230" y="392" width="12" height="12" fill="#27ae60"/>
+<text x="248" y="402" font-family="Arial" font-size="12" fill="#243044">First token p50</text>
+<rect x="390" y="392" width="12" height="12" fill="#9b51e0"/>
+<text x="408" y="402" font-family="Arial" font-size="12" fill="#243044">Server p50</text>
+</svg>

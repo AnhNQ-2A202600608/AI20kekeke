@@ -1,0 +1,210 @@
+{
+  "id": "day18-t1-basics",
+  "parent_id": "day18-ai-product",
+  "topic_title": "Day 18: AI Financial Modeling & ROI",
+  "title": "Phần 1: Khái Niệm Tài Chính Khởi Nghiệp & 5 Nhóm Chi Phí Của AI Startup",
+  "description": "Đánh giá kiến thức cơ bản về Burn Rate, Runway, sự khác biệt giữa SaaS truyền thống và AI COGS, các chi phí ẩn (hidden costs) và MRR/Consumption models.",
+  "difficulty": "dễ",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Trong tài chính khởi nghiệp AI, chỉ số Burn Rate được định nghĩa chính xác là gì?",
+      "options": {
+        "A": "Tốc độ chi tiêu tiền mặt ròng của doanh nghiệp tính theo đơn vị mỗi tháng.",
+        "B": "Tổng doanh thu thuần mà doanh nghiệp thu về từ khách hàng trong một năm.",
+        "C": "Số tiền đầu tư ban đầu từ các quỹ mạo hiểm cấp cho nhóm sáng lập.",
+        "D": "Chi phí tuyển dụng thêm nhân sự mới cho các bộ phận công nghệ đó."
+      },
+      "answer": "A",
+      "explanation": "Burn Rate là tốc độ chi tiêu tiền mặt ròng mỗi tháng của startup (chi phí trừ đi doanh thu thực tế).",
+      "hints": [
+        "Hãy liên tưởng đến hình ảnh ngọn nến đang cháy dần tiền mặt của công ty.",
+        "Đây là lượng tiền thất thoát ròng đi ra khỏi tài khoản ngân hàng mỗi tháng.",
+        "Đáp án đúng là tốc độ chi tiêu tiền mặt ròng hàng tháng."
+      ],
+      "concepts": [
+        "d18-t1-financial-roi"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Trong mô hình tài chính của một doanh nghiệp AI, chỉ số Runway thể hiện điều gì?",
+      "options": {
+        "A": "Thời gian dự kiến doanh nghiệp có thể hoạt động trước khi hết sạch tiền.",
+        "B": "Tốc độ tăng trưởng số lượng người dùng đăng ký sử dụng hệ thống mới.",
+        "C": "Tổng số lượng máy chủ GPU được triển khai trên hạ tầng điện toán đó.",
+        "D": "Khoản lợi nhuận gộp thu về sau khi khấu trừ chi phí gọi API OpenAI."
+      },
+      "answer": "A",
+      "explanation": "Runway đại diện cho số tháng mà doanh nghiệp có thể tiếp tục sống sót với lượng tiền mặt hiện tại chia cho Burn Rate.",
+      "hints": [
+        "Nghĩa đen của Runway là đường băng để cất cánh trước khi rơi xuống vực.",
+        "Nó phụ thuộc trực tiếp vào số tiền mặt còn lại và tốc độ đốt tiền.",
+        "Đáp án là số thời gian ước tính doanh nghiệp tồn tại trước khi cạn kiệt quỹ."
+      ],
+      "concepts": [
+        "d18-t1-financial-roi"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Trong 5 thành phần chi phí của AI startup, nhóm chi phí nào thường bị bỏ quên nhất?",
+      "options": {
+        "A": "Chi phí mặt bằng văn phòng làm việc và dịch vụ tiện ích hàng tháng.",
+        "B": "Chi phí ẩn của AI như dán nhãn dữ liệu, retrain model và giám sát.",
+        "C": "Tiền lương của các kỹ sư phát triển phần mềm và nhóm thiết kế.",
+        "D": "Hóa đơn dịch vụ đám mây AWS dùng để duy trì hệ thống máy chủ."
+      },
+      "answer": "B",
+      "explanation": "Các chi phí ẩn (hidden costs) như dán nhãn lại dữ liệu, retrain model để tránh model drift và QA giám sát đầu ra thường bị bỏ quên.",
+      "hints": [
+        "Đây là phần chìm của tảng băng chi phí, đặc trưng riêng của các sản phẩm AI.",
+        "Nó bao gồm các hoạt động làm sạch dữ liệu, xử lý phản hồi và đào tạo lại.",
+        "Đáp án chỉ ra các chi phí ẩn như dán nhãn, retraining và giám sát thủ công."
+      ],
+      "concepts": [
+        "d18-t1-financial-roi"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Đặc điểm cơ bản của mô hình doanh thu MRR (SaaS Monthly Recurring Revenue) là gì?",
+      "options": {
+        "A": "Người dùng trả phí dựa trên số lượng token thực tế mà họ tiêu.",
+        "B": "Khách hàng trả một khoản phí cố định định kỳ hàng tháng để sử dụng.",
+        "C": "Doanh nghiệp thu tiền hoa hồng trên từng giao dịch thành công của khách.",
+        "D": "Hệ thống tự động trừ tiền trong tài khoản khi có lượt truy cập mới."
+      },
+      "answer": "B",
+      "explanation": "MRR là mô hình thu phí thuê bao định kỳ cố định hàng tháng (như phí Netflix hay Notion AI).",
+      "hints": [
+        "Hãy nghĩ đến cách thu tiền đều đặn mang lại doanh thu dễ dự đoán nhất.",
+        "Mô hình này không phụ thuộc vào lượng sử dụng cụ thể của từng lượt gọi API.",
+        "Đáp án là việc khách hàng trả phí cố định hàng tháng."
+      ],
+      "concepts": [
+        "d18-t1-financial-roi"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Điểm khác biệt chính về biên lợi nhuận gộp (Gross Margin) giữa AI Product và SaaS truyền thống là gì?",
+      "options": {
+        "A": "AI product có Gross Margin lớn hơn rất nhiều so với SaaS truyền thống.",
+        "B": "AI product có Gross Margin mỏng hơn nhiều do chi phí gọi API cao.",
+        "C": "Cả hai mô hình đều có biên lợi nhuận giống hệt nhau trong thực tế.",
+        "D": "SaaS truyền thống tốn nhiều chi phí vận hành máy chủ hơn ứng dụng AI."
+      },
+      "answer": "B",
+      "explanation": "Gross Margin của AI product thường mỏng hơn (40-60%) so với SaaS truyền thống (80-90%) do chi phí tính toán và gọi API phát sinh trên mỗi yêu cầu.",
+      "hints": [
+        "Hãy so sánh chi phí máy chủ tĩnh của web SaaS với chi phí gọi GPU/LLM API.",
+        "Mỗi request gọi AI đều tốn tiền tính toán đáng kể, kéo giảm biên lợi nhuận gộp.",
+        "Đáp án phản ánh biên lợi nhuận của AI mỏng hơn nhiều do gánh nặng chi phí API."
+      ],
+      "concepts": [
+        "d18-t1-financial-roi"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Ngân sách dự phòng hàng năm cho việc huấn luyện lại mô hình (Model Retraining) nên ở mức nào?",
+      "options": {
+        "A": "Tương đương khoảng 50% chi phí xây dựng ban đầu của mỗi quý đó.",
+        "B": "Tương đương khoảng 5% chi phí xây dựng ban đầu của mỗi năm đó.",
+        "C": "Tương đương khoảng 20% chi phí xây dựng ban đầu của mỗi năm đó.",
+        "D": "Tương đương khoảng 80% chi phí xây dựng ban đầu của mỗi tháng đó."
+      },
+      "answer": "C",
+      "explanation": "Quy tắc tài chính doanh nghiệp AI đề xuất dự trù ngân sách retraining hàng năm tương đương khoảng 20% chi phí xây dựng ban đầu.",
+      "hints": [
+        "Đây là chi phí bảo trì để chống lại hiện tượng suy giảm chất lượng (drift) của mô hình.",
+        "Mức ngân sách này bằng một phần năm chi phí đầu tư phát triển ban đầu.",
+        "Đáp án chính xác là khoảng 20% chi phí xây dựng ban đầu mỗi năm."
+      ],
+      "concepts": [
+        "d18-t1-financial-roi"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Mô hình định giá theo mức tiêu dùng (Consumption Model) hoạt động dựa trên nguyên tắc nào?",
+      "options": {
+        "A": "Người dùng trả phí cố định mỗi năm không giới hạn lượt truy cập.",
+        "B": "Doanh nghiệp tự động trích xuất hoa hồng từ tài khoản ngân hàng.",
+        "C": "Người dùng thanh toán dựa trên lượng tài nguyên thực tế đã tiêu dùng.",
+        "D": "Hệ thống miễn phí hoàn toàn cho các doanh nghiệp quy mô nhỏ đó."
+      },
+      "answer": "C",
+      "explanation": "Mô hình Consumption (Pay-as-you-go) tính phí người dùng trực tiếp dựa trên số lượng tài nguyên tiêu thụ thực tế như số token hoặc số cuộc gọi API.",
+      "hints": [
+        "Hãy nghĩ đến hóa đơn tiền điện hoặc tiền nước sinh hoạt của bạn.",
+        "Bạn dùng bao nhiêu token thì hệ thống sẽ tính tiền bấy nhiêu.",
+        "Đáp án là thanh toán dựa trên tài nguyên thực tế đã tiêu thụ."
+      ],
+      "concepts": [
+        "d18-t1-financial-roi"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Vấn đề 'Power User' (người dùng siêu cấp) gây rủi ro gì cho mô hình SaaS Unlimited của AI startup?",
+      "options": {
+        "A": "Họ sử dụng quá ít tài nguyên làm lãng phí băng thông hệ thống.",
+        "B": "Họ liên tục phàn nàn và yêu cầu hoàn trả lại tiền phí đó.",
+        "C": "Họ dùng lượng API cực lớn vượt quá số tiền đăng ký cố định.",
+        "D": "Họ tự động chia sẻ tài khoản cho nhiều người khác cùng sử dụng."
+      },
+      "answer": "C",
+      "explanation": "Người dùng siêu cấp sử dụng lượng API rất lớn, vượt quá biên lợi nhuận từ mức phí cố định họ đóng, kéo biên lợi nhuận của toàn công ty xuống.",
+      "hints": [
+        "Hãy tưởng tượng một người ăn buffet khỏe bằng mười khách bình thường ăn.",
+        "Chi phí API tích lũy từ những người dùng này có thể lớn hơn số tiền họ đóng.",
+        "Đáp án là việc họ tiêu dùng lượng API khổng lồ vượt quá mức phí cố định."
+      ],
+      "concepts": [
+        "d18-t1-financial-roi"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Nguyên nhân số một khiến 90% AI startup thất bại trước khi đạt Product-Market Fit là gì?",
+      "options": {
+        "A": "Hệ thống bảo mật lỏng lẻo bị tin tặc tấn công liên tục.",
+        "B": "Các kỹ sư không đủ khả năng tối ưu hóa mô hình ngôn ngữ.",
+        "C": "Không tìm được nhà cung cấp dịch vụ máy chủ phù hợp nhất.",
+        "D": "Doanh nghiệp hết tiền mặt trước khi tìm được thị trường phù hợp."
+      },
+      "answer": "D",
+      "explanation": "Lý do hàng đầu khiến startup chết là hết tiền mặt (cạn kiệt Runway) trước khi tìm ra sản phẩm phù hợp với thị trường.",
+      "hints": [
+        "Hãy nghĩ đến vấn đề sinh tử liên quan đến dòng tiền mặt của doanh nghiệp.",
+        "Công nghệ rất tốt vẫn có thể chết nếu không quản lý tốt Runway tài chính.",
+        "Đáp án chỉ ra việc doanh nghiệp hết tiền mặt trước khi đạt PMF."
+      ],
+      "concepts": [
+        "d18-t1-financial-roi"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Chi phí giá vốn hàng bán (COGS) của một sản phẩm AI thường nằm trong khoảng nào?",
+      "options": {
+        "A": "Khoảng 5% đến 10% doanh thu thuần của doanh nghiệp công nghệ đó.",
+        "B": "Khoảng 10% đến 20% doanh thu thuần của doanh nghiệp công nghệ đó.",
+        "C": "Khoảng 20% đến 30% doanh thu thuần của doanh nghiệp công nghệ đó.",
+        "D": "Khoảng 40% đến 60% doanh thu thuần của doanh nghiệp công nghệ đó."
+      },
+      "answer": "D",
+      "explanation": "Chi phí COGS (gồm API, máy chủ GPU) của sản phẩm AI chiếm tới 40-60% doanh thu, cao hơn hẳn mức 10-20% của SaaS truyền thống.",
+      "hints": [
+        "Hãy nhớ lại bảng so sánh COGS giữa AI Product và SaaS truyền thống.",
+        "Chi phí này rất cao do phải gánh tiền hạ tầng compute trên mỗi yêu cầu.",
+        "Đáp án chính xác là khoảng 40% đến 60% doanh thu."
+      ],
+      "concepts": [
+        "d18-t1-financial-roi"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+---
+title: Multi-Skill Graph Propagation
+description: Định vị lỗi sai khi câu hỏi chứa nhiều kỹ năng và lan truyền độ thành thạo trên đồ thị khái niệm.
+---
+
+Trong thực tế giáo dục, một câu hỏi kiểm tra thường yêu cầu học sinh kết hợp đồng thời nhiều kỹ năng thành phần. Để theo dõi chính xác trạng thái năng lực, **EduGap** triển khai hai thuật toán đồ thị cốt lõi:
+1.  **Phân bổ Trách nhiệm (Credit & Blame Assignment):** Xác định kỹ năng nào chịu trách nhiệm chính khi học sinh làm sai một câu hỏi chứa nhiều kỹ năng.
+2.  **Lan truyền Đồ thị 1-Bước (Local 1-Step Propagation):** Cập nhật xác suất làm chủ của các khái niệm liên quan trực tiếp trên cây đồ thị tiên quyết (được trích xuất và tối ưu từ tài liệu học tập thô bằng khung nghiên cứu **[Graphusion](/docs/academic-citations#6-graphusion-scientific-knowledge-graph-construction)**).
+
+---
+
+## 1. Định vị Lỗi sai (Credit & Blame Assignment)
+
+Khi một câu hỏi kiểm tra đồng thời một tập hợp gồm nhiều kỹ năng $S_Q = \{s_1, s_2, ..., s_k\}$, hệ thống chỉ nhận được một kết quả Đúng/Sai tổng quát của học sinh. 
+
+Hệ thống áp dụng mô hình liên kết đồng hành **DINA (Deterministic Input, Noisy And gate)**: học sinh bắt buộc phải làm chủ **tất cả** kỹ năng thành phần mới có thể làm đúng câu hỏi.
+
+*   **Nếu câu hỏi ĐÚNG:** Ghi nhận điểm cộng cho tất cả kỹ năng $s_i \in S_Q$.
+*   **Nếu câu hỏi SAI:** Chỉ cần ít nhất một kỹ năng bị hổng là câu hỏi sẽ sai. Do đó, hệ thống phân bổ hình phạt tỷ lệ nghịch với độ thông thạo hiện tại $M(s_i)$:
+
+$$M(s_i)_{\text{new}} = M(s_i)_{\text{old}} \cdot \left( 1 - \eta \cdot (1 - \text{Score}) \cdot \frac{1 - M(s_i)_{\text{old}}}{\sum_{k \in S_Q} (1 - M(s_k)_{\text{old}})} \right)$$
+
+*Trong đó $\eta$ là hệ số phạt học tập, $\text{Score}$ là điểm số thực tế ($0$ hoặc điểm thành phần).*
+
+*   **Ý nghĩa:** Kỹ năng nào học sinh đang yếu nhất (có $M(s_i)$ thấp nhất) sẽ chịu phần phạt nặng nhất, vì đó là điểm nghẽn (bottleneck) cao nhất khiến học sinh làm sai. Kỹ năng học sinh đã nắm rất vững sẽ bị phạt cực kỳ nhẹ (tránh việc làm sai câu khó ảnh hưởng oan đến các kỹ năng đã master).
+
+---
+
+## 2. Thuật toán Lan truyền Đồ thị 1-Bước (Local 1-Step Propagation)
+
+Để cập nhật độ thông thạo trên đồ thị khái niệm thời gian thực mà không gây lag ($< 10\text{ms}$), hệ thống loại bỏ các mô hình mạng neural đồ thị (GNN) chạy real-time và thay thế bằng **Message Passing cục bộ giới hạn độ sâu (Depth = 1)** thông qua các quan hệ tiên quyết (`Prerequisite_of`):
+
+### A. Lan truyền ngược (Backward Propagation) - Khi giảm điểm ($\Delta M < 0$)
+Nếu độ thông thạo khái niệm đích $s$ bị giảm mạnh, hệ thống duyệt qua danh sách các kỹ năng cha tiên quyết trực tiếp $p \in \text{Parents}(s)$ và giảm nhẹ điểm của chúng:
+
+$$M(p)_{\text{new}} = M(p)_{\text{old}} - \gamma \cdot |\Delta M(s)| \cdot w_{p \rightarrow s}$$
+
+*Với $\gamma = 0.25$ là hệ số suy giảm ngược, $w_{p \rightarrow s}$ là trọng số quan hệ tiên quyết.*
+
+### B. Lan truyền xuôi (Forward Propagation) - Khi tăng điểm ($\Delta M > 0$)
+Nếu độ thông thạo khái niệm tiên quyết $s$ tăng lên, hệ thống sẽ cập nhật tăng điểm nhẹ cho các node con trực tiếp $c \in \text{Children}(s)$:
+
+$$M(c)_{\text{new}} = M(c)_{\text{old}} + \beta \cdot \Delta M(s) \cdot w_{s \rightarrow c}$$
+
+*Với $\beta = 0.25$ là hệ số suy giảm xuôi.*
+
+## 3. Bộ nhớ Đồ thị Hai thời gian (Bitemporal Graph Memory)
+
+Để đánh giá chính xác tốc độ tiếp thu và mức độ phù hợp của các phương pháp sư phạm đối với từng học viên, **EduGap** không chỉ ghi nhận lịch sử học tập tĩnh mà triển khai cấu trúc **Bộ nhớ Đồ thị Hai thời gian (Bitemporal Graph Memory)** làm nền tảng lưu trữ dữ liệu thích ứng cốt lõi.
+
+### A. Hai Trục Thời Gian Độc Lập
+
+Hệ thống quản lý dữ liệu tiến trình năng lực thông qua hai trục thời gian riêng biệt:
+1.  **Thời gian Hiệu lực (Valid Time - VT):** Khoảng thời gian mà trạng thái năng lực (Elo, BKT) của học viên được xác định là phản ánh đúng thực tế năng lực của họ.
+2.  **Thời gian Giao dịch (Transaction Time - TT):** Khoảng thời gian hệ thống thực tế ghi nhận dữ liệu năng lực này vào cơ sở dữ liệu.
+
+Cấu trúc này cho phép hệ thống giải quyết hai bài toán kinh điển trong AI EdTech:
+*   **Hiệu chỉnh Hồi tố (Retroactive Calibration):** Khi học sinh làm sai ở Ngày 7, thuật toán nhận diện học sinh đã bị rỗng kiến thức từ Ngày 6 (dù trước đó làm đúng do đoán mò). Hệ thống sẽ cập nhật hồi tố hạ điểm của Ngày 6 (VT nằm trong quá khứ) tại thời điểm giao dịch hiện tại (TT hiện tại).
+*   **Du hành thời gian (Time-travel Query):** Giúp AI Agent có thể truy vấn xem tại một thời điểm chính xác trong quá khứ, Agent đã nắm được trạng thái năng lực nào của học sinh để đưa ra quyết định gợi ý câu hỏi (Explainable AI).
+
+---
+
+### B. Cá nhân hóa Lộ trình Socratic tuyến tính
+
+Bộ nhớ hai thời gian cho phép AI phân tích tốc độ thay đổi Elo ($\frac{d\theta}{dt}$) của học viên dưới các mức độ gợi ý sư phạm khác nhau (Level 1 Hint, Level 2 Analogy, Level 3 Code Skeleton) tại từng khoảng thời gian hiệu lực ($VT$). 
+
+$$v_{\text{learn}} = \frac{\theta_{VT_{\text{end}}} - \theta_{VT_{\text{start}}}}{VT_{\text{end}} - VT_{\text{start}}}$$
+
+Bằng cách theo dõi biến số tốc độ học tập $v_{\text{learn}}$, AI Agent tự động tối ưu hóa chính sách gợi ý (Scaffolding Policy) bằng thuật toán Contextual Bandit, đưa ra các gợi ý có độ khó rơi trúng vùng phát triển gần nhất (ZPD) của học viên một cách tuyến tính và mượt mà.
+
+---
+
+### C. Triển khai Database tối giản trên Supabase (PostgreSQL)
+
+Để tuân thủ nguyên tắc **KISS (Keep It Simple, Stupid)**, tránh việc vận hành thêm một máy chủ Graph Database độc lập (như Neo4j/Graphiti), hệ thống cài đặt Bitemporal Graph Memory trực tiếp trên Supabase PostgreSQL sử dụng kiểu dữ liệu dải thời gian `tstzrange` và cơ chế khóa loại trừ **GiST Exclusion Constraint**:
+
+```sql
+CREATE TABLE app.student_mastery_bitemporal (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    student_id UUID NOT NULL REFERENCES app.users(id),
+    concept_id UUID NOT NULL REFERENCES app.concepts(id),
+    elo_score DOUBLE PRECISION NOT NULL,
+    bkt_mastery_probability DOUBLE PRECISION NOT NULL,
+    learning_style_preference VARCHAR(50) DEFAULT 'analogy',
+    
+    -- Hai chiều thời gian bitemporal
+    valid_time TSTZRANGE NOT NULL,        -- Thời gian hiệu lực thực tế
+    transaction_time TSTZRANGE NOT NULL,  -- Thời gian ghi nhận vào DB
+    
+    -- GiST Exclusion Constraint: Ngăn chặn trùng lặp thời gian trên cùng học sinh & concept
+    CONSTRAINT no_overlapping_mastery EXCLUDE USING gist (
+        student_id WITH =,
+        concept_id WITH =,
+        valid_time WITH &&,
+        transaction_time WITH &&
+    )
+);
+```
+
+Khi AI Agent cần dựng lại hồ sơ năng lực của học viên tại một thời điểm quá khứ $T$ để giải thích quyết định gợi ý, hệ thống sử dụng toán tử chứa dải thời gian (`@>`):
+
+```sql
+SELECT elo_score, bkt_mastery_probability, learning_style_preference
+FROM app.student_mastery_bitemporal
+WHERE student_id = :student_id AND concept_id = :concept_id
+  AND valid_time @> :target_timestamp
+  AND transaction_time @> :target_timestamp;
+```
+
+---
+
+## 4. Cơ chế Chống lặp (Cycle Protection)
+
+Mặc dù đồ thị khái niệm kiến thức (Knowledge Graph) được thiết kế dạng đồ thị có hướng không chu trình (DAG), trong thực tế cấu hình nhập liệu có thể phát sinh các vòng lặp đệ quy (cycles). 
+
+Hệ thống triển khai cơ chế Cycle Protection bằng cách duy trì một danh sách các node đã duyệt qua (`visited` set) trong quy trình đệ quy lan truyền:
+
+```python
+def propagate_mastery(
+    db: AdaptiveDatabaseInterface,
+    student_id: UUID,
+    course_id: UUID,
+    concept_id: UUID,
+    old_bkt: float,
+    new_bkt: float,
+    visited: set[UUID] | None = None,
+) -> set[UUID]:
+    if visited is None:
+        visited = set()
+
+    modified_concepts = set()
+
+    # Nếu node đã được duyệt, dừng đệ quy ngay lập tức
+    if concept_id in visited:
+        return modified_concepts
+
+    visited.add(concept_id)
+    ...
+```
+
+---
+
+## 5. Tham chiếu mã nguồn backend
+
+*   Cài đặt chi tiết của thuật toán lan truyền đồ thị nằm tại [graph_propagation.py](file:///d:/CODE/AITHUCCHIEN/PROJECT/C2-App-125/src/services/adaptive/graph_propagation.py).
+*   Định nghĩa quyết định kiến trúc bitemporal nằm tại [adr-014-bitemporal-graph-memory-storage.md](file:///d:/CODE/AITHUCCHIEN/PROJECT/C2-App-125/ADR/adr-014-bitemporal-graph-memory-storage.md).
+*   Kế hoạch triển khai bitemporal nằm tại [plan.md](file:///d:/CODE/AITHUCCHIEN/PROJECT/C2-App-125/plans/20260624-1310-bitemporal-graph-memory-implementation/plan.md).

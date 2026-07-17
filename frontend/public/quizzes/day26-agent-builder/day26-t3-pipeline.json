@@ -1,0 +1,210 @@
+{
+  "id": "day26-t3-pipeline",
+  "parent_id": "day26-agent-builder",
+  "topic_title": "Day 26: Model Context Protocol (MCP)",
+  "title": "Phần 2: Phân Biệt Tools/Resources/Prompts & Viết MCP Server SDK",
+  "description": "Đánh giá khả năng phân biệt bốn trụ cột MCP và triển khai viết MCP Server sử dụng Python SDK.",
+  "difficulty": "bình thường",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Sự khác biệt cốt lõi về mặt chức năng giữa hai khái niệm Tools và Resources trong Model Context Protocol (MCP) là gì?",
+      "options": {
+        "A": "Tools lưu trên ổ cứng SSD, còn Resources lưu trữ trực tiếp trong bộ nhớ đệm RAM.",
+        "B": "Tools cho phép chạy code thay đổi trạng thái, Resources chỉ cho phép đọc dữ liệu.",
+        "C": "Tools chỉ hoạt động trực tuyến, còn Resources có khả năng chạy offline hoàn toàn.",
+        "D": "Tools tốn nhiều chi phí token hơn gấp năm lần so với việc sử dụng Resources."
+      },
+      "answer": "B",
+      "explanation": "Tools là các hành động động (executable functions) cho phép thay đổi trạng thái hoặc thực thi lệnh (ví dụ: viết file, chạy command). Resources là các nguồn dữ liệu tĩnh (read-only data) chỉ cung cấp thông tin đọc (ví dụ: log file, DB schema).",
+      "hints": [
+        "Phân biệt giữa hành động chủ động thực thi viết/chạy lệnh và hành động đọc dữ liệu thụ động.",
+        "Tools đại diện cho động từ (actions), Resources đại diện cho danh từ (data sources).",
+        "Đáp án chính xác là Tools cho phép chạy code thay đổi trạng thái, Resources chỉ cho phép đọc."
+      ],
+      "concepts": [
+        "d26-t3-mcp-spec"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Tính năng 'Sampling' (hoặc Elicitation) trong Model Context Protocol cho phép MCP Server làm điều gì độc đáo?",
+      "options": {
+        "A": "Gọi ngược lại Client để yêu cầu mô hình LLM sinh ra văn bản phản hồi.",
+        "B": "Tự động lấy mẫu ngẫu nhiên các tệp tin log của hệ thống để tìm lỗi.",
+        "C": "Cắt bớt số lượng token đầu vào prompt của người dùng để tiết kiệm chi phí.",
+        "D": "Tự động phân phối tải lượng request suy luận chéo giữa các card GPU hệ thống."
+      },
+      "answer": "A",
+      "explanation": "Sampling cho phép giao tiếp hai chiều. MCP Server có thể gửi request ngược lại Client, yêu cầu mô hình LLM giải quyết một tác vụ phụ (ví dụ: yêu cầu LLM tóm tắt đoạn text vừa đọc) và nhận lại kết quả sinh từ LLM.",
+      "hints": [
+        "Đây là cơ chế đảo chiều cuộc gọi, nơi máy chủ yêu cầu máy khách sử dụng bộ não LLM.",
+        "Giúp server không cần tự tích hợp API key của LLM mà mượn trực tiếp từ client.",
+        "Đáp án chính xác là gọi ngược lại Client để yêu cầu mô hình LLM sinh văn bản."
+      ],
+      "concepts": [
+        "d26-t3-mcp-spec"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Khi sử dụng thư viện Python MCP SDK thế hệ mới FastMCP, decorator nào dùng để khai báo một công cụ (tool) mới?",
+      "options": {
+        "A": "Sử dụng decorator `@server.register_tool` ở đầu của định nghĩa hàm Python.",
+        "B": "Sử dụng decorator `@fastmcp.action` ở đầu của định nghĩa hàm Python.",
+        "C": "Sử dụng decorator `@mcp.define_tool` ở đầu của định nghĩa hàm Python.",
+        "D": "Sử dụng decorator `@app.tool()` ở đầu của định nghĩa hàm Python."
+      },
+      "answer": "D",
+      "explanation": "Trong FastMCP (SDK rút gọn của Anthropic dành cho Python), bạn khởi tạo đối tượng `app = FastMCP(\"Server Name\")` và đăng ký các tool vô cùng đơn giản bằng cách dùng decorator `@app.tool()` trước hàm xử lý.",
+      "hints": [
+        "Nghĩ về cú pháp đăng ký route quen thuộc của các framework Python như FastAPI hay Flask.",
+        "Decorator sử dụng biến ứng dụng FastMCP được khởi tạo ban đầu là 'app'.",
+        "Đáp án chính xác là sử dụng decorator `@app.tool()` ở đầu hàm định nghĩa."
+      ],
+      "concepts": [
+        "d26-t3-mcp-spec"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Khái niệm 'Prompts' trong Model Context Protocol cung cấp khả năng nào cho ứng dụng tích hợp?",
+      "options": {
+        "A": "Tự động chỉnh sửa lỗi chính tả tiếng Việt của người dùng trên giao diện UI.",
+        "B": "Mã hóa toàn bộ các câu lệnh của người dùng để bảo mật an toàn thông tin.",
+        "C": "Cung cấp các biểu mẫu câu lệnh có sẵn kèm tham số cho người dùng lựa chọn.",
+        "D": "Giới hạn thời gian suy luận tối đa của mô hình ngôn ngữ lớn ở mỗi lượt."
+      },
+      "answer": "C",
+      "explanation": "Prompts trong MCP đóng vai trò là kho chứa các prompt templates có sẵn (ví dụ: mẫu code-review). Client có thể hiển thị danh sách này kèm các trường nhập liệu tham số để người dùng điền nhanh.",
+      "hints": [
+        "Đây là các mẫu câu lệnh thiết lập sẵn (templates) giúp chuẩn hóa đầu vào cho LLM.",
+        "Cho phép người dùng truyền tham số (arguments) vào để sinh ra prompt hoàn chỉnh.",
+        "Đáp án chính xác là cung cấp các biểu mẫu câu lệnh có sẵn kèm tham số."
+      ],
+      "concepts": [
+        "d26-t3-mcp-spec"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Trình tự trao đổi thông điệp JSON-RPC đúng chuẩn khi MCP Client thực hiện gọi một Tool từ MCP Server là gì?",
+      "options": {
+        "A": "Server gửi notification -> Client chạy tool -> Server xác nhận cuộc gọi thành công.",
+        "B": "Client gửi request `tools/call` -> Server chạy code -> Server phản hồi trả về response.",
+        "C": "Client chạy code -> Gửi kết quả cho Server -> Server lưu kết quả database.",
+        "D": "Server yêu cầu Client nhập mã OTP -> Client thực hiện nhập -> Server chạy."
+      },
+      "answer": "B",
+      "explanation": "Quy trình: 1. Client gửi request JSON-RPC với method `tools/call` kèm tham số. 2. Server nhận được, thực thi code hàm tương ứng. 3. Server đóng gói kết quả và trả về JSON-RPC response chứa nội dung text/image.",
+      "hints": [
+        "Đây là mô hình yêu cầu - phản hồi (Request-Response) kinh điển dựa trên JSON-RPC.",
+        "Client bắt đầu cuộc gọi, Server thực thi và trả kết quả ngược lại cho Client.",
+        "Đáp án chính xác là Client gửi request `tools/call` -> Server chạy -> Server trả response."
+      ],
+      "concepts": [
+        "d26-t3-mcp-spec"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Trong Python MCP SDK, kiểu dữ liệu nào được khuyến nghị trả về từ hàm `@app.tool()` để Client có thể hiển thị đa phương tiện?",
+      "options": {
+        "A": "Một chuỗi văn bản thuần túy hoặc cấu hình đối tượng Image/Text của SDK.",
+        "B": "Tệp tin định dạng nén ZIP chứa toàn bộ kết quả thực thi của câu lệnh.",
+        "C": "Một mảng nhị phân chứa mã máy của chương trình đã chạy trên server.",
+        "D": "Đường dẫn liên kết URL dẫn tới video mô tả cách thức hoạt động của tool."
+      },
+      "answer": "A",
+      "explanation": "Hàm Python đăng ký tool có thể trả về một string đơn giản (SDK tự bọc thành text content), hoặc trả về danh sách các đối tượng hiển thị chuyên dụng như `ImageContent` hoặc `TextContent` của thư viện mcp.",
+      "hints": [
+        "Client cần nhận được nội dung trực quan để nạp vào cửa sổ chat hiển thị cho người dùng.",
+        "Hỗ trợ cả định dạng văn bản thô lẫn biểu diễn hình ảnh trực quan sinh động.",
+        "Đáp án chính xác là một chuỗi văn bản thuần túy hoặc cấu hình đối tượng Image/Text."
+      ],
+      "concepts": [
+        "d26-t3-mcp-spec"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Khi khai báo một tool bằng Python MCP SDK, làm thế nào để định nghĩa chính xác kiểu dữ liệu và mô tả (schema) của các tham số đầu vào?",
+      "options": {
+        "A": "Viết một tài liệu hướng dẫn sử dụng riêng rồi lưu vào thư mục của dự án.",
+        "B": "Khai báo kiểu dữ liệu trong file cấu hình JSON riêng biệt bên ngoài ứng dụng.",
+        "C": "Sử dụng Type Hints và Docstring chuẩn của Python ngay trong hàm khai báo.",
+        "D": "Cấu hình trực tiếp trong phần cài đặt phần cứng máy chủ chạy các agents."
+      },
+      "answer": "C",
+      "explanation": "Python MCP SDK sử dụng cơ chế tự động phân tích (introspection). Nó đọc Type Hints (ví dụ: `prompt: str`) và Docstring của hàm Python để sinh ra JSON Schema tự động gửi lên Client, giúp LLM hiểu cách gọi tool.",
+      "hints": [
+        "Cơ chế này giúp lập trình viên không cần viết thủ công các file cấu hình JSON schema phức tạp.",
+        "Viết code Python sạch sẽ với chú thích kiểu dữ liệu và mô tả hàm bằng tiếng Anh/Việt.",
+        "Đáp án chính xác là sử dụng Type Hints và Docstring chuẩn ngay trong hàm khai báo."
+      ],
+      "concepts": [
+        "d26-t3-mcp-spec"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Tại sao việc sử dụng tính năng 'Resources' lại an toàn bảo mật hơn 'Tools' khi chia sẻ dữ liệu nhạy cảm cho LLM?",
+      "options": {
+        "A": "Vì Resources tự động mã hóa dữ liệu bằng các thuật toán bảo mật của ngân hàng.",
+        "B": "Vì Resources không yêu cầu máy chủ phải kết nối internet trong quá trình chạy.",
+        "C": "Vì Resources chỉ hoạt động khi có sự phê duyệt thủ công của giám đốc công nghệ.",
+        "D": "Vì Resources được thiết kế chỉ đọc (Read-only), ngăn chặn LLM ghi đè hoặc phá hủy."
+      },
+      "answer": "D",
+      "explanation": "Tools cho phép thực thi hành động có thể thay đổi trạng thái (như viết/xóa file). Resources chỉ cung cấp quyền đọc tĩnh (read-only), LLM chỉ có thể tham chiếu dữ liệu mà không thể chỉnh sửa hay chạy lệnh độc hại trên server.",
+      "hints": [
+        "Nghĩ về sự khác biệt giữa quyền xem (View) và quyền chỉnh sửa (Edit) tài liệu.",
+        "Quyền đọc tĩnh giúp bảo vệ file gốc khỏi các nguy cơ prompt injection phá hoại dữ liệu.",
+        "Đáp án chính xác là vì Resources được thiết kế chỉ đọc, ngăn chặn LLM ghi đè."
+      ],
+      "concepts": [
+        "d26-t3-mcp-spec"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Khi MCP Client gửi yêu cầu API `resources/list`, MCP Server sẽ phản hồi những thông tin gì?",
+      "options": {
+        "A": "Danh sách các tài nguyên dữ liệu tĩnh khả dụng kèm theo URI và mô tả chi tiết.",
+        "B": "Danh sách các card đồ họa GPU hiện có trên hệ thống đám mây của server.",
+        "C": "Toàn bộ lịch sử các câu hỏi của tất cả người dùng đã từng gửi lên chatbot.",
+        "D": "Mã nguồn Python của tất cả các công cụ tools đang hoạt động trên máy chủ."
+      },
+      "answer": "A",
+      "explanation": "Yêu cầu `resources/list` giúp Client khám phá (discover) xem Server đang phơi bày những tài liệu tĩnh nào. Server trả về danh sách các resource định danh bằng URI (Uniform Resource Identifier) kèm mô tả ngữ cảnh.",
+      "hints": [
+        "Đây là danh sách lục lộ các nguồn tài nguyên dữ liệu tĩnh mà mô hình có thể tham chiếu đọc.",
+        "Mỗi tài nguyên được định vị bằng một địa chỉ URI duy nhất (ví dụ: file://logs/app.log).",
+        "Đáp án chính xác là danh sách các tài nguyên dữ liệu tĩnh khả dụng kèm URI và mô tả."
+      ],
+      "concepts": [
+        "d26-t3-mcp-spec"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Decorator nào trong Python MCP SDK tiêu chuẩn được sử dụng để đăng ký danh sách các mẫu prompt có sẵn cho Server?",
+      "options": {
+        "A": "Sử dụng decorator `@server.register_prompt` ở đầu hàm định nghĩa.",
+        "B": "Sử dụng decorator `@server.list_prompts()` ở đầu hàm định nghĩa.",
+        "C": "Sử dụng decorator `@app.prompt_template` ở đầu hàm định nghĩa.",
+        "D": "Sử dụng decorator `@app.define_prompt` ở đầu hàm định nghĩa."
+      },
+      "answer": "B",
+      "explanation": "Trong MCP SDK tiêu chuẩn (không dùng FastMCP), ta đăng ký danh sách các prompt có sẵn bằng decorator `@server.list_prompts()`, và đăng ký hàm lấy nội dung prompt cụ thể bằng `@server.get_prompt()`.",
+      "hints": [
+        "Decorator này dùng để 'liệt kê' (list) các mẫu prompts khả dụng cho máy khách.",
+        "Tương tự như cách ta liệt kê danh sách các tools khả dụng trên máy chủ.",
+        "Đáp án chính xác là sử dụng decorator `@server.list_prompts()` ở đầu hàm định nghĩa."
+      ],
+      "concepts": [
+        "d26-t3-mcp-spec"
+      ]
+    }
+  ]
+}

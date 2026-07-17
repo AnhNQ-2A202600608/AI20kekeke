@@ -1,0 +1,12 @@
+packages:
+  - '.'
+
+allowBuilds:
+  '@google/genai': true
+  '@tailwindcss/oxide': true
+  core-js: true
+  esbuild: true
+  protobufjs: true
+  re2: true
+  sharp: true
+  unrs-resolver: true

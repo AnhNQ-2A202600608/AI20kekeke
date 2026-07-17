@@ -1,39 +1,19 @@
+version: "3.8"
+
 services:
   backend:
     build:
-      context: ./backend
+      context: .
       dockerfile: Dockerfile
-    container_name: vaic-backend
     ports:
       - "8000:8000"
-    environment:
-      - APP_NAME=vaic-universal-starter
-      - DEBUG=true
-      - STORAGE_PATH=/app/data
-      - LOG_LEVEL=info
-      - FRONTEND_ORIGIN=http://localhost:3000
+    env_file:
+      - .env
     volumes:
-      - backend-data:/app/data
+      - ./data:/app/data
+    restart: unless-stopped
     healthcheck:
-      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/v1/health')"]
-      interval: 10s
-      timeout: 5s
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 10s
       retries: 3
-
-  frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-      args:
-        - BACKEND_API_URL=http://backend:8000/api/v1
-    container_name: vaic-frontend
-    ports:
-      - "3000:3000"
-    environment:
-      - BACKEND_API_URL=http://backend:8000/api/v1
-    depends_on:
-      backend:
-        condition: service_healthy
-
-volumes:
-  backend-data:

@@ -1,0 +1,58 @@
+---
+title: Vòng lặp Tiến hóa thích ứng (Adaptive Progression)
+description: Đặc tả chi tiết luồng tích hợp từ đánh giá năng lực (Knowledge Tracing) đến kích hoạt câu hỏi tiến hóa (Evol-Instruct) khi học viên đạt ngưỡng thành thạo.
+---
+
+Để hỗ trợ học viên phát triển năng lực liên tục, EduGap thiết lập một vòng lặp phản hồi khép kín (Closed-Loop). Luồng đi từ việc theo dõi độ thông thạo bằng thuật toán **Knowledge Tracing (BKT/Elo)** cho đến khi học viên đạt ngưỡng **Thành thạo Tối đa (Max Mastery)**, từ đó kích hoạt cơ chế gợi ý **Câu hỏi tiến hóa (Evol-Instruct)** để bẻ gãy giới hạn năng lực.
+
+---
+
+## 1. Biểu đồ luồng hoạt động (Activity Flow DAG)
+
+Sơ đồ dưới đây mô tả chi tiết luồng xử lý từ lúc học viên làm bài, cập nhật điểm số cho đến khi hệ thống tự động kích hoạt câu hỏi tiến hóa nâng cao:
+
+![Mermaid Diagram](/docs/images/mermaid-de1f1978b32cdfb83a352d78bb3b9c83.svg)
+
+---
+
+## 2. Chi tiết các pha xử lý trong luồng
+
+### Pha 1: Đánh giá Năng lực liên tục (Knowledge Tracing)
+
+Mỗi khi học viên nộp bài qua RPC `submit_attempt_v3`, hệ thống cập nhật đồng thời hai chỉ số:
+1.  **Bayesian Knowledge Tracing ($P(L)$)**: Đo lường xác suất học viên làm chủ khái niệm cụ thể (Concept-specific mastery).
+2.  **Elo Rating ($\theta$)**: Đo lường năng lực lập trình/tư duy tổng quát của học viên (General proficiency).
+
+**Điều kiện xác định Thành thạo Tối đa (Max Mastery)**:
+Một học viên được coi là đạt trạng thái Max Mastery của Concept hiện tại khi thỏa mãn đồng thời hai điều kiện biên:
+
+$$P(L) \ge 0.90 \quad \text{và} \quad \theta \ge 1800$$
+
+*Ý nghĩa:* Học viên không những hiểu rõ lý thuyết của concept đó ($P(L)$ cao) mà còn có tư duy giải quyết vấn đề xuất sắc ($\theta$ cao), sẵn sàng cho các thử thách phức tạp hơn.
+
+---
+
+### Pha 2: Kích hoạt Gợi ý Câu hỏi Tiến hóa (Evol-Instruct Trigger)
+
+Khi học viên đã đạt ngưỡng Max Mastery, nếu tiếp tục phân phối các câu hỏi tiêu chuẩn cũ sẽ gây ra hiện tượng **"Trần năng lực" (Skill Ceiling)**. Học viên sẽ liên tục trả lời đúng mà không tích lũy thêm giá trị giáo dục, đồng thời hệ số UCB của bandit cho các câu hỏi dễ sẽ bị phạt nặng.
+
+Hệ thống sẽ chuyển trạng thái gợi ý:
+1.  **Lọc câu hỏi ứng viên**: API `/recommend` quét ngân hàng câu hỏi và chỉ trích xuất các câu hỏi đã được gắn tag tiến hóa từ **Evol-Instruct Pipeline** (Add Constraints, troubleshooting, complication input) có độ khó:
+    $$b_{\text{question}} \ge 2000$$
+2.  **Xây dựng ngữ cảnh Bandit**: Vector ngữ cảnh LinUCB được thiết lập với $P(L) \approx 1.0$ và Elo chuẩn hóa cao, giúp thuật toán ưu tiên lựa chọn các arms là câu hỏi tiến hóa phức tạp.
+
+---
+
+### Pha 3: Điều hướng Lộ trình & Hạ bậc Thích ứng (Progression & Fallback)
+
+Kết quả làm bài đối với câu hỏi tiến hóa sẽ quyết định lộ trình tiếp theo của học viên:
+
+#### Hướng phát triển (Progression)
+*   Nếu học viên giải quyết thành công câu hỏi tiến hóa, điểm Elo tăng vọt.
+*   Hệ thống đánh dấu hoàn thành Concept hiện tại và tự động chuyển hướng lộ trình học tập sang các Concept nâng cao tiếp theo trên **Concept Graph DAG**.
+
+#### Hướng hỗ trợ & Hạ bậc (Scaffolding & Fallback)
+*   Nếu học viên trả lời sai câu hỏi tiến hóa, hệ thống **không lập tức giảm điểm Elo nặng nề**. Thay vào đó, **Nấc thang gợi ý Socratic (Hint Ladder)** sẽ được kích hoạt để cung cấp gợi ý từng bước (bậc 1 đến bậc 4).
+*   Nếu học viên vẫn thất bại sau khi xem hết các mức gợi ý hoặc có hành vi đoán mò (Rapid Guessing), hệ thống sẽ:
+    1.  Áp dụng **Forgetting Decay** làm giảm xác suất làm chủ $P(L)$ xuống dưới $0.80$.
+    2.  **Hạ bậc thích ứng (Fallback)**: Đưa học viên quay lại luyện tập các câu hỏi tiêu chuẩn hoặc điều hướng về Concept tiền đề (Prerequisite) để củng cố lại gốc rễ kiến thức.

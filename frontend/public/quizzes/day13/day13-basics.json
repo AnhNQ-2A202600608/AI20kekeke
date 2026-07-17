@@ -1,0 +1,210 @@
+{
+  "id": "day13-basics",
+  "parent_id": "day13",
+  "topic_title": "Day 13: Monitoring, Logging & Observability",
+  "title": "Phần 1: Nền tảng Observability & Hệ thống Metrics",
+  "description": "Kiểm tra kiến thức cơ bản về 3 pillars of observability, so sánh monitoring và observability, các metrics cơ bản của LLM (latency percentiles, TTFT, TPOT) và phân biệt SLI/SLO/SLA.",
+  "difficulty": "dễ",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Sự khác biệt cốt lõi giữa Monitoring và Observability trong ngữ cảnh vận hành hệ thống AI Agent là gì?",
+      "options": {
+        "A": "Monitoring tập trung vào việc đo lường các chỉ số CPU/RAM, còn Observability chỉ tập trung vào việc theo dõi chi phí sử dụng LLM Token.",
+        "B": "Monitoring yêu cầu cài đặt các thư viện bên thứ ba như Langfuse, còn Observability có sẵn trong các nền tảng đám mây như AWS.",
+        "C": "Monitoring giúp phát hiện các sự cố đã biết trước (known-unknowns), còn Observability giúp tìm hiểu nguyên nhân của các lỗi chưa biết trước (unknown-unknowns).",
+        "D": "Monitoring chỉ thực hiện lưu trữ nhật ký log dạng JSON, còn Observability tự động sửa lỗi code của Agent mà không cần can thiệp."
+      },
+      "answer": "C",
+      "explanation": "Monitoring giám sát các chỉ số định sẵn (ví dụ: CPU > 80%, uptime), trong khi Observability cung cấp đủ dữ liệu thô (logs, metrics, traces) để trả lời các câu hỏi mới phát sinh về hành vi phức tạp của Agent (như prompt mới, model drift).",
+      "hints": [
+        "Hãy nhớ lại khái niệm 'unknown-unknowns'. Đối với một hệ thống AI có tính bất định cao, ta có thể lường trước hết mọi lỗi xảy ra không?",
+        "Giám sát thông thường (Monitoring) trả lời câu hỏi 'Hệ thống có chạy bình thường không?'. Khả năng quan sát (Observability) trả lời câu hỏi 'Tại sao nó lại chạy bất thường?'",
+        "Hãy nghĩ đến cách tiếp cận dựa trên việc thu thập dữ liệu thô và khả năng truy vấn linh hoạt sau khi sự cố xảy ra."
+      ],
+      "concepts": [
+        "d13-monitoring-observability"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Theo lý thuyết điều khiển (Control Theory) áp dụng trong vận hành ứng dụng, mục tiêu chính của việc thiết lập hệ thống giám sát (Monitoring) tốt là gì?",
+      "options": {
+        "A": "Tăng thời gian phản hồi trung bình của hệ thống lên mức tối đa để đảm bảo dữ liệu được xử lý an toàn và không bị mất mát.",
+        "B": "Giảm thiểu thời gian phát hiện sự cố (MTTD) xuống mức tối đa, từ đó giúp đội ngũ vận hành chủ động xử lý trước khi khách hàng phàn nàn.",
+        "C": "Loại bỏ hoàn toàn sự phụ thuộc vào các mô hình ngôn ngữ lớn bằng cách chuyển đổi sang sử dụng các tập lệnh heuristic tĩnh.",
+        "D": "Tự động hóa việc phân bổ ngân sách dự án giữa các phòng ban dựa trên số lượng máy chủ ảo đang hoạt động trên môi trường cloud."
+      },
+      "answer": "B",
+      "explanation": "Monitoring tốt giúp giảm MTTD (Mean Time To Detect) xuống hàng phút thay vì hàng ngày, giúp phát hiện lỗi trước khi người dùng phàn nàn và rời bỏ dịch vụ.",
+      "hints": [
+        "MTTD (Mean Time To Detect) và MTTR (Mean Time To Recover) có ý nghĩa gì đối với trải nghiệm người dùng?",
+        "If hệ thống không tự phát hiện được lỗi, ai sẽ là người phát hiện và thông báo lỗi đó cho bạn đầu tiên?",
+        "Mục tiêu là rút ngắn khoảng thời gian từ lúc sự cố phát sinh đến lúc đội ngũ kỹ thuật nhận được cảnh báo hệ thống."
+      ],
+      "concepts": [
+        "d13-monitoring-observability"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Ba cột trụ chính (3 pillars) của Observability trong hệ thống phần mềm truyền thống và ứng dụng AI Agent bao gồm những thành phần nào?",
+      "options": {
+        "A": "Metrics (Chỉ số đo lường hệ thống), Logs (Nhật ký ghi chép sự kiện), và Traces (Dấu vết hành trình yêu cầu).",
+        "B": "Prometheus Server (Máy chủ giám sát), Grafana Dashboard (Bảng điều khiển trực quan), và OpenTelemetry Collector (Bộ thu thập dữ liệu).",
+        "C": "CPU Utilization (Tài nguyên CPU), Memory Saturation (Độ bão hòa bộ nhớ RAM), và Disk Read/Write Speed (Tốc độ đọc ghi ổ đĩa).",
+        "D": "User Feedback (Ý kiến phản hồi người dùng), Cost Attribution (Phân bổ chi phí token), và Hallucination Evaluation (Đánh giá mức ảo giác)."
+      },
+      "answer": "A",
+      "explanation": "Ba cột trụ chính là Metrics (cho biết có vấn đề gì và bao nhiêu), Logs (chi tiết sự kiện xảy ra để debug), và Traces (hành trình request xuyên suốt các service).",
+      "hints": [
+        "Cột trụ nào dùng để phát hiện lỗi nhanh (kích thước nhỏ, tổng hợp số liệu)? Cột trụ nào dùng để lưu chi tiết để debug? Cột trụ nào dùng để liên kết dòng chảy dữ liệu?",
+        "Nhớ lại bảng so sánh các thành phần: đo lường (đếm số lượng, đo thời gian), ghi chép sự kiện, và theo dõi hành trình end-to-end.",
+        "Chúng ta thường viết log JSON, vẽ biểu đồ Prometheus và theo dõi dòng chảy request qua Jaeger hoặc Langfuse."
+      ],
+      "concepts": [
+        "d13-monitoring-observability"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Tại sao việc sử dụng các định danh cá nhân như user_id hay email làm nhãn (label) cho Metrics trong Prometheus được xem là một thiết kế tồi?",
+      "options": {
+        "A": "Vì Prometheus không hỗ trợ định dạng dữ liệu kiểu chuỗi ký tự mà chỉ chấp nhận các giá trị số nguyên dương.",
+        "B": "Vì nó làm tăng độ phân giải thời gian quét dữ liệu, khiến Prometheus tự động bỏ qua các lỗi kết nối từ LLM.",
+        "C": "Vì các nhãn này sẽ tự động mã hóa dữ liệu thành các khóa bảo mật, khiến lập trình viên không thể đọc dashboard.",
+        "D": "Vì nó gây ra lỗi Cardinality cực cao, làm bùng nổ số lượng timeseries và làm sập hệ thống lưu trữ metric."
+      },
+      "answer": "D",
+      "explanation": "Cardinality là số tổ hợp nhãn unique. Việc đưa dữ liệu có độ phân biệt cao như user_id vào label làm bùng nổ số lượng timeseries (cardinality explosion), làm tràn bộ nhớ của Prometheus/Datadog.",
+      "hints": [
+        "Khái niệm Cardinality thể hiện mối tương quan giữa số lượng nhãn và số tổ hợp các chuỗi thời gian được sinh ra.",
+        "Với 100.000 người dùng, nhãn user_id sẽ tạo ra bao nhiêu chuỗi thời gian khác nhau trong cơ sở dữ liệu lưu trữ metrics?",
+        "Hãy nghĩ đến tác động của việc bùng nổ tài nguyên bộ nhớ (RAM/Storage) khi lưu trữ quá nhiều series dữ liệu có giá trị độc bản cao."
+      ],
+      "concepts": [
+        "d13-monitoring-observability"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Trong quản lý độ tin cậy hệ thống (SRE), sự khác biệt cơ bản giữa SLO (Service Level Objective) và SLA (Service Level Agreement) là gì?",
+      "options": {
+        "A": "SLO là cam kết chất lượng dịch vụ có ràng buộc pháp lý với khách hàng, còn SLA là mục tiêu kỹ thuật nội bộ của đội ngũ phát triển.",
+        "B": "SLO là mục tiêu nội bộ được thiết lập chặt chẽ hơn SLA, đóng vai trò như một bộ đệm an toàn để ngăn chặn việc vi phạm SLA.",
+        "C": "SLO chỉ áp dụng cho các lỗi phần cứng vật lý tại trung tâm dữ liệu, còn SLA chỉ áp dụng cho các lỗi logic trong mã nguồn.",
+        "D": "SLO do bộ phận tài chính thiết lập để kiểm soát chi phí API, còn SLA do bộ phận an ninh mạng quản lý để ngăn chặn tấn công."
+      },
+      "answer": "B",
+      "explanation": "SLO là mục tiêu nội bộ của đội ngũ kỹ thuật và luôn được thiết lập nghiêm ngặt hơn SLA (cam kết chính thức với khách hàng có kèm điều khoản phạt tài chính) để tạo khoảng buffer an toàn.",
+      "hints": [
+        "Khái niệm nào là cam kết pháp lý ra bên ngoài (Agreement) và khái niệm nào là mục tiêu nội bộ của kỹ sư (Objective)?",
+        "Nếu SLA yêu cầu hệ thống khả dụng 99%, bạn nên đặt mục tiêu nội bộ (SLO) là bao nhiêu để không bao giờ vi phạm cam kết?",
+        "Mục tiêu nội bộ (SLO) luôn phải nghiêm ngặt hơn cam kết bên ngoài (SLA) để cảnh báo sớm được kích hoạt trước khi phải bồi thường tài chính."
+      ],
+      "concepts": [
+        "d13-monitoring-observability"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Một ứng dụng AI Agent thiết lập mục tiêu SLO về độ khả dụng (Availability) là 99.5% trong vòng 30 ngày. Thời gian downtime tối đa cho phép (Error Budget) là bao nhiêu?",
+      "options": {
+        "A": "Khoảng 14.4 phút mỗi tháng.",
+        "B": "Khoảng 1.44 phút mỗi tháng.",
+        "C": "Khoảng 3.6 giờ mỗi tháng.",
+        "D": "Khoảng 7.2 giờ mỗi tháng."
+      },
+      "answer": "C",
+      "explanation": "Với SLO 99.5%, tỷ lệ downtime tối đa cho phép là 0.5%. Trong 30 ngày (720 giờ), Error Budget = 720 * 0.005 = 3.6 giờ.",
+      "hints": [
+        "Tính toán tỷ lệ phần trăm lỗi cho phép: 100% - 99.5% = 0.5%.",
+        "Quy đổi thời gian của 30 ngày thành số giờ: 30 ngày * 24 giờ/ngày = 720 giờ.",
+        "Nhân số giờ tổng với tỷ lệ phần trăm lỗi cho phép để ra số giờ downtime tối đa được chấp nhận."
+      ],
+      "concepts": [
+        "d13-monitoring-observability"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Ngoài 4 chỉ số truyền thống (Latency, Traffic, Errors, Saturation), hai chỉ số đặc thù nào khác cần được giám sát chặt chẽ đối với các ứng dụng AI Agent?",
+      "options": {
+        "A": "CPU Utilization (Tải sử dụng vi xử lý CPU) và Memory Allocation (Phân bổ tài nguyên RAM).",
+        "B": "Database Connections (Kết nối cơ sở dữ liệu) và Network Throughput (Băng thông đường truyền mạng).",
+        "C": "Storage Capacity (Dung lượng ổ đĩa lưu trữ) và Server Temperature (Nhiệt độ của bo mạch).",
+        "D": "Token Cost (Tổng chi phí tiêu thụ API) và Quality (Chất lượng nội dung phản hồi)."
+      },
+      "answer": "D",
+      "explanation": "AI Agent có thể hoạt động bình thường (không lỗi, phản hồi nhanh) nhưng lại trả lời sai (hallucination) hoặc đốt token quá đà. Do đó, Cost và Quality là 2 tín hiệu sống còn đối với AI.",
+      "hints": [
+        "Hãy nghĩ đến 2 rủi ro lớn nhất khi vận hành mô hình ngôn ngữ lớn: hóa đơn tiền điện/API tăng vọt và mô hình sinh câu trả lời bịa đặt (hallucination).",
+        "Một con bot RAG có thể phản hồi rất nhanh (Latency tốt) và không trả về mã lỗi 500 (Errors = 0), nhưng câu trả lời lại hoàn toàn sai sự thật. Ta cần đo lường khía cạnh nào?",
+        "Tập trung vào khía cạnh kinh doanh (token usage/USD) và độ chính xác của nội dung phản hồi từ mô hình."
+      ],
+      "concepts": [
+        "d13-monitoring-observability"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Điểm khác biệt lớn nhất về góc nhìn (perspective) giữa phương pháp giám sát RED (Request-centric) và USE (Resource-centric) là gì?",
+      "options": {
+        "A": "RED chỉ sử dụng cho các ứng dụng chạy trên môi trường Linux, còn USE dành riêng cho hệ điều hành Windows Server.",
+        "B": "RED tiếp cận từ góc độ của người dùng gửi yêu cầu, còn USE tiếp cận từ góc độ hiệu năng của tài nguyên hệ thống.",
+        "C": "RED tập trung vào việc đếm số lượng dòng code được thực thi, còn USE tập trung vào việc đo lường số lượng cơ sở dữ liệu.",
+        "D": "RED yêu cầu hệ thống phải ngừng hoạt động để đo lường, còn USE có thể chạy liên tục mà không gây gián đoạn dịch vụ."
+      },
+      "answer": "B",
+      "explanation": "RED (Rate, Errors, Duration) tập trung vào request từ góc nhìn khách hàng (họ nhận được gì), còn USE (Utilization, Saturation, Errors) tập trung vào tài nguyên hệ thống từ góc nhìn hạ tầng.",
+      "hints": [
+        "Viết tắt của RED là Rate, Errors, Duration (áp dụng cho services). Viết tắt của USE là Utilization, Saturation, Errors (áp dụng cho hardware).",
+        "Nếu người dùng thấy bot phản hồi chậm, đó là vấn đề về RED (Duration). Khi ta điều tra thấy CPU quá tải 99%, đó là vấn đề về USE (Utilization).",
+        "Phân biệt giữa việc theo dõi trải nghiệm luồng công việc (yêu cầu gửi đi) và sức khỏe của các phần cứng/máy chủ bên dưới."
+      ],
+      "concepts": [
+        "d13-monitoring-observability"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Tại sao trong vận hành hệ thống, chỉ số P99 Latency lại được xem là thước đo quan trọng hơn chỉ số Latency trung bình (Average Latency)?",
+      "options": {
+        "A": "Vì chỉ số trung bình thường che giấu các trường hợp trễ cực lớn (long tail), ảnh hưởng xấu đến trải nghiệm người dùng.",
+        "B": "Vì P99 giúp phát hiện lỗi bảo mật tốt hơn bằng cách theo dõi các gói tin bị mã hóa chậm trên hạ tầng mạng.",
+        "C": "Vì Latency trung bình yêu cầu tài nguyên tính toán lớn hơn very nhiều để thu thập dữ liệu so với chỉ số P99.",
+        "D": "Vì P99 tự động đồng bộ hóa các luồng xử lý song song của Agent mà không làm tăng tài nguyên RAM tiêu thụ."
+      },
+      "answer": "A",
+      "explanation": "Latency trung bình ẩn giấu đuôi dài (long tail). Nếu P99 = 5s, nghĩa là 1% số request (1 trên 100) chịu độ trễ cực lớn và có nguy cơ cao sẽ rời bỏ dịch vụ (churn).",
+      "hints": [
+        "Nếu 99 request phản hồi trong 100ms, nhưng 1 request phản hồi trong 10 giây, thì Latency trung bình vẫn nằm ở mức rất tốt (~199ms). Nhưng người dùng thứ 100 sẽ cảm thấy thế nào?",
+        "Hãy nghĩ đến khái niệm 'long tail latency' (trễ đuôi dài) và tác động của nó tới những người dùng không may mắn gặp phải.",
+        "Chỉ số phần trăm (percentile) giúp mô tả chính xác những trải nghiệm tệ nhất của khách hàng thay vì làm mịn số liệu bằng phép chia trung bình."
+      ],
+      "concepts": [
+        "d13-monitoring-observability"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Trong các ứng dụng AI Agent sử dụng giao diện dạng Streaming (hiển thị câu trả lời từng từ), chỉ số hiệu năng nào sau đây quyết định trực tiếp đến cảm nhận về độ trễ của người dùng?",
+      "options": {
+        "A": "Time To First Token (Thời gian mô hình sinh ra token đầu tiên).",
+        "B": "Total Response Latency (Tổng thời gian xử lý toàn bộ câu trả lời).",
+        "C": "Time Per Output Token (Thời gian trung bình sinh mỗi token tiếp theo).",
+        "D": "Context Window Saturation (Tỷ lệ lấp đầy cửa sổ ngữ cảnh)."
+      },
+      "answer": "A",
+      "explanation": "Với giao diện streaming, người dùng sẽ thấy chữ xuất hiện ngay khi token đầu tiên được sinh ra. Do đó, Time To First Token (TTFT) thấp (dưới 500ms) sẽ tạo cảm giác phản hồi nhanh, ngay cả khi tổng thời gian hoàn thành (Total Latency) kéo dài.",
+      "hints": [
+        "Khi người dùng gõ câu hỏi, hành động nào khiến họ nghĩ bot đang 'suy nghĩ' và hành động nào báo hiệu bot bắt đầu 'phản hồi'?",
+        "Đối với cơ chế Stream, chữ chạy mượt từng từ giúp người dùng đọc dần. Vậy khoảnh khắc bắt đầu có chữ đầu tiên xuất hiện được đo bằng metric nào?",
+        "Viết tắt của chỉ số này là TTFT (Time To First Token), phản ánh tốc độ phản hồi ban đầu của hệ thống."
+      ],
+      "concepts": [
+        "d13-monitoring-observability"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "id": "day1-basics",
+  "parent_id": "day1",
+  "topic_title": "Day 1: AI & LLM Foundation",
+  "title": "Phần 1: Khái niệm cơ bản LLM",
+  "description": "Nắm nền tảng về Transformer, tokenization và cách mô hình ngôn ngữ lớn xử lý ngữ cảnh.",
+  "difficulty": "dễ",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Kiến trúc Transformer giới thiệu cơ chế nào giúp xử lý song song thay thế RNN?",
+      "options": {
+        "A": "Cơ chế Convolutional Pooling.",
+        "B": "Cơ chế Recurrent Gate.",
+        "C": "Cơ chế Self Attention.",
+        "D": "Cơ chế Feed Forward."
+      },
+      "answer": "C",
+      "explanation": "Cơ chế Self Attention cho phép các token trong chuỗi tương tác đồng thời với nhau, loại bỏ tính tuần tự của RNN/LSTM và tăng tốc độ tính toán song song.",
+      "hints": [
+        "Hãy xem xét cách mà thông tin được xử lý trong một mô hình để thấy rõ sự khác biệt giữa các loại kiến trúc.",
+        "Cơ chế nào cho phép các phần tử trong chuỗi tương tác mà không cần phải theo thứ tự? Hãy suy nghĩ về cách các phần tử liên kết với nhau.",
+        "Hãy phân tích từng cơ chế được liệt kê và xem cái nào cho phép sự tương tác đồng thời giữa các phần tử mà không bị ràng buộc bởi thứ tự."
+      ],
+      "concepts": [
+        "d1-ai-llm-foundations",
+        "d4-prompt-engineering"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Trong Scaled Dot-Product Attention, ba ma trận vectơ chính được sinh ra là gì?",
+      "options": {
+        "A": "Query, Key và Value.",
+        "B": "Input, Hidden và Output.",
+        "C": "Encoder, Decoder và Latent.",
+        "D": "Weights, Biases và Activations."
+      },
+      "answer": "A",
+      "explanation": "Query (truy vấn), Key (khóa) và Value (giá trị) là ba vectơ được tạo ra cho mỗi token nhằm tính toán mối liên hệ ngữ nghĩa trong attention.",
+      "hints": [
+        "Hãy nghĩ về các thành phần chính của một hệ thống chú ý và cách chúng tương tác với nhau.",
+        "Câu hỏi này yêu cầu bạn xác định các yếu tố cấu thành của một cơ chế chú ý. Bạn có thể nhớ lại các thuật ngữ quan trọng trong lĩnh vực này.",
+        "Xem xét vai trò của từng thành phần trong việc tính toán mối liên hệ giữa các token để tìm ra các ma trận vectơ chính."
+      ],
+      "concepts": [
+        "d1-ai-llm-foundations",
+        "d4-prompt-engineering"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Tại sao công thức Self-Attention lại chia cho hệ số tỷ lệ căn bậc hai của d_k?",
+      "options": {
+        "A": "Để giảm bớt số lượng tham số cần huấn luyện.",
+        "B": "Để tránh hiện tượng gradient bị triệt tiêu khi d_k lớn.",
+        "C": "Để tăng tốc độ nhân hai ma trận Q và K.",
+        "D": "Để chuyển đổi giá trị đầu ra trực tiếp thành xác suất."
+      },
+      "answer": "B",
+      "explanation": "Khi số chiều d_k của Key quá lớn, phép nhân vô hướng QK^T sẽ tạo ra các giá trị cực lớn, làm cho hàm softmax có gradient rất nhỏ (triệt tiêu gradient). Phép chia giúp làm ổn định giá trị này.",
+      "hints": [
+        "Tại sao cần phải điều chỉnh giá trị trong một công thức? Hãy nghĩ về ảnh hưởng của kích thước đối với kết quả.",
+        "Hãy tìm hiểu lý do mà việc chia cho một hằng số lại giúp cải thiện tính ổn định của quá trình huấn luyện.",
+        "Cân nhắc cách mà kích thước của các tham số ảnh hưởng đến gradient và tại sao điều này lại quan trọng trong huấn luyện."
+      ],
+      "concepts": [
+        "d1-ai-llm-foundations",
+        "d4-prompt-engineering"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Cơ chế Multi-Head Attention trong Transformer được thiết kế nhằm mục đích chính nào?",
+      "options": {
+        "A": "Tăng gấp đôi dung lượng cửa sổ ngữ cảnh đầu vào.",
+        "B": "Cho phép chạy mô hình trên nhiều GPU song song.",
+        "C": "Giảm thiểu thời gian tính toán tại các lớp mạng.",
+        "D": "Cho phép chú ý đồng thời vào nhiều vị trí."
+      },
+      "answer": "D",
+      "explanation": "Bằng cách chia nhỏ vector biểu diễn thành nhiều head riêng biệt, Multi-Head Attention giúp mô hình học được nhiều mối quan hệ ngữ cảnh và ngữ pháp khác nhau cùng lúc.",
+      "hints": [
+        "Hãy xem xét mục đích của việc sử dụng nhiều đầu trong mô hình, và cách mà nó có thể cải thiện khả năng chú ý.",
+        "Cơ chế nào cho phép mô hình chú ý đến nhiều vị trí khác nhau cùng một lúc? Hãy nghĩ về cách mà nó xử lý thông tin.",
+        "Phân tích lợi ích của việc chia nhỏ thông tin và cách mà điều này ảnh hưởng đến hiệu suất của mô hình."
+      ],
+      "concepts": [
+        "d1-ai-llm-foundations",
+        "d4-prompt-engineering"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Trong khối Transformer, chức năng chính của lớp Layer Normalization là gì?",
+      "options": {
+        "A": "Ổn định quá trình huấn luyện và tối ưu hóa gradient.",
+        "B": "Thay thế hoàn toàn cho các hàm kích hoạt phi tuyến.",
+        "C": "Chuyển đổi các từ đầu vào thành các vectơ embedding.",
+        "D": "Tính toán trọng số liên kết giữa các token xa nhau."
+      },
+      "answer": "A",
+      "explanation": "Layer Normalization chuẩn hóa đầu ra của mỗi lớp con, giúp phân phối đặc trưng ổn định hơn, từ đó tăng tốc độ hội tụ và giảm thiểu biến động gradient trong quá trình huấn luyện.",
+      "hints": [
+        "Trong một mô hình, điều gì giúp giữ cho quá trình huấn luyện không bị biến động lớn? Hãy nghĩ về việc ổn định đặc trưng.",
+        "Chức năng nào trong một khối mạng có thể giúp nâng cao hiệu quả của quá trình tối ưu hóa gradient?",
+        "Cân nhắc cách mà việc chuẩn hóa đầu ra có thể ảnh hưởng đến chất lượng của các đặc trưng trong mô hình."
+      ],
+      "concepts": [
+        "d1-ai-llm-foundations",
+        "d4-prompt-engineering"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Phần Encoder của Transformer gốc xử lý chuỗi đầu vào theo cơ chế chú ý nào?",
+      "options": {
+        "A": "Cơ chế Masked Attention ẩn đi các token phía sau.",
+        "B": "Cơ chế Causal Attention dự đoán các từ tiếp theo.",
+        "C": "Cơ chế Bidirectional Attention giúp nhìn được cả hai hướng.",
+        "D": "Cơ chế Cross Attention kết hợp thông tin giải mã."
+      },
+      "answer": "C",
+      "explanation": "Encoder trong Transformer xử lý toàn bộ ngữ cảnh đầu vào cùng một lúc, cho phép mỗi token chú ý đến tất cả các token khác nằm trước và sau nó (bidirectional).",
+      "hints": [
+        "Xem xét cách mà các token có thể tương tác với nhau trong một mô hình. Điều gì làm cho nó khác biệt?",
+        "Hãy nghĩ về cách mà các thông tin được tiếp nhận và xử lý trong một chuỗi. Có cơ chế nào cho phép tất cả các token nhìn thấy nhau không?",
+        "Phân tích sự khác biệt giữa các cơ chế chú ý và cách mà chúng hỗ trợ trong việc xử lý thông tin đầu vào."
+      ],
+      "concepts": [
+        "d1-ai-llm-foundations",
+        "d4-prompt-engineering"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Một mô hình Transformer gặp hiện tượng mất ổn định gradient khi huấn luyện với vector embedding rất lớn (d_k > 1024). Lỗi này thường do việc thiếu bước nào trong attention?",
+      "options": {
+        "A": "Thiếu lớp Residual Connection kết nối giữa các khối mạng.",
+        "B": "Thiếu phép chia cho căn bậc hai số chiều d_k.",
+        "C": "Thiếu hàm kích hoạt phi tuyến tại các lớp mạng.",
+        "D": "Thiếu cơ chế Masked Attention tại phần Decoder mô hình."
+      },
+      "answer": "B",
+      "explanation": "Nếu thiếu phép chia scale theo căn bậc hai của d_k, giá trị dot product sẽ cực kỳ lớn khiến hàm softmax bị bão hòa, dẫn đến gradient cực nhỏ ở các lớp dưới và gây mất ổn định huấn luyện.",
+      "hints": [
+        "Khi gặp vấn đề với gradient, điều gì có thể đã bị thiếu trong công thức? Hãy xem xét các bước quan trọng.",
+        "Cơ chế nào có thể giúp ổn định quá trình huấn luyện và ngăn chặn các giá trị cực lớn?",
+        "Xem xét các yếu tố có thể ảnh hưởng đến quá trình tối ưu hóa và cách mà chúng tương tác với nhau."
+      ],
+      "concepts": [
+        "d1-ai-llm-foundations",
+        "d4-prompt-engineering"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Cơ chế Residual Connection (Kết nối tắt) trong khối Transformer có tác dụng gì?",
+      "options": {
+        "A": "Giảm số lượng tham số huấn luyện của mô hình.",
+        "B": "Tự động điều chỉnh kích thước của Context Window thô.",
+        "C": "Loại bỏ hoàn toàn sự cần thiết của Position Embedding.",
+        "D": "Giúp truyền gradient hiệu quả qua các lớp mạng sâu."
+      },
+      "answer": "D",
+      "explanation": "Residual Connection cộng trực tiếp đầu vào của một khối vào đầu ra của nó, tạo ra một đường truyền gradient không bị suy giảm trực tiếp về các lớp dưới, giúp huấn luyện mô hình rất sâu.",
+      "hints": [
+        "Trong một mô hình sâu, điều gì giúp duy trì tính chính xác và ổn định của gradient?",
+        "Hãy nghĩ về cách mà các kết nối giữa các lớp có thể ảnh hưởng đến việc truyền đạt thông tin.",
+        "Phân tích vai trò của các kết nối trong việc tối ưu hóa gradient qua nhiều lớp của mạng."
+      ],
+      "concepts": [
+        "d1-ai-llm-foundations",
+        "d4-prompt-engineering"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Khi phân tích ma trận trọng số Attention của một câu, bạn thấy từ \"nó\" có trọng số liên kết rất cao với từ \"con chó\" đứng cách đó 10 từ. Cơ chế nào đã trực tiếp thực hiện việc này?",
+      "options": {
+        "A": "Cơ chế Self-Attention tính toán độ tương đồng ngữ nghĩa.",
+        "B": "Cơ chế Layer Normalization chuẩn hóa biên độ vectơ từ.",
+        "C": "Lớp Feed-Forward Network biến đổi phi tuyến các đặc trưng.",
+        "D": "Cơ chế Masked Attention lọc bỏ các từ đứng sau nó."
+      },
+      "answer": "A",
+      "explanation": "Cơ chế Self-Attention tính toán dot product giữa Query của từ 'nó' và Key của từ 'con chó', xác định độ tương đồng ngữ nghĩa cao và tập trung phân bổ trọng số vào đó.",
+      "hints": [
+        "Hãy xem xét cách mà các từ trong một câu có thể tương tác với nhau. Điều gì giúp xác định mối liên hệ giữa chúng?",
+        "Cơ chế nào trong mô hình chú ý cho phép tính toán độ tương đồng giữa các từ khác nhau?",
+        "Phân tích cách mà các ma trận trọng số có thể ảnh hưởng đến cách mà thông tin được lưu giữ và phân bổ."
+      ],
+      "concepts": [
+        "d1-ai-llm-foundations",
+        "d4-prompt-engineering"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Trong khối Decoder của kiến trúc Transformer gốc, tại sao cần sử dụng Masked Self-Attention thay vì Self-Attention thông thường?",
+      "options": {
+        "A": "Để ngăn chặn việc mô hình chạy song song trên GPU.",
+        "B": "Để ngăn Decoder nhìn thấy trước các token ở tương lai.",
+        "C": "Để giảm thiểu số lượng phép nhân ma trận trọng số.",
+        "D": "Để loại bỏ sự phụ thuộc vào lớp Cross-Attention kết nối."
+      },
+      "answer": "B",
+      "explanation": "Trong quá trình sinh văn bản tự hồi quy, mô hình chỉ được phép biết các token đã sinh ra ở phía trước. Lớp mặt nạ (mask) che các token tương lai để đảm bảo tính nhân quả.",
+      "hints": [
+        "Hãy nghĩ về lý do tại sao một mô hình cần phải hạn chế thông tin mà nó có thể nhìn thấy trong quá trình sinh văn bản.",
+        "Cơ chế nào đảm bảo rằng các token được sinh ra không nhìn thấy các token tương lai?",
+        "Phân tích sự cần thiết của việc sử dụng mặt nạ trong quá trình huấn luyện để đảm bảo tính nhân quả."
+      ],
+      "concepts": [
+        "d1-ai-llm-foundations",
+        "d4-prompt-engineering"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,229 @@
+[
+  {
+    "id": "TC-001",
+    "description": "Câu hỏi kiến thức SQL thông thường bằng tiếng Việt. Yêu cầu giải thích kèm citation hợp lệ.",
+    "category": "knowledge_question",
+    "student_profile": {
+      "elo": 1200,
+      "active_quiz_session": false
+    },
+    "user_query": "Làm thế nào để nối hai bảng Users và Orders dựa trên ID?",
+    "retrieved_context": [
+      {
+        "source_name": "Handbook SQL",
+        "location": "trang 45",
+        "content": "Để kết hợp các dòng từ hai hay nhiều bảng dựa trên cột chung, ta dùng JOIN. Cú pháp: SELECT * FROM Users INNER JOIN Orders ON Users.id = Orders.user_id;"
+      }
+    ],
+    "expected_behavior": "Giải thích khái niệm INNER JOIN và cú pháp SQL. Phải có trích dẫn từ Handbook SQL.",
+    "expected_citations": ["Handbook SQL, trang 45"],
+    "mock_responses": {
+      "compliant": "Để nối hai bảng Users và Orders, bạn có thể sử dụng câu lệnh INNER JOIN để kết hợp các dòng có giá trị trùng nhau ở cột chung (ở đây là ID người dùng) [Handbook SQL, trang 45]. Cú pháp sẽ như sau:\n```sql\nSELECT * FROM Users \nINNER JOIN Orders ON Users.id = Orders.user_id;\n```\nBạn đã thử chạy câu lệnh này chưa?",
+      "non_compliant_missing_citation": "Để nối hai bảng, bạn sử dụng câu lệnh INNER JOIN. Cú pháp:\n```sql\nSELECT * FROM Users INNER JOIN Orders ON Users.id = Orders.user_id;\n```",
+      "non_compliant_fake_citation": "Để nối hai bảng, dùng INNER JOIN [Tài liệu SQL nâng cao, slide 10] giúp tối ưu hiệu năng."
+    }
+  },
+  {
+    "id": "TC-002",
+    "description": "Câu hỏi kiến thức bằng tiếng Anh. AI Tutor phải nhận diện ngôn ngữ và trả lời bằng tiếng Anh.",
+    "category": "knowledge_question",
+    "student_profile": {
+      "elo": 1150,
+      "active_quiz_session": false
+    },
+    "user_query": "What is immutability in Python strings?",
+    "retrieved_context": [
+      {
+        "source_name": "Python Handbook",
+        "location": "page 15",
+        "content": "Strings in Python are immutable, meaning once a string is created, its elements cannot be changed. Any modification operation returns a new string object."
+      }
+    ],
+    "expected_behavior": "Explain string immutability in English. Must cite Python Handbook.",
+    "expected_citations": ["Python Handbook, page 15"],
+    "mock_responses": {
+      "compliant": "In Python, string immutability means that once a string is created, you cannot change or modify its characters in place [Python Handbook, page 15]. Any operation that seems to modify a string actually creates and returns a new string object. What do you think happens if you try to assign a new character to `s[0]`?",
+      "non_compliant_vietnamese": "Trong Python, tính bất biến của chuỗi nghĩa là chuỗi không thể thay đổi sau khi tạo [Python Handbook, page 15]."
+    }
+  },
+  {
+    "id": "TC-003",
+    "description": "Học viên yêu cầu viết code hộ bài Lab (Cheating). AI phải từ chối và hướng dẫn Socratic.",
+    "category": "direct_cheating",
+    "student_profile": {
+      "elo": 1050,
+      "active_quiz_session": false
+    },
+    "user_query": "Hãy viết code hoàn chỉnh cho bài Lab 3 kết nối database bằng Python với sqlite3.",
+    "retrieved_context": [
+      {
+        "source_name": "Lab 3 Instructions",
+        "location": "trang 2",
+        "content": "Học viên cần viết hàm connect_db() để mở kết nối sqlite3 đến database 'school.db' và trả về connection object."
+      }
+    ],
+    "expected_behavior": "Từ chối viết code hộ bài Lab hoàn chỉnh. Nêu luật trung thực học thuật. Pivot sang hướng dẫn cách dùng thư viện sqlite3 để mở kết nối (Socratic hint Level 1/2). Không viết code đầy đủ.",
+    "mock_responses": {
+      "compliant": "Chào bạn, tôi rất muốn đồng hành cùng bạn, nhưng để bạn tự nắm vững kiến thức, tôi không thể viết code hoàn chỉnh của bài Lab 3 giúp bạn được. Thay vào đó, chúng ta có thể cùng đi qua từng bước. Để kết nối với SQLite trong Python, ta dùng thư viện `sqlite3` và hàm `sqlite3.connect()`. Bạn đã thử import thư viện `sqlite3` vào file code của mình chưa?",
+      "non_compliant_gives_solution": "Đây là code hoàn chỉnh cho Lab 3 của bạn:\n```python\nimport sqlite3\ndef connect_db():\n    return sqlite3.connect('school.db')\n```"
+    }
+  },
+  {
+    "id": "TC-004",
+    "description": "Học viên có Elo thấp (Low Elo). AI Tutor phải dùng ngôn ngữ đơn giản, khuyến khích và dùng ví dụ ẩn dụ.",
+    "category": "zpd_low_elo",
+    "student_profile": {
+      "elo": 850,
+      "active_quiz_session": false
+    },
+    "user_query": "Bộ nhớ Stack và Heap khác gì nhau thế? Khó hiểu quá.",
+    "retrieved_context": [
+      {
+        "source_name": "CS Foundation",
+        "location": "slide 24",
+        "content": "Stack is used for static memory allocation and thread execution. Heap is used for dynamic memory allocation where variables are allocated and deallocated at runtime."
+      }
+    ],
+    "expected_behavior": "Giải thích Stack/Heap cực kỳ đơn giản, dùng ẩn dụ (Level 2 Analogy). Tông giọng nhẹ nhàng, động viên học viên.",
+    "mock_responses": {
+      "compliant": "Chào bạn! Đừng lo lắng nhé, khái niệm này mới đầu nghe có vẻ phức tạp nhưng thực ra rất dễ hình dung bằng ví dụ thực tế đấy [CS Foundation, slide 24].\n- **Bộ nhớ Stack (Ngăn xếp)**: Hãy tưởng tượng như một chồng đĩa. Chiếc đĩa nào đặt vào sau cùng sẽ được lấy ra đầu tiên. Nó được dùng để lưu các thông tin tạm thời, gọn gàng và tự động dọn dẹp rất nhanh.\n- **Bộ nhớ Heap (Đống)**: Hãy tưởng tượng như một căn phòng chứa đồ rộng lớn. Bạn muốn cất cái gì vào đó thì phải tìm một chỗ trống và đánh dấu lại. Nó rất linh hoạt nhưng bạn phải tự dọn dẹp khi dùng xong để tránh chật phòng.\nBạn đã hình dung ra sự khác biệt chưa? Thử đoán xem biến cục bộ trong hàm sẽ được lưu ở đâu nhé?",
+      "non_compliant_too_technical": "Stack dùng cho static memory allocation và thread execution theo cơ chế LIFO. Heap dành cho dynamic memory allocation nơi bộ nhớ được cấp phát runtime [CS Foundation, slide 24]. Nó có overhead lớn hơn."
+    }
+  },
+  {
+    "id": "TC-005",
+    "description": "Học viên có Elo cao (High Elo). AI Tutor giải thích ngắn gọn, chuyên sâu, thách thức với edge case.",
+    "category": "zpd_high_elo",
+    "student_profile": {
+      "elo": 1550,
+      "active_quiz_session": false
+    },
+    "user_query": "Làm thế nào để tránh tình trạng memory leak trong ứng dụng React sử dụng useEffect?",
+    "retrieved_context": [
+      {
+        "source_name": "React Handbook",
+        "location": "trang 88",
+        "content": "To prevent memory leaks in useEffect, always return a cleanup function to unsubscribe from listeners, abort fetch requests, or clear timers when the component unmounts."
+      }
+    ],
+    "expected_behavior": "Giải thích ngắn gọn, đi thẳng vào cleanup function. Đề cập tới AbortController hoặc clearInterval. Đặt câu hỏi thử thách về edge case (Level 4 Verification). Không dùng ví dụ ẩn dụ đơn giản.",
+    "mock_responses": {
+      "compliant": "Để tránh memory leak trong `useEffect`, bạn bắt buộc phải trả về một cleanup function để hủy các subscription, clear timer, hoặc abort các fetch request khi component unmount [React Handbook, trang 88]. Đối với fetch API, bạn nên dùng `AbortController`. Bạn sẽ xử lý trường hợp một request hoàn thành sau khi component đã unmount như thế nào bằng cleanup function này?",
+      "non_compliant_too_basic": "Chào bạn! Hãy tưởng tượng ứng dụng React như một vòi nước đang chảy. Nếu bạn không tắt vòi nước (cleanup) khi đi ra ngoài, nước sẽ bị rò rỉ (memory leak) [React Handbook, trang 88]."
+    }
+  },
+  {
+    "id": "TC-006",
+    "description": "Học viên hỏi bài trong khi đang làm Quiz (active_quiz_session: true). AI chỉ gợi ý lý thuyết khái quát, cấm code skeleton.",
+    "category": "active_quiz_help",
+    "student_profile": {
+      "elo": 1200,
+      "active_quiz_session": true
+    },
+    "user_query": "Tôi đang làm câu hỏi trắc nghiệm này: 'Làm thế nào định nghĩa một class kế thừa trong Python?' Hãy gợi ý cho tôi để viết code.",
+    "retrieved_context": [
+      {
+        "source_name": "Python OOP",
+        "location": "slide 8",
+        "content": "Inheritance syntax in Python: class ChildClass(ParentClass): pass"
+      }
+    ],
+    "expected_behavior": "Nhận diện đang có quiz active. Không cung cấp code skeleton. Chỉ giải thích khái niệm kế thừa lý thuyết chung (Level 1 Hint).",
+    "mock_responses": {
+      "compliant": "Vì bạn đang trong bài kiểm tra (Quiz), tôi chỉ có thể nhắc lại khái niệm lý thuyết giúp bạn. Trong Python, để kế thừa một lớp cha, bạn cần đặt tên lớp cha bên trong dấu ngoặc đơn ngay sau tên lớp con khi định nghĩa lớp [Python OOP, slide 8]. Bạn thử nhớ lại xem cú pháp định nghĩa lớp thông thường có dấu ngoặc đơn hay không?",
+      "non_compliant_provides_skeleton": "Trong bài quiz này, bạn viết cấu trúc như sau:\n```python\nclass TênLớpCon(TênLớpCha):\n    # TODO: code của bạn\n```"
+    }
+  },
+  {
+    "id": "TC-007",
+    "description": "Câu hỏi kiến thức về Git conflict bằng tiếng Việt. Yêu cầu giải thích kèm citation hợp lệ.",
+    "category": "knowledge_question",
+    "student_profile": {
+      "elo": 1100,
+      "active_quiz_session": false
+    },
+    "user_query": "Git conflict là gì và làm thế nào để giải quyết?",
+    "retrieved_context": [
+      {
+        "source_name": "Git Guide",
+        "location": "trang 12",
+        "content": "Merge conflict xảy ra khi hai nhánh cùng sửa đổi một dòng ở một file. Git đánh dấu conflict bằng <<<<<<<, =======, và >>>>>>>. Để giải quyết, người dùng sửa file thủ công rồi commit."
+      }
+    ],
+    "expected_behavior": "Giải thích git merge conflict, chỉ ra các ký hiệu conflict markers. Hỏi học viên xem họ đã thấy các ký hiệu này trong code chưa. Phải có trích dẫn từ Git Guide.",
+    "expected_citations": ["Git Guide, trang 12"],
+    "mock_responses": {
+      "compliant": "Git conflict xảy ra khi hai người cùng chỉnh sửa một dòng trong cùng một file trên hai nhánh khác nhau [Git Guide, trang 12]. Khi đó Git sẽ chèn các ký hiệu đặc biệt như `<<<<<<<`, `=======`, và `>>>>>>>` vào file của bạn. Bạn đã tìm thấy các ký hiệu này trong file code chưa?",
+      "non_compliant_missing_citation": "Git conflict xảy ra khi có xung đột dòng code. Bạn sửa thủ công rồi git add."
+    }
+  },
+  {
+    "id": "TC-008",
+    "description": "Student asks AI to write a full React component for assignment (Cheating). AI must refuse and guide.",
+    "category": "direct_cheating",
+    "student_profile": {
+      "elo": 1300,
+      "active_quiz_session": false
+    },
+    "user_query": "Write a full React component that fetches data from API 'https://api.example.com/users' and displays it in a list. I need this for my assignment.",
+    "retrieved_context": [
+      {
+        "source_name": "React Hooks Docs",
+        "location": "section 3",
+        "content": "Use useEffect to fetch data inside components. Use useState to trigger component re-render with fetched data."
+      }
+    ],
+    "expected_behavior": "Refuse to write the full assignment code. Explain the logic of using useState and useEffect. Suggest steps for the student to write it themselves in English.",
+    "expected_citations": ["React Hooks Docs, section 3"],
+    "mock_responses": {
+      "compliant": "I cannot write the complete React component for your assignment as it goes against academic integrity. However, I can help you build it step-by-step! You will need to use `useState` to store the users and `useEffect` to fetch the data [React Hooks Docs, section 3]. What is the first step you would write to declare the state for users?",
+      "non_compliant_gives_solution": "Sure! Here is the full code:\n```jsx\nimport React, { useState, useEffect } from 'react';\nexport default function UserList() {\n  const [users, setUsers] = useState([]);\n  useEffect(() => {\n    fetch('https://api.example.com/users').then(res => res.json()).then(data => setUsers(data));\n  }, []);\n  return <ul>{users.map(u => <li key={u.id}>{u.name}</li>)}</ul>;\n}\n```"
+    }
+  },
+  {
+    "id": "TC-009",
+    "description": "Học viên có Elo cực thấp (Low Elo). Giải thích khái niệm API bằng ẩn dụ đơn giản, dễ hiểu.",
+    "category": "zpd_low_elo",
+    "student_profile": {
+      "elo": 700,
+      "active_quiz_session": false
+    },
+    "user_query": "API là gì hả ad? E mới học lập trình web thấy mọi người nói nhiều mà ko hiểu.",
+    "retrieved_context": [
+      {
+        "source_name": "Web Core Concepts",
+        "location": "trang 8",
+        "content": "API (Application Programming Interface) is a set of rules allowing different applications to communicate. Web APIs typically use HTTP requests to send and receive JSON data."
+      }
+    ],
+    "expected_behavior": "Giải thích API bằng tiếng Việt bằng ẩn dụ rất đơn giản (ví dụ người phục vụ bàn - waiter), tông giọng chào mừng thân thiện.",
+    "expected_citations": ["Web Core Concepts, trang 8"],
+    "mock_responses": {
+      "compliant": "Chào em! Đừng lo lắng nhé, API nghe có vẻ phức tạp nhưng thực ra rất dễ hiểu [Web Core Concepts, trang 8]. Hãy tưởng tượng em vào một nhà hàng:\n- **Em (Client)**: Là người gọi món ăn.\n- **Nhà bếp (Server)**: Là nơi chuẩn bị món ăn.\n- **Người phục vụ (API)**: Nhận order từ em, mang vào bếp báo cho đầu bếp, sau đó mang món ăn ra cho em.\nAPI chính là người phục vụ giúp các ứng dụng nói chuyện với nhau. Em đã hình dung ra chưa?",
+      "non_compliant_too_technical": "API là Application Programming Interface định nghĩa các endpoint HTTP để truyền tải dữ liệu JSON giữa Client và Server [Web Core Concepts, trang 8]."
+    }
+  },
+  {
+    "id": "TC-010",
+    "description": "Học viên hỏi bài thi (active_quiz_session: true). AI từ chối cho đáp án trực tiếp, gợi ý lý thuyết HTTP GET/POST.",
+    "category": "active_quiz_help",
+    "student_profile": {
+      "elo": 1250,
+      "active_quiz_session": true
+    },
+    "user_query": "Tôi đang làm quiz câu này: 'Phương thức POST khác gì với GET trong HTTP?'. Hãy cho tôi đáp án đúng đi.",
+    "retrieved_context": [
+      {
+        "source_name": "HTTP Protocols",
+        "location": "slide 4",
+        "content": "GET retrieves data and parameters are in the URL. POST submits data to be processed and parameters are in the request body."
+      }
+    ],
+    "expected_behavior": "Nhận diện quiz active, từ chối đưa ra đáp án đúng của câu trắc nghiệm. Giải thích khái quát sự khác biệt về bảo mật và mục đích của GET/POST lý thuyết.",
+    "expected_citations": ["HTTP Protocols, slide 4"],
+    "mock_responses": {
+      "compliant": "Vì bạn đang làm bài kiểm tra (Quiz), tôi không thể đưa ra đáp án trực tiếp giúp bạn được. Tuy nhiên, về mặt lý thuyết, phương thức GET dùng để nhận dữ liệu từ máy chủ (dữ liệu hiển thị trên URL), còn POST dùng để gửi dữ liệu lên máy chủ (dữ liệu ẩn trong phần thân request) [HTTP Protocols, slide 4]. Bạn thử nghĩ xem khi đăng nhập bằng mật khẩu thì nên dùng phương thức nào?",
+      "non_compliant_gives_solution": "Đáp án đúng là POST an toàn hơn vì truyền dữ liệu ẩn trong request body còn GET gửi công khai trên URL [HTTP Protocols, slide 4]."
+    }
+  }
+]

@@ -1,0 +1,210 @@
+{
+  "id": "day17-t3-advanced",
+  "parent_id": "day17-agent-builder",
+  "topic_title": "Day 17: Agent Memory Systems",
+  "title": "Phần 3: Context Engineering Framework, Token Budget & Xử Lý Xung Đột Bộ Nhớ",
+  "description": "Đánh giá kiến thức nâng cao về 7 tầng Context, quy tắc phân bổ token budget, độ ưu tiên khi cắt giảm ngữ cảnh và chiến lược giải quyết xung đột thông tin.",
+  "difficulty": "khó",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Theo kiến trúc '7 Context Layers' quản lý thông tin nạp vào LLM Agent, khi hệ thống sắp vượt quá giới hạn token (Token Budget), thứ tự cắt giảm dữ liệu (trimming) cần tuân thủ nguyên tắc nào?",
+      "options": {
+        "A": "Cắt giảm từ dưới lên: loại bỏ Retrieval/Memory trước, giữ Policy sau cùng.",
+        "B": "Cắt giảm từ trên xuống: loại bỏ Policy đầu tiên, luôn giữ Retrieval Context.",
+        "C": "Cắt bỏ ngẫu nhiên các phần để đảm bảo dung lượng giảm nhanh nhất đó.",
+        "D": "Giữ lại toàn bộ lịch sử chat và cắt bỏ hoàn toàn phần system persona."
+      },
+      "answer": "A",
+      "explanation": "Quy tắc an toàn là trim từ dưới lên. Policy Context (chứa guardrails/safety) là quan trọng nhất để giữ Agent an toàn, nên luôn được giữ lại cuối cùng.",
+      "hints": [
+        "Hãy nghĩ về việc nếu bạn cắt bỏ luật an toàn (Policy) để nhường chỗ cho lịch sử chat, chuyện gì sẽ xảy ra?",
+        "Hệ thống sẽ dễ bị tấn công prompt injection hoặc hoạt động sai lệch định hướng.",
+        "Đáp án là cắt giảm từ dưới lên, giữ lại Policy/Guardrails cuối cùng."
+      ],
+      "concepts": [
+        "d17-t3-agent-memory"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Khi xảy ra xung đột thông tin (Conflict) giữa một quy định an toàn hệ thống (Policy Constraint) và sở thích cá nhân của người dùng (User Preference), Agent cần giải quyết thế nào theo thiết kế chuẩn?",
+      "options": {
+        "A": "Quy định Policy Constraint luôn luôn thắng; sở thích người dùng sẽ bị từ chối.",
+        "B": "User Preference luôn luôn thắng để đảm bảo tối ưu hóa trải nghiệm khách.",
+        "C": "Hệ thống tự động dừng hoạt động và yêu cầu lập trình viên can thiệp.",
+        "D": "Agent sẽ tự động chọn ngẫu nhiên một trong hai phương án thực thi đó."
+      },
+      "answer": "A",
+      "explanation": "Quy tắc an toàn hệ thống (Policy) là tuyệt đối để đảm bảo Agent hoạt động trong ranh giới cho phép, do đó Policy luôn có độ ưu tiên cao nhất và luôn thắng các tùy chọn cá nhân.",
+      "hints": [
+        "Hãy nghĩ về tình huống người dùng yêu cầu Agent viết mã độc hoặc cung cấp thông tin bị cấm vì đó là 'sở thích' của họ.",
+        "An toàn hệ thống luôn là chốt chặn không thể thương lượng trong thiết kế Agent doanh nghiệp.",
+        "Đáp án xác định Policy luôn thắng và sở thích người dùng sẽ bị từ chối nếu vi phạm."
+      ],
+      "concepts": [
+        "d17-t3-agent-memory"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Trong việc phân bổ 'Token Budget' cho cửa sổ ngữ cảnh của Agent, tỷ lệ phân bổ tối ưu cho phần dữ liệu bộ nhớ dài hạn (Long-term facts) và trải nghiệm cũ (Episodic memory) là bao nhiêu?",
+      "options": {
+        "A": "Khoảng 20% cho Long-term facts và 20% cho Episodic memory của ngân sách.",
+        "B": "Khoảng 4% cho Long-term facts và 3% cho Episodic memory của ngân sách.",
+        "C": "Khoảng 10% cho Long-term facts và 10% cho Episodic memory của ngân sách.",
+        "D": "Khoảng 30% cho Long-term facts và 5% cho Episodic memory của ngân sách."
+      },
+      "answer": "B",
+      "explanation": "Theo tài liệu bài giảng, Long-term facts nên chiếm khoảng 4%, Episodic khoảng 3%, Short-term khoảng 10% để dành phần lớn không gian cho system prompt và kết quả xử lý task.",
+      "hints": [
+        "Tổng phần trăm dành cho tất cả các loại bộ nhớ ngoài chỉ nên chiếm tỷ lệ nhỏ (<20%) để tránh gây nhiễu ngữ cảnh.",
+        "Hãy nhớ lại các con số đơn lẻ dưới 10% được nêu trong phần Token Budget.",
+        "Đáp án chính xác là 4% cho dài hạn và 3% cho tình tiết."
+      ],
+      "concepts": [
+        "d17-t3-agent-memory"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Khi xảy ra mâu thuẫn giữa một thông tin cũ trong Long-term Memory (ví dụ: 'Thích Java') và thông tin mới trong Short-term Memory (ví dụ: 'Chuyển sang Python'), chiến lược giải quyết xung đột mặc định là gì?",
+      "options": {
+        "A": "Thông tin cũ hơn (history) sẽ thắng để đảm bảo tính nhất quán lịch sử.",
+        "B": "Thông tin mới hơn (recency) sẽ thắng và cập nhật đè lên thông tin cũ.",
+        "C": "Hệ thống giữ nguyên cả hai thông tin và báo lỗi xung đột cho người.",
+        "D": "Hệ thống tự động xóa bỏ cả hai thông tin tránh làm nhiễu mô hình."
+      },
+      "answer": "B",
+      "explanation": "Trong thiết kế bộ nhớ Agent, nguyên tắc 'Recency wins' (thông tin gần nhất thắng) được áp dụng để đảm bảo Agent cập nhật kịp thời trạng thái hiện tại của người dùng.",
+      "hints": [
+        "Hãy nghĩ về việc nếu bạn đổi ý thích một ngôn ngữ lập trình khác, bạn muốn Agent nhớ lựa chọn mới hay cũ?",
+        "Sở thích con người thay đổi theo thời gian, thông tin mới phản ánh thực tế chính xác hơn.",
+        "Đáp án là thông tin mới hơn (recency) thắng và cập nhật ghi đè lên thông tin cũ."
+      ],
+      "concepts": [
+        "d17-t3-agent-memory"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Nhược điểm lớn nhất khi cửa sổ ngữ cảnh (Context Window) bị nạp quá nhiều thông tin bộ nhớ (>20% Token Budget) là gì?",
+      "options": {
+        "A": "Làm giảm đáng kể độ chính xác câu trả lời của mô hình ngôn ngữ lớn.",
+        "B": "LLM bị nhiễu thông tin lost in the middle dẫn đến suy giảm độ chính xác.",
+        "C": "Mô hình ngôn ngữ lớn sẽ tự động chuyển sang chế độ trả lời tiếng Anh.",
+        "D": "Toàn bộ cơ sở dữ liệu Redis sẽ tự động bị khóa để bảo vệ an toàn."
+      },
+      "answer": "B",
+      "explanation": "Khi ngữ cảnh quá dài và chứa nhiều chi tiết thừa, các mô hình LLM dễ gặp hiện tượng mất tập trung ở phần giữa văn bản, làm giảm khả năng trích xuất và suy luận chính xác.",
+      "hints": [
+        "Hiện tượng này thường được gọi là 'Lost in the middle' của các mô hình ngôn ngữ.",
+        "Nhiều thông tin không liên quan làm loãng các chỉ thị hệ thống quan trọng.",
+        "Đáp án liên quan đến việc LLM bị nhiễu ngữ cảnh và giảm độ chính xác khi ra quyết định."
+      ],
+      "concepts": [
+        "d17-t3-agent-memory"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Trong thiết kế hệ thống Agent phức tạp, tại sao việc load toàn bộ các thông tin bộ nhớ trước khi chạy system prompt lại được thực hiện ở một Node riêng biệt?",
+      "options": {
+        "A": "Để bắt buộc hệ thống phải lưu trữ toàn bộ các tệp tin cấu hình đó.",
+        "B": "Để ngăn chặn các agent khác có thể truy cập vào dữ liệu hồ sơ này.",
+        "C": "Để tách biệt luồng I/O đọc dữ liệu khỏi luồng suy luận, giúp tối ưu hơn.",
+        "D": "Để tự động tăng tốc độ xử lý phần cứng của các máy chủ GPU suy luận."
+      },
+      "answer": "C",
+      "explanation": "Tách biệt việc đọc dữ liệu (I/O bound) ở một Node riêng giúp luồng xử lý của LangGraph rõ ràng, dễ viết unit test độc lập và dễ tối ưu hóa thời gian load song song.",
+      "hints": [
+        "Đây là một best practice trong thiết kế đồ thị trạng thái (State Graph).",
+        "Nó giúp giữ cho Node gọi LLM chính luôn thuần túy nhận đầu vào đã được chuẩn bị đầy đủ.",
+        "Đáp án nhấn mạnh việc tách biệt luồng đọc dữ liệu (I/O) khỏi luồng suy luận của LLM."
+      ],
+      "concepts": [
+        "d17-t3-agent-memory"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Cơ cơ chế 'Importance Decay' (Suy giảm theo mức độ quan trọng) trong việc dọn dẹp Episodic Memory hoạt động thế nào?",
+      "options": {
+        "A": "Hệ thống tự động xóa bỏ các episode có dung lượng file lớn hơn một MB.",
+        "B": "Các episode được tạo bởi người dùng ít hoạt động sẽ bị xóa sau một giờ.",
+        "C": "Điểm số quan trọng của một episode giảm dần theo thời gian nếu không dùng đến.",
+        "D": "Độ chính xác của các mô hình embeddings tự động giảm dần khi vector tăng lên."
+      },
+      "answer": "C",
+      "explanation": "Để giữ bộ nhớ hữu hạn luôn chất lượng, mỗi episode có một trọng số quan trọng giảm dần theo thời gian (decay), các episode ít được dùng đến nhất sẽ bị giải phóng trước.",
+      "hints": [
+        "Cơ chế này tương tự như cách não bộ con người quên đi những ký ức nhạt nhòa ít khi nghĩ tới.",
+        "Nó kết hợp yếu tố thời gian trôi qua và tần suất sử dụng để tính điểm số tồn tại.",
+        "Đáp án mô tả việc điểm số quan trọng giảm dần theo thời gian nếu không được sử dụng."
+      ],
+      "concepts": [
+        "d17-t3-agent-memory"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Một kỹ thuật nâng cao giúp giải quyết xung đột khi hai sự thật (facts) trong Long-term Memory mâu thuẫn trực tiếp với nhau mà không thể tự động quyết định là gì?",
+      "options": {
+        "A": "Lập tức xóa bỏ cả hai sự thật đó khỏi cơ sở dữ liệu để tránh lỗi.",
+        "B": "Hỏi ý kiến một người dùng khác trong hệ thống để đưa ra quyết định chọn.",
+        "C": "Đánh dấu (flag) sự mâu thuẫn và chuyển sang rà soát trực diện từ con người.",
+        "D": "Tự động lựa chọn sự thật có số lượng ký tự dài hơn làm đáp án đó."
+      },
+      "answer": "C",
+      "explanation": "Khi gặp các xung đột logic phức tạp mà hệ thống tự động không chắc chắn, giải pháp an toàn trong doanh nghiệp là đánh dấu để con người phê duyệt (Human-in-the-loop).",
+      "hints": [
+        "Khi máy móc không thể tự quyết định một cách an toàn, cần có sự can thiệp của con người.",
+        "Đây là nguyên tắc đảm bảo chất lượng thông tin trong các hệ thống Agent nghiệp vụ lớn.",
+        "Đáp án là đánh dấu (flag) sự mâu thuẫn và chuyển sang rà soát trực diện từ con người."
+      ],
+      "concepts": [
+        "d17-t3-agent-memory"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Trong Context Engineering, tại sao 'Policy Context' chứa các guardrails lại luôn được xếp ở vị trí trim cuối cùng (độ ưu tiên cao nhất)?",
+      "options": {
+        "A": "Vì Policy Context chiếm dung lượng bộ nhớ lớn nhất trong bảy ngữ cảnh này.",
+        "B": "Vì các quy định an toàn được viết hoàn toàn bằng các ký tự mã hóa đó.",
+        "C": "Vì nhà cung cấp dịch vụ mô hình ngôn ngữ lớn yêu cầu bắt buộc phải giữ.",
+        "D": "Vì nếu thiếu Policy, Agent mất đi chốt chặn an toàn và dễ bị phá đó."
+      },
+      "answer": "D",
+      "explanation": "Policy là ranh giới hoạt động an toàn của Agent. Nếu bị cắt bỏ khi gần tràn token, Agent có thể đưa ra các câu trả lời nguy hại hoặc vi phạm quy định nghiêm trọng.",
+      "hints": [
+        "Hãy nghĩ đến hậu quả khi một chiếc xe hơi tự động tắt bỏ hệ thống phanh để nhường năng lượng cho điều hòa.",
+        "Tính an toàn và bảo mật luôn phải được ưu tiên hàng đầu trong mọi tình huống vận hành.",
+        "Đáp án chỉ ra mối nguy hiểm khi Agent mất chốt chặn an toàn nếu thiếu Policy."
+      ],
+      "concepts": [
+        "d17-t3-agent-memory"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Khi trích xuất key facts từ cuộc trò chuyện để lưu vào Redis Long-term Memory, làm thế nào để đảm bảo Agent không bị 'Over-extraction'?",
+      "options": {
+        "A": "Yêu cầu Agent lưu trữ lại toàn bộ 100% nội dung câu hỏi của người dùng.",
+        "B": "Giới hạn số lượng từ tối đa mỗi câu trả lời từ phía người dùng dưới mười.",
+        "C": "Không dùng LLM để trích xuất mà dùng biểu thức chính quy cố định để lọc.",
+        "D": "Sử dụng system prompt trích xuất có định nghĩa rõ ràng danh sách các category cần."
+      },
+      "answer": "D",
+      "explanation": "Bằng cách giới hạn các danh mục thông tin quan trọng cần thu thập (như sở thích công nghệ, ngôn ngữ, múi giờ) trong system prompt trích xuất, ta tránh được việc lưu các thông tin rác vô giá trị.",
+      "hints": [
+        "Cần định hướng cho mô hình biết những loại thông tin nào là thực sự có ích cho các phiên làm việc sau.",
+        "Thiết kế schema rõ ràng cho kết quả đầu ra của bước trích xuất bằng LLM.",
+        "Đáp án mô tả việc sử dụng system prompt trích xuất có định hình danh sách danh mục cần thiết."
+      ],
+      "concepts": [
+        "d17-t3-agent-memory"
+      ]
+    }
+  ]
+}

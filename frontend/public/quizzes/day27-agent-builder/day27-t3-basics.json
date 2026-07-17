@@ -1,0 +1,210 @@
+{
+  "id": "day27-t3-basics",
+  "parent_id": "day27-agent-builder",
+  "topic_title": "Day 27: Human-in-the-Loop UX",
+  "title": "Phần 1: Nguy Cơ Full Autonomy & Phân Loại 6 Interaction Patterns",
+  "description": "Đánh giá kiến thức cơ bản về rủi ro khi để Agent tự quyết hoàn toàn, mô hình Bounded Autonomy và 6 mẫu tương tác người-máy (HITL Taxonomy).",
+  "difficulty": "dễ",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Tại sao việc cho phép AI Agent vận hành ở chế độ Full Autonomy (tự chủ hoàn toàn) lại mang lại rủi ro cao trong môi trường production?",
+      "options": {
+        "A": "Vì Agent sẽ làm giảm tốc độ xử lý của CPU máy chủ.",
+        "B": "Vì các hành động có tác động vật lý không thể đảo ngược.",
+        "C": "Vì Agent không thể tự động gọi các API bên thứ ba.",
+        "D": "Vì người dùng không muốn trả tiền bản quyền cho mô hình."
+      },
+      "answer": "B",
+      "explanation": "Các hành động phá hủy hoặc có tác động vật lý ra bên ngoài (như xóa database, gửi email, push code lên production) là không thể thu hồi (irreversible), do đó cần human-in-the-loop.",
+      "hints": [
+        "Hãy nghĩ đến hậu quả của việc Agent tự ý gửi email sai cho khách hàng hoặc xóa nhầm dữ liệu.",
+        "Những hành động này có dễ dàng khôi phục lại trạng thái cũ?",
+        "Rủi ro lớn nhất là các hành động có tác động bên ngoài (side effects) không thể đảo ngược."
+      ],
+      "concepts": [
+        "d27-t3-hitl-ux"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Mô hình tương tác 'Bounded Autonomy' (tự chủ trong ranh giới) định nghĩa cách hoạt động của AI Agent như thế nào?",
+      "options": {
+        "A": "Agent chỉ được chạy trên máy tính cục bộ của người dùng.",
+        "B": "Agent tự ý thực hiện mọi hành động mà không cần lưu log.",
+        "C": "Agent tự quyết trong ranh giới và hỏi khi vượt ranh giới.",
+        "D": "Agent bắt buộc phải hỏi người dùng trước mọi bước suy luận."
+      },
+      "answer": "C",
+      "explanation": "Bounded Autonomy cho phép Agent tự động thực hiện các hành động nằm trong ranh giới an toàn đã định (ví dụ: đọc/tìm kiếm), nhưng bắt buộc phải xin phép người dùng khi thực hiện các hành động nguy hiểm hoặc vượt ngưỡng.",
+      "hints": [
+        "Đây là sự cân bằng giữa tốc độ tự trị và tính an toàn kiểm soát.",
+        "Agent có cần hỏi ý kiến người dùng khi chỉ thực hiện tác vụ đọc dữ liệu?",
+        "Agent tự động hóa các tác vụ an toàn và chỉ dừng lại để yêu cầu phê duyệt cho các hành động nằm ngoài ranh giới."
+      ],
+      "concepts": [
+        "d27-t3-hitl-ux"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Khi AI Agent dừng lại để hỏi người dùng 'Bạn muốn xuất báo cáo cho Quý 1 hay Quý 2?', Agent đang áp dụng mẫu tương tác nào trong HITL Taxonomy?",
+      "options": {
+        "A": "Mẫu tương tác Approval để phê duyệt hành động vật lý.",
+        "B": "Mẫu tương tác Structured Elicitation để điền biểu mẫu.",
+        "C": "Mẫu tương tác Escalation để chuyển quyền xử lý cấp cao.",
+        "D": "Mẫu tương tác Clarification để làm rõ thông tin mơ hồ."
+      },
+      "answer": "D",
+      "explanation": "Mẫu tương tác Clarification được sử dụng khi yêu cầu của người dùng bị mơ hồ (ambiguous input) và Agent cần làm rõ ý định trước khi tiếp tục thực hiện.",
+      "hints": [
+        "Yêu cầu ban đầu thiếu thông tin cụ thể về mốc thời gian.",
+        "Agent đang yêu cầu người dùng chọn một trong hai lựa chọn rõ ràng.",
+        "Đây là hành động làm rõ ý định, tương đương mẫu Clarification."
+      ],
+      "concepts": [
+        "d27-t3-hitl-ux"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Trong ma trận Autonomy Spectrum, vị trí 'Sweet Spot' (điểm cân bằng tối ưu) thường được lựa chọn dựa trên yếu tố cốt lõi nào?",
+      "options": {
+        "A": "Mức độ rủi ro tên miền và độ trưởng thành của Agent.",
+        "B": "Số lượng dòng code của các tệp tin cấu hình LangGraph.",
+        "C": "Dung lượng RAM tối đa của máy chủ chạy LLM model.",
+        "D": "Tổng số lượng API key mà startup đang sở hữu hiện tại."
+      },
+      "answer": "A",
+      "explanation": "Vị trí tối ưu trên Autonomy Spectrum phụ thuộc vào mức độ rủi ro của lĩnh vực (domain risk) và độ trưởng thành của Agent (agent maturity) để đảm bảo an toàn mà không làm phiền người dùng.",
+      "hints": [
+        "Nếu rủi ro rất cao (y tế, tài chính), ta cần kiểm soát chặt chẽ hay tự động hoàn toàn?",
+        "Độ tin cậy của Agent tăng lên theo thời gian thì ta có thể nới lỏng kiểm soát không?",
+        "Sweet spot là sự cân bằng giữa mức độ rủi ro (risk) và độ trưởng thành/tin cậy của hệ thống AI."
+      ],
+      "concepts": [
+        "d27-t3-hitl-ux"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Mẫu tương tác 'Structured Elicitation' trong HITL Taxonomy thường được kích hoạt trong trường hợp nào?",
+      "options": {
+        "A": "Khi Agent phát hiện lỗi cú pháp trong mã nguồn Python.",
+        "B": "Khi thiếu các trường thông tin bắt buộc để chạy một tool.",
+        "C": "Khi mô hình ngôn ngữ lớn bị sập hoàn toàn ở runtime.",
+        "D": "Khi người dùng muốn thay đổi hoàn toàn prompt hệ thống."
+      },
+      "answer": "B",
+      "explanation": "Structured Elicitation xảy ra khi Agent cần chạy một công cụ nhưng thiếu các tham số bắt buộc (missing mandatory fields), do đó yêu cầu người dùng điền thông tin qua biểu mẫu hoặc cấu hình.",
+      "hints": [
+        "Hãy nghĩ về việc điền một form thông tin trước khi thực thi.",
+        "Agent cần tham số cụ thể như môi trường deploy, email người nhận.",
+        "Đây là mẫu tương tác Structured Elicitation để thu thập thông tin có cấu trúc thiếu hụt."
+      ],
+      "concepts": [
+        "d27-t3-hitl-ux"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Ví dụ nào sau đây thể hiện đúng mẫu tương tác 'Review Checkpoint' của AI Agent trong quy trình làm việc?",
+      "options": {
+        "A": "Agent tự động xóa toàn bộ bảng dữ liệu trên máy chủ SQL.",
+        "B": "Agent yêu cầu người dùng nhập API key để kết nối server.",
+        "C": "Agent trình bản thảo email để người dùng xem trước khi gửi.",
+        "D": "Agent tự động gửi tin nhắn báo lỗi đến kênh Slack nội bộ."
+      },
+      "answer": "C",
+      "explanation": "Review Checkpoint cho phép con người kiểm tra và đánh giá chất lượng sản phẩm đầu ra (artifact) do Agent tạo ra trước khi nó được phân phối hoặc áp dụng chính thức.",
+      "hints": [
+        "Hành động này giống như việc biên tập viên duyệt bài viết của cộng tác viên.",
+        "Sản phẩm đầu ra (như email draft, code PR) được giữ lại để con người xem xét.",
+        "Đó chính là việc trình bản thảo email để người dùng xem trước khi gửi đi."
+      ],
+      "concepts": [
+        "d27-t3-hitl-ux"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Tại sao các hành động dạng 'Read-only' (chỉ đọc) thường được gán mức tự trị cao (auto) trong các hệ thống Agent hiện đại?",
+      "options": {
+        "A": "Vì chúng không sử dụng đến tài nguyên tính toán của mô hình.",
+        "B": "Vì chúng không thể bị can thiệp bởi mã độc prompt injection.",
+        "C": "Vì chúng không cần kết nối với máy chủ cơ sở dữ liệu.",
+        "D": "Vì chúng không tạo ra các tác động phá hủy hoặc thay đổi state."
+      },
+      "answer": "D",
+      "explanation": "Các hành động chỉ đọc (như tìm kiếm thông tin, đọc tài liệu) là an toàn vì chúng không làm thay đổi trạng thái hệ thống (stateless) và dễ dàng audit mà không gây thiệt hại.",
+      "hints": [
+        "Đọc dữ liệu có làm mất mát dữ liệu hoặc thay đổi cấu hình hệ thống không?",
+        "Nếu Agent đọc sai thông tin, hậu quả có nghiêm trọng bằng việc Agent xóa dữ liệu?",
+        "Vì các hành động này không tạo ra side effects có hại hay thay đổi trạng thái vĩnh viễn."
+      ],
+      "concepts": [
+        "d27-t3-hitl-ux"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Trong quy trình duyệt chi của công ty, nguyên tắc nào quyết định mức độ kiểm soát và phê duyệt đối với các quyết định của Agent?",
+      "options": {
+        "A": "Chi phí hoặc hậu quả của sai lầm từ hành động.",
+        "B": "Tốc độ xử lý trung bình của mô hình ngôn ngữ lớn.",
+        "C": "Số lượng tham số của mô hình học sâu đang sử dụng.",
+        "D": "Thời gian lập trình viên viết xong code cho Agent."
+      },
+      "answer": "A",
+      "explanation": "Mức độ kiểm soát (strictness) được quyết định bởi chi phí sai lầm (cost of failure) - hành động rủi ro cao hoặc chi phí lớn cần nhiều cấp duyệt, hành động rủi ro thấp có thể auto-approve.",
+      "hints": [
+        "Hãy nghĩ đến sự so sánh giữa việc Agent chi 5 triệu đồng và chi 50 triệu đồng.",
+        "Quyết định nào có thể gây thiệt hại lớn hơn cho doanh nghiệp nếu xảy ra lỗi?",
+        "Nguyên tắc là chi phí sai lầm hoặc hậu quả của quyết định sẽ định hình mức kiểm soát."
+      ],
+      "concepts": [
+        "d27-t3-hitl-ux"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Mẫu tương tác 'Edit / Correction' trong HITL Taxonomy mang lại khả năng đặc biệt nào cho người dùng?",
+      "options": {
+        "A": "Cho phép người dùng viết lại hoàn toàn kiến trúc LangGraph.",
+        "B": "Cho phép chỉnh sửa các tham số của tool trước khi thực thi.",
+        "C": "Tự động sửa đổi cấu trúc bảng cơ sở dữ liệu trên production.",
+        "D": "Ngăn chặn Agent thực hiện bất kỳ hành động nào trong tương lai."
+      },
+      "answer": "B",
+      "explanation": "Edit / Correction cho phép người dùng can thiệp trực tiếp vào các tham số (arguments) của công cụ do Agent đề xuất để tinh chỉnh trước khi nhấn nút chạy thực tế.",
+      "hints": [
+        "Người dùng nhìn thấy Agent chuẩn bị chạy lệnh SQL với điều kiện WHERE sai.",
+        "Thay vì từ chối chạy và bắt Agent làm lại, người dùng có thể làm gì?",
+        "Người dùng có thể sửa đổi trực tiếp các tham số của công cụ đó trước khi thực thi."
+      ],
+      "concepts": [
+        "d27-t3-hitl-ux"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Mẫu tương tác 'Escalation' trong HITL Taxonomy được thiết kế nhằm mục đích gì?",
+      "options": {
+        "A": "Để mô hình tự động nâng cấp kích thước cửa sổ ngữ cảnh.",
+        "B": "Để tự động chuyển giao tác vụ cho một Agent khác mạnh hơn.",
+        "C": "Để chuyển quyết định vượt thẩm quyền lên cấp quản lý cao hơn.",
+        "D": "Để ngăn chặn toàn bộ các tương tác từ người dùng bình thường."
+      },
+      "answer": "C",
+      "explanation": "Escalation được kích hoạt khi Agent gặp các tình huống vượt quá thẩm quyền chính sách của nó (như pháp lý, giao dịch tài chính lớn, vi phạm bảo mật) và cần escalate lên người có thẩm quyền cao hơn giải quyết.",
+      "hints": [
+        "Tương tự như nhân viên chăm sóc khách hàng chuyển cuộc gọi cho giám đốc khi gặp ca khó.",
+        "Hành động này giải quyết các vấn đề vượt quá giới hạn chính sách an toàn của Agent.",
+        "Mục đích là chuyển quyết định vượt thẩm quyền lên con người hoặc cấp quản lý cao hơn."
+      ],
+      "concepts": [
+        "d27-t3-hitl-ux"
+      ]
+    }
+  ]
+}

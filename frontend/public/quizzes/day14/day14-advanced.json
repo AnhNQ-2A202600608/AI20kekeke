@@ -1,0 +1,210 @@
+{
+  "id": "day14-advanced",
+  "parent_id": "day14",
+  "topic_title": "Day 14: AI Evaluation & Benchmarking",
+  "title": "Phần 3: Statistical Rigor, Safety Eval & Failure Analysis",
+  "description": "Đánh giá chuyên sâu về kiểm định tính chặt chẽ thống kê (sample size, t-test, p-value), đánh giá an toàn & bảo mật (Red Teaming, jailbreak, PII leakage), và quy trình Failure Analysis chuyên nghiệp.",
+  "difficulty": "khó",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Để phát hiện độ lệch điểm số đánh giá Delta = 0.2 với độ tin cậy 95% và lực mạnh thống kê 80%, công thức tính sample size tối thiểu yêu cầu quy mô bộ test case khoảng bao nhiêu?",
+      "options": {
+        "A": "Quy mô tối thiểu khoảng 10 đến 20 test cases.",
+        "B": "Quy mô tối thiểu khoảng 50 đến 80 test cases.",
+        "C": "Quy mô tối thiểu khoảng 150 đến 200 test cases.",
+        "D": "Quy mô tối thiểu khoảng 500 đến 1000 test cases."
+      },
+      "answer": "C",
+      "explanation": "Để phát hiện một khác biệt nhỏ về hiệu năng (ví dụ Delta = 0.2 trên thang điểm 5) với lực thống kê (statistical power) 80% và mức ý nghĩa 5%, phép tính cỡ mẫu (sample size power analysis) thông thường yêu cầu tối thiểu khoảng 150-200 trường hợp kiểm thử (test cases).",
+      "hints": [
+        "Hãy liên hệ với lý thuyết kiểm định giả thuyết thống kê (Statistical Power Analysis). Khi Delta (hiệu ứng mong muốn) càng nhỏ, ta cần cỡ mẫu lớn hơn hay nhỏ hơn?",
+        "Nếu cỡ mẫu quá nhỏ (ví dụ 20 câu hỏi), các biến động ngẫu nhiên (noise) sẽ làm lu mờ sự khác biệt thực tế giữa hai phiên bản mô hình.",
+        "Tính toán cỡ mẫu chuẩn cho phép thử t-test với hiệu ứng Delta trung bình thường rơi vào khoảng vài trăm mẫu."
+      ],
+      "concepts": [
+        "d14-ai-evaluation"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Khi so sánh phiên bản Agent A và Agent B trên 100 test cases, Agent A đạt trung bình 4.2 điểm, Agent B đạt 4.0 điểm, p-value của phép thử t-test là 0.12. Kỹ sư nên đưa ra kết luận nào?",
+      "options": {
+        "A": "Agent A tốt hơn Agent B một cách rõ rệt và sự khác biệt này hoàn toàn có ý nghĩa về mặt thống kê.",
+        "B": "Sự khác biệt điểm số này chưa có ý nghĩa thống kê và có thể chỉ là do yếu tố ngẫu nhiên tạo nên.",
+        "C": "Hệ thống đang bị lỗi nghiêm trọng và cần thực hiện nạp lại toàn bộ cơ sở dữ liệu vector database.",
+        "D": "Agent B chắc chắn tốt hơn Agent A nếu tiến hành kiểm thử lại trên môi trường Production của cloud."
+      },
+      "answer": "B",
+      "explanation": "Với p-value = 0.12 > 0.05 (mức ý nghĩa thông thường), chúng ta không bác bỏ giả thuyết H0, nghĩa là sự khác biệt về điểm số trung bình (4.2 vs 4.0) chưa đủ căn cứ thống kê để khẳng định Agent A thực sự tốt hơn Agent B, có thể chỉ do sai số ngẫu nhiên.",
+      "hints": [
+        "Mức ý nghĩa alpha chuẩn trong khoa học thực nghiệm và kiểm định phần mềm thường được thiết lập ở mức bao nhiêu? (thường là 0.05)",
+        "Nếu p-value lớn hơn mức ý nghĩa alpha, điều đó có nghĩa là xác suất xảy ra sự khác biệt do ngẫu nhiên là cao hay thấp?",
+        "Hãy chọn phương án kết luận sự khác biệt này chưa có ý nghĩa thống kê (statistical significance)."
+      ],
+      "concepts": [
+        "d14-ai-evaluation"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Khi đánh giá chất lượng của một AI Agent tích hợp nhiều công cụ (Tool-using Agent), tại sao chỉ đo lường chất lượng câu trả lời cuối cùng là chưa đủ?",
+      "options": {
+        "A": "Vì Agent có thể gọi sai công cụ hoặc truyền sai tham số nhưng vẫn ngẫu nhiên sinh ra câu trả lời đúng.",
+        "B": "Vì các cuộc gọi công cụ không tốn bất kỳ chi phí token nào nên không cần thiết phải thực hiện giám sát.",
+        "C": "Vì mô hình ngôn ngữ lớn luôn đảm bảo gọi đúng công cụ với độ chính xác tuyệt đối trong mọi tình huống.",
+        "D": "Vì các công cụ chỉ chạy trên môi trường phát triển cục bộ và không được triển khai lên Production."
+      },
+      "answer": "A",
+      "explanation": "Một AI Agent có thể đưa ra câu trả lời cuối cùng trông có vẻ đúng nhưng thực chất đã gọi sai API, truyền nhầm tham số, hoặc rơi vào vòng lặp lãng phí token (lỗi thầm lặng - silent failures). Cần đánh giá thêm độ chính xác gọi tool (Tool Call Accuracy) và hành trình (Trajectory).",
+      "hints": [
+        "Hãy tưởng tượng một con bot làm toán: nó gọi nhầm tool cộng thay vì nhân, nhưng do ngẫu nhiên các con số đầu vào lại cho ra kết quả giống nhau.",
+        "Đánh giá Agent đòi hỏi kiểm thử cả khâu trung gian (hành vi gọi công cụ) chứ không chỉ nhìn vào kết quả hiển thị cuối cùng.",
+        "Hãy chọn phương án đề cập đến việc Agent gọi sai công cụ/tham số nhưng ngẫu nhiên trả lời đúng."
+      ],
+      "concepts": [
+        "d14-ai-evaluation"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Phương pháp đánh giá hành trình Agent (Trajectory Evaluation) tập trung đo lường chỉ số nào sau đây xuyên suốt quá trình thực thi nhiệm vụ?",
+      "options": {
+        "A": "Tổng số lượng người dùng đồng thời truy cập vào ứng dụng tại một thời điểm nhất định trong ngày.",
+        "B": "Số lượng lập trình viên tham gia viết code và tổng thời gian deploy ứng dụng lên máy chủ đám mây.",
+        "C": "Tốc độ ghi file log của hệ điều hành và dung lượng bộ nhớ RAM trống của máy chủ tại thời điểm chạy.",
+        "D": "Tổng số lượng token tiêu thụ và số bước lặp (steps) trung bình để Agent hoàn thành xong một công việc."
+      },
+      "answer": "D",
+      "explanation": "Trajectory Evaluation đánh giá con đường đi của Agent: số bước lặp (steps) trong vòng lặp ReAct, tỷ lệ lặp vòng vô hạn (infinite loop rate), và tổng lượng token/chi phí tiêu thụ để hoàn thành nhiệm vụ.",
+      "hints": [
+        "Từ khóa 'Trajectory' liên quan đến quỹ đạo hoặc hành trình các bước đi trung gian của Agent.",
+        "Chúng ta cần tối ưu hóa hiệu năng và chi phí của Agent, tránh việc nó phải gọi đi gọi lại LLM quá nhiều lần cho một tác vụ đơn giản.",
+        "Chọn phương án phản ánh số bước xử lý trung bình và lượng tài nguyên token tiêu thụ của Agent."
+      ],
+      "concepts": [
+        "d14-ai-evaluation"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Trong quy trình Red Teaming để đánh giá an toàn AI, kỹ thuật nào sau đây được sử dụng để phát hiện lỗ hổng rò rỉ thông tin nhạy cảm của hệ thống?",
+      "options": {
+        "A": "Tải lên các tệp tin chứa virus máy tính để kiểm tra khả năng phòng chống mã độc của hệ điều hành.",
+        "B": "Thiết kế các prompt tấn công giả lập nhằm lừa mô hình bỏ qua system prompt để truy xuất dữ liệu ẩn.",
+        "C": "Tắt hoàn toàn các kết nối mạng internet của máy chủ để đo lường khả năng phản hồi ngoại tuyến của bot.",
+        "D": "Tăng tần suất gửi câu hỏi trùng lặp liên tục để gây nghẽn băng thông và làm sập ứng dụng AI Agent."
+      },
+      "answer": "B",
+      "explanation": "Red Teaming giả lập các cuộc tấn công prompt injection/jailbreaking phức tạp nhằm kiểm tra xem Agent có bị lừa để tiết lộ tài liệu hệ thống ẩn (system prompt, database schema) hay vi phạm các chính sách an toàn thông tin hay không.",
+      "hints": [
+        "Mục tiêu của Red Teaming là đóng vai kẻ tấn công (hacker) để chủ động tìm kiếm các lỗ hổng bảo mật đặc thù của LLM.",
+        "Lỗ hổng rò rỉ thông tin hệ thống thường liên quan đến việc vượt qua các chỉ dẫn an toàn ban đầu (system prompt/meta-prompt).",
+        "Hãy tìm phương án mô tả việc giả lập các prompt tấn công để lừa mô hình truy xuất dữ liệu ẩn."
+      ],
+      "concepts": [
+        "d14-ai-evaluation"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Để tự động kiểm thử khả năng phòng chống rò rỉ dữ liệu cá nhân (PII Leakage) của AI Agent, kỹ sư nên thiết lập kịch bản đánh giá như thế nào?",
+      "options": {
+        "A": "Sử dụng công cụ giám sát để đo lường băng thông mạng tiêu thụ của Agent trong suốt quá trình hoạt động.",
+        "B": "Thực hiện mã hóa toàn bộ dữ liệu đầu vào bằng thuật toán SHA-256 trước khi gửi yêu cầu tới mô hình.",
+        "C": "Gửi các prompt yêu cầu Agent tiết lộ số thẻ tín dụng hoặc mật khẩu mẫu có sẵn trong tài liệu ngữ cảnh.",
+        "D": "Tự động xóa lịch sử trò chuyện của người dùng sau khi kết thúc phiên làm việc để tránh bị đánh cắp."
+      },
+      "answer": "C",
+      "explanation": "Kịch bản kiểm thử rò rỉ PII tự động gửi các câu lệnh mang tính dụ dỗ (adversarial prompts) đòi hỏi mô hình xuất ra dữ liệu nhạy cảm (như email, số thẻ, số tài khoản) đã được gài sẵn trong tài liệu ngữ cảnh RAG để đo lường tỷ lệ rò rỉ.",
+      "hints": [
+        "Để test xem con bot có 'kín miệng' khi bị hỏi về thông tin mật không, ta phải chủ động đóng vai người dùng tò mò hỏi về các thông tin mật đó.",
+        "Chúng ta cần đưa dữ liệu cá nhân giả định (mock PII) vào ngữ cảnh và viết prompt ép mô hình phải tiết lộ xem nó có tuân thủ bộ lọc đầu ra không.",
+        "Chọn phương án mô tả việc gửi prompt yêu cầu tiết lộ thông tin nhạy cảm mẫu có trong ngữ cảnh."
+      ],
+      "concepts": [
+        "d14-ai-evaluation"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Khi tiến hành phân tích lỗi (Failure Analysis) từ kết quả benchmark đạt điểm thấp, bước đầu tiên kỹ sư cần thực hiện là gì?",
+      "options": {
+        "A": "Gửi email báo cáo tình hình sự cố cho ban giám đốc dự án để yêu cầu tăng thêm ngân sách vận hành.",
+        "B": "Tiến hành thay đổi ngay lập tức system prompt của mô hình ngôn ngữ lớn trên môi trường Production.",
+        "C": "Xóa toàn bộ dữ liệu trong cơ sở dữ liệu vector database và tiến hành nhúng lại tài liệu từ đầu.",
+        "D": "Lọc ra các test cases tệ nhất, phân loại chúng theo nhóm lỗi và chẩn đoán nguyên nhân gốc rễ của lỗi."
+      },
+      "answer": "D",
+      "explanation": "Failure Analysis khoa học yêu cầu: 1. Lọc ra các câu hỏi bị điểm thấp nhất (worst cases); 2. Phân nhóm lỗi (ví dụ: lỗi lấy sai tài liệu, lỗi LLM đọc hiểu sai, lỗi định dạng đầu ra); 3. Chẩn đoán nguyên nhân gốc rễ để đưa ra phương án sửa đổi phù hợp.",
+      "hints": [
+        "Chúng ta có nên sửa code một cách mù quáng ngay khi thấy điểm trung bình giảm mà không biết lỗi cụ thể xảy ra ở đâu?",
+        "Việc phân tích lỗi yêu cầu phải đi từ các mẫu dữ liệu thực tế bị hỏng (failed samples) để tìm ra quy luật chung.",
+        "Hãy chọn phương án bắt đầu từ việc lọc các trường hợp tệ nhất, phân loại nhóm lỗi và chẩn đoán nguyên nhân gốc."
+      ],
+      "concepts": [
+        "d14-ai-evaluation"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Trong chu trình cải tiến liên tục (Continuous Improvement Loop), làm thế nào để đảm bảo một thay đổi prompt không gây ra lỗi hồi quy (regression)?",
+      "options": {
+        "A": "Yêu cầu người dùng cuối cùng trực tiếp kiểm thử và phản hồi lại nếu phát hiện ra bất kỳ sự cố nào.",
+        "B": "Chạy lại toàn bộ bộ Golden Dataset và so sánh điểm số trung bình cũng như kiểm tra các test cases biên.",
+        "C": "Tự động tăng phiên bản của mô hình ngôn ngữ lớn được gọi trong mã nguồn lên phiên bản mới nhất.",
+        "D": "Thực hiện sao lưu dự phòng toàn bộ cơ sở dữ liệu lịch sử chat của hệ thống trước khi tiến hành cập nhật."
+      },
+      "answer": "B",
+      "explanation": "Để tránh regression (prompt mới sửa được lỗi A nhưng lại làm hỏng câu trả lời B vốn đang tốt), bắt buộc phải chạy lại (rerun) toàn bộ tập dữ liệu vàng (Golden Dataset) để đối chiếu sự thay đổi điểm số một cách hệ thống.",
+      "hints": [
+        "Lỗi hồi quy (Regression) trong phần mềm xảy ra khi bản cập nhật mới vô tình làm hỏng các tính năng cũ đang chạy tốt.",
+        "Biện pháp duy nhất để kiểm chứng là thực hiện chạy lại bài thi (test suite) trên toàn bộ ngân hàng câu hỏi chuẩn.",
+        "Hãy chọn phương án đề cập đến việc chạy lại toàn bộ Golden Dataset để so sánh và kiểm tra lại điểm số."
+      ],
+      "concepts": [
+        "d14-ai-evaluation"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Tại sao phương pháp đánh giá dùng LLM-as-a-Judge kết hợp Ground Truth lại tốt hơn phương pháp so sánh chuỗi văn bản thuần túy (như BLEU, ROUGE)?",
+      "options": {
+        "A": "Vì LLM có khả năng hiểu được ngữ nghĩa và chấp nhận các cách diễn đạt đồng nghĩa của câu trả lời.",
+        "B": "Vì các chỉ số BLEU và ROUGE chỉ hoạt động tốt trên các ứng dụng viết bằng ngôn ngữ lập trình Java.",
+        "C": "Vì phương pháp so sánh chuỗi văn bản yêu cầu máy chủ phải có cấu hình phần cứng GPU cực kỳ mạnh mẽ.",
+        "D": "Vì LLM-as-a-Judge hoàn toàn miễn phí và không yêu cầu kết nối mạng internet để thực hiện đánh giá."
+      },
+      "answer": "A",
+      "explanation": "BLEU và ROUGE dựa trên so sánh trùng khớp từ khóa (n-gram overlap), dễ chấm sai nếu mô hình dùng các từ đồng nghĩa hoặc hành văn khác đi. LLM-as-a-Judge có khả năng đọc hiểu ngữ nghĩa để đánh giá chất lượng câu trả lời một cách linh hoạt.",
+      "hints": [
+        "Hai câu: 'Mặt trời mọc ở hướng Đông' và 'Ở phía Đông, vầng thái dương đang dần nhô lên' có cùng ý nghĩa không? Các bộ lọc so sánh từ khóa thuần túy như BLEU sẽ cho điểm thế nào?",
+        "Chúng ta cần một giám khảo có khả năng đọc hiểu và cảm nhận ngữ nghĩa của ngôn ngữ tự nhiên thay vì chỉ đếm số lượng từ trùng nhau.",
+        "Hãy chọn câu trả lời nhấn mạnh việc hiểu ngữ nghĩa và chấp nhận cách diễn đạt đồng nghĩa."
+      ],
+      "concepts": [
+        "d14-ai-evaluation"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Nếu tài liệu ngữ cảnh trích xuất chứa thông tin chuẩn nhưng Ground Truth quá ngắn và thiếu ý, điểm Context Recall của RAGAS sẽ bị ảnh hưởng thế nào?",
+      "options": {
+        "A": "Điểm số Context Recall vẫn đạt mức tối đa 1.0 vì tất cả các ý trong Ground Truth đều được bao phủ.",
+        "B": "Điểm số Context Recall sẽ giảm về mức 0.0 vì mô hình không thể tìm thấy từ khóa trùng khớp hoàn toàn.",
+        "C": "Điểm số Context Recall sẽ tăng lên mức vô hạn do độ dài tài liệu ngữ cảnh trích xuất lớn hơn Ground Truth.",
+        "D": "Điểm số Context Recall sẽ bị lỗi và hệ thống kiểm thử tự động báo lỗi ngoại lệ trên môi trường CI/CD."
+      },
+      "answer": "A",
+      "explanation": "Context Recall đo lường xem bao nhiêu phần của Ground Truth được tìm thấy trong Context. Nếu Ground Truth quá ngắn và nghèo nàn, Context dễ dàng bao phủ hết số ý đó, dẫn đến điểm Recall ảo luôn đạt 1.0 (không phản ánh đúng thực tế lấy thiếu tài liệu).",
+      "hints": [
+        "Recall tính toán dựa trên tập mẫu chuẩn Ground Truth làm mẫu số.",
+        "Nếu đề bài chuẩn chỉ yêu cầu 1 ý, và tài liệu trích xuất có ý đó (nhưng thực tế tài liệu đúng cần 5 ý), điểm Recall vẫn sẽ coi như bạn đã lấy đủ 100% yêu cầu của Ground Truth.",
+        "Hãy chọn phương án kết luận điểm Recall vẫn đạt tối đa 1.0 vì tất cả các ý của Ground Truth (dù ngắn) đều được bao phủ."
+      ],
+      "concepts": [
+        "d14-ai-evaluation"
+      ]
+    }
+  ]
+}

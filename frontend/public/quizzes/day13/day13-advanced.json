@@ -1,0 +1,210 @@
+{
+  "id": "day13-advanced",
+  "parent_id": "day13",
+  "topic_title": "Day 13: Monitoring, Logging & Observability",
+  "title": "Phần 3: Cost Engineering, Drift & Thiết lập Alerting",
+  "description": "Đánh giá chuyên sâu về công thức tính toán và tối ưu hóa chi phí (FinOps for AI), giám sát data/model drift (PSI/KL-divergence), thiết kế dashboard và thiết lập alert rules dựa trên SLO.",
+  "difficulty": "khó",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Một RAG Agent chạy trên Claude 3.5 Sonnet với các thông số: 9.800 tokens input tĩnh (có cache hit), 200 tokens input động (cache miss) và 500 tokens output. Biết giá API là: Input=$3/M tokens, Output=$15/M, Cache Read=$0.30/M. Chi pháp cho request này là bao nhiêu?",
+      "options": {
+        "A": "Chi phí khoảng $0.0345.",
+        "B": "Chi phí khoảng $0.0450.",
+        "C": "Chi phí khoảng $0.0110.",
+        "D": "Chi phí khoảng $0.0820."
+      },
+      "answer": "C",
+      "explanation": "Chi phí gồm: Cache read cost = (9800/1M) * 0.3 = $0.00294; Input miss cost = (200/1M) * 3 = $0.0006; Output cost = (500/1M) * 15 = $0.0075. Tổng = 0.00294 + 0.0006 + 0.0075 = $0.01104.",
+      "hints": [
+        "Công thức tính chi phí: Cost = (Tokens_in_cache / 1.000.000) * Price_cache + (Tokens_in_miss / 1.000.000) * Price_input + (Tokens_out / 1.000.000) * Price_output.",
+        "Hãy tính riêng rẽ 3 thành phần: chi phí đọc từ bộ nhớ đệm (prompt cache read), chi phí token đầu vào chưa được lưu đệm, và chi phí sinh từ đầu ra (output).",
+        "Chú ý đơn vị tính giá là trên mỗi 1 triệu (M) tokens. 9.800 tokens tương đương 0.0098 triệu tokens."
+      ],
+      "concepts": [
+        "d13-monitoring-observability"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Để tối ưu hóa chi phí cho một hệ thống AI hỗ trợ khách hàng quy mô lớn, kỹ sư tích hợp mẫu thiết kế Cascade Model Routing và Semantic Cache theo thứ tự nào là hợp lý nhất?",
+      "options": {
+        "A": "Chạy Cascade Routing trước để chọn model phù hợp, sau đó nếu model trả về lỗi thì mới gửi yêu cầu tới Semantic Cache.",
+        "B": "Truy vấn Semantic Cache trước để tìm câu trả lời tương tự có sẵn, nếu miss mới chuyển yêu cầu qua bộ phân loại Cascade Routing.",
+        "C": "Gửi đồng thời tới cả Semantic Cache và Cascade Routing, sau đó sử dụng thuật toán bỏ phiếu để chọn ra kết quả tốt nhất.",
+        "D": "Tắt hoàn toàn tính năng Semantic Cache và chỉ chạy Cascade Routing trên các mô hình ngôn ngữ lớn nguồn mở tự host."
+      },
+      "answer": "B",
+      "explanation": "Semantic Cache kiểm tra xem câu hỏi tương tự đã có câu trả lời chưa (độ chính xác > 95% similarity). Nếu trúng (hit), trả về ngay lập tức với chi phí cực thấp (gần như bằng 0). Chỉ khi trượt (miss), request mới được gửi tới bộ phân loại (Classifier/Cascade Routing) để chọn mô hình (nhẹ hoặc nặng) xử lý tiếp.",
+      "hints": [
+        "Thao tác nào có chi phí thấp nhất và tốc độ phản hồi nhanh nhất (không cần gọi LLM)? Thao tác nào bắt buộc phải chạy mô hình phân loại?",
+        "Chúng ta nên tận dụng lại những câu trả lời đã có sẵn trong cơ sở dữ liệu lịch sử trước khi quyết định gọi bất kỳ mô hình ngôn ngữ nào.",
+        "Semantic Cache đóng vai trò như lớp lọc đầu tiên (L1 cache), tiếp theo mới đến Cascade Routing để phân luồng xử lý giữa các mô hình lớn nhỏ."
+      ],
+      "concepts": [
+        "d13-monitoring-observability"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Để đo lường tỷ lệ ảo giác (Hallucination Rate) của một RAG Agent trong môi trường Production, phương pháp tính toán chỉ số Groundedness/Faithfulness được thực hiện như thế nào?",
+      "options": {
+        "A": "So sánh từng khẳng định trong câu trả lời của Agent với thông tin được cung cấp trong tài liệu ngữ cảnh trích xuất.",
+        "B": "Đếm tần suất xuất hiện của các từ phủ định hoặc từ mang tính không chắc chắn trong câu trả lời từ mô hình.",
+        "C": "Đo lường tốc độ phản hồi trung bình của mô hình và tính toán số lượng token được sinh ra trên mỗi giây.",
+        "D": "Đếm số lần người dùng bấm nút làm mới hoặc yêu cầu mô hình sinh lại câu trả lời trong một phiên làm việc."
+      },
+      "answer": "A",
+      "explanation": "Groundedness (hay Faithfulness trong RAGAS) đo lường xem các tuyên bố (claims) trong câu trả lời của mô hình có được chứng thực bởi tài liệu ngữ cảnh (retrieved context) hay không. Đây là cách chính thống để phát hiện ảo giác.",
+      "hints": [
+        "Khái niệm 'Groundedness' (tính dựa trên cơ sở) đòi hỏi câu trả lời phải được neo đậu vững chắc vào nguồn thông tin nào?",
+        "Chúng ta cần bóc tách câu trả lời thành từng ý nhỏ (statements) và kiểm chứng xem mỗi ý đó có thể suy ra được từ văn bản đã truy xuất (contexts) hay không.",
+        "Hãy tìm phương án có sự đối chiếu trực tiếp giữa nội dung sinh ra và nguồn dữ liệu đầu vào làm căn cứ."
+      ],
+      "concepts": [
+        "d13-monitoring-observability"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Phương pháp Self-consistency để phát hiện ảo giác hoạt động bằng cách gọi LLM 3 lần với tham số temperature = 0.7. Kỹ thuật này nên được áp dụng ở Production như thế nào để cân bằng giữa chi phí và hiệu quả?",
+      "options": {
+        "A": "Chạy Self-consistency cho 100% tất cả các yêu cầu của người dùng để đảm bảo chất lượng tuyệt đối.",
+        "B": "Chỉ áp dụng kỹ thuật này vào cuối tuần khi chi phí sử dụng API của các nhà cung cấp được giảm giá.",
+        "C": "Tăng temperature lên mức tối đa là 2.0 để mô hình sinh ra các câu trả lời hoàn toàn giống nhau.",
+        "D": "Chỉ áp dụng kỹ thuật này cho một mẫu nhỏ (ví dụ 1%) số request để giám sát xu hướng chất lượng chung."
+      },
+      "answer": "D",
+      "explanation": "Self-consistency nhân chi phí lên gấp 3 lần (3x cost) do gọi LLM 3 lần. Do đó, trên production, người ta chỉ chạy nó trên một tập mẫu nhỏ (ví dụ 1% traffic) để làm thống kê đánh giá hallucination trend, tránh làm bùng nổ chi phí API.",
+      "hints": [
+        "Nếu gọi LLM 3 lần cho mỗi lượt chat của khách hàng, hóa đơn sử dụng API của dự án sẽ tăng lên bao nhiêu lần?",
+        "Chúng ta có cần thiết phải chạy một cơ chế kiểm tra đắt đỏ cho mọi request thời gian thực của người dùng không, hay chỉ cần lấy mẫu đại diện?",
+        "Áp dụng lấy mẫu (sampling) tỷ lệ thấp là phương án thực tế để vừa kiểm soát được xu hướng ảo giác vừa giữ ngân sách ở mức cho phép."
+      ],
+      "concepts": [
+        "d13-monitoring-observability"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Chỉ số Population Stability Index (PSI) được sử dụng để giám sát sự thay đổi phân phối dữ liệu (Data Drift). Khi giá trị PSI đo được lớn hơn 0.25, kỹ sư vận hành nên đưa ra quyết định hành động nào?",
+      "options": {
+        "A": "Giữ nguyên hệ thống vì giá trị PSI này cho thấy dữ liệu đầu vào đang ở trạng thái cực kỳ ổn định.",
+        "B": "Thực hiện hiệu chỉnh lại mô hình (retrain hoặc fine-tune) hoặc tiến hành cập nhật lại phân phối dữ liệu huấn luyện.",
+        "C": "Ngay lập tức tắt toàn bộ máy chủ vật lý và chuyển hướng người dùng sang hệ thống điện thoại truyền thống.",
+        "D": "Xóa toàn bộ dữ liệu vector store và thiết lập lại cấu hình mạng kết nối internet cho ứng dụng."
+      },
+      "answer": "B",
+      "explanation": "PSI < 0.1 cho thấy hệ thống ổn định; PSI từ 0.1 đến 0.25 cho thấy có sự dịch chuyển nhẹ; PSI > 0.25 cho thấy dữ liệu đầu vào đã drift nghiêm trọng, cần cập nhật mô hình hoặc tập dữ liệu để duy trì hiệu năng.",
+      "hints": [
+        "Ngưỡng PSI được quy ước: < 0.1 là ổn định, 0.1 - 0.25 là có dịch chuyển nhẹ, và > 0.25 là dịch chuyển lớn.",
+        "Khi phân phối dữ liệu thực tế đã thay đổi đáng kể so với dữ liệu huấn luyện ban đầu, mô hình sẽ bị giảm hiệu năng. Ta cần làm gì với mô hình?",
+        "Chọn phương án mô tả hành động huấn luyện lại (retraining) hoặc tái cân chỉnh mô hình để tương thích với phân phối dữ liệu mới."
+      ],
+      "concepts": [
+        "d13-monitoring-observability"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Nghiên cứu thực tế chỉ ra chỉ số tương tác (Implicit Metric) nào của người dùng là predictor chính xác nhất cho nguy cơ rời bỏ dịch vụ (churn) đối với ứng dụng AI Chatbot?",
+      "options": {
+        "A": "Số lần người dùng nhấn nút không thích (thumbs down) ở cuối mỗi câu trả lời.",
+        "B": "Tổng số lượng từ có trong câu hỏi đầu tiên của người dùng gửi cho ứng dụng.",
+        "C": "Tần suất người dùng nhấn nút làm mới hoặc yêu cầu sinh lại câu trả lời (regenerate rate).",
+        "D": "Khoảng thời gian người dùng mở ứng dụng trên trình duyệt web nhưng không tương tác."
+      },
+      "answer": "C",
+      "explanation": "User thường không nhấn thumbs down khi không hài lòng mà họ sẽ nhấn 'Regenerate' hoặc im lặng rời đi. Tỷ lệ regenerate rate tăng cao là dấu hiệu rõ ràng nhất cho thấy chất lượng phản hồi kém, dẫn đến churn.",
+      "hints": [
+        "Người dùng không hài lòng thường có xu hướng im lặng rời đi thay vì bấm các nút đánh giá rõ ràng (explicit feedback).",
+        "Hành động nào thể hiện người dùng không hài lòng với câu trả lời nhận được và muốn bot đưa ra một phương án khác?",
+        "Tỷ lệ yêu cầu tạo lại câu trả lời (Regenerate Rate) tăng đột biến phản ánh chất lượng mô hình đang đi xuống và gây ức chế cho người dùng."
+      ],
+      "concepts": [
+        "d13-monitoring-observability"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Khi phân tích một waterfall trace của một RAG Agent mất tổng cộng 8 giây để hoàn thành, bạn phát hiện: root span = 8s, span vector_search = 6.2s, span llm_generate = 1.2s. Bạn nên đưa ra kết luận chẩn đoán gì?",
+      "options": {
+        "A": "Bottleneck nằm ở mô hình ngôn ngữ lớn (LLM API) bị chậm hoặc gặp hiện tượng nghẽn mạng truyền tải.",
+        "B": "Toàn bộ dữ liệu ngữ cảnh truyền vào mô hình đang vượt quá giới hạn cửa sổ ngữ cảnh cho phép.",
+        "C": "Hệ thống đang bị quá tải tài nguyên phần cứng CPU vật lý trên máy chủ chạy ứng dụng chính.",
+        "D": "Bottleneck nằm ở bước truy vấn dữ liệu từ cơ sở dữ liệu vector (vector search) cần được tối ưu hóa."
+      },
+      "answer": "D",
+      "explanation": "Nhìn vào trace, span vector_search chiếm 6.2s trên tổng số 8s (hơn 75%), trong khi LLM chỉ mất 1.2s. Do đó bottleneck rõ ràng nằm ở khâu tìm kiếm vector, cần tối ưu hóa index hoặc chuyển sang DB khác.",
+      "hints": [
+        "Hãy so sánh tỷ trọng thời gian thực thi của từng span con so với tổng thời gian của root span (8 giây).",
+        "Span nào chiếm tới hơn 75% tổng thời gian phản hồi của hệ thống?",
+        "Tập trung khắc phục hiệu năng ở khâu tìm kiếm vector (vector search) vì đây là nơi gây trễ lớn nhất."
+      ],
+      "concepts": [
+        "d13-monitoring-observability"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Theo thực tiễn vận hành SRE hiện đại, tại sao việc cấu hình Alerting dựa trên triệu chứng ảnh hưởng người dùng (Symptom-based) lại tốt hơn cảnh báo dựa trên nguyên nhân (Cause-based)?",
+      "options": {
+        "A": "Vì cảnh báo dựa trên triệu chứng tự động sửa lỗi cơ sở dữ liệu mà không cần gọi kỹ sư trực ca.",
+        "B": "Vì nó giúp giảm thiểu tối đa các cảnh báo nhiễu (alert fatigue), chỉ kích hoạt khi trải nghiệm người dùng thực sự bị ảnh hưởng.",
+        "C": "Vì cảnh báo dựa trên nguyên nhân yêu cầu hệ thống phải khởi động lại liên tục để thu thập metrics.",
+        "D": "Vì nó giúp ban lãnh đạo dự án theo dõi chi phí sử dụng tài nguyên đám mây một cách chi tiết hơn."
+      },
+      "answer": "B",
+      "explanation": "Cause-based alerting (ví dụ: CPU > 80% hoặc 1 server down nhưng có fallback) thường gây ra cảnh báo giả/nhiễu (alert fatigue). Symptom-based alerting dựa trên SLO (ví dụ: P99 latency > 5s hoặc Error Rate > 5% ở API ngoài) chỉ báo động khi người dùng thực sự bị ảnh hưởng.",
+      "hints": [
+        "Nếu một máy chủ bị quá tải CPU (nguyên nhân) nhưng hệ thống tự động cân bằng tải sang máy chủ khác và người dùng vẫn truy cập bình thường, cảnh báo có cần réo kỹ sư lúc 3 giờ sáng không?",
+        "Mục tiêu là hạn chế hiện tượng 'Alert Fatigue' (chai sạn cảnh báo) cho đội ngũ kỹ thuật trực vận hành.",
+        "Cảnh báo dựa trên triệu chứng (Symptom-based) tập trung vào các cam kết SLO đầu cuối để chỉ cảnh báo khi người dùng thực tế đang gặp lỗi hoặc bị chậm."
+      ],
+      "concepts": [
+        "d13-monitoring-observability"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Khi thiết lập dashboard giám sát ứng dụng AI Agent cho nhiều đối tượng sử dụng (Stakeholders), mô hình Dashboard 3 lớp (3-layer dashboard) bao gồm những gì?",
+      "options": {
+        "A": "Lớp 1: Ban giám đốc (Tổng quan); Lớp 2: Quản lý sản phẩm (UX); Lớp 3: Kỹ sư hệ thống (Debug).",
+        "B": "Lớp 1: Tài nguyên CPU/RAM; Lớp 2: Tốc độ đọc ghi ổ đĩa; Lớp 3: Băng thông mạng sử dụng.",
+        "C": "Lớp 1: Ghi nhật ký mã nguồn; Lớp 2: Nhật ký container Docker; Lớp 3: Nhật ký máy chủ web Nginx.",
+        "D": "Lớp 1: Tiền mẫu prompt đầu vào; Lớp 2: Trọng số mô hình LLM; Lớp 3: Phản hồi ngôn ngữ đầu ra."
+      },
+      "answer": "A",
+      "explanation": "3-layer dashboard phục vụ các đối tượng khác nhau: Lớp 1 (Executive/SLO overview) cho lãnh đạo/CFO xem cost/uptime; Lớp 2 (Product/UX metrics) cho PM xem CSAT/error/completion; Lớp 3 (Engineering) cho Developer xem trace/APM/infrastructure để debug.",
+      "hints": [
+        "Dashboard cần được thiết kế riêng biệt để phù hợp với từng đối tượng: Lãnh đạo cấp cao (CFO/CEO), Quản lý sản phẩm (PM) và Kỹ sư phát triển (Developer).",
+        "Mỗi đối tượng quan tâm tới một khía cạnh: Lãnh đạo cần số liệu vĩ mô và chi phí; PM cần trải nghiệm người dùng; Kỹ sư cần dữ liệu hạ tầng chi tiết để sửa lỗi.",
+        "Hãy tìm mô hình chia lớp theo thứ tự: Executive $\rightarrow$ Product $\rightarrow$ Engineering."
+      ],
+      "concepts": [
+        "d13-monitoring-observability"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Sự khác biệt cơ bản giữa khái niệm Data Drift và Concept Drift trong giám sát mô hình AI là gì?",
+      "options": {
+        "A": "Data Drift xảy ra khi phân phối của dữ liệu đầu vào thay đổi, còn Concept Drift xảy ra khi mối quan hệ giữa đầu vào và đầu ra thay đổi.",
+        "B": "Data Drift chỉ xảy ra trên các mô hình ngôn ngữ nguồn đóng thương mại, còn Concept Drift chỉ xuất hiện trên các mô hình nguồn mở tự host.",
+        "C": "Data Drift tác động tiêu cực đến tốc độ sinh ra các token của mô hình ngôn ngữ, còn Concept Drift tác động đến cơ chế layer cache.",
+        "D": "Data Drift bắt buộc ta phải nâng cấp phần cứng card đồ họa GPU của máy chủ, còn Concept Drift bắt buộc đổi cấu hình đường truyền."
+      },
+      "answer": "A",
+      "explanation": "Data Drift (độ lệch dữ liệu) là sự dịch chuyển của dữ liệu đầu vào P(X) (ví dụ: người dùng bắt đầu hỏi các chủ đề mới). Concept Drift (độ lệch khái niệm) là sự thay đổi của hàm mục tiêu P(Y|X) (ví dụ: hành vi của người dùng thay đổi khiến câu trả lời trước đây là đúng nay trở thành sai).",
+      "hints": [
+        "Hãy nghĩ đến mối quan hệ toán học: phân phối của X là P(X) và mối quan hệ xác suất có điều kiện P(Y|X).",
+        "Nếu người dùng bắt đầu chat bằng tiếng Tây Ban Nha thay vì tiếng Việt, đó là sự thay đổi ở dữ liệu đầu vào. Nếu cùng một câu hỏi nhưng câu trả lời mong muốn thay đổi do luật pháp thay đổi, đó là gì?",
+        "Data Drift phản ánh sự thay đổi của dữ liệu đầu vào X, còn Concept Drift phản ánh sự thay đổi của luật gán nhãn hoặc định nghĩa nhãn Y tương ứng."
+      ],
+      "concepts": [
+        "d13-monitoring-observability"
+      ]
+    }
+  ]
+}

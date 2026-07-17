@@ -1,0 +1,210 @@
+{
+  "id": "day23-t3-advanced",
+  "parent_id": "day23-agent-builder",
+  "topic_title": "Day 23: Agent Evaluation",
+  "title": "Phần 3: Thiết Kế Eval Suite Đầu Cuối & Latency Budget Tối Ưu",
+  "description": "Đánh giá nâng cao về thiết kế eval suite toàn diện cho môi trường production, tối ưu hóa overhead guardrail <100ms P95.",
+  "difficulty": "khó",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Để thiết kế một hệ thống Guardrails hiệu quả mà không vi phạm cam kết chất lượng dịch vụ (SLO) về độ trễ, kiến trúc nào sau đây được khuyến nghị?",
+      "options": {
+        "A": "Bắt buộc phải chạy mọi guardrail nối tiếp nhau tuần tự trên một luồng CPU.",
+        "B": "Chạy song song các input guardrail và thực hiện verify output theo cơ chế stream.",
+        "C": "Chỉ thực hiện quét dữ liệu ở cổng ra (output) và bỏ qua hoàn toàn cổng vào.",
+        "D": "Chuyển toàn bộ nhiệm vụ kiểm tra an toàn cho mô hình LLM chính xử lý."
+      },
+      "answer": "B",
+      "explanation": "Chạy song song các input guardrails (như kiểm tra PII, rà soát topic) giúp tận dụng tối đa thời gian chờ. Đối với output guardrail, việc verify theo luồng stream (verify từng cụm từ sinh ra) giúp phát hiện sớm vi phạm mà không làm nghẽn toàn bộ phản hồi.",
+      "hints": [
+        "Nghĩ về cách tối ưu hóa thời gian xử lý đồng thời (concurrency) trong lập trình.",
+        "Tránh việc bắt người dùng đợi chạy xong 5 lớp guardrail nối tiếp rồi mới gửi prompt lên LLM.",
+        "Đáp án nói về việc chạy song song input guardrail và verify output theo stream."
+      ],
+      "concepts": [
+        "d23-t3-langgraph"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Khi cài đặt Llama Guard 3 làm chốt chặn an toàn, tại sao việc tinh chỉnh danh mục rủi ro (custom taxonomy) lại quan trọng hơn là sử dụng cấu hình mặc định?",
+      "options": {
+        "A": "Để bỏ qua các cảnh báo không khớp với quy chuẩn kinh doanh cụ thể của công ty.",
+        "B": "Để giảm bớt 50% chi phí hóa đơn sử dụng điện năng của trung tâm dữ liệu.",
+        "C": "Để tự động tăng cường khả năng suy luận logic của mô hình lên cấp độ mới.",
+        "D": "Để đảm bảo mô hình không bao giờ bị tràn bộ nhớ VRAM khi chạy các batch lớn."
+      },
+      "answer": "A",
+      "explanation": "Cấu hình mặc định có thể quá nhạy cảm hoặc bỏ sót các rủi ro đặc thù của doanh nghiệp (ví dụ: tư vấn tài chính trái luật). Tinh chỉnh custom taxonomy giúp loại bỏ các cảnh báo nhiễu và tập trung bắt đúng rủi ro nghiệp vụ.",
+      "hints": [
+        "Mỗi doanh nghiệp có một chính sách an toàn thông tin và quy chuẩn đạo đức khác nhau.",
+        "Sự khác biệt giữa chính sách chung toàn cầu và quy định nghiệp vụ cụ thể của một ngành.",
+        "Đáp án chỉ ra việc bỏ qua cảnh báo không khớp với quy chuẩn kinh doanh của công ty."
+      ],
+      "concepts": [
+        "d23-t3-langgraph"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Trong CI/CD pipeline cho hệ thống RAG, làm thế nào để thiết lập một 'Quality Gate' tự động bảo vệ chất lượng mô hình trước khi deploy?",
+      "options": {
+        "A": "Bắt buộc chạy kiểm thử thủ công bởi đội ngũ QA tối thiểu 2 ngày trước khi release.",
+        "B": "Chạy tự động RAGAS eval trên Golden Dataset và block deploy nếu score < 0.75.",
+        "C": "Tự động gửi email thông báo cho nhà đầu tư khi điểm số RAGAS đạt mức tối đa.",
+        "D": "Tắt toàn bộ hệ thống máy chủ staging để dọn dẹp các time series có cardinality cao."
+      },
+      "answer": "B",
+      "explanation": "Thiết lập Quality Gate tự động trong CI/CD bằng cách chạy bộ kiểm thử RAGAS trên Golden Dataset (ví dụ: 100 câu hỏi chuẩn). Nếu điểm số (ví dụ: Faithfulness) rơi xuống dưới ngưỡng an toàn (ví dụ: 0.75), pipeline sẽ báo fail và tự động chặn (block) việc deploy bản cập nhật lỗi.",
+      "hints": [
+        "Nghĩ về cách tự động hóa quy trình kiểm thử chất lượng phần mềm (automated testing).",
+        "Sử dụng các chỉ số đo lường (metrics) khách quan làm chốt chặn chặn deploy.",
+        "Đáp án chỉ ra việc chạy tự động RAGAS trên Golden Dataset và block deploy nếu score < 0.75."
+      ],
+      "concepts": [
+        "d23-t3-langgraph"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Một kỹ sư đo lường thấy việc thêm Llama Guard 3 làm tăng độ trễ phản hồi của hệ thống lên 250ms (overhead). Để giảm overhead này xuống dưới 100ms P95, giải pháp nào sau đây là hiệu quả?",
+      "options": {
+        "A": "Tích hợp thêm cơ chế cache cho các câu hỏi phổ biến và sử dụng mô hình quantized nhỏ hơn.",
+        "B": "Loại bỏ hoàn toàn bước kiểm tra an toàn input và chỉ chạy kiểm tra ở output.",
+        "C": "Chuyển dịch toàn bộ cơ sở hạ tầng lưu trữ GPU sang các máy chủ CPU thế hệ cũ.",
+        "D": "Tăng tần suất thực hiện scrape dữ liệu metrics của hệ thống Prometheus từ 15 giây xuống 5 giây."
+      },
+      "answer": "A",
+      "explanation": "Để giảm overhead latency của guardrails xuống dưới 100ms P95, kỹ sư có thể áp dụng: cache các phán quyết an toàn của các prompt quen thuộc, và sử dụng phiên bản mô hình quantized nhỏ hơn (ví dụ: 8B quantized) hoặc các mô hình phân loại cực nhanh như Llama Guard 3 1B.",
+      "hints": [
+        "Nghĩ về cách tối ưu hóa tài nguyên tính toán và giảm thiểu số lượt gọi inference mô hình lớn.",
+        "Sử dụng kỹ thuật lưu trữ đệm (caching) và giảm kích thước mô hình (quantization).",
+        "Đáp án đề cập đến tích hợp cơ chế cache và sử dụng mô hình quantized nhỏ hơn."
+      ],
+      "concepts": [
+        "d23-t3-langgraph"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Khi thiết kế một LLM-as-Judge pipeline để chấm điểm pairwise cho 1,000 cặp câu trả lời hằng ngày, kỹ sư nên làm gì để kiểm soát chi phí API?",
+      "options": {
+        "A": "Bắt buộc chạy chấm điểm thủ công bởi các kỹ sư DevOps vào cuối mỗi tuần.",
+        "B": "Sử dụng mô hình đắt nhất gpt-4o cho toàn bộ 100% cuộc gọi đánh giá liên tục.",
+        "C": "Chỉ thực hiện so sánh khi độ dài của hai câu trả lời lệch nhau trên 80%.",
+        "D": "Dùng mô hình nhỏ hơn (gpt-4o-mini) làm judge mặc định và chỉ gửi mẫu 5% lên gpt-4o để audit."
+      },
+      "answer": "D",
+      "explanation": "Chiến lược tối ưu chi phí là dùng mô hình rẻ (gpt-4o-mini/Llama-3-8B-Instruct) để chạy đại trà cho 1,000 cases, sau đó lấy mẫu ngẫu nhiên khoảng 5-10% gửi lên mô hình mạnh nhất (gpt-4o) để kiểm tra chéo (audit) độ lệch điểm số.",
+      "hints": [
+        "Nghĩ về thiết kế phân cấp mô hình (hierarchical model usage) để cân bằng chi phí và chất lượng.",
+        "Sử dụng mô hình nhỏ, rẻ cho số lượng lớn và dùng mô hình lớn để kiểm định ngẫu nhiên.",
+        "Đáp án chỉ ra việc dùng gpt-4o-mini làm mặc định và gửi mẫu 5% lên gpt-4o để audit."
+      ],
+      "concepts": [
+        "d23-t3-langgraph"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Hiện tượng 'Jailbreaking' (bẻ khóa) vượt qua các lớp Input Guardrail thường sử dụng kỹ thuật tấn công nào sau đây?",
+      "options": {
+        "A": "Nhập các câu lệnh nhập vai (role-play) phức tạp để ép LLM bỏ qua chỉ thị hệ thống.",
+        "B": "Gửi hàng triệu yêu cầu truy cập cùng lúc để cố gắng làm sập hệ thống máy chủ GPU.",
+        "C": "Cố tình chèn mã SQL vào ô nhập liệu để lấy dữ liệu từ cơ sở dữ liệu Postgres.",
+        "D": "Tạo ra các time series có cardinality cực cao để làm sụt giảm dung lượng RAM."
+      },
+      "answer": "A",
+      "explanation": "Jailbreaking thường sử dụng các kỹ thuật context engineering như nhập vai (role-play), giả định tình huống giả tưởng, hoặc các prompt lồng nhau phức tạp để đánh lừa mô hình bỏ qua chỉ thị an toàn trong System Prompt.",
+      "hints": [
+        "Đây là kiểu tấn công thao túng ngữ cảnh (prompt injection/manipulation) đặc thù của LLM.",
+        "Ví dụ như yêu cầu LLM đóng vai một máy tính không có quy chuẩn đạo đức.",
+        "Đáp án chỉ ra việc nhập các câu lệnh nhập vai phức tạp để ép LLM bỏ qua chỉ thị."
+      ],
+      "concepts": [
+        "d23-t3-langgraph"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Tại sao việc thiết lập một 'Golden Dataset' (bộ kiểm thử chuẩn) lại là yếu tố quyết định để xây dựng một hệ thống đánh giá AI đáng tin cậy?",
+      "options": {
+        "A": "Vì nó tự động sửa đổi các lỗi cú pháp trong câu lệnh prompt của người dùng.",
+        "B": "Vì nó cung cấp một benchmark tĩnh và ổn định giúp đo lường sự suy giảm chất lượng.",
+        "C": "Vì nó giúp giảm thiểu 90% lượng tài nguyên GPU tiêu thụ khi chạy inference mô hình.",
+        "D": "Vì nó tự động mã hóa thông tin nhạy cảm của khách hàng trước khi gửi đi."
+      },
+      "answer": "B",
+      "explanation": "Golden Dataset chứa các cặp câu hỏi - câu trả lời chuẩn được con người kiểm duyệt kỹ lưỡng. Nó đóng vai trò là cột mốc (benchmark) cố định giúp đo lường chính xác xem một thay đổi prompt/model mới có làm giảm chất lượng (regression) hệ thống hay không.",
+      "hints": [
+        "Nghĩ về vai trò của một tập dữ liệu kiểm thử chuẩn hóa (ground truth test set).",
+        "Nếu không có cột mốc cố định, bạn không thể biết hệ thống đang tốt lên hay xấu đi.",
+        "Đáp án chỉ ra việc cung cấp một benchmark tĩnh để đo sự suy giảm chất lượng."
+      ],
+      "concepts": [
+        "d23-t3-langgraph"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Khi chẩn đoán rủi ro của hệ thống LLM-as-Judge, sự đồng thuận của quan tòa LLM và con người (Cohen's Kappa) ở mức nào được coi là đủ tiêu chuẩn để tự động hóa trên production?",
+      "options": {
+        "A": "Từ 0.1 đến 0.3, thể hiện mức độ đồng thuận cực kỳ thấp giữa hai bên.",
+        "B": "Từ 0.6 đến 0.8 trở lên (độ đồng thuận từ tốt đến rất tốt).",
+        "C": "Chỉ số thống kê Cohen's Kappa bắt buộc phải đạt điểm số tuyệt đối 1.0.",
+        "D": "Chỉ số phải đạt giá trị âm (-) để thể hiện tính khách quan cao."
+      },
+      "answer": "B",
+      "explanation": "Trong thống kê đánh giá, chỉ số Cohen's Kappa đạt từ 0.6 đến 0.8 trở lên thể hiện mức độ đồng thuận cao giữa LLM và con người, đủ tin cậy để đưa vào quy trình giám sát tự động.",
+      "hints": [
+        "Nghĩ về ngưỡng chấp nhận được của sự đồng nhất trong nghiên cứu khoa học hành vi.",
+        "Điểm số tuyệt đối 1.0 là không tưởng do con người cũng có sự bất đồng ý kiến.",
+        "Đáp án chính xác là từ 0.6 đến 0.8 trở lên."
+      ],
+      "concepts": [
+        "d23-t3-langgraph"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Khi thiết kế hệ thống Input Guardrail rà soát thông tin nhạy cảm PII, tại sao việc kết hợp cả Regex (quy tắc) và NER (mô hình học máy) lại là giải pháp tối ưu?",
+      "options": {
+        "A": "Vì Regex giúp tăng tốc độ mạng, còn NER giúp tối ưu hóa dung lượng ổ cứng lưu trữ.",
+        "B": "Vì Regex giúp phân tích cú pháp SQL, còn NER giúp dịch ngôn ngữ tự động.",
+        "C": "Vì Regex bắt chính xác các định dạng chuẩn (email, phone), NER bắt các thực thể không chuẩn (tên người).",
+        "D": "Vì sự kết hợp này giúp hệ thống tự động sinh thêm 50% số lượng câu lệnh prompt."
+      },
+      "answer": "C",
+      "explanation": "Regex cực kỳ hiệu quả và nhanh để bắt các định dạng mẫu cố định (email, số điện thoại, số CCCD). NER (Named Entity Recognition) sử dụng học máy để bắt các thông tin ngữ cảnh biến đổi như tên người, tên địa điểm, mang lại độ bao phủ (recall) cao nhất.",
+      "hints": [
+        "So sánh điểm mạnh của các luật tĩnh (regular expressions) và các mô hình học máy nhận diện thực thể.",
+        "Cách bắt email (dạng tĩnh) so với cách bắt tên người (dạng động trong câu chữ).",
+        "Đáp án chỉ ra Regex bắt định dạng chuẩn, NER bắt thực thể không chuẩn."
+      ],
+      "concepts": [
+        "d23-t3-langgraph"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Một hệ thống Agentic RAG gặp lỗi nghiêm trọng khi chatbot tự động chửi mắng người dùng sau một chuỗi prompt jailbreak. Lớp phòng vệ nào sau đây đã bị thất bại hoàn toàn?",
+      "options": {
+        "A": "Chốt chặn Output-Guardrail.",
+        "B": "Chốt chặn Input-Guardrail.",
+        "C": "Chốt chặn Log-Shipper.",
+        "D": "Chốt chặn Observability."
+      },
+      "answer": "A",
+      "explanation": "Cho dù user có jailbreak thành công ở cổng vào (input), lớp phòng ngự cuối cùng là Output Guardrail (như Llama Guard 3) có nhiệm vụ quét câu trả lời của LLM trước khi hiển thị cho user. Việc chatbot chửi bới hiển thị trực tiếp cho user chứng tỏ Output Guardrail đã thất bại hoặc không được cài đặt.",
+      "hints": [
+        "Nghĩ về chốt chặn cuối cùng ngay trước khi dữ liệu được gửi trả về cho trình duyệt người dùng.",
+        "Chốt chặn này quét các nội dung thô tục, độc hại do chính LLM sinh ra.",
+        "Đáp án chính xác là Output Guardrail."
+      ],
+      "concepts": [
+        "d23-t3-langgraph"
+      ]
+    }
+  ]
+}

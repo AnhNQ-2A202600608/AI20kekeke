@@ -1,0 +1,210 @@
+{
+  "id": "day22-t1-basics",
+  "parent_id": "day22-ai-product",
+  "topic_title": "Day 22: AI Compliance",
+  "title": "Phần 1: Khái Niệm Tuân Thủ & Luật AI Việt Nam",
+  "description": "Đánh giá kiến thức cơ bản về triết lý phanh ngoài pháp luật, 3 tầng rủi ro theo Luật AI VN và nghĩa vụ đăng ký cổng thông tin Bộ KH&CN.",
+  "difficulty": "dễ",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Trong quản trị startup AI, triết lý hoạt động của hệ thống 'phanh ngoài' (pháp luật) được hiểu thế nào?",
+      "options": {
+        "A": "Quy định pháp lý giữ founder không bị vướng vào các đồn công an.",
+        "B": "Quy định giúp mô hình tự động sửa đổi lỗi hệ thống lập trình.",
+        "C": "Quy định pháp lý làm kìm hãm hoàn toàn tốc độ phát triển dự án.",
+        "D": "Quy định tự động phân bổ tài nguyên tính toán của máy chủ đám mây."
+      },
+      "answer": "A",
+      "explanation": "Trong khi phanh nội bộ (Day 21) bảo vệ startup không tự đâm vào gốc cây (sụp đổ vì sự cố kỹ thuật), phanh ngoài (pháp luật) bảo vệ founder và startup không đi vào đồn cảnh sát (vi phạm hình sự).",
+      "hints": [
+        "Nghĩ về mối quan hệ giữa vận hành kỹ thuật nội bộ và tuân thủ luật pháp.",
+        "Đây là chốt chặn pháp lý bảo vệ founder cá nhân khỏi các án phạt tù.",
+        "Đáp án chỉ ra quy định pháp lý giữ founder không vào đồn công an."
+      ],
+      "concepts": [
+        "d22-t1-compliance"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Dưới góc độ rà soát phạm vi (scoping), điều gì xảy ra nếu startup AI có dù chỉ một người dùng quốc tịch EU?",
+      "options": {
+        "A": "Dự án bắt buộc phải tuân thủ Luật AI Act của Liên minh Châu Âu.",
+        "B": "Dự án được miễn trừ mọi trách nhiệm pháp lý tại thị trường Việt Nam.",
+        "C": "Dự án phải tự động đóng cửa vĩnh viễn hệ thống máy chủ đám mây.",
+        "D": "Dự án được tự động nhận thêm nhiều khoản tiền đầu tư mạo hiểm."
+      },
+      "answer": "A",
+      "explanation": "Luật AI Act của Liên minh Châu Âu (EU AI Act) áp dụng theo nguyên tắc ngoài lãnh thổ (extraterritorial effect). Chỉ cần phục vụ 1 công dân EU, startup bắt buộc phải tuân thủ luật này.",
+      "hints": [
+        "Phạm vi áp dụng của luật pháp châu Âu đối với các dịch vụ kỹ thuật số.",
+        "Ảnh hưởng xuyên biên giới của các quy định bảo vệ dữ liệu và AI Act.",
+        "Đáp án là dự án bắt buộc phải tuân thủ Luật AI Act của EU."
+      ],
+      "concepts": [
+        "d22-t1-compliance"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Khi đưa sản phẩm AI ra vận hành thực tế ở thị trường ngoài, founder cần chuẩn bị ba thành phần nào?",
+      "options": {
+        "A": "Bao gồm Rules (Quy tắc), Rails (Rào chắn) và Ritual (Nghi thức) hệ thống.",
+        "B": "Giấy phép lái xe, hồ sơ đăng kiểm và bảo hiểm chứng cứ pháp lý.",
+        "C": "Đồ thị lưu lượng, siêu tham số huấn luyện và bản sao lưu dữ liệu.",
+        "D": "Thư xin lỗi, khoản tiền đền bù và cuộc họp báo cáo nhà đầu tư."
+      },
+      "answer": "B",
+      "explanation": "Khi đưa AI ra 'đường cao tốc', startup cần: Giấy phép (quyền vận hành pháp lý), Đăng kiểm (hồ sơ tuân thủ/đánh giá rủi ro), và Bảo hiểm (hồ sơ chứng cứ bảo vệ founder).",
+      "hints": [
+        "Các tài liệu pháp lý tương tự như khi vận hành một chiếc siêu xe trên đường.",
+        "Các hồ sơ này giúp startup được phép hoạt động hợp pháp và giảm nhẹ khi có lỗi.",
+        "Đáp án là giấy phép lái xe, hồ sơ đăng kiểm và bảo hiểm chứng cứ."
+      ],
+      "concepts": [
+        "d22-t1-compliance"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Dưới góc độ tuân thủ, thành phần 'Giấy phép lái xe' (Driving License) đại diện cho điều gì?",
+      "options": {
+        "A": "Nhật ký kiểm thử các tính năng công nghệ của lập trình viên.",
+        "B": "Quyền hợp pháp được vận hành hệ thống AI tại thị trường mục tiêu.",
+        "C": "Biểu đồ đánh giá hiệu năng của mô hình ngôn ngữ lớn gốc.",
+        "D": "Các điều khoản sử dụng dịch vụ của nhà cung cấp API nước ngoài."
+      },
+      "answer": "B",
+      "explanation": "Giấy phép lái xe đại diện cho tư cách và quyền hợp pháp của doanh nghiệp khi cung cấp dịch vụ AI tại quốc gia hoặc lĩnh vực cụ thể (như cấp phép tài chính, y tế).",
+      "hints": [
+        "Khả năng được pháp luật chấp nhận cho phép triển khai sản phẩm.",
+        "Tránh việc vận hành chui không đăng ký kinh doanh các dịch vụ đặc thù.",
+        "Đáp án là quyền hợp pháp được vận hành AI tại thị trường mục tiêu."
+      ],
+      "concepts": [
+        "d22-t1-compliance"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Luật AI Việt Nam (134/2025/QH15) phân chia các hệ thống AI thành bao nhiêu tầng rủi ro chính?",
+      "options": {
+        "A": "Bao gồm năm tầng rủi ro từ cực thấp cho tới cực kỳ cao.",
+        "B": "Bao gồm ba tầng rủi ro chính là Cao, Trung bình và Thấp.",
+        "C": "Chỉ gồm một tầng rủi ro duy nhất cho tất cả các mô hình.",
+        "D": "Bao gồm mười tầng rủi ro khác nhau chia theo lĩnh vực hoạt động."
+      },
+      "answer": "B",
+      "explanation": "Luật AI Việt Nam thông qua 10/12/2025 phân loại rủi ro AI thành 3 tầng: Thấp, Trung bình, và Cao.",
+      "hints": [
+        "Phân loại rủi ro giúp áp dụng nghĩa vụ kiểm soát tương ứng.",
+        "Một mô hình phân loại tinh gọn chia thành ba mức độ cơ bản.",
+        "Đáp án đúng là ba tầng rủi ro chính: Cao, Trung bình và Thấp."
+      ],
+      "concepts": [
+        "d22-t1-compliance"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Những hệ thống AI hoạt động trong các lĩnh vực nào thì được xếp vào tầng rủi ro 'Cao' tại Việt Nam?",
+      "options": {
+        "A": "Lọc thư rác, gợi ý sản phẩm và tự động hóa công việc dịch thuật.",
+        "B": "Các ứng dụng trò chơi giải trí và chỉnh sửa hình ảnh thông thường.",
+        "C": "Các lĩnh vực y tế, giáo dục, tài chính, tuyển dụng và hành pháp.",
+        "D": "Các hệ thống phân tích dữ liệu thời tiết của cơ quan nhà nước."
+      },
+      "answer": "C",
+      "explanation": "Các hệ thống AI ảnh hưởng trực tiếp đến sức khỏe, quyền cơ bản hoặc an toàn thông tin trong y tế, giáo dục, tài chính, tuyển dụng, hành pháp được xếp vào nhóm rủi ro Cao.",
+      "hints": [
+        "Các lĩnh vực nhạy cảm và quan trọng đối với đời sống con người.",
+        "Nơi quyết định của AI có thể tạo ra các phân biệt đối xử hoặc nguy hiểm.",
+        "Đáp án đúng chứa các từ khóa: y tế, giáo dục, tài chính, tuyển dụng, hành pháp."
+      ],
+      "concepts": [
+        "d22-t1-compliance"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Nghĩa vụ pháp lý quan trọng nhất đối với các hệ thống AI thuộc tầng rủi ro 'Trung bình' là gì?",
+      "options": {
+        "A": "Bắt buộc phải dừng toàn bộ mọi hoạt động kinh doanh của doanh nghiệp.",
+        "B": "Phải nộp hồ sơ xin cấp phép kinh doanh từ cơ quan an ninh.",
+        "C": "Phải thực hiện dán nhãn thông báo nội dung do AI tạo ra.",
+        "D": "Phải thuê một công ty luật lớn để giám sát hoạt động hệ thống."
+      },
+      "answer": "C",
+      "explanation": "Đối với các AI có khả năng gây nhầm lẫn (như chatbot, deepfake, AI tạo nội dung), nghĩa vụ cốt lõi là phải dán nhãn rõ ràng 'đây là nội dung do AI tạo' để bảo vệ người dùng.",
+      "hints": [
+        "Cơ chế minh bạch thông tin giúp người dùng biết họ đang tương tác với AI.",
+        "Chống lại các hành vi lừa đảo bằng các hình ảnh hoặc văn bản giả mạo.",
+        "Đáp án đúng là phải thực hiện dán nhãn thông báo nội dung do AI tạo."
+      ],
+      "concepts": [
+        "d22-t1-compliance"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Các doanh nghiệp cung cấp AI thuộc tầng rủi ro Trung bình và Cao có nghĩa vụ thông báo với cơ quan nào?",
+      "options": {
+        "A": "Phải đăng ký và thông báo trực tiếp với cơ quan hải quan.",
+        "B": "Phải nộp báo cáo kiểm toán tài chính cho Bộ Tài chính Việt Nam.",
+        "C": "Phải đăng ký và thông báo qua cổng thông tin Bộ KH&CN.",
+        "D": "Phải xin giấy phép từ ngân hàng trung ương để được hoạt động."
+      },
+      "answer": "C",
+      "explanation": "Nhà cung cấp các hệ thống AI rủi ro Trung bình hoặc Cao bắt buộc phải tự khai báo và đăng ký thông qua Cổng thông tin AI quốc gia của Bộ Khoa học & Công nghệ.",
+      "hints": [
+        "Cơ quan quản lý nhà nước về lĩnh vực khoa học và phát triển công nghệ.",
+        "Cổng đăng ký trực tuyến quốc gia để lưu trữ thông tin thực thể AI.",
+        "Đáp án là đăng ký và thông báo qua cổng thông tin Bộ KH&CN."
+      ],
+      "concepts": [
+        "d22-t1-compliance"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Mức phạt tiền hành chính tối đa đối với tổ chức vi phạm các quy định của Luật AI Việt Nam là bao nhiêu?",
+      "options": {
+        "A": "Phạt hành chính tối đa là mười triệu đồng cho một lần vi phạm.",
+        "B": "Phạt tối đa năm mươi triệu đồng kết hợp tịch thu siêu xe.",
+        "C": "Phạt cảnh cáo và yêu cầu founder phải xin lỗi công chúng.",
+        "D": "Phạt tiền tối đa lên đến hai tỷ đồng cho các tổ chức."
+      },
+      "answer": "D",
+      "explanation": "Đối với các hành vi vi phạm quy định của Luật AI Việt Nam, mức phạt hành chính tối đa đối với pháp nhân/tổ chức lên đến 2 tỷ đồng (khoảng 75,800 USD).",
+      "hints": [
+        "Một án phạt tiền có tính răn đe cực kỳ mạnh mẽ đối với doanh nghiệp.",
+        "Mức phạt này tương đương với khoảng hai tỷ đồng Việt Nam tiền mặt.",
+        "Đáp án là phạt tiền tối đa lên tới hai tỷ đồng cho các tổ chức."
+      ],
+      "concepts": [
+        "d22-t1-compliance"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Theo Luật AI Việt Nam, các nhà cung cấp AI nước ngoài (như OpenAI) phải thực hiện yêu cầu gì?",
+      "options": {
+        "A": "Phải chia sẻ toàn bộ mã nguồn của mô hình cho cộng đồng.",
+        "B": "Phải sử dụng máy chủ đặt tại văn phòng của Bộ KH&CN.",
+        "C": "Không được phép cung cấp bất kỳ dịch vụ nào cho người Việt.",
+        "D": "Bắt buộc phải có đại diện pháp lý chính thức tại Việt Nam."
+      },
+      "answer": "D",
+      "explanation": "Các nhà cung cấp dịch vụ AI nước ngoài khi cung cấp dịch vụ xuyên biên giới vào Việt Nam bắt buộc phải chỉ định hoặc thành lập văn phòng đại diện pháp lý chính thức tại Việt Nam.",
+      "hints": [
+        "Ràng buộc trách nhiệm xử lý khi xảy ra sự cố ảnh hưởng người dùng.",
+        "Giống như các quy định tương tự đối với doanh nghiệp công nghệ lớn.",
+        "Đáp án đúng là bắt buộc phải có đại diện pháp lý tại Việt Nam."
+      ],
+      "concepts": [
+        "d22-t1-compliance"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "id": "day12-advanced",
+  "parent_id": "day12",
+  "topic_title": "Day 12: Cloud Infrastructure & Deployment",
+  "title": "Phần 3: Scaling, Reliability & Cloud Platforms",
+  "description": "Đánh giá chuyên sâu về các mô hình mở rộng hệ thống, các mẫu thiết kế tăng độ tin cậy (Resilience Patterns), các chỉ số SRE (SLI/SLO/SLA) và so sánh các tùy chọn triển khai Cloud.",
+  "difficulty": "khó",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Khi quy mô hệ thống AI Agent tăng lên, tại sao 'Horizontal Scaling' (mở rộng theo chiều ngang) lại được ưu tiên hơn 'Vertical Scaling' (mở rộng theo chiều dọc) cho các stateless services?",
+      "options": {
+        "A": "Vì Horizontal Scaling không cần thiết lập các bộ cân bằng tải Load Balancer.",
+        "B": "Vì Vertical Scaling bị giới hạn vật lý của một server và chi phí đắt.",
+        "C": "Vì Horizontal Scaling giúp tăng tốc độ phản hồi của các mô hình LLM.",
+        "D": "Vì Vertical Scaling bắt buộc phải chuyển đổi code ứng dụng sang dạng microservices."
+      },
+      "answer": "B",
+      "explanation": "Vertical Scaling (nâng cấp CPU/RAM của 1 server) luôn có giới hạn vật lý (ceiling) và chi phí mua server lớn tăng rất nhanh (non-linear). Horizontal Scaling (thêm nhiều server nhỏ) cho phép mở rộng gần như vô hạn với chi phí tuyến tính và hỗ trợ tính sẵn sàng cao (High Availability).",
+      "hints": [
+        "Hãy nghĩ đến giới hạn tối đa của số lượng khe cắm RAM hoặc CPU trên một bo mạch chủ của máy chủ.",
+        "Xem lại phần so sánh 'Vertical vs Horizontal Scaling' ở slide 545-570.",
+        "Stateless services cực kỳ thích hợp để mở rộng theo chiều ngang vì không cần chia sẻ bộ nhớ cục bộ giữa các instance."
+      ],
+      "concepts": [
+        "d12-cloud-deployment"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Cơ chế tự động mở rộng quy mô theo chiều ngang của Pod trong Kubernetes (Horizontal Pod Autoscaler - HPA) hoạt động dựa trên nguyên lý nào?",
+      "options": {
+        "A": "Tự động tăng số lượng Pod khi phát hiện có lỗi cú pháp hoặc runtime exception trong ứng dụng.",
+        "B": "Quét DB định kỳ và tăng số lượng Pod khi phát hiện dung lượng ghi mới tăng đột biến.",
+        "C": "Giám sát chỉ số CPU/Memory và điều chỉnh số lượng Pod tương ứng với mục tiêu thiết lập.",
+        "D": "Tự động nhân bản các Pod chạy theo khung giờ cố định bất kể lượng traffic thực tế."
+      },
+      "answer": "C",
+      "explanation": "HPA liên tục giám sát mức tiêu thụ tài nguyên (ví dụ: CPU utilization > 70%) của các Pod đang chạy. Khi vượt ngưỡng, HPA tự kích hoạt thêm Pod mới (scale out) để chia tải, và khi tải giảm xuống dưới ngưỡng (ví dụ: < 30%), HPA sẽ giảm bớt Pod (scale in).",
+      "hints": [
+        "Hãy nghĩ đến một hệ thống điều hòa tự động điều chỉnh công suất dựa trên nhiệt độ đo được trong phòng.",
+        "Tham khảo sơ đồ và giải thích về 'Kubernetes HPA' tại slide 573-587.",
+        "Chỉ số phổ biến nhất được dùng làm trigger cho HPA là phần tích hợp tài nguyên CPU hoặc Memory của các container."
+      ],
+      "concepts": [
+        "d12-cloud-deployment"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Phương pháp triển khai 'Canary Release' được thực hiện theo quy trình nào để giảm thiểu rủi ro khi cập nhật phiên bản mới của Agent?",
+      "options": {
+        "A": "Chỉ chuyển hướng một lượng nhỏ traffic (ví dụ 5-10%) sang phiên bản mới để theo dõi lỗi trước khi nâng cấp 100%.",
+        "B": "Duy trì hai hệ thống giống hệt nhau (Blue và Green) và switch 100% traffic ngay lập tức bằng cấu hình DNS.",
+        "C": "Thay thế lần lượt từng instance cũ bằng instance mới cho đến khi hoàn tất quá trình cập nhật.",
+        "D": "Deploy bản thử nghiệm trực tiếp lên máy tính cá nhân của người dùng đại diện trước khi đưa lên server."
+      },
+      "answer": "A",
+      "explanation": "Canary Release cho phép giảm thiểu rủi ro lỗi hệ thống diện rộng bằng cách chỉ cho 5-10% người dùng tiếp cận phiên bản mới (v2). Nếu hệ thống giám sát không phát hiện lỗi bất thường (error rate, latency) sau một khoảng thời gian, traffic v2 sẽ được tăng dần lên 100%.",
+      "hints": [
+        "Tên gọi 'Canary' bắt nguồn từ việc những người thợ mỏ mang chim yến phụng xuống hầm lò để phát hiện khí độc sớm.",
+        "Tham khảo so sánh các chiến lược deploy tại slide 591-599.",
+        "Hãy phân biệt Canary với Blue/Green (chuyển 100% traffic lập tức) và Rolling Update (thay thế dần từng instance)."
+      ],
+      "concepts": [
+        "d12-cloud-deployment"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Khi triển khai hệ thống AI Agent xử lý các tác vụ suy luận nặng (LLM inference) có thời gian xử lý rất khác nhau cho mỗi request, thuật toán Load Balancing nào là tối ưu nhất?",
+      "options": {
+        "A": "Thuật toán Round Robin phân phối request xoay vòng tuần tự.",
+        "B": "Thuật toán IP Hash phân phối request dựa vào địa chỉ IP.",
+        "C": "Thuật toán Weighted Round Robin phân phối theo trọng số cố định.",
+        "D": "Thuật toán Least Connections phân phối request tới server rảnh nhất."
+      },
+      "answer": "D",
+      "explanation": "Vì các request gọi LLM/Agent có độ dài và độ phức tạp khác nhau (có request xong trong 1s, có request mất 30s), thuật toán Round Robin dễ dẫn đến tình trạng một server bị nghẽn do trúng nhiều request nặng liên tục. Least Connections giúp chuyển request mới đến server đang rảnh nhất, tối ưu hóa thời gian phản hồi.",
+      "hints": [
+        "Hãy nghĩ đến việc xếp hàng thanh toán trong siêu thị: bạn nên chọn quầy có ít người đang chờ thanh toán nhất hay cứ đi tuần tự theo lượt?",
+        "Đọc mục 'Thuật toán Load Balancing' tại slide 600-604.",
+        "Least Connections ngăn ngừa hiện tượng quá tải cục bộ trên một server khi phân phối request có thời gian thực thi bất định."
+      ],
+      "concepts": [
+        "d12-cloud-deployment"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Trong mẫu thiết kế 'Circuit Breaker' (Ngắt mạch bảo vệ), trạng thái 'HALF-OPEN' (Nửa mở) có nhiệm vụ gì?",
+      "options": {
+        "A": "Ngắt và trả về lỗi ngay lập tức mà không gửi request sang service đang bị sự cố.",
+        "B": "Cho phép thử nghiệm gửi một lượng request nhỏ để kiểm tra xem service đã phục hồi chưa.",
+        "C": "Liên tục gửi request để test tải và kiểm tra giới hạn chịu lỗi của database.",
+        "D": "Tự động copy toàn bộ dữ liệu của request lỗi vào hàng đợi tin nhắn."
+      },
+      "answer": "B",
+      "explanation": "Sau khi Circuit Breaker bị OPEN (ngắt hoàn toàn do lỗi liên tục) và trải qua một khoảng thời gian chờ, nó sẽ chuyển sang trạng thái HALF-OPEN. Tại đây, nó cho phép một vài request đi qua. Nếu các request này thành công, mạch sẽ đóng lại (CLOSED) hoạt động bình thường; nếu thất bại, mạch sẽ mở lại (OPEN) để tiếp tục bảo vệ hệ thống.",
+      "hints": [
+        "Hãy nghĩ đến việc cầu dao điện tự động sau khi bị ngắt, ta cần thử đóng lại từ từ để kiểm tra xem sự cố chập điện đã được khắc phục hay chưa.",
+        "Xem lại cơ chế hoạt động của Circuit Breaker ở slide 607-611.",
+        "Trạng thái này đóng vai trò như một bước kiểm tra thử nghiệm (probing) để phục hồi tự động."
+      ],
+      "concepts": [
+        "d12-cloud-deployment"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Tại sao việc tích hợp thêm thành phần 'Jitter' (nhiễu ngẫu nhiên) vào thuật toán 'Retry với Exponential Backoff' lại cực kỳ quan trọng?",
+      "options": {
+        "A": "Để mã hóa các gói tin thử lại tránh bị nghe lén trên đường truyền.",
+        "B": "Để giảm dung lượng CPU/RAM dùng để chạy các vòng lặp thử lại trên server.",
+        "C": "Để tránh hiện tượng nhiều clients đồng loạt gửi retry cùng lúc gây sập server.",
+        "D": "Để đảo bảo các API keys của mô hình luôn được xoay vòng ngẫu nhiên."
+      },
+      "answer": "C",
+      "explanation": "Nếu không có Jitter, tất cả các client bị lỗi cùng lúc sẽ tính toán ra các mốc thời gian retry giống hệt nhau (ví dụ: cùng retry sau đúng 1s, 2s, 4s...). Điều này tạo ra các đợt traffic khổng lồ dội vào server cùng lúc (Thundering Herd). Thêm Jitter (nhiễu ngẫu nhiên ±20%) giúp phân tán thời gian retry của các client.",
+      "hints": [
+        "Hãy tưởng tượng một đám đông cùng chạy qua một cánh cửa hẹp vào những khoảng thời gian được đếm nhịp chính xác giống nhau.",
+        "Xem lại phần giải thích 'Retry với Exponential Backoff' tại slide 609.",
+        "Jitter giúp 'làm mịn' traffic retry bằng cách thêm sự ngẫu nhiên vào thời gian chờ."
+      ],
+      "concepts": [
+        "d12-cloud-deployment"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Tại sao việc thiết lập 'Idempotency Key' trong HTTP Header lại là bắt buộc khi triển khai API cho phép Agent gọi hành động thực thi giao dịch thanh toán?",
+      "options": {
+        "A": "Đảm bảo giao dịch chỉ thực hiện một lần dù Agent gửi trùng request do mạng lỗi.",
+        "B": "Tăng tốc độ mã hóa và ghi dữ liệu giao dịch vào database quan hệ của server.",
+        "C": "Giúp API Gateway tự động nén response để tiết kiệm băng thông truyền tải mạng.",
+        "D": "Chống tấn công DDoS bằng cách giới hạn số lượng thẻ ngân hàng được liên kết."
+      },
+      "answer": "A",
+      "explanation": "Khi Agent gọi một API giao dịch nhưng bị lỗi mạng ở bước nhận phản hồi, Agent không biết giao dịch đã thành công chưa và sẽ tự động retry. Idempotency Key (ví dụ một chuỗi UUID duy nhất cho giao dịch đó) giúp server nhận diện request bị trùng và trả về kết quả đã xử lý trước đó thay vì thực hiện giao dịch lần hai.",
+      "hints": [
+        "Hãy nghĩ đến rủi ro khách hàng bị trừ tiền hai lần cho cùng một món hàng chỉ vì kết nối internet của Agent bị chập chờn.",
+        "Xem định nghĩa và ví dụ về 'Idempotency' tại slide 611.",
+        "Một hàm hoặc API được coi là idempotent nếu việc gọi nó nhiều lần với cùng một tham số cho ra cùng một kết quả và không gây tác dụng phụ dư thừa."
+      ],
+      "concepts": [
+        "d12-cloud-deployment"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Trong thực hành SRE (Site Reliability Engineering), làm thế nào để phân biệt chính xác giữa SLI, SLO và SLA?",
+      "options": {
+        "A": "SLI là cam kết pháp lý, SLO là số đo thực tế, còn SLA là mục tiêu nội bộ.",
+        "B": "SLI là mục tiêu nội bộ, SLO là cam kết pháp lý, còn SLA là số đo thực tế.",
+        "C": "SLI là giả lập lỗi, SLO là biểu đồ giám sát log, còn SLA là khôi phục thảm họa.",
+        "D": "SLI là số đo thực tế, SLO là mục tiêu nội bộ, còn SLA là cam kết pháp lý."
+      },
+      "answer": "D",
+      "explanation": "SLI (Indicator) là số liệu thực tế đo được (ví dụ: latency hiện tại). SLO (Objective) là mục tiêu nội bộ team hướng tới (ví dụ: latency < 200ms). SLA (Agreement) là cam kết pháp lý với khách hàng (ví dụ: cam kết uptime 99.5%, nếu vi phạm sẽ hoàn tiền). Thường SLO đặt cao hơn SLA để làm buffer an toàn.",
+      "hints": [
+        "Hãy nhớ thứ tự từ đo lường thô (Indicator) -> mục tiêu kỹ thuật (Objective) -> thỏa thuận pháp lý (Agreement).",
+        "Đọc lại bảng phân biệt SLI, SLO, SLA tại slide 615-619.",
+        "SLA luôn đi kèm với các điều khoản phạt hoặc bồi thường tài chính nếu vi phạm."
+      ],
+      "concepts": [
+        "d12-cloud-deployment"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Mục tiêu cốt lõi của phương pháp 'Chaos Engineering' (ví dụ việc chạy Chaos Monkey của Netflix) trên môi trường Production là gì?",
+      "options": {
+        "A": "Để huấn luyện mô hình AI tự viết code sửa lỗi khi có máy chủ bị tắt đột ngột.",
+        "B": "Để kiểm nghiệm xem toàn bộ hệ thống có chạy bình thường khi mất mạng internet không.",
+        "C": "Để chủ động gây lỗi có kiểm soát nhằm phát hiện lỗ hổng trước khi sự cố xảy ra.",
+        "D": "Để giảm thiểu chi phí bằng cách tắt bớt các máy chủ rảnh rỗi vào ban đêm."
+      },
+      "answer": "C",
+      "explanation": "Chaos Engineering chủ động đưa các lỗi (như tắt pod, tăng latency mạng, đầy ổ đĩa) vào hệ thống production để xác minh xem các cơ chế tự phục hồi (self-healing, failover, circuit breaker) có hoạt động đúng thiết kế hay không, giúp chủ động cải thiện độ tin cậy.",
+      "hints": [
+        "Triết lý của phương pháp này là: 'Thà tự tìm điểm yếu trong tầm kiểm soát còn hơn để sự cố bất ngờ đánh sập hệ thống lúc nửa đêm'.",
+        "Đọc kỹ mục 'Chaos Engineering' tại slide 622-641.",
+        "Nó giúp kiểm thử tính kiên cố (resilience) của hệ thống trước các kịch bản lỗi thực tế."
+      ],
+      "concepts": [
+        "d12-cloud-deployment"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Khi lựa chọn giữa Serverless (như AWS Lambda) và Container-based PaaS (như Railway/Render) để triển khai ứng dụng AI Agent giao tiếp thời gian thực, yếu tố nào sau đây là điểm yếu lớn nhất của Serverless?",
+      "options": {
+        "A": "Serverless hoàn toàn không hỗ trợ giao tiếp với các cơ sở dữ liệu SQL ở ngoài.",
+        "B": "Độ trễ Cold Start khi khởi tạo container lớn làm chậm tốc độ phản hồi của Agent.",
+        "C": "Serverless có chi phí duy trì hàng tháng cực đắt kể cả khi không có traffic.",
+        "D": "Không hỗ trợ nạp biến môi trường cho ứng dụng như các dịch vụ container PaaS."
+      },
+      "answer": "B",
+      "explanation": "Hàm Serverless khi không có traffic sẽ bị scale về 0. Khi có request mới, cloud provider phải khởi tạo container, nạp runtime và dependencies, gây ra độ trễ khởi động lạnh (Cold Start) từ vài giây đến mười mấy giây. Với AI Agent đòi hỏi phản hồi nhanh hoặc có runtime dung lượng lớn, Container-based PaaS là lựa chọn ổn định hơn.",
+      "hints": [
+        "Hãy nghĩ đến việc một hàm code phải đợi hệ thống cloud khởi tạo tài nguyên phần cứng từ đầu khi đã lâu không có ai truy cập.",
+        "Tham khảo cảnh báo về Serverless cold start tại slide 665.",
+        "Cold start là rào cản lớn đối với các ứng dụng đòi hỏi độ trễ cực thấp hoặc có kích thước đóng gói lớn."
+      ],
+      "concepts": [
+        "d12-cloud-deployment"
+      ]
+    }
+  ]
+}

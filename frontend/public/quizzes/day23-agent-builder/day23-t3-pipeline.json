@@ -1,0 +1,210 @@
+{
+  "id": "day23-t3-pipeline",
+  "parent_id": "day23-agent-builder",
+  "topic_title": "Day 23: Agent Evaluation",
+  "title": "Phần 2: Pipeline LLM-as-Judge & Xây Dựng Chốt Chặn Guardrails",
+  "description": "Đánh giá kiến thức về thiết lập LLM-as-Judge, xử lý 4 loại bias của quan tòa LLM, và cài đặt Presidio PII/Llama Guard 3.",
+  "difficulty": "bình thường",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Tại sao việc sử dụng LLM-as-Judge lại được áp dụng rộng rãi để thay thế con người khi đánh giá ở quy mô lớn?",
+      "options": {
+        "A": "Vì LLM-as-Judge hoàn toàn không có thiên vị và luôn cho kết quả đồng nhất.",
+        "B": "Vì LLM-as-Judge có thể tự động nâng cấp mã nguồn của ứng dụng AI.",
+        "C": "Vì chi phí thấp hơn 100 lần và thông lượng xử lý nhanh hơn hàng ngàn lần.",
+        "D": "Vì LLM-as-Judge không cần phải thiết lập chạy hiệu chuẩn chi tiết với con người."
+      },
+      "answer": "C",
+      "explanation": "Đánh giá bằng con người chất lượng nhưng chi phí cao ($1-5/query) và chậm. LLM-as-Judge có sự tương quan cao với người (r >= 0.8), chi phí cực thấp ($0.01-0.05/query) và tốc độ xử lý nhanh, giúp scale từ 100 lên 100k queries dễ dàng.",
+      "hints": [
+        "So sánh khía cạnh chi phí kinh tế và tốc độ xử lý giữa con người và mô hình.",
+        "Nghĩ về khả năng xử lý hàng loạt của LLM trên môi trường đám mây.",
+        "Đáp án chỉ ra chi phí thấp hơn 100 lần và thông lượng nhanh hơn hàng ngàn lần."
+      ],
+      "concepts": [
+        "d23-t3-langgraph"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Trong hiệu chuẩn quan tòa LLM, chỉ số thống kê nào thường được đo lường để đánh giá mức độ đồng thuận giữa LLM và con người?",
+      "options": {
+        "A": "Đo lường bằng Cosine-Similarity.",
+        "B": "Đo lường bằng F1-Score.",
+        "C": "Đo lường bằng Euclidean-Distance.",
+        "D": "Đo lường bằng Cohen-Kappa."
+      },
+      "answer": "D",
+      "explanation": "Cohen's Kappa (hoặc Cohen's κ) đo lường sự đồng thuận giữa các quan sát viên (LLM và con người) sau khi loại trừ yếu tố đồng thuận ngẫu nhiên, giúp xác nhận độ tin cậy của LLM-as-Judge.",
+      "hints": [
+        "Một chỉ số thống kê nổi tiếng đo lường inter-rater reliability.",
+        "Tên của chỉ số này bắt đầu bằng chữ C và từ Hy Lạp Kappa.",
+        "Đáp án chính xác là Cohen's Kappa."
+      ],
+      "concepts": [
+        "d23-t3-langgraph"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Sự khác biệt lớn giữa phương pháp Absolute Scoring và Pairwise Scoring của LLM-as-Judge là gì?",
+      "options": {
+        "A": "Absolute chấm điểm 1 câu theo rubric, Pairwise so sánh A vs B để tìm người thắng.",
+        "B": "Absolute chỉ chạy trên mô hình GPT-4, còn Pairwise bắt buộc chạy trên mô hình Claude-3.",
+        "C": "Absolute đo lường thời gian trễ của LLM, còn Pairwise đo lường tổng số lượng token.",
+        "D": "Absolute không cần câu lệnh prompt, còn Pairwise yêu cầu các cấu hình YAML phức tạp."
+      },
+      "answer": "A",
+      "explanation": "Absolute Scoring đánh giá độc lập một câu trả lời trên thang điểm 1-5 theo rubric. Pairwise Scoring so sánh trực tiếp hai câu trả lời A và B để chọn ra câu tốt hơn (hoặc hòa), đem lại kết quả đánh giá ổn định và ít bias hơn.",
+      "hints": [
+        "Nghĩ về việc chấm điểm độc lập so với việc đặt hai câu trả lời cạnh nhau để so sánh.",
+        "Pairwise giống như trận đấu đối đầu trực tiếp giữa hai phiên bản prompt.",
+        "Đáp án chỉ ra Absolute chấm điểm 1 câu, Pairwise so sánh A vs B chọn người thắng."
+      ],
+      "concepts": [
+        "d23-t3-langgraph"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Hiện tượng 'Position Bias' của LLM-as-Judge được mô tả như thế nào?",
+      "options": {
+        "A": "Quan tòa LLM có xu hướng chấm điểm cao hơn cho các câu trả lời nằm ở vị trí top 10.",
+        "B": "Quan tòa LLM thiên vị câu trả lời được trình bày ở vị trí A hoặc B trong prompt so sánh.",
+        "C": "Mô hình LLM hoạt động kém hiệu quả khi vị trí máy chủ GPU nằm xa người dùng.",
+        "D": "Sự suy giảm chất lượng chấm điểm khi câu hỏi của user có độ dài quá ngắn."
+      },
+      "answer": "B",
+      "explanation": "Position Bias là hiện tượng LLM judge thiên vị phương án đứng trước (vị trí A) hoặc đứng sau (vị trí B) trong prompt so sánh song song (pairwise comparison), ngay cả khi chất lượng hai phương án tương đương nhau.",
+      "hints": [
+        "Thiên vị liên quan đến thứ tự hiển thị của các phương án được so sánh.",
+        "GPT-4 thường thích câu trả lời đầu tiên (A) hơn câu trả lời thứ hai (B).",
+        "Đáp án chỉ ra quan tòa LLM thiên vị câu trả lời ở vị trí A hoặc B trong prompt."
+      ],
+      "concepts": [
+        "d23-t3-langgraph"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Để giảm thiểu ảnh hưởng của 'Position Bias' trong Pairwise Comparison, kỹ thuật giảm thiểu (mitigation) nào là tối ưu?",
+      "options": {
+        "A": "Sử dụng mô hình nhỏ hơn như Llama-3-8B làm quan tòa chấm điểm.",
+        "B": "Yêu cầu người dùng tự chọn thứ tự hiển thị của các câu trả lời.",
+        "C": "Swap-and-average: hoán đổi vị trí (A,B) thành (B,A) rồi lấy điểm trung bình.",
+        "D": "Nâng cấp bộ nhớ VRAM của cụm máy chủ chạy mô hình quan tòa."
+      },
+      "answer": "C",
+      "explanation": "Kỹ thuật Swap-and-average chạy đánh giá hai lần: lần một đưa (A, B), lần hai hoán đổi thành (B, A), rồi lấy điểm trung bình. Điều này loại bỏ hoàn toàn ảnh hưởng của position bias tuy tốn gấp đôi chi phí gọi API.",
+      "hints": [
+        "Nghĩ về cách hoán đổi vị trí của hai phương án để triệt tiêu sự thiên vị thứ tự.",
+        "Phương pháp này nhân đôi số lần gọi API nhưng đảm bảo tính khách quan.",
+        "Đáp án là Swap-and-average hoán đổi vị trí rồi lấy điểm trung bình."
+      ],
+      "concepts": [
+        "d23-t3-langgraph"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Hiện tượng 'Length Bias' (Verbosity Bias) của LLM-as-Judge được hiểu là gì?",
+      "options": {
+        "A": "Mô hình judge chấm điểm chậm hơn khi câu hỏi của user có độ dài quá lớn.",
+        "B": "Mô hình judge tự động từ chối đánh giá các câu trả lời có độ dài dưới 50 từ.",
+        "C": "Mô hình judge tự động sinh ra các câu giải thích kết quả rất dài dòng.",
+        "D": "Mô hình judge thiên vị các câu trả lời dài dòng hơn dù chất lượng tương đương."
+      },
+      "answer": "D",
+      "explanation": "Length Bias xảy ra khi LLM judge chấm điểm cao hơn cho các câu trả lời dài dòng, verbose (vì trông có vẻ thông minh, học thuật) hơn là các câu trả lời ngắn gọn, cô đọng, mặc dù thông tin cung cấp là tương đương.",
+      "hints": [
+        "Thiên vị liên quan đến số lượng từ (tokens) trong câu trả lời.",
+        "LLM thích phong cách viết học thuật, chi tiết và dài dòng.",
+        "Đáp án chỉ ra mô hình judge thiên vị các câu trả lời dài dòng hơn."
+      ],
+      "concepts": [
+        "d23-t3-langgraph"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Để bảo vệ dữ liệu nhạy cảm của người dùng (PII) ở chốt chặn đầu vào (Input Guardrail), thư viện mã nguồn mở nào của Microsoft thường được sử dụng?",
+      "options": {
+        "A": "Dùng thư viện Presidio.",
+        "B": "Dùng thư viện Autogen.",
+        "C": "Dùng thư viện Guidance.",
+        "D": "Dùng thư viện Kernel."
+      },
+      "answer": "A",
+      "explanation": "Microsoft Presidio là thư viện mã nguồn mở mạnh mẽ giúp tự động phát hiện và làm mờ (redact/mask) các thông tin định danh cá nhân nhạy cảm (PII như tên, số điện thoại, email, số thẻ tín dụng) ở input guardrail.",
+      "hints": [
+        "Thư viện này có tên bắt nguồn từ một pháo đài hoặc khu bảo tồn bảo vệ.",
+        "Nó chuyên dụng cho việc PII detection và anonymization.",
+        "Đáp án chính xác là Microsoft Presidio."
+      ],
+      "concepts": [
+        "d23-t3-langgraph"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Ở chốt chặn đầu ra (Output Guardrail), mô hình phân loại an toàn nào của Meta được khuyến nghị để lọc câu trả lời độc hại?",
+      "options": {
+        "A": "Mô hình Llama Instruct.",
+        "B": "Mô hình Llama Guard.",
+        "C": "Mô hình Code Llama.",
+        "D": "Mô hình Purple Llama."
+      },
+      "answer": "B",
+      "explanation": "Llama Guard 3 (của Meta) là mô hình phân loại an toàn chuyên dụng, được huấn luyện để kiểm tra xem prompt đầu vào hoặc câu trả lời đầu ra của LLM có chứa nội dung độc hại (bạo lực, quấy rối, vũ khí, v.v.) hay vi phạm chính sách an toàn không.",
+      "hints": [
+        "Đây là một mô hình thuộc họ Llama được tinh chỉnh riêng cho mục đích làm bảo vệ (Guard).",
+        "Có phiên bản 3 được phát hành tối ưu hóa cho nhiều danh mục nội dung độc hại.",
+        "Đáp án chính xác là Llama Guard 3."
+      ],
+      "concepts": [
+        "d23-t3-langgraph"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Khi thiết lập chốt chặn đầu vào (Input Guardrail), mục tiêu chính của việc rà soát phạm vi chủ đề (Topic Scope Validation) là gì?",
+      "options": {
+        "A": "Tăng tốc độ sinh token của mô hình LLM chính lên gấp đôi.",
+        "B": "Đo lường thời gian trễ của mạng internet từ client đến server.",
+        "C": "Từ chối trả lời câu hỏi không liên quan đến sản phẩm.",
+        "D": "Tự động dịch các câu hỏi tiếng nước ngoài sang tiếng Việt."
+      },
+      "answer": "C",
+      "explanation": "Topic Scope Validation giúp lọc và từ chối các câu hỏi off-topic (ví dụ: chatbot chăm sóc khách hàng của ngân hàng bị user trêu bắt làm thơ, code python), ngăn chặn việc lãng phí tài nguyên và rủi ro bị bẻ khóa (jailbreak).",
+      "hints": [
+        "Nghĩ về cách giữ cho chatbot luôn tập trung vào nghiệp vụ được giao.",
+        "Tránh việc chatbot bị lợi dụng để trả lời các câu hỏi ngoài phạm vi kinh doanh.",
+        "Đáp án chỉ ra việc từ chối trả lời các câu hỏi không liên quan đến sản phẩm."
+      ],
+      "concepts": [
+        "d23-t3-langgraph"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Khi một quan tòa LLM tự động chấm điểm cao hơn cho các câu trả lời do chính mô hình của mình sinh ra, hiện tượng này được gọi là gì?",
+      "options": {
+        "A": "Thiên vị tự tôn (Self-enhancement bias).",
+        "B": "Thiên vị độ dài (Verbosity bias).",
+        "C": "Thiên vị vị trí (Position bias).",
+        "D": "Sự trôi lệch mẫu (Exemplar drift)."
+      },
+      "answer": "A",
+      "explanation": "Self-enhancement bias (thiên vị tự tôn) xảy ra khi một LLM làm judge (ví dụ: GPT-4) có xu hướng đánh giá cao hơn cho các câu trả lời được sinh ra bởi chính mô hình đó (hoặc cùng họ mô hình) do sự tương đồng về phong cách viết và phân bổ từ vựng.",
+      "hints": [
+        "Sự thiên vị mang tính cá nhân của mô hình đối với sản phẩm của chính nó.",
+        "Nó có nghĩa là tự nâng cao bản thân hoặc tự ưu ái.",
+        "Đáp án chính xác là Self-enhancement bias."
+      ],
+      "concepts": [
+        "d23-t3-langgraph"
+      ]
+    }
+  ]
+}

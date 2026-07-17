@@ -1,0 +1,210 @@
+{
+  "id": "day17-t1-pipeline",
+  "parent_id": "day17-ai-product",
+  "topic_title": "Day 17: PRD & Product-Market Fit",
+  "title": "Phần 2: Xác Định Ranh Giới MVP & Kiểm Soát Scope Creep",
+  "description": "Đánh giá hiểu biết về việc xác định In-Scope, Out-of-Scope, Non-Goals của MVP, nguyên tắc cắt giảm tính năng và các case study từ startup nổi tiếng.",
+  "difficulty": "bình thường",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Ranh giới 'Non-Goals' trong tài liệu xác định phạm vi MVP có vai trò quan trọng nhất là gì?",
+      "options": {
+        "A": "Ngăn chặn hiện tượng phình to phạm vi (scope creep) trong đội ngũ phát triển.",
+        "B": "Liệt kê các tính năng sẽ được phát triển ngay trong phiên bản tiếp theo.",
+        "C": "Định hướng cho đội ngũ marketing về các thông điệp truyền thông cốt lõi.",
+        "D": "Giúp các kỹ sư tối ưu cấu trúc cơ sở dữ liệu ngay từ ban đầu."
+      },
+      "answer": "A",
+      "explanation": "Non-Goals xác định rõ ràng ranh giới những gì sản phẩm CHẮC CHẮN KHÔNG làm trong giai đoạn này, giúp giữ sự tập trung và ngăn chặn scope creep.",
+      "hints": [
+        "Hãy nghĩ về việc làm thế nào để cả team không bị phân tâm bởi những ý tưởng phát sinh.",
+        "Non-goals là ranh giới đỏ ngăn chặn việc tự ý thêm tính năng ngoài kế hoạch.",
+        "Đáp án chỉ ra vai trò ngăn chặn hiện tượng phình to phạm vi thiết kế của sản phẩm."
+      ],
+      "concepts": [
+        "d17-t1-prd-pmf"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Câu hỏi 'Kill question' chuẩn để quyết định một tính năng có nên thuộc về 'In-Scope' của MVP hay không là gì?",
+      "options": {
+        "A": "Nếu cắt tính năng này đi, khách hàng có còn nhận được giá trị cốt lõi không?",
+        "B": "Chi phí để phát triển và vận hành tính năng này có vượt quá ngân sách không?",
+        "C": "Kỹ sư có thể hoàn thành việc lập trình tính năng này trong một tuần không?",
+        "D": "Đối thủ cạnh tranh lớn nhất hiện nay đã có tính năng tương tự hay chưa?"
+      },
+      "answer": "A",
+      "explanation": "Nếu câu trả lời là 'Có' (khách vẫn nhận được giá trị cốt lõi), tính năng đó phải chuyển sang Out-of-Scope vì nó không bắt buộc đối với MVP.",
+      "hints": [
+        "Hãy nghĩ về nguyên tắc cắt giảm tối đa để giữ MVP tinh gọn nhất có thể.",
+        "Tính năng In-scope chỉ bao gồm những gì tối thiểu để kiểm chứng giả thuyết.",
+        "Đáp án là câu hỏi kiểm tra xem khách hàng có còn nhận được giá trị cốt lõi khi cắt bỏ nó."
+      ],
+      "concepts": [
+        "d17-t1-prd-pmf"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Case study kinh điển của Instagram khi chuyển đổi từ ứng dụng Burbn sang Instagram đã thực hiện cắt giảm tính năng như thế nào?",
+      "options": {
+        "A": "Loại bỏ hoàn toàn tính năng chia sẻ ảnh để tập trung check-in địa điểm.",
+        "B": "Cắt bỏ 90% tính năng phức tạp, giữ chụp ảnh, bộ lọc màu và chia sẻ.",
+        "C": "Giữ nguyên toàn bộ tính năng và chỉ thay đổi giao diện cho đẹp mắt.",
+        "D": "Tập trung xây dựng hệ thống chat nhóm thay vì đăng ảnh công khai."
+      },
+      "answer": "B",
+      "explanation": "Instagram ban đầu là Burbn (một ứng dụng check-in phức tạp), họ đã dũng cảm cắt bỏ hầu hết để dồn toàn lực vào tính năng cốt lõi được yêu thích nhất là chụp ảnh, lọc màu và chia sẻ.",
+      "hints": [
+        "Hãy nhớ lại cách Instagram trở nên cực kỳ tinh giản và thu hút hàng triệu người dùng.",
+        "Họ tập trung hoàn toàn vào đúng một trải nghiệm cốt lõi mang lại giá trị nhanh nhất.",
+        "Đáp án mô tả việc cắt giảm 90% tính năng phức tạp để giữ lại bộ ba tính năng cốt lõi."
+      ],
+      "concepts": [
+        "d17-t1-prd-pmf"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Để giải quyết vấn đề ranh giới của Figma khi đối đầu với gã khổng lồ Adobe, họ đã dồn 100% nguồn lực vào tính năng khác biệt nào?",
+      "options": {
+        "A": "Hệ thống chỉnh sửa ảnh chuyên nghiệp chứa hàng loạt hiệu ứng phức tạp.",
+        "B": "Khả năng cộng tác thiết kế nhiều người cùng lúc theo thời gian thực.",
+        "C": "Công cụ vẽ vector nâng cao vượt trội hơn hẳn so với Adobe Illustrator.",
+        "D": "Khả năng xuất bản thiết kế ra nhiều định dạng file ngoại tuyến khác nhau."
+      },
+      "answer": "B",
+      "explanation": "Figma không cố gắng bắt chước mọi tính năng của Adobe, mà dồn toàn lực vào tính năng đối thủ chưa có lúc đó: Multiplayer realtime (thiết kế đồng thời trên trình duyệt).",
+      "hints": [
+        "Hãy nghĩ về đặc điểm giúp Figma thay đổi cách các đội ngũ thiết kế làm việc chung với nhau.",
+        "Đó là tính năng cộng tác thời gian thực ngay trên môi trường web.",
+        "Đáp án chỉ ra khả năng cộng tác thiết kế đồng thời của nhiều người dùng."
+      ],
+      "concepts": [
+        "d17-t1-prd-pmf"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Một tính năng nằm trong danh mục 'Out-of-Scope' của tài liệu ranh giới MVP được định nghĩa như thế nào?",
+      "options": {
+        "A": "Là tính năng bị cấm hoàn toàn và không được phép phát triển sau.",
+        "B": "Là tính năng tốt và hữu ích, nhưng không bắt buộc khi kiểm chứng.",
+        "C": "Là tính năng bắt buộc phải có để hệ thống có thể chạy được.",
+        "D": "Là tính năng do khách hàng yêu cầu nhưng đội kỹ thuật từ chối."
+      },
+      "answer": "B",
+      "explanation": "Out-of-Scope là những tính năng có giá trị nhưng chưa cần thiết cho việc kiểm chứng giả định ở giai đoạn MVP, sẽ được phát triển sau.",
+      "hints": [
+        "Phân biệt với In-Scope (bắt buộc) và Non-Goals (không bao giờ làm trong tương lai gần).",
+        "Đây là những tính năng hữu ích nhưng tạm thời bị gác lại để giữ tiến độ MVP.",
+        "Đáp án mô tả tính năng có ích nhưng không bắt buộc để kiểm chứng giả thuyết ban đầu."
+      ],
+      "concepts": [
+        "d17-t1-prd-pmf"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Hiện tượng 'Scope Creep' trong quá trình xây dựng MVP thường dẫn đến hậu quả nghiêm trọng nhất nào cho team?",
+      "options": {
+        "A": "Tốc độ phản hồi hệ thống bị giảm sút do có quá nhiều người dùng.",
+        "B": "Đội ngũ marketing không biết cách viết thông điệp quảng cáo cho sản phẩm này.",
+        "C": "Sản phẩm trễ hạn ra mắt và cạn kiệt nguồn lực trước khi kiểm chứng.",
+        "D": "Các mô hình ngôn ngữ lớn liên tục gặp lỗi khi xử lý câu hỏi đó."
+      },
+      "answer": "C",
+      "explanation": "Scope creep (phình to phạm vi) làm kéo dài thời gian phát triển vô hạn, khiến startup cạn vốn và trễ cơ hội kiểm chứng với thị trường.",
+      "hints": [
+        "Hãy nghĩ đến việc liên tục thêm các tính năng nhỏ 'nhân tiện làm luôn'.",
+        "Điều này làm loãng sự tập trung và kéo dài thời gian hoàn thành dự án.",
+        "Đáp án chỉ ra việc chậm trễ ra mắt sản phẩm và lãng phí tài nguyên phát triển."
+      ],
+      "concepts": [
+        "d17-t1-prd-pmf"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Trong câu chuyện của Slack, họ đã chuyển hướng từ sản phẩm ban đầu là gì để giữ lại công cụ chat nội bộ?",
+      "options": {
+        "A": "Một nền tảng quản lý dự án cho các công ty xây dựng lớn.",
+        "B": "Một ứng dụng chia sẻ hình ảnh và video ngắn cho mọi gia đình.",
+        "C": "Một tựa game trực tuyến tên là Glitch nhưng không đạt thành công.",
+        "D": "Một hệ thống gửi email bảo mật cao cho các định chế tài chính."
+      },
+      "answer": "C",
+      "explanation": "Slack ban đầu được sinh ra dưới dạng công cụ liên lạc nội bộ của đội ngũ phát triển game Glitch. Khi game thất bại, họ vứt bỏ game và chỉ giữ lại công cụ chat này.",
+      "hints": [
+        "Hãy liên tưởng đến xuất phát điểm của Stewart Butterfield trước khi tạo ra Slack.",
+        "Sản phẩm ban đầu của họ là một dự án game trực tuyến không thành công.",
+        "Đáp án là tựa game trực tuyến Glitch."
+      ],
+      "concepts": [
+        "d17-t1-prd-pmf"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Khi xác định ranh giới MVP, vì sao việc thống nhất giữa PM và Tech Lead về 'In-Scope' lại cực kỳ quan trọng?",
+      "options": {
+        "A": "Để PM có thể tự viết code khi các kỹ sư quá tải công việc.",
+        "B": "Để đảm bảo chi phí API các mô hình AI luôn ở mức thấp nhất.",
+        "C": "Để tránh việc kỹ sư tự ý tối ưu các tính năng phụ chưa cần thiết.",
+        "D": "Để thiết lập các chính sách bảo mật thông tin nội bộ của doanh nghiệp."
+      },
+      "answer": "C",
+      "explanation": "Sự thống nhất giúp đội kỹ thuật tập trung xây dựng đúng và đủ những tính năng tối thiểu, tránh tình trạng tự ý over-engineer các phần không quan trọng.",
+      "hints": [
+        "Kỹ sư thường có xu hướng muốn xây dựng mọi thứ thật hoàn hảo và có khả năng mở rộng tốt.",
+        "Tuy nhiên, MVP chỉ cần kiểm chứng nhanh giả thuyết với chất lượng vừa đủ.",
+        "Đáp án đề cập đến việc ngăn ngừa kỹ sư tối ưu hóa quá mức các tính năng không cốt lõi."
+      ],
+      "concepts": [
+        "d17-t1-prd-pmf"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Làm thế nào để ứng phó hiệu quả nhất khi khách hàng thử nghiệm yêu cầu thêm một tính năng mới trong quá trình test MVP?",
+      "options": {
+        "A": "Lập tức lập trình tính năng đó để làm hài lòng khách hàng thử nghiệm.",
+        "B": "Từ chối thẳng thừng và giải thích rằng sản phẩm sẽ không làm điều đó.",
+        "C": "Yêu cầu khách hàng tự trả thêm tiền để đội phát triển làm tính năng.",
+        "D": "Ghi nhận vào danh sách Out-of-Scope và đánh giá ưu tiên cho phiên bản sau."
+      },
+      "answer": "D",
+      "explanation": "Cần ghi nhận ý kiến phản hồi của khách hàng nhưng không được tùy tiện phá vỡ ranh giới MVP hiện tại; thay vào đó, đưa vào Out-of-Scope để cân nhắc sau.",
+      "hints": [
+        "Hãy nghĩ về việc bảo vệ ranh giới MVP để đảm bảo tiến độ dự án.",
+        "Ý kiến khách hàng rất quan trọng nhưng cần được quản lý một cách có cấu trúc.",
+        "Đáp án đề cập đến việc lưu lại thông tin vào Out-of-Scope để xem xét sau."
+      ],
+      "concepts": [
+        "d17-t1-prd-pmf"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Nguyên tắc cơ bản nhất để xác định tính khả thi kỹ thuật khi lập kế hoạch MVP là gì?",
+      "options": {
+        "A": "Yêu cầu hệ thống hỗ trợ hàng triệu người dùng đồng thời ngay lập tức.",
+        "B": "Lựa chọn những công nghệ mới nhất chưa từng được kiểm chứng trên thực tế.",
+        "C": "Tự xây dựng tất cả module từ đầu thay vì dùng thư viện thứ ba.",
+        "D": "Đảm bảo tính năng cốt lõi có thể xây dựng nhanh bằng công nghệ hiện có."
+      },
+      "answer": "D",
+      "explanation": "Tính khả thi kỹ thuật của MVP đòi hỏi các tính năng cốt lõi phải được hiện thực hóa nhanh chóng bằng các giải pháp công nghệ đã biết hoặc có sẵn.",
+      "hints": [
+        "MVP cần ra mắt nhanh để kiểm chứng giả định thị trường.",
+        "Tránh việc mất quá nhiều thời gian nghiên cứu công nghệ mới không chắc chắn.",
+        "Đáp án nhấn mạnh việc xây dựng nhanh chóng dựa trên năng lực công nghệ sẵn có."
+      ],
+      "concepts": [
+        "d17-t1-prd-pmf"
+      ]
+    }
+  ]
+}

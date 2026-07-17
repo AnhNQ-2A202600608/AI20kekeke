@@ -1,9 +1,23 @@
-# Optional Make wrappers. The Python CLI is the cross-platform source of truth.
+.PHONY: run test lint format typecheck check clean
 
-.PHONY: help bootstrap install dev dev-backend dev-frontend docker-up docker-down lint format typecheck test test-backend smoke eval validate clean package
+run:
+	uvicorn src.main:app --reload --reload-dir src --host 0.0.0.0 --port 8000
 
-help:
-	@python scripts/project_tasks.py --help
+test:
+	pytest tests/ -v
 
-bootstrap install dev dev-backend dev-frontend docker-up docker-down lint format typecheck test test-backend smoke eval validate clean package:
-	@python scripts/project_tasks.py $@
+lint:
+	ruff check src/ tests/
+
+format:
+	ruff format src/ tests/
+
+typecheck:
+	mypy src/
+
+check: lint format test
+
+clean:
+	find . -type d -name __pycache__ -exec rm -rf {} +
+	find . -type d -name .pytest_cache -exec rm -rf {} +
+	find . -type d -name .ruff_cache -exec rm -rf {} +

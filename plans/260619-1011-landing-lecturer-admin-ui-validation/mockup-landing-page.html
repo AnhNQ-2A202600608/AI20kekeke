@@ -1,0 +1,1390 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EduGap | Hệ thống Gia sư AI Thích ứng & Liêm chính Học thuật</title>
+  <!-- Google Fonts: Plus Jakarta Sans for headings, Nunito Sans for body -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@500;700;800;900&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      /* Sapia Design System Tokens */
+      --primary: #58cc02;
+      --primary-border: #46a302;
+      --secondary: #00cd9c;
+      --secondary-border: #00a47d;
+      --yellow: #ffc800;
+      --yellow-border: #cc9600;
+      --orange: #ff9600;
+      --orange-border: #cc7000;
+      --red: #ff4b4b;
+      --red-border: #ea2b2b;
+      --blue: #1cb0f6;
+      --blue-border: #1899d6;
+      
+      --bg: #f4fce8; /* Cozy Avocado */
+      --ink: #171e12; /* On-Background Dark Charcoal */
+      --surface: #ffffff;
+      --surface-glass: rgba(255, 255, 255, 0.85);
+      --muted: #61736d;
+      --line: #dfe7da;
+      --shadow-3d: 0 5px 0 var(--line);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(88, 204, 2, 0.12), transparent 40rem),
+        radial-gradient(circle at 88% 12%, rgba(255, 200, 0, 0.18), transparent 35rem),
+        var(--bg);
+      font-family: "Nunito Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .page-shell { overflow: hidden; }
+    .container {
+      width: min(100% - 40px, var(--max));
+      margin: 0 auto;
+    }
+
+    /* Tactile 3D Buttons */
+    .btn-3d {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 28px;
+      border-radius: 18px;
+      font-weight: 900;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      transform: translateY(0);
+      transition: transform 100ms ease, box-shadow 100ms ease;
+    }
+
+    .btn-3d:active {
+      transform: translateY(4px);
+    }
+
+    .btn-primary {
+      color: white;
+      background: var(--primary);
+      box-shadow: 0 5px 0 var(--primary-border), 0 10px 20px rgba(88, 204, 2, 0.22);
+    }
+    .btn-primary:active {
+      box-shadow: 0 1px 0 var(--primary-border), 0 5px 10px rgba(88, 204, 2, 0.12);
+    }
+
+    .btn-secondary {
+      color: var(--ink);
+      background: white;
+      border: 1px solid var(--line);
+      box-shadow: 0 5px 0 var(--line), 0 10px 20px rgba(23, 30, 18, 0.05);
+    }
+    .btn-secondary:active {
+      box-shadow: 0 1px 0 var(--line), 0 5px 10px rgba(23, 30, 18, 0.02);
+    }
+
+    .btn-blue {
+      color: white;
+      background: var(--blue);
+      box-shadow: 0 5px 0 var(--blue-border), 0 10px 20px rgba(28, 176, 246, 0.22);
+    }
+    .btn-blue:active {
+      box-shadow: 0 1px 0 var(--blue-border);
+    }
+
+    .btn-orange {
+      color: white;
+      background: var(--orange);
+      box-shadow: 0 5px 0 var(--orange-border), 0 10px 20px rgba(255, 150, 0, 0.22);
+    }
+    .btn-orange:active {
+      box-shadow: 0 1px 0 var(--orange-border);
+    }
+
+    .btn-red {
+      color: white;
+      background: var(--red);
+      box-shadow: 0 5px 0 var(--red-border);
+    }
+    .btn-red:active {
+      box-shadow: 0 1px 0 var(--red-border);
+    }
+
+    /* Navigation */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(18px);
+      background: rgba(244, 252, 232, 0.85);
+      border-bottom: 2px solid var(--line);
+    }
+
+    .nav-inner {
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      font-size: 24px;
+      letter-spacing: -0.04em;
+    }
+
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: linear-gradient(145deg, var(--primary), var(--secondary));
+      border-radius: 14px;
+      font-size: 20px;
+      box-shadow: 0 4px 0 var(--primary-border);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 15px;
+    }
+    .nav-links a:hover { color: var(--primary-border); }
+
+    .nav-actions { display: flex; gap: 12px; }
+
+    /* Hero Section */
+    .hero {
+      padding: 60px 0 72px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      align-items: start;
+      gap: 52px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      color: var(--primary-border);
+      background: rgba(88, 204, 2, 0.12);
+      border: 1px solid rgba(88, 204, 2, 0.2);
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 14px;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+    }
+
+    h1 {
+      margin-top: 18px;
+      font-size: clamp(38px, 5.5vw, 56px);
+      color: var(--ink);
+    }
+
+    h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      color: var(--ink);
+    }
+
+    .hero-copy {
+      margin: 22px 0 32px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 16px; }
+
+    .trust-row {
+      margin-top: 36px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .chip-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: white;
+      border: 1px solid var(--line);
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 800;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+
+    .chip-badge::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--primary);
+    }
+
+    /* Tab Switcher & Interactive Simulator */
+    .simulator-container {
+      background: var(--surface-glass);
+      border: 3px solid var(--line);
+      border-radius: var(--radius-xl);
+      box-shadow: 0 20px 40px rgba(23, 30, 18, 0.06);
+      padding: 24px;
+      position: relative;
+    }
+
+    .tab-switcher {
+      display: flex;
+      background: rgba(23, 30, 18, 0.04);
+      padding: 5px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+      border: 1px solid rgba(23, 30, 18, 0.06);
+    }
+
+    .tab-btn {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border: none;
+      border-radius: 15px;
+      font-weight: 900;
+      font-size: 15px;
+      cursor: pointer;
+      background: transparent;
+      color: var(--muted);
+      transition: all 150ms ease;
+    }
+
+    .tab-btn.active {
+      background: white;
+      color: var(--ink);
+      box-shadow: 0 4px 10px rgba(23, 30, 18, 0.08);
+    }
+
+    /* Simulation Panels */
+    .sim-panel {
+      display: none;
+    }
+    .sim-panel.active {
+      display: block;
+      animation: fadeIn 300ms ease;
+    }
+
+    /* Student View Styles */
+    .student-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--line);
+      margin-bottom: 18px;
+    }
+
+    .mascot-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .sofi-avatar {
+      background: white;
+      border: 2px solid var(--line);
+      border-radius: 50%;
+      padding: 2px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    .header-details strong {
+      font-size: 16px;
+      font-weight: 900;
+    }
+    .header-details div {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .student-metrics {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 12px;
+      background: white;
+      border: 2px solid var(--line);
+      padding: 12px 16px;
+      border-radius: var(--radius-md);
+      margin-bottom: 16px;
+    }
+
+    .metric-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .metric-lbl {
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .metric-val {
+      font-size: 18px;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Mastery BKT State tags */
+    .mastery-tag {
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    .mastery-weak { background: rgba(255, 75, 75, 0.12); color: var(--red); }
+    .mastery-learning { background: rgba(88, 204, 2, 0.12); color: var(--primary-border); }
+    .mastery-mastered { background: rgba(255, 200, 0, 0.15); color: var(--yellow-border); }
+
+    /* Interactive Steps */
+    .sim-step {
+      display: none;
+    }
+    .sim-step.active {
+      display: block;
+    }
+
+    .chat-bubble {
+      background: white;
+      border: 2px solid var(--line);
+      border-radius: 18px;
+      padding: 14px 16px;
+      margin-bottom: 14px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.02);
+      font-weight: 700;
+    }
+    .chat-bubble-sofi {
+      border-left: 5px solid var(--primary);
+    }
+    .chat-bubble-user {
+      background: var(--bg);
+      border-left: 5px solid var(--blue);
+      text-align: right;
+    }
+
+    .citation-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(28, 176, 246, 0.08);
+      color: var(--blue-border);
+      border: 1px dashed rgba(28, 176, 246, 0.3);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      margin-top: 8px;
+    }
+
+    .code-mockup {
+      background: #171e12;
+      color: #bbf7d0;
+      font-family: monospace;
+      padding: 14px;
+      border-radius: var(--radius-md);
+      font-size: 14px;
+      margin-bottom: 14px;
+      overflow-x: auto;
+      border: 2px solid #293422;
+    }
+
+    .action-box {
+      background: white;
+      border: 2px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      text-align: center;
+    }
+
+    .action-box h4 {
+      margin: 0 0 12px;
+      font-size: 15px;
+      font-weight: 900;
+    }
+
+    .actions-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    .actions-grid-2 {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .feedback-alert {
+      padding: 14px;
+      border-radius: var(--radius-md);
+      font-weight: 800;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+    .alert-danger {
+      background: rgba(255, 75, 75, 0.12);
+      color: var(--red);
+      border: 2px solid rgba(255, 75, 75, 0.2);
+    }
+    .alert-success {
+      background: rgba(88, 204, 2, 0.12);
+      color: var(--primary-border);
+      border: 2px solid rgba(88, 204, 2, 0.2);
+    }
+
+    /* Lecturer View Styles */
+    .lecturer-dashboard {
+      background: #171e12; /* Premium dark background */
+      color: white;
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      border: 2px solid #293422;
+    }
+
+    .db-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+    }
+
+    .db-badge {
+      background: rgba(88, 204, 2, 0.2);
+      color: var(--primary);
+      border: 1px solid rgba(88,204,2,0.3);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .db-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 580px) {
+      .db-grid { grid-template-columns: 1fr; }
+    }
+
+    .db-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-md);
+      padding: 14px;
+    }
+
+    .db-card h4 {
+      margin: 0 0 12px;
+      font-size: 14px;
+      font-weight: 900;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .chart-bar-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .chart-bar-row {
+      display: grid;
+      grid-template-columns: 80px 1fr 34px;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .chart-bar-track {
+      height: 8px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .chart-bar-fill {
+      height: 100%;
+      border-radius: inherit;
+    }
+
+    .sentinel-alert {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 8px;
+    }
+    .sentinel-alert::before {
+      content: "⚠️";
+    }
+
+    .students-support-list {
+      display: grid;
+      gap: 8px;
+    }
+    .support-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255,255,255,0.03);
+      padding: 8px 10px;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .lbl-tag {
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-size: 10px;
+      font-weight: 900;
+    }
+
+    .intervention-builder {
+      background: rgba(88, 204, 2, 0.08);
+      border: 1px dashed rgba(88, 204, 2, 0.3);
+      padding: 16px;
+      border-radius: var(--radius-md);
+      text-align: center;
+    }
+
+    /* Reteach Slide Loader Animation */
+    .reteach-loader {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 20px 0;
+    }
+    .spinner {
+      width: 32px;
+      height: 32px;
+      border: 3px solid rgba(88, 204, 2, 0.2);
+      border-top-color: var(--primary);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    .slide-preview {
+      display: none;
+      background: white;
+      color: var(--ink);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      border: 2px solid var(--primary);
+      text-align: left;
+      margin-top: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    /* Core Product Benefits & Feature Blocks */
+    .features-section {
+      background: white;
+      border-top: 2px solid var(--line);
+      border-bottom: 2px solid var(--line);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .panel {
+      background: var(--bg);
+      border: 2px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      box-shadow: 0 8px 0 var(--line);
+      transition: transform 150ms ease, box-shadow 150ms ease;
+    }
+    .panel:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 0 var(--line);
+    }
+
+    .panel-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      color: white;
+      font-size: 20px;
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+
+    .panel-icon-1 { background: var(--primary); }
+    .panel-icon-2 { background: var(--orange); }
+    .panel-icon-3 { background: var(--blue); }
+
+    .panel h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+    .panel p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    /* Adaptive Loop flow */
+    .loop-card {
+      background: var(--bg);
+      border: 3px solid var(--line);
+      border-radius: var(--radius-xl);
+      padding: 32px;
+    }
+    .loop-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .loop-step {
+      background: white;
+      border: 2px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      position: relative;
+    }
+    .loop-number {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 16px;
+      margin-bottom: 16px;
+      box-shadow: 0 3px 0 var(--primary-border);
+    }
+
+    .loop-step h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .loop-step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    /* Detailed section: student experience */
+    .split-section {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 52px;
+      align-items: center;
+    }
+
+    .list-check {
+      list-style: none;
+      padding: 0;
+      margin: 24px 0 0;
+      display: grid;
+      gap: 16px;
+    }
+    .list-check li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-weight: 800;
+      color: var(--ink);
+    }
+    .list-check-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+
+    /* AI Ops & Safety */
+    .safety-section {
+      background: white;
+      border-top: 2px solid var(--line);
+      border-bottom: 2px solid var(--line);
+    }
+
+    /* CTA Section */
+    .cta-card {
+      background: radial-gradient(circle at top left, rgba(88, 204, 2, 0.15), transparent 30rem), linear-gradient(135deg, white, #eefbe8);
+      border: 3px solid var(--primary);
+      border-radius: var(--radius-xl);
+      padding: 52px;
+      text-align: center;
+      box-shadow: 0 12px 0 var(--primary-border);
+    }
+    .cta-card p {
+      max-width: 600px;
+      margin: 16px auto 32px;
+      color: var(--muted);
+      font-size: 19px;
+      font-weight: 700;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 40px 0 60px;
+      border-top: 2px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    /* Animations */
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 980px) {
+      .hero-grid, .split-section {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .grid-3, .loop-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .grid-3, .loop-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-links { display: none; }
+      h1 { font-size: 34px; }
+      .cta-card { padding: 32px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <!-- Navigation Bar -->
+    <header class="nav">
+      <div class="container nav-inner">
+        <a class="brand" href="#top" aria-label="EduGap home">
+          <span class="brand-mark">EG</span>
+          <span>EduGap</span>
+        </a>
+        <nav class="nav-links" aria-label="Menu chính">
+          <a href="#about">Vì sao chọn EduGap</a>
+          <a href="#loop">Vòng lặp Thích ứng</a>
+          <a href="#students">Trải nghiệm Sinh viên</a>
+          <a href="#safety">Bảo vệ Học thuật</a>
+        </nav>
+        <div class="nav-actions">
+          <a class="btn-3d btn-secondary" style="padding: 10px 20px; font-size: 14px;" href="#pilot">Đặt Demo</a>
+          <a class="btn-3d btn-primary" style="padding: 10px 20px; font-size: 14px;" href="#pilot">Trải nghiệm Thử</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- Hero Section with Interactive Sandbox -->
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <div class="eyebrow">Adaptive-first AI Tutor for Higher Education</div>
+            <h1>Gia sư AI Thích ứng cá nhân hóa cho từng Sinh viên</h1>
+            <p class="hero-copy">
+              Được xây dựng riêng cho giảng đường Đại học quy mô lớn. EduGap bám sát giáo trình chính thống, hướng dẫn bằng Socratic và liên tục hiệu chuẩn năng lực theo Elo thực tế, giúp Thầy Cô theo sát lỗ hổng lớp học và ngăn chặn gian lận AI.
+            </p>
+            <div class="hero-actions">
+              <a class="btn-3d btn-primary" href="#pilot">Đăng ký Thử nghiệm (Pilot)</a>
+              <a class="btn-3d btn-secondary" onclick="activateTab('student')">Chạy thử Simulator</a>
+            </div>
+            <div class="trust-row">
+              <span class="chip-badge">Gia sư Socratic RAG</span>
+              <span class="chip-badge">Định vị lỗ hổng BKT</span>
+              <span class="chip-badge">Hiệu chuẩn Elo thích ứng</span>
+              <span class="chip-badge">Ngăn chặn Copy AI</span>
+            </div>
+          </div>
+
+          <!-- Interactive Sandbox Simulator Card -->
+          <div class="simulator-container" id="sandbox-hub">
+            <div class="tab-switcher">
+              <button class="tab-btn active" id="tab-student" onclick="activateTab('student')">
+                🦊 Màn hình Sinh viên
+              </button>
+              <button class="tab-btn" id="tab-lecturer" onclick="activateTab('lecturer')">
+                📊 Góc Giảng viên
+              </button>
+            </div>
+
+            <!-- Student View Panel -->
+            <div class="sim-panel active" id="panel-student">
+              <div class="student-header">
+                <div class="mascot-area">
+                  <!-- Sofi the Fox Scholar SVG -->
+                  <div class="sofi-avatar">
+                    <svg viewBox="0 0 100 100" width="46" height="46">
+                      <!-- Graduation cap -->
+                      <polygon points="50,15 80,28 50,40 20,28" fill="#17342f" />
+                      <rect x="42" y="32" width="16" height="8" fill="#17342f" />
+                      <line x1="80" y1="28" x2="82" y2="45" stroke="#ffc800" stroke-width="2" />
+                      <circle cx="82" cy="45" r="3" fill="#ffc800" />
+                      <!-- Fox face -->
+                      <polygon points="25,48 75,48 50,85" fill="#ff9600" />
+                      <polygon points="25,48 50,48 50,85" fill="#e07b00" />
+                      <!-- Ears -->
+                      <polygon points="20,48 10,25 35,40" fill="#ff9600" />
+                      <polygon points="80,48 90,25 65,40" fill="#ff9600" />
+                      <polygon points="22,44 15,28 32,38" fill="#ffddb3" />
+                      <polygon points="78,44 85,28 68,38" fill="#ffddb3" />
+                      <!-- Cheeks -->
+                      <polygon points="25,48 38,65 25,65" fill="#ffffff" />
+                      <polygon points="75,48 62,65 75,65" fill="#ffffff" />
+                      <!-- Snout tip -->
+                      <circle cx="50" cy="83" r="4" fill="#17342f" />
+                      <!-- Glasses -->
+                      <circle cx="38" cy="55" r="10" fill="none" stroke="#17342f" stroke-width="2.5" />
+                      <circle cx="62" cy="55" r="10" fill="none" stroke="#17342f" stroke-width="2.5" />
+                      <line x1="48" y1="55" x2="52" y2="55" stroke="#17342f" stroke-width="2.5" />
+                      <circle cx="38" cy="55" r="2.5" fill="#17342f" />
+                      <circle cx="62" cy="55" r="2.5" fill="#17342f" />
+                    </svg>
+                  </div>
+                  <div class="header-details">
+                    <strong>Gia sư Socratic (Sofi)</strong>
+                    <div>Học phần: Calculus I · Đệ quy</div>
+                  </div>
+                </div>
+                <div class="status-pill" id="student-status-pill">ZPD: Difficulty 1250 Elo</div>
+              </div>
+
+              <!-- Live ELO / BKT Metrics -->
+              <div class="student-metrics">
+                <div class="metric-item">
+                  <span class="metric-lbl">Chỉ số Năng lực (Student Elo)</span>
+                  <div class="metric-val" id="student-elo-val">1200</div>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-lbl">Độ làm chủ (BKT Mastery)</span>
+                  <div class="metric-val">
+                    <span class="mastery-tag mastery-weak" id="student-mastery-tag">Weak (25%)</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 1: The Problem -->
+              <div class="sim-step active" id="s-step-1">
+                <div class="chat-bubble chat-bubble-sofi">
+                  Chào bạn! Hãy giúp mình hoàn thiện điều kiện dừng (base case) của hàm đệ quy tính giai thừa dưới đây.
+                </div>
+                <div class="code-mockup">
+def factorial(n):
+    # Điền điều kiện dừng tại đây
+    _____
+    return n * factorial(n - 1)
+                </div>
+                <div class="action-box">
+                  <h4>💡 Bạn đang bế tắc? Đừng lo lắng!</h4>
+                  <button class="btn-3d btn-orange" style="width:100%" onclick="goToStep(2)">
+                    🙋 Xem gợi ý (Ask Sofi)
+                  </button>
+                </div>
+              </div>
+
+              <!-- Step 2: Socratic Hint -->
+              <div class="sim-step" id="s-step-2">
+                <div class="chat-bubble chat-bubble-sofi">
+                  Đệ quy cần điểm dừng để không lặp vô hạn. Bạn có biết giai thừa của 0 (0!) có giá trị bằng bao nhiêu không?
+                  <br />
+                  <span class="citation-tag">📄 Giáo trình Calculus · Chương 2 · Trang 45</span>
+                </div>
+                <div class="action-box">
+                  <h4>Lựa chọn hành vi của bạn:</h4>
+                  <div class="actions-grid">
+                    <button class="btn-3d btn-blue" onclick="goToStep(3)">
+                      ✍️ Tự suy luận & Trả lời theo gợi ý
+                    </button>
+                    <button class="btn-3d btn-secondary" onclick="goToStep(4)">
+                      🤖 Copy bài giải sẵn từ ChatGPT bên ngoài
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 3: Socratic Success (Positive Path) -->
+              <div class="sim-step" id="s-step-3">
+                <div class="chat-bubble chat-bubble-user">
+                  Nếu n == 0 thì kết quả trả về là 1!
+                </div>
+                <div class="feedback-alert alert-success">
+                  🎉 Chính xác! Bạn đã tìm ra base case đúng: <code>if n == 0: return 1</code>.
+                </div>
+                <div class="chat-bubble chat-bubble-sofi">
+                  Tuyệt vời! Do bạn đã sử dụng 1 gợi ý, điểm năng lực đã được cập nhật với chiết khấu để bảo vệ tính công bằng học thuật.
+                </div>
+                <div class="action-box">
+                  <button class="btn-3d btn-primary" onclick="resetStudentSim()">
+                    🔄 Thử lại Simulator
+                  </button>
+                </div>
+              </div>
+
+              <!-- Step 4: Cheating Warning (Negative Path) -->
+              <div class="sim-step" id="s-step-4">
+                <div class="chat-bubble chat-bubble-user">
+                  *Dán toàn bộ code giải thuật hoàn chỉnh từ ChatGPT*
+                </div>
+                <div class="feedback-alert alert-danger">
+                  🚨 CẢNH BÁO LIÊM CHÍNH HỌC THUẬT
+                </div>
+                <div class="chat-bubble chat-bubble-sofi">
+                  Phát hiện dấu vết mã nguồn được tạo sẵn trực tiếp bởi AI ngoài hệ thống. Điểm năng lực của bạn đã bị ĐÓNG BĂNG để tránh gian lận.
+                </div>
+                <div class="action-box">
+                  <button class="btn-3d btn-secondary" onclick="goToStep(2)">
+                    ↩️ Quay lại và tự suy nghĩ
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Lecturer View Panel -->
+            <div class="sim-panel" id="panel-lecturer">
+              <div class="lecturer-dashboard">
+                <div class="db-header">
+                  <div>
+                    <strong style="font-size:16px;">Báo cáo Học phần: Calculus I</strong>
+                    <div style="font-size:11px;color:rgba(255,255,255,0.68);">Lớp: K20 Khoa Khoa học Máy tính</div>
+                  </div>
+                  <span class="db-badge">Chỉ số Lớp học</span>
+                </div>
+
+                <div class="db-grid">
+                  <!-- Weak concepts list -->
+                  <div class="db-card">
+                    <h4>Lỗ hổng Kiến thức (Weak Concepts)</h4>
+                    <div class="chart-bar-list">
+                      <div class="chart-bar-row">
+                        <span>Đệ quy (Recursion)</span>
+                        <div class="chart-bar-track">
+                          <div class="chart-bar-fill" style="width: 32%; background: var(--red);"></div>
+                        </div>
+                        <span style="color:var(--red);">32%</span>
+                      </div>
+                      <div class="chart-bar-row">
+                        <span>Giới hạn (Limits)</span>
+                        <div class="chart-bar-track">
+                          <div class="chart-bar-fill" style="width: 58%; background: var(--orange);"></div>
+                        </div>
+                        <span style="color:var(--orange);">58%</span>
+                      </div>
+                      <div class="chart-bar-row">
+                        <span>Đạo hàm (Derivatives)</span>
+                        <div class="chart-bar-track">
+                          <div class="chart-bar-fill" style="width: 85%; background: var(--primary);"></div>
+                        </div>
+                        <span style="color:var(--primary);">85%</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Academic Integrity Sentinel -->
+                  <div class="db-card">
+                    <h4>Giám sát Liêm chính AI</h4>
+                    <div class="sentinel-alert">
+                      14% sinh viên bị đóng băng Elo tuần này do phát hiện sao chép đáp án AI ngoài luồng.
+                    </div>
+                    <div class="sentinel-alert">
+                      Chỉ số trợ giúp: 68% sinh viên cần tới gợi ý thứ 3 tại chủ đề "Base Case đệ quy".
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Students needing support list -->
+                <div class="db-card" style="margin-bottom:16px;">
+                  <h4>Sinh viên cần can thiệp bổ trợ gấp</h4>
+                  <div class="students-support-list">
+                    <div class="support-item">
+                      <span>Nguyễn Văn A (MSSV: 2012001)</span>
+                      <span class="lbl-tag" style="background:rgba(255, 75, 75, 0.2); color:var(--red);">Elo: 980 (Nguy cơ)</span>
+                    </div>
+                    <div class="support-item">
+                      <span>Trần Thị B (MSSV: 2012015)</span>
+                      <span class="lbl-tag" style="background:rgba(255, 150, 0, 0.2); color:var(--orange);">Elo: 1040 (Cảnh báo)</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Interactive Intervention slide generation -->
+                <div class="intervention-builder" id="lecturer-action-box">
+                  <h4 style="margin:0 0 10px; font-size:14px; color:white;">💡 Phát hiện lớp hổng đệ quy lớn (32% làm chủ)</h4>
+                  <button class="btn-3d btn-primary" onclick="generateReteachSlide()">
+                    ⚡ AI Tự động Tạo Slide Reteach bổ trợ
+                  </button>
+                </div>
+
+                <!-- Reteach Loader (Labor Illusion) -->
+                <div class="reteach-loader" id="reteach-loader">
+                  <div class="spinner"></div>
+                  <div style="font-size:12px;color:rgba(255,255,255,0.7); font-weight: 700;" id="loader-text">
+                    Đang phân tích 154 bài làm sai...
+                  </div>
+                </div>
+
+                <!-- Generated Slide Preview -->
+                <div class="slide-preview" id="slide-preview-box">
+                  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; border-bottom:1px solid var(--line); padding-bottom:6px;">
+                    <strong style="color:var(--primary-border); font-size:13px;">💻 SLIDE HỖ TRỢ GIẢNG DẠY (Đã tạo sẵn)</strong>
+                    <span class="lbl-tag" style="background:var(--mint); color:var(--primary-border);">Tập tin PDF</span>
+                  </div>
+                  <h5 style="margin:6px 0; font-size:15px; font-weight:900;">Chủ đề: Hiểu sâu về Base Case trong đệ quy</h5>
+                  <p style="margin:4px 0 10px; font-size:12px; color:var(--muted); font-weight:700;">
+                    AI phát hiện 76% sinh viên gặp lỗi lặp vô tận (Stack Overflow) do thiếu điều kiện dừng <code>n == 0</code>. Slide này sẽ hướng dẫn cách vẽ Call Stack trực quan.
+                  </p>
+                  <div style="display:flex; gap:10px;">
+                    <a class="btn-3d btn-secondary" style="padding: 6px 12px; font-size:12px; flex:1;" href="#download">Tải Slide xuống</a>
+                    <button class="btn-3d btn-primary" style="padding: 6px 12px; font-size:12px; flex:1;" onclick="resetLecturerSim()">Làm lại</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why not another chatbot -->
+      <section class="features-section" id="about">
+        <div class="container">
+          <div style="text-align: center; max-width: 700px; margin: 0 auto 48px;">
+            <div class="eyebrow" style="margin-bottom:12px;">Giải quyết triệt để nỗi đau đào tạo</div>
+            <h2>Nhà trường cần bằng chứng học tập học thuật, không chỉ là đáp án nhanh từ AI.</h2>
+          </div>
+          <div class="grid-3">
+            <article class="panel">
+              <div class="panel-icon panel-icon-1">01</div>
+              <h3>Định vị lỗ hổng thực tế</h3>
+              <p>Khác với điểm số thi cuối kỳ thụ động, thuật toán BKT đo lường mức độ làm chủ từng khái niệm cốt lõi theo thời gian thực.</p>
+            </article>
+            <article class="panel">
+              <div class="panel-icon panel-icon-2">02</div>
+              <h3>Không giải hộ bài tập</h3>
+              <p>Cáo Sofi áp dụng nấc thang gợi ý Socratic để dẫn dắt tư duy tự học của sinh viên, từ chối đưa ra lời giải ăn sẵn.</p>
+            </article>
+            <article class="panel">
+              <div class="panel-icon panel-icon-3">03</div>
+              <h3>Bảo vệ điểm số thực chất</h3>
+              <p>Hệ thống tự động phát hiện mã nguồn và đáp án copy từ bên ngoài, đóng băng Elo để đảm bảo liêm chính học thuật.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Adaptive Learning Loop -->
+      <section id="loop">
+        <div class="container">
+          <div style="text-align: center; max-width: 700px; margin: 0 auto 48px;">
+            <div class="eyebrow" style="margin-bottom:12px;">Mô hình vận hành của EduGap</div>
+            <h2>Vòng lặp tương tác tự động cập nhật lộ trình thích ứng</h2>
+          </div>
+          <div class="loop-card">
+            <div class="loop-grid">
+              <article class="loop-step">
+                <div class="loop-number">1</div>
+                <h3>Chẩn đoán năng lực</h3>
+                <p>Theo dõi điểm Elo và BKT của từng sinh viên qua các bài luyện tập thích ứng ZPD.</p>
+              </article>
+              <article class="loop-step">
+                <div class="loop-number">2</div>
+                <h3>Gợi mở Socratic</h3>
+                <p>AI đóng vai trò dẫn dắt bằng các gợi ý bậc thang, đính kèm dẫn chứng tài liệu khóa học.</p>
+              </article>
+              <article class="loop-step">
+                <div class="loop-number">3</div>
+                <h3>Đánh giá thích ứng</h3>
+                <p>Gợi ý bài kiểm tra trắc nghiệm/tự luận có độ khó tối ưu (LinUCB) để củng cố kiến thức hổng.</p>
+              </article>
+              <article class="loop-step">
+                <div class="loop-number">4</div>
+                <h3>Can thiệp sớm</h3>
+                <p>Tổng hợp chỉ số lớp học để tạo slide bổ trợ, giúp giảng viên reteach hiệu quả trước kỳ thi.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Student Detailed Value -->
+      <section id="students">
+        <div class="container split-section">
+          <div>
+            <div class="eyebrow" style="margin-bottom:12px;">Trải nghiệm của Người học</div>
+            <h2>Bứt phá kỹ năng, tự tin làm chủ kiến thức học thuật.</h2>
+            <p style="color:var(--muted); font-size: 17px; font-weight:700; margin-top:16px;">
+              Sinh viên có một trợ lý học tập cá nhân hóa 24/7, đồng hành trên mọi khái niệm khó nhất trong chương trình.
+            </p>
+            <ul class="list-check">
+              <li>
+                <span class="list-check-icon">✓</span>
+                <span>Câu trả lời luôn đối chiếu slide, sách giáo trình lớp học với trích dẫn rõ ràng.</span>
+              </li>
+              <li>
+                <span class="list-check-icon">✓</span>
+                <span>Cơ chế gợi ý kích thích tư duy giải quyết vấn đề độc lập.</span>
+              </li>
+              <li>
+                <span class="list-check-icon">✓</span>
+                <span>Hệ thống Elo thú vị giúp học tập như đang tham gia leo rank trò chơi.</span>
+              </li>
+            </ul>
+          </div>
+          <div style="background:white; border: 3px solid var(--line); border-radius: var(--radius-xl); padding: 24px; box-shadow: 0 16px 30px rgba(0,0,0,0.03);">
+            <div style="display:flex; justify-content:space-between; align-items:center; border-bottom: 2px solid var(--line); padding-bottom:12px; margin-bottom:16px;">
+              <strong style="font-size:16.px;">Giao diện Gia sư cá nhân hóa</strong>
+              <span class="lbl-tag" style="background:var(--mint); color:var(--primary-border);">Live chat</span>
+            </div>
+            <div class="chat-bubble chat-bubble-user" style="font-size:14px;">
+              Mình không hiểu phép toán liên kết SQL (SQL Join) hoạt động thế nào?
+            </div>
+            <div class="chat-bubble chat-bubble-sofi" style="font-size:14px;">
+              Hãy tưởng tượng bạn có 2 bảng: Danh sách Sinh viên và Danh sách Lớp. Phép INNER JOIN chỉ lấy những sinh viên đã được phân lớp. Hãy thử xem ví dụ sau trong giáo trình của thầy nhé.
+              <br />
+              <span class="citation-tag">📄 Slide Cơ sở Dữ liệu · Chương 4 · Trang 19</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Academic Safety & integrity -->
+      <section class="safety-section" id="safety">
+        <div class="container">
+          <div style="text-align: center; max-width: 700px; margin: 0 auto 48px;">
+            <div class="eyebrow" style="margin-bottom:12px;">Đảm bảo chuẩn học thuật</div>
+            <h2>Hệ thống rào chắn bảo vệ tính toàn vẹn giảng đường</h2>
+          </div>
+          <div class="grid-3">
+            <article class="panel">
+              <div class="panel-icon panel-icon-1">S</div>
+              <h3>Socratic Guardrails</h3>
+              <p>Mô hình chặn đứng việc AI trực tiếp làm hộ bài tập lớn cho sinh viên bằng các bộ lọc prompt phân lớp.</p>
+            </article>
+            <article class="panel">
+              <div class="panel-icon panel-icon-2">G</div>
+              <h3>Grounded Retrieval RAG</h3>
+              <p>Dữ liệu giảng dạy được chuẩn hóa và trích xuất nguyên gốc tài liệu giảng viên phê duyệt, tránh hiện tượng ảo giác AI.</p>
+            </article>
+            <article class="panel">
+              <div class="panel-icon panel-icon-3">A</div>
+              <h3>Audit Trail Observability</h3>
+              <p>Mọi dấu vết, latency, độ tin cậy hội thoại được ghi nhận và phân tích tự động trên server giám sát của hệ thống.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pilot CTA Section -->
+      <section id="pilot">
+        <div class="container">
+          <div class="cta-card">
+            <div class="eyebrow" style="margin-bottom:12px;">Chương trình Pilot giới hạn</div>
+            <h2>Đưa EduGap vào giảng đường của bạn ngay hôm nay</h2>
+            <p>
+              Bắt đầu nhanh chóng với 1 lớp học, 1 giáo trình PDF và 1 tài khoản giảng viên để trải nghiệm sự khác biệt rõ rệt về năng lực sinh viên.
+            </p>
+            <div class="hero-actions" style="justify-content:center;">
+              <a class="btn-3d btn-primary" href="mailto:pilot@edugap.edu.vn">Đăng ký Thử nghiệm ngay</a>
+              <a class="btn-3d btn-secondary" href="#top">Trải nghiệm Simulator</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container" style="text-align:center;">
+        EduGap © 2026 · Hệ thống Gia sư AI Thích ứng cho Đại học quy mô lớn · Bản mẫu thiết kế Mockup UI/UX để xác thực.
+      </div>
+    </footer>
+  </div>
+
+  <!-- Interactive Simulator Logic (Vanilla JS) -->
+  <script>
+    // Tab switching logic
+    function activateTab(tabName) {
+      // Toggle Tab Buttons
+      const tabStudent = document.getElementById('tab-student');
+      const tabLecturer = document.getElementById('tab-lecturer');
+      const panelStudent = document.getElementById('panel-student');
+      const panelLecturer = document.getElementById('panel-lecturer');
+
+      if (tabName === 'student') {
+        tabStudent.classList.add('active');
+        tabLecturer.classList.remove('active');
+        panelStudent.classList.add('active');
+        panelLecturer.classList.remove('active');
+      } else {
+        tabStudent.classList.remove('active');
+        tabLecturer.classList.add('active');
+        panelStudent.classList.remove('active');
+        panelLecturer.classList.add('active');
+      }
+    }
+
+    // Step navigation in Student Sim
+    function goToStep(stepNum) {
+      // Hide all steps
+      for (let i = 1; i <= 4; i++) {
+        document.getElementById('s-step-' + i).classList.remove('active');
+      }
+      
+      // Show requested step
+      document.getElementById('s-step-' + stepNum).classList.add('active');
+
+      // Update metrics based on path
+      const eloVal = document.getElementById('student-elo-val');
+      const masteryTag = document.getElementById('student-mastery-tag');
+      const statusPill = document.getElementById('student-status-pill');
+
+      if (stepNum === 3) {
+        // Correct path
+        // Safe DOM update — no innerHTML (XSS-safe)
+        eloVal.textContent = '1215';
+        const spanUp = document.createElement('span');
+        spanUp.style.cssText = 'color:var(--primary); font-size: 13px; font-weight:900;';
+        spanUp.textContent = '(+15 Elo)';
+        eloVal.appendChild(document.createTextNode(' '));
+        eloVal.appendChild(spanUp);
+        masteryTag.className = 'mastery-tag mastery-learning';
+        masteryTag.innerText = 'Learning (48%)';
+        statusPill.innerText = 'Học tập Đúng hướng';
+        statusPill.style.background = 'var(--mint)';
+        statusPill.style.color = 'var(--primary-border)';
+      } else if (stepNum === 4) {
+        // Cheating path
+        // Safe DOM update — no innerHTML (XSS-safe)
+        eloVal.textContent = '1200';
+        const spanFrz = document.createElement('span');
+        spanFrz.style.cssText = 'color:var(--red); font-size: 13px; font-weight:900;';
+        spanFrz.textContent = '(+0 Elo - Frozen)';
+        eloVal.appendChild(document.createTextNode(' '));
+        eloVal.appendChild(spanFrz);
+        masteryTag.className = 'mastery-tag mastery-weak';
+        masteryTag.innerText = 'Weak (25%)';
+        statusPill.innerText = 'Báo động Liêm chính';
+        statusPill.style.background = 'rgba(255, 75, 75, 0.12)';
+        statusPill.style.color = 'var(--red)';
+      }
+    }
+
+    function resetStudentSim() {
+      // Reset variables
+      document.getElementById('student-elo-val').innerText = '1200';
+      const masteryTag = document.getElementById('student-mastery-tag');
+      masteryTag.className = 'mastery-tag mastery-weak';
+      masteryTag.innerText = 'Weak (25%)';
+      
+      const statusPill = document.getElementById('student-status-pill');
+      statusPill.innerText = 'ZPD: Difficulty 1250 Elo';
+      statusPill.style.background = 'var(--mint)';
+      statusPill.style.color = 'var(--primary-border)';
+
+      goToStep(1);
+    }
+
+    // Lecturer Reteach slide builder simulator
+    function generateReteachSlide() {
+      const actionBox = document.getElementById('lecturer-action-box');
+      const loader = document.getElementById('reteach-loader');
+      const text = document.getElementById('loader-text');
+      const preview = document.getElementById('slide-preview-box');
+
+      actionBox.style.display = 'none';
+      loader.style.display = 'flex';
+
+      // Phase 1 loader
+      setTimeout(() => {
+        text.innerText = 'Đang trích xuất lỗi sai Base Case phổ biến (76% sinh viên)...';
+      }, 600);
+
+      // Phase 2 loader
+      setTimeout(() => {
+        text.innerText = 'Đang lập dàn trang slide hỗ trợ giảng dạy...';
+      }, 1200);
+
+      // Show Slide Preview
+      setTimeout(() => {
+        loader.style.display = 'none';
+        preview.style.display = 'block';
+      }, 1800);
+    }
+
+    function resetLecturerSim() {
+      document.getElementById('lecturer-action-box').style.display = 'block';
+      document.getElementById('reteach-loader').style.display = 'none';
+      document.getElementById('slide-preview-box').style.display = 'none';
+      document.getElementById('loader-text').innerText = 'Đang phân tích 154 bài làm sai...';
+    }
+  </script>
+</body>
+</html>

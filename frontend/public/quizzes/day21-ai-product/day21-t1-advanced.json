@@ -1,0 +1,210 @@
+{
+  "id": "day21-t1-advanced",
+  "parent_id": "day21-ai-product",
+  "topic_title": "Day 21: AI Governance & Risk",
+  "title": "Phần 3: Kế Hoạch Xử Lý Sự Cố Incident Playbook & Giao Tiếp Khủng Hoảng",
+  "description": "Đánh giá nâng cao về quy trình xử lý sự cố trong 30 phút đầu (Verify, Stop Bleeding, Communicate), cơ chế Soft/Hard Kill và viết thông điệp xin lỗi khách hàng.",
+  "difficulty": "khó",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Quyết định đầu tiên mà founder cần thực hiện trong 5 phút đầu tiên khi xảy ra khủng hoảng lan truyền (viral) là gì?",
+      "options": {
+        "A": "Quyết định xác thực (Verify) xem đó có thực sự là lỗi của AI không.",
+        "B": "Quyết định sa thải lập trình viên đã viết code gây ra lỗi hệ thống.",
+        "C": "Quyết định gọi điện thoại xin lỗi toàn bộ các nhà đầu tư mạo hiểm.",
+        "D": "Quyết định đóng cửa toàn bộ trang web bán hàng của doanh nghiệp mình."
+      },
+      "answer": "A",
+      "explanation": "Trong 5 phút đầu (Verify), founder cần xác định xem ảnh chụp màn hình sự cố là thật hay chỉ là sản phẩm chỉnh sửa photoshop hoặc trò đùa (prank) từ người dùng.",
+      "hints": [
+        "Cần kiểm chứng tính xác thực của thông tin trước khi đưa ra hành động tiếp theo.",
+        "Tránh việc phản ứng thái quá khi chưa có bằng chứng xác thực trong tay.",
+        "Đáp án đúng là quyết định xác thực lỗi có thực sự của AI hay không."
+      ],
+      "concepts": [
+        "d21-t1-governance-risk"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Để thực hiện quyết định xác thực (Verify) nhanh chóng, founder nên làm gì?",
+      "options": {
+        "A": "Hãy kiểm tra log trên Helicone hoặc Langfuse để đối chiếu định danh và timestamp.",
+        "B": "Hãy thực hiện cuộc gọi trực tiếp đến bên nhà cung cấp mô hình ngôn ngữ.",
+        "C": "Hãy tiến hành đăng tải câu chuyện lên mạng xã hội để nhờ hỗ trợ kiểm tra.",
+        "D": "Hãy thực hiện xóa sạch toàn bộ cơ sở dữ liệu để ngăn chặn sự cố này."
+      },
+      "answer": "A",
+      "explanation": "Founder cần truy cập vào hệ thống log (như Helicone hoặc LangFuse) để đối chiếu timestamp và User ID nhằm tìm ra đúng lượt chat bị lỗi.",
+      "hints": [
+        "Sử dụng các công cụ giám sát prompt và response thời gian thực của hệ thống.",
+        "Xem xét lịch sử hội thoại thực tế được lưu trữ trên server của bạn.",
+        "Đáp án chỉ ra việc kiểm tra log của Helicone/Langfuse để đối chiếu."
+      ],
+      "concepts": [
+        "d21-t1-governance-risk"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Quyết định thứ hai (5-15 phút) mang tên 'Stop the bleeding' nhằm mục tiêu gì?",
+      "options": {
+        "A": "Xác định danh tính của khách hàng để gửi đơn kiện ra tòa.",
+        "B": "Lựa chọn phương án tắt hoặc hạn chế hoạt động của AI chatbot.",
+        "C": "Viết thông cáo báo chí dài gửi đến các cơ quan truyền thông.",
+        "D": "Thuê thêm nhân sự để trực máy điện thoại hỗ trợ khách hàng."
+      },
+      "answer": "B",
+      "explanation": "Mục tiêu của 'Stop the bleeding' là ngăn chặn thiệt hại lan rộng bằng cách vô hiệu hóa phần AI lỗi, thắt chặt prompt, chặn người dùng hoặc kích hoạt fallback.",
+      "hints": [
+        "Phải nhanh chóng cô lập sự cố để tránh việc AI tiếp tục trả lời sai.",
+        "Có bốn phương án chính: hard kill, soft kill, block user, và tighten prompt.",
+        "Đáp án đúng là chọn phương án tắt hoặc hạn chế hoạt động của chatbot."
+      ],
+      "concepts": [
+        "d21-t1-governance-risk"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Điểm hạn chế lớn nhất của giải pháp 'Hard Kill' (tắt toàn bộ AI) khi xảy ra sự cố là gì?",
+      "options": {
+        "A": "Hệ thống sẽ chạy nhanh hơn nhưng tốn nhiều chi phí lưu trữ.",
+        "B": "Ngăn chặn lỗi lập tức nhưng làm mất dịch vụ của mọi khách hàng.",
+        "C": "Được nhà đầu tư khen ngợi nhưng bị khách hàng kiện ra tòa.",
+        "D": "Tăng độ trễ của mô hình nhưng giữ được toàn bộ dữ liệu."
+      },
+      "answer": "B",
+      "explanation": "Hard Kill ngắt hoàn toàn hệ thống AI, giải quyết được sự cố tức thì nhưng lại khiến 100% người dùng khác mất dịch vụ và có thể phàn nàn.",
+      "hints": [
+        "Đây là phương án cuối cùng (last resort) khi không còn cách nào khác.",
+        "Nó làm sập hoàn toàn trải nghiệm người dùng của ứng dụng trong thời gian đó.",
+        "Đáp án chỉ ra ngăn lỗi lập tức nhưng làm mất dịch vụ của mọi khách hàng."
+      ],
+      "concepts": [
+        "d21-t1-governance-risk"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Tại sao giải pháp 'Soft Kill' (chuyển sang rule-based fallback) được đánh giá cao hơn 'Hard Kill'?",
+      "options": {
+        "A": "Giúp tăng gấp đôi doanh thu của doanh nghiệp trong mùa khủng hoảng.",
+        "B": "Giữ được dịch vụ chạy ổn định cho phần lớn người dùng khác.",
+        "C": "Tự động sửa chữa mã nguồn của mô hình ngôn ngữ lớn gốc.",
+        "D": "Làm hài lòng các cơ quan quản lý nhà nước về mặt luật pháp."
+      },
+      "answer": "B",
+      "explanation": "Soft Kill chuyển chatbot sang hoạt động dựa trên các quy tắc cứng (rule-based) đã soạn sẵn, giúp 90% người dùng khác vẫn sử dụng được dịch vụ ở mức tối thiểu.",
+      "hints": [
+        "Hệ thống không bị sập hoàn toàn mà chỉ bị giảm cấp trải nghiệm nhẹ.",
+        "Đòi hỏi lập trình viên phải lập trình sẵn logic fallback này trước khủng hoảng.",
+        "Đáp án đúng là giữ được dịch vụ chạy ổn định cho phần lớn người dùng."
+      ],
+      "concepts": [
+        "d21-t1-governance-risk"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Hãng chuyển phát DPD đã phản ứng như thế nào khi chatbot của họ gặp sự cố viral năm 2024?",
+      "options": {
+        "A": "Họ khởi kiện người dùng đã đăng bức ảnh chụp màn hình đó.",
+        "B": "Họ im lặng suốt ba tuần để chờ dư luận lắng xuống dần.",
+        "C": "Họ vô hiệu hóa phần AI của chatbot trong vòng vài giờ đồng hồ.",
+        "D": "Họ bồi thường cho toàn bộ khách hàng số tiền vé máy bay."
+      },
+      "answer": "C",
+      "explanation": "DPD đã phản ứng rất nhanh bằng cách vô hiệu hóa thành phần AI của chatbot chỉ trong vài giờ và đưa ra tuyên bố về việc cập nhật hệ thống.",
+      "hints": [
+        "Đây là phản ứng kiểu 'Hard Kill' giúp ngăn chặn đà viral của sự cố.",
+        "Nhờ hành động dứt khoát này, DPD đã kiểm soát được thiệt hại thương hiệu.",
+        "Đáp án đúng là họ vô hiệu hóa phần AI của chatbot trong vài giờ."
+      ],
+      "concepts": [
+        "d21-t1-governance-risk"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Quyết định thứ ba 'Communicate' (15-30 phút) yêu cầu founder liên hệ đầu tiên với đối tượng nào?",
+      "options": {
+        "A": "Các nhà đầu tư mạo hiểm để báo cáo tình hình tài chính.",
+        "B": "Các cơ quan báo chí để đăng bài viết giải thích sự cố.",
+        "C": "Khách hàng bị ảnh hưởng trực tiếp bởi sự cố nói sai đó.",
+        "D": "Toàn bộ nhân viên trong công ty để tổ chức họp khẩn cấp."
+      },
+      "answer": "C",
+      "explanation": "Người cần được liên hệ đầu tiên là khách hàng bị ảnh hưởng trực tiếp để giải thích, xin lỗi chân thành và đưa ra mức đền bù thỏa đáng.",
+      "hints": [
+        "Hãy tập trung giải quyết vấn đề của nạn nhân trực tiếp trước khi công bố rộng rãi.",
+        "Điều này giúp ngăn chặn việc khách hàng tiếp tục chia sẻ thông tin tiêu cực.",
+        "Đáp án đúng là khách hàng bị ảnh hưởng trực tiếp bởi sự cố đó."
+      ],
+      "concepts": [
+        "d21-t1-governance-risk"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Tại sao thư xin lỗi gửi khách hàng cần sử dụng giọng điệu cá nhân của founder (Founder's personal voice)?",
+      "options": {
+        "A": "Để tránh việc phải trả tiền cho các công ty luật bên ngoài.",
+        "B": "Để chứng minh rằng hệ thống AI của startup là tốt nhất thế giới.",
+        "C": "Để thiết lập lại lòng tin và sự chân thành từ phía startup.",
+        "D": "Để giảm thiểu số lượng cuộc gọi hỗ trợ gửi đến hệ thống."
+      },
+      "answer": "C",
+      "explanation": "Giọng điệu cá nhân của founder (như xưng tôi, dùng email cá nhân) mang lại cảm giác chân thành, minh bạch, điều mà các thông điệp PR khuôn mẫu của tập đoàn lớn không có.",
+      "hints": [
+        "Khách hàng muốn làm việc với con người có trách nhiệm chứ không phải ban PR.",
+        "Tạo ra một tín hiệu tin cậy mạnh mẽ giúp xoa dịu sự thất vọng của khách.",
+        "Đáp án đúng là để thiết lập lại lòng tin và sự chân thành."
+      ],
+      "concepts": [
+        "d21-t1-governance-risk"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Thành phần 'Making it right' trong email xin lỗi của founder nên chứa nội dung gì?",
+      "options": {
+        "A": "Một lời hứa sẽ sửa chữa lỗi trong vòng vài tháng tới.",
+        "B": "Một đường link hướng dẫn khách hàng tự giải quyết vấn đề của mình.",
+        "C": "Một chương trình khuyến mãi giảm giá cho các sản phẩm khác nữa.",
+        "D": "Một khoản đền bù cụ thể, thực tế và được gửi trực tiếp ngay."
+      },
+      "answer": "D",
+      "explanation": "Hành động đền bù phải cụ thể và ngay lập tức (như hoàn tiền trực tiếp, không bắt điền form phức tạp) để chứng minh startup thực sự muốn sửa sai.",
+      "hints": [
+        "Đừng chỉ hứa suông hoặc bắt khách hàng phải làm thêm các thủ tục phiền hà.",
+        "Ví dụ như hoàn trả trực tiếp số tiền chênh lệch vé của Air Canada.",
+        "Đáp án đúng là một khoản đền bù cụ thể, thực tế và gửi trực tiếp."
+      ],
+      "concepts": [
+        "d21-t1-governance-risk"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Trong sự cố năm 2024, khách hàng Ashley Beauchamp đã làm cách nào để khiến chatbot DPD chửi thề?",
+      "options": {
+        "A": "Anh ta sử dụng phần mềm độc hại để lấy cắp thông tin.",
+        "B": "Anh ta gửi hàng ngàn yêu cầu cùng lúc gây sập hệ thống.",
+        "C": "Anh ta yêu cầu chatbot hoàn lại tiền vé máy bay của mình.",
+        "D": "Anh ta thực hiện prompt injection yêu cầu bot chửi thề và làm thơ."
+      },
+      "answer": "D",
+      "explanation": "Ashley Beauchamp đã thực hiện kỹ thuật prompt injection bằng cách yêu cầu chatbot bỏ qua các quy tắc (disregard rules) và thực hiện chửi thề cũng như làm thơ chê bai hãng chuyển phát.",
+      "hints": [
+        "Người dùng đã lừa chatbot bỏ qua các rào chắn hệ thống bằng câu lệnh cụ thể.",
+        "Đây là một ví dụ kinh điển về lỗ hổng bảo mật prompt injection trong thực tế.",
+        "Đáp án là thực hiện prompt injection yêu cầu bot chửi thề và làm thơ."
+      ],
+      "concepts": [
+        "d21-t1-governance-risk"
+      ]
+    }
+  ]
+}
