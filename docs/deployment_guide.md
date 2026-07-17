@@ -1,152 +1,145 @@
-# Hướng dẫn Cấu hình Tự động Deploy lên Render và Vercel qua GitHub Actions
+# Hướng Dẫn Cấu Hình Triển Khai (Setup Render & Vercel)
 
-Tài liệu này hướng dẫn chi tiết cách tự động hóa quá trình kiểm thử và deploy Backend (FastAPI - Python) lên **Render** và Frontend (Next.js) lên **Vercel** mỗi khi có code mới được đẩy lên GitHub (nhánh `main`, `master`, hoặc `universal-starter`).
-
----
-
-## Mục lục
-1. [Cách 1: Kết nối trực tiếp GitHub (Khuyên dùng - Đơn giản nhất)](#1-cach-1-ket-noi-truc-tiep-github-khuyen-dung---don-gian-nhat)
-2. [Cách 2: Deploy tự động bằng GitHub Actions Runner](#2-cach-2-deploy-tu-dong-bang-github-actions-runner)
-3. [Hướng dẫn cấu hình Render (Backend)](#3-huong-dan-cau-hinh-render-backend)
-4. [Hướng dẫn cấu hình Vercel (Frontend)](#4-huong-dan-cau-hinh-vercel-frontend)
-5. [Thiết lập GitHub Secrets](#5-thiet-lap-github-secrets)
+Tài liệu này hướng dẫn chi tiết cách cấu hình hạ tầng triển khai song song hai môi trường **Staging** (nhánh `dev`) và **Production** (nhánh `main`, `master`, hoặc `universal-starter`) cho Backend (FastAPI - Render) và Frontend (Next.js - Vercel) sử dụng pipeline GitHub Actions.
 
 ---
 
-## 1. Cách 1: Kết nối trực tiếp GitHub (Khuyên dùng - Đơn giản nhất)
+## 1. Quy Trình Phân Chia Môi Trường
 
-Cả Vercel và Render đều hỗ trợ tính năng tự động deploy trực tiếp từ kho lưu trữ GitHub của bạn mà không cần viết file YAML.
+Hệ thống được thiết kế để tự động hóa hoàn chỉnh dựa trên nhánh Git:
 
-* **Với Vercel:** Bạn chỉ cần đăng nhập bằng GitHub, chọn **Import Project**, trỏ tới repo này và thiết lập `Root Directory` là `frontend`. Vercel sẽ tự động build và deploy lại mỗi khi có push mới.
-* **Với Render:** Tạo một **Web Service**, liên kết tài khoản GitHub của bạn, chọn repo này và chỉ định đường dẫn build là `backend`. Render sẽ tự động trigger deploy mỗi khi có push mới.
-
-*Tuy nhiên, nếu bạn muốn chỉ deploy khi toàn bộ các bài test (CI Lint, Typecheck, Pytest) chạy thành công trên GitHub Runner, hãy sử dụng **Cách 2** dưới đây.*
+```
+                  ┌──────────────┐
+                  │   Developer  │
+                  └──────┬───────┘
+                         │ git push
+                         ▼
+               ┌───────────────────┐
+               │  GitHub Actions   │ (Chạy Lint, Test & Readiness Check)
+               └─────────┬─────────┘
+                         │
+        ┌────────────────┴────────────────┐
+        ▼ Nhánh dev                       ▼ Nhánh main/master
+ ┌──────────────┐                  ┌──────────────┐
+ │ Deploy STG   │                  │ Deploy PROD  │
+ └──────┬───────┘                  └──────┬───────┘
+        ├─► Render Staging Backend        ├─► Render Production Backend
+        └─► Vercel Preview Frontend       └─► Vercel Production Frontend
+```
 
 ---
 
-## 2. Cách 2: Deploy tự động bằng GitHub Actions Runner
+## 2. Hướng Dẫn Cấu Hình Render (Backend)
 
-Trong phương pháp này, chúng ta sẽ tạo các workflow tự động chạy sau khi các bước kiểm tra mã nguồn (CI) hoàn thành xuất sắc.
+Vì dự án đã cấu hình `autoDeploy: false` trong [render.yaml](file:///d:/Project/Hackathon/AI%20Innovation/AI20kekeke/render.yaml), Render sẽ **không** tự động deploy khi bạn push code. Việc deploy sẽ do GitHub Actions ra lệnh thông qua Deploy Webhooks sau khi code pass CI.
 
-### Quy trình tự động hóa
-1. **Developer** `git push` code lên GitHub.
-2. GitHub Runner chạy các bước kiểm tra (Linting, Tests) trong file CI tương ứng.
-3. Nếu thành công, runner sẽ kích hoạt lệnh Deploy:
-   * **Backend:** Kích hoạt webhook (Deploy Hook) của Render để Render tự động tải mã nguồn mới nhất và xây dựng lại Docker Image.
-   * **Frontend:** Sử dụng **Vercel CLI** thông qua GitHub Action để build trực tiếp mã nguồn trên runner và đẩy lên Vercel.
+Để phục vụ Staging và Production chạy song song, bạn cần khởi tạo **2 Web Services riêng biệt** trên Render:
 
----
-
-## 3. Hướng dẫn cấu hình Render (Backend)
-
-Render hỗ trợ deploy thông qua Dockerfile có sẵn trong thư mục `backend/Dockerfile`. Bạn có thể cấu hình bằng 1 trong 2 cách dưới đây:
-
-### Bước 3.1: Cách A - Sử dụng Blueprint (Tự động & Khuyên dùng)
-Dự án đã được cấu hình sẵn file `render.yaml` (Blueprint) ở thư mục gốc để tự động hóa toàn bộ việc cấu hình hạ tầng:
-1. Truy cập [dashboard.render.com](https://dashboard.render.com/) và đăng nhập.
-2. Nhấn **New +** và chọn **Blueprint**.
-3. Chọn repo chứa dự án của bạn (nếu chưa liên kết GitHub, hãy liên kết tài khoản).
-4. Nhập tên nhóm dịch vụ (Service Group Name) (ví dụ: `vaic-app-group`).
-5. Render sẽ tự động đọc file `render.yaml` để cấu hình Web Service với các thông số:
-   * **Name**: `vaic-backend`
-   * **Docker Context**: `backend`
-   * **Dockerfile**: `backend/Dockerfile`
-   * **Port**: `8000`
-   * Các biến môi trường: `APP_NAME`, `DEBUG`, `STORAGE_PATH`, `LOG_LEVEL`...
-6. Nhấn **Apply** để Render tự động tạo và build Web Service.
-
-### Bước 3.2: Cách B - Cấu hình thủ công trên Render
-Nếu bạn không muốn sử dụng Blueprint, bạn có thể tạo dịch vụ thủ công theo các bước sau:
-1. Tại Dashboard Render, nhấn **New +** và chọn **Web Service**.
-2. Chọn **Build and deploy from a Git repository**, chọn repo chứa dự án của bạn.
-3. Cấu hình các thông số cơ bản:
-   * **Name:** `vaic-backend` (hoặc tên tùy chọn)
-   * **Region:** Chọn khu vực gần bạn nhất (ví dụ: Singapore)
-   * **Branch:** `master` hoặc `main` (hoặc nhánh bạn đang deploy)
+### Bước 2.1: Tạo Web Service cho Production
+1. Truy cập [dashboard.render.com](https://dashboard.render.com/) và nhấn **New +** > Chọn **Web Service**.
+2. Liên kết với kho lưu trữ GitHub của bạn.
+3. Cấu hình dịch vụ Production:
+   * **Name:** `vaic-backend-prod` (hoặc tên tùy chọn của bạn)
+   * **Region:** `Singapore` (để tối ưu tốc độ)
+   * **Branch:** `main` (hoặc `master`)
    * **Root Directory:** `backend` (Rất quan trọng!)
-   * **Runtime:** `Docker` (Render sẽ tự nhận diện và build từ `backend/Dockerfile`)
+   * **Runtime:** `Docker` (Render sẽ tự động dùng `backend/Dockerfile` đa tầng)
+4. Nhấn **Advanced** và thiết lập biến môi trường (Environment Variables):
+   * `APP_ENV` = `production`
+   * `DEBUG` = `false`
+   * `FRONTEND_ORIGIN` = URL production thật của Vercel (ví dụ: `https://your-app.vercel.app`)
+5. Nhấn **Create Web Service**.
+
+### Bước 2.2: Tạo Web Service cho Staging (Môi trường Dev)
+1. Thực hiện các bước tạo Web Service tương tự trên.
+2. Cấu hình dịch vụ Staging:
+   * **Name:** `vaic-backend-staging`
+   * **Region:** `Singapore`
+   * **Branch:** `dev` (Để tự động hóa khi đẩy code vào nhánh phát triển)
+   * **Root Directory:** `backend`
+   * **Runtime:** `Docker`
+3. Thiết lập biến môi trường (Environment Variables):
+   * `APP_ENV` = `staging`
+   * `DEBUG` = `true`
+   * `FRONTEND_ORIGIN` = URL preview/staging của Vercel (ví dụ: `https://your-app-git-dev.vercel.app`)
 4. Nhấn **Create Web Service**.
 
-### Bước 3.3: Lấy Deploy Hook URL
-Sau khi dịch vụ `vaic-backend` được khởi tạo thành công (từ Blueprint hoặc thủ công):
-1. Tại Dashboard Render, chọn dịch vụ **vaic-backend** vừa tạo.
-2. Nhấp vào mục **Settings** ở thanh menu bên trái dịch vụ.
-3. Cuộn xuống phần **Deploy Hook**.
-4. Sao chép webhook URL (ví dụ: `https://api.render.com/deploy/srv-xxxxxxxxxxxxx?key=yyyyyyyyyyyy`).
-5. Dán URL này vào **GitHub Secrets** dưới tên `RENDER_DEPLOY_HOOK_URL`.
-
-
+### Bước 2.3: Lấy các Deploy Hooks
+Sau khi cả 2 Web Service khởi tạo thành công:
+1. Truy cập vào phần cài đặt của dịch vụ **vaic-backend-prod** > Chọn mục **Settings** ở menu trái > Cuộn xuống phần **Deploy Hook** > Copy đường dẫn Webhook.
+   * Đây sẽ là secret `RENDER_DEPLOY_HOOK_URL` của bạn.
+2. Thực hiện tương tự với dịch vụ **vaic-backend-staging** để lấy Webhook Staging.
+   * Đây sẽ là secret `RENDER_DEPLOY_HOOK_URL_STAGING` của bạn.
 
 ---
 
-## 4. Hướng dẫn cấu hình Vercel (Frontend)
+## 3. Hướng Dẫn Cấu Hình Vercel (Frontend)
 
-Vercel hỗ trợ tối ưu rất tốt cho các ứng dụng Next.js.
+Chúng ta sử dụng cơ chế **Vercel Remote Cloud Build** (không tự build trên runner của GitHub Actions), giúp tiết kiệm tài nguyên và tối ưu hóa hạ tầng build của Vercel.
 
-### Bước 4.1: Cấu hình Vercel CLI cục bộ để lấy IDs (hoặc qua Dashboard)
-Để Deploy từ GitHub Actions lên Vercel, chúng ta cần 3 tham số quan trọng: `VERCEL_TOKEN`, `VERCEL_ORG_ID`, và `VERCEL_PROJECT_ID`.
+### Bước 3.1: Lấy các mã nhận diện dự án
+Để GitHub Actions ra lệnh build và deploy từ xa lên đúng dự án trên Vercel, bạn cần lấy 3 thông số: `VERCEL_TOKEN`, `VERCEL_ORG_ID`, và `VERCEL_PROJECT_ID`.
 
-**Cách lấy thông tin nhanh nhất:**
-1. Cài đặt Vercel CLI cục bộ bằng lệnh:
+1. Cài đặt Vercel CLI trên máy cá nhân để lấy ID nhanh nhất:
    ```bash
    npm install -g vercel
+   # Hoặc dùng pnpm:
+   pnpm add -g vercel
    ```
-2. Đăng nhập vào tài khoản Vercel của bạn:
+2. Đăng nhập vào tài khoản Vercel:
    ```bash
    vercel login
    ```
-3. Di chuyển vào thư mục `frontend` và liên kết dự án:
+3. Di chuyển vào thư mục dự án `frontend/` và liên kết với dự án trên Vercel:
    ```bash
    cd frontend
-   ```
-   Chạy lệnh link dự án:
-   ```bash
    vercel link
    ```
-   *Lệnh này sẽ tạo ra một thư mục ẩn `.vercel` chứa file `project.json` có định dạng:*
-   ```json
-   {
-     "orgId": "team_xxxxxxxxxxxxxxxxxxxxx",
-     "projectId": "prj_yyyyyyyyyyyyyyyyyyyyy"
-   }
-   ```
-   * `orgId` chính là **VERCEL_ORG_ID**
-   * `projectId` chính là **VERCEL_PROJECT_ID**
+   * CLI sẽ hỏi bạn thiết lập project mới hoặc liên kết project cũ.
+   * Sau khi liên kết thành công, một thư mục ẩn `.vercel/` sẽ được tạo ra chứa file `project.json` có dạng:
+     ```json
+     {
+       "orgId": "team_xxxxxxxxxxxx",
+       "projectId": "prj_yyyyyyyyyyyy"
+     }
+     ```
+   * Lưu lại **`orgId`** (dùng cho secret `VERCEL_ORG_ID`) và **`projectId`** (dùng cho secret `VERCEL_PROJECT_ID`).
 
-### Bước 4.2: Tạo Vercel Personal Access Token
+### Bước 3.2: Tạo Vercel Access Token
 1. Truy cập [vercel.com/account/tokens](https://vercel.com/account/tokens).
-2. Nhấp vào **Create**.
-3. Điền tên token (ví dụ: `github-actions-deploy`) và phạm vi quyền lực, sau đó nhấp vào **Create**.
-4. Sao chép Token này và lưu trữ làm **VERCEL_TOKEN**.
+2. Tạo một Personal Access Token mới (ví dụ tên: `github-actions-deploy-token`).
+3. Sao chép token này (dùng cho secret `VERCEL_TOKEN`).
 
 ---
 
-## 5. Thiết lập GitHub Secrets
+## 4. Thiết Lập GitHub Secrets
 
-Để GitHub Runner có quyền ra lệnh cho Render và Vercel, bạn phải cấu hình Repository Secrets bảo mật trên GitHub:
+Để GitHub runner có quyền kích hoạt deploy lên Render và Vercel, bạn phải cấu hình Repository Secrets bảo mật trên GitHub:
 
 1. Truy cập kho lưu trữ GitHub của bạn.
-2. Chọn tab **Settings** -> **Secrets and variables** (ở thanh menu bên trái) -> Chọn **Actions**.
-3. Nhấp vào nút **New repository secret**.
-4. Lần lượt thêm các Secret sau:
+2. Chọn tab **Settings** > **Secrets and variables** > Chọn **Actions**.
+3. Chọn **New repository secret** và thêm lần lượt các biến sau:
 
-| Secret Name | Giá trị |
+| Tên Secret trên GitHub | Giá trị |
 | :--- | :--- |
-| `RENDER_DEPLOY_HOOK_URL` | Dán liên kết Deploy Hook lấy được ở **Bước 3.2** |
-| `VERCEL_TOKEN` | Dán Personal Access Token lấy được ở **Bước 4.2** |
-| `VERCEL_ORG_ID` | Dán `orgId` từ file `.vercel/project.json` ở **Bước 4.1** |
-| `VERCEL_PROJECT_ID` | Dán `projectId` từ file `.vercel/project.json` ở **Bước 4.1** |
+| `RENDER_DEPLOY_HOOK_URL` | Webhook URL lấy từ dịch vụ Render **Production** (Bước 2.3) |
+| `RENDER_DEPLOY_HOOK_URL_STAGING` | Webhook URL lấy từ dịch vụ Render **Staging** (Bước 2.3) |
+| `VERCEL_TOKEN` | Personal Access Token lấy từ Vercel (Bước 3.2) |
+| `VERCEL_ORG_ID` | `orgId` lấy từ file `.vercel/project.json` (Bước 3.1) |
+| `VERCEL_PROJECT_ID` | `projectId` lấy từ file `.vercel/project.json` (Bước 3.1) |
 
 ---
 
-## 6. Cấu hình môi trường (Environment Variables)
+## 5. Cấu Hình Biến Môi Trường (Environment Variables)
 
-### Môi trường Backend (Render)
-Khi chạy trên Render, hãy thiết lập các biến môi trường trong phần **Environment** trên Dashboard Render:
+### Môi trường Backend (Render Dashboard)
 * `PORT` = `8000`
 * `PYTHONUNBUFFERED` = `1`
-* Các biến API Key hoặc Database URL cần thiết của backend.
+* Các biến API Key của LLM (ví dụ: `OPENAI_API_KEY`, `GEMINI_API_KEY`) cần điền trực tiếp trên Render Dashboard của cả 2 dịch vụ (Prod và Staging).
 
-### Môi trường Frontend (Vercel)
-Khi chạy trên Vercel, hãy thiết lập các biến môi trường trong phần **Project Settings** > **Environment Variables** trên Dashboard Vercel:
-* `NEXT_PUBLIC_API_URL` = `https://<ten-backend-cua-ban>.onrender.com/api/v1` (Trỏ API URL của Frontend tới địa chỉ Backend trên Render).
+### Môi trường Frontend (Vercel Dashboard)
+Trên Vercel Project Settings > **Environment Variables**, bạn cấu hình biến môi trường kết nối API:
+* **Production Environment:**
+  * `BACKEND_API_URL` = `https://vaic-backend-prod.onrender.com/api/v1` (Trỏ về URL backend Production)
+* **Preview Environment (Staging):**
+  * `BACKEND_API_URL` = `https://vaic-backend-staging.onrender.com/api/v1` (Trỏ về URL backend Staging)
