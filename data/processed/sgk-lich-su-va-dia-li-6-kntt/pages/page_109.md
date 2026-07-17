@@ -7,71 +7,101 @@ source: ocr
 
 # SGK Lịch sử và địa lí 6 KNTT (lớp 6) — Trang 109
 
-KÍ HIỆU VÀ BẰNG CHÚ GIẢI
-BẢN ĐỒ.
-
 Học xong bài này,
+em sẽ:
 
-Sim số: TÌM ĐƯỜNG ĐI TRÊN BẢN ĐỒ
+* Đọc được các kí
+hiệu và chú giải
+bản đồ hành chính,
+bản đồ địa hình.
 
-» Đọc được các kí Bản đồ có vai trò rất quan trọng trong học tập và đời
+° Biết đọc bản đÒ, xác
+định được vị trÍ của
+đói tượng địa lí trên
+bản đồ.
 
-hiệu và chú giải _ sóng. Bài học này sẽ giúp các em có được kĩ năng đọc
-bản đồ hành chính, và sử dụng bản đồ
-bản đồ địa hình. : :
+° Biết tìm đường đi
+trên bản đồ.
 
-« Biết đọc bản đồ, xác
-
-định được vị trí của than - trong x“. ng
-đối tượng địa lí trên BE DHOINTHHEEHON W. CnỦ
-bên đồ g4 đường cho chúng ta đên mọi
-Ề ' nơi ta muôn.
-5 _ Biệt tìm đường đi =
-
-trên bản đò.
-
-Người ta có thê sử dụng kí hiệu
+Người ta có thê sử dung kíhiệu
 đê thê hiện quy mô, đặc điêm,
-thành phân của các đôi tượng
-
-chúng ta đi
-"đường nào nhỉ? ⁄
-
-Yên tâm, tớ có `\_bản đồ ở đây.
-
+thành phân của các đối tượng
 địa lí.
-Và quy mô F2 .^ ` 2> F2 .^®. +? `
-: ". 1. Ki hiệu và bảng chú giải bản đô
-Điểm dân cu dưới 1 triệu người :
-Lưu Điểm dân cư trên 1 triệu người a) Kí hiệu bản đồ
-Về đặc điểm Ä ca ..^ F2 Ấ: . . ˆ kì ` xà +
-Ni aä Đê thê hiện các đôi tượng địa lí trên bản đồ, người ta phải
-L[l Tran nau sử dụng các dâu hiệu quy ước gọi là kí hiệu bản đô.
-Về thành phần "` ˆ 3 Xe £ Ä #a mg : ~
-- Kí hiệu bản đồ rât đa dạng, có thê là những hình vẽ,
-Cơ khi ` “ ` ^ “ . 3 ' Sài TT 2<
-BÃ Chả tiến nông sản màu sắc,... được dùng một cách quy ước đề thê hiện
-Na ưng các sự vật, hiện tượng địa lí trên bản đô. Người ta
 
-thường sử dụng ba loại: kí hiệu điểm, kí hiệu đường và
-kí hiệu diện tích.
+Về quy mô
+
+® ĐDiểm dân cư dưới 1 triệu người
+
+@ Điểm dân cư trên 1 triệu người
+Về đặc điềm
+
+IE Than đá
+[Ñ Than nâu
+Về thành phản
+
+I Cơ khi
+
+E] Chế biến nông sản
+
+I Hoá chát
+
+I] Sản xuất vật liệu xây dựng
 
 Thứ tự các kí hiệu trong bảng
 chú giải được sắp xếp phụ
 thuộc vào nội dung chính
 mà bản đồ thể hiện. Ví đụ: Ở
 bảng chú giải của bản đồ tự
-nhiên, các kí hiệu thê hiện địa
+nhiên, các kí hiệu thể hiện địa
 hình được đưa lên đầu, sau đó
 là các kí hiệu thể hiện sông
-ngòi, đường giao thông, ranh
-giới, điểm đân cư....
+ngòi, đường glao thông, ranh
+giới, điểm dân cu....
 
-Hãy kể thêm tên
-một số đối tượng
-địa lí được thể
-hiện bằng các
-loại kí hiệu: điểm,
-đường, diện tích.
+… HIỆU VÀ BẢNG CHÚ GIẢI
+BẢN ĐỒ. .
+TÌM ĐƯỜNG ĐI TRÊN BẢÁN ĐỒ
 
-Hình 1. Một số ki hiệu trên bản đồ
+Bản đồ có vai trò rất quan trọng trong học tập và đời
+sông. Bài học này sẽ giúp các em có được kĩ năng đọc
+và sử dụng bản đô.
+
+Bản đồ trong chiếc điện
+
+thoại thông minh này sẽ chỉ
+đưo1*lg cho chúng ta đền mọi
+nơi ta muồn. A
+
+chúng ta di
+.đường nào nhỉ?
+
+Yên tâm, tớ có \
+bản đồ ở đây.
+
+[‹
+¬
+;3
+
+1. Kí hiệu và bảng chú giải b
+a) Kí hiệu bản đồ
+
+Đề thể hiện các đối tượng đĩịa lí trên bản đồ, người ta phải
+sử dụng các dấu hiệu quy ước gọi là kí hiệu bản đồ.
+
+Kĩ hiệu bản đồ rất đa dạng, có thể là những hình vẽ,
+màu sắc,... được dùng một cách quy ước đề thể hiện
+các sự vật, hiện tượng địa lí trên bản đồ. Người ta
+thường sử dụng ba loại: kí hiệu điểm, kí hiệu đường và
+kí hiệu diện tích.
+
+@ Hãy kẻể thêm tên
+một số đồi tượng
+địa l được thể
+
+a m hiện bằng các
+
+kn G e loại kí hiệu: điểm,
+„ _ Đấphn - .sỤ đường, diện tích.
+Hình 1. Một số kí hiệu trên bản đồ
+
+Đất cát.

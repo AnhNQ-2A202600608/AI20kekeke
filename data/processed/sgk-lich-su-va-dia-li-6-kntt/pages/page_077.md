@@ -7,34 +7,48 @@ source: ocr
 
 # SGK Lịch sử và địa lí 6 KNTT (lớp 6) — Trang 77
 
-Trị sở đô hộ của nhà Đường
-Căn cú của nghĩa quân
+5 CH
+Nự ¡ Nam Định]
 
-Nhân dân các châu hưởng ứng
-Nơi khởi nghĩa bùng nỗ
+—(
 
-Đường tiến của nghĩa quân CHÂNLẠẬP
+/Nari Đản? - Nghệ Ar)
+Trị sở đô hộ của nhả Đường .
+
+)
+j
+
+Mai Phụ
+'Thạch Hà - Hà Tĩnh)
+Căn cứ của nghĩa quân
+
+Nhân dân các châu hưởng ứng PH( _
+Nơi khởi nghĩa bùng nổ ' :
+Dường tiền của nghĩa quân
 Quân Đường rút chạy
+Quân Đường sang đản áp
 
-Quân Đường sang đàn áp
+BIỀN ĐÔNG
 
-.—.—- Biên giới quốc gia ngảy nay
+CHÂN LẠF
 
-4 Hình 7. Lược đồ khởi nghĩa Mai Thúc Loan (713 - 722)
+Biên giới quốc gia ngày nay
 
-Mai Thúc Loan xưng đê, xây thành Vạn An (Nghệ An) làm quốc
+- Hình 7. Lược đồ khởi nghĩa Mai Thúc Loan (713-722)
+
+Mai Thúc Loan xưng đề, xây thành Vạn An (Nghệ An) làm quốc
 đô. Nhà Đường sai Dương Tư Húc dẫn đại quân sang đàn áp.
 Cuộc khởi nghĩa bị dập tắt.
 
 Quân khởi nghĩa tiền công ra Bắc, đánh đuổi chính quyền đô hộ,
-làm chủ thành Tống Bình, giải phóng đất nước.
+làm chủ thành Tồng Bình, giải phóng đất nước.
 
 Khởi nghĩa lan rộng ra phạm vi cả nước, thu hút vài chục vạn
 người tham gia, được nhân dân Chăm-pa, Chân Lạp hưởng ứng.
 
-Khởi nghĩa bùng nỗ và nhanh chóng làm chủ vùng đất Hoan Châu
+Khởi nghĩa bùng nổ và nhanh chóng làm chủ vùng đắt Hoan Châu
 (thuộc Nghệ An — Hà Tĩnh ngày nay).
 
-gà 1. Hãy trình bày diễn biến chính của cuộc khởi nghĩa Mai Thúc Loan trên lược đỏ.
-2. Cuộc khởi nghĩa Mai Thúc Loan có ý nghĩa gì đối với lịch sử dân tộc?
+Ô 1. Hãy trình bày diễn biến chính của cuộc khởi nghĩa Mai Thúc Loan trên lược đồ.
+2. Cuộc khởi nghĩa Mai Thúc Loan có ý nghHĩa gì đối với lịch sử dân tộc?
 76

@@ -12,22 +12,20 @@ Châu Phi có khí hậu khô nóng bậc nhất thế giới, nhiệt độ tru
 Xich đạo, gồm: khí hậu xích đạo, khí hậu cận xích đạo, khí hậu nhiệt đới, khí hậu
 cận nhiệt. Đặc điểm các đới khí hậu ở châu Phi:
 
-Khí hậu xích đạo: nóng âm, mưa nhiều quanh năm.
+— Khí hậu xích đạo: nóng ảm, mưa nhiều quanh năm.
 
-Khí hậu cận xích đạo: chịu tác động của gió mùa, một mùa nóng ảm, mưa nhiều;
+— Khí hậu cận xiích đạo: chịu tác động của gió mùa, một mùa nóng âm, mưa nhiều:
 một mùa khô, mát.
 
-Khí hậu nhiệt đới: ở Bắc Phi mang tính lục địa, rất khô và nóng; ở Nam Phi âm và
+— Khí hậu nhiệt đới: ở Bắc Phi mang tính lục địa, rất khô và nóng; ở Nam Phi m và
 đỡ nóng hơn.
 
-Khí hậu cận nhiệt: mùa đông ấm, ằm ướt, mưa nhiều; mùa hạ khô, trời trong sáng.
+— Khí hậu cận nhiệt: mùa đông ấm, ẩm ướt, mưa nhiều; mùa hạ khô, trời trong sáng.
 
-Kầpua vào thông tin trong mục b và hình 2, hãy cho biết đặc điểm nỏi bật của khí
+E9 Dựa vào thông tin trong mục b và hình 2, hãy cho biết đặc điểm nổi bật của khí
+hậu châu PHhi.
 
-©)
-
-hậu châu Phi.
-Sông, hô
+c) Sông, hồ
 
 Mạng lưới sông ngòi
 của châu Phi phân bố
@@ -35,37 +33,32 @@ không đều, tuỳ thuộc
 vào lượng mưa. Đặc
 biệt, các sông có nhiều
 thác ghềnh nên không
-thuận lợi cho giao
-thông, nhưng có nguồn
+thuận lợi cho glao
+thông, nhưng có nguôn
 trữ năng thuỷ điện lớn.
 
 Châu Phi có nhiều
-hồ lớn Trong đó,
+hồ lớn. Trong đó,
 nhiều hồ được hình
 thành bởi các đứt gãy
 như hồ Tan-ga-ni-ca,
-hồ Tuốc-ca-na,...
+hồ Tuốc-ca-na....
 
 Hình 3. Đoạn sông Nin chảy qua hoang mạc Xa-ha-ra
 
 Em có biết?
 
 Sông Nin (6 695 km) dài nhất thế giới. Đây là dòng sông duy nhất chảy qua hoang mạc Xa-ha-ra.
-Phân hạ lưu sông Nin bôi đấp phù sa tạo thành đồng bằng châu thỗ sông Nin màu mỡ rộng
-khoảng 24 000 km.
+Phân hạ lưu sông Nin bồi đấp phù sa tạo thành đông bằng châu thỗ sông Nin màu mỡ rộng
+khoảng 24 000 km°.
 
 Dựa vào thông tin trong mục c và hình 1, hãy:
-
-Nêu đặc điểm sông, hỏ ở châu Phi.
-
+— Nêu đặc điểm sông, hồ ở châu Phi.
 — Xác định vị trí các sông và hồ lớn ở châu Phi.
+d) Các mỗi trường tự nhiên
+Các môi trường tự nhiên ở châu Phi phân bồ đối xứng qua Xích đạo:
 
-d)
+— Môi trường xích đạo gồm bồn địa Công-gô và duyên hải phía bắc vịnh Ghi-nê. Khí
+hậu nóng và m điều hoà, với thẳm thực vật rừng rậm xanh quanh năm.
 
 130
-
-Các môi trường tự nhiên
-Các môi trường tự nhiên ở châu Phi phân bố đối xứng qua Xích đạo:
-
-Môi trường xích đạo gồm bồn địa Công-gô và duyên hải phía bắc vịnh Ghi-nê. Khí
-hậu nóng và ẩm điều hoà, với thảm thực vật rừng rậm xanh quanh năm.

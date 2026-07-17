@@ -7,55 +7,57 @@ source: ocr
 
 # SGK Lịch sử và địa lí 7 KNTT (lớp 7) — Trang 183
 
-Gia-các-ta 117
-Gi-da 134
+ia- 117
+Gi-d
 
-: Georgia
+145
 
-Iluman — [im |9 —
-=——====-rrT:wnr
+:
+NH NHENG
+I UIKE.TUNII:
+1
 
-lxem —— [sms ——[m —
+l
 
-Đông Ti-mo
+m —
+m — Jmy ;
+xee — Jme
+(
 
-E-xki-mô
+Kilimanjaro
 
-Ghi-nê
+4
+18
+L
+
+119
+125
+145
+1
+
+có
+
+=aả.
+¬J Ø
+
+=
+-
+Leại
 
 182
 
-Kim-bơc-li
-
-'
-
-Kimberley 15
-
-La-da-rép 182
-La-ho 117
-La-tinh 152, 153
-La-ti-nô
-Lê-na 119
-Li-băng 118
+Kimberley
+Lốt An-giơ-lét LosAngeles
 
 Ma-chu Pi-chu Machu Picchu
-Me ——— [mm Jm |
-Mammse — [Wave [me —]
-|Mania — |Manla ¡i7 — _|
+vere l |Mases |1e x
+ManHa — — |Manla — |I7 -
 
-La Pla-ta
+ee l Jwoe |im —
 
-Li-vơ-pun
+Monvesn - - Momen - |m®
+vimoa — — |Munee |m7 —
+yy l
 
-Lốt An-gio-lét
-
-Meum ——[NWwm |1 —]
-
-Mua —— [ma |m —]
-
-——————=————~,
-Nê-pan 118
-Ni-giê-ri-a 135
-Nin 130
-Niu Di-len 157
-Niu Ghi-nê 127
+N — Jwe - |m -
+ẢNuDim - {NevZeme I? —

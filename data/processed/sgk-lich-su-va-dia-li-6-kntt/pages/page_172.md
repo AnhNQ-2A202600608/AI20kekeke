@@ -9,41 +9,40 @@ source: ocr
 
 SỰ SỐNG TRÊN TRÁI ĐẤT
 
-Học xong bài này,
+hĨĐC«XĐHg[bổI này,
 
-em sẽ: ý Các cơ thê sóng tôn tại và phát triển ở
+e'.’ỉỸx_~Ểề Õ Các cơ thễ sóng tồn tại và phát triên ở
 
-«Nêu được ví dụ tế sự : các môi trường khác nhau đã tạo nên
-đa dạng của thế giới sự khác Diệt, tính đa dạng của sinh vật
-sinh vật ở luc địa và trên Trái Đât. Vậy sự đa dạng của sinh vật
-đại dương. — trên Trái Đât biêu hiện như thê nào?
+* Nêu được ví dụ Ởsự' các môi trường khác nhau đã tạo nên
+đa dạng của thế giới Sự khác biệt tính đa dạng của sinh vật
+sinh vât ở lục địa và trên Trái fflật. Wậ y sự đa aanglcủa sinh vật
+đại ®Ổng. — trên Trái Đât biêu hiện như thê nào?
 
-» Yêu thiên nhiên, có
-ý thúc bảo vệ sự đa
+s Yêu thiên nhiên, có
+ý thức bảo vệ sự đa
 dạng của sinh vật trên
-Trái Đắt.
+Trái Đát.
 
-1. Sự đa dạng của sinh vật dưới đại dương
+1.Sự đa dạng của sinh vật dưới đại dương
 
-Sinh vật ở đại dương vô cùng phong phú, đa dạng. Ở các vĩ độ và độ sâu khác nhau
-sẽ có sự khác nhau về nhiệt độ, độ muối, áp suất, ánh sáng, nòng độ oxy,... dẫn đến
+Sinh vật ở đại dương vô cùng phong phú, đa dạng. Ở các VĨ độ và độ sâu khác nhau
+sẽ có sự khác nhau về nhiệt độ, độ muối, áp suất, ánh sáng, nồng độ oxy,... dẫn đến
 sự đa dạng của các loài sinh vật.
 
-Có biển ị
-8 VÙNG BIÊN KHƠI MẶT
-auhô Tôm K bì 'Hnừ Rùa
-
-VÙNG BIÉN KHƠI TRUNG
+.ố ".' ˆ SỔ'U'Ủ.
+ù San hô Tôm —- ngư : Rùi
 
 Cá mập
 
-VÙNG ĐÁY VỰC THẦM
+r
+t
 
-Hải quy
+VÙNG ĐÁY VỰC THẰM
+Hải quỷ
 
 Hình 1. Sinh vật dưới đại dương
 
-€ Quan sát hình 1, em hãy kể tên một số loài sinh vật ở các vùng biển trong
+@) Quan sát hình 1, em hãy kể tên một số loài sinh vật ở các vùng biển trong
 
 đại dương.
-m
+i

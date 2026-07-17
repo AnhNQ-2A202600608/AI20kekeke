@@ -14,114 +14,118 @@ Những yêu cầu học sinh cần đạt được sau khi học
 xong bài học.
 
 Mở đầu:
-Xác định nhiệm vụ, vấn để học tập học sinh cần giải
+Xác định nhiệm vụ, vấn đề học tập học sinh cần giải
 quyết; kết nối với những điều học sinh đã biết, nêu vấn
 để nhằm kích thích tư duy, tạo hứng thú đối với bài mới.
 
 Hình thành kiến thức mới:
-Với các nội dung (kênh hình, kênh chữ, hệ thống cầu
+Với các nội dung (kênh hình, kênh chữ, hệ thống câu
 hỏi) thông qua các hoạt động học tập giúp học sinh
 khai thác, khám phá kiến thức mới.
 
 Tuyến phụ:
-Thông tin hỗ trợ, bổ sung hoặc có tính liên môn nhằm
+Thông tin hỗ trợ, bổ sung hoặc có tính liên mỗn nhằm
 làm rõ hơn nội dung chính.
 
 Tư liệu:
 
-Được trích dẫn từ các nguốn tư liệu khác nhau. Là
+Được trích dẫn từ các nguồn tư liệu khác nhau. Là
 
 cơ sở để tổ chức các hoạt động tự nhận thức bài học
 cho học sinh.
 
 Nhiệm vụ học tập:
 
-Định hướng hoạt động học tập đáp ứng yêu cầu cẩn đạt.
+Định hướng hoạt động học tập đáp ứng yêu cầu cần đạt.
 
 Luyện tập:
 Là các câu hỏi, bài tập để thực hành, củng cố, hệ thống
 hoá, khắc sâu kiến thức ở hoạt động hình thành kiến
 thức mới.
 
-Vận dụng:
+Vận dung:
 Sử dụng kiến thức, kĩ năng đã học để giải quyết các tình
-huống, vấn để trong thực tiễn.
+huống, vấn đề trong thực tiễn.
 
-KHÍ HẬU WÄ THUỶ VĂN
+KHÍ HẬU VÀ THUÝ VĂN
+VIỆT NAM
 
-[HIINS Z2 vê SE
+Ä 2
 
-Baii 7:
+Bài 4
 
-=_Tủ=R bảy được đặc điềm: kêu bã nều‹än đợt im gio phản của Viểt Hi
-=_ Chững mảnh được nợ phim ai đá: ¿ăng cần khả 5n Viết Rônm,.
+= Trư£5 băn Uưer i jiếT: kếc ã n5-E: d2h 9 gbỗ FEdh c a NH Mễni
+= (hngg rr chưx ii pở lni Ersd a ẻ gưng rc d E ế l3dsTi.
 
-khá hận: Viait iáøn puuống lành chấn nhiệt đái lạm gia mãa rã củ du gêulnn hái
-đê đảng, Các gu chấn đa đa: boều biện dối thể pàa” lãän kêu bái tri Lihi Biện:
+kău ii N aj4 Puaïg a; L0Ì: chơv1 nhhnj1 dơnu kin phả °H SU k ( s đốckki luận
+4 dãôg: S à H HÀI rð d du d ka u Ea hưï: ấỐi í ể Ecgu ! |[Eã: haiï: [ui ciời L NI 5 B
 
-# đi ph sag cấu II
-(khi hấu nhàấ Lam lún gia rran
-ta] TửnE đất nhiệt đãi
-Tirk, nhấn đời của kh khu Vi Man được Ba hiện quai
-- Rhiện đê không khi trưng bính năm lồn cả nước đấu lên han TÙC [trữ vồng.
-rãi cai vì tầng dẫn Lũ Bắc vác: nan
-- gimmng đạc từ 400 - 1 068 gá/ndm, cần căn ắc mạ hũ 7E — IÚE hcatcrv (ni
+FA B HY II ll
 
-Bán 4. REBET Hỗ KISG SG. TEUING liBEt THÀNG, 24
-Tảø T4R Mi KHẩ TU Bậc, L8‡G, 271M llÁ (C, kát! PSD¡
+J Khi nău nhiệt t 35I np giỏ rr
+i Tônh chit xgkr ỚI
+Tirh: rhiế: đ rửa khả "Llsa lìcH Mur d ưzơc Pkh hkkni ii
+= hữekE: đ khng Ih1: truFrg Eá r: 1 T i 5E1 Ch Dười đ kóT: -2E: TỨC ã xköng
+rã z EÌ 81 Lã5g d ka EÙ ELk: sikC- L
+= ð ghố rL lrgg âat lùi I 40U - J 807 gưỜO T T Gá ã 5xảc: xg G 7Ế - ÙN ịcg rET Tkkr1
 
-—T
-4Í l4?
-m lsụã
-LiL- -5 1N j }
+Eãm 4 l. HHHHẾT H KHHỦ MG 9 TELISS: EE H HN, kgj B
+TẠ 73514 KHÍ TLSTHG LãME 777 VÁ Cỡ, kiME C)
 
-AMgmik: đang 20-7 2khtg [PL rẻ Zwifk-4[v KEM) Phug mất.
+| man |:lilrlslsielrislsimlm|simsel
+sE3|“|]ei=|ssesesieedheh] r
+kĩ đ : ã|' GÓ
+
+n i s i í l i 4 ã i 4 ã i NHÍ
+lĐã raa Ô # i s
+iiđ # | ã
+
+Ag0m A n n 108 0 ã 4 EE rã e E -ả n LEC*LJ Phh.ag mghi
 
 mã
 
-„ Ì. L ả-rữi Bã khẳng đước Chiến
-Tanee:tgam iy kâệ báa Hợp vang tu:
+„ 2 1 14 rấn l khẳng điềï: Chiên
+Tarfv: máz x kế- cui HOẸ: Ơ kguễi
 
-'tamh quai. đắc lắp rủ rác Hưaäc
-diia Anh 3 Bắc kỹ là cuếx "chiên ranh:
-'viöji, thuên iraali đá tài giải phố.
-'tPhết: lài cũ :h: FTả FNg”.
-(ket E L Lõ-gĩs, Soi Bến.
-)
-KH dã TEYI h2) =
-Cuản traani giai đếc Lip của l1 Eha6r địa Arẻ.
-3 Blr Mỹ: rang Lính cbái lũ mới caäc cách rang bụi
-t1, cä ñnÊ Faiig điển: ñöeang tra đa Eradì Qquyểi
-điệc liễp l sử Li ru: va caẩn thẻ kí EếN - điuathd D-—<———
-MP =
-Đúc điểm chánh căn Chiên tránh giản đúc lp | <<.
-“tủa ]1'Ê&sör địa Ärử, lh ca tia Lắp. rhiả 3:5 h Bế Big:
-link đãa, điấr, hà đuậi hình thúc cáö: Chuẩn tay,
-'3tdipfiang, rheếr Lipi rhẻ đã rồng bếã Lông thống.
+HegOửt quinẽ đóc EBkp: rủa chc thưưốc
+kếp (ã Ciuùn: L E-ồsing DÓn n u Lhng, EN
+a Anh 5 Bắc kấp là cuốc 'chiến Iu tgi hịc m tấy [ hkiữu nhiều. làn mgui
+nõ ãuá, rhidễn [ISHEI EFuk: UL -quải c ng, IN ¡ rÈu L qguyền Lioe côngp ã E-2kh
+Lun HH I HỊ U. ã Liei 2 hãi E N l x rí IE S2np HÊ Lưc
+¡ ñ n t, kg Thong số šEleb 4sgfi Ủy -H qurhi
 
-Bl1.sraituc+z kèo trên và thông Em mang rác hãy
+kăHài ra 1871,h HỊ
 
-cha biết lãi quả. ý nghĩa, tinh chúi của [hiên tran HiN&1Ä TsyisngôaDilg
+(CEuiin Eranh gáirl đóc Lkp rủa LJ Esair đẹy Nnh:
+5 Bix M rT linh chdi Là rrưi rzöc cỷách rTØ H
+LÄ rã Hỗồi Fasorrq Gếr: piênzsg trku GE irkrht pgiri
+diếc Hãp- ởi cöneễ tà C&.kóE: 2 Couồi thoế ki NH - đ thkt |L- m ]
+H3sD,
+Euiz điểmT: r dnh: của Chuến sarhi giảnh đ5z Lập
+rử 11 %Ea Éc đâa r: Là doi xhrzg kâp: chrã mõi gh Eui nhïi
+43h 4ã5, điắ T, “k Chiời n x E ro;ời Puiên T,
+-gkhi pEkăng:, thiết Lầp chd 35 công hc lng Herrg
 
-giãn độc lập căn LÏ thuộc địa Aaõ bi: Mã cản Big củ nạ quấc hạ ý 7Í
+IIl.ỂỈ'.lllfh.llỄlJb|IJl'l'l'Ìll\llỈ'h5"'Ểll'Ìl"'ủ"'Ểl'lJl' si. =
+cho béd kối ra ý nghia, Hnk: chủi của Chiến irsi fhl"-f' r'-"""""ẳc'°"""Ĩ"°'jỉ'1Ể_l
+qiữũnh độc Lp pãu L thuộc đầu Anh, ở Bắc Mặ Kin Ehng ch d ng nuưốc hôN l r nhi
 
-'3 Nha đc để. chánh, của (hước, Lruyn gia: đóa lắp của L1 taxec địa an l Rổ: Mỹ
+. HEu đ GnHT: E "Hrhi cảu ( ikÉT: L quả È: c Lip: coảu 1] tguốc i n ở ã N.
 
-| Loyia rên — W@mdeng
-+ 1L Sự tham gia lắnh đạc của tăng lắp: quý lc mới rã ảnh Rướng rêyg thể na.
-điển tết quả rên Cách rưa~g tụi tân ha?
-3ä. Lig Eáxg hả Thêng xứ ngupni nhấa, gui cấp lánh đưa, kết pgái, j sa hỉa,
-tinh chút củn C5 rang tú tắn dÍnh nh [un tranh giảnh Bậc lắp của 11
-thu địa ri lắc kg.
+L 5 IEzars tág ànhi đạc: củu tng kấp quý lÉc Fời cãi inh Buưởn g như thể n2.
+tễn ết gai pãs CảE5 F1874 EU Lắ5 KE2
 
-+ 1_Tim hấu thảm vũ che: biết Lầu xảo trang bẩn Tupkr:sgồn Dác tp của lăơp chứng
-ngốc ki? được Chủ tìch (Mi Chỉ (Vănh rkếi dắn cổic bản: Tuyển ngắn Đúc lập của
-nước 'ôất Mam Dần chủ Cũng Saá [3 — — T45)?
-13. Tem hiểu t:ềng ti bú thch, Hồn, trả set trề chị: BöÏt- Mật, tu cán Big 3 la
-Mỹ (USD in hình ki cần nợ luận rắc, reng Chiến tra nh: gian: đề: lặp của T1
-thuc tu Anh š Bắc Mỹ Ý nghêu rần điu này là gịT
+3. Lkz Sáng hỗ # ôrgg ử a pdTi DhLk T, qua các Làrhi đua kát ri ý mghia,
+Bình zhứt của C kch rangg lu Lắn Anh sẽ Phuẩn irash giảnh đóc H4p của 11
+Eaz5r.ịu Ani: ở Hắc MEG.
 
-tụ
+I- Tìm hiểu thẩm và chờ biổt: Eãu nàa trưng bản Fuyấr.sgốn Dác H củu HAp cháng
+tgước khi được Cmủ trh Hỗ Chỉ Inhi Tk dẫn cc bản, Tuyản ngản C l rÚa
+rguớc tiết Msr Dãn phủ Cômg a [(1 - ð — 15452
 
-Hầu bảo quản, giữ gìn sách giấo khoa để
-đành tặng các em học sinh lớp sau!
+3. TaT. hiểu dr5ng lEi nù kách, bảo, migTHE vũ rhịa biii: Min Lưu nù đôngg J để-ñg
+Mộ ID ín hình krết nùs rự loãn nắc: tErzg Chiến Is nh gihsh, đóc Lập của 11
+hước địa Anh š kắz Mặ T Ý nghĩa của điểu ndy Là gi!
+
+Hãu bảo quản, giữ gìn sách giáo khoa để
+dũnh tặng các em học sinh lớp sau!

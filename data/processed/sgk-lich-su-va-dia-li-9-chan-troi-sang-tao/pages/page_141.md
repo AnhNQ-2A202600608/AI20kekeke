@@ -7,43 +7,48 @@ source: ocr
 
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 141
 
-Tiện
-mử
-TRƯNG QUỐC ~Š.,zz-^>|
+S A
 
-=z Q0, Cân Sơn
-E- IS]
+N n N
 
-3: ~ `
-HU5x0xs4 „ hàn Khani “ên sò Ắ
-104° hàn Bể Lễ
+Chísuyển Rắc -
 
-CHỦ GIẢI
-CÁC VŨNG NÔNG NGHIỆP SẢN PHẨM CHUYÊN MỖN HOÁ ẨM Trấu
-_.. Vùng trồng cây lương thực, thực phẩm lc Chế # lạc KHg Bò
-LÌ Đậu tương đư@ Lợn
-ma Vùng trồng cây công nghiệp lầu nãm _
-".. @ Bằng & Gia cẩm
-và cầy ăn quả :
-[G6 vùng rừng E Hóu@u tủa i7 - Đánh hắt hải sản Địa giới hành chỉnh cấp tỉnh
-—
+r% j'r
+TRÙNG
 
-và cây hãng nấm l
-£œÐ
-Ï Ngủ ẳ tử vu
-—. Vùng nông lắm kết hợp Điều Ẳ ng Ð Đảo Ranh giới vùng
-ð
-LÝ
+.
 
-Cao su
-Cả nhà
+QP, Cốn Sơn
+ve.. hôn gây Cạnh
 
-Cây thực nhầm q8. Quần đản sec Ee Biên giới quốc qia
+¡ đền
+„ hàn Khani đ
+1 Ủ4J:l hàn E Lẻ ẺịíJầl5I"`t_ỂIfeìIú|,il ỄỂỦHỂ'
 
-ũ 5Ũũ 200
+mu?cỡ knu
 
-E—] Vũng nuỗi trắng thuy sản tập trung
-Cây ăn quả Km
+CHÚ GIẢI
 
-Hình 4.1. Bản đổ nông nghiệp, lãm nghiệp, thuỷ sản Việt Nam, năm 2021
+CÁC VŨÙNG NÔNG NGHIỆP SẲN PHẨM CHUYÊN MÔN HOÁ Thủ đồ
+- Vùng trống cây lương thực, thực phẩm Chẽ Lạc Bò Ẻ San hỗ
+
+và cây hàng năm Can su Đầu tương Lợn
+—] W'[J "g Ệ…9 cấy công nghiệp lầu năm Cà phê Bông
+
+và cấy ä[1 quả
+
+Vùng rừng ®. Hỏ liệu Lủa Đánh bắt hải sẵn Địa giới hành chỉnh cấp tỉnh
+- ] Ngỗ ù lới vũ
+NØ Vùng nông lâm kết hợp n : _ cẠ gợi vùng
+
+' äy thực phầ lên giới ¡
+- Vùng nuồi trng thuý sản Lập trung m cạy Tk giin .. Quần đảo T““=¬- Biên giới quốc gia
+
+í n êmg 5 ũ EU EHM
+Mía Cây ăn quả Km
+
+Sống
+Gia cẩm Hẻ
+
+Hình 4.1. Bản đồ nông nghiệp, lãm nghiệp, thuý sản Việt Nam, năm 2021
 138

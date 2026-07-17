@@ -19,39 +19,42 @@ văn hoá ở Đông Nam Á từ đầu Công nguyên đến thế kỉ X.
 Trong hơn mười thế kỉ hình thành và phát triển, ở Đông Nam Á đã diễn ra quá
 
 trình giao lưu văn hoá với Trung Quốc và Ân Độ. Quá trình giao lưu đó đã tác động
-như thê nào đên văn hoá Đông Nam À?
+như thê nào đên văn hoá Đông Nam Á?
 
-Tín ngưỡng phôn thực
+Em có biết?
+
+Tín ngưỡng phồn thực
 của người Chăm xưa
-nhăm cầu mong vạn
+nhằm cầu Imong vạn
 vật sinh sôi, nảy nở,
 sung túc.
 
 Sau này, khi Ấn Độ
 giáo được tiêp nhận,
-lin-sa (linh vật tượng
+lin-ga (Iinh vật tượng
 trưng cho tín ngưỡng
-phôn thực) trở thành
-biêu tượng quyên lực
+phon thực) trở manh
+biêu tượng quyền lực
 cho nhà vua - người
-được đông nhât với
+được ®ng nhất với
 một vị thân, gọi là
 Thân Vua.
 
 56
 
-1. Tín ngưỡng, tôn giáo
+1. Tiín ngưỡng, tôn giáo
+
 Trong quá trình lịch sử, cư dân Đông Nam Á có nhiều tín ngưỡng
-dân gian như: tín ngưỡng phôn thực, tục thờ cúng tổ tiên, tục
+dân gian như: tín ngưỡng phồn thực, tục thờ cúng t tiên, tục
 cầu mưa....
 
-4> Hình 1. Nghỉ lễ trong tết Té nước Song-kran (ở Thái Lan) -
+x& Hình 1. Nghi lễ trong tết Té nước Song-kran (ở Thái Lan) -
 một lễ hội liên quan đến tục cầu mưa của cư dân Đông Nam Á
 
-Các tín ngưỡng bản địa đã dung hợp với Án Độ giáo (từ Án Độ),
+Các tín ngưỡng bản địa đã dung hợp với Án Độ giáo (từ Án Ðộ).
 Phật giáo (từ Án Độ và Trung Quốc). Trong đó, các quốc gia
-chịu ảnh hưởng của văn hoá Án Độ đều có tín ngưỡng Thần —
-Vua (Chăm-pa, Chân Lạp,...).
+chịu ảnh hưởng của văn hoá Án Độ đều có tín ngưỡng Thần -
+Vua (Chăm-pa, Chân Lạp....).
 
-@sời sống tin ngưỡng - tôn giáo của các cư dân Đông Nam Á đã
-chịu ảnh hưởng từ văn hoá Án Độ, Trung Quôc như thê nào?
+@bĐøi sống tín ngưỡng - tôn giáo của các cư dân Đông Nam Á đã
+chịu ảnh hưởng từ văn hoá Án Độ, Trung Quốc như thế nào?

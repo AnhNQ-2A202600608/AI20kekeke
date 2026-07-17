@@ -9,63 +9,65 @@ source: ocr
 
 Học xong bài này, em sẽ:
 
-Mô tả được các bộ phận của
-
-một dòng sông lớn, mói quan
-
+* Mô tả được các bộ phận của
+một dòng sông lớn, môi quan
 hệ giữa mùa lũ của sông với
-các nguôn cấp nước sông.
-Nêu được tầm quan trọng
+các nguôn câp nước sông.
+
+» Nêu được tâm quan trọng
 của việc sử dụng tông hợp
 nước sông, hô.
 
-Nêu được tâm quan trọng
+° Nêu được tầm quan trọng
 của nước ngâm và băng hà.
-Có ý thức sử dụng hợp lí và
+
+* Có ý thức sử dụng hợp lí và
 bảo vệ nước sông, hô, nước
 ngâm và băng hà.
 
 Ranh giới
 lưu vực sông
 
+Em có biết?
+
 Sông A-ma-dôn là con sông
 có lưu vực rộng nhất và lưu
-lượng nước nhiều nhất thế giới.
-Vào mùa lữ, chỗ rộng nhất của
-sông có thê lên đến hơn 40 km.
+lượng nước nhiều nhất thê giới.
+Vào mùa lũ, chõ rộng nhất của
+sông có thể lên đến hơn 40 km.
 Vì thế, người ta còn gọi nó là
-"sông biên".
+"sông biên”.
 
 SÔNG VÀ HỒ.
 NƯỚC NGẦM VÀ BĂNG HÀ
 
-Nước sông, hồ, nước ngâm và băng hà là nguôn
-nước ngọt chính trên Trái Đắt. Các nguồn nước
+Nước sông, hỖ, nước ngằm và băng hà là nguồn
+nước ngọt chính tiên Trái Đât. Các nguôn nước
 
-này có vai trò như thế nào đối với tự nhiên và đời
-sống con người? Làm thế nào đề sử dụng chúng đạt
+này có vai trò như thế nào đói với tự nhiên và đời
+SÔng con người? Làm thê nào đê sử dụng chúng đạt
 hiệu quả cao?
 
-1. Sông, hỗ
-
+1. Sông, hô
 a) Sông
+
 Sông là dòng chảy thường xuyên tương đối lớn trên bề
-mặt lục địa và đảo, được các nguồn nước mưa, nước
+mặt lục địa và đảo, được các nguôn nước mưa, nước
 ngâm, nước băng tuyêt tan nuôi dưỡng.
 
 Mỗi con sông đều có một vùng đất cung cấp nước
 thường xuyên cho nó gọi là lưu vực sông. Một hệ
-thống sông gồm sông chính, phụ lưu là sông đổ nước
-vào sông chính và chỉ lưu là các sông thoát nước cho
+thống sông gồm sông chính, phụ lưu là sông đồ nước
+vào sông chính và chiỉ lưu là các sông thoát nước cho
 sông chính.
 
 Phụ lưu
 
-Hình 1. Mô hình hệ thống sông
+Hình 1. Mô hình hệ thóng sông
 
-TP) 1. Đọc thông tin trong mục a và quan sát hình 1, em
+( 1. Đọc thông tin trong mục a và quan sát hình 1, em
 
 hãy mô tả các bộ phận của một dòng sông lớn.
 
-2. Em hãy nêu mối quan hệ giữa mùa lũ của sông
+2. Em hãy nêu mồi quan hệ giữa mùa lũ của sông
 với nguôn cung câp nước sông.

@@ -7,186 +7,361 @@ source: ocr
 
 # SGK Lịch sử và địa lí 7 KNTT (lớp 7) — Trang 181
 
-——
+42.43.93 .
 
-"m¬x
-Mactlen — [Maesmn —
-Ma-gien-lăng 14, 15, 167-169
-Ma-ki-a-vê-i
+2 Ä G — :
 
-ủ TỊ T| nịỊ ml [`
-s|l0ö|<lzla =
-1¬ |=|mị6
-m|d2|3|g|z
-|” G =—Ị
-mịn
-bài 2lm
-tal|lm|t
+Kho.ne
+Kre
 
-=.Ô
-=
-®
+Lê-ô-na đơ Vanh-xi 19, 22
+:
+Lisbmn
 
-_
-+
-_
-(n
+M. Xéc-van-tét :
+Mác-cô Pô-lô 9
+57
+Maláccs — |Malees - 1393738 x
+Ma-lai-xi-a 36, 37,38
+Mác-tin Lu-thơ 21
+Mer=_ ha..
 
-to| =—
-hi (
-lÌ
-
-_
-œ
-bái
-
-Pha
-[
-
-Maiieea — |MaBem —_
-Mauuku — |MaMu — [T67
-
-Ma-lai-xi-a 6, 37,38
-Mác-tin Luthoơ |Martin Luther |2
-Mêm __ |Mem
-lMianma — |Mwanmar |3538.4i
-20
+Mi-ken-lăng-giơ |Michelangelo
 
 Môn-tê Đây Monte dei
 Pat-chi đi Paschi di 173
 Si-ê-na Siena
 
-Mô-giô-pa-hit Majap ahit
+, , l đ
+x iếi
+Voipamt - |%
 
-Dung Mohenjo-daro | 171
-Ne-ga-rắc
+Mohenjo-daro |171
 
 Negarak
-Re-ta-ga-ma Retagama
-Ophozết — [Euphrdes |7
+Retagama
 
-co
-œ
+z
+Othello
 
-„37,38
+Pa-gan Bagan
 
-củ | —
-œ
+lưi]
+cn
 
-I
-œ
+==
+EPHM
 
-lÔtemo — [omao |
+se.d |Ù cccả.
+_
++~
 
-lPegan — — ƑBagan
+—.
 
-JPalexin |Paesin |j |
+r
+T
 
-Pa [Pas |
+4,15
 
-Pami |Pa l2 |
-: Phraya Fa
+iỉ
+ỉi
 
-Phi-lip-pin Philippines 36, 168
+i
+
+II
+II
+Đ: Ù D3
+= REsi
+.- ]
+nlỈI L
+
+_ ww_
+Mranma -xI SusE m d
+
+-38,41
+20
+
+œ|ợ
+
+l
+
+—
+
+Mô-gôn
+
+Mô-giô-pa-hit
+
+Mô-hen-giô
+Đa-rô
+
+Ne-ga-rắc
+Re-ta-ga-ma
+
+ll
+ư sï
+
+Ơ-phơ-rát
+
+Ô-ten-lô
+
+=¬
+c
+
+Là|
+
+Palesin^> |u - Ố
+Pades —^. |4
+Ea - 172 - I
+Phraya Fa
+
+%5, 168
+
+Pha Ngừm
+
+Phi-lip-pin
 
 180
 
-(D
+TU|I|U| T TƠ TU
+el©| @ A :
+=|l3| =
+mi%| c -
+35iịeo | 3 5
 
-Phơ-răng
+‹ ra
 
-—
-h3
+G)
 
-— _— | —+
-¬l hà
-+
-
-Pô-klong Ga-rai :
-
-Rê-mê-ô Romeo
-
-Sác-loơ-ma-nhơ | Charlemagne
-
-ị
-Sa-ra-na Sarana
-lSa-rava-ti |Saravati
-Sếchxpa |Shakepeare
-i
-ha
-
-Pi-rê
-
-=>;
-_-
-
-74
-
-9,22
-
-œ ứœ œ|(2
-¬ E 8 |
-= E¬x 2|
-= =r -=
-mm la ¬
-< =t m |TÐ
-ni 7 ol3
-xe cCÍIO
-su
-8
-€3 | €2 | 2| cì | —
-Ằ||Mðị|®
-cà
-¬
-
-œ|
-5
-ứ)
-S
-8)
-E=
 m
 
-‹O
+Ý
 
-h
+5 -
+Uiulqgmm1u|u|m| m #
+L- Ruil ẫ.JD -BE.v E .,
+=Il5 |¬ m l= .
+mim|mz2I®lml|lz= l
+Z2imml|I|"-aạa = m l
+% | n 5ie|o _®
+^ ©lg|l® ¬
 
-co |Pha
-Í
+=| c
+n5
+
+ren-xê
 
 —
+q.Nt
+UU
+
+i
+
+ga
+Ô-li-an-xki
+
+—.
+¬I
+=
+
+Rô-ma
+
+zU
+-
+3
+
+e
+Ó
+
+.
+—
+©
+
+3c-lơ-ma-nhơ. | Charlemagne
+
+—L
+
+-pa-nhơ
+
+t
+
+-ta
+
+U
+m
+m
+G
+m
+@
+=
+T
+
+l0zNREBRạ |
+aHP
+t
+
+= |= L=
+Ểlm'ẳ
+ũ)|5
+SIG,
+Siumu
+m
+
+Sa-ra-na
+Saravan — |Saavu |S -
+Sukhotay |Sukhomay 3637
+
+-tơ-la
+
+GỠ
+I
+
+I
+Lesi
+
+Si-va-sa-xa-na
+
+)|œ| Ø
+ẵ.ẳỊ
+m |=
+nìffl
+lm. |
+i
+ư
+Ccn
+
+l
+S
+c
+hồ
+
+l-va
+
+°
+,
+Q
+=
+0
+=
+n
+3
+
+Tam-bra-lin-ga
+
+Cố I| 2
+II
+
+Ti-gơ-rơ
+Tôn-đô
+Tôn-gu
+
+Tigris
+
+I
+Løại
+
+Lưiï
+Ø
+
+Tongu
+
+c
+Ơi
+
+Top-ka-pi
+
+¬IEIEEkIE
+; 5 | e
+Z~ = = |=
+DJ l ¬ |
+G, m l=
+= | m
+i
+= |¬
+m
+m s
+q.q
+_
 
 U-rúc
 
-Vasco da
-Va-xcô đơ Gama tama
-Viays
-
-Vit-ten-béc VWttenberg
-
-ha |ta
-
-®
-3
-
-¬l
-_
-
-ølø| e|ø
-
-_
-EIEIF:E:
-œ|m | |5
-¬|ml|slo®
-0mịO
-
-HH)
-|
-:| —
-
-œ)
-®
+c-
 ¬
-œ
-¬
-he
+C
+=
+<
+s=i. ==
+o5 ¬|
+—H
+
+Va-ti-căng
+
+x
+Ơ
+
+Va-xcô đơ Gama
+
+J
+
+5.69-91
+
+Gama
+
+GỠ
+
+Vi-giay-a
+
+H
+
+<
+T
+
+x | m mm.|J =
+m I= 8I'.'J
+5 | n
+m .. i
+m
+E m
+Lim]
+
+_¬
+
+SẠ
+
+nhồ
+==
+
+ten-béc
+
+Xich-xtin
+
+In-ga-po
+Xu-ma-tra
+
+ỉ
+
+x
+z
+Ị
+Lưi]
+q,h4
+
+—.
+¬I
+—
+
+Xu-me
+
+LL-un =
+5i3|3l|ø |=
+Tmịlịmlilm|nm'5
+¬i=zml=xim
+Ø I o
+m
+I
+LaMĩ
+
+><
+hth
+5
+
+en

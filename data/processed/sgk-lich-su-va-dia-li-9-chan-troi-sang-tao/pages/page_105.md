@@ -12,62 +12,62 @@ b) Ý nghĩa lịch sử
 Nhân dân Việt Nam đã kết thúc
 thắng lợi cuộc kháng chiến chống Mỹ,
 cứu nước, hoàn thành sự nghiệp giải
-phóng dẫn tộc, thu non sông về một
-mối, mở ra mệt kỉ nguyên mới cho lịch
+phóng dân tộc, thu non sông về một
+mối, mở ra một kỉ nguyền mới cho lịch
 sử dân tộc - kỉ nguyên đất nước độc
-lập, thống nhất, đi lên chủ nghĩa xã hội.
+lập thống nhất, đi lên chủ nghĩa xã hội.
 
 Thắng lợi của Việt Nam trong cuộc
-kháng chiến chỗng Mỹ tác động mạnh
+kháng chiến chống Mỹ tác động mạnh
 đến tình hình nước Mỹ và thế giới, cổ
 vũ phong trào giải phóng dân tộc, các
 cuộc đấu tranh vì hoà bình, dân chủ và
 tiến bộ trên thế giới.
 
-z Luyện tập
+ủ Luyện tập
 
 Luyện tập - Vận dụng
 
-_18.24) “Chiến tranh Việt Nam đã kết thúc với thẳng lợi
-của lực lượng giảiphóng điều đó có thể khẳng định,
+ổ “Chiến tranh Việt Nam đã kết thúc với thẳng lợi
+của lực lượng giải phóng, điều đó có thể kháẳng định,
 thời mà các nước lớn dùng sức mạnh để bóp nghẹt
-chủ nghĩa dân tộc đã chấm dút:
+chủ nghĩa dân tộc đã chấm dúứt?
 
-(Tờ báo A-sa-hi Sin-bun (Asahi Shimbun)
-của Nhất Bản, số ra ngày 1 - 5 - 1975)
+(Tờ báo A-sa-hi Sim-bun (Asahi! Shimbun)
+của Nhật Bản, số ra ngày ] -5-1975)
 
-Œ> “Năm tháng sẽ trôi qua, nhưng thẳng lợi của
-nhân dân ta trong sự nghiệp kháng chiến chống Mũ,
-cứu nước mãi mãi được ghi vào lịch sử dân tộcta như
+Ổ “Nám tháng sẽ trôi qua, nhưng tháng lợi của
+nhân dân ta trong sự nghiệp kháng chiến chống Mỹ,
+Ccứu nước mãi mãi được ghi vào lịch sử dân tộcta như
 một trong những trang chói lọi nhất, một biểu tượng
-sắng ngời về sự toàn thẳng của chủ nghĩa anh hùng
+sáng ngời về sự toàn thắng của chủ nghĩa anh hùng
 cách mạng và trí tuệ con người và đi vào lịch sử thế
-giới như một chiến công vĩ đại của thế kÌXX, một sự
-kiện có tâm quan trọng quốc tế to lớn và có tính thời
-đại sâu sắc?
+giới như một chiến công vĩ đại của thế kỉ XX, một sự
+kiện có tầẩm quan trọong quốc tế to lớn và có tính thời
+đại sâu sác”?
 
 (Báo cáo chính trị tại Đại hội đại biểu toàn quốc
-lẫn thứ IV của Đăng, 20 - 12 - 1976)
+lần thứ lV của Đảng, 20 — 12-1976)
 
-Hãy lập bảng hệ thông những thẳng lợi tiêu biêu của quân đân hai miền Nam — Bắc
-trong kháng chiến chống MU, cứu rước (1965 < 7973):
+JHãy lập bảng hệ fflổng những ffl-ẳHg lợi tiêu biểu của guận dđâm hai miền Nam — Bắc
+trong kháng chiến chóng Mỹ, cu tước (1965 ~ 4975):
 
 Vận dụng
 
-Dựa vào kiến thức đã học trong bài,
-đọc tư liệu 15.1 và quan sát bức ảnh
+Dựa vào kiến thức đã học #ong bài,
+đọc tư Hệu 18 18 và quan sát bức ảnh
 lịch sử bên cạnh, hãy:
 
-— Nêu những chỉ tiết trong bức ảnh
-tư liệu tương động với mô tả của
-phóng viên nước ngoài về ngày
-30—4_— 1975 ở Sài Gòn.
+— Nêu những chỉ Hồt rong bức ảnh
+tự liệu tương đồng với mô tô của
+phóng viên nước ngoời về ngày
+30— 4— 1975 ở Sởi GòÓn.
 
-— Viết một đoạn văn ngắn (khoảng
+— Viêt một đoạn văn ngăn (khoảng
 200 chữ) về chiến thẳng lịch sử
-30— 4— 1975 với chủ đề: “Giá trị
-của hoà bình trong chiến thẳng
-quản sự ngày 30 — 4 — 1975 tại
-Sài Gòn ”.
+30 — 4— 1975 với chủ đề: “Giả trị
+của hoà bình #ong chiến thẳng
+quan Sự ngày 30 — ấ — 1973 tại
+Sởi Gòn ”.
 
-102
+107

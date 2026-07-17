@@ -7,58 +7,49 @@ source: ocr
 
 # SGK Lịch sử và địa lí 7 KNTT (lớp 7) — Trang 54
 
-Năm 1010, vua Lý Công Uẫn đặt niên hiệu là Thuận
-Thiên, quyết định dời đô từ Hoa Lư vê thành Đại La
-(Hà Nội ngày nay) và đổi tên là Thăng Long.
+Năm 1010, vua Lý Công Uần đặt niên hiệu là Thuận
+Thiên, quyêt định dời đồ từ Hoa Lư về thành Đại La
 
-Trong Chiếu dời đô có đoạn:
+(Hà Nội ngày nay) và đồi tên là Thăng Long. :
 
-1. “... thành Đại La... ở giữa khu vực trời đất, được thế
-rông cuộn hỗ ngôi, chính giữa nam bắc đông tây,
-tiện nghi núi sông sau trước. Vùng này mặt đắt rộng
-mà bằng phẳng, thê đất cao mà sáng sủa, dân cư
-không khỗ vì ngập lụt, muôn vật hết sức tươi tốt,
+Jrong Chiêu dời đô có đoạn: Sử chép, khi fflU}fền nhà vua
+1. “... thành Đại La... ở giữa khu vực trời đất được thế tạm đỗ dưới thành Đại La, có
+rông cuộn hỗ ngôi. chính giữa nam bắc đông tây, rồng vàng hiện lên, nhân đó
+tiện nghỉ núi sông sau trước. Vùng này mặt đát rộng đổi tên thành là Thăng Long
+mà bằng phẳng. thê đắt cao mà sáng sủa, dân cư (có nghĩa là Rồng bay lên).
+không khỗ vì ngập lụt muôn vật hết sức tươi tót,
 phôn thịnh.
 
-Xem khắp nước Việt, đó là thắng địa, thực là chỗ tụ
+Xem khắp nước Việt đó là thắng địa, thực là chỗ tụ
 
-hội quan yêu của bỗn phương. đúng là nơi thượng
-đô kinh sư mãi muôn đòi".
+hội quan yếu của bôn phương, đúng là nơi thượng
+đồ kinh sư mãi muôốn đời”.
 
 (Theo Ngô Sỹ Liên, Đại Việt sử ký toàn thư,
 
-Tập I, Sđd, tr.241)
+Tập Il, Sđd, tr.241)
 
 Ở khu vực trung tâm, nhà Lý đã xây dựng nhiều
-cung điện làm nơi làm việc của vua và triều đình, nơi
+cung điện làm nơi làm việc của vua và triêều đình, nơi
 ở của hoàng gia. Bên ngoài là khu vực buôn bán, làm
-ăn của dân chúng. Năm 1054, nhà Lý đỏi tên nước là
-Đại Việt.
+ăn của dân chúng. Năm 1054, nhà Lý đổi tên nước là
+Đại Việt
 
-“. Hình 2. Sơ đồ `: .
-phục dựng Câm thành trong
-| Hoàng thành Thăng Long
+S
+Hoàng thành Thăng Long Kinh thành Thăng Long
 
-1. Nhà Lý được thành lập như thế nào?
+- Hinh2.Sơ đồ ọ n=
+phục dựng Cắm thành trong
+|
+|
 
-2. Khai thác tư liệu 1, tìm những từ, cụm từ miêu tả về
-thành Đại La. Những thông tin đó chứng tỏ điêu gì
-về vùng đất này? Từ đó, hãy cho biết ý nghĩa của
-sự kiện dời đô của Lý Công Uẫn.
-
-Em có biết?
-
-Sử chép, khi thuyền nhà vua
-tạm đỗ dưới thành Đại La, có
-rồng vàng hiện lên, nhân đó
-đổi tên thành là Thăng Long
-(có nghĩa là Rông bay lên).
-
-Kinh thành Thăng Long
 được xây dựng gồm ba vòng
-thành. Cắm thành và Hoàng
-thành được bảo vệ nghiêm
-ngặt, là nơi ở của vua và
-hoàng tộc, làm việc của triều
-đình. Vòng thảnh thứ ba là
+
+1. Nhà Lý được thành lập như thế nào? thành, Cám thành và Hoàng
+
+2. Khai thác tư liệu 1, tìm những từ, cụm từ miều tả về thành được bảo vệ nghiêm
+thành Đại La. Những thông tin đó chứng tỏ điều gì ngặt, là nơi ở của vua và
+về vùng đắt này? Từ đó, hãy cho biết ý nghĩa của hoàng tộc, làm việc của triều
+sự kiện dời đô của Lý Công Uầân. đình. Vòng thành thứ ba là
+
 La thành.

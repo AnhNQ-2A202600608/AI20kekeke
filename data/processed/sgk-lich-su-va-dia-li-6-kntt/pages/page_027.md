@@ -8,44 +8,78 @@ source: ocr
 # SGK Lịch sử và địa lí 6 KNTT (lớp 6) — Trang 27
 
 2. Sự tan rã của xã hội nguyên thuỷ ở Việt Nam
+
 a) Sự xuất hiện kim loại
 
 Từ khoảng 4 000 năm trước, cư dân ở Bắc Bộ, Trung Bộ và Nam Bộ đã biết tới đồ đồng.
 
-Văn hoá Văn hoá Đông Đậu Văn hoá Gò Mun
-".- Nguyên (Bắc Bộ) (Bắc Bộ)
+Văn hoá
+Phùng Nguyên
+(Bắc Bộ)
 
-(Bắc Bộ) Hiện vật bằng đồng Hiện vật đồng chiếm hơn
-Đã tìm thấy những khá phô biên gôm: một nủa hiện vật tìm
-mẫu xỉ đông, đục, dùi, cán dao, được, bao gôm: vũ khí
-mẫu đông thau mũi tên, lưỡi câu,... (mũi tên, dao, giáo,...),
-nhỏ, mảnh vòng lưỡi câu, dùi, rìu (đặc biệt
-hay đoạn dây chỉ. rìu lưỡi xéo), đục,...
+Đã tìm thấy những
+mẫu xỉ đồng,
 
-|1500 TCN [1000 TCN
+mẫu đồng thau
+nhỏ, mảnh vòng
+hay đoạn dây chi.
 
-Văn hoá tiên Sa Huỳnh Văn hoá Đồng Nai
-(Trung Bộ) (Nam Bộ)
+2000 TCN
 
-Hiện vật bằng đồng Hiện vật bằng đông như:
+Văn hoá Đông Đậu
+(Bắc Bộ)
 
-như: đục, lao, mũi tên, rìu, giáo, lao có ngạnh,
+Hiện vật bằng đồng
 
-lưỡi câu,... mũi tên, lưỡi câu...
+khá phỗ biến gồm:
 
-4> Hình 3. Sơ đồ các nên văn hoá đồ đồng ở Việt Nam
+đục, dùi. cán dao,
+
+mũi tên, lưỡi câu,...
+
+|1500 TCN
+
+Văn hoá tiền Sa Huỳnh
+(TrungBô)
+
+Hiện vật bằng đỏng
+
+như: đục, lao, mũi tên,
+
+lưỡi câu,...
+
+Văn hoá Gò Mun
+(Bắc Bộ)
+
+Hiện vật đông chiếm hơn
+một nữa hiện vật tìm
+được, bao gôm: vũ khí
+(mũi tên, dao, giáo....).
+lưỡi câu, dùi, rìu (đặc biệt
+rìu lưỡi xéo), đục,....
+
+| 1000 TCN
+
+Văn hoá Đông Nai
+(Nam Bộ)
+Hiện vật bằng đồng như:
+rìu, giáo, lao có ngạnh,
+mũi tên, lưỡi câu....
+
+x Hình 3. Sơ đồ các nền văn hoá đồ đồng ở Việt Nam
 
 b
 
-Tre
+m
 
 Sự phân hoá và tan rã của xã hội nguyên thuỷ ở Việt Nam
 
-Việc sử dụng ‹ các công cụ bằng kim loại đã giúp cho người nguyên thuỷ mở rộng địa bàn
-cư trú. Một số đã rời khỏi vùng trung du, chuyển xuống các vùng đồng bằng ven sông.
-Họ đã biết dùng cày gỗ có lắp lưỡi bằng đồng đề cày ruộng, trồng lúa, dùng lưỡi hái
+Việc sử dụng các công cụ bằng kim loại đã giúp cho người nguyên thuỷ mở rộng địa bàn
+cư trú. Một số đã rời khỏi vùng trung du, chuyền xuống các vùng đồng bằng ven sông.
+Họ đã biết dùng cày gỗ có lắp lưỡi bằng đồng để cày ruộng, trồng lúa, dùng lưỡi hái
+
 đề gặt.
 
-®> Hình 4. Công cụ và vũ khí bằng đồng (văn hoá Gò Mun)
+x Hình 4. Công cụ và vũ khí bằng đồng (văn hoá Gò Mun)
 
 26

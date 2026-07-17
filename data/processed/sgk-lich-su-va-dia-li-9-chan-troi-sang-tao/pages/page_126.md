@@ -7,43 +7,44 @@ source: ocr
 
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 126
 
-bÍPH MẬNG KH0ñ HỌC, KĨ THUẬT
-HƯỮN Ì - vì gụ quế Toàn cầu n0á
+0ÁGH MẠNG KH0A H00, KĨ THUẬT
+GhưƠng 7 Ổ và XU THẾ TUẦN CÀU HĐñ
 
-Bài 21 0H MANG KHỦR HỤC, KĨ TRUẬT
-VÀ ÑU THÊ TUẦN ÂU HŨñ
+Bài24 0ÁEH MANG KHOñ H00, KĨ THUẬT
+V\ KU THẾ TUÀN GẦU H0ñ
 
 Học xong bài này, em sẽ:
 
-— Mô tả được những thành tựu
+— Mô tả được những thành tưu
 chủ yếu của cách mạng khoa
 học, kĩ thuật trên thế giới và
 ảnh hưởng của cuộc cách
-mạng đỏ đến Việt Nam.
+mạng đó đến Việt Nam.
 
-- Trình bay được những nét
+- Trình bày được những nét
 cơ bản về xu hướng toàn
 cầu hoá và đánh giá được
 tác động của toàn cầu hoá
 đối với thế giới và Việt Nam.
 
-Năm 1595, Mác Tuên (Mark Twuain) đã viết một câu
-chuyện viễn tưởng về Luân Đền năm 1904 (Erom the
-Lomriiôn Thne of 1004), tơng ẩo ông mô tả về một thiết bị
-giống nÏữ chiếc điện thoại cỗ khả năng kết nội trên toàn
-thể giới để mọi người có thể cha sẻ thông tin và quan súf
-nhau từ xa. Những thành tụu điệu kì của khoa học công
-nghệ đã hiện thực hoá vượt xa câu chuyện viễn tưởng của
-AMác Tuên, tạo nên một thể giới kết nối toàn câu như chúng
-ta biết ngày nay. Những thành tựu đó là gì? Sự liên kết thể
+Năm 1S9S, Móc Tuân (34urk Tuuain) đã viết một câu
+chuyện viên tưởng về Luân Đôn năm 1904 (From the
+T,nohdO Thúe šoƒ 7 904), rd rE đÓ ông mô lỎ về một thiết bị
+giÔng nữư chiếc điệñ thoại cố khó năng kết nôi trên toàn
+thể giới đề mọi người có thể chia sẽ thông tìn và quan sắt
+nhau từ xa. Mhững thành tựu diệu tì của khoa bọc công
+nghệ đã hiện thực hoá vượt xa cầu chuyện viên tưởng của
+Móc Tuên, tạo nên một thể giới kết nổi toàn cầu như chung
+ta biết ngày ngy. Những thành tựu đó là gì? Sự liên kết thê
 giới trong xu thể toàn cầu hoá có những nét cơ bản nào?
-;ã tác động đến thể giới và Việt Nam ra sao?
+ã tác động đến thể giới và Việt Nam ra sao?
 
-— Tựa vào thông tin trong bài và tư liệu 24.1, hãy mô tả các thành tựu của
-cách mạng khoa học, kì thuật. Theo em, thành fựu nào có giả Ị ứng dụng
+— Dựa vào thông tn rong bời và tư liệu 24 Í hãy mô tả các thờnh tựu của
 
-nhất trong đời sống hiện nay?
-— Cách mạng khoa học, Kì thuật mang đến thuận lợi và thách thức gì cho sự
-phát triển của Uiệt Nam?
+cách mạng khoa học, t thuật. †heo em, thành tựu nào có giá # ‡ ứng dụng
+nhất rong đời sống hiện nay?
 
-L2
+— Cách mợng khoa học, kĩ thuật mang đến thuận lợi về thách thức gì cho sự
+phát triển của Việt Ðam?
+
+123

@@ -7,21 +7,21 @@ source: ocr
 
 # SGK LỊCH SỬ VÀ ĐỊA LÍ 8 KNTT (lớp 8) — Trang 172
 
-GIẢI THÍCH THUẬT NGỮ PHẦN LỊCH SỬ
+GIẢI THÍCH THUẬT NGỮ PHẦN LICH SỬ
 
-Bảo hộ (chế đô) (79): một hình thức thống
+Bảo hộ (chẽ đö) (79): một hình thức thống
 trị của đế quốc thực dân đối với một số
 nước bị xâm lược dưới chiêu bài bảo hộ.
 
 Bôn-sê-vích (54): chiếm đa số trong cơ
 quan lãnh đạo của đảng công nhân xã hội
 dân chủ Nga năm 1903, đứng đầu là V. I.
-Lễ-nin.
+Lẽ-nin.
 
 C
 
-Các-ten (45): một hình thức tổ chức công tỉ
-tư bản độc quyển, trong đó mỗi thành viên
+Các-ten (45): một hình thức tổ chức công ti
+tư bản độc quyền, trong đó mỗi thành viên
 phải tuân thủ những quy định thống nhất
 về điều hành sản xuất, tiêu thụ sản phẩm và
 thuê mướn nhân công. Các-ten có ban lãnh
@@ -43,25 +43,25 @@ khẳng định trong pháp luật mỗi nước,
 trong văn bản pháp lí quốc tế, là nguyên
 tắc cơ bản cần tuân theo.
 
-Chuyên chính (13): chính quyển do một
+Chuyên chính (13): chính quyền do một
 giai cấp nắm giữ hoàn toàn nhằm bảo
 đảm triệt để việc thực hiện đường lối chính
 trị của giai cấp đó, đồng thời để trấn áp
 sự chống đối của giai cấp thù địch (nền
 chuyên chính Gia-cô-banh).
 
-D-ĐÐĐ
+D-Đ
 
 Duy tân (60): phong trào đấu tranh đòi
-thay đổi theo cái mới, cái tiến bộ, bỏ cái cũ,
+thay đối theo cái mới, cái tiến bộ, bỏ cái cũ,
 cái lạc hậu trong đời sống xã hội, xây dựng
 đất nước.
 
-Đẳng cấp thứ ba (12): đằng cấp thấp nhất
+Đảẳng cấp thứ ba (12): đẳng cấp thấp nhất
 trong xã hội phong kiến nước Pháp trước
-năm 1789, gỗm công nhân, dân nghèo
-thành thị, tư sản và nông dân. Họ không có
-quyển gì, bị phong kiến thống trị và phải
+năm 1789, gồm công nhân, dân nghèo
+thành thị, tư sản và nông dẫân. Họ không có
+quyền gì, bị phong kiến thống trị và phải
 đóng mọi thứ thuế.
 
 Định (28): người đàn ông từ 18 tuổi trở lên,
@@ -70,12 +70,12 @@ làm các nghĩa vụ khác.
 
 Độc quyền (45): chiếm giữ hoàn toàn lấy
 một mình, không chia sẻ cho ai trong hoạt
-động kinh tế, chính trị: độc quyển kinh
-doanh của Nhà nước, công tỉ tư bản độc
+động kinh tế, chính trị: độc quyền kinh
+doanh của Nhà nước, công ti tư bản độc
 quyền,...
 
-Hai chính quyền song song tổn tại (tình
-trạng) (54): tình hình độc đáo ở nước Nga
+Hai chính quyền song song tồn tại (tình
+trang) (54): tình hình độc đáo ở nước Nga
 sau Cách mạng tháng Hai năm 1917: Chính
 phủ tư sản lâm thời và Xô viết - đại biểu
 công nhân và binh lính.
@@ -84,8 +84,8 @@ K
 
 Khối quân sự (53): tổ chức nhiều nước liên
 kết với nhau về chính trị, quân sự qua các
-hiệp ước. Trong Chiến tranh thể giới thứ nhất
-(1914 - 1918) có hai khối quân sự đổi địch
+hiệp ước. Trong Chiến tranh thế giới thứ nhất
+(1914- 1918) có hai khối quân sự đối địch
 nhau là khối Liên minh và khối Hiệp ước.
 
-171
+1⁄1

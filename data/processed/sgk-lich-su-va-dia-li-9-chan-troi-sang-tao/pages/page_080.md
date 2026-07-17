@@ -8,98 +8,87 @@ source: ocr
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 80
 
 Phía Pháp huy động
-12000 quân cùng với hâu
+12000 quân cùng với hầu
 hết máy bay ở Đông Dương
 tiến công lên Việt Bắc.
 Ngày 7 - 10 - 1947, lính
 Pháp nhảy dù xuống thị
-xã Bắc Kạn, Chợ Mới, Chợ
-Đổn. Đồng thời, bộ binh từ
+xã Eắc Kạn, Chợ Mới, Chợ
+Đồn. Đồổng thời, bộ binh từ
 Lạng Sơn theo Đường số
 4 tiến lên Cao Bằng. Ngày
 9 - 10 - 1947, binh đoàn
 hỗn hợp bộ binh và lính
-thuỷ ngược sông Hỗng,
-sông Lô và sông Gâm, tiến
-đến Đài Thị (Tuyên Quang).
+thuỷ ngược sông Hổng,
+sống Lô và sông Gâm, tiến
+dến Đài Thị (Tuyên Quang).
 Hai cánh quân tạo thế
 
 gọng kìm, bao vây Việt Bắc.
 
-Quân và dân Việt Nam
+Quân và dẫn Việt Nam
 chủ động tiến công và
 phục kích chặn đánh quân
 Pháp ở Chợ Đồn, Chợ Mới,
-Chợ Rã, Ngân Sơn, trên
+Chợ Rã, Ngân 5Sơn, trên
 Đường số 4 (đèo Bông Lau)
-và ở sông Lê (Đoan Hùng,
-Khe Lau,...
-kìm tiến công của quân Pháp.
+và ở sông Lô (Đoan Hùng,
+Khe Lau),... bẻ gãy hai gọng
 
-bê gãy hai gọng
+kìmtiến công của quân Pháp.
 
 Ngày 19 - 12 - 1947,
-đại bộ phận quân Pháp rút
-chạy khôi Việt Bắc. Cơ quan
+đại bộ phận quân Pháp rứt
+chạy khỏi Việt Bắc. Cơ quan
 đầu não kháng chiến được
-bảo toàn, bệ đội chủ lực
+bảo toàn, bộ dội chủ lực
 Việt Nam ngày càng trưởng
 thành. Pháp buộc phải từ
-bô chiến lược “đánh nhanh
+bỏ chiến lược “đánh nhanh
 thắng nhanh”.
 
-Œ “Địch hội quản ở Bắc Kạn, tạo thành cái ô bọc lấy Việt Bắc,
-rồi chúng cụp ỗõ lại, dưới đánh lên, trên đánh xuống, phá cho được
-cơ quan đầu não kháng chiến. Người (Hồ Chí Minh) chỉ rõ: Chúng
-mạnh ở hai gọng kìm, gọng kìm mà gãy thì cái ô đụp xuống sẽ
-thành cái ô rách, cuộc tấn công sẽ thất bạt.
+Ổ “Địch hội quân ở Bắc Kạn, tạo thành cái ô bọc lẫy Việt Bắc,
+rồi chúng cụp ô lại, đưới đánh lên, trên đánh xuống, phá cho được
+cơ quan đầu não kháng chiến, Người (Hồ Chí Minh) chỉ rõi Chúng
+mạnh ở hai gọng kìm, gọong kìm mà gấãy thì cái ô cụp xuống sẽ
+thành cái ô rách, cuộc tốn công sẽ thất bại".
 
 (Đại tướng Võ Nguyên Giáp, Chiến đấu trong vòng vậy,
-NXB Quân đội nhân dẫn, Hà Nội, 1995, trang 179)
+NXB Quân đội nhân dân, Hà Nội, 1995, trang 179)
 
-% x
+H A
 
-` ầ “hủ | Quả ta
-.. \ * Bảo hệ tên, .
-SE ao D ¬ : ":
-của HÀ GIẢNG -
-“ =
+kmài
 
-bạn ộ § à” _ aCA0 DEUNG
-F tiền Bảng Lau
-cIa
-y9
-XS,
+n Kneg Lnn. ĐĩnhH ”'_Ể
+: m I m
+l H n
+SN t Bình a
+n , ì
 
-30 — 10 =19471 „4
-Định Hoá c
+-= ¬ tQuãn Pháp rủi Iui
 
-(Chợ Chu]
-h bề » Bình Ca
-— *
+ỵỆ Nữi quấn Pháp nhấy d == .. Mũi tiện cóng của quần Phần
 
-nh Nữzi quãn Pháp nhảy dù *=—~ Mũi tiện công của quăn Pháp = = ® Quận Pháp rúi lui
+2= hi liên công của quần đội Việt Nam —D Đưỡờng quếc l = . Biên giới quốc gia
 
-=> Mii tiền côrg của quân đội Việt Nam ==Œ— Đường quốc lộ ~_ Biên giới quốc gia
+@ [ược đề chiến cịch Viet Bắc thuế” đồng năm 1947
 
-177) Lược đỏ chiến dịch Việt Bắc thụ - đông năm 1947
+Emcó biết?
 
-' Em có biết?
-
-Sông lô,
+sông lỗ, “sống ngàn
 Việt Bắc bãi dài ngô lau,
-núi rừng âm u” là nơi ghi
+núi rừng âm u” là nơi ghí
 dấu chiến thắng oai hùng
-của tiểu đoàn pháo bính
-325 đánh tan cuộc hành
-quân của Pháp lên Việt Bắc
-ngày 25 — TÔ - 1947, “mở
-đầu cho những chiến thẳng oanh liệt của bộ đội chủ lực ta
+của tiểu đoàn pháo binh
+225 đánh tan cuộc hành
+quận của Pháp lên Việt Bắc
+ngày 25 — 1Ũ — 1942 “mở
+đầu cho những chiến thắng oanh ñệt của bộ đội chủ lực ta
+
 trong chiến dịch Việt Bắc” (Võ Nguyên Giáp). Ngày nay, tại vị trí
-xảy ra trận đánh, thuộc Đoan Hùng (Phú Thọ), một tượng đài
+xảy ra trận đánh, thuộc Đoạn Hùng (Phú Thọ) một tượng đời
 chiến thắng được xây dựng, cao 26 m, nhìn xuống dòng sông
 “sóng ngàn kháng chiến?
 
-“sông ngàn
-
-tị
+tri

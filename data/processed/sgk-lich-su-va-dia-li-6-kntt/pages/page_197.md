@@ -7,114 +7,127 @@ source: ocr
 
 # SGK Lịch sử và địa lí 6 KNTT (lớp 6) — Trang 197
 
-ị
-\
+ỉ
 
-`.
-
-œ2
-Mà
+T T
 
 Papyrus
+
+Patalputa 35
+
+47
+
+51
+
+n 18,19,
+Philippines 50,52
+
+emk 38
+
+48
+Polybius 48
+18
+
 Pa-ri-a
-
-G2
-
 Pa-ta-li-pu-tra
 Pê-ri-dét
 Pha-ra-ông
 
-Pataliputra
+Š
 
-Pharaoh
+Phi-lip-pin
+Pi-rắc
+Pi-ta-go
 
-Phi-líp-pin Philippines
-
-œ
-
-Pi-ta-qgo
 Pô-li-bi-út
 
 Pon-đa-ung
 
-Pythagoras
-Polybius
-Pondaung
+G
+c
+3
 
-Á
-¬
-œ
-_=
-
-1n
-~
+v w
+Ii
+œ u u
 
 Ra-ma-kien Ramakien
 
 Ra-ma-y-a-na Ramayana
 
-G2
-¬
-`
+]
+>I
+-
 
-n
-¬
+SẠ
+>¬I
+
+18
 
 Sa-ra-oắc
 Sa-ra-va-na Saravana
 Sa-ra-va-xti Saraswati
 
+Sanchi 53,37,
+
+36, 52,
+
+LEN
+
+II`.`I'
+b 8 (2i
+
 Shyam Rai
 
-QJ Q2
+Cyprus
 
-Sri Vi-giay-a Srivijaya
+LSN]
 
-¬ œ œ
-lv mm œ
+52,54
+Tacôda -Á Takoh Á 53/
+đadé Ô Thaes: U 248 Ô
 
-T
+Tam-adip/- Tammalpt - 35
+Ta-ru.ma
+Tha Thar
+The-bơ Thebes
+Ti-gơ-rơ Tigris
+Top
 
-_ Nguyên gốc Trang.
-Tambralinga
-35
 30,45
-,46
-35
-Troa
 
-Tam-bra-lin-ga
-Tam-ra-li-pti
-Ta-ru-ma
+Topra
 
-h
-The-bơ
-Ti-gơ-rơ
-Top-ra
+Tri-nin Trinil
 
-a
++
+kSAI
 
-œ2
+Troa Troy
 
-2.02
+Thucydides
 
-U-rúc
+Tuy-xi-dít
 
-Vác-na Varna
+i ; w
 
-Xin-ga-po 18, 52
+Vác-na
+Vai-si-a
 
-Xirđa-aG9 1a mai [
-Gautama
+[Sài
 
-`..." ....
-CX@phố Sophols 48
-Sparta 45,46
-54,57
+Varna
+Vaishya
+Vi-ha-pu-ra Vihapura
+
+Vis-nu Vishnu
+
+Xê-natRô-man _ SenatusRomanus 191 -
+Xin-ga-po 18,52
+
+Xít-đác-ta Gô-ta-ma
+Xixêrông - (Gœmo - 10
+Xônphốc - Sophodes - 48
+Xpác l U aa U 4546
+Xumatra - Sumara - 54,57
 190
-XH 0
-
-Syria 3
-
-Vi-ha-pu-ra
-Vis-nu

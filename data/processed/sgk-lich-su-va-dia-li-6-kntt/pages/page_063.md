@@ -7,19 +7,23 @@ source: ocr
 
 # SGK Lịch sử và địa lí 6 KNTT (lớp 6) — Trang 63
 
-“=> Thảnh nội L3 Công thành
+t
+l
 
-=> Thànưung CC $Ống,aohò
-XÃ ĐÔNG HỘI tường
+_ w Cửa Tây Bắc
 
-“Thành ngoài Xóm Làng
+ee Thành nội i Công thành
+đ ÐThànhƯưung r. C 2 ẵểnìglẫỉo hồ
 
-+ Hình 3. Sơ đồ thành Cổ Loa - được xây dựng theo hình xoáy
-trôn ốc, có ba vòng khép kín với tổng chiêu dài là 16 000m
+XÃ ĐÔNG HỘI
+~xø%), Thành ngoài G>(óm Lảng
 
-4> Hình 4. Lẫy nỏ và mũi tên đồng được tìm thấy ở Cổ Loa
+. Hình 3. Sơ đồ thành Cổ Loa — được xây dựng theo hình xoáy
+trôn ốc, có ba vòng khép kín với tổng chiều dài là 16 000m
 
-7) 1. Dựa vào thông tin trong mục 2 và sử dụng bản đồ hành chính Việt Nam, hãy xác
+. Hình 4. Lẫy nỏ và mũi tên đồng được tìm thấy ở Cổ Loa
+
+e 1. Dựa vào thông tin trong mục 2 và sử dụng bản đồ hành chính Việt Nam, hãy xác
 định phạm vi không gian chủ yếu của nước Âu Lạc trên bản đồ.
 
 2. Nước Âu Lạc ra đời trong bối cảnh nào? Nhà nước Âu Lạc có điểm gì giống và

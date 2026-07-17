@@ -7,22 +7,22 @@ source: ocr
 
 # SGK Lịch sử và địa lí 6 KNTT (lớp 6) — Trang 43
 
-4. Một số thành tựu nồi bật của văn minh Trung Quốc từ thời cổ đại
-đên thê kỉ VII
+4. Một số thành tựu nồi bật của văn minh Trung Quốc từ thời cồ đại
 
-4> Hình 5. Chữ giáp cốt- nguồn gốc của chữ Hán
+đến thế kỉ VỊI
+
+x& Hình 5. Chữ giáp cốt— nguồn gốc của chữ Hán
 ngày nay
 
-4 Hình 6. Tượng Khổng Tử - người đặt nền móng
-cho sự hình thành Nho giáo
+A Hình 6. Tượng Khổng Tử - người đặt nền móng
 
 Từ thời nhà Thương, người Trung Quốc
 đã khắc chữ trên mai rùa, xương thú,
 gọi là giáp cốt văn.
 
-Kinh Thi là tập thơ cô nhất ở Trung Quốc,
+Kinh Thilà tập thơ c nhất ở Trung Quốc,
 gồm nhiều sáng tác dân gian, được
-Khổng Tử sưu tập và chỉnh li. Nhiều bài
+Không Tử sưu tập và chỉnh Ií. Nhiều bài
 thơ trong đó là nguồn cảm hứng sáng
 tác thơ ca Trung Quốc giai đoạn sau,
 đồng thời cũng ảnh hưởng lớn đến văn
@@ -30,13 +30,13 @@ học của các nước khác, trong đó có
 Việt Nam.
 
 Thời cổ đại, xuất hiện nhiều nhà tư
-tưởng nỗi tiếng, tiêu biểu là Khổng Tử
+tưởng nổi tiếng, tiêu biểu là Không Tử
 và Lão Tử.
 
-Người Trung Quốc xưa rất có ý thức về
+Người Trung Quóốc xưa rất có ý thức về
 việc chép sử. Những bộ sử tiêu biểu
-như Sởử kí của Tư Mã Thiên, Hán thư
-của Ban Có....
+như Sử kí của Tư Mã Thiên, Hán thư
+của Ban Gó....
 
 Người Trung Quốc cũng đã phát minh
 ra một loại lịch dựa trên sự kết hợp giữa
@@ -46,28 +46,25 @@ gian của nhiều nước phương Đông,
 trong đó có Việt Nam.
 
 Thế kỉ II TCN, họ đã phát minh ra thiết
-bị đo động đất sớm nhất thế giới gọi là
-địa động nghĩ.
+bị đo động đắt sớm nhất thế giới gọi là
+địa động nghỉi.
 
-Đặc biệt, người Trung Quốc cô đại đã có bốn phát minh quan trọng
+cho sự hình thành Nho giáo
+Đặc biệt, người Trung Quốc cỏ đại đã có bồn phátminh quan trọng
+vê mặt Kĩ thuật, đó là giây, thuôc nô, la bàn và Kĩ thuật in.
 
-về mặt kĩ thuật, đó là giấy, thuốc nỏ, la bàn và kĩ thuật in.
-
-Si lí của Tư Mã Thiên SỐ TS 2 M1 c
-
+Sử lý của Tư Mã Thiên .. .. . ~
 là công trình sử học Bộ Hoàng đê nội kinh của Hoa Đà (một trong “tứ đại danh
-lớn nhật Trung Quốc y" của Trung Quốc) được coi là sách kinh điển của y học
+lớn nhất Trung Quốc y" của Trung Quốc) được coi là sách kinh điển của y học
 thời cô đại và nôi cổ truyền Trung Hoa. Hoa Đà cũng là người đầu tiên thực hiện
 têng toàn thê giới. phương pháp phẫu thuật gây mê.
-
-Đây cũng là một ` ¬ ›
-
-trons những tác phâm Các triêu đại từ Tân đên Tuỷỳ đêu chú trọng xây dựng những
-văn học tiêu biều của công trình kiến trúc đồ sô.
+Đây cũng là một ' \ , \
+trong những tác phâm Các triêu đại từ Tân đên Tuy đều chú trọng xây dựng những
+văn học tiêu biêu của công trình kiến trúc đồ sộ.
 
 nhân loại.
 
-@Qkẻ tên một số thành tựu văn minh tiêu biểu của người
+@ Kẻ tên một số thành tựu văn minh tiêu biểu của người
 
 Trung Quốc cỗ đại.
 

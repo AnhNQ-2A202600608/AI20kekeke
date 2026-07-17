@@ -10,27 +10,29 @@ source: ocr
 HỆ THỐNG KINH, VĨ TUYẾN.
 TOẠ ĐỘ ĐỊA LÍ
 
-Học xong bài này,
+Học xong bài này, HƯN
 
 em sẽ:
-kinh tuyến, vĩ tuyên, kinh
-tuyến góc, vĩ tuyến gốc
-(Xích đạo), các bán câu,
-toạ độ địa lí.
 
-«_ Xác định được trên bản
-đồ và trên quả Địa Câu:
-kinh tuyến góc, Xích đạo, : :
-các bán câu. Ghi được toạ T. Hệ thông kinh, vĩ tuyên
+* Biết được thế nào là:
+kinh tuyến, vĩ tuyền, kinh
+tuyến góc, vĩ tuyến góc
+(Xích đạo), các bán câu,
+toạ độ địa l.
+
+° Xác định được trên bản
+đồ và trên quả Địa Cầu:
+kinh tuyên góc, Xích đạo, ] :
+các bán câu. Ghiđượctoa,. 1, Hệ thông kinh, vĩ tuyên
 
 Ngày nay, các con tàu ra khơi đều có gắn các
-thiết bị định vị để thông báo vị trí của tàu. Vậy
+thiết bị định vị đề thông báo vị trí của tàu. Vậy
 
-dựa vào đâu để người ta xác định được vị trí của con
-tàu khi đang lênh đênh trên biển?
+dựa vào đâu đề người ta xác định được vị í của con
+tàu khi đang lênh đênh trên biên?
 
-độ địa lí của một địa điểm NHesaaaag SỐ .
-trên bản đề. Quả Địa Câu là mô hình thu nhỏ của Trái Đât. Trên quả
+độ địa lí của một địa điểm .X øẼỶẼÊỄÉỄ_Ễ_——_
+trên bản đỏ. Quả Địa Câu là mô hình thu nhö của Trái Đât. Trên quả
 
 Địa Cầu, có thể hiện cực Bắc, cực Nam và hệ thống
 kinh, vĩ tuyến. Kinh tuyến là nửa đường tròn nối hai
@@ -39,34 +41,30 @@ quanh quả Địa Cầu và vuông góc với các kinh tuyến.
 Đề đánh số các kinh tuyến và vĩ tuyến, người ta chọn
 một kinh tuyến, một vĩ tuyến làm gốc và ghi 0°. Các
 kinh tuyến và vĩ tuyến khác được xác định dựa vào
-kinh tuyến gốc và vĩ tuyến góc.
+kinh tuyến góc và Vĩ tuyến góc.
 
-Hình 1. Quả Địa Câu
+Hình 1. Quả Địa Cầu
 
-Kinh tuyến gốc được quy ước
-
-là kinh tuyên đi qua Đài thiên
-
+Kinh tuyên gốc được quy ước
+là kinh tuyến đi qua Đài thiên
 văn Grin-uých (năm ở ngoại
-
-ô thành phô Luân Đôn, thủ đô
-
+ô thành phố Luân Đôn, thủ đô
 nước Anh).
 
-Kinh tuyên gôc cùng với kinh
+Kinh tuyên gộc cùng với kinh
 
-tuyên 180° chia quả Địa Câu l l .
-thành hai bán cầu: bán cầu Hình 2. Các đường kinh tuyên, vĩ tuyên trên quả Địa Câu
+tuyên 180° chia quả ĐịỊa Câu , . `
+thành hai bán cầu: bán cầu Hình 2. Các đường kinh tuyên, vĩ tuyên trên quá Địa Câu
 Đông và bán cầu Tây.
 
-Vĩ tuyến gốc là Xích đạo lở) Dựa vào hình 2 và đọc thông tin trong mục 1,
-chia quả Địa Cầu thành hai em hãy:
+Vĩ tuyến gốc là Xích đạo e Dựa vào hình 2 và đọc thông tin trong mục 1,
+chia quả Địa Câu thành hai em hãy.
 
-bán câu: bán câu Bắc và bán 1. Xác định đường kinh tuyến gốc và vĩ tuyến gốc.
-Ty on, l Cho biết thế nào là kinh tuyến tây, kinh tuyến
-Vĩ tuyên 23927` được gọi là đông, vĩ tuyến bắc, vĩ tuyến nam.
+bán câu: bán câu Bắc và bán 1. Xác định đường kinh tuyến góc và Vĩ tuyến gốc.
+S _ Cho biết thế nào là kinh tuyến tây, kinh tuyến
+Vĩ tuyên 23°27' được gọi là đông, Vĩ tuyến bắc, vĩ tuyến nam.
 
-chí tuyên, vĩ tuyên 66933" - SH ¬- -
+chí tuyên, Vĩ tuyên 66°33' \ —- =L : :
 được gọi là vòng cực. 2. So sánh độ dài giữa các kinh tuyên với nhau và
 
 độ dài giữa các vĩ tuyến với nhau.

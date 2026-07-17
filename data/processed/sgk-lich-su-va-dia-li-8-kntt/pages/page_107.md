@@ -8,7 +8,7 @@ source: ocr
 # SGK LỊCH SỬ VÀ ĐỊA LÍ 8 KNTT (lớp 8) — Trang 107
 
 - Một số dãy núi có vai trò là bức chắn địa hình tạo nên sự phân hoá thiên nhiên
-giữa các sườn núi.
+giữa các sưởn nủi.
 
 + Dãy Hoàng Liên Sơn làm suy yếu tác động của gió mùa Đông Bắc khiến mùa
 đông ở Tây Bắc có thời gian ngắn hơn và nền nhiệt cao hơn ở Đông Bắc.
@@ -22,45 +22,45 @@ nóng quanh năm). Tự nhiên ở hai miền cũng có nhiều nét khác biệ
 
 b) Đối với khai thác kinh tế
 
-Mỗi khu vực địa hình (đổi núi, đồng bằng, bờ biển và thềm lục địa) sẽ có phương
+Mỗi khu vực địa hình (đổi núi, đồng bằng, bờ biến và thềm lục địa) sẽ có phương
 thức khai thác kinh tế phù hợp để tận dụng những lợi thế và khắc phục những khó
 khăn, hướng đến sự phát triển bền vững.
 
-- Khai thác kinh tế ở khu vực đổi núi
+- Khai thác kinh tế ở khu vực đồi núi
 
 + Thế mạnh:
 
-Đối với nông nghiệp, lâm nghiệp:
+Đối với nông nghiệp, lâãm nghiệp:
 
-Quần thể du lịch nghỉ dưỡng Bà Nà (Đà Nẵng) Đây là nơi có nguồn lâm sản phong phú
-nằm trên núi Chúa thuộc dãy Trường 5ơn, ở độ thuận lợi phát triển ngành lâm nghiệp;
-cao khoảng 1 500 m sơ với mực nước biển, nên mm .
-mắt mẻ quanh năm, thích hợp cho hoạt động
+Quần thể du lịch nghỉ dưỡng Bà Nà (Đà Nẵng) Đâylà nơi có nguồn lâm sản phong phú
+nằm trên núi Chúa thuộc dãy Trường Sơn, ở độ thuận lợi phát triển ngành lâm nghiệp;
+cao khoảng 1 500 m sơ với mực nước biến, nên .. . '
+mắáắt mẻ quanh năm, thích hợp cho hoạt động
 du lịch nghỉ dưỡng.
 
 các đồng cỏ tự nhiên rộng lớn tạo
 điều kiện phát triển chăn nuôi gia súc
 lớn; thổ nhưỡng và khí hậu thích hợp
 cho cây công nghiệp lâu năm, cây ăn
-quả;...nhưcác vùng Tây Bắc,Đông Bắc,
-Tây Nguyên,...
+quả;...nhưcácvùng TâyBắc,Đông Bắc,
+Tảy Nguyễn,...
 
-Đổi với công nghiệp: Khu vực đổi
+Đối với công nghiệp: Khu vực đổi
 núi nước ta thường có nguồn tài
 nguyên khoáng sản phong phú đa
 dạng, tạo điều kiện thuận lợi phát
 triển các ngành công nghiệp khai
-Hình 2.11. Quần thể du lịch nghỉ dưỡng thác khoáng sản, luyện kim,... Sông
+Hình 2.11. Quần thể du lịch nghỉ dưỡng thác khoáng sản, luyện kim,.. Sông
 
 Bà Nà, Đà Nẵng ngòi chảy qua địa hình miền núi,
 nhiều thác ghềnh (sông Đà, sông
-Sê San, Srê Pốk,..) nên có tiềm năng
+Sẽ San, Srê Pốk,..) nên có tiềm năng
 thuỷ điện rất lớn.
 
-Đối với du lịch: Khu vực đổi núi có khí hậu mát mẻ, cảnh quan đa dạng và đặc sắc,
+Đối với du lịch: Khu vực đồi núi có khí hậu mát mẻ, cảnh quan đa dạng và đặc sắc,
 là cơ sở để hình thành các địa điểm du lịch có giá trị.
 
 + Hạn chế: Địa hình bị chia cắt mạnh gây khó khăn cho giao thông và cần chú ý đến
 công tác phòng chống thiên tai như lũ quét, sạt lở,...
 
-10áó
+106

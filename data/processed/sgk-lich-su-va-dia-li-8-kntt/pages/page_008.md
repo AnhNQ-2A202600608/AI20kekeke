@@ -7,42 +7,44 @@ source: ocr
 
 # SGK LỊCH SỬ VÀ ĐỊA LÍ 8 KNTT (lớp 8) — Trang 8
 
-oxi
-ra
+—~
+1
 
-+
-~
-F. xế
+#
+m
+m
 
-CHA¬U AU VÀ BAC MY
+CHAU AU VA BAC MỸ
 
-`
-r¿
-
-Ề
-
-VÀ
-
-TƯ NƯA SAU TH
-
-“`
+.
+rẠ
 
 ĐẾN THẾ KỈ XVIII
 
-¬5
+(
 
-PIIINB Í
+?
 
-IIIAX — IAX Jị 11 ues mị BuẻuI 2g2 50n2 Os }ÔUU E1 uộ|p JðU ỌP 20T] Y
+TƯ NỬA SAU TH
 
-đẹuc¡ uệs BuêuUI 22) 81 UộIpP JÔN
-Ấị\ 2ệ8 @ quy Bịp 2Ôn) EL eo
-dệ| 2ộp queIÕ tui U0IJO 84 UạIp JON
+l
+JI\f
 
-Liượ Liệs Bướu t3g2) Ei Lộ |Øhj
+^`
 
-L|-200-BN tiẹS đi) BuÈLU „e2 E¡ Up {N
+nHUUNG ]
 
-)NĐ/)Œữ
+IIIAX — IAX 14 3U171 UẸS 1 BUPLLI L2P2 203 05 1OUL E1 UỢID IDU Op 30/T] Ÿ
 
-2NO¡NđG
+dgeud uẹs n BuêuL LOẸO EJ LUẬIP ION
+
+Á 56Ø Ø UUV EÌp 20nU CL En
+dệi 5ÓP QUẸ(B UU611 UĐIHO 81 USỊP LON
+
+LIƯỰ UẸS (Ỷ BUẾUL LJ2EC) ElI UỐID LOM
+
+UEI-29D-9N UỆS ì BUÊUL JOPO E1 UỐID LON
+
+25NDIJGU
+
+ØNOInG

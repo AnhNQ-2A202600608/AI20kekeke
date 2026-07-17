@@ -7,23 +7,21 @@ source: ocr
 
 # SGK Lịch sử và địa lí 6 KNTT (lớp 6) — Trang 155
 
-Nhiệt độ ("C} Lượng mưa (mm)
+Nhiệt độ ("C) Lượng mưa (mm) Nhiệt độ (*C) Lượng mưa (mm)
 
-Nhiệt độ ("C) Lượng mưa (mm)
-T=25.4'C P=2047mm
+s Tz133"C P=l373mm * ˆ = ? =
+40 B00 30 T=25.4'C . P=2047 mm
 
-l Tz133' P=l373mm ~*
+600
 
-30 800 30 600
+500 25 500
 
-25 500 25 500
+400 20 400
 
-20 400 20 400
+Nhiệt độ ("C) Lượng mưa (mm) 15
 
-Nhiật độ ("C) Lượng mưa (mm) 15
-
-T=-128' P=321
-10 € P=3imm Tn 10
+T=128°C P=321mm
+10 — 200 10
 
 300 15 300
 
@@ -31,24 +29,22 @@ T=-128' P=321
 
 100 5 100
 
-0 0 H...
-1234567 89101112 Tháng
-ụ _ na.
-Ma-ni-la.
+Ũ 0 N
+1234567239101112 Tháng
+Ma-ni-la
 -10
 
 123456789101112 Tháng
 
 123456789101112 Tháng
 
-'Tích-xi
+Tích-xi
 
-_ = k bÃU Si; vé
-15802 1207 906 60” 307 00 307 607 907 1207 1507
+1202 90S 60 30° 30° 60°. 90° 120° 150°
 
-— lĐớinóng [T Đớiônhoä ^^” Đớilạnh
+- |Đớinóng || Đớiônhoà ! Đớilạnh
 
 2 000 0 2000 4000 6000 8000km
-= =.———S_____.._....
+N- x m n — ỗngư.
 
-Hình 2. Các đỏi khí hậu trên Trái Đắt
+Hình 2. Các đới khí hậu trên Trái Đắt

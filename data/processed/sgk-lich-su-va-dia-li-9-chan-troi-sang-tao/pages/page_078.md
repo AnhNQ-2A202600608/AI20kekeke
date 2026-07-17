@@ -15,7 +15,7 @@ Tháng 12 - 1946, quân Pháp liên tục
 gây ra những vụ xung đột vũ trang
 ở Hà Nội. Tình hình cấp bách, ngày
 12 - 12 - 1946, Ban Thường vụ
-Trung ương Đảng ra Chỉ thị Toàn đân
+Trung ương Đảng ra Chỉ thị Toàn dân
 kháng chiến.
 
 Ngày 18 - 12 - 1946, Pháp gửi tối
@@ -26,60 +26,59 @@ vòng 24 giờ.
 
 Trước tình hình đó, Ban Thường vụ
 Trung ương Đảng họp vào ngày 18 và
-19 - 12 - 1946 quyết định phát đệng
-toàn quốc kháng chiến. Đêm 19 - 12,
-Hồ Chủ tịch ra lời kêu gọi toàn quốc
-kháng chiến, cuộc kháng chiến chếng
+19-12- 1946 quyết định phát động
+toàn quốc kháng chiến. Đêm 19 — 12,
+Hồ Chủ tịch ra Ltời kêu gọi toàn quốc
+kháng chiến, cuộc kháng chiến chống
 Pháp của toàn dân tộc chính thức
 bắt đầu.
 
-5.0 “Bản chỉ thị vạch rõ mục đích cuộc kháng
+a “Bản chỉ thị vạch rõ mục đích cuộc kháng
 
-chiến là đánh thực dân Pháp xâm lược, giành
-thống nhất và độc lập cho Tổ quốc, Tính chất
-cuộc kháng chiến là lâu đài và toàn điện... đoàn
-kết chặt chế toàn dân, thực hiện toàn dân kháng
+chiến là đánh thực dân Pháp xâm lược, giảnh
+thống nhất và độc lập cho Tổ quốc. Tính chất
+cuộc kháng chiến là lẫu dài và toàn diện... đoàn
+kết chặt chẽ toàn dẫn, thực hiện toàn dẫn kháng
 chiến, bảo vệ dân và được lòng dân; phải tự cấp tự
-
 túc về mọi mặt?
 (Lược trích nội dung Chỉ thị Toàn dân kháng chiến
-của Ban Thường vụ Trung ương Đẳng,
-12-12-1946
+của Ban Thường vụ Trung ương Đảng,
+12-12-7046)
 
-ŒĐ “Chúngta muốn hoà bình, chúng tạ phảinhân
+@ “Chúngta muốn hoà bình, chúng ta phảinh ân
 
-nhượng. Nhưng chúngfacàng nhân nhượng, thực
+nhương. Nhưng chúng ta cảng nhân nhương, thực
 dân Pháp càng lấn tới, vì chúng quyết tâm cướp
-nước ta một lần nữa! Không! Chúng ta thà hi sinh
+nước ta một lân nữa! Không! Chúng ta thà hï sinh
 tất cả, chứ nhất định không chịu mất nước nhất
-định không chịu làm nỗ lệ. Hỡi đồng bào! Chúng
-ta phải đứng lên! Bất kì đàn ông, đàn bà, bất kì
-người già, người trẻ, không chia tôn giáo, đảng
-phái, dân tộc. Hễ là người Việt Nam thì phải đứng
+định không chịu làm nô lệ. Hỡi đồng bào! Chúng
+ía phải đứng lên! Bất kì đàn ông, đàn bà, bất kì
+người giả, người trẻ không chia tôn giáo, đáng
+phái, dẫn tộc, Hễ là người Việt Nam thì phải đứng
 lên đánh thực dân Pháp để cứu Tổ quốc... Dù phải
 gian lao kháng chiến, nhưng với một lòng kiên
-quyết hi sinh, thẳng lợi nhất định về dần tộc ta!?
-(Irích tời kêu gợi toàn quốc kháng chiến,
-19 -12- 1946)
+quyết h¡ sinh, thẳng lợi nhất định về dân tộc tat"
+(Trích i kêu gọi toàn quốc kháng chiến,
+19-712- 1946)
 
-Chỉ thị Toàn dân kháng chiến của Ban Thường vụ Trung ương Đảng, Lời kêu gọi toàn
-quốc kháng chiến của Chủ tịch Hỗ Chí Minh và tác phẩm Kháng chiến nhất định thắng lợi
+Chỉ thị Toàn dân kháng chiến của Ban Thường vụ Trung ương Đảng, Lởi kêu gọi toàn
+quốc kháng chiến của Chủ tịch Hồ Chí Minh và tác phẩm Kháng chiến nhất định thắng lợi
 của Tổng Bí thư Trường Chinh (tháng 3 - 1947) đã nêu rõ đường lối kháng chiến chống
 
-thực dân Pháp: “toàn dân, toàn diện, trường kì, tự lực cánh sinh”.
+thực dân Pháp: “toàn dẫn, toàn diện, trường kì, tự lực cánh sinh”.
 
-Toàn đân: do toàn đân tiền hành, không phân biệt giai cấp, tôn giáo,
+Toàn dân: do toàn dân tiền hành, không phân biệt giai cấập, tôn giáo,
 
-đẳng phái.
-Đường lỗi Toàn diện: đâu tranh trên tất cả các mặt trận như quân sự, chính trị,
-chỗng thực = l l 5
-đân Pháp Trường kỉ: cuộc chiên đầu phải lầu đải do so sánh lực lượng lúc đầu
+Bường Tôi Toàn điện: đầu tranh trên tật cả các mặt trận như quân sự, chính trị,
+kháng m kimh tế....
+chông thực . | _ w
+đân Pháp Trưởng kì: cuộc chiên đầu phái lâu dài do so sánh lực lượng lúc đầu
 
-giữa ta và địch chênh lệch.
+giữa ta va địch chênh lệch.
 
-Tự lực cánh sinh: vận mệnh của dân tộc phải do chính nhân dân Việt Nam
+Tự lực cánh simh: vận mệnh của dân tộc phải do chính nhân dân Việt Nam
 quyết định, sự giúp đỡ bên ngoài chỉ là điều kiện hỗ trợ.
 
-€Ð 16m tắt đường lối kháng chiến chống thực dân Pháp xâm lược (1946 - 1954)
+®Tr:’:rr~n tắt đường lối kháng chiến chống thực dân Pháp xâm lược (1946 - 1954)
 
-75
+7

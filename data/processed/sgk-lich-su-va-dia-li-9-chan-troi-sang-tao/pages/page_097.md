@@ -7,22 +7,23 @@ source: ocr
 
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 97
 
-182) Thuỷ quân lục chiến Mỹ đổ bộ
+%
+
+® Thuỷ quân lục chiến Mỹ đổ bộ
 
 lên bãi biển Xuân Thiều
-
-(Đà Nẵng) ngày 8- 3 - 1965
+(Đà Nẵng) ngày 8 - 3~ 1965
 
 Tháng 5 - 1965, thực
 hiện chủ trương của Chỉ uỷ
-khu V, bệ đội địa phương
+khu V. bộ đội địa phương
 Quảng Nam chủ động tấn
 công chớp nhoáng một đại
 đội quân Mỹ tại Núi Thành.
 Sau chiến thắng Núi Thành,
-tháng 8 - 196%, quân Giải
+tháng 8 - 1965, quân Giải
 phóng tiếp tục thắng lớn
-ở Vạn Tường (Quảng Ngãi)
+ở Van Tường (Quảng Ngãi)
 đập tan cuộc hành quân
 của Mỹ. Chiến thắng Vạn
 Tường đã mở đầu cao trào
@@ -33,60 +34,60 @@ Sau trận Vạn Tường,
 khả năng đánh bại quân
 Mỹ trong chiến lược “Chiến
 tranh cục bộ” của quân và
-dân miễn Nam tiếp tục
-được chứng minh bằng
+dân miền Nam tiếp tục
+được chứng mính bằng
 những thắng lợi của quân
-và dân miễn Nam trong hai
-mùa khê 1965 - 1966 và
+và dân miền Nam trong hai
+mùa khô 1965 - 1966 và
 1966 - 1967.
 
 94
 
-quản Mỹ
+tuuần khự
 
-600 00D
+SỮD DŨO
+543 4DD
 
-5413 400
+45D DDD
 
-450 000
+SUD DDD
 
-300 005D
+15D D0D 184 000
 
-150 000
+11300 25 5DU
 
-184 000
+1382
 
-1882 1864 1865 19668 1867 18688 1970 19872
+1384 1365 156BB 1387 136883 1370
 
 Biểu đồ số quân Mỹ trực tiếp tham chiến ở Việt Nam
-giai đoạn 1962 - 1972
+giai đoạn 1962 ~1972
 
-ýÌ Ô| dừa... Quản Mỹ tiến công
+. khên, Quần Mỹ tiến công
 
-bảng chiên hạm
+bằng chiên ngm
 
-Quên Mỹ liễn công
-” mm mÌM bảng xe lỗi HƯỚC
+L N Quến Mỹ liền công
+.. .. mmm bằng xelồi HƯỚC
+đ uốn - Quần Mỹ tiền công
 
-2 || ĐIỄN ĐÓNG
+— ^ Tñăng máy hay
 
-Ñ “ NE— Quan Mỹ tiến công
-TC 7V ˆ nằng máy bay
-F Quẫn: Giải nhòỏng phản công
+5 .IIBIẾEN ĐÔNG
 
->%x Nơi quận Giải phông bẻ gây
-các đẹt tiên sông địch
+qQuản Giải phóng phản củng
 
-Vùng quyết chiến
+Mơi quần Giải phóng b gấy
+các đợt tiên cốông địch
 
-„Z7 _ma__
+Vùng quyết chiền
 
-Hạm T-vä-đi-nư
+~-nhữa...
 
-\ Tạm
-Gan=vet<lơn
-kấi
+Tlạm I-vố-đi“cng
 
-s Gàa...
+\ Tạam
+Gan=vet-kirm
+$ (290a..
 
-T184) Lược đồ trận Vạn Tường (8 ~ 1965)
+@ Lược đồ trận Vạn Tường (8 - 1965)

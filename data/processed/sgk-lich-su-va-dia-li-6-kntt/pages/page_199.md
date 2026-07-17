@@ -7,119 +7,93 @@ source: ocr
 
 # SGK Lịch sử và địa lí 6 KNTT (lớp 6) — Trang 199
 
-Phiên âm
+Phiênâm | Nguyênngữ | Trang -
 
-thu —— [m
-
-Enem |mmm |M.
-
-: N1,
-Guinea
+E-ti-ô-pa | Ethiopa | 97
+Ê-vơ-rét 97,131
+- s U
 163, 166
+101,119,183
+mm— lm - |S —
+m |owan — m -
+.‹ n U
 
-Gia-các-ta Jakarta 101, 119, 183
+97
+Hokkaidô 97
 
-Hốc-cai-đô | Hokkaidô
-Z= ` 4...1..
-6...
-
-lomm [5m 7 |8 |
-
+97
 183
-
-Kham — [8m | —.
-
-1ï —-.—
-lamb [im |S .^
-
-Grơn-len
-
-Nguyên ngữ
-
-Laut 110
-
-Los Angeles 119, 121, 183
-
-:
-Magellan
-
-Phiên âm
-La-út
-Láp-tép
-Li-ma
-Lốt An-giơ-lét
-
-Luân Đôn
-
-4
-
-1
-117
-1
-
-Ma-đa-ga-xca
-
-Ma-gien-lăng
-
+In-đô-nê-xi-a 101,119
+Kim-bơc-li Kimberley 97
+183
 7
 
+Gia-các-ta
+
+Hi-ma-lay-a
+
+Hốc-cai-đô
+
+l-xtan-bun
+
+5
+e
+
+HN
+[ NH
+
+La-pla-ta
+
+Phiênâm | Nguyênngg | Trng -
+— m
+Ma-đa-ga-xca 9
+14
+1
 1
 
-101, 110
+7
+Magellan 17
 10
-1
+
+Ma-gien-lăng
+101,119,
+120, 183
+
+CMarenes S | 97 131
 
 Ma-lai-xi-a
 Ma-lắc-ca
 
-101, 119,
-
-Q7
-
+Man-đi-vơ
 Mát-xcơ-va
-
 Mê-hi-cô
 
-119, 183
+97
+Mosow S | 119183
+99, 182
+Mexico City 182,183
+ưane 1Mean |ầ
+l : l. I
+mmssns w |
+Mixixepi |Mgssspn - (9 -
+Mít-xu-ri Missouri J_
 
-Mexico City 182, 183
+Maanpne - |1œ
 
-Mê-la-nê-di-a
-Mê-ri Bớc
+182,183
 
-Marie Byrd
-
-Mama — |1
-
-Mi-xi-xi-pi Mississippi
-
-[Misoui
-166
-Mumbi | 182,183
-TL
-Nây-pi-tô 101
-Nicoba — | 101
-He —=IS
-96, 119
-
-182, 183
-
-Mít-xu-ri
 Mô-dăm-bích
 
-Ni-ca-ra-goa
+e G
+Mgi |Ngh - |[MÐ
+m |w — |
+NuDEen |NavDEmo - 199 -
+NuĐen [NauDem - |Hàm3 -
+NuGum |Nưome |9 -
+NuPaoim |NauFmmdind |%
+Nuôm - [Nanok - |I59 x
+e G
 
-Ni-cô-ba
+Weddell 99, 163
 
-`©
-¬
-
-New Found Land
-New York
-
-Niu Phao-len
-119, 183
-
-99, 163
-
-0ét-đen Weddell
+Oét-đen

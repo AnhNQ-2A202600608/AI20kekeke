@@ -7,11 +7,11 @@ source: ocr
 
 # SGK LỊCH SỬ VÀ ĐỊA LÍ 8 KNTT (lớp 8) — Trang 101
 
-€ Các khu vực địa hình
-a) Địa hình đổi núi
+@ Các khu vực địa hình
+a) Địa hình đồi núi
 
-Địa hình đổi núi nước ta chia thành bốn vùng là Đông Bắc, Tây Bắc, Trường Sơn Bắc
-vả Trường Sơn Nam.
+Địa hình đổi núi nước ta chia thành bốn vùng là Đồng Bắc, Tây Bắc, Trường Sơn Bắc
+và Trường Sơn Nam.
 
 - Vùng Đông Bắc
 
@@ -28,30 +28,35 @@ Triều) và vùng đổi (trung du) phát
 triển mở rộng (như ở Phú Thọ, Bắc
 Giang,...).
 
-+ Địa hình các-xtơ khá phổ biến, tạo nên những cảnh quan đẹp như vùng hồ Ba Bể,
-vịnh Hạ Long.
-
 Hình 2.3. Vùng đồi Long Cốc, Phú Thọ
 
-TRUNG QUỐC xẻ
++ Địa hình các-xtơ khá phốổ biến, tạo nên những cảnh quan đẹp như vùng hồ Ba Bể,
+vịnh Hạ Long.
 
-HỦ GIẢI
-l RÙ ZTU BỢB 1800 1B00 370032890
+TRUNG QUỐC
 
-Trên † E0 m
-uŸM” Hiểm độ ran
-. —-—-— Biện giới quảcgia "
-#ứ cm:
-.a Các chủ viết tất By L5nyV am
-'W HÀ MỘI Thủdã ¡ Sông M MÚI TP. Quản đảo "
-\
-£
-kì
-TT ă TH
+Li . 4 W
 
-ũŨ Bũ Tử 150 #ÙŨ Rm
-—
+L-] U TUU EB2Ơ '|N2 ï B7Ù 2 D0 3 SOO
 
-Hình 2.4. Lược đồ địa hình vùng núi Tây Bắc và vùng núi Đông Bắc
+Trên z ðgG m
+
+A45M* [iễm độ rn
+
+- =s-=:= HB giời quốc gia .
+# n
+P ỄỂÌE Các chữ viết tắt E NG I z
+WÀ NỘI Thúôồ { ~ Sóng N MUI (2. Quản đún ìi
+
+~|-ỈF«ỉ..a
+
+H s
+z
+T = Lui c .ng
+
+5ũ L HỊ 100 150 >DŨ km
+— ——
+
+Hình 2.4. Lược đồ địa hình vùng núi Tây Bắc và vùng núi Đồng Bắc
 
 100

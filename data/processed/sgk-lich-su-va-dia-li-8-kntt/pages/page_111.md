@@ -18,15 +18,15 @@ có chứa quặng,...
 Dựa vào các kiến thức đã học (về vị trí địa lí, địa hình,...), thông tin mục 1 và hình 3.3,
 hãy trình bày và giải thích đặc điểm chung của tài nguyên khoáng sản ở nước ta.
 
-€ bặc điểm phân bố các loại khoáng sản chủ yếu
+@ Đặc điểm phân bố các loại khoáng sản chủ vếu
 
 - Than đá: Tổng trữ lượng khoảng 7 tỉ tấn, phân bố chủ yếu ở bể than Quảng Ninh.
 
 - Dầu mỏ và khí tự nhiên: Tổng trữ lượng khoảng 10 tỉ tấn dầu quy đổi, phân bố
-chủ yếu ở vùng thểm lục địa phía đồng nam.
+chủ yếu ở vùng thềm lục địa phía đông nam.
 
 - Bô-xít: Tổng trữ lượng khoảng 9,6 tỉ tấn, phân bố tập trung ở Tây Nguyên (Đắk Nông,
-Lãm Đồng, Gia Lai, Kon Tum,...), ngoài ra còn có ở một số tỉnh phía bắc (Lạng Sơn,
+Lâm Đồng, Gia Lai, Kon Tum,...), ngoài ra còn có ở một số tỉnh phía bắc (Lạng Sơn,
 Cao Bằng, Hà Giang,...).
 
 - Sắt: Tổng trữ lượng khoảng 1,1 tỉ tấn, phân bố chủ yếu ở khu vực Đông Bắc
@@ -34,16 +34,17 @@ Cao Bằng, Hà Giang,...).
 
 - A-pa-tít: Tổng trữ lượng khoảng 2 tỉ tấn, phân bố tập trung ở Lào Cai.
 
-- Ti-tan: Tổng trữ lượng khoảng 663 triệu tấn, phân bổ rải rác ở ven biển từ
-Quảng Ninh đến Bà Rịa - Vũng Tàu.
+- Ti-tan: Tổng trữ lượng khoảng 663 triệu tấn, phân bố rải rác ở ven biển từ
+Quảng Ninh đến Bà Ria - Vũng Tàu.
 
 - Đá vôi: Tổng trữ lượng lên đến 8 tỉ tấn, phân bố chủ yếu ở vùng núi phía Bắc và
 Bắc Trung Bộ.
 
-Hình 3.1. Giần khoan dầu khí Đại Hùng 1, Hình 3.2. Mỏ khai thác than,
+.IJU| A
+Hình 3.1. Giàn khoan dầu khi Đại Hùng 1, Hình 3.2. Mỏ khai thác than,
 Bà Rịa - Vũng Tàu Quảng Ninh
 
 Dựa vào thông tin trong mục 2 và hình 3.3, hãy phân tích đặc điểm phân bố các loại
 khoáng sản chủ yếu của Việt Nam.
 
-110
+10

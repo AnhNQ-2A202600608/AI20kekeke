@@ -7,48 +7,44 @@ source: ocr
 
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 14
 
-1) Tình hình sản xuất điện, thép ở nước Nga và Liên Xô từ năm 1913 đến năm 1940
+® Tình hình sản xuất điện, thép ở nước Nga và Liên Xô từ năm 1913 đến năm 1940
 
-Điện (tỉ kWh) 2,0
-
-5,0 13,5 36,2 48,3
-
-(Công cuộc công nghiệp hoá Liên Xô (1926 - 1926), NXB Khoa học, Mắt-xcd-va (Moscow), Nga, 1969)
+(Công cuộc công nghiệp hoá liên Xô (1926 — 1928), NXB Khoa học, Mát-xcd-va (Moscow), Nga, 1969)
 
 Bên cạnh những thành
 tựu to lớn, công cuộc xây
 dựng chủ nghĩa xã hội ở
 Liên Xô cũng có một số hạn
-chế: đẩy nhanh tốc độ tập
-thể hoá nông nghiệp khi
+chế: đấy nhanh tốc độ tập
+thế hoá nông nghiệp khi
 người dân chưa hoàn toàn
 sẵn sàng, đầu tư một tỉ lệ
 quá thấp cho công nghiệp
-nhẹ,...
+nhẹ...
 
 Năm 1941, khi phát
-xít Đức xâm lược, Liên Xê
+xit Đức xâm lược, Liên Xô
 tạm ngừng việc thực hiện
 kế hoạch 5 năm lần thứ ba
 (triển khai từ năm 1938) để
 tiến hành cuộc chiến tranh
 bảo vệ Tổ quốc.
 
-zZ Luyện tập
+Ổ Nhà máy thuỷ điện Đni-ép (Dnepr) được xây dựng năm 1927
+Đâylà đập thuỷ điện lớn nhất châu Âu đương thời và được ca ngợi là một
+trong những thành tưu lớn nhất của chương trình công nghiệp hoá Liên Xô.
 
-Nhà máy thuỷ điện Đni-ép (Onepr) được xây dựng năm 1927
-Đây là đập thuỷ điện lớn nhất châu Âu đương thời và được ca ngợi là một
-trong những thành tựu lớn nhất của chương trình công nghiệp hoá Liên Xô.
+ẵẫ Luyện tập - Vận dụng
 
-Luyện tập - Vận dụng
+Luyện tập
 
-Hãy hoàn thành bảng tóm tắt những nội dụng chính về tình hình nước Nga và Liên Xô
-từ năm 1015 — 1945 theo mâu dưới đây:
+Hãy hoàn thành bảng tóm tốt những nội dụng chính về tình hình nước Nga và Liên Xô
+từ năm 1918— 1945 theo môu đưới đây:
 
 Vận dụng
 
-Năm 1922, Liên Xô thành lận, rong đó, Nga và LÌ-crai-na là hai nước đồng vai HÒ Han
-trọng hàng đâu. Sưu tâm thêm thông tin và hãy cho biết tình trạng quan hệ ngoại giao
-giữa hai quốc gia này trong giai đoạn hiện nay (đâu thể kí XX]).
+Măm 4922, Liên Xô thành lập, rong đó, Ngaạ và U-crai-na là hai nước đóng vai #Ò quan
+tọng hàng đầu. Sưu tâm thêm thông tin và hãy cho biết tình ẳang quan hệ ngoại giao
+giữa bai quốc gia này rong giai đoạn hiện nay (đầu thể kí XXJ).
 
-H
+1]

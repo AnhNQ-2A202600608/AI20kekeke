@@ -7,75 +7,63 @@ source: ocr
 
 # SGK Lịch sử và địa lí 6 KNTT (lớp 6) — Trang 151
 
-Học xong bài này,
-em sẽ:
+THƠI TIET VÀ KHÍ HẬU.
 
-Phân biệt được thời tiết
-và khí hậu.
-
-Trình bày được khái
-quát đặc điểm của một
-trong các đới khí hậu:
-trên Trái Đât.
-
-Nêu được một số
-
-biểu hiện của biễn đổi
-
-khí hậu.
-
-Trình bày được một
-số biện pháp phòng
-tránh thiên tai và
-ứng phó với biến đôi
-khí hậu.
-
-Người ta quan trắc
-nhiệt độ, độ âm, khí
-áp, gló, mây, mưa,
-các hiện tượng thời
-tiết... tại các trạm
-khí tượng vào cùng
-những thời điểm nhất
-định trên toàn thế giới
-(ít nhất 4 lần, vào lúc 0,
-6, 12, 18 giờ GMT).
-
-THỜI TIẾT VÀ KHÍ HẬU.
 BIẾN ĐỔI KHÍ HẬU
 
-Theo em,
+Học xong bài nầày,
+em sẽ:
 
-bạn nào
-nói đúng?
+s Phân biệt được. thời tiết
+và khí hâu
 
-1. Khái niệm về thời tiết và khí hậu
-Thời tiết là trạng thái của khí quyển tại một thời điểm
-và khu vực cụ thê được xác định bằng nhiệt độ, độ âm,
+- Trình bày được khái ị
+quát đặc điểm của một . Theo em.
+trong các đới khí hậu bạn nào
+trên Trái Đắt. — \ nói đúng?
+
+* Nêu được một số b. C
+biểu hiện của biến đỏi
+
+khí hậu.
+
+s Trình bày được một
+H H ôN 1. Khái niệm về thời tiết và khí hậu
+tránh thiên tai và -. i : \
+ứng phó với biến đỏi Thời tiêt là trạng thái của khí quyên tại một thời điểm
+khí hậu. và khu vực cụ thể được xác định bằng nhiệt độ, độ âm,
+
 mưa, mây, gió,... Thời tiết luôn thay đồi.
 
 Dưới đây là một bản tin dự báo thời tiết ở một địa điểm:
 
-Thời gia Thứ Ba, Thứ Tư, Thứ Năm, Thứ Sáu,
-Iglan. | os/03/2018| 07/03/2018 | 08/03/2018 | 09/03/2018
+Thời qi Thứ Ba, Thứ Tư, Thứ Năm, Thứ Sáu,
+Igian ì gg/03/2018| 07/03/2018 | 08/03/2018 | 09/03/2018
+=
+ỉ
 
-IH:
-Ù
+Ít mây,
+trời nắng
 
-trời nắ hộ
+-II-
+¬I .T =
 
-TT]...
+nhiệt độ, độ ẩm, khí
 
-& Dựa vào bản tin dự báo thời tiết ở trên, em hãy:
+ấp, Ẻuó› mây, . Đông bắc | Đôngbắc | Đôngbắc | Đông bắc
+các hiện tượng thời
 
-— Nêu những yếu tố được sử dụng để biểu hiện
-thời tiệt.
+tiết... tại các trạm huường G EN G n a
+khí tượng vào cùng @) Dựa vào bản tin dự báo thời tiết ở trên, em hãy:
+những thời điểm nhất — Nêu những yếu tố được sử dụng để biểu hiện
+định trên toàn thế giới thời tiết.
 
-— _ Mô tả đặc điểm thời tiết của từng ngày trong bảng.
+ít nhật 4 lân, vào lúc 0, — Mô tả đặc điểm thời tiết của từng ngày trong bảng.
 
-Khí hậu ở một nơi là tổng hợp các yếu tố thời tiết (nhiệt
+6, 12, 18 giờ GMT).
+Khí hậu ở một nơi là tổng hợp các yếu tồ thời tiết (nhiệt
 độ, độ âm, lượng mưa, gió,...) của nơi đó, trong một thời
 gian dài và đã trở thành quy luật.
 
-€Ò Hãy cho biết, trong tình huống ở đầu bài, bạn
+@ Hãy cho biết, trong tình huống ở đầu bài, bạn
 nào là người nói đúng.

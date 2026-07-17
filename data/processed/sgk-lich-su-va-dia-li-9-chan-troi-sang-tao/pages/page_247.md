@@ -7,58 +7,55 @@ source: ocr
 
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 247
 
-Tài nguyên ở vùng biển Việt Nam có
+Tài nguyên ở vùng biến Việt Nam có
 tiềm năng rất lớn, với hàng nghìn loài hải
 sản, nhiều khoáng sản có giá trị và trữ
 lượng lớn; bờ biển dài có nhiều bãi cát,
 vịnh, hang động tự nhiên đẹp và nhiều
-cảng biển nước sâu. Hệ thống đảo, quân
-đảo của Việt Nam nằm ở vị trí án ngữ các
-trục giao thông huyết mạch trên Biển Đông.
-Vì vậy, vùng biển, đảo Việt Nam có điều kiện
-thuận lợi để phát triển tổng hợp kinh tế biển.
+cảng biến nước sâu. Hệ thống đảo, quần
+đảo của Việt Nam nẵằm ở vị trí án ngữ các
 
-Các hoạt động kinh tế biển không chỉ
-thúc đẩy phát triển kinh tế và cải thiện chất
-lượng cuộc sống của người dân, mà còn
-giúp đất nước nâng cao sức mạnh tổng
-hợp quốc gia. Nhờ đó, công cuộc bảo vệ
-chủ quyển, các quyền và lợi ích hợp pháp
-của Việt Nam ở Biển Đông trở nên thuận
-lợi hơn.
-
-Luyện tập = Vận
-
-Luyện tập N/ TY " ' íÍ Ing .
+trục giao thông huyết mạch trên Biến Đôồng.
 
 Hình 3.10. Hải đăng trên đảo chìm Đá Lát,
-cao 42 m, cao nhất trong 9 ngọn hải đăng
+cao 42 m cao nhất trong 9 ngọn hải đăng
 ở quần đảo Trường Sa
 
-Hình 3.11. Ngư dân tỉnh Bình Định vươn khơi,
+Vì vậy, vùng biến, đảo Việt Nam có điều kiện
+thuận lợi dể phát triển tổng hợp kinh tế biển.
+
+Các hoạt động kinh tế biển không chỉ
+thúc đẩy pháttriển kinhtế vàcảithiệnchất .
+lượng cuộc sống của người dân, mà còn. . -
+giúp đất nước nâng cao sức mạnh tổng. X . ;Ÿ
+hợp quốc gia. Nhờ đó, cồng cuộc bảo vệ _ m = s
+chủ quyền, các quyền và lợi ích hợp pháp
+của Việt Nam ở Biến Đông trở nên thuận
+lợi hơn.
+
+Hình 3.11. Ngư dân tỉnh B
 bám biển, góp phần bảo vệ chủ quyền biển đảo
 của Tổ quốc
 
-1. Hãy hoàn thành bảng thống kế Tông đua? ‹ xi ðn Ta quyền của a Tiệt Nam đổi với quân đủo
-Hoàng Sa, quân đáo Trường Sa theo mẫu đưới đây vào vớ:
+Luyện tập = Vận dụng...
 
-Tên tư liệu/
+ủ Luyện ặp MQi
+
+1 Hãy hoàn thừnh bảng Ềiắng kế liên quan đến c','ỂĨJ'I'“i'*'/Jf"fỂ':cj'®x'zal.ỊfIJfe"JsỂIịJ-f1 của Việt Nam đổi với quần đảo
+Hoàng Sa, quần đáo Trường Sa theo mẫu đưới đây vào vở:
+
+Tên tư liệu/ Thời gian, Nội dung
+Bản đô tác giả chủ yêu
+
 Bản đồ
 
-Tư liệu thành văn
-
-2. Dựa vào những kiến thúc đã học và thông tin trong bài, hãy nêu vai tò của biên đảo
-
-Thời gian, Nội dung
-
-đổi với sự nghiện xây dụng và bảo vệ Tô quốc Liệt Nam hiện nay.
+2. Dựa vào những kiến thức đã học và thông tìn Fong bài, hầy nêu vai rò của biên đảo
+đối với sự nghiệp xây dựng và bảáo vệ Tổ quốc Việt Nam hiện nay.
 
 Vận dụng
 
-Hãy viết một bức thư gửi người bạn thân, rong đÓ HếH mỘt sỐ hoạt động thể hiện
-
-rách nhiệm của học sih dối với việc bảo vệ chủ quyên, các quyền và lợi ích hợn phún
-
-của tiệt Nam ở Biên Tông.
+Hãy viết một búức thư gưi người bạn thần, frong đÓ nếu mộit số hoạt động thể hiện
+trách nhiệm của học sinh đối với việc bảo vệ chủ quyền, các quyền và lợi ích hợp pháp
+của Việt Nam ở Biển Đông.
 
 244

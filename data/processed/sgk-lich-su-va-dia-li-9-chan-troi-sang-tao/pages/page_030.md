@@ -7,59 +7,54 @@ source: ocr
 
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 30
 
-@® „khắp xứ Nam Kỳ đã làm lễ an táng
+a “.kháp xứ Nam Kỳ đã làm lễ an táng
 theo quốc lễ và khắp nước đã tổ chức lễ
 truy điệu nhà chí sĩ.. Tất cả học sinh, sinh
 viên đều để tạng cụ. Trước phong trào yêu
-nước của toàn dân, bọn thực dân Pháp sơ
-hãi, bắt đầu phản công lại Chúng cấm học
+nước của toàn dân, bọn thực dân Pháp sợ
+hãi bắt đầu phản công lại. Chúng cấm học
 sinh để tạng và tổ chức lạc quyên. Chúng
-cấm tổ chức các lễ truy điệu,... Để phản đối
-lại, học sinh đã bãi khoá...”
+cấm tổ chức các lễ truy điệu,.. Đề phản đối
+lại, học sinh đã bãi khoá..”
 
-(Hỗ Chí Minh toàn tập, tập 2,
-NXB Chính trị quốc gia, Hà Nội, 2011, trang 246)
+(Hồ Chí Minh toàn tập, tập 2,
+NMXB Chính trị quốc qia, Hà Nội, 2011, trang 246)
 
-Đám tang Phan Châu Trinh
-(hình chụp ngày 4- 4- 1926)
-2. Phong trào công nhân
+g Đám tang Phan Châu Trinh
+(hình chụp ngày 4 - 4~- 1926)
 
-2
+Dựa vào bình 5.3, hãy nêu những nét chính rong phong trào đầu ằnh của
+công nhân từ năm 19719 đến năm 1929
 
-Dựa vào hình 5.3, hãy nêu những nét chính trong phong trào đầu tranh của
-công nhân từ năm 1919 đền năm 1929
+Công nhân, thuỷ thủ Đầu tranh của công nhân Đầu tranh của công nhân
+tàu Sác-ne (Charner) nhàrmmáyz rnãng Hải Phòng, nhà máy sợi Nam PỊnh,
+ở cảng Hải Phòng nhàï:máy sợi Nam Tịnh, các đôn điền Phú Riềng
+đèi tăng lương. nhà máy rượu Hà Nội. (nay thuộc tỉĩnh Bình Phước)....
+777 1919 77 1922 77 49235 - 1924 E9 1925 p77D 1926-1927) 77 1928-1920 UU
 
-Công nhân, thuỷ thủ Đâu tranh của công nhân Đầu tranh của công nhân
-tàu Sác-ne (Charner) nihàrmnáy sĩ inărg Hải Phòng, nhà tmnáy sợi Nam Định,
-ở cảng Hải Phòng nhàznáy sợi Nam Định, các đền điền Phú Riềng
-đòi tăng lương. nhà imnáy rượu Hà Nội. (nay thuộc tỉnh Bình Phước),...
+Viên chức các sở công thương (Công nhân xưởng Đầu tranh của công nhân
 
-XS 1919 ©1922 © 1923-1924 {1925 1926-1927 -” 1928-1929
+ở Bắc Kỳ và 600 công nhân thợ nhuộm Ba 5on ở cảng nhà Ỗmáy sửa chữa xe lửa
+5e Gòn — Chợ Lớn bãr công. 5ài Gờn bãi công. Trường Thi (Vĩnh,....
 
-Viên chức các sở công thương, Công nhân xưởng Đấu tranh của công nhân
+Ổ Những cuộc đấu tranh tiêu biểu của công nhân từ năm 1919 đến năm 1929
 
-ở Bắc Kỳ và 600 công nhân thợ rnlmệm Ba Son ở cảng, nhà máy sửa chữa xe lửa
-Sài Gòn — Chợ Lớn bãi công. Bài Cròn bãi công. Trường Thị (Vĩinh),...
-
-@® Những cuộc đấu tranh tiêu biểu của công nhân từ năm 1319 đến năm 1929
-
-Từ năm 1919, phong trào đấu tranh của công nhân chú yếu diễn ra dưới hình thức bãi
+Từ năm 1919, phong trào đấu tranh của công nhân chủ yếu diễn ra dưới hình thức bãi
 công, đòi việc làm, tăng lương, trong đó, tiêu biểu là cuộc bãi công của thợ máy xưởng
 đóng tàu Ba Son (cảng Sài Gòn). Dưới sự lãnh đạo của Công hội đỏ, công nhân bãi công
-ngăn cân tàu chiến Pháp chở lính qua đàn áp phong trào cách mạng ởTrung Quốc. Thắng
-lợi của cuộc bãi công chứng tô giai cấp công nhân Việt Nam đã bắt đâu đấu tranh có tế
+ngăn cản tàu chiến Pháp chở lính qua đàn áp phong trào cách mạng ở Trung Quốc. Thắng
+lợi của cuộc bãi công chứng tô giai cấp công nhân Việt Nam đã bắt đầu đấu tranh có tổ
 chức và có mục đích chính trị rõ rằng.
 
 3. Sự ra đời và hoạt động của các tổ chức cách mạng
-2
 
-Hãy trình bày những nét chính trong hoạt động của tô chúc Liệt Nam
-Quốc dân đúng và tô chức Tân Uiệt Cách mạng đẳng. Theo em, tại sao
-tiệt Nam Quốc dân đẳng đã không thê thành công?
+Hãy trình bày những nét chính ong hoạt động của tô chức Việt Nam
+Quốc đân đẳng và tổ chức Tân Việt Cách mạng đáng, Theo em, tại sạo
+Việt Vam Ouốc dân đáng đã không thê thành công ?
 
-Từ những hội đoàn yêu nước xuất hiện trong phong trào đấu tranh công khai, những
-đảng phái chính trị dân dẫn được thành lập. Tiêu biểu là Việt Nam Quốc dân đảng (1927)
-có tiễn thân từ nhà xuất bản Nam đồng thư xã; Tân Việt Cách mạng đảng (1928) có tiền
+Từ những hội doàn yêu nước xuất hiện trong phong trào đấu tranh công khai, những
+đẳng phái chính trị dần dần được thành lập. Tiêu biểu là Việt Nam Quốc diân đẳng (1927)
+có tiền thân từ nhà xuất bản Nam đồng thư xã; Tân Việt Cách mạng đảng (19238) có tiền
 thân từ Hội Phục Việt.
 
 27

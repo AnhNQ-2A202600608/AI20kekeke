@@ -7,78 +7,71 @@ source: ocr
 
 # SGK Lịch sử và địa lí 7 KNTT (lớp 7) — Trang 7
 
-Váo thể kỉ XV, Ma-lắc-ca có I8 lẽ nơi duy nhất trên thế
-giới má người la mua rắt đễ dàng hàng hoá Trung Quắc
-
-Goủo dục, 2008, tr145)
-
-BẦ(t trai héc hình 2 và thông tín trong mục, trình bảy
-sơ lược sự hinh thánh và phát triển của ảo vướng
-quốc kiên ở Đông Nam Á từ nủa sau lê kỉ %,
-đẫn nửa đầu thể kí XVI
-
-2. Từ tư liệu lrắn, em c¿ nhân séi gi vẻ hoạt động kinh lễ
-của Vuơng quốc Ma:lắc:ca?
-
-Đ Những thành tu vân hoá tiêu hiểu
-ä] Tỉn ngưởng - tắn giáo
-Từ thể kỉ XIII, dòng Phật giáo liều thửa được truyền bả vả phổ biến ở Eông Nam Á như
-ử Lan Xang, Cam-pu-chia, các vương quốc của người Thải, người Miễn Điện thuộc
-Thái Lan, Mi-an-ma ngày nay,... Nhiều ngôi chùa mới được xây dựng, không chỉ là
-nơi thở phụng mả còn trở thành những trung tâm văn hoá thời bây giờ.
-
-Hinh 3. Công viên lịch sử Su-khỏ-Ihay = trung tăm Phát geáo lớn nhất Thái Lan thể kỉ XIU
-Hồi qgáo cũng Iheo chẵn các tương nhân Á Rặp, Án Độ du nhập vào Đông Nam Ä
-vào thế kỉ XII — XIII, Đán những thể kỉ sau đó, háng loạt miệt quốc Hồi giáo ra đời và
-Hỏi giáo trở thánh quốc giáo,
-bị Chứ viễt ~ wän học
-Đầu thể kí XIII, chữ Thái được hình thánh dựa trên hệ thông chữ Phan của người Án;
-khoáng thê kỉ XIV, chữ Lào ra đời. Trên cø' sở cải tiễn chữ Hàn (Trung Quốc), nguời Việt
-đã tạo ra chữ Năm,
-
-3“
-
-Tuyện tập - Vận dụng:
-
 Tư liệu:
 
 Được trích dẫn từ các nguồn
-tư liệu khác nhau. Là cơ sở để
-tổ chức các hoạt động †ự nhận
-†hức bài học cho học sinh.
+tư liệu khác nhau. Là cơ sở đề
+tổ chức các hoạt động tự nhận
+thức bài học cho học sinh.
+
+Vản thể kĩ XV: Ma-iŠc-ca có l là roï duy nhả! trểm IÃ
+ỂiỂlff?ìẩPì|ỊìflỒflIfNt1Ifúđ'Jr|ÍuỦ'J1g'fìẺ°ull'í\Ể'TnnTg"nllỔH
+
+I' 1. Khai lhác hinh 2 và lhông tn Irong mục, trình báy nup Nhật Bản, Trung Quốc,
+sơ lược §ự hlnh thánh và phát triển cửa các vương Hán Quốc.. phụ EHxộc rối
+quốc phong kiên ở Đóng Mam AlưnUDasauhếklX = lm vào hoại động thương
+đến nứa thể kí XVI, m thông tưa eợ biển này:
+
+5 Từ lư liệu liển, em có nhân xét gì về hoại động kình lẻ
+của Vương quản Mg.lắc-c3?
 
 Tuyến phụ:
 
-Thông tin hỗ trợ, bổ sung
+Thông tin hỗ trợ, bồ sung
 hoặc có tính liên môn nhằm
 làm rõ hơn nội dung chính.
 
-Luyện tập: ——”. 1. Em hãy lập và hoàn thành bảng theo mẫu dưới đây.
+8 Những thành tưu yăn hoá tiếu biếu
+a] Tin ngường - hỗn giáo
+Từ thể l XIII, dóng Phải giáo liều thữa được truyền bắ và phố biển ở Đông Mam Á như
+ử Lan Xang, CGam-pu-chia, các vương quốc của người Thái, người Miễn Điện thuộc
+Thái Lan, Mi-an-ma ngày nay,... Nhiều ngôi chứa mới được Ẻfdl.l'hũ không chĩ là
+nơĩ thở phụng mã còn trở thành wL'mg ủng tắm vấn hoá thời
 
-Là các câu hỏi, bài tập
+Hình 3. Công viên lịch sử Su-khô-iay — trung khm Phảt giáo lớn nhiit THái Lan Iẻ kĩ XPU
+Hồi giáo cũng theo chân các tiương nhân Á Fiáp, Án Độ du nhập váo Đông Nam Â
+vào Ihế kí XII — 24I Đn những thể kÍ sau đó, hàng loạt +:ìỄ quắc Hồi giáo ra đời vã
+Hồi giáo trở thánh quốc giáo.
+bị Chữ viễt - vän học
+
+Điầu thể kĩ XIII, chữ Thái được hình thánh dựa trên hệ thồng chữ Phạn của người Án:
+khoảng thẻ kỉï XIV, chữ Láo ra đời. Trên cơ sở cải tiền chữ Hàn (Trung Quốc), người Việt
+đã tạo ra phữ Năm,..
+
+”
+
+Luyện tập - Vận dụng
+
+Luyện tập: .—g 1. Em hãy lập và hoàn thành bảng theo mẫu dưới đây.
+Là các câu hỏi, bài mp .
+
 để thực hành, củng
 có, hệ thống hoá, khắc
-sâu kiến thức, rèn
-luyện các kĩ năng gắn
-với kiến thức vừa học.
 
-Thời gian xuất hiện |
+E . h ã Thời gian xuất hiện
+sâu kiếm thức, rèn | = -
+luyện các kĩ năng gắn Hoạt động kinh tẻ chủ yếu
+với kiên thức vừa học. Thành phản cư dân chủ yếu
 
-Hoạt động kinh tế chủ yếu
+2. "Thành thị giống như những bông hoa rực rỡ nhắt của châu Âu thời trung
+đại". Em hãy tìm những dẫn chứng trong bài học đề chứng minh cho ý kiến trên.
 
-Thành phần cư dân chủ yếu
+3. Tìm hiểu và cho biết một số dầu ần tiêu biểu của thành thị trung đại (các
+Vận dụng: '-Ồ thành phố cồ, trường đại học,...) còn được bảo tồn, gìn giữ và phát triển
+Sử dụng kiến thức, Kĩ đền ngày nay.
 
-2. "Thành thị giếng như những bông hoa rực rỡ nhất của châu Âu thời trung
-đại". Em hãy tim những dẫn chứng trong bài học đề chứng minh cho ý kiến trên.
+năng đã học đề glal
+quyêt các tình huông,
+vân đê trong thực tiên.
 
-Vận dụng: @' . Tìm hiểu và cho biết một số dấu án tiêu biểu của thành thị trung đại (các
-
-Sử dụng kiến thức, kĩ
-năng đã học để giải
-quyết các tình huống,
-vấn đề trong thực tiến.
-
-6
-
-thành phố cỗ, trường đại học,...) còn được bảo tồn, gìn giữ và phát triển
-đến ngày nay.
+A

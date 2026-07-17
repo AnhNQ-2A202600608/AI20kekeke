@@ -7,22 +7,43 @@ source: ocr
 
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 1
 
-HÀ BÍCH LIÊN - Hồ THANH TÂM (đồng Chú biên phản Lịch sử)
+HÀ BÍCH LIÊN - H THANH TÃM (đồng Chủ biên phần Lịch sử)
 
-LỄ PHỤNG H0ÀNG — NHỮ THỊ PHƯƠNG LAN — NGUYÊN TRÀ MY
-TRẤN VIẾT NGẠC — NGUYÊN VĂN PHƯỢNG —NGUYỄN KIM TƯỜNG VY
-NGUYÊN KIM HỒNG (Tống Chủ biên phân Địa lí) - HUỲNH PHẨM DŨNG PHÁT (8011101211017110917-1))
-TRẦN NGỌC ĐIỆP — NGUYÊN HÀ QUỲNH GIAO — TẠ ĐỨC HIẾI!
-H0ÀNG THỊ KIỂU 0ANH —TRẦN QUỐC VIỆT
+LÊ PHỤNG HOÀNG — NHỮ THỊ PHƯƠNG LAN — NGUYÊN TRÀ MỸ
+TRẦN VIẾT NGẠC — NGUYÊN VĂN PHƯỢNG — NGUYÊN KIM TƯỜNG VY
 
-LỊCH SỬ
-^ ĐỊA LÍ
+NGUYĨN KIM HỒNG (Tổng Chủ biên phần Địa lí) — HUỲNH PHẨM DŨNG PHÁT (Chủ biên phần Địa l
+TRẤN NGỌC ĐIỆP — NGUYÊN HÀ QUỲNH GIA0 — TẠ ĐỨC HIẾU
+HOÀNG THỊ KIỂU 0ANH — TRẦN QUỐC VIỆT
 
-E— HÌ NRETT x VY ƯƯN Em]
+íH sỬ
+* ĐỊA LÍ
 
-—~LLI -L111111111 <
-P rIYT"
++
 
-—NH 7 7
+:HIVNEPNENEURNE: - ¡ T Z rIC rrr n EP:
 
-HÀ X
+¬ ffll
+
+FẾ NI
+
+.
+
+N HVNE ! .C H..:
+
+#+ILIII
+
+b
+
+ri
+I
+
+TN ER .. -Ạ
+Wx m NH
+
+°
+
+|M
+
+x l Ị__'l' I : -JIlf |
+Ñ ' I ' l"_' tả

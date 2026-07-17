@@ -7,44 +7,32 @@ source: ocr
 
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 200
 
-‹> đan Lý Sơn
-
-: hòn Ông Căn
+s đáo Lý Sơn
 
 CAM-PU-CHIA
 
-TRUNG Quốc 3>"
-nÝÏ—_Ÿỹ=-
+CHỦ GIẢI
+Luyên kim màu LIR, i_ Cà phẽ, hồ tiêu, can su
+Sản xuất, chế biến thực phẩm e ØÔ Š Chẽ, bông, dậu tương
+Sản xuất vật liệu xây dựng E Sổ Mứa,cây thực phẩm
+Khai thắc, chế biển lãm sản Œs= đỗ Điếu, cây ăn quả
+Cơ khí; đệt, sản xuất trang phục | Vùng rừng
+Thuý điện H3 Trâu [ ] Vùng nông làm kết hợp
+Điện gió 4 Bò [ ] vùng lợn, lúa, gia cảm
 
-CHỦ GIÁ
-Luyện kim mâu ÁÐ Ÿ8 Ä Cả phê, hồ tiêu, cao su
+Điện mặt trời # Lợn [ ] vùngcảycöngnghiệp Ù 25 50 100 14 - Quốc lộ, tên đường
 
-Sản xuất, chế biến thực phẩm W> Õ Ñ Chó, bóng, dâu tương
-Sản xuất vật liệu xảy dựng k b4 Mĩa, căy thực phẩm
-Khải thắc, chế biển lãm sản @m (Ể. Điều cây ăn quả
+Làng nghề Thú đồ, san hô
+Thắng cảnh — X sáng, hồ
 
-Cơ khí; diệt, sản xuất trang phục [A4 vung rừng
-
-Thuỷ điện “1 Trâu Ï— —L Vùng nông làm kết hợp
-Điện gió X* Bỏ __—] Vũng lợn, lúa, gia cầm
-
-Biện mặt trời f#W## Lợn [| Vùng cây công nghiệp 0 2š blÚ 14— __ Quốc lộ, tên đường
-
-Làng nghề Thủ đỏ, san hỗ
-sí
-
-Thắng cảnh ông, hổ
-
-Di tích lịch sử cách trang Rừng 3 Sông
+Dĩ tích lịch sử cách mạng Rừng s Sông
 Cảng hàng không quốc nội Khu kinh tế cửa khẩu
-Cảng hãng không quốc tế Địa giới hành chính cấp tỉnh
 
-Vườn quốc qia Ranh giới vùng
+Cảng hàng không quốc tế Địa giới hành chính cấp tỉnh
+Vườn quấc gia Banh giới vùng
 
-Khu dự trữ sinh quyển thể giới Biên giới quấc gla
+Khu dự trữ sinh quyền thể giới == Biên giới quốc gia
 
-l@ <] >> =1] &
+Hình 17.2. Bản đổ kinh tế vùng Tây Nguyên, năm 2021
 
-Hình 17.2. Bản đồ kinh tế vùng Tây Nguyên, năm 2021
-
-187
+197

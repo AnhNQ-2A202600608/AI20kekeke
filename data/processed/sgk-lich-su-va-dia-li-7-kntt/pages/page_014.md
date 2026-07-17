@@ -9,40 +9,33 @@ source: ocr
 
 Em có biết?
 
-Ra đời năm 1088, Trường
-Đại học Bô-lô-na là trường
+Ra đời năm 10688, Trường
+Đại học Bô-lôna là trường
 đại học lâu đời nhất trên
 thế giới. Nhiệm vụ ban đầu
-của ngôi trường này là dạy
+của ngôi trường nảy là dạy
 Kinh thánh và luật pháp.
-Sau đó, Bô-lô-na trở thành
+Sau đó, Bô-lô-na trở thàảnh
 trung tâm về giáo dục cao
-học của l-ta-li-a nói riêng và
-châu Âu nới chung. Đến nay,
+học của I-ta-li-a nói riêng và
+châu Âu nói chung. Đến nay,
 ngôi trường này đã thu hút
-hàng trăm nghìn sinh viên từ
-nhiều nơi trên thê giới đến
+hàng trắm nghìn sinh viên từ
+nhiều nơi trên thế giới đến
 học tập.
 
-2. Hình 7. Một góc Trường Đại học Bô-lô-na (I-ta-li-a) — một
-trong những trường đại học nỗi tiêng được thành lập
+# Hình 7. Một góc Trường Đại học Bô-lô-na (I-ta-li-a) — một
+trong những trường đại học nôi tiếêng được thành lập
 từ thời trung đại
 
 1. Thành thị trung đại ra đời thế nào?
 2. Em hãy phân tích vai trò của các thành thị đối với châu Âu thời trung đại.
 
-Luyện tập - Vận dụng:
-
-Thời gian xuất hiện
-
-Hoạt động kinh tế chủ yếu
-
-Thành phần cư dân chủ yếu
+Luyện tập - Vận dụng
 
 2. "Thành thị giống như những bông hoa rực rỡ nhất của châu Âu thời trung
-đại". Em hãy tìm những dẫn chứng trong bài học để chứng minh cho ý kiến trên.
+đại". Em hãy tìm những dân chứng trong bài học đề chứng minh cho ý kiến trên.
 
-3. Tìm hiểu và cho biết một số dấu ấn tiêu biểu của thành thị trung đại (các
-
-thành phó cỏ, trường đại học,...) còn được bảo tổn, gìn giữ và phát triển
+3. Tìm hiểu và cho biết một số dấầu ấn tiêu biểu của thành thị trung đại (các
+thành phố cồ, trường đại học,...) còn được bảo tồn, gìn giữ và phát triển
 đến ngày nay.

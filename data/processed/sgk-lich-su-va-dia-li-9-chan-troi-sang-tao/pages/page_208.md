@@ -7,83 +7,93 @@ source: ocr
 
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 208
 
-tị lông quốc ›
+Chỉ t đắc 1087 L16
 
-ủ, Hd Rịa = Vũng Tủa ` &
+N n F
+TRUNG QUỐC Ểgẻff““†'
+. "Il.`l"'n-n\ưẾ"²a u s
 
-Trung tâm công nghiệp CHỦ GIẢI
+Ỉĩ_ĩ…'xe.
+Đẳ'=…__`I-'1l'l_.|.jcẸrậắỂl
 
-Cây ăn quả
-Thuấc lá E
-= : Ọ Bạch 11 (Ñ
-Cao su 1%
+®\ m fflxủ —L . - ii .N `ổ Q3
 
-Hồ tiêu m. Rêng Œ®)
+Trung Lãm công nghiệp CHỦ GIẢI
 
-Trâu Mẹ § =- 108°
+Cấy ăn quả !
+Thuốc lá . .
 
--Bộ
+Điểu v I :
+: -' Hgoh Hó CÑ
 
-Tiát lớn F
+Cả phê
 
-( nh #$ŸZ bánh bắthải sản
-tb Cảng biển
+Tát km đang lông Qi_J
 
-Bật, sản xuất trang phục; cơ khí
+Ễ n vZ - Đánh bắt hải sản
+JJ Cảng biển
+Dệt, sản xuất trang phục; cơ khí
 
-` D Tung PMng “)
+Hoá chất, sản xuất giấy 0 §u
 
-Hoá chất, sản xuất qiấy
+m ( jIn|
+d 9 #%
 
-@®af› lu
-œQ#
+Khai thác, chế biến lãm sản
 
-Luyện kim đen, luyện klm màu
-Khai thác, chế biển lắm sản
-Khai thắc đầu thỏ, khi Lự nhiễn
+Khải thác dầu thö, khí Lự nhiễn ]
+Sản xuất ô tô, đóng tàu và thuyền 'Ệg.Ì | LỆ
+Sản xuất vật liệu xây dựng 9 Giacám
 
-)®
-.o À
+ậ*
+t
+@
+ẵ :
+Luyện kim đen, luyện kim máu LP Hồ tiêu : R.ổr:g Ộ_]
 
-Sản xuất ö tô, đóng tâu và thuyền - Lựn
+,N
+ỉ’ụE`J)Ạ`
 
-$Ðzi2 7 =e(0=e^
+Sản xuấL, chế biển thực phẩm
+Sản xuất sản phẩm điện tử, máy vi tính
+Thuy điện, nhiệt điện, hoá dấu
 
-Sản xuất vật liệu xây dựng. 'Gia cẩm
-Sản xuất, chế biển thực phẩm
+Cảng hàng kháng quốc tế
+Cảng hàng không quốc nội Căn Đảo K.QP, Côn Sơn I n Ễ'
+| . QĐ Căn Sơn Ó Đạ Hìng
+B
 
-Sản xuất sản phẩm điện tử, máy vị tính
+X+
+2 # % ( ñh
+L
 
-Thuy điện, nhiệt điện, hoá đầu
+Cảng hàng không đang xây dựng | ;á 7) i C 3
+Vùng rửng Côn Đảo `Ềr \
 
-Cảng hàng khẳng quốc tế
-Cân Đảo
+Vùng nông lắm kết hợp
 
-+
->> *# 0ƒ
-m
+2=
+r..
 
-Cảng hàng không quốc nội L.QÐ. Côn Sơn
-Cảng hàng không đang xây dựng | Đi 0u :
+L
+Vùng lúa, lợn, gia cẩm 107
 
-Vũng rừng Côn Đảo kuyế SP : ủ { sẺ
+s
+=
 
-Vùng nẵng lắm kết hợp
+Vũng cây công nghiệp Sở Thắng cảnh P Bãi tắm Đưỡng sắt
+Thủ đö, san hỗ Ể Di tích lịch sử cách maạng Vườn guốc gia Điagiởihänh chính cấäptỉnhr OØ Quần đảáo
 
-Cần Su
+# ì
 
-Vùng lúa, lợn, gia cắm
+Sống, hỗ lẸl khu kinh tế cửa khẩu ị Khu dự trữ sinh quyền thể giới Ranh giới vùng .. Sông
 
-Vùng cây công nghiệp ẨÑỆ Tháng cảnh Ầ Bãi tắm Đường s
-Thủ đỏ, san hỗ l5\ Di tích lịch sử cách rrrar1g Vườn quốc gia Địa giới hành chính cấp tính @Đ. Quần đản
-Sảng, hỗ HH Khu kinh tế cửa khẩu L] khu dự trữ sinh quyển thế giới Ranh qiới vùng ._ sảng
+25 160 T
+m — 1— Quốt lộ, tên đường n= Biên giới quốc gia # Cảng biển
 
-25 100 t0
-Km — 1— Quốc lộ, tên đường Biên giới quốc gia ø.. Cảng biển
-
-Hình 19.3. Bản đổ kinh tế vùng Đông Nam Bộ, năm 2021
-
+Hình 19,3. Bản đổ kinh tế vùng Đông Nam Bộ, năm 2021
 a) Công nghiệp
+
 Công nghiệp là động lực phát triển, chiếm khoảng 38% GRDP của vùng và khoảng
 38% giá trị sản xuất công nghiệp của cả nước (năm 2021).
 

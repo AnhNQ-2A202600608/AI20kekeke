@@ -7,33 +7,28 @@ source: ocr
 
 # SGK Lịch sử và địa lí 6 KNTT (lớp 6) — Trang 156
 
-— —ẽ= anh
-
-NƯỚC TREN
+NƯỚC TRÊN
 TRÁI ĐẤT
 
-Hành tinh của chúng ta nhìn từ ngoài
-không gian nỏi bật lên bởi màu xanh của
+Hành tính của chúng ta nhìn từ ngoài
+không gian nổi bật lên bởi màu xanh của
 nước biển và đại dương. Lớp nước này
 là một trong những điều kiện để tạo nên
 sự sống của muôn loài điểm khác biệt của
 Trái Đắt so với các hành tinh khác trong hệ
 Mặt Trời.
 
-^®
+TRONG CHƯƠNG NÀY, EM SẼ TÌM HIẾU VÊ:
 
-TRONG CHƯƠNG NÀY, EM SẼ TÌM HIẾU VẼ:
+°Các thành phần chủ yếu của thuỷ quyền
 
-Các thành phần chủ yếu của thuỷ quyên
+° Vòng tuần hoàn nước
 
-Vòng tuần hoàn nước
+°Sông, hồ và việc sử dụng nước sông, hồ
 
-Sông, hồ và việc sử dụng nước sông, hồ
+°Nước ngằm và băng hà
 
-Nước ngầm và băng hà
-
-Biên và đại dương. Một số đặc điểm của môi trường biên
-"" ¿4
-“”
+° Biển và đại dương. Một số đặc điểm của môi trường biên
+x
 
 155

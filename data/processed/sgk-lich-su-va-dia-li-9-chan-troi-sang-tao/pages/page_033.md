@@ -7,121 +7,88 @@ source: ocr
 
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 33
 
-Việt Nam.
-Các bải giảng của
+=Triệu tập và chủ trì Tám yêu sách của nhân dân An Nam
+Hội nghị thảnh lập ì n
+
+Đảng Cộông sản ” Một xin tha kẻ đồng bào,
+
+Việt Nam. Vì chưng chính trị mắc vào từ giam.
+
+Các bải giảng của Hai xin phép luật sửa sang,
+
 Nguyễn Ái Quốc
-trong các lớp đảo tạo —— `
-cán bộ được tập hợp thành th IÊI
 
-sách Đường Kách mệnh.
+trong các lớp đào tạo _- n Người Tây người Việt hai phương cùng đồng.
 
-Tham dự và trinh bảy
-về cách mạng ở các ——
-nước thuộc địa
+cán bộ được tập hợp thánh ll Hôi Viêt Nam Những toà đặc biệt bất công,
+
+SGh Ơ ng Kgơ TN GH: Cách mạng Thanh niên. lám xin bỏ đưt rộng dụng đânlành,
+-—ị3'(Lle1i.' bản Bản án chế độ n 0000
+
+thực dân Pháp.
+
+AMở mạng kĩ nghệ, lập thành công thương.
+Tham dự và trình bày Bốn xin được phép hội hàng,
+về cách mạng ở các. —~
+nước thuộc Gia
 
 tại Đại hội V của
 
-Tham gia sáng lập Hội —_
-Liên hiệp thuộc địa. IIll
+Quốc tễ Công sản.
 
-(Le Pana).
+Năm xin nghĩngợi nói bản tự do,
 
-Thay mặt nhỏm những =
+Il Dự Hội nghị Quắc tế Sáu x được phép lịch du,
+- Nông dân và được bầu Bốn phương mặc sức năm châu mặc tình,
+O EE IO Bảy xin hiện pháp bạn hành,
+-- Xuất bản báo Trám điều phải có thân lĩnh pháp quyền.
+n n c n Tám xin được cửnghị viên,
+Il (Le Pana). . IY T
+Qua Tây thay mặt giữ quyền thô dân..”
 
+Tham gia sáng lập Hội .. Đọc Sơ thảo lần
+
+Liên hiệp thuộc địa. thứ nhất những -
+II luận cương về ván đề Ổ Bản Yêu sách của nhân dân An Nam
+— dân tốc và vấn đề được Nguyễn Ái Quốc dịch ra tiếng
+
+II thước gia của Lê-nin: Việt theo thể thơ lục bát với nhan đề
+tham gia Đại hội Tua = H H n B n
+của Đáng Xã hội Pháp; Việt Nam yêu cầu ca (Hồ Chí A ình
+bó phiều tán thành việc toàn tập, tập 1, NXB Chính trị quốc gia,
+gia nhập Quốc tê Hà Nội, 2011, trang 472 - 474)
+†hử ba: tham gia
+sáng lập Đảng
+
+Thay mặt nhóm những =
+người An Nam vều nước
 gửi đến Hội nghị Véc-xai
-(Versailles)}
+(Versallles)
 
-bản Yêu sách của
+bán Yêu sách của
 
-nhân dân An Nam.
+c Il 2 m Hoạt động chính của Nguyễn Ái Quốc trong
+nhân đân An Nam. Công sản Pháp rìhl.",I`l'1r=“Jl năm 1919 - 1930
 
-Ï Em có biết?
-
-==Triệu tập và chủ tri
-Hội nghị thành lập
-Đảng Cộng sản
-
-Cách mạng Thanh niên;
-_ 1925 —Xuất bản Bản án chế độ
-thực dân Pháp.
-
-lÌÌ Dự Hội nghị Quốc tế
-
-Quốc tế Công sản. Nông dân và được bầu
-193 vào ân Chắp hành.
-
-— Xuất bản báo _
-Người cùng khö
-
-Đọc Sơ thảo lẫn
-thứ nhất những
-luận cương về vẫn đề
-__ dân tộc và vẫn đề
-thuộc địa của Lê-nin;
-[II tham gia Đại hội Tua
-của Đáng Xã hội Pháp;
-người An Nam yêu nước 1919. bó phiêu tán thành việc
--_ gia nhập Quốc tế
-thứ ba; tham gia
-sảng lập Đảng
-Công sản Pháp.
+„ Em có biết?
 
 Việc thành lập Hội Việt Nam
 Cách mạng Thanh niên là một sáng
-tạo của Nguyễn Ái Quốc trong quá
-trình thành lập chỉnh đảng cộng sản
-ở Việt Nam. Thông qua các hoạt động
-truyền bá lï luận giải phóng dân tộc
-giác ngệ tư tưởng và đào tạo cán bộ
+lạo của Nguyễn Ái Quốc trong quá
+trình thành lập chính đảng cộng sản
+ởViệt Nam., Thông qua các hoạt động
+truyền bá Ÿ luận giải phóng dân tộc,
+giác ngộ tư tưởng và đảo tạo cần bộ
 cách mạng, Hội đã góp phần hoàn
-tất quá trình chuẩn bị những điều
+Tất quá trình chuốn bị những điều
 kiện cần thiết cho sự ra đời của Đảng
 Cộng sản Việt Nam.
 
-Báo Người cùng khổ, diễn đần của những
-
-dân tộc thuộc đĩa, lên án các chính sách
-hà khắc, bóc lột của chính quyển thực
-
-dân, kêu gọi giải phóng con người, đánh
+Báo Người cùng khố, diễn đàn của những
+dân tộc thuộc địa, lên án các chính sách
+hà khắc, bóc lột của chính quyền thực
+dân, kêu goọi giải phóng con người, đánh
 dấu sự chuyển biến về tư tưởng của nhà
-
 cách mạng Nguyễn Ái Quốc
 
 30
-
-Tám yêu sách của nhân dẫn An Nam
-% Một xin tha kẻ đồng bào,
-VỊ chưng chính trị mắc vào tù giam.
-Haixin phép luật sửa sang,
-
-Người Tây người Việt hai phương cùng đồng.
-Những toà đặc biệt bất công,
-Đámxin bỏ đút rộng dung đân lành,
-Baxin rộng phép học hành,
-
-Mở mang kĩ nghệ, lập thành công thương.
-Bến xin được phép hội hàng,
-
-Năm xin nghĩ ngợi nói bàn tự đo,
-
-Sáu xi được phép lịch dụ,
-
-Bốn phương mặc sức năm châu mặc tình.
-Bảyxin hiến pháp bạn hành,
-
-Trăm điều phải có thân linh pháp quyền.
-Tám xin được cửnghi viên,
-
-Qua Tây thay mặt giữ quyền thổ đân..7
-
-Bản Yêu sách của nhân dân An Nam
-được Nguyễn Ái Quốc dịch ra tiếng
-Việt theo thể thơ lục bát với nhan để
-Việt Mam yêu câu ca (Hỗ ChíMinh
-
-toàn tập, tập 1, NXB Chính trị quốc gia,
-Hà Nội, 2011, trang 472 -474)
-
-Hoạt động chính của Nguyễn Ái Quốc trong
-những năm 1919 - 1930

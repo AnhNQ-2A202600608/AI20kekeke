@@ -7,59 +7,48 @@ source: ocr
 
 # SGK Lịch sử và địa lí 7 KNTT (lớp 7) — Trang 129
 
-KT Xu Ỉ
-0” Xich đạo LỊNH|GHI-NẺ Ỉ
+ủ.._ ỆlỂẺH N
 
-Ï DÔNG BIẾN:
+Ũ Aïch đạo
 
-NAM XIGH bẠO
-———— M h
+_ODÔNG BIẾN.
+| MAM XÍCH BAO
+Iu—… s L
 
 ĐẠI TÂY
 DƯƠNG
 
-sơ
+Ũ 200 S00 1000 2000 3000 Trêến 3 000 m
+Điểm độ cao A Dằumỏ - Ẩ Ni-ken
 
-\
-\
-\ Chỉ tuyển Nam ___
+Hoa Gvả hi
+ủnỄguaưzỀmạc [\ Khi tự nhiên Ề ẵồng
 
-bị 200 B00 1000 2000 3000 Trên 3000 m
-Điểm độ cao ñDằum Ki Ni-ken
+—-%#x= Dòngbiểnnóng . l U-ra-niurn <
+g ấm ng 4 t& < Thiếc '
+w—"= Döỏng biên lạnh A Bô-xít
 
-Hoa cvả hi
-Bản H2rdj nẹc _ T0 Hiện kiên
+Ạ Rừnglácứng . ÈŠ Crôm © Vàng
 
-——> Dòng biển nóng lu U-ra-nium XE Su
-h ất
+- !
+& Rừngrậmnhigtđới * Cô-ban - [ Phốtphorft| „ DÔNG fflEWỆTHEE: GIÔ TÂY _—l-—Ể——————Ẻ__———““--—-L'—`_afỂ~`_*'Ị}.'²'
 
-—> Dòng biểnlạnh &@ Sä ñl Bôxít
+20” mĩff 605/
 
-- Rừnglácứng PÍ Crôm © Vàng . — _ on
+. Xavan mø Man-gan . © Kim cương
 
-Ậ( Rừngrâmnhiệtđới Côban (mj phốtphoxit DÒNG BIÊN THEO GIÔ TÂY “>> —-—
-
-Ỉ T——
-_W_ Xavan xa Man-gan ' Kim cương 20” at$
-550 0 8550 1 100 1650 2200 km
-_ Mmx“ ` L.ẮẰ.«<œ# 'Ö>.- GHun=i
+550 Ũ 550 11001650 2200km
+.- m mX——— n n
 
 Hình 1. Bản đồ tự nhiên châu Phi
 
-ñá Dựa vào thông tin trong mục 1 và hình 1, hãy cho biết:
+cả Dựa vào thông tin trong mục 1 và hình 1, hãy cho biết
 — Châu Phi tiếp giáp với các biển, đại dương và châu lục nào.
-— Hình dạng, kích thước châu Phi.
+— Hiình dạng, kích thước châu Phi.
 
 128
 
-1 "Ni ng
-HIỄNĐ£zwy T40
-cha AE UV 2
+j
+/
 
-_ Chí tuyên Bắc _
-
-ỉ
-
-Â= _407
-
-gợi
+/

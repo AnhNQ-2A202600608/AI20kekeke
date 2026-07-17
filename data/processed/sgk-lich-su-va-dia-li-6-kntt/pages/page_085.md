@@ -7,29 +7,36 @@ source: ocr
 
 # SGK Lịch sử và địa lí 6 KNTT (lớp 6) — Trang 85
 
-LƠ) 1. Quan sát hình 6 và khai thác đoạn tư liệu 1, em hãy cho biết Ngô Quyền đã
-chuẩn bị kế hoạch cho trận thuỷ chiến chặn giặc như thế nào.
+e 1. Quan sát hình 6 và khai thác đoạn tư liệu 1, em hãy cho biết Ngô Quyền đã
 
+chuâẩn bị kế hoạch cho trận thuỷ chiến chặn giặc như thế nào.
 2. Theo em, trận địa cọc Bạch Đằng sẽ gây khó khăn gì cho quân giặc?
+
 b) Trừ ngoại xâm dậy sóng Bạch Đằng
 
-2 “Khi nước triều lên, Quyên sai người đem thuyên nhẹ ra khiêu chiến, giả thua chạy:
-để dụ địch đuôi theo. Hoằng Tháo quả nhiên tiến quân vào. Khi binh thuyên đã vào
-trong vùng cắm cọc, nước triêu rút, cọc nhô lên, Quyên bèn tiễn quân ra đánh, ai
-nắy đều liễu chết chiến đáu. Quân Hoằng Tháo không Kịp sửa thuyên mà nước triều
-rút xuống rắt gấp, thuyền đêu mắc vào cọc mà lật úp, tối loạn tan võ, quân lính chết
-đuối quá nửa. Quyên thừa thắng đuôi đánh, bắt được Hoằng Tháo giết đi... Lưu
-Cung (vua Nam Hán), chỉ còn biết thương khóc, thu nhặt quân lính còn sót rút vẻ ”
+2. “Khi nước triều lên, Quyền sai người đem thuyền nhẹ ra khiêu chiến, giả thua chạy.
+đề dụ địch đuôi theo. Hoằng Tháo quả nhiên tiền quân vào. Khi binh thuyền đã vào
+trong vùng cắm cọc, nước triêu rút, cọc nhô lên, Quyền bèn tiền quân ra đánh, ai
+nấy đều liều chết chiền đáu. Quân Hoằng Tháo khong kịp sửữa thuyền mà nước triều
+rút xuống rắt gap, thuyền đêu mắc vào cọc mà lật úp, rồi loạn tan vỡ, quân lính chết
+đuối quá nửa. Quyên thừa thắng đ_uo: đánh, bắt được Hoằng Ma_o giết đi... Lưu
+Cung (vua Nam Hán), chỉ còn biết thương khóc, thu nhặt quân lính còn sót rút về.
 
-=>. Đường tiến công của quân Nam Hán |
-==-„ Quân ta đánh nhử địch vào trận địa
-lúc thuỷ triều lên
+(Đại Wệg ẳggíatgạỉ_gfl;ẵ_tg…meập 1, Sđd, tr.203 — 204)
 
-2+ Quân ta tắn công
+%
 
-+ Quân Lưu Hoằng Tháo rút chạy
+“ P ..
+
+2œ=-. Đường tiền công của quân Nam Hán e_juLI
+z==. Quân ta đánh nhử địch vào trận địa
+lúc thuỷ triêu lên
+
+7#>> Quân ta tấn công
+
+Z”»» Quân Lưu Hoằng Tháo rút chạy
 Quân ta đánh phục kích
 
-¿'4$+ Bãi cọc ngầm
+.+ Bãi cọc ngằầm
 
-4® Hình 7. Lược đồ trận Bạch Đằng năm 938
+x& Hình 7. Lược đồ trận Bạch Đằng năm 938

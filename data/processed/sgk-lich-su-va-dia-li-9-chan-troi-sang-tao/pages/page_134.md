@@ -10,60 +10,59 @@ source: ocr
 - Cơ cấu dân số theo giới tính
 
 Cơ cấu dân số theo
-
 giới tính nước ta có sự thay
 đối. Năm 2021, nữ chiếm
-50,2% và nam chiếm 49,8%
-trong tống số dân. Tuy Năm 1999 2009 2019 2021
+50,29 và nam chiếm 49,8%
+trong tổng số dân. Tuy
+nhiên, tình trạng mất cân
 
-bằng giới tính ở nhóm sơ
+Năm
+băng giới tính ở nhóm sơ
+sinh khá rõ rệt, Năm 2021,
 
-<inh khá rõ rệt. Năm 2021, ,_ Nam
-bình quân cứ 100 bé gái có (Nguôn: Tổng cục Thống kê, năm 2000, 2010 và 2022)
+bình quân cứ 100 bé gái có (Nguồn: Tổng cục Thống kê, năm 2000, 2010 và 2022)
 đến 112 bé trai.
 
 Bảng 1.3. Cơ cấu dân số theo giới tính ở Việt Nam,
-giai đoạn 1999 - 2021
-
+giai đoạn 1999 -2021
 (Đơn vị: %)
 
-nhiên, tình trạng mất cân
+1999 2009 2019 2021
 
 3. Phân hoá thu nhập theo vùng
 
-Dựa vào bảng 1.4 và thông ti tong bài, hãy nhận xét sự phân hoá thu nhận
-bình quận đâu người giữa các vùng.
+JTựa vào bảng Í 4 và thông từt #ong bài, hãy nhận xét sự phẩn hoá thu nhận
+bình guận đứu người giữa các vùng.
 
 Năm 2021, thu nhập Bảng 1.4. Thu nhập bình quân đầu người/tháng
 (theo giá hiện hành) phân theo các vùng ở Việt Nam,
-giai đoạn 2014 - 2021
+giai đoạn 2014- 2021
 (Đơn vị: triệu đồng)
 
 bình quân đầu người/tháng
 của nước ta khoảng 4,2 triệu
-đồng; trong đó, khu vực
-thành thị đạt 5,4triệu đồng, Z 2014 2019 2021
-khu vực nông thôn đạt 1,
-
+đồng; trong đó, khu vực |
+thành thị đạt 5,4triệu đồng, di 2014 2015 2071
+khu vực nông thôn đạt
 3,5 triệu đồng. Nhìn chung,
+thu nhập của người dân
+đều có sự cải thiện theo
 
-thu nhập của người dân lpị_ Trung Bộ và Duyên hải 1,
-đều có sự cải thiện theo . | miẩn Trung
-thời gian nhưng vẫn còn sự Tây Nguyên
-phân hoá giữa các vùng. E0
-Đồng bằng sông Cửu Long 2,
+thời gian nhưng vân còn sự Tây Nguyên
+phân hoá giữa các vùng. Đông Nam Bộ
+Đồng bằng sông Cửu Long
 
 (Nguồn: Tổng cục Thống kê, năm 2016 và 2022)
 
-Ẫ Luyện tập - Vận dụng
+Ìgị Luyện tập - Vận dụng
 
-= Luyện tập
-1. Dựa vào bảng 1.1, hãy vẽ biểu đồ thê hiện tỉ lệ gia tăng dân số của nước fa, giai đoạn
-19909— 2021.
-2. Dựa vào bảng 1.4, hãy sắp xếp thú tự từ cao đến thấp về thu nhận bình quân đều
-người tháng của các vùng ở nước ta năm 2014 và 2021. Nhận xét.
+C Luyện tập
+1 Dựa vào bảng 1.1, hãy vẽ biểu đồ thể hiện É lệ gia tăng dân số của nước ta, giai đoạn
+1999—2021.
+2. Dựa vào bảng 1.4, hãy sắp xếp thứ tự từ cao đến thầp về thu nhập bình quân đều
+người tTháng của các vùng ở nước ta năm 2014 và 2021. Nhận xét.
 Vận dụng
-Hãy tìm hiểu và viết báo cáo ngắn về hiện trạng mất cân bằng giới tính khi sinh ở
+Hãy tìm hiểu và viết báo cáo ngăn về hiện #rạng mốt cần bằng giới tính khi sinh ở
 địa phương em sinh sống.
 
 131

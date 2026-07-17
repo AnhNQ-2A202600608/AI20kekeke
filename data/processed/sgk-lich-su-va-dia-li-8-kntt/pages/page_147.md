@@ -7,23 +7,25 @@ source: ocr
 
 # SGK LỊCH SỬ VÀ ĐỊA LÍ 8 KNTT (lớp 8) — Trang 147
 
-BIỂN XU-LU (74
-MÀ. _“
-XL-I (Avf VÉ-IDJ
+BIẾN XU-LU 72
+v ‹—~
+XU-I JI VE-DI
 
-1~:--—: Biên giới quốc gia
-——-.*:
+m-lúũffl
+¬k HÀ NỘI. Thủ đồ
+J ==-= Biên giới quốc gia
+m = „S Sũng -S
 Các chữ viết tắt
-% Sông QÐĐ. Quần đảo
+5 Sông QĐÐ. Quản đảo
 
-210 ũ 230 4ñũ 680 820 km
-X"...... 7 7 TT CC NNNNNNGE
+230 Ũ 230 460 650 320 km
+.- m m n ———MÄÃM — n
 
-Hình 11.1. Bản đổ các nước có chung Biển Đông
-€ các vùng biển của Việt Nam ở Biển Đông
+Hình 11.1. Bản đồ các nước có chung Biển Đồng
+@ Các vùng biển của Việt Nam ở Biển Đông
 
-Biển Việt Nam có diện tích khoảng 1 triệu km?. Theo Công ước Liên hợp quốc về Luật
-Biển năm 1982 và Luật Biển Việt Nam năm 2012, Việt Nam có các vùng biển là: nội
-thuỷ, lãnh hải, tiếp giáp lãnh hải, vùng đặc quyển kinh tế và vùng thềm lục địa.
+Biến Việt Nam có diện tích khoảng 1 triệu km”. Theo Công ước Liên hợp quốc về Luật
+Biến năm 1982 và Luật Biển Việt Nam năm 2012, Việt Nam có các vùng biến là: nội
+thuỷ, lãnh hải, tiếp giáp lãnh hải, vùng đặc quyền kinh tế và vùng thềm lục địa.
 
 146

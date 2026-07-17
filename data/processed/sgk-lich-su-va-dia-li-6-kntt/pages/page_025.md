@@ -12,66 +12,66 @@ CỦA XÃ HỘI NGUYÊN THUỶ
 
 Học xong bài này, em sẽ:
 
-«_ Trình bày được quá trình phát hiện ra kim loại và vai trò của nó đối với sự chuyên biến và
-phân hoá từ xã hội nguyên thuỷ sang xã hội có giai cấp.
+- Trình bày được quá trình phát hiện ra kim loại và vai trò của nó đỏi với sự chuyễn biên và
 
-Giải thích được vì sao xã hội nguyên thuỷ tan rã.
+phân hoá từ xã hội nguyên thuÿỷ sang xã hội có giai câp.
 
-- _ Mô tả được sự hình thành xã hội có giai cấp.
+Giải thích được vì sao xã hội nguyên thuỷÿ tan rã.
 
-- _ Mô tả và giải thích được sự phân hoá không triệt đễ của xã hội nguyên thuỷ Ở phương Đông.
-- . Nêu được một sô nét cơ bản của xã hội nguyên thuỷ ở Việt Nam (qua các nên văn hoá khảo cỗ
-Phùng Nguyên - Đông Đậu - Gò Mun).
+- IMô tả được sự hình thành xã hội có giai cấp.
 
-Trong đời sống thường ngày, chúng ta sử dụng rắt nhiều các vật dụng được làm
-từ đông và săt, bởi các nguyên liệu này đã trở nên rât quen thuộc và cân thiết
+- IMôtả và giải thích được sự phân hoá không triệt đề của xã hội nguyên thuÿ ở phương Đông.
 
-đối với con người từ rắt lâu đời. Em hãy kê tên một số vật dụng đó. Em có biết các
-nguyên liệu đồng và sắt được phát hiện như thế nào, từ bao giờ và chúng đã làm
-thay đổi đời sóng xã hội ra sao?
+° Nêu được một số nét cơ bản của xã hội nguyên thuÿ ở Việt Nam (qua các nên văn hoá khảo cô
+Phùng Nguyên — Đông Đậu — Gò Mun).
 
-1. Sự phát hiện ra kim loại và bước tiến của xã hội
+Trong đời sóng thường ngày, chúng ta sử dụng rất nhiều các vật dụng được làm
+từ đông và săt, bởi các nguyên liệu này đã trở nên rât quen thuộc và cân thiêt
 
-nguyên thuỷ
-Đồng được phát duy y
+đối với con người từ rất lâu đời. Em hãy kê tên một số vật dụng đó. Em có biết các
+nguyên liệu đồng và săt được phát hiện như thê nào, từ bao giờ và chúng đã làm
+thay đôi đời sông xã hội ra sao?
 
-hiện một cách ngẫu =a) Sự phát hiện ra kim loại và những chuyền biến trong đời
+1.Sự phát hiện ra kim loại và bước tiên của xã hội
 
-nhiên tìm thấy sống vật chất
+` nguyên thuỷ
+Đông được phát guy M
 
-từ các đám cháy. l
+hiện một cáchneâu . ạ) Sự phát hiện ra kim loại và những chuyền biến trong đời
 
-Những thỏi đồng Vào khoảng thiên niên kỉ IV TCN, người nguyên thuỷ đã phát
-hiện ra một loại nguyên liệu mới đề chế tạo công cụ và vũ khí
-thay thế cho đồ đá. Đó là kim loại.
+từ các đám cháy. |
+Những thỏi đông Vào khoảng thiên niên kỉ IV TCN, người nguyên thuỷ đã phát
 
 nóng chảy, vón cục
-là đông đỏ (đồng
-nguyên châu). Sau
-đó, người ta biết
-pha chê,... đề tạo ra
+là đông đỏ (đông
+nguyên châĐ. Sau
+đó, người ta biêt
+pha chê.... đ tạo ra
 đông thau.
 
 Sắt được phát hiện
 muộn hơn, do cứng
-hơn đồng. nên được
+hơn đông nên được
 sử dụng rộng rãi.
 
+hiện ra một loại nguyên liệu mới đề chế tạo công cụ và vũ khí
+thay thê cho đồ đá. Đó là kim loại.
+
 Người Tây Á và
-Ai Cập đã biết
+Ni Cập đã biết
 dùng đồng đỏ.
 
 Cư dân nhiều nơi
 đã biết dùng
 đồng thau.
 
-(on người biết
+Con người biết
 chế tạo các công cụ
 bằng sắt.
 
-Khoảng Khoảng Khoảng cuối thiên niên kỉ lI—
-3500 năm TCN 2000nămT(N đầu thiên niên kỉ ITCN
+Khoảng Khoảng Khoảng cuối thiên niên kỉ II —
+3500 năm TCN 2000 năm TCN đầu thiên niên kỉ I TCN
 
-4® Hình 1. Sơ đồ quá trình xuất hiện công cụ bằng kim loại
+. Hình 1. Sơ đồ quá trình xuất hiện công cụ bằng kim loại
 
 24

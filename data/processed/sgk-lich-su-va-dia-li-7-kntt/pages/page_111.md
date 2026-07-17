@@ -7,83 +7,83 @@ source: ocr
 
 # SGK Lịch sử và địa lí 7 KNTT (lớp 7) — Trang 111
 
-Đặc điểm tự nhiên
+Ø Đặc điểm tự nhiên
 a) Địa hình
 
-¡80°
+Z00 500 1000 2000 3000 5000
 
-ũ 201 5002 1000 2000 3000 5000 _- cân KUC
-X?ñ.ởự ¡Ö ' =
-Đất thắp Trên 5 000 ” +“ C*Y¿ #2 WÓ
-«+ Hoang mạc và Ã Diumỏ Mụ Kí: đLNG D Ms,
-«2` bản hoang mạc Than đá : = . :
-Dòng biển nông " sắm
-Dòng biển lạnh Á Sát
-Đi nguyên Gröm
-Rừng lá kim »ă Man-gan
-Rừng lá rộng mm Đồng
-Rừng nhiệt đớiẫm ® Thiếc
-Xa van, rừng thưa © Vàng
-Khi tự nhiên $' Kim cương
-r -=
-CHÂU ÂU
+Trên 5 000 m
+Dầu mỏ
 
-TH:ÁI 100
+Than đá
+Sắt
 
--¬Ò. `. CN QagổÓ chì (mi đan uy 2 ` XC Vi BÌNH
+Grồm
+Man-gan
+Đồng
+Thiếc
+Vàng
 
-Ị l Đà N DƯƠNG
+Kim cương
 
-Ỉ #È
-sỂ
+Hoang mạc và
+bán hoang mạc
 
-2Ñ .ụj” 207
+Dòng biển nóng
+Döng biển lạnh
+Đải nguyẽn
 
-\ lê»
+Fừng lá kim
 
-HỆA !
+FRừng lá rộng
+Rừng nhiệt đới ảm
+Xa van, rững thưa
+Khi tự nhiên
 
-„MUA ÔNG
+:i<#*4ãEãtbPmm
 
+….." ⁄ Gg DƯƠNG
+
+í b
 l
+ụ…x / Ầl.'
+\ 5
 
-lý \tMH ĐEN — Ũ TC — i \
-lap” BC Xï “ng vé `
-ÁP uNà
+ụìb ỄÚd
+Ì SBIẾN Ÿ
+i . m"*-…
 
-4 ƒ
-CHÂU ¿ —
-PHI 4„xe1| À
+. v
 
-.. % |
-La
-S66 TS c2
-=du—~ ' đo
+M.xi
+¬x =
+—IIỆAV DỔ
 
-.
+..
 
-à) Jy#» s&/
+J".. ( fìthll'Ịlủ'|'..'
+S L ưÔ | Uỷ)/
 
-".. VJNH
-AÍ đi BEN-GIN
-: ¡)MH „IẾ
+ve Há
+,, .I'd'E.ffl "~'--....._____.'___ qu
+- TNE5T) ffl’
 
-°
-_=_=. =. —8⁄* ƒ am —*#E0 E0 GIÓ) LẺ 8i VU
-: 8
-«° KG Xieh | nâu
-tế, Xcc 4N ĐỘI DƯƠNG
+g
+rw
+\’Ẩ£',.Fg'.Ề Ả'IDH IØẠn
 
-680 0 680 1360 2040 2720km
-——=—..........ảa
+4 ỄỂ* DƯƠNG
+
+680 ũ 580 1360 2040 2720km
+. m
 
 Hình 1. Bản đồ tự nhiên châu Á
 
-— _ Địa hình châu Á rất đa dạng, gồm: núi và sơn nguyên cao, đồ sộ; cao nguyên và đồng
+— Địa hình châu Á rất đa dạng, gồm: núi và sơn nguyên cao, đồ sộ; cao nguyên và đồng
 băng rộng lớn,... Bê mặt địa hình bị chia căt mạnh.
 — Địa hình chia thành các khu vực:
 + Ở trung tâm là vùng núi cao, đồ sộ và hiểm trở nhất thế giới. Một số dãy núi điển
-hình: Thiên Sơn, Côn Luân, Hi-ma-lay-a.
+hình: Thiên Sơn, Oôn Luân, Hi-ma-lay-a.
 + Phía bắc là các đồng bằng và cao nguyên thấp, bằng phẳng.
 
 110

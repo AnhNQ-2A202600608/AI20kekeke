@@ -7,46 +7,49 @@ source: ocr
 
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 12
 
-Bảng 1.2. Những nội dung của Chính sách kinh tế mới ( NEP)
+Eảng 1.2. Những nội dung của Chính sách kinh tế mới ( NEP)
 
-Nông nghiệp L Bãi bỏ chế độ trưng thu, trưng mua lương thực thay bằng chế độ thu thuế.
+Nông nghiệp | Bãi bỏ chế độ trưng thu, trưng mua lương thực thay bằng chế độ thu thuế.
 
 Chính phủ kiểm soát các ngành công nghiệp chính; cho phép tư nhân
 
-Công nghiệp | được thuê hoặc xây dựng một số nhà máy, nông trang quy mô nhỏ;
+Côngnghiệp | được thuê hoặc xây dựng một số nhà máy, nông trang quy mô nhỏ;
 khuyến khích đầu tư nước ngoài.
 
-Thương nghiệp | Tư nhân được tự do buôn bán, trao đối hàng hoá.
+Thương nghiệp | Tư nhân được tự do buôn bán, trao đổi hàng hoá.
 
-=—— = _=_ẽ Nhờ vào các chính sách
-. mới, sản xuất kinh tế dần
+S Nhờ vào các chính sách
+
+mới, sản xuất kinh tế dần
 hổi phục. Tình hình chính trị,
-xã hội ốn định. Cuối năm
-1922, Liên bang Cộng hoà
-xã hội chủ nghĩa Xô viết
-(gọi tắt là Liên Xô) được
-thành lập, bao gỗm các nước
-cộng hoà đầu tiền là Nga,
-Bê-lô-rút-xi-a (Belorussia),
-RRh U-crai-na (Ukraina) và các
-E>sX nước Cộng hoà Ngoại
-K2 Cáp-ca-dơ (Kavkaz).
+xã hội ổn định. Cuối năm
+_ __ . | 1922, Liên bang Cộng hoà
+. W c á ¡ xã hội chủ nghĩa Xô viết
+_ „ (gọi tắt là Liên Xô) được
+thành lập, bao gồm các nước
 
-NGA
+`Ẩ²eg\ _ - : s " .. cộng hoà đầu tiên là Nga,
+x . « n . Ổ 3lôrútxra (Belorussia),
+riv = U-crai-na (Ukraina) và các
+Ẻ ¡ [“1 BẼ-LO-RUTAXLA z ˆ ˆ ,
+—-. EEH 0ekare nước Cộng hoà Ngoại
 
-LÔ) Lược đồ Liên Xô năm 1922
+( Lược đồ Liên Xô năm 1922
 
-2.Liên Xô từ năm 1922 đến năm 1945
+CÁC HƯỚC CÔNG HOÀ NGOẠI Á P,ZX TỊ lz:a’ FÌ'CỔ'dƠ Ữ(ỒVkỒZ).
 
-— Dựa vào các tư liệu Lá, L5 16 17.15
-và thông tín trong bài học, hãy nêu những
-thành tựu của Liên Xô trong giai đoạn
-1922— 1945. Hạn chế của CÔNG cuỐộc xây
-dựng chủ nghĩa xã hội ở Liên Xô là gì?
+2. Liên Xô từ năm 1922 đến năm 1945
 
-—Áp phích l4 thể hiện thành tựu nào của
-Liên Xô trong công cuộc xây dựng chủ nghĩa
+— Dựa vào các tư lệu 1 4 ‡ 5 1ó 17 18
+võ thông Hn trong bài học, hẩy nêu những
+thành tựu của Liên XÔ tWong giai đoạn
+7922— 1945. Hạn chế của công cuộc xây
+đựng chủ nghĩa xã hội ở Liên Xô là gì?
+
+— Áp phích 1.4 thể hiện thành tựu nào của
+J tên XÔ #Ong công cuộc xây dựng chủ nghĩa
 xã hội?
 
-® “Hãy đến đây đồng chíơi!
+® “Hãy đến đây đồng chiơi!
+
 Tham gia nông trang cùng chúng tôi”

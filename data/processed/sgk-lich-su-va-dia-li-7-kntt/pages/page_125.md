@@ -8,67 +8,52 @@ source: ocr
 # SGK Lịch sử và địa lí 7 KNTT (lớp 7) — Trang 125
 
 Đông Á có một số sông lớn như Trường Giang, Hoàng Hà, có giá trị về nhiều mặt.
-Tuy nhiên, do nằm trong vùng khí hậu gió mùa nên về mùa mưa sông hay gây ra
+Tuy nhiên, do năm trong vùng khí hậu gió mùa nền về mùa mưa sồông hay gây ra
 ngập lụt.
 
-k bọc thông tin trong mục e và quan sát hình 5, hãy trình bày đặc điểm tự nhiên
-
+L_— Đọc thông tin trong mục e và quan sát hình 5, hãy trình bày đặc điểm tự nhiên
 của khu vực Đông Á.
-
 g) Khu vực Đông Nam Á
-Khu vực Đông Nam Á rộng khoảng 4,5 triệu km2, gồm hai phần: phần đất liền
+
+Khu vực Đông Nam Á rộng khoảng 4,5 triệu km?, gồm hai phần: phần đất liền
 mang tên bán đảo Trung Án và phần hải đảo được gọi là quần đảo Mã Lai.
 
-— Địa hình: Phần đất liền có các dải núi cao trung bình hướng bắc - nam và tây
-bắc — đông nam, xen kế là các thung lũng sông cắt xẻ sâu, làm cho địa hình bị
-chia cắt mạnh. Đồng bằng phù sa tập trung ở ven biển và hạ lưu sông.
+- Địa hình: Phần đất liền có các dải núi cao trung bình hướng bắc - nam và tây
+băc — đông nam, xen kẽ là các thung lũng sông căt xẻ sâu, làm cho địa hình bị
+chia cắt mạnh. Đồng bằng phù sa tập trung ở ven biên và hạ lưu sông.
 
 Phần hải đảo có nhiều đồi núi, ít đồng bằng. Đây là khu vực có nhiều núi lửa,
 động đât, sóng thân.
 
-— Khí hậu: Phần đất liền có khí hậu nhiệt đới gió mùa. Vào mùa hạ có gió tây nam
-nóng, äm gây mưa nhiều. Vào mùa đông có gió đông bắc khô, lạnh.
+— Khí hậu: Phần đắt liền có khí hậu nhiệt đới gió mùa. Vào mùa hạ có gió tây nam
+nóng, ầm gây mưa nhiều. Vào mùa đông có gió đông bắc khô, lạnh.
 
-= -TEENET.TTRXK xã —————tTứœ———
-, ñ 209 500 1000 2000 3000
-: LÔ
+Ũ 200 500 1000 2000 3000
+H
 
-NAM Á Ặ Trên 3 00m
-dụ _ —K Ä Dầu mỏ ^ Sất
-
-lí thyễh bổ 4
-
-ñ Khi tự nhiễn =_ Đồng
-
-l¡
-
-§ Than đá ~ Thiếc
-
-HE.
-
--LIP-PIN
-
-THÁI
+Trên 3000 m
+| A Dẩurmỏ A Sảt
+. Khi tự nhiên m Đồng
+m Than đá ¬ Thiếc
 
 BÌNH
 
-DƯƠNG
+= |
 
-ữ
+PHI J." fil_l.r.=Jll.ỵ.'
+|
+|
 
-BIEN GHi-l2I
+HIEN
+BAN-EB,|
+BIEA |
+I-A4-PFHIL-Ñ
+HB*sA
+t”-M(
+J Iũn” 15( 141
+350 Ũ 350 TU 10507 14D0Dkm
+.T m NH —M — n
 
-acc XE V5Iện s TƯ
-
-I-JÈ4-PNI7-h.l
-
-“2œ - HIỂN
-“4 L ú
-71-Aq ử ` \
-| 100” 120 Bở - 140
-350 Ũ 350 700 1050 1400 km
-_.. THƯHƯỚNNH “—“' NGHNHG
-
-Hình 7. Bản đỗ tự nhiên khu vực Đông Nam Á
+Hình 7. Bản đồ tự nhiên khu vực Đông Nam Á
 
 124

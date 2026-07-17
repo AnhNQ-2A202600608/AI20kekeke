@@ -7,12 +7,13 @@ source: ocr
 
 # SGK Lịch sử và địa lí 6 KNTT (lớp 6) — Trang 97
 
-Đàm lầy Sông, hồ, thác
-Hoang mạc, sa mạc „ Núi lửa
+Đầm lầy -Á = gông, hồ, tháo
 
-Băng hà lục địa “ San hô
+Hoang mạc, sa mạc % Núi lửa
 
-Thềm băng B959 Độ cao đỉnh núi
-Sông băng S875 'Độ sâu đại dương
+Băng hà lục địa 2 San hô
+
+Thềm băng 45959 Độ cao đình núi
+Sông băng 5875 Độ sâu đại dương
 
 TỈ LỆ 1 : 110 000 000

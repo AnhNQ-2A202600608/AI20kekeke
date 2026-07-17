@@ -7,86 +7,128 @@ source: ocr
 
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 156
 
-hộ
+s
 
-L gÌ
-Chỉ tuyễn
+LỀJ ML'ễỦ _a£,'1_.[_ \i` ` m
+-
 
-[hành phế
-San hỗ
-Sảng
+% ¬] k'JAM
+F*’
+Ú " H4<JM PÉNH 'ke -
+t
 
-Hồ
+Ñ Ø
 
-l
-[ mự Tấ đinh
-\N Ð.BgchTong Vĩ |
-( sở, am tình lị
+H
+hg rhắr Đ'ur.I'f
 
-nñ Hoấí
+'h f.> a;;'cntungỵĩ__
 
-sẽ hà
-Quảng TPƯỜNG \
-* %
-_
-m Quảng giả
-8. Cần tỏ
+Ú g m PỂlnn
 
-Ú lây É ĐỊNH,
+E Ä r5 Ýi n
+#
 
-cân BảOẢ. hàn đây cụnh
+ì
+C A phẾ d ủệ Ñ
+h m ~ `ẦJ""" L
 
-- hàn Khqaj ~„. 7” ® Â“
+S ˆ
+Qudng 7H L
+` `
 
-“vươn |
+à
+Ô C u:ĩfrằÌ`
+
+#.Cần &ö VÀ
+
+C Quanbllu
+
+PU- Gffl
+
+l—ls›ii1.rJ_j
+i úmlug
+
+1 ( m Du 5
+
+x ủỂJ` ì'ỉgđfhu
+
+x
+QE CônSơn |
+Căn aưwè hàn Bây Cũnh
+
+HỔhỤẺmJg
+
+d'ỂD1'I
+
+E, Cử EH
+- hơn Khani E )
 
 Cảng hàng không quốc nội
+[hành phố Cáng hàng không quốc Lế
+5an hỗ Cảng hàng không đang xây dựng
+Sống Cảng biển
 
-Cảng hàng không quốc tế
+Hồ CDẩng thuy nổi địa
 
-Cảng hàng không đang xây dựng
-Cảng biển
+# \
 
-Cảng thuỷ nội địa
+.
+\ ——.
 
-=--“š—-—-m an
+Ể
+T
 
-Nuàng TY a
+- đ :
+Ea -ắ’Ễi"Ĩl.Jì"Ể'_P"Ề_ĩ ỄT"'I*.V'Ể n
 
-cũ
+# Hoàng sØ
 
-TRƯNG QUỐC cŠ. „=>
-_—
+: ỉF'Ji—ửg@'.il,squ_Hnẽ
+
+108”
+
+hãi Đij ñắc
+¬
+n
+Ù, lấy x gy Ngmi .f
+
+. C m…tm' Ệ²í
+
+" ư X U I n
+
+Ệl IUU
 
 CHỦ GIẢI
 
--r
+- n a
 
-at
+Quốc lộ, tên đường
 
--IamE
-
-Quốc lộ, tắn đường
-
-Đường can tắc, tên đường
-Dường Xuyên ả, tên dường
+Đường cao tốc, tên đường
+Dưỡng Xuyên Â, tên dường
 Đường sắt
 
-Đường hiển
+Đường biển
 
-BRU-NAYếi 16
+á0
 
-C8. Cảng biển
-Q8. Quần đản
-Biên giới quốc qia
+Ẻ*—
+mlỒ @ A
 
-Cø. Cảng thuỷ nội địa
+BRU-NÂY£tiø:
 
-f8 Cửa khẩu quốc tế
+C. Cảng biển
+Cg. Cảng thuỷ nội địa QÐ Quáản đáo
+.- =¬ ¬ - Biển giới quốc gia
 
-mũ 10 znd
+5ũ 105
+
+Cửa khẩu quốc tế
+
+zna
 Km
 
-Hình 8.2. Bản đổ mạng lưới giao thông Việt Nam, năm 2021
+Hình 8.2, Bản đồ mạng lưới giao thông Việt Nam, năm 2021
 
 153

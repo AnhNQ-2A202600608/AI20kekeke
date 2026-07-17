@@ -7,60 +7,63 @@ source: ocr
 
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 104
 
-3. Nguyên nhân thắng lợi và ý nghĩa lịch sử của cuộc kháng chiến
+3. Nguyên nhân thắẳng lợi và ý nghĩa lịch sử của cuộc kháng chiến
 chống Mỹ, cứu nước (1954 - 1975)
 
-2
+a)Nguyên nhân thắng lợi
 
-— Đựa vào sơ đồ 19.20 và các tư liệu 18.21, 1922, 19.23, hãy tình bày
-nguyên nhân thẳng lợi của cuộc kháng chiến chống Mỹ, cửu nước.
+527
 
-— Thăng lợi của cuộc kháng chiến chống Mỹ, cứu nước của nhân dân
-tiệt Nam có ÿ nghĩa quan trọng như thế nào đối với lịch sử dân tộc và
+— Dựa vào sơ đồ 1820 và các tư liệu 18.21, 18.22, 18.23, hãy #ình bày
+
+nguyên nhân thống lợi của cuộc kháng chiến chồng Mỹ, cứu nước.
+
+—TJhăng lợi của cuộc kháng chiên chống lM†?ÿ, cửu nước của nhân dân
+
+Diệt Nam có ý nghĩa quan #rọng như thể nào đối với lịch sử dân tộc và
+
 thể giới?
 
-a) Nguyên nhân thắng lợi
-
-œ®
-
 Sự lãnh đạo Đại tướng
-của Đảng với Võ Nguyên Giáp ghi
-đường lối lại trên tấm bản đồ
+của Dảng với Võ Nguyên Giáp ghi
+đường lỗi lại trên tấm bản đề
 chính trị, của Bộ Tổng Tham
-quân sự mưu quân đội Sài Gòn
-độc lập, Nhân dần khi ông vào Sãi Gần
+quần sự muu quân đội Sài Gòn
+độc lập, Nhân dân khi ông Vão Sài Gòn
 tự chủ Việt Nam đầu tháng 5 - 1975:
-yêu nước, ⁄„ vũ khí kĩ thuật Mỹ,
+yêu nước, “, vũ khí kĩ thuật Mỹ,
 
-đững cảm, ‹... đì hiện đại đến đầu,
-thông minh. cũng không thể cứu
-kẻ thù khỏi thất bại,
-Quyết định thẳng lợi
-là con người Việt Nam
+đũng cảm, ( dù hiện đại đến đâu,
 
-yêu nước, đũng cảm,
+thông mi ẫ cũng không thể cứu
 
-thông mình: Œma Chủ tịch Cu-ba Phi-đen Cát-xtơ+ô tại
-Siữn lộ Vợ lì li chiến trường Quảng Trị, tháng Ø~ 1973
-của các T, kề quyện GHP s và câu nói nổi tiếng “Vì Việt Nam, Cu-ba
-nhờn Hào khí trắm nắm, sẵn sàng hiến dàng cả máu của mình"
+kẻ thù khỏi thất bại.
+Quyết định tháng lợi
+là con người Việt Mam
+yêu nước đũúng cảm,
+
+thông mình: Chú tịch Cu-ba Phi-đen Cát-xto+ô tại
+S n Te Vưận Ệìái ỆI'th chiến trường Quảng Trị, tháng 9 1973
+ỨJả các mrổc ẺO ỦỄWỂ ỦfJỆ u và cầu nói qoi tiếng “Vì Việt Marr, Cu-ba
+n Hảo khí trâm nắm, sốn sàng hiến dãâng cả máu của mình"
 xã hội NXB Trẻ, Thành phố
-chủ nghĩa Hồ Chí Minh, 201 1, kỳ
-và nhân đâần trang 372)
+chủ nghĩa Hồ Chí Minh, 2011, L<i
+và nhân dân trang 372)
 yêu chuộng
-hoa bình
+hoả bình
+
 trên thế giới
 
 Nguyên nhân thắng lợi của
 cuộc kháng chiến chống Mỹ,
-cứu nước
+CỨU nƯỚc
 
-Ngày 19 - 1 - 1969, lá cờ của
+Ngày 19- 1- 1969 lá cờ của
 
 Mặt trận Dân tộc Giải phóng
 
 miền Nam Việt Nam tung bay
 
-trên nóc nhà thờ Đức Bà Pa+ri (Pháp)
+trên nóc nhà thờ Đức Bà Pa-ri (Pháp)
 
-101
+lõi

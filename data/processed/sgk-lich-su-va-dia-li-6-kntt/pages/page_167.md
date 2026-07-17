@@ -7,26 +7,44 @@ source: ocr
 
 # SGK Lịch sử và địa lí 6 KNTT (lớp 6) — Trang 167
 
-90°Ẻ 1202 150°
+180° 150° 120° 90°” Ø60° 309 60° 90° 120° 150° 180
 
-180° 1805 1202 9U 60 30 0 30 60Đ UP 1205 1805 180”
-——> Dòng biểnnóng ——> Dòng biển lạnh
+Ầ
 
-200 0 2000 4000 6000 8000km
-mm ——i ST —=._.
-Hình 3. Các dòng biễn trong đại dương thế giới
+¬ 1 ^ \
+- 3° uJ.J ‡ ì"TĨ "". ỄL
+ELAU J²
 
-ˆ tayê® tạ
-\ 2 Vận SANG
+~
 
-% <
-CÁ í. Em hãy phân biệt ba dạng vận động của nước biên và đại dương:
+N. rz
+
+c , Z N
+CHÂU PHỊ È⁄A, EF.
+# . à
+c N x @S
+
+v kội An
+|
+
+180° 150° 120 90° 60 30° 0° 30° 80° 90 120°
+— Dòngbiểnnóng . —=— Dòng biển lạnh
+
+1509 180°
+2 000 0 2 000 4 000 6000 8000km
+. m m NH ư - J
+Hình 3. Các dòng biên trong đại dương thề giới
+
+yện tạ
+( "'vYt Vận ầlng
+
+1. Em hãy phân biệt ba dạng vận động của nước biển và đại dương:
 sóng, thuỷ triêu và dòng biên.
 
 Chọn một trong hai nhiệm vụ sau:
 
-2. Sưu tầm thông tin về việc con người khai thác năng lượng từ sóng
+2. Sưu tằm thông tin về việc con người khai thác năng lượng từ sóng
 và thuỷ triều.
 
-3.. Hãy sưu tầm tư liệu về ảnh hưởng của dòng biên nóng và dòng biên
+3. Hãy sưu tằm tư liệu về ảnh hưởng của dòng biển nóng và dòng biển
 lạnh đôi với các vùng ven bờ nơi chúng chảy qua.

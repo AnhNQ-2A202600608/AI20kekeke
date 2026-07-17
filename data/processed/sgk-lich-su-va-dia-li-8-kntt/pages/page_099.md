@@ -7,10 +7,10 @@ source: ocr
 
 # SGK LỊCH SỬ VÀ ĐỊA LÍ 8 KNTT (lớp 8) — Trang 99
 
-98
+uuăxủỂỂỄẳẵẵt
 
-Hới Tri
+100 ũ 100 20 500 +DŨ m
 
-Tử ũ MU!) zũũ 30ũ 4Ú km
+Hình 2.1. Bản đồ địa hình Việt Nam
 
-Hình 2.1. Bản đổ địa hình Việt Nam
+II

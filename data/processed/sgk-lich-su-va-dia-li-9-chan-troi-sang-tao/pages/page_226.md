@@ -7,41 +7,51 @@ source: ocr
 
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 226
 
-==—— — P CTTC
-Tự : _.= EEN guượn `... -...a.
-Chỉ tryởn ắc " Bị ^
+`
 
-Khai thác dầu ở mỏ Bạch Hổ
+"x_L Nay ›-l tĩỉhÌ1l\-l\-" ..
+- E- ; T
+Chỉ tuyên Rếc k
 
-—.
+n
 
-TRUNG QUỐC Äu>
+~
+ẩđ'a
 
-tư
+Khai thác clầu ở mỏ Bạch Hồ
 
-SGHẾ AC 7 ;
-In tiện z gÐ Cửn Sơn -
-^ vŸ „e hônBayCanh b: |
+`l l À —
 
-ải Nink
+THÁI LAN ~
 
-{un-pn KEseal P
+TE; ÙÁ Qnhonp
+-. -nOà ThốChu | ê TRÁN
+`i5l L l. b - 1 s N n .
+K n LÚ - (Lzi Đình Hào 4 -. 0Đ.Côn Sn sỐ
+hu '.`:. b
 
-= MA-LAIXEA
-MA-UAI-XI-A BRUI-NÄY£
+N z canh Š ¡ : Cã Nước.
+shi 5 n ắìq.l.Ề_'Ẻ':' 'ỂỀ T . ỄỊ Hẵllllfẽ]'ì l<r`i5.Ị-c«:›-íiẨI
 
-Khai thắc khoảng sản CHỦ GIẢI
-Œ Khai thác dầu thỏ Địa giới hành chính cấptỉnh ##£ Thủđả Ð. Đập 7®. Bảitắm VÏNHPHÚC 6 HÀ NAM
-® Khai thác khí tự nhiễn +==:= Biên giới quốc gia Sanhõ OĐ. Quấnđảo ,j, Cảng biển BÁC NINH 7 THÁI BÌNH
-@ Khải thác ti-tan ——— Đường biển ~».„ Sông -_ Cảng biển EH Khukinh tế ven biển HẢI DƯƠNG 8 ĐÀNẴNG
-® Sản xuất muối s. Đănh bắt hải sản Ÿ Hể . hằng HẢI PHÒNG 9 BÀ RỊA—VŨNG TÀU
-Phản tầng độ säu tmÌ HƯỚNG YÊN 10 TP. HỒ CHÍ MINH
+hn NH r= Jặdh’ :
+`ỏ®®ỄẺ1'FăJỂ’-fFạạ-_f__3Ề1 n 1 5/Ean Tấy Œ E _ MA-LALI-XI-A
 
-znn
-Km
+Khai thác khoáng sản CHỦ GIẢI
+Œ Khai thắc dầu thô Địagiởihành chínhcáptinh Y Thùđô Ø Đảo Ta Bãi tắm VĨNHPHÚC 6 HÀ MAhM
 
-Dưới 2000 2000 1500 1000 200 180
+Tũns
 
-Hình 23.3. Bản để một số ngành kinh tế biển, đảo ở Việt Nam, năm 2021
+Œ Khai thác khí tự nhiền -==r= Biên giới quốc gia Sanhð QØ Quầnđản ¡ Cảng biển BÁCNINH - ? THÁI BÌNH
+
+@ Khai thác ti-tan = — — Đường biển 2 „ Sông # Cảngbiển TỊ Khukinh tể ven biển HẢIDƯƠNG 8 ĐÀNẴNG
+
+s Sản xuất muối ỄỀỈ Đánh bắt hải sản Š Hề S sáng HẢIPHÒÔNG 9 BÀ RỊA - VŨNG TÂU
+Phản tầng độ sâu (m) HUNGYÊN - 10 TP.HỔ CHÍ MINH
+
+Nwuiam”m.... 205
+
+Dưới4D0O 2000 1500 T0D00 - 200 10n 30 kêu
+
+Hình 23.3. Bản đồ một số ngành kinh tế biển, đảo ở Việt Nam, năm 202]T
 
 223

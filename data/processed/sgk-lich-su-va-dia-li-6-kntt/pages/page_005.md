@@ -7,44 +7,48 @@ source: ocr
 
 # SGK Lịch sử và địa lí 6 KNTT (lớp 6) — Trang 5
 
-Kihiệu và bảng đú giải bản đồ.
-Tìm đường đi trên bản đổ
-——Mm
+-_ Kí hiệu và bảng chú giải bản đổ.
+Tìm đường đi trên bản đồ
 
-— Bài6 — Tả Đất trong hệ Mặt Trời
-(huyển động tự quay quanh
+Nơc ủ trínhớ
+
+Trái Ệ`trong;lỉệffl'ặt Trời
+
+Chuyển động tự quay quanh
+
 trục của Trái Đất và hệ quả
 Chuyển động của Trái Đất
 quanh Mặt Trời và hệ quả
 
 Xác định phương hướng
-Rưàithớc
+Wiàlthư(tể
 
 (ấu tạo của Trái Đất.
-(ác mảng kiến tạo ạ0
+Các mảng Mỗỉgg_ỳ
 
-Quá trình nội sinh và quá __
-trình ngoại sinh. Hiện tượng
-tạo núi “_...
+N n
 
-— Bầi2 - NHlữawàđộngđất -
+mạh ngoại smlr*1-llệl`l,ỹi lợng
+tạo núi
 
-(ác dạng địa hình chính -
+- Núi Navàđongẵẵ ì
+
+CGácdạngđịahìnhchính .
 trên Trái Đất. Khoáng sản
-Thực hành: Đọc Mục đồ đa,
-hình tỉ lệ lớn và lát vắt địa
-hìnhđơngin — —-
+Thực hành: Đọc lược đồ ủỈ
+hình tỉ lệ lớn và látdắt: &a
+Mlh Clơn fflẫn
 
-Lớp vỏ khí của Trái Đất.
-Mây và mưa.
+Hfì
 
-Thời tiết và khí hậu.
+N\ây ủmưa Thời tiết và khí hậu.
+
+2
+
 Biến đổi khí hậu
 
-Thực hành: Phân tích biểu đồ
+Thựchành: Phân tích biểu đồ
 nhiệt độ, lượng mưa
-
-108
 
 113
 
@@ -54,66 +58,77 @@ nhiệt độ, lượng mưa
 
 118
 
-122
-
 125
 
 128
 
-141
+129
 
-142
+131
 
-146
+13
 
-150
+135
 
-153
+139
 
-SYV-S9/<Z/cx2
+Thuỷ ựyển và vòng tuần
 
-Sông và hồ. Nước ngầm.
+Sông Vầ m Wở_c ngầm
+và băng hà
 
-Biển và đại dương
+mẽn và đại ùrơng
 
-— Bài22 lốp đất trên Trái Đất
+àààààà
 
-— BÀ3 - §ự sống trên Trái Đất
+Lóp đất trên Trái Đất
+mõng trên Trái Đất
+mạg nhiệt đới
+_3ÌĨ`Iễhân bố các đới thiên
+hiên trên Trái Đất
 
-—_ Bài⁄4.. Rừngnhệtđối
+Ảu_ 1ìm meu mô:
 
-|... Bbm bố cácđới thiên
-nhiên trên Trái Đất
+và thiên nhiên
 
-Tìm hiểu môi
-hiên địa phương.
-
-trên thế giới
-Mối quan hệ giữa con người
-
-'Bảo vệ tự nhiên và khai thác
-ông minh các tài nguyên
-thiên nhiên vì sự phát triển
-
+Bảo vệ tự nhiên và khai thác
+1:ong minh các tài nguyên
+lên nhiên vì sự phát triển
 bền vững
-Thực hành:Tìm hiểu mối
+Thựchành:Tìm hiểu mối
 quan hệ giữa con người và
+thiên nhiên ở địa phương.
+MNG TRA CỨU THUẬT NGỮ
 
-—— BẰNG TRA CỨU THUẬT NGỮ
+=
+t
+;4
+. . S
+Ñ
 
-BẰNG PHIÊN ÂM
+Wĩl quan Mẽ giữa con người.
+
+BẰNG PHIÊNÂM.
+
+155
+
+156
+
+158
 
 163
 
 167
 
 168
-171
+1
 173
+
+175
 
 179
 
-180
+160
 
 184
 

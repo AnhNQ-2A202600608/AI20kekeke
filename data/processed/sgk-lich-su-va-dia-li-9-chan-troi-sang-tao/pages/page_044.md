@@ -7,69 +7,63 @@ source: ocr
 
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 44
 
-17 - 8 - 1945, Đại hội
+17-83- 1945, Đại hội
 Quốc dân được triệu tập
 ở Tân Trào. Đại hội tán
-thành chủ trương Tống
+thành chủ trương Tổng
 khởi nghĩa, thông qua 10
 chính sách của Việt Minh,
-cử ra Uÿ ban Dân tộc giải
+cử ra Uỷ bạn Dãn tộc giải
 phóng Việt Nam.
 
-€Ế Chiếm Bác Bộ Phú -
+Chiếm Bắc Bộ Phủ -
 khởi nghĩa ở Hà Nội
-ngày 19 ~ 8~ 1945
+ngày 19-8-1945
 
-14-8-1945 -18 8 ~ 1945 -23-8~— 1845 -
-Nhiều xã, huyện ở Bắc Bộ
-và Trung Bộ bắt đầu khỏi nghĩa.
+s14-8-1948. "18-8-1945 23-8-1945 28-8-1945
 
-_?8—8— 1945.
+Bôn tỉnh đâu tiên giảnh chinh quyền; . Giánh chinh quyền
+Bắc Giang, Hải Dương, Hà Tĩnh, ỡ Huề.
+Quảng Mam.
 
-Bồn tỉnh đầu tiên giảnh chính quyền: Giảnh chính quyền
-Bắc Giang, Hải Dương, Hả Tĩnh, ở Huẻ.
-Quảng Nam.
+Hai tỉnh cuỗi cũng là
+Đằng Nai Thượng,
+Hả Tiên niảnh chính quyền.
 
-Hai tỉnh cuỗi cùng là
-Đẳng Nai Thượng,
-Hà Tiên qiảnh chỉnh quyền.
+Nhiều xã. huyện ở Bắc Eộ
+và Trung Bộ bảt đầu khởi nghĩa,
 
-Giải phỏng quân
-tiễn vẽ giải nhỏng
+Giải phóng quân Giảnh chính quyền ở Hả Mội. Giảnh chính quyền ở Sải Gón.
+tiền về niải pháng
 thị xã Thái Nguyễn.
 
--16—8—1845- _18—~8~ 1845
+s18-8-1945. 19-8-1945 28-8-1945.
 
-Giảnh chính quyên ở Hà Nội. Giảnh chinh quyền ở Sải Gón.
+ủ Diễn biến chính Tổng khởi nghĩa tháng Tám năm 1945
 
-"-.——. `
-
-(8.11 Diễn biến chính Tổng khởi nghĩa tháng Tám năm 1945
-
-Ngày 2~9~ 194°,tại Quảng trường ÊLˆ z;.„. :2¡- chính phú lâm thời của nước Việt Nam
-Ba Đình (Hà Nội), Hỗ Chí Minh thay Dân chủ Cộng hoà ~ trịnh trọng tuyên bố với thế giới
-mặt Chính phủ lâm thời đọc bản __ˆ, rằng: Nước Việt Nam có quyên hưởng tự do và độc
-Tuyên ngôn Độc lấp, tên Hs lập, và sự thực đã thành một nước tự do và độc lập.
-” k có Số kở : l 7 Toàn thể đàn tộc Việt Nam quyết đem tất cả tỉnh thần và
-nhân dân cả nước và toàn thể giới về lực lượng tính mạng và của cải để giữ vững quyền tự do,
-sự ra đời của nước Việt Nam Dân chủ độc lập ấy:
-R % (Trích Tuyên ngôn Độc lận, 1945)
+Ngày 2 - 9~ 1245, tại Quảng trường Ổ “Chúng tôi - Chính phủ lâm thời của nước Việt Nam
+Ba Đình (Hà Nội), Hồ Chí Minh thay Dân chủ Công hoà ~ trình trọong tuyên bố với thế giới
+mặt Chính phủ lâm thời đọc bản rắng: Nước Việt Nam có quyền hưởng tự do và độc
+lập, và sự thực đã thành một nước tự do và độc lập.
+- - Toàn thể dân-tộc Việt Nam quyết đem tất cả tình thần và
+nhân dẫn cả nước và toàn thể giới về lực lượng, tính mạng và của cải để giữ vững quyền tự do,
+sự ra đời của nước Việt Nam Dân chủ độc lập ấy'
 Cộng hoà.
-4. Nguyên nhân thắng lợi, ý nghĩa lịch sử của Cách mạng tháng Tám năm 1945
-“2
 
-— Đọc ? liệu 8.9, S. 13 và thông tin trong bài, hãy nêu nguyên nhân thẳng lợi
-và rut ra y nghĩa lịch sử của Cúch mạng thủng Tám năm 1949.
+Tuyên ngôn Độc lập, tuyên bố với
+(Trích Tuyên ngôn Độc lập, 1945)
 
-L3
+4.Nguyên nhân thắng lợi, ý nghĩa lịch sử của Cách mạng tháng Tám năm 1945
 
-— Theo em, Đảng Cộng sản Đông Dương có vai tò như thể nào trong Cúch mạng thủng Tám
-năm 194%?
+—2Đọc tư liệu 8.9. 8.13 và thông tin trong bài, bấy nêu nguyên nhân thẳng lợi
+vềà r‡ ra ý nghềa lịch sử của Cách mạng tháng T m năm 1945.
 
+— 7heo em, Đhởng Cộng sản Đông Dương có vai bÒ như thể nào ##ong Cách mạng tháng Tớm
+năm 19452
 a) Nguyên nhân thắng lợi
 
 Thắng lợi của Cách mạng tháng Tám năm 1945 trước hết là do Đảng Cộng sản
-Đông Dương, đứng đầu là Hổ Chí Minh lãnh đạo, đã để ra đường lỗi cách mạng đúng
+Đông Dương, đứng đấu là Hỗ Chí Minh lãnh đạo, đã đễể ra đường lỗi cách mạng đúng
 đắn, có quá trình chuẩn bị trong suốt 15 năm và chớp thời cơ phát động quần chúng
 
-41
+4I

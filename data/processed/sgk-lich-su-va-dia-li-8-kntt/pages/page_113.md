@@ -7,16 +7,16 @@ source: ocr
 
 # SGK LỊCH SỬ VÀ ĐỊA LÍ 8 KNTT (lớp 8) — Trang 113
 
-€ vấn đề sử dụng hợp lí tài nguyên khoáng sản
+@ Vấn đề sử dụng hợp lí tài nguyên khoáng sản
 
 - Nước ta có nguồn tài nguyên khoáng sản khá phong phú, đa dạng, gồm cả
-khoáng sản năng lượng, khoáng sản kim loại và khoáng sản phi kim loại. Trong đó,
+khoảáng sản năng lượng, khoáng sản kim loại và khoáng sản phi kim loại. Trong đó,
 nhiều loại khoáng sản có trữ lượng lớn, chất lượng tốt như than đá, dầu mỏ, khí tự
-nhiên, sắt, bô-xít,... là nguồn cung cấp nguyên liệu, nhiên liệu cho nhiều ngành công
+nhiên, sắt, bô-xít,.. là nguồn cung cấp nguyên liệu, nhiên liệu cho nhiều ngành công
 nghiệp cũng như đảm bảo an ninh năng lượng cho quốc gia.
 
 - Nhiều mỏ khoáng sản đã được phát hiện và đưa vào khai thác phục vụ cho phát
-triển kinh tế và đời sống. Tuy nhiên, khai thác và sử dụng khoáng sản còn chưa hợp
+triển kinh tế và đời sống. Tuy nhiền, khai thác và sử dụng khoáng sản còn chưa hợp
 lí, nhiều nơi công nghệ khai thác còn lạc hậu,... gây lãng phí, ảnh hưởng xấu đến môi
 trường và phát triển bền vững. Một số loại khoáng sản bị khai thác quá mức dẫn tới
 nguy cơ cạn kiệt, vì vậy cần phải sử dụng hợp lí tài nguyên khoáng sản.
@@ -34,16 +34,16 @@ sản thô.
 
 + Bảo vệ khoáng sản chưa khai thác và sử dụng tiết kiệm tài nguyên khoáng sản.
 
-+ Tổ chức tuyên truyền, phổ biến, giáo dục pháp luật trong hoạt động khai thác và
++ Tổ chức tuyên truyền, phố biến, giáo dục pháp luật trong hoạt động khai thác và
 sử dụng khoáng sản.
 
-Dựa vào thông tin mục 3, hãy phân tích vấn để sử dụng hợp lí tài nguyên khoáng sản
+Dựa vào thông tin mục 3, hãy phân tích vấn đề sử dụng hợp lí tài nguyên khoáng sản
 
 ở Việt Nam.
 
-Luuẽn tập —- Văn dụng
+Luuếên tập —- Văn dụng
 
-5 Hãy vẽ sơ đồ thể hiện sự đa dạng của tài nguyên khoáng sản Việt Nam.
+ậ Hãy vẽ sơ đổ thể hiện sự đa dạng của tài nguyên khoáng sản Việt Nam.
 
 112
 

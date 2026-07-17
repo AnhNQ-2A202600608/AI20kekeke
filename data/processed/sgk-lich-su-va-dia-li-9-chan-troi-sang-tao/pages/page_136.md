@@ -7,81 +7,121 @@ source: ocr
 
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 136
 
-THÁP DẪN SỐ VIỆT NAM
+m Ả
+[ffltm`kfiạ_fĩĩẵlfPử(ể
 
-Chỉ sệc ShŸE ng Rhem luỗi
+s Tn
 
-in
+. H-`ì"\ Lai Châu
+G Ề_—`_“"f"`_H…Ị .
 
-bả
+DẪN SỐ VIỆT NAM QUA CÁC NĂM
+Triệu nguïi
 
-sụn
-R95 d: BH EU tấn ĐẾN Đ
+ạ. "CAM- ffl-CHýA
 
-+ + 8m 18 4 z ữ Ũ
+ự
+Ì- m
 
-NÓ
-PHÒNG lê Tỉ lệ người theo nhắm tuổi Năm 2021
-Che THi Bình trong têng số đăn
+On,kMerm u -
+n QØ Thổ Chư
+x hàn hận
 
-FHIINH Ê- Bạch Lang Vĩ
-. .
+x
+12ừ nCà Ha
+1045
 
-NH HÓA
-LắI
+MÁT ĐỘ DẪN SỐ (người/krr]
+Dưới 100
+Từ 100 - 500
+Từ 301 — 500
+Từ 501 - 1 000
 
-bài Đã Bắc
-Loa
-BiAy.
+Trên 1 000
 
-Đau
+NH HOA,
 
-đủ Chim Ên ° 9
-ö
+[FINH # Bạch ù:unị'ư'ỉ
 
-Ð.Hoàng SH ca
+tị đØ ð l GI tE
+t EE 4 E E Ý EE
 
-TRỊ BÀ NẴNG.
+Năm zũD3
 
-¿ Nà #.Tr quân á0
-DẪN SỐ VIỆT NAM QUA CÁC NĂM lộ
+TỊ BÀ NẴNG -
 
-Triệu người
-Sợ QỊ
+QUY MỐ DẪN SỐ
+Trên 1 ñ0ũ ñ0Ũ người
 
-I Hồn Ủng Cần
-Ý NHữM
-TT Ä
-k _M 1;
-`,
-Ỉ
+Từ 200 001 — 5D0 UDD người
 
-Hạnh
-m Bang Thấp Chàm
-THIẾT
+Tử 100 000 — 200 0D0 người
 
-L Phú Cuỷ
-L
+Dưuởi 100 D0D người
 
-G. Nam Du: `:
-“+. G8.Thổ Chư
-x~ hủn Nhạn
+Từ 500 001 — 1 ODO DDD người
 
-«
-ST hú š n ẻ> 4
-104° MA-LAEXI-A
+Hhón Ếln_q Cạn
+(UY I44O4
+
+Hanh
+
+ự
+Phàn Báng = Thấp Châm
+
+(THIẾT
+
+E Phú Cuý
+Lui
 
 CHỦ GIẢI
-MÁT ĐỘ DÂN SỐ (người/km?] QUY MÔ DẪN SỐ ĐÔ THỊ Thủ đỏ
 
-Dưới 109 Trên 1 000 000 người HẢ NỘI z 5anhỗ
+ĐÕ THỊ
+HÀ NỘI
+THUẬN AN
+B LẠT
+Minh Binh
 
-Từ 10n - 300 Từ 500 001 — 1 ñn0 000 người THUẬN AM xà»... Sông Q8. Quân đảo
-Từ 301 ~ 500 1 Từ200001-— 500 000 người ĐÃ LẠT Địa giới hành chính cấp tỉnh
-Tử 501 - 1 ñ00 Tử 100 000 - 200 800 người hinh Bình 'arm:=- Biển giới quốc gia
+Yên Hái
 
-Trên 1 ũnũ bưởi 100 000 người Yên Bái
+Đ.Hoàng Sa s
 
-Hình 2. Bản đồ dân số Việt Nam, năm 2021
+ĐTEI'Ệ†Ổn ffll nfỂ
 
-133
+THÁP DẪM SỐ VIỆT NAM
+
+Nhâm luậi
+
+È
+
+Y T E
+A T n đ ha S bg d đ N B
+
++ ã “nö 4 E ũ Ũ
+
+Tì lệ người thec nhám tuổi Năm 2021
+trong tàng số chản
+
+bài Đhở Bấc
+n
+34 Ẻ›fỀ p.Mam
+
+„ ð
+úidm 0Jrj
+
+g®
+
+đá Chím Én K
+
+@Y
+
+Thủ đó
+
+San hồ
+
+sống Q8 - Quần đảo
+Địa giới hành chính cần tỉnh
+
+Biên giới quốc gia
+
+Hình 2. Bản đồổ dân số Việt Nam, năm 2021

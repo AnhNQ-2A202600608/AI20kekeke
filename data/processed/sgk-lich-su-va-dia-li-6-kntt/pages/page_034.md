@@ -8,36 +8,41 @@ source: ocr
 # SGK Lịch sử và địa lí 6 KNTT (lớp 6) — Trang 34
 
 Kim tự tháp Kê-ốp
-cao tới 147m. Đề xây
+cao tới 147m. Đê xây
 dựng công trình này,
 người ta sử dụng tới
-2,3 triệu tảng đá, môi
-tảng nặng từ 2,5 đên
-4 tân được ghè đếo
+2.3 triệu tảng đá, môi
+táng nặng từ 2,5 đên
+4 tân được ghè đẽo
 theo kích thước đã
 định, rôi mài nhăn và
-xếp chông lên nhau
+xêp chông lên nhau
 mà không dùng bât cứ
 vật liệu kêt dính nào.
-Trải qua hàng nghìn
-năm, đên nay các
-kim tự tháp vân đứng
+Trái qua hàng nghìn
+năm, đền nay các
+kim tự tháp vận đứng
 vững như muôn thách
 thức với thời gian.
 
-4 Hình 7. Kim tự tháp và tượng Nhân sư ở Ai Cập
+x& Hình 7. Kim tự tháp và tượng Nhân sư ở Ai Cập
 
-Nêu những thành tựu văn hoá chủ yếu của Ai Cập và Lưỡng Hà cỗ đại.
+@ Nêu những thành tựu văn hoá chủ yếu của Ai Cập và Lưỡng Hà cỏ đại.
 
-c Si 1. Từ các hình ảnh và thông tin ở mục 3, em ấn tượng nhất với thành tựu
-văn hoá nào của người Ai Cập và Lưỡng Hà cỗ đại? Vì sao?
+( vyês tập
 
-Là 2. Em hãy nêu một số vật dụng hay lĩnh vực mà ngày nay chúng ta đang
-thừa hưởng từ các phát minh của người Ai Cập và Lưỡng Hà cổ đại.
-.. Dựa vào bảng chữ số của người Ai Cập cổ đại dưới đây, em hãy làm
-các phép tính sau: 124 + 321 = ? và 1565 —- 1243 = ? theo cách viết
+và Vận ùut
+
+1. Từ các hình ảnh và thông tin ở mục 3, em ấn tượng nhất với thành tựu
+văn hoá nào của người Ai Cập và Lưỡng Hà cô đại? Vì sao?
+
+2. Em hãy nêu một số vật dụng hay lĩnh vực mà ngày nay chúng ta đang
+thừa hưởng từ các phát minh của người Ai Cập và Lưỡng Hà cỗ đại.
+
+3. Dựa vào bảng chữ số của người Ai Cập cổ đại dưới đây, em hãy làm
+các phép tính sau: 124 + 321 = ? và 1565 — 1243 = ? theo cách viết
 của họ.
 
-1000 10,000 100,000 1,000,080
+1,0096 16,000 100,000 1,000,060
 
 33

@@ -9,23 +9,33 @@ source: ocr
 
 BẢN ĐỎ HÀNH CHÍNH VIỆT NAM NĂM 2020
 
-[lá I1 TIẾ-
+104 InB TIE" TIữ
 
-CHỦ GIẢI
-'#HÁMỘI Thủ đỗ
-Thảnh phố
+CHÚ GIẢI
+Thủ đô
+Thảnh phổ
 trực thuộc Trung ương
-Tên tỉnh
-Ranh niởi tỉnh
-Biên giới quốc gia
-Sỗng
+Tên lỉnh
 
-Hà
-Ban hỗ
+Ranh giới tỉnh
+
+Biên giới quốc gia
+Sóng
+
+Hỗ
+San hỗ
 
 Các tỉnh đánh số
-lBắcNinh 1. Hà Nam
-ä. Hải Dương 4. Hưng Yên
-ä. Vĩnh Lang 6. Vĩnh Phúc
-Các chữ viết tắt
-% Bông QB. Quần đảo
+1.BắcNinh 3. Hả Nam
+3 Hải Dương 4.Hưng Yên
+# l š.VĩnhLong 6.Vĩnh Phúc
+, | . Các chữ viết tắt
+THÁI L.âiN _ S Sông . QØ. Quần đản
+
+ể"'«-. _I
+
+T
+ÍÉ
+m `
+153 A
+à

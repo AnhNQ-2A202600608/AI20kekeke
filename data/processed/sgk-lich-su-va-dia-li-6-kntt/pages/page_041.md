@@ -7,34 +7,47 @@ source: ocr
 
 # SGK Lịch sử và địa lí 6 KNTT (lớp 6) — Trang 41
 
-1. Điều kiện tự nhiên của Trung Quốc cổ đại
+1. Điều kiện tự nhiên của Trung Quốc cỏ đại
 
-(443) Kếtnốivớiđialí ) Người Trung Quốc đã xây dựng nền văn minh đầu tiên ở lưu
-ệệằẶ_Ầ. vực Hoàng Hà, sau đó mở rộng đến lưu vực Trường Giang
-Hoàng Hà là sông (Dương Tử). Phù sa của hai dòng sông này đã tạo nên đồng
-đài thứ hai Trung bằng Hoa Bắc, Hoa Trung và Hoa Nam rộng lớn, phì nhiêu,
-MP TẾ feu thuận lợi cho phát triển nông nghiệp. Tuy nhiên, lũ lụt do hai
-Trường Giang là con sông cũng đã gây ra nhiều khó khăn cho đời sống của
-sông đài nhât Trung người dân.
+Ở Kêt nôi với địa lí
 
-Quôc và thứ ba thê TÊN. mm. £ TT 8
-giới (6 300km). Thượng nguồn các dòng sông là vùng đât cao, có nhiêu đông co
+Hoảng Hả là sông
+dài thứ hai Trung
+Quôc và thứ sáu
+thê giới (5 464km),
+Trường Giang là
+sông dài nhât Trung
+Quôc và thứ ba thê
+giới (6 300km).
 
+Người Trung Quốc đã xây dựng nền văn minh đầu tiên ở lưu
+vực Hoàng Hà, sau đó mở rộng đến lưu vực Trường Giang
+(Dương Tử). Phù sa của hai dòng sông này đã tạo nên đồng
+bằng Hoa Bắc, Hoa Trung và Hoa Nam rộng lớn, phì nhiêu,
+thuận lợi cho phát triển nông nghiệp. Tuy nhiên, lũ lụt do hai
+con sông cũng đã gây ra nhiều khó khăn cho đời sống của
+người dân.
+
+Thượng nguồn các dòng sông là vùng đắt cao, có nhiều đồng cỏ
 nên chăn nuôi đã phát triển từ sớm.
 
-€QTheo em, Hoàng Hà và Trường Giang đã tác động như thế nào
+0Theo em, Hoàng Hà và Trường Giang đã tác động như thế nào
+
 đến cuộc sống của cư dân Trung Quốc thời cổ đại?
 
-2. Nhà Tản thống nhát và xác lập chế độ phong kiến
+2. Nhà Tân thống nhất và xác lập chế độ phong kiến
 ở Trung Quôc
 
-. Í | ứ
-Thành phố cổ đại | | Hiấy ˆ
+Thành phố cổ đại
 
-Lãnh thổ Trung Quốc |VJ¿ Ta...
-ˆ—. mời nhà Tàn Ly ) P: _HOA ĐỒNG
+thời nhà Tần
 
-Biên giới Trung Quốc j
-ngày nay hư la °Ì
+.~a
+BIỂN
 
-24 Hình 2. Lược đồ Trung Quốc thời nhà Tần
+Lãnh thễ Trung Quốc |V ( .
+e=Ì n ⁄ : HOA ĐỒNG
+
+Biên giới Trung Quốc Ợ Ể
+
+w Hình 2. Lược đồ Trung Quốc thời nhà Tần

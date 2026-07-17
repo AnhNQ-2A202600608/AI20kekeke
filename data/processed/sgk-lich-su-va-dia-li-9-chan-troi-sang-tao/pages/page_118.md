@@ -12,50 +12,52 @@ b) Tình hình kinh tế
 Sau một đợt suy thoái
 ngắn vào đầu những năm
 1990, kinh tế Mỹ nhanh
-chóng hổi phục và tăng
+chóng hồi phục và tăng
 trưởng vững mạnh trong
 thời gian còn lại của thế
-ki XX. Đầu thế ki XXI, mặc
+kỉ XX, Đầu thế kỉ XXI, mặc
 dù chịu ảnh hưởng của
-những đẹt suy thoái trong
+những đợt suy thoái trong
 các năm 2000 - 2003,
-2008 _ 2009; dịch bệnh
+2008 - 2009: dịch bệnh
 Covid-19 (từ năm 2020)
 nhưng kinh tế Mỹ vẫn giữ
 vị trí đứng đầu thế giới.
 
 Hiện nay, các sản phẩm
-của nền kinh tế Mỹ thống
+của nềên kinh tế Mỹ thống
 trị trong các lĩnh vực hàng
 không vũ trụ, dược phẩm,
 công nghệ thông tin, giao
-thông vận tải (tiêu biểu là
+thông vận tải (tiều biểu là
 ô tô điện của hãng Tét-la
-(Tesla)),...
+(Tesla))....
 
-;"
+Ps
 
-=¬a Luyện tập
+Luyện tập
 
-1887 2000 2001
+%
 
-Biểu đồ tốc độ tăng trưởng GDP hãng năm của Mỹ
+1937 zũ 2DU1
+
+Biểu đồ tốc độ tăng trưởng GDP hằng năm của Mỹ
 giai đoạn 1991 - 2021
 
-Niu Oóc vẫn giữ vị trí là trung tâm tài chính hàng đầu của thế giới
+Niu Oóc văn giữ vịi trí là rung tâm tài chính hàng đầu của thế giới
 từ những năm 60 của thế kỉ XX đến nay
 
-Luyện tập - Vận dụng
+Luyện tập - Vận dung
 
-Hãy nêu nhận xét về tốc độ tăng trưởng kinh tế của Liên bang Nga và nước ÀÂÿ giai đoạn
+Hãy nêu nhận xét về tốc độ tăng rướng kinh tê của Liên bang Nga và nước MỸỹ giại đoạn
 
-TUỢI U21.
+n T n
 Vận dụng
 
-Hãy chọn một vấn đè chính trị hoặc kinh lễ của ÁP, Liên bang Nga mà em cho là có
+Hãy chọn một vấn đồ chính ‡ hoặc kinh tế của Mỹ, Liên bang Nga mà em cho là có
 
-ảnh hưởng HIẾU cực đến sự phát triển của hai quốc gia này. Giải thích lí do cho sự lựa chọn
+ảnh bướng tiêu cực đến sự phát triển của hai quốc gia này. Giải thích Íí do cho sự lựa chọn
 
-C111 G01.
+của em.
 
 115

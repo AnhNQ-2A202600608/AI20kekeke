@@ -12,7 +12,7 @@ VŨ MINH GIANG (Tổng Chủ biên phần Lịch sử)
 NGHIÊM ĐÌNH VỲ (Tổng Chủ biên cấp THCS phần Lịch sử)
 TRỊNH ĐÌNH TÙNG (Chủ biên phần Lịch sử)
 
-NGUYÊN NGỌC CƠ - ĐÀO TUẤN THÀNH - HOÀNG THANH TÚ
+NGUYÊN NGỌC CƠ - ĐÀO TUẤN THÀNH - HOÀNG THANH TỦ
 
 ĐÀO NGỌC HÙNG (Tổng Chủ biên kiêm Chủ biên phần Địa lí)
 BÙI THỊ THANH DUNG - PHẠM THỊ THU PHƯƠNG - PHÍ CÔNG VIỆT

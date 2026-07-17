@@ -12,9 +12,9 @@ source: ocr
 
 2. Nêu một số giải pháp được sử dụng để chống thoái hoá đất.
 
-Luuên tập —- Vần dung
+Luuếên tậặp - Văn dụng
 
-C9) Hoàn thành bảng theo mẫu sau vào vở:
+Hoàn thành bảng theo mẫu sau vào vở:
 GIÁ TRỊ SỬ DỤNG CỦA ĐẤT FERALIT VÀ ĐẤT PHÙ SA Ở NƯỚC TA
 
 Nhóm đất Giá trị sử dụng

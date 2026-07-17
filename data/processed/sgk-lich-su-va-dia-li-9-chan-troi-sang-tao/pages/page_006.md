@@ -9,28 +9,28 @@ source: ocr
 
 Lời nói đầu
 
-Cúc em học sinh thãn mến!
+Các em học sinh thðn mền!
 
-Tiếp nỗi sách giáo khoa Lịch sử và Địa lí é, # và 8, sách giáo khoa Lịch sử
-vờ Địa lí 9 bộ sách Chãn trời sắng †qo) giúp các em trang bị cho bản †hãn có mội
-kho tri thức về thế giới đầy màu sắc với những kiễn thức lịch sử - địa lí nà chương
-trĩnh lớp 9 mang lại.
+Tiếp nỗi sách giớo khoa Lịch sử và Địa lí é, 7 và 8, sách giáo khoa Lịch sử
+vờ Địg lí 9 (bộ sách Chãn trời sóng 1ạo) giúp các em †rang bị cho bản thãn có một
+kho tri thức về thế giới đây mðu sắc với những kiến thức lịch sử - địa lí mà chương
+Trình lớp 9 mạng lại.
 
-Phần Lịch sử: gồm 7 chương và 24 bài, giới †hiệU về lịch sử thế giới, lịch sử
-khU vực và lịch sử Việt Narn gắn với cúc gidi đoạn: 1918 — 1945, 1945 — 1991 vũ
-1991 - nay.
+Phần Lịch sử: gồm 7 chương và 24 bời, giới thiệu về lịch sử thế giới, lịch sử
+khu vực v lịch sử Việt Nam gắn với các giai đoạn: 1918 — 1945, 1945 — 199] và
+1991—ngy.
 
-Phần Địa lí: gồm 3 chương và 24 bài, giới thiệu về đặc điểm đãn cư, địa lí
-ngành kinh tế; sự phôn hoá lãnh thổ Việt Nam gỗm các vùng: Trung du và miễn
-núi Bắc Bộ, Đồng bằng sõng Hồng, Bắc Trung Bộ, Duyên hải Nam Trung Bộ,
-Tây Nguyên, Đông Nam Bộ, Đồng bằng sông Cửu Long.
+Phần Địa lí: gồm 3 chương và 24 bồi, giới thiểu về đặc điểm dãn cư, địa lí
+ngành kinh tế; sự phốn hoớ lỡnh thổ Việt Nam gồm các vùng: Trung du và miền
+núi Bắc Bộ, Đồng bằng söng Hỗng, Bắc Trung Bộ, Duyên hỏi Ngm Trung Bộ,
+Tây Nguyễn, Đông Ngm Bộ, Đồng bỗng sống Cửu Long.
 
-Trong chương trình môn Lịch sử và Địa lí ở lớp 9, cúc em sẽ tiếp tục được Tìm
-hiểu về ba chủ đề chung đã học ở lớp Z và 8, đó là: Đô thị: Lịch sử và hiện tại;
-Văn minh châu thổ söng Hồng và sõng Cửu Long; Bảo vệ chủ quyền, cúc quyền
-vũ lợi ích hợp pháp của Việt Nam ở Biển Đông.
+Trong chương Trình mõn Lịch sử và Địa lí ỏ lớp 9, các em sẽ Hếp Tục được Tim
+hiểu về ba chủ đề chung đã học ở lớp 7 và 8, đó là: Đõ thị: Lịch sử và hiến tgi;
+Văn minh chãu thổ sống Hồng và sốông Cửu Long; Bảo về chủ quyền, các quyền
+và lợi ích hợp pháp của Việt Nam ở Biển Đông.
 
-Chúc các em sẽ có những trải nghiệm thật tuyệt vời và khám phú được nhiều
-điều thú vị, bổ ích qua từng bồi học lịch sử và địd lí rong quyển sách nồy.
+Chúc các em sẽ có những trải nghiệm thội tUyết vời và khám phố được nhiều
+điều thú vị, bổ ích qua từng bời học lịch sử và địa lí irong quyền sách nðy.
 
-CÁC TÁC GIÁ
+CÁC TÁC GIẢ

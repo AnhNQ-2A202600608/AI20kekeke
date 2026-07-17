@@ -13,12 +13,12 @@ NGHIÊM ĐÌNH VỲ (Tổng Chủ biên cấp THCS phần Lịch sử)
 
 ĐINH NGỌC BẢO (Chủ biên phần Lịch sử)
 
-PHAN NGỌC HUYỀN - PHẠM THỊ THANH HUYỀN - HOÀNG ANH TUẤN
+PHAN NGỌC HUYỀN - PHAM THỊ THANH HUYỀN - HOÀNG ANH TUẤN
 
-ĐÀO NGỌC HÙNG (Tổng Chủ biên kiêm Chủ biên phần Địa lí)
-VŨ THỊ HẰNG - LÊ HUỲNH - TRẦN THỊ HỒNG MAI - PHÍ CÔNG VIỆT
+ĐÀO NGỌC HÙNG (Tổng Chủ biên kiêm Chủ biên phần Địa l)
+VŨ THỊ HẰNG - LÊ HUỲNH - TRẦN THỊ HỒNG MAI - PHÍ CÔNGVIỆT
 
-LICH SỬ
-và ĐĨA LÍ
+LỊCH SƯ
+vÀ2A LÍ
 
 NHÀ XUẤT BẢN GIÁO DỤC VIỆT NAM

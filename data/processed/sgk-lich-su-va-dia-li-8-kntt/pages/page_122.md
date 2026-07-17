@@ -25,20 +25,23 @@ hình nan quạt, hội tụ tại Việt Trì (Phú Thọ). tỉnh Sơn La
 
 Chế độ nước của hệ thống sông Hồng có hai mùa: mùa lũ bắt đầu từ tháng 6 và
 kết thúc vào tháng 10 phù hợp với mùa mưa, lượng nước mùa lũ chiếm khoảng 75%
-
 tổng lượng nước cả năm; mùa cạn bắt đầu từ tháng 11 và kết thúc vào tháng 5 năm
 sau, lượng nước mùa cạn chỉ chiếm khoảng 25% tổng lượng nước cả năm.
 
 Do mạng lưới sông có dạng nan quạt, nên khi mưa lớn, nước tập trung nhanh, dễ
 gây lũ lụt.
 
-CHỦ GIẢI
-ii Lưu vực hệ thống sông Hồng
--~ Sông + Hỗ
-HÃ NỘI Thủ đỗ
-—-—- Biên giới quốc gia
+~
+TRUNG QUỐC
 
-4ũ Ũ 4ũ 8q 120 1B km
-' mm ————.À.....` “...a
+ki
+
+CHÚ GIẢI
+- Lưu vực hệ thống sông Hồng
+¬~ Sông 1 Hỗ
+HÀNGÔI Thúủ đỗ
+—-=: Biên giới quốc gia
+
+4ũ Ũ 4ũ B 120 180 km
 
 Hình 6.3. Lược đồ lưu vực hệ thống sông Hồng trên lãnh thổ Việt Nam

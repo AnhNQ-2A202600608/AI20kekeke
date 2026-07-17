@@ -7,35 +7,39 @@ source: ocr
 
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 85
 
-S2
-
 2. Cuộc Tiến công chiến lược Đông - Xuân 1953 - 1954 và chiến dịch
 lịch sử Điện Biên Phủ năm 1954
 
-của ' quân Tdnn Điệt Nhi tông cuộc Tiển công g chẩn được Đông — Xuân
+— Dựa vào lược. đồ 16.2, 163 và đhông lừn vong bài, hãy mô tả chiến thắng
+của quân dân Việt MNam trong cuộc Tiền công (?JÍ"ỈtJEéẹ'\Ể1 lược Đàông — Xuân
+1953— 1954 và chiến địch lịch sử Điện Biên Phủ năm 1954.
 
-1953— 1954 và chiến dịch lịch sử Điện Biên Phú năm 1954.
+— Vì sao Điện Biên Phủ trở thành điểm quyết chiền chiến lược của thực dân Pháp #rong
+chiềến tranh ĐĐông Dương?
 
-— Pì sao Điện Biên Phú trở thành điểm quyết chiến chiến lược của thực dân Pháp ong
-chiến tranh Đông Dương?
+m
+kn , ê
+: wỂỊHÀGỄ.Ắ.ỂIỂ"”-'*"N.
 
-`
-gHƯƠNN
+I
+H|IJ
+SƠN-TAV H]
 
-x. . vì UIT
-` AZr @IIÁ GIANẾ «21».
+INIIB]
 
-IRI1BI
+"-7 THANH
 
-“®*2 THANH
+I Hải lMam
 
-H. Hải Nam
+| Vùnglựdovaảcäncứdukiích của Việt Nam. aeme~-x HLiướng tiền công của quản đội Việt Mam ăfflh Mơi Pháp tập trung quản
 
-| Vùng tự do và căn cứ cụ kích của Việt Nam m==> Hướng tiễn sông của quản đội Việt Nam .Í Nai Pháp tập trung quản
+Hướng tiền công của quần Làn kết hợn
+với nuân tinh nguyện Việt Nam
 
-[Vùng quân Pháp tạm chiêm ]———> cúc J/Dhhới em Ti Nam, kết hợ2 ,_._, gian giới quốc gia ngày nay
-@ Những hướng tiễn công chiến lược
+U vùng quân Pháp lạm chiêếm — "=-¬ Biên giới quốc gia ngày nay
+CỊ) Những hướng tiền cõng phiên lượn
 
-của quân đội Việt Nam ==———> Hưởng tiễn cảng của quản Phản
+của quân đôi Việt Nam . Huởớng tiếên cũng của quần Pháp
 
-ẤT? Lược đồ hình thái chiến trường trên các mặt trận Đông - Xuân 1953 ~ 1954
+@ Lược đồ hình thái chiến trường trên các mặt trận Đông - Xuân 1953 — 1954
+2

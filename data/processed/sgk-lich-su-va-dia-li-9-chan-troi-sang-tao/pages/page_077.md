@@ -7,42 +7,40 @@ source: ocr
 
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 77
 
-Học xong bài này, em sẽ:
+C ư x-sasaui. ế „ “"-— — n %
 
-- Giải thích được nguyên nhân bùng nổ
+Học xong bài này, em sẽ: ² Tà Nội, vào lúc 8 giờ 3 phút tối 19— 12—
+
+- Giải thích được nguyên-nhân bùng nổ
+
+- Nhận biết và giải thích được đưỡng lối
+
+494Ó, dèn điện phụt tặt. Đại bác của Vệ ạ1ổc
+guảận từ pháo đời Lông cầm lên. Bầu trời
+tra NVới đó vực Tkhỏi Hửa ngợp trời”. Đó là
+những giờ phút mở đều cho toàn quốc kháng
+
 cuộc kháng chiến toàn quốc chống thực
 dân Pháp xâm lược (1946).
 
-- Nhận biết và giải thích được đường lối
-kháng chiến chống thực dân Pháp xâm
-lược của Đẳng.
+— . G “ôNGG.. i L oä.........
 
-~ Mê tả được những thắng lợi tiêu biểu của
-Việt Nam trên mặt trận quản sự trong
-những năm đầu của cuộc kháng chiến.
+kháng chiến chống thực dân Pháp xâm chiến chông thực dân Pháp xêm lược. Cuộc
 
-—_—_ G Yớn_lJ sIAUÖ.e.e...
+lược của Đảng. kháng chiến đó đã bắt đầều như thể nào và
 
-_— -—- _Ẩ—_— =“““““:
+~ Mô tả được những thắng lợi tiêu biểu của giành được những thắng lợi tiêu biểu nào
+Việt Nam trên mặt trận quân sự trong trong những năm đầu kháng chiến từ năm
+những năm đầu của cuộc kháng chiến. 1946 đến năm 19502
 
-Hà Nội, vào lúc ® giờ 3 phút tôi 19— 12 —
-1946, đèn điện nhụt tăt. Đại bác của Vệ quốc
-quân Từ pháo đài Lũng gâm lên. Bầu trời
-THà Nội do rực. khôi lứa ngợp trời”, Đó là
-những giờ phút mỡ đâu cho toàn quốc kháng
-chiến chống thực dân Pháp xâm lược. Cuộc
-kháng chiến đó đã bắt đầu như thể nào và
-giành được những thẳng lợi tiêu biếu nào
-trong những năm đâu khủng chiến từ năm
-1946 đến năm 19502
+— Trước ngày 19— 12— 19đ6ó, thực ả:m Pháp đổ có những hành động gây
 
-— Trước ngày 19— 12— 1946, thực dân Phản đã có những hành động gây
+CĨỹ.i',lĨIỂ,'Ĩ'I .*f1Ỹ.t1ic* thể nòo? Trong Ji'Ẹ.:J".f, kêu gọi toờn quốc kháng chiến ”, Chủ tịch Hồ Chí Minh
 
-chiến T. thể nào? Trong “ời kêu gọi toàn quốc kháng chiến”, Chủ tịch Hồ Chí Minh
-đã giải thích như thể nào về lí do nhân dân Liệt Nam buộc phải kháng chiến?
+đã giải thích như thể nào về lí do nhân dân Việt Nam buộc plhffl kháng chiến?
 
-— Dựa vào tư liệu 15.1, 15.2 và 15.3, hãy nêu nội dụng đường lỗi kháng chiến chỗng
+— Dựa vào tư liệu 15.1, 152 và 15.3, hãy nêu nội dụng đường lối kháng chiến chồng
+
+z4
 
 thực dân Pháp của Đảng.
-
-74

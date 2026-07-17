@@ -35,28 +35,34 @@ CHƯƠNG 2. XÃ HỘI NGUYÊN THUỶ
 
 Bài 4 Nguồn gốc loài người
 Bài 5 Xã hội nguyên thuỷ
-` Sự chuyển biến và phân hoá
-Bài 6 š in : :
+ˆ Sự chuyển biến và phân hoá
+Bài 6 C n Ể :
 của xã hội nguyên thuỷ
 CHƯƠNG 3. XÃ HỘI CỔ ĐẠI
 Bài 7 Ai Cập và Lưỡng Hà cổ đại
-Bài8 — ẤnĐộcổđại
-: Trung Quốc từ thời cổ đại
-B2. đạnthekjVJ
-Bài10 — HyLạp và La Mã cổ đại
-(HƯƠNG 4. ĐÔNG NAM Á TỪ NHỮNG THẾ KỈ
-TIẾP GIÁP ĐẦU (ÔNG NGUYÊN ĐẾN THẾ KỈ X
-Các quốc gia sơ kì ở
-BH Đông Nam Á
+Bà8 = ẤnĐộcổ đại
+- Trung Quốc từ thời cổ đại
+I gến thếkIVI
+Bài10 w HyLạpvà La Mã cổ đại
+CHƯƠNG 4. ĐÔNG NAM Á TỪ NHỮNG THẾ KỈ
+TIẾP GIÁP ĐẦU CÔNG NGUYÊN ĐẾN THẾ KỈ X
+É (ác quốc gia sơ kì ở
+HUI Đông Nam Á
 Sự hình thành và bước đầu
-Bài 12 phát triển của các vương quốc
+Bài12 phát triển của các vương quốc
 
-phong kiến ởĐông Nam Á (từ
-thế kiVII đến thế kỉ X)
+phong kiến ở Đông Nam Á (từ
+thế kỉ VII đến thế kỉ X)
 
-14
+TRANG
 
-?8
+›
+
+20
+
+24
+
+28
 
 29
 
@@ -66,13 +72,13 @@ thế kiVII đến thế kỉ X)
 
 50
 
-5]
+51
 
 54
 
 MỤC
 
-Bài 13
+Bài13
 
 NỘI DUNG
 
@@ -97,7 +103,7 @@ Bài 19
 
 Bài 20
 
-Nhà nước Văn Lang — Âu Lạc
+Nhà nước Văn Lang - Âu Lạc
 Chính sách cai trị của các
 triều đại phong kiến
 phương Bắc và sự chuyển
@@ -107,7 +113,7 @@ biến của xã hội Âu Lạc
 biểu giành độc lập trước
 thế kỉ X
 
-Cuộc đấu tranh bảo tổn và
+Cuộc đấu tranh bảo tồn và
 phát triển văn hoá dân tộc
 của người Việt
 
@@ -127,7 +133,7 @@ THỂ HIỆN BỀ MẶT TRÁI ĐẤT
 
 Bài 1
 
-Bài 2
+Bài2
 
 Bài 3
 
@@ -138,27 +144,25 @@ Bản đồ. Một số lưới kinh, vĩ
 tuyến. Phương hướng trên
 bản đồ
 
-Tỉ lệ bản đồ. Tính khoảng
+Tí lệ bản đồ. Tính khoảng
 cách thực tế dựa vào tỉ lệ
 bản đồ
 
-TRANG
-
-%6
-
-39
+59
 
 65
 
-7/0
+/0
 
 78
 
+86
+
+%
+
+%
+
 9
-
-95
-
-98
 
 101
 

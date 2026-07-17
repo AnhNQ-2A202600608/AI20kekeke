@@ -7,84 +7,117 @@ source: ocr
 
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 175
 
-Tất lản
-Trung tâm công nghiệp é Trràn Kện
+Trung tâm công nghiệp Ẹịỵg n
 Nhà
 
 Sản xuất vật liệu xây dựng
 
-Sản xuất, chế hiển thực phẩm
+Sản xuất, chế biến thực phẩm
 
 Sản xuất sản phẩm điện tử, máy vi tính
 Dệt, sản xuất trang phục; sản xuất giấy
-Hoá chất, đẳng tàu và thuyền
+Hoắ chất, đáng tàu và thuyền
 
-Luyện kim đen, cơ khí
+Luyện kim đen, cơ khi
 
-Sản xuất ỏ tổ, nhiệt điện
+Sản xuất ở tô, nhiệt điện
 
-CHÚ GIẢI
-lƒ ta
-£ Cây ấn quả
-v Cây thực phẩm
-Ặ. Đậu tưởng
-gỡ Lạc
-se Gia cầm
-f0 Lựn
+Khai thắc than đả, đá vôi xi mắng
 
--“Mận
+Khai thắc nước khoảng, khi tự nhiên
+vùng rừng
 
-T
-Ỷ
+vùng nông làm kết hợp
 
-:1@ @ # €
+vuùng lúa, lợn, gia cẩm
 
-Thú đỏ
+zID8°
 
-San hả
+>”TRUNG QUỐC
 
-Söng
+r.
 
-Hồ
+n |7hái Bình
+
+! CHÚ GIẢI
+ư
+
+_Ổ' Cây ấn quả
+
+ỵ_ Cây thực phẩm
+
+ñ. Đậu tưởng
+
+g8 Lạc
+
+Ẹ Gia cắm
+# Lợn
+
+'ÌẮẺ`Ịl"ụạftu.*›'
+
+#:# Đánh bắt hải sản
+
+tị› Gáng biển
+
+xb| Khu kinh tế ven biển
+
+|ỉl Khu kinh tế cửa khẩu
+
+4h Cảng hãng không quốc tế
+
+Thái Bình
+
+Thú đó
+
+5an hỗ
+
+c
+H
+
+SÔng
+
+Hỗ
 
 Thắng cảnh
 
-Bi sản vần hoá thể giới
+Diĩ sản văn hơä thể giới
 
-Di sản thiên nhiễn thế giới
-Di tích lịch sử cách mạng
+Di sản thiên nhiền thế giới
 
-Khai thắc than đả, đá vôi xi mắng +. Đánh bắt hải sản
-4Ÿ? Căng biển
-Vùng rừng £b| Khu kinh tế ven biển
+:4@ 9 ø %
 
-Vùng nông lâm kết hợp
+Ditichlịch sử cách mạng
 
-=*.~+ Bianiéi hành chính cẩptịnh
+~ + Đianlới hanh chính cậptình
 
-Khai thác nước khoáng, khỉ tự nhiễn =———— Ranh giới vùng
+— Ranh giới vùng n . || ế
+MA-LAI-XE:
 
--¬-—-—' Hiên giới quốc gia
-[H Khu kinh tế cửa khẩu —1— Quếc lộ,tên đường Ø Đảo OB Quảnđảo Cũ. Lảng biển 3. Sống
-Vùng lúa, lợn, gia cảm
+HEU-NÄY£HT1s"
 
-Đường sắt % là
+Ð Đảo QD Quảầnđảo Cs Cảng biển Ø Sốông
 
-4 Cảng hàng không quốc tế 1 Km
+n Biện giới quốc gia
+— 1 — Quốc lỗ, tên đường
 
-Hình 11.4. Bản đổ kinh tế vùng Đồng bằng sông Hồng, năm 2021
+Đường sắt
+
+m
+
+Hình 11.4, Bản đồ kinh tế vùng Đồng bằăng sông Hồng, năm 2021
+
 - Công nghiệp
 
-Dựa vào hình 114 và thông tin trong bài, hãy trình bày sự phát triển và
-phân bô ngành công nghiệp của vùng Đông bằng sông Hồng.
+Dựa vào hình 11.4 và thông tin #rong bài, hãy trình bày sự phát triển và
+phân bố ngành công nghiệp của vùng Đông băng sông Hồng.
 
-Ngành công nghiệp ở vùng Đồng bằng sông Hồng có tốc độ phát triển nhanh trong
+Ngành công nghiệp ở vùng Đồổng bằng sông Hồng có tốc độ phát triển nhanh trong
 những năm gần đây, chiếm khoảng 35% GRDP của vùng (năm 2021).
 
-Cơ cấu ngành công nghiệp của vùng khá đa dạng, trong đó nối bật là sản xuất
-sản phẩm điện tử, máy vi tính (Hà Nội, Hải Phòng, Bắc Ninh,...); sản xuất ô tô (Hải Phòng,
+Cơ cấu ngành công nghiệp của vùng khá đa dạng, trong đó nổi bật là sản xuất
+sản phẩm điện tử, máy vi tính (Hà Nội, Hải Phòng, Bắc Ninh,...}; sản xuất ô tô (Hải Phòng,
 Vĩnh Phúc,...); sản xuất, chế biến thực phẩm (Hà Nội, Hải Dương,...); dệt, sản xuất trang phục
-(Hưng Yên, Nam Định,..); nhiệt điện (Quảng Ninh, Thái Bình,...; khai thác than (Quảng Ninh);
+(Hưng Yên, Nam Định,...); nhiệt diện (Quảng Ninh, Thái Bình,...J; khai thác than (Quảng Ninh);
 sản xuất vật liệu xây dựng (Hải Phòng, Hải Dương,...).
 
 172

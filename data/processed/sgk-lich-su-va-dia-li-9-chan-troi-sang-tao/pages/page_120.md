@@ -9,9 +9,9 @@ source: ocr
 
 Nhật Bản là một trong các trung
 tâm kinh tế - tài chính của thế giới.
-Nền kinh tế của quốc gia này lâm vào
-suy thoái vào cuối thế kỉ XX nhưng
-bắt đầu tăng trưởng trở lại từ năm
+Nền kinh tế của quốc gia này lâãm vào
+suy thoái vào cuối thế kỉĩ XX nhưng
+bắt dầu tăng trưởng trở lại từ năm
 2000 đến nay.
 
 Sau khi trải qua khủng hoảng
@@ -20,59 +20,67 @@ kinh tế Hàn Quốc khôi phục, phát
 triển mạnh và vững chắc.
 
 Do tác động của dịch bệnh
-Covid-19, nên kinh tế Trung Quốc
+Covid-19, nền kinh tế Trung Quốc
 tăng trưởng ở mức thấp, Nhật Bản
 và Hàn Quốc có mức tăng trưởng âm
 vào năm 2020 nhưng nhanh chóng
-phục hổi vào năm 2021.
+phục hồi vào năm 2021.
 
 Hiện nay, chiến lược phát triển
 kinh tế của các nước Đông Bắc Á là tập
-trung vào ngành kinh tế công nghệ
-cao, áp dụng công nghệ xanh - sạch.
+trung vào ngành kinh tế cồng nghệ
+cao, áp dụng công nghệ xanh ~ sạch.
 
 b) Tình hình xã hội
-“
+2
 
-ma ch ah da
+c
+I
+ã
+
+n n nhh bình xổ
 hội Trung Quốc, Nhật Bản, Hàn Quốc
-có điều gì đúng chủ ý? Dựa vào
-tư liệu 22.3, hãy xác định nét đặc trung
-của xã hội Nhật Bản hiện đạt.
+có điều gì đảng chủ ý? Dựa vào
+tưãliệu 22.3. hãy xác cặnh nét đặc rung
+của xã hội MNhật Bản hiện đại.
 
 Nền kinh tế thịnh vượng đã tạo
 ra sự ổn định xã hội, thu nhập của
-người dân tăng nhanh, các chương
-trình phúc lợi được mỡ rộng,... Trong
+người dẫn tăng nhanh, các chương
+trình phúc lợi được mở rộng,.. Trong
 xu thế toàn cầu hoá hiện nay, xã hội
-của các nước Đêng Bắc Á đã chứng
-tô được những giá trị văn hoá truyền
+của các nước Đông Bắc Á dã chứng
+tô dược những giá trị văn hoá truyền
 thống, mang những nét đặc trưng
-riêng của cộng đống.
+riêng của cộng đồng.
 
-(22.1) “Chúng ta (Trung Quốc sẽ thúc đẩy quá trình công
-nghiệp hoáä theo hướng mới và tiễn nhanh hơn để tăng
+a “Chúng ta (Trung Quốc) sẽ thúc đẩy quá trình công
+
+nghiệp hoá theo hướng mới và tiến nhanh hơn để tăng
 cường sức mạnh của Trung Quốc trong sản xuất, chất
-lượng sẵn phẩm, hàng không vũ trụ, giao thông vận tải,
-không gian mạng và phát triển kĩ thuật số, Chúng ta sẽ
+lượng sản phẩm, hàng không vũ tru, giao thông vận tải,
+không gian mạng và phát triển kĩ thuật số. Chúng ta sẽ
 (...) chuyển sang sản xuất cao cấp hơn, thông minh hơn
 và xanh hơn”
+(Báo cáo của Tổng Bí thư Tập Cần Bình
+tại Đại hội XX của Đảng Cộng sản Trung Quốc (2022))
 
-(Báo cáo của Tổng Bí thư Tập Cận Bình
-tại Đại hội XX của Đảng Công sẵn Trung Quốc (2022)
+=#=Trung Duốc: =“Hhật Bắn: =#=Hàn Duốc
 
-=#Trung Huốc =#=Nhật Hẵn —#-Hãn Huấc
-
-222 Biểu đổ tốc độ tăng trưởng GDP hằng năm của Trung
+Biểu đồ tốc độ tăng trưởng GDP hằng năm của Trung
 Quốc, Nhật Bản, Hàn Quốc giai đoạn 1991 - 2021
 
-25304 (t2: 14/2
+['m(rra
 
-(22.3) Xen-đai Sendai), Nhật Bản ngày 22 - 3 - 2011
-Tấm bảng trong hình “Vuilòng xếp hàng ở cuối,
+-. z
+
+ổ Xen-đai (&eendal), Nhật Bản ngày 22 -3-2011
+
+lấm bảng trong hình “Vui lòng xếp hàng ở cuối,
+
 Một số sản phẩm có thể không còn khi đến lượt bạn?
 Hình ảnh người Nhật trật tự và kiên nhẫn xếp hàng
-nhận hàng cứu trợ sau trận động đất tháng 3 - 2011
-làm cả thế giới khâm phục,
+nhận hàng cứu trợ sau trận động đất tháng 3 — 2011
+làm cả thế giới khẳm phục.
 
-l1?
+lỊ7

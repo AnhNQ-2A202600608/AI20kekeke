@@ -7,66 +7,42 @@ source: ocr
 
 # SGK Lịch sử và địa lí 7 KNTT (lớp 7) — Trang 141
 
--_ Chí duy |
+BIẾN \
+xÁC-GÁT
 
-ũ
+Y —O BIEN BÁCLXÌICH ĐÀP
+¬w.— 72
+` ì
 
-L=
+\
+\
 
-Ỷ
+-ÐQnh
+ll
+a. tanr':.lllằf"n'Ìuu.ửofcìỆ`
 
-140
+|
 
-ham
+a Ế'I'Ểf:'*'ỉìĩĩ'll'Ĩlỉfrĩm
 
-Ẳ
+\
 
-200 500 1000 2
+0 200 5CIZl'†+1`n'l!!lZi2Ề3IZì1IlIỉl'5xCllZl'lZl
 
-¡6 Điểm độ cao
-——* Dòng biển nóng
-——> Dòng biển lạnh
-
-Đải nguyễn
-
-Rừng lá kim, tai-ga
-Rừng cận nhiệt đới
-Rừng lá rộng
-Rừng nhiệt đới ẩm
-Thảo nguyên
-Rừng thưa, xa van
-
-3000 35000
-
-"neoltmrễ=-r
-
-Trên 5000 m
-
-Băng tuyết
-Hoang mạc
-
-Dầu mỏ
-
-Khí tự nhiên
-Than đá
-Man-gan
-Đồng
-
-Chỉ
-
-Vàng
-
-Sắt
-
-\ HỠT-VUN
-
-[NH _
-
-Th—“#Vẻ g/ÉN pÁc | xicH ĐC
-—==——
-E Í
-
-0 680 1360 2040 2720km
-——.ẦỔỐSÀ... ` =—
+Trên 5 000 m
+4699 - Điểm độ cao - Băng tuyết
+——* Dòng biển nóng ~ Hoang mạc
+—= Dòng biển lạnh Ử Dầu mỏ
+u - Đải nguyên n Khi tự nhiên
+Hừnglákim,tai-ga % Than đá
+Rừngcậnnhiệtđới sø Man-gan
+Rừng lá rộng . Đồng
+Rừngnhiệtđớiẩm © Chỉ
+Thảo nguyên © vàng
+;j Rừngthưa,xavan A đSắt
+680 Ũ B680 13602040 2720km
+| t H NS MÄ ( - MMI
 
 Hình 1. Bản đồ tự nhiên châu Mỹ
+
+140

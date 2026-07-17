@@ -7,7 +7,8 @@ source: ocr
 
 # SGK LỊCH SỬ VÀ ĐỊA LÍ 8 KNTT (lớp 8) — Trang 137
 
-104” 10B”
-100 ũ 1ñũ z0 300 4ñ km
+1047 L: -
+100 ũ 100 H] 300 400 km
+m U m k l +kÒ|øòoĐÖ l
 
-Hình 9.3. Bản đổ các nhóm đất chính ở Việt Nam
+Hình 9.3. Bản đồ các nhóm đất chính ở Việt Nam

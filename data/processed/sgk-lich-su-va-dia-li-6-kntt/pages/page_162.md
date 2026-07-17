@@ -7,40 +7,47 @@ source: ocr
 
 # SGK Lịch sử và địa lí 6 KNTT (lớp 6) — Trang 162
 
-2. Nước ngàm (nước dưới đất)
-Nước ngâm là nước năm trong tâng chứa nước thường
-xuyên dưới bề mặt đất. Nước ngầm được tạo nên chủ Nước ngâm từ xa xưa được
-yếu bởi nước mưa, nước sông, hỏ,... thấm xuống đất. con người khai thác đê sử
+2. Nước ngầm (nước dưới đất) |
+Nước ngâm là nước năm trongtâng chứa nước thường
+
+xuyên dưới bề mặt đất. Nước ngằm được tạo nênchủ . Nước ngâm từ xa xưa được
+
+& a , E ˆ ˆ £ £ 4 r : 1 Ẩ sẽ
+yếu bởi nước mưa, nước sông, hồ,...thắmxuống đắt.. con người khai thác đề sử
 dụng trong sinh hoạt dưới
-Lượng nước ngàm nhiều hay ít, mực nước ngầm nông dạng các giếng đào.
+
+Lượng nước ngằm nhiều hay ít, mực nước ngam nông dạng các giêng đào.
 
 hay sâu phụ thuộc vào địa hình, nguồn cung cấp nước
-và lượng bốc hơi,...
+và lượng bóc hơi,...
 
-Nước ngầm là nguồn cung cấp nước sinh hoạt và
-nước tưới quan trọng trên thế giới. Nước ngầm góp
-phần ôn định dòng chảy của sông ngòi; đồng thời, có
+Nước ngằm là nguồn cung cấp nước sinh hoạt và
+nước tưới quan trọng trên thế giới. Nước ngằm góp
+phần ồn định dòng chảy của sông ngòi; đồng thời, có
 định các lớp đất đá bên trên, ngăn chặn sự sụt lún.
 
-Hị Thị "lì hh
-hh lu NN IỦ
-M h
+ẢG
+T m l i l
+m l n…i m n
 
-Ù Ì ìM.! TƯ YNN
-hà HP ng `
-H JNN N | lÌ, hHÌT
+Lh
+l HN i L
+t.'H I,ỵH ìHlanH HI.JI
 
-Ngắm
-— :
+IUU U] su’u…›q
+Ngâm
 
-Tâng'thẩm 'nưóc
+-:IId :
 
-Tâng nước ngâm
+Tâng thẩm Tnước Ea
 
-Tâng.không thâm nước
+Tầng nước ngầm
 
-Hình 3. Sơ đồ sự hình thành nước ngâm
+Tâng/không!thấm‡nước
 
-Q 1. Dựa vào hình 3, em hãy cho biết nước ngầm được hình thành như thế nào.
+Hình 3. Sơ đồ sự hình thành nước ngầm
+
+@ 1. Dựa vào hình 3, em hãy cho biết nước ngằm được hình thành như thế nào.
 2. Nước ngằm chủ yếu được sử dụng vào mục đích gì?
+
 3. Nêu một số biện pháp sử dụng hợp lí và bảo vệ nước ngầm.

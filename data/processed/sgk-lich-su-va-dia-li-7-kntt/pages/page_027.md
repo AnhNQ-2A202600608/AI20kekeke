@@ -9,15 +9,15 @@ source: ocr
 
 © Su phát triển kinh tế thời Minh - Thanh
 
-Thời Minh - Thanh, nông nghiệp có những bước tiễn về kĩ thuật gieo trồng, diện
-tich trồng trọt vượt xa thời kì trước, sản lượng lương thực tăng nhiều,...
+Thời Minh - Thanh, nông nghiệp có những bước tiền về kĩ thuật gieo trồng, diện
+tích trồng trọt vượt xa thời kỉ trước, sản lượng lương thực tăng nhiều,...
 
 Về thủ công nghiệp, đã hình thành những xưởng thủ công tương đối lớn, thuê
 nhiều nhân công và sản phẩm rất đa dạng.
 
-Nghề làm đổ sứ đạt đến độ tinh xảo, với những sản phẩm nỗi tiếng (đồ sứ
+Nghề làm đồ sứ đạt đến độ tinh xảo, với những sản phẩm nổi tiếng (đồ sứ
 Giang Tây,...). Nhiều xưởng dệt lớn, chuyên môn hoá cao xuất hiện ở Tô Châu, Tùng
-Giang,... Các xưởng đóng tàu đã đóng được những loại thuyễn lớn.
+Giang,... Các xưởng đóng tàu đã đóng được những loại thuyền lớn.
 
 Em có biết?
 
@@ -32,16 +32,16 @@ khác nhau, được miêu tả là
 gương, mỏng như giấy và
 vang như chuông”.
 
-Hình 2. Đồ gỗm men xanh thời Minh
+Hình 2. Đỏ gồm men xanh thời Minh
 
-Về thương nghiệp, nhiều thành thị trở nên phổn thịnh như Bắc Kinh, Nam Kinh,...
+Về thương nghiệp, nhiều thành thị trở nên phồn thịnh như Bắc Kinh, Nam Kinh,...
 
-Nhiều thương cảng lớn như Quảng Châu, Phúc Kiến,... đã trở thành những trung
-tâm buôn bán sằm uất - nơi giao thương với các nước Đông Nam Á, Án Độ, Ba Tư.,...
+Nhiều thương cảng lớn như Quảng Châu, Phúc Kiến.... đã trở thành những trung
+tâm buôn bán sằm uất — nơi giao thương với các nước Đông Nam Á, Án Độ, Ba Tư,...
 
-Như thế, đến thời Minh - Thanh, mầm mồng kinh tế tư bản chủ nghĩa đã xuất
-hiện nhưng còn nhỏ bé, chưa đủ sức chỉ phôi mạnh mẽ đồi với nên kinh tê — xã hội
+Như thế, đến thời Minh - Thanh, mầm móng kinh tế tư bản chủ nghĩa đã xuất
+hiện nhưng còn nhỏ bé, chưa đủ sức chỉ phôi mạnh mẽ đồôi với nên kinh tê — xã hội
 Trung Quốc.
 
-Hình 3. Bức tranh nồi tiếng Thanh minh thượng hà đô __
-miều tả sự phát triên sâm uất của các thành thị ở Trùng Quỗc
+Hình 3. Bức tranh nổi tiềng Thanh minh thượng hà đồ .
+miều tả sự phát triển sâm uât của các thành thị ở Trung Quôc

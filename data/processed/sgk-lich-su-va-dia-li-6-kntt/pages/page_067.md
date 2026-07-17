@@ -7,36 +7,23 @@ source: ocr
 
 # SGK Lịch sử và địa lí 6 KNTT (lớp 6) — Trang 67
 
-- QUẬN GIAO CHÍ
-lu sớu
+Ị _ GIAO CHÂU
+_ (Thứ sử người Hán)
 
-HUYỆN _
-(Huyện lệnh người Hán).
-Hình 1. Sơ đồ tổ chức ¬ "
-chính quyền đô hộ của
-nhà Hán ở nước ta từ sau
-khởi nghĩa Hai Bà Trưng}>
+“ QUẬNGIAOCHỈ“QUẬNCỬUCHÂN QUẬNNHẬTNAM
+(Thái thú người Hán) (TháthúngườiHán) (Tháithú người Hán)
+HUYỆN - HUYỆN HUYỆN
+(HuyệnlệnhngườiHán) (Huyệnlệnh người Hán) (Huyện lệnh người Hán)
+Hình 1. Sơ đồ tổ chức I l ' i : . 'l
+chính quyền đô hộ của ; LÀN G# XÃ Ẵ a Ư\N Cu,XÃ - ' Ư\NG,XÂ s
 
-(Hào trưởng người Việt).
+nhà Hán ở nước ta từ sau m nn . I G 00I nuye Gu N U uv u
+khởi nghĩa Hai Bà Dưng› (Hào trưởng người Việt). ÊI:là_otmỡngngườn\ủèt) ửlàgtmởngịngườn Việt)
 
-#Ñ - - Trị sở của nhà Đường
+# ỌTri sở của nhà Đường
 GIAO CHÂU Tên châu
 
-Biên giới quốc gia ngày nay
+¬ee=: Biên giới quốc gia ngày nay
 
-—: —=-—-
-
-4> Hình 2. Lược đồ hành chính nước ta thời thuộc Đường
-
+. Hình 2. Lược đồ hành chính nước ta thời thuộc Đường
 66
-
-_ QUẬN CỬU CHÂN _
-(Thái thú người Hán)
-1
-(Hào trưởng người Việt)
-
-QUẬN NHẬT NAM Í
-
-(Hào trưởng người Việt)
-
-BIÊN ĐÔNG

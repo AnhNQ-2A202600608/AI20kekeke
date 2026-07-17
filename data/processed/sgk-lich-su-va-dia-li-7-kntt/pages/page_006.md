@@ -9,43 +9,45 @@ source: ocr
 
 HƯỚNG DẪN SỬ DỤNG SÁCH
 
-ở
-
 ĐÔNG NAM Á
+
 TỪ NỦA SAU
-THẾERỈX _
-ĐẾN NỦA ĐẦU
-THẾ KỈ XVI
+THẾ KỈ X
 
-thính đạt trang ai đoạn bắp: Eiee.
+ĐẾN NỬA ĐẦU
 
-Trang chương nây. eri sẽ được lớn đưếu
-
-ø Củc vương quốc phang tuần Bông Nam Á.
-[lừ nửa sau thệ kỉ x đến nửa đều thể kệ ZVI]
-
-» Mương quốc Lo
-
-« Vưỡng quốc Cam-pu.chia
-
-Với nàn King kính lỗ nồng nghiệp kia
-
-về văn hoà Mặt khác.
-
-những ảnh hưởng lử văn lxod Án Đệ, Trưng
-Quậc lhông ra nưá bình gan lưu ngay từ
-thởi cổ đai cảng lắm gia te sự kết dính
-trong khu vực. Những Erảnh tựu đại được.
-khoảng tứ thể kí Vil đến thể kỉ X vừa là
-
-tơ Bố, ưừa l4 động lực để các vương quốc
-In Bếp tục hoàn thiện và phút triển
+THỂẾ KĨ XVI
 
 nhận thức.
 
+với nên bìng kinh tả nông nghiện kia
+mước, các quốc gia Đông Mam A cố nhiều
+mét hrorg] động vẻ văn hnả höặi khác.
+những dr hướng lừ văn hoá n Độ, Trưng
+(QUuốc IhôrgT ua quá tirnh geøg lưu ngay lử
+thới cỗ Gại căng làm gia tàng sự kết dănh
+Irong) khu vực. Mhững Eidri lựu đại được
+Irorg; khoảng t È kí vN đến Hỗ kï X vứa là
+Dữ Bở, vữa 4 đng hực để các wonig quốc
+phong kiến Bến tục hoàn Hưện và phát triển
+
+lhyh đạt rong gyei đoạn Bếp #ien,
+
+Trong chương náy, eri sẽ được lìm hiểu
+. Các vương quảc phòng hiấn Ham Á
+[đừ nựa sau !hỗ kỉ X đến nửa đầu thể ký x1V ]
+
+- Vương quốc Lào
+
+. WVương quốc Cam-puichis
+
+59I đoạn Fênh I4nh v gời| triểm
+vu củu các vương quớc zhang Biển
+=-. s
+
 Mở đầu:
 Xác định nhiệm vụ,
-vân đề học tập học
+vấn đề học tập học
 sinh cần giải quyết;
 kết nối với những
 điều học sinh đã
@@ -57,72 +59,65 @@ duy, tạo hứng thú
 Hình thành
 kiến thức mới:
 Với các nội dung
-(kênh hỉnh, kênh
+(kênh hình, kênh
 chữ, hệ thống câu
 hỏi) thông qua các
 hoạt động học tập
 giúp học sinh khai
-thác khám phá
+thác, khám phá
 kiến thức mới.
 
->> BẢN ĐỎ CHÍNH TRỊ CHẪU Á.
+II..!'ìL_!'bJ[!`:ỉPỂĨIf.'J1²IÍI\“ÍH'Ị'Iì'.ỊI'J]EI!ỂJ..II.!Ễ...
+GCÁC KHU VỤC CỦA CHÂU Á
 
-CÁC KHU VỤC CỦA CHÂU Á
+p Học xưng luìi Mẫy, enH kế:
+* JMắc dịnh dược trên hận đổ dhính trị các khu vuc Cửa chăn Á,
+s rn h-ủp L1m_ư. đặc diểm L nhiền của truô4 lIrông, Các khu vht ứguu A
 
-»> Hạc xứng laải My, em sết
-* - Xác (llnh được trên bản đã chính §rị các lehii is £ủa chăn Á.,
-Tần" Hảy dư đặc điểm IỤ nll*n của ttội trông Các kHIM vị d clúu Á
+. Thiên nhiễn chấu Á ghần hơa võ cứng đa dang: hỗi lihu pưC của chấu Á In
+cỗ cánh sắc hiển nhiền khác nhau, đhầu để ten nên những nẻi năng bêM củ
+hừmg khu vực
 
-® Thiên nhiện châu Á phân hoả võ củng đa dang. Mỗi hhụ vực của châu Ä lạ
-&ỗ cảnh sắ: Miền nhiên khắc nhau, điều đá tạn nên những nét riêng biệt của
-tửng khi vựe
+EPhâu Ä cõ những khú vute năo? Máu hiểu biết của em tvẻ một khu vừc ở
+nhẫu Ä
 
-Châu Ả ca những khu tuc nản? Nấu hiểu biết của em tê một khu ưực d
-châu Ä
+#Ø Bản đỏ chính trị châảu Ä
 
-Bản đỗ chỉnh trị châu Ä
-
-Hiện nay, chấu Ả cả 48 quắc gia và vùng lãnh thổ với nhiều thẻ chế chỉnh 1rị
+Hiện nay, chấu Ả có 49 quắc gia và vlng lãnh thổ với nhiều thể chế chính trị
 khác nhau
 
-Trên bản đề chỉnh trị, châu Ä được phản chịa thành sâu khu vực.
-CÁC KHU VỰC CỦA GHẤU Á
+Trên bán đủ chính trị, chấu Á được phần chia thánh sầu khu vực.
+CÁC KHU VỰC CÚA GHU Á
 
-ác quốc gia và vùng lãnh thả
+Các quốc gia và vùng lãnh thổ
 
-Khu vực:
+BắcÁ = Các vùng Tây Xi-bia. Trung Xi-Eia, Đông xXi-bia cửa Mna
+! .† NHRHUET GC VƯC: HHH", EC --HHHHON -HS HƯ HEEEEOEOEGGRIEEE
 
-Bắc Á Các vùng Tây Xi-bia. Trung Xi-báa, Đềng Xi-hia của Nga
+| CUa-dân-xtan, L-dr-bð-kĩxiam, Tâ4-g-ki-xian, Tuôc- ê- m-xtan, CLrf-gu-sarn
+¡A-rập Xê-út, l-rắc, Ca-ta, Gức Tiểu vương quốc A-rập thống nhất (LIÁE)
+Ham Ba-ranh, Cũ-nét, Ô-man, Yê-men, Xii, Li-năng, Glode-đa-m,
 
-(Trung À Eadắc-xian, LE-dd-bä-kisian, Tải-g-ki-xEan, Tuồc-m@-ri-xian, Cư-ttr-gu=kEerr
+| ựa-Le-nlln. I-xfa-en, Thả Mhĩ Ký, Áo-mẽ-ni-B, A-đếp-ba|-gian, Gru-dh-a
 
-_ _&-rập Xé-ut, l-rắc, Ca-ta, Gác Tiểu vương quốc A-rập thông nhật (AE)
-hanA - Ba-ranh, Cô-nẻt, Ö-man, Yê-men, Äi-ri, Li-bãng, Giaỏs-đa-ni,
-| |» la-xtin, Í-xfa-en. Thẻ Nhĩ Ký, Ảc-mẻ-ni-a, A-đêc-bal-giaa, Gru-di-a
+. Án Đạ, Fa-ki-xian, Ảp-ga-ni-xian, Nö-pạn, Eurtan, Băng-la-ốt,
+. xm Lar-ca, Man-đi-vớ, I-ran
 
-Ị
-‡
-+
-Í
+ủ ảngÁ - Mếng Cỗ, Trung Guốc, Đải Loan [Trung Duốc), Triễu Tiên, Hán Quốc,
+g ; Nhật Bản
 
-_ Ân Độ, Pa-ki-xian, Ảp-ga-ni-tam., Nö-pan, Bu-tan, Băng-Ia-Gõt,
-ri Lar-ca. Man-di-wở, l-ran
+LĐăng _ Việt MHam, Láo, Gam-pischia, Thái Lan, kia-lai-xi-a, X -ga-pö, kir-arr-rha,
+Mam In-đó-r&=xi=a, Phi-lip-pin, Eru-näy, Đóng TI-g:
 
-Đồng Ả Mông Dỏ, Trung Quốc, Bái Loan [Trung Quốc], Triểu Tiên. Fian Quắc,
-kẻ ,Nhã t Hắn
+Mam Á
 
-Nam Ä
+Trình đề phảt triển của các nước ở chẫu Á rắt khác nhau, nhưng phần nhiều là các
+nước đang phả! triển, Tịnh hĩnh phát triển kinh tế — xã hội của chấu À trung những
+năm qua có nhiều chuyển biển tích Gưc.
 
-.Bảng lụa Mam. Láa, Cam-pu-cháaä, Thải Lan, Ma-lai-xi-4, Xin-ga-pö, Mli-ari-rmia.
--Mam Ả In-đỏ-n#-xi-a, Phi-lip-pirt, Bru-nãy, Máng Tim.
+I>i-à|: ñịnh cðc kHu UU rửa chấu Á lrêm hán đ hiPi1
 
-Trinh độ phát triên của các nước ở chấu À rất khác nhaơ, nhưng phần nhiều là các
-nước đang phảt triển, Tình hinh phát triển kinh lễ — xã hồi của châu Ä trang những
-trảm qua có nhiều chuyển biển tích cực.
-
-BẰ x&eaenh c< khu vụn rửa nhất! À |rên thản đổ B4ff0171
-
-TR
+LJ.i
 
 Trang mở đầu chương:
 
@@ -131,7 +126,7 @@ của chương với những hình
 ảnh có tính gợi mở, định hướng
 
 Mục tiêu bài học:
-Nhắn mạnh những
+Nhấn mạnh những
 yêu cầu học sinh
-cần đạt được sau
+cằn đạt được sau
 khi học xong bài học.

@@ -7,11 +7,23 @@ source: ocr
 
 # SGK LỊCH SỬ VÀ ĐỊA LÍ 8 KNTT (lớp 8) — Trang 116
 
-BẢN (Hưởng 4 day và tác suấj.
-_—=—*>~ Tửũ/1đẳn1 cơnäalháng
+— Gió Tây khó nóng
+BÃO (Hướng đ chuyển và khn muảt)
+—<==‡> - Từ 0,3 đến ! cơn bãoNháng
 
-=7” Từ1din13cơn bä6fhúng
+—-7 - Từ \ đẫn 13 cơs bãøháng
+ỀỂ- Từ 1,3 đẫn 1,7 c bên/Thăng
+ÁC kHÉM KHÍ HáU
 
-Hình 4.1. Bản đổ khí hậu Việt Nam
+Miễn khí hậu phía Bắc.
+
+Miễn khí h§u phía Ngm:
+
+Ranh giới miễn khí hậu
+
+&=s
+Thủ Gỗ
+
+Hình 4.1. Bản đổ khi hậu Việt Nam
 
 Dựa vào thông tin mục c và hình 4.1, hãy trình bày đặc điểm gió mùa của khí hậu Việt Nam.

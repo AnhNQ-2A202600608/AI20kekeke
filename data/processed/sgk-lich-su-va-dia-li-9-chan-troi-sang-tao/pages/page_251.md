@@ -7,39 +7,39 @@ source: ocr
 
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 251
 
-Nhàxuất bản Giáo dục Việt Nưưu xin trân trọng CẬH ơn
-các túc giả có tác phẩm, tư liệu được sử dụng, tích đẫm
-trong cuồn sách này.
+Nhà xuất bản Giáo dục Việt Num xin trên trọng cũm ơn
+các tác giả có c phẩm, tt liệu điược S dựng, trícH dân
+trong cuồn sách tày.
 
 Chịu trách nhiệm xuất bản:
-Tổng Giám đốc HOÀNG LÊ BÁCH
+R'Ềng Giám đốc HOÀNG LÊ BÁCH
 
 Chịu trách nhiệm nội dung:
-Tổng biên tập PHẠM VĨNH THÁI
+Tổng biên tập PHAM VĨNH THÁI
 
-Biên tập nội dung: ĐỖ XUÂN GIANG —~ NGUYÊN NGỌC THẠNH
+Biên tập nội dung: ĐỒ XUÂN GIANG —- NGUYÊN NGỌC THẠNH
 
-Thiết kế sách: NGUYÊN THỊ CÚC PHƯƠNG —- ĐẶNG NGỌC HÀ
+Thiết kế sách: NGUYÊN THỊ CÚC PHƯƠNG — ĐẶNG NGỌC HÀ
 
-Trình bày bia: TRÀN DUY THANH — TỐNG THANH THẢO
+Trình bày bìa: TRÀN DUY THANH — TỔNG THANH THẢO
 
-Xây dựng và biên vẽ bản đồ HỨA HOÀNG HUÉ — ĐỊNH NGUYÊNANH TUẦN —TẠ ĐỨC HIẾU
-Sửa bản in: ĐỖ XUÂN GIANG — NGUYÊN NGỌC THANH
+Xây dựng và biên vẽ bản đồi HỨA HOÀNG HUẾ — ĐỊNH NGUYÊNANH TUẦN — TẠ ĐỨC HIÉU
+Sửa bản in: ĐỒ XUÂN GIANG — NGUYÊN NGỌC THAẠNH
 
-Chế bản: CÔNG TY CỎ PHẢN DỊCH VỤ XUẤT BẢN GIÁO DỤC GIA ĐỊNH
+Chế bản: CÔNG TY CÓ PHẢN DỊCH VỤ XUẤT BẢN GIÁO DỤC GIÁ ĐỊNH
 
-Bản quyền ® (2023) thuộc Nhà xuất bản Giáo dục Việt Nam.
+Bản quyền © (2023) thuộc Nhà xuất bản Giáo dục Việt Nam.
 
-Xuất bản phẩm đã đăng kí quyền tác giả. Tất cả các phần của nội dung cuốn sách này
-đều không được sao chép, lưu trữ, chuyên thẻ dưới bất kì hình thức nào khi chưa có sự
+Xuất bản phẩm đã đăng kí quyền tác giả. Tắt cả các phần của nội dung cuốn sách này
+đều không được sao chép, lưu trữ, chuyền thể dưới bắt kỉ hình thức nào khi chưa có sự
 cho phép bằng văn bản của Nhà xuất bản Giáo dục Việt Nam.
 
 LỊCH SỬ VÀ ĐỊA LÍ 9 (Chân trời sáng tạo)
 
-Mã số:
+Mã sô:
 
-Số QĐÐXB.......... ngày .... tháng.... năm 20...
-In xong và nộp lưu chiêu tháng ....năm 20....
+Số QĐXR:........ ngày .... tháng.... nắm 20...
+In xong và nộp lưu chiều tháng ....năm 20....
 
 Mã số ISBN:
 

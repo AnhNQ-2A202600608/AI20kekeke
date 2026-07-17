@@ -7,120 +7,255 @@ source: ocr
 
 # SGK Lịch sử và địa lí 7 KNTT (lớp 7) — Trang 180
 
-BẢNG PHIÊN ÂM PHÂN LỊCH SỬ
+BẢNG PHIÊN ÂM PHẦN LỊCH SỬ
 
-A-co-ba Akbar
-|Ang-eoVát — |AngkorWai
-9.178
+>
+S
+m
+m
+I
 
-am JAhems — |to.t7
-Ä Rập ật T69
+S.3:,52,35
+3. 59 5:
 
-Bà La Môn 32
-Ba-bi-lon 171
-nay — [8mm lap ——]
-Bwn — Jemmm | — —]
-B c====E. ` L
+L<
+ng-co Vát 4,35.41,43
+ng-giô Xắc-xông 173
 
-ñ Christopher |8, 14, 15, 167,
-lc-Mác — [KmMam |2 — —|
+-thay-a Autthaya
+Rập
 
-3,34, 35,
-Cam-pu-chia Cambodia 36, 37, 38,
-40-43, 93
+Bmunel - |
+20
+C
+Christopher
+Columbus
+Karl Marx
+Calicut
 
-lcspua — JKmm jp —— —
-166, 187
+ẫh
+'
+m
+a
+J
+Eii
+m
+nộ
 
-4,35, 41, 43,
-Chăm-pa Champa s. s S 70,
-90-94
+b
+¬
+&
 
-Chao Phray-a Chao Phraya |35, 36, 43
-Cô-péc-ních 20, 22
+Ắng-co
 
-Dane jg '
+ỉl
 
-Ăng-co
+ng-co Thom
+
+T*
+
+ca c | eœ |u | +
+LeMi Lưi
+
+H
+
+Lưii
+
+1, 166
+
+=
 
 B. Đi-a-xơ
+Bả La Môn
+Ba-bi-lon
 
-Đan-tê
+= | G3 | —
 
-Ba —— [ẩm —”
-hotê
-lổ
+¬JI|F2| +
 
--ca-nô Elcano
+Phờng l
+=¬
+Ơ
 
-2)
+Ba-ran
 
-gai
-ôn Ki-
-
-œ3
+I
+¬
 
 =
-c
-h
-( ị
-& s
+ư
 
-leaile — ]Jeae — [ao
-leam+s — [@muk —
+Ba-ray
+Bổ-lô-na
+Boóc-nê-ô
 
-i
-leeeman |@mman
-lSiemsaiem|¡
+muẫu
+Lưa]
 
-Gi -lem
+Lưài
+Ơ
 
-+>| œ h
-h|G =)
-G3 IS)
-¬ mð
+Bru-nây
 
-ba
-—_
-=
+Ơ
 
-erusalem
-Giê-su dJesus
+løu l ư sĩ n hÖ
+l =I
+==
 
-ễ-ru-sa
-23, 29, 30,
+8,14,15, 187,
+168, 169
+
+(3
+(
+v
+m i
+=¡
+ĩ
+
+s bô
+
+C. Mác
+Ca-li-cút
+
+mukn
+n5
+
+LÊn
+3,34, 35,
+356,37.38.
+
+Cam-pu-chia Cambodia
+
+Ca-pu-át Kapuat
+Caravel
+
+Caribe
+
+a-ra-ven
+Ca-ri-bê
+
+166, 167
+68
+
+4,35.41,43,
+58, 64.69. 70,
+74,84,88,
+90-94
+
+35, 36, 43
+
+20, 22
+
+== GỠ
+Le ]
+
+Chăm-pa Champa
+
+Chao Phraya
+
+OIO O
+ii
+. Ø
+Ó U
+5
+~ | n
+ị<
+lửi
+
+Copernicus
+
+Dane — |9 - J
+
+ỉ`
+n
+|
+
+Davd SS1D2
+
+Đôn Kino t
+
+ÐĐa-vit
+
+3. 29. 30-33
+3. 20
+
+L
+
+Lưài
+Laai
+
+171
+169
+
+Garie — |emhe |[2
+Jean Calvin
+
+EH
+E
+
+23,29.30,
+52 33
+
 Johann
-Giô-han Gớt Wolfgangvon |32
+Wolgangvon |32
 Goethe
 
-Haosa
-ăm-lét
+Hác-sa Hacsa
 
-_—
-_-
+12
+ìng
+n
 
-Hn-đu
+In-đô-nê-xi-a ndonesia 6-36. 168
+I-ra-oa-đi N ]
 
-8.38, 169
-5.36
+1Ô Tả T. 9
+27.173,174
 
-27, 173, 174
-==......
-Ke-đa
-Kha-giurahô |Khajuraho |32
+Kẽda
+Kha-giu-ra-hô Khajuraho
 
-c3 | — h3
-€| ca
-_=
+=¬
+n5
+n5
 
-©ð | œ | Rg
-h | có
-Gò
+Cỡ | hở
+ơI—
+Lưaï
+h_4
 
+Ỉ
+nh5
+
+_
+—
 =
 
-2,43, 94
+Giô-han Gớt
 
-œ
+E]M
+==
+
+cð | »
+i
+G3
+=
+
+Lầ
+P5
+l
+C
+£
+
+3
+
+Lưa]
+
+Có | C C
+mœ|I|m
+
+GỠ
+u
 
 179

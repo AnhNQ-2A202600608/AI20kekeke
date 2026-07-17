@@ -7,36 +7,58 @@ source: ocr
 
 # SGK Lịch sử và địa lí 6 KNTT (lớp 6) — Trang 23
 
-TRUNG QUỐC
+n = v CẢM-PU-HIA
 
-` ' đảo Bạch sói
-D ¬ —_ 2° LôngVT -
-: , \ ( Lô ỉ z \
-IOa LỌC sŠ r. & k
-uỳnh Văn 5` : ý
-` ÑŠ . đảo Hải Nam ¡
-N ) .
-Bảu Tró
-.đảo Côn Cỏ T
-3 sân Š
-^ ề
-ø
-co `
-——rm (TP. oố :
-Á Di chỉ đô đá cũ \
-A Nở k¿ đồ đố mới ; \ << đão Lý Sơn &œ
-H1 Di chỉ đồ đồng N _ #8] Binh Châu
-¬-—- Biên giới quốc gia =
-ngày nay t
-—=~.. . . 3N ©
-ïXóm Cồn vÝ
-Ñy¬n đảo Phú Quỷ
-Si dao Giỏng Lớn
-Phú Quôc'.
-h GP
-« __e^ \W
-⁄ ¬ vAÓ
-(nh +
-" ý ặ:
+TRUNG QUỐÔC
 
-4> Hình 4. Lược đồ di chỉ thời đồ đá và đồ đồng ở Việt Nam
+z
+lL€
+r7 Ề_ẾẢ 4
+C_
+
+Ớ Ợ Ông
+
+M
+
+¬ - đáo Bạch u
+. Ý Long vĩ- —
+. sở
+
+bCỉuì`rnh Văn .$ —
+( - - đảo Hải Nam 7
+S
+
+=
+
+Bàu Tró
+
+1
+A Dichi đồ đá cũ
+Ê Di chỉ đồ đá mới - đảo Lý Sơn CỒ
+
+Di chỉ đồ đồng . 9JBình Châu
+
+- Biên giới quốc gia
+na
+
+... uý -
+HỊ luqgl—1opI` lum Š ĩc
+
+- v J'› A
+
+ì
+Ị
+=
+
+ñ
+i
+," 1 L
+ỤxÍ.
+u “~,Ạ Jv;" ²`___J_' , sn Eèđảo P l'Itj Qlly'
+Số ˆ : -
+
+“Js..<"ễjỈ"""i`zẩ`&~"' _ Giông Lớn
+
+Ÿ : ˆ
+
+x& Hình 4. Lược đồ di chỉ thời đồ đá và đồ đồng ở Việt Nam

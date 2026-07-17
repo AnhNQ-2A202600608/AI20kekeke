@@ -7,122 +7,110 @@ source: ocr
 
 # SGK LỊCH SỬ VÀ ĐỊA LÍ 8 KNTT (lớp 8) — Trang 176
 
-Phiên äm Nguyễn ngữ Trang
+Phiên ầm Nguyễn ngữ Trang
 
-Na-pô-lê-ông lII — |NapoléonlIl 49 |
+Na-pô-lê-ôngll |Napoléon II 149 -
+x XẮ—RRmg
 
-lOetsmmuø — [Wemmnnr — | t6_
-lôaixøcrômeen |Olwremwdl | 8_
-Am ————
+Ngvalet
+—Y
+Oatxmntg — |gesmnse - | -
+ÔdivơCrômoen |OlverCromwel _ | 8
+_
+Pan -S Jpak - | 80
+PariBat-- S |panbs - - | 46
+Ph.Angghen |FiedichEngek | 48
+Pme x | |9
+Pucombs - |pucomeo - | @
+. Á .”§.
 
-Pamn |Pas | 80 |
-n —¬
-EhAngghn |meomhmeM | 8.
-Ph. Gồi-a s9
+Eosen — |Rown - | S
+Rốc-phe-lơ Rockefeller
 
-Ph. Si-lơ s8
+s.Đich-ken Charles Dickens
 
-Ph. Sô-panh 8
+NG-va-lét
 
-Ph. Vôn-te Ph. Voltaire
+Phiên ầm Nguyên ngữ Trang
 
-Phi-lip-pin 2
+5 Mongtexkrg |smMontesqusu | 13
+%g |ceem - | 3
+m
 
-Phlo-đờ Ma 20
+m — l
 
-fod |
+-ni Vladmir llyich Lenin
+ñ V. Van Gogh
+¡
 
-Pôn Ðu-me 87
+lưĩ
+Eu
+7
+¬
 
-Bucômb lwemm — | @œTL AAA
+=| | =¬ Lì | ì
+3lz, s|s
+s s |3
+LI
 
-hoạm — [Rom ||
-Rỗc-phe-ld Rockefeller
+5 lợ
 
-Phiên äm Nguyễn ngữ Trang
+=
 
-le —— |dmmi — | $3~
-5umitồmô — Jamhamo — | 6œ,
+L
 
-m7 THỌ [T®Ị
+J
 
-vo
-ViLlenn — |Vadmirlgkhtenn | tr,
-wvnSố — Jwwnegh | 5.
-Meeaa — Jvzam — | 16.
+s8 |Vgeriuo
+
+Saint Peterburg
+
+= l. | u L
+Lại Là
+
+=< =Il=i=<
+EỄỂỂ*-=:-
+m x X | ð |
+ỵcủ'ổaũẳ’
+m l=
+kca
+Lưïi
 
 ~
-m
-:.x
-=a
-mu
+u
+r..
+==
+EDM
 5
 
-ca
+-(i-Ca
 
-~
-m
-=
-=
-si
-f
-—t
-j°
-ñ
-“8
-E
-=m
+Xanh Pẽ-téc-bua
 
-b3
+>
+bul
+L
+=
+l
+
+“tỗ-ga
+
+:
 -
-ga
-rủ
-B
-3
-BỊ
+-
 
-_
-ĐH |JWMMem 7 [8|
-W. Thackeray
+wMos - |pMesh - | m x
 
-Xa-van-na-khét
+64
 
-|
-L3
-
-<
-
--xữn
-
-Sa
-=.
-1z
-_
-H
-¬
-
-g
-ni
-
-=
-k
-Ei
-B
-
-=
-th
-¬
-L5
-E
-¬
-
-=|=
-ad|=
-m.|O
-
-mịa
-gịỊ”
-
-fũ
+45
+XanhPê-téc-bua
+K
+Xa-van-na-khét a
+Xécbi - |
+K
+Xivôtha - 68
+6
+Xumatơra -
 
 175

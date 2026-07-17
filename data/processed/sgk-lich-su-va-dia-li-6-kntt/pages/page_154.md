@@ -9,49 +9,56 @@ source: ocr
 
 THỰC HÀNH:
 PHÂN TÍCH BIỂU ĐỒ NHIỆT ĐỘ,
-Jiô»SBRö.BAURNI emsẽ LƯỢNG MƯA
+Họcxongbàinày,emsẽ = LƯỢNG MƯA
 
-*_Phân tích được biểu đồ
-nhiệt độ, lượng mưa.
+- pnq;;;’twh fflị@’O,ĩblêU đo
 
-` .~
+nhiệt độ, lượng mưa. 1. Hướng dân đọc biêu đô nhiệt độ,
 
-1. Hướng dẫn đọc biểu đồ nhiệt độ,
+° Xác định được đặc lượng miya i
 
-» Xác định được đặc tượng ma -
-điểm về nhiệt độ và Quan sát hình 1, em hãy cho biết:
+điểm về nhiệt độ và Quan sát hình 1, em hãy cho biêt:
+
 lượng mưa của một số — Trục bên tay trái thể hiện yếu tố nào. Đơn vị đo của yếu
+
 địa điểm trên bản đồ tố đó.
-khí hậu thế giới —_ Trục bên tay phải thẻ hiện yếu tố nào. Đơn vị đo của
+
+khí hậu thế giới. — Trục bên tay phải thể hiện yếu tố nào. Đơn vị đo của
+
 yếu tố đó.
 — Biểu đồ cột màu xanh thể hiện cho yếu tố nào.
-— Đường biểu diễn màu đỏ thể hiện yếu tố nào.
-—_ Trục ngang thể hiện yếu tố nào.
-" 2. Nội dung thực hành
-Nhiệt độ (°C) Lượng mưa (mm) = c
-T=238°C P=l684mm {| „„ Quan sát hình 2, em hãy:
-— Xác định vị trí của các địa điểm trên bản đồ (thuộc đới
+— Đường biềểu diễn màu đỏ thể hiện yếu tố nào.
+— Trục ngang thể hiện yếu tố nào.
+:- 2. Nội dung thực hành
+Nhiệt độ (°C) Lượng mưa (mm) s 5
+T=238°C P=1684 mm Quan sát hình 2, em hãy:
+
+4'0D ^ ˆ 2 4 ˆ Z .
+— Xác định vị trí cua các địa điềm trên bảán đô (thuộc đới
+
 khí hậu nào).
 
-Hoàn thành bảng gợi ý theo mẫu sau vào vở để đọc
-được biêu đô nhiệt độ, lượng mưa của Tích-xi, Xơ-un,
+sp - Hoàn thành bảng gợi ý theo mẫu sau vào vở đề đọc
+được biêu đồ nhiệt độ, lượng mưa của Tich-xi, Xơ-un,
 Ma-ni-la.
 
-Nhiệt độ tháng cao nhất (°C) TL |
-h ồ Nhiệt độ tháng thấp nhất (°C) | ˆj
-123456789101112 Tháng
-Hình 1. Biếu đồ nhiệt độ, lưọng
+200 '
 
-HH. SN: Nhiệt độ trung bình năm (°C) maMwẲ
+100
+6 ö Nhiệt độ tháng thấp nhất (°C) ---
+123456789101112 Tháng
+Hình 1. Biêu đô nhiệt độ, lượng
+
+mưa tại trạm Láng (Fà Nội) Nhiệt độ trung bình năm (°C) ---
 
 T: Nhiệt độ trung bình năm
 
-P: Lượng mưa trung bình năm Lượng mưa tháng cao nhất (mm) mưaMw
+P: Lượng mưa trung bình năm Lương mưa tháng cao nhất (mm) ---
 
 Lượng mưa tháng thấp nhất (mm)
 
 Lượng mưa trung bình năm (mm)
 
-— Nêu đặc điểm về nhiệt độ, lượng mưa của ba địa
+- Nêu đặc điểm về nhiệt độ, lượng mưa của ba địa
 
-điễm trên.
+điểm trên.

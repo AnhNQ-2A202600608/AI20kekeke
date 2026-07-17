@@ -10,17 +10,19 @@ source: ocr
 Học xong bài này,
 em sẽ:
 
-° Trình bày được sự thay
+s Trình bày được sự thay
+đỏi nhiệt độ không khí
+trên bề mặt Trái Đát
+theo Vĩ độ.
 
-trên bê mặt Trái ĐÁ.
-theo vĩ độ.
-
-»_ Mô tả được hiện tượng
+s /IMô tả được hiện tượng
 
 hình thành mây và mưa.
 
-»_ Biết cách sử dụng nhiệt
-kê, âm kê.
+° Biết cách sử dụng nhiệt
+kê, âmkê.
+
+Em có biết?
 
 Nhiệt độ trung bình
 ngày là giá trị trung bình
@@ -36,14 +38,16 @@ trị trung bình của nhiệt
 Hình 1. Nhiệt kế treo tường
 
 NHIỆT ĐỘ KHÔNG KHÍ.
+
 MÂY VÀ MƯA
+
+i
+,«
 
 Nhiệt độ không khí và mưa có vai trò hết sức
 
-quan trọng đối với đời sống và sản xuất. Nhiệt
-
+quan trọng đóối với đời sống và sản xuất. Nhiệt
 độ không khí và mưa do đâu mà có? Tại sao nhiệt
-
 độ không khí và mưa lại khác nhau ở mọi nơi trên
 Trái Đắt?
 
@@ -52,29 +56,29 @@ Trái Đắt?
 a) Nhiệt độ không khí và cách sử dụng nhiệt kế
 
 Mặt Trời là nguồn cung cấp ánh sáng và nhiệt cho Trái
-Đất. Các tia sáng mặt trời đi qua khí quyển làm nhiệt độ
+Đất. Các tia sáng mặt trời đi qua khí quyền làm nhiệt độ
 không khí nóng lên không đáng kể. Chỉ khi bề mặt đất
 hấp thụ nhiệt của Mặt Trời rồi phản hồi lại vào không
 khí thì lúc đó không khí mới nóng lên rõ rệt.
 
 Độ nóng, lạnh của không khí được gọi là nhiệt độ
 không khí. Đơn vị đo nhiệt độ không khí được dùng
-phổ biến là độ C (°C).
+phỏ biến là độ C (°C).
 
-Dụng cụ đo nhiệt độ không khí là nhiệt kế. Có hai loại
+Dụng cụ đo nhiệt độ không khí là nhiệt Kế. Có hai loại
 nhiệt kê thường dùng là nhiệt kê có bâu thuỷ ngân
-(hoặc rượu) và nhiệt kê điện tử.
+(hoặc rượu) và nhiệt kế điện tử.
 
 Ở các trạm khí tượng, nhiệt kế được đặt trong lều khí
-tượng sơn màu trắng (hình 3), cách mặt đất 1,5 m.
-Nhiệt độ không khí được đo ít nhất 4 lần trong ngày (ở
-Việt Nam vào các thời điểm: 1, 7, 13, 19 giò).
+tượng sơn màu trắng (hình 3), cách mặt đắt 1,5 m.
+Nhiệt độ không khí được đo ít nhất 4 lằn trong ngày (ở
+Việt Nam vào các thời điểm: 1, 7, 13, 19 giờ).
 
-#à 1. Em hãy đọc giá trị nhiệt độ không khí hiển thị
+0 1. Em hãy đọc giá trị nhiệt độ không khí hiển thị
 trên nhiệt kế ở hình 1.
 
 2. Ở trạm khí tượng Láng (Hà Nội), kết quả đo
-nhiệt độ ở bốn thời điểm trong ngày 25 tháng
-Ÿ năm 2019 lẫn lượt là 2?7°G, Z7°G, 32°€,
+nhiệt độ ở bồn thời điểm trong ngày 25 tháng
+7 hăm 20619 lắm lượt là 275Ø 575G, 32°G,
 30°C. Hãy cho biết nhiệt độ không khí trung
 bình của ngày hôm đó.

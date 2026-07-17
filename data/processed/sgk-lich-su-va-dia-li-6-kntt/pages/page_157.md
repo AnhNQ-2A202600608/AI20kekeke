@@ -9,39 +9,32 @@ source: ocr
 
 Học xong bài này,
 
-em sẽ:
+* IMô tả được vòng tuần
+hoàn lớón của nước.
 
-« Kể tên được các _
-thành phân chủ yếu
-của thuỷ quyên. -
-
-«_ Mô tả được vòng tuần
-
-hoàn lón của nước.
-
-Có ý thức sử dụng
-
+* Có ý thức sử dụng
 hợp lí và bảo vệ
-
 tài nguyên nước.
 
-Nước là nhu cần cơ bản
+Em có biết?
+
+Nước là nhu cầu cơ bản
 của sự sống. Hơn 2/3
 bề mặt Trái Đất được
 bao phủ bởi nước. Tuy
 nhiên, lượng nước ngọt
 có thể sử dụng cho sinh
-hoạt và sản xuất lại rất ít
-Và ngày càng suy giảm
+hoạt và sân xuất lại rất ít
+và ngày càng suy giảm
 về chất lượng.
 
 THUỶ QUYỂN
 VÀ VÒNG TUẦN HOÀN LỚN
-CA NƯỚC
+CUA NƯỚC
 
 Nước có ở sông,
 hồ, ao, biên.
-Cậu nói đúng, Theo em, nước
+Cậu nối đúng, Theo em, nước
 còn có ở những
 nơi nào nữa?
 
@@ -50,10 +43,10 @@ còn thiêu!
 
 1. Thuỷ quyền
 
-Thuỷ quyển là toàn bộ lớp nước bao quanh Trái Đắt, nằm
-trên bề mặt và bên trong của vỏ Trái Đắt; gồm nước ở
-các đại dương, biển, sông, hồ, đàm lầy, nước dưới đất
-(nước ngầm), tuyết, băng và hơi nước trong khí quyền....
+Thuỷ quyền là toàn bộ lớp nước bao quanh Trái Đất, nằm
+trên bề mặt và bên trong của vỏ Trái Đất; gồm nước ở
+các đại dương, biềển, sông, hồ, đằm lầy, nước dưới đất
+(nước ngàm), tuyết, băng và hơi nước trong khí quyền....
 
 Nước
 
@@ -62,12 +55,12 @@ mặt và
 nước khác
 1,2%
 
-Hình 1. Tỉ lệ các thành phân của thuỷ quyễn
+Hình 1. Tï lệ các thành phân của thuỷ quyền
 
-tạ Quan sát hình 1 và đọc thông tin trong mục 1,
+@) Quan sát hình 1 và đọc thông tin trong mục 1,
 em hãy:
 
 — Kể tên các thành phần chủ yếu của thuỷ quyền.
 
-—_ Cho biết nước ngọt tồn tại dưới những dạng nào.
+— _ Cho biết nước ngọt tồn tại dưới những dạng nào.
 Nêu tỉ lệ của từng dạng.

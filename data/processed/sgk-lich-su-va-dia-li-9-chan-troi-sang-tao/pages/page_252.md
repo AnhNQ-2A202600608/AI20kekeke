@@ -7,48 +7,57 @@ source: ocr
 
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 252
 
-TỰ HHIÊM œ
+L
 
-HUẤN CHƯƠNG HỒ CHÍ MINH
+-
+š¬ :
+L I
 
-TRÃI HBHIỆPI, ¡8
-HLIỜMG HGHIỆP. -*”‹
+HUẦN CHƯƠNG HỒ CHÍ MINH
+
+lạ
+
+THI HGHIỆM, / HỊ
+HIEMG HOHIỆP ' :
+L ự T
+
+ktịa:-
 
 BỘ SÁCH GIÁO KHOA LỚP 9 - CHÂN TRỜI SÁNG TẠO
 
 1.NGỮ VĂN 9 - TẬP MỘT 11. CÔNG NGHỆ 9 - Trải nghiệm nghề nghiệp
 
-2, NGỮ VĂN 9 - TẬP HAI Lấp đặt mạng điện trong nhà
+2. NGỮ VĂN 9 - TẬP HAI Lắp đặt mạng điện trong nhà
 
-3, TOÁN 9 - TẬP MỘT 12. CỘNG NGHỆ 9 - Trải nghiệm nghề nghiệp
+3, TOÁN 9 - TẬP MỘT 12, CÔNG NGHỆ 9 - Trái nghiệm nghề nghiệp
 
-4. TOÁN 9 - TẬP HAI Nông nghiệp 4.0
+4, TOÁN 9 - TẬP HAI Nông nghiệp 4.0
 
-5. TIẾNG ANH 9 13. CÔNG NGHỆ 9 - Trải nghiệm nghề nghiệp
-Friends Plus - Student Book Cắt may
+5, TẾNG ANH 9 13. CÔNG NGHỆ 9 ¬ Trải nghiệm nghề nghiệp
+Friends Plus - 5tudentBook Cất may
 
-6. GIÁO DỤC CÔNG DẪN 9 14. GIÁO DỤC THẾ CHẤT 9
+6, GIÁO DỤC CÔNG DẪN 9 14, GIÁO DỤC THẾ CHẤT 9
 
-7. KHOA HỌC TỰ NHIÊN 9 15. ẤM NHẠC Ø9
+7. KHOA HỌC TỰ NHIÊN 9 15. ÃM NHẠC-9
 
-8, LỊCH SỬ VÀ ĐỊA LÍ 9 16. MÍ THUẬT 9 ()
+8, LỊCH SỨ VÀ ĐỊA LÍ 9 16. MĨ THUẬT 9 (1)
 
-9. TIN HỌC 9 17. MĨ THUẬT 9 (2)
+5 TINHỌC 9 17,MÏ THUẬT 9 2}
 
-10, CÔNG NGHỆ 9 - Định hứớng nghề nghiệp - ˆ 18.HOẠT ĐỘNG TRẢI NGHIỆM, HƯỚNG NGHIỆP 9 (1)
-19: HOẠT ĐỘNG TRẢI NGHIỆM, HƯỚNG NGHIỆP 9 (2)
+10, CÔNG NGHỆ 9 - Định hướng nghềnghiệp ( 1 18.HOẠT ĐỘNG TRÃI NGHIỆM, HƯỚNG NGHIỆP 9 (1)
+19; HOẠT ĐỘNG TRẢI NGHIỆM, HƯỚNG NGHIỆP 9 (2)
 
 Các đơn vị đầu mối phát hành
 
-e Miến Bắc: — CTCP Đầu tư và Phát triển Giáo dục Hà Nội
+e MiểnBắc - CTCP Đầu tự và Phát triển Giáo dục Hà Nội
 CTCP Sách và Thiết bị Giáo dục miền Bắc
 
 e Miễn Trung: CTCP Đầu tư và Phát triển Giáo dục Đà Nẵng
 CTCP Sách và Thiết bị Giáo dục miền Trung
 
-e Miền Nam: CTCP Đầu tư và Phát triển Giáo dục Phương Nam
+e Miển Nam:. CTCP Đầu tư và Phát triển Giáo dục Phương Nam
 CTCP Sách và Thiết bị Giáo dục miền Nam
 CTCP Sách và Thiết bị Giáo dục Cửu Long
 
-Cão lớp nhũ trên tem rỗi quét mã
-để xác thực vã truy cập học liệu điện tứ,
+Căo lớp nhũ trên tem rồi quét mã
+để xác thực và truy cập học liệu điện tử.

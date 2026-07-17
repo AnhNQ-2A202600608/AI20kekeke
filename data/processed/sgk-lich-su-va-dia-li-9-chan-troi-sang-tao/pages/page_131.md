@@ -7,61 +7,67 @@ source: ocr
 
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 131
 
-Chỉ tuyển,
+ĩ a N .N
 
-n s ẹ ~ — — — Xu” _—
-ác n Bà 1.
-NG, .,
+» L
 
-h
+.. C
 
-Jƒrwer7
+u
 
 TRÙNG QUỐC
 
-Ge~
-
-Mr
-
-G: cường. Tã Tn
-tui qó
-THÁI LAN `
+A
 
 CHỦ GIẢI
-w Thủđ 1 VĨNH PHÚC
+VĨNH PHÚC
 
-cu _ San hỗ 2 BẮC NINH
-x>—, Sông 3 HẢI DƯƠNG
-Hỏ 4 HƯNGYÊN
+BẮC NINH
 
-5_ HÀ NAM
+HẢI DƯƠNG
 
-Quần đảo &_ MINHBÌNH
-Đĩa giới hành chính cấp tỉnh
+HƯỂMG YÊN
+5 HÀ NAM
 
-—=——— Hinh giới vùng
+Quản đảo 6 NINH BÌNH
+— . Địa giới hành chính cấp tỉnh
+— Hanh giới vùng
 
-Biên giới quốc gia
-Mu
+1= - Biển giới quốc gia
+ặ SỐ - 100 ZDg
 
-Nụ %
+n n — l
 
-=
-CAM-PU-CHI:
+I »
+a
 
-ï vững
+;
+CAM-PU-CHIA
 
-ca
-= 18 Ngân Du +:
-X=
-_ 0H ThếChu
-—_ hôn Nhan
-=
-vk miöi Cả Mau.
+)
+ỄEI 5 mũi Đại Lãnh Tiến a
+ể | ngng . i hòn Đội = E
 
-KN MA-LAI-XEA
-104° Ệ BRU-NẬY 8ï 1ø
+-
 
-Bản đồ hành chính Việt Nam, năm 2021
+nA E v TAUI
+
+= ỦỦNJ†` Du #
+kas
+
+.. đhón hhơn `
+
+.-Ệf
+möt Cả gñzu
+⁄ ị
+
+z . hàn Bây Cạnh
+
+„ hện Khoai ủỉ&ỵ,g
+-l1ỊI,4l3l ỈIGI'.IĐIJ'LỄ Irè"l'ìlf'l1'.l _lD`8I._'
+
+BRU-NAYrST1sr
+
+Bắn đồ hành chính Việt Nam, năm 2021
 
 128

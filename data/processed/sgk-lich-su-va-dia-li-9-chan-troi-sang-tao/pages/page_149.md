@@ -7,58 +7,121 @@ source: ocr
 
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 149
 
-Khai thác dầu thả ở mỏ Bạch Hế
+WAM PU- ClJ-ỊIA
 
-bãi Đđ Hắc
-K>
+.RìIĩlll.' Thap Chím
+Nam Thuận Mam
 
-8.
+AN THIẾT
 
-Hoà
-PM Cnn
-La
-đã Chím En TU
+b Phú Duý
 
-tuigönEea si lAi
-hận hị
+Œ) nu: Ẩ.Ể.=ạ--
+®_l~lSlll|" Đăng
 
-Ñ
+Lzs f"l'.i'[
 
-ệ
+f Ì Hạch Hỗ
 
-LÚỦ Hãng, Nữ
+Œnz«
 
-xế (Rau bám
-Hạch Hỗ :
-(địa hên Hải
+C"1 Cần sơmn
+sx , iòn Bảy Cạnh
 
-Ø, Phú Quốc
+Ề"q,ự
+, 0 a
+Ễfỉ'crn
 
-® tố công
+L
 
-he 0U. ồn Sài `. TH
-cà li Cử Mau.” Ty 3 " sờ NUUE2 kg) Le
-„ hên tà! Đụ tạng ti Hừng (§) Lan tê () Š- Ma-ILAIXFA
-104? MIU/E0/5E _ 108° Làn Tây (f) „ |MADALXLA BRU NẬY£tTi6°
+Thi Hùng rị:ị
+
+E
+hún Hồi
+
+Lạn thả Ểzỵ
+Lan Tắy Ệl
 
 CHỦ GIẢI
-Trung tâm công nghiệp #3 Sản xuất, chế biến thực nhẩấm đi Sản xuất vật liệu xây dựng X# Nhiệtđiện '# Thủdô
-Bất lắn.
 
-LINH #£?'' khai thác, chế biển lãm sản Š Dệt, sản xuất trang nhục # Thuỷ điện vế — San hỗ
-tung hình
+Trung tâm công nghiệp
+FEsllan
 
-ló Bổ Sản xuất sản phẩm điện tử, máy vi tính Ẩ|. Hoá dấu X# Biệnglô SH...
+Œ Sản xuất, chế hiến thực phẩm
 
-ện kỉ ện ki : l Điện mát trời ỗ
-BÀ NẴNG — Trung tâm công nghiệp 9 ũ Luyện kim đen, luyện kim màu “ SHIKHI & 2A HỆ ' ` Hỗ
+r # Khai thác, chế biến lãm sản H
 
-can tteay — Điểm công nghiệp #0 Khai thác dầu thả, khí tự nhiên Ÿ_ Đóng tàu và thuyền Đ. Đảo —11|— tuếc lộ, tên đường
-(8 Khai thác than, sắt 48*` Sản xuất ô tố QĐ. Quần đảo Bịa giới hành chính cấp tỉnh
+Nhỏ :
+%& - Sản xuất sản phẩm điện tủ, máy vi tính. l
 
-T00 200 Tin g0 - đủ
-m—————.r “=‹'L::ith:c jón 3 apa @ Hoá chất -¬.=.= Biển giới quốc gia
+§8 Õ Luyện kim đen, luyện kim màáu L
+( ĩ Khai thác dấu thỗ, khi tự nhiền
 
-Hình 6,1. Bản đổ công nghiệp Việt Nam, năm 2021
+đhữ Khai thác than, sắt
+
+BÀ RẰNG - Trung lắm công nghiệp
+
+Điểm công nghiệp
+
+Cnn: Thưởng,
+
+100 zạu
+u l u l
+
+$
+A
+Š
+
+# ( Khai thác đồng, a-pa-tít
+
+t Sản xuấtvậtliệuxãydựng X MNhiệt điện
+
+DệtT, sản xuất trang phục
+Hoä dầu
+
+Ez khi
+
+Đóng tầu và thuyền
+
+Sản xuất ở tô
+
+Hoä chất
+
+Khai thắc dầu thỏ ở mở Bạch Hồ
+
+bãiĐá BắC `
+K
+
+lah mf ~.g*_1bd<JLl'I'l
+
+m c r
+Ch KSI I²ftu fflrn Ễă Q
+đã Chín En n
+
+-
+n fflJủnỏn ỞCIP_ Ềă'Ễ'Ẩ`Ĩ`Ìr`› AQ
+
+# Hoàng ủ
+
+MA TAI XTA ERL.M: †rĩ 188
+
+*
+x Thuỷ điện c
+t Điện gió 5 N sống
+wỸ H
+
+— 1F UDuốc lỗ, tên đường
+
+Thủ đỏ
+San hỗ
+
+X Điện mặt trởi
+È. Đảo
+
+Q) Quản đảo Dịa giới hành chính cấp tỉnh
+
+.“ Biện giới quốc giả
+
+Hình 6.1. Bản đồ công nghiệp Việt Nam, năm 2021
 
 146

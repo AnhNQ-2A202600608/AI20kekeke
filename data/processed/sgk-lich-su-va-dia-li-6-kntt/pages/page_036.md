@@ -7,46 +7,61 @@ source: ocr
 
 # SGK Lịch sử và địa lí 6 KNTT (lớp 6) — Trang 36
 
-Ma-thu-ra,
-Bai-ratt ° A-dqr
+Ma—-tl'lU-l`a. \
 
-` 8Óyg Giỏ đang
+Bai-ratfr S A-gr.
 
-"CAO NGUYÊN `PA-LA-
+..
+)
 
-1N É ®,Pa-la-va
-NĂ
-VINH
+° mwSan-chi
 
-ím `. BEN-GAN
-"
-J
-..e Ben-gô-la
-
-Mu ha rB n-chi-pu-ram
-ĐÁ, `
+1
 \
 
-\PAN-ĐE _
+ì — n "I`rỈ`
 
-m- Cột đá A-sô-ca
+'ề j
+{ F ư
+
+n
+E ỗ'0hg c71()—cĨa-g;(_,`I.
+
+ậ x, mo NGUYÊN À FA
+BIEN ¬_ ĐÊ ow Ề- la-va
+
+A-RAP \ÌMa -xkÌN” VỊNH
+Ẻ Cm ử-ra—va-naẩ BEN-GAN
+VA
+
+\ J
+.sBen-gô-la
+L e/Can-chi-pu-ram
+
+ĩ.
+
+m Cột đá A-sô-ca
 ® Thành thị cổ
 
-4 Hình 2. Lược đô Ấn Độ cổ đại
+A Hình 2. Lược đồ Ấn Độ cổ đại
 
-Miền Trung và miền Nam là cao nguyên Đê-can với rừng rậm @9 Kết nối với đía lí
-và núi đá hiểm trở; chỉ có vùng cực Nam và dọc theo hai —DD
-bờ ven biên là những đồng băng nhỏ hẹp, là nơi sinh sông Sông An dài gân 3 000km,
+Miền Trung và miền Nam là cao nguyên Đê-can với rừng rậm
+và núi đá hiểm trở; chỉ có vùng cực Nam và dọc theo hai - `
+bờ ven biển là những đồng bằng nhỏ hẹp, lànơisinhsống.. Sông An dài gân 3 000km,
 
-tương đối thuận lợi, dân cư đông đúc. theo tiếng Phạn là Sindhu
+tương đói thuận lợi, dân cư đông đúc. theo tiêng Phạn là Sindhu
 (Sm-đu), về sau, người
 
-Lưu vực sông Án chịu tác động của sa mạc nên rất ítmưa, Ba Tư đọc thành Hindus
-khí hậu khô nóng. Ở lưu vực sông Hằng, do tác động củagió (Hin-du) và gọi bán đảo
-mùa nên lượng mưa nhiều, cây cối tươi tốt. An Độ là Hindusan
-: (Him-đu-xtan) (nghĩa là
-lu Khai thác lược đô trên và thông tin trong mục 1, hãy cho “xứ các con sông”).
+Lưu vực sông Án chịu tác động của sa mạc nên rấtít mưa, . Ba Tư đọc thành Hindus
+khí hậu khô nóng. Ởlưuvực sông Hằng, dotác động của gió . (Hin-đu) và gọi bán đảo
+
+mùa nên lượng mưa nhiều, cây cối tươi tốt. Ân Độ là Hindustan
+. : (Hin-đu-xtan) (nghĩa là
+
+6 Khai thác lược đồ trên và thông tin trong mục 1, hãy cho . “xứ các con sông”).
 biết nét chính về điều kiện tự nhiên của lưu vực sông Án,
 sông Hằng ở Án Độ.
+
+i với địa lí
 
 35

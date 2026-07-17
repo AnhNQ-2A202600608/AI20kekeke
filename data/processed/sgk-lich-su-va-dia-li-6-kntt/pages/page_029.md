@@ -9,34 +9,28 @@ source: ocr
 
 XÃ HỘI CÔ ĐẠI
 
-hoảng cuối thiên niên kỉ IV TCN,
-
+hoảng cuối thiên niên kỉ IV TOCN,
 con người bắt đầu bước vào thời đại
-xã hội có giai cấp, nhà nước. Với những : ¬
-công cụ bằng đá và đồng thô sơ, các š
+xã hội có giai cấp, nhà nước. Với những
+công cụ bằng đá và đồng thô sơ, các
 cư dân cổ đại đã từng bước chinh
-phục tự nhiên, dần tạo lập cuộc sống
-ổn định. Chiến tranh giữa các nhà
-nước cũng thường xuyên diễn ra..
+phục tự nhiên, dàn tạo lập cuộc sống
+ồn định. Chiến tranh giữa các nhà
+nước cũng thường xuyên diễn ra...
 Hơn tất cả, những giá trị văn hoá
-vật chất, tinh thần mà con người cỗ
+vật chất, tinh thằn mà con người cồ
 đại tạo ra đã có đóng góp to lớn cho
 lịch sử văn minh nhân loại. Trong số
 đó rất nhiều giá trị còn được truyền
 lại đến ngày nay.
 
-xăm tự tháp Kê-ốp /2¡
-E & Ễ d
+TRONG CHƯƠNG NÀY, EM SẼ ĐƯỢC TÌM HIÊU:
+Ai Cập, Lưỡng Hà cỏ đại
+Án Độ cỏ đại
+Trung Quốc từ thời cỏ đại đến thế kỉ VII
 
-TRONG CHƯƠNG NÀY, EM SẼ ĐƯỢC TÌM HIẾU:
-- Ai Cập, Lưỡng Hà cổ đại
+- HyLạpvà La Mã cỗ đại
 
-- Án Độ cô đại
-
-- Trung Quốc từ thời cổ đại đến thế kỉ VII
-
--_ Hy Lạp và La Mã cỗ đại
-
-Cô :
-Khải hoàn'môn 10x
-(a2) — ˆ “<2
+(ŒY .
+( ê 22
+2

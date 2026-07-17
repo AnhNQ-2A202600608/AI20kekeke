@@ -9,49 +9,47 @@ source: ocr
 
 HƯỚNG DẪN SỬ DỤNG SÁCH
 
-Hài ö HIẠT WE DỦA NBUYÊN ÁI tt
-VR SI THÀNH LẬP HÀN P(]NE SảN VIỆT NRM
+Bài 5 HUẠT HŨNG EÚA NGUYÊN ÁI DUÉP
+VÀ SIƒ THÀNH LẬP BẢNE EE SÂN VIỆT HAM
 
-HẸc tonglbdi rúu, ai si:
-~ Nấu nhưng rátdirhivä hoạt đểng cửu Hguy tải Tuệctrangrfirrgrdnn1313.~ 10
-~ Nạn bắt điệc qui tính và š rr†ša của vệ: Húrhil‡p Eirg rộng sả Việt Hang đánh gửi điKịcvx rẻ:
+Hợc xongdbdi râ s S:
 
 Yêu cầu cần đạt
 
-Những yêu cầu cẩn đạt đối với
+— Nâ UyM E rT t T v5 Fropt đ T] oia Hg ê Ái CU2ctcngEODGTGITTST#-- 1D
 
-+tkHguyln li CHếctrerg qui Hình thánh l‡ÐrEdrrgGErr1savkfệE Han
-
+Những yêu cầu cần đạt đối với
 học sinh sau mỗi bài học.
 
 Mở đầu
 Tình huống tạo hứng thú,
-xác định nhiệm vụ của bài học.
 
-nà hể no
+như gỂ ngưpĩ
 
-1, Haạt đậng của Nguyễn Xi quặc trang những năm 18 18- 1930
+M H LES ¬ I CUU CLAAn Sách: đh kc x i
+xác định nhiệm vụ của bài học. _ n n c 0 n
+1, Hoạt động của Hguyễn i Qudctrong những năm 15 18- 1930
 
-X”
-Km — Tt nữa sử đi c2, hẩy nếu những nết chủnh rễ hént điềng củitgu nên r1 Qhưấc
-— trng những nằm J9/8— J9T0.
+Ủ
+®_ịÌẢ = FAet mtt se dU d ơi hiÊP ngui những nÈư chênh xì hextt đỚng Flitrgi pẵn d3 Chuc:
+n #rêng những năm ÍT4E — HƯ
 
-“Dụcếh g Kdeh mộnh ˆ té pá cm phn dnh sự bedchờn
-ren die'ng ruac nưaÝt re như cdếh mưng pÌguyền cl Quốc —
-ngưci có dnẢ hưởng đục chấp đến cỉh hành củếh mựng
-Hiột đhêm mế tực nẻ đt củt Dựng Lưng sửn KEẾt đưm mê
-năm 1910. Viễn, cên duzỳng củnh mựng ng mới ABuyễn clỉ Quuấc
-đi đi trông những năm !918 — UTÚY rhhng hạt đừng
-ủu flRuyển r1ủ Qhut gin rdế dud trếh đhưnh bi Dhíng
+“Erin g Fidcl mềnh ˆ ư c pà m ghn dảnh ự e hin
+t;ón điờnng Eua, nưưc c như cdc Á mứng (guyễên d u —
+người c ứnh Aướng c nip nền rính đính crch mứng
+PH¿ 0hm mrỉ rự rử i cử Dưng Ung tn VAUI Ảkkm mấc
+năm 49TØ kiẾn dớn tường cknh mưng ndic m i nân r14 Chuốc
+F đ srong những năm (Đ48 — J9TUT mhững, ảrg dồng
+i ( guyễn r13 Chuyốc giẫn rỏể t trnh m ảnh kấp: Thšng
 
-TẾT aengicininh- caenzam được nàtbán
-êo rắn ] 39 3 CuínggCTáu(TurgtCMse]
+— Hện bấit được quá t tà ÿ ng1ĩa của vệc Hrl‡p EH GECg E iệt Han đch g 2Lkc v T ở
+cứu HC păn Ái CUÓCLDOEI á n khnihljrEtï U rggsán kht hani
 
 Câu hỏi giao nhiệm vụ học
 tập trong từng nội dung
 của bài học.
 
-— De dư 1u G.T rẻ 6.3, ñ đự chó b8ểt trếng gím đrn /0/7— 00T, huyền clỦ Qhuïc đữ.
+= Dựe a liiu 6.T ể ở.3, ð w cAm G A râ gdrl m 091 9 = J TTẾI, đip u yễn 44 Churic T
 
 Hình thành kiến thức mới
 Nội dung bài học (các kênh
@@ -60,81 +58,80 @@ thống câu hỏi giúp học sinh
 khám phá, hình thành kiến
 thức mới.
 
-Saunhi&aniãrri bến ba in
-cách "rữi đúng Lâu; hguyễn
-Tát Trênh trứ lại Hai (19 17],
-Than gia huạt động Trạng
-tiãng Kã hội Pheh (19131.
-Từ đầy, những hoạt động yêu
-nước của Hgư#Ền Tát Thănh
-bát đấu dưới cái tên huyện _ Š
-iEMắC.
+55ITihidtrisrri DỄn Em T
+cách 'cúi đóng Eáo! kguyên
+Tạ Trênh Trở lạ Fizp [1917),
+tharn qịa högt động trong
+Đăng Xã hội Fhep (1915).
+Tư đây, những IAOst TC(K] xêU
+nước cũa kguyên Tát Trênh
+Dởt Tâ dưới cải tớn Hguyền ñ
+Aituac,
 
-Hg2yBnAi Cốc PFot bit.
-"hi hội EMNIĐtểrg Xã hội Pháp:
-8 thánh phốTtn [Töra)
+Hgquyãn S Cuốc phái biditg
+i hổi XIEttrg] K5 H Frrip
+5 tránfi phá Tua (ToLrs)
 
-tharg12~1 s0
+tháng12 - 1290
 
-th những chuyên biển gể xưng ác duyỷng nỉ hưnh đhưcc Hiểu srưnh ch mựng.
+fỆpf—ềĨTưT1Eo biẾt:
 
-Tư liệu lịch sử, sơ đồ, lược đổ...
-sắp xếp theo thứ tự 1, 2, 3,...
-theo từng bài học (ví dụ bài 6,
-được kí hiệu 6.1, 6.2, 6.3,....
+Kiến thức hỗ trợ, bố sung,
+nâng cao, mở rộng, tích hợp
+hoặc kết nối với hiện tại.
 
-19
-Kiến thức hỗ trợ, bế sung, ®
-nâng Cao, mở rộng tích hợp —____ Tinh đền Hưững 12-2021, hệ th<Ìng đề thỷ thản qudeaö 869 đ thị trang đöoä 2đồ thựtogi
-Ù v h v =.
+dị Truyền thữmg wần kg dũn tốc v
+xitích lịch sử— vấn hoä
 
-hoặc kết nối với hiện tại. Ƒ
-
-dd] Truyền thông văn hoi dân tộc vũ
-dich lịch sử— vẫn ho
-
-Nước tạ cả bế dãy phát triển lịch sử lâu
-đổi, nhiều qR trị truyền thống, các di tích
-lịch sử - vẫn hzä qãu bản sắc của dân tặc
-"việt Mam như lš hài đến Hùng, na tranh
-thăng Hỗ, nghệthuặt Đến ca tài tử Nam Bộ,
-nửa rỗi nước, Cẽ đã Huẽ,... giúp thúc đấy
-sự pháttriền ngãnh dịch vụ, nhất § ngãnh
+Hước ts cõ EE dây phát triển lịch sử lãu
+đềi, nhEu gB trị [muyếen thông, các ditkh
+lịch sử - văn hoä gẽu Eän sắc của dân tặc
+xiết hlarn như lẽ hãi đên Hùng, Eng tranh
+Đö ra Hồ, nghệ th uật Đếm catãi tử Marn Eộ,
+rửa mi nước, Cõ đã Huế... qiúp thúc đây
+sự pháttriển ngãnh dịch vụ, nhất B ngãnh
 du lịch.
 
 Luyện tập
 Các câu hỏi, bài tập, bài thực hành để học sinh
-củng cố, hệ thống hoá kiến thức, rèn luyện kĩ năng.
+cũng cố, hệ thống hoá kiến thức, rèn luyện kĩ năng.
 
-Vận dụng
+Vạn dụng
 Sử dụng kiến thức, kĩ năng đã học để giải quyết
-các fình huống, vấn đề trong thực tiễn.
+các tĩnh huống, vấn để trong thực tiễn.
 
-đặc biệt 22đồ thilogil,32 đô thiIogiil$8đô tựloail 9143 thựloại lỰ sử 8$ đã thoại
+Erl những rñugển Diễn ể ưông z dướng rế hốnh Ehucc điểu hránh chöh: mng .
 
-" (lgult:BÕ3:5y dựng, gi cán tết quả theichiaần phiệm vụ nấm 302,
+Tưliệu lịch sử, sơ đổ, lược đổ,...
+sắp xếp theo thứ tự 1, 2,3,..
+theo từng bài học (ví dụ bài 6,
+được kí hiệu 6.1, 62, 6,3..).
 
-Ạ Ề pfirtna Birởng niệm trị trong bưm Big 2422 baánh 344 địa năm 21211
-/!/
+- Tính đếh thẩng. 12 — 20011 bỆ thdikT đÓ thự tïh qUốc cÓ EÉB đã thh ong đácó 245 / logi
+c đặc biệp 2206 0/logi, 32 đồ thíloại l 48 đổ týi oại lí, 9140 tf (oại l võ 679 đõ G logi
+L’",'. fBlguc: Ei2eay dựng đ c hết quậ thựt hưn nhiệmtU bấm 2021
+H , F,,Ii IỂ phobng hoờng hlyếng v Ectg b brn) 2027 pgánh x pdthj năm 20211
+
+ẩ 4
 
 Tư liệu hình của phần Địa lí
-được sắp xếp theo thứ tự
-1, 2, 3... đứng trước là số
-bài (@&í dụ tư liệu hình ở
+được sấp xếp theo thứ tự
+1, 2,3,.. đứng trước là số
+bài (ví dụ tư liệu hình ở
 bài 8 được thể hiện như
-sau: Hình 8.1, Hình 8.2...)
+sau: Hình 8.1, Hình 8.2,..)
 là cơ sở để tổ chức các hoạt
 động học tập cho học sinh.
 
-Ỗ Luyện tập -Vận dụng
-Luyệntập
+Ểẳ Luyện tập -Văn dụng
+Luyệntặp
 
-Em hãy vẽ sơ đồ thể hiện các nhân tổ chính ảnh hưởng tối sự phân bỗ và nhất triểm
-Hỗng nghiên Huốc la.
+Tm hãy về sơ Š B Tiện các nhyễn fố chính rãnh luưỡng fốt sự nhân bỏ và phưố triểm
+Xg xghiệm HưỚc ha,
 
-Vănduna
+Vãndụung
 
-“la tâm thông tia và bình ảnh nề một trang những ngành mông nghiện, lâm nghiện,
-†iuƑ sim ở nước fa
+Jâm tần tixðng fín rà hình ảnh rể mết rong những ngành nóng nghiện, lâm ngiiên
+Èn Ƒ szữ Ở YHHỐC Í
 
-Hinh 8.1. Eiều diễn mrủa nổi nưiệc [Hà Nội
+Hinh5.1. EEL diễn Irnúa nối nLiớc [ Hà Mộ

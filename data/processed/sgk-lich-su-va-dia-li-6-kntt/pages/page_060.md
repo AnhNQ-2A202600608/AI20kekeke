@@ -7,65 +7,45 @@ source: ocr
 
 # SGK Lịch sử và địa lí 6 KNTT (lớp 6) — Trang 60
 
-VIỆT NAM TỪ KHOẢNG THẺ KỈVII -
-TRƯỚC CÔNG NGUYEN ĐÉN ĐẢU THẺ KĨ X
+VIỆT NAM TỪ KHOẢNG THẺ KÍ VI .
+TRƯỚC CÔNG NGUYÊN ĐEN ĐẦU THẺ KÍ X
 
-Trống đồng Đông Sơn
+— _
+
+Trống đồng Đông Sơn Tháp Chăm ở Ninh Thuận
 
 TRONG CHƯƠNG NÀY, EM SẼ ĐƯỢC
-TIM HIEU:
 
-Nhà nước Văn Lang - Âu Lạc.
+TÌM HIỀU: Tl`.l’ khoảng thế kỉ VII TCN đến
+m - những thế kỉ đầu Công nguyên,
 
-Chính sách cai trị của các triều đại
-phong kiến phương Bắc và sự
-chuyên biến về kinh tế - xã hội
-của Việt Nam thời Bắc thuộc.
+° Nhà nước Văn Lang - Âu Lạc. trên lãnh thỏ Việt Nam đã hình thành
+- Chính sách cai trị của các triều đại các quốc gia sơ kì như: Văn Lang,
+phong kiến phương Bắc và sự sau đó là Âu Lạc, Chăm-pa và
+chuyển biến về kinh tế - xã hội Phù Nam. Sự ra đời của các quốc
+của Việt Nam thời Bắc thuộc. gia này với những thành tựu văn hoá
 
-Các cuộc đấu tranh giành độc lập thời
-Bắc thuộc đến thế kỉ X.
-
-Cuộc đấu tranh giữ gìn và phát triển
-văn hoá của người Việt.
-
-Vương quốc Chăm-pa.
-
-Vương quốc Phù Nam.
-
-VIITCN
-Nước Văn Lang
-thành lập
-
-208TŒN
-Nước Âu Lạc
-ra đời
-
-.. xe.
-
-Tháp Chăm ở Ninh Thuận
-
-W khoảng thế kỉ VII TCN đến
-những thế kỉ đầu Công nguyên,
-trên lãnh thổ Việt Nam đã hình thành
-các quốc gia sơ kì như: Văn Lang,
-sau đó là Âu Lạc, Chăm-pa và
-Phù Nam. Sự ra đời của các quốc
-gia này với những thành tựu văn hoá
 đặc sắc đã tạo dựng nên những giá trị
 truyền thống cốt lõi, góp phần định hình
 bản sắc văn hoá dân tộc. Thời kì này
-cũng chứng kiến sự nổi dậy mạnh mẽ
-của nhân dân ta nhằm đấu tranh giành
-lại quyền độc lập tự chủ cũng như bảo
+
+Các cuộc đầu tranh giành độc lập thời
+Bắc thuộc đến thế kỉ X.
+
+- Cuộc đầu tranh giữ gìn và phát triển cũng chứng kiến sự nỏi dậy mạnh mẽ
+văn hoá của người Việt. của nhân dân ta nhằm đầu tranh giành
+- Vương quốc Chăm-pa. lại quyên độc lập tự chủ cũng như bảo
+
 vệ và phát triển nền văn hoá của mình.
 
-248 542
-Khởi nghĩa Khởi nghĩa
-
-Khởi nghĩa Khu Liên,
-thành lập nước Lâm Ấp
+Vương quốc Phù Nam.
 
 938
+VIITCN 40 248 542 73 ỮllênthỄng
+Nước Văn Lang Khởinghĩa | Khởinghĩa Khởnghia| Khởngia]4ch Đảng
+thành lập HaiBàTrưng |BàTriệu Lý Bí | MaiThúcLoan
 
-Chiến thắng
-Bạch Đằng
+208 TCN r 192 v CuốiVII
+Nước Âu Lạc Wẵ'Ì9ẵẵ“ Khởi nghĩa Khu Liên, Vươngquốc |khởinghia
+ra đời HH thành lập nước Lâm Ấp PhùNam - |Phùng Hưng
+rađời bị Chân Lạp

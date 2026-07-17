@@ -7,128 +7,146 @@ source: ocr
 
 # SGK Lịch sử và địa lí 7 KNTT (lớp 7) — Trang 182
 
-BẢNG PHIÊN ÂM PHẦN ĐỊA LÍ
+BẢNG PHIÊN ÂM PHÂN ĐỊA LÍ
 
-Bri-xbên Brisbane
+A-côn-ca-goa
 
-109, 118
-108
+at
 
-Bru-nây
-118 Bruxelles
+(
+Adelaide
 
-Budapest
+4
 
-Brúc-xen
+1
 
-153
+1
 
-A-do-tếch
+A-déc-bai-gian
+A-do-téch
 A-đê-lai
+
 A-ma-dôn
+
+1
+1
+]
+]
+
 A-mê-ri-gô
 
-Bu-đa-pét
+A-mu Đa-ri-a
 
-160
+:
+1
+Áp-ga-ni-xtan
+A-ran 113,120
+A-rập Xê-út
+Anh-điêng 145, 152
 
+Ba-ranh 18
+Bác-i 58
+Bai-can 13
+L
+117,118
+=
+62
+49
+22
+
+A-mun-sen
+
+0
+ö
+53
+60
+1
+20
+62
+42
+
+8
+21
+36
+
+9
+
+ö
+58
+37
+
+0
+
+A-pa-lát ]
 1
 
-151, 152
-14
+116,118
+
+A-ra-bi-ca
+
+A-ta-ca-ma 4
+Ác-mê-ni-a
+Ác-tê-di-an
+
+An-đét
+
+1
+1
+L
+]
+1
+149, 151
 1
 
-40
+An-giê-ri
+
+Ban-căng
+
+1
+1
+1
 1
 
-118
+Ban-ga-lo
+
+Băng-la-đét
+
+Bê-linh-hao-den
+
+Boóc-ro-grê-vin
+Bolivia
+
+ffl 150, 151
+
+1
+]
+Bô-li-vi-a ]
+1
+
+Bra-ma-pút
+
+Bra-xin
+
+Bu-đa-pét Budapest
+
 109, 127
-14
-154
-Áp-ga-ni-xtan 118 Ca-ny-on Canyon 142
-117
-118, 121
-99, 113
+.
+l
 
-Ca-dắc-xtan Kazakhstan
+Ca-dắc-xtan
+Ca-liÖ-man-tan
 
-120 Ca-li-man-tan Kalimantan
+Ca-na-đa
 
-162
+n
 
-h
+Cri-xtô-phơ Christopher 139
+Cô-lôm-bô Columbus
 
-Ca-na-đa Canada
+Kyrgyzstan 118
 
-A-mun-sen Amundsen
-
-42 Ca-na-van Carnival
-
-A-pa-lát Appalachian
-
-A-ran 113, 120 Ca-ra-sỉ Karachi
-A-ráp 121 Ca-ta
-
-A-rập Xê-út 116, 118
-
-A-ra-hi-ca 186 Các-pát
-A-ta-ca-ma 149 Cam-pu-chia
-Ác-mê-ni-a 118 Can-bê-ra
-Ác-tê-di-an 158
-An-đét 149, 151
-An-giê-ri 137
-Anh-điêng lIndan | 145, 152
-An-pơ 98, 99
-An-tai 120
-
-Bác-li Barkly 158 Công-gô
-Băng-la- đét Bangladesh 117, 118 Cư-rơ-gư-xtan Kyrgyzstan 118
-Bê-linh-hao-den Bellingshausen
-
-Ca-xpi Caspian
-
-Carpathian
-Campuchia 118
-Canb erra
-Can-gqu-ru Kangaroo 159
-Kavkaz 121
-Cordie 142
-132
-
-153, 154
-
-Cáp-ca
-
-Coóc-di-e
-Cô-la Cola
-Cô-lôm-bi-a Colombia
-
-Cô-pen-ha-ghen Copenhagen
-
-103
-117
-130
-118, 121
-
-Côn Koln
-
-Kolkata
-
-Côn-ca-ta
-
-Congo
-
-_
-“3
-‹Ö
-
-Danube
-Dhaka
-
-96, 97
-117
 122
 
-Delhi 117
+Cuư-rơ-gư-xtan
 
-181
+18I

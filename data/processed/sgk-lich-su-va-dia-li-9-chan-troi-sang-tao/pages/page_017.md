@@ -7,46 +7,53 @@ source: ocr
 
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 17
 
-Sau thời kì thịnh vượng ngắn ngủi trong
+S
 
-100 %
+S0 Vương qua
+Ể 78
+Thể giới
+ú \
+. 65
+ức
+60
+Hoa Kỷ N 55
 
-những năm 20 của thế kỉ XX, nền kinh tế của
+1925 1930 IE n 1932
 
-Pháp ĐI NON VÉ CƠN 8É Ế SỦ „ (HỮU HỢP Sự
-90 nước Mỹ và châu Âu tiếp tục đối mặt với một
-` cuộc khủng hoảng kinh tế trầm trọng bắt
-§0 HƯHg 00 nguồn từ sự sụp đổ của thị trường chứng
-Thế _ khoán Niu Oóc (New York), Mỹ, sau đó lan
-70 sang châu Âu và các châu lục khác, kéo dài đến
-<0 b.= những năm 1933 - 1934. Trong thời kì đại suy
-s8 thoái này, hàng chục triệu người thất nghiệp,
-
-H ky là 5a ` bổ ˆ . . La k\ ^ Lư
-` Káo ¿ s5 nhiều nhà máy, nông trại bị phá sản,... Ở Pháp
-
-và Đức, nhiều người hoài nghi sự tốn tại của
-19222 1930 1931 1932 4 l
-chế độ cộng hoà.
 Chỉ số sản xuất công nghiệp của châu Âu
-và nước Mỹ giai đoạn 1929 - 1932
 
-3. Sự hình thành chủ nghĩa phát xít ở châu Âu
+và nước Mỹ giai đoạn 1929~- 1932
 
-Cuộc đại suy thoái kinh tế những
+Sau thời kì thịnh vượng ngắn ngủi trong
+những năm 20 của thế kỉ XX, nền kinh tế của
+nước Mỹ và châu Âu tiếp tục đối mặt với một
+cuộc khủng hoảng kinh tế trầm trọng bắt
+nguồn từ sự sụp đổ của thị trường chứng
+khoán Niu Oóc (New York), Mỹ, sau đó lan
+sang châu Âu và các châu lục khác, kéo dài đến
+những năm 1933 1934. Trong thời kì đại suy
+thoái này, hàng chục triệu người thất nghiệp,
+nhiều nhà máy, nông trại bị phá sản,... Ở Pháp
+và Đức, nhiều người hoài nghi sự tồn tại của
+chế độ cộng hoà.
+
+3. Sự hình thành chủ nghĩa phátXít ở châu Âu
+
+Cuộc đại suy thoái kinh tếnhứững
 năm 1929 - 1933 đã tàn phá nặng nề
 nền kinh tế các nước tư bản ở châu Âu.
 Một số nước như Anh, Pháp,... đã tìm
-cách thoát ra khỏi khủng hoâng bằng
+cách thoát ra khỏi khủng hoảng bằng
 các cải cách kinh tế - xã hội. Trong khi
-đó, Đức và I-ta-li-a lại đẩy mạnh nỗ lực
+đó, Đức và I-ta-li-a lại đấy mạnh nỗ lực
 phát xít hoá bộ máy nhà nước và tăng
 cường chính sách tái vũ trang phục vụ
 ý đồ gây chiến tranh, để “phân chia” lại
 thế giới.
 
-A-đôn-phø Hít-e (Adolf Hitler) và Bê-ni-tô
+Ố A-đôn phơ HíLle (Adolf Hitler) và Bê-ni-tô
+
 Mút-xô-li-ni (Benito Mussolini) tại Béc-lin
-(Berlin, Đức), tháng 9 - 1937
+(Berlin, Đức), tháng 9- 1937
 
 14

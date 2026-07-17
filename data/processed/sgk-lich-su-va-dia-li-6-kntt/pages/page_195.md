@@ -11,115 +11,103 @@ BẢNG PHIÊN ÂM
 
 PHÀN LỊCH SỬ
 
-mm naäăằ.<
+“ pPhiênâm Nguyêngốc Trang
 
-(Ấcát NMad 31
-Ấc-si-mét 4
-
-CAngkr
-57,97
-57
-Enghen |
-Lm.
-_Ahena
-
-Asyria
-
-A-khe-ta-tông
-
-An-đa-man 18, 52
+mmm a
+Ácsi-mét 4
 
 8
-35
 30
-Ăng-co 52
+52
+
+LØ
+il
+
+A-khe-ta-tông
+An-đa-man
+
+18,52
+cAngkor U
+57,97
+57
+Enghen .44
+CAshoka i 137,3,
+
+Asyria
+B
+
+30,31,
+Banau 50
+
+Ăng-co
 Ăng-co Bo-rây
 Ăng-co Vát
 Ăng-ghen
-A-ni-at
 
 A-rập Xê-ut
 
-œ2
-3a
-ề
+A-sô-ca
 
-Ất-xi-ri
+I
+- %
+ồ
 
-Ba-bi-lon
+A-tê-na
 
-Ba-na-u Banau
+Át-xi-ri 3
 
-`.
-Vai
+LØ
+N,
 
-Bai-rat Bairat
+LØ
+kSẠI
 
-+>
-Nai
+1
 
-Balkans
-Balkhash
-Battambang
+8
+Bogoh l |3S
+5
 
-Ban-căng
-Ban-khat
-Bat-tam-pang
+N)
 
-Sa)
+Borobudur
+Brahmaputra
+W . ° U
 
-Ben-gô-la Bengola
-
-Bi-dan-tin
-
-Byzantium
 Boóc-nê-ô Boocneo
-Bô-rô-bu-đua Borobudur
-Bra-man Brahman
-Bra-ma-put Brahmaputra
 
-Brunei 18, 52
+18,52
 
-Bru-nây
+18,22,52,
 
-18,22, 52,
+Ca-pu-át 18,52
 
-Cam-pu-chia Cambodia
+v
+>I
+Nei
+Iỉt`i’
 
-Ca-pa-oan Kapaoan
+Cáctagi-- (Carhag - 46
+Canchipuram - Kanchipuam 35
 
-Ca-pu-át Kapuas 18,52
-
-œ
-»x
-
-(áctagd (anhaạe 46 _
-(anchipuram KamipmAm 35 -
-
-9
-
-4
-_ .......
-Công-xtăng-tin Constanine 28 _
+Công xtăng tin
 Cô-ring
-(mMela KumbhMea 34
-ïY Ta ẽ___
+CumMêla - KumbhMela - 34
 
-luagp 7 [ham | -
-đĐmỹG |ĐỤM |5 —~
-h CN = —
+4 EN
+banup l [Dambe - 146
+ĐE<n - S Đsean 3537 I
+E ..
+9axide - 10nw6 - 36
+E I!I-I IG
 
-En-x Em 3
-45
-KGandada Gandhaa 35 -
+m m I |
+E
+m |mm |S -
 
-35
+,
 
-30
-(Gieiicho Jekho 30 —_
--.AHẲdÂ...
-KGiốcđan Jodan 30 —
-AmammẠỪaạÐ5`¬5ặẶặẶœ6=
-
-Ha-mu-ra-bi Hammurabi 29
-Ha-ráp-pa 35, 36
+menae — |A - |3M |ïƒ
+m |[Ku - |5 |ïƒ
+ghdcdm - = |lmeen - 13 ;
+m

@@ -8,31 +8,32 @@ source: ocr
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 125
 
 Đời sống của người dân ốn định và
-nâng cao. GDP bình quân đầu người năm
-2019 đạt 2 714 USD, gấp gần 20 lẫn so với I Liên chỉ số về H5 . thông
-năm 1991. Từ năm 2008, Việt Nam đã ra Dê bia 0H Ch ToiaellMR QIủ CAPNRBIA
+nâng cao. GDP bình quân đầu người năm . . j
+2019 đạt 2 714 USD, gấp gần 20 lần so với ; f`Ẩh_"Ề—"U chỉ số về ấ f,;'ụỉpho thông
+ñăn T99T. Từ Bšmi 2008, Viết Năm đã l s-v
+
 khỏi nhóm nước và vùng lãnh thổ thu nhập
 
-F Em có biết?
+. Em có biết?
 
-khu vực như: tỉ lệ huy động trẻ 6 tuổi vào
-lớp 1 đạt 99% (đúng thứ 2 trong khu vực
+khu vực như tỉ lệ huy động trẻ 6 tuổôi vào
+lớp 1 đạt 99% (đứng thứ 2 trong khu vực
 
-thấp để gia nhập nhóm nước và vùng lãnh f5DIN sau-XirmgarpgỆ frlEfiacsinifirtf
+thấp để gia nhập nhóm nước và vùng lãnh —
 thổ thu nhập trung bình thấp. Năm 2020, học và đạt chuẩn Chương trình Tiểu học
 Việt Nam trở thành một trong 52 quốc gia sau 5 năm đạt 92,08%, đứng đầu của khối
 có chỉ số phát triển con người cao. Quy mô ASEAN. Năm 2010, Việt Nam đạt chuẩn
-giáo dục phát triển, từng bước đáp ứng phê cập giáo dục Trung học cơ sở.
+giáo dục phát triển, từng bước đáp ứng phố cập giáo dục Trung học cơ sở.
 
-yêu câu về nguồn nhân lực chất lượng cao.
+yêu cầu về nguồn nhân lực chất lượng cao.
 
 4. Thành tựu về quốc phòng - an ninh
 
-Công cuộc đổi mới ở Uiệt Nam đã đem đến những thành tựu tiểu biểu nào
-trong lĩnh vực quốc phòng —œnnimh?
+Công cuộc đổi mới ở Việt Nam đã đem đến những thành tựu tiêu biểu nào
+#rong lĩnh vực quốc phòng —atrnbih2
 
 Bảo vệ vững chắc độc lập, chủ quyền
-và toàn vẹn lãnh thổ của Tổ quốc là thành
+và toàn vẹn lãnh thố của Tổ quốc là thành
 tựu cơ bản nhất của Việt Nam. Bên cạnh đó,
 vấn để an ninh chính trị, trật tự an toàn xã
 hội, an toàn cho các sự kiện chính trị quan
@@ -40,23 +41,22 @@ trọng tổ chức tại Việt Nam được đảm bảo.
 Năm 2023, Việt Nam nằm trong nhóm các
 quốc gia cải thiện thứ hạng về chỉ số hoà
 bình, tăng 4 hạng lên vị trí 41/163 quốc
-
 gia và vùng lãnh thổ. Nền quốc phòng
 
-` `. na. Tâu ngẩm của Hải quân Việt Nam tại vịnh
-được hiện đại hoá, năng lực chiến đấu của Căiii BARH,KHANHHö3
+- : AE S Aã — — Tàu ngắm của Hải quân Việt Nam tại vịnh
+được hiện đại hoá, năng lực chiến đấu của Cam Ranh, Khánh Hoà
 
 quân đội được nâng cao. Xây dựng thành
-
 công cơ chế hợp tác quốc phòng, an ninh
 đa phương.
 
-k Luyện tập - Vận dụng
-Zn Luyện tập
-Hãy lập bảng tóm tắt những thành tựu tiêu biểu của Việt Nam từ năm 1991 đến nay.
+Luyện tập - Vận dụng
+Ẹ.m Luyện tập
+THãy lập bông tóm tốt những thành tựu tiêu biểu của Việt Nam từ năm 1991 đến nạy.
 
 Vận dụng
-Hy sưu tâm những thành tựu trong công cuộc Đôi mới đất nước từ năm 1991 đến nay ở
-địa nhương nơi em sinh sông. Chọn và giới thiệu một thành tựu tiêu biểu nhát.
 
-122
+Tiãy sưu tâm những thành tựu #fong công cuộc ĐĐối mới đềt nước Hừ năm 1991 đến ngy ở
+đừa phương nơi em sinh sống. Chọn và giới thiệu một thành tựu tiêu biêu nhất.
+
+127

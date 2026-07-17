@@ -7,75 +7,53 @@ source: ocr
 
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 182
 
-1®. Bạch Lạng Vĩ
+1 Bạch Làng Vĩ
 
-' BS.
+.
+—
 
-%
-ANH HOÁ Ñ SN 3
-bị Sun : T4 :
+=a
 
-'s Hòn Mê PP
--8. Thanh [ad SH
+đảáo Hải Nam
 
-Tu l
-ẹ
-_
+1- LỊ Chán Máy - Lãng C
+- hón Cháo
+#
 
-đảo Hải Nam
-lMuhe du
-hòn Ngư
+MA-L M
+BEU-NÄY£t
 
-È[¬L] Chân Aập — Lãng Có
-s#”' hàn Chăn
-2h
+Trung tắm công nghiệp CHỦ GIẢI
+Trung bình Lủa C Thắng cảnh
 
-MA-LAI-XIÉA
-BRL-NAYziff1ø"
+Cao su, chè (@ Di sản văn hoá thể giới
+Dệt, sản xuất trang phục Cà phê, hổ tiêu ( Di sản thiên nhiên thể giới s„ Sông
+Mia, lạc l Di tích lịch sử cách mạng Hỗ
 
-CHÚ GIẢI
-Lúa lộ Thẳng cảnh Thủ đỗ
+Cây thực phẩm b| Khu kinh tế ven biển Địa giới hành chính cấp tỉnh
 
-Cao su, chế Di sản văn hoá thể giới San hô
+Khai thác, chế biến lãm sản
+Sản xuất vật liệu xây dưrg
+Sản xuất, chế biến thực phẩm Trâu [H] Khu kinh tế cửa khẩu Ranh giới vùng
 
-Cả phê, hổ tiêu @® Di sản thiên nhiên thể giới mộ Sảng
+Bộ c`Í_ụ Cảng biển .< =¬ Biên giới quốc gia
+Lợn w Đánh bắt hải sản Quốc lộ, tên đường
 
-Mia, lạc Di tích lịch sử cách mạng Hồ
+vùng rừng Ji~ Cảng hàng không quốc nội Đường sắt
 
-Cây thực nhầm «| Khu kinh tế ven biển Địa giới hành chính cấp tỉnh
+l Huá chất, hoá dầu
+Cư khi, sản xuất giấy
+* * ẮĨ,Ĩ Thuỷ diện, nhiệt diện, diện giá
+lỆ l@ g Khai thác sắt, ti-tan, mạn-gạn
 
-Trung tảm công nghiệp
-Trung bình,
-Nhé
+(®) Œ [©] Khai thác thiếc, đá quý, nước khaáng
 
-Dệt, sản xuất trang nhục
-Khai thác, chế biển lắm sản
+Vũùng năng lãm kết hợp ;ị Cảng hàng không nuấc tế . - Cảng biến
 
-Sản xuất vật liệu xây chrng
+vùng lúa, lợn, gia cắm Ũ = u 1lIIđĨl}g_'|-|-l 5 Đản
 
-Trâu HH Khu kinh tế cửa khẩu Ranh giới vùng
+Aui EC
 
-Sản xuất, chế biển thực nhẩm
-
-Bỏ tù Cảng biển x——:— Biên giới quốc gia
-lợn *#8È7' Dánh bắt hải sản Quốc lộ, tên đường
-Vùng rừng + Cảng hàng không quốc nội Đường sắt
-
-Hoä chất, hoá dấu
-
-Cũ khi, sản xuất giấy
-
-Thuỷ điện, nhiệt điện, diện giá
-Vùng nông lãm kết hợp 4 Cảng hàng khẳng nuiắc tế „8. — Cảng biển
-
-Vùng lúa, lợn, gia cắm £¿iIRII...., ÔN... ^ hạn -_ Đảo
-
-Khai thác sắt, ti-tan, rian-gan
-
-[IRIEĐz2«š sẽ ¬
-
-Khai thác thiếc, đả quý, nước khaảng
-
-Hình 13.3. Bản đổ kinh tế Bắc Trung Bộ, năm 2021
+Hình 13.3. Bản đồ kinh tế Bắc Trung Bộ, năm 2021
 
 179

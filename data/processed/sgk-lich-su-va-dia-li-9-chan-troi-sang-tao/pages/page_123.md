@@ -7,58 +7,58 @@ source: ocr
 
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 123
 
-CHƠIMJ VIỆT NRM TỪ NĂM 1991 ĐẾN NRY
+0hU0H9 0 VIỆT NAM TỪ NĂM 1991 DẾN NAY
 
-Bài 23 ÔNG PUỘC NỔI Mi TỪ NĂM 1901 PÉN NữY
+Bài 23 D0NG 0UG BỔI MỨI TỪ NĂM 1991 BẾN NãY
 
-Học xøng bài này, em sẽ:
+Học xong bài này, em sẽ:
 
 Chỉ ra được những thành tựu tiêu biểu (trên các lĩnh vực kinh tế, chính trị, xã hội, văn hoá, quốc phòng,
 
 an ninh,...) của công cuộc Đổi mới đất nước từ năm 1991 đến nay.
 
-Từ Đại hội Đảng lần thứ ƯI (1986),
-Điệt Nam bắt đầu đối mới toàn điện trên
-các lĩnh vực: kinh tế, chính trị, xã hội, văn
-hoá, quốc phòng, an nình,... ĐẤT nước
-phát tiên, đời sống nhân dân bình yên,
-hạnh phúc. Đỏ là những thành quải8ọt
-ngào mà công cuộc Đôi mới đang lại
-Từ năm 1991 đến nay, công độc Đôi mới
-tiếp tục diễn ra như thể nào và đạt được
+7ừ Đại bội Đông lần thứ VI £1956),
+Việt Nam bắt đều đối mới toàn diện trên
+các lình vực: kinh tế, chính trị, xã hội, văn
+hoá, quốc phòng, an ninh,.. TOất nước
+phảt Biển, đời sống nhân dân bình yên,
+hạnh phuc. #)ó là những thàònh quáảgot
+ngào mà công cuộc ĐĐối mới đñang lại.
+7ừ năm 1991 đến nay, công dưộc TĐôi mới
+Ủ'ếp tục điễn ra như thể năo và đạt được
 những thành tựu tiêu biểu gì?
 
-1. Thành tựu về kinh tế
+1.Thành tựu về kinh tế
 
 Từ năm 1991 đến nay, nền kinh tế Việt
-Nam tăng trưởng bền vững với quy mô
-ngày càng mỡ rộng. GDP năm 2019 gấp
-12,5 lân so với năm 2001. GDP bình quân
+Nam tăng trưởng bên vững với quy mỗ
+ngày càng mở rộng. GDP năm 2019 gấp
+12,5 lần so với năm 2001. GDP bình quân
 đầu người năm 2019 đạt 2 714 USD, gấp
-15 lẫn so với năm 1990. Từ năm 2008, Việt
-Nam đã ra khôi nhóm nước và vùng lãnh
+15 lần so với năm 1990, Từ năm 2008, Việt
+Nam đã ra khỏi nhóm nước và vùng lãnh
 thổ thu nhập thấp để gia nhập nhóm nước
 và vùng lãnh thổ thu nhập trung bình thấp.
 
 Công nghiệp và dịch vụ tăng trưởng
 mạnh, trở thành ngành kinh tế chủ lực của
 đất nước, chiếm khoảng 70% tỉ trọng GDP
-(2020). Kinh tế nông nghiệp phát triển liền
+(2020). Kinh tế nông nghiệp phát triển liên
 tục, góp phần vào tăng trưởng kinh tế và
-ốn định cuộc sống của người dân.
+ốổn định cuộc sống của người dân.
 
 120
 
-KẾT) Cầu Tân Vũ ` Lạch Huyện dài 5,5 km,
+(v câu Tân Vũ - Lạch Huyện dài 5/5 km,
 một thành quả của “Đổi mới” là cây cầu
-vượt biển dài nhất Việt Nam kết nối thành phố
+vượt biển dãi nhất Việt Nam kết nối thành phố
 Hải Phòng với các tỉnh vùng Đông Bắc Bộ
 
-Từ năm 1991 đến nay, nền kinh tễ của Việt Nam từng bước phát triển theo
-hướng hiện đại hoä như thể nào?
+Từ năm 1997 đến nay, nên kinh tế của Việt Nam từng bước phát triển theo
+hướng hiện đại hoá hb tRồ nào 2
 
-(232) Cánh đồng mẫu lớn ở tỉnh An Giang
+ổ Cánh đồng mấẫu lớn ở tỉnh An Giang
 
-Mô hình liên kết bốn nhà (nhà nông nhà doanh
-nghiệp - nhà nước - nhà khoa họa trong sẵn xuất —
-tiêu thụ lúa gạo.
+Mô hình liên kết bốn nhà (nhà nông - nhà doanh
+nghiệp - nhà nước - nhà khoa học) trong sản xuất —
+tiêu thụ lửa gạo.

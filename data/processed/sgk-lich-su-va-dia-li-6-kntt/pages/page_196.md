@@ -7,126 +7,133 @@ source: ocr
 
 # SGK Lịch sử và địa lí 6 KNTT (lớp 6) — Trang 196
 
-Phiênâm Nguyêngốc Trang.
-_Haipumgiaya Haipunjay 52
-Hê-li-ô-pô-lít Heliopolis 3
-Hê-rô- đốt
+Phiênâm Nguyênc‹
+Ha-ri-pun-giay-a Haripunjaya
+Hê-li-ô-pô-lít
+Hê-rô-đốt
 Hi-ma-lay-a
+Hin-đu-xtan
+Hin-đu
 
-©
+Heliopolis
+Herodotos
+Himalaya
 
-œ2
+35,37,190
 
-Herodotos 0,48
+W w / W
+ề + © ẩ
+ề 5
+l
 
-Himalaya 3
+¬
 
-Hin-đu 35,37, 190
+—
+(ei
+=
+N e]
+SẠ
+1
 
-lÌ
-œŒœ Ẳœ
-
-^
-œ
-=.
-`Ð
-“A)
-©
+Ạ
+N2
+L HẠI
++
 
 In-đô-nê-xi-a Indonesia
 
-Ca Ñ là)
-lo
-
 In-đra-pu-ra Indrapura
+I-phu-gao
 
-l-phu-gao líugao
+l-rắc
 
-I-ra-oa-đi lrrawaddy
+lfugao
 
-I-ta-li-a ltaly
+l-ra-oa-đi Irrawaddy
+
+I-ta-li-a Italy
+
+Aè#zes ¬I
+. ©o
 
 Ka-lin-ga
 
-Ko-ta Tam-pan
-Ksa-tri-a
+K
 
-(lam-pag lampng 18 -
-langXpen laangSpean 18 -
-(langkasuka langkasuka 52
-(lawaGiog-gang laraJonggrang 58
+ỉiIlỉÌ
 
-La-tinh Latin 48, 190
-Li-băng Liban
-Libya
-
-Kota Tampan
-
-đữad
-loan
-`...
-(Hugao 50 -
-`... .
-(HAY 4647 -
-_. 1. l1
-(Kae
-(Khep
-Khmer
-(Kotalampan
-Ksauya
+Ko-ta Tam-pan Kota Tampan
 
 Ksatrya
 
-Lin-ga
-Lơ Pa-ria
-Lôt Ca-ba-lôt
+dagát Ô 1agah - 1300
+dam-pang - dampang -S 18 C
+1araGiong-grang laraJonggrang - 58
 
-Le Paria
+La-tinh Latin 48, 190
 
-E
-]
-=:
+a
 
-Los Caballos
+Liban
+Libya
+LeParia
 
-Maxêđônia Maedona 45
-Máy Magwy 18 —_
+Lôt Ca-ba-lôt Los Caballos
+
+CMácuây S Magway Ô 8 UÔ
 Magadha
-Magada
 
+Ma-ga-da Magada
 Ma-ha-bha-ra-ta Mahabharata
 
-Malayu
+37537
 
-'
+Ma-lai-xi-a Malaysia
 
-37,57
-18, 19,
+N
 
-Nai
+Ma-lay-u Malayu
+
+Ma-ta-ram
+
+H &ị|s
+ầ
 
 Menes
 
-Myanmar ` hc
+Myanmar
 
-+c>
-Vai
++
 
 Mycenae
-45,47
 
 Mô-hen-giô Đa-rô Mohenjo Daro
-KMôäEa — Mauna
 
-G2
-+>
++
 
-kU tủ
-lào le ä ĐK
-bái
+Maurya
 
-cỨấíp 0edipus
-Ø-phơ-rát
+Nở
+>I
 
-Pa PO
-` À ộ§ .£s1sa
+Níp-pơ
+
+CNô=ớt - : 1 Knossos - 046
+Ô
+HL m t
+Ốc ta viút
+00-địxê S 0dyeey - 048
+——944C7 NS
+
+0đấp - S 06diẳus - 48 Á
+Ø-phơ rát cEuphrtes .130/,46
+
+-Páctênông - ParẦhenon - 44 Ổ
+L mmm t
+mmm
+Padembang - Palembang - 55
+HN H
+
+W
+
+Pan-đi-a

@@ -11,75 +11,68 @@ HƯỚNG DẪN SỬ DỤNG SÁCH
 
 — Trang mở đầu chương:
 
-Giới thiệu khái quát nội dung của
-chương với những hình ảnh có tính
-gợi mỏ, định hướng nhận thúc.
+` Giới thiệu khái quát nội dung của
+XÃ HỘI CÓ DẠI .- chương với những hình ảnh có tính
+Ứ……z…… 4 gợi mở, định hướng nhận thức.
 
-ỘI CÓ DẠI
+côcg cụ hắng đã ! 1z5cu-qJ n-osơ w: /
 
-Ki» tuổi #uên niễn kj IV TCN,
-er rgườn sắt đầu bưở thớt đại
+mf sỬ văn mnn Mènlca Tro n;pó
 
-xi hột z1 qøi sắp, nha ru tớc: ôi n1f†ng
-cẽtg cị hẳng đã va đồng IFö s, các
+đó rắt nhiều m 'ị cờni được U uyền
+lại đến ngày !
 
-cư dân có đại đ& lùng 3uửe chữ
-Eftelự nhiên, dẫn tau lập cuộc sẺtrg
-ri tức cÍlng tt King viiyÊnt điên re
-Hzn tật cả. rhững giả tr: yên hoậ
-vật chất hnh thân mã czr ngư r
+TRONG CHƯƠNG NÀY, EMSẼ DƯỢC TÌM HIẾU: / CƯŠ
+* Ai Cặo, Lưỡng Hà có đại .
 
-£a tạo ra đ3 sò đông gếp to krtco
-lị‡: sử vân mình ntậyt le. Trorg sắ
-đỏ rất nhiều giả tị cừa được Huyền:
-lại đến ngày trey
+* Án Độ có dại
 
-TRƠNG CHƯƠNG NÀY, El4 SẼ DƯỢC TÌM HIỂU: ‹
-~_Ai Cửo, Lưởng Hà cổ đại /
+» Trurg Quác l | sắ ổai đắn mắ kÌ v
 
-~ Ân Đệ cổ đại
-
-*_ Trurg (Quốc từ #el sẵ #a: đắn tá kỈ II
-* Hự Lạp vk _a lJã số đại
+* Fý Lạp và La Vã oó đa
 
 Mục tiêu bài học:
 
-Nhắn mạnh vê yêu câu cân đạt,
-năng lực và phẫm chất, thái độ
-học sinh cân đạt được sau khi học.
+Nhắn mạnh về yêu cầu cần đạt,
+năng lực và phẩm chất, thái độ
+học sinh cần đạt được sau khi học.
 
-Mở đầu:
-TRÁI ĐẤT TRONG Xác định nhiệm vụ,
-ƒ |, HỆ MÁT 1500 0N KV và vân đê học tập học sinh
-X5, it ĐÓ: 4u dân cêm cà y9 bệ 9 cần giải quyết;
-MöIofMo Hp du. | ng im Tan xứng dao tay Võ TP kết nói với những điều
-« Vị trí của Trái Đắt trong hệ Mặt Trời học sinh đã biệt, nếu
-Vũ Tru là không gian võ tận. Trong Vũ Trụ bao 1z có vân đê nhăm kích thích
+| Mở đầâu:
+TRÁI Ð/ h TRONG Xác định nhiệm vụ,
 
-võ số thiện hả, Tniện hả chữa "ệ Mật Trới gói là dải
+đọc Xông bởi này, dn aẽ: \ ASØ Chúng : dang sóng trén Trái Đắất một Ả .Ä Á£-
+- Xác định được vï t của hành ðnh Wọng VŨ Trụ bạo ía chấc hắn cân giải quyêt
+Trái Đắt trung hệ Mỹt Trời. không ( lằn chúng t đất câu bồi nré nơ' mình
 
-Ngân Hà tư duy, tạo hứng thú
+. W kêt nôi với những điều
++ Vị trí của Trái Đắt trong hệ Mặt Trời fìg2 `SlII`.ìI'Ì đI'Uìạ bIe't›I I7eLII
+Vũ Trụ là không gian võ tận. Trong Vũ Trụ bao !s có vân đề nhăm kích thích
 
-Renstasnmecmsaermm | đối với bài mới
+võ sỐ Whiện hà. Thiện hả chữa hệ Mật Trới qoi là dải
 
-đẳng xung quanh Mặt Trừi cứ! tự quay quanh rrờnh.
+NgànHà, | tư duy, tạo hứng thú
+
+Nềắm ở trung tắm của hệ Mãi ïrời lá El0l ngồi sao. :ự phé à
+ra ảnh sảng; — đó à Mãi Trời. Chuyển động xung quanh Ar Ấu i L
+lặt T à làm hành 9nh. Các hành tnh Hgoài chuyên đôi với bài mới.
+
+động xung quanh Mặt Trừi cứn lự guay quanh rmìh
+
 Hình thành
+
 kiến thức mới:
+
 Với các nội dung
 (kênh hình, kênh chữ)
-thông qua các hoạt ...
-động học tập giúp học ————.
+thông qua các hoạt ˆ. x — _
 
-Khoảng cá£n tự Trải Đài đến Mật Trời là khoảng c&ch lì
+: ; 4 -Á n có b Khoảng cách từ Trời Đảt đến Mặt Trừi là khoảng cách li
+S lỈ7Icì l(Ỉ1 al l"'7 a C.J uep ¬ tướng giúp cho Trái Đắt nhận được lượng nhiệt vả #nh
+b c z z ỀỀ_ ỹilltk lnlaI…1IIlỊ'Kv.1:"'lè sởng phú bợp đồ sự sống cú thể lên lại và phờl lriển
+^ H li Trớ: là nhữm:
+nhận kiên thức mới. t hivg y pho s @ Dvavào hình 1, m hãy cho ế
+n n a n , — Trải Đắt nẩm ở vị trí thứ máy thøo thử tự xã dẫn
+thầy tớ các hãnh rình l Trời
 
-Sinh khai thác, tiếp 22.-Ó tướng giúp cho Trải Đắt nhận được lượng nhiệt ¿ä &nhi
-
-Bề lấ: ? Xx vn hụ nao lên« sửng phú hợp để sự sóng củ thể lên tại và phải triển
-nhận kiên thức mới. bể hòg phế seo Dựa vào hình 1,en bây ch bi
-
-ảnh sáng chà tà nhào —_ Trải Đắt nằm ở vị trí thứ mây theo thở: tự xa dân
-thấy tứ các ltạnh: rình là Mặt Trời
-
-đá phân cluổu ảnh s¿nc: : 1
-
-THẬP ta ` nalữa của klerẳng cách từ Trải ĐÁ đền ạt Trời
+đa phản cluểu: ảnh sóngp : Ñ
+mh v Ý nghĩa của khoảng cách l Trái ĐẾt đến Mặi Trời

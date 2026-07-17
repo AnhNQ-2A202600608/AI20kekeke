@@ -7,136 +7,117 @@ source: ocr
 
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 217
 
-104°
-Ị
+I NH E. Â iên (iriier
+ï - ù
 
-CẠM-PU-CHIA
-
-hòn Nghệ z
-
+hàn Nghệ i
 hòn Tre
+..
+DQÐ Nam Du hàn Bải
+xỶ
+É
 
-F
-B8 Nữưn bu hòn Rúi
-lk%
+LEn. ửỀ't_'l›:' . F hôn ffl°mm'zểằ
+E I L n b l : j n
+MA-LAI-XEA . hònĐátẽ -
+BRU-NA e e 1055
 
-#
+Truing tâm công nghiện Sản xuất vật liệu sây đimg
 
-| IR LUNG QUỐC k „8|
+— Trungbinh
+Hhỗ
 
-vê, —"
-VN:
+(
 
-s Trần thể
-tử Cuuắc Pih
+c
+@
+8
+- vùng rửng lịĨJ khải thác sét, caø lạnh
+®
+i
+s
 
-hòn Khodi s_
-hòn Đá Lễ
+Sản xuất, chẻ hiển thực phẩm
 
-MA -LAEXEA "” LIẾ
-BRLI-NAYEiitgr 105"
+Sán xuất đồ uống
+
+[“ — vùng nông lãm kết hợp Khải thác đầu thở
+| Vùng lúa lợn gia cẩm ị Khai thác, chế biến lãm sản
+- Vũùng nuối tàm, nưuối cả tập trung
+
+Cm - Cảng hiển S Ó (Ccidri,hcä chát
+
+Cg - Cảng thuỷ nội địa +‡
+
+b Sống *ỉẮỀ* Nhiệt điện, điện giớ, điện mặt trời
+
+Sản xUất sản phẩm điện BJ, máy í tĩnh Ệi B
+
+. Dệt, sản xuất trang phụp; luyện kim đen Ụ" Giïa cầm
+
+Ba Đông
+Juyên hệi Í ễ bài ã
+„ TruNg Xam Trở Vinh
+L hản Đề
+m vi Chưuác Pirh
+
+( Côn Sơn
+Ĩf: s
+C x BÓn 8ảy Canh
+i
 
 CHÚ GIẢI
 
-Trung tầm công nghiện
+Ẩ t
+đ Cyängquả
+a Hỗtiêu
+l., tầu tương
+* Dừa
 
-—- Trlng Bình
-4 Rhế.
+Số Cây thực phẩm
 
-=| Vùng rửng
+Vvườn quốc gia Á - Thúđô
+Khu dự trữ s Sanhỏ
+sinh quyến thể giới - .
+sống
 
-—] Vũng nông lãm liết hợp
+táng hãng không quốc nội Š Hồ
 
-| Vùnglúa,lựn,giacẩm
+Cảng hãng không quốc tế Địa giới hành chính cấp tỉnh
+-. Dánh bắt hải sẵn Hanh giới vùng
 
-BH Vũng nuäi tằm, nuỗi cả tận truriq
+cảng hiển 1H Biển giới quốc giá
+— 1— qQuốt lạ, tên đường
 
-Œ Cảng hiển
-Củ. Cảng thuỷ nội địa
+È Lựn Cáng thuý nội địa
 
-% Sông
+Khu kinh tế ven biến Ð. Đảo OĐ, Quần đảo
+; ũ 30 ÊM EM
 
-Sản guất vật liệu xây đựng
-Sản xuất, chế biến thực phăm
+khu hình Lễ cửa khău Em
 
-Sản xuất đề uống
+EIE.s=c422> l
 
-Khải thác đấu thê.
+T Bãitẩm
 
-h
+Hình 21.3. Bản đồ kinh tế vùng Đồng bằng sông Cửu Long, năm 2021
 
-8
-® Khai thắc sét, caa lanh
-„ƒ&# Khai thác, chế biển lãm sản
-g8
-
-=8
-
-XÂXX XÃ Nhiệt điện, điện gió, điện mặt trời
-
-tr khí, haá chất
-
-ƒ. tủa
-
-@_ Cáyinaui
-l Hề tiêu
-R_ Đautương
-kia) bữa
-
-W Gặy thực phẩm
-
-Sản xuất săn phẩm điện tử, máy ví tỉnh K~i Bà
-
-Sg lợn
-
-Tiệt, sản xuất trang phục; luyện kim đen La Gia căm
-
-7® Biitim
-
-EI[R-c- È > + l@ <<
-
-Vườn quốc gia
-
-Khu dự trữ
-
-sinh quyến thế giới
-
-Eảnng liäng không quốc nội
-Cảng hàng lthöng quốc tế
-Đánh bắt hái sắn
-
-Cảng hiển
-
-Cảng thuỷ nội địa
-
-Khu kinh tế wen biễn
-
-Khu kinh Lễ cửa khẩu
-
-Ð Đán
-
-San hỗ
-
-Sảng
-
-Hồ
-
-Địa giới hành chính cấp tỉnh
-Ranh giới wùng
-
-Biên giới quốc gia
-
-Quuất lộ, tên đường
-
-QÐ,- Quần đản
-
-bai Bũ
-km
-
-Hình 21.3. Bản đổ kinh tế vùng Đồng bằng sông Cửu Long, năm 2021
 - Lâm nghiệp: Rừng ở Đồng bằng sông Cửu Long chủ yếu là rừng ngập mặn với sự
-phong phú về hệ sinh thái, có ý nghĩa lớn trong bảo tổn và phát triển du lịch, việc khôi
-phục và bảo vệ rừng đang được chú trọng.
+phong phú về hệ sinh thái, có ý nghĩa lớn trong bảo tồn và phát triển du lịch, việc khôi
+
+phục và bảo vệ rừng dang dược chú trọng.
+
+- Thuỷ sản: Là ngành thế mạnh
+của vùng với sản lượng và diện tích mặt
+nước nuôi trồng thuỷ sản lớn nhất cả
+nước. Sản phẩm nuôi trồng chủ yếu
+là cá và tôm, phát triển mạnh ở các
+tỉnh như Cà Mau, Bạc Liêu, Sóc Trăng,
+An Giang, Đồng Tháp,... Các tỉnh đứng
+đầu về sản lượng thuỷ sản khai thác là
+Kiên Giang, Cả Mau, Bến Tre,..
+
+214
 
 Bảng 21.3. Sản lượng thuỷ sản nuôi trồng,
 khai thác ở vùng Đồng bằng sông Cửu Long,
@@ -144,22 +125,6 @@ giai đoạn 2010 - 2021
 
 (Đơn vị: triệu tấn)
 
-2010 2015 2021
+Năm 2010 2015 2021
 
-- Thuỷ sản: Là ngành thế mạnh
-của vùng với sản lượng và diện tích mặt
-nước nuôi trỗng thuỷ sản lớn nhất cả
-nước. Sản phẩm nuôi trống chủ yếu
-là cá và tôm, phát triển mạnh ở các
-tỉnh như Cà Mau, Bạc Liêu, Sóc Trăng,
-Ấn Giang, Đồng Tháp,... Các tỉnh đứng
-đầu về sản lượng thuỷ sản khai thác là
-Kiên Giang, Cà Mau, Bến Tre,...
-
-Năm
-
-Nuôi trỗng
-Khai thác
-(Nguôn: Tổng cục Thống kê, năm 2016 và 2022)
-
-214
+(Nguồn: Tổng cục Thống kê, năm 2016 và 2022)

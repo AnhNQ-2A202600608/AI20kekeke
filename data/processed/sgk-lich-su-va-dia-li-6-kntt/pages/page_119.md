@@ -9,50 +9,56 @@ source: ocr
 
 Bài 7
 
-nhanh này, : : QUANH TRÒN
+m›c mng bài m y — -
 
-5® Mô tả lã đượcnchuyÊn
-động tự qua y quanh
-trục của Trái Đắt.
+-11r
+
+* Môtả đưw'cnuyền
+é!ong#ư quay mưanh
+trục của Ữál Đắt.
 
 Trình bày được các hệ
-quả của chuyển động
+quả của ửu’y’ểh“đóh’g
 tự quay quanh trục của
-Trái Đất: ngày đêm
+Trái Đắt: ngày đêm
 luân phiên nhau, giờ
 trên Trái Đắt (giờ địa
-phương/giò khu vực),
-sự lệch hướng chuyên š l
+phương/giờ khu vực),
+sự lệch hướng chuyễn \
 động của vật thể theo 1.Chuyên động tự quay quanh trục của
 
-cŠ
+v
 
 Trái Đắt không đứng yên mà luôn tự quay quanh
 trục. Điều đó dẫn tới những hệ quả có tác động
-lớn với đời sống con người. Trái Đắt tự quay như
+lớn với đời sống con người. Trái Đất tự quay như
 thế nào và dẫn tới những hệ quả gì?
 
-chiêu kinh tuyến. Trái Đât
+chiều kinh tuyến. Trái Đất
 
-»s So sánh được giờ Trái Đất không ngừng tự quay quanh một trục tưởng
-của hai địa điểm tượng. Trong quá trình tự quay, trục Trái Đất luôn
-trên Trái Đắt. nghiêng so với mặt phẳng quỹ đạo một góc 66°33'.
+°_So sánh được giờ Trái Đất không ngừng tự quay quanh một trục tưởng
+fflfa Mf ợ_zagđlem tượng. Trong quá trình tự quay, trục Trái Đất luôn
+trên Trái Đât. nghiêng so với mặt phẳng quỹ đạo một góc 66s33'.
 
-Mặt phẳng quỹ đạo
+Trục Trái fflit
 
-Trái Đất tự quay quanh
+\ Mặt phẳng quỹ đạo
+
+Em có biết?
+
+Trá Đất tự quay quanh
 trục một vòng hết 23
 giờ 56 phút 04 giây. Tuy
-nhiên, đề thuận tiện trong
-đời sông và sản xuất, thời
+nhiên, để thuận tiện trong
+đời sống và sản xuất, thời
 
-gian Trái Đất tự quay một : "- HE. 139209
-vòng quanh trục được Hình 1. Chuyên động tự quay quanh trục của Trải Đât
-quy ước là 24 giờ. €1. Dựa vào hình 1 và thông tin trong mục 1, em hãy
+gian Trái Đất tự quay một ` . N
+vòng nuanh Hrục được Hình 1. Chuyên động tự quay quanh trục của Trái Đât
+quy ước là 24 giờ. @ 1. Dựa vào hình 1 và thông tin trong mục 1, em hãy
 
 cho biết:
-— Hướng tự quay quanh trục của Trái Đắt.
-— Góc nghiêng của trục Trái Đất khi tự quay.
-— _ Thời gian Trái Đắt tự quay quanh trục hết một vòng.
-2. Sử dụng quả Địa Cầu để mô tả chuyển động tự
-quay quanh trục của Trái Đât.
+— Hướng tự quay quanh trục của Trái Đất.
+— Góc nghiêng của trục Trái Đắt khi tự quay.
+— Thời gian Trái Đắt tự quay quanh trục hết mộtvòng.
+2. Sử dụng quả Địa Cầu đề mô tả chuyên động tự
+quay quanh trục của Trái Đắt.

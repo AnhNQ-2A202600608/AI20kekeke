@@ -7,4 +7,6 @@ source: ocr
 
 # SGK LỊCH SỬ VÀ ĐỊA LÍ 8 KNTT (lớp 8) — Trang 7
 
-Ỗ
+-. mh
+
+l

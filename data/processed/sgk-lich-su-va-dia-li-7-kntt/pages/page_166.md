@@ -7,37 +7,33 @@ source: ocr
 
 # SGK Lịch sử và địa lí 7 KNTT (lớp 7) — Trang 166
 
-€ Kịch bản về sự thay đổi thiên nhiên châu Nam Cục khi có
-biên đôi khí hậu toàn câu
+©Kịch bản về sự thay đổi thiên nhiên châu Nam Cục khi có
+biến đối khí hậu toàn câu .
 
 Do có tính nhạy cảm cao, thiên nhiên châu Nam Cực
 
-dễ thay đổi khi có biến đồi khí hậu. Theo tínhtoáncủa *#P Đăng phú trên lục địa
+dễ thay đỏi khi có biến đỏi khí hậu.Theo tínhtoáncủa . LớP băng phủ trên lục địa
+các nhà khoa học, đến cuối thế kỉXXI,nhiệtđộở châu . Mam. Cực thưởng xuyên di
+Nam Cực sẽ tăng 0,5°C, lượng mưa cũng tăng lên, Ệuẩeb'ề,tư Ềịẵf_ị“'ẵẵẵịị
+mực nước bliẻrj sẽ dâng thêm ủỌ5 —D,32m. Ẹlhiéujhjệ các ểffl.nẵăn*g f'I"t'.'?`›'.|"JÍ'ẾJ"] biển
+Sinh thái sẽ mật đi nhưng Ẹị ›ỉuăt hiện các đồông có ở m muyể:ĩ:
+vùng ven biên. Lớp băng phu Ỡ vùng trung tâm sẽ dày qua lại
 
-các nhà khoa học, đến cuối thế kỉ XXI, nhiệt độ ở châu Nam Cực thưởng xuyên di
+thêm do có nước mưa cung cấp. '
 
-Nam Cực sẽ tăng 0,5°C, lượng mưa cũng tăng lên, HN trung m “
-3 c3 mm b sx = biến; băng bị vỡ ra, tạo thành
-
-mực nước biên sẽ dâng thêm 0,05 —0,32m. Nhiêu hệ sắc nữi Hển) Lộ trên biến
-
-sinh thái sẽ mắt đi nhưng lại xuất hiện các đông cỏ ở Fếi Ngủ hiến? cho tấu tuyên
-
-vùng ven biên. Lớp băng phủ ở vùng trung tâm sẽ dày qua lại
-
-thêm do có nước mưa cung câp. |
+—
 
 Hình 4. Băng trôi ở Nam Cực
 
-ầ boc thông tin trong mục 4, cho biết kịch bản về sự thay đổi thiên nhiên châu Nam Cực
-khi có biến đổi khí hậu toàn cầu.
+ửạc thông tin trong mục 4, cho biết kịch bản về sự thay đỏi thiên nhiên châu Nam Cực
+khi có biến đỏi khí hậu toàn cầu.
 
-Luyện tập - Vận dụng:
+Luyện tập - Vận dụng
 
-lô Trình bày một trong các đặc điểm tự nhiên: địa hình, khí hậu, sinh vật ở châu
+g Trình bày một trong các đặc điểm tự nhiên: địa hình, khí hậu, sinh vật ở châu
 Nam Cực.
 
-Tìm hiểu về tác động của việc tan băng ở châu Nam Cực do biến đồi khí hậu
-toàn cầu đối với thiên nhiên hoặc con người trên Trái Đắt.
+Tìm hiểu về tác động của việc tan băng ở châu Nam Cực do biến đỗi khí hậu
+toàn câu đôi với thiên nhiên hoặc con người trên Trái Đât.
 
 165

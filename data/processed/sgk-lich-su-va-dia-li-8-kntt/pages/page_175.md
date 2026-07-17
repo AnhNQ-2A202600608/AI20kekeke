@@ -9,215 +9,51 @@ source: ocr
 
 BẰNG PHIÊN ÂM
 
-Phiên äm Nguyễn ngữ Trang
+LLULUETLUU Nguyễn ngữ Trang
 
-A-cha Xoa
-ñ. Pu-skin
-À. Xmit
+Bolovn — Èev = | øW
+s
+m
 
-Acha Soa
-Alecksandr Puhkin
-ÀA. 5mith
+Ghămp — = |chme - x | N
 
-Lh
-=j |
+Chi-ca-gö Chicago 51
+Cuba 47
 
-Barmen
-Balkan
-Bandula
+C.Ricardo
+Diponegoro
 
-Bastille
-
-Bảc-men
-Ban-căng
-Ban-đu-la
-Ba-xti
-Bä-lỗö-ven Baloven
-
-Bôn-sẽ-vích Bnlshevik
-
-Lh" + |Ln
-
-“1
-ra
-
-Boóc-đã Bnrdeaux
-
-—
-—
-
-Bö-xtơn Boston
-
-L„
-
-Bru-nầy Brunei
-
-C. Mắc Karl Mlarx
-
-Các-ten Cartel
-
-(CMáC |KaMA. | g_
-(cán |caml | 4s | [guxu luạu | œt |
-lCalimantan |KaMmanan | 6 | |Kômay Km. | ø_
-
-Kalimantan 6
-
-l
-Cam-pu-chia 2ñ
-Chäm-pa Champa 168 |
-
-lSOaanhiơm |6Wahngen | 8_
+I
+G-Ossnhion |GWashngim | 8
 
 174
 
-Ca-li-man-tan
+D. Ri-các-đỗ
 
-Phiên ẫm
-Gi. Đa-vit
-Giêm Oát
+- .. =
+- -
 
-Nguyễn ngữ
-1. David
-James Watt
+Phiên ấm
+Gi. Ða-vit
+Giếm Oát
 
-H£
+Nguyễn ngữ Trang
 
-Gien-ni
+s
 
-Giô-han Gứt
+re — |hRườc - | 723
 
-Jenny
-Jlahann Goethe
-John Reed
+hoscte - |okom = | m
+# ‹ Ngu
 
-If
-=:
-¬
-=
-=
-ở | VD
+— G
+Usopm.. w - |-
+lunk—lÐ l osx — | 9
 
-Honnrẻ de Balzac
-
-Ề
-
-Nïm
-* |
-ft | |5
-ml”
-Z-|mh |R
-
-lai
-=1” |xõ mm
-
-I-đan Jlose' Rizal
-
-Indonesia
-
-¬
-Đ
-¬
-f
-*
-tử
-
-Ll
-Ú
-L
-L
-
-Yorktown
-
-B
-Ö-
-„ì
-+
-BỊ
-B
-
-|. Lavitan
-
-lsaac Mawton
-
-- H
-¿ |}
-kim
-3lg
-5
-
-GÀ | Ch | =>
-
--ta-li-a
-
-Kyushu
-
-Lapulapu
-Lev Tolstoi
-Liverpool
-Louis XVI
-
-L. Beethoven
-L.Feuerbach
-
-=
-BỊ
-
-k*
-Ẹ
-p
-
-.*j
-—
-
-íp-
-% l_
-=
-¬
-
-ủn-xtõi
-Li-vơ-nun
-Lu-i XVI
-L. Bét-thö-ven
-L. Phoi-ơ-bách
-
-Ln
-
-Ln Ln | +
-=i |& |.
-
-=
-BI.
-h
-—
-m
-¬
-z|z
-+
-
-Mactan
-Mác-xây
-Man-chextơ — |Manchester | 1s |
-Manila |Manh — | œ7 |
-mm —Ằ—
-Myanmar
-
-F.
-
-M. Lnmnnosnv
-Michel Beud
-Mitsui
-
-=
-T
-zs
-E
-
-'
-=
-5|?
-: 3
-5 |#
-=,
-œ
-š
-T4
+y NI
+Mácxay —SSX (Masnel l |1 9
+Manchextg — |Mancheme — | 15
+Mania l {AManh — | 9
+Mgiốc —SS{Maeee: SX 6 Mianm - - |Mama - | 20
+MxenBo — |MihalBed - | W
+N l 1{Men l | 6

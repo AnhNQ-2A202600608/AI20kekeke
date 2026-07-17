@@ -9,54 +9,50 @@ source: ocr
 
 BẢN ĐÔ HÀNH CHÍNH VIỆT NAM
 
-CHỦ GIẢI
-'#HàANộ!L Thủ đô
+1087
 
-ảnh phố,
-“DÀ NẴNG. trục thuộc Trung ương
-NGHỆAN Tên lỉnh
+—H
 
-Ranh giới tỉnh
-—+—-_ Biên giới quốc gia
+— n _. T = — Á N L n n 3 , '
+s . ` À. ~ * : WXHANỘ. Thủ đô
 
+; .. Thành phố
+&DÃ NẴNG trực muẹỈ›c Trung ương
+
+NGHỆAN - Tên tỉnh
+-=--- Ranh giới tỉnh
+—sr¬: Biên giới quốc gia
 Các tỉnh đánh số trên bản đồ
-1. Bắc Ninh
-
-2. Hà Nam
-3. Hải Dương 4. Hưng Yên 20°
-5. Vĩnh Long 6. Vĩnh Phúc
+1.BắcNnnh 2. HàNam
+3. Hải Dương. 4. Hưng Yên
+5. VínhLong 6.Vĩnh Phúc
 
 Các chữ viết tắt trên bản đồ
-š Sông
 
-QÐ. Quần đảo
+ẻ r . § Sông QÐ. Quần đảo
+¡ đãơ Hải Nam , ,
 
-T
+fÌ.
+- —
 
-gà
-Phú Q
+¬ ợ
+: r
 
-Q9, Tiö Ch9
+u NH‹ : A YS TAU - cđảo Phú Quý
+aị:ắ Èb W -
+„ . Phú Quốc! Hà Tiên ~ T ^.Búi hòn Đỏ Lớn- -
 
-¬
-=_—
-2,
-r"
-=
-kợc,
-=
-c
-_
-=
-ve“
+i . “hòn Hải
 
-2.
+Q9| vam DU
 
-bán đảo `
+mũi|Cả Mau
+, hôn Khoai
 
-6-lö-oa BAN-ĐA XÉ-RI „ N Sỹ “đảo Ca-li-man-tan
-MA-LAI-XA | BRỤ-NÂY! †
-104” "108" 1427
+bán đảo v mmm rA
+Ma-lác-ca `. G n u u 1ìL'l"t"JA"cJ'Ấ..Ểf"ặ"ĩỀ ~“đảo Ca-li-man-tan
+MA-LAI-XLA m BRỤ NẤY? \
+
+1047 108” 112° 116”
+
 TỈ LỆ 1 : 10 000 000
-
-118?

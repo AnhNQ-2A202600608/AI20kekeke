@@ -8,32 +8,34 @@ source: ocr
 # SGK Lịch sử và địa lí 6 KNTT (lớp 6) — Trang 40
 
 TRUNG QUỐC TỪ THỜI CỔ ĐẠI
-ĐẾN THỂ KỈ VII
+ĐẾN THẾ KỈ VII
 
 Học xong bài này, em sẽ:
--_ Giới thiệu được những đặc điểm về điêu kiện tự nhiên của Trung Quốc thời cỗ đại.
+- Giới thiệu được những đặc điểm về điều kiện tự nhiên của Trung Quốc thời cô đại.
 
--_ Mô tả được sơ lược quá trình thống nhất và sự xác lập chế độ phong kiến ở Trung Quốc
-dưới thời Tân Thuỷ Hoàng.
+- Mô tã được sơ lược quá trình thóng nhất và sự xác lập chế độ phong kiến ở Trung Quốc
+dưới thời Tân Thuÿỷ Hoàng.
 
-‹_ Xây dựng được đường thời gian từ nhà Hán, Nam Bắc triêu đến nhà Tu}.
-- . Nêu được những thành tựu cơ bản của nên văn minh Trung Quốc thòi cô đại.
+- Xây dựng được đường thời gian từ nhà Hán, Nam Bắc triêu đến nhà Tuyỳ.
+- Nêu được những thành tựu cơ bản của nên văn minh Trung Quóc thời cô đại.
 
-Từ thời xa xưa, người Trung Quốc đã chế tạo ra la bàn để xác định phương
-hướng. Họ còn là chủ nhân của một nên văn minh phát triển với nhiêu thành tựu
+Từ thời xa xưa, người Trung Quốc đã chế tạo ra la bàn đề xác định phương
+hướng. Họ còn là chủ nhân của một nền văn minh phát triển với nhiều thành tựu
 mà cho đến ngày nay nhân loại vẫn đang được thừa hưởng. Vậy, điều kiện nào đã
-giúp người Trung Quốc cỗ đại tạo dựng được
-nên văn minh rực rõ như thế? Những
-giá trị to lớn mà họ tuyên lại
+giúp người Trung Quốc cô đại tạo dựng được
+nền văn minh rực rỡ như thế? Những
+giá trị to lớn mà họ truyền lại
 đến ngày nay là gì?
 
-4š Hình 1. La bàn - một phát minh của người Trung Quốc
+w Hình 1. La bàn - một phát minh của người Trung Quốc
 
-Thế kỉ XXITCN 1027TCN 206TCN
-Nhà Hạ thành lập Mở đâu nhà Chu Mở đâu nhà Hán
+Thế kỉ XXITCN 1027 TCN 206 TCN
+Nhà Hạ thành lập Mở đầu nhà Chu Mở đầu nhà Hán
 
-1523T(N __ 22ITW
-Mở đầu nhà Thương Nhà Tân thống nhất
+1000 TCN
+
+1523 T(N 221T(N
+Mở đầu nhà Thương Nhà Tần thống nhất
 Trung Quốc
 
 39

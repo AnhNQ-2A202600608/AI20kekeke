@@ -9,67 +9,74 @@ source: ocr
 
 a) Thành tựu
 
-Bắt đầu từ những năm 40 của thế ki XX, cách mạng khoa học, kĩ thuật (sau này gọi là
-cách mạng khoa học công nghệ) đã đạt được nhiều thành tựu vượt bậc. Trong lĩnh vực
+Bắt đầu từ những năm 40 của thế kỉ XX, cách mạng khoa học, kĩ thuật (sau này gọi là
+cách mạng khoa học công nghệ) đã đạt dược nhiều thành tựu vượt bậc. Trong lĩnh vực
 khoa học cơ bản, con người đã có những bước tiến dài trong các ngành Toán học, Vật
-lí học, Hoá học, Sinh học,... Từ những năm 1970, lĩnh vực công nghệ đã có những phát
-minh quan trọng, làm thay đối nhận thức của con người về thế giới. Trong những năm
-đấu thế kỉ XXI, thế giới chuyển sang cách mạng công nghiệp 4.0 với thành tựu nổi bật là
-vạn vật kết nối (IoT), dữ liệu lớn (Big Data), trí tuệ nhân tạo (AI),...
+lí học, Hoá học, 5inh học,... Từ những năm 1970, lĩnh vực công nghệ đã có những phát
+minh quan trọng, làm thay đổi nhận thức của con người về thế giới. Trong những năm
+đầu thế kỉ XXI, thế giới chuyển sang cách mạng công nghiệp 4.0 với thành tựu nổi bật là
+vạn vật kết nốổi (loT), dữ liệu lớn (Big Data), trí tuệ nhân tạo (AI),...
 
-Máy bay siêu thanh, = Máy vỉ tính.
-tầu siêu tốc, xe máy và h =Máy tự động và hệ
-ô tô điện. [ <] : thống máy tự động.
+Máy bay siêu thanh, - Máy vi tính.
 
-= —— — Mạng internet,
-Máy ví tính các công cụ tìm
-có kết nối internet kiếm, mạng xã hội
+tàu siêu Lốc, xe máy và E
 
-(Goodle, Facebook,
-Viber, Zalo,...) và
+ô tô điện.
+
+Máy vi tính
+có kết nối internet
+
+- Máy tự động và hệ
+thống máy tự động.
+
+- Mạng Internet,
+các công cụ tìm
+kiếm, mạng xã hội
+(Google, Facebook,
+Viber, Zalg...) và
 điện toán đám mây.
 - Rô-bốt sử dụng trí
-tuệ nhân tạo (AI),
+tuệ nhân tạo (AI).
 
-- Công nghệin 3D,
+- Công nghệ in 3D.
 
-Chinh phục Mặt Trăng,
+Chinh phục Mặt Trắng,
 khám phá các hành
 tỉnh khác.
 
-Công œ1 `
-sản xuất mới „
--“ - Chất dẻo pô-li-rme
-
+- Chất dẻo pô-liÖóme
 (polyme).
-N.Am-xtroøng N. Armstrong}) (Ýấn ô NNg ~ Các vật liệu siêu
-và tàu A-pô-lô 11 (Apollo 11) Ẳ ` SG. sạch, siêu cứng,
-
-trên Mặt Trăng vào ngày siêu bền, siêu dẫn,..
-20— 7 - 1969: “bước chân
+N.Am-xtroong (N. Armstrong) (Ä E ' lILER — Các vật liệu siêu
+và tàu A-pô-lô 11 @pollo 11) : ~ . _~^>Ạ, . sạch, siêu cứng,
+trên Mặt Trăng vào ngày ' siêu bền, siêu dẫn,...
+20 = 7 - 1969: “bước chân
 nhỏ bé của con người,
 bước tiến vĩ đại của nhân loại?
 
-Năng lượng mặt trời,
-năng lượng gió, năng
-lượng nguyên tử,...
+Nguồn năng
+lượng mới
 
-— Tìm ra nhiều loại
+Năẵng lượng mặt trời,
+năng lượng gió năng
+lượng nguyễên tỬ,..
+
+- Tìm ra nhiều loại
 thuốc chữa bệnh
-hiểm nghèo,
+hiểm nghèo.
 
 - Đột phá trong Quạt gió tạo năng lượng
+
 công nghệ tế bào,
 di truyền, vi sinh,
-en-zim (enzyme),
-- Lập được bản đỗ
+en-zim (enzyme).
+- Lập được bản đầ
 gen (gene) người,
-nhân bản vô tính
-(cừu Đô-li (Dolly).
+nhân bản võô tính
+(cừu Đô-li (Dolly),
 
-Cừu Đô"
+Cừu Đôt-i
 
-: Một số thành tựu trong lĩnh vực
+Ể Một số thành tựu trong lĩnh vực
 nhân bản vô tính
 
 khoa học công nghệ

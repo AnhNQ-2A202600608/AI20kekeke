@@ -7,39 +7,39 @@ source: ocr
 
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 32
 
-Bài 6 HUẠT ĐỘNG PÚA NGUYÊN ÁI QUÚC -
-VÌ SỰ THÀNH LẬP BẰNG PNG SẢN VIỆT NAM
+Bài 6 H0ẠT BỘNG PÚA NGUYÊN ÁI 9U0C -
+VÀ SỰ THÀNH LẬP BÁNG CỘNG SẲN VIỆT NAM
 
 Học xong bài này, em sẽ:
 
-— Nêu được những nét chính về hoạt động của Nguyễn Ái Quốc trong những năm 1918 - 1930,
+— Nêu được những nét chính về hoạt động của Nguyễn Ái Quốc trong những năm 1918~ 1930,
 
-— Nhận biết được quá trình và ý nghĩa của việc thành lập Đảng Cộng sản Việt Nam; đánh giá được vai trò
-của Nguyễn Ái Quốc trong quá trình thành lập Đẳng Cộng sản Việt Nam.
+- Nhận biết được quá trình và ý nghĩa của việc thành lập Đảng Cộng sản Việt Nam; đánh giá được vai trò
+của Nguyễn Ái Quốc trong quá trình thành lập Đảng Cộng sản Việt Nam.
 
-“Đường Kách mệnh” là tác phẩm phản ảnh sự lựa chọn
-con đường cửu nước của nhà cách mạng Nguyễn Ä1 Quốc —
-người có ảnh hưởng trực tiếp đến tình hình cách mạng
-tiệt Nam và sự ra đời của Đảng Cộng sản Liệt Nam vào
-năm 1930. Vậy, cơn đường cách mạng nào mà Nguyễn ñi Quốc
-đã it trong những năm 191S— 19302 Nguyễn Ái Quốc có
-vai trò như thể nào trong quá trình thành lập Đảng?
+qOường Kách mệnh” là fflỂcphẩmphcỉn dnh sự lưa chọn
+con đường cửu nước của nhà cách mạng Nguyễn Ai Quốc —
+người có ảnh hướng trực tiếp đến tình hình cách mạng
+Việt Mam và sự ra đời của ỷáng Cộng sản Việt Nem vào
+năm 1930. Vậy con đường cách mạng nờo mà Nguyễn Í‡ Quốc
+đã đi rong những năm 1918— 19302 Nguyễn Ái Quốc có
+vai #rò như thể nào trong quá trình thành lập Đảng?
 
-@® Đường Kách mệnh - cuốn sách được xuất bản
-vào năm 1827 ở Quảng Châu (Trung Quốc)
+a£ỉ!:Lcụ“c`:~²f^.'s_:ẩ~J Kách mệnh - cuốn sách được xuất bản
+vào năm 1927 ở Quảng Châu (Trung Quốc)
 
-— Dựa vàõ sơ đồ 6 4, hãy nêu những nét chính về lầoqf động của Nguyễn ZÍ¡ Quốc
-trong những năm J918 « 1930.
+— Dựu vờo sơ đô6 4 hãy nêu những nét chính về hogf động của Nguyễn i Quốc
+trong những#tH 4915 >~ 32930
 
-— Đọc tư liệu 6.3 và 6.5) hy cho biết trong giải đöáu 1919 1930, Nguyễn Íi Quốc đã
-có những chuyên biến gì trong tư tưởng và hình thức đâu tranh cách mạng.
+—Đọc tư liệu 6.3 và 6.5/ Bãy cho biết trong giới đöd 1919- 1930, Nguyễn Ái Quốc đã
+có những chuyển biên gì rong tư tướng và hình thức đầu tranh cách mạng.
 
-Sau nhiều năm bên ba tìm
-cách “cứu đồng bàơ, Nguyễn
+Sau nhiều năm bôn ba tìm
+cách “cứu đồng bào, Nguyễn
 Tất Thành trở lại Pháp (1917),
 tham gia hoạt động trong
 Đảng Xã hội Pháp (1919).
-Từ đây, những hoạt động yêu
+Từ đây, những hoạt động yều
 nước của Nguyễn Tất Thành
 bắt đầu dưới cái tên Nguyễn
 Ái Quốc.
@@ -47,7 +47,7 @@ bắt đầu dưới cái tên Nguyễn
 
 Đại hội XVIII Đảng Xã hội Pháp
 
-ở thành phổ Tua (Tours)
-tháng 12 - 1920
+ở thành phố Tua (Tours)
+tháng 12- 1920
 
 29

@@ -7,42 +7,74 @@ source: ocr
 
 # SGK Lịch sử và địa lí 6 KNTT (lớp 6) — Trang 120
 
-2. Hệ quả chuyên động tự quay quanh trục
-của Trái Đât SĂC ïố diứng bị ấy
-a) Ngày đêm luân phiên Mặt Trời đường như mọc ở
-. &..š › phía đông và lặn ở phía tây.
-Trái Đât có dạng khôi câu nên lúc nào cũng chi được gi Mặ Trờ lên cao
-Mặt Trời chiêu sáng một nửa. Nửa được chiêu sáng là nhật trên bầu tời người
-ngày, nửa năm trong bóng tôi là đêm (hình 1). Do sự ta quy ước đó là lúc
-chuyên động tự quay quanh trục theo hướng từ tây 12 giờ, từ đó tính ra các giờ
-sang đông nên ở khắp mọi nơi trên Trái Đất đều lần khác trong ngày. Giờ được
+2. Hệ quả w_uyển động tự quay quanh trục
+của Trái Đât
+a) Ngày đêm luân phiên
 
-lượt có ngày và đêm luân phiên nhau. tính dựa vào độ cao Mặt Trời
-Nhang trong ngày như vậy gợi là giờ
-€Q Sử dụng quả Địa Cầu để trình bày hiện tượng _ qa SP BẤT Ein âš HH
-ngày đêm luân phiên trên Trái Đât. không thuận tiện trong đời
+Trái Đắt có dạng khối cầu nên lúc nào cũng chỉ được
+Mặt Trời chiều sáng một nửa. Nửa được chiếu sáng là
+ngày, nửa nằm trong bóng tối là đêm (hình 1). Do sự
+chuyển động tự quay quanh trục theo hướng từ tây
+sang đông nên ở khắp mọi nơi trên Trái Đất đều lần
+lượt có ngày và đêm luân phiên nhau.
 
-sống, sản xuẤt.
+@) Sử dụng quả Địa Cầu đẻ trình bày hiện tượng
+ngày đêm luân phiên trên Trái Đắt.
 
 b) Giờ trên Trái Đất
-Đề thuận tiện trong sinh hoạt và giao dịch, người ta chia bề mặt Trái Đất ra 24 khu
+
+Em có biết?
+
+Hằng ngày chúng ta thấy
+Mặt Trời dường như mọc ở
+phía đông và lăn ở phía tây.
+Kh Mặt Trời lên cao
+nhất trên bầu trời người
+ta quy ước đó là lúc
+12 gờ, từ đó tính ra các giờ
+khác trong ngày. Giờ được
+tính dựa vào độ cao Mặt Trời
+trong ngày như vậy gọi là giờ
+địa phương. Giờ địa phương
+không thuận tiện trong đời
+sông, sản xuất.
+
+Đề thuận tiện trong sinh hoạt và giao dịch, người ta chia bề mặt Trái Đắt ra 24 khu
 vực giờ. Các địa điểm nằm trong cùng một khu vực sẽ có giờ giống nhau, gọi là giờ
 khu vực. Hai khu vực giờ liền nhau chênh nhau 1 giờ. Ranh giới của các khu vực giờ
+
 rất phức tạp do bị điều chỉnh theo đường biên giới của các quốc gia, vùng lãnh thỏ.
 
 Giờ của khu vực số 0 có đường kinh tuyến 0° đi qua chính giữa được lấy làm giờ
 Quốc tế (GMT). Giờ của các khu vực khác được tính dựa theo giờ ở khu vực số 0.
 Ví dụ: Khi ở Luân Đôn là 0 giờ thì Hà Nội là 7 giờ sáng, Bắc Kinh là 8 giờ sáng.
 
-NT G
-3. ~ -2 z `
+r Ze. E đdr. 72k
 
-t. ki «4 Tổ - “ _—
-0100 0200 0300 0400 0509 08003 07:00 0800. 0900 1000 1100 1200 1303 1400 15:00 1600 1703 1602 1800
+x - O
+ZI 4 đ
+0100 02:00 03:00 04-00 D5:0O 06:00 0#00 1000 11:00 1 15:00 16:00
 
-#lu'%G (G000
+2000 4000
 
-2000 0 2000 4000 6000 8000km
-mz...nN 7 THNNENNNE HƯƠNG
+2 000 0
+.. m m
 
 Hình 2. Các khu vực giờ trên thế giới
+
+( Œ ÚỦ) Ø
+
+1700 18:00
+
+&
+
+S 9
+
+1900 20:00 ¡ 2200 23:00
+
+6000 8000km
+
+f’T\l
+N
+
+24:00

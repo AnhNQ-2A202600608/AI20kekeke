@@ -7,52 +7,52 @@ source: ocr
 
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 15
 
-Bài 2 PHÂU ÂU VÀ NƯIÍt MỸ
-TỪ NĂM 1918 NIÊN NĂM 1945
+Bài 2 0HÂU ÂU VÀ NƯỚC MỸ
+TỪ NĂM 1918 ĐÉN NĂM 1945
 
 Học xong bài này, em sẽ:
 
-— Trình bày được những nét chính về: phong trào cách mạng và sự thành lập Quốc tế Cộng sẵn;
+- Trình bày được những nét chính về: phong trào cách mạng và sự thành lập Quốc tế Cộng sản;
 đại suy thoái kinh tế 1929 - 1933; sự hình thành chủ nghĩa phát xít ở châu Âu.
 
-~ Nhận biết được tình hình chính trị và sự phát triển kinh tế của nước Mỹ giữa hai cuộc chiến tranh
+- Nhận biết được tình hình chính trị và sự phát triển kinh tế của nước Mỹ giữa hai cuộc chiến tranh
 thế giới.
 
-Đứng trước cổng nhà máy đã bị khoá, người thợ
-tuyệt vọng nhìn vào và tự hỏi: “Khi nào cuộc khủng hoảng
-sẽ kết thúc2”. Hình ảnh này phân únh tâm trạng chung
-của người dân “âu ÄÑĐ trước một loạt các biến động của
-lịch sử điển ra dôn đập trong thập niên 1930. Vào quãng
-thời gian giữa hai cuộc chiến lớn của thế ki XX, tình hình
-chính tricldnh dê của châu ẩu và nước A4ÿ đã phát triển
-rũ sao? Sự phát triểmdó gắn với những biến cô lớn nào
-của lịch sứ?
+Đứng trước công nhà máy đã bị khoá, người thợ
+fuyệt vọng nhìn vào và tự hỏi: “Khi nào cuộc khủng hoảng
+sẽ kết thúc?”. Hình ảnh này phản ánh tâm trạng chung
+của người đân Âu 1Mỹ trước một loạt các biển động của
+lịch sử diễn ra dồn đdập #ong thập niên 1930. Vào quống
+thời gian giữa hai cuộc chiến lớn của thể kí XX, tình hình
+chính tbekinhiiê của châu Âu và nước Mỹ đã phát triển
+rấ sao? Sự phát triểmđó gắn với những biên cổ lớn nào
+của lịch stử2
 
-“Khi nào cuộc khủng hoảng sẽ kết thúc7??
-hình minh hoa đăng trên một tạp chí của Pháp,
-tháng 10- 1931
+“Khi nào cuộc khủng hoảng sẽ kết thúc??
+hình minh hoạ đăng trên một tạp chí của Pháp,
+tháng 10-1931
 
-Ko)
+&
 
-— Hãy “nêu nguyên nhân dân đến phong trào cách
-mạng ở cúc nước châu Âu sau Chiến tranh thể giới
-thứ nhất. Phong trào cách mạng trong thời kì này
-đã mang đến hệ quả gì?
+— Hãy nêu nguyên nhân dân đến phong trào cách
+mạng ở các nước châu u sau Chiến tranh thể giới
+thư nhất Phong trào cách mạng trong thời kì này
+đỡ mạng đến hệ quả gì?
 
-— Hãy trình bày ÿ nghĩa của việc thành lập Quốc lễ
-Cộng sản (1919) đổi với phong trào cách mạng
+— Hãy tình bày ý nghĩa của việc thành lập Quốc tê
+Cộng sản (1919) đối với phong trào cách mạng
 trên thể giới.
 
 Sau Chiến tranh thế giới thứ nhất, dưới ảnh
 hưởng của Cách mạng tháng Mười Nga và hậu quả
 của chiến tranh, tình hình châu Âu có nhiều thay
-đối: các nước Anh, Pháp, Đức,.. phải đối mặt với
-nên kinh tế bị tàn phá, tỉ lệ thất nghiệp cao, lạm : "KH | giả th
+dối: các nước Anh, Pháp, Đức,.. phải đối mặt với
+nềên kinh tế bị tàn phá, tỉ lệ thất nghiệp cao, lạm _ Máu gia u
 
-W.L QÉỢ Ô gg š N % te ặ trẻ em Đức sử dụng tiền đề
-phát tăng vọt, đời sỗng nhân dân gặp nhiều khé Äếö tiiê'BÌNH fö'EHöïi'GH8
+_ — S a s - . trẻ em Đức sử dụng tiền đề
+phát tăng vọt, đời sống nhân dân gặp nhiều khó xếp T /NIIEERS eHGITEORG
 khăn, mâu thuẫn xã hội căng thẳng; phong trào kì lạm phát (năm 1923)
 
-@® Đồng tiền không còn giá trị,
+ỡ Đồng tiền không còn giá trị,
 
 12

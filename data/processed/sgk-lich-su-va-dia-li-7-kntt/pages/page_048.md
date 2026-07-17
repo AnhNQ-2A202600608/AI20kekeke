@@ -7,35 +7,35 @@ source: ocr
 
 # SGK Lịch sử và địa lí 7 KNTT (lớp 7) — Trang 48
 
-Em có biết?
+Đinh Bộ Lĩnh là người động 2_ NĩfĨả ỂÌ m_:Ẻ: ử Ển Hưu ›’IhậỉXéỉ.' "ĨĨẺfT Hoàng nhờ
 
-Đinh Bộ Lĩnh là người động 2. Nhà sử học Lê Văn Hưu nhận xét: "Tiên Hoàng nhờ
+Hoa Lư (Gia Viễn, Ninh CÓ ỂI Ếng sáng s..1.mt I"`lI2`.ìĩ.\".l mtỈm, fflm_g r:am'mưf.ỉ ửqc
 
-Hoa Lư (Gia Viễn, Ninh có tài năng sáng suốt hơn người, dũng cảm mưu lược
-Bình), con trai Đinh Công nhất đời, đương lúc nước Việt ta không có chủ, các
-"na (Thứ sử Hoan Châu). hùng trưởng cát cứ, một phen cât quân mà mười hai
+Bình), con trai Đinh Công ủat ®*J,ÌđưowÍg ch .\’]|'.Jl"Jịn'L]F'tĩ.` Việt Ễ %ang fflỉ] ffluĩ_caci
 
-sứ quân phục hết.
-(Theo Ngô Sỹ Liên, Đại Việt sử ký toàn thư,
-Tập |, Sđd, tr.211)
+Trứ (Thứ sử Hoan Châu). hùng trưởng r:at_ cứ, một phen cât quân mà mười hai
+sứ quân phục hệt".
 
-Hỏi nhỏ, ông thường cùng
-trẻ con trong vùng chăn trâu,
+(Theo Ngô Sỹ Liên, Đại Việt sử kỹ toàn thư,
+
+Tập I, Sđd, tr.211)
+
+Hồi nhỏ, ông thường cùng
+trẻ con trong vùng chăn trầu,
 chơi trò tập trận, khiêng kiệu,
-lắy bông lau làm cờ.
+lẫy bông lau làm cờ.
 
-Hình 2. Đền thờ Đỉnh Tiên Hoàng thuộc Quân thể di tích danh thắng Tràng An —
-được UNESCO công nhận Di sản văn hoá thê giới năm 2014
+Hình 2. Đền thờ Đinh Tiên Hoàng thuộc Quân thể di tích danh thắng Tràng An —
+được UNESGO công nhận Di sản văn hoá thê giới năm 2014
 
-1. Em hãy nêu tình hình nước †a sau khi Ngô Quyền mắt.
-2. Hãy trình bày công cuộc thống nhất đất nước và thành lập nhà Đinh của Đinh Bộ Lĩnh.
+1. Em hãy nêu tình hình nước ta sau khi Ngô Quyền mắt.
+2. Hãy trình bày công cuộc thốóng nhất đất nước và thành lập nhà Đinh của Đinh Bộ Lĩnh.
 
-Luyện tập - Vận dụng:
+Luyện tập - Vận dụng
 
-1. Em hãy đánh giá công lao của Ngô Quyền trong buỏi đầu độc lập.
-2. Những việc làm của Đinh Bộ Lĩnh có ý nghĩa như thế nào đối với dân tộc?
+1. Em hãy đánh giá công lao của Ngô Quyền trong buổi đầu độc lập.
 
-3. Có ý kiến cho rằng: Ngô Quyền quyết định về đóng đô ở Cô Loa là để tiếp
-nối truyền thống cha ông. Em có đồng ý với ý kiễn đó không? Vì sao?
+2. Nhữngviệc làm của Đinh Bộ Lĩnh có ý nghĩa như thế nào đối với dân tộc?
 
-Âm:
+3. Có ý kiến cho rằăng: Ngô Quyền quyết định về đóng đô ở Cỏ Loa là đề tiếp
+nối truyền thống cha ông. Em có đồng ý với ý kiến đó không? Vì sao?

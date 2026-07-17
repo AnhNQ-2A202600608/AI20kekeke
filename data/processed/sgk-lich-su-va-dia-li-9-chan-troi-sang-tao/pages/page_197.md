@@ -7,31 +7,26 @@ source: ocr
 
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 197
 
-`. - hồn Ông Căn
-
-Ñ. Xrông£
+Š Arnôn6È
 
 CAM-PU-CHIA
 
-TRUNG QUỐC
+ốc X re
 
-“h
-I0
+Địa giới hành chính cấp tỉnh X - Ihủđỏ CHÚ GIẢI
+x—=— Ranh giới vùng .—. 5an hỗ Phăn tắng độ cao địa hình tm])
 
-_ LAI:
-St: MIA-LAI-XI-A ;-NÄY?t11ø
-IAI Địa giới hành chính cấp tỉnh Lí [hủ đã CHÚ GIẢI
-laa| ñsen ——— Ranh giới vùng vi San hỗ Phân tầng độ cao địa hình (Im]
-¡NA ..a ~ Biên giới quốc gia .Ày sangh |WNC - 1/0 NA
-Nước khaảng lên) Khu dự trữ sinh quyển thế giới ưˆ 29B piầm độ can 9 50 200 200 1UDU 1500 2000 2500 lrên2500
-" z TU IEU F K " li bì bị ]ạ0
-Rừng Í# Cửa khẩu quốc tế Bi Vườn quốcgia 3 sông ẤW. Núi 1 Km:
+----- = Biên giới quốc gia -X sanaaaoptt INƯỖỚNG. /
+Ệ Nước khoảng . Khu dự trữ sinh quyền thế giới _[2 358 . piểm điá can u u 09 500 1000 1500
 
-Hình 17.1. Bản đổ tự nhiên vùng Tây Nguyên
+2000 2500 Trên 2 5D0
+Rừưng fflq Cửa khẩu quốc tế l
+
+Vườnguốcgia % Sông N. Núi
+Hình 17.1. Bản đồ tự nhiên vùng Tây Nguyên
 Khí hậu: mang tính chất cận xích đạo, có sự phân hoá theo độ cao địa hình, chia
 thành hai mùa mưa và khô rõ rệt. Mùa mưa có lượng mưa lớn, cung cấp nước cho sản xuất
 và sinh hoạt; mùa khô ít mưa, kéo dài tạo điều kiện thuận lợi để phơi sấy, bảo quản nông sản.
-
 Một số cao nguyên cao trên 1 000 m khí hậu mát mẻ, có thể phát triển du lịch và trồng cây
 cận nhiệt như chè, cây dược liệu,...
 

@@ -9,44 +9,57 @@ source: ocr
 
 có nhiều phụ lưu, riêng ở Việt Nam có 286
 phụ lưu, lớn nhất là sông Srê Pốk. Mạng
-lưới sông có hình lông chim. Hai chi lưu
-lớn ở Việt Nam là sông Tiền và sông Hậu,
+lưới sông có hình lông chim. Hai chỉ lưu
+lớn ở Việt Nam là sóng Tiền và sông Hậu,
 được chia ra thành nhiều sông nhỏ cùng
-hệ thống kênh rạch chẳằng chịt.
+hệ thống kênh rạch chằng chịt.
 
-Hinh 6.6. Đoạn sông Hậu chảy qua tỉnh
-- Chế độ nước sông: Sóc Trăng
+- Chế độ nước sông:
+
+Hình 6.6. Đoạn sông Hậu chảy qua tỉnh
+SÓc Trắăng
+
 Chế độ nước của hệ thống sông Mê Công có hai mùa: mùa lũ kéo dài từ tháng 7 đến
 tháng 11, lượng nước mùa lũ chiếm khoảng 80% tổng lượng nước cả năm; mùa cạn từ
 tháng 12 đến tháng 6 năm sau, lượng nước mùa cạn chỉ chiếm khoảng 20% tổng lượng
-nước cả năm. Nhờ mạng lưới sông dạng lông chim và được điều tiết bởi hổ Tôn-lê Sáp
+nước cả năm. Nhờ mạng lưới sông dạng lông chim và được điều tiết bởi hồ Tôn-lê Sáp
 (Cam-pu-chia) nên vào mùa lũ nước lên và xuống chậm.
 
-tụ
-* ^^. «mm
-1x V Vu
+t Š
 
-Ằ%L...
-1A. _
+.
+L 7 T
 
-L..
-J h F
-m<
+à
+
+-
+.
+n'
 
 CHỦ GIẢI
-ẽï Lưu vực hệ thẳng
-sẵng Mà Cang
+I Lưu vực hệ thẳng
+sống Mð Công
 
-=—. Sông % Hỗ
+2 Sông > Hỗ
+MÀ MCH Tiuũ đ
+=.=.:=: Biển qưới quốc gia
 
-HÀ HỘI# Thủ đỗ
-man Biên quới quốc gia
+100 L 100
 
-Các chữ viết tắt
-š Sông Q. Quản đảo CC.
+S
+C
+=
+G
 
-10Ö ũ M1!) 2Ù 3ùủ 4ÖÖ kưi
-Ams.m...N €ỳ€ỳ TNNHENNNNNNEE NHƯ
+l-.l._..
+:
+1- L
+T E .=
+nu
+
+¬+
+
+sữU — 300- 40Ökm
 
 Hình 6.7. Lược đồ lưu vực hệ thống sông Mê Công trên lãnh thổ Việt Nam
 

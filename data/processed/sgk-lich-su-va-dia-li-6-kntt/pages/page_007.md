@@ -14,80 +14,98 @@ Tư liệu:
 liệu khác nhau hoặc được cung
 cấp bởi tác giả viết SGK. Là cơ
 
-sở để tỗ chức các hoạt động tự
+sở đề tô chức các hoạt động tự
 
-nhận thúc bài học cho học sinh.
+nhận thức bài học cho học sinh.
 
-l§ 1. Tặng phẩm của những dòng sông
-“Ai Cập nắm ở sữa ông Báo của điâu Ffr nới e3 động sông.
-Nin chếy qua. Lưởng Hà 3 tắt: gọi vùng Eất giữa hai san gắng
--nt-rät wâ Ti-qe-r ở lfvw wc Tây Nern Á.
+lR 1. Tặng phẩm của những dóng sống
+Ai Cặp nắm ở sùng Dóng Bắc cửa ơiâu Plr. nơi có đòng sóng
+Nin chếy qua. Lường |43 là tếP: ggi vÙng Cắt gữa hai cơn sóng
+Ơ-pFo-rat và Tì-39-nơ ở kðu vục Tây Namh Á
 
-Mọc xeng say emse:— CẤU TẠO CỦA TRÁI ĐẤT.
+Morvengsimyemse | CẦU TẠO CỦA TRÁI ĐẤT.
 
-‹ neasyaeccome_ CÁC MẢNG KIẾN TẠO
-c0 !rai F3ẩt gắm bøÄD
+c AO U CÁC MẢNG KIẾN TẠO
+của Trại Đắt gảm bố Xp
 
-+ #Ä#0f-Ố€ đã (ung skấn AI Cân M đăng phẩm của sáng MÀ.
+.. 26 -CÓI Ớã hìng vxảt AI CÁp M2 l5ng phám của A
 
-Esp li bện To lkctrrDe sex DabE dani
+SÓ'Ẹ'ử'.°I'ỨlÓfỤdI'|'l!IÉA’.\Ở'|lơ|JỸƯ.Y11lũ!!|IUDăÁffl cnÙ
+° ñ 53 (7Vào mở, bó phố cây rói 119 ma hẳnv) nãi nước
+1ia2 l,.r u~ rửi t Áz% chủ cấy GẢ mnmauứmoi KUUN OI;>A:MW#& ÿ cát
 
-mm `
-Sững tỉihsnlr và s3 m&o mộ, có chỗ cự đốt Tri ra hãng năm 9 XI PM được trên tưọc. Tử xin tt nay con ngợi vần man Nm Đếu: `
-lia2 rư bằ: ag:ổu tủ A/dhcho oây SỐ Aoe miềuỐt tu NuAi Cáo ti động 3i lv 2M) Trang lũng 7H. Đất cô gì? CẤU tạo của
-văng má thiệc Thể tạ" hở thlnh, TrỆt iuươH h3. đổi tiếo aiáo của hai đáng Trải ĐÁI tả sa2? Bài học nấy sẽ để cầu lớn
+ving n thược Thở A trở thánh: Triệt w*ơx: ho3”...
+Ahi KÌ, chủt u H ? Ô Với mụn vuẩn, ngớc sống (-nho-rát vó Tí-gơ-rơ tiểng G90,
+vð đồ a vịch e lư. ữ\'L’ụíaPIílSin1ââ|n|l’Iểỏẵ'aỊìcf\)ifâIụlởuẩ'1`nỉ.`fIa '.~Y.t…dv6fJ'n9al'l.vxg
+cửa sống l'ỦLỔl!llflIfỔ’!g.'.|Ắ’I.’l bỡ biển của vịnh: Õ3 T+ cứcii
 
-AÚ tắt (15L.
+ñìi zÃ gdo 26
 
-Nhi K,shb die HÀ: .... Vẻ mg xuấg, ước đống [ vé Tỉ-g0e'0 tiềcĐ 40, "lb3g vấn đề đó.
-và đồ r vịnh Ha T. tên si c san ở 0Ã cño vâng ðã Àzu, BIẾT trung
-Si các biển cc nữ Bà Từ phải
+mm unng Mih (Chu biến1, Lịnh s7 thế giớt cổ đôï,
+NXE G#g dục Việt Ham, H NỘ, 2015 9 34, 53|
 
-lãi z4.
-(Theo Lượng Ninh (2hú biếc), Lịch sở thể. y1 cÉ đạt,
-NXE Gức đục việt Nam: 0v HỆ, 2015, 34, 03)
+TỪ xưa tớt nay con ngướời vận muẩn tìn hiều: c
+Trong Øng t Đắt có g!? Câu tạn của
+Tiải Đắi ra eeo? Dài "ọc náy $ẽ đề bậu tửn
+nbGng vớn đẻ đó.
 
-1. Cấu tạo bên trong của Trải Đắt
-Trẻi Đết đượo cấu sạo bói be l#p, lù: ngoải êo trorg.
-baa gồm: về Trải Đất. man l và nhền Trải Dái.
+đề
+đứi tiếp aiáo còa hei măng :
+Ó vào rvi5u.,
 
-Việc rahiên cứu vật
-thật trừng làng Trải
-đi
+1. Cầu tạo bốn trong của Trải Đắt
+Trẽi Đếi đ0ợ cố! sạo bÓi be lớp, lử ngoài vêo Uorg
+bgz gồïm: v Trái Đắt. metl l và nhón Trái Dồi.
 
--
+Mt< Tahiện cữu vật
+thểi trung Exmgp Trải
+Đài là nớc vẫn để
+khé kun, ©c nhb
+khổ hục hiển nzy
+dùng phuang Pw
+maẹ T 4 uv đen
+th tửc cjug rhư
+m… phêO sủ trang
+thải cóa \u chỉ ở
+lreng lên: Trii E
 
-ANH 1, Cầu f$o bên Irosg ciiy rất cát
+H Ũ s
+#Rxbire TrÐýt ;35 rã 2 .. .
+L‡ê Cắp . "gôz
+i lỚi vương Quốc _ ` n Ầ
+e » ,* C-v
+..6-5 ^. -
+r C Y1rklsga . „œ'
+- **ll!!Ừ'IỐKFli'Ảl0' á
+XU ĐĂNG ! |
+. đAnh * CA2 b 052 PCVD cHờ T G A'
+<& h\:h 1 Lược đồ A!Cậ/ và Lưỡng Eu cố đv
 
-(@ Hãy nêu: sự khác nhau về Ø3 d4/, rạng thái, nhiệt độ giữa
-vú Trải Đết, tran 6 về nhền (có thé lập bảng so sảnh].
+Ø Hãy nêu 2J khôc nhøul về ố3 dái trạng thái, nhiệt đỹ giữa
+vỏ Tiái Đễ!, inøri 6 về nhiễn (có thế lập bảng so sánh].
 
 Tuyến phụ:
 
-Thông tin hỗ trợ, bỗ sung
+Thông tin hỗ trợ, bỏ sung
 hoặc có tính liên môn nhằm
 làm rõ hơn nội dung chính.
 
 Luyện tập:
+
 Là các câu hỏi, bài
+tập, thực hành đề
+củng cô kiên thức, rèn
+luyện các Kĩ năng găn
+với kiến thức vừa hoc 1. Điều kiện tự nhiên tác động như thế nào đến sự hình thành và phát
+cÄ triển của văn minh Hy Lạp, La Mã?
 
-tập, thực hành để
-củng có kiến thức, rèn
-luyện các kĩ năng gắn
-với kiến thức vừa học.
-
-Cái
-
-1. Điều kiện tự nhiên tác động như thế nào đến sự hình thành và phát
-triển của văn minh Hy Lạp, La Mã?
-
-2. Có ý kiến cho rằng: Người Hy Lạp và La Mã cổ đại đạt được những
+2. Có ý kiến cho rằng: Người Hy Lạp và La Mã cỏ đại đạt được những
 thành tựu văn hoá rực rỡ là do tiếp thu những thành tựu của người
-phương Đông cố đại. Em có đồng ý với ý kiến trên không? Vì sao?
+phương Đông c đại. Em có đồng ÿ với ý kiên trên không? Vì sao?
 
 Vận dụng:
 
-Sử dụng kiến thức, kĩ
-năng đã học để giải
-quyết các tình huống,
-vẫn đê trong thực tiễn.
+Sử dụng kiến thức, Kĩ
+năng đã học đề giải
+quyết các tình huồng,
+vấn đề trong thực tiễn.

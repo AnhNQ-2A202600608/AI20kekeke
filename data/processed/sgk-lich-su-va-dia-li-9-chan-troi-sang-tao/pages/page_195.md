@@ -7,121 +7,66 @@ source: ocr
 
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 195
 
-_BàiÍ6 THỰP HÀNH: PHÂN TÍPH ÑNH HƯỚNG ỦA
+_ Bài16 THỰC HÀNH: PHÂN HIIII ñNH HƯỚNG DÚA
 
-HN HẦN WÄ $ñ MẠC H0ñ BÚIVÚ -
-PHÁT TRIỂN KINH TẾ — Nñ HỘI ử WÙN6
-KH HẠN NINH THUẬN — BÌNH THUẬN
+HẠN HÃN VÀ SẴ MẠO H0A L H
+PHÁT TRIỀN KINH TẾ — Xñ HỘI Ú VÙNG
+KHÔ HẠN NINH THUẬN — BÌNH THUẬN
 
 Học xong bài này, em sẽ:
 Sử dụng sơ đồ tư duy để phân tích được ảnh hưởng của nạn hạn hán và sa mạc hoá đối với sự phát triển
 kinh tế — xã hội ở vùng khô hạn Ninh Thuận - Bình Thuận.
-
 Yêu cầu
+Dựa vào sơ đồ dưới dây, hãy:
 
-Dựa vào sơ đỗ dưới đây, hãy:
-
-- Phân tích ảnh hưởng của nạn
-hạn hán và sa mạc hoá đối với phát
-triển kinh tế - xã hội ở vùng khô hạn
-Ninh Thuận - Bình Thuận.
-
-- Đề xuất giải pháp khắc phục
-những ảnh hưởng của nạn hạn hán
-và sa mạc hoá đối với phát triến
-kinh tế - xã hội ở vùng khô hạn :
-Ninh Thuận - Bình Thuận. „.<=
-
-VÙNG KHỔ HẠN NINH THUẬN - BÌNH THUẬN
-
-M Em có biết?
+. t iợ Í Em có biết?
+— Phân tích ảnh hưởng của nạn
 
 Hạn hán: Hiện tượng thiếu nước nghiêm trọng
-xảy ra trong thời gian dài do không có mưa và
+Xảy ra trong thời gian dài do không có mưa và
 cạn kiệt nguồn nước.
 
-Sa mạc hoá: Sự suy thoái đất đai tại các vùng
-khô hạn, bán khô hạn, vùng ấm nửa khô hạn,
-do các nguyên nhân khác nhau như thay đối khí
+hạn hán và sa mạc hoá đối với phát
+triển kinh tế - xã hội ở vùng khô hạn
 
-A\ :hậu, kể cả hoạt động của con người gây ra.
-`... (Nguồn: Công ước chống sa mạc hoá
+Ninh Thuận - Bình Thuận. 5a mạc hoá: Sự suy thoái đất đại tại các vùng
+
+- Đề xuất giải pháp khắc phục khô hạn, bán khô hạn, vùng ấm nửa khô hạn,
+những ảnh hưởng của nạn hạn hán do các nguyên nhân khác nhau như thay đôi khí
+
+và sa mạc hoá đối với phát triển. . "ỄỄÌỂf-':IIẾỀỂỦkECỬ l ƯỜNG của con người gây rai
+
+kinh tế - xã hội ở vùng khô hạn .
+Ninh Thuận - Bình Thuận. .
+
+VŨNG KHỔ HẠN NINH THUẬN - BÌNH THUẬN
+
+- HẠNHÁN. / SA MẠC HOÁ
+Ảnhhưởng - Í—Ảnh hưởng - Ảnh hưởng Ảnh hưởng
+tớixãhội . - tớikinhtế - tới xã hội tới kinh tế
+
+(Nguồn: Công ước chống sa mạc hoá
 của Liên hợp quốc, năm 1992)
 
-__ HẠNHÂN. ¿2
-_ Ảnhhưởng ˆ — Ảnh hưởng ˆ
-tới xã hội tới kinh tế
+-Thiếunướcsinhhoạt.. -Thiếunướcsẩnxuất.-Suy thoái nguồn | | - Thiếu nước sản xuất.
 
-— Thiếu nước sinh hoạt,
+— Sức khoẻ giảm sút, — Phát sinh sảu bệnh làm nước mặt và nước -Đất bị thoái hoá làm
+dịch bệnh xuất hiện giảm năng suất cây ngầm gây cạn kiệt giảm diện tích canh tác
+do khô hạn kéo dài. trồng, vật nuôi. nước sinh hoạt. nông nghiệp.
 
-— Sức khoẻ giảm sút,
-dịch bệnh xuất hiện
-do khô hạn kéo dài.
+-Đới nghèp, thiếu — lăng chỉ phí xây dựng — Phá huỷ môi trường —Hiện tượng cát bay tàn
+lượng thực vì năng hệ thống tưới tiêu. sinh kế ga người phá cây trồng, vật nuôi.
+suất sẵn xuất thấp. — Tăng nguy cơ cháy rừng. dân, dẫn đến di cư | | — Môi trường thuỷ sinh bị
 
--Đói nghèo, thiếu
-lưng thực vì năng
-suất sản xuất thấp,
+— Phát sinh các vấn đề -Giảm khả năng lưu tự phát. thu hẹp.
+xã hội về sử dụng thông đường thuỷ. — Xuất hiện dịch bệnh — Hư hỏng các công trình,
+nước. —-Giám nắng suất thuỷ và thiếu lương thực, cơ sở hạ tầng.
 
-— Phát sinh các vấn để
-xã hội về sử dụng
-nước
+điện, thiếu hụt năng
 
-— Thiếu nước sản xuất.
-
-— Phát sinh sâu bệnh làm
-giảm năng suất cây
-trồng, vật nuôi.
-
-- Tăng chỉ phí xảy dựng
-hệ thống tưới tiêu,
-
-— Tăng nguy cơ cháy rừng,
-
--Giảm khả nắng lưu
-thông đường thuỷ.
-
-Giảm nắng suất thuỷ
-điện, thiếu hụt nắng
 lượng.
-
-- Tăng chỉ phí làm mát
+— lãng chỉ phí làm mát
 các nhà xưởng.
-
-SÄ MẠC HOÁ
-
-Ảnh hưởng
-tới xã hội
-
--Suy thoái nguồn
-nước mặt và nước
-ngắm gây cạn kiệt
-nước sinh hoạt.
-
-— Phá huỷ môi trường
-sinh kế của người
-dân, dẫn đến di cư
-tự phát,
-
-— Xuất hiện dịch bệnh
-và thiếu lương thực.
-
-Ảnh hưởng
-tới kinh tế
-
-— Thiếu nước sẵn xuất.
-
-Đất bị thoái hoá làm
-giảm diện tích canh tác
-nông nghiệp.
-
-— Hiện tượng cát bay tàn
-phá cảy trồng, vật nuôi,
-
-— Môi trường thuỷ sinh bị
-thu hẹp.
-
-- Hư hỏng các công trình,
-cơ sử hạ tầng,
 
 Hình 16, Sơ đồ ảnh hưởng của hạn hán và sa mạc hoá đối với sự phát triển
 kinh tế - xã hội ở vùng khô hạn Ninh Thuận - Bình Thuận

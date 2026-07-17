@@ -9,48 +9,48 @@ source: ocr
 
 VƯƠNG QUỐC LÀO
 
-ồ> Học xong bài này, em sẽ:
-e® Mô tả được quá trình hình thành và phát triển của Vương quốc Lào.
+> Học xong bài này, em sẽ:
+s Mô tả được quá trình hình thành và phát triển của Vương quốc Lào.
 
-e© Nhận biết và đánh giá được sự phát triển của Vương quốc Lào thời Lan Xang.
-e® Nêu được một số nét tiêu biểu về văn hoá của Vương quốc Lào.
+s Nhận biết và đánh giá được sự phát triển của Vương quốc Lào thời Lan Xang.
+s Nêu được một số nét tiêu biểu về văn hoá của Vương quốc Lào.
 
-'l Hình bên là một công
+e Hình bên là một công
 
-trình văn hoá tiêu biểu
+trình văn hoá tiêu biễu
 cho khả năng sáng tạo của
 người Lào, được chọn làm
 hình ảnh trung tâm trên
 Quốc huy của nước Lào
-ngày nay. Theo em. công
+ngày nay. Theo em,. công
 trình này được xây dựng vào
 thời kì nào? Hãy chia sẻ một
-số hiểu biết của em về đất
+số hiêu biết của em về đát
 nước Lào thời kì đó.
 
-Hình 1. Thạt Luỗng _
+Hình 1. Thạt Luồng ›
 
-Đất nước Lào gắn liền với dòng sông Mê Công. Nơi
+Đắt nước Lào gắn liền với dòng sông Mê Công. Nơi
 đây từ xa xưa đã có người sinh sống, gọi là người
-Lào Thơng. Đến thế kỉ XIII, một nhóm người nói tiếng
+Lào Thơng. Đền thế kỉ XIII, một nhóm người nói tiếng
 Thái di cư đến đất Lào, gọi là người Lào Lùm. Họ sinh
 sống hoà hợp với người Lào Thơng, hợp chung là
 người Lào. Tổ chức xã hội sơ khai của người Lào là các
-mường cô.
+mường cồ.
 
-Năm 1353, một tộc trưởng người Lào là Pha Ngừm
+Năm 1353, một tộc trưởng người Lảo là Pha Ngừm
 đã tập hợp và thống nhất các mường Lào, lên ngôi
-vua, đặt tên nước là Lan Xang (nghĩa là Triệu Voi). Từ
+vua, đặt tên nước là Lan Xang (nghĩa là Triệu Vol). Tử
 đó, Vương quốc Lào từng bước phát triển và đạt tới
-sự thịnh vượng trong các thế kỉ XV — XVII.
+sự thịnh vượng trong các thế kỉ XV — XVỊII.
 
 Hãy trình bày quá trình hình thành, phát triển của
 
 Vương quốc Lào.
 
-? Quá trình hình thành, phát triển của Vương quốc
+@ Quá trình hình thành, phát triển của Vuong quốc
 
-Kết nối với văn hoá
+KRKết nối với văn hoá
 
 Theo truyền thuyết, Pha
 Ngừm được nuôi dạy và

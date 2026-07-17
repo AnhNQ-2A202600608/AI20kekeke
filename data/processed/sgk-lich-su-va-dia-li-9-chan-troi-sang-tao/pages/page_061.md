@@ -8,45 +8,62 @@ source: ocr
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 61
 
 Không chỉ nhằm hợp tác giữa các nước thành viên về kinh tế, Liên minh châu Âu còn
+
 hợp tác trong lĩnh vực chính trị - an ninh (Nghị viện chung châu Âu, biên giới mở giữa
-các quốc gia, quyển công dân châu Âu,...). Từ 12 nước năm 1993, hiện nay, Liên minh
+các quốc gia, quyền công dân châu Âu,..). Từ 12 nước năm 1993, hiện nay, Liền minh
 châu Âu bao gồm 27 nước thành viên và là một liên minh kinh tế - chính trị lớn nhất
+
 thế giới.
 
-Sau Chiến tranh _.ả) —7 t
-Là . + ¬ v SAU ¬—.........
-thể giới thứ hai, Chính ` ẻ ứ TEORREESHE U10
-l — với sv b h CÁC NƯỚC DÁNH SỐ
-phủ một số nước như ` : ề Ả TRÊN LƯỢC ĐỒ
-Anh Phá b H à Lan 9 Ÿ " Ì : # HC Ề VÀ 52K
-l 7 mự Š - (Ô3.LÚG-KĂM-HUA — ñ KANWA-RLNG
-
+Sau Chiến tranh
+thế giới thứ hai, Chính
+phủ một số nước như
+Anh, Pháp, Hà Lan,..
 tìm cách thiết lập lại
-nến cai trị tại các thuộc
+nền cai trị tại các thuộc
 địa nhưng từ giữa thập
-niên 50 của thế kỉ XX,
-chủ nghĩa thực dân cũ
-đã sụp đố trên phạm
+niềện 50 của thế kỉ XX
+chủ nghĩa thực dẫn cũ
+đã sụp đổ trên phạm
 vi toàn thế giới. Trong
 khuôn khổ Chiến tranh
-lạnh và trật tự I-an-ta,
+lạnh và trật tự l-an-ta,
 các nước Tây Âu liên
-minh chặt chã với Mỹ,
+mính chặt chẽ với Mỹ,
 gia nhập khối quân sự
-NATO do Mỹ đứng đầu.
+NATO do Mỹ đứng đầấu.
 
-CHẤU PHI
+©
 
-œ® Lược đồ các nước Liên minh châu Âu năm 1893
-
-ÿ”® Luyện tập -Vận dụng
 Luyện tập
-Hãy vẽ sơ đồ tư duy trình bày những nét chính về tình hình kinh tế, chính trị của nước Mỹ
-và các nước Tây Âu giai đoạn 1945%— 1001.
+
+. & : N —.—. Biên giới quốc gia
+E x s ]
+ˆ L : S GCÁC NƯỚC DÁNH SỐ
+.Ò L n 1 TRÊN LƯỢC ĐỒ
+khhi `
+N ẹỂ S u 1.AM-EÕ-HA ‡. MÔ-HA-CÔI
+ọ ` # LI-XTEM-XTAI 5. MA -T E- O A
+~
+
+1 5,LUG-KĂM-HUA - B XAM MA-REHÔ
+
+THIẾN Ô NẾ
+
+CHẢU PFHI =MAN-TA
+
+® Lược đồ các nước Liên mĩnh châu ÂẤu năm 1993
+
+Luyện tập - Vận dụng
+
+Hãy về sơ đồ tư dụy trình bày những nét chính về tình hình kinh tế, chính r‡ của nước Mỹ
+và các nước Tây du giại đoạn 1945— 1991
+
 Vận dụng
 
-Ảnh — một trong các quốc gia sáng lập — đã rời khỏi tÔ chức Liên mình châu Âu vào
-năm 2020. Hãy tham khảo thêm thông tin đề viết một đoạn văn ngắn (khoảng 150 chữ)
+Ainh — một frong các quốc gia sáng lập — đã rời khỏi tô chức Liên mình châu Âu vào
+năm 2020. Hãy tham khảo thêm thông tìn đồ viết một đoạn văn ngăn (khoáng 150 chữ)
+
 giới thiệu về sự kiện này.
 
-38
+58

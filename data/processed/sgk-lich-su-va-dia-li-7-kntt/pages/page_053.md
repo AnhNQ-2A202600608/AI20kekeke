@@ -8,40 +8,42 @@ source: ocr
 # SGK Lịch sử và địa lí 7 KNTT (lớp 7) — Trang 53
 
 NHÀ LÝ XÂY DỰNG
-VÀ PHÁT TRIÊẾN ĐẤT NƯỚC (1009 - 1225)
+VÀ PHÁT TRIỂN ĐẤT NƯỚC (1009 - 1225)
 
-ồ> Học xong bài này, em sẽ:
+2 Học xong bùi này, em sẽ:
 
-e Trình bày được những nét chính về sự thành lập nhà Lý.
+s Trình bày được những nét chính về sự thành lập nhà Lý.
 
-e© Đánh giá ý nghĩa của sự kiện dời đô ra Đại La của Lý Công Uẩn.
+s Đánh giá ý nghĩa của sự kiện dời đô ra Đại La của Lý Công Uẩn.
 
-e Mô tả được những nét chính về chính trị, kinh tế, xã hội, văn hoá, tôn giáo thời Lý.
-e Giới thiệu được những thành tựu tiêu biểu về văn hoá, giáo dục.
+s Mô tả được những nét chính về chính trị, kinh tế, xã hội, văn hoá, tôn giáo thời Lý.
+s Giới thiệu được những thành tựu tiêu biểu về văn hoá, giáo dục.
 
-¿ Năm 1009, nhà Lý được thành lập. Không lâu sau khi lên ngôi, Lý Công Uẫn
-quyết định dời đồ từ Hoa Lư về Đại La. Sự kiện này có ý nghĩa như thê nào đôi
+e Năm 1009, nhà Lý được thành lập. Không lâu sau khi lên ngôi, Lý Công if.,J'…-:ểJì~’.I*1!
+quyết định dời đô tử Hoa Lư về Đại La. Sự kiện này có ÿ nghĩa như thê nào đôi
 với lịch sử dân tộc? Nhà Lý đã làm những gì đề xây dựng và phát triên đât nước?
 
-Ế} Nhà Lý thành lập và định đô ở Thăng Long
+@€) Nhà Lý thành lập và định đô ở Thàăng Long
 
-Năm 1005, Lê Hoàn mắt. Lê Long Đĩnh nói ngôi,
+Năm 1005, Lê Hoàn mất. Lê Long Đĩnh ni ngôi,
 
-: : đã thi hành nhiêu chính sách tàn bạo. Năm 1009, sau
+: : đã thi hành nhiều chính sách tàn bạo. Năm 1008, sau
 
-Lý Công Uân quê ở châu Cô khi Lê Long Đĩnh mất, giới sư sãi và đại thần đã tôn Lý
-Pháp (Từ Sơn — Băc Ninh). Công Uẳn lên ngôi vua. Nhà Lý được thành lập.
+Lý Công Uần quê ở châu Cõ khi Lê Long Đĩnh mất, giới sư sãi và đại thân đã tôn Lý
+Pháp (Từ Sơn - Bắc Ninh). Công Uẫn lên ngôi vua. Nhà Lý được thành lập.
 
 Thuở nhỏ, ông theo học sư
 Vạn Hạnh. Khi Vạn Hạnh
 vào Kinh đô Hoa Lư đã đưa
-ông đi theo. Sau này, Lý
-Công Uẫn làm quan trong
+ông di theo. Sau này, Lý
+Công Uần làm quan trong
 triều Tiền Lê, đến chức Điện
-tiên Chỉ huy sứ, chỉ huy cắm
+tiền Chỉ huy sứ, chỉ huy cắm
 quân. Là người có tài đức
 nên ông được triều thần rất
-quý trọng.
+quy trọng.
 
-Hình 1. Tượng đài vua
-Lý Thái Tô (Hà Nội) 2
+Hình TTưgng đài vua
+Lý Thái Tô (Hà Nội) ›
+
+52

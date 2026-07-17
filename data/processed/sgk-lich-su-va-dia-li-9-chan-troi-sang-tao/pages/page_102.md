@@ -8,11 +8,11 @@ source: ocr
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 102
 
 Hiệp định Pa-ri về chấm
-đứt chiến tranh, lập lại hoà
-bình ở Việt Nam được kí
+dứt chiến tranh, lập lại hoà
+bình ở Việt Nam dược kí
 ngày 27 - 1 - 1973. Ngày
-29 -3-— 1973, những lính
-Mỹ cuối cùng rút khôi
+29 - 3- 1973, những lính
+Mỹ cuối cùng rút khỏi
 miền Nam. Tuy nhiên,
 quân đội Sài Gòn vẫn ngang
 nhiên vi phạm Hiệp định,
@@ -20,88 +20,98 @@ lẫn chiếm trái phép vùng
 giải phóng.
 
 Cuối năm 1974, đầu
-năm 1975, Bộ Chính trị
-quyết định mở hoạt động
-quân sự trọng tâm ở Đống
+nắm 1975, Bộ Chính trị
+quyết định mỡở hoạt động
+quân sự trọng tâm ở Đồng
 bằng sông Cửu Long và
-Đông Nam Bộ. Quân Giải
+Đồng Nam Bộ. Quân Giải
 phóng giành thắng lợi lớn ở
 Phước Long, một tỉnh nằm
 sát Sài Gòn (phần lớn thuộc
-Bình Phước ngày nay). Sau
+Bình Phước ngày nay). 5au
 chiến thắng Phước Long,
 so sánh thế và lực có lợi cho
-cách mạng, Bộ Chính trị đề
+cách mạng, Bộ Chính trị dề
 ra chủ trương giải phóng
 miền Nam trong hai năm
-1975 - 1976, nhãn mạnh;
-nếu thời cơ đến sẽ giải
+1975 — 1976, nhẫn mạnh:
+nếu thời cơ đến sẽ dgiải
 phóng miền Nam ngay vào
 đầu hoặc cuối năm 1975.
 
 Thực hiện kế hoạch giải
-phéng miễn Nam, ngày
+phóng miền Nam, ngày
 4 - 3 - 1975, quân Giải
-phóng đánh nghi binh ở
+phóng đánh nghỉ binh ở
 Pleiku, Kon Tum, sau đó
 tiến công Buôn Ma Thuột.
-Quân đội Sài Gòn buộc
+Quân đội Sải Gòn buộc
 phải rút khôi địa bàn chiến
 lược quan trọng này. Ngày
-24 - 3, Tây Nguyên hoàn
+24 - 3, Tây Nguyễn hoàn
 toàn giải phóng.
 
-Lễ cuốn cờ rút quân của quân đội Mỹ tại miền Nam Việt Nam,
-28-3-1973
+Lễ cuốn cỡ rút quân của quân đội Mỹ tại miền Nam Việt Nam,
+xq=3-Tryz
 
-Các mũi liên công của quản Giải nhúng:
+Gác mũi liễn cũng của quản Giải phúng:
 
-CC Quản Giải chéng tiễn công từ
+ẸT__"_:ỜI Quân Giải phóng tiền công tử'
 
-ngày 4— 3 đến ngày 18 — 3 — 1875
+ngày 4 — 3 đến ngày 18 —3 — 1975
 
-CC. Quân Giải phóng liên cổng lừ
+ỈĩỆlũ" Quân Giải phóng liên công ử
+ngày 20 — 3 đến ngày 31—3— 1875
+Quân Giải phéng tiễn công tử
+ngáy 1= 4 đến ngày 2 =5 - 1875
+Hướởng rũi chạy
+của quản đội Sạai t3àn
+bla danh và ngày được
+niái phòng
 
-ngày 20 — 3 đến ngày 31 — 3— 1875
-Quân Giải chéng tiên công từ
-ngày 1 - 4 đến ngây 2 - 5 - 1875
+Biến qiới quốc gia ngày nay
 
-Hưởng rút chạy
+Phước Long được giải phúng
+trước khi Tổng tiên gðng ) ĩ L
 
-my...
-cua quản đội Sải Gản
-SÃI [ÒN, Địa danh vả ngày được
-= giải những
-—-—- Biên giới quốc gia ngày nay
-EU Phước Long được giải nhúng
-trước khi Tổng :iễn sñng
-MẶC củ ooac RA TVM vc
-` lề
-l "` uiến Sận ị
+KRON 11M
+162757 Á
 
-L>**! ". am
-——7 đều, ⁄⁄
+A kẳi
+kài
 
-„ý 27
-s1 THIẾT
+Iy NHƯ x
+ỊhỀo lizði, l
 
-Eé
-b_x z S829 55t
-hưng # _. Phí Quý
-„ñ v
-D`Phú Quốc `
-Nà bì
-BẠCH ( GIÁ
->> ö hôn Hài
-= s
-QØ. Thể Chu 1 SP
-hỏn Nhạn v $ ọ
-x$
-$
+n s
+Lũng meni
+24 — 3 TU
 
-hồn Khoai.
-“nàn tà Lễ
+C "HHẨN Đại Lãnh
+LIỒN MATHUỘÔT - n
+=n ủỉfrd_r t s . .
+.. . ' H 17-3
+/ Š CAM-PUXCHIA . : _
+=e-id : . r THRANG
 
-Œob Lược đồ diễn biến cuộc Tổng tiến công và nổi dậy Xuân 1975
+. \
+
+XUÂM LỘC:
+C i ZHAN THIẾT
+Ể b 10-4 L
+l = "
+] DiRi LØ Phn Quý
+ẺP_Ắu:- Quốc . % DNg TÂU
+llILI_ à Ề ĩ l ¬
+~ s ủư.Llúiậl__._ L ` _ -
+s ư Ẵ \ ~ hón Hải
+@Đ T emu G| (| , n s
+hền NMhạn SÓC TRĂNG - L
+¬ _J--"p-__--_- Ệ.`y
+
+hón Khoai .
+“ hón Đã Lê
+
+Ổ Lược đồ diễn biến cuộc Tổng tiến công và nổi dậy Xuân 1975
 
 99

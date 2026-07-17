@@ -7,75 +7,59 @@ source: ocr
 
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 233
 
-- Sự mở rộng về không gian đề thị:
+- Sự mở rộng về không gian đô thị:;
 quy mô các đồ thị phát triển mở rộng
-thành vùng đô thị (các thị trấn và vùng
-ngoại ô cấu trúc tương tự như các
-thành phố nhỏ trong một thành phố
-lớn); các dải đô thị hay hành lang đê
+thành vùng đỗ thị (các thị trẫn và vùng
 
-MỸ Em có biết?
-
+S Em có biết?
 Những vùng đô thị nỗi tiếng trên thế giới
-như Ban-ga-lo của Ấn Độ, Cai+ô (Cairo) của
-Ai Cập,...; dải độ thị lớn nhất thế giới hiện nay
-là 9 thành phố lớn với diện tích bể mặt tổng
-cộng 40 000 km2, 42 triệu dân ở Châu Giang,
+như Ban-ga-lo của Ấn Độ, Cai-rô (Cairo) của
 
-Quảng Đông (Trung Quốc); ngoài ra, phải kế
-___ đến hành lang đô thị Đông Bắc Mỹ kéo dài từ
-_ Bô-xtơn (Boston) tới Oa-sinh-tơn (Washington)
-đài hàng trăm km.
+ngoại ô cấu trúc tương tự như các Ai Cập,..; dải đô thị lớn nhất thế giới hiện nay
+thành phốổ nhỏ trong một thành phỗ là 9 thành phố lớn với diện tích bề mặt tổng
+lớn); các dải đô thị hay hành lang đô cộng 40 000 km^, 42 triệu dân ở Châu Giang,
+thị (sự liên kết, hợp nhất giữa các vùng Quảng Đông (Trung Quốc); ngoài ra, phải kê
 
-thị (sự liên kết, hợp nhất giữa các vùng
-ngoại ô và các thành phố tạo nên một
-dải đô thị liên tục).
+ngoại ô và các thành phố tạo nên một s đến hành lang đô thị Đông Bắc Mỹ kéo dài từ
+dài <ĩ;'<':`:| thíT En-tue) ' ' . Bô-xtơn (Boston) tới Oa-sinh-tơn (Washington)
+- b dờài hàng trăm km.
 
-- Sự xuất hiện các đô thị vệ tinh tại
+- Sự xuất hiện các đô thị vệ tỉnh tại
 các vùng ngoại ô xung quanh những
-thành phế lớn được quy hoạch với
+thành phố lớn được quy hoạch với
 các định hướng và chức năng riêng
-nhằm giảm áp lực dân số ở các đô thị
-trung tâm, tạo không gian xanh và môi
+nhằm giảm áp lực dân số ở các dô thị
+trung tâm, tạo không gian xanh và mỗi
 trường sinh thái an toàn cho một vùng
-đề thị.
+dỗ thị.
 
 - Sự ra đời của các đô thị thông
-minh, đê thị xanh tập trung phát triển
+minh, đô thị xanh tập trung phát triển
 trong các lĩnh vực như phát triển không
-gian xanh, thành phổ không giấy, trong đó, yếu tổ quan trọng nhất là sử dụng công nghệ
+gian xanh, thành phố không giấy, trong đó, yếu tố quan trọng nhất là sử dụng công nghệ
+
+Hình 1.5. Một mô hình thành phố thông minh và xanh
+
 số để cải thiện chất lượng cuộc sống của người dân và phát triển bền vững.
-
 c) Đô thị hoá ở Việt Nam
-
-Đô thị hoá ở Việt Nam diễn ra khá sớm, gán liền với những biến động của lịch sử đất nước.
-
+Đô thị hoá ởViệt Nam diễn ra khá sớm, gắn liền với những biến động của lịch sử đất nước.
 Bảng 1.10. Quá trình đô thị hoá ở Việt Nam
-
-Hình 1.8. Một mô hình thành phổ thông minh và xanh
-
-Trước năm 1945 ' Đô thị quy mô nhỏ, có chức năng hành chính, quân sự.
-
+Trước năm 1945 ¡ Đồ thị quy mô nhỏ, có chức năng hành chính, quẫn sự.
 - Thời kháng chiến chống Pháp (1945 - 1954): đô thị hoá diễn ra
-chậm, các đô thị ít thay đối.
-
-- Thời kì đất nước bị tạm thời chia cắt (1954 - 1975), đô thị hoá có
-nhiều nét khác nhau giữa hai miền, nhìn chung đều phát triển,
-tỉ lệ dân thành thị tăng. Tuy nhiên, hầu hết các đô thị bị phá huỷ
+chậm, các đô thị ít thay đổi.
+Từnăm 1945 - Thời kì đất nước bị tạm thời chia cắt (1954 - 1975), đô thị hoá có
+đến năm 1975 nhiều nét khác nhau giữa hai miền, nhìn chung đều phát triển,
+tỉ lệ dân thành thị tăng. Tuy nhiền, hầu hết các đô thị bị phá huỷ
 nặng nề do chiến tranh.
 
-Từ năm 1945
-đến năm 1975
-
 - Đất nước thống nhất, quá trình đô thị hoá có nhiều chuyển biến
-TỊCH ELie:
+tích cực.
 
-Từ sau năm 1975
-
-r - Nền kinh tế đất nước dân ốn định và phát triển, quá trình đô thị
-đến nay
-
+- Nền kinh tế đất nước dần ổn định và phát triển, quá trình đô thị
 hoá tăng nhanh, số dân thành thị và tỉ lệ dân thành thị không
 ngừng gia tăng.
+
+Từ sau năm 1975
+đến nay
 
 230

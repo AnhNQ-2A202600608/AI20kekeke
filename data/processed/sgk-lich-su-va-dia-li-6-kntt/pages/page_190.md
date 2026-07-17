@@ -9,10 +9,10 @@ source: ocr
 
 Học xong bài này, em sẽ:
 
-»_ Biết được mối quan hệ giữa con người
+° Biết được mối quan hệ giữa con người
 và thiên nhiên ở địa phương.
 
-‹_ Biết cách tìm hiễu môi trường tự nhiên
+° Biết cách tìm hiềểu môi trường tự nhiên
 qua tài liệu và tham quan địa phương.
 
 1. Gợi ý một số nội dung
@@ -28,39 +28,35 @@ a) Nội dung 1: Nguồn lợi tự nhiên ở
 
 — Tài nguyên khoáng sản
 
-— Tài nguyên nước,...
+-— Tài nguyên nước....
 
-—_ Vai trò của nguồn lợi tự nhiên với
+— Vai ưf› của nguồn pi tự nhiên với
+đời sông và sản xuât
 
-đời sống và sản xuất
-
-Nội dung 2: Ô nhiễm môi trường
+b) Nội dung 2: Ô nhiễm môi trường
 
 — Ô nhiễm không khí
 
-—_ Ô nhiễm nước
+- Ônhiễm nước
 
-— Ô nhiễm đất
+- Ô nhiễm đất
 
 — Hậu quả và biện pháp khắc phục
-
-L®J
-_<
 
 c) Nội dung 3: Thiên tai và phòng
 chông thiên tai
 
 — Các thiên tai: bão, lũ, hạn hán, trượt
-lở đất, xâm nhập mặn....
+lở đắt, xâm nhập mặn....
 
-- Các biện pháp phòng chống thiên
+— Các biện pháp phòng chống thiên
 tai ở địa phương
 
 d
 — Sử dụng tài nguyên hợp lí
 
-- Cải tạo thiên nhiên: đất, nước,
-không khí,...
+— Cải tạo thiên nhiên: đất, nước,
+không khií,...
 
 Nội dung 4: Bảo vệ thiên nhiên
 
@@ -72,7 +68,7 @@ GIỮA CON NGƯỜI
 VÀ THIÊN NHIÊN
 Ở ĐỊA PHƯƠNG
 
-2. Cách thức tiến hành
+2. Cách thức tiền hành
 
 a) Thành lập nhóm và lựa chọn nội dung
 
@@ -86,15 +82,15 @@ quan ở địa phương
 
 d) Thu thập tài liệu và xử lí tài liệu
 
-Thu thập tài liệu qua sách vở, mạng
-internet, cơ quan quản lí vân đê ở địa
+Thu thập tài liệu qua sách vở,` mạng
+internet, cơ quan quản lí vân đề ở địa
 phương.
 
-Tham quan, tìm hiểu thực tế địa phương.
+Tham quan, tìm hiều thực tế địa phương.
 Tìm hiểu qua người dân địa phương
 (phương pháp xã hội học).
 
-Phân tích, tổng hợp, so sánh các kết
+Phân tích, tồổng hợp, so sánh các kết
 quả đã tìm hiêu được.
 
 đ) Viết báo cáo và trình bày
@@ -105,16 +101,16 @@ báo cáo theo gợi ý (nên viêt ngăn gọn,
 
 súc tích):
 
-+ Nêu ý nghĩa của việc tìm hiểu môi
++ Nêu ý nghĩa của việc tìm hiềểu môi
 trường.
 
 + Nêu hiện trạng và nguyên nhân.
 
-+ Một số giải pháp.
++ Một sóố giải pháp.
 
 Trình bày báo cáo
 
 + Phân công người báo cáo trước lớp.
 
 + Chuẩn bị nội dung kèm theo: tranh
-ảnh, bảng số liệu, biểu đồ,...
+ảnh, bảng số liệu, biêu đồ,...

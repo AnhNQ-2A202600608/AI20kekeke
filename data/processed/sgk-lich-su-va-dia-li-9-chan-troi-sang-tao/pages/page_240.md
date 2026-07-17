@@ -9,66 +9,53 @@ source: ocr
 
 + Công nghiệp và xây dựng
 
-Biến đổi khí hậu phá huỷ các công
-trình xây dựng, nhà máy; thiếu nguồn
-nước và năng lượng cung cấp cho hoạt
-động sản xuất công nghiệp.
+É Em có biết?
 
-+ Dịch vụ
+Biến đổi khí hậu phá huỷ các côn . n
+m v Phầ PHÿ các công Theo Kịch bản biến đổi khí hậu Việt Nam
+trình xây dựng, nhà máy; thiểu nguồn của Bộ Tài nguyên và Môi trường năm 2020:
+nướcÐã Răwgiongseung eapsstvetitoist 1, Nếu mực nước biếển dàng 100 m, châu thổ
 
-Biến đối khí hậu tàn phá nguồn tài
-nguyên, cơ sở hạ tầng; tác động bất lợi
-đến hoạt động của ngành dịch vụ, đặc
-biệt là du lịch.
+động sản xuất công nghiệp. sông Hồng sẽ có 13,2% diện tích bị ngập,
++ Dịch vu châu thổ sông Cửu Long sẽ có nguy cơ ngập
+__ , — 47,39% diện tích.
+Biến đối khí hậu tàn phá nguốn tài h . _
+: : s EU aa # Ei 2. Nêếu mực nước biên dâng 1m, giao thông
+nguyên, cơ sở hạ tng; tác động bất lợi _ "—T . c u Ể
+- - ì \ ] Ù vận tải ở châu thô sông Cửu Long sẽ bị ảnh hưởng
+dến hoạt động của ngành dịch vụ, đặc nặng nề nhất cả nước, ngập 28% quốc lộ và
+biệt là du lịch. 27% tỉnh lộ.
 
-- Đối với xã hội
+- Đối với xã hội 3. Biến đối khí hậu làm giảm 129 diện tích
+
+n n
+
+n xuất nông nghiệp ở châu thổ sông Hồng
+24% ở châu thổ sông Cửu Long,
 
 Biến đổi khí hậu gây thiếu nước sinh
-hoạt trầm trọng, dịch bệnh gia tăng, tác
-động tiêu cực đến sức khoẻ con người.
+hoạt trầm trọng, dịch bệnh gia tăng, tác & . \
+Ñ - ~ . : u zl -ạL rI..r M I' x n z ó.'lJ IỂ
+động tiều cực đến sức khoẻ con người. ' ffl_g ffl,_ ể jffl…ựụ c',ng njffln
 
-Biến đối khí hậu làm mất địa bần cư
+' ' lại, thậm chí không có vụ đông.
+Biến đối khí hậu làm mất địa bàn cư
 trú của người dân ven biển.
-
-Ứ Em có biết?
-
-Theo Kịch bản biến đổi khí hậu Việt Nam
-
-của Bộ Tài nguyên và Môi trường năm 2020:
-
-1. Nếu mực nước biên dâng 100 m, châu thổ
-
-sông Hồng sẽ có 13,2% diện tích bị ngập,
-
-châu thổ sông Cửu Long sẽ có nguy cơ ngập
-47,3% diện tích.
-2. Nếu mục nước biển dâng 1 m, giao thông
-
-vận tải ở châu thổ sông Cửu Long sẽ bị ảnh hưởng
-
-nặng nề nhất cả nước, ngập 28% quốc lộ và
-
-27% tỉnh lộ.
-
-3. Biến đổi khí hậu làm giảm 12% diện tích
-sản xuất nông nghiệp ở châu thổ sông Hồng
-4% ở châu thổ sông Cửu Long.
-
-' độ tăng có thể khiến vụ đông ở miễn
-, thậm chỉ không có vụ đông.
 
 c) Một số biện pháp ứng phó với biến đổi khí hậu
 
-giảm nhẹ, thích ứng với. biế ) `. :
-hậu ở hai vùng châu thô sông Hông
-và sông Củu Long.
+JẺJaJ hãy đ xuất một sô ửỆpẩfìxgữ ỉgfỀp
 
-Để ứng phó với biến đổi khí hậu ở
-hai vùng châu thố, cần thực hiện song
+giảm nhẹ, thích ứng với biển đốt khí
+hậu ở bai vừng châu thô sông H'ong
+vớ SÔng Cửu .ong.
+
+Đểứngphóvớibiến đốikhíhậuở -
+hai vùng châu thổ, cần thực hiện song
 song hai biện pháp: giảm nhẹ với biến
-đối khí hậu và thích ứng với biến đối
+đối khí hậu và thích ứng với biến đổối
 khí hậu.
 
-Hình 2.5. Trồng rừng ngập mặn ven biển, tỉnh Thái Bình
+Hình 2.5., Trồng rừng ngập mặn ven biển, tỉnh Thái Bình
 
 237

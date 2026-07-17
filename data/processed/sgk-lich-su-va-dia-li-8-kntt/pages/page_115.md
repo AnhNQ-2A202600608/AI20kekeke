@@ -11,15 +11,18 @@ Dựa vào thông tin mục a, bảng 4.1, hãy trình bày tính chất nhiệt
 
 b) Tính chất ẩm
 
-Nước ta có độ ẩm không khí cao, trung bình trên 80%; lượng mưa lớn, trung bình
-dao động từ 1 500 - 2 000 mm/năm.
+Nước ta có độ ấm không khí cao, trung bình trên 80%; lượng mưa lớn, trung bình
+dao động từ 1 500 - 2 000 mm/năäm.
 
 Bảng 4.2. LƯỢNG MƯA VÀ ĐỘ ẨM KHÔNG KHÍ TRUNG BÌNH THÁNG
+
+Lượng mưa
+(mm)
+
 TẠI TRẠM KHÍ TƯỢNG HÀ ĐÔNG (HÀ NỘI)
+tị2)3itisie|7isisieimim
 
-[obánb) |sa4 | sa6 | s0 s7 |a45 | sụt su | s53 | 54 si |sìi |7
-
-(Nguồn: Trung tâm Thông tin và Dữ liệu khí tượng thuỷ văn}
+(Nguồn: Trung tâm Thông tin và Dữ liệu khí tượng thuỷ vãn)
 
 Dựa vào thông tin mục b và bảng 4.2, hãy nêu tính chất ẩm của khí hậu nước ta.
 
@@ -29,10 +32,10 @@ Việt Nam nằm trong phạm vi hoạt động của Tín phong bán cầu Bắ
 nước ta còn chịu ảnh hưởng mạnh mẽ của các khối khí hoạt động theo mùa:
 
 - Gió mùa đông (từ tháng 11 đến tháng 4 năm sau): Miền Bắc chịu ảnh hưởng
-của khối khí lạnh từ phía Bắc di chuyển xuống nước ta tạo nên một mùa đông lạnh
-(nửa đầu mùa đông có thời tiết lạnh, khô; nửa cuối mùa đông có thời tiết lạnh,
+của khối khí lạnh từ phía Bắc di chuyển xuống nước ta tạo nền một mùa đông lạnh
+(nửa đầu mùa đông có thời tiết lạnh, khỏ; nửa cuối mùa đông có thời tiết lạnh,
 ẩm). Từ phía nam dãy Bạch Mã trở vào, Tín phong bán cầu Bắc có hướng đông bắc
-chiếm ưu thế gây mưa cho vùng biển Nam Trung Bộ; còn ở Tây Nguyên và Nam Bộ
+chiếm ưu thế gầây mưa cho vùng biển Nam Trung Bộ; còn ở Tây Nguyên và Nam Bộ
 thời tiết nóng, khô.
 
 - Gió mùa hạ (từ tháng 5 đến tháng 10): Chủ yếu có hướng tây nam. Vào đầu mùa
@@ -41,7 +44,7 @@ Tây Nguyên. Khi vượt qua dãy Trường Sơn và các dãy núi chạy dọ
 Lào, tính chất của gió thay đổi do hiệu ứng phơn khiến phía đông dãy Trường Sơn
 và phía nam khu vực Tây Bắc có thời tiết khô nóng (gió Tây khô nóng). Vào giữa và
 cuối mùa hạ, gió mùa Tây Nam xuất phát từ bán cầu Nam di chuyển lên, kết hợp với
-ảnh hưởng của dải hội tụ nhiệt đới tạo nên thời tiết nóng ấm, mưa nhiều phổ biến
+ảnh hưởng của dải hội tụ nhiệt đới tạo nên thời tiết nóng ẩm, mưa nhiều phố biến
 trên cả nước. Hiện tượng thời tiết cực đoan trong mùa này là bão kèm theo mưa lớn.
 
 114

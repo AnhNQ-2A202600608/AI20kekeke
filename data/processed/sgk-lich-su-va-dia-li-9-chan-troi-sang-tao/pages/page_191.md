@@ -7,96 +7,101 @@ source: ocr
 
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 191
 
-` cử lan Chăm
+bấi Đá Bắc
+Ý 11 Cây
+(en, Ø Bắc
+Đ.Tây E Mam
+Ð.Bình Sơn” ¬ © Phú Lâm n
+b J-ưrocJỄỀ_:,Ể"Ễ:ỄLỂÌỂÌỄỂ._\` baiXãCừ su n u S n cớn
 
-thủ củ Nhật im
+- Quang Ảnh đạ ffl:Ể ' nẺẵ-Ểg Ha u -
 
-'g: Ôu“ng Nam
+đáLỗi r.- Đấi Châu Mfg:'ũ ứ `Ề\ì_\Ềx
 
-(Củ. [lap M aäï.
-= Ð lý sơn
-đừng {2Mait
+đá Bạch Quy:” - ụ a đ80n060
+ẳ .„N`
 
-: BUNG QUÁI
-~
+Đ.Trị Tôn » ầu "ề
 
-JE]"
+ñ - ñ L ø
+. (libboc eVanr S
+x - LẠ N n i H G Ì.'Ắ lại Ề`Ù g
 
-_ bãi Đá Bắc
-ra Ð Cây
-trờn, Ð, Bắc
-Đ.Tây Nam
-Binh Sơn” + ® Phú Lãm
+Ỗ T
+w
 
-ÐÚcHođ— bai va 5 ® Linh Côn
-Ð Hoàng §q s5 ch SĨ, hòn Tháp". ,
-Ð.Hữu Nhật, „ ,ÈP Duy Mộng —
-
-kí E\ Quang Ảnh ga Cai TÊ) Hoà mo n, h ®
-dátái x⁄-==^- bãi Châu Thả. â 3 ve*
-đủ Bạch Quy-z` ụ Quê.
-ö a9 đá Bảng Bay
-ẳ N - v2
-Ø, Trị Tân *° ànñ ọ°
-Hộ ¬
-sa”
-non)
-(9 §
-
-HỆ) hòn Ông Cán
-UY NHỮM. :
-
-_sự
-
-mũi Kê Gà Phú Quý -
-_3w Ti Ben LÑ) h
-Từ Thẳng (DỊ
-hòn Đồ Lớn! HếI +
-+
-Trang lãm tũtng nghiệp h Sản xuất vật liêu xây đụng tủ
-Kiến Mã Sản xuất, chế biến thực phẩm EH
-é KỂl lảnsuẩtzẩnphẩmđiệnti máyvitinh ssử>
-G vùng rìng @ Lo äinxuittrangphvcrsinxuitgiy cê
-L Vùng nêng lắm kết hợp :,t lật Khai thắc, chế biển lâm sản; cr khi “#
-|| vùng lúa, lặn, gia cắm xe Thuỷ điện, nhiệt điện ®
-——:—— Địa giới hành chính cẩn tính XỔ X)# — Biện mát trời, điện giá 1
-——— Ranh giới vùng ® (§) Khai thắt vàng, ti-tan: lấn
-;—=m Biến tiết quốc giả @ Kì Khai thắc cát thuỷ thi, nước khrrảirgr I]
-—H5I— Quốc lũ, lên đường GÌ khaithác dầu thô, Shỉ tự nhiên bì
-— Đường cật G Ê Hạc thịt học dứu đồng tủ về thuyền
+ẫ_ mmm
+;
 
 ©
-=
 
-li6"
+¬E đônh Trurir
 
-HÀNG lá
+mũi Kẽ Gặ ỀẺỂ E, Phú Quý ẺỄẩ
+— LÀ
+IR-T: ?ìrẸlz'ẹ=r:|-xl!,i_- -
+z Từ Trắng (DỤ
+CHÚ Giả|
 
-TRUNG QUỐC ` saiil Ì
+hòn Hải
+hòn Đề Lớn
 
-CHỦ GIẢI
-Cảng hàng không suốc nội | Lúa
-Cảng hàng không quốc kế Lu 1 Bữa, lũng;
-Cảng hiển kh # ma.lc vn
-Khu kinh tế wan biển lổ tzyinnua đá Chữ Thập
-Đánh bắt hãi sản “ã Trấu
-ñ
+n
 
-Sản xuất muối krÌ Bò : ' su9” “à
-Thẳng rảnh: #ượờ Lưn bung sào Öxẽ
-Bi sản vấn hư thể siớ # mua : vu ve° Sử
-LẺ hội truyền thống CC” — Sanh _Ð Trường Sa Đẳng _.. và đã Châu Viên
+Cảng hàng không quốc nội lủa
 
-= đảng SỐ AỐNG
-Lùng nghề cổ Iruyển x= Sông W = ˆ”' #q Bằng
++ Dửa hững
 
-th đá Lột cóc
-BÍ tích lịch sử cách mạng. VN” Hữ zz ~xuườ
-Đập Cự. Căng biến quyến Ð Trường Sa
+Cảng hàng kháng quốc bế
 
-a 15 bài 180
-#m.
+u
+® 5
 
-Hình 15.2. Bản đổ kinh tế Duyên hải Nam Trung Bộ, năm 2021
+Trung lâm Lũng nghiệp Ÿ Sản xuất vật liêễu xây dLIg
+ê u l Sẵn xuất, chế biến thực phẩm
 
-18S
+C @ Sân xuất sân phẩm điện tử, máy vl rính
+- Vùng rằng I đØ Dèt sản xuấttramg phục; sản xuất giấy
+L Vùng nông làm kết hợp gfị. Khai thắc, chế biến lãm sản; c khi
+-. Vùng lúa, lợn, gia cồm ** Thuý điện, nhiệt điện
+—=:—- Địa giới hành chính cấp tính * Iự Diện mặt trôi, Giễn giớ
+— RBanh giới vùng lẮỆ' ẺĨJ Khải thác vàng, T-tAm
+nm=im: Biền ghời quốc gia fPh[S] - Khai thác cát thuỷ tình, nước khoảng
+—L Quếc lũ, lên đường (Ñ) T? - Khai thác dầu thệ, khí tự nhiền
+
+Đường sắt C ÑÑ Š Ioá chất, hơá diu, dồng tàu và thuyền
+
+tảng biển kha, lạp a
+
+u
+
+Cây n quả “a đá Chữ Thập
+Trểu
+
+Khu kinh tễ ven biển
+Đánh bểt hšl rản
+Sốn nuất muối
+
+Thẳng cản”:
+
+. sỐ x
+Bỡ QI à
+Lựn % ạì.Ẹ;oùdủn __~~ẾỀỂCỆ`
+Thủ đã HU xẸl'ỵ'I`.l-ẳa"_
+
+LỆ hội truyền thẳng San hỗ "EÌl`—lIf'_I.I'Ổ'J"'llg'_5Ểl—1-E-ỉl-'²ỂI'Ĩ'1{ẳ'j' E _u'ĩ"l'o..lẵ.lĩ`flẽì _ gú Chấu Viên
+Lãng nghề cổ Huyền Sắng đá Tây l-ĩG_.ì-Eì""~L`l'IĨ" — b Eỉỏng
+Di tích lịch sử cách mạng S Hồ Dỵồng
+
+Đảo %% Cảng biển ự1Ư*IỀn 8 Trưởng 5a
+
+ã
+
+Di sản vẫn hu thổ qiới x
+
+.zmEmwseøs btEezx>>
+ZvxgÐe
+
+Hình 15.2. Bắn đồ kinh tế Duyên hải Nam Trung Bộ, năm 2021
+
+188

@@ -7,4 +7,4 @@ source: ocr
 
 # SGK Lịch sử và địa lí 6 KNTT (lớp 6) — Trang 1
 
-VñIIPU )DISNB
+VÚIIBEUÕETSỮNB

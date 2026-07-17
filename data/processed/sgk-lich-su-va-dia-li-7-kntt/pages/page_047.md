@@ -7,40 +7,59 @@ source: ocr
 
 # SGK Lịch sử và địa lí 7 KNTT (lớp 7) — Trang 47
 
-@ Công cuộc thống nhất đất nước của Định Bộ Linh
+© Công cuộc thống nhất đất nuớc của Đinh Bộ Lĩnh
 và sự thành lập nhà Định
 
-Năm 944, Ngô Quyên mắt, chính quyền nhà Ngô Suy yếu nhanh chóng. Nhân
-cơ hội đó, các thế lực hào trưởng địa phương nồi lên, mỗi người chiếm cứ một
-vùng. Đến năm 965, chính quyền nhà Ngô tan rã, đất nước lâm vào tình trạng cát cứ
+Năm 944, hlgO Quyền mất, chính quyền nhà rxlgo suy wu nhanh dmng Nhân
+cơ hội đó, các thế lực hào ừương địa phương nỏi lên, mỗi người chiếm cứ một
+vùng. Đến năm 9865, chính quyền nhà Ngô tan rã, đất nước lâm vào tình trạng cát cứ
 của 12 sứ quân.
 
-=..
-“
-TP
+Ẻ#*
+ỀS_.—
+à
 
-=
+~
 
-đế tuớn _ tả ông)Hãn)
+G n PHANG CHÂU
+Irml_-ểỆìl_'l_flỹ-lllfl'lìfậlllj ỦẺằ ông|Hãn) Ẩ\
+"’l É
 
-Sã : ` TAM ĐÁI
-_(Nuyễn Khoan)
+- ¬4 \ ỆăM £JỄ|
 
-ĐƯỜNG LẤM ˆ:
-(Ngõ Nhật|[Khánh)
+ĐƯƠNG LẮM .. fflgu n Khoan)
 
-ĐỖ ĐỌNG ¬-. +
-(Bỗ Cảnh Thạc)
-TÂY PHÙ LIỆT .
-(Nguyễn Si¿u)
+(Ngõ Nhật|Khánh} — — —
 
-ở Thủ phủ của các
-=h sử quân
+"xớ a - ng IÊN-ÒU
 
-Vùng đất các
-TẾ GIANG sứ quãn chiếm cứ
+ĐỒ ĐỌNG GIANG.! Ẩồ 7 SIÊU LO/
+Ẹ[E=]
 
-(Lý Khuê) Tên sử quân cựu Thần [Ädu
+(Đô Cảnh Thạc) - (Lý m…a;
+
+TÂY PHÙ LIẸT ATÉGIANG 2
+
+N Siêu) ) -
+(Nguyễn Sieu) Íỵ' (Lữ Đường) *?.-ỘI
+
+ỏ jẺĐÁN CHẢ
+
+Phạrh Bạch Hồ)
+
+ẵ` '4Ắ.——_~Ì— BÓ HẢI KHẨU
+(Trần Lãm .
+
+c= ⁄
+
+. = L u
+~ Thủ phủ của các
+
+= sỬ Ủ|LIỄI'I
+
+sử quản chiếm cử rửa Đại 42
+
+(Lÿ Khuê) Tên sử quân
 
 Hình 1. Lược đồ cát cứ của 12 sứ quân
 

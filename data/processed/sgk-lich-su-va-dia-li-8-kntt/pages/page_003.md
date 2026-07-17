@@ -12,9 +12,9 @@ LỜI NÓI ĐẦU
 Các em học sinh thân mến!
 
 Sách giáo khoa Lịch sử và Địa lí 8 sẽ đồng hành cùng các em tiếp tục tìm hiểu
-những vấn để nổi bật của lịch sử thế giới và lịch sử Việt Nam từ nửa sau thế kỉ XVI
+những vấn đề nổi bật của lịch sử thế giới và lịch sử Việt Nam từ nửa sau thế kỉ XVI
 đến đầu thế kỉ XX và các đặc điểm của địa lí tự nhiên Việt Nam. Cùng với đó là hai
-chủ để chung: Văn minh châu thổ sông Hồng và sông Cửu Long; Bảo vệ chủ quyền,
+chủ đề chung: Văn minh châu thổ sông Hồng và sông Cửu Long; Bảo vệ chủ quyền,
 các quyền và lợi ích hợp pháp của Việt Nam ở Biển Đông.
 
 Nội dung phần Lịch sử lớp 8 cung cấp cho các em bức tranh lịch sử tổng thể

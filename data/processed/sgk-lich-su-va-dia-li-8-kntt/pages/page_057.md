@@ -9,46 +9,46 @@ source: ocr
 
 SỰ PHÁT TRIỂN CỦA KHOA HỌC,
 
-FHÚỮNH 3 mí THUẬT, VĂN HỌC, NGHỆ THUẬT
-TRONG CÁC THỂ KỈ XVIII - XIX
+DHUNG Ö kĩ THUẬT, VĂN HỌC, NGHỆ THUẬT
+TRONG CÁC THÊ KỈ XVIII - XIX
 
-Bài Í 3 SỰ PHÁT TRIỂN CỦA KHOA HỌC,
-a1 KĨ THUẬT, VĂN HỌC, NGHỆ THUẬT
-TRONG CÁC THÊ KĨ XVIII — XIX
+Bài ĩl. ĩ3 SỰ PHÁT TRIỂN CỦA KHOA HỌC,
+al KĨ THUẬT, VĂN HỌC, NGHỆ THUẬT
+TRONG CÁC THÊ KÍ XVIII - XIX
 
-Học xung bải này, em sẽ:
+Học xong bài nàv. em sẽ:
 
-s_ Mô tả được một số thành tựu tiêu biểu về khoa học, kĩ thuật, văn học, nghệ thuật
+s Mô tả được một số thành tựu tiêu biểu về khoa học, kĩ thuật, văn học, nghệ thuật
 trong các thế kỉ XVIII - XIX.
 
 s Phân tích được tác động của sự phát triển khoa học, kĩ thuật, văn học, nghệ thuật
 trong các thế kỉ XVIII - XIX.
 
-Trong các thế kỉ XVII - XIX, xã hội loài người đã có
-những thành tựu lớn về khoa học, kĩ thuật và văn học,
+Trong các thế kỉ XVHI - XIX, xã hội loài người đã có
+những thành tựu lớn về khoa học, K thuật và văn học,
 nghệ thuật. Hình ảnh bên là I. Niu-tơn - người có phát
 minh khoa học vĩ đại trong thời kì lịch sử này. Theo
 em, đó là phát minh nào? Hãy chia sẻ những điều em
 biết về những thành tựu khoa học, kĩ thuật mang dấu
-ấn thời đại, cũng như tác động của các thành tựu đÓ _ Hình 13.1. I. Niu-tơn (1643 - 1727)
+ấn thời đại, cũng như tác động của các thành tựu đÓ n 13.1. | Niu-tơn (1643 - 1727)
 
-đối với đời sống con người. II
-€} Những thành tựu tiêu biểu về khoa học và kĩ thuật
+đối với đời sống con người. ll
+( Những thành tựu tiêu biểu về khoa học và kĩ thuật
 a) Khoa học
 
 Khoa học tự nhiên đạt được những tiến bộ vượt bậc với nhiều phát minh lớn của
 các nhà khoa học.
 
-Đầu thế kỉ XVIII +> Giữa thế kỉ XVIII ~> Giữa thế kỉ XIX
+Đầu thế kỉ XVIII ¬> Giữa thế kỉ XVIII ¬> Giữa thế kỉ XIX
 
 Ỷ Ỷ Ỷ
 
 Định luật bảo toàn và
 
-Z Thuyết vạn vật chuyển hoá năng lượng HH c tiền —
-hấp dẫn của l. Niu-tơn của M. Lô-mô-nô-xố của 5. Đác-uyn
-(Vật lí) p (Sinh học)
+; 'l'l'\IE..|_'gll'IE`Ỉ."r'l.ll'uE_lf'I ìf.ạt chuyển hoá năng lượng wluyet uỀn hoả
+hấp dẫn của l. Niu-tơn của M.Lô-mô-nô-xố của 5. Đác-uyn
+(Vậtli) | P (Sinh học)
 
-(Vật lí và Hoá học)
+(Vật li và Hoá học)
 
-Hình 13.2. Sơ đồ một số phát minh tiêu biểu
+Hình 13.2. 5ơ đổ một số phát minh tiêu biểu

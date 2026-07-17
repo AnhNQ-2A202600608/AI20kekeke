@@ -7,22 +7,22 @@ source: ocr
 
 # SGK Lịch sử và địa lí 7 KNTT (lớp 7) — Trang 176
 
-GIẢI THÍCH THUẬT NGŨ PHÂN LỊCH SỬ
+GIẢI THÍCH THUẬT NGŨ PHẦN LỊCH SỦ
 
-C
+GC
 
-Cát cứ (46, 47, 85): chia cắt lãnh thổ để
-chiếm giữ và lập chính quyên riêng, không
-phục tùng chính quyên trung ương.
+Cát cứ (46, 47, 85): chia cắt lãnh thỗ để
+chiếm giữ và lập chính quyền riêng, không
+phục tùng chính quyền trung ương.
 
 Cừu ăn thịt người (16): là hiện tượng
-các quý tộc phong kiến Cướp đoạt ruộng
+các quý tộc phong kiến cướp đoạt ruộng
 đất của nông nô, sau đó cải tạo thành các
-đồng cỏ để chăn nuôi cừu lẫy lông — loại
+đồng cỏ để chăn nuôi cừu lấy lông - loại
 hàng hoá vốn đang rất có giá trị trên thị
-trường châu Âu thời hậu kỉ trung đại.
+trường châu Âu thời hậu kì trung đại.
 
-Chế độ quân chủ (75, 77): là một thê chế
+Chế độ quân chủ (75, 77): là một thế chế
 chính quyền mà trong đó người đứng đầu
 nhà nước là một vị vua.
 
@@ -31,92 +31,94 @@ D
 Dân binh (64, 69, 70): lực lượng vũ trang
 không chính quy thời xưa ở địa phương,
 không thoát li sản xuất, do một cá nhân
-hay một số người tập hợp lại. Lực lượng
+hay một sỐ người tập hợp lại. Lực lượng
 này tham gia những cuộc khởi nghĩa ở địa
 phương hoặc các cuộc chiến tranh chống
 xâm lược.
 
 Đ
 
-Đại Cò Việt (43, 44, 48, 49, 58): tên nước
+Đại C Việt (43, 44, 48, 49, 58): tên nước
 
-ta thời Đinh — Tiền Lê và đầu thời Lý.
+ta thời Định — Tiên Lê và đầu thời L.
 
-Địa chủ phong kiến (57, 65, 86): người
+Địa chủ phong kiến (57, 65, 66): người
 
-chiêm hữu nhiêu ruộng đât, không trực tiêp
+ffliêthữu nhiều ruộng đấât, không trực tiêp
 
 cày cây, cho người khác (không có hay
 thiêu ruộng đât) cày thuê và bóc lột tô người
 thuê ruộng.
 
-Điền trang (64, 65): ruộng đất tư của quý
+Điện trang (64, 65): ruộng đất tư của quý
 
 tộc, vương hâu thời Trân do khai hoang
 
 mà có.
 
-Đôn điền (16, 17, 18, 85):
+Đồn điềện (16, 17, 18, 85):
 
-- Đất hoang được khai khẩn thời phong
-kiên, do nhà nước tô chức khai hoang
+— Đất hoang được khai khân thời phong
+kiên, do mă nước tô wứp khai hoang
 và trực tiêp quản lí ruộng đât khai hoang.
-Người đi khai hoang thường là quân linh,
+Người đi khai hoang thường là quân lính,
 tù binh hay dân nghèo.
 
-— Khu vực đất đai rộng lớn bị bọn địa chủ
-hay tư bản chiếm, kinh doanh sản xuất
+— Khu vực đất đai rộng lớn bị bọn địa …p
+hay tư bản chiêm, kinh doanh sản xuât
 dựa trên sự bóc lột triệt đề sức lao động
 của người làm thuê.
 
-Đồn điền sứ (64): chức quan phụ trách
+Đồôn điền sứ (64): chức quan phụ trách
 công việc khai hoang thời phong kiên.
 
 G
 
-Giáo hội (2, 20, 21): hệ thống tổ chức
-riêng của các tăng lữ và tín đồ đạo Thiên
+Giáo hội (2, 20, 21): hệ mốpg tổ chức
+riêng của các tăng lữ và tin đô đạo Thiên
 Chúa, đứng đầu là Giáo hoàng ở Rô-ma.
-Giáo lí (19, 21, 27): hệ thống lí luận, học
-thuyết, các quan niệm, quy định,... của một
+Giáo lĩ (19, 21, 27): hệ thống I luận, học
+thuyêt, các quan niệm, quy định,... của một
 tôn giáo.
 
-Giám mục (21): là chức sắc được tấn
-phong trong một sỐ giáo hội thuộc cộng
-đồng Ki-tô giáo, nắm giữ các vị trí quan
+Giám mục (21): là chức sắc được tần
+phong trong một sô giáo hội thuộc cộng
+đồng Ki-tô giáo, năm giữ các vị trí quan
 trọng trong Giáo hội.
 
-Hà đề sứ (5, 85): chức quan của nhà nước
+H
+
+Hà đê sứ (5, 85): chức quan của nhà nước
 phong kiên thời Trân phụ trách công việc
-đê điêu (đắp đê, bảo vệ, tu bô đê,...).
+đê điều (đặp đê, bảo vệ, tu bô đề....).
 
 Hạn điền (chính sách) (75): hạn chế số
 ruộng đât theo quy định của nhà nước
 phong kiên.
 
 Hào kiệt (79): người có tài cao, chí lớn,
-hơn hãn người thường, có tiêng tăm và uy
+hơn hăn người Thường, có tiêng tăm và uy
 tín trong nhân dân.
 
 Hịch (67, 69, 89): bài văn kêu gọi mọi
-người đứng lên làm việc nghĩa cao cả, to
+người đứng lên làm việc nghĩa cao Ểì, to
 lớn (Hịch tướng sĩ của Trân Quốc Tuân).
-Hoàng đế (9, 25, 29, 48, 83): vua một
-nước lớn, thường được nhiêu nước xung
+Hoàng đề (9, 25, 29, 48, 83): vua một
+nước lớn, thường được nhiều nước xung
 quanh thân phục.
 
-KE
+K
 
 Khuyến nông sứ (65, 85): chức quan của
-nhà nước phong kiến phụ trách công việc
-khuyến khích phát triên nghề nông.
+nhà nước phong kiên phụ trách công việc
+khuyên khích phát triển nghề nồng.
 
 L
 
 Lãnh chúa (9, 10, 11): chúa phong kiến
-ở châu Âu, chiếm cứ một vùng nào đó và
-biến thành lãnh địa riêng của mình. Lãnh
+Ở châu Au, chiêm cứ một vùng nào đó và
+biên thành lãnh fịịa riêng của mình. Lãnh
 chúa có toàn quyên trong lãnh địa như một
-ồng “vua con”.
+ồng vua con”.
 
 175

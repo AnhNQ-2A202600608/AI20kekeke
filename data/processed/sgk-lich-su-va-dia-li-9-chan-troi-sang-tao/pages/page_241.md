@@ -7,21 +7,24 @@ source: ocr
 
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 241
 
-Bảng 2.3. Các biện pháp ứng phó với biến đổi khí hậu
+Bảng 2.3. Các biện pháp ứng phó với biến đối khí hậu
 ở châu thổ sông Hồng và sông Cửu Long
 THÍCH ỨNG BIẾN ĐỔI KHÍ HẬU
 
-Châu thổ Châu thổ Châu thổ Châu thổ
-sông Hỗng sông Cửu Long sông Hỗng sông Cửu Long
++ _¬ E n i H =
+7 :
 
-GIẢM NHẸ BIẾN ĐỔI KHÍ HẬU
+GIAM NHẸ BIEN ĐÓI KHÍ HẬU
+
+Châu thổ Châu thổ Châu thổ Châu thổ
+sống Hồng sống Cửu Long sống Hồng sông Cửu Long
 
 - Phát triển công
 nghiệp xanh.
 
-- Nâng cao năng
+- Nẵng cao nãng
 lực dự báo, vận
-hành các hỗ chứa,
+hành các hồ chứa,
 đập xả trữ nước
 thuỷ điện, thuỷ lợi.
 
@@ -39,10 +42,7 @@ cường nhận thức
 cộng đồng về biến
 đối khí hậu.
 
-©
-/
-
-- Đẩy mạnh trồng
+- Đấy mạnh trồng
 rừng và tái tạo
 rừng, giảm lượng
 khí nhà kính.
@@ -50,24 +50,24 @@ khí nhà kính.
 - Quy hoạch 3 tiểu
 vùng sinh thái:
 nước ngọt, nước
-lợ nước mặn với
+lợ}j nước mặn với
 ba trọng tâm: thuỷ
 sản - cây ăn quả -
 lúa.
 
-- Sử dụng- nước
+- Sử dụng -nước
 tiết kiệm.
 
-- Tuyên. truyền,
-giáo dục ý thức
-người dân-về biến
-đối khí hậu:
+- Tuyển truyểền,
+giáo /dục ý thức
+người dârrvề biến
+đối khí hậu.
 
-Luyện tập
+—À Luyện tập
 
-- Chuyển đổi cơ
-cấu cây trỗng và
-vật nuôi thích ứng
+- Chuyển đổối cơ
+cấu cây trồng và
+vật nuỗi thích ứng
 với nhiệt độ tăng
 cao.
 
@@ -75,56 +75,58 @@ cao.
 thải công nghiệp.
 - Thay đổi thời vụ
 sản xuất (vụ đông).
-- Xây dựng các mỗ
-hình nêng nghiệp
+- Xây dựng các mô
+hình -nông nghiệp
 xanh thích ứng với
 biến đối khí hậu.
 
 - Điều tiết nguồn
 nước từ các công
-trình thuy điện. ở
+trình thuỷ điện ở
 thượng lưu:
 
-Luyện tập - Vận dụnd
+Luyện tập “Vận dùng
 
 - Xây dựng các công trình
-thuỷ lợi, chống xâm nhập
+thuỷ lợi, chốngxâm nhập
 mặn.
 
-- Chuyển đối thời vụ
+- Chuyển đổi thời vụ
 sản xuất, sử dụng giống
-lúa chịu phèn, chịu hạn,
+lúa chịu pheén, chịu hạn,
 chịu mặn.
 
 - Phát triển du lịch miệt
-vườn, sinh thái, sông
+vườn, sinh thái sông
 nước gắn với các khu
-bảo tốn thiên nhiên.
+bảo tồn thiên nhiên.
 
-- Sử dụng các mô hình
+- Sử dụng các mỗ hình
 thích ứng với biến đối khí
 hậu: lúa - tôm, lúa - cá,
-trỗng rừng ngập mặn.
+trồng rừng ngập mặn.
 
-~ Xây dựng hệ thống bờ
-ao, chỗng sạt lở bờ sông,
+- Xây dựng hệ thống bờ
+ao, chống sạt lở bờsông,
 biến.
 
-1. Hãy hoàn thành bảng thông kê về nét đặc sắc của văn hoá ở châu thô sông Hông
-và sông Củu Long theo mâu dưới đây vào vở:
+J. Hãy hoàn thành bảng thông kê về nét đặc sắc của văn hoá ở châu thô sông Hông
+và sÔng Cửu Long theo mẫu đdưới đây vào vở:
 
-Văn hoá ở châu thổ Văn hoá ở châu thổ
-sông Hồng sông Cửu Long
+Văn hoá ở châu thô Văn hoá ở châu thô
+fflmg H()I1g :›xmg Cứu hmg
 
-2. Tóm tắt những biểu hiện của biển đổi khí hậu ở hai vùng châu thô sông Hông và sông
-Cứu Long.
+tĐời fflng với ửaf
 
-Vận dụng
+2. Tớn tắt những biểu biện của biên đổi khí hậu ở hai vùng châu thô sông H'ổng và SÔng
+Ctu Long.
 
-1. Những nét văn hoá tuyên thông nào còn được lưu giữ trong đồi sống của người
-Việt Nam hiện nay ở vùng châu thô sông Hông và sông Cửu Long?
+Vận dung
 
-2. Hãy sưu tâm hình ảnh về những tác động của biển đôi khi hậu đối với hai vùng châu
-thô sông Hông và sông Cửu Long, sau đó chia sẽ với các bạn cùng lớp.
+J Những nét văn hoá ruyền thống nào còn được lưu giữ #rong đời sống của người
+VDiệt Vam hiện nay ở vùng châu thô sông Hồng và sống Cửu Long?
+
+2. Hãy sưu tàm hình ảnh về những tác động của biển đổi khí hậu đổi với hai vùng châu
+thô sông Hồng và sốông Cửu Long, sau đó chia sẻ với các bạn cùng lớp.
 
 238

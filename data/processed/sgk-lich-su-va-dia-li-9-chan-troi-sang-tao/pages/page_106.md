@@ -7,66 +7,61 @@ source: ocr
 
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 106
 
-Imtmememmmmmm
+n n' "g" ~ — - _
 
-Học xong bại này, em sẽ:
+==EET .J…_…I_.~ E SIế Ư I ~y~—ưr * 9 EE x TF K EE e =
 
-— Trình bày được sự thống nhất đất nước về mặt Nhà nước, cuộc đấu tranh bảo vệ Tổ quốc ở vùng biên giới
-Tây Nam và vùng biên giới phía Bắc trong những năm 1975 — 1979, đấu tranh bảo vệ chủ quyền biển đảo.
+_Jữ M›Jự sS ỵẵag Ơ*~F
 
-— Nêu được fình hình chính trị, kinh tế, xã hội Việt Nam trong những năm 1976 - 1988.
+Học xong bài này; em sẽ:
 
-~ Mô tả được đường lối Đối mới của Đẳng và Nhà nước ta, giải thích được nguyên nhân, nêu được kết quả
-và ý nghĩa của công cuộc Đối mới trong giai đoạn 1986 - 1991.
+- Trình bày được sự thống nhất đất nước về mặt Nhà nước, cuộc đấu tranh bảo vệ Tổ quốc ở vùng biên giới
+Tây Nam vàvùng biên giới phía Bắc trong những năm 1975 - 1979 đấu tranh bảo vệ chủ quyền biển đảo,
 
-~ Đánh giá được thành tựu và hạn chế trong việc thực hiện đường lỗi Đối mới,
+— Nêu được ũnh hình chính trị, kinh tế, xã hội Việt Nam trong những năm 1976 ~ 1985,
 
-Chiếc câu Hiền Lương vắt ngang trên dòng sông Bến Hải ở vì tyễn 17 có hai màu xanh
-— vàng, vì rong thời kì chiến tranh;-kiui phía bờ Đắc sowTmàu xanh thì phía bờ Nam sơn lại
-màu vàng. Sưu ngày 30 4-1975-lịch sử đã sang trưng, đt nước thông nhất, chiếc cấu
-hai màu trở thành dị tích. Từ năm 1975 đến năm 1991, dưới sự lãnh đạo của Đảng, nhân dân
-cả nước đổ chung tay X8P đựng và bào vệ TỔ quốc như thể nào?”
+= Mô tả được đường lối Đối mới của Đảng và Nhà nước ta, giải thích được nguyên nhân, nêu được kết quả
+và ý nghĩa của công cuộc Đổi mới trong giai đoạn 1986 — 199],
 
-1. Hoàn thành thống nhất đất tiướé về mặt Nha trước
+— Đánh giá được thành tựu và hạn chế trong việc thực hiện đường lối Đối mới.
 
-Dựa các tư liệu 19 1, 19 2 và thông tn rong bài, hãy nêu những sự kiện liên
+Cliếc cầu Hiệển Lương vãt ngưng trên dòng sốông Dốn Hải ở%ĩ tuyến 17 có hai mờu xanh
+— vàng, vì †rong thời kì chiên #anh, khi phía bờ Bắc sơï! Tuờu xanh thì phía bờ Nam sơn lại
+màu vàng. Sạu ngày 30 Š 4—” 7075 1ịch sử đH sang trgñg, đât nước thống nhất, chiếc cầu
+hai mờu #ở thành dĩ tích. Từ năm 1975 đến năm 1991, đưới sự lãnh đạo của Đông, nhân dân
+cả nước đã chung tay XÊÿ đựng và bảo vệ TỔ quốc như thể nào?
 
-quan đền việc hoàn thành thông nhát đất nước về mặt Nhà nước. Tại sao việc
-thông nhất đút nước về mặt Nhà nước lại có ý nghĩa quan trọng?
+1. Hoàn thành thống nhất đất Hước vè mặt Nhã hiước
+Tựa các tư liệu 19 †, 192 và thông tín #ong bài, hãy nêu những sự kiện liên
 
-Sau ngày 30 - 4 - 1975, đất nước Việt Nam
-đã thống nhất về lãnh thổ, song trên thực
-tế vẫn còn tốn tại hai Chính phú: Chính phủ
-Việt Nam Dân chủ Cộng hoà ở miền Bắc và
-Chính phủ Cách mạng lầm thời Cộng hoà
-miễn Nam Việt Nam ở miễn Nam. Trước yêu
-cầu của lịch sử, việc thống nhất đất nước về
-mặt Nhà nước đã được tiến hành thông qua
-Hiệp thương chính trị thống nhất hai miền
-(21—11— 1975) và bầucửQuốchội (25—4-— 1976).
+quan đền việc hoàn thành thống nhất đổt nước về mặt Nhà nước. Tại sạo việc
+thông nhất đớt nước về mặt Nhà nước lại có ý nghĩa quan # png?
 
-“Thống nhất đất nước vừa là nguyện
+JJll…ụ' L
+
+Sau ngày 30 - 4-~- 1975, đất nước Việt Nam
+
+đã thống nhất về lãnh thổ, song trên thực —
+
 vọng tha thiết bậc nhất của đồng bào cả
-nước... Thống nhất đất nước tạo ra sức
-mạnh mới, những thuận lợi mới để phát
-triển kinh tế văn hoá và củng cỗ quốc
+
+F tế vẫn còn tồn tại hai Chính phủ: Chính phủ n n n s
+| Việt Nam Dân chủ Cộng hoà ở miền Bắc và mạnh mới những thuận lợi mới để phát
+
+triển kinh tế. văn hoá và củng cố quốc
+
+Chính phủ Cách mạng lâm thời Cộng hoà - — Ể
 phòng. Thống nhất đất nước càng tăng
-cường ảnh hưởng của Việt Nam trên trường
-quốc tế?
 
-(Dẫn theo Nghị quyết Hội nghị lần thứ 24 của
+3 miền Nam Việt Nam ở miễn Nam. Trước yêu cường ảnh hướng của Việt Nam.trêntrường ¬
+i cầu của lịch sử, việc thống nhất đất nước về quốc tế? E |
+ỉ mặt Nhà nước đã được tiến hành thông qua (Dẫn theo Nghị quyết Hộinghị lân thứ 24 của
+- - : E w — Bạn Chấp hành Trung ương Đảng Lao động
+5 Hiệp thương chính trị thống nhất hai miễn Việt Nam, 20 9 ~ 1975)
 
-Ban Chấp hành Trung ương Đảng Lao động
+Ệị
+=
 
-Việt Nam, 29 -0— 1975)
+(21-11-1975) và bẫu cửQuốchội(25-4-1976).
 
 103
-
-1uÄ1L lui.
-
-l Ì HẠ TH BIUY THỊ | d1 -Nuill:4u
-
-l|
-vụ „«|
-
-lai lÌájia luảÌ,

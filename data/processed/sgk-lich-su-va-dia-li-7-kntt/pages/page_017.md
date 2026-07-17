@@ -7,46 +7,46 @@ source: ocr
 
 # SGK Lịch sử và địa lí 7 KNTT (lớp 7) — Trang 17
 
-b) Hệ quả của các cuộc phát kiễn địa lí
+b) Hệ quả của các cuộc phát kiến địa lÍ
 
-Phát kiến địa li đã để lại những hệ quả lớn lao cho loài người.
+Phát kiến địa lí đã đề lại những hệ quả lớn lao cho loài người.
 
 Mở ra con đường Đem về cho châu Âu Làm nảy sinh nạn
 mới, tìm ra vùng đất khối lượng lớn vàng bạc, buôn bán nô lệ da
 mới, thị trường mới, nguyên liệu; thúc đẩy đen và quá trình
 thúc đẩy hàng hải nền sản xuất và thương xâm chiếm, cướp
-quốc tế phát triển,... nghiệp ở đây phát triển. bóc thuộc địa,...
+quốc tế phát triển.... nghiệp ở đây phát triển. bóc thuộc đia,...
 
 Hình 3. Hình ảnh mô phỏng con tàu buôn bán nô lệ thời trung đại
 
-Hãy trình bày hệ quả của các cuộc phát kiến địa li.
+Hãy trình bày hệ quả của các cuộc phát kiến địa l.
 
-© Sự nảy sinh chủ nghia tư bản và những biến đổi chính
+@ Sụ nảy sinh chủ nghĩa tư bản và những biến đổi chính
 trong xã hội Tây Au
 
 a) Sự nảy sinh chủ nghĩa tư bản
 
-—— Sau các cuộc phát kiến địa lí, giới quý tộc và
+== Sau các cuộc phát kiến địa li, giới quý tộc và
 
-thương nhân châu Âu đây mạnh cướp bóc của cải, tài
-Giới quý tộc, điên hình nhất nguyên từ các nước thuộc địa châu Á, châu Phi, châu
-ở Anh, đã trân áp, cướp đoạt Mỹ đem về châu Âu. Ở trong nước, họ dùng bạo lực
-ruộng đất của nông nô, rảo lại và nhiều thủ đoạn để tước đoạt ruộng đất của nông
+f thương nhân châu Âu đầy mạnh cướp bóc của cải, tài
+Giới quý tộc, điển hình nhất nguyên từ các nước thuộc địa châu Á, châu Phi, châu
+ở Anh, đã trần áp, cướp đoại Mỹ đem về châu Âu. Ở trong nước, họ dùng bạo lực
+ruộng đốt của nông nỗ, rảo lại và nhiều thủ đoạn đề tước đoạt ruộng đất của nông
 
-thành đồng cỏ nuôi cừu để lây
+thành đồng cỏ nuôi cừu đề lầy
 lông cung cấp cho ngành sản
 xuất len dạ. Hàng vạn gia đình
-nông nô mất đất phải đi lang
-thang. Tôemát Mo+o (nhà xã
+nông nô mắt đát phải đi lang
+thang. Tô-mát Mlo+ơ (nhà xã
 hội học người Anh) gọi đây là
-hiện tượng “cừu ăn thịt người”.
+hiện tưrọng cửu ăn thị người”.
 
-nô, tư liệu sản xuất của thợ thủ công....
-Hàng triệu người da đen ở châu Phi bị bắt để bán cho các
-chủ đồn điền, hằm mỏ ở châu Âu, châu Mỹ làm nhân công.
-Tại châu Âu, do phong trào "rào đât cướp ruộng”, hàng
-vạn nông nô không có ruộng cày cấy, trở thành những
-người đi lang thang, cuối cùng buộc phải vào làm thuê
+nô, tư liệu sản xuất của thợ thủ công,...
+Hàng triệu người da đen ở châu Phi bị bắt đề bán cho các
+chủ đồn điền, hầm mỏ ở châu Âu, châu Mỹ làm nhân công.
+Tại châu Âu, do phong trào “rào đât cướp ruộng”, hàng
+vạn nông nô không có ruộng cày cây, trở thành những
+người đi lang thang, cuồi cùng buộc phải vào làm thuê
 trong các công xưởng của tư sản.
 
-16
+46

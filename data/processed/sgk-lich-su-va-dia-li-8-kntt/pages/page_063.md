@@ -16,50 +16,50 @@ phong kiến Trung Quốc, mở đường cho chủ nghĩa tư bản ở nước
 
 Cuộc cách mạng xã hội và nhất là tư tưởng của Tôn Trung Sơn có ảnh hưởng
 nhất định đến nhiều nước Đông Nam Á, trong đó có Việt Nam.
-(Theo Vũ Dương Ninh, Nguyễn Văn Hồng, Lịch sử thể giới cận đại, 5đủ, tr. 370)
+(Theo Vũ Dương Ninh, Nguyễn Văn Hồng, Lịch sử thể giới cận đại, Sđd, tr. 370)
 
 Tuy nhiên, cuộc cách mạng này đã không xoá bỏ triệt để giai cấp phong kiến, cũng
-như không giải quyết được vấn để ruộng đất cho nông dân, không chống lại các nước
-để quốc xâm lược.
+như không giải quyết được vấn đề ruộng đất cho nông dân, không chống lại các nước
+đế quốc xâm lược.
 
 1. Hãy trình bày diễn biến chính, nguyên nhân thắng lợi của Cách mạng Tân Hợi.
 
 2. Khai thác tư liệu 1 và thông tin trong mục, em hãy cho biết ý nghĩa lịch sử và một số
 hạn chế của Cách mạng Tân Hợi.
 
-Nhật Bản từ nửa sau thế kỉ XIX đến đầu thế kỉ XX
+© Nhật Bản từ nửa sau thế kỉ XIX đến đầu thế kỉ XX
 
 a) Cuộc Duy tân Minh Trị (1868)
 
-Mút-su-hi-tô là con thứ của Thiên hoàng Kö-mảy, Tháng 1 - 1868, sau khi lên ngôi
-được kế vị lúc mới 15 tuổi, khi vua cha qua đời, lấy : : ¬.AỪ ^.
-hiệu là Minh Trị. Ông là một vị vua có tư tưởng Thiện POang Minh Trị tiên hành một
+Mút-su-hi-tỏ là con thứ của Thiên hoàng Kö-mẫy, Tháng 1 - 1868, sau khi lên ngôi
+được kế vị lúc mới 15 tuổi, khi vua cha qua đời, lấy . . — s
+hiệu là Minh Trị. Ông là một vị vua có tư tưởng H _lif1=:'I`E'…rqi'2-:l M`H_1h_TrỊ U_En r'Ềrfh n1Ể't
 duy tân, chủ trương nắm lại quyền lực và tiến loạt cải cách mà lịch sử gọi là cuộc
 hành cải cách. Duy tân Minh Trị.
 
-« Thành lập chính phủ mới, xoá bỏ tình trạng cát cứ.
-Chính tri « Ban hành Hiến pháp năm 1889 với quyền lực tối cao thuộc về Thiên hoàng.
-« Đưa quý tộc tư sản hoá và đại tư sản lên nằm quyển.
+Thành lập chính phủ mới, xoá bỏ tình trạng cát cứ.
+Chính tri Ban hành Hiến pháp năm 1889 với quyền lực tối cao thuộc về Thiên hoàng.
+a Đưa quý tộc tư sản hoá và đại tư sản lên nắm quyền.
 
-s Thống nhất tiển tệ và thị trường, cho phép mua bán ruộng đất và tự do
+s Thống nhất tiền tệ và thị trường, cho phép mua bán ruồng đất và tự do
 Kinh tế kinh doanh.
-s Xây dựng đường sá, cầu cống,...
+Xây dựng đường sá, cầu cống,...
 
-s Tổ chức và huấn luyện quân đội theo kiểu phương Tây, thực hiện chế độ
+Tổ chức và huấn luyện quân đội theo kiểu phương Tây, thực hiện chế độ
 nghĩa vụ thay cho chế độ trưng binh.
 
-s Phát triển công nghiệp đóng tàu, sản xuất vũ khi,...
+s Phát triển công nghiệp đóng tàu, sản xuất vũ khí....
 
-« Học tập các chuyên gia quân sự nước ngoài về lục quân, hải quân.
+Học tập các chuyên gia quân sự nước ngoài về lục quân, hải quân.
 
-Quân sự
+Quảân sự
 
-« Thi hành chính sách giáo dục bắt buộc, chú trọng nội dung khoa học -
+s Thi hành chính sách giáo dục bắt buộc, chú trọng nội dung khoa học -
 kĩ thuật trong chương trình giảng dạy.
-« Cử những học sinh ưu tú du học ở phương Tây.
+s Cử những học sinh ưu tú du học ở phương Tây.
 
 Giáo dục
 
 Hình 14.4. Sơ đồ nội dung chính của cuộc Duy tân Minh Trị
 
-62
+ó2

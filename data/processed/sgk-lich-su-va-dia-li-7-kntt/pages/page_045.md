@@ -7,29 +7,25 @@ source: ocr
 
 # SGK Lịch sử và địa lí 7 KNTT (lớp 7) — Trang 45
 
-_ —
-
-Các vương triều Ngô —- Đinh - Tiên Lê đã hoàn thành sự nghiệp khôi phục nền
-độc lập, thống nhất đất nước, xây dựng chính quyền quân chủ và đặt nền móng cho
+Các vương triều Ngô — Định - Tiền Lê đã hoàn thành sự nghiệp khôi phục nềên
+độc lập, thống nhất đắt nước, xây dựng chính quyền quân chủ và đặt nền móng cho
 thời kì phục hưng mạnh mẽ của dân tộc.
 
-Trong chương này, em sẽ tìm hiểu về:
-e_ Đất nước buổi đầu độc lập (939 — 967).
-e_ Đại Cô Việt thời Đinh và Tiền Lê (968 — 1009).
+Trong chương này, em sẽ tìm hiều về:
+s Đấtnước buổi đầu độc lập (939 - 967).
+e Đại Cô Việt thời Đinh và Tiền Lê (968 - 1003).
 
-4 Khu di tích Hoa Lư (NinhBình) _
+A Khu di tích Cổ Loa (Hà Nội)
 
-- Ỷn+
+4 Khu di tích Hoa Lư (Ninh Bình) .
 
-44 Khu di tích Cổ Loa (Hà Nội)
-
-939 ) . 868 j ( 881 )
-Ngô Quyền Đỉnh Bộ Lĩnh lên ngôi Lê Hoàn lãnh đạo
+939 ] LS68 981
+Ngô Quyền Đỉnh Bộ Lĩnh lên ngôi Lê Hoàn lãnhđạo
 xưng vương hoàng đế, nhà Đinh thành lập kháng chiến chống Tống
-thắng kí
+thắng b
 
-Chính quyền nhà Ngô tan rã | Lê Hoàn lên ngôi vua,
-tình trạng cát cứ của 12 sứ quân| lập ra nhà Tiên Lê
-965 ) L980 )
+Chính quyền nhà Ngô tan rã,|. Lê Hoàn lên ngôi vua,
+lình trạng cát cứ của 12sứquân] . lập ra nhà Tiền Lê
+965 ) .880 )
 
-3443
+44

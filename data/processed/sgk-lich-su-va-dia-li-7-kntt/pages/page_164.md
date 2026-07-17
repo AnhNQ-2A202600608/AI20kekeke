@@ -7,29 +7,30 @@ source: ocr
 
 # SGK Lịch sử và địa lí 7 KNTT (lớp 7) — Trang 164
 
-6) Vị trí địa lí
+®@Vịi trí địa lí
 
-Ki (CC c.A)
+llllllll
 
-.Đắt Uyn-xơ Ỉ
+ff BIỂN RÓT
 
-BIỂN ^
-.ĐURỆC-IN ` uy
+..
 
-Vách bằng
-=s Bông băng
-Đo anh, " Em có biết?
+ẠỈ ê / ' "ĐUYẾC-ĐIN Ÿ l.
+# / |
+.......... Vách băng 2 lhạ IỌ`
+=Z” Sông băng s Ị
+Thêm băng 5 Em có biết?
 
-Tư1F1. Ranh giới băng trôi
++ư1tri, Ranh giới băng trôi
 
-I6 knuvục không đóng băng Thảng 6 năm 2021,
+ã kKhu vục không đóng băng Tháng 6 năm 2021
 
-¡;. v 450 900 1350 1800 km Hội Địa lí quốc gia
-h Hoa Kỳ công nhận
-Hinh 2. Bản đỗ châu ham Cực Nam Đại Dương là đại
-dương thứ năm trên
+450 - 0 450 900 4350 1900km Hội Địa l quốc gia
+` Hoa Kỷ công nhận
+Hình 2. Bản đồ châu Nam Cực Nam Đại Dương là đại
+dương thử năm trên
 
-thế giới.
+thê giới.
 
 Châu Nam Cực gồm lục địa Nam Cực và các đảo ven lục địa, tổng diện tích hơn
 14 triệu km? (đứng thứ tư trong các châu lục trên thế giới).
@@ -38,8 +39,8 @@ Châu Nam Cực gồm lục địa Nam Cực và các đảo ven lục địa, t
 cực Nam. Châu Nam Cực được bao bọc bởi đại dương và nằm cách xa với các châu
 lục khác.
 
-Dựa vào thông tin trong mục 2 và bản đỏ hình 2, hãy:
-— Xác định trên bản đồ vị trí của châu Nam Cực.
-— Cho biết vị trí địa li ảnh hưởng như thế nào tới khí hậu của châu Nam Cực.
+Dựa vào thông tin trong mục 2 và bản đồ hình 2, hãy:
+- Xác định trên bản đồ vị trí của châu Nam Cực.
+— Cho biết vị trí địa lí ảnh hưởng như thế nào tới khí hậu của châu Nam Cực.
 
 163

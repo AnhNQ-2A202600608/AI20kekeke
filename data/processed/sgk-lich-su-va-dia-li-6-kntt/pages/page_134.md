@@ -7,32 +7,29 @@ source: ocr
 
 # SGK Lịch sử và địa lí 6 KNTT (lớp 6) — Trang 134
 
+Bài J2
+
 Học xong bài này, em sẽ:
 
-»_ Trình bày được hiện tượng
-
+Trình bày được hiện tượng
 núi lửa, động đắt và nêu
 được nguyên nhân của
+
 hiện tượng này.
 
-‹_ Biết tìm kiếm thông tin vê các
+Biét tìm kiếm thông tin về các
 thảm hoạ thiên nhiên do núi
-
 lửa và động đắt gây ra.
 
-«_ Biết cách ứng phó khi có
-núi lửa và động đắt
-
-Óng phun
-
-Miệng phụ
+Biết cách ứng phó khi có
+núi lửa và động đát
 
 NÚI LỬA VÀ ĐỘNG ĐẤT
 
-Núi lửa và động đất là hai dạng thiên tai gây
+Núi lửa và động đắt là hai dạng thiên tai gây
 ra nhiêu thảm hoạ kinh hoàng trong lịch sử
 
-nhân loại. Động đất và núi lửa diễn ra như thế
+nhân loại. Động đắt và núi lửa diễn ra như thế
 nào và nguyên nhân do đâu?
 
 1. Núi lửa
@@ -42,28 +39,27 @@ theo các khe nứt của vỏ Trái Đất, phun trào lên bề mặt
 
 Tro bụi
 
-Dung nham
-
 Lò mac-ma
 
-Hình 1. Cấu tạo và hoạt động của một núi lửa
+Hình 1. Cáu tạo và hoạt động của một núi lửa
 
-Năn ISlI5S núi lửa
+Em có biết?
+
+Năm 1815 núi lửa
 Tam-bô-ra ở In-đô-nê-xi-a
 phun trào. Có hơn 70 nghìn
 người chết sau khi thảm
-hoạ xây ra, chủ yêu đo nạn
-đói, bệnh địch và không khí
-bị ô nhiễm.
+hoạ xảy ra, chủ yêu do nạn
+đói, bệnh dịch và không khí
 
-@ 1..Ềễ Quan sát hình 1 và đọc thông tin trong mục 1, em
+Ộ 1. QUuan sát hình 1 và đọc thông tin trong mục 1,em
 hãy mô tả hiện tượng núi lửa và nguyên nhân
 hình thành núi lửa.
 
 2. Theo em, núi lửa phun trào sẽ gây ra những
 hậu quả gì?
 
-Trước khi núi lửa phun trào, có thể mặt đất rung nhẹ,
+Trước khi núi lửa phun trào, có thể mặt đắt rung nhẹ,
 nóng hơn, có khí bốc lên ở miệng núi. Khi núi lửa có
 dấu hiệu phun trào, người dân quanh vùng phải sơ tán
 nhanh chóng khỏi khu vực đó.

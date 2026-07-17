@@ -7,59 +7,59 @@ source: ocr
 
 # SGK Lịch sử và Địa lí 9 Chân trời sáng tạo (lớp 9) — Trang 193
 
-Khai thác khoáng sản biển: khai thác dẫu thô, khí tự nhiên, cát, titan, muối,..
-Ngoài ra, Duyên hải Nam Trung Bộ còn có tiềm năng khai thác băng cháy ở quân đảo
-Hoàng §a, quần đảo Trường Sa.
+Khai thác khoáng sản biển: khai thác dầu thô, khí tự nhiên, cát, ti-tan, muối,..
+Ngoài ra, Duyên hải Nam Trung Bộ còn có tiềm năng khai thác băng cháy ở quần đảo
+Hoàng 5a, quần đảo Trường 5a.
 
 - Công nghiệp
 
 Công nghiệp sản xuất, chế biến thực phẩm phát triển gắn với việc hình thành các
 trung tâm dịch vụ hậu cần nghề cá. Công nghiệp cơ khí chủ yếu là sửa chữa và đóng tàu,
-thuyền. Công nghiệp điện có tiểm năng lớn như thuỷ điện, nhiệt điện, điện gió, điện mặt
-trời. Đặc biệt, công nghiệp lọc, hoá dẫu tại Dung Quất (Quảng Ngãi) góp phân đảm bảo
+thuyền. Công nghiệp điện có tiềm năng lớn như thuỷ điện, nhiệt điện, điện gió, điện mặt
+trời. Đặc biệt, công nghiệp lọc, hoá dầu tại Dung Quất (Quảng Ngãi) góp phần đảm bảo
 an ninh năng lượng quốc gia.
 
 Các khu công nghiệp phân bố dọc hành lang kinh tế ven biển, các tuyến hành lang
-kinh tế Đông - Tây, các tuyến quốc lộ kết nối vùng Tây Nguyên.
+kinh tế Đồng ~ Tây, các tuyến quốc lộ kết nổi vùng Tây Nguyền.
 
-5. Vùng kinh tế trọng điểm miền Trung
+5.Vùng kinh tế trọng điểm miền Trung
 
-Dựa vào hình 15.4 và thông ttm rong Bài, hãy:
+Jựa vào hình 15 4 và thông tzt#ong Đài, hấy:
 
-— Xác định phạnÉ vị của vùng kinh tễ trọng tiêm miễn Trung.
+— Xác định phạn£ ví của vùng kinh tê trọng điểm miền Trung.
 
-— Trình bày thế mạnh nỗi bật và vai tò của vùng kinh tễ trọng điểm miễn Trung.
+— Trình bày thể tuạnh nổi bật và vai trò của vừng kinh tế rọng điểm nuên Trung.
 a) Quá trình hình thành và phạm vi lãnh thổ
 
 Vùng kinh tế trọng điểm
 
-miễn Trung có diện tích hơn
-28,0 nghìn km2 (chiếm 8,5%
+miền Trung có diện tích hơn ¬ ủn có biết?
+280 nghìn km2 (chiếm 8,5% ]
 diện tích cả nước), với số dân
 hơn 6,6 triệu người (chiếm hơn
-6,7% số dẫn cả nước) năm 2021.
+6,7% số dân cả nước) năm 202]1.
 
-ĐA Em có biết?
-
---1heò Nghị-quyết 61/2023/QH15 của Quốc hội
-về Quy hoạch tổng thể quốc gía thời kì 2021 - 2030,
+„ đheò Nghị quyết 61/2023/QH15 của Quốc hội
+về Quy hoạch tông thể quốc gia thời kì 2021 - 2030,
 tâm nhìn đến năm 2050 sẽ phát triển vùng động
-lực miễn Trung gồm khu vực ven biên Thừa Thiên
-Vùng bao gồm các tỉnh, Huế - Đà Nẵng- Quảng Nam - Quảng Ngãi, trong
-tHãnh phố lš Thừa Thiển Huế đó Đà Nẵng là cực tăng trưởng.
+lực miền Trung gồm khu vực ven biến Thừa Thiên
+
+Vùng bao gồm các tỉnh, Huế - Đà Nẵng - Quảng Nam - Quảng Ngãi, trong
+thành phố là Thừa Thiên Huế, C n n Q n n
+
 (Nguồn: Nghị quyết 81/2023/QH15
 
 Đà Nẵng, Quảng Nam, Quản
-9, Quảng ° 9 ngày 09 tháng 0T năm 2023)
+S Q g Q ợ ngày 09 tháng 01 năm 2023)
 
-Ngãi, đến năm 2004 bố sung
+Ngãi, đến năm 2004 bổ sung
 thêm Bình Định.
 
 b) Thế mạnh nổi bật để phát triển kinh tế
 
-Vùng có vị trí giao thông chiến lược nằm giữa phía bác và phía nam nước ta, cửa ngõ
+Vùng có vị trí giao thông chiến lược nằm giữa phía bắc và phía nam nước ta, cửa ngõ
 thông ra biển của vùng Tây Nguyên. Nguồn tài nguyên của vùng phong phú: biển rộng,
-nhiều bãi biển, đầm phá, vũng vịnh, khoáng sản đa dạng, nhiều di sản văn hoá thế giới
+nhiều bãi biểến, đầm phá, vũng vịnh, khoáng sản đa dạng, nhiều di sản văn hoá thế giới
 như Cố đô Huế, Phố cổ Hội An, Thánh địa Mỹ Sơn.
 
-190
+150

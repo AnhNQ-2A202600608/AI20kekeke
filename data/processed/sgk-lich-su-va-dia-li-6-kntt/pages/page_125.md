@@ -7,57 +7,57 @@ source: ocr
 
 # SGK Lịch sử và địa lí 6 KNTT (lớp 6) — Trang 125
 
-Em có biết?
+XX b) Hiện tượng ngày - đêm dài ngắn theo mùa
 
-Xích đạo là nơi quanh
-năm có độ đài thời gian
-ban ngày và thời glan
+Xích đạo là nơi quanh Trong quá trình chuyển động quanh Mặt Trời, do trục
 
-b) Hiện tượng ngày - đêm dài ngắn theo mùa
+năm Ổđộ dài thời gian Trải Đất mhi`êng `và k`riìônlg đỏi hướẬng mặn độ dài mqg
 
-Trong quá trình chuyển động quanh Mặt Trời, do trục
-Trái Đất nghiêng và không đổi hướng nên độ dài thời
-gian ban ngày và thời gian ban đêm có sự thay đổi
+ban ngày và thời gian gian ban ngày và thời gian ban đêm có sự thay đôi
 
-ban đêm bằng nhau. theo mùa và theo vĩ độ.
-Trong khi đó, ở cực
-trong năm có 6 tháng là
-ngày và 6 tháng là đêm.
+ban đêm bằăng nham. theo mùa và theo Vĩ độ.
 
-Quan sát hình 4, ta thấy: ngày 22 tháng 6, bán cầu Bắc
-đang là mùa nóng, có ngày dài đêm ngắn. Cùng lúc,
-ở bán cầu Nam đang là mùa lạnh, có ngày ngắn đêm dài.
-Ngày 22 tháng 12 hiện tượng diễn ra ngược lại.
+ẵỀgnălịlnu c…ẸÌc6’t1lcị'lI1ễlĨẵ Quan sát hình 4, ta thầy: ngày 22 tháng 6, bán cầu Bắc
 
-Đường phân chia
+ngày và 6 tháng là đêm. đang là mùa nóng, có ngày dài đêm ngắn. Cùng lúc,
+ở bán câu Nam đang là mùa lạnh, có ngày ngắn đêm dài.
+Ngày 22 tháng 12 hiện tượng diên ra ngược lại.
 
-Đường phân chia! JPpn
-sáng tôi
+Đường phân chia: Trục Trái Đắt Đường phân chia Trục Trái Đất
 
-sáng tối _
+sáng tồi
 
-_“NÀ Ngày dài
-
-/ KS j
+sáng tối
 
 TIA SÁNG MẶT TRỜI
 
-l I
-Ngày 22 tháng 6 Ngày 22 tháng 12
+Ị Ị
+“ Ngày 22 tháng 6 Ngày 22 tháng 12
 
 Hình 4. Độ dài ban ngày và ban đêm trên Trái Đắt
 
-SƠ) Dựa vào hình 4, hãy hoàn thành bảng vào vở theo mẫu sau:
+e Dựa vào hình 4, hãy hoàn thành bảng vào vở theo mẫu sau:
 
-HIỆN TƯỢNG NGÀY —- ĐÊM DÀI NGẮN THEO MÙA
+HIỆN TƯỢNG NGÀY - ĐỀM DÀI NGẮN THEO MÙA
 
-\sy® tập
-„về Vận dụng
+:
+—
+
+a M So sánh độ dài ngày — đêm M So sánh độ dài ngày — đêm |
+
+- ..
+` \ laại
+è lặi
+
+~
+
+vsyê8 tập
+Ñ về Vận Ủ.hg
 
 \
 
-Q & F
-j {..Ề Hãy trình bày hiện tượng ngày — đêm dài ngăn theo mùa trên Trái Đât.
+K - M
+g 1. Hãy trình bày hiện tượng ngày — đêm dài ngăn theo mùa trên Trái Đât.
 
-2. Nghỉ hè năm nay, bố cho Nam đi du lịch ở Ô-xtrây-li-a. Nam không hiểu tại
-sao bố lại dặn chuẩn bị nhiều đồ ấm đề làm gì. Em hãy giải thích cho Nam.
+,, 2. Nghỉ hè năm nay, bố cho Nam đi du lịch ở Ô-xtrây-li-a. Nam không hiều tại
+.. sao bồ lại dặn chuẩn bị nhiều đồ ấm đề làm gì. Em hãy giải thích cho Nam.

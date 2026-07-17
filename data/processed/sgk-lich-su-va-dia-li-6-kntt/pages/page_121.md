@@ -9,8 +9,8 @@ source: ocr
 
 @:
 
-Nước ta năm trong khu vực
-giờ số 7 và sô 8, nhưng thông
+Nước ta nằm trong khu vực
+giờ số 7 và số 8, nhưng thống
 nhất sử dụng giờ của khu
 vực giờ số 7.
 
@@ -19,7 +19,7 @@ Dựa vào hình 2, em hãy:
 Cho biết tên một số quốc gia sử dụng giờ của
 nhiều khu vực.
 
-Kể tên một số quốc gia sử dụng cùng khu vực giờ
+Kềể tên một số quốc gia sử dụng cùng khu vực giờ
 với Việt Nam.
 
 . Đêm gala nghệ thuật "Sắc màu văn hoá bốn
@@ -27,24 +27,24 @@ với Việt Nam.
 phương" được truyền hình trực tiếp vào 20
 giờ ngày 31 tháng 5 năm 2019 tại Việt Nam.
 Vậy khi đó ở các địa điểm Xơ-un (Hàn Quốc),
-Mát-xcơ-va (Nga), Ma-ni-la (Phi-lip-pin) là mấy giờ?
+Mát-xcơ-va (Nga), Ma-ni-la (Phklip-pin) là mấy giờ?
 
-Hình 3. Đài thiên văn Hoàng gia Grin-uých ở ngoại ô thành phố Luân Đôn (Anh),
-nơi có kinh tuyên 0° đĩi qua
+Hình 3. Đài miép văn Hoàng gia Grin-uých ở ngoại ô thành phóố Luân Đôn (Anh),
+nơi có kinh tuyên 0° đi qua
 
-c) Sự lệch hướng chuyển động của vật thể
+c) Sự lệch hướng chuyền động của vật thể
 
-Do Trái Đắt chuyển động tự quay quanh trục nên các vật thể chuyển động trên bề mặt
+Do Trái Đất chuyển động tự quay quanh trục nên các vật thể chuyên động trên bề mặt
 Trái Đất đều bị lệch hướng. Lực làm lệch hướng đó được gọi là lực Cô-ri-ô-lít.
 
-Lực Cô-ri-ô-lit có tác động đến hướng di chuyển của dòng sông, dòng biển, gió,...
+Lực Cô-ri-ô-lít có tác động đến hướng di chuyển của dòng sông, dòng biển, gió,...
 
-trên Trái Đất.
+trên Trái Đắt.
 
-€Q Quan sát hình 4, em hãy cho biết:
+@2 Quan sát hình 4, em hãy cho biết:
 
-— Ở bán cầu Bắc, vật thể chuyên động theo chiều kinh tuyến lệch về bên trái hay
-bên phải so với hướng di chuyên ban đầu.
+— Ở bán cầu Bắc, vật thể chuyển động theo chiều kinh tuyến lệch về bên trái hay
+bên phải so với hướng di chuyền ban đầu.
 
-— _ Ở bán cầu Nam, vật thể chuyên động theo chiều kinh tuyến lệch về bên trái hay
-bên phải so với hướng di chuyên ban đầu.
+— Ở bán cầu Nam, vật thể chuyền động theo chiều kinh tuyến lệch về bên trái hay
+bên phải so với hướng di chuyên ban đâu.

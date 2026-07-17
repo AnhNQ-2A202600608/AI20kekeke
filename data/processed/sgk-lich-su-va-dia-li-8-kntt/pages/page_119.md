@@ -7,30 +7,29 @@ source: ocr
 
 # SGK LỊCH SỬ VÀ ĐỊA LÍ 8 KNTT (lớp 8) — Trang 119
 
-THỰC HÀNH: VỀ VÀ PHÂN TÍCH
-BIỂU ĐỒ KHÍ HẬU
+THỰC HANH: VẾ VÀ PHÂN TÍCH
+BIỂU ĐÔ KHÍ HẬU
 
-Học xong bải này, em sẽ:
+Học xong bài nàv. em sẽ:
 
-se. Vẽ và phân tích được biểu đồ khí hậu của một số trạm thuộc các vùng khí hậu khác nhau.
+s Vẽvà phân tích được biểu đồ khí hậu của một số trạm thuộc các vùng khí hậu khác nhau.
 
 Cho bảng số liệu sau:
 NHIỆT ĐỘ, LƯỢNG MƯA TRUNG BÌNH CÁC THÁNG TRONG NĂM
-CỦA MỘT SỐ TRẠM KHÍ TƯỢNG Ở VIỆT NAM
+CỦA MỘT SỐ TRAM KHÍ TƯƠNG Ở VIỆT NAM
 
-Nhiệt độ (PC) | 17,1 | 18,6 24,7 | 281 | 300 | 29,8 | 29,1 | 28,2 226 | 18/8
-Lắng
-(TP Hà Nội]
-màn |9|>|z|»|elelelsislmlz|=
-mm
+Nhiệt độ CC)| 171 | 186 247 | 261 | 300 282
+Lắáng
+(TP Hả Nội)
+== sielsiaieieialoisioi.=
 
-[TP Hỗ Chí
-Minh) Ha M~~ | sus 250/1 su sa |ss 1674 lá
-Trường 5a Nhiệt độ (°C) | 26,8 | 27,0 29,1 | 28,5 | 288 28,5 | 28,3 | 28,2 27,1
+(TP Hồ Chỉ
+Minh) ỂỂỆ mưa 215/9 1250,1 | 258/7 3158 1674 ffl
+Tưởng 5a . [Nhiệt độ C) | 268 | 270 291 | 295 | 289 285 | 283 | 282 271
 (tỉnh Khánh
-Hoà) Lượng mưa
+Hoả) Lượng mưa
 
-101,2 | 62,5 | 130,3 | 202,4 | 272,5 | 248,8 | 251,3 | 338,8 505,0
+1012 | 62,5 | 130,3|202,4 | 272,5 |249,8 |251,3 | 338/8 505,0
 
 (Nguồn: Trung tâm Thông tin và Dữ liệu khí tượng thuỷ văn)
 
@@ -47,6 +46,6 @@ các tháng thể hiện bằng cột.
 + Tổng lượng mưa trung bình năm
 
 + Thời gian mùa mưa (mùa mưa là thời gian có 3 tháng liên tục trở lên có lượng mưa
-trên 100 mm]
+trên 100 mm)
 
 118

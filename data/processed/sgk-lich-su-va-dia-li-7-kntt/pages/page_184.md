@@ -7,58 +7,47 @@ source: ocr
 
 # SGK Lịch sử và địa lí 7 KNTT (lớp 7) — Trang 184
 
-Washington 147
+Oa-sinh-tơn Washington 147
 
-Oa-sinh-tơn
+Ô-ru-rô Oruro
 
-Ô-đét-xa Odessa
+151
 
-Ô-ri-nô-cô
+——<>7Gm,_ị ékckc. X
 
-Ô-ru-rô
+120
 
-m ¬
-* œ
+5
+Pa-rin-tin w
+Fem |«
+Ptô-lê-mê 158
+aa GƯỢNGH]
+_ 96, 99
+Rôm . |
 
-Ô-xa-ca
+100
+Rúp en Khar-li Rub al Khaili
 
-Ô-xtra-lô-it Australoid
-Ô-xtrây-li-a 156, 157
-owe— [t8 —
+W - =
+LẠ © ‹©
 
-Ơ-phrát Euphrates
-o4 — |EuðØØ1099/2
+Pa-ki-xtan
+Pa-le-xtin
+Pa-na-ma
 
-Ôn-ta-ri-ô
+Pa-pi-rút
 
-Pa-ki-xtan 117,118
-Pa-lextn T16, T18
-P>m —— [mm [mm —
-Prmm — [Em J1m —
-Pa —— [Em — JmĐ —-
-Phi-lÍp-pin Philippines 117, 118
-me ——— [5m Jm —|
+121
 
-Rúp en Kha-li Rub al Khaii
+Si-ca-gô Chicago 146
+T
 
-Sê-ren-ge-ti
-
-ù
-132, 136
-Tan-ga-ni-ca 130
-Tát-gi-ki-xtan 118
-Tuốc-mê-ni-xtan
-
+z p
+Uy-ni-pêc 144
 V
 
-kem 7T” Tam Ts
+Xưa Đa-ri-a Syr Darya 120
 
-Demsma — [SEmme | ——
-
-Sỉ-ca-gô
-
-Tan-da-ni-a
-
-U-dơ-bê-ki-xtan
+Y
 
 183

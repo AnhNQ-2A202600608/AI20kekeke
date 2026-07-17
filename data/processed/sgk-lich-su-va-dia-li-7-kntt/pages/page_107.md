@@ -7,44 +7,54 @@ source: ocr
 
 # SGK Lịch sử và địa lí 7 KNTT (lớp 7) — Trang 107
 
-&€ Vấn đề ứng phó với biến đổi khí hậu
+@ Vấn đề ứng phó với biến đổi khí hậu
+
 Trong những năm gần đây, châu Âu bị ảnh hưởng
+
 liên tiếp bởi các hiện tượng thời tiết cực đoan, như
-các đợt nắng nóng bắt thường xảy ra ở các nước
-Bắc Âu, nắng nóng cũng đã gây ra những trận cháy
-rừng tàn khốc ở một số quốc gia Nam Âu; mưa lũ gây
+
+các đợt nắng nóng bất thường xảy ra ở các nước
+
+Bắc Âu, mmg mng cũng đã gây ra những trận cháy
+
+rừng tàn khốc ở một số quốc gia hlam Âu; mưa lũ gây
+
 hậu quả nghiêm trọng tại một số quốc gia ở Tây và
+
 Trung Âu.
-bùi k dạ. lo: dây tủ Vu Để ứng phó với biến đổi khí hậu, các nước châu Âu
-Tân Ban tìha năm 2071 9 đã có nhiều hành đông cụ thể như:
+Tgị ỀirễỂnẳ ỂỄỄnnTJỂ Ễntăgg Để ứng phó với biến đỗi khí hậu, các nước châu Âu
+Tây Ban Jha nlẵm 2001 g đã có nhiều hành ử_›jng cụ thể như:
 
-— Irông rừng và bao vệ rừng: Rừng đóng vai trò
-quan trọng trong việc giảm thiểu tác động của biến
-đôi khí hậu vì rừng hâp thụ khí CO, gây hiệu ứng
+— Trông rửng và bảo vệ rừửng: Rửng đóng vai trò
+
+quan trọng trong việc giảm thiều tác động của biền
+
+đôi khí hậu vì rừng hấp thụ khí CO, gây hiệu ứng
+
 nhà kính. Rừng còn làm giảm nguy cơ lũ lụt và
-giảm thiêu hạn hán.
+giảm thiều hạn hán.
 
-Mục tiêu chung của các
+Mục tiêều chung của các
 nước châu Âu là giảm 55%
 lượng khí thải gây hiệu ứng
 
-nhà kính vào năm 2030. Các - Hạn chế sử dụng nhiên liệu hoá thạch ở mức tối
-quốc gia châu Âu giám sát và đa và phát triển các nguồn năng lượng tái tạo, thân
+nhà K vấo năm 2020 Các — Hạn chế sử dụng nhiên liệu hoá thạch ở mức tối
+quốc gia châu Âu giám sát và đa và phát triên các nguôn năng lượng ñái tạo, thân
 bảo vệ nghiêm ngặt các khu thiện với môi trường như năng lượng mặt trời, gió,
-rừng nguyên sinh, những khu sóng biển, thuỷ triều,...
+rừng nguyên sinh, những khu sóng biên, thuỷ triều,...
 
-rùng này có vai trò như lá
-chắn tự nhiên chống lại biến
-đỗi khí hậu.
+rửừng này có vai trò như lá
+chắn tự nhiên chồng lại biền
+đồi khi hậu.
 
-Đọc thông tin và quan sát hỉnh 3 trong mục 3, hãy
-trình bày vẫn đề ứng phó với biến đổi khí hậu ở
+Đọc thông tin và quan sắt hình 3 trong mục 3, hãy
+trình bày vấn đề ứng phó với biến đỏi khi hậu ở
 châu Âu.
 
-Luyện tập - Vận dụng:
+Luyện tập - Vận dụng
 
-LỘ) Hoàn thành bảng theo mẫu sau vào vở:
-VÁN ĐỀ BẢO VỆ MỖI TRƯỜNG Ở CHÂU ÂU
+Ệ Hoàn thành bảng theo mẫu sau vào vở:
+VÁN ĐỀ BẢO VỆ MÔI TRƯỜNG Ở CHÂU ÂU
 
 — Môi trường không khí
 — Môi trường nước

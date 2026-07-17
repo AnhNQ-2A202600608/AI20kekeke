@@ -7,44 +7,59 @@ source: ocr
 
 # SGK Lịch sử và địa lí 6 KNTT (lớp 6) — Trang 31
 
-TEANER, T1. Tặng phẩm của những dòng sông
-"”.... (6T TS ĐO i5
+.N 1. Tặng phẩm của những dòng sông
+
+— Ai Cập nằm ở vùng Đông Bắc của châu Phi, nơi có dòng sông
+ông Nin dài khoảng . : B . IP G n = . .
+
 6 400km, đoạn chảy qua Nin chảy qua. Lưỡng Hà là tên gọi vùng đât giữa hai con sông
-Ai Cập dài 700km, là Ơ-phơ-rát và Ti-gơ-rơ ở khu vực Tây Nam Á.
+Ai Cập ỔiỞOOkm, là Ơ-pho-rát và Tr-gơ-rơ ở khu vực Tây Nam Á.
 
-con đường giao thông l - -
-huyệt mạch của đât «Ò Hê-rô đốt đã từng viết: Ai Cập là tặng phâm của sông Nin.
+con đường glao thông , i _
 
-nước. Sông Nin không chỉ tạo nên ở vùng thung lũng một dải đắt phù
-Sông Ơ-phơrát và sa màu mỡ, có chô dày tới 10m, mà hãng năm còn mang nước
-Ti-eơ-rơ bắt nguôn từ tưới cho cây côi, hoa màu tôt tưoi, biên Ai Cập từ “một đồng cát
-vùng núi thuộc Thô bụi” trở thành “một vườn hoa'...
+huyêt mạch của đât - Hêzrô-đÔt đã từng viết: Ai Cập là tặng phâm của sông Nin.
 
-Nhĩ Kì, chảy qua I-rắc Ã toa . k2 — š
+nước. Sông Nin không chỉ tạo nên ở vùng thung lũng một dải đât phù
+Sông C-phơ-rát và sa màu mỡ, có chỗ dày tới 10m, mà hằng năm còn mang nước
+Ti- -g0-TƠ bắt nguồn từ tưới cho cây côi, hoa màu tôt tươi, biên Ai Cập từ “một đông cát
+vùng núi thuộc Thô bụ? trở thành “một vườn hoa”...
 
-vả để ra vịnh Ba Tư. Vê mùa xuân, nước sông O-pho-rát và Ti-go-rơ dâng cao,
+Nhĩ Kì, chảy qua I-răc
 
-mang phù sa màu mỡ bôi đắp cho vùng hạ lưu, biến vùng
+Về mùa xuân, nước sông O-pho-rát và Ti-go-rơ dâng cao,
 
-cửa sông trở thành đông băng, bờ biên của vịnh Ba Tư phải
-lùi xa gân 200km.
+mang phù sa màu mỡ bồi đap cho vùng hạ lưu, biến vùng
+
+cửa sông trở thành đồng bằng, bờ biên của vịnh Ba Tư phải
+lùi xa gần 200km.
 
 (Theo Lương Ninh (Chủ biên), Lịch sử thế giới cỗ đại,
 
 NXB Giáo dục Việt Nam, Hà Nội, 2015, tr.34, 63)
 
-®Ba-bi-lon Thành phố cổ đại
+và đô ra vinh Ba Tư.
 
-Lãnh thổ Ai Cập
+n b `Gle-I'I-_CÌ'Ìt3
+
+b A
+Ị" ủoocfflmx
+
+…-zao lệdi
+Mem-pt1ỉt'_l'
+
+¡ AI CẬP
+
+sBa-bi-lon Thành phố cỗ đại
+
+Lãnh thố Ai Cập
 thời Tân vương quốc
 
 Lãnh thỗ Lưỡng Hà
 thời kì Ba-bi-lon
 
 Tên quốc gia ngày nay
+Biên giới quốc gia ngày nay
 
-Biên giới quốc gia ngày nay . -£ XU ĐĂNG
-
-44 Hình 3. Lược đồ Ai Cập và Lưỡng Hà cổ đại
+x Hình 3. Lược đồ Ai Cập và Lưỡng Hà cổ đại
 
 30

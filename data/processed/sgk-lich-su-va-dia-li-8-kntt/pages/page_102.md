@@ -27,50 +27,52 @@ mạnh. Xen giữa các vùng núi đá vôi là các cánh
 600 km từ phía nam sông Cả tới dãy Bạch Mã.
 Đây là vùng có độ cao trung bình khoảng 1 000 m,
 một số ít đỉnh cao trên 2 000 m như: Pu Xai Lai Leng
-(2 711 m), Rào Cỏ (2 235 mì.
+(2711 m), Rào Cỏ (2 235 m).
 
-+ Trường Sơn Bắc có nhiều nhánh núi đâm ngang
-ra biển chia cắt đồng bằng duyên hải miền Trung.
++ Trường Sơn Bắc có nhiều nhánh núi đảm ngang
+ra biến chia cắt đồng bằng duyên hải miền Trung.
 
 - Vùng Trường Sơn Nam
 
-Phan-xi-păng là đỉnh núi cao
+Em cũ biết?
+
+Phan-xi-päng là đỉnh núi cao
 nhất Việt Nam và được mệnh
-danh là“Nóc nhà Đông Dương”
+danh là "Nóc nhà Đông Dương?
 thuộc dãy Hoàng Liên Sơn. Độ
-cao của đỉnh núi đa đạc năm
-1808 là 3 143 m, tuy nhiên theo
+cao của đỉnh núi đo đạc năm
+1909 là 3 143 m, tuy nhiên theo
 số liệu mới nhất của Cục Đo
-đạc, Bản đồ và Thông tin địa lí
+đạc, Bản đồ và Thông tin địa lÍ
 Việt Nam, năm 2019 núi có độ
-cao 3 147m.
+cao 3 147 m.
 
 Dãy Bạch Mã là một nhánh
 núi thuộc dãy Trường Sơn,
 có độ cao trung bình khoảng
 1 200 - 1 300 m, chạy theo
 hướng tây - đông lan ra
-sát biển. Đây cũng là ranh
-qiới tự nhiên quan trọng
+sắt biển. Đây cũng là ranh
+giới tự nhiên quan trọng
 nhất tạo nên sự phản hoá
 sầu sắc về khí hậu theo chiều
-bắc = nam ở nước ta.
+bắc - nam ở nước ta.
 
 + Địa hình chủ yếu là núi và cao nguyên, có độ cao lớn hơn vùng Trường Sơn Bắc.
 Địa hình có hướng vòng cung, hai sườn đông và tây Trường Sơn Nam không đối xứng.
 
-+ Dạng địa hình nổi bật là các cao nguyên rộng lớn, xếp tầng, bề mặt phủ đất đỏ
++ Dạng địa hình nổi bật là các cao nguyên rộng lớn, xếp tầẩng, bề mặt phủ đất đỏ
 
 badan.
 
 + Các khối núi cao nằm ở phía bắc và nam của vùng có nhiều đỉnh cao trên 2 000 m
 như: Ngọc Linh (2 598 m), Chư Yang Sin (2 405 m), Lang Biang (2 167 m),...
 
-+ Chuyển tiếp giữa miễn núi, cao nguyên với miền đồng bằng là địa hình bán
-bình nguyên Đông Nam Bộ với những thểm phù sa cổ, có nơi cao tới 200 m.
++ Chuyển tiếp giữa miền núi, cao nguyên với miền đồng bằng là địa hình bán
+bình nguyên Đôồng Nam Bộ với những thểm phù sa cố, có nơi cao tới 200 m.
 
-Cao nguyên Lãm Viên thuộc Tây Nguyên có độ can
-trung bình khoảng 1 500 m, diện tích khoảng 1 080 kmỶ.
+Cao nguyên Lãm Viên thuộc Tây Nguyên có độ cao
+trung bình khoảng 1 500m, diện tích khoảng 1 080 km”.
 Phía nam cao nguyên có thành phố Đà Lạt, phong
 cảnh đẹp, khí hậu trong lành, đất đỏ badan màu mỡ,
 tạo lợi thế cho phát triển kinh tế.
