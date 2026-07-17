@@ -4,20 +4,20 @@ services:
     runtime: docker
     dockerContext: backend
     dockerfilePath: Dockerfile
+    region: singapore
+    plan: free
+    healthCheckPath: /api/v1/health   # ← Cấu hình đúng path thực tế của FastAPI
+    autoDeploy: false                  # ← Để CI/CD điều khiển quá trình deploy qua webhook
     envVars:
       - key: APP_NAME
         value: vaic-universal-starter
+      - key: APP_ENV
+        value: production
       - key: DEBUG
-        value: "true"
+        value: "false"
       - key: STORAGE_PATH
         value: /app/data
       - key: LOG_LEVEL
-        value: info
-      - key: PORT
-        value: 8000
-    # Lưu ý: Ổ đĩa (disk) yêu cầu tài khoản trả phí trên Render.
-    # Nếu sử dụng gói Free, vui lòng xóa hoặc comment đoạn dưới đây.
-    # disk:
-    #   name: backend-data
-    #   mountPath: /app/data
-    #   sizeGB: 1
+        value: INFO
+      - key: FRONTEND_ORIGIN
+        sync: false  # ← Được cấu hình động từ Render dashboard (Domain của Vercel)
