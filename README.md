@@ -12,7 +12,7 @@
 
 | Component | URL |
 |---|---|
-| **Frontend** | [https://frontend-o2vyd6xgw-edu-gap1.vercel.app](https://frontend-o2vyd6xgw-edu-gap1.vercel.app) |
+| **Frontend** | [https://ai20kekeke-lb7qb79q8-ai-20kekeke.vercel.app](https://ai20kekeke-lb7qb79q8-ai-20kekeke.vercel.app) |
 | **Backend** | [https://vaic-backend-staging.onrender.com](https://vaic-backend-staging.onrender.com) |
 | **Health check** | [https://vaic-backend-staging.onrender.com/health](https://vaic-backend-staging.onrender.com/health) |
 
