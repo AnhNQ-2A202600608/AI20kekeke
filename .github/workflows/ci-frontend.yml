@@ -33,7 +33,7 @@ concurrency:
 jobs:
   test-and-lint:
     name: Frontend Test & Lint
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
@@ -69,7 +69,7 @@ jobs:
   deploy:
     name: Deploy to Vercel
     needs: test-and-lint
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     if: github.event_name == 'push' && (github.ref_name == 'main' || github.ref_name == 'dev' || startsWith(github.ref_name, 'blue/') || github.ref_name == 'trong/test-deploy-and-connect-db')
     steps:
       - name: Checkout Code
@@ -98,5 +98,5 @@ jobs:
         working-directory: ./frontend
         run: pnpm dlx vercel deploy ${{ env.VERCEL_ARGS }} --yes --token=${{ secrets.VERCEL_TOKEN }}
         env:
-          VERCEL_ORG_ID: "team_9geAGj5trV0XkQz6U1eVTNFN"
-          VERCEL_PROJECT_ID: "prj_EUBA9eIkuKBEJAju2pdqA73xhQgI"
+          VERCEL_ORG_ID: "team_LafIGeSssVHZiDCw6GHQcda6"
+          VERCEL_PROJECT_ID: "prj_SPgxDRRuOhioP6Apsy0hDEoyPaR6"

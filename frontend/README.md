@@ -2,7 +2,7 @@
 
 Chào mừng bạn đến với **EduGap Quiz Web Application**, nền tảng ôn luyện kiến thức trực quan và thực chiến dành riêng cho các học viên tham gia chương trình đào tạo **AI Thực Chiến**. Nền tảng được tối ưu hóa toàn diện về trải nghiệm người dùng (UX/UX), tốc độ phản hồi và giá trị thực tế của từng bộ đề ôn luyện.
 
-👉 **Trải nghiệm trực tuyến tại:** [edu-gap.hoangblue.dev](https://edu-gap.hoangblue.dev/)
+👉 **Trải nghiệm trực tuyến tại:** [ai20kekeke.vercel.app](https://ai20kekeke.vercel.app)
 👉 **Form đóng góp ý kiến:** [Feedback Form](https://forms.gle/Np7swC5Xwzmbsxno9)
 
 ---

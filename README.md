@@ -8,17 +8,17 @@
 
 | Component | URL |
 |---|---|
-| **Frontend** | [https://edugap-c2-app-125.vercel.app](https://edugap-c2-app-125.vercel.app) |
-| **Backend** | [https://c2-app-backend-g5cu.onrender.com](https://c2-app-backend-g5cu.onrender.com) |
-| **Health check** | [https://c2-app-backend-g5cu.onrender.com/health](https://c2-app-backend-g5cu.onrender.com/health) |
+| **Frontend** | [https://ai20kekeke.vercel.app](https://ai20kekeke.vercel.app) |
+| **Backend** | [https://vaic-backend.onrender.com](https://vaic-backend.onrender.com) |
+| **Health check** | [https://vaic-backend.onrender.com/health](https://vaic-backend.onrender.com/health) |
 
 ### 🧪 Staging
 
 | Component | URL |
 |---|---|
-| **Frontend** | [https://frontend-o2vyd6xgw-edu-gap1.vercel.app](https://frontend-o2vyd6xgw-edu-gap1.vercel.app) |
-| **Backend** | [https://c2-app-backend-staging.onrender.com](https://c2-app-backend-staging.onrender.com) |
-| **Health check** | [https://c2-app-backend-staging.onrender.com/health](https://c2-app-backend-staging.onrender.com/health) |
+| **Frontend** | [ai20kekeke-trongmarvel-4106-ai-20kekeke.vercel.app](ai20kekeke-trongmarvel-4106-ai-20kekeke.vercel.app) |
+| **Backend** | [https://vaic-backend-staging.onrender.com](https://vaic-backend-staging.onrender.com) |
+| **Health check** | [https://vaic-backend-staging.onrender.com/health](https://vaic-backend-staging.onrender.com/health) |
 
 **Test account:**
 - **Student**: `student@edugap.vn` / `Password123!`
