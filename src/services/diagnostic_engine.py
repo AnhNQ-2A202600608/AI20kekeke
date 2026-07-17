@@ -23,7 +23,7 @@ class DiagnosticEngine:
             if db_url.startswith("sqlite:///"):
                 db_path = db_url[10:]
             else:
-                db_path = db_url
+                db_path = Path(self.settings.sgk_data_dir) / "mastery.db"
         
         self.db_path = Path(db_path)
         # Ensure parent directory exists
@@ -62,6 +62,15 @@ class DiagnosticEngine:
                 node_id TEXT,
                 is_correct INTEGER,
                 timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )
+        """)
+
+        # Bảng outbox đồng bộ offline
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS offline_outbox (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                payload TEXT,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             )
         """)
         conn.commit()
@@ -134,6 +143,23 @@ class DiagnosticEngine:
         else:
             # Học sinh khối dưới làm bài khối trên -> Ưu tiên thấp
             return 0.2
+
+    def queue_offline_attempt(self, payload: dict):
+        """Lưu trữ một giao dịch nộp bài offline để đồng bộ sau."""
+        import json
+        conn = sqlite3.connect(str(self.db_path))
+        cursor = conn.cursor()
+        cursor.execute("""
+            INSERT INTO offline_outbox (payload) VALUES (?)
+        """, (json.dumps(payload),))
+        conn.commit()
+        conn.close()
+
+        student_id = payload.get("p_student_id")
+        question_id = payload.get("p_question_id")
+        actual_score = payload.get("p_actual_score", 0.0)
+        is_correct = actual_score >= 0.75
+        self.record_answer(student_id, question_id, is_correct)
 
     def record_answer(self, student_id: str, question_id: str, is_correct: bool):
         """Ghi nhận sự kiện làm bài của học sinh và tính toán lại BKT mastery."""

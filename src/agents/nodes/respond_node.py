@@ -304,7 +304,7 @@ async def respond_node(state: AgentState) -> dict:
         if dynamic_prompt:
             messages.append(SystemMessage(content=dynamic_prompt))
 
-        messages.append(HumanMessage(content=query))
+        messages.append(HumanMessage(content=f"<student_query>\n{query}\n</student_query>"))
 
         chunks = []
         llm_start = time.perf_counter()
@@ -338,14 +338,20 @@ async def respond_node(state: AgentState) -> dict:
             "valid_citations": validation_result["valid_citations"],
         }
 
-        # Nếu có phản hồi kiểm định, tăng số lần thử
-        new_attempts = reflection_attempts + 1 if reflection_feedback else reflection_attempts
+        # Nếu phát hiện trích dẫn ảo, tự động kích hoạt feedback để quay lại vòng lặp reflection
+        feedback = None
+        if validation_result.get("invalid_citations"):
+            feedback = f"Câu trả lời chứa trích dẫn ảo (invalid citations) không tồn tại trong học liệu: {validation_result['invalid_citations']}. Hãy viết lại câu trả lời và chỉ sử dụng trích dẫn thực tế từ học liệu."
+
+        current_feedback = reflection_feedback or feedback
+        new_attempts = reflection_attempts + 1 if current_feedback else reflection_attempts
 
         return {
             "response": cleaned_text,
             "metadata": new_metadata,
             "timings_ms": new_metadata.get("timings_ms", {}),
             "reflection_attempts": new_attempts,
+            "reflection_feedback": current_feedback,
         }
     except Exception as e:
         logger.error(f"Lỗi khi xử lý respond_node: {e}", exc_info=True)
