@@ -1,0 +1,210 @@
+{
+  "id": "day24-t2-basics",
+  "parent_id": "day24-rag-data",
+  "topic_title": "Day 24: Data Governance & Security",
+  "title": "Phần 1: Khung Quản Trị Dữ Liệu & Phân Cấp Bảo Mật Cho AI",
+  "description": "Đánh giá kiến thức cơ bản về Data Governance Framework (Catalog, Classification, Lineage), least-privilege access và phân cấp bảo mật.",
+  "difficulty": "dễ",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Bốn trụ cột cốt lõi cấu thành nên Khung quản trị dữ liệu (Data Governance Framework) cho hệ thống AI bao gồm những gì?",
+      "options": {
+        "A": "Data Catalog, Data Encryption, Data Compression và Data Hosting.",
+        "B": "Data Catalog, Data Classification, Data Lineage và Business Glossary.",
+        "C": "Data Storage, Data Indexing, Data Querying và Data Rendering.",
+        "D": "Data Scraping, Data Cleaning, Data Labeling và Data Backing."
+      },
+      "answer": "B",
+      "explanation": "Theo bài học, bốn trụ cột của Data Governance cho AI là: Data Catalog (phát hiện và tài liệu hóa), Data Classification (phân loại chính sách), Data Lineage (nguồn gốc và luồng dữ liệu) và Business Glossary (đồng nhất thuật ngữ).",
+      "hints": [
+        "Nghĩ về các yếu tố giúp theo dõi, phân loại và đồng nhất dữ liệu trong doanh nghiệp.",
+        "Tránh các nhóm chứa các thuật ngữ thuần túy về hạ tầng lưu trữ hay mã hóa kỹ thuật.",
+        "Đáp án chỉ ra Catalog, Classification, Lineage và Business Glossary."
+      ],
+      "concepts": [
+        "d24-t2-data-governance"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Theo phân cấp phân loại dữ liệu (Data Classification) trong AI, các bộ dữ liệu huấn luyện (Training datasets) thường được xếp vào mức bảo mật nào?",
+      "options": {
+        "A": "Mức Public - Dữ liệu công khai cho cộng đồng sử dụng.",
+        "B": "Mức Restricted - Dữ liệu cực kỳ nhạy cảm liên quan đến y tế.",
+        "C": "Mức Confidential - Dữ liệu bí mật nội bộ của doanh nghiệp.",
+        "D": "Mức Internal - Dữ liệu nội bộ thông thường của nhân viên."
+      },
+      "answer": "C",
+      "explanation": "Trong bảng phân loại bảo mật: Training datasets được xếp vào mức Confidential (Bí mật); PII và hồ sơ bệnh án thuộc Restricted (Giới hạn); code feature engineering thuộc Internal (Nội bộ); còn benchmarks/docs thuộc Public.",
+      "hints": [
+        "Bộ dữ liệu huấn luyện chứa tài sản trí tuệ và thông tin kinh doanh bí mật.",
+        "Nó nằm dưới mức nhạy cảm cao nhất (Restricted) nhưng trên mức thông thường (Internal).",
+        "Đáp án chính xác là mức Confidential."
+      ],
+      "concepts": [
+        "d24-t2-data-governance"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Khái niệm 'Data Lineage' trong quản trị dữ liệu AI đóng vai trò quan trọng nhất trong việc giải quyết vấn đề nào?",
+      "options": {
+        "A": "Giảm dung lượng lưu trữ của dữ liệu thô trên các máy chủ đám mây.",
+        "B": "Tự động mã hóa các trường thông tin nhạy cảm của khách hàng.",
+        "C": "Tăng tốc độ truy vấn cơ sở dữ liệu khi hệ thống bị quá tải.",
+        "D": "Theo vết nguồn gốc dữ liệu từ source, qua ETL đến model prediction."
+      },
+      "answer": "D",
+      "explanation": "Data Lineage ghi lại lược đồ biến đổi từ nguồn dữ liệu thô (source) qua quá trình ETL, Feature Store, Training cho đến Prediction. Đây là cơ sở để thực hiện compliance audit trail và gỡ lỗi chất lượng dữ liệu.",
+      "hints": [
+        "Nghĩ về từ 'Lineage' nghĩa là dòng dõi hoặc nguồn gốc biến đổi.",
+        "Giúp trả lời câu hỏi: 'Model dự đoán sai này đã được huấn luyện bằng dữ liệu nào?'.",
+        "Đáp án chính xác là theo vết nguồn gốc dữ liệu từ source qua ETL đến model."
+      ],
+      "concepts": [
+        "d24-t2-data-governance"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Theo nguyên tắc đặc quyền tối thiểu (Least Privilege), quyền hạn nào sau đây là phù hợp nhất đối với vai trò 'ML Engineer'?",
+      "options": {
+        "A": "Có quyền đọc dữ liệu huấn luyện, ghi mô hình nhưng không được xóa dữ liệu production.",
+        "B": "Có quyền admin toàn diện đối với cơ sở dữ liệu sản xuất của doanh nghiệp.",
+        "C": "Chỉ được phép truy cập và thử nghiệm trên môi trường sandbox dữ liệu giả lập.",
+        "D": "Chỉ được phép xem các báo cáo tổng hợp và không có quyền truy cập code."
+      },
+      "answer": "A",
+      "explanation": "Với vai trò ML Engineer, họ cần đọc dữ liệu training và ghi model artifacts, nhưng tuyệt đối không được cấp quyền xóa dữ liệu production (được giữ bởi Admin hoặc Data Owner) để tránh thảm họa vận hành.",
+      "hints": [
+        "ML Engineer cần truy cập dữ liệu thật để huấn luyện và triển khai mô hình.",
+        "Tuy nhiên, họ không cần quyền quản trị cao nhất như xóa dữ liệu sản xuất.",
+        "Đáp án chỉ ra quyền đọc training data, ghi model artifacts và không xóa production data."
+      ],
+      "concepts": [
+        "d24-t2-data-governance"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Công cụ nào sau đây thường được sử dụng phổ biến nhất để quản lý và vẽ bản đồ Data Lineage trong hạ tầng dữ liệu?",
+      "options": {
+        "A": "Thư viện Microsoft Presidio.",
+        "B": "Hệ thống OpenLineage Marquez.",
+        "C": "Dịch vụ Secrets Manager.",
+        "D": "Công cụ HashiCorp Vault."
+      },
+      "answer": "B",
+      "explanation": "OpenLineage và Marquez là bộ công cụ mã nguồn mở phổ biến để theo dõi metadata và vẽ bản đồ nguồn gốc luồng dữ liệu (Data Lineage) tự động từ các data pipelines.",
+      "hints": [
+        "Tìm kiếm công cụ có chứa trực tiếp từ khóa liên quan đến 'Lineage'.",
+        "Presidio dùng cho PII, Vault dùng cho key management.",
+        "Đáp án chính xác là OpenLineage / Marquez."
+      ],
+      "concepts": [
+        "d24-t2-data-governance"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Sai lầm phổ biến nào trong quản trị phân quyền cho đội ngũ AI thường dẫn đến rủi ro thảm họa mất mát dữ liệu?",
+      "options": {
+        "A": "Không cấp quyền truy cập internet cho các máy chủ GPU huấn luyện.",
+        "B": "Yêu cầu tất cả nhân viên phải xác thực đa yếu tố MFA khi đăng nhập.",
+        "C": "Cấp quyền Admin toàn quyền cho tất cả ML engineers để tiện làm việc.",
+        "D": "Sử dụng các service account riêng biệt cho từng pipeline biến đổi dữ liệu."
+      },
+      "answer": "C",
+      "explanation": "Cấp quyền admin toàn quyền cho tất cả MLEngineers 'cho nhanh' là sai lầm phổ biến. Một lỗi thao tác hoặc xóa nhầm lệnh của MLEngineer có thể phá hủy dữ liệu sản xuất ngay lập tức.",
+      "hints": [
+        "Đây là hành vi vi phạm nghiêm trọng nguyên tắc đặc quyền tối thiểu (least privilege).",
+        "Thường được làm để tránh phiền toái khi xin phê duyệt quyền hạn.",
+        "Đáp án chỉ ra việc cấp quyền Admin toàn quyền cho tất cả ML engineers."
+      ],
+      "concepts": [
+        "d24-t2-data-governance"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Để đảm bảo bảo mật cho các ML pipelines chạy tự động, cơ chế quản lý thông tin xác thực (Service Account credentials) nào là tối ưu nhất?",
+      "options": {
+        "A": "Sử dụng API key vĩnh viễn và lưu trong tệp cấu hình của code.",
+        "B": "Sử dụng chung một tài khoản đăng nhập của người quản trị dự án.",
+        "C": "Lưu trữ thông tin credentials plaintext trực tiếp trong biến môi trường hệ thống.",
+        "D": "Sử dụng OIDC federation và tự xoay vòng thông tin xác thực hàng tuần."
+      },
+      "answer": "D",
+      "explanation": "Cơ chế tối ưu là sử dụng OIDC federation (không lưu khóa dài hạn) kết hợp tự động xoay vòng credentials định kỳ (hàng tuần) thông qua Vault hoặc KMS để giảm thiểu rủi ro rò rỉ.",
+      "hints": [
+        "Tránh việc sử dụng các chìa khóa dài hạn (long-lived keys).",
+        "Nên xoay vòng tự động và áp dụng OIDC federation.",
+        "Đáp án chính xác là sử dụng OIDC federation và xoay vòng hàng tuần."
+      ],
+      "concepts": [
+        "d24-t2-data-governance"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Theo thống kê từ báo cáo của IBM năm 2024, chi phí trung bình của một vụ rò rỉ dữ liệu (data breach) doanh nghiệp ước tính là bao nhiêu?",
+      "options": {
+        "A": "4.45 triệu USD.",
+        "B": "1.20 triệu USD.",
+        "C": "9.50 triệu USD.",
+        "D": "0.50 triệu USD."
+      },
+      "answer": "A",
+      "explanation": "Theo IBM 2024, một vụ data breach trung bình tốn khoảng 4.45 triệu USD của doanh nghiệp, nhấn mạnh tầm quan trọng phi tài chính của Data Governance.",
+      "hints": [
+        "Đây là con số hàng triệu đô la được đưa ra ngay phần mở đầu bài học.",
+        "Con số này bắt đầu bằng số 4.",
+        "Đáp án chính xác là 4.45 triệu USD."
+      ],
+      "concepts": [
+        "d24-t2-data-governance"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Một ví dụ điển hình về dữ liệu thuộc phân cấp 'Restricted' (Giới hạn) trong hệ thống AI của doanh nghiệp là gì?",
+      "options": {
+        "A": "Mã nguồn xây dựng pipeline ETL xử lý dữ liệu thô của hệ thống.",
+        "B": "Thông tin định danh cá nhân (PII) hoặc hồ sơ bệnh án khách hàng.",
+        "C": "Các tài liệu hướng dẫn mô tả API công khai của dịch vụ chatbot.",
+        "D": "Các kết quả đánh giá benchmark hiệu năng thực tế của mô hình LLM."
+      },
+      "answer": "B",
+      "explanation": "Dữ liệu Restricted là mức nhạy cảm cao nhất, bao gồm thông tin định danh cá nhân (PII) như căn cước công dân (CCCD), số điện thoại, email, hoặc hồ sơ sức khỏe.",
+      "hints": [
+        "Đây là nhóm dữ liệu chịu sự chế tài mạnh mẽ nhất của pháp luật bảo vệ dữ liệu.",
+        "Chỉ một rò rỉ nhỏ sẽ gây hậu quả pháp lý trực tiếp tức thì.",
+        "Đáp án chỉ ra thông tin định danh cá nhân (PII) hoặc hồ sơ bệnh án."
+      ],
+      "concepts": [
+        "d24-t2-data-governance"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Vì sao không nên lưu trữ khóa giải mã dữ liệu (Plaintext Keys) trực tiếp trong tệp mã nguồn hoặc các biến môi trường thông thường?",
+      "options": {
+        "A": "Vì sẽ làm tăng dung lượng lưu trữ của tệp mã nguồn lên gấp đôi.",
+        "B": "Vì mô hình LLM không thể đọc được mã nguồn nếu chứa plaintext keys.",
+        "C": "Vì keys dễ bị lộ lọt khi đẩy code lên git hoặc qua log của container.",
+        "D": "Vì sẽ làm chậm tốc độ thực thi các câu lệnh SQL trong database."
+      },
+      "answer": "C",
+      "explanation": "Lưu trữ plaintext keys trong code hoặc env vars là lỗ hổng bảo mật cực kỳ nguy hại vì keys dễ bị lộ lọt khi push code lên Git, hoặc hiển thị qua log container. Do đó, cần sử dụng các giải pháp quản lý khóa chuyên dụng như AWS KMS hay HashiCorp Vault.",
+      "hints": [
+        "Nghĩ đến rủi ro lộ lọt thông tin cấu hình nhạy cảm khi làm việc nhóm trên GitHub.",
+        "Các công cụ quét bí mật sẽ dễ dàng phát hiện ra các plaintext keys này.",
+        "Đáp án chỉ ra keys dễ bị lộ lọt khi đẩy code lên git hoặc qua log container."
+      ],
+      "concepts": [
+        "d24-t2-data-governance"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "id": "day22-t1-pipeline",
+  "parent_id": "day22-ai-product",
+  "topic_title": "Day 22: AI Compliance",
+  "title": "Phần 2: Case Study Vụ Kẹo Kera & Mr Pips",
+  "description": "Đánh giá kiến thức về tội lừa dối khách hàng (Điều 198) từ vụ kẹo Kera, tội rửa tiền (Điều 324) vụ Mr Pips và rà soát marketing claims.",
+  "difficulty": "bình thường",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Điểm vi phạm cốt lõi dẫn đến việc truy tố hình sự các thành viên CER Group trong vụ kẹo Kera là gì?",
+      "options": {
+        "A": "Thổi phồng tính năng sản phẩm khi không hề kiểm chứng nguồn gốc nguyên liệu.",
+        "B": "Tự động tăng giá bán của sản phẩm lên gấp nhiều lần so với trước.",
+        "C": "Lưu trữ thông tin khách hàng trên máy chủ không được mã hóa bảo mật.",
+        "D": "Không đóng thuế thu nhập cá nhân đầy đủ cho cơ quan nhà nước."
+      },
+      "answer": "A",
+      "explanation": "CER Group quảng cáo kẹo chứa 28% rau củ, thay thế được rau xanh luộc trong khi thực tế chất xơ chỉ chiếm 0.935% và họ hoàn toàn không kiểm tra chất lượng từ nhà sản xuất.",
+      "hints": [
+        "Quảng cáo sai lệch nghiêm trọng về thành phần và công dụng thực tế.",
+        "Thiếu sự kiểm chứng hoặc cơ sở khoa học đối với những tuyên bố marketing.",
+        "Đáp án đúng là thổi phồng tính năng sản phẩm khi không kiểm chứng nguyên liệu."
+      ],
+      "concepts": [
+        "d22-t1-compliance"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Cụm từ 'biết rõ là không biết' trong bản cáo trạng vụ kẹo Kera mang hàm ý pháp lý gì?",
+      "options": {
+        "A": "Biết rõ là bản thân không kiểm tra chất lượng nhưng vẫn quảng cáo.",
+        "B": "Biết rõ khách hàng sẽ không bao giờ mua sản phẩm nếu giá đắt.",
+        "C": "Biết rõ lập trình viên viết code bị lỗi nhưng không sửa chữa lại.",
+        "D": "Biết rõ các nhà đầu tư mạo hiểm đang tìm cách rút vốn đi."
+      },
+      "answer": "A",
+      "explanation": "'Biết rõ là không biết' nghĩa là các bị cáo biết mình không kiểm tra nguyên liệu, không biết thực hư công dụng thế nào nhưng vẫn cam kết với khách hàng những thông tin sai lệch.",
+      "hints": [
+        "Cố tình đưa ra cam kết trong khi bản thân không nắm rõ thông tin xác thực.",
+        "Đây là cơ sở cấu thành hành vi gian dối cấu thành tội phạm lừa dối khách hàng.",
+        "Đáp án đúng là biết rõ không kiểm tra chất lượng nhưng vẫn quảng cáo."
+      ],
+      "concepts": [
+        "d22-t1-compliance"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Vì sao Shark Bình bị cơ quan công an đề nghị truy tố tội Rửa tiền (Điều 324) trong vụ Mr Pips?",
+      "options": {
+        "A": "Ông ta trực tiếp lập ra GKFX để lừa đảo tiền của nạn nhân.",
+        "B": "Biết rõ sàn có dấu hiệu lừa đảo nhưng vẫn tiếp tục xử lý.",
+        "C": "Không đóng tiền thuế thu nhập doanh nghiệp đầy đủ cho nhà nước.",
+        "D": "Để lộ thông tin tài khoản ngân hàng của khách hàng ra ngoài."
+      },
+      "answer": "B",
+      "explanation": "Mặc dù biết các sàn của Mr Pips có dấu hiệu lừa đảo và công an đang xác minh, ví Ngân Lượng do Shark Bình quản trị vẫn tiếp tục xử lý dòng tiền giao dịch để thu phí.",
+      "hints": [
+        "Shark Bình đóng vai trò cung cấp giải pháp cổng thanh toán cho đường dây.",
+        "Ông vẫn chỉ đạo chạy hệ thống dù đã nhận thấy các cảnh báo phạm pháp.",
+        "Đáp án đúng là biết rõ sàn có dấu hiệu lừa đảo nhưng vẫn xử lý."
+      ],
+      "concepts": [
+        "d22-t1-compliance"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Rủi ro pháp lý của cổng thanh toán Ngân Lượng trong vụ Mr Pips tương thích với lỗi nào ở startup AI?",
+      "options": {
+        "A": "Chạy quảng cáo quá nhiều làm phiền lòng người dùng của sản phẩm.",
+        "B": "Cung cấp AI content cho user spam lừa đảo dù có cảnh báo.",
+        "C": "Tự động tăng chi phí sử dụng API của nhà cung cấp lớn.",
+        "D": "Không kiểm tra hiệu năng của mô hình trước khi cho ra mắt."
+      },
+      "answer": "B",
+      "explanation": "Nếu startup AI nhận thấy người dùng đang dùng công cụ của mình để tạo nội dung lừa đảo, spam hàng loạt (có cảnh báo lạm dụng) nhưng vẫn tiếp tục phục vụ để ăn tiền, founder có thể bị truy tố vai trò đồng phạm.",
+      "hints": [
+        "Cố tình cung cấp công cụ/nền tảng hỗ trợ cho hoạt động vi phạm pháp luật.",
+        "Phớt lờ các báo cáo lạm dụng (abuse reports) từ hệ thống để giữ doanh thu.",
+        "Đáp án là cung cấp AI content cho user spam lừa đảo dù có cảnh báo."
+      ],
+      "concepts": [
+        "d22-t1-compliance"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Trong quy trình rà soát tuyên bố marketing (marketing claims audit), một câu tuyên bố 'Mức C' là gì?",
+      "options": {
+        "A": "Câu nói có đầy đủ bằng chứng, dữ liệu thử nghiệm thực tế.",
+        "B": "Câu thổi phồng tính năng sản phẩm mà không có bất kỳ bằng chứng nào.",
+        "C": "Câu nói chưa được kiểm chứng đầy đủ nhưng có thể thực hiện.",
+        "D": "Câu quảng cáo do chính các nhà đầu tư mạo hiểm soạn thảo."
+      },
+      "answer": "B",
+      "explanation": "Mức C đại diện cho các tuyên bố marketing thổi phồng vượt quá năng lực thực tế của AI mà hoàn toàn không có dữ liệu chứng minh (vùng nguy hiểm vi phạm Điều 198).",
+      "hints": [
+        "Các tuyên bố quá đà kiểu 'AI hoạt động hoàn toàn không có bất kỳ lỗi nào'.",
+        "Nhóm các câu quảng cáo thiếu căn cứ khoa học hoặc kết quả đo lường.",
+        "Đáp án là câu thổi phồng tính năng sản phẩm mà không có bằng chứng nào."
+      ],
+      "concepts": [
+        "d22-t1-compliance"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Mục tiêu cốt lõi của việc chuyển đổi các tuyên bố marketing Mức C sang phiên bản trung thực (honest version) là gì?",
+      "options": {
+        "A": "Để giảm thiểu chi phí sử dụng tài nguyên máy chủ đám mây.",
+        "B": "Để đánh lừa các cơ quan quản lý nhà nước về mặt luật pháp.",
+        "C": "Để loại bỏ nguy cơ vi phạm Điều 198 về lừa dối khách hàng.",
+        "D": "Để tăng tỷ lệ chuyển đổi khách hàng đăng ký mua sản phẩm."
+      },
+      "answer": "C",
+      "explanation": "Việc viết lại các marketing claims thổi phồng sang phiên bản trung thực, phản ánh đúng năng lực kiểm thử của AI giúp startup triệt tiêu nguy cơ bị truy tố tội lừa dối khách hàng.",
+      "hints": [
+        "Giảm thiểu rủi ro pháp lý ngoài (phanh ngoài) đối với các cơ quan quản lý.",
+        "Đảm bảo các tuyên bố quảng cáo luôn đi kèm với bằng chứng kiểm định thực tế.",
+        "Đáp án đúng là để loại bỏ nguy cơ vi phạm Điều 198 về lừa dối khách hàng."
+      ],
+      "concepts": [
+        "d22-t1-compliance"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Dưới góc độ Bộ luật Hình sự Việt Nam, khi nào tội lừa dối khách hàng sẽ bị áp hình phạt tù?",
+      "options": {
+        "A": "Khi doanh nghiệp thu lợi bất chính từ năm mươi triệu đồng trở lên.",
+        "B": "Khi số lượng các khách hàng gửi đơn khởi kiện hình sự quá nhiều.",
+        "C": "Khi số tiền thu lợi bất chính đạt năm mươi triệu đồng trở lên.",
+        "D": "Khi toàn bộ các founder của startup bị công an bắt tạm giam luôn."
+      },
+      "answer": "C",
+      "explanation": "Theo Khoản 2 Điều 198 BLHS Việt Nam, nếu thu lợi bất chính từ hành vi lừa dối khách hàng trị giá từ 50 triệu đồng trở lên, người vi phạm sẽ bị áp hình phạt tù từ 1 năm đến 5 năm.",
+      "hints": [
+        "Mức thiệt hại/thu lợi tối thiểu được pháp luật hình sự quy định làm khung phạt.",
+        "Con số này tương đương với khoản tiền năm mươi triệu đồng Việt Nam.",
+        "Đáp án đúng là khi số tiền thu lợi bất chính đạt từ năm mươi triệu đồng trở lên."
+      ],
+      "concepts": [
+        "d22-t1-compliance"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Tại sao lập luận 'Tôi không biết hệ thống của tôi bị dùng sai' không giúp founder thoát tội rửa tiền?",
+      "options": {
+        "A": "Vì các luật sư bào chữa đã từ chối nhận tiền dịch vụ.",
+        "B": "Vì hệ thống máy chủ đã tự động ghi nhận toàn bộ thông tin.",
+        "C": "Vì có các dấu hiệu cảnh báo rõ ràng nhưng vẫn cố ý bỏ qua.",
+        "D": "Vì nhà đầu tư mạo hiểm đã cảnh báo trước đó rất nhiều."
+      },
+      "answer": "C",
+      "explanation": "Luật pháp quy định nếu có các dấu hiệu cảnh báo rõ ràng (như yêu cầu xác minh từ công an, lượng giao dịch bất thường) nhưng founder vẫn phớt lờ để trục lợi, hành vi này được coi là cố ý gián tiếp.",
+      "hints": [
+        "Sự làm ngơ trước các tín hiệu đỏ (red flags) rõ ràng từ hệ thống.",
+        "Doanh nghiệp vẫn tiếp tục cung cấp dịch vụ để hưởng phí giao dịch.",
+        "Đáp án chỉ ra vì có các dấu hiệu cảnh báo rõ ràng nhưng vẫn cố ý bỏ qua."
+      ],
+      "concepts": [
+        "d22-t1-compliance"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Bước thực hiện đầu tiên trong quy trình rà soát tuyên bố marketing của startup AI là gì?",
+      "options": {
+        "A": "Tự động thiết lập cấu hình của hệ thống máy chủ đám mây.",
+        "B": "Gửi báo cáo tuân thủ pháp lý cho các nhà đầu tư mạo hiểm.",
+        "C": "Xóa toàn bộ các bài viết giới thiệu sản phẩm cũ trên mạng.",
+        "D": "Đánh dấu tất cả câu nói về công dụng và tính năng AI."
+      },
+      "answer": "D",
+      "explanation": "Bước đầu tiên là liệt kê và highlight toàn bộ các câu khẳng định trên website, tài liệu bán hàng nói về tính năng, mức độ cải thiện hiệu suất, công dụng của AI.",
+      "hints": [
+        "Cần thu thập và phân lập mọi tuyên bố (claims) liên quan đến sản phẩm.",
+        "Trích xuất tất cả những từ ngữ mang tính cam kết chất lượng với khách hàng.",
+        "Đáp án đúng là đánh dấu tất cả câu nói về công dụng và tính năng AI."
+      ],
+      "concepts": [
+        "d22-t1-compliance"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Khi phát hiện người dùng sử dụng AI của mình vào các hoạt động có dấu hiệu lừa đảo, founder nên làm gì?",
+      "options": {
+        "A": "Tự động tăng giá gói đăng ký hàng tháng đối với người dùng.",
+        "B": "Im lặng và chờ đợi cơ quan công an gửi thông báo chính thức.",
+        "C": "Xóa toàn bộ các tệp tin log ghi nhận lịch sử giao dịch.",
+        "D": "Lập tức tạm dừng tài khoản, điều tra và báo cáo cơ quan."
+      },
+      "answer": "D",
+      "explanation": "Quy trình ứng phó chuẩn là lập tức dừng tài khoản nghi vấn, bảo lưu bằng chứng (logs), tiến hành điều tra nội bộ và báo cáo với cơ quan chức năng khi cần thiết để bảo vệ bản thân.",
+      "hints": [
+        "Hành động dứt khoát ngăn chặn thiệt hại tiếp tục lan rộng cho xã hội.",
+        "Xây dựng bằng chứng chứng minh doanh nghiệp không đồng lõa với tội phạm.",
+        "Đáp án là lập tức tạm dừng tài khoản, điều tra và báo cáo cơ quan."
+      ],
+      "concepts": [
+        "d22-t1-compliance"
+      ]
+    }
+  ]
+}

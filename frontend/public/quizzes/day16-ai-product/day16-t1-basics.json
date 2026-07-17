@@ -1,0 +1,210 @@
+{
+  "id": "day16-t1-basics",
+  "parent_id": "day16-ai-product",
+  "topic_title": "Day 16: AI Product Strategy & Market Analysis",
+  "title": "Phần 1: Insight Cốt Lõi & Reframing Ý Tưởng Sản Phẩm",
+  "description": "Đánh giá kiến thức cơ bản về sự khác biệt giữa Idea và Product Definition, cùng cách Reframing ý tưởng sản phẩm từ bối cảnh thực tế.",
+  "difficulty": "dễ",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Sự khác biệt cốt lõi nhất giữa một 'Ý tưởng' (Idea) và một 'Định nghĩa sản phẩm' (Product Definition) trong khởi nghiệp AI là gì?",
+      "options": {
+        "A": "Ý tưởng là cảm nhận về một khoảng trống thị trường; định nghĩa sản phẩm là giải pháp kỹ thuật đầu tiên được đề xuất.",
+        "B": "Ý tưởng do người sáng lập nghĩ ra; định nghĩa sản phẩm do các kỹ sư phần mềm phát triển độc lập trong phòng thí nghiệm.",
+        "C": "Ý tưởng tập trung vào các công nghệ mới nổi; định nghĩa sản phẩm tập trung vào việc kêu gọi vốn đầu tư từ các quỹ ngoại.",
+        "D": "Ý tưởng mang tính dài hạn và vĩ mô; định nghĩa sản phẩm là kế hoạch kinh doanh chi tiết trong thời hạn từ năm đến mười năm."
+      },
+      "answer": "A",
+      "explanation": "Theo tài liệu bài giảng, Idea là cảm nhận đúng về một khoảng trống hoặc cơ hội công nghệ, trong khi Product Definition là phiên bản cụ thể đầu tiên mà đội ngũ nghĩ ra để giải quyết khoảng trống đó.",
+      "hints": [
+        "Hãy nghĩ về việc cái nào xuất hiện trước như một sự nhen nhóm và cái nào là hình hài giải pháp đầu tiên.",
+        "Định nghĩa sản phẩm cần mang tính cụ thể hóa giải pháp hơn là chỉ nhận diện khoảng trống.",
+        "Đáp án đúng chỉ rõ ý tưởng là cảm nhận khoảng trống, còn định nghĩa sản phẩm là giải pháp cụ thể đầu tiên."
+      ],
+      "concepts": [
+        "d16-t1-product-strategy"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Theo bài học từ BIVA, sai lầm lớn nhất của họ khi đưa ra 'Phiên bản sản phẩm ngô nghê đầu tiên' (Naive First Product) là gì?",
+      "options": {
+        "A": "Thiết kế một giải pháp có chi phí bản quyền quá đắt đỏ khiến cho các khách hàng không thể tiếp cận.",
+        "B": "Xây dựng một nền tảng Voice AI self-serve quá tổng quát và giả định rằng khách hàng SME có thể tự vận hành.",
+        "C": "Sử dụng các mô hình ngôn ngữ lớn nguồn mở có độ trễ cao và chất lượng trả lời tiếng Việt không chuẩn xác.",
+        "D": "Tập trung quá nhiều vào việc tối ưu hóa giao diện người dùng thay vì cải thiện chất lượng nhận diện giọng nói."
+      },
+      "answer": "B",
+      "explanation": "BIVA ban đầu xây dựng một nền tảng Voice AI self-serve tổng quát với giả định sai lầm rằng các doanh nghiệp SME có thể tự viết prompt, cấu hình cuộc gọi và tự vận hành hệ thống một cách hiệu quả.",
+      "hints": [
+        "Hãy xem xét giả định ngầm của BIVA về khả năng kỹ thuật của các doanh nghiệp SME.",
+        "Sản phẩm ban đầu là một platform self-serve tổng quát (generic platform).",
+        "BIVA đã giả định sai rằng khách hàng có thể tự vận hành và cấu hình Voice AI."
+      ],
+      "concepts": [
+        "d16-t1-product-strategy"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Đặc trưng nào dưới đây định nghĩa đúng nhất về một phân khúc khách hàng sớm (Early Customer Segment) có chất lượng tốt?",
+      "options": {
+        "A": "Được xác định bằng quy mô doanh nghiệp rộng lớn và lượng vốn điều lệ đăng ký ban đầu từ hàng triệu USD trở lên.",
+        "B": "Được xác định bằng việc sở hữu cơ sở hạ tầng công nghệ thông tin tiên tiến và đội ngũ nhân sự kỹ thuật đông đảo.",
+        "C": "Được xác định bằng sự kết hợp giữa bối cảnh ngành nghề, quy trình lặp lại, thời điểm đau và hậu quả đi kèm.",
+        "D": "Được xác định bằng mức độ quan tâm của ban lãnh đạo doanh nghiệp đối với các xu hướng công nghệ trí tuệ nhân tạo."
+      },
+      "answer": "C",
+      "explanation": "Một segment tốt được định nghĩa bằng công thức: ngành + workflow lặp lại + pain moment + consequence (hậu quả), thay vì chỉ định nghĩa chung chung bằng quy mô doanh nghiệp hay hạ tầng.",
+      "hints": [
+        "Hãy nhớ rằng định nghĩa khách hàng theo hạ tầng sở hữu (như 'có hotline') thường quá rộng và yếu.",
+        "Một phân khúc sắc nét cần gắn liền với nỗi đau và bối cảnh vận hành thực tế.",
+        "Đáp án đúng chứa đầy đủ các yếu tố: bối cảnh, quy trình lặp lại, thời điểm đau và hậu quả."
+      ],
+      "concepts": [
+        "d16-t1-product-strategy"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Câu hỏi chí mạng (Kill Question) nào được dùng để kiểm tra tính đúng đắn của một phân khúc khách hàng sớm trong 6 tháng đầu?",
+      "options": {
+        "A": "Doanh nghiệp đó có sẵn sàng chi trả mức chi phí cố định hàng tháng tối thiểu là bao nhiêu cho giải pháp AI này?",
+        "B": "Nếu chỉ được giữ một nhóm khách hàng duy nhất trong vòng sáu tháng đầu tiên, nhóm này có còn là lựa chọn không?",
+        "C": "Hệ thống hạ tầng công nghệ hiện tại của khách hàng có tương thích hoàn toàn với các API của hệ thống hay không?",
+        "D": "Khách hàng có đồng ý ký kết hợp đồng ghi nhớ (MOU) thử nghiệm dịch vụ không cần thanh toán trước hay không?"
+      },
+      "answer": "B",
+      "explanation": "Theo bài học từ BIVA, câu hỏi chí mạng để cắt giảm và chọn lọc phân khúc khách hàng là: 'Nếu chỉ được giữ một nhóm khách hàng trong 6 tháng đầu, nhóm này có còn là lựa chọn?'",
+      "hints": [
+        "Đây là câu hỏi nhằm mục tiêu thu hẹp sự tập trung tối đa vào nhóm khách hàng quan trọng nhất.",
+        "Mục đích của câu hỏi là loại bỏ các nhóm khách hàng không mang lại giá trị sống còn.",
+        "Đáp án đúng đề cập đến việc chỉ giữ lại một nhóm khách hàng duy nhất trong 6 tháng đầu."
+      ],
+      "concepts": [
+        "d16-t1-product-strategy"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Tại sao một định nghĩa khách hàng dạng 'Bất kỳ doanh nghiệp nào có hotline' lại được coi là một định nghĩa rất yếu?",
+      "options": {
+        "A": "Vì định nghĩa này quá rộng về quy trình vận hành, mức độ cấp bách, hành vi mua và đường tiếp cận khách hàng.",
+        "B": "Vì số lượng doanh nghiệp sở hữu hotline tại thị trường Việt Nam hiện nay còn quá ít để có thể mở rộng quy mô.",
+        "C": "Vì các doanh nghiệp có hotline thường đã tự xây dựng hệ thống tổng đài tự động riêng biệt từ rất lâu trước đó.",
+        "D": "Vì chi phí để tích hợp API Voice AI vào các đầu số hotline truyền thống hiện tại vẫn còn quá cao cho doanh nghiệp."
+      },
+      "answer": "A",
+      "explanation": "Định nghĩa này yếu vì nó quá rộng về workflow (quy trình vận hành), urgency (mức cấp bách), buying behavior (hành vi mua) và access path (đường tiếp cận), dẫn đến việc không thể thiết kế sản phẩm tập trung.",
+      "hints": [
+        "Định nghĩa theo hạ tầng (hotline) mà không quan tâm đến nỗi đau nghiệp vụ cụ thể sẽ gây ra vấn đề gì?",
+        "Nó làm loãng tính tập trung của sản phẩm trên nhiều khía cạnh vận hành và tiếp cận.",
+        "Tìm phương án mô tả sự quá rộng của quy trình, mức cấp bách, hành vi mua và đường tiếp cận."
+      ],
+      "concepts": [
+        "d16-t1-product-strategy"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Ví dụ nào sau đây thể hiện một phân khúc khách hàng sớm (Early Segment) được định nghĩa sắc nét nhất?",
+      "options": {
+        "A": "Các doanh nghiệp SME hoạt động trong lĩnh vực vận tải hành khách tại thị trường khu vực Đông Nam Á.",
+        "B": "Các nhà xe vận tải hành khách thường xuyên bị nhỡ cuộc gọi của khách hàng vào các khung giờ cao điểm.",
+        "C": "Các trung tâm chăm sóc khách hàng có nhu cầu nâng cấp hệ thống tổng đài truyền thống lên tổng đài AI.",
+        "D": "Các công ty khởi nghiệp công nghệ muốn ứng dụng trí tuệ nhân tạo để tối ưu hóa quy trình bán hàng qua điện thoại."
+      },
+      "answer": "B",
+      "explanation": "Đáp án B chỉ rõ ngành/lĩnh vực (nhà xe vận tải), quy trình lặp lại (cuộc gọi inbound của khách hàng), thời điểm đau nhất (giờ cao điểm) và hậu quả ngầm hiểu (mất khách/nhỡ cuộc gọi), làm nổi bật nỗi đau cấp bách.",
+      "hints": [
+        "Hãy tìm phân khúc mô tả cụ thể bối cảnh vận hành nghiệp vụ và thời điểm đau rõ ràng nhất.",
+        "Tránh các định nghĩa chung chung như 'doanh nghiệp SME' hay 'trung tâm chăm sóc khách hàng'.",
+        "Nhà xe bị nhỡ cuộc gọi giờ cao điểm là định nghĩa sắc nét đáp ứng đầy đủ tiêu chí."
+      ],
+      "concepts": [
+        "d16-t1-product-strategy"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Nguyên tắc 'Tôn trọng ý tưởng ban đầu, nhưng đừng vội tin phiên bản định nghĩa sản phẩm đầu tiên của nó' ám chỉ điều gì?",
+      "options": {
+        "A": "Ý tưởng ban đầu thường hoàn toàn sai lầm, nhưng định nghĩa sản phẩm đầu tiên lại có độ chính xác rất cao.",
+        "B": "Cần kiên trì theo đuổi thiết kế ban đầu của sản phẩm bất kể phản hồi của thị trường trong giai đoạn đầu ra sao.",
+        "C": "Ý tưởng có thể đúng về khoảng trống thị trường, nhưng thiết kế sản phẩm ban đầu thường còn thô sơ hoặc sai lệch.",
+        "D": "Nên thay đổi ý tưởng cốt lõi liên tục thay vì điều chỉnh các tính năng nhỏ nhặt của sản phẩm trong quá trình chạy thử."
+      },
+      "answer": "C",
+      "explanation": "Nguyên tắc này chỉ ra rằng trực giác ban đầu về khoảng trống (Idea) có thể đúng, nhưng giải pháp đầu tiên ta nghĩ ra để hiện thực hóa nó (Product Definition) gần như luôn có điểm chưa hợp lý và cần được mài giũa qua thực tế.",
+      "hints": [
+        "Hãy nghĩ về mối quan hệ giữa trực giác ban đầu và hình hài đầu tiên của giải pháp.",
+        "Trực giác có thể đúng, nhưng giải pháp đầu tiên thường mang tính chủ quan và cần kiểm chứng.",
+        "Đáp án đúng giải thích ý tưởng phản ánh khoảng trống đúng, nhưng định nghĩa sản phẩm ban đầu dễ bị thô sơ hoặc sai lệch."
+      ],
+      "concepts": [
+        "d16-t1-product-strategy"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Trong bối cảnh bài học của BIVA, chỉ số '20 khách hàng thử nghiệm (POC), 0 khách hàng trả tiền' báo hiệu vấn đề gì?",
+      "options": {
+        "A": "Hệ thống hạ tầng Voice AI của BIVA gặp sự cố kỹ thuật nghiêm trọng làm gián đoạn trải nghiệm của khách hàng.",
+        "B": "Khách hàng SME hoàn toàn không có ngân sách dành cho các hoạt động chuyển đổi số hay ứng dụng công nghệ mới.",
+        "C": "Định nghĩa sản phẩm đang gặp vấn đề, sự quan tâm của khách hàng mới chỉ dừng lại ở mức độ tò mò công nghệ.",
+        "D": "Quy trình chào bán sản phẩm của đội ngũ kinh doanh chưa tối ưu và cần được thay thế bằng mô hình tự động."
+      },
+      "answer": "C",
+      "explanation": "Sự quan tâm thử nghiệm (Interest) không đồng nghĩa với mức độ sẵn sàng chi trả (Willingness to pay). Việc có nhiều POC nhưng không có chuyển đổi trả phí là tín hiệu rõ ràng cho thấy sản phẩm chưa giải quyết được nỗi đau cốt lõi, tức định nghĩa sản phẩm bị sai lệch.",
+      "hints": [
+        "Sự tò mò công nghệ (interest) có giống với sự sẵn sàng chi trả để giải quyết nỗi đau hay không?",
+        "Khi khách hàng dùng thử rất nhiều nhưng không ai xuống tiền, điều đó phản ánh giá trị thực tế của sản phẩm thế nào?",
+        "Đáp án đúng chỉ ra sự tò mò công nghệ khác với sẵn sàng chi trả, cảnh báo lỗi định nghĩa sản phẩm."
+      ],
+      "concepts": [
+        "d16-t1-product-strategy"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Yếu tố nào dưới đây thể hiện động lực (motivation) chính của một doanh nghiệp khi quyết định mua giải pháp Voice AI?",
+      "options": {
+        "A": "Mong muốn trải nghiệm công nghệ trí tuệ nhân tạo mới nhất để nâng cao hình ảnh thương hiệu trong mắt đối tác.",
+        "B": "Nhận được các gói tài trợ tài chính hoặc ưu đãi giảm giá sâu từ nhà cung cấp dịch vụ viễn thông liên kết.",
+        "C": "Giải quyết các điểm nghẽn vận hành thực tế để tránh thất thoát doanh thu hoặc giảm thiểu chi phí nhân sự trực tiếp.",
+        "D": "Áp lực cạnh tranh khi thấy các đối thủ lớn trên thị trường bắt đầu ứng dụng thử nghiệm các mô hình tương tự."
+      },
+      "answer": "C",
+      "explanation": "Doanh nghiệp mua giải pháp khi nó trực tiếp giải quyết nỗi đau vận hành và mang lại kết quả tài chính rõ ràng (tránh mất doanh thu, giảm chi phí), chứ không chỉ vì xu hướng hay hình ảnh.",
+      "hints": [
+        "Động lực mua hàng của doanh nghiệp (B2B) luôn xoay quanh bài toán tối ưu hóa vận hành và tài chính thực tế.",
+        "Hãy tránh các yếu tố mang tính hình thức hoặc cảm xúc nhất thời.",
+        "Đáp án đúng nhấn mạnh việc giải quyết điểm nghẽn vận hành và bài toán doanh thu/chi phí thực tế."
+      ],
+      "concepts": [
+        "d16-t1-product-strategy"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Khi Reframing (diễn giải lại) một ý tưởng AI, đội ngũ sáng lập sản phẩm cần phải dịch chuyển trọng tâm từ đâu sang đâu?",
+      "options": {
+        "A": "Từ việc phát triển các tính năng công nghệ phức tạp sang việc thấu hiểu bối cảnh và nỗi đau thực tế của khách hàng.",
+        "B": "Từ việc tối ưu hóa trải nghiệm người dùng trên thiết bị di động sang việc xây dựng các kiến trúc máy chủ backend.",
+        "C": "Từ việc phục vụ các phân khúc khách hàng lớn sang việc tập trung tối đa vào các thị trường ngách phi lợi nhuận.",
+        "D": "Từ việc sử dụng các mô hình ngôn ngữ lớn nguồn đóng sang việc tự huấn luyện các mô hình AI nguồn mở hoàn toàn."
+      },
+      "answer": "A",
+      "explanation": "Reframing ý tưởng yêu cầu đội ngũ chuyển từ tư duy lấy công nghệ làm trung tâm (muốn làm gì với AI) sang tư duy lấy khách hàng làm trung tâm (khách hàng gặp vấn đề gì trong bối cảnh vận hành của họ và làm sao để giải quyết nó).",
+      "hints": [
+        "Hãy nghĩ về việc dịch chuyển từ 'tôi có công nghệ gì' sang 'khách hàng cần giải quyết bài toán gì'.",
+        "Đây là bước chuyển dịch từ Technology-driven sang Customer/Need-driven.",
+        "Đáp án đúng chỉ ra sự dịch chuyển từ tính năng công nghệ phức tạp sang thấu hiểu bối cảnh và nỗi đau của khách hàng."
+      ],
+      "concepts": [
+        "d16-t1-product-strategy"
+      ]
+    }
+  ]
+}

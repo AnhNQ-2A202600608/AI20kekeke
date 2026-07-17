@@ -1,0 +1,22 @@
+version: "1.0.0"
+app:
+  name: "AI20K Agent"
+  env: "development"
+  port: 8000
+  host: "0.0.0.0"
+  log_level: "INFO"
+  cors_origins: "http://localhost:3000"
+
+database:
+  database_url: "sqlite:///./data/app.db"
+
+cache:
+  cache_type: "in_memory"
+  redis_url: "redis://localhost:6379/0"
+
+vector_store:
+  chroma_persist_dir: "./data/chroma"
+
+llm:
+  model_name: "gpt-4o-mini"
+  llm_temperature: 0.7

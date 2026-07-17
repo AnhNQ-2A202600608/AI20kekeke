@@ -1,0 +1,210 @@
+{
+  "id": "day14-pipeline",
+  "parent_id": "day14",
+  "topic_title": "Day 14: AI Evaluation & Benchmarking",
+  "title": "Phần 2: LLM-as-a-Judge & Đánh giá với RAGAS",
+  "description": "Đánh giá kỹ năng thiết lập cơ chế tự động chấm điểm bằng LLM-as-a-Judge, kiểm soát các thiên lệch (biases), và sử dụng framework RAGAS đo lường hiệu năng của hệ thống RAG.",
+  "difficulty": "bình thường",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Ưu điểm lớn nhất của phương pháp đánh giá sử dụng LLM-as-a-Judge so với việc con người đánh giá thủ công trong môi trường CI/CD là gì?",
+      "options": {
+        "A": "Tự động sửa đổi cấu trúc mã nguồn của ứng dụng AI Agent để cải thiện điểm số sau mỗi chu kỳ kiểm thử.",
+        "B": "Đảm bảo độ chính xác tuyệt đối 100% trong mọi kịch bản và không bao giờ gặp phải các sai lệch logic.",
+        "C": "Tốc độ thực thi cực kỳ nhanh, chi phí vận hành rất thấp, và kết quả có tính nhất quán cao, dễ lặp lại.",
+        "D": "Hoàn toàn không tốn bất kỳ chi phí sử dụng API nào của các nhà cung cấp dịch vụ mô hình ngôn ngữ lớn."
+      },
+      "answer": "C",
+      "explanation": "LLM-as-a-Judge giúp tự động hóa quá trình đánh giá chất lượng trong CI/CD pipeline, chạy rất nhanh và rẻ hơn con người hàng chục lần, đồng thời giữ được tính nhất quán (consistency) nếu prompt rubric được thiết kế tốt.",
+      "hints": [
+        "Hãy nghĩ đến tốc độ và chi phí khi cần chấm điểm 500 test cases sau mỗi lần push code lên Github.",
+        "Con người chấm điểm có thể bị mệt mỏi và không nhất quán giữa các lần chấm. Máy có gặp vấn đề đó không?",
+        "Tập trung vào khía cạnh tốc độ, tính kinh tế và tính nhất quán (reproducibility) của việc tự động hóa giám khảo."
+      ],
+      "concepts": [
+        "d14-ai-evaluation"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Hiện tượng 'Verbosity Bias' (thiên vị độ dài) trong quá trình chấm điểm bằng LLM-as-a-Judge được mô tả như thế nào?",
+      "options": {
+        "A": "Mô hình giám khảo chỉ chấp nhận chấm điểm các câu trả lời ngắn gọn và tự động loại bỏ các câu trả lời dài dòng.",
+        "B": "Mô hình giám khảo có xu hướng chấm điểm cao hơn cho các câu trả lời viết dài và chi tiết, dù có thể bị lập ý.",
+        "C": "Mô hình giám khảo ưu tiên chấm điểm cao cho các câu trả lời sử dụng nhiều mã nguồn lập trình bằng ngôn ngữ Python.",
+        "D": "Mô hình giám khảo tự động viết thêm các đoạn văn dài vào câu trả lời của Agent để làm tăng điểm số đánh giá."
+      },
+      "answer": "B",
+      "explanation": "Các mô hình ngôn ngữ lớn khi làm giám khảo thường bị thiên vị bởi những câu trả lời dài, viết trang trọng và chi tiết (verbosity bias), ngay cả khi câu trả lời đó chứa thông tin thừa hoặc lặp ý.",
+      "hints": [
+        "Từ khóa 'Verbosity' liên quan đến độ dài và sự nhiều lời của văn bản.",
+        "Hãy tưởng tượng một học sinh viết 3 trang giấy lan man so với một học sinh trả lời đúng 1 câu trực tiếp. LLM sẽ thích bài viết nào hơn?",
+        "Thiên vị độ dài là xu hướng đánh giá cao các phản hồi có kích thước từ ngữ lớn và chi tiết."
+      ],
+      "concepts": [
+        "d14-ai-evaluation"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Để khắc phục hiện tượng 'Position Bias' (thiên vị vị trí) khi dùng LLM chấm điểm so sánh cặp (Pairwise Comparison), kỹ sư nên làm gì?",
+      "options": {
+        "A": "Thay đổi vị trí thứ tự xuất hiện của hai câu trả lời và thực hiện gọi mô hình đánh giá thêm một lần nữa.",
+        "B": "Tăng tham số temperature của mô hình giám khảo lên mức tối đa để tạo ra các kết quả đánh giá ngẫu nhiên.",
+        "C": "Sử dụng hai mô hình ngôn ngữ lớn của các nhà cung cấp khác nhau để tiến hành chấm điểm độc lập hoàn toàn.",
+        "D": "Rút ngắn độ dài của cả hai câu trả lời trước khi gửi chúng vào prompt của mô hình giám khảo để đối sánh."
+      },
+      "answer": "A",
+      "explanation": "LLM khi so sánh 2 câu trả lời A và B thường có xu hướng chọn câu trả lời ở vị trí đầu tiên (hoặc cuối cùng) do ảnh hưởng của Position Bias. Cần đảo vị trí (swap) và chạy eval 2 lần để lấy kết quả khách quan.",
+      "hints": [
+        "Từ khóa 'Position' liên quan đến thứ tự sắp đặt trước - sau trong prompt gửi lên LLM.",
+        "Nếu mô hình thích chọn phương án đứng ở vị trí số 1, ta hãy đảo vị trí của chúng và so sánh xem kết quả có bị thay đổi không.",
+        "Kỹ thuật đảo vị trí (Position Swapping) là cách chuẩn để triệt tiêu bias vị trí trong so sánh cặp."
+      ],
+      "concepts": [
+        "d14-ai-evaluation"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Hiện tượng 'Self-bias' (thiên vị bản thân) xảy ra khi nào trong quá trình áp dụng kỹ thuật LLM-as-a-Judge?",
+      "options": {
+        "A": "Khi ứng dụng AI Agent tự động điều chỉnh các tham số giải mã của nó để đạt được kết quả kiểm thử tốt hơn.",
+        "B": "Khi lập trình viên tự chấm điểm cho ứng dụng của mình cao hơn so với kết quả đánh giá thực tế của người dùng.",
+        "C": "Khi mô hình giám khảo từ chối chấm điểm cho các câu trả lời có chứa thông tin nhạy cảm của cá nhân.",
+        "D": "Khi mô hình giám khảo tự chấm điểm cao nhất cho chính câu trả lời do mô hình cùng loại với nó sinh ra."
+      },
+      "answer": "D",
+      "explanation": "Self-bias (hay Self-favoritism) xảy ra khi mô hình làm giám khảo (ví dụ: GPT-4) có xu hướng chấm điểm cao hơn cho các câu trả lời do chính nó hoặc mô hình cùng họ tạo ra so với các mô hình của đối thủ (như Claude).",
+      "hints": [
+        "Hãy nghĩ tới câu thành ngữ 'Mẹ hát con khen hay' áp dụng trong thế giới mô hình AI.",
+        "Nếu dùng giám khảo GPT-4 để so sánh kết quả của GPT-4 và Claude 3.5, liệu giám khảo GPT-4 có khách quan hoàn toàn?",
+        "Self-bias phản ánh xu hướng ưu tiên các câu trả lời mang phong cách hành văn của chính mô hình giám khảo đó."
+      ],
+      "concepts": [
+        "d14-ai-evaluation"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Khi thiết kế prompt cho LLM-as-a-Judge, tại sao việc cung cấp một 'Evaluation Rubric' (tiêu chí chấm điểm) chi tiết là bắt buộc?",
+      "options": {
+        "A": "Để giúp mô hình giám khảo hiểu rõ cấu trúc lập trình Python của ứng dụng AI Agent mà nó đang đánh giá.",
+        "B": "Để định hướng mô hình chấm điểm theo các tiêu chí thống nhất, giảm thiểu tính chủ quan và tăng độ tin cậy.",
+        "C": "Để tự động tối ưu hóa số lượng token đầu vào và giúp giảm thiểu chi phí sử dụng API của giám khảo.",
+        "D": "Để ngăn chặn hoàn toàn các cuộc tấn công prompt injection từ phía người dùng gửi tới hệ thống kiểm thử."
+      },
+      "answer": "B",
+      "explanation": "Một rubric chấm điểm rõ ràng (ví dụ: định nghĩa chi tiết thang điểm từ 1 đến 5 kèm ví dụ minh họa) giúp LLM giám khảo chấm điểm chính xác, khách quan và giảm thiểu biến động (variance) giữa các lần gọi.",
+      "hints": [
+        "Nếu bạn chỉ bảo LLM 'hãy chấm điểm câu này từ 1-5', kết quả giữa các lần chạy có ổn định không?",
+        "Rubric đóng vai trò như một bộ quy tắc chấm thi chi tiết của giáo viên, chỉ rõ từng tiêu chí để đạt điểm tối đa hoặc bị trừ điểm.",
+        "Hãy tìm phương án đề cập đến việc thống nhất tiêu chí đánh giá, giảm thiểu tính chủ quan và tăng độ tin cậy."
+      ],
+      "concepts": [
+        "d14-ai-evaluation"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Chỉ số 'Faithfulness' (tính trung thực) trong framework đánh giá RAGAS được dùng để đo lường khía cạnh nào của câu trả lời?",
+      "options": {
+        "A": "Đo lường xem câu trả lời có chứa các mã nguồn độc hại hoặc các đường liên kết internet không an sau hay không.",
+        "B": "Đo lường xem câu trả lời có sử dụng các từ ngữ thân thiện và phù hợp với thuần phong mỹ tục hay không.",
+        "C": "Đo lường xem câu trả lời của mô hình có hoàn toàn được suy ra từ các tài liệu ngữ cảnh trích xuất hay không.",
+        "D": "Đo lường tỷ lệ phần trăm số lượng từ khóa trùng khớp giữa câu trả lời và tài liệu ngữ cảnh trích xuất."
+      },
+      "answer": "C",
+      "explanation": "Faithfulness trong RAGAS (đo lường Hallucination) tính toán xem tất cả các khẳng định (statements) có trong câu trả lời sinh ra có được chứng thực bởi tài liệu ngữ cảnh (retrieved context) đã trích xuất hay không.",
+      "hints": [
+        "Từ khóa 'Faithfulness' thể hiện sự trung thành của nội dung trả lời đối với nguồn thông tin đầu vào.",
+        "Nếu mô hình đưa ra một thông tin ngoài lề không có trong tài liệu trích xuất (dù đúng thực tế), điểm Faithfulness sẽ bị ảnh hưởng thế nào?",
+        "Đây là chỉ số đánh giá mức độ ảo giác của mô hình dựa trên tài liệu ngữ cảnh tham chiếu."
+      ],
+      "concepts": [
+        "d14-ai-evaluation"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Chỉ số 'Answer Relevancy' (độ phù hợp của câu trả lời) trong RAGAS được tính toán dựa trên cơ chế nào sau đây?",
+      "options": {
+        "A": "Đo lường thời gian trễ từ lúc người dùng gửi câu hỏi cho đến khi nhận được ký tự phản hồi đầu tiên.",
+        "B": "Tính toán tỷ lệ phần trăm số lượng từ khóa trùng khớp hoàn toàn giữa câu hỏi gốc và câu trả lời đầu ra.",
+        "C": "Đếm số lượng tài liệu tham khảo được trích dẫn trực tiếp trong nội dung câu trả lời của ứng dụng Agent.",
+        "D": "Đo lường mức độ tương đồng giữa câu hỏi gốc và các câu hỏi được sinh ngược lại từ câu trả lời của Agent."
+      },
+      "answer": "D",
+      "explanation": "Answer Relevancy được tính bằng cách yêu cầu LLM sinh ngược lại các câu hỏi giả định từ câu trả lời của Agent, sau đó đo cosine similarity của các câu hỏi này với câu hỏi gốc của người dùng.",
+      "hints": [
+        "RAGAS không chỉ so sánh từ khóa thuần túy vì từ khóa có thể giống nhưng nghĩa khác nhau.",
+        "Kỹ thuật này dùng mô hình sinh ngược (reverse engineering) lại câu hỏi từ câu trả lời, rồi so sánh độ tương đồng ngữ nghĩa.",
+        "Hãy tìm phương án có nhắc tới sự tương đồng ngữ nghĩa giữa câu hỏi gốc và câu hỏi được sinh ngược."
+      ],
+      "concepts": [
+        "d14-ai-evaluation"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Chỉ số 'Context Recall' (độ phủ của ngữ cảnh) trong RAGAS đo lường mối quan hệ giữa các thành phần nào sau đây?",
+      "options": {
+        "A": "Mối quan hệ giữa câu trả lời đầu ra của Agent và lịch sử trò chuyện của người dùng trong phiên làm việc.",
+        "B": "Mối quan hệ giữa tài liệu ngữ cảnh trích xuất được và câu trả lời chuẩn tham chiếu (Ground Truth).",
+        "C": "Mối quan hệ giữa câu hỏi đầu vào của người dùng và các tài liệu lưu trữ trong cơ sở dữ liệu vector.",
+        "D": "Mối quan hệ giữa tốc độ truy vấn dữ liệu từ vector database và dung lượng bộ nhớ đệm KV Cache sử dụng."
+      },
+      "answer": "B",
+      "explanation": "Context Recall đo lường mức độ phủ của tài liệu trích xuất (retrieved context) so với câu trả lời chuẩn (ground truth), nhằm đánh giá xem bộ Retrieval có lấy thiếu tài liệu cần thiết để trả lời câu hỏi hay không.",
+      "hints": [
+        "Recall trả lời câu hỏi: 'Chúng ta đã lấy đủ những tài liệu cần thiết để viết ra câu trả lời chuẩn chưa?'",
+        "Để biết có lấy đủ tài liệu không, ta phải đối chiếu ngữ cảnh trích xuất với câu trả lời lý tưởng (Ground Truth) do con người viết sẵn.",
+        "Hãy chọn phương án thể hiện sự đối chiếu giữa ngữ cảnh trích xuất và Ground Truth."
+      ],
+      "concepts": [
+        "d14-ai-evaluation"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Chỉ số 'Context Precision' (độ chuẩn xác của ngữ cảnh) trong RAGAS tập trung đánh giá khía cạnh nào của khâu Retrieval?",
+      "options": {
+        "A": "Đánh giá xem các tài liệu có độ liên quan cao nhất có được xếp ở các vị trí đầu tiên trong danh sách hay không.",
+        "B": "Đánh giá tổng số lượng tài liệu được trích xuất ra từ cơ sở dữ liệu vector cho mỗi câu hỏi đầu vào.",
+        "C": "Đánh giá dung lượng lưu trữ tính bằng kilobyte của các tài liệu trích xuất được hiển thị trên giao diện.",
+        "D": "Đánh giá xem tài liệu trích xuất có chứa bất kỳ thông tin nhạy cảm nào của khách hàng hay không."
+      },
+      "answer": "A",
+      "explanation": "Context Precision đánh giá xem các chunk tài liệu có độ liên quan cao (relevant chunks) có được thuật toán tìm kiếm xếp hạng ở trên đầu (higher rank) trong danh sách trả về hay không.",
+      "hints": [
+        "Khái niệm 'Precision' trong xếp hạng (Ranking Precision) quan tâm tới thứ tự ưu tiên của các kết quả trả về.",
+        "Nếu tài liệu quan trọng nhất bị xếp ở cuối danh sách (ví dụ vị trí thứ 5 thay vì thứ 1), điểm Precision sẽ bị giảm.",
+        "Hãy chọn câu trả lời đề cập đến thứ tự xếp hạng (rank) của các tài liệu liên quan trong danh sách kết quả."
+      ],
+      "concepts": [
+        "d14-ai-evaluation"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Một hệ thống RAG có điểm Context Recall = 0.9, Faithfulness = 0.9, nhưng Answer Relevancy = 0.3. Bạn nên đưa ra chẩn đoán lỗi gì?",
+      "options": {
+        "A": "Bước Retrieval tìm đúng tài liệu và LLM viết đúng sự thật, nhưng LLM trả lời lan man, không đúng trọng tâm câu hỏi.",
+        "B": "Bước Retrieval lấy sai tài liệu hoàn toàn, dẫn đến mô hình ngôn ngữ lớn bị ảo giác và bịa đặt thông tin.",
+        "C": "Hệ thống đang gặp lỗi kết nối mạng internet nên không thể gửi request tới máy chủ của các nhà cung cấp LLM.",
+        "D": "Cửa sổ ngữ cảnh đầu vào của mô hình đang bị quá tải do số lượng tài liệu trích xuất vượt quá giới hạn."
+      },
+      "answer": "A",
+      "explanation": "Điểm Context Recall cao nghĩa là lấy đủ tài liệu chuẩn; Faithfulness cao nghĩa là viết đúng sự thật trong tài liệu. Tuy nhiên, Answer Relevancy thấp (0.3) chỉ ra LLM sinh câu trả lời bị lệch đề hoặc lan man, không giải quyết trực tiếp câu hỏi người dùng.",
+      "hints": [
+        "Hãy phân tích ý nghĩa của từng chỉ số: Lấy đúng tài liệu (Recall cao), Không nói dối (Faithfulness cao), nhưng không trúng trọng tâm (Relevancy thấp).",
+        "Điều này có nghĩa là câu trả lời của AI dù trung thực và có căn cứ, nhưng lại đi trả lời một câu hỏi khác chứ không phải câu hỏi người dùng cần.",
+        "Chọn phương án mô tả việc LLM viết đúng sự thật dựa trên tài liệu nhưng nội dung trả lời bị lan man hoặc lạc đề."
+      ],
+      "concepts": [
+        "d14-ai-evaluation"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "notion-spec-to-implementation": {
+      "source": "davila7/claude-code-templates",
+      "sourceType": "github",
+      "skillPath": "cli-tool/components/skills/productivity/notion-spec-to-implementation/SKILL.md",
+      "computedHash": "708a76b187caaa132d17fea351570d134e1d1ea55f41bc44b330a920cacc6ef9"
+    },
+    "notion-template-business": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "sourceType": "github",
+      "skillPath": "skills/notion-template-business/SKILL.md",
+      "computedHash": "58d0491c1e85a72ebf516937a32f2ab50b965eb03ad0a864eb80c4dc667f92c9"
+    }
+  }
+}

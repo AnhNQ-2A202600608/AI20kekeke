@@ -1,0 +1,210 @@
+{
+  "id": "day24-t1-pipeline",
+  "parent_id": "day24-ai-product",
+  "topic_title": "Day 24: Responsible AI",
+  "title": "Phần 2: 8 Kiểu Lỗi Phổ Biến & Thiết Kế Bản Đồ Rủi Ro Risk Map",
+  "description": "Đánh giá khả năng nhận diện 8 failure modes của hệ thống GenAI và thiết kế Risk Map (Scenario, Failure, Layer, Harm).",
+  "difficulty": "bình thường",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Khi mô hình liên tục đồng ý với các ý kiến sai lệch hoặc câu hỏi dẫn dắt mang tính thiên kiến của người dùng, lỗi này được gọi là gì?",
+      "options": {
+        "A": "Hallucination.",
+        "B": "Over-reliance.",
+        "C": "Sycophancy.",
+        "D": "Jailbreak."
+      },
+      "answer": "C",
+      "explanation": "Sycophancy (thiên vị nịnh nọt/nịnh user) là hiện tượng mô hình đồng ý với các khẳng định sai lệch hoặc câu hỏi dẫn dắt của người dùng thay vì đính chính thông tin một cách khách quan.",
+      "hints": [
+        "Nghĩ về từ tiếng Anh có nghĩa là sự nịnh bợ hoặc xu nịnh.",
+        "Mô hình cố gắng làm hài lòng người dùng bằng cách đồng thuận vô điều kiện.",
+        "Đáp án chính xác là Sycophancy."
+      ],
+      "concepts": [
+        "d24-t1-responsible-ai"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Trong phân tích hệ thống AI của hãng Air Canada, việc thiếu hụt dữ liệu RAG vào chính sách hỗ trợ tang chế chính thức thuộc về lỗi ở tầng nào?",
+      "options": {
+        "A": "Tầng Model.",
+        "B": "Tầng UI.",
+        "C": "Tầng Monitoring.",
+        "D": "Tầng Input."
+      },
+      "answer": "D",
+      "explanation": "Việc thiếu RAG, prompt không được grounding hoặc thiếu tài liệu tri thức (knowledge base) chính thống thuộc về lỗi thiết kế phòng vệ ở tầng Input (Đầu vào).",
+      "hints": [
+        "Nơi chứa prompt, dữ liệu nền tảng và các kết nối tri thức grounding.",
+        "Đây là chặng đầu tiên trong luồng xử lý của hệ thống RAG.",
+        "Đáp án chính xác là Tầng Input."
+      ],
+      "concepts": [
+        "d24-t1-responsible-ai"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Hiện tượng một hệ thống AI chấm điểm rủi ro tái phạm tội (như COMPAS) cao hơn cho một nhóm sắc tộc dù hành vi tương đương là lỗi gì?",
+      "options": {
+        "A": "Bias / fairness - Lỗi thiên lệch và thiếu công bằng.",
+        "B": "Over-reliance - Lỗi người dùng tin AI quá mức.",
+        "C": "Escalation failure - Lỗi không chuyển đổi sang người thật.",
+        "D": "Harmful advice - Lỗi khuyên bảo gây hại cho sức khỏe."
+      },
+      "answer": "A",
+      "explanation": "Đây là lỗi điển hình về Bias / fairness (thiên lệch/công bằng), xuất phát từ việc dữ liệu huấn luyện bị lệch (data skew) hoặc sử dụng các biến gián tiếp (proxy) không công bằng.",
+      "hints": [
+        "Liên quan đến sự phân biệt đối xử hoặc đối xử bất bình đẳng giữa các nhóm đối tượng.",
+        "Nghiên cứu case study nổi tiếng COMPAS trong quản lý tư pháp.",
+        "Đáp án chính xác là Bias / fairness."
+      ],
+      "concepts": [
+        "d24-t1-responsible-ai"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Trong lăng kính phân tích tác hại Harm Map, đối tượng nào được định nghĩa là 'Affected person'?",
+      "options": {
+        "A": "Các kỹ sư lập trình trực tiếp viết mã nguồn cho mô hình LLM.",
+        "B": "Người chịu hậu quả từ hệ thống AI dù không trực tiếp tương tác.",
+        "C": "Khách hàng đang trực tiếp chat với chatbot trên giao diện website.",
+        "D": "Các nhà đầu tư tài chính rót vốn vào dự án khởi nghiệp AI."
+      },
+      "answer": "B",
+      "explanation": "Affected person (người chịu ảnh hưởng) là những người không trực tiếp sử dụng hay tương tác với hệ thống AI nhưng phải gánh chịu hậu quả từ quyết định của nó (ví dụ: gia đình Jake Moffatt bị stress, hoặc người đi bộ bị xe tự lái đâm).",
+      "hints": [
+        "Phân biệt với người dùng trực tiếp (direct user).",
+        "Họ chịu tác động gián tiếp từ bên ngoài luồng tương tác chatbot.",
+        "Đáp án chính xác là người chịu hậu quả từ hệ thống AI dù không trực tiếp tương tác."
+      ],
+      "concepts": [
+        "d24-t1-responsible-ai"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Khi thiết kế một bản đồ rủi ro Risk Map (worksheet/01-risk-map.md), việc xác định 'Tầng phụ' (Secondary Layer) có ý nghĩa gì?",
+      "options": {
+        "A": "Là nơi lưu trữ toàn bộ các tệp cấu hình của hệ thống Docker.",
+        "B": "Là giao diện phụ dành riêng cho đội ngũ kỹ sư QA test lỗi.",
+        "C": "Là vị trí lẽ ra phải thiết lập rào chắn để chặn đứng lỗi đó.",
+        "D": "Là máy chủ lưu trữ log dự phòng khi hệ thống chính gặp crash."
+      },
+      "answer": "C",
+      "explanation": "Trong phân tích Risk Map, Tầng chính (Primary Layer) là nơi lỗi phát sinh/bắt đầu, còn Tầng phụ (Secondary Layer) là nơi lẽ ra hệ thống phải thiết lập chốt chặn (guardrail) hoặc quy trình để ngăn lỗi thoát ra ngoài.",
+      "hints": [
+        "Nghĩ về cơ chế phòng vệ nhiều lớp (defense-in-depth).",
+        "Nếu layer 1 (Input) lỗi, layer tiếp theo nào sẽ làm chốt chặn backup?",
+        "Đáp án chỉ ra vị trí lẽ ra phải thiết lập rào chắn để chặn đứng lỗi."
+      ],
+      "concepts": [
+        "d24-t1-responsible-ai"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Sự cố chatbot của hãng DPD chửi bới chính công ty mình và bị lan truyền (viral) trên mạng xã hội là ví dụ của lỗi nào?",
+      "options": {
+        "A": "Hiện tượng mô hình nịnh người dùng.",
+        "B": "Hiện tượng tin tưởng AI quá mức.",
+        "C": "Hiện tượng không chuyển sang người thật.",
+        "D": "Hiện tượng lạm dụng hoặc vượt rào."
+      },
+      "answer": "D",
+      "explanation": "Chatbot DPD bị người dùng tấn công đối kháng (adversarial prompt) bằng cách ép chatbot đóng vai và viết thơ chửi công ty, đây là lỗi jailbreak/misuse điển hình do thiếu guardrails đầu vào.",
+      "hints": [
+        "Người dùng cố tình ép bot vượt qua các chỉ thị hệ thống thông thường.",
+        "Trường hợp này chatbot bị lạm dụng để sinh ra nội dung độc hại chống lại chính công ty.",
+        "Đáp án chính xác là Misuse / jailbreak."
+      ],
+      "concepts": [
+        "d24-t1-responsible-ai"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Trong sơ đồ hệ thống 5 tầng phòng ngự an toàn AI, tầng nào chịu trách nhiệm thực thi các cơ chế 'Escalation' (chuyển người thật)?",
+      "options": {
+        "A": "Tầng kiểm soát con người.",
+        "B": "Tầng dữ liệu đầu vào.",
+        "C": "Tầng lõi của mô hình.",
+        "D": "Tầng giám sát hoạt động."
+      },
+      "answer": "A",
+      "explanation": "Tầng Human-in-the-loop thiết lập quy trình review, fallback và đặc biệt là chuyển cấp (escalation) sang nhân viên con người hỗ trợ khi AI gặp trường hợp vượt quá khả năng xử lý.",
+      "hints": [
+        "Liên quan đến sự can thiệp và phối hợp trực tiếp giữa con người và máy móc.",
+        "Bao gồm các nút gọi khẩn cấp hoặc định tuyến tự động sang hỗ trợ viên.",
+        "Đáp án chính xác là Human-in-the-loop."
+      ],
+      "concepts": [
+        "d24-t1-responsible-ai"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Khái niệm 'Hidden Harm' (tác hại ẩn) trong lăng kính Harm Map được dùng để mô tả điều gì?",
+      "options": {
+        "A": "Các chi phí ẩn phát sinh khi thuê thêm máy chủ đám mây.",
+        "B": "Tác hại bị che khuất như stress tinh thần hay xói mòn niềm tin.",
+        "C": "Số lượng log lỗi bị hacker xóa bỏ khỏi hệ thống cơ sở dữ liệu.",
+        "D": "Các prompt độc hại của hacker ẩn giấu dưới dạng hình ảnh."
+      },
+      "answer": "B",
+      "explanation": "Hidden Harm là các tác hại phi vật chất, bị che khuất như stress tinh thần của gia đình lúc có tang, thời gian bị lãng phí, hoặc sự xói mòn niềm tin lâu dài vào thông tin chính thức của tổ chức.",
+      "hints": [
+        "Đây là các tác hại không dễ đo lường bằng con số tài chính trực tiếp.",
+        "Nghĩ về những hậu quả tâm lý, xã hội và uy tín bị bỏ sót khi đánh giá ngây thơ.",
+        "Đáp án chỉ ra tác hại bị che khuất như stress tinh thần hay xói mòn niềm tin."
+      ],
+      "concepts": [
+        "d24-t1-responsible-ai"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Khi viết một 'Failure pattern sentence' trong Risk Map, cấu trúc chuẩn bắt buộc phải chứa các thành phần nào?",
+      "options": {
+        "A": "Thời gian trễ, dung lượng log, số lượng CPU và chi phí API hàng tháng.",
+        "B": "Tên kỹ sư viết code, ngôn ngữ lập trình, hệ điều hành và link git.",
+        "C": "Bối cảnh kích hoạt, hành vi xấu, hành vi an toàn và người bị hại.",
+        "D": "Địa chỉ IP máy chủ, mã lỗi HTTP, tên database và API key bảo mật."
+      },
+      "answer": "C",
+      "explanation": "Câu mô tả lỗi chuẩn có dạng: 'Khi [bối cảnh/trigger], AI có xu hướng [hành vi xấu] thay vì [hành vi an toàn kỳ vọng], gây hậu quả cho [ai]'. Cấu trúc này làm đầu vào trực tiếp cho việc thiết kế các safety test questions.",
+      "hints": [
+        "Câu này giúp định nghĩa rõ ràng điều kiện kích hoạt lỗi và tác động thực tế của nó.",
+        "Đầy đủ cấu phần để các kỹ sư khác có thể viết test case từ câu mô tả này.",
+        "Đáp án chính xác là Bối cảnh kích hoạt, hành vi xấu, hành vi an toàn kỳ vọng và đối tượng bị hại."
+      ],
+      "concepts": [
+        "d24-t1-responsible-ai"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Tại sao việc xác định bối cảnh sử dụng (Context) lại là yếu tố quyết định để đánh giá mức độ nghiêm trọng (Severity) của lỗi?",
+      "options": {
+        "A": "Vì cùng một mô hình bịa thông tin sẽ gây hại cực lớn trong y tế so với FAQ vui vẻ.",
+        "B": "Vì bối cảnh sử dụng quyết định xem mô hình chạy trên nền tảng python hay javascript.",
+        "C": "Vì bối cảnh sử dụng giúp tự động tối ưu hóa chi phí token đầu ra của mô hình.",
+        "D": "Vì bối cảnh sử dụng ảnh hưởng trực tiếp đến tốc độ mạng internet của khách hàng."
+      },
+      "answer": "A",
+      "explanation": "Cùng một mô hình bịa thông tin (hallucination) có thể vô hại trong một chatbot trò chuyện FAQ vui vẻ (Severity Low), nhưng lại gây nguy hiểm tính mạng trong y tế hoặc tài chính pháp lý (Severity High/Critical).",
+      "hints": [
+        "An toàn AI không phải thuộc tính cố định của mô hình, mà là của mô hình + hệ thống + bối cảnh.",
+        "Sự chuyển đổi mức độ rủi ro dựa trên hậu quả thực tế ngoài đời.",
+        "Đáp án chỉ ra cùng một mô hình bịa thông tin gây hại cực lớn trong y tế so với FAQ vui vẻ."
+      ],
+      "concepts": [
+        "d24-t1-responsible-ai"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "id": "day28-t3-advanced",
+  "parent_id": "day28-agent-builder",
+  "topic_title": "Day 28: Real-World System Architecture",
+  "title": "Phần 3: Thiết Kế Robot Humanoid, CCTV AI Edge & Ứng Dụng Ảnh Vệ Tinh GeoAI",
+  "description": "Đánh giá năng lực thiết kế hệ thống CCTV AI biên bảo vệ quyền riêng tư, Embodied AI cho humanoid robot (mô hình VLA, học tăng cường RL), xử lý phân tích ảnh vệ tinh GeoAI và vận hành data flywheel hỗ trợ bởi con người.",
+  "difficulty": "khó",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Mô hình kiến trúc Edge-Cloud split phổ biến trong hệ thống CCTV AI thông minh hoạt động ra sao?",
+      "options": {
+        "A": "Camera gửi toàn bộ video chất lượng cao lên cloud để chạy YOLOv10.",
+        "B": "Edge detector lọc sự kiện, gửi clip nghi vấn lên cloud cho VLM lớn xử lý.",
+        "C": "Mọi frame video được phân tích song song ở cả edge và cloud cùng lúc.",
+        "D": "Edge system tự động mã hóa video rồi gửi thẳng về máy chủ lưu trữ AWS."
+      },
+      "answer": "B",
+      "explanation": "Để tiết kiệm băng thông và chi phí tính toán, edge camera chạy mô hình nhẹ (YOLO) để phát hiện chuyển động/đối tượng, sau đó chỉ gửi clip sự kiện nghi vấn lên cloud để các mô hình lớn (VLM) phân tích sâu.",
+      "hints": [
+        "Phân tích mọi khung hình bằng mô hình AI lớn trên cloud là cực kỳ đắt đỏ.",
+        "Sử dụng bộ lọc phân tầng để giảm thiểu tối đa dữ liệu truyền tải trên mạng.",
+        "Đó là Edge detector lọc sự kiện, gửi clip nghi vấn lên cloud cho VLM lớn."
+      ],
+      "concepts": [
+        "d28-t3-real-world-architectures"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Công cụ phân đoạn ảnh như SAM hoặc Grounded SAM giải quyết bài toán tìm kiếm trên video CCTV như thế nào?",
+      "options": {
+        "A": "Tự động điều chỉnh góc quay của camera an ninh biên thời gian thực.",
+        "B": "Hỗ trợ tìm kiếm đối tượng theo mô tả ngôn ngữ tự do (open-vocabulary).",
+        "C": "Mã hóa video đầu vào thành định dạng bảo mật riêng của hệ thống IT.",
+        "D": "Tự động loại bỏ hoàn toàn các khung hình video bị nhiễu do thời tiết."
+      },
+      "answer": "B",
+      "explanation": "SAM/Grounded SAM hỗ trợ nhận diện và phân đoạn đối tượng dựa trên prompt văn bản tự do (open-vocabulary), cho phép nhân viên an ninh tìm kiếm đối tượng bằng cách gõ mô tả (ví dụ: 'người mặc áo khoác đỏ').",
+      "hints": [
+        "Không bị giới hạn trong các class được định nghĩa sẵn (như người, xe).",
+        "Sử dụng mô hình nền tảng thị giác (Vision Foundation Model) có khả năng zero-shot.",
+        "Đó là Hỗ trợ tìm kiếm đối tượng theo mô tả ngôn ngữ tự do (open-vocabulary)."
+      ],
+      "concepts": [
+        "d28-t3-real-world-architectures"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Cải tiến lớn nhất của các nghiên cứu năm 2024 khi ứng dụng VLM trong phát hiện bất thường video CCTV là gì?",
+      "options": {
+        "A": "Tăng độ phân giải của luồng stream video RTSP lên mức tối đa.",
+        "B": "Sinh văn bản giải thích nguyên nhân và diễn biến xảy ra sự cố bất thường.",
+        "C": "Tự động phân bổ lại tài nguyên lưu trữ video của máy chủ biên.",
+        "D": "Loại bỏ hoàn toàn các yêu cầu cấu hình phân quyền bảo mật dữ liệu."
+      },
+      "answer": "B",
+      "explanation": "Ứng dụng VLM/LLM giúp hệ thống không chỉ phát hiện bất thường (anomaly score) mà còn có khả năng giải thích bằng ngôn ngữ tự nhiên về diễn biến và nguyên nhân sự việc (explainable anomaly detection).",
+      "hints": [
+        "Giúp nhân viên an ninh hiểu rõ tại sao AI lại gắn nhãn sự kiện đó là bất thường.",
+        "Chuyển đổi từ cảnh báo định lượng (con số) sang cảnh báo định tính (văn bản).",
+        "Đó là Sinh văn bản giải thích nguyên nhân và diễn biến xảy ra sự cố bất thường."
+      ],
+      "concepts": [
+        "d28-t3-real-world-architectures"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Hệ thống Embodied AI trên humanoid robot kết hợp mô hình VLA (Vision-Language-Action) và học tăng cường (RL) ra sao?",
+      "options": {
+        "A": "VLA chạy offline để gán nhãn, RL chạy online để điều phối K8s pod.",
+        "B": "VLA lập kế hoạch mức cao, RL tinh chỉnh tín hiệu điều khiển motor mức thấp.",
+        "C": "VLA mã hóa hình ảnh vệ tinh, RL điều phối lộ trình robot giao hàng vỉa hè.",
+        "D": "VLA thu thập dữ liệu logs, RL tự động cập nhật phần mềm qua sóng OTA."
+      },
+      "answer": "B",
+      "explanation": "Mô hình VLA (như RT-2) xử lý thông tin thị giác-ngôn ngữ để đưa ra quyết định hành động mức cao (high-level plan). Học tăng cường (RL) và các bộ điều khiển vật lý tinh chỉnh tín hiệu lực/mô-men xoắn motor mức thấp thời gian thực.",
+      "hints": [
+        "Phân tách luồng xử lý thành lập kế hoạch nhận thức và điều khiển cơ học.",
+        "Đảm bảo robot vừa hiểu chỉ thị ngôn ngữ vừa di chuyển khéo léo, an toàn.",
+        "Đó là VLA lập kế hoạch mức cao, RL tinh chỉnh tín hiệu điều khiển motor mức thấp."
+      ],
+      "concepts": [
+        "d28-t3-real-world-architectures"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Thách thức kỹ thuật lớn nhất khi xử lý ảnh vệ tinh GeoAI cho bài toán phát hiện thay đổi (change detection) là gì?",
+      "options": {
+        "A": "Cần đồng bộ hóa dữ liệu video stream thời gian thực từ vệ tinh về edge.",
+        "B": "Đồng bộ hóa ảnh đa thời gian và loại bỏ sai lệch do mây hoặc góc nắng.",
+        "C": "Mã hóa bảo vệ các thông tin PII của người dân chụp từ không gian.",
+        "D": "Thiết lập cấu hình Kafka topic để lưu trữ toàn bộ dữ liệu ảnh thô."
+      },
+      "answer": "B",
+      "explanation": "Ảnh vệ tinh chụp tại các thời điểm khác nhau có sự sai lệch lớn về góc chiếu mặt trời, độ che phủ của mây và mùa. GeoAI cần kỹ thuật multi-temporal fusion và chuẩn hóa để phát hiện thay đổi địa chất thực tế.",
+      "hints": [
+        "Vệ tinh bay vòng quanh trái đất và chụp ảnh cùng một địa điểm ở các ngày khác nhau.",
+        "Cần phân biệt thay đổi thực tế (xây nhà) với thay đổi do thời tiết (mây che, bóng râm).",
+        "Đó là Đồng bộ hóa ảnh đa thời gian và loại bỏ sai lệch do mây hoặc góc nắng."
+      ],
+      "concepts": [
+        "d28-t3-real-world-architectures"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Bài học kinh nghiệm thực tế về quản trị hệ thống rút ra từ thử nghiệm AI giám sát của TfL trên tàu điện ngầm London là gì?",
+      "options": {
+        "A": "Cần tăng cường băng thông mạng internet di động dọc theo đường hầm tàu.",
+        "B": "Kiểm soát chặt chẽ tỷ lệ báo động giả (false alarms) và chính sách bảo mật.",
+        "C": "Tích hợp thêm các cảm biến LiDAR trên đầu tàu để tránh va chạm vật lý.",
+        "D": "Chuyển toàn bộ các model phân tích video sang chạy offline tại edge camera."
+      },
+      "answer": "B",
+      "explanation": "Thử nghiệm của TfL chỉ ra rằng tỷ lệ báo động giả (false positives) quá cao sẽ gây quá tải cho nhân viên vận hành, đồng thời việc giám sát công cộng đòi hỏi chính sách bảo mật dữ liệu và sự chấp nhận xã hội nghiêm ngặt.",
+      "hints": [
+        "Liên quan đến các yếu tố phi kỹ thuật như tính công bằng, quyền riêng tư.",
+        "Sự mệt mỏi cảnh báo (alert fatigue) của con người khi AI báo sai quá nhiều.",
+        "Đó là Kiểm soát chặt chẽ tỷ lệ báo động giả (false alarms) và chính sách bảo mật."
+      ],
+      "concepts": [
+        "d28-t3-real-world-architectures"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Cơ chế Shadow Mode (chế độ chạy bóng) trong quy trình Data Flywheel ngoài đời thực hoạt động như thế nào?",
+      "options": {
+        "A": "Chạy model ngầm trên thiết bị thật để so sánh output với model chính.",
+        "B": "Tự động tắt toàn bộ camera an ninh khi phát hiện rò rỉ thông tin PII.",
+        "C": "Sinh dữ liệu mô phỏng hoàn toàn trong môi trường sandbox của cloud.",
+        "D": "Sử dụng đội ngũ remote assist để trực tiếp lái xe thay cho thuật toán AI."
+      },
+      "answer": "A",
+      "explanation": "Shadow Mode chạy model mới ngầm (không gửi lệnh đến cơ cấu chấp hành), chỉ ghi nhận output của nó để đối chiếu hiệu năng với model chính đang chạy thực tế, giúp xác minh an toàn trước khi deploy chính thức.",
+      "hints": [
+        "Cách kiểm thử mô hình mới an toàn ngay trên thiết bị phần cứng của khách hàng.",
+        "Mô hình mới xem xét dữ liệu cảm biến thật nhưng không có quyền điều khiển vật lý.",
+        "Đó chính là chạy model ngầm trên thiết bị thật để so sánh output với model chính."
+      ],
+      "concepts": [
+        "d28-t3-real-world-architectures"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Hành vi nhường đường và phát âm thanh thân thiện của robot giao hàng vỉa hè nhằm mục đích gì?",
+      "options": {
+        "A": "Giảm điện năng tiêu thụ của hệ thống bánh xe khi đi vào khu đông người.",
+        "B": "Tối ưu hóa chỉ số trễ truyền thông của luồng video streaming lên cloud.",
+        "C": "Tăng cường mức độ chấp nhận của xã hội (Human Acceptance) đối với robot.",
+        "D": "Thu hút sự chú ý của khách hàng để họ quét mã nhận hàng nhanh hơn."
+      },
+      "answer": "C",
+      "explanation": "Robot đi chung không gian công cộng với con người cần các hành vi giao tiếp xã hội lịch sự (Social navigation, nhường đường, âm thanh cảnh báo thân thiện) để tăng tính chấp nhận xã hội (Human Acceptance), tránh bị phá hoại.",
+      "hints": [
+        "Yếu tố tâm lý và tương tác xã hội giữa con người và thực thể robot tự hành.",
+        "Giúp con người xung quanh cảm thấy thoải mái và an toàn khi đi cạnh robot.",
+        "Đó là Tăng cường mức độ chấp nhận của xã hội (Human Acceptance) đối với robot."
+      ],
+      "concepts": [
+        "d28-t3-real-world-architectures"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Việc sử dụng VLM phân tích các tình huống suýt va chạm (near-miss) trong xe tự hành nhằm mục đích gì?",
+      "options": {
+        "A": "Tự động kích hoạt hệ thống phanh khẩn cấp của xe thời gian thực ở edge.",
+        "B": "Phân tích nguyên nhân sự cố và tự động hóa việc gán nhãn các ca khó.",
+        "C": "Đồng bộ hóa trực tiếp bản đồ HD map từ hệ thống vệ tinh GeoAI vệ tinh.",
+        "D": "Loại bỏ hoàn toàn vai trò của các safety driver ngồi trên cabin giám sát."
+      },
+      "answer": "B",
+      "explanation": "Near-miss analysis dùng VLM lớn offboard phân tích logs video để tự động giải thích nguyên nhân suýt va chạm, gắn nhãn dữ liệu và đưa kịch bản khó này vào bộ simulator huấn luyện lại.",
+      "hints": [
+        "Tác vụ này được thực hiện offboard trên cloud, không phải trên xe đang chạy.",
+        "Giúp hệ thống tự động khai thác các ca khó (hard cases) từ dữ liệu fleet logs.",
+        "Đó là Phân tích nguyên nhân sự cố và tự động hóa việc gán nhãn các ca khó."
+      ],
+      "concepts": [
+        "d28-t3-real-world-architectures"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Tại sao việc khử trùng lặp sự kiện (event deduplication) lại cần thiết trong thiết kế CCTV AI sản xuất?",
+      "options": {
+        "A": "Để giảm thiểu dung lượng RAM tiêu thụ khi chạy YOLOv10 ở các edge camera.",
+        "B": "Để giảm mệt mỏi cảnh báo (alert fatigue) cho nhân viên giám sát an ninh.",
+        "C": "Để đảm bảo các vết log audit trail được đồng bộ hóa hoàn toàn lên Git.",
+        "D": "Để ngăn chặn các rủi ro liên quan rò rỉ dữ liệu nhạy cảm PII trên mạng."
+      },
+      "answer": "B",
+      "explanation": "Nếu cùng một sự kiện (ví dụ: xe đỗ sai quy định) liên tục gửi hàng trăm cảnh báo thô, nhân viên an ninh sẽ bị quá tải/alert fatigue. Cần cơ chế deduplication ở event broker để gom sự kiện gửi 1 lần.",
+      "hints": [
+        "Giảm áp lực trực quan và số lượng thông báo lặp lại gửi đến con người.",
+        "Dùng Event Broker (MQTT/Kafka) để lọc và gom nhóm các sự kiện trùng lặp.",
+        "Đó là Để giảm mệt mỏi cảnh báo (alert fatigue) cho nhân viên giám sát an ninh."
+      ],
+      "concepts": [
+        "d28-t3-real-world-architectures"
+      ]
+    }
+  ]
+}

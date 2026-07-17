@@ -1,0 +1,29 @@
+{
+  "username": "aithucchien_student",
+  "name": "Nguyễn Văn Thực Chiến",
+  "joinedAt": "2026-05-01T00:00:00.000Z",
+  "loggedIn": true,
+  "streak": 12,
+  "xp": 780,
+  "completedSets": [
+    "day1-basics",
+    "day1-tokenization",
+    "day1-llm-architecture",
+    "day2-basics",
+    "day2-model-selection",
+    "react-loop-basics",
+    "prompt-context-foundations",
+    "ai-product-uncertainty-foundations"
+  ],
+  "activeDays": [
+    "2026-06-01",
+    "2026-06-02",
+    "2026-06-03",
+    "2026-06-04",
+    "2026-06-05",
+    "2026-06-06",
+    "2026-06-07",
+    "2026-06-08",
+    "2026-06-09"
+  ]
+}

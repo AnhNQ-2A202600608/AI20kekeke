@@ -1,0 +1,210 @@
+{
+  "id": "day23-t1-basics",
+  "parent_id": "day23-ai-product",
+  "topic_title": "Day 23: Change Management & AI Adoption",
+  "title": "Phần 1: Khái Niệm Cơ Bản Về Quản Trị Thay Đổi & Lăng Kính Tiếp Nhận AI",
+  "description": "Đánh giá kiến thức nền tảng về sự chấp nhận AI trong tổ chức, câu nói cốt lõi của Blue, lăng kính và ADKAR framework.",
+  "difficulty": "dễ",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Sự khác biệt cốt lõi giữa 'Wow' và 'Adoption' trong quá trình ứng dụng AI vào doanh nghiệp được Blue phát biểu như thế nào?",
+      "options": {
+        "A": "Wow tạo ra sự lan toả, còn workflow tạo ra adoption thực sự.",
+        "B": "Wow mang lại nguồn vốn, còn license mang lại quy trình làm việc.",
+        "C": "Wow thu hút nhân tài, còn hạ tầng mạng thu hồi vốn đầu tư nhanh.",
+        "D": "Wow chứng minh tính năng, còn code tay tối ưu hoá hiệu năng máy."
+      },
+      "answer": "A",
+      "explanation": "Theo bài giảng của Blue, 'Wow tạo ra sự lan toả. Workflow tạo ra adoption'. Điều này có nghĩa là sự hào hứng ban đầu chỉ giúp truyền bá, còn áp dụng thực tế phải đi vào quy trình công việc.",
+      "hints": [
+        "Hãy nghĩ về vai trò của quy trình công việc (workflow) đối với sự bền vững của AI.",
+        "So sánh giữa hiệu ứng truyền thông ban đầu và hoạt động vận hành hằng ngày.",
+        "Tìm phương án khẳng định workflow tạo ra sự tiếp nhận thực sự."
+      ],
+      "concepts": [
+        "d23-t1-change-adoption"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Trong 5 lăng kính chẩn đoán điểm nghẽn AI của Instructor, lăng kính 'ADKAR' tập trung vào khía cạnh nào sau đây?",
+      "options": {
+        "A": "Sự sẵn sàng của cơ sở dữ liệu và các quy chuẩn phân quyền.",
+        "B": "Các điểm kẹt về nhận thức, mong muốn và năng lực người dùng.",
+        "C": "Mối tương quan giữa chi phí vận hành API và năng suất thực tế.",
+        "D": "Độ tin cậy của kết quả đầu ra và phương án xử lý khi AI sai."
+      },
+      "answer": "B",
+      "explanation": "Lăng kính ADKAR tập trung vào khía cạnh con người, chẩn đoán xem người dùng đang bị kẹt ở nhận thức (Awareness), mong muốn (Desire), kiến thức (Knowledge), khả năng (Ability) hay sự củng cố (Reinforcement).",
+      "hints": [
+        "ADKAR là một mô hình nổi tiếng về quản trị sự thay đổi hướng con người.",
+        "Xem xét các chữ cái viết tắt đại diện cho hành vi của người dùng.",
+        "Đáp án đúng nói về nhận thức, mong muốn và năng lực của nhân sự."
+      ],
+      "concepts": [
+        "d23-t1-change-adoption"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Khi chẩn đoán sự sẵn sàng của hệ thống AI qua lăng kính 'Readiness', yếu tố nào sau đây được ưu tiên xem xét?",
+      "options": {
+        "A": "Ý kiến đóng góp từ các Red-team và bảng đánh giá rủi ro pháp lý.",
+        "B": "Trải nghiệm giao diện của chatbot và tốc độ phản hồi trung bình.",
+        "C": "Dữ liệu, quyền truy cập, governance, owner và ngân sách vận hành.",
+        "D": "Tỷ lệ nhấp chuột vào ứng dụng và số câu lệnh người dùng nhập vào."
+      },
+      "answer": "C",
+      "explanation": "Lăng kính Readiness chẩn đoán tính sẵn sàng về hạ tầng tổ chức, bao gồm dữ liệu, quyền truy cập, governance, owner, và ngân sách (budget).",
+      "hints": [
+        "Nghĩ về những chuẩn bị mang tính nền tảng kỹ thuật và quản trị tổ chức.",
+        "Cần những điều kiện cần thiết để một hệ thống AI bắt đầu chạy chính thức.",
+        "Đáp án đề cập đến dữ liệu, quyền truy cập, quản trị và ngân sách."
+      ],
+      "concepts": [
+        "d23-t1-change-adoption"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Theo phân tích của Blue về 5 ngưỡng tiếp nhận AI, dấu hiệu quan sát của ngưỡng 'ADOPTION' là gì?",
+      "options": {
+        "A": "Một cá nhân tự mở ChatGPT lên để soạn thảo email công việc.",
+        "B": "Một phòng ban được cấp ngân sách thử nghiệm một vài use case.",
+        "C": "Doanh nghiệp hoàn tất mua license phần mềm và phân quyền SSO.",
+        "D": "Bản mô tả công việc (JD), quy trình bàn giao và bàn việc đã đổi."
+      },
+      "answer": "D",
+      "explanation": "Ngưỡng ADOPTION đạt được khi JD (mô tả công việc), quy trình bàn giao, người chịu trách nhiệm (owner) và quy trình làm việc thực tế đã được thay đổi để tích hợp AI.",
+      "hints": [
+        "Ngưỡng này cao hơn việc cài đặt phần mềm hay dùng thử cá nhân.",
+        "Nó liên quan đến sự thay đổi chính thức trong cấu trúc công việc.",
+        "Tìm phương án nhắc đến bản mô tả công việc (JD) và quy trình bàn giao."
+      ],
+      "concepts": [
+        "d23-t1-change-adoption"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Theo biểu đồ 'Adoption vs ROI' từ BCG 2024 được trích dẫn trong bài học, có bao nhiêu phần trăm công ty thực sự vượt qua khoảng cách giá trị để thu về ROI thực sự?",
+      "options": {
+        "A": "Chỉ có khoảng 26% doanh nghiệp vượt qua, phần còn lại bị kẹt.",
+        "B": "Có đến 50% doanh nghiệp đạt được mục tiêu doanh thu ngay năm đầu.",
+        "C": "Chỉ có 5% doanh nghiệp thất bại do thiếu hạ tầng máy chủ đám mây.",
+        "D": "Khoảng 74% doanh nghiệp thu về lợi nhuận vượt mong đợi từ AI Act."
+      },
+      "answer": "A",
+      "explanation": "Biểu đồ trích dẫn từ BCG 2024 chỉ ra nghịch lý tiếp nhận: sử dụng thì rộng nhưng ROI chậm. Chỉ có 26% công ty vượt qua khoảng cách giá trị, còn lại 74% bị kẹt.",
+      "hints": [
+        "Nghĩ về tỷ lệ doanh nghiệp thành công trong việc tạo ra ROI thực tế.",
+        "Đây là một tỷ lệ tương đối thấp trong các báo cáo khảo sát lớn.",
+        "Tìm đáp án chỉ ra con số 26% doanh nghiệp thành công."
+      ],
+      "concepts": [
+        "d23-t1-change-adoption"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Lớp đầu tiên (Layer 1) trong AI Adoption Stack được gọi là gì, và nó trả lời câu hỏi cốt lõi nào?",
+      "options": {
+        "A": "Org Absorption – Tổ chức đã sẵn sàng hấp thụ công nghệ mới chưa?",
+        "B": "Capability Shock – AI làm được gì và đường cong chi phí đổi ra sao?",
+        "C": "Task Design – Việc nào giữ cho con người và việc nào giao cho AI?",
+        "D": "Value Measurement – Việc áp dụng AI có thực sự tạo ra giá trị không?"
+      },
+      "answer": "B",
+      "explanation": "Layer 1 trong AI Adoption Stack là Capability Shock, trả lời câu hỏi: AI mới làm được gì? Đường cong chi phí thay đổi thế nào dưới áp lực và sự tưởng tượng.",
+      "hints": [
+        "Đây là phản ứng đầu tiên của thị trường khi các mô hình lớn ra mắt.",
+        "Nói về cú sốc năng lực công nghệ và sự thay đổi về chi phí tính toán.",
+        "Tìm đáp án bắt đầu bằng cụm từ 'Capability Shock'."
+      ],
+      "concepts": [
+        "d23-t1-change-adoption"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Trong AI Adoption Stack, triết lý chia việc giữa người và AI ('Task Design') gắn liền với tác giả nào?",
+      "options": {
+        "A": "Blue (Chuyên gia từ FPT Long Châu).",
+        "B": "Gartner (Bản đồ AI Maturity Model).",
+        "C": "Ethan Mollick (Giáo sư đại học Wharton).",
+        "D": "Prosci (Tác giả của ADKAR Framework)."
+      },
+      "answer": "C",
+      "explanation": "Triết lý chia việc (Task Design) gắn liền với giáo sư Ethan Mollick (Wharton), đặt câu hỏi việc nào giữ cho người, việc nào giao cho AI.",
+      "hints": [
+        "Nghĩ về giáo sư nổi tiếng thường viết về cách cộng tác với AI.",
+        "Tên của ông được nhắc đến trong các slide bài giảng phần chia việc.",
+        "Tìm đáp án có chứa tên 'Ethan Mollick'."
+      ],
+      "concepts": [
+        "d23-t1-change-adoption"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Khi chẩn đoán điểm nghẽn người dùng bằng lăng kính ADKAR, sự thiếu hụt tài liệu hướng dẫn hay kỹ năng thao tác thuộc về điểm nghẽn (Barrier Point) nào?",
+      "options": {
+        "A": "Awareness (Nhận thức).",
+        "B": "Desire (Mong muốn).",
+        "C": "Knowledge (Kiến thức).",
+        "D": "Ability (Khả năng)."
+      },
+      "answer": "D",
+      "explanation": "Thiếu tài liệu hướng dẫn hoặc kỹ năng thực hành thuộc về điểm nghẽn Ability (Khả năng thực hiện công việc). Knowledge thường là hiểu về lý thuyết.",
+      "hints": [
+        "Phân biệt giữa biết cách làm (Knowledge) và thực sự có khả năng thực hiện (Ability).",
+        "Tài liệu hướng dẫn trực tiếp giúp người dùng vượt qua rào cản hành động.",
+        "Đáp án chính xác là Ability (Khả năng)."
+      ],
+      "concepts": [
+        "d23-t1-change-adoption"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Trong quá trình rollout AI, 'Normalization' được định nghĩa là trạng thái nào của công nghệ trong doanh nghiệp?",
+      "options": {
+        "A": "AI trở thành cách làm việc mặc định và không còn ai bàn tán về nó.",
+        "B": "Mọi nhân viên đều được cấp tài khoản ChatGPT Enterprise có phân quyền.",
+        "C": "Dự án hoàn tất đánh giá Red-team và chuyển giao sang cho đội ngũ IT.",
+        "D": "Doanh nghiệp thu hồi hoàn toàn vốn đầu tư ban đầu từ các giải pháp."
+      },
+      "answer": "A",
+      "explanation": "Normalization (bình thường hóa) xảy ra khi công nghệ trở nên vô hình, trở thành cách làm việc mặc định và không ai còn bàn tán về nó như một thứ mới lạ.",
+      "hints": [
+        "Nghĩ về ý nghĩa của từ 'bình thường hóa' trong vận hành thực tế.",
+        "Khi một công cụ trở nên quá quen thuộc đến mức mặc định.",
+        "Tìm phương án mô tả AI trở thành cách làm việc mặc định."
+      ],
+      "concepts": [
+        "d23-t1-change-adoption"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Điểm kẹt nào sau đây trong lăng kính 'Trust / Quality' trực tiếp cản trở nhân viên sử dụng AI lâu dài?",
+      "options": {
+        "A": "Doanh nghiệp quyết định không cấp thêm ngân sách cho việc chi trả mua license ChatGPT.",
+        "B": "Người dùng không tin tưởng kết quả đầu ra hoặc không biết xử lý khi AI sai.",
+        "C": "Hệ thống SSO của công ty liên tục gặp sự cố bảo mật trong lúc vận hành.",
+        "D": "Bản mô tả công việc (JD) của nhân viên chưa bổ sung kỹ năng viết prompt."
+      },
+      "answer": "B",
+      "explanation": "Lăng kính Trust/Quality chẩn đoán niềm tin: người dùng có tin output không và khi AI sai thì xử lý thế nào. Nếu không tin hoặc sợ sai không biết sửa, họ sẽ không dùng.",
+      "hints": [
+        "Lăng kính này tập trung vào độ tin cậy của output và tính an toàn của hệ thống.",
+        "Nỗi sợ của người dùng khi phải chịu trách nhiệm về kết quả sai của AI.",
+        "Đáp án chỉ ra việc người dùng không tin output hoặc không biết xử lý khi AI sai."
+      ],
+      "concepts": [
+        "d23-t1-change-adoption"
+      ]
+    }
+  ]
+}

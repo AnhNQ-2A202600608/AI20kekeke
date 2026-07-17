@@ -1,0 +1,210 @@
+{
+  "id": "day24-t1-basics",
+  "parent_id": "day24-ai-product",
+  "topic_title": "Day 24: Responsible AI",
+  "title": "Phần 1: Khái Niệm Responsible AI & 6 Câu Hỏi Trước Khi Launch",
+  "description": "Đánh giá kiến thức nền tảng về đạo đức AI vs Responsible AI vs safety evaluation, 5 cách hiểu về AI an toàn và 6 câu hỏi trước khi ra mắt chatbot.",
+  "difficulty": "dễ",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Trong ba khái niệm cốt lõi của an toàn AI, sự khác biệt giữa 'AI Ethics' và 'Responsible AI' là gì?",
+      "options": {
+        "A": "AI Ethics là lớp giá trị cốt lõi, còn Responsible AI là quy trình vận hành và kiểm tra thực tế.",
+        "B": "AI Ethics chạy trên các máy chủ đám mây, còn Responsible AI chạy cục bộ trên thiết bị di động.",
+        "C": "AI Ethics là việc viết code prompt, còn Responsible AI là việc mã hóa dữ liệu cơ sở dữ liệu.",
+        "D": "AI Ethics là tiêu chuẩn dành cho kỹ sư, còn Responsible AI chỉ dành cho nhà đầu tư tài chính."
+      },
+      "answer": "A",
+      "explanation": "Theo tài liệu bài giảng, AI Ethics trả lời câu hỏi 'AI nên hay không nên làm gì' (lớp giá trị), còn Responsible AI là việc biến các giá trị đó thành quy trình, review và người chịu trách nhiệm vận hành thực tế.",
+      "hints": [
+        "Nghĩ về sự khác biệt giữa các nguyên lý đạo đức (ethics) và việc thực thi, quản trị quy trình (responsibility).",
+        "Một bên đưa ra lý do, một bên đưa ra mục tiêu vận hành thực tế.",
+        "Đáp án chỉ ra AI Ethics là lớp giá trị, còn Responsible AI là quy trình vận hành."
+      ],
+      "concepts": [
+        "d24-t1-responsible-ai"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Định nghĩa về AI Safety của Helen Toner (Georgetown CSET) nhấn mạnh điểm nào sau đây là quan trọng nhất?",
+      "options": {
+        "A": "Hệ thống AI phải được xây dựng hoàn toàn từ các mô hình mã nguồn mở như Llama.",
+        "B": "Hệ thống AI vận hành một cách đáng tin cậy, không đơn thuần chỉ là bảo mật kỹ thuật.",
+        "C": "Hệ thống AI có khả năng tự động sửa lỗi code mà không cần kỹ sư con người can thiệp.",
+        "D": "Hệ thống AI phải có chi phí vận hành API rẻ nhất trên các hạ tầng điện toán đám mây."
+      },
+      "answer": "B",
+      "explanation": "Định nghĩa của Helen Toner nhấn mạnh an toàn AI là sự vận hành đáng tin cậy (reliable operation), vì tường lửa hay mã hóa kỹ thuật thông thường không giải quyết được các lỗi logic như hallucination hay over-reliance.",
+      "hints": [
+        "An toàn AI rộng hơn nhiều so với bảo mật thông tin truyền thống (security).",
+        "Nó bao hàm cả việc tránh các lỗi logic và ảo giác của mô hình trong bối cảnh thực tế.",
+        "Đáp án chỉ ra hệ thống vận hành đáng tin cậy, không chỉ là bảo mật kỹ thuật."
+      ],
+      "concepts": [
+        "d24-t1-responsible-ai"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Tại sao việc một mô hình làm 'đúng ý người dùng' (intended use) vẫn chưa đủ để khẳng định hệ thống đó an toàn?",
+      "options": {
+        "A": "Vì người dùng không có tài khoản đăng nhập chính thức vào hệ thống.",
+        "B": "Vì mô hình chỉ chạy được trên CPU chứ không chạy được trên GPU.",
+        "C": "Vì ý định của người dùng có thể là hành vi thao túng giá bán.",
+        "D": "Vì hệ thống không hỗ trợ tự động dịch thuật kết quả sang tiếng Việt."
+      },
+      "answer": "C",
+      "explanation": "intended use chưa đủ vì mục đích của người dùng hoặc công ty có thể gây hại (ví dụ: chatbot thao túng giá đối với khách hàng đang hưng phấn). Đo đó, safety phải đánh giá trong bối cảnh sử dụng (context).",
+      "hints": [
+        "Hãy nghĩ về ví dụ một sàn thương mại điện tử dùng AI để tự động điều chỉnh giá.",
+        "Mô hình hoàn thành nhiệm vụ của doanh nghiệp nhưng người mua bị thao túng.",
+        "Đáp án chỉ ra ý định của người dùng có thể là lừa đảo hoặc thao túng giá bán."
+      ],
+      "concepts": [
+        "d24-t1-responsible-ai"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Trong vụ kiện nổi tiếng Moffatt v. Air Canada (2024), phán quyết của tòa án rút ra bài học pháp lý nào cho các doanh nghiệp triển khai AI?",
+      "options": {
+        "A": "Hãng bay không phải chịu trách nhiệm nếu khách hàng không chụp lại màn hình bot.",
+        "B": "Mô hình LLM phải tự chịu trách nhiệm pháp lý độc lập trước tòa án y khoa.",
+        "C": "Hãng bay được miễn trách nhiệm vì thông tin chính thức đã có sẵn trên website.",
+        "D": "Doanh nghiệp phải chịu trách nhiệm cho mọi thông tin do chatbot của mình sinh ra."
+      },
+      "answer": "D",
+      "explanation": "Tòa án phán quyết rằng chatbot là một phần của website Air Canada, doanh nghiệp phải chịu trách nhiệm đối với các thông tin sai lệch do chatbot sinh ra và phải đền bù thiệt hại cho khách hàng.",
+      "hints": [
+        "Hãy nghĩ về việc ai chịu trách nhiệm giải trình cho sản phẩm của doanh nghiệp.",
+        "Air Canada lập luận bot là một thực thể độc lập nhưng tòa không đồng ý.",
+        "Đáp án là doanh nghiệp phải chịu trách nhiệm cho mọi thông tin do chatbot sinh ra."
+      ],
+      "concepts": [
+        "d24-t1-responsible-ai"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Câu hỏi số 2 trong '6 câu hỏi trước khi ra mắt' chatbot nhằm giải quyết điểm yếu nào của hệ thống AI?",
+      "options": {
+        "A": "Chatbot sẽ ứng xử ra sao khi gặp câu hỏi không biết câu trả lời.",
+        "B": "Chatbot có được bảo vệ bằng tường lửa và mã hóa dữ liệu SSL không.",
+        "C": "Hệ thống có chạy mượt mà trên các thiết bị di động Android cũ không.",
+        "D": "Chi phí gọi API của mô hình có vượt quá ngân sách của dự án không."
+      },
+      "answer": "A",
+      "explanation": "Câu hỏi 2: 'Khi không biết thì sao?' nhằm giải quyết lỗi chatbot tự tin bịa câu trả lời (hallucination) thay vì nói không biết, dẫn nguồn tài liệu hoặc chuyển cho nhân viên con người hỗ trợ.",
+      "hints": [
+        "Liên quan đến phản ứng của chatbot khi không tìm thấy thông tin phù hợp trong dữ liệu.",
+        "Tránh việc bot trả lời sai lệch một cách quá tự tin như trường hợp Air Canada.",
+        "Đáp án là chatbot sẽ ứng xử ra sao khi gặp câu hỏi không biết câu trả lời."
+      ],
+      "concepts": [
+        "d24-t1-responsible-ai"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Câu hỏi số 5 trong '6 câu hỏi trước khi ra mắt' đề cập đến yếu tố vận hành thiết yếu nào?",
+      "options": {
+        "A": "Cơ chế tự động nhân bản dữ liệu sang máy chủ dự phòng.",
+        "B": "Đường truyền và quy trình chuyển giao sang nhân viên người thật.",
+        "C": "Kế hoạch nâng cấp phiên bản phần cứng của máy chủ GPU.",
+        "D": "Chiến lược tiếp thị và quảng bá sản phẩm đến người dùng."
+      },
+      "answer": "B",
+      "explanation": "Câu hỏi 5: 'Có đường chuyển người thật không?' đề cập đến thiết lập cơ chế chuyển cấp (escalation) rõ ràng khi chatbot gặp trường hợp nhạy cảm hoặc các ngoại lệ cần con người xử lý.",
+      "hints": [
+        "Đây là khía cạnh thiết kế Human-in-the-loop để bổ cứu giới hạn của AI.",
+        "Tránh việc AI cố gắng giải quyết các trường hợp ngoài khả năng gây hậu quả nghiêm trọng.",
+        "Đáp án chính xác là đường truyền và quy trình chuyển giao sang nhân viên người thật."
+      ],
+      "concepts": [
+        "d24-t1-responsible-ai"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Một lỗi hệ thống AI ở tầng Giao diện (UI) thường dẫn đến hiện tượng tâm lý tiêu cực nào ở người dùng?",
+      "options": {
+        "A": "Người dùng lập tức xóa bỏ ứng dụng vì giao diện không đẹp mắt.",
+        "B": "Hệ thống gặp lỗi kết nối mạng internet do UI quá nặng nề.",
+        "C": "Người dùng tin tưởng tuyệt đối vào output của AI mà không kiểm chứng.",
+        "D": "Nhân viên DevOps không thể ghi log các yêu cầu của khách hàng."
+      },
+      "answer": "C",
+      "explanation": "Khi giao diện UI thiếu các cảnh báo về độ không chắc chắn (uncertainty indicators), người dùng dễ rơi vào hiện tượng Over-reliance (tin AI quá mức), chấp nhận kết quả sai của AI như thông tin chính thức.",
+      "hints": [
+        "Liên quan đến niềm tin mù quáng vào các phản hồi trông rất tự tin của LLM.",
+        "Đây là lỗi thiết kế giao diện không signpost rõ bản chất thử nghiệm của AI.",
+        "Đáp án là người dùng tin tưởng tuyệt đối vào output của AI mà không kiểm chứng."
+      ],
+      "concepts": [
+        "d24-t1-responsible-ai"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Tại sao việc đánh giá an toàn AI phải là một vòng lặp liên tục (Iterative Eval Loop) chứ không phải đánh giá một lần trước khi launch?",
+      "options": {
+        "A": "Vì các quy định pháp lý về bảo mật dữ liệu thay đổi mỗi tuần.",
+        "B": "Vì chi phí thuê máy chủ GPU liên tục tăng giảm theo thị trường.",
+        "C": "Vì người dùng không muốn sử dụng các chatbot không được cập nhật UI.",
+        "D": "Vì người dùng thật sẽ liên tục tạo ra các tình huống lỗi mới chưa dự tính."
+      },
+      "answer": "D",
+      "explanation": "Đánh giá an toàn là một vòng lặp liên tục vì khi ra mắt thực tế, người dùng sẽ kích hoạt các failure modes mới. Đội ngũ cần red-team, thu thập các case lỗi này để liên tục mở rộng bộ kiểm thử (test set) và cải thiện prompt/guardrails.",
+      "hints": [
+        "Nghĩ về tính bất định của tương tác người dùng trong thế giới thực.",
+        "Sau launch, các logs thực tế sẽ hé lộ các góc tối (failure clusters) mà lab test bỏ sót.",
+        "Đáp án là vì người dùng thật sẽ liên tục tạo ra các tình huống lỗi mới."
+      ],
+      "concepts": [
+        "d24-t1-responsible-ai"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Chỉ số nào trong 5 cách hiểu phổ biến về AI an toàn đo lường khả năng tránh bịa đặt thông tin của mô hình?",
+      "options": {
+        "A": "Factual consistency.",
+        "B": "System transparency.",
+        "C": "Model fairness.",
+        "D": "Corporate accountability."
+      },
+      "answer": "A",
+      "explanation": "Factual consistency (sự nhất quán thực tế) đo lường khả năng mô hình trả lời chính xác, tránh bịa đặt thông tin (hallucination) dựa trên ngữ cảnh được cung cấp.",
+      "hints": [
+        "Chỉ số này liên quan mật thiết đến tính đúng đắn của dữ kiện thực tế.",
+        "Nó dịch ra tiếng Việt là 'nhất quán dữ kiện'.",
+        "Đáp án chính xác là Factual consistency."
+      ],
+      "concepts": [
+        "d24-t1-responsible-ai"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Theo Helen Toner, tường lửa và mã hóa dữ liệu (security) không thể giải quyết được lỗi nào sau đây của GenAI?",
+      "options": {
+        "A": "Lỗi ngắt kết nối mạng từ client lên server.",
+        "B": "Lỗi ảo giác và thiên lệch thông tin của mô hình.",
+        "C": "Lỗi cạn kiệt bộ nhớ VRAM của GPU máy chủ.",
+        "D": "Lỗi sai cú pháp tệp cấu hình YAML của Kubernetes."
+      },
+      "answer": "B",
+      "explanation": "Helen Toner chỉ ra an toàn không chỉ là security; tường lửa và mã hóa không thể ngăn chặn các lỗi thuộc về bản chất mô hình như ảo giác (hallucination) hay thiên lệch (bias).",
+      "hints": [
+        "Đây là các lỗi logic nội dung do mô hình sinh chữ tạo ra.",
+        "Bảo mật mạng chỉ bảo vệ hạ tầng, không bảo vệ được chất lượng nội dung sinh ra.",
+        "Đáp án chỉ ra lỗi ảo giác và thiên lệch thông tin của mô hình."
+      ],
+      "concepts": [
+        "d24-t1-responsible-ai"
+      ]
+    }
+  ]
+}

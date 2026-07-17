@@ -1,0 +1,210 @@
+{
+  "id": "day26-t2-basics",
+  "parent_id": "day26-rag-data",
+  "topic_title": "Day 26: MCP & A2A Infrastructure",
+  "title": "Phần 1: Kiến Trúc MCP Transports & Các Hướng Thiết Kế Routing",
+  "description": "Đánh giá kiến thức cơ bản về các giao thức truyền tải MCP (stdio, SSE, WebSockets) và so sánh mô hình Orchestrator-Worker vs Choreography.",
+  "difficulty": "dễ",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Mục tiêu hàng đầu của giao thức Model Context Protocol (MCP) được phát triển bởi Anthropic là gì?",
+      "options": {
+        "A": "Tăng cường dung lượng bộ nhớ VRAM vật lý của card đồ họa khi chạy model.",
+        "B": "Chuẩn hóa giao tiếp giữa LLM clients và các nguồn dữ liệu hoặc công cụ.",
+        "C": "Mã hóa toàn bộ mã nguồn của các chatbot tự trị trước khi đẩy lên Git.",
+        "D": "Tự động dịch các câu lệnh prompt từ tiếng Việt sang các ngôn ngữ khác."
+      },
+      "answer": "B",
+      "explanation": "MCP là giao thức mở giúp chuẩn hóa cách thức các mô hình ngôn ngữ lớn (LLM) kết nối và tương tác với các công cụ (Tools), nguồn dữ liệu (Resources), và biểu mẫu (Prompts), loại bỏ việc viết adapter riêng cho mỗi model.",
+      "hints": [
+        "Nghĩ về cổng kết nối USB-C chuẩn hóa cho mọi thiết bị ngoại vi.",
+        "Tránh việc mỗi nhà cung cấp mô hình tự định nghĩa định dạng gọi tool riêng.",
+        "Đáp án chính xác là chuẩn hóa giao tiếp giữa LLM clients và các nguồn dữ liệu hoặc công cụ."
+      ],
+      "concepts": [
+        "d26-t2-mcp-a2a-infra"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Sự khác biệt cốt lõi về môi trường hoạt động giữa hai cơ chế truyền tải stdio và HTTP+SSE trong giao thức MCP là gì?",
+      "options": {
+        "A": "stdio dùng cho subprocess nội bộ, còn HTTP+SSE dùng cho kết nối từ xa.",
+        "B": "stdio chỉ truyền file hình ảnh, còn HTTP+SSE chỉ truyền được file text.",
+        "C": "stdio yêu cầu mạng internet không dây, còn HTTP+SSE hoạt động offline.",
+        "D": "stdio tốn nhiều chi phí token hơn gấp mười lần so với dùng HTTP+SSE."
+      },
+      "answer": "A",
+      "explanation": "stdio transport khởi chạy MCP server như một tiến trình con (subprocess) của client trên cùng một máy (local), có độ trễ cực thấp. HTTP+SSE (Server-Sent Events) là transport remote qua giao thức web, phù hợp cho môi trường production phân tán.",
+      "hints": [
+        "Nghĩ về sự khác biệt giữa giao tiếp liên tiến trình (IPC) và giao tiếp qua mạng internet.",
+        "stdio viết tắt của Standard Input/Output, chạy trực tiếp trên luồng hệ điều hành nội bộ.",
+        "Đáp án chính xác là stdio dùng cho subprocess nội bộ, còn HTTP+SSE dùng cho kết nối từ xa."
+      ],
+      "concepts": [
+        "d26-t2-mcp-a2a-infra"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Đặc điểm nổi bật nhất của mô hình điều phối đa tác nhân dạng Orchestrator-Worker (Nhạc trưởng - Thợ phụ) là gì?",
+      "options": {
+        "A": "Các tác nhân tự giao tiếp chéo và không cần bất kỳ sự kiểm soát nào.",
+        "B": "Hệ thống tự động phân rã mã nguồn thành các vi dịch vụ chạy độc lập.",
+        "C": "Mỗi tác nhân thợ phụ tự quản lý một database lưu trữ checkpoints riêng.",
+        "D": "Một tác nhân trung tâm điều phối, phân chia tác vụ và tổng hợp kết quả."
+      },
+      "answer": "D",
+      "explanation": "Trong mô hình Orchestrator-Worker, tác nhân Orchestrator (Nhạc trưởng) giữ vai trò trung tâm, quản lý State của luồng làm việc, trực tiếp ra lệnh cho các Worker chuyên biệt thực thi nhiệm vụ và thu hồi kết quả để đưa ra quyết định tiếp theo.",
+      "hints": [
+        "Nghĩ về hình ảnh một người nhạc trưởng điều khiển cả dàn nhạc giao hưởng.",
+        "Mô hình này giúp theo dõi và kiểm soát luồng di chuyển trạng thái vô cùng dễ dàng.",
+        "Đáp án chính xác là một tác nhân trung tâm điều phối, phân chia tác vụ và tổng hợp kết quả."
+      ],
+      "concepts": [
+        "d26-t2-mcp-a2a-infra"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Tại sao mô hình Choreography (Biểu diễn phi tập trung) lại khó gỡ lỗi (debug) và giám sát hơn rất nhiều so với Orchestrator-Worker?",
+      "options": {
+        "A": "Vì Choreography yêu cầu cấu hình các hệ thống máy chủ GPU lớn để chạy.",
+        "B": "Vì Choreography chỉ hỗ trợ chạy mã nguồn bằng các ngôn ngữ biên dịch.",
+        "C": "Vì luồng điều khiển phi tập trung, các agent tự tương tác qua sự kiện.",
+        "D": "Vì Choreography giới hạn số lượng tin nhắn hội thoại tối đa của user."
+      },
+      "answer": "C",
+      "explanation": "Choreography không có bộ não trung tâm. Các Agent tự phản ứng và gửi tin nhắn cho nhau dựa trên các sự kiện (event-driven). Khi có lỗi xảy ra, việc truy vết vết lỗi (trace) di chuyển qua lại giữa nhiều agent độc lập là cực kỳ phức tạp.",
+      "hints": [
+        "Nghĩ về việc điều tra một vụ tai nạn giao thông trên ngã tư không có đèn tín hiệu điều phối.",
+        "Mỗi agent tự đưa ra quyết định bước tiếp theo dựa trên các tin nhắn nhận được ngẫu nhiên.",
+        "Đáp án chính xác là vì luồng điều khiển phi tập trung, các agent tự tương tác qua sự kiện."
+      ],
+      "concepts": [
+        "d26-t2-mcp-a2a-infra"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Tại sao việc thiết kế MCP Server theo kiến trúc stateless (không lưu trạng thái) lại được khuyến nghị trong thực tế vận hành?",
+      "options": {
+        "A": "Để mô hình ngôn ngữ lớn LLM không bao giờ bị quên chỉ thị hệ thống.",
+        "B": "Để dễ dàng scale bằng cách tăng số lượng workers chạy song song phía sau.",
+        "C": "Để giảm thiểu tối đa kích thước lưu trữ của các tệp tin cấu hình đĩa.",
+        "D": "Để loại bỏ hoàn toàn các lỗi bảo mật liên quan đến quyền truy cập mạng."
+      },
+      "answer": "B",
+      "explanation": "Stateless MCP servers không giữ session state. Nhờ đó, ta có thể dễ dàng chạy nhiều worker instance đằng sau một bộ cân bằng tải (Load Balancer) để scale-out hệ thống mà không lo lắng về việc đồng bộ hóa dữ liệu bộ nhớ đệm.",
+      "hints": [
+        "Nghĩ về việc nhân bản các máy chủ web để gánh lượng tải truy cập khổng lồ từ người dùng.",
+        "Khi server không lưu biến cục bộ, request bất kỳ có thể gửi tới instance bất kỳ để xử lý.",
+        "Đáp án chính xác là để dễ dàng scale bằng cách tăng số lượng workers chạy song song."
+      ],
+      "concepts": [
+        "d26-t2-mcp-a2a-infra"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Trụ cột thông tin nào sau đây không thuộc ba nhóm tính năng cốt lõi được Model Context Protocol (MCP) định nghĩa cấu trúc?",
+      "options": {
+        "A": "Vectordb (Hạ tầng tìm kiếm vector ngữ nghĩa và lưu trữ cơ sở dữ liệu).",
+        "B": "Tools (Khả năng thực thi các hàm code hành động do LLM kích hoạt).",
+        "C": "Resources (Nguồn dữ liệu đầu vào tĩnh như tệp tin văn bản, tài liệu).",
+        "D": "Prompts (Các biểu mẫu câu lệnh thiết lập sẵn cho người dùng chọn)."
+      },
+      "answer": "A",
+      "explanation": "Ba trụ cột thông tin của MCP gồm: Resources (dữ liệu tĩnh), Prompts (mẫu câu lệnh), và Tools (hành động động). Vectordb là hạ tầng lưu trữ bên ngoài, không phải là một protocol primitive của MCP.",
+      "hints": [
+        "Tìm kiếm yếu tố nằm ở tầng công nghệ lưu trữ dữ liệu thay vì giao thức truyền thông điệp.",
+        "MCP tập trung chuẩn hóa cách LLM đọc dữ liệu, gọi hành động và nạp cấu hình prompt.",
+        "Đáp án chính xác là Vectordb."
+      ],
+      "concepts": [
+        "d26-t2-mcp-a2a-infra"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Trong môi trường Local Lab development (phòng thí nghiệm nội bộ), cơ chế transport nào của MCP được sử dụng mặc định do sự đơn giản?",
+      "options": {
+        "A": "Cơ chế HTTP REST API truyền tải dữ liệu qua cổng port mạng không dây.",
+        "B": "Cơ chế WebSocket streaming gửi nhận thông điệp thời gian thực liên tục qua mạng.",
+        "C": "Cơ chế stdio (Standard Input/Output) thực hiện kết nối trực tiếp qua luồng tiến trình.",
+        "D": "Cơ chế sao lưu đĩa vật lý để truyền tay nhau các file cấu hình."
+      },
+      "answer": "C",
+      "explanation": "stdio là transport mặc định và đơn giản nhất. Client (như Claude Desktop hoặc ADK) chỉ cần spawn tiến trình MCP server thông qua câu lệnh shell và giao tiếp trực tiếp qua stdin/stdout của tiến trình đó.",
+      "hints": [
+        "Đây là phương pháp giao tiếp liên tiến trình trực tiếp nhất trên cùng một máy tính.",
+        "Không yêu cầu phải khởi tạo các cổng port mạng hay lắng nghe kết nối TCP.",
+        "Đáp án chính xác là cơ chế stdio (Standard Input/Output) kết nối qua luồng tiến trình."
+      ],
+      "concepts": [
+        "d26-t2-mcp-a2a-infra"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Khi nào đội ngũ kỹ sư nên quyết định chuyển đổi MCP server transport từ stdio sang HTTP+SSE (Server-Sent Events)?",
+      "options": {
+        "A": "Khi mô hình ngôn ngữ lớn LLM bắt đầu xuất hiện các lỗi phản hồi chậm.",
+        "B": "Khi lập trình viên muốn viết code bằng ngôn ngữ Python thay vì JavaScript.",
+        "C": "Khi hệ thống chatbot yêu cầu giao diện UI phải hiển thị các biểu đồ 3D.",
+        "D": "Khi cần deploy MCP server trên máy chủ độc lập và scale cho nhiều client gọi."
+      },
+      "answer": "D",
+      "explanation": "HTTP+SSE là lựa chọn bắt buộc khi MCP server và client nằm ở các máy chủ vật lý khác nhau (môi trường đám mây phân tán), cho phép một MCP server phục vụ đồng thời nhiều client từ xa qua mạng internet.",
+      "hints": [
+        "Nghĩ về nhu cầu chia sẻ tài nguyên tính toán công cụ cho toàn mạng lưới doanh nghiệp.",
+        "Khi các dịch vụ không còn nằm chung trên một hệ điều hành máy tính cá nhân của lập trình viên.",
+        "Đáp án chính xác là khi cần deploy MCP server trên máy chủ độc lập và scale."
+      ],
+      "concepts": [
+        "d26-t2-mcp-a2a-infra"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Giao thức truyền tin A2A (Agent-to-Agent) đóng vai trò bổ sung như thế nào cho Model Context Protocol (MCP) trong hệ thống?",
+      "options": {
+        "A": "A2A chuẩn hóa thông điệp giữa các agent, còn MCP chuẩn hóa kết nối tools.",
+        "B": "A2A thay thế hoàn toàn MCP để thực hiện các cuộc gọi hàm code hành động.",
+        "C": "A2A tự động mã hóa toàn bộ dữ liệu database Supabase của các agents.",
+        "D": "A2A chỉ hoạt động trên hệ điều hành di động iOS chứ không chạy trên cloud."
+      },
+      "answer": "A",
+      "explanation": "MCP giải quyết câu chuyện LLM kết nối với tools/data. A2A Protocol giải quyết câu chuyện các tác nhân tự trị (Agents) nói chuyện, trao đổi thông tin, gửi yêu cầu và phối hợp hành động với nhau (Agent-to-Agent communication).",
+      "hints": [
+        "Phân biệt giữa việc gọi công cụ (tool calling) và việc hội thoại phối hợp giữa các trí tuệ nhân tạo.",
+        "A2A định nghĩa các trường dữ liệu như sender, receiver, conversation_id cho hội thoại chéo.",
+        "Đáp án chính xác là A2A chuẩn hóa thông điệp giữa các agent, còn MCP chuẩn hóa kết nối tools."
+      ],
+      "concepts": [
+        "d26-t2-mcp-a2a-infra"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Đâu là đặc trưng điển hình nhất của mô hình Choreography (Biểu diễn phi tập trung) trong phối hợp đa tác nhân?",
+      "options": {
+        "A": "Có một agent nhạc trưởng đứng ra chỉ định rõ ràng bước tiếp theo cho từng agent.",
+        "B": "Các tác nhân tự phản ứng dựa trên các thông điệp sự kiện đẩy lên hàng đợi chung.",
+        "C": "Tất cả các agents bắt buộc phải chia sẻ chung một vùng bộ nhớ RAM vật lý.",
+        "D": "Hệ thống tự động khởi động lại khi phát hiện có một agent gặp sự cố timeout."
+      },
+      "answer": "B",
+      "explanation": "Choreography giống như một điệu nhảy không có biên đạo. Mỗi vũ công (Agent) tự quan sát chuyển động của người bên cạnh (subscribing to events) để thực hiện bước nhảy tiếp theo của mình (publishing events) một cách độc lập.",
+      "hints": [
+        "Nghĩ về mô hình kiến trúc hướng sự kiện (Event-Driven Architecture) phi tập trung.",
+        "Không tồn tại bất kỳ chốt chặn chỉ huy trung tâm nào điều phối tuần tự công việc.",
+        "Đáp án chính xác là các tác nhân tự phản ứng dựa trên các thông điệp sự kiện."
+      ],
+      "concepts": [
+        "d26-t2-mcp-a2a-infra"
+      ]
+    }
+  ]
+}

@@ -1,70 +1,106 @@
-# ============================================================
-# VAIC AI Agent Starter Template — .gitignore
-# ============================================================
-
-# --- Python ---
+# Python
 __pycache__/
 *.py[cod]
-*$py.class
 *.so
 *.egg-info/
-*.egg
 dist/
 build/
 .eggs/
-*.whl
 
 # Virtual environments
-.venv/
 venv/
-ENV/
+.venv/
+env/
 
-# --- Node.js ---
-node_modules/
-.next/
-out/
-.turbo/
+# Environment variables
+.env
+.env.local
+.env.production
 
-# --- IDE ---
+# IDE
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
+
+# OS
 .DS_Store
 Thumbs.db
 
-# --- Environment ---
-.env
-.env.local
-.env.*.local
-
-# --- Database ---
+# Data (never commit large data)
 data/
+eval/data/
+*.zip
+*.tar.gz
+*.tgz
 *.db
-*.sqlite
 *.sqlite3
 
-# --- Logs ---
-*.log
+# Logs
 logs/
+*.log
 
-# --- Coverage ---
+# Test coverage
 htmlcov/
 .coverage
-.coverage.*
 coverage.xml
-*.cover
 
-# --- pytest ---
-.pytest_cache/
+# Docker
+docker-compose.override.yml
 
-# --- mypy ---
-.mypy_cache/
+# Node (frontend)
+node_modules/
+.next/
+out/
+.nuxt/
 
-# --- ruff ---
-.ruff_cache/
+# Build
+*.pyc
+*.pyo
 
-# --- OS ---
-Desktop.ini
-ehthumbs.db
+# Pipeline PDFs
+src/pipeline/data/pdf/
+
+# Local pipeline archive (exceeds GitHub's 100 MB file limit)
+/src/pipeline.rar
+
+# AI logs — tracked structure, ignored content
+.ai-log/*.jsonl
+.ai-log/archive/
+
+# Repomix outputs
+repomix-*.xml
+
+# Generated screenshots and visual test outputs
+outputs/
+
+# Local checklist
+CHECKLIST.md
+
+# Antigravity Kit (ag-kit) - Ignore all skills except notion-backlog-workflow
+.agents/skills/*
+.agents/agent/*
+.agents/memory/*
+.agents/rules/*
+.agents/scripts/*
+.agents/workflows/*
+.agents/ARCHITECTURE.md
+!.agents/skills/notion-backlog-workflow/
+
+# Supabase CLI temp files
+supabase/.temp/
+.temp/
+
+# TypeScript build info cache
+*.tsbuildinfo
+
+# Local Claude Code / Antigravity config & runtime
+.claude/
+/.agents/mcp_config.json
+
+# Fumadocs generated files
+frontend/.source/
+
+# Temp scratch folder
+scratch/

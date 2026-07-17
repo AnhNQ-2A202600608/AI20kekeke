@@ -1,0 +1,220 @@
+{
+  "id": "context-engineering-practice",
+  "parent_id": "day4",
+  "topic_title": "Day 4: Prompt Engineering & Tool Calling",
+  "title": "Phần 2: Context Engineering Thực Hành",
+  "description": "Kiểm tra cách quản lý token budget, context rot, JIT context, compaction, memory và kiến trúc sub-agent.",
+  "difficulty": "bình thường",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Context rot mô tả vấn đề nào trong hệ thống agent?",
+      "options": {
+        "A": "Ngữ cảnh bị nhiễu và loãng dần khi chứa quá nhiều dữ liệu rác hoặc không liên quan.",
+        "B": "Mô hình tự động mất khả năng gọi tool sau khi nhận nhiều system prompt hợp lệ.",
+        "C": "API xoá hoàn toàn lịch sử hội thoại ngay khi người dùng gửi thêm một tin nhắn mới.",
+        "D": "Tool result luôn bị chuyển thành mã độc nếu phản hồi có nhiều dòng văn bản."
+      },
+      "answer": "A",
+      "explanation": "Context rot xảy ra khi context phình to bởi noise, log thô hoặc thông tin lệch mục tiêu. Mô hình vẫn có context nhưng khó tập trung vào tín hiệu chính.",
+      "hints": [
+        "Hãy nghĩ về cách mà thông tin có thể bị mất đi hoặc không còn liên quan khi nó bị lấp đầy bởi những dữ liệu không cần thiết.",
+        "Bạn có thể xem xét sự ảnh hưởng của việc quá tải thông tin đến khả năng tập trung của mô hình như thế nào.",
+        "Có thể nào bạn đã từng gặp tình huống mà thông tin quan trọng bị che khuất bởi quá nhiều dữ liệu không cần thiết không?"
+      ],
+      "concepts": [
+        "d4-prompt-engineering",
+        "d3-agentic-react"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Trong tư duy context engineering, token budget nên được hiểu đúng như thế nào?",
+      "options": {
+        "A": "Không gian miễn phí nên lấp đầy bằng toàn bộ file, log và lịch sử hội thoại.",
+        "B": "Tài nguyên chú ý hữu hạn cần dùng cho token có tín hiệu cao nhất với task hiện tại.",
+        "C": "Giới hạn chỉ ảnh hưởng chi phí tiền, không ảnh hưởng độ chính xác hoặc hành vi chọn tool.",
+        "D": "Dung lượng chỉ dùng cho user prompt, không liên quan system prompt hoặc tool definition nào."
+      },
+      "answer": "B",
+      "explanation": "Token budget vừa ảnh hưởng chi phí vừa ảnh hưởng khả năng chú ý. Thiết kế tốt là chọn tập token nhỏ nhất nhưng đủ tín hiệu.",
+      "hints": [
+        "Hãy xem xét khái niệm về 'ngân sách' và tại sao nó lại quan trọng trong một mô hình AI.",
+        "Bạn có thể phân tích cách mà việc phân bổ tài nguyên chú ý ảnh hưởng đến kết quả của nhiệm vụ hiện tại.",
+        "Có những yếu tố nào bạn cần cân nhắc để tận dụng hiệu quả nhất ngân sách token của mình?"
+      ],
+      "concepts": [
+        "d4-prompt-engineering",
+        "d1-ai-llm-foundations"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Một agent cần sửa bug trong repo lớn. Cách JIT context nào phù hợp nhất?",
+      "options": {
+        "A": "Chỉ dựa vào tên file trong README và không đọc code thật để tiết kiệm token.",
+        "B": "Nạp toàn bộ repo vào context ngay từ đầu để tránh phải gọi tool nhiều lần.",
+        "C": "Bắt đầu từ path, glob, grep, đọc đoạn liên quan rồi mở rộng dần khi có bằng chứng.",
+        "D": "Yêu cầu người dùng dán toàn bộ mã nguồn vào prompt trước khi phân tích lỗi."
+      },
+      "answer": "C",
+      "explanation": "JIT context dùng progressive disclosure: bắt đầu nhẹ, lấy thêm dữ liệu khi cần. Cách này giống workflow glob/grep/read trong công cụ lập trình agentic.",
+      "hints": [
+        "Hãy nghĩ về việc tiếp cận một vấn đề phức tạp và cách bạn có thể dần dần mở rộng phạm vi thông tin.",
+        "Bạn có thể so sánh cách xử lý thông tin theo từng bước với việc đọc tài liệu hay mã nguồn như thế nào.",
+        "Có thể nào bạn đã từng thấy một chiến lược nào đó giúp tiết kiệm thời gian và năng lượng trong việc thu thập thông tin không?"
+      ],
+      "concepts": [
+        "d4-prompt-engineering",
+        "d3-agentic-react"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Kỹ thuật 'lost in the middle' gợi ý cách sắp xếp context nào?",
+      "options": {
+        "A": "Trộn instruction với raw logs để context tự nhiên hơn và giống hội thoại thật hơn.",
+        "B": "Đưa mọi policy quan trọng vào chính giữa context để mô hình phải tìm kiếm nhiều hơn.",
+        "C": "Xoá toàn bộ heading vì cấu trúc rõ ràng làm giảm khả năng tự suy luận của mô hình.",
+        "D": "Không chôn facts quan trọng giữa đoạn dài; dùng heading và nhắc lại format ở vị trí dễ chú ý."
+      },
+      "answer": "D",
+      "explanation": "Context dài không được dùng đều ở mọi vị trí. Heading, cấu trúc rõ và vị trí nổi bật giúp facts quan trọng dễ được mô hình dùng hơn.",
+      "hints": [
+        "Hãy suy nghĩ về cách mà tổ chức thông tin có thể ảnh hưởng đến khả năng hiểu của mô hình.",
+        "Bạn có thể xem xét sự quan trọng của việc sắp xếp thông tin trong một ngữ cảnh dài như thế nào để tối đa hóa khả năng chú ý.",
+        "Liệu có cách nào mà bạn có thể làm cho những thông tin quan trọng nổi bật hơn trong một khung cảnh dày đặc không?"
+      ],
+      "concepts": [
+        "d4-prompt-engineering",
+        "d2-ai-problem-framing"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Khi compaction lịch sử agent, thông tin nào cần giữ lại nhất?",
+      "options": {
+        "A": "Quyết định kiến trúc, constraints, file đã sửa, lỗi chưa giải quyết và câu hỏi còn mở.",
+        "B": "Toàn bộ raw terminal output, lời chào xã giao và các lần tool trả về dữ liệu trùng lặp.",
+        "C": "Chỉ giữ câu trả lời cuối cùng, bỏ hết nguồn và lý do để summary ngắn nhất có thể.",
+        "D": "Chỉ giữ user prompt đầu tiên vì các lượt sau luôn ít quan trọng hơn lượt mở đầu."
+      },
+      "answer": "A",
+      "explanation": "Compaction là lossy nên phải giữ state quan trọng cho task tiếp tục. Raw logs, lặp lại và noise nên bị drop hoặc archive ngoài context.",
+      "hints": [
+        "Hãy cân nhắc những thông tin nào là thiết yếu để duy trì sự tiếp nối trong một quá trình làm việc.",
+        "Bạn có thể phân tích cách mà việc giữ lại thông tin quan trọng có thể ảnh hưởng đến hiệu quả của nhiệm vụ trong tương lai.",
+        "Có thể có những thông tin nào mà bạn nghĩ là không cần thiết và có thể loại bỏ mà không làm mất đi khả năng làm việc của agent không?"
+      ],
+      "concepts": [
+        "d4-prompt-engineering",
+        "d1-ai-llm-foundations"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Agentic memory khác gì với việc giữ toàn bộ chat history trong context?",
+      "options": {
+        "A": "Nó nhân đôi toàn bộ lịch sử hội thoại vào prompt để tránh mất bất kỳ chi tiết nào.",
+        "B": "Nó ghi state có cấu trúc ra ngoài context và chỉ đọc lại phần cần thiết khi tiếp tục task.",
+        "C": "Nó thay thế validation vì mô hình đã nhớ mọi dữ kiện chính xác qua nhiều giờ.",
+        "D": "Nó chỉ phù hợp cho chatbot vui vẻ, không dùng trong task kỹ thuật dài hạn."
+      },
+      "answer": "B",
+      "explanation": "Agentic memory giúp agent giữ tiến trình lâu dài mà không phình context. Nó cần cấu trúc rõ, nguồn, constraint và câu hỏi còn mở.",
+      "hints": [
+        "Hãy xem xét sự khác biệt giữa việc ghi nhớ tất cả và việc giữ lại thông tin cần thiết cho một nhiệm vụ cụ thể.",
+        "Bạn có thể phân tích cách mà việc cấu trúc thông tin ra ngoài context giúp cải thiện hiệu quả làm việc của agent.",
+        "Có thể nào bạn đã từng gặp vấn đề khi phải xử lý quá nhiều thông tin trong một cuộc hội thoại không?"
+      ],
+      "concepts": [
+        "d4-prompt-engineering",
+        "d3-agentic-react"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Trong mô hình write/select/compress/isolate, bước 'select' có mục tiêu gì?",
+      "options": {
+        "A": "Mã hoá dữ liệu bằng delimiter để biến dữ liệu ngoài thành instruction đáng tin.",
+        "B": "Ghi mọi dữ liệu vào prompt để model tự quyết định phần nào cần bỏ qua.",
+        "C": "Chỉ lấy thông tin liên quan trực tiếp đến task hiện tại thay vì nhồi toàn bộ nguồn.",
+        "D": "Xoá toàn bộ lịch sử trước đó kể cả quyết định và constraint chưa được giải quyết."
+      },
+      "answer": "C",
+      "explanation": "Select giảm nhiễu bằng cách chọn đúng dữ liệu cần cho lượt xử lý. Nó đi cùng write, compress và isolate để kiểm soát context rot.",
+      "hints": [
+        "Hãy nghĩ về mục đích của từng bước trong quy trình write/select/compress/isolate.",
+        "Bạn có thể xem xét cách mà việc chọn lọc thông tin liên quan có thể giúp giảm thiểu noise trong quá trình xử lý.",
+        "Liệu có những cách nào khác mà bạn có thể sử dụng để đảm bảo chỉ giữ lại thông tin cần thiết không?"
+      ],
+      "concepts": [
+        "d4-prompt-engineering",
+        "d2-ai-problem-framing"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Khi nào nên dùng sub-agent thay vì để lead agent tự đọc mọi thứ?",
+      "options": {
+        "A": "Khi task đơn giản một bước và chi phí orchestration lớn hơn lợi ích nhận được.",
+        "B": "Khi muốn mọi agent cùng sửa một file để tăng tốc độ hoàn thành công việc.",
+        "C": "Khi muốn lead agent không cần biết kế hoạch tổng thể và bỏ qua điều phối.",
+        "D": "Khi cần tìm kiếm sâu trong vùng riêng nhưng chỉ trả lại kết luận gọn cho lead agent."
+      },
+      "answer": "D",
+      "explanation": "Sub-agent giúp cô lập context và giảm pollution cho lead agent. Lead giữ kế hoạch, sub-agent xử lý vùng sâu rồi báo cáo ngắn.",
+      "hints": [
+        "Hãy cân nhắc tình huống nào mà việc chia sẻ công việc giữa các agent có thể mang lại lợi ích lớn hơn.",
+        "Bạn có thể phân tích cách mà việc sử dụng sub-agent giúp tăng hiệu quả trong một nhiệm vụ phức tạp.",
+        "Có phải bạn cũng đã từng thấy rằng việc chia sẻ công việc có thể làm giảm khối lượng công việc cho một agent không?"
+      ],
+      "concepts": [
+        "d4-prompt-engineering",
+        "d3-agentic-react"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Một tool trả về log 20.000 dòng cho agent. Cách đưa result lại vào context nào tốt nhất?",
+      "options": {
+        "A": "Trích xuất lỗi, nguồn, timestamp, đoạn liên quan và summary; archive raw log ngoài context.",
+        "B": "Dán toàn bộ log vào tool_result để mô hình tự tìm mọi chi tiết có thể cần.",
+        "C": "Chỉ trả về dòng đầu tiên của log và coi phần còn lại là không liên quan.",
+        "D": "Chuyển log thành instruction mới để mô hình ưu tiên hơn system prompt hiện tại."
+      },
+      "answer": "A",
+      "explanation": "Tool result là context mới và cần được làm sạch. Raw log dài nên được parse, chọn lọc, nén và giữ nguồn để truy lại khi cần.",
+      "hints": [
+        "Hãy nghĩ về cách mà thông tin từ một tool có thể được xử lý để phù hợp với ngữ cảnh của nhiệm vụ.",
+        "Bạn có thể phân tích cách mà việc chọn lọc và tóm tắt thông tin từ một log dài có thể tiết kiệm thời gian cho agent.",
+        "Liệu có cách nào bạn có thể làm cho thông tin trở nên dễ tiêu hóa hơn mà không làm mất đi giá trị của nó không?"
+      ],
+      "concepts": [
+        "d4-prompt-engineering",
+        "d2-ai-problem-framing"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Hybrid context strategy phù hợp với trường hợp nào?",
+      "options": {
+        "A": "Nạp trước mọi dữ liệu biến động để tránh agent phải kiểm tra nguồn hiện tại.",
+        "B": "Nạp trước tài liệu định hướng ổn định, còn dữ liệu lớn hoặc biến động để agent tìm JIT.",
+        "C": "Không nạp bất cứ instruction nào và chỉ cho agent tự suy ra policy từ file ngoài.",
+        "D": "Chỉ dùng vector search, không cho agent mở rộng context bằng công cụ đọc cụ thể."
+      },
+      "answer": "B",
+      "explanation": "Hybrid strategy dùng nền tảng ổn định như tài liệu định hướng, còn phần lớn dữ liệu được khám phá khi cần. Cách này cân bằng định hướng và token cost.",
+      "hints": [
+        "Hãy suy nghĩ về cách mà việc nạp dữ liệu ổn định và dữ liệu biến động có thể hoạt động cùng nhau.",
+        "Bạn có thể xem xét tầm quan trọng của việc tìm kiếm thông tin theo yêu cầu trong khi vẫn giữ lại các tài liệu hướng dẫn.",
+        "Có thể nào bạn đã từng thấy trường hợp nào mà sự kết hợp giữa hai cách tiếp cận này mang lại hiệu quả tốt hơn không?"
+      ],
+      "concepts": [
+        "d4-prompt-engineering",
+        "d1-ai-llm-foundations"
+      ]
+    }
+  ]
+}

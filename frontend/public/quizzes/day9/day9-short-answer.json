@@ -1,0 +1,136 @@
+{
+  "id": "day9-short-answer",
+  "parent_id": "day9",
+  "topic_title": "Day 9: Multi-Agent & Kết Nối Hệ Thống",
+  "title": "Tự Luận: Multi-Agent & Kết Nối Hệ Thống Thực Chiến",
+  "description": "Câu hỏi tự luận ngắn theo SFIA-lite, tập trung vào thiết kế Supervisor-Worker, ranh giới an toàn MCP và tối ưu hóa hệ thống.",
+  "difficulty": "khó",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Một trợ lý hỗ trợ khách hàng của ngân hàng sử dụng Single-Agent để đọc một tài liệu điều khoản dài 100 trang (~50,000 tokens), gọi tool tra cứu lịch sử giao dịch và trả lời câu hỏi. Khi khách hàng hỏi về một điều khoản hoàn tiền cụ thể nằm ở chương giữa của tài liệu, agent liên tục trả lời sai hoặc gọi tool với tham số trống. Hãy chẩn đoán nguyên nhân kỹ thuật và đề xuất giải pháp cải tiến kiến trúc.",
+      "expected_answer": "Nguyên nhân do hiện tượng 'Lost-in-the-Middle' và 'Context Bottleneck' khi cửa sổ ngữ cảnh bị chiếm dụng quá nhiều bởi tài liệu dài và lịch sử hội thoại. Giải pháp: Chuyển đổi sang kiến trúc Multi-Agent. Tách nhỏ tài liệu thành các chunk nhỏ hơn và sử dụng một Retrieval Worker chuyên biệt để tìm kiếm các đoạn liên quan nhất (RAG), sau đó chuyển kết quả cho Synthesis Worker để tạo câu trả lời, thay vì nạp toàn bộ tài liệu thô vào ngữ cảnh.",
+      "evaluation_points": [
+        "Nhận diện đúng hiện tượng Lost-in-the-Middle và Context Bottleneck do nhồi nhét quá nhiều thông tin vào một Agent đơn lẻ.",
+        "Đề xuất tách nhỏ trách nhiệm của hệ thống bằng kiến trúc Multi-Agent (Retrieval Worker và Synthesis Worker).",
+        "Đề xuất giải pháp RAG để lọc và chỉ đưa vào ngữ cảnh các đoạn tài liệu có độ tương đồng cao nhất thay vì nạp toàn bộ văn bản thô."
+      ],
+      "sfia_level": "SFIA L4",
+      "competency": "Diagnose context limitations and transition from God Agent to multi-agent architectures",
+      "hints": [
+        "Hãy xem xét cách mà một hệ thống có thể bị ảnh hưởng bởi lượng thông tin lớn trong ngữ cảnh. Điều gì xảy ra khi thông tin quá nhiều?",
+        "Bạn có thể nghĩ đến việc chia nhỏ tài liệu thành các phần nhỏ hơn để cải thiện khả năng xử lý của hệ thống. Liệu có cách nào để sử dụng nhiều agent thay vì chỉ một?",
+        "Hãy kiểm tra xem việc sử dụng một loại agent chuyên biệt cho từng nhiệm vụ có thể giúp giải quyết vấn đề như thế nào. Bạn có thể chỉ ra các yếu tố gây ra lỗi không?"
+      ],
+      "concepts": [
+        "d9-multi-agent-mcp",
+        "d4-tool-calling"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Doanh nghiệp muốn xây dựng hệ thống tự động kiểm tra chất lượng code (Code Review Agent). Hệ thống cần thực hiện 3 bước: (1) Quét lỗi bảo mật, (2) Đánh giá coding convention, và (3) Tổng hợp báo cáo gửi lập trình viên. Nếu thiết kế theo mô hình Supervisor-Worker sử dụng LangGraph, hãy thiết kế cấu trúc Graph (Node, Edge, Shared State) để xử lý tối ưu về latency và độ độc lập của tác vụ.",
+      "expected_answer": "Thiết kế Graph như sau: State chứa 'code_content', 'security_errors', 'convention_errors', 'final_report', và 'trace'. Nodes gồm: Supervisor Node, Security Worker Node, Convention Worker Node, và Synthesis Node. Edges: Supervisor định tuyến song song đến Security Worker và Convention Worker. Sau khi cả hai worker chạy xong (đầu ra ghi vào state độc lập), đồ thị hội tụ về Synthesis Node để tổng hợp báo cáo và kết thúc (END). Chạy song song giúp giảm latency hệ thống.",
+      "evaluation_points": [
+        "Thiết kế được Shared State chứa các trường dữ liệu độc lập cho từng worker ghi kết quả tránh xung đột (state pollution).",
+        "Định nghĩa rõ các Node chuyên biệt (Supervisor, Security Worker, Convention Worker, Synthesis Node).",
+        "Cấu hình luồng chạy song song (concurrency) giữa Security Worker và Convention Worker trước khi hội tụ về Synthesis Node để giảm latency."
+      ],
+      "sfia_level": "SFIA L4",
+      "competency": "Design Supervisor-Worker graphs and implement concurrent node execution in LangGraph",
+      "hints": [
+        "Hãy chú ý đến cách mà các tác vụ có thể được xử lý song song để tối ưu hóa thời gian. Bạn có thể nghĩ về cách tổ chức các bước trong quy trình.",
+        "Có thể bạn cần phân tích cách mà các node trong đồ thị có thể tương tác với nhau mà không gây xung đột. Điều này sẽ ảnh hưởng đến độ tin cậy và tính độc lập của các tác vụ.",
+        "Kiểm tra xem việc chia sẻ trạng thái giữa các node có thể dẫn đến tình trạng ô nhiễm trạng thái hay không. Làm thế nào bạn có thể thiết kế để tránh điều đó?"
+      ],
+      "concepts": [
+        "d9-multi-agent-mcp",
+        "d20-t2-model-serving"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Một lập trình viên đang xây dựng một ứng dụng MCP Client để kết nối với một MCP Server tự viết. Lập trình viên muốn Client tự động khám phá và thực thi một công cụ tra cứu thời tiết ngay khi kết nối được thiết lập mà không cần hard-code tên công cụ trong mã nguồn Client. Hãy mô tả quy trình Discovery Flow (handshake và trao đổi thông điệp JSON-RPC) giữa Client và Server để thực hiện điều này.",
+      "expected_answer": "Bước 1: Khởi tạo bắt tay (Handshake) kết nối qua Stdio/SSE. Bước 2: Client gọi 'tools/list'. Bước 3: Server trả về danh sách công cụ kèm JSON Schema mô tả chi tiết tên, tham số của tool thời tiết. Bước 4: Client đọc schema, trích xuất tham số và gọi 'tools/call' kèm arguments. Bước 5: Server thực thi công cụ và trả về kết quả JSON chuẩn hóa.",
+      "evaluation_points": [
+        "Mô tả đúng bước bắt tay (handshake) khởi tạo kết nối qua Stdio hoặc SSE.",
+        "Xác định chính xác method 'tools/list' dùng để truy vấn capabilities và schema từ server.",
+        "Xác định chính xác method 'tools/call' kèm theo arguments để thực thi tool và nhận kết quả JSON chuẩn hóa."
+      ],
+      "sfia_level": "SFIA L3",
+      "competency": "Implement dynamic discovery flows and JSON-RPC message exchange in MCP integrations",
+      "hints": [
+        "Bạn có thể hình dung một quy trình giao tiếp giữa hai hệ thống như một cuộc trò chuyện. Thao tác nào là cần thiết để bắt đầu cuộc trò chuyện này?",
+        "Khi một client muốn biết về các công cụ có sẵn từ server, điều gì sẽ xảy ra? Hãy nghĩ về cách mà client có thể truy vấn những thông tin đó.",
+        "Làm thế nào để client có thể thực thi một công cụ mà không cần biết trước tên của nó? Bạn có thể mô tả quy trình này một cách chi tiết hơn không?"
+      ],
+      "concepts": [
+        "d9-multi-agent-mcp",
+        "d4-prompt-engineering"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Trong một dự án AI Agent nội bộ, đội kỹ thuật tạo một MCP Server kết nối trực tiếp với Database PostgreSQL để Agent truy vấn dữ liệu dự án. Để Agent hoạt động linh hoạt, họ công bố một công cụ tên 'execute_query' nhận đầu vào là câu lệnh SQL thô ('query') và trả về kết quả trực tiếp từ Database. Hãy đánh giá rủi ro bảo mật của thiết kế này và đề xuất giải pháp thay thế an toàn hơn.",
+      "expected_answer": "Thiết kế này nguy hiểm vì vi phạm Trust Boundary. Agent có thể bị Prompt Injection dẫn đến chạy câu lệnh SQL độc hại (SQL Injection) gây rò rỉ hoặc mất dữ liệu. Giải pháp: MCP Server phải làm firewall. Chỉ cung cấp công cụ có API hẹp (như 'get_project_by_id' nhận 'project_id' kiểu integer), validate tham số chặt chẽ bằng Pydantic trên server và dùng prepared statements để truy vấn.",
+      "evaluation_points": [
+        "Nhận diện rủi ro bảo mật nghiêm trọng (SQL Injection / Prompt Injection) khi cho phép Agent chạy các câu lệnh SQL thô.",
+        "Phân tích nguyên lý vi phạm Trust Boundary giữa Agent (Client) và Database (thông qua Server).",
+        "Đề xuất giải pháp thay thế sử dụng các API có phạm vi hẹp, thực hiện validate tham số (như Pydantic) và prepared statements trên server."
+      ],
+      "sfia_level": "SFIA L4",
+      "competency": "Evaluate system security boundaries and design secure tool schemas for AI integrations",
+      "hints": [
+        "Hãy nghĩ về các rủi ro có thể xảy ra khi cho phép một agent thực hiện các lệnh mà không có sự kiểm soát. Điều gì có thể đi sai?",
+        "Có thể bạn cần xem xét các biện pháp bảo mật để bảo vệ dữ liệu. Làm thế nào để ngăn chặn việc thực thi các lệnh không mong muốn?",
+        "Điều gì sẽ xảy ra nếu bạn chỉ cho phép các lệnh nhất định? Bạn có thể nghĩ ra cách nào để giới hạn quyền truy cập không?"
+      ],
+      "concepts": [
+        "d9-multi-agent-mcp",
+        "d11-guardrails-safety"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Một ngân hàng số sử dụng một Multi-Agent System thiết kế trên LangGraph để hỗ trợ khách hàng thực hiện các giao dịch chuyển tiền nội bộ. Hãy chỉ ra điểm rủi ro lớn nhất nếu cho phép đồ thị chạy tự động hoàn toàn từ đầu đến cuối, và thiết kế cơ chế Human-in-the-Loop để kiểm soát rủi ro đó trong quá trình vận hành đồ thị.",
+      "expected_answer": "Rủi ro lớn nhất là giao dịch chuyển tiền không thể đảo ngược; nếu Agent bị Prompt Injection hoặc hiểu sai số tiền sẽ gây thiệt hại tài chính. Cơ chế kiểm soát: Sử dụng persistence (checkpointing) trong LangGraph và thiết lập 'interrupt_before' trước node thực thi. Khi đồ thị chạy đến node này, nó sẽ tạm dừng để khách hàng xác nhận qua OTP. Chỉ khi khách hàng duyệt, đồ thị mới tiếp tục thực hiện giao dịch.",
+      "evaluation_points": [
+        "Xác định rủi ro của hành động không thể đảo ngược (chuyển tiền sai, Prompt Injection) khi hệ thống hoạt động tự trị hoàn toàn.",
+        "Đề xuất sử dụng persistence (checkpointing) của LangGraph để lưu giữ trạng thái khi dừng đồ thị.",
+        "Thiết kế cơ chế Human-in-the-Loop dừng trước node thực thi rủi ro cao (interrupt_before) để yêu cầu phê duyệt từ người dùng/OTP."
+      ],
+      "sfia_level": "SFIA L5",
+      "competency": "Design safety-critical governance and human-in-the-loop checkpoints in agent workflows",
+      "hints": [
+        "Hãy xem xét những hậu quả có thể xảy ra khi một giao dịch không thể đảo ngược. Điều này tạo ra rủi ro gì cho cả khách hàng và ngân hàng?",
+        "Bạn có thể nghĩ đến cách nào để kết hợp kiểm soát của con người vào quy trình tự động? Điều này có thể giúp giảm thiểu rủi ro như thế nào?",
+        "Có thể có những điểm nào trong quy trình mà bạn muốn tạm dừng để xác nhận từ khách hàng? Bạn có thể chỉ ra chúng không?"
+      ],
+      "concepts": [
+        "d9-multi-agent-mcp",
+        "d21-t3-finetuning-lora"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Một start-up muốn xây dựng hệ thống tự động trả lời email hỗ trợ khách hàng quy mô lớn. Họ dự kiến sử dụng mô hình GPT-4o cho toàn bộ hệ thống (Supervisor và 3 Workers). Chi phí vận hành thử nghiệm ban đầu vượt quá ngân sách. Hãy phân tích các yếu tố gây tốn chi phí và đề xuất giải pháp tối ưu hóa sử dụng Model Cascading mà vẫn giữ nguyên chất lượng câu trả lời.",
+      "expected_answer": "Nguyên nhân tốn chi phí do sử dụng mô hình đắt đỏ GPT-4o cho toàn bộ các bước định tuyến và định dạng đơn giản, cộng với token overhead. Giải pháp Model Cascading: 1. Sử dụng mô hình nhỏ và rẻ (gpt-4o-mini) cho Supervisor node để định tuyến và Synthesis node để định dạng. 2. Chỉ dùng mô hình lớn GPT-4o cho Worker chuyên biệt cần suy luận sâu. 3. Áp dụng nguyên tắc Need-to-know để chỉ truyền dữ liệu tối thiểu cho mỗi worker.",
+      "evaluation_points": [
+        "Chỉ ra được nguyên nhân gây tốn chi phí do sử dụng mô hình đắt đỏ cho các tác vụ điều phối đơn giản và token overhead.",
+        "Đề xuất áp dụng kỹ thuật Model Cascading (dùng mô hình nhỏ cho Supervisor/Synthesis, mô hình lớn cho Worker chuyên sâu).",
+        "Đề xuất giảm token budget bằng cách áp dụng nguyên tắc Need-to-know để lọc bớt context trước khi gửi đến các node."
+      ],
+      "sfia_level": "SFIA L5",
+      "competency": "Advise on operational cost-efficiency and model cascading strategies for enterprise agent systems",
+      "hints": [
+        "Hãy suy nghĩ về việc sử dụng một mô hình mạnh mẽ cho tất cả các tác vụ. Có thể có những yếu tố nào khiến cho điều này trở nên tốn kém?",
+        "Có những phương pháp nào giúp tối ưu hóa chi phí khi sử dụng mô hình AI? Bạn có thể phân chia các tác vụ để giảm bớt chi phí không?",
+        "Bạn có thể áp dụng nguyên tắc nào để chỉ truyền thông tin cần thiết giữa các phần của hệ thống? Điều này có thể giúp tiết kiệm nguồn lực như thế nào?"
+      ],
+      "concepts": [
+        "d9-multi-agent-mcp",
+        "d18-t1-financial-roi"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "practice_concept_clarification": "Bạn muốn ôn tập chủ đề nào? Hãy chọn một chủ đề học tập trước, hoặc gửi tên chủ đề cụ thể để mình tạo câu hỏi phù hợp.",
+  "practice_concept_analysis": "Practice mode cần chủ đề trước khi tạo câu hỏi ôn tập.",
+  "rules": [
+    {
+      "id": "general_capability",
+      "contains_any": ["giup gi", "giup duoc gi", "co the lam gi", "ho tro gi"],
+      "regex_any": ["gi.p\\s+g.", "c.\\s+th.\\s+l.m\\s+g."],
+      "response": "Xin chào! Tôi có thể giúp bạn học, ôn tập và giải thích các chủ đề trong khóa học. Bạn muốn bắt đầu với chủ đề nào?"
+    },
+    {
+      "id": "general_greeting",
+      "exact_any": ["chao", "chao ban", "xin chao", "hello", "hi", "hey"],
+      "response": "Xin chào! Tôi có thể hỗ trợ bạn học tập hôm nay. Bạn muốn học hoặc ôn lại chủ đề nào?"
+    },
+    {
+      "id": "general_thanks",
+      "exact_any": ["cam on", "cam on ban", "thank", "thanks"],
+      "response": "Rất vui được hỗ trợ bạn. Khi cần học tiếp, bạn cứ gửi chủ đề hoặc câu hỏi cụ thể."
+    },
+    {
+      "id": "general_goodbye",
+      "exact_any": ["bye", "tam biet"],
+      "response": "Tạm biệt! Chúc bạn học tốt, hẹn gặp lại ở buổi học tiếp theo."
+    }
+  ]
+}

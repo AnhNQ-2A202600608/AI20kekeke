@@ -1,0 +1,210 @@
+{
+  "id": "day27-t2-basics",
+  "parent_id": "day27-rag-data",
+  "topic_title": "Day 27: Data Observability & Lineage",
+  "title": "Phần 1: Phân Biệt Observability vs Monitoring & 7 Chiều Chất Lượng Dữ Liệu",
+  "description": "Đánh giá kiến thức cơ bản về khác biệt giữa System Monitoring và Data Observability, 7 chiều chất lượng dữ liệu, thống kê Monte Carlo về nguyên nhân sự cố.",
+  "difficulty": "dễ",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Điểm khác biệt cốt lõi giữa System Monitoring (giám sát hệ thống) và Data Observability (quan sát dữ liệu) là gì?",
+      "options": {
+        "A": "System Monitoring giám sát CPU, còn Data Observability giám sát GPU.",
+        "B": "System Monitoring giám sát hạ tầng, còn Data Observability giám sát dữ liệu.",
+        "C": "System Monitoring chỉ chạy trên cloud, còn Data Observability chạy dưới local.",
+        "D": "System Monitoring dùng cơ sở dữ liệu SQL, còn Data Observability dùng NoSQL."
+      },
+      "answer": "B",
+      "explanation": "System Monitoring trả lời câu hỏi 'hạ tầng hệ thống có khỏe không' (CPU, RAM, API latency), trong khi Data Observability trả lời câu hỏi 'dữ liệu bên trong hệ thống có đúng/đầy đủ không'.",
+      "hints": [
+        "Hạ tầng chạy mượt nhưng dữ liệu bị rỗng có thể xảy ra không?",
+        "System Monitoring giám sát các chỉ số vật lý/hạ tầng mạng.",
+        "Data Observability đi sâu vào bản chất chất lượng và tính đúng đắn của dữ liệu."
+      ],
+      "concepts": [
+        "d27-t2-data-observability"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Theo thống kê năm 2026 của Monte Carlo trên 11 triệu bảng, nguyên nhân nào gây ra tỷ lệ sự cố dữ liệu cao nhất?",
+      "options": {
+        "A": "Lỗi do thay đổi cấu trúc bảng dữ liệu đột ngột.",
+        "B": "Sự cố liên quan đến mất kết nối mạng vật lý.",
+        "C": "Lỗi do logic biến đổi trong các pipeline dữ liệu.",
+        "D": "Lỗi do quá hạn thanh toán tài nguyên đám mây."
+      },
+      "answer": "C",
+      "explanation": "Thống kê của Monte Carlo chỉ ra lỗi pipeline (logic biến đổi) chiếm tỷ lệ cao nhất (26.2%) trong số các nguyên nhân gây ra sự cố dữ liệu.",
+      "hints": [
+        "Hãy loại trừ lỗi cấu trúc bảng (schema drift) vì nó chỉ chiếm tỷ lệ nhỏ (7.8%).",
+        "Nguyên nhân lớn nhất nằm ở khâu viết code xử lý dữ liệu của con người.",
+        "Đó chính là lỗi logic trong các pipeline biến đổi dữ liệu (chiếm 26.2%)."
+      ],
+      "concepts": [
+        "d27-t2-data-observability"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Thống kê của Monte Carlo cho thấy lỗi cấu trúc bảng (schema drift) chiếm tỷ lệ bao nhiêu trong các sự cố dữ liệu thực tế?",
+      "options": {
+        "A": "Chiếm khoảng 92.2% tổng số lượng sự cố dữ liệu.",
+        "B": "Chiếm khoảng 50.0% tổng số lượng sự cố dữ liệu.",
+        "C": "Chiếm khoảng 26.2% tổng số lượng sự cố dữ liệu.",
+        "D": "Chiếm khoảng 7.8% tổng số lượng sự cố dữ liệu."
+      },
+      "answer": "D",
+      "explanation": "Schema drift chỉ chiếm 7.8% sự cố dữ liệu thực tế, cho thấy việc chỉ kiểm tra cấu trúc bảng (schema checks) là không đủ để bảo vệ hệ thống dữ liệu.",
+      "hints": [
+        "Đây là một tỷ lệ tương đối nhỏ so với các lỗi logic hay phân phối dữ liệu.",
+        "Nó chứng tỏ các bộ lọc schema truyền thống chỉ bắt được một phần rất nhỏ lỗi.",
+        "Con số chính xác theo thống kê của Monte Carlo là 7.8%."
+      ],
+      "concepts": [
+        "d27-t2-data-observability"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Chiều nào trong 7 chiều của Data Observability đo lường khoảng thời gian kể từ lần cập nhật dữ liệu gần nhất?",
+      "options": {
+        "A": "Freshness (độ tươi mới của dữ liệu).",
+        "B": "Volume (khối lượng dòng dữ liệu).",
+        "C": "Distribution (độ phân phối của dữ liệu).",
+        "D": "Lineage (truy vết nguồn gốc dữ liệu)."
+      },
+      "answer": "A",
+      "explanation": "Freshness đo lường xem dữ liệu có được cập nhật đúng hạn hay không, bằng cách tính thời gian trễ kể từ điểm cập nhật gần nhất.",
+      "hints": [
+        "Thuật ngữ này liên quan đến tính thời gian và sự cập nhật.",
+        "Nó cho biết dữ liệu có bị cũ hay trễ (stale) hay không.",
+        "Đó chính là khái niệm Freshness."
+      ],
+      "concepts": [
+        "d27-t2-data-observability"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Khi pipeline vẫn báo thành công (exit code 0) nhưng dữ liệu ghi xuống bảng bị rỗng (0 dòng), chiều chất lượng nào bị vi phạm?",
+      "options": {
+        "A": "Chiều Schema của bảng dữ liệu.",
+        "B": "Chiều Volume của dòng dữ liệu.",
+        "C": "Chiều Lineage của nguồn dữ liệu.",
+        "D": "Chiều Distribution của dữ liệu."
+      },
+      "answer": "B",
+      "explanation": "Sự sụt giảm đột ngột số lượng bản ghi xuống 0 dòng trong khi hệ thống không báo lỗi là vi phạm chiều Volume (khối lượng dữ liệu).",
+      "hints": [
+        "Vấn đề nằm ở số lượng dòng dữ liệu bị thay đổi bất thường.",
+        "Hạ tầng không lỗi nhưng số lượng bản ghi thực tế ghi nhận bằng không.",
+        "Đây là lỗi vi phạm thuộc chiều Volume."
+      ],
+      "concepts": [
+        "d27-t2-data-observability"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Trong 7 chiều của Data Observability, chiều nào giúp trả lời câu hỏi 'Cột dữ liệu bị hỏng này sẽ ảnh hưởng đến những dashboard và model nào?'",
+      "options": {
+        "A": "Chiều Schema của bảng dữ liệu.",
+        "B": "Chiều Volume của dòng dữ liệu.",
+        "C": "Chiều Lineage của nguồn dữ liệu.",
+        "D": "Chiều Distribution của dữ liệu."
+      },
+      "answer": "C",
+      "explanation": "Lineage (truy vết dòng chảy dữ liệu) cho phép xây dựng bản đồ phụ thuộc để phân tích ảnh hưởng (impact analysis/blast radius) khi có sự cố dữ liệu.",
+      "hints": [
+        "Khái niệm này liên quan đến bản đồ quan hệ nguồn gốc và đích đến của dữ liệu.",
+        "Nó giúp vẽ đường đi của dữ liệu từ nguồn vào đến nơi tiêu thụ.",
+        "Đó chính là Lineage."
+      ],
+      "concepts": [
+        "d27-t2-data-observability"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Công cụ thương mại (SaaS) nổi tiếng nhất trong thị trường Data Observability hiện nay là công cụ nào?",
+      "options": {
+        "A": "Nền tảng Great Expectations.",
+        "B": "Hệ thống Soda SQL.",
+        "C": "Trình điều phối Apache Airflow.",
+        "D": "Nền tảng Monte Carlo."
+      },
+      "answer": "D",
+      "explanation": "Monte Carlo là nền tảng SaaS đi đầu và nổi tiếng nhất trong thị trường Data Observability chuyên cung cấp giải pháp phát hiện bất thường bằng ML.",
+      "hints": [
+        "Đây là một nền tảng SaaS thương mại, không phải mã nguồn mở hoàn toàn.",
+        "Tên của nó trùng với tên phương pháp thống kê lấy mẫu ngẫu nhiên nổi tiếng.",
+        "Đó chính là nền tảng Monte Carlo."
+      ],
+      "concepts": [
+        "d27-t2-data-observability"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Tại sao việc chỉ giám sát sự khỏe mạnh của hệ thống (System Monitoring) lại không đủ để đảm bảo chất lượng dữ liệu đầu ra?",
+      "options": {
+        "A": "Vì hệ thống có thể chạy thành công nhưng ghi dữ liệu sai lệch.",
+        "B": "Vì System Monitoring không thể cài đặt trên hệ điều hành Linux.",
+        "C": "Vì các công cụ System Monitoring luôn có chi phí bản quyền đắt hơn.",
+        "D": "Vì System Monitoring chỉ dùng để theo dõi nhiệt độ của phần cứng."
+      },
+      "answer": "A",
+      "explanation": "Pipeline có thể chạy thành công không có lỗi hệ thống, nhưng do lỗi logic code hoặc lỗi dữ liệu nguồn vào, dữ liệu ghi xuống vẫn có thể bị rỗng, trùng lặp hoặc sai lệch giá trị.",
+      "hints": [
+        "Hãy nghĩ đến trường hợp code chạy hoàn thành nhưng logic biến đổi nhân đôi sai giá trị.",
+        "Hệ thống có báo lỗi đỏ khi ghi một con số sai logic nghiệp vụ?",
+        "Hạ tầng xanh (thành công) không đồng nghĩa với việc nội dung dữ liệu bên trong là chính xác."
+      ],
+      "concepts": [
+        "d27-t2-data-observability"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Chiều chất lượng 'Distribution' trong Data Observability tập trung giám sát khía cạnh nào của dữ liệu?",
+      "options": {
+        "A": "Đường đi của dữ liệu từ bảng nguồn tới bảng đích.",
+        "B": "Phân phối xác suất và biên độ giá trị của các cột.",
+        "C": "Số lượng dòng dữ liệu được nạp vào hệ thống mỗi giờ.",
+        "D": "Kiểu dữ liệu và cấu trúc các cột trong bảng cơ sở."
+      },
+      "answer": "B",
+      "explanation": "Distribution giám sát xem các giá trị dữ liệu có tuân theo phân phối bình thường không, phát hiện các giá trị ngoại lệ (outliers) hoặc sự thay đổi đột ngột về mặt thống kê.",
+      "hints": [
+        "Từ khóa 'Distribution' dịch ra là phân phối.",
+        "Nó liên quan đến các đặc trưng thống kê như trung bình, phương sai, min, max.",
+        "Đó chính là phân phối xác suất và biên độ giá trị của cột dữ liệu."
+      ],
+      "concepts": [
+        "d27-t2-data-observability"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Khái niệm 'Data Downtime' trong quản lý chất lượng dữ liệu được định nghĩa như thế nào?",
+      "options": {
+        "A": "Thời gian hệ thống máy chủ cơ sở dữ liệu bị sập hoàn toàn.",
+        "B": "Số lượng pipeline dữ liệu bị lỗi cú pháp không thể chạy được.",
+        "C": "Khoảng thời gian dữ liệu bị sai lệch trước khi được phát hiện và sửa.",
+        "D": "Thời gian các Business Analyst nghỉ ngơi không phân tích dữ liệu."
+      },
+      "answer": "C",
+      "explanation": "Data Downtime đo lường tổng thời gian dữ liệu bị lỗi, được tính bằng số lượng sự cố nhân với tổng thời gian phát hiện (TTD) và thời gian khắc phục (TTR).",
+      "hints": [
+        "Nó tương tự chỉ số downtime của dịch vụ hạ tầng nhưng áp dụng cho chất lượng dữ liệu.",
+        "Dữ liệu sai mà không ai biết kéo dài bao lâu?",
+        "Chỉ số này phản ánh khoảng thời gian dữ liệu bị hỏng hoặc thiếu chính xác trước khi được sửa chữa."
+      ],
+      "concepts": [
+        "d27-t2-data-observability"
+      ]
+    }
+  ]
+}

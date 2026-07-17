@@ -1,0 +1,210 @@
+{
+  "id": "day26-t2-pipeline",
+  "parent_id": "day26-rag-data",
+  "topic_title": "Day 26: MCP & A2A Infrastructure",
+  "title": "Phần 2: Thiết Kế Agent Registry & Xây Dựng Semantic Routing Layer",
+  "description": "Đánh giá khả năng xây dựng Agent Registry quản lý metadata và thiết lập bộ định tuyến ngữ nghĩa (semantic router) để phân phối task.",
+  "difficulty": "bình thường",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Thành phần siêu dữ liệu (metadata) nào sau đây là bắt buộc phải đăng ký trong một cấu trúc Agent Registry chuẩn?",
+      "options": {
+        "A": "Họ và tên của lập trình viên đã viết mã nguồn cho tác nhân đó.",
+        "B": "Tên tác nhân, mô tả năng lực, danh sách tools và địa chỉ endpoint.",
+        "C": "Giá tiền thuê máy chủ đám mây tính theo giờ của card đồ họa GPU.",
+        "D": "Tổng số lượng bug logic đã phát sinh từ khi triển khai ứng dụng."
+      },
+      "answer": "B",
+      "explanation": "Agent Registry cần lưu trữ: định danh (agent_id/name), năng lực hệ thống (capability description để router tìm kiếm), công cụ hỗ trợ (tools schema), và giao thức/địa chỉ kết nối (endpoint/transport) kèm trạng thái health check.",
+      "hints": [
+        "Nghĩ về những thông tin tối thiểu cần thiết để tìm kiếm và gọi một dịch vụ từ xa.",
+        "Bộ định tuyến cần mô tả để biết agent làm được gì và endpoint để biết gửi tin nhắn đi đâu.",
+        "Đáp án chính xác là tên tác nhân, mô tả năng lực, danh sách tools và địa chỉ."
+      ],
+      "concepts": [
+        "d26-t2-mcp-a2a-infra"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Mục đích sử dụng chính của trường conversation_id trong cấu trúc thông điệp của giao thức A2A (Agent-to-Agent) là gì?",
+      "options": {
+        "A": "Định danh duy nhất một luồng hội thoại xuyên suốt giữa các tác nhân.",
+        "B": "Đo lường tổng số lượng token đã tiêu thụ trong một lượt gọi API.",
+        "C": "Tự động dịch nội dung tin nhắn sang ngôn ngữ lập trình của server.",
+        "D": "Mã hóa tên của người sáng lập startup công nghệ để bảo mật dữ liệu."
+      },
+      "answer": "A",
+      "explanation": "Trường `conversation_id` giúp liên kết các tin nhắn trao đổi qua lại giữa nhiều agent khác nhau (ví dụ: Agent A hỏi Agent B, B hỏi C, C trả lời B, B trả lời A) vào chung một luồng xử lý ngữ cảnh logic duy nhất.",
+      "hints": [
+        "Giúp các tác nhân không bị lẫn lộn giữa các phiên hội thoại của các khách hàng khác nhau.",
+        "Đóng vai trò tương tự như Session ID trong phát triển web truyền thống.",
+        "Đáp án chính xác là định danh duy nhất một luồng hội thoại xuyên suốt giữa các tác nhân."
+      ],
+      "concepts": [
+        "d26-t2-mcp-a2a-infra"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Cơ chế hoạt động cốt lõi của bộ định tuyến ngữ nghĩa (Semantic Router) trong hệ thống đa tác nhân là gì?",
+      "options": {
+        "A": "Tự động biên dịch câu hỏi sang mã SQL rồi truy vấn trực tiếp database.",
+        "B": "Chia đều các câu hỏi của người dùng cho các agents theo thuật toán vòng tròn.",
+        "C": "Gửi câu hỏi tới tất cả các agents cùng lúc để lấy câu trả lời nhanh nhất.",
+        "D": "Tính độ tương đồng vector giữa prompt và mô tả năng lực của các agents."
+      },
+      "answer": "D",
+      "explanation": "Semantic Router tính toán vector embedding của câu hỏi đầu vào, đo khoảng cách tương đồng (ví dụ Cosine Similarity) với vector mô tả năng lực (capability metadata) của từng Agent trong Registry để chọn Agent phù hợp nhất.",
+      "hints": [
+        "Liên quan đến việc so sánh ý nghĩa ngữ nghĩa của câu văn thông qua các mô hình nhúng.",
+        "Giúp gửi yêu cầu chính xác đến tác nhân chuyên biệt thay vì chọn lựa ngẫu nhiên.",
+        "Đáp án chính xác là tính độ tương đồng vector giữa prompt và mô tả năng lực."
+      ],
+      "concepts": [
+        "d26-t2-mcp-a2a-infra"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Tại sao việc định tuyến bằng Semantic Router lại giúp cắt giảm chi phí token vượt trội so với phương pháp phát sóng (Broadcasting)?",
+      "options": {
+        "A": "Vì Semantic Router tự động nén dung lượng các file checkpoints hệ thống lại.",
+        "B": "Vì nó buộc người dùng phải trả phí token trước khi gửi câu hỏi lên chatbot.",
+        "C": "Vì nó chỉ định hướng câu hỏi đến một agent phù hợp thay vì gọi tất cả.",
+        "D": "Vì Semantic Router không sử dụng mô hình ngôn ngữ lớn để tính toán toán học."
+      },
+      "answer": "C",
+      "explanation": "Phương pháp Broadcasting gửi prompt tới mọi agent trong hệ thống, gây tiêu tốn token vô ích của các agent không liên quan. Semantic Router chỉ định tuyến trực tiếp đến một Agent chuyên biệt duy nhất phù hợp với tác vụ.",
+      "hints": [
+        "Gửi thư cho một người nhận chính xác thay vì gửi spam cho toàn bộ hòm thư công ty.",
+        "Hạn chế tối đa số lượng cuộc gọi LLM không cần thiết trong mạng lưới tác nhân.",
+        "Đáp án chính xác là vì nó chỉ định hướng câu hỏi đến một agent phù hợp thay vì gọi tất cả."
+      ],
+      "concepts": [
+        "d26-t2-mcp-a2a-infra"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Lợi ích lớn nhất của việc cấu hình cơ chế Health Check (Kiểm tra sức khỏe) định kỳ trong Agent Registry là gì?",
+      "options": {
+        "A": "Giúp tự động sửa các lỗi cú pháp lập trình Python trong mã nguồn của agent.",
+        "B": "Tránh gửi các yêu cầu công việc đến một agent đã bị sập hoặc mất kết nối.",
+        "C": "Cắt giảm một nửa chi phí tiêu thụ điện năng của cụm máy chủ GPU cloud.",
+        "D": "Tự động nâng cấp phiên bản hệ điều hành của máy chủ chạy các agents."
+      },
+      "answer": "B",
+      "explanation": "Health Check ping định kỳ đến các agent endpoints. Nếu phát hiện một agent ngoại tuyến (Offline), Registry sẽ đánh dấu trạng thái không khả dụng, giúp Router tránh định tuyến công việc vào đó gây treo hệ thống.",
+      "hints": [
+        "Nghĩ về việc đảm bảo tính sẵn sàng hoạt động của các nút dịch vụ trước khi giao việc.",
+        "Giảm thiểu lỗi thất bại cuộc gọi (connection refused) trong quá trình vận hành.",
+        "Đáp án chính xác là tránh gửi các yêu cầu công việc đến một agent đã bị sập."
+      ],
+      "concepts": [
+        "d26-t2-mcp-a2a-infra"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Trường thông tin nào sau đây không bắt buộc phải có trong cấu trúc JSON của một thông điệp A2A tiêu chuẩn?",
+      "options": {
+        "A": "Địa chỉ IP vật lý của máy tính trạm đang dùng để gõ code của founder.",
+        "B": "Định danh của tác nhân gửi thông điệp và tác nhân nhận thông điệp.",
+        "C": "Trường nội dung thông tin trao đổi và định danh phiên hội thoại chung.",
+        "D": "Dấu mốc thời gian gửi tin nhắn để phục vụ việc sắp xếp luồng lịch sử."
+      },
+      "answer": "A",
+      "explanation": "Cấu trúc thông điệp A2A gồm: sender_id, receiver_id, content, conversation_id, timestamp và status. Địa chỉ IP của lập trình viên là thông tin nhạy cảm và không thuộc giao thức truyền tin.",
+      "hints": [
+        "Tìm kiếm yếu tố thuộc về môi trường phát triển cá nhân của kỹ sư thay vì giao thức.",
+        "Giao thức chỉ quan tâm đến định danh của các bên tham gia giao dịch tin nhắn.",
+        "Đáp án chính xác là địa chỉ IP vật lý của máy tính trạm đang dùng để gõ code."
+      ],
+      "concepts": [
+        "d26-t2-mcp-a2a-infra"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Quy trình xử lý chuẩn của một Semantic Router khi nhận được một prompt truy vấn mới từ phía người dùng là gì?",
+      "options": {
+        "A": "Lưu prompt vào ổ đĩa cứng -> Gọi điện báo cáo quản trị viên -> Chờ phê duyệt.",
+        "B": "Tự động dịch prompt sang tiếng Anh -> Xóa toàn bộ các tệp tin log của hệ thống.",
+        "C": "Nhúng prompt -> Đo Cosine Similarity với mô tả năng lực -> Định tuyến tới agent cao nhất.",
+        "D": "Gửi prompt cho tất cả các agents cùng lúc để lấy câu trả lời nhanh nhất có thể."
+      },
+      "answer": "C",
+      "explanation": "Quy trình: 1. Tạo vector embedding của prompt mới. 2. So sánh độ tương đồng cosine với các vector mô tả năng lực của các agent đã lưu trong registry. 3. Chuyển tiếp prompt đến agent có điểm tương đồng cao nhất vượt ngưỡng.",
+      "hints": [
+        "Đây là quy trình kết hợp giữa mô hình nhúng (Embedding Model) và cơ sở dữ liệu registry.",
+        "Mục tiêu là tìm ra đích đến tối ưu ngữ nghĩa nhất cho thông điệp yêu cầu.",
+        "Đáp án chính xác là nhúng prompt -> Đo Cosine Similarity -> Định tuyến tới agent cao nhất."
+      ],
+      "concepts": [
+        "d26-t2-mcp-a2a-infra"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Nguy cơ bảo mật nghiêm trọng nhất khi thiết kế Agent Registry mà hoàn toàn không có cơ chế phân quyền (Scope/Permissions) là gì?",
+      "options": {
+        "A": "Dung lượng bộ nhớ lưu trữ registry sẽ bị phình to làm chậm tốc độ máy chủ.",
+        "B": "Lập trình viên không thể viết code cho các agents bằng ngôn ngữ lập trình Python.",
+        "C": "Hệ thống tự động kích hoạt tính năng gửi tin nhắn rác quảng cáo cho khách hàng.",
+        "D": "Tác nhân độc hại giả mạo đăng ký để chiếm quyền truy cập hoặc đánh cắp dữ liệu."
+      },
+      "answer": "D",
+      "explanation": "Nếu không phân quyền, bất kỳ mã nguồn độc hại nào cũng có thể đăng ký làm một Agent hợp lệ trong registry, từ đó chặn thu thập các tin nhắn nhạy cảm hoặc giả mạo công cụ để tấn công hệ thống (Agent Spoofing).",
+      "hints": [
+        "Không có chốt chặn kiểm soát danh tính khi gia nhập mạng lưới liên kết tác nhân.",
+        "Kẻ tấn công có thể dễ dàng chèn một tác nhân nghe lén vào luồng hội thoại A2A.",
+        "Đáp án chính xác là tác nhân độc hại giả mạo đăng ký để chiếm quyền truy cập."
+      ],
+      "concepts": [
+        "d26-t2-mcp-a2a-infra"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Điểm giống nhau lớn nhất về mặt chức năng giữa Agent Registry trong hệ thống AI và Service Registry trong kiến trúc Microservices truyền thống là gì?",
+      "options": {
+        "A": "Cả hai đều đóng vai trò là thư mục tập trung để đăng ký và khám phá dịch vụ.",
+        "B": "Cả hai đều bắt buộc phải sử dụng chung các thuật toán nén mô hình mạng neural.",
+        "C": "Cả hai đều tự động mã hóa toàn bộ dữ liệu lịch sử hội thoại của người dùng.",
+        "D": "Cả hai đều hoạt động dựa trên cơ chế đồng bộ hóa luồng CPU vật lý của card đồ họa."
+      },
+      "answer": "A",
+      "explanation": "Cả hai đều giải quyết bài toán Service Discovery (Khám phá dịch vụ). Registry hoạt động như một danh bạ điện thoại, cho phép các thành phần khác tìm kiếm vị trí và năng lực của dịch vụ để kết nối động.",
+      "hints": [
+        "Nghĩ về chức năng của cuốn danh bạ điện thoại của cả một cơ quan lớn.",
+        "Giúp loại bỏ việc cấu hình cứng (hard-code) địa chỉ IP của các dịch vụ phụ trợ.",
+        "Đáp án chính xác là cả hai đều đóng vai trò thư mục tập trung để đăng ký và khám phá."
+      ],
+      "concepts": [
+        "d26-t2-mcp-a2a-infra"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Khi Semantic Router phát hiện không có bất kỳ agent nào trong registry có độ tương đồng ngữ nghĩa vượt ngưỡng an toàn cấu hình, hành vi xử lý nào là tối ưu nhất?",
+      "options": {
+        "A": "Tự động tắt toàn bộ hệ thống máy chủ RAG để bảo mật an toàn cho dữ liệu.",
+        "B": "Trả về thông báo lỗi hoặc định tuyến yêu cầu sang tác nhân điều phối mặc định.",
+        "C": "Bắt buộc người dùng phải gõ lại câu hỏi bằng tiếng Anh để router thử lại.",
+        "D": "Gửi ngẫu nhiên câu hỏi tới một agent bất kỳ để thử vận may phản hồi hệ thống."
+      },
+      "answer": "B",
+      "explanation": "Khi không khớp (match) được specialist nào vượt ngưỡng tương đồng (similarity threshold), router cần hành xử an toàn bằng cách chuyển tiếp đến Orchestrator mặc định (default fallback) để nó tự xử lý hoặc báo lỗi thân thiện cho user.",
+      "hints": [
+        "Nghĩ về việc xây dựng cơ chế phòng thủ dự phòng (default fallback handler).",
+        "Tránh việc định tuyến bừa bãi gây lỗi xử lý sai lệch hoặc treo luồng chạy.",
+        "Đáp án chính xác là trả về thông báo lỗi hoặc định tuyến sang tác nhân mặc định."
+      ],
+      "concepts": [
+        "d26-t2-mcp-a2a-infra"
+      ]
+    }
+  ]
+}

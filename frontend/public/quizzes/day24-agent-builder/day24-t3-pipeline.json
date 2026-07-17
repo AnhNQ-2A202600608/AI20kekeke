@@ -1,0 +1,210 @@
+{
+  "id": "day24-t3-pipeline",
+  "parent_id": "day24-agent-builder",
+  "topic_title": "Day 24: LangGraph & Agentic Orchestration",
+  "title": "Phần 2: Lập Trình Vòng Lặp Agent Loop & Cơ Chế Persistence Checkpointing",
+  "description": "Đánh giá khả năng lập trình workflow vòng lặp, thiết lập conditional routing và cấu hình Persistence Checkpointer cho agent.",
+  "difficulty": "bình thường",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Thứ tự xây dựng đồ thị (Build Order) chuẩn hóa khi lập trình một StateGraph trong LangGraph là gì?",
+      "options": {
+        "A": "Compile graph -> Add edges -> Implement nodes -> Define state schema -> Invoke graph.",
+        "B": "Implement nodes -> Add edges -> Compile graph -> Define state schema -> Invoke graph.",
+        "C": "Define state schema -> Compile graph -> Add edges -> Implement nodes -> Invoke graph.",
+        "D": "Define state schema -> Implement nodes -> Implement routing -> Add edges -> Compile -> Invoke."
+      },
+      "answer": "D",
+      "explanation": "Quy trình xây dựng chuẩn: 1. Định nghĩa cấu trúc trạng thái (State), 2. Viết các hàm logic cho Nodes, 3. Viết hàm định tuyến (Routing), 4. Thêm Nodes/Edges vào graph, 5. Biên dịch (Compile) kèm Checkpointer, 6. Thực thi đồ thị (Invoke).",
+      "hints": [
+        "Cấu trúc State là nền tảng phải có trước khi viết logic cho các Nodes đọc từ nó.",
+        "Biên dịch đồ thị (Compile) là bước cuối cùng trước khi có thể gọi thực thi (Invoke).",
+        "Đáp án chính xác là quy trình bắt đầu bằng Define state schema và kết thúc bằng Compile -> Invoke."
+      ],
+      "concepts": [
+        "d24-t3-ragas-guardrails"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Sự khác biệt chính về hành vi giữa MemorySaver và PostgresSaver khi triển khai Persistence Checkpointer là gì?",
+      "options": {
+        "A": "MemorySaver lưu trữ checkpoints trong bộ nhớ RAM tạm thời, còn PostgresSaver lưu trữ bền vững vào đĩa cứng DB.",
+        "B": "MemorySaver chỉ dùng cho Python, còn PostgresSaver chỉ dùng cho các ứng dụng chạy mã nguồn Node.js.",
+        "C": "MemorySaver tự động mã hóa dữ liệu, còn PostgresSaver không hỗ trợ bất kỳ cơ chế bảo mật nào.",
+        "D": "MemorySaver giới hạn số lượng nodes trong graph tối đa là 5, còn PostgresSaver không giới hạn."
+      },
+      "answer": "A",
+      "explanation": "MemorySaver lưu trữ in-memory, có tốc độ rất nhanh nhưng checkpoints sẽ bị mất sạch khi restart ứng dụng. PostgresSaver lưu trữ bền vững vào cơ sở dữ liệu Postgres độc lập, phù hợp cho môi trường production đa máy chủ.",
+      "hints": [
+        "Nghĩ về tính chất lưu trữ trong bộ nhớ tạm (in-memory) so với lưu trữ bền vững (persistent database).",
+        "Khi khởi động lại máy chủ ứng dụng, saver nào sẽ bị mất sạch dữ liệu lịch sử checkpoint?",
+        "Đáp án chính xác là MemorySaver lưu trong RAM tạm thời, PostgresSaver lưu bền vững vào DB."
+      ],
+      "concepts": [
+        "d24-t3-ragas-guardrails"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Để thực hiện gọi đồ thị (Invoke) kèm theo Thread ID để hệ thống tự động tải và lưu checkpoints, ta truyền cấu hình vào tham số nào?",
+      "options": {
+        "A": "Truyền trực tiếp vào dictionary dữ liệu đầu vào của State.",
+        "B": "Truyền thông qua tham số config dưới dạng {'configurable': {'thread_id': '...'}}.",
+        "C": "Cấu hình biến môi trường toàn cục mang tên LANGCHAIN_THREAD_ID.",
+        "D": "Khai báo thread_id ngay trong constructor khi khởi tạo đối tượng StateGraph."
+      },
+      "answer": "B",
+      "explanation": "LangGraph yêu cầu truyền thread_id trong tham số `config` dưới dạng khóa `configurable` để checkpointer biết phiên chạy nào cần được khôi phục hoặc ghi nhớ.",
+      "hints": [
+        "Đây là đối số cấu hình thứ hai được truyền vào hàm `.invoke()` hoặc `.stream()`.",
+        "Nó có cấu trúc lồng nhau với khóa `configurable`.",
+        "Đáp án chính xác là truyền thông qua tham số config dưới dạng {'configurable': {'thread_id': '...'}}."
+      ],
+      "concepts": [
+        "d24-t3-ragas-guardrails"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Trong LangGraph, thời điểm nào hệ thống checkpointer sẽ tự động tiến hành chụp snapshot lưu trạng thái State?",
+      "options": {
+        "A": "Chỉ chụp duy nhất một lần khi đồ thị hoàn thành toàn bộ luồng chạy và trả về END.",
+        "B": "Chụp định kỳ mỗi 5 giây một lần thông qua một luồng chạy nền background daemon.",
+        "C": "Chụp sau mỗi super-step (sau khi một node hoặc nhóm node song song hoàn thành việc ghi đĩa).",
+        "D": "Chỉ chụp khi xảy ra ngoại lệ lỗi runtime crash để hỗ trợ việc debug gỡ lỗi."
+      },
+      "answer": "C",
+      "explanation": "LangGraph tự động chụp checkpoint sau mỗi super-step khi có node hoặc tập các node song song hoàn thành xử lý. Điều này đảm bảo trạng thái luôn được cập nhật liên tục và an toàn.",
+      "hints": [
+        "Super-step là đơn vị thực thi cơ bản của đồ thị giữa các trạng thái chuyển bước.",
+        "Cơ chế này giúp đồ thị có thể khôi phục chính xác tại node bị lỗi nếu crash xảy ra giữa chừng.",
+        "Đáp án chính xác là chụp sau mỗi super-step."
+      ],
+      "concepts": [
+        "d24-t3-ragas-guardrails"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Khi gỡ lỗi hệ thống Agent hỗ trợ khách hàng, việc truy xuất lịch sử trạng thái của đồ thị (State History) giúp ích gì?",
+      "options": {
+        "A": "Tự động gửi email thông báo xin lỗi khách hàng khi hệ thống gặp sự cố crash.",
+        "B": "Giảm bớt thời gian chờ đợi phản hồi của khách hàng thông qua bộ nhớ cache kết quả.",
+        "C": "Tự động tối ưu hóa và làm sạch bộ nhớ RAM của máy chủ chạy đồ thị.",
+        "D": "Biết chính xác node nào quyết định sai, input lúc đó là gì và human đã duyệt chưa."
+      },
+      "answer": "D",
+      "explanation": "State History lưu lại danh sách tất cả các checkpoint của thread. Nhờ đó, lập trình viên có thể truy vết lại toàn bộ quá trình suy luận của Agent, biết node nào ghi đè sai thông tin hoặc ghi nhận sai lệch để tiến hành sửa đổi prompt.",
+      "hints": [
+        "Nghĩ về tính năng audit trail và khả năng debug vết chạy của Agent.",
+        "Tại sao khách hàng lại nhận được thông tin sai? Ta cần quay ngược thời gian để xem các bước chạy trước.",
+        "Đáp án chỉ ra biết chính xác node nào quyết định sai, input lúc đó là gì và human đã duyệt chưa."
+      ],
+      "concepts": [
+        "d24-t3-ragas-guardrails"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Kỹ thuật 'Replay' (Chạy lại đồ thị từ checkpoint cũ) được sử dụng nhằm mục đích gì trong phát triển Agent?",
+      "options": {
+        "A": "Chạy lại từ một thời điểm cũ để thử nghiệm rẽ nhánh logic khác hoặc tái hiện lỗi debug.",
+        "B": "Tự động nhân bản luồng chạy của Agent sang nhiều máy chủ khác nhau để cân bằng tải.",
+        "C": "Chạy lại toàn bộ đồ thị từ đầu với API key khác để kiểm tra giới hạn rate limit.",
+        "D": "Sao lưu toàn bộ checkpoints của đồ thị vào một tệp nén ZIP để lưu trữ lâu dài."
+      },
+      "answer": "A",
+      "explanation": "Replay cho phép khôi phục trạng thái tại một checkpoint cụ thể trong lịch sử của thread và chạy tiếp từ đó. Hữu ích để thử nghiệm các prompt mới trên cùng một ngữ cảnh lịch sử hoặc tái hiện lại chính xác lỗi để debug.",
+      "hints": [
+        "Tính năng này liên quan đến khả năng du hành thời gian (time travel) trong LangGraph.",
+        "Giúp nhà phát triển phân nhánh luồng chạy từ quá khứ mà không phải nhập lại dữ liệu từ đầu.",
+        "Đáp án chính xác là chạy lại từ một thời điểm cũ để thử nghiệm rẽ nhánh hoặc tái hiện lỗi."
+      ],
+      "concepts": [
+        "d24-t3-ragas-guardrails"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Khi thiết kế workflow phân loại và xử lý ticket (support ticket triage), ta nên áp dụng mô hình thiết kế nào trong LangGraph?",
+      "options": {
+        "A": "Dựng một LCEL Chain duy nhất để xử lý tuần tự toàn bộ các loại ticket.",
+        "B": "Dựng StateGraph chứa routing phân loại, hỏi lại nếu thiếu và dừng chờ duyệt nếu rủi ro cao.",
+        "C": "Sử dụng mô hình gọi mô hình đệ quy không giới hạn cho đến khi cạn tiền API.",
+        "D": "Đóng gói toàn bộ logic xử lý ticket vào một prompt hệ thống khổng lồ duy nhất."
+      },
+      "answer": "B",
+      "explanation": "Ticket triage yêu cầu quyết định động (routing), tương tác lặp lại với người dùng để làm rõ thông tin (loop) và chốt chặn phê duyệt con người đối với ticket nhạy cảm/rủi ro cao (HITL). Mô hình StateGraph là giải pháp hoàn hảo để quản trị workflow phức tạp này.",
+      "hints": [
+        "Nghĩ về sự kết hợp giữa phân loại, vòng lặp hỏi đáp, và chốt chặn an toàn cho các tác vụ nhạy cảm.",
+        "Các yêu cầu này không thể giải quyết bằng một đường thẳng tuyến tính đơn giản.",
+        "Đáp án chỉ ra dựng StateGraph chứa routing phân loại, hỏi lại nếu thiếu và dừng chờ duyệt."
+      ],
+      "concepts": [
+        "d24-t3-ragas-guardrails"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Trong LangGraph, làm thế nào để lấy ra snapshot trạng thái hiện tại (State Snapshot) của một thread cụ thể?",
+      "options": {
+        "A": "Truy vấn trực tiếp bảng SQLite bằng lệnh SELECT * FROM states.",
+        "B": "Sử dụng hàm get_state(config) từ đối tượng graph sau khi đã compile.",
+        "C": "Đọc dữ liệu logs trực tiếp từ tệp tin logs/state.log của container.",
+        "D": "Gọi hàm invoke() đầu vào trống để graph tự trả về state."
+      },
+      "answer": "B",
+      "explanation": "Khi đồ thị đã compile kèm checkpointer, ta sử dụng hàm `compiled_graph.get_state(config)` truyền vào thread_id để lấy ra snapshot chứa state, checkpoint id và các nodes kế tiếp.",
+      "hints": [
+        "Đây là phương thức API chính thức của đối tượng CompiledStateGraph.",
+        "Tên phương thức có tiền tố lấy dữ liệu trạng thái (get state).",
+        "Đáp án chính xác là sử dụng hàm get_state(config) từ đối tượng graph đã compile."
+      ],
+      "concepts": [
+        "d24-t3-ragas-guardrails"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Để theo dõi và ghi nhận metrics của Agent chạy thực tế, trace events trong LangGraph cần ghi nhận tối thiểu thông tin gì?",
+      "options": {
+        "A": "Địa chỉ MAC của card mạng máy chủ chạy mô hình LLM.",
+        "B": "Dung lượng đĩa cứng còn trống của các máy chủ SQLite saver.",
+        "C": "Mã khóa bảo mật SSH kết nối từ xa của hệ thống.",
+        "D": "Số lượng node đi qua, số lần retry và số lần duyệt."
+      },
+      "answer": "D",
+      "explanation": "Trace events của đồ thị cần ghi nhận luồng đi (node count), số lần công cụ gặp lỗi phải chạy lại (retry count), và các điểm dừng phê duyệt (approval count) để tính toán hiệu năng và chẩn đoán tắc nghẽn.",
+      "hints": [
+        "Nghĩ về các chỉ số hiệu suất chính (KPIs) phản ánh độ phức tạp và chi phí của một phiên chạy Agent.",
+        "Các chỉ số này giúp đo lường mức độ tương tác của con người và số lượng bước dư thừa.",
+        "Đáp án chính xác là số lượng node đã đi qua, số lần retry và số lần duyệt."
+      ],
+      "concepts": [
+        "d24-t3-ragas-guardrails"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Tại sao việc cấu hình một checkpointer bền vững (như SQLite/Postgres) lại tự động giúp Agent có khả năng 'Crash Recovery'?",
+      "options": {
+        "A": "Vì khi ứng dụng khởi động lại, đồ thị sẽ tự đọc checkpoint cuối cùng của thread để chạy tiếp.",
+        "B": "Vì checkpointer tự động sửa chữa phần cứng và card đồ họa GPU khi gặp sự cố vật lý.",
+        "C": "Vì cơ sở dữ liệu sẽ tự động gửi thông báo cảnh báo lỗi trực tiếp lên kênh Discord.",
+        "D": "Vì checkpointer tự động tối ưu hóa prompt của Agent để tránh gặp lỗi ảo giác."
+      },
+      "answer": "A",
+      "explanation": "Khi có checkpointer bền vững, nếu máy chủ gặp sự cố sập nguồn giữa chừng, khi khởi động lại, ta chỉ cần gọi đồ thị với đúng thread_id đó. Đồ thị sẽ tự động khôi phục trạng thái từ checkpoint gần nhất và tiếp tục thực thi bước tiếp theo như chưa hề có crash.",
+      "hints": [
+        "Nghĩ về khả năng tiếp tục chạy từ điểm dừng chân cuối cùng trước khi xảy ra sự cố sập nguồn.",
+        "Hệ thống không cần phải chạy lại toàn bộ quy trình tốn kém từ đầu.",
+        "Đáp án chỉ ra đồ thị tự đọc checkpoint cuối cùng của thread để chạy tiếp."
+      ],
+      "concepts": [
+        "d24-t3-ragas-guardrails"
+      ]
+    }
+  ]
+}

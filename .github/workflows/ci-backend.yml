@@ -2,28 +2,38 @@ name: Backend CI
 
 on:
   push:
-    branches: [main, master, universal-starter, dev]
+    branches: [main, dev, trong/test-deploy-and-connect-db]
     paths:
-      - 'backend/**'
-      - 'scripts/**'
+      - 'src/**'
+      - 'tests/**'
+      - 'requirements.txt'
+      - 'pyproject.toml'
+      - 'uv.lock'
       - '.github/workflows/ci-backend.yml'
+      - '.github/workflows/manual-backend-verification.yml'
   pull_request:
-    branches: [main, master, universal-starter, dev]
+    branches: [main, dev, trong/test-deploy-and-connect-db]
     paths:
-      - 'backend/**'
-      - 'scripts/**'
+      - 'src/**'
+      - 'tests/**'
+      - 'requirements.txt'
+      - 'pyproject.toml'
+      - 'uv.lock'
       - '.github/workflows/ci-backend.yml'
+      - '.github/workflows/manual-backend-verification.yml'
 
 concurrency:
   group: backend-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
-jobs:
-  backend-checks:
-    name: Backend Test & Lint
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
+permissions:
+  contents: read
 
+jobs:
+  test-and-lint:
+    name: Backend Test & Lint
+    runs-on: self-hosted
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
 
@@ -31,56 +41,44 @@ jobs:
         uses: astral-sh/setup-uv@v5
         with:
           enable-cache: true
-          python-version: "3.11"
+          python-version: "3.13"
 
       - name: Install dependencies
-        working-directory: ./backend
-        run: uv pip install -e ".[dev]"
+        run: uv pip install -r requirements.txt
 
       - name: Lint with ruff
-        working-directory: ./backend
-        run: |
-          uv run ruff check src/ tests/
-          uv run ruff format --check src/ tests/
+        run: uv run ruff check src/ tests/
 
       - name: Run tests
-        working-directory: ./backend
         run: uv run pytest tests/ -v --tb=short
         env:
           APP_ENV: test
+          OPENAI_API_KEY: test-key
 
-      - name: Validate Module Manifests
-        run: uv run python scripts/validate_modules.py
-
-      - name: Production Readiness Check
+      - name: Run Production Readiness Checker
         run: uv run python scripts/check_production_ready.py
 
-  deploy:
-    name: Deploy Backend
-    needs: backend-checks
-    if: github.event_name == 'push'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy → Render Production
-        if: github.ref_name == 'main' || github.ref_name == 'master' || github.ref_name == 'universal-starter'
-        env:
-          RENDER_DEPLOY_HOOK: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
-        run: |
-          if [ -z "$RENDER_DEPLOY_HOOK" ]; then
-            echo "Warning: RENDER_DEPLOY_HOOK_URL secret is not set. Skipping deployment."
-            exit 0
-          fi
-          echo "Triggering Render Production deployment..."
-          curl -f -X POST "$RENDER_DEPLOY_HOOK"
+      # TODO: Re-enable Trivy scanner before production deployment
+      # - name: Run Trivy vulnerability scanner
+      #   uses: aquasecurity/trivy-action@master
+      #   with:
+      #     image-ref: 'c2-app-backend:latest'
+      #     format: 'table'
+      #     exit-code: '1'
+      #     ignore-unfixed: true
+      #     vuln-type: 'os,library'
+      #     severity: 'CRITICAL,HIGH'
 
-      - name: Deploy → Render Staging
-        if: github.ref_name == 'dev'
-        env:
-          RENDER_DEPLOY_HOOK_STAGING: ${{ secrets.RENDER_DEPLOY_HOOK_URL_STAGING }}
+      - name: Trigger Render Production CD
+        if: github.event_name == 'push' && github.ref_name == 'main'
         run: |
-          if [ -z "$RENDER_DEPLOY_HOOK_STAGING" ]; then
-            echo "Warning: RENDER_DEPLOY_HOOK_URL_STAGING secret is not set. Skipping deployment."
-            exit 0
-          fi
-          echo "Triggering Render Staging deployment..."
-          curl -f -X POST "$RENDER_DEPLOY_HOOK_STAGING"
+          curl -f -X POST "${{ secrets.RENDER_DEPLOY_HOOK_URL }}"
+
+      - name: Trigger Render Staging CD
+        if: github.event_name == 'push' && (github.ref_name == 'dev' || github.ref_name == 'trong/test-deploy-and-connect-db')
+        run: |
+          curl -f -X POST "${{ secrets.RENDER_DEPLOY_HOOK_URL_STAGING }}"
+          
+
+
+

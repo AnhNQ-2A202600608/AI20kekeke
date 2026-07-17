@@ -1,0 +1,210 @@
+{
+  "id": "day17-t2-basics",
+  "parent_id": "day17-rag-data",
+  "topic_title": "Day 17: AI Data Engineering Foundations",
+  "title": "Phần 1: Data-Centric AI Mindset & Kiến Trúc Medallion",
+  "description": "Đánh giá kiến thức nền tảng về tầm quan trọng của data pipeline đối với chất lượng model, so sánh ETL vs ELT và các tầng dữ liệu Bronze/Silver/Gold.",
+  "difficulty": "dễ",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Theo triết lý 'Data-Centric AI', yếu tố nào sau đây là trọng tâm quyết định sự khác biệt lớn nhất về chất lượng của hệ thống AI trong thực tế?",
+      "options": {
+        "A": "Chất lượng và sự sạch sẽ của dữ liệu được đưa vào trong mô hình.",
+        "B": "Kiến trúc mô hình mạng neural nhân tạo phức tạp được lựa chọn ở đó.",
+        "C": "Kích thước của tệp thư viện mã nguồn mở import vào trong dự án.",
+        "D": "Tổng số lượng tham số của mô hình ngôn ngữ lớn được sử dụng đó."
+      },
+      "answer": "A",
+      "explanation": "Trong khi kiến trúc mô hình ngày nay dần trở nên phổ biến và dễ tiếp cận, sự khác biệt thật sự nằm ở chất lượng dữ liệu được nạp vào mô hình ('garbage in, garbage out').",
+      "hints": [
+        "Andrew Ng là một trong những người tiên phong thúc đẩy phong trào này.",
+        "Hãy nghĩ về câu nói: 'Model gần như miễn phí, sự khác biệt nằm ở dữ liệu của bạn'.",
+        "Đáp án nhấn mạnh chất lượng dữ liệu đầu vào làm yếu tố quyết định hàng đầu."
+      ],
+      "concepts": [
+        "d17-t2-data-eng-foundations"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Tầng dữ liệu 'Bronze' trong kiến trúc Medallion (Bronze/Silver/Gold) có đặc điểm cốt lõi nào sau đây?",
+      "options": {
+        "A": "Lưu trữ dữ liệu dạng thô (raw), append-only và được giữ nguyên vẹn mãi mãi.",
+        "B": "Lưu trữ dữ liệu đã được loại bỏ hoàn toàn các bản ghi trùng lặp kỹ lượng.",
+        "C": "Lưu trữ các bảng tổng hợp kết quả phân tích phục vụ trực tiếp cho báo cáo.",
+        "D": "Lưu trữ dữ liệu đã mã hóa toàn bộ thông tin cá nhân nhạy cảm của khách."
+      },
+      "answer": "A",
+      "explanation": "Tầng Bronze chứa dữ liệu thô từ nguồn gửi về, không chỉnh sửa, chỉ ghi thêm (append-only) để làm nguồn lưu trữ gốc đáng tin cậy.",
+      "hints": [
+        "Hãy nghĩ về điểm xuất phát của dữ liệu khi mới đi vào hệ thống lakehouse.",
+        "Nó là nơi lưu giữ dữ liệu nguyên bản phục vụ cho việc backfill hoặc trace lỗi sau này.",
+        "Đáp án mô tả dữ liệu thô, append-only và lưu trữ vĩnh viễn."
+      ],
+      "concepts": [
+        "d17-t2-data-eng-foundations"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Trong kiến trúc Medallion, tầng dữ liệu nào là nơi thực hiện các tác vụ lọc dữ liệu bẩn, chuẩn hóa kiểu dữ liệu và khử trùng lặp (deduplication)?",
+      "options": {
+        "A": "Tầng Bronze (Đồng) là nơi tiếp nhận dữ liệu gốc chưa được xử lý.",
+        "B": "Tầng Silver (Bạc) là nơi làm sạch và chuẩn hóa các dữ liệu thô.",
+        "C": "Tầng Gold (Vàng) là nơi tính toán các chỉ số kinh doanh tổng hợp này.",
+        "D": "Tầng Platinum (Bạch kim) là nơi lưu trữ các mô hình AI đã huấn luyện đó."
+      },
+      "answer": "B",
+      "explanation": "Tầng Silver tiếp nhận dữ liệu từ Bronze, thực hiện làm sạch, khử trùng lặp, áp dụng schema validation để dữ liệu sẵn sàng cho các tác vụ xử lý chuyên sâu.",
+      "hints": [
+        "Hãy nghĩ về một bước trung gian kết nối giữa dữ liệu thô bẩn và dữ liệu sẵn sàng cho doanh nghiệp.",
+        "Đây là bước làm sạch và chuẩn hóa dữ liệu.",
+        "Đáp án chính xác là tầng Silver (Bạc)."
+      ],
+      "concepts": [
+        "d17-t2-data-eng-foundations"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Lý do quan trọng nhất khiến mô hình ELT (Extract - Load - Transform) trở thành lựa chọn mặc định trong các kiến trúc dữ liệu hiện đại là gì?",
+      "options": {
+        "A": "ELT giúp bảo vệ tuyệt đối dữ liệu nhạy cảm khỏi rò rỉ ngay từ nguồn.",
+        "B": "Tài nguyên tính toán của các cloud lakehouse hiện nay rất mạnh và giá rẻ.",
+        "C": "ELT không yêu cầu bất kỳ công cụ lập trình hay quản lý luồng dữ liệu nào.",
+        "D": "Quá trình biến đổi dữ liệu trước khi tải giúp tiết kiệm bộ nhớ lưu trữ."
+      },
+      "answer": "B",
+      "explanation": "Sự phát triển của cloud compute (Snowflake, BigQuery, Databricks) giúp việc biến đổi dữ liệu trực tiếp trong kho dữ liệu (transform-at-destination) trở nên tối ưu và rẻ hơn.",
+      "hints": [
+        "So sánh sự thay đổi chi phí tính toán đám mây và lưu trữ hiện nay so với quá khứ.",
+        "ELT tận dụng sức mạnh xử lý quy mô lớn của đích đến thay vì xử lý trên đường truyền tải.",
+        "Đáp án liên quan đến hiệu năng mạnh mẽ và chi phí rẻ của hạ tầng đám mây lakehouse."
+      ],
+      "concepts": [
+        "d17-t2-data-eng-foundations"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Tình huống nào sau đây bắt buộc phải áp dụng quy trình ETL (Extract - Transform - Load) thay vì ELT mặc định?",
+      "options": {
+        "A": "Khi dung lượng dữ liệu cần xử lý vượt quá một terabyte trong mỗi ngày.",
+        "B": "Khi cần che giấu thông tin cá nhân nhạy cảm (PII) trước khi tải lên cloud.",
+        "C": "Khi hệ thống đích dùng công nghệ cơ sở dữ liệu quan hệ truyền thống đó.",
+        "D": "Khi đội ngũ kỹ sư muốn giảm thiểu số lượng dòng code Python cần viết đó."
+      },
+      "answer": "B",
+      "explanation": "Đối với các ngành nghề yêu cầu bảo mật cao, thông tin PII bắt buộc phải được mã hóa hoặc loại bỏ (Transform) ngay trên đường truyền trước khi lưu vào kho lưu trữ (Load) để tuân thủ pháp luật.",
+      "hints": [
+        "Hãy nghĩ về các quy định khắt khe của ngành y tế hay tài chính ngân hàng.",
+        "Dữ liệu nhạy cảm không được phép lưu trữ thô ở bất cứ nơi nào trên môi trường đám mây chung.",
+        "Đáp án chỉ ra việc bảo vệ thông tin PII trước khi tải lên đám mây lưu trữ."
+      ],
+      "concepts": [
+        "d17-t2-data-eng-foundations"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Ý nghĩa lớn nhất của việc áp dụng mô hình kiến trúc Medallion trong quản lý dữ liệu cho AI là gì?",
+      "options": {
+        "A": "Tăng tốc độ phản hồi các cuộc gọi API từ các mô hình ngôn ngữ lớn.",
+        "B": "Tự động phát hiện và vá các lỗ hổng bảo mật trong mạng nội bộ đó.",
+        "C": "Tạo ra một cấu trúc dữ liệu có tính truy vết cao và dễ bảo trì.",
+        "D": "Giảm thiểu 100% thời gian chạy các chương trình huấn luyện các mô hình AI."
+      },
+      "answer": "C",
+      "explanation": "Kiến trúc Medallion phân chia dữ liệu thành các tầng rõ ràng giúp việc sửa lỗi, tái xử lý dữ liệu (backfill) và giám sát chất lượng trở nên có hệ thống và dễ quản lý.",
+      "hints": [
+        "Hãy nghĩ về việc nếu phát hiện dữ liệu ở Gold bị sai, làm thế nào để trace lại gốc.",
+        "Sự phân tầng giúp xây dựng luồng dữ liệu minh bạch, có thể chạy lại từ đầu khi cần.",
+        "Đáp án liên quan đến tính truy vết tốt và khả năng bảo trì hệ thống dữ liệu."
+      ],
+      "concepts": [
+        "d17-t2-data-eng-foundations"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Trong bối cảnh data-centric AI, câu phát biểu kinh điển 'Garbage in, garbage out' cảnh báo điều gì?",
+      "options": {
+        "A": "Nếu dùng các mô hình AI đời cũ, hệ thống tự động sinh dữ liệu rác.",
+        "B": "Việc lưu trữ quá nhiều dữ liệu thô làm nghẽn băng thông hệ thống mạng.",
+        "C": "Nếu dữ liệu đầu vào kém chất lượng, mô hình AI đầu ra hoạt động kém.",
+        "D": "Các kỹ sư không nên viết code biến đổi dữ liệu trực tiếp trong database."
+      },
+      "answer": "C",
+      "explanation": "Dù mô hình AI có thông minh hay đắt tiền đến đâu, nếu dữ liệu dùng để huấn luyện hoặc truy vấn bị nhiễu và sai lệch, kết quả đầu ra sẽ bị sai lệch tương ứng.",
+      "hints": [
+        "Đây là nguyên lý cơ bản nhất của khoa học máy tính và xử lý thông tin.",
+        "Chốt chất lượng đầu vào quyết định trực tiếp đến độ chính xác của kết quả đầu ra.",
+        "Đáp án mô tả mối liên hệ giữa chất lượng dữ liệu nạp vào và hiệu năng mô hình đầu ra."
+      ],
+      "concepts": [
+        "d17-t2-data-eng-foundations"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Tại sao việc duy trì dữ liệu ở tầng Bronze dưới dạng 'append-only' (chỉ ghi thêm) lại là một nguyên tắc thiết kế bắt buộc?",
+      "options": {
+        "A": "Để giảm thiểu tối đa không gian lưu trữ đĩa cứng cần thiết trên đám mây.",
+        "B": "Để tăng tốc độ đọc dữ liệu trực tiếp cho các mô hình AI đang chạy.",
+        "C": "Để đảm bảo dữ liệu thô gốc không bao giờ bị mất hoặc bị ghi đè.",
+        "D": "Để ngăn chặn các hacker có thể truy cập và thay đổi cấu trúc dữ liệu."
+      },
+      "answer": "C",
+      "explanation": "Append-only bảo toàn lịch sử dữ liệu thô không bị sửa đổi, giúp hệ thống có thể xây dựng lại toàn bộ các tầng Silver/Gold bất cứ lúc nào khi logic xử lý thay đổi.",
+      "hints": [
+        "Hãy nghĩ đến việc bạn phát hiện ra một bug trong code làm sạch dữ liệu từ một tháng trước.",
+        "Làm thế nào để chạy lại quy trình làm sạch nếu dữ liệu thô ban đầu đã bị sửa đổi trực tiếp?",
+        "Đáp án chỉ ra việc bảo toàn dữ liệu thô nguyên gốc không bị mất mát hoặc chỉnh sửa."
+      ],
+      "concepts": [
+        "d17-t2-data-eng-foundations"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Trong kiến trúc Medallion, dữ liệu lưu trữ tại tầng 'Gold' thường có cấu trúc đặc trưng nào sau đây?",
+      "options": {
+        "A": "Là tập hợp các file log văn bản chưa được phân tích cú pháp chi tiết.",
+        "B": "Là các bản ghi thô lưu trữ thông tin giao dịch gốc hệ thống máy chủ.",
+        "C": "Là dữ liệu nhị phân chứa các vector đặc trưng của các file hình ảnh lớn.",
+        "D": "Là các bảng dữ liệu đã được tổng hợp, làm giàu và sẵn sàng cho phân tích."
+      },
+      "answer": "D",
+      "explanation": "Tầng Gold chứa dữ liệu có mức độ tinh lọc cao nhất, được gom nhóm và tối ưu hóa để phục vụ trực tiếp cho báo cáo kinh doanh hoặc đưa vào mô hình AI ứng dụng.",
+      "hints": [
+        "Đây là tầng dữ liệu hoàn thiện nhất của kim tự tháp Medallion.",
+        "Dữ liệu ở đây đã qua xử lý phức tạp và mang giá trị nghiệp vụ rõ ràng.",
+        "Đáp án mô tả dữ liệu đã được làm giàu, tổng hợp và sẵn sàng cho việc truy vấn nghiệp vụ."
+      ],
+      "concepts": [
+        "d17-t2-data-eng-foundations"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Thuật ngữ 'Schema Drift' trong kỹ thuật đường ống dữ liệu (data pipeline) được định nghĩa là gì?",
+      "options": {
+        "A": "Việc dữ liệu từ nguồn phát bị trễ giờ gửi so với lịch trình định sẵn.",
+        "B": "Sự mất mát kết nối internet giữa nguồn phát dữ liệu và hệ thống lưu trữ.",
+        "C": "Việc các mô hình ngôn ngữ lớn liên tục thay đổi cấu trúc câu trả lời.",
+        "D": "Sự thay đổi không báo trước cấu trúc cột hoặc kiểu dữ liệu từ nguồn phát."
+      },
+      "answer": "D",
+      "explanation": "Schema Drift xảy ra khi nguồn dữ liệu thay đổi cấu trúc (thêm/bớt cột, đổi kiểu dữ liệu) mà không báo trước, có thể làm gãy pipeline nếu không có cơ chế xử lý động.",
+      "hints": [
+        "Hãy nghĩ về việc hệ thống backend nguồn cập nhật phiên bản mới làm thay đổi định dạng dữ liệu gửi đi.",
+        "Đây là nguyên nhân gây lỗi phổ biến trong các pipeline tĩnh không tự thích ứng.",
+        "Đáp án là sự biến động bất ngờ về mặt cấu trúc cột hoặc kiểu dữ liệu đầu vào."
+      ],
+      "concepts": [
+        "d17-t2-data-eng-foundations"
+      ]
+    }
+  ]
+}

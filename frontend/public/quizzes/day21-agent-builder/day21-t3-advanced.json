@@ -1,0 +1,210 @@
+{
+  "id": "day21-t3-advanced",
+  "parent_id": "day21-agent-builder",
+  "topic_title": "Day 21: Fine-tuning LLMs (LoRA/QLoRA)",
+  "title": "Phần 3: Huấn Luyện Unsloth SFTTrainer & Multi-tenant Serving",
+  "description": "Đánh giá nâng cao về huấn luyện mô hình 4-bit với Unsloth SFTTrainer, kỹ thuật sequence packing, gỡ lỗi OOM, và multi-tenant LoRA adapter serving.",
+  "difficulty": "khó",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Tại sao công cụ Unsloth lại giúp tăng tốc độ huấn luyện mô hình và giảm thiểu VRAM đáng kể?",
+      "options": {
+        "A": "Nó viết lại các CUDA kernels tối ưu riêng cho quá trình huấn luyện.",
+        "B": "Nó nén toàn bộ mô hình ngôn ngữ gốc thành định dạng một bit.",
+        "C": "Nó tự động tải thêm các tài nguyên tính toán từ đám mây về.",
+        "D": "Nó loại bỏ hoàn toàn các siêu tham số trong cấu hình chạy thử."
+      },
+      "answer": "A",
+      "explanation": "Unsloth viết lại các CUDA kernels thủ công cho quá trình forward và backward (đặc biệt là cho lớp Attention, RoPE, và CrossEntropy Loss), giúp tăng tốc 2x và giảm 60% VRAM tiêu thụ.",
+      "hints": [
+        "Unsloth tối ưu hóa ở mức độ giao tiếp phần cứng GPU cấp thấp.",
+        "Nó can thiệp trực tiếp vào cách viết các kernel tính toán của PyTorch.",
+        "Đáp án đúng là viết lại các CUDA kernels tối ưu riêng cho huấn luyện."
+      ],
+      "concepts": [
+        "d21-t3-finetuning-lora"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Cơ chế hoạt động cốt lõi của kỹ thuật Sequence Packing trong SFTTrainer là gì?",
+      "options": {
+        "A": "Gộp nhiều mẫu dữ liệu ngắn vào cùng một chuỗi có độ dài tối đa.",
+        "B": "Nén toàn bộ cơ sở dữ liệu huấn luyện thành một tệp tin duy nhất.",
+        "C": "Tự động dịch chuyển các trọng số của mô hình sang máy tính khác.",
+        "D": "Xóa bỏ các ký tự đặc biệt trong văn bản trước khi mã hóa."
+      },
+      "answer": "A",
+      "explanation": "Sequence Packing gộp nhiều mẫu dữ liệu ngắn (ngăn cách bởi token EOS) vào cùng một sequence dài cho đến khi đạt max_seq_length, tránh lãng phí tính toán trên các padding token.",
+      "hints": [
+        "Nó giúp tối đa hóa số lượng token thực tế mà mô hình xử lý trong một batch.",
+        "Loại bỏ các khoảng trống (padding) vô ích làm tiêu tốn tài nguyên GPU.",
+        "Đáp án đúng là gộp nhiều mẫu ngắn vào cùng một chuỗi độ dài tối đa."
+      ],
+      "concepts": [
+        "d21-t3-finetuning-lora"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Dấu hiệu rõ ràng nhất của hiện tượng quá khớp (overfitting) thể hiện trên đồ thị loss là gì?",
+      "options": {
+        "A": "Cả train loss và eval loss đều giảm đều đặn theo thời gian.",
+        "B": "Eval loss bắt đầu tăng lên trong khi train loss vẫn tiếp tục giảm.",
+        "C": "Train loss đột ngột tăng vọt lên mức cao nhất của đồ thị.",
+        "D": "Eval loss đi ngang và không có bất kỳ sự thay đổi nào."
+      },
+      "answer": "B",
+      "explanation": "Overfitting xảy ra khi mô hình bắt đầu học vẹt tập train. Khi đó, train loss vẫn tiếp tục giảm nhưng eval loss (trên tập đánh giá độc lập) bắt đầu đi lên hoặc tăng mạnh.",
+      "hints": [
+        "Sự phân kỳ giữa hiệu năng trên tập huấn luyện và tập kiểm định độc lập.",
+        "Đồ thị thể hiện mô hình đang mất đi khả năng tổng quát hóa dữ liệu mới.",
+        "Đáp án đúng là eval loss bắt đầu tăng lên trong khi train loss tiếp tục giảm."
+      ],
+      "concepts": [
+        "d21-t3-finetuning-lora"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Hành động phù hợp nhất khi phát hiện mô hình bắt đầu bị overfitting trong lúc huấn luyện?",
+      "options": {
+        "A": "Tiếp tục chạy thêm nhiều epochs nữa để mô hình tự sửa lỗi.",
+        "B": "Dừng quá trình huấn luyện, giảm số epochs hoặc bổ sung thêm data.",
+        "C": "Tăng kích thước của tham số learning rate lên gấp nhiều lần nữa.",
+        "D": "Xóa toàn bộ các tệp tin cấu hình trong thư mục của dự án."
+      },
+      "answer": "B",
+      "explanation": "Khi phát hiện overfitting, lập trình viên nên áp dụng kỹ thuật dừng sớm (early stopping), thu thập thêm dữ liệu huấn luyện sạch, hoặc áp dụng các kỹ thuật regularization mạnh hơn.",
+      "hints": [
+        "Cần can thiệp để tránh việc mô hình tiếp tục tối ưu hóa mù quáng trên tập train.",
+        "Điều chỉnh số lượng epoch chạy hoặc đa dạng hóa tập dữ liệu đầu vào.",
+        "Đáp án đúng là dừng huấn luyện, giảm epochs hoặc bổ sung thêm data."
+      ],
+      "concepts": [
+        "d21-t3-finetuning-lora"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Khái niệm chưng cất mô hình (Model Distillation) trong chuẩn bị dataset được hiểu là gì?",
+      "options": {
+        "A": "Lọc bỏ toàn bộ các từ nhiễu trong dữ liệu huấn luyện gốc.",
+        "B": "Sử dụng mô hình mạnh để tạo dữ liệu huấn luyện cho mô hình yếu.",
+        "C": "Gộp nhiều mô hình nhỏ lại thành một mô hình lớn duy nhất.",
+        "D": "Tự động tối ưu hóa tốc độ truyền dữ liệu của hệ thống máy chủ."
+      },
+      "answer": "B",
+      "explanation": "Model Distillation sử dụng mô hình mạnh (như GPT-4, Claude 3.5) làm giáo viên để tạo ra tập dữ liệu chất lượng cao (synthetic data) dùng để huấn luyện mô hình nhỏ hơn (như Qwen 7B).",
+      "hints": [
+        "Một kỹ thuật chuyển giao tri thức từ mô hình lớn sang mô hình nhỏ.",
+        "Giúp mô hình nhỏ học được cách suy luận và định dạng của mô hình lớn.",
+        "Đáp án đúng là dùng mô hình mạnh tạo dữ liệu huấn luyện cho mô hình yếu."
+      ],
+      "concepts": [
+        "d21-t3-finetuning-lora"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Ưu thế lớn nhất của cơ chế 'multi-tenant adapter serving' (như S-LoRA hoặc Punica) là gì?",
+      "options": {
+        "A": "Giúp mô hình tự động sửa lỗi chính tả cho khách hàng khi chat.",
+        "B": "Cho phép tăng gấp đôi dung lượng bộ nhớ của card đồ họa.",
+        "C": "Chạy nhiều LoRA adapters khác nhau trên cùng một base model và GPU.",
+        "D": "Tự động đồng bộ dữ liệu giữa các máy chủ đám mây khác nhau."
+      },
+      "answer": "C",
+      "explanation": "Multi-tenant serving cho phép tải và phục vụ hàng chục LoRA adapters chuyên biệt khác nhau cho từng khách hàng trên cùng một mô hình nền (base model) và một GPU duy nhất mà không tốn thêm VRAM lớn.",
+      "hints": [
+        "Tận dụng tính chất chia sẻ trọng số nền và chỉ tráo đổi các adapter hạng thấp.",
+        "Giúp tiết kiệm hàng ngàn USD chi phí hạ tầng khi phục vụ nhiều khách hàng khác nhau.",
+        "Đáp án đúng là chạy nhiều LoRA adapters trên cùng một base model và GPU."
+      ],
+      "concepts": [
+        "d21-t3-finetuning-lora"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Khi sử dụng SFTTrainer, cấu hình `packing=True` giúp cải thiện hiệu năng ra sao?",
+      "options": {
+        "A": "Không mang lại bất kỳ sự tăng tốc nào cho quá trình huấn luyện.",
+        "B": "Làm giảm tốc độ huấn luyện của hệ thống xuống một nửa so với.",
+        "C": "Giúp tăng gấp đôi throughput nhờ loại bỏ các token đệm thừa.",
+        "D": "Tăng tốc độ lên gấp một trăm lần tùy thuộc vào loại GPU."
+      },
+      "answer": "C",
+      "explanation": "Kích hoạt packing giúp gộp các câu ngắn lại, loại bỏ gần như toàn bộ các padding tokens vô ích, giúp tăng lưu lượng xử lý token (throughput) lên khoảng 2 lần trong thực tế.",
+      "hints": [
+        "Giúp GPU luôn bận rộn tính toán các token thực tế thay vì tính toán các token trống.",
+        "Tối đa hóa hiệu suất sử dụng của ma trận attention trên mỗi block chạy.",
+        "Đáp án đúng là giúp tăng gấp đôi throughput nhờ loại bỏ token đệm thừa."
+      ],
+      "concepts": [
+        "d21-t3-finetuning-lora"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Theo khuyến nghị thực tế (best practice), khi thiết lập LoRA, bạn nên nhắm mục tiêu (target_modules) vào đâu?",
+      "options": {
+        "A": "Chỉ nên cấu hình cho hai lớp attention cơ bản là q_proj và v_proj.",
+        "B": "Chỉ cấu hình cho các lớp MLP ở cuối mô hình ngôn ngữ.",
+        "C": "Nên nhắm mục tiêu vào tất cả các lớp attention và MLP.",
+        "D": "Loại bỏ hoàn toàn việc cấu hình các target modules để tự học."
+      },
+      "answer": "C",
+      "explanation": "Nghiên cứu chỉ ra rằng chỉ cấu hình q_proj và v_proj sẽ thiếu năng lực học tập. Việc nhắm mục tiêu vào tất cả các lớp tuyến tính (cả Attention và MLP layers) giúp đạt hiệu năng tiệm cận full fine-tuning.",
+      "hints": [
+        "Nhắm mục tiêu vào toàn bộ các lớp Linear của mô hình để đạt hiệu năng tốt nhất.",
+        "Bao gồm q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, và down_proj.",
+        "Đáp án đúng là nên nhắm mục tiêu vào tất cả các lớp attention và MLP."
+      ],
+      "concepts": [
+        "d21-t3-finetuning-lora"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Tại sao việc đọc kỹ ToS của nhà cung cấp API (như OpenAI) là bắt buộc khi làm model distillation?",
+      "options": {
+        "A": "Để đảm bảo mô hình chạy với độ trễ thấp dưới 200ms.",
+        "B": "Để tránh việc phải trả phí bản quyền cho các thư viện mã nguồn.",
+        "C": "Để tự động cập nhật các phiên bản phần mềm của hệ thống.",
+        "D": "Vì nhiều nhà cung cấp cấm dùng output của họ train model cạnh tranh."
+      },
+      "answer": "D",
+      "explanation": "Hầu hết các nhà cung cấp mô hình thương mại (như OpenAI) đều ghi rõ trong ToS cấm sử dụng đầu ra từ API của họ để huấn luyện các mô hình cạnh tranh trực tiếp với họ.",
+      "hints": [
+        "Đây là một ràng buộc pháp lý quan trọng để tránh các rủi ro kiện tụng sau này.",
+        "Cần kiểm tra kỹ chính sách sử dụng dữ liệu thương mại của bên cung cấp.",
+        "Đáp án là nhiều nhà cung cấp cấm dùng output của họ train model cạnh tranh."
+      ],
+      "concepts": [
+        "d21-t3-finetuning-lora"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Dấu hiệu nhận biết lỗi cạn bộ nhớ đồ họa (OOM) do vùng nhớ kích hoạt (activation memory) gây ra là gì?",
+      "options": {
+        "A": "Lỗi xảy ra ngay lập tức khi mô hình vừa mới được tải lên.",
+        "B": "Lỗi xảy ra khi lưu trữ tệp tin checkpoint vào ổ cứng máy tính.",
+        "C": "Lỗi xuất hiện khi chạy lệnh dvc repro trên hệ thống dữ liệu.",
+        "D": "Lỗi OOM xảy ra đột ngột ở giữa epoch đầu tiên khi forward."
+      },
+      "answer": "D",
+      "explanation": "Lỗi OOM do model weights sẽ xảy ra ngay khi tải mô hình (load model). Còn lỗi OOM do activation memory chỉ xảy ra khi chạy lượt forward của batch dữ liệu ở giữa epoch đầu tiên.",
+      "hints": [
+        "Lỗi phát sinh trong quá trình tính toán lan truyền xuôi của batch dữ liệu.",
+        "Khi kích thước chuỗi đầu vào hoặc kích thước batch vượt quá dung lượng GPU.",
+        "Đáp án đúng là lỗi OOM xảy ra đột ngột ở giữa epoch đầu tiên khi forward."
+      ],
+      "concepts": [
+        "d21-t3-finetuning-lora"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+---
+title: Spaced Repetition (SM-2)
+description: Quản lý ôn tập thẻ ghi nhớ tối ưu hóa khả năng ghi nhớ dài hạn dựa trên thuật toán SM-2.
+---
+
+Để hỗ trợ ghi nhớ kiến thức dài hạn, **EduGap** triển khai hệ thống **Spaced Repetition (Ôn tập ngắt quãng)** lấy cảm hứng từ thuật toán **SuperMemo-2 (SM-2)** (dựa trên nghiên cứu của **[Woźniak & Gorzelańczyk (1994)](/docs/academic-citations#5-spaced-repetition-forgetting--fsrs)**). Hệ thống lên lịch ôn tập cho học viên dựa trên lịch sử phản hồi và độ bền của bộ nhớ (Memory Decay Curve).
+
+---
+
+## 1. Các trường dữ liệu cốt lõi của SM-2
+
+Mỗi thẻ ghi nhớ (Flashcard) liên kết với một Concept và lưu trữ trạng thái ôn tập cá nhân hóa của học sinh thông qua các thuộc tính:
+
+*   **Repetitions ($n$):** Số lần ôn tập thành công liên tiếp (được chấm điểm $\ge 3$).
+*   **Interval ($I$):** Số ngày giãn cách cho đến lượt ôn tập tiếp theo.
+*   **Ease Factor ($EF$):** Hệ số biểu thị độ dễ của thẻ ghi nhớ (mặc định khởi tạo = $2.5$).
+*   **Last Score ($q$):** Điểm đánh giá chất lượng câu trả lời gần nhất của học viên trên thang điểm từ $0$ đến $5$.
+*   **Due Date:** Thời điểm đến hạn ôn tập tiếp theo.
+
+---
+
+## 2. Công thức toán học SM-2
+
+Khi học viên trả lời thẻ ghi nhớ và nhận điểm chất lượng $q \in [0, 5]$:
+
+### A. Cập nhật Ease Factor (EF)
+Hệ số Ease Factor được điều chỉnh linh hoạt theo điểm số $q$:
+
+$$EF_{\text{new}} = EF_{\text{old}} + \left(0.1 - (5 - q) \cdot \left(0.08 + (5 - q) \cdot 0.02\right)\right)$$
+
+*Lưu ý: Giá trị của $EF$ luôn được giới hạn cận dưới ở mức $1.3$ để tránh việc giãn cách giảm quá sâu.*
+
+### B. Tính Quãng Giãn cách Ôn tập (Interval)
+Số ngày giãn cách cho lượt ôn tập tiếp theo được tính toán như sau:
+
+*   **Lượt đầu tiên thành công ($n = 0$):** $I = 1$ ngày.
+*   **Lượt thứ hai thành công ($n = 1$):** $I = 6$ ngày.
+*   **Các lượt thành công tiếp theo ($n > 1$):**
+    $$I_{\text{new}} = I_{\text{old}} \cdot EF_{\text{new}}$$
+
+### C. Xử lý khi ôn tập thất bại ($q < 3$)
+Nếu học viên trả lời không đạt (điểm $q < 3$):
+*   Reset số lần lặp liên tiếp: $n = 0$.
+*   Đặt lại quãng giãn cách ngay lập tức: $I = 1$ ngày (thẻ ghi nhớ sẽ hiển thị ôn tập lại vào ngày mai).
+*   Giữ nguyên Ease Factor cũ $EF$.
+
+---
+
+## 3. Quy trình Ôn tập Active Recall & AI Bounded Grading
+
+Khác với các ứng dụng flashcard truyền thống (nơi người dùng tự đánh giá xem mình nhớ hay quên), EduGap ép buộc học sinh thực hiện **Active Recall (Gợi nhớ tích cực)** bằng cách:
+
+1.  Học sinh phải **nhập trực tiếp câu trả lời** bằng văn bản tự do.
+2.  Hệ thống sử dụng **AI Bounded Grading** (LLM Evaluator với schema JSON ràng buộc) để chấm điểm câu trả lời tự luận ngắn của sinh viên và quy đổi sang thang điểm $0-5$:
+    *   **5:** Câu trả lời hoàn hảo, đầy đủ ý chính.
+    *   **4:** Trả lời đúng, thiếu sót chi tiết không quan trọng.
+    *   **3:** Trả lời đúng ý cốt lõi nhưng thiếu hụt nhiều ý phụ.
+    *   **2:** Trả lời sai ý chính, nhưng có gợi nhớ đúng một phần thuật ngữ.
+    *   **1:** Trả lời sai hoàn toàn.
+    *   **0:** Không trả lời được gì.
+
+---
+
+## 4. Kiểm soát Độ trễ và Chi phí (Cost & Latency Controls)
+
+Để tối ưu hóa chi phí gọi API LLM và giảm độ trễ phản hồi khi học sinh làm flashcard:
+
+*   **Deterministic exact matching:** Hệ thống tiến hành so khớp từ khóa chính xác (keyword matching) với đáp án mẫu trước. Nếu khớp chính xác, chấm điểm $5$ ngay lập tức mà không gọi LLM.
+*   **Asynchronous AI Grading:** Giao diện hiển thị trạng thái chờ (loading skeleton) mượt mà trong khi AI Microservice chạy kiểm định ngữ nghĩa ngầm.

@@ -1,0 +1,116 @@
+{
+  "id": "midterm-common-short-answer",
+  "parent_id": "midterm-review",
+  "topic_title": "Ôn tập giữa kỳ: Cấu trúc bài thi",
+  "title": "Phần I - Chung - Tự luận tình huống",
+  "description": "5 câu trả lời ngắn về thiết kế, debug và guardrail cho hệ thống AI.",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Một RAG agent có nguy cơ prompt injection từ tài liệu nội bộ. Hãy đề xuất 3 lớp phòng vệ cụ thể.",
+      "expected_answer": "Lọc quyền trước retrieval, phân tách rõ instruction/data trong system prompt, và dùng C-RAG/verification để loại chunk đáng ngờ hoặc không đủ bằng chứng.",
+      "evaluation_points": [
+        "Có pre-filter theo quyền và metadata",
+        "Có ràng buộc không làm theo lệnh trong tài liệu",
+        "Có bước kiểm chứng/citation trước khi trả lời",
+        "Có logging để audit sự cố"
+      ],
+      "sfia_level": "SFIA 4",
+      "competency": "Design secure RAG flow",
+      "hints": [
+        "Nêu quyết định chính trước, rồi giải thích trade-off.",
+        "Liên hệ câu trả lời với rủi ro hoặc chỉ số vận hành.",
+        "Kết luận bằng bước kiểm chứng hoặc tiêu chí nghiệm thu."
+      ],
+      "concepts": [
+        "midterm-security",
+        "midterm-rag"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Một agent bị loop gọi tool tìm kiếm cùng truy vấn. Bạn sẽ debug và sửa thế nào?",
+      "expected_answer": "Kiểm trace tool call, thêm điều kiện dừng, giới hạn số vòng lặp, cache observation và yêu cầu agent đổi chiến lược khi kết quả không mới.",
+      "evaluation_points": [
+        "Nêu cách đọc trace/observation",
+        "Có giới hạn vòng lặp hoặc budget",
+        "Có cache hoặc kiểm tra kết quả trùng",
+        "Có fallback/escalation khi không tiến triển"
+      ],
+      "sfia_level": "SFIA 4",
+      "competency": "Diagnose agent loop",
+      "hints": [
+        "Nêu quyết định chính trước, rồi giải thích trade-off.",
+        "Liên hệ câu trả lời với rủi ro hoặc chỉ số vận hành.",
+        "Kết luận bằng bước kiểm chứng hoặc tiêu chí nghiệm thu."
+      ],
+      "concepts": [
+        "midterm-agent-architecture"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Bạn cần thiết kế eval cho prompt phân loại ticket. Hãy nêu bộ dữ liệu và metric tối thiểu.",
+      "expected_answer": "Dùng tập ticket gán nhãn chuẩn, chia theo loại lỗi phổ biến, đo accuracy/F1 theo nhãn, confusion matrix và kiểm mẫu lỗi quan trọng.",
+      "evaluation_points": [
+        "Có dataset gán nhãn chuẩn",
+        "Có metric phù hợp từng lớp",
+        "Có phân tích lỗi/confusion",
+        "Có tiêu chí pass/fail trước rollout"
+      ],
+      "sfia_level": "SFIA 4",
+      "competency": "Design prompt evaluation",
+      "hints": [
+        "Nêu quyết định chính trước, rồi giải thích trade-off.",
+        "Liên hệ câu trả lời với rủi ro hoặc chỉ số vận hành.",
+        "Kết luận bằng bước kiểm chứng hoặc tiêu chí nghiệm thu."
+      ],
+      "concepts": [
+        "midterm-evaluation"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "RAG trả lời đúng nguồn nhưng kết luận sai. Hãy nêu quy trình debug ngắn.",
+      "expected_answer": "Kiểm query rewrite, retrieval/rerank, chunk được đưa vào prompt, prompt tổng hợp, rồi so câu trả lời với citation bằng test case tái lập.",
+      "evaluation_points": [
+        "Tách retrieval và generation để debug",
+        "Kiểm rerank/chunk/citation",
+        "Có test case tái lập",
+        "Có hành động sửa rõ ràng"
+      ],
+      "sfia_level": "SFIA 4",
+      "competency": "Debug RAG quality",
+      "hints": [
+        "Nêu quyết định chính trước, rồi giải thích trade-off.",
+        "Liên hệ câu trả lời với rủi ro hoặc chỉ số vận hành.",
+        "Kết luận bằng bước kiểm chứng hoặc tiêu chí nghiệm thu."
+      ],
+      "concepts": [
+        "midterm-rag",
+        "midterm-observability"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Một AI feature có thể đưa câu trả lời sai cho nhân viên mới. Bạn thiết kế fallback thế nào?",
+      "expected_answer": "Khi confidence thấp hoặc thiếu bằng chứng, hệ thống hỏi thêm, trả lời giới hạn theo nguồn, hoặc escalte cho mentor/admin thay vì đoán.",
+      "evaluation_points": [
+        "Có tiêu chí confidence/evidence",
+        "Có hành vi abstain/hỏi thêm",
+        "Có escalation phù hợp",
+        "Có logging để cải thiện về sau"
+      ],
+      "sfia_level": "SFIA 4",
+      "competency": "Design safe fallback",
+      "hints": [
+        "Nêu quyết định chính trước, rồi giải thích trade-off.",
+        "Liên hệ câu trả lời với rủi ro hoặc chỉ số vận hành.",
+        "Kết luận bằng bước kiểm chứng hoặc tiêu chí nghiệm thu."
+      ],
+      "concepts": [
+        "midterm-safety"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+---
+title: Tổng quan Thuật toán
+description: Kiến trúc phân tầng và sự phối hợp giữa các mô hình đánh giá năng lực trong lõi thích ứng của EduGap.
+---
+
+Hệ thống **EduGap** tích hợp một lõi thích ứng (Adaptive Learning Core Engine) đa tầng để liên tục đánh giá năng lực của người học, hiệu chuẩn độ khó học liệu và đưa ra các đề xuất học tập cá nhân hóa phù hợp nhất.
+
+## Sơ đồ Tương tác Hệ thống (System Architecture DAG)
+
+
+
+Dưới đây là sơ đồ luồng dữ liệu tương tác giữa các mô hình thuật toán cốt lõi từ lúc học viên làm bài đến khi nhận được lộ trình học tập tối ưu:
+
+![Mermaid Diagram](/docs/images/mermaid-82d46a3114c4ceda78005c5b6ee2cd3a.svg)
+
+## Danh mục các thuật toán cốt lõi
+
+Trang tài liệu này phân tách chi tiết thành các phần chuyên sâu tương ứng với từng thuật toán:
+
+| Chuyên mục | Mô tả & Vai trò | Đầu vào chính (Inputs) | Đầu ra chính (Outputs) |
+| :--- | :--- | :--- | :--- |
+| **[Elo Rating System](/docs/algorithms/elo)** | Đánh giá năng lực tổng quát của học sinh và hiệu chuẩn tự động độ khó câu hỏi. | Kết quả Đúng/Sai, lượt dùng Gợi ý. | Điểm Elo học sinh ($\theta$), Elo câu hỏi ($b$). |
+| **[Bayesian Knowledge Tracing (BKT)](/docs/algorithms/bkt)** | Ước lượng xác suất làm chủ từng Concept qua HMM tích hợp Đường cong Lãng quên (FSRS Lazy Decay). | Chuỗi câu trả lời Đúng/Sai, thời gian trôi qua. | Xác suất nắm vững kiến thức $P(L)$ thực tế. |
+| **[Contextual Bandit](/docs/algorithms/bandit)** | Gợi ý câu hỏi cá nhân hóa nằm trong Vùng phát triển gần nhất (ZPD). | Vector ngữ cảnh 3 chiều: $[Bias, P(L), \sigma(\theta)]$. | Câu hỏi tốt nhất (Arm) tối ưu hóa khả năng hấp thụ. |
+| **[Multi-Skill Graph Propagation](/docs/algorithms/graph)** | Phân bổ lỗi sai cho nhiều kỹ năng và lan truyền độ thông thạo trên đồ thị. | Kết quả làm bài, Đồ thị khái niệm liên kết. | Cập nhật điểm Elo/BKT cho các kỹ năng phụ thuộc. |
+| **[Spaced Repetition](/docs/algorithms/mem-recall)** | Lập lịch ôn tập tối ưu để chống lại sự suy giảm trí nhớ dựa trên SM-2. | Điểm số đánh giá tự luận (0 - 5). | Quãng giãn cách ngày ôn tập tiếp theo. |
+| **[Evaluation & Verification](/docs/algorithms/evaluation)** | Quy trình kiểm chứng khoa học, mô phỏng học sinh giả lập, đo lường Next-step AUC, Oracle Regret và bảo mật CI/CD. | Môi trường giả lập sinh viên, dữ liệu logs. | RMSE, AUC thực tế, Cumulative Regret thống kê. |
+| **[Item Generation Overview](/docs/quiz-generation)** | Quy trình trích xuất concept, sinh câu hỏi tiến hóa qua Evol-Instruct và thiết lập ma trận đa kỹ năng Q-Matrix. | Tài liệu slides/PDF thô. | Đồ thị khái niệm, ngân hàng câu hỏi nháp (MCQ/Code/Short Answer). |
+| **[Socratic Scaffolding](/docs/algorithms/question-gen)** | Thiết lập thang gợi ý Socratic 4 bậc và phát hiện trạng thái học viên vội vã để can thiệp Adaptive Fallback. | Telemetry người học (Response Time, lỗi sai liên tiếp), Gợi ý có sẵn. | Scaffolding gợi ý động, Toast Notification cảnh báo/hỗ trợ. |
+
+Hãy click vào từng chuyên mục trên menu hoặc bảng trên để đi sâu vào chi tiết toán học và cài đặt lập trình của từng thuật toán.

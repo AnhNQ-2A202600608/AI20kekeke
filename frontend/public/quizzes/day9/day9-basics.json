@@ -1,0 +1,220 @@
+{
+  "id": "day9-basics",
+  "parent_id": "day9",
+  "topic_title": "Day 9: Multi-Agent & Kết Nối Hệ Thống",
+  "title": "Phần 1: Nền tảng Multi-Agent & Tư duy Hệ thống",
+  "description": "Nắm vững các khái niệm cơ bản về hệ thống Multi-Agent, giới hạn của Single-Agent và tư duy thiết kế hệ thống chia để trị.",
+  "difficulty": "dễ",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Nguyên nhân chính dẫn đến hiện tượng 'God Agent' trong thiết kế hệ thống trợ lý AI là gì?",
+      "options": {
+        "A": "Do sử dụng một mô hình ngôn ngữ có kích thước cực lớn.",
+        "B": "Do thiết kế một tác tử duy nhất gánh vác quá nhiều vai trò.",
+        "C": "Do tích hợp quá nhiều cơ sở dữ liệu vector vào hệ thống.",
+        "D": "Do giới hạn tốc độ xử lý của hệ thống phần cứng máy."
+      },
+      "answer": "B",
+      "explanation": "Hiện tượng God Agent xảy ra khi một agent duy nhất phải đảm nhận quá nhiều trách nhiệm như lập kế hoạch, truy xuất, thực thi và tổng hợp.",
+      "hints": [
+        "Hãy suy nghĩ về việc một tác nhân có thể gánh vác bao nhiêu vai trò mà không bị quá tải.",
+        "Có thể có sự phân chia nào giữa các vai trò mà một tác nhân cần đảm nhận không?",
+        "Hãy xem xét những hệ thống nào có thể gây ra hiện tượng một tác nhân phải làm mọi việc, và liệu điều đó có hiệu quả không."
+      ],
+      "concepts": [
+        "d9-multi-agent-mcp",
+        "d4-prompt-engineering"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Giới hạn 'Context Bottleneck' của Single-Agent thường trực tiếp gây ra hậu quả tiêu cực nào sau đây?",
+      "options": {
+        "A": "Khiến cơ sở dữ liệu vector bị quá tải khi thực hiện.",
+        "B": "Khiến tác tử dễ bị ảo giác hoặc gọi sai công cụ.",
+        "C": "Khiến mô hình ngôn ngữ tự động cập nhật thêm kiến thức mới.",
+        "D": "Khiến hệ thống máy chủ bị tắc nghẽn về băng thông mạng."
+      },
+      "answer": "B",
+      "explanation": "Context Bottleneck xảy ra khi context window bị chiếm dụng quá nhiều, dẫn đến lỗi Lost-in-the-Middle làm tác tử quên dữ liệu hoặc gọi công cụ sai tham số.",
+      "hints": [
+        "Xem xét cách mà ngữ cảnh ảnh hưởng đến quyết định của một tác nhân.",
+        "Liệu có thể có một yếu tố nào đó làm cho tác nhân mất khả năng tập trung vào nhiệm vụ chính không?",
+        "Hãy phân tích các tình huống mà một tác nhân có thể bị rối và không thực hiện đúng chức năng của nó."
+      ],
+      "concepts": [
+        "d9-multi-agent-mcp",
+        "d3-agentic-react"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Dấu hiệu nào rõ ràng nhất cho thấy tác tử đang gặp lỗi 'Lost-in-the-Middle'?",
+      "options": {
+        "A": "Bỏ sót thông tin quan trọng nằm giữa ngữ cảnh truyền vào.",
+        "B": "Thời gian phản hồi của hệ thống bị kéo dài quá mức.",
+        "C": "Không thể kết nối được với các cơ sở dữ liệu ngoài.",
+        "D": "Tự động lặp lại một câu trả lời nhiều lần liên tiếp."
+      },
+      "answer": "A",
+      "explanation": "Lỗi Lost-in-the-Middle là hiện tượng mô hình ngôn ngữ lớn bỏ qua các thông tin quan trọng nằm ở phần giữa của cửa sổ ngữ cảnh.",
+      "hints": [
+        "Hãy nghĩ về những thông tin nào có thể bị bỏ qua trong quá trình xử lý ngữ cảnh.",
+        "Có những yếu tố nào có thể dẫn đến việc một tác nhân không nhận thức được thông tin quan trọng?",
+        "Suy nghĩ về cách mà một tác nhân có thể mất đi thông tin giữa các giai đoạn quyết định."
+      ],
+      "concepts": [
+        "d9-multi-agent-mcp",
+        "d4-tool-calling"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Sự đánh đổi về chuyên môn hóa (Specialization Trade-off) trong thiết kế Single-Agent nghĩa là gì?",
+      "options": {
+        "A": "Chi phí đầu tư phần cứng máy chủ tăng lên đáng kể.",
+        "B": "Prompt quá dài và phức tạp làm giảm hiệu năng tổng thể.",
+        "C": "Hệ thống không thể hỗ trợ nhiều ngôn ngữ lập trình khác.",
+        "D": "Thời gian huấn luyện lại mô hình bị kéo dài quá lâu."
+      },
+      "answer": "B",
+      "explanation": "Khi cố gắng prompt một Agent làm mọi việc, system prompt trở nên dài dòng và phức tạp, khiến Agent hoạt động không ổn định ở từng nhiệm vụ nhỏ.",
+      "hints": [
+        "Có thể có một sự cân bằng nào giữa sự phức tạp và hiệu quả trong thiết kế hệ thống không?",
+        "Liệu việc làm cho một tác nhân quá đa năng có thể dẫn đến sự suy giảm trong hiệu suất không?",
+        "Suy nghĩ về cách mà độ dài của prompt có thể ảnh hưởng đến khả năng xử lý của tác nhân."
+      ],
+      "concepts": [
+        "d9-multi-agent-mcp",
+        "d4-prompt-engineering"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Điểm yếu lớn nhất về độ tin cậy (Reliability) của hệ thống Single-Agent là gì?",
+      "options": {
+        "A": "Thiếu cơ chế cô lập lỗi khiến toàn bộ luồng chạy hỏng.",
+        "B": "Không thể tự động phát hiện các lỗi chính tả đầu vào.",
+        "C": "Tốc độ xử lý truy vấn của mô hình bị giảm dần.",
+        "D": "Dữ liệu lịch sử hội thoại tự động bị xóa sau ngày."
+      },
+      "answer": "A",
+      "explanation": "Single-Agent thiếu khả năng cô lập lỗi (fault isolation). Nếu agent chọn sai công cụ hoặc đi lệch hướng ngay từ đầu, toàn bộ quy trình sẽ bị hỏng.",
+      "hints": [
+        "Hãy xem xét cách mà việc thiếu khả năng cô lập lỗi có thể ảnh hưởng đến toàn bộ hệ thống.",
+        "Liệu có thể có một yếu tố nào đó khiến một tác nhân không thể tự điều chỉnh khi gặp lỗi không?",
+        "Suy nghĩ về các tình huống mà một lỗi nhỏ có thể dẫn đến sự cố lớn hơn trong hệ thống."
+      ],
+      "concepts": [
+        "d9-multi-agent-mcp",
+        "d11-guardrails-safety"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Trong tư duy hệ thống (Systems Thinking) đối với Multi-Agent, câu hỏi nào sau đây cần trả lời trước tiên?",
+      "options": {
+        "A": "Làm thế nào để lưu trữ lịch sử hội thoại lâu dài?",
+        "B": "Mô hình ngôn ngữ nào có chi phí vận hành rẻ nhất?",
+        "C": "Cần bao nhiêu lập trình viên để xây dựng hệ thống này?",
+        "D": "Phần nào cần suy luận sâu, phần nào chỉ lấy dữ liệu?"
+      },
+      "answer": "D",
+      "explanation": "Tư duy hệ thống bắt đầu bằng việc phân chia trách nhiệm (specialization) rõ ràng giữa các phần việc cần suy luận logic và các phần việc lấy dữ liệu tĩnh.",
+      "hints": [
+        "Trong một hệ thống phức tạp, phân chia trách nhiệm là rất quan trọng.",
+        "Hãy suy nghĩ về những phần nào trong hệ thống cần phải xử lý nâng cao và phần nào chỉ cần lấy dữ liệu đơn giản.",
+        "Có thể có những yếu tố nào khiến một phần của hệ thống trở nên phức tạp hơn phần còn lại không?"
+      ],
+      "concepts": [
+        "d9-multi-agent-mcp",
+        "d2-ai-problem-framing"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Hiện tượng 'Context Rot' (suy thoái ngữ cảnh) trong hệ thống AI Agent có biểu hiện như thế nào?",
+      "options": {
+        "A": "Hệ thống dừng hoạt động do hết thời gian phản hồi API.",
+        "B": "Cơ sở dữ liệu vector tự động cập nhật phiên bản mới.",
+        "C": "Thông tin cũ bị nhiễu hoặc ghi đè bởi dữ liệu mới.",
+        "D": "Mô hình chỉ trả lời bằng các cụm từ ngắn gọn nhất."
+      },
+      "answer": "C",
+      "explanation": "Context Rot là hiện tượng thông tin cũ trong ngữ cảnh bị loãng, nhiễu hoặc bị các thông điệp mới đè lên, khiến AI mất định hướng nhiệm vụ ban đầu.",
+      "hints": [
+        "Hãy nghĩ về tác động của thông tin cũ trong ngữ cảnh đến quá trình ra quyết định.",
+        "Có thể có những yếu tố nào khiến thông tin mới làm nhiễu hoặc thay thế thông tin cũ không?",
+        "Suy nghĩ về cách mà sự thay đổi thông tin có thể ảnh hưởng đến hiệu suất của tác nhân."
+      ],
+      "concepts": [
+        "d9-multi-agent-mcp",
+        "d10-data-pipeline-observability"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Mục tiêu cốt lõi của việc chuyển dịch từ Single-Agent sang Multi-Agent là gì?",
+      "options": {
+        "A": "Chia nhỏ năng lực thành các worker chuyên biệt dễ kiểm soát.",
+        "B": "Giảm thiểu tối đa số lượng API gọi đến mô hình lớn.",
+        "C": "Tăng kích thước tối đa của cửa sổ ngữ cảnh mô hình.",
+        "D": "Tự động tối ưu hóa trọng số của mô hình ngôn ngữ."
+      },
+      "answer": "A",
+      "explanation": "Chuyển dịch sang Multi-Agent giúp chia nhỏ bài toán phức tạp thành các vai trò hẹp (worker chuyên biệt) để dễ kiểm soát, kiểm thử và cô lập lỗi.",
+      "hints": [
+        "Khả năng phân chia trách nhiệm có thể giúp tối ưu hóa quy trình làm việc như thế nào?",
+        "Hãy suy nghĩ về việc chia nhỏ nhiệm vụ phức tạp thành những phần đơn giản hơn.",
+        "Có thể có những lợi ích nào khi chuyển từ một tác nhân đơn lẻ sang nhiều tác nhân không?"
+      ],
+      "concepts": [
+        "d9-multi-agent-mcp",
+        "d5-ai-product-kickoff"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Khi thiết kế hệ thống Multi-Agent, nguyên tắc 'Need-to-know' (Cần mới biết) được áp dụng thế nào?",
+      "options": {
+        "A": "Chỉ lưu trữ lịch sử hội thoại khi thật sự cần thiết.",
+        "B": "Chỉ cho phép người dùng xem kết quả của supervisor node này.",
+        "C": "Chỉ cung cấp lượng thông tin tối thiểu cho mỗi worker node.",
+        "D": "Chỉ kích hoạt hệ thống khi có yêu cầu từ admin thôi."
+      },
+      "answer": "C",
+      "explanation": "Nguyên tắc Need-to-know chỉ truyền context tối thiểu cần thiết cho worker thực hiện công việc, giảm token overhead và tăng độ tập trung của LLM.",
+      "hints": [
+        "Hãy suy nghĩ về cách mà việc cung cấp thông tin tối thiểu có thể ảnh hưởng đến hiệu suất của một tác nhân.",
+        "Có thể có những yếu tố nào khiến một tác nhân chỉ cần thông tin cần thiết mà không thừa thãi?",
+        "Xem xét vai trò của thông tin trong việc tối ưu hóa hoạt động của các worker node."
+      ],
+      "concepts": [
+        "d9-multi-agent-mcp",
+        "d4-tool-calling"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Trong hệ thống Multi-Agent, một 'Worker' hoạt động hiệu quả nhất khi ở trạng thái nào?",
+      "options": {
+        "A": "Có quyền tự quyết định thay đổi cấu trúc của đồ thị.",
+        "B": "Tự động lưu toàn bộ lịch sử trò chuyện của người dùng.",
+        "C": "Liên tục thay đổi prompt hệ thống trong lúc chạy thực tế.",
+        "D": "Càng stateless (không lưu trạng thái lịch sử dài hạn) càng tốt."
+      },
+      "answer": "D",
+      "explanation": "Worker hoạt động hiệu quả nhất khi ở trạng thái stateless, tức là chỉ nhận input từ Supervisor và xử lý độc lập mà không cần duy trì lịch sử hội thoại phức tạp.",
+      "hints": [
+        "Hãy suy nghĩ về cách mà trạng thái không lưu có thể giúp worker hoạt động hiệu quả hơn.",
+        "Có thể có những lý do nào mà một worker không cần phải duy trì lịch sử để hoạt động tốt?",
+        "Suy nghĩ về cách mà sự đơn giản trong thiết kế có thể dẫn đến hiệu suất cao hơn."
+      ],
+      "concepts": [
+        "d9-multi-agent-mcp",
+        "d20-t3-multi-agent"
+      ]
+    }
+  ]
+}
