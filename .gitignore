@@ -39,8 +39,15 @@ Thumbs.db
 .env.local
 .env.*.local
 
-# --- Database ---
-data/
+# --- Data / Database ---
+# Keep raw PDFs and backend runtime storage local, but allow the small OCR output
+# and local RAG index to be shared with teammates.
+/backend/data/
+/data/*
+!/data/processed/
+!/data/processed/**
+!/data/rag_index/
+!/data/rag_index/**
 *.db
 *.sqlite
 *.sqlite3
