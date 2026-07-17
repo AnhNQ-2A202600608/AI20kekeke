@@ -99,4 +99,4 @@ jobs:
         run: pnpm dlx vercel deploy ${{ env.VERCEL_ARGS }} --yes --token=${{ secrets.VERCEL_TOKEN }}
         env:
           VERCEL_ORG_ID: "team_LafIGeSssVHZiDCw6GHQcda6"
-          VERCEL_PROJECT_ID: "prj_xS9QuwKCECnb7FI9CwakEoKNhcEC"
+          VERCEL_PROJECT_ID: "prj_SPgxDRRuOhioP6Apsy0hDEoyPaR6"
