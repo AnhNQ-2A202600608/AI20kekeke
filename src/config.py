@@ -57,13 +57,11 @@ class PromptsConfig(BaseModel):
     @classmethod
     def validate_system_prompt_placeholders(cls, v: str) -> str:
         expected_keys = {
-            "student_elo",
-            "student_bkt",
-            "student_weakness",
             "active_quiz_session",
             "scaffolding_rules",
             "mode_instructions",
             "context",
+            "diagnostic_summary",
         }
         try:
             formatter = string.Formatter()

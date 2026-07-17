@@ -15,17 +15,16 @@ def test_get_settings():
 def test_system_prompt_validation_success():
     # Valid prompt with all expected variables
     valid_prompt = (
-        "Hello {student_elo} {student_bkt} {student_weakness} "
-        "{active_quiz_session} {scaffolding_rules} {mode_instructions} {context}"
+        "Hello {active_quiz_session} {scaffolding_rules} {mode_instructions} {context} {diagnostic_summary}"
     )
     prompt_config = PromptsConfig(system_prompt=valid_prompt)
     assert prompt_config.system_prompt == valid_prompt
 
 
 def test_system_prompt_validation_missing_keys():
-    # Missing student_elo and context
+    # Missing diagnostic_summary and context
     invalid_prompt = (
-        "Hello {student_bkt} {student_weakness} {active_quiz_session} {scaffolding_rules} {mode_instructions}"
+        "Hello {active_quiz_session} {scaffolding_rules} {mode_instructions}"
     )
     with pytest.raises(ValidationError) as exc_info:
         PromptsConfig(system_prompt=invalid_prompt)
