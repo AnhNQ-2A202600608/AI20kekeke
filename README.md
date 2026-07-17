@@ -149,6 +149,13 @@ uv run python scripts/seed-questions.py
 
 # 3. Đồng bộ hóa dữ liệu ngân hàng câu hỏi Quiz từ manifest frontend lên database:
 uv run python scripts/migrate_quizzes.py
+
+# 4. (Tùy chọn) Chạy OCR cho SGK dạng scan ảnh (tiếng Việt) trong data/ và dựng chỉ mục:
+# - Cài đặt Tesseract binary & gói ngôn ngữ vie trên hệ điều hành trước (xem docs/engineering/ocr-pipeline.md)
+# - Run OCR offline (tách khỏi synchronous chat loop):
+uv run python scripts/ingest_pdfs.py
+# - Tạo chỉ mục TF-IDF cục bộ để tìm kiếm/truy vấn ngoại tuyến:
+uv run python -c "from src.config import get_settings; from src.modules.rag.index import build_index_from_processed, save_index; settings = get_settings(); index = build_index_from_processed(settings.processed_dir, chunk_chars=settings.rag_chunk_chars, overlap_chars=settings.rag_chunk_overlap_chars); save_index(index, settings.rag_index_dir / 'index.json'); print(f'Indexed {len(index.documents)} chunks')"
 ```
 
 ---

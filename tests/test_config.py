@@ -60,3 +60,11 @@ def test_mode_instructions():
     assert settings.algorithm is not None
     assert "Explain" in settings.algorithm.mode_instructions
     assert "CHẾ ĐỘ: GIẢI THÍCH" in settings.algorithm.mode_instructions["Explain"]
+
+
+def test_sgk_data_dir_relative_path_resolves_from_repo_root(monkeypatch):
+    monkeypatch.setenv("SGK_DATA_DIR", "./data")
+    from src.config import Settings
+    settings = Settings()
+    from pathlib import Path
+    assert settings.sgk_data_path == Path(__file__).resolve().parent.parent / "data"

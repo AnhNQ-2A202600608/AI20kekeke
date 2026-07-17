@@ -107,6 +107,16 @@ class Settings(BaseSettings):
     # Vector Store
     chroma_persist_dir: str = "./data/chroma"
 
+    # OCR / PDF Ingestion Pipeline settings
+    sgk_data_dir: str = "./data"
+    ocr_lang: str = "vie"
+    ocr_dpi: int = 300
+    ocr_min_chars_per_page: int = 40
+    tesseract_cmd: str = ""
+    rag_chunk_chars: int = 1200
+    rag_chunk_overlap_chars: int = 200
+    rag_top_k: int = 5
+
     # Prompts & Algorithm configs loaded from yaml files
     prompts: PromptsConfig | None = None
     algorithm: AlgorithmConfig | None = None
@@ -180,6 +190,31 @@ class Settings(BaseSettings):
             dotenv_settings,
             YamlConfigSettingsSource(settings_cls),
         )
+
+    @property
+    def sgk_data_path(self) -> Path:
+        p = Path(self.sgk_data_dir).expanduser()
+        if not p.is_absolute():
+            p = Path(__file__).resolve().parent.parent / p
+        return p
+
+    @property
+    def raw_pdf_dir(self) -> Path:
+        p = self.sgk_data_path
+        p.mkdir(parents=True, exist_ok=True)
+        return p
+
+    @property
+    def processed_dir(self) -> Path:
+        p = self.sgk_data_path / "processed"
+        p.mkdir(parents=True, exist_ok=True)
+        return p
+
+    @property
+    def rag_index_dir(self) -> Path:
+        p = self.sgk_data_path / "rag_index"
+        p.mkdir(parents=True, exist_ok=True)
+        return p
 
 
 @lru_cache
