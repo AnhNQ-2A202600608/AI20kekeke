@@ -402,4 +402,18 @@
 
 ---
 
+## 2026-07-17
+
+| Member | Task | Status | Output | Time |
+|--------|------|--------|--------|------|
+| Lương Thị Hồng Nhung | Thiết kế lại pipeline PDF-to-Knowledge Graph cho domain Toán KNTT | Done | Cập nhật tài liệu [PDF_to_Knowledge_Graph.md](docs/domain-knowledge/PDF_to_Knowledge_Graph.md) dựa trên kiểm chứng thực tế với `data/Math`: phân loại PDF có text layer/scan, chọn GPT-4o vision làm lane chính cho trang scan, yêu cầu marker `<!-- page: N -->` để giữ provenance, ghi nhận rủi ro OCR/vision sai dấu tiếng Việt và sai công thức toán cần verify + review trước khi publish KG. | N/A |
+| Lương Thị Hồng Nhung | Bổ sung luồng chuyển PDF scan sang Markdown bằng Vision LLM | Done | Mở rộng [doc_converter.py](src/pipeline/transform/doc_converter.py) với `VISION_PAGE_PROMPT`, render trang PDF sang PNG base64 bằng PyMuPDF và hàm `convert_pdf_to_markdown_openai_vision()` xử lý theo batch trang; thêm [classify_pdf_pages.py](src/pipeline/ingest/classify_pdf_pages.py) để phân lane `direct_text`/`vision`; cập nhật dependency `sympy` và `requests` trong `pyproject.toml`/`requirements.txt`; thêm `.envv` chứa các khóa cấu hình app, OCR và RAG dạng env local. | N/A |
+| Lương Thị Hồng Nhung | Triển khai pipeline Math Knowledge Graph có kiểm chứng | Done | Thêm [extract_math_knowledge.py](src/pipeline/graphusion/extract_math_knowledge.py) để trích xuất concept/relation Toán bằng LLM structured output theo từng lesson package; thêm [formula_verifier.py](src/pipeline/graphusion/formula_verifier.py) dùng SymPy back-substitution để phát hiện công thức/lời giải sai transcription; thêm [ingest_math_graph_to_db.py](src/pipeline/graphusion/ingest_math_graph_to_db.py) để merge lesson JSON, enforce DAG, ghi concept/relation vào Supabase với status `draft` và provenance thay vì auto-approve. | N/A |
+| Lương Thị Hồng Nhung | Mở rộng schema Supabase cho Math KG, Q-matrix và misconception | Done | Thêm migration [20260717170000_math_kg_provenance_role_misconceptions.sql](db/supabase/migrations/20260717170000_math_kg_provenance_role_misconceptions.sql): bổ sung `source_document`/`source_page` cho `app.concepts` và `app.concept_relations`, thêm enum `question_concept_role` + cột `role` cho `app.question_concepts`, tạo bảng `app.misconceptions` phục vụ chẩn đoán lỗi sai và review theo `draft`. | N/A |
+| Lương Thị Hồng Nhung | Cập nhật định hướng hệ thống adaptive tutor dựa trên bằng chứng | Done | Thêm [giai_phap_adaptive_tutor_toi_uu.md](giai_phap_adaptive_tutor_toi_uu.md) mô tả kiến trúc Evidence-Guided Adaptive Tutoring System: Knowledge Graph, Q-matrix, Misconception/Error Pattern, Root-Cause Backtracking, Diagnostic Probe, BKT, Elo, ZPD, Teacher Intelligence, chatbot tool-based và offline-first; ghi nhận `artifacts/` đang có 157 artifact pytest/RAG sinh trong quá trình chạy kiểm thử local. | N/A |
+
+**Tổng kết ngày:** Hoàn tất một vertical slice thiết kế và hạ tầng ban đầu cho hệ thống Toán adaptive tutor: dữ liệu PDF scan được phân lane và chuyển sang Markdown có provenance, concept/relation Toán được trích xuất bằng structured output, công thức có bước verify bằng SymPy, schema Supabase được mở rộng cho provenance/Q-matrix/misconception, và mọi relation AI sinh ra mặc định ở trạng thái `draft` để mentor review trước khi đưa vào Knowledge Graph chính thức.
+
+---
+
 <!-- Format: copy block trên cho mỗi ngày làm việc -->
