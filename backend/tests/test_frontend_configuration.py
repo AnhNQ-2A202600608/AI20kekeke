@@ -28,4 +28,3 @@ def test_frontend_dockerfile_does_not_copy_missing_public_directory() -> None:
 
     assert "pnpm install" in dockerfile
     assert "/app/public" not in dockerfile
-
