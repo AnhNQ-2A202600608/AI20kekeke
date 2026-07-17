@@ -26,5 +26,5 @@ def test_next_config_proxies_same_origin_api() -> None:
 def test_frontend_dockerfile_does_not_copy_missing_public_directory() -> None:
     dockerfile = (PROJECT_ROOT / "frontend" / "Dockerfile").read_text(encoding="utf-8")
 
-    assert "npm ci" in dockerfile
+    assert "pnpm install" in dockerfile
     assert "/app/public" not in dockerfile

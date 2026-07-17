@@ -2,12 +2,12 @@ name: Frontend CI
 
 on:
   push:
-    branches: [ main, master, universal-starter ]
+    branches: [main, master, universal-starter, dev]
     paths:
       - 'frontend/**'
       - '.github/workflows/ci-frontend.yml'
   pull_request:
-    branches: [ main, master, universal-starter ]
+    branches: [main, master, universal-starter, dev]
     paths:
       - 'frontend/**'
       - '.github/workflows/ci-frontend.yml'
@@ -18,41 +18,59 @@ concurrency:
 
 jobs:
   frontend-checks:
+    name: Frontend Test & Lint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
-          cache-dependency-path: frontend/package-lock.json
+          node-version: 22
+
+      - name: Enable Corepack & pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@10.0.0 --activate
 
       - name: Install Dependencies
-        run: |
-          npm ci --prefix frontend
+        working-directory: ./frontend
+        run: pnpm install --frozen-lockfile
 
       - name: Frontend Lint & Compile
+        working-directory: ./frontend
         run: |
-          npm run lint --prefix frontend
-          npm run typecheck --prefix frontend
-          npm run build --prefix frontend
+          pnpm run lint
+          pnpm run typecheck
 
   deploy-frontend:
+    name: Deploy to Vercel
     needs: frontend-checks
-    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master' || github.ref == 'refs/heads/universal-starter')
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: frontend
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: Install Vercel CLI
-        run: npm install --global vercel@latest
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
 
-      - name: Pull Vercel Environment Information
+      - name: Enable Corepack & pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@10.0.0 --activate
+
+      - name: Set Deployment Environment
+        run: |
+          if [[ "${{ github.ref_name }}" == "main" || "${{ github.ref_name }}" == "master" || "${{ github.ref_name }}" == "universal-starter" ]]; then
+            echo "VERCEL_ARGS=--prod" >> $GITHUB_ENV
+          else
+            echo "VERCEL_ARGS=" >> $GITHUB_ENV
+          fi
+
+      - name: Deploy to Vercel (Remote Cloud Build)
+        working-directory: ./frontend
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
@@ -62,29 +80,4 @@ jobs:
             echo "Warning: VERCEL_TOKEN secret is not set. Skipping deployment."
             exit 0
           fi
-          vercel pull --yes --environment=production --token=$VERCEL_TOKEN
-
-      - name: Build Project Artifacts
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-        run: |
-          if [ -z "$VERCEL_TOKEN" ]; then
-            echo "Warning: VERCEL_TOKEN secret is not set. Skipping deployment."
-            exit 0
-          fi
-          vercel build --prod --token=$VERCEL_TOKEN
-
-      - name: Deploy Project Artifacts to Vercel
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-        run: |
-          if [ -z "$VERCEL_TOKEN" ]; then
-            echo "Warning: VERCEL_TOKEN secret is not set. Skipping deployment."
-            exit 0
-          fi
-          vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN
-
+          pnpm dlx vercel deploy ${{ env.VERCEL_ARGS }} --yes --token=$VERCEL_TOKEN
