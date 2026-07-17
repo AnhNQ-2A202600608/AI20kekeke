@@ -25,6 +25,12 @@
 - **Mentor**: `mentor@edugap.vn` / `Password123!`
 - **Admin**: `admin@edugap.vn` / `Password123!`
 
+## Spec Kit
+
+- Hướng dẫn: [docs/spec-kit-setup-vi.md](./docs/engineering/spec-kit-setup-vi.md)
+- Workflow và template nằm trong `.specify/`
+- Các skill `speckit-*` nằm trong `.agents/skills/`
+
 ---
 
 ## 📦 Demo Day Deliverables Index
