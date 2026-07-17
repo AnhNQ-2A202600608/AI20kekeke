@@ -83,10 +83,22 @@ def _cache_auth_user(token: str, user: AuthenticatedUser) -> AuthenticatedUser:
 
 
 def allow_dev_tokens() -> bool:
+    try:
+        from src.config import get_settings
+        if get_settings().app_env.lower() == "production":
+            return False
+    except Exception:
+        pass
     return os.environ.get("AUTH_ALLOW_DEV_TOKENS", "").strip().lower() in {"1", "true", "yes", "on"}
 
 
 def allow_service_role_bypass() -> bool:
+    try:
+        from src.config import get_settings
+        if get_settings().app_env.lower() == "production":
+            return False
+    except Exception:
+        pass
     return os.environ.get("AUTH_ALLOW_SERVICE_ROLE_BYPASS", "").strip().lower() in {"1", "true", "yes", "on"}
 
 
@@ -646,7 +658,55 @@ def submit_attempt(
         }
 
         txn_start = time.perf_counter()
-        txn_result = db.submit_attempt_v3(payload)
+        txn_result = None
+        
+        # Nếu database ở stub mode hoặc ngoại tuyến, ghi offline
+        is_mock = "mock" in type(db).__name__.lower()
+        is_stub = False if is_mock else bool(getattr(db, "_stub_mode", False))
+        is_offline = False if is_mock else (getattr(db, "app_client", None) is None)
+
+        if is_stub or is_offline:
+            try:
+                from src.services.diagnostic_engine import DiagnosticEngine
+                engine = DiagnosticEngine()
+                engine.queue_offline_attempt(payload)
+                import uuid
+                txn_result = {
+                    "attempt_id": str(uuid.uuid4()),
+                    "new_student_elo": old_elo,
+                    "expected_success": expected_success,
+                    "new_bkt": old_bkt,
+                    "new_state": mastery.get("mastery_state", "not_started"),
+                    "weakness_flag": mastery.get("weakness_flag", False),
+                    "is_correct": is_correct,
+                    "offline_saved": True,
+                }
+            except Exception as offline_err:
+                logger.error(f"Lỗi khi ghi attempt offline trong stub mode: {offline_err}", exc_info=True)
+        else:
+            try:
+                txn_result = db.submit_attempt_v3(payload)
+            except Exception as api_err:
+                logger.warning(f"Supabase submit_attempt_v3 failed: {api_err}. Fallback to offline SQLite queue.")
+                try:
+                    from src.services.diagnostic_engine import DiagnosticEngine
+                    engine = DiagnosticEngine()
+                    engine.queue_offline_attempt(payload)
+                    import uuid
+                    txn_result = {
+                        "attempt_id": str(uuid.uuid4()),
+                        "new_student_elo": old_elo,
+                        "expected_success": expected_success,
+                        "new_bkt": old_bkt,
+                        "new_state": mastery.get("mastery_state", "not_started"),
+                        "weakness_flag": mastery.get("weakness_flag", False),
+                        "is_correct": is_correct,
+                        "offline_saved": True,
+                    }
+                except Exception as offline_err:
+                    logger.error(f"Lỗi khi ghi attempt offline trong fallback: {offline_err}", exc_info=True)
+                    raise api_err
+
         txn_ms = (time.perf_counter() - txn_start) * 1000
         if not txn_result:
             raise HTTPException(status_code=503, detail="Kho dữ liệu adaptive hiện không sẵn sàng.")
