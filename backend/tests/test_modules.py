@@ -177,3 +177,11 @@ def test_active_challenge_requires_existing_module_config(tmp_path, monkeypatch)
 
     with pytest.raises(ValueError, match="ACTIVE_CHALLENGE"):
         Settings().modules_config_path
+
+
+def test_sgk_data_dir_relative_path_resolves_from_repo_root(monkeypatch):
+    monkeypatch.setenv("SGK_DATA_DIR", "./data")
+
+    settings = Settings()
+
+    assert settings.sgk_data_path == Path(__file__).resolve().parents[2] / "data"

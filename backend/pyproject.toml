@@ -18,6 +18,16 @@ dev = [
     "httpx>=0.27.0",
     "ruff>=0.5.0",
 ]
+# OCR pipeline (scripts/ingest_pdfs.py). Kept separate from `dev` because it pulls in
+# PyMuPDF/Pillow and requires a system Tesseract binary + Vietnamese language pack to
+# actually OCR anything — see docs/engineering/ocr-pipeline.md. The `rag` capability's
+# indexing/query path (src/modules/rag/index.py, chunking.py) is stdlib-only and does
+# NOT need this group.
+rag-ocr = [
+    "pymupdf>=1.24.0",
+    "pytesseract>=0.3.10",
+    "pillow>=10.0.0",
+]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

@@ -44,3 +44,27 @@ async def get_file(file_id: str):
     meta = storage.get_file_meta(file_id)
     duration = (time.perf_counter() - t0) * 1000
     return success_response(meta, request_id=request_id, duration_ms=round(duration, 2))
+
+
+@router.get("/data/pdfs")
+async def list_source_pdfs():
+    """List SGK PDFs dropped directly under data/, bypassing MAX_UPLOAD_SIZE_MB.
+
+    This is the recommended way to feed large scanned textbooks into
+    scripts/ingest_pdfs.py without going through the /files upload endpoint.
+    """
+    request_id = str(uuid.uuid4())
+    t0 = time.perf_counter()
+    data = storage.list_source_pdfs()
+    duration = (time.perf_counter() - t0) * 1000
+    return success_response(data, request_id=request_id, duration_ms=round(duration, 2))
+
+
+@router.get("/data/processed")
+async def list_processed_books():
+    """List OCR'd books under data/processed/ with their manifest summaries."""
+    request_id = str(uuid.uuid4())
+    t0 = time.perf_counter()
+    data = storage.list_processed_books()
+    duration = (time.perf_counter() - t0) * 1000
+    return success_response(data, request_id=request_id, duration_ms=round(duration, 2))

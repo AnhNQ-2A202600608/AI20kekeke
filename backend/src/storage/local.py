@@ -266,6 +266,38 @@ def get_artifact_content(artifact_id: str) -> str:
     return path.read_text(encoding="utf-8")
 
 
+# ── OCR pipeline (data/ source PDFs and data/processed/ output) ────────────────
+
+
+def list_source_pdfs() -> list[dict[str, Any]]:
+    """List SGK PDFs dropped directly under data/ (not uploaded through the UI).
+
+    This is the preferred ingestion path for large scanned textbooks: avoids
+    MAX_UPLOAD_SIZE_MB entirely and lets scripts/ingest_pdfs.py process them offline.
+    """
+    settings = get_settings()
+    return [
+        {"filename": p.name, "path": str(p), "size_bytes": p.stat().st_size}
+        for p in sorted(settings.raw_pdf_dir.glob("*.pdf"))
+    ]
+
+
+def list_processed_books() -> list[dict[str, Any]]:
+    """List OCR'd books under data/processed/, reading each book's manifest.json."""
+    settings = get_settings()
+    books = []
+    for book_dir in sorted(p for p in settings.processed_dir.iterdir() if p.is_dir()):
+        manifest_path = book_dir / "manifest.json"
+        if not manifest_path.exists():
+            continue
+        try:
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        books.append({"slug": book_dir.name, **manifest})
+    return books
+
+
 # ── Helpers ──────────────────────────────────────────────────────────────────
 
 

@@ -132,6 +132,30 @@ vaic-universal-starter/
 
 ---
 
+## 4b. OCR Pipeline: PDF SGK → Markdown → RAG
+
+`data/` (root repo, git-ignored, tách biệt với `backend/data/` dùng cho uploads/artifacts/runs)
+là nơi đặt trực tiếp các PDF SGK dạng scan ảnh — **không cần upload qua UI** (vốn bị giới hạn
+bởi `MAX_UPLOAD_SIZE_MB`). Chạy OCR offline rồi build chỉ mục truy vấn:
+
+```bash
+# 1. Cài thư viện OCR (PyMuPDF, pytesseract, Pillow) + cài Tesseract binary + gói tiếng Việt
+cd backend && pip install -e ".[dev,rag-ocr]"
+
+# 2. OCR toàn bộ PDF trong data/ -> data/processed/<book_slug>/{book.md, pages/*.md, manifest.json}
+python scripts/ingest_pdfs.py
+
+# 3. Bật module rag rồi build chỉ mục TF-IDF cục bộ (nhanh, không cần OCR lại)
+python scripts/enable_module.py rag
+python scripts/project_tasks.py ingest-index
+```
+
+Sau đó truy vấn qua capability `rag` (`POST /runs` với `parameters.action = "query"`) hoặc
+Workspace UI. Chi tiết đầy đủ (cài Tesseract theo từng OS, cơ chế resumable, watermark
+removal, cấu trúc manifest,...): [docs/engineering/ocr-pipeline.md](./docs/engineering/ocr-pipeline.md).
+
+---
+
 ## 5. Ingest Đề thi và Khởi tạo Workspace mới
 
 Khi nhận được đề bài chính thức, đội thi có thể nhập dữ liệu đề và tạo thư mục giải bài độc lập mà không ảnh hưởng tới code gốc.

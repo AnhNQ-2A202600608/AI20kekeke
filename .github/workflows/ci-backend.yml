@@ -35,7 +35,7 @@ jobs:
 
       - name: Install dependencies
         working-directory: ./backend
-        run: uv pip install -e ".[dev]"
+        run: uv pip install -e ".[dev,rag-ocr]"
 
       - name: Lint with ruff
         working-directory: ./backend

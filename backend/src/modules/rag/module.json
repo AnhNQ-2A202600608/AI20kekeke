@@ -1,16 +1,16 @@
 {
   "id": "rag",
   "name": "RAG System",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "category": "rag",
   "enabled_by_default": false,
-  "description": "Retrieval Augmented Generation system utilizing a local vector store.",
-  "dependencies": ["chromadb"],
+  "description": "Retrieval over OCR'd SGK Markdown using a local TF-IDF vector index (no external services).",
+  "dependencies": [],
   "environment_variables": [],
   "input_types": ["text", "file"],
-  "output_types": ["text"],
+  "output_types": ["text", "json"],
   "evaluation_metrics": ["retrieval_relevance", "faithful_generation"],
   "frontend_component": "RAGForm",
   "backend_entrypoint": "src.modules.rag.capability.RAGCapability",
-  "limitations": "Vector store is stored in local data folder."
+  "limitations": "Index/query is TF-IDF (stdlib-only, offline). OCR ingestion of PDFs runs separately and offline via scripts/ingest_pdfs.py (requires the 'rag-ocr' extras and a system Tesseract install) — it does not run through this capability or the /runs endpoint."
 }

@@ -194,6 +194,24 @@ def run_command(command: str, root: Path = PROJECT_ROOT) -> None:
     elif command == "validate":
         # Validate tách riêng để team có thể kiểm tra module optional trước demo.
         _run([python, "scripts/validate_modules.py"], root)
+    elif command == "ingest":
+        # OCR các PDF SGK trong data/ thành Markdown dưới data/processed/.
+        # Chạy offline, tách khỏi request /runs đồng bộ vì có thể mất nhiều phút với 800+ trang.
+        _run([python, "scripts/ingest_pdfs.py"], root)
+    elif command == "ingest-index":
+        # Build lại chỉ mục TF-IDF từ Markdown đã OCR (nhanh, an toàn chạy trong CI).
+        index_code = (
+            "from src.core.config import get_settings; "
+            "from src.modules.rag.index import build_index_from_processed, save_index; "
+            "settings = get_settings(); "
+            "index = build_index_from_processed("
+            "settings.processed_dir, "
+            "chunk_chars=settings.rag_chunk_chars, "
+            "overlap_chars=settings.rag_chunk_overlap_chars); "
+            "save_index(index, settings.rag_index_dir / 'index.json'); "
+            "print(f'Indexed {len(index.documents)} chunks -> {settings.rag_index_dir}/index.json')"
+        )
+        _run([python, "-c", index_code], backend)
     elif command == "clean":
         removed = clean_project(root)
         print(f"Removed {len(removed)} generated paths; challenges/ was preserved.")
@@ -221,6 +239,8 @@ def main() -> None:
         "smoke",
         "eval",
         "validate",
+        "ingest",
+        "ingest-index",
         "clean",
         "package",
     ]
