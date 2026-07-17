@@ -1,5 +1,21 @@
 # VAIC Universal Starter Template
 
+### 🌐 Production
+
+| Component | URL |
+|---|---|
+| **Frontend** | [https://ai20kekeke.vercel.app](https://ai20kekeke.vercel.app) |
+| **Backend** | [https://vaic-backend.onrender.com](https://vaic-backend.onrender.com) |
+| **Health check** | [https://vaic-backend.onrender.com/health](https://vaic-backend.onrender.com/health) |
+
+### 🧪 Staging
+
+| Component | URL |
+|---|---|
+| **Frontend** | [https://frontend-o2vyd6xgw-edu-gap1.vercel.app](https://frontend-o2vyd6xgw-edu-gap1.vercel.app) |
+| **Backend** | [https://vaic-backend-staging.onrender.com](https://vaic-backend-staging.onrender.com) |
+| **Health check** | [https://vaic-backend-staging.onrender.com/health](https://vaic-backend-staging.onrender.com/health) |
+
 ## Spec Kit
 
 Repo này đã được gắn `Spec Kit` cho `Codex` ở chế độ `skills`.
