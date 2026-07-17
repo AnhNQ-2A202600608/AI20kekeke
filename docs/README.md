@@ -53,4 +53,3 @@ docs/
 - Update `engineering/` when architecture, stack, repo commands, CI/CD, deployment, or code standards change.
 - Update `product/` when MVP scope, roadmap, personas, design direction, or user-facing product behavior changes.
 - Update `research/` when new learning-science models, adaptive research papers, or algorithmic evaluations are completed.
-
