@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cytoscape.js - Curriculum Graph Mockup</title>
+    
+    <!-- Load Cytoscape.js & Dagre layout engine via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.26.0/cytoscape.min.js"></script>
+    <script src="https://unpkg.com/dagre@0.7.4/dist/dagre.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/cytoscape-dagre@2.5.0/cytoscape-dagre.min.js"></script>
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #0f172a;
+            color: #f8fafc;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        header {
+            background-color: #1e293b;
+            padding: 15px 25px;
+            border-b: 1px solid #334155;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #38bdf8;
+        }
+        .subtitle {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-top: 2px;
+        }
+        #cy {
+            flex: 1;
+            width: 100%;
+            height: 100%;
+        }
+        /* Tooltip style */
+        #tooltip {
+            position: absolute;
+            background: rgba(30, 41, 59, 0.95);
+            border: 1px solid #475569;
+            color: #f8fafc;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            max-width: 300px;
+            display: none;
+            pointer-events: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            z-index: 999;
+        }
+        .legend {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(30, 41, 59, 0.9);
+            border: 1px solid #334155;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            z-index: 10;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div>
+            <h1>🎓 Curriculum Dependency Graph Mockup (Cytoscape.js + Dagre)</h1>
+            <div class="subtitle">Mockup standard library rendering. Nodes can be dragged, zoomed, and hovered.</div>
+        </div>
+        <div>
+            <button onclick="cy.fit()" style="background: #334155; border: 1px solid #475569; color: white; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 0.8rem;">
+                Fit View
+            </button>
+        </div>
+    </header>
+
+    <div style="position: relative; flex: 1;">
+        <div id="cy"></div>
+        <div id="tooltip"></div>
+        
+        <div class="legend">
+            <div style="font-weight: bold; margin-bottom: 8px; color: #94a3b8;">LEGEND</div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #0ea5e9;"></div>
+                <span>General AI Core (Day 1-16)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #f59e0b;"></div>
+                <span>Track 1: Product & Business</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #10b981;"></div>
+                <span>Track 2: AI Data & Architecture</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #f43f5e;"></div>
+                <span>Track 3: Advanced AI / Agents</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = [{"group": "nodes", "data": {"id": "ai-taxonomy", "label": "AI Taxonomy\n(Day 1)", "color": "#0ea5e9", "day": 1, "track": "General Core", "desc": "Classification of AI levels, from classic rule-based systems to agentic systems."}}, {"group": "nodes", "data": {"id": "self-attention", "label": "Self-Attention Mechanism\n(Day 1)", "color": "#0ea5e9", "day": 1, "track": "General Core", "desc": "Core mechanism of Transformer computing similarity between tokens using Q, K, V matrices."}}, {"group": "nodes", "data": {"id": "transformer-architecture", "label": "Transformer Architecture\n(Day 1)", "color": "#0ea5e9", "day": 1, "track": "General Core", "desc": "Revolutionary deep learning architecture based on self-attention, covering encoder and decoder models."}}, {"group": "nodes", "data": {"id": "token-economy", "label": "Token Economy\n(Day 1)", "color": "#0ea5e9", "day": 1, "track": "General Core", "desc": "Understanding tokenization, context window limits, and cost/latency trade-offs in LLM API usage."}}, {"group": "nodes", "data": {"id": "ai-product-lifecycle", "label": "AI Product Lifecycle\n(Day 2)", "color": "#0ea5e9", "day": 2, "track": "General Core", "desc": "The end-to-end process of discovering, statements, building, and deploying human-centered AI products."}}, {"group": "nodes", "data": {"id": "solution-levels", "label": "Rule/Workflow/Agent Selection\n(Day 2)", "color": "#0ea5e9", "day": 2, "track": "General Core", "desc": "Decision matrix to choose between Rule-based, Workflow, or Agentic architectures based on task complexity."}}, {"group": "nodes", "data": {"id": "agentic-agent-react", "label": "ReAct Reasoning Pattern\n(Day 3)", "color": "#0ea5e9", "day": 3, "track": "General Core", "desc": "Reasoning and acting loop (Thought-Action-Observation) for autonomous agents."}}, {"group": "nodes", "data": {"id": "tool-calling", "label": "Tool Calling API\n(Day 3)", "color": "#0ea5e9", "day": 3, "track": "General Core", "desc": "How LLMs declare, parse, and execute external tools using structured JSON schemas."}}, {"group": "nodes", "data": {"id": "prompt-engineering", "label": "Prompt Engineering\n(Day 4)", "color": "#0ea5e9", "day": 4, "track": "General Core", "desc": "Techniques for guiding LLMs, including system prompts, XML structuring, few-shot learning, and Chain-of-Thought."}}, {"group": "nodes", "data": {"id": "context-engineering", "label": "Context Engineering\n(Day 4)", "color": "#0ea5e9", "day": 4, "track": "General Core", "desc": "Strategies to manage context window, mitigate Lost-in-the-Middle phenomenon, and compress history."}}, {"group": "nodes", "data": {"id": "ai-product-uncertainty", "label": "AI Product Uncertainty & UX\n(Day 5)", "color": "#0ea5e9", "day": 5, "track": "General Core", "desc": "Designing user experiences that handle LLM uncertainty, precision/recall trade-offs, and graceful failures."}}, {"group": "nodes", "data": {"id": "vector-embeddings", "label": "Vector Embeddings\n(Day 7)", "color": "#0ea5e9", "day": 7, "track": "General Core", "desc": "Mathematical representation of text in high-dimensional vector spaces, measured by cosine similarity."}}, {"group": "nodes", "data": {"id": "vector-databases", "label": "Vector Databases\n(Day 7)", "color": "#0ea5e9", "day": 7, "track": "General Core", "desc": "Specialized databases for indexing, storing, and performing fast similarity search on vector embeddings."}}, {"group": "nodes", "data": {"id": "basic-rag", "label": "Basic RAG Pipeline\n(Day 8)", "color": "#0ea5e9", "day": 8, "track": "General Core", "desc": "Retrieval-Augmented Generation basics, including document ingestion, chunking, and context-based prompting."}}, {"group": "nodes", "data": {"id": "advanced-rag", "label": "Advanced RAG Pipelines\n(Day 8)", "color": "#0ea5e9", "day": 8, "track": "General Core", "desc": "Advanced techniques such as query transformation, reranking, hybrid search, and semantic caching."}}, {"group": "nodes", "data": {"id": "multi-agent-architectures", "label": "Multi-Agent Architectures\n(Day 9)", "color": "#0ea5e9", "day": 9, "track": "General Core", "desc": "Designing systems with multiple cooperating agents, routers, and specialized coordinators."}}, {"group": "nodes", "data": {"id": "data-pipelines-observability", "label": "Data Pipelines & Observability\n(Day 10)", "color": "#0ea5e9", "day": 10, "track": "General Core", "desc": "Data pipelines for ETL operations, logging, and observability of LLM interactions."}}, {"group": "nodes", "data": {"id": "guardrails-safety", "label": "AI Guardrails & Safety\n(Day 11)", "color": "#0ea5e9", "day": 11, "track": "General Core", "desc": "Input/output validation, prompt injection detection, and content filtering for safe AI deployment."}}, {"group": "nodes", "data": {"id": "cloud-infrastructure-agents", "label": "Cloud Infrastructure for Agents\n(Day 12)", "color": "#0ea5e9", "day": 12, "track": "General Core", "desc": "Deploying agents onto cloud platforms using serverless functions, Docker containers, and scalable backends."}}, {"group": "nodes", "data": {"id": "observability-stack", "label": "LLM Observability Stack\n(Day 13)", "color": "#0ea5e9", "day": 13, "track": "General Core", "desc": "Monitoring latency, token usage, cost tracking, and system performance at production scale."}}, {"group": "nodes", "data": {"id": "ai-evaluation", "label": "AI Evaluation & Benchmarking\n(Day 14)", "color": "#0ea5e9", "day": 14, "track": "General Core", "desc": "Constructing golden datasets, LLM-as-a-judge patterns, and quantitative evaluation of AI systems."}}, {"group": "nodes", "data": {"id": "t1-d17-prd-pmf", "label": "[T1] PRD & Product-Market Fit\n(Day 17)", "color": "#f59e0b", "day": 17, "track": "Product & Business", "desc": "Analyzing product requirements and identifying PMF for AI applications."}}, {"group": "nodes", "data": {"id": "t2-d17-data-ingestion-strategy", "label": "[T2] AI Data Ingestion Strategy\n(Day 17)", "color": "#10b981", "day": 17, "track": "AI Data & Architecture", "desc": "Designing robust ingestion pipelines and data models for unstructured and structured AI datasets."}}, {"group": "nodes", "data": {"id": "t3-d17-agent-memory-systems", "label": "[T3] Agent Memory Systems\n(Day 17)", "color": "#f43f5e", "day": 17, "track": "Advanced AI / Agents", "desc": "Managing short-term state, conversational history, and long-term vector/relational memories for agents."}}, {"group": "nodes", "data": {"id": "t1-d18-financial-modeling-roi", "label": "[T1] AI Financial Modeling & ROI\n(Day 18)", "color": "#f59e0b", "day": 18, "track": "Product & Business", "desc": "Calculating return on investment, compute cost projection, and token cost economics for AI features."}}, {"group": "nodes", "data": {"id": "t2-d18-data-lakehouses", "label": "[T2] Data Lakehouses & Production Data\n(Day 18)", "color": "#10b981", "day": 18, "track": "AI Data & Architecture", "desc": "Implementing data lakehouses (e.g. Delta Lake, Iceberg) and production pipeline design for massive scale AI apps."}}, {"group": "nodes", "data": {"id": "t3-d18-production-rag", "label": "[T3] Production RAG Pipelines\n(Day 18)", "color": "#f43f5e", "day": 18, "track": "Advanced AI / Agents", "desc": "Building reliable retrieval architectures with advanced document parsing and chunking for production environments."}}, {"group": "nodes", "data": {"id": "t1-d19-stakeholder-management", "label": "[T1] Stakeholder Management & Communication\n(Day 19)", "color": "#f59e0b", "day": 19, "track": "Product & Business", "desc": "Aligning internal teams, managing user expectations, and presenting AI model trade-offs to stakeholders."}}, {"group": "nodes", "data": {"id": "t2-d19-vector-feature-stores", "label": "[T2] Vector & Feature Stores\n(Day 19)", "color": "#10b981", "day": 19, "track": "AI Data & Architecture", "desc": "Using feature stores and vector databases to manage low-latency data access and embeddings for AI models."}}, {"group": "nodes", "data": {"id": "t3-d19-graph-rag", "label": "[T3] GraphRAG & Knowledge Graphs\n(Day 19)", "color": "#f43f5e", "day": 19, "track": "Advanced AI / Agents", "desc": "Combining Knowledge Graphs with RAG, using entity/relation extraction and graph traversals for deeper queries."}}, {"group": "nodes", "data": {"id": "t1-d20-roadmap-execution", "label": "[T1] Roadmap Execution\n(Day 20)", "color": "#f59e0b", "day": 20, "track": "Product & Business", "desc": "Structuring milestones, handling uncertainties, and executing agile iterations for AI systems."}}, {"group": "nodes", "data": {"id": "t2-d20-model-serving-optimization", "label": "[T2] Model Serving & Optimization\n(Day 20)", "color": "#10b981", "day": 20, "track": "AI Data & Architecture", "desc": "Inference optimization techniques including quantization, batching, and high-throughput engines like vLLM."}}, {"group": "nodes", "data": {"id": "t3-d20-multi-agent-architectures", "label": "[T3] Multi-Agent Architectures\n(Day 20)", "color": "#f43f5e", "day": 20, "track": "Advanced AI / Agents", "desc": "Designing systems with multiple cooperating agents, routers, and specialized coordinators."}}, {"group": "nodes", "data": {"id": "t1-d21-governance-risk", "label": "[T1] AI Governance & Risk\n(Day 21)", "color": "#f59e0b", "day": 21, "track": "Product & Business", "desc": "Assessing algorithmic bias, intellectual property, data lineage, and risk mitigation strategies in AI products."}}, {"group": "nodes", "data": {"id": "t2-d21-cicd-ai-systems", "label": "[T2] CI/CD for AI Systems\n(Day 21)", "color": "#10b981", "day": 21, "track": "AI Data & Architecture", "desc": "Continuous integration and deployment pipelines for ML models, data schemas, and backend applications."}}, {"group": "nodes", "data": {"id": "t3-d21-lora-qlora-tuning", "label": "[T3] LoRA & QLoRA Fine-tuning\n(Day 21)", "color": "#f43f5e", "day": 21, "track": "Advanced AI / Agents", "desc": "Parameter-efficient fine-tuning (PEFT) methods for customizing LLMs with low computational cost."}}, {"group": "nodes", "data": {"id": "t1-d22-compliance", "label": "[T1] AI Compliance\n(Day 22)", "color": "#f59e0b", "day": 22, "track": "Product & Business", "desc": "Ensuring products adhere to global standards (e.g. EU AI Act, GDPR, local regulations) and compliance audits."}}, {"group": "nodes", "data": {"id": "t2-d22-llmops-versioning", "label": "[T2] LLMOps & Prompt Versioning\n(Day 22)", "color": "#10b981", "day": 22, "track": "AI Data & Architecture", "desc": "Continuous integration, deployment, and versioning of prompts, schemas, and models in production."}}, {"group": "nodes", "data": {"id": "t3-d22-alignment-dpo", "label": "[T3] LLM Alignment & DPO\n(Day 22)", "color": "#f43f5e", "day": 22, "track": "Advanced AI / Agents", "desc": "Direct Preference Optimization and human alignment strategies to steer model behavior."}}, {"group": "nodes", "data": {"id": "t1-d23-ai-adoption", "label": "[T1] AI Adoption Tactics\n(Day 23)", "color": "#f59e0b", "day": 23, "track": "Product & Business", "desc": "Designing change management strategies and educational materials to increase user adoption of AI systems."}}, {"group": "nodes", "data": {"id": "t2-d23-observability-monitoring", "label": "[T2] LLM Monitoring & Observability Stack\n(Day 23)", "color": "#10b981", "day": 23, "track": "AI Data & Architecture", "desc": "Monitoring latency, token usage, cost tracking, and system performance at production scale."}}, {"group": "nodes", "data": {"id": "t3-d23-langgraph-agents", "label": "[T3] LangGraph Agents & Workflows\n(Day 23)", "color": "#f43f5e", "day": 23, "track": "Advanced AI / Agents", "desc": "Implementing complex stateful multi-agent systems and cyclic workflows using LangGraph."}}, {"group": "nodes", "data": {"id": "t1-d24-responsible-ai", "label": "[T1] Responsible AI & Ethics\n(Day 24)", "color": "#f59e0b", "day": 24, "track": "Product & Business", "desc": "Applying ethical guidelines, mitigating biases, and ensuring transparency in user-facing AI applications."}}, {"group": "nodes", "data": {"id": "t2-d24-data-governance-security", "label": "[T2] Data Governance & Security\n(Day 24)", "color": "#10b981", "day": 24, "track": "AI Data & Architecture", "desc": "Applying data security controls, access policies, encryption, and classification of sensitive AI data."}}, {"group": "nodes", "data": {"id": "t3-d24-ragas-guardrails", "label": "[T3] Ragas & Guardrails Evaluation\n(Day 24)", "color": "#f43f5e", "day": 24, "track": "Advanced AI / Agents", "desc": "Quantitative framework to evaluate RAG pipelines (faithfulness, relevancy) and runtime safety guardrails."}}, {"group": "edges", "data": {"id": "e_0", "source": "ai-taxonomy", "target": "solution-levels", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_1", "source": "self-attention", "target": "transformer-architecture", "type": "Part_of", "style": "dashed", "color": "#94a3b8"}}, {"group": "edges", "data": {"id": "e_2", "source": "self-attention", "target": "transformer-architecture", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_3", "source": "self-attention", "target": "transformer-architecture", "type": "Used_for", "style": "dashed", "color": "#94a3b8"}}, {"group": "edges", "data": {"id": "e_4", "source": "transformer-architecture", "target": "token-economy", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_5", "source": "token-economy", "target": "context-engineering", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_6", "source": "ai-product-lifecycle", "target": "solution-levels", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_7", "source": "ai-product-lifecycle", "target": "t1-d17-prd-pmf", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_8", "source": "solution-levels", "target": "agentic-agent-react", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_9", "source": "agentic-agent-react", "target": "t3-d17-agent-memory-systems", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_10", "source": "tool-calling", "target": "agentic-agent-react", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_11", "source": "prompt-engineering", "target": "context-engineering", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_12", "source": "prompt-engineering", "target": "guardrails-safety", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_13", "source": "context-engineering", "target": "ai-product-uncertainty", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_14", "source": "vector-embeddings", "target": "vector-databases", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_15", "source": "vector-embeddings", "target": "basic-rag", "type": "Used_for", "style": "dashed", "color": "#94a3b8"}}, {"group": "edges", "data": {"id": "e_16", "source": "vector-databases", "target": "basic-rag", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_17", "source": "basic-rag", "target": "advanced-rag", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_18", "source": "basic-rag", "target": "advanced-rag", "type": "Compare", "style": "dashed", "color": "#94a3b8"}}, {"group": "edges", "data": {"id": "e_19", "source": "basic-rag", "target": "t3-d18-production-rag", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_20", "source": "data-pipelines-observability", "target": "t2-d17-data-ingestion-strategy", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_21", "source": "t1-d17-prd-pmf", "target": "t1-d18-financial-modeling-roi", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_22", "source": "t2-d17-data-ingestion-strategy", "target": "t2-d18-data-lakehouses", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_23", "source": "t3-d17-agent-memory-systems", "target": "t3-d18-production-rag", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_24", "source": "t1-d18-financial-modeling-roi", "target": "t1-d19-stakeholder-management", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_25", "source": "t2-d18-data-lakehouses", "target": "t2-d19-vector-feature-stores", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_26", "source": "t2-d18-data-lakehouses", "target": "t3-d19-graph-rag", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_27", "source": "t3-d18-production-rag", "target": "t3-d19-graph-rag", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_28", "source": "t1-d19-stakeholder-management", "target": "t1-d20-roadmap-execution", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_29", "source": "t2-d19-vector-feature-stores", "target": "t2-d20-model-serving-optimization", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_30", "source": "t3-d18-production-rag", "target": "t2-d19-vector-feature-stores", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_31", "source": "t3-d19-graph-rag", "target": "t3-d20-multi-agent-architectures", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_32", "source": "t1-d20-roadmap-execution", "target": "t1-d21-governance-risk", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_33", "source": "t2-d20-model-serving-optimization", "target": "t2-d21-cicd-ai-systems", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_34", "source": "t3-d20-multi-agent-architectures", "target": "t3-d21-lora-qlora-tuning", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_35", "source": "t1-d21-governance-risk", "target": "t1-d22-compliance", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_36", "source": "t2-d21-cicd-ai-systems", "target": "t2-d22-llmops-versioning", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_37", "source": "t3-d21-lora-qlora-tuning", "target": "t3-d22-alignment-dpo", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_38", "source": "t1-d22-compliance", "target": "t1-d23-ai-adoption", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_39", "source": "t2-d22-llmops-versioning", "target": "t2-d23-observability-monitoring", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_40", "source": "t3-d22-alignment-dpo", "target": "t3-d23-langgraph-agents", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_41", "source": "t1-d23-ai-adoption", "target": "t1-d24-responsible-ai", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_42", "source": "t2-d23-observability-monitoring", "target": "t2-d24-data-governance-security", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_43", "source": "t3-d23-langgraph-agents", "target": "t3-d24-ragas-guardrails", "type": "Prerequisite_of", "style": "solid", "color": "#64748b"}}, {"group": "edges", "data": {"id": "e_44", "source": "t3-d24-ragas-guardrails", "target": "t1-d24-responsible-ai", "type": "Conjunction", "style": "dashed", "color": "#94a3b8"}}];
+            
+            window.cy = cytoscape({
+                container: document.getElementById('cy'),
+                elements: elements,
+                style: [
+                    {
+                        selector: 'node',
+                        style: {
+                            'content': 'data(label)',
+                            'text-wrap': 'wrap',
+                            'text-valign': 'center',
+                            'text-halign': 'center',
+                            'background-color': 'data(color)',
+                            'color': '#ffffff',
+                            'font-size': '10px',
+                            'font-family': 'system-ui, sans-serif',
+                            'font-weight': 'bold',
+                            'width': '120px',
+                            'height': '45px',
+                            'shape': 'round-rectangle',
+                            'border-width': '1px',
+                            'border-color': '#1e293b'
+                        }
+                    },
+                    {
+                        selector: 'edge',
+                        style: {
+                            'width': 2,
+                            'line-color': 'data(color)',
+                            'target-arrow-color': 'data(color)',
+                            'target-arrow-shape': 'triangle',
+                            'curve-style': 'bezier',
+                            'line-style': 'data(style)',
+                            'arrow-scale': 0.8
+                        }
+                    },
+                    {
+                        selector: 'node:selected',
+                        style: {
+                            'border-width': '3px',
+                            'border-color': '#ffffff'
+                        }
+                    }
+                ],
+                layout: {
+                    name: 'dagre',
+                    rankDir: 'LR',
+                    nodeSep: 40,
+                    rankSep: 140,
+                    animate: false
+                }
+            });
+
+            // Interactive Tooltip on hover
+            const tooltip = document.getElementById('tooltip');
+            
+            cy.on('mouseover', 'node', function(evt) {
+                const node = evt.target;
+                const data = node.data();
+                
+                tooltip.innerHTML = `
+                    <div style="font-weight: bold; color: #38bdf8; margin-bottom: 4px;">${data.label.split('\n')[0]}</div>
+                    <div style="font-size: 0.75rem; color: #94a3b8; margin-bottom: 6px;">Day ${data.day} &bull; ${data.track}</div>
+                    <div style="line-height: 1.3;">${data.desc}</div>
+                `;
+                tooltip.style.display = 'block';
+            });
+
+            cy.on('mousemove', 'node', function(evt) {
+                const renderedPosition = evt.renderedPosition;
+                tooltip.style.left = (renderedPosition.x + 15) + 'px';
+                tooltip.style.top = (renderedPosition.y + 15) + 'px';
+            });
+
+            cy.on('mouseout', 'node', function() {
+                tooltip.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
