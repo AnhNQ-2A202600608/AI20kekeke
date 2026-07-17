@@ -1,0 +1,210 @@
+{
+  "id": "day25-t2-advanced",
+  "parent_id": "day25-rag-data",
+  "topic_title": "Day 25: GPU FinOps & Cost Optimization",
+  "title": "Phần 3: Kỹ Thuật Tối Ưu Inference & Các Chỉ Số Sustainable AI",
+  "description": "Đánh giá kiến thức chuyên sâu về tối ưu chi phí suy luận (batching, caching, cascading, quantization) và đo lường carbon footprint của AI.",
+  "difficulty": "khó",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Thư viện phục vụ suy luận vLLM sử dụng cơ chế PagedAttention nhằm mục đích giải quyết triệt để vấn đề gì?",
+      "options": {
+        "A": "Vấn đề tốc độ kết nối internet chậm giữa người dùng và máy chủ chatbot.",
+        "B": "Vấn đề lãng phí bộ nhớ KV Cache do phân bổ tĩnh và phân mảnh bộ nhớ.",
+        "C": "Vấn đề rò rỉ mã khóa bảo mật của các service account trong hệ thống RAG.",
+        "D": "Vấn đề mô hình sinh ảo giác do thiếu hụt dữ liệu huấn luyện đầu vào."
+      },
+      "answer": "B",
+      "explanation": "PagedAttention quản lý bộ nhớ KV Cache tương tự như bộ nhớ ảo trong hệ điều hành (paging), giảm thiểu lãng phí bộ nhớ từ mức ~60-80% (do dự phòng max context) xuống sát mức 4%, cho phép chạy batch size lớn hơn gấp nhiều lần.",
+      "hints": [
+        "Nghĩ về cơ chế phân trang bộ nhớ (paging) kinh điển của hệ điều hành máy tính.",
+        "Bộ nhớ đệm KV Cache phình to rất nhanh khi độ dài văn bản hội thoại tăng lên.",
+        "Đáp án chính xác là vấn đề lãng phí bộ nhớ KV Cache do phân bổ tĩnh."
+      ],
+      "concepts": [
+        "d25-t2-gpu-finops"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Điểm khác biệt cốt lõi về cơ chế hoạt động giữa kỹ thuật KV Cache và Semantic Cache trong hệ thống LLM là gì?",
+      "options": {
+        "A": "KV Cache tránh tính toán lại context trong phiên, còn Semantic Cache bỏ qua LLM nếu trùng ý nghĩa.",
+        "B": "KV Cache lưu trữ dữ liệu trên đĩa cứng SSD, còn Semantic Cache lưu trực tiếp trong VRAM GPU.",
+        "C": "KV Cache chỉ hỗ trợ tiếng Anh, còn Semantic Cache hoạt động tốt với tất cả ngôn ngữ.",
+        "D": "KV Cache tự động viết lại prompt của user, còn Semantic Cache tự động dịch văn bản."
+      },
+      "answer": "A",
+      "explanation": "KV Cache lưu trạng thái tính toán của các token trước đó để tăng tốc sinh token tiếp theo. Semantic Cache sử dụng vector embeddings để tìm các prompt có ý nghĩa tương đương đã được trả lời trước đó, bỏ qua hoàn toàn việc gọi LLM, giúp tiết kiệm 100% token cost cho các câu hỏi trùng ý nghĩa.",
+      "hints": [
+        "Một kỹ thuật tối ưu hóa trong quá trình sinh token của mô hình.",
+        "Kỹ thuật kia hoạt động như một bộ lọc chốt chặn ngay trước khi yêu cầu chạm tới mô hình.",
+        "Đáp án chính xác là KV Cache tránh tính toán lại context trong phiên, còn Semantic Cache bỏ qua LLM."
+      ],
+      "concepts": [
+        "d25-t2-gpu-finops"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Cơ chế hoạt động của kỹ thuật định tuyến 'Model Cascading' giúp cắt giảm chi phí suy luận (Inference Cost) như thế nào?",
+      "options": {
+        "A": "Bằng cách gộp nhiều mô hình nhỏ lại để huấn luyện đồng thời trên một cụm máy chủ.",
+        "B": "Bằng cách nén dung lượng bộ nhớ weights của các mô hình lớn xuống mức thấp nhất.",
+        "C": "Bằng cách tắt bớt các card đồ họa GPU khi lượng truy cập của người dùng giảm xuống.",
+        "D": "Bằng cách chuyển prompt đơn giản sang model rẻ, prompt khó sang model đắt hơn."
+      },
+      "answer": "D",
+      "explanation": "Model Cascading sử dụng một bộ phân loại (router) nhẹ để đánh giá độ khó của prompt. Các câu hỏi đơn giản (ví dụ: chào hỏi, FAQ) được xử lý bởi mô hình rẻ (như Llama 3 8B), chỉ các câu hỏi phức tạp mới được chuyển lên GPT-4o, giúp tối ưu hóa chi phí trung bình trên mỗi request.",
+      "hints": [
+        "Nghĩ về cơ chế phân loại và định tuyến thông minh dựa trên độ phức tạp của nhiệm vụ.",
+        "Không phải câu hỏi nào của người dùng cũng đòi hỏi trí tuệ nhân tạo cấp độ tối cao để trả lời.",
+        "Đáp án chính xác là bằng cách chuyển prompt đơn giản sang model rẻ, prompt khó sang model đắt."
+      ],
+      "concepts": [
+        "d25-t2-gpu-finops"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Khi thực hiện nén mô hình bằng kỹ thuật Quantization từ FP16 xuống INT4, hệ năng hệ thống và chất lượng mô hình thay đổi thế nào?",
+      "options": {
+        "A": "Dung lượng mô hình tăng lên gấp bốn lần nhưng độ chính xác suy luận giảm mạnh.",
+        "B": "Mô hình chạy chậm hơn do tốn thời gian giải mã nhưng giữ nguyên dung lượng VRAM.",
+        "C": "Dung lượng VRAM giảm 4 lần, tốc độ tăng, nhưng có thể suy giảm nhẹ độ chính xác.",
+        "D": "Độ chính xác tăng vượt trội nhưng bắt buộc phải thuê thêm máy chủ GPU để chạy."
+      },
+      "answer": "C",
+      "explanation": "Quantization xuống INT4 giúp giảm bộ nhớ VRAM cần thiết đi ~4 lần, cho phép chạy các mô hình lớn trên GPU rẻ hơn và tăng thông lượng (throughput) nhờ giảm băng thông truyền dữ liệu, đổi lại có thể mất một phần nhỏ độ chính xác (perplexity tăng nhẹ).",
+      "hints": [
+        "Nghĩ về tác động của việc giảm độ mịn của các con số dấu phẩy động.",
+        "Nhiều tham số được nén lại giúp chiếm dụng ít không gian bộ nhớ hơn.",
+        "Đáp án chính xác là dung lượng VRAM giảm 4 lần, tốc độ tăng, nhưng có thể suy giảm nhẹ."
+      ],
+      "concepts": [
+        "d25-t2-gpu-finops"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Chỉ số hiệu quả sử dụng điện năng Power Usage Effectiveness (PUE) của một trung tâm dữ liệu xanh lý tưởng nhất đạt giá trị nào?",
+      "options": {
+        "A": "Đạt giá trị sát mức 1.0 (toàn bộ điện năng cấp vào đều dùng cho thiết bị IT).",
+        "B": "Đạt giá trị sát mức 0.0 (không tốn điện năng cấp vào cho hệ thống máy chủ).",
+        "C": "Đạt giá trị lớn hơn 2.0 (điện năng cho hệ thống làm mát gấp đôi thiết bị IT).",
+        "D": "Đạt giá trị sát mức 100 (đạt hiệu suất hoạt động tối đa của máy chủ GPU)."
+      },
+      "answer": "A",
+      "explanation": "PUE = Tổng năng lượng tiêu thụ của cơ sở / Năng lượng tiêu thụ của thiết bị IT. PUE càng gần 1.0 nghĩa là năng lượng lãng phí cho làm mát, ánh sáng... càng ít. Trung tâm dữ liệu xanh hiện đại thường đạt PUE < 1.2.",
+      "hints": [
+        "PUE là tỷ số đo lường hiệu quả năng lượng của cơ sở hạ tầng.",
+        "Tỷ số hoàn hảo nhất là khi tử số bằng mẫu số.",
+        "Đáp án chính xác là đạt giá trị sát mức 1.0."
+      ],
+      "concepts": [
+        "d25-t2-gpu-finops"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Để giảm thiểu tác động carbon (Carbon Footprint) khi chạy các tác vụ huấn luyện AI lớn và không khẩn cấp, giải pháp nào sau đây là tối ưu nhất?",
+      "options": {
+        "A": "Chạy huấn luyện mô hình trực tiếp trên các máy tính trạm cục bộ đặt tại văn phòng.",
+        "B": "Lên lịch chạy tại các vùng đám mây dùng năng lượng tái tạo và chạy giờ thấp điểm.",
+        "C": "Tăng số lượng card đồ họa GPU hoạt động song song để rút ngắn thời gian huấn luyện.",
+        "D": "Sử dụng các phiên bản Docker image cũ hơn để giảm dung lượng file cấu hình."
+      },
+      "answer": "B",
+      "explanation": "Chạy huấn luyện tại các cloud regions có Carbon Intensity thấp (như Oregon dùng thủy điện, Thụy Điển) và lên lịch chạy vào ban đêm (khi lưới điện có tỷ lệ năng lượng xanh cao) giúp giảm phát thải carbon đáng kể.",
+      "hints": [
+        "Cần tận dụng nguồn cung cấp điện từ thiên nhiên như gió hoặc mặt trời.",
+        "Thời điểm lưới điện ít bị tải nặng sẽ có giá trị phát thải carbon trên mỗi kWh thấp hơn.",
+        "Đáp án chính xác là lên lịch chạy tại các vùng đám mây dùng năng lượng tái tạo và chạy giờ thấp điểm."
+      ],
+      "concepts": [
+        "d25-t2-gpu-finops"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Trong các hệ thống phục vụ LLM hiện đại, kỹ thuật ghép nhóm động 'Continuous Batching' hoạt động dựa trên cơ chế nào?",
+      "options": {
+        "A": "Chờ đợi đủ một trăm câu hỏi của người dùng rồi mới gửi sang GPU xử lý một lần.",
+        "B": "Tự động tắt tiến trình suy luận của người dùng cũ để ưu tiên cho người dùng mới.",
+        "C": "Ghép nhóm và xử lý ở cấp độ token ngay khi có request mới thay vì đợi cả sequence.",
+        "D": "Chuyển toàn bộ dữ liệu suy luận sang định dạng tệp tin CSV để xử lý tuần tự."
+      },
+      "answer": "C",
+      "explanation": "Continuous Batching (hoặc Orca-style batching) hoạt động ở cấp độ token (iteration-level). Ngay khi một câu trả lời trong batch hoàn thành sinh token, request mới có thể thế chỗ lập tức ở bước tiếp theo mà không cần đợi toàn bộ batch cũ chạy xong.",
+      "hints": [
+        "Kỹ thuật này tối ưu hóa việc tận dụng tài nguyên GPU tại mỗi vòng lặp sinh chữ.",
+        "Tránh tình trạng các request ngắn phải chờ đợi request dài chạy xong.",
+        "Đáp án chính xác là ghép nhóm và xử lý ở cấp độ token ngay khi có request mới."
+      ],
+      "concepts": [
+        "d25-t2-gpu-finops"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Tại sao việc lạm dụng Semantic Cache lại mang lại rủi ro lớn đối với các ứng dụng AI đòi hỏi thông tin thời gian thực?",
+      "options": {
+        "A": "Vì Semantic Cache sẽ làm tăng gấp đôi dung lượng bộ nhớ VRAM GPU cần sử dụng.",
+        "B": "Vì Semantic Cache không hỗ trợ lưu trữ dữ liệu dạng text mà chỉ lưu trữ file ảnh.",
+        "C": "Vì thuật toán băm của Semantic Cache rất dễ bị hacker tấn công đối kháng phá hủy.",
+        "D": "Vì cache có thể trả về câu trả lời cũ lỗi thời cho các câu hỏi tương tự."
+      },
+      "answer": "D",
+      "explanation": "Semantic cache dựa trên độ tương đồng ngữ nghĩa (semantic similarity). Nếu người dùng hỏi thông tin thay đổi liên tục (ví dụ: 'Giá cổ phiếu VinFast hôm nay thế nào?'), cache có thể hiểu nhầm là giống câu hỏi tuần trước và trả về giá cũ lỗi thời.",
+      "hints": [
+        "Nghĩ về tính chất tĩnh của dữ liệu được lưu trữ trong bộ nhớ đệm.",
+        "Sự giống nhau về mặt ngữ nghĩa (semantic) không đảm bảo sự giống nhau về mặt dữ kiện thực tế thời gian thực.",
+        "Đáp án chính xác là vì cache có thể trả về câu trả lời cũ đã lỗi thời."
+      ],
+      "concepts": [
+        "d25-t2-gpu-finops"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Kỹ thuật sử dụng định dạng số FP8 (Floating Point 8-bit) trên các dòng GPU thế hệ mới (như H100) mang lại ưu thế vượt trội nào?",
+      "options": {
+        "A": "Tăng tốc độ tính toán ma trận lên gấp đôi và giảm bộ nhớ VRAM so với FP16.",
+        "B": "Miễn phí hoàn toàn chi phí bản quyền sử dụng thư viện CUDA của NVIDIA.",
+        "C": "Cho phép mô hình tự động kết nối internet để cập nhật dữ liệu tri thức mới.",
+        "D": "Loại bỏ hoàn toàn hiện tượng ảo giác thông tin của mô hình ngôn ngữ lớn."
+      },
+      "answer": "A",
+      "explanation": "FP8 là định dạng số mới được hỗ trợ phần cứng (Transformer Engine trên H100/L4). Nó cho phép lưu trữ và tính toán với độ chính xác vừa đủ, tăng băng thông tính toán lên gấp đôi so với FP16 mà hầu như không làm suy giảm độ chính xác của mô hình.",
+      "hints": [
+        "Đây là định dạng biểu diễn số thực dấu phẩy động cực ngắn (chỉ 8 bits).",
+        "Được hỗ trợ trực tiếp bởi các lõi Tensor Cores thế hệ mới nhất của NVIDIA.",
+        "Đáp án chính xác là tăng tốc độ tính toán ma trận lên gấp đôi và giảm bộ nhớ VRAM."
+      ],
+      "concepts": [
+        "d25-t2-gpu-finops"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Chỉ số Carbon Intensity (Độ phát thải carbon) của một lưới điện đám mây (Cloud Region Grid) đo lường điều gì?",
+      "options": {
+        "A": "Tổng lượng điện năng tiêu thụ tính bằng Kilowatt-giờ của toàn bộ tòa nhà trung tâm dữ liệu.",
+        "B": "Khối lượng khí thải carbon phát ra trên mỗi đơn vị điện năng sản xuất ra của lưới điện đó.",
+        "C": "Số lượng cây xanh cần phải trồng để bù đắp lượng khí thải do máy chủ GPU thải ra.",
+        "D": "Độ trễ truyền dẫn dữ liệu mạng internet từ máy chủ đám mây đến vị trí của người dùng."
+      },
+      "answer": "B",
+      "explanation": "Carbon Intensity đo lượng gram CO2 phát ra trên mỗi kWh điện năng được sản xuất (gCO2eq/kWh). Vùng dùng than đá (như Singapore) có carbon intensity rất cao, vùng dùng thủy điện/hạt nhân (như Thụy Điển) có carbon intensity cực thấp.",
+      "hints": [
+        "Chỉ số này đo lường độ 'sạch' của nguồn điện năng vận hành máy chủ.",
+        "Nó cho biết mức độ ô nhiễm môi trường của việc tiêu thụ một đơn vị điện năng.",
+        "Đáp án chính xác là khối lượng khí thải carbon phát ra trên mỗi đơn vị điện năng sản xuất."
+      ],
+      "concepts": [
+        "d25-t2-gpu-finops"
+      ]
+    }
+  ]
+}

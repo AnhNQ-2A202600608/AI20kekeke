@@ -1,0 +1,210 @@
+{
+  "id": "day11-pipeline",
+  "parent_id": "day11",
+  "topic_title": "Day 11: Guardrails & AI Safety",
+  "title": "Phần 2: Thiết lập Input/Output Guardrails Pipeline",
+  "description": "Kiểm tra kiến thức về thiết kế bộ lọc Input/Output, các frameworks bảo vệ (Llama Guard, NeMo) và nguyên tắc Defense in Depth.",
+  "difficulty": "bình thường",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Sắp xếp nào sau đây mô tả đúng kiến trúc các lớp lọc của Input Guardrails trước khi dữ liệu được gửi đến LLM?",
+      "options": {
+        "A": "Injection Detection -> Topic Filter -> Input Validation -> LLM.",
+        "B": "Topic Filter -> Input Validation -> Injection Detection -> LLM.",
+        "C": "Input Validation -> Injection Detection -> Topic Filter -> LLM.",
+        "D": "Input Validation -> Topic Filter -> Injection Detection -> LLM."
+      },
+      "answer": "C",
+      "explanation": "Theo sơ đồ kiến trúc tại slide 324, luồng Input đi qua: Input Validation (Độ dài, định dạng) -> Injection Detection (Phát hiện tấn công) -> Topic Filter (Lọc chủ đề) -> LLM.",
+      "hints": [
+        "Hãy nghĩ đến việc kiểm tra kỹ thuật định dạng cơ bản trước, sau đó phát hiện mã độc hại, và cuối cùng phân loại chủ đề phù hợp.",
+        "Xem lại sơ đồ Input Guardrails Architecture ở slide 324.",
+        "Loại bỏ các phương án đặt Topic Filter ở trước bước kiểm tra tính hợp lệ của chuỗi đầu vào (Input Validation)."
+      ],
+      "concepts": [
+        "d11-guardrails-safety"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Đâu là ưu điểm lớn nhất của việc triển khai lớp Input Guardrails so với chỉ dùng Output Guardrails?",
+      "options": {
+        "A": "Tăng độ tin cậy và tính chính xác của thông tin trích xuất từ database.",
+        "B": "Chặn sớm input xấu trước khi tốn token xử lý và giảm thiểu chi phí.",
+        "C": "Giúp tự động sửa các lỗi chính tả và định dạng trong câu hỏi người dùng.",
+        "D": "Tự động chuyển các câu hỏi sang tiếng Anh để tối ưu hóa hiệu suất LLM."
+      },
+      "answer": "B",
+      "explanation": "Slide 335: \"Input xấu bị chặn trước khi tốn token và trước khi LLM có cơ hội phản hồi sai\", giúp giảm latency và cost vô ích.",
+      "hints": [
+        "Hãy nghĩ đến quy tắc phòng bệnh hơn chữa bệnh. Việc chặn sớm ngay từ cửa ngõ mang lại lợi ích gì về mặt tài chính và tài nguyên?",
+        "Tham khảo phần giải thích dưới sơ đồ Input Guardrails tại slide 335.",
+        "Chú ý đến yếu tố chi phí token (cost) và thời gian phản hồi hệ thống."
+      ],
+      "concepts": [
+        "d11-guardrails-safety"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Trong tầng Output Guardrails, nhiệm vụ cốt lõi của bước 'Grounding Check' là gì?",
+      "options": {
+        "A": "Kiểm tra xem câu trả lời của LLM có dựa trên bằng chứng (evidence) trong context trích xuất không.",
+        "B": "Kiểm tra xem định dạng đầu ra của phản hồi có khớp với Schema JSON yêu cầu không.",
+        "C": "Dịch văn bản đầu ra sang ngôn ngữ mà người dùng yêu cầu trên giao diện.",
+        "D": "Lọc bỏ các từ ngữ thô tục, độc hại hoặc các thông tin PII nhạy cảm."
+      },
+      "answer": "A",
+      "explanation": "Grounding Check (kiểm tra đối chiếu) đảm bảo câu trả lời được sinh ra hoàn toàn từ ngữ cảnh trích xuất (retrieved context), ngăn chặn ảo giác (hallucination) không có căn cứ.",
+      "hints": [
+        "Từ 'Grounding' có nghĩa là neo giữ thông tin vào thực tế hoặc chứng cứ xác thực.",
+        "Đọc kỹ phần mô tả Grounding Check tại slide 409-421.",
+        "Loại trừ các phương án liên quan đến kiểm tra định dạng cú pháp hoặc lọc từ ngữ thô tục."
+      ],
+      "concepts": [
+        "d11-guardrails-safety"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Khi phát hiện câu hỏi người dùng khớp với mẫu `r\"reveal your (instructions|prompt)\"`, Input Guardrail nên làm gì?",
+      "options": {
+        "A": "Chặn yêu cầu và trả về thông báo lỗi thân thiện được định nghĩa trước.",
+        "B": "Gửi toàn bộ prompt hệ thống cho người dùng để tăng tính minh bạch.",
+        "C": "Chuyển tiếp yêu cầu đó đến một Agent phụ để dịch sang mã Base64.",
+        "D": "Ghi đè chỉ dẫn hệ thống cũ bằng chỉ dẫn hệ thống mới từ người dùng."
+      },
+      "answer": "A",
+      "explanation": "Mẫu regex này dùng để phát hiện nỗ lực trích xuất prompt hệ thống (system prompt extraction). Hệ thống nên chặn yêu cầu này ngay lập tức để tránh lộ thông tin.",
+      "hints": [
+        "Đây là một nỗ lực tấn công dò tìm chỉ dẫn hệ thống của Agent. Chúng ta cần ngăn chặn hay tiếp tay?",
+        "Xem ví dụ đoạn code phát hiện Prompt Injection bằng Pattern-based ở slide 350-363.",
+        "Chọn giải pháp an toàn nhất: ngắt luồng xử lý và trả về lỗi thông báo cố định."
+      ],
+      "concepts": [
+        "d11-guardrails-safety"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Nguyên tắc phòng thủ 'Defense in Depth' (phòng thủ theo chiều sâu) trong AI Safety được thể hiện như thế nào?",
+      "options": {
+        "A": "Chỉ tập trung phát triển các mô hình ngôn ngữ có kích thước lớn và nhiều tham số.",
+        "B": "Kết hợp đồng thời các lớp bảo vệ ở Input, chỉ dẫn LLM và kiểm tra Output.",
+        "C": "Sử dụng duy nhất một bộ lọc regex có độ chính xác cực cao ở đầu vào hệ thống.",
+        "D": "Phân tán cơ sở dữ liệu vector thành nhiều phân vùng lưu trữ bảo mật độc lập."
+      },
+      "answer": "B",
+      "explanation": "Defense in Depth (slide 428-433) là sự kết hợp của nhiều lớp: Input rails -> LLM rails -> Output rails. Mỗi lớp bắt các lỗi khác nhau để tránh bỏ sót lỗ hổng.",
+      "hints": [
+        "Hãy nghĩ về việc bảo vệ một tòa lâu đài bằng cả hào nước, tường thành và binh lính canh gác bên trong.",
+        "Đọc kỹ sơ đồ 3 Tầng Phòng Thủ và bảng so sánh tại slide 428-444.",
+        "Loại bỏ các phương án chỉ đề cập đến một biện pháp bảo vệ đơn độc."
+      ],
+      "concepts": [
+        "d11-guardrails-safety"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Theo slide học, framework NeMo Guardrails của NVIDIA sử dụng ngôn ngữ lập trình nào để cấu hình các luồng đối thoại và luật bảo vệ?",
+      "options": {
+        "A": "Ngôn ngữ Python script",
+        "B": "Ngôn ngữ YAML config",
+        "C": "Ngôn ngữ SQL schema",
+        "D": "Ngôn ngữ Colang mới"
+      },
+      "answer": "D",
+      "explanation": "Slide 453: \"Configurable rails bằng Colang\". Colang là ngôn ngữ lập trình khai báo được NVIDIA thiết kế riêng để cấu hình các luật bảo vệ cho chatbot.",
+      "hints": [
+        "Tên ngôn ngữ này bắt đầu bằng chữ 'Co', đại diện cho việc định nghĩa các luồng cộng tác hoặc đối thoại.",
+        "Xem kỹ các tính năng chính của NeMo Guardrails tại slide 450-456.",
+        "Tìm từ khóa kết thúc bằng chữ 'lang'."
+      ],
+      "concepts": [
+        "d11-guardrails-safety"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Đâu là đặc điểm nổi bật nhất của framework Guardrails AI so với NeMo Guardrails?",
+      "options": {
+        "A": "Mạnh ở việc kiểm soát cấu trúc Schema đầu ra của Agent kèm cơ chế retry.",
+        "B": "Chỉ tập trung vào việc loại bỏ các thông tin nhạy cảm PII ở lớp Input.",
+        "C": "Hỗ trợ triển khai trên các hệ thống máy chủ GPU thế hệ cũ của NVIDIA.",
+        "D": "Tích hợp sẵn một mô hình ngôn ngữ lớn cục bộ để tự động kiểm duyệt."
+      },
+      "answer": "A",
+      "explanation": "Slide 468-469: Guardrails AI \"mạnh ở: schema enforcement, output validation, retry logic\" cho structured output.",
+      "hints": [
+        "Hãy nhớ đến việc thiết lập định dạng đầu ra chuẩn (ví dụ như JSON khớp chính xác kiểu dữ liệu).",
+        "Tham khảo ghi chú về Guardrails AI ở slide 468.",
+        "Chọn đáp án tập trung vào tính năng xác thực lược đồ (schema) và cơ chế thử lại."
+      ],
+      "concepts": [
+        "d11-guardrails-safety"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Khi nào kỹ sư nên chọn giải pháp 'LLM-as-a-Judge' để làm bộ lọc kiểm tra an toàn trong pipeline?",
+      "options": {
+        "A": "Khi cần xử lý với tốc độ siêu nhanh và giảm thiểu tối đa chi phí vận hành.",
+        "B": "Khi muốn ngăn chặn các cuộc tấn công từ chối dịch vụ (DDoS) vào server.",
+        "C": "Khi các luật kiểm tra mang tính đặc thù ngành, phức tạp mà regex không bắt được.",
+        "D": "Khi Agent chỉ cần kiểm tra độ dài ký tự của câu hỏi đầu vào."
+      },
+      "answer": "C",
+      "explanation": "Slide 471-474: LLM-as-Judge \"mạnh ở: domain-specific rules mà regex không bắt được\" và \"tốn thêm cost và latency. Chỉ dùng cho high-stakes output hoặc khi pattern-based không đủ\".",
+      "hints": [
+        "Việc gọi một LLM khác để chấm điểm/đánh giá sẽ làm tăng độ trễ và tốn token. Do đó nó chỉ phù hợp cho trường hợp nào?",
+        "Xem phần lưu ý về LLM-as-a-Judge tại slide 474.",
+        "Loại trừ các phương án đề cao tốc độ xử lý nhanh hoặc chi phí thấp."
+      ],
+      "concepts": [
+        "d11-guardrails-safety"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Lớp bảo vệ nào trong Output Guardrails chịu trách nhiệm loại bỏ các liên kết (URLs) hoặc thông tin giả mạo được LLM sinh ra?",
+      "options": {
+        "A": "Content Filter.",
+        "B": "Format Validation.",
+        "C": "Grounding Check.",
+        "D": "Rate Limiting."
+      },
+      "answer": "B",
+      "explanation": "Format Validation (slide 404-405) đảm bảo response đúng schema, không chứa hallucinated links/data (action: reject invalid format, strip fake URLs).",
+      "hints": [
+        "Các đường dẫn giả mạo (hallucinated URLs) thường vi phạm cấu trúc định dạng hoặc kiểm tra cú pháp đầu ra.",
+        "Đọc danh sách 4 lớp của Output Guardrails tại slide 400-407.",
+        "Chọn đáp án liên quan đến việc kiểm định định dạng (Format)."
+      ],
+      "concepts": [
+        "d11-guardrails-safety"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Sự kết hợp bảo vệ nào được khuyên dùng để đạt được 'Defense in Depth' tối ưu về cả hiệu năng và chi phí?",
+      "options": {
+        "A": "Chỉ sử dụng mô hình LLM-as-a-Judge ở mọi lớp để đảm bảo an toàn tuyệt đối.",
+        "B": "Cấu hình khóa bảo mật ở tất cả các cổng kết nối API của cơ sở dữ liệu.",
+        "C": "Loại bỏ toàn bộ các bộ lọc regex đầu vào và chỉ sử dụng system prompt cứng.",
+        "D": "Kết hợp các bộ lọc mẫu (pattern matching) gọn nhẹ và các framework quản lý đối thoại."
+      },
+      "answer": "D",
+      "explanation": "Slide 482: \"Kết hợp pattern + framework = defense in depth\". Giúp bắt sớm các lỗi cơ bản bằng regex/pattern với chi phí thấp trước khi dùng framework xử lý.",
+      "hints": [
+        "Để tối ưu chi phí và tốc độ, chúng ta cần lọc bớt các tấn công thô sơ bằng phương pháp nhanh rẻ trước khi đưa vào các tầng xử lý đắt đỏ.",
+        "Xem phần gợi ý lựa chọn phương án tại slide 482.",
+        "Chọn phương án kết hợp tối ưu giữa bộ lọc mẫu (pattern matching) và bộ khung quản lý."
+      ],
+      "concepts": [
+        "d11-guardrails-safety"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,216 @@
+{
+  "id": "day9-advanced",
+  "parent_id": "day9",
+  "topic_title": "Day 9: Multi-Agent & Kết Nối Hệ Thống",
+  "title": "Phần 3: Giao thức MCP & Kỹ thuật Hệ thống",
+  "description": "Đánh giá kiến thức chuyên sâu về Model Context Protocol (MCP), tối ưu hóa chi phí, độ trễ và các cơ chế fail-safe.",
+  "difficulty": "khó",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Trong kiến trúc Model Context Protocol (MCP), vai trò chính của MCP Client là gì?",
+      "options": {
+        "A": "Tự động mã hóa toàn bộ dữ liệu truyền qua mạng bằng khóa ssl.",
+        "B": "Lưu trữ toàn bộ dữ liệu vector của doanh nghiệp trên ổ đĩa cứng.",
+        "C": "Kết nối với máy chủ, đọc schema công cụ và gửi lệnh thực thi.",
+        "D": "Thay thế hoàn toàn mô hình ngôn ngữ lớn để tự trả lời luôn."
+      },
+      "answer": "C",
+      "explanation": "MCP Client (như LangGraph Agent, Cursor, Claude Desktop) kết nối với MCP Server, truy vấn danh sách capabilities và gửi bản tin JSON-RPC để gọi tool.",
+      "hints": [
+        "Hãy suy nghĩ về vai trò của một client trong một kiến trúc mạng, nó thường thực hiện nhiệm vụ gì để giao tiếp với server?",
+        "Client cần phải thực hiện những bước nào để kết nối và tương tác với server? Hãy xem xét các hành động chính trong giao tiếp mạng.",
+        "Có thể có những nhầm lẫn nào khi nghĩ rằng client chỉ là một phần của hệ thống mà không hiểu rõ nhiệm vụ cụ thể của nó?"
+      ],
+      "concepts": [
+        "d9-multi-agent-mcp"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Ba năng lực cốt lõi (Capabilities) mà một MCP Server có thể công bố là gì?",
+      "options": {
+        "A": "Nodes (các tác tử), Edges (đường nối) và State (bộ nhớ chia sẻ chung).",
+        "B": "Tools (hành động), Resources (tài nguyên đọc) và Prompts (các mẫu chỉ dẫn sẵn).",
+        "C": "Client (ứng dụng khách), Server (máy chủ dịch) và Network (kênh truyền thông tin).",
+        "D": "Dense Search (tìm ngữ nghĩa), Sparse Search (từ khóa) và Hybrid Search kết hợp."
+      },
+      "answer": "B",
+      "explanation": "Ba khả năng cốt lõi của MCP Server là Tools (để ghi/thực thi), Resources (để đọc dữ liệu/context), và Prompts (các template prompt mẫu).",
+      "hints": [
+        "Năng lực cốt lõi thường liên quan đến các chức năng chính mà một hệ thống cung cấp. Bạn có thể nghĩ ra những chức năng nào mà một server cần phải thực hiện?",
+        "Hãy xem xét các thuật ngữ như 'tools', 'resources', và 'prompts'. Chúng có thể được phân loại như thế nào trong một hệ thống tương tác?",
+        "Nên chú ý đến những vấn đề nào khi lựa chọn ba chức năng cốt lõi? Có thể có những lựa chọn nào bị lẫn lộn với nhau?"
+      ],
+      "concepts": [
+        "d9-multi-agent-mcp",
+        "d4-prompt-engineering"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Giao thức Model Context Protocol (MCP) sử dụng chuẩn định dạng truyền tin nào?",
+      "options": {
+        "A": "Bản tin JSON-RPC 2.0 truyền tải qua cổng Stdio hoặc cổng kết nối SSE.",
+        "B": "Bản tin XML-RPC 1.0 truyền tải qua giao thức SOAP hoặc cổng REST API.",
+        "C": "Dữ liệu nhị phân Protocol Buffers truyền tải qua gRPC hoặc qua cổng WebSocket.",
+        "D": "Dữ liệu định dạng YAML truyền tải qua giao thức HTTP POST thông thường."
+      },
+      "answer": "A",
+      "explanation": "MCP sử dụng giao thức JSON-RPC 2.0 để giao tiếp, truyền tải qua Stdio (cho tiến trình cục bộ) hoặc SSE (Server-Sent Events cho kết nối từ xa).",
+      "hints": [
+        "Khi nói đến giao thức truyền tin, bạn có thể nghĩ về các định dạng dữ liệu phổ biến nào mà các hệ thống thường sử dụng?",
+        "Hãy nhớ lại những gì bạn biết về các chuẩn giao thức truyền thông, đặc biệt là trong ngữ cảnh của JSON và XML.",
+        "Có thể có những hiểu lầm nào khi nghĩ rằng tất cả các giao thức đều giống nhau? Hãy xem xét mục đích sử dụng của chúng."
+      ],
+      "concepts": [
+        "d9-multi-agent-mcp",
+        "d4-tool-calling"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Trong quy trình tự động khám phá (Discovery Flow) của MCP, method nào dùng để lấy danh sách công cụ?",
+      "options": {
+        "A": "Method 'prompts/get' dùng để yêu cầu server cung cấp mẫu chỉ dẫn sẵn có.",
+        "B": "Method 'tools/call' dùng để yêu cầu server thực thi các công cụ đó ngay.",
+        "C": "Method 'resources/read' dùng để yêu cầu server trả về nội dung tệp tin này.",
+        "D": "Method 'tools/list' dùng để yêu cầu server trả về danh sách công cụ sẵn."
+      },
+      "answer": "D",
+      "explanation": "Method 'tools/list' được client gọi trong Discovery Flow để truy vấn các công cụ khả dụng kèm theo JSON Schema của chúng từ server.",
+      "hints": [
+        "Trong quy trình khám phá, client thường cần biết thông tin gì để có thể tương tác với server hiệu quả?",
+        "Hãy xem xét các phương thức và cách mà client có thể yêu cầu thông tin từ server. Có những phương thức nào có vẻ phù hợp hơn?",
+        "Có thể có những cái bẫy nào khi chọn các phương thức có thể gây nhầm lẫn với nhau không?"
+      ],
+      "concepts": [
+        "d9-multi-agent-mcp"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Tại sao việc tích hợp qua cổng chuẩn MCP lại giúp tăng tính bảo mật hệ thống?",
+      "options": {
+        "A": "MCP Server tự động mã hóa cứng các câu hỏi của người dùng gửi.",
+        "B": "MCP Server đóng vai trò firewall ngăn tác tử trực tiếp chạm vào database.",
+        "C": "MCP Server không cho phép truyền dữ liệu dạng văn bản qua mạng ngoài.",
+        "D": "MCP Server bắt buộc các tác tử phải chạy trên môi trường sandbox này."
+      },
+      "answer": "B",
+      "explanation": "MCP Server đóng vai trò ranh giới bảo mật (firewall). Agent không trực tiếp truy cập file hệ thống hay database mà phải thông qua các hàm được kiểm duyệt bởi server.",
+      "hints": [
+        "Hãy nghĩ về cách mà các hệ thống bảo mật thường hoạt động để bảo vệ dữ liệu và ngăn chặn truy cập trái phép.",
+        "Trong một hệ thống, các yếu tố nào có thể giúp tăng cường bảo mật giữa client và server?",
+        "Có thể có những nhầm lẫn nào khi nghĩ rằng chỉ cần mã hóa là đủ để bảo mật? Hãy xem xét các biện pháp khác."
+      ],
+      "concepts": [
+        "d9-multi-agent-mcp",
+        "d11-guardrails-safety"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Trong thiết kế chi phí vận hành (LLM Cost), kỹ thuật 'Model Cascading' nghĩa là gì?",
+      "options": {
+        "A": "Kết hợp cơ sở dữ liệu vector với các mô hình dịch ngôn ngữ.",
+        "B": "Dùng nhiều mô hình ngôn ngữ lớn chạy song song để tăng độ chính.",
+        "C": "Dùng model nhỏ để định tuyến và chỉ dùng model lớn khi cần thiết.",
+        "D": "Chuyển toàn bộ các prompt hệ thống sang định dạng văn bản xml này."
+      },
+      "answer": "C",
+      "explanation": "Model Cascading phân cấp mô hình: sử dụng mô hình nhỏ, rẻ (như gpt-4o-mini) cho supervisor/routing và mô hình lớn (như Claude 3.5 Sonnet) cho worker phức tạp.",
+      "hints": [
+        "Khi bạn nghĩ về việc tối ưu hóa chi phí trong các hệ thống, có những chiến lược nào mà bạn có thể liên tưởng đến?",
+        "Hãy xem xét cách mà các mô hình có thể được sử dụng một cách hiệu quả để tiết kiệm tài nguyên. Có thể có những phương pháp nào để kết hợp các mô hình?",
+        "Có thể có những hiểu lầm nào khi nghĩ rằng chỉ cần sử dụng một mô hình lớn cho mọi tình huống?"
+      ],
+      "concepts": [
+        "d9-multi-agent-mcp",
+        "d15-production-deployment-cost"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Kỹ thuật tối ưu hóa 'Concurrency' giúp giảm latency trong hệ thống Multi-Agent như thế nào?",
+      "options": {
+        "A": "Giảm thiểu số lượng token của prompt hệ thống khi mô hình chạy thực.",
+        "B": "Cho phép người dùng gửi nhiều câu hỏi cùng lúc lên máy chủ này.",
+        "C": "Tự động nén kích thước của các file ảnh lưu trong hệ thống này.",
+        "D": "Cho phép các worker node độc lập chạy song song thay vì tuần tự."
+      },
+      "answer": "D",
+      "explanation": "Concurrency giúp các Worker Node độc lập (ví dụ: Retrieval Worker và Tool Worker) chạy song song cùng lúc để giảm tổng thời gian phản hồi.",
+      "hints": [
+        "Hãy nghĩ về cách mà các tác vụ trong một hệ thống có thể được thực hiện đồng thời để nâng cao hiệu suất.",
+        "Concurrency thường liên quan đến việc xử lý nhiều nhiệm vụ cùng một lúc. Bạn có thể tưởng tượng ra những lợi ích nào từ điều này?",
+        "Có thể có những nhầm lẫn nào khi nghĩ rằng chỉ cần giảm thiểu thời gian chờ là đủ để cải thiện hiệu suất? Hãy xem xét các yếu tố khác."
+      ],
+      "concepts": [
+        "d9-multi-agent-mcp",
+        "d3-agentic-react"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Thiết kế 'Graceful Degradation' (suy giảm hiệu năng có kiểm soát) hoạt động thế nào khi worker lỗi?",
+      "options": {
+        "A": "Hệ thống tự động xóa bỏ toàn bộ lịch sử trò chuyện của họ.",
+        "B": "Hệ thống tiếp tục chạy bằng dữ liệu fallback thay vì bị crash luôn.",
+        "C": "Hệ thống dừng hoạt động và yêu cầu lập trình viên vào sửa lỗi.",
+        "D": "Hệ thống tự động đổi sang một mô hình ngôn ngữ lớn khác ngay."
+      },
+      "answer": "B",
+      "explanation": "Graceful Degradation đảm bảo khi một Worker lỗi (như API ngoài sập), hệ thống vẫn hoạt động bằng cách dùng cache hoặc thông báo thiếu dữ liệu thay vì sập toàn bộ.",
+      "hints": [
+        "Hãy xem xét cách mà các hệ thống xử lý lỗi và duy trì hoạt động trong khi gặp sự cố.",
+        "Graceful Degradation có thể giúp hệ thống duy trì tính khả dụng như thế nào? Bạn có thể nghĩ ra các ví dụ cụ thể không?",
+        "Có thể có những nhầm lẫn nào khi nghĩ rằng hệ thống luôn phải hoàn hảo mà không có lỗi?"
+      ],
+      "concepts": [
+        "d9-multi-agent-mcp"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Tại sao việc validate schema đầu vào bằng Pydantic lại quan trọng đối với Shared State?",
+      "options": {
+        "A": "Ngăn dữ liệu sai cấu trúc từ worker làm hỏng các node chạy sau.",
+        "B": "Tăng tốc độ truy cập và ghi dữ liệu vào cơ sở này ngay.",
+        "C": "Giúp mã hóa dữ liệu nhạy cảm trước khi truyền qua mạng internet.",
+        "D": "Tự động sửa các lỗi chính tả có trong câu hỏi của họ gửi."
+      },
+      "answer": "A",
+      "explanation": "Validate schema đầu vào bằng Pydantic giúp phát hiện sớm dữ liệu sai định dạng từ các worker trước khi ghi đè vào Shared State, tránh làm hỏng các node tiếp theo.",
+      "hints": [
+        "Khi làm việc với dữ liệu, việc kiểm tra định dạng có thể quan trọng như thế nào trong việc đảm bảo tính chính xác?",
+        "Hãy nghĩ về những hậu quả có thể xảy ra nếu dữ liệu không đúng định dạng được sử dụng trong một hệ thống chia sẻ trạng thái.",
+        "Có thể có những nhầm lẫn nào khi nghĩ rằng chỉ cần dữ liệu hợp lệ là đủ, mà không cần xem xét tính chính xác của nó?"
+      ],
+      "concepts": [
+        "d9-multi-agent-mcp",
+        "d7-data-foundations"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Trong thiết kế độ tin cậy, tham số 'Timeout & Retry Limits' có tác dụng gì?",
+      "options": {
+        "A": "Giới hạn thời gian chờ và số lần gọi lại khi node gặp lỗi.",
+        "B": "Tăng dung lượng bộ nhớ đệm của toàn bộ hệ thống này lên.",
+        "C": "Tự động ngắt kết nối internet khi phát hiện sự cố bảo mật mạng.",
+        "D": "Cho phép người dùng đánh giá chất lượng câu trả lời của tác tử."
+      },
+      "answer": "A",
+      "explanation": "Timeout & Retry Limits ngăn chặn việc hệ thống bị treo vô hạn do chờ một Worker bị đơ và thực hiện gọi lại một số lần nhất định trước khi báo lỗi.",
+      "hints": [
+        "Hãy suy nghĩ về cách mà các hệ thống quản lý thời gian và nỗ lực khi gặp phải các lỗi.",
+        "Timeout & Retry Limits giúp hệ thống tránh khỏi những tình huống nào có thể gây ra gián đoạn lớn?",
+        "Có thể có những nhầm lẫn nào khi nghĩ rằng không cần thiết phải giới hạn thời gian chờ và số lần thử lại?"
+      ],
+      "concepts": [
+        "d9-multi-agent-mcp"
+      ]
+    }
+  ]
+}

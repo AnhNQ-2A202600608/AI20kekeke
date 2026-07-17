@@ -1,0 +1,1425 @@
+{
+  "id": "midterm-mix-all",
+  "parent_id": "midterm-review",
+  "topic_title": "Ôn tập giữa kỳ: Cấu trúc bài thi",
+  "title": "Mixed Midterm - All sections",
+  "description": "65 câu tổng hợp toàn bộ phần chung và 3 track Business, Infrastructure, App Build, gồm MCQ và tự luận ngắn.",
+  "difficulty": "khó",
+  "questions": [
+    {
+      "id": "midterm-common-1",
+      "question": "Một chatbot HR cần trả lời theo chính sách thay đổi hằng tháng và phải trích nguồn. Thiết kế nào phù hợp nhất?",
+      "options": {
+        "A": "Fine-tune toàn bộ mô hình mỗi tháng",
+        "B": "Prompt dài chứa mọi chính sách",
+        "C": "Cache câu trả lời theo nhân viên",
+        "D": "RAG với tài liệu đã phân quyền"
+      },
+      "answer": "D",
+      "explanation": "RAG phù hợp khi tri thức thay đổi và cần grounding theo nguồn có quyền truy cập.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-rag",
+        "midterm-grounding"
+      ],
+      "source_set_id": "midterm-common"
+    },
+    {
+      "id": "midterm-common-2",
+      "question": "Trong ReAct agent, bước Observation nên được dùng để làm gì?",
+      "options": {
+        "A": "Bỏ qua bước kiểm tra lỗi",
+        "B": "Thay thế toàn bộ system prompt",
+        "C": "Tạo khóa API cho công cụ",
+        "D": "Lưu lại kết quả tool vừa gọi"
+      },
+      "answer": "D",
+      "explanation": "Observation là dữ liệu trả về từ tool, giúp agent quyết định bước tiếp theo.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-react",
+        "midterm-agent-patterns"
+      ],
+      "source_set_id": "midterm-common"
+    },
+    {
+      "id": "midterm-common-3",
+      "question": "RAG lấy đúng tài liệu nhưng câu trả lời bỏ qua đoạn bằng chứng ở giữa context dài. Failure mode nào khớp nhất?",
+      "options": {
+        "A": "Cold start của người dùng mới",
+        "B": "Cache stampede khi tải cao",
+        "C": "Schema drift của dữ liệu nguồn",
+        "D": "Lost in the Middle trong context"
+      },
+      "answer": "D",
+      "explanation": "Lost in the Middle xảy ra khi model ít chú ý thông tin nằm giữa prompt dài.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-rag",
+        "midterm-context-engineering"
+      ],
+      "source_set_id": "midterm-common"
+    },
+    {
+      "id": "midterm-common-4",
+      "question": "Guardrail nào nên đặt trước retrieval để giảm rò rỉ tài liệu giữa phòng ban?",
+      "options": {
+        "A": "Tăng nhiệt độ sinh văn bản",
+        "B": "Ẩn citation khỏi câu trả lời",
+        "C": "Lọc metadata theo quyền truy cập",
+        "D": "Nối tất cả tài liệu liên quan"
+      },
+      "answer": "C",
+      "explanation": "Lọc quyền trước retrieval ngăn tài liệu sai phạm vi đi vào context ngay từ đầu.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-security",
+        "midterm-rag"
+      ],
+      "source_set_id": "midterm-common"
+    },
+    {
+      "id": "midterm-common-5",
+      "question": "Prompt yêu cầu agent gọi tool xóa dữ liệu nếu người dùng nói 'khẩn cấp'. Rủi ro chính là gì?",
+      "options": {
+        "A": "Prompt quá ngắn để chạy tool",
+        "B": "Thiếu xác nhận trước hành động",
+        "C": "Tool thiếu giao diện người dùng",
+        "D": "Không đủ ví dụ few-shot an toàn"
+      },
+      "answer": "B",
+      "explanation": "Hành động phá hủy cần xác nhận, phân quyền và audit thay vì chỉ dựa vào prompt.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-agent-safety",
+        "midterm-security"
+      ],
+      "source_set_id": "midterm-common"
+    },
+    {
+      "id": "midterm-common-6",
+      "question": "Bạn cần đo chất lượng RAG theo từng lần trả lời. Bộ log tối thiểu nên có gì?",
+      "options": {
+        "A": "Logo, màu nút và theme",
+        "B": "Prompt, chunks, citation và outcome",
+        "C": "Tên GPU, fan speed và RAM",
+        "D": "Email mentor, avatar và role"
+      },
+      "answer": "B",
+      "explanation": "Observability RAG cần thấy truy vấn, tài liệu lấy về, citation và kết quả để debug.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-observability",
+        "midterm-rag"
+      ],
+      "source_set_id": "midterm-common"
+    },
+    {
+      "id": "midterm-common-7",
+      "question": "Khi prompt engineering cho tác vụ phân loại ticket, cách nào dễ kiểm soát nhất?",
+      "options": {
+        "A": "Yêu cầu trả lời tự do dài",
+        "B": "Ẩn tiêu chí phân loại khỏi prompt",
+        "C": "Đưa schema nhãn và ví dụ",
+        "D": "Tăng sáng tạo của model phân loại"
+      },
+      "answer": "C",
+      "explanation": "Schema nhãn và ví dụ giúp giảm mơ hồ, dễ validate và dễ theo dõi lỗi.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-prompt-engineering"
+      ],
+      "source_set_id": "midterm-common"
+    },
+    {
+      "id": "midterm-common-8",
+      "question": "Agent liên tục gọi cùng một tool dù kết quả không đổi. Cách xử lý hợp lý nhất?",
+      "options": {
+        "A": "Thêm điều kiện dừng rõ ràng",
+        "B": "Tăng số vòng lặp tối đa",
+        "C": "Xóa toàn bộ memory phiên",
+        "D": "Bỏ logging khỏi tool call"
+      },
+      "answer": "A",
+      "explanation": "Điều kiện dừng, giới hạn vòng lặp và kiểm tra trạng thái giúp tránh loop tốn chi phí.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-agent-architecture"
+      ],
+      "source_set_id": "midterm-common"
+    },
+    {
+      "id": "midterm-common-9",
+      "question": "Một câu trả lời RAG có citation đúng nhưng kết luận sai. Bạn nên debug điểm nào trước?",
+      "options": {
+        "A": "Màu giao diện trang kết quả",
+        "B": "Ranking và cách tổng hợp bằng chứng",
+        "C": "Kích thước avatar trong trang kết quả",
+        "D": "Tên nhánh git đang chạy thử"
+      },
+      "answer": "B",
+      "explanation": "Citation đúng chưa đủ; cần kiểm tra reranking, prompt tổng hợp và cách model suy luận.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-rag",
+        "midterm-observability"
+      ],
+      "source_set_id": "midterm-common"
+    },
+    {
+      "id": "midterm-common-10",
+      "question": "Để chống indirect prompt injection trong tài liệu được retrieval, lớp nào quan trọng nhất?",
+      "options": {
+        "A": "Chỉ tin mọi nội dung trong chunk",
+        "B": "Nén chunk thành một dòng ngắn",
+        "C": "Tắt toàn bộ citation của RAG",
+        "D": "Phân tách instruction và data retrieval"
+      },
+      "answer": "D",
+      "explanation": "Model phải được hướng dẫn xem chunk là dữ liệu, không phải lệnh hệ thống.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-security",
+        "midterm-prompt-injection"
+      ],
+      "source_set_id": "midterm-common"
+    },
+    {
+      "id": "midterm-common-11",
+      "question": "Bạn muốn so sánh hai prompt phiên bản A/B. Chỉ số nào nên ưu tiên cho tác vụ có đáp án chuẩn?",
+      "options": {
+        "A": "Độ chính xác theo bộ eval",
+        "B": "Độ dài câu trả lời sinh",
+        "C": "Số token trong prompt hiện tại",
+        "D": "Số lần reload trang học"
+      },
+      "answer": "A",
+      "explanation": "Bộ eval có đáp án chuẩn đo trực tiếp chất lượng thay vì chỉ đo độ dài hay chi phí.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-evaluation"
+      ],
+      "source_set_id": "midterm-common"
+    },
+    {
+      "id": "midterm-common-12",
+      "question": "Một agent được phép đọc CRM và gửi email khách hàng. Kiểm soát nào nên có trước khi gửi?",
+      "options": {
+        "A": "Bỏ kiểm tra quyền CRM nội bộ",
+        "B": "Ẩn preview email khỏi người dùng",
+        "C": "Cho agent tự tạo danh sách nhận",
+        "D": "Human approval cho email nhạy cảm"
+      },
+      "answer": "D",
+      "explanation": "Tác vụ tác động khách hàng cần approval, preview và audit để giảm rủi ro vận hành.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-agent-safety"
+      ],
+      "source_set_id": "midterm-common"
+    },
+    {
+      "id": "midterm-common-13",
+      "question": "Khi RAG trả lời chậm, thông tin nào giúp phân biệt lỗi retrieval và lỗi generation?",
+      "options": {
+        "A": "Ảnh nền trong dashboard học tập",
+        "B": "Latency theo từng stage pipeline",
+        "C": "Tên font trong giao diện",
+        "D": "Số ký tự trong tiêu đề"
+      },
+      "answer": "B",
+      "explanation": "Tracing theo retrieval, rerank, generation và streaming giúp khoanh vùng bottleneck.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-observability"
+      ],
+      "source_set_id": "midterm-common"
+    },
+    {
+      "id": "midterm-common-14",
+      "question": "Câu hỏi người dùng yêu cầu model tiết lộ system prompt. Phản hồi đúng nên là gì?",
+      "options": {
+        "A": "Đưa prompt vào citation công khai",
+        "B": "Tóm tắt toàn bộ system prompt",
+        "C": "Từ chối và chuyển hướng hợp lệ",
+        "D": "Gọi tool đọc biến môi trường"
+      },
+      "answer": "C",
+      "explanation": "Không tiết lộ system prompt; nên từ chối ngắn và chuyển sang hỗ trợ nhu cầu hợp lệ.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-security",
+        "midterm-prompt-engineering"
+      ],
+      "source_set_id": "midterm-common"
+    },
+    {
+      "id": "midterm-common-15",
+      "question": "Trong thiết kế AI feature, vì sao cần fallback khi model không tự tin?",
+      "options": {
+        "A": "Để tăng độ dài câu trả lời",
+        "B": "Để tránh trả lời bịa chắc chắn",
+        "C": "Để bỏ qua quyền người dùng",
+        "D": "Để giảm nhu cầu kiểm thử"
+      },
+      "answer": "B",
+      "explanation": "Fallback giúp chuyển sang hỏi thêm, tra cứu lại hoặc escalte thay vì hallucinate.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-ai-patterns",
+        "midterm-safety"
+      ],
+      "source_set_id": "midterm-common"
+    },
+    {
+      "id": "midterm-common-short-answer-1",
+      "question": "Một RAG agent có nguy cơ prompt injection từ tài liệu nội bộ. Hãy đề xuất 3 lớp phòng vệ cụ thể.",
+      "expected_answer": "Lọc quyền trước retrieval, phân tách rõ instruction/data trong system prompt, và dùng C-RAG/verification để loại chunk đáng ngờ hoặc không đủ bằng chứng.",
+      "evaluation_points": [
+        "Có pre-filter theo quyền và metadata",
+        "Có ràng buộc không làm theo lệnh trong tài liệu",
+        "Có bước kiểm chứng/citation trước khi trả lời",
+        "Có logging để audit sự cố"
+      ],
+      "sfia_level": "SFIA 4",
+      "competency": "Design secure RAG flow",
+      "hints": [
+        "Nêu quyết định chính trước, rồi giải thích trade-off.",
+        "Liên hệ câu trả lời với rủi ro hoặc chỉ số vận hành.",
+        "Kết luận bằng bước kiểm chứng hoặc tiêu chí nghiệm thu."
+      ],
+      "concepts": [
+        "midterm-security",
+        "midterm-rag"
+      ],
+      "source_set_id": "midterm-common-short-answer"
+    },
+    {
+      "id": "midterm-common-short-answer-2",
+      "question": "Một agent bị loop gọi tool tìm kiếm cùng truy vấn. Bạn sẽ debug và sửa thế nào?",
+      "expected_answer": "Kiểm trace tool call, thêm điều kiện dừng, giới hạn số vòng lặp, cache observation và yêu cầu agent đổi chiến lược khi kết quả không mới.",
+      "evaluation_points": [
+        "Nêu cách đọc trace/observation",
+        "Có giới hạn vòng lặp hoặc budget",
+        "Có cache hoặc kiểm tra kết quả trùng",
+        "Có fallback/escalation khi không tiến triển"
+      ],
+      "sfia_level": "SFIA 4",
+      "competency": "Diagnose agent loop",
+      "hints": [
+        "Nêu quyết định chính trước, rồi giải thích trade-off.",
+        "Liên hệ câu trả lời với rủi ro hoặc chỉ số vận hành.",
+        "Kết luận bằng bước kiểm chứng hoặc tiêu chí nghiệm thu."
+      ],
+      "concepts": [
+        "midterm-agent-architecture"
+      ],
+      "source_set_id": "midterm-common-short-answer"
+    },
+    {
+      "id": "midterm-common-short-answer-3",
+      "question": "Bạn cần thiết kế eval cho prompt phân loại ticket. Hãy nêu bộ dữ liệu và metric tối thiểu.",
+      "expected_answer": "Dùng tập ticket gán nhãn chuẩn, chia theo loại lỗi phổ biến, đo accuracy/F1 theo nhãn, confusion matrix và kiểm mẫu lỗi quan trọng.",
+      "evaluation_points": [
+        "Có dataset gán nhãn chuẩn",
+        "Có metric phù hợp từng lớp",
+        "Có phân tích lỗi/confusion",
+        "Có tiêu chí pass/fail trước rollout"
+      ],
+      "sfia_level": "SFIA 4",
+      "competency": "Design prompt evaluation",
+      "hints": [
+        "Nêu quyết định chính trước, rồi giải thích trade-off.",
+        "Liên hệ câu trả lời với rủi ro hoặc chỉ số vận hành.",
+        "Kết luận bằng bước kiểm chứng hoặc tiêu chí nghiệm thu."
+      ],
+      "concepts": [
+        "midterm-evaluation"
+      ],
+      "source_set_id": "midterm-common-short-answer"
+    },
+    {
+      "id": "midterm-common-short-answer-4",
+      "question": "RAG trả lời đúng nguồn nhưng kết luận sai. Hãy nêu quy trình debug ngắn.",
+      "expected_answer": "Kiểm query rewrite, retrieval/rerank, chunk được đưa vào prompt, prompt tổng hợp, rồi so câu trả lời với citation bằng test case tái lập.",
+      "evaluation_points": [
+        "Tách retrieval và generation để debug",
+        "Kiểm rerank/chunk/citation",
+        "Có test case tái lập",
+        "Có hành động sửa rõ ràng"
+      ],
+      "sfia_level": "SFIA 4",
+      "competency": "Debug RAG quality",
+      "hints": [
+        "Nêu quyết định chính trước, rồi giải thích trade-off.",
+        "Liên hệ câu trả lời với rủi ro hoặc chỉ số vận hành.",
+        "Kết luận bằng bước kiểm chứng hoặc tiêu chí nghiệm thu."
+      ],
+      "concepts": [
+        "midterm-rag",
+        "midterm-observability"
+      ],
+      "source_set_id": "midterm-common-short-answer"
+    },
+    {
+      "id": "midterm-common-short-answer-5",
+      "question": "Một AI feature có thể đưa câu trả lời sai cho nhân viên mới. Bạn thiết kế fallback thế nào?",
+      "expected_answer": "Khi confidence thấp hoặc thiếu bằng chứng, hệ thống hỏi thêm, trả lời giới hạn theo nguồn, hoặc escalte cho mentor/admin thay vì đoán.",
+      "evaluation_points": [
+        "Có tiêu chí confidence/evidence",
+        "Có hành vi abstain/hỏi thêm",
+        "Có escalation phù hợp",
+        "Có logging để cải thiện về sau"
+      ],
+      "sfia_level": "SFIA 4",
+      "competency": "Design safe fallback",
+      "hints": [
+        "Nêu quyết định chính trước, rồi giải thích trade-off.",
+        "Liên hệ câu trả lời với rủi ro hoặc chỉ số vận hành.",
+        "Kết luận bằng bước kiểm chứng hoặc tiêu chí nghiệm thu."
+      ],
+      "concepts": [
+        "midterm-safety"
+      ],
+      "source_set_id": "midterm-common-short-answer"
+    },
+    {
+      "id": "midterm-business-1",
+      "question": "PM muốn ưu tiên use case AI đầu tiên cho doanh nghiệp. Tiêu chí nào nên đứng đầu?",
+      "options": {
+        "A": "Model mới nhất trên thị trường",
+        "B": "ROI rõ và dữ liệu sẵn sàng",
+        "C": "Demo nhiều hiệu ứng thị giác",
+        "D": "Tên dự án nghe hấp dẫn"
+      },
+      "answer": "B",
+      "explanation": "Use case đầu tiên nên cân bằng giá trị kinh doanh, dữ liệu, rủi ro và khả năng triển khai.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-business",
+        "midterm-roi"
+      ],
+      "source_set_id": "midterm-business"
+    },
+    {
+      "id": "midterm-business-2",
+      "question": "Một AI roadmap tốt cho 6 tháng đầu nên tránh điều gì?",
+      "options": {
+        "A": "Pilot nhỏ có tiêu chí đo",
+        "B": "Chọn use case ít rủi ro",
+        "C": "Triển khai toàn công ty ngay",
+        "D": "Thiết lập governance cơ bản"
+      },
+      "answer": "C",
+      "explanation": "Triển khai diện rộng khi chưa có eval, adoption và guardrail thường làm tăng rủi ro.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-ai-roadmap"
+      ],
+      "source_set_id": "midterm-business"
+    },
+    {
+      "id": "midterm-business-3",
+      "question": "Khi tính ROI cho chatbot hỗ trợ nội bộ, chỉ số nào đáng tin hơn vanity metric?",
+      "options": {
+        "A": "Số màu trong giao diện",
+        "B": "Giờ hỗ trợ tiết kiệm được",
+        "C": "Số lượt mở trang chủ",
+        "D": "Số slide trong proposal nội bộ"
+      },
+      "answer": "B",
+      "explanation": "ROI nên gắn với thời gian tiết kiệm, tỉ lệ giải quyết, chi phí giảm hoặc doanh thu tăng.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-roi"
+      ],
+      "source_set_id": "midterm-business"
+    },
+    {
+      "id": "midterm-business-4",
+      "question": "EU AI Act thường yêu cầu quản trị chặt hơn với nhóm hệ thống nào?",
+      "options": {
+        "A": "Hệ thống rủi ro cao",
+        "B": "Ứng dụng thay ảnh đại diện",
+        "C": "Bộ lọc màu cá nhân",
+        "D": "Trang FAQ tĩnh nội bộ"
+      },
+      "answer": "A",
+      "explanation": "Các hệ thống rủi ro cao cần quản trị, giám sát, tài liệu và kiểm soát nghiêm hơn.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-eu-ai-act"
+      ],
+      "source_set_id": "midterm-business"
+    },
+    {
+      "id": "midterm-business-5",
+      "question": "Một team muốn dùng AI chấm điểm tuyển dụng tự động. PM nên làm gì trước?",
+      "options": {
+        "A": "Ẩn tiêu chí khỏi ứng viên",
+        "B": "Đánh giá rủi ro và bias",
+        "C": "Bỏ human review để chạy nhanh",
+        "D": "Dùng điểm AI làm quyết định cuối"
+      },
+      "answer": "B",
+      "explanation": "Tuyển dụng là bối cảnh nhạy cảm; cần đánh giá rủi ro, bias, minh bạch và human oversight.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-ai-governance"
+      ],
+      "source_set_id": "midterm-business"
+    },
+    {
+      "id": "midterm-business-6",
+      "question": "Khi stakeholder yêu cầu AI 'thông minh hơn', PM nên chuyển yêu cầu thành gì?",
+      "options": {
+        "A": "Một bộ metric đo được",
+        "B": "Một model lớn hơn mặc định",
+        "C": "Một khẩu hiệu marketing mới",
+        "D": "Một sprint không tiêu chí"
+      },
+      "answer": "A",
+      "explanation": "Yêu cầu mơ hồ cần chuyển thành metric như accuracy, resolution rate, latency, CSAT.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-product-management"
+      ],
+      "source_set_id": "midterm-business"
+    },
+    {
+      "id": "midterm-business-7",
+      "question": "Luật/quy định AI Việt Nam còn đang phát triển. Cách quản trị thực tế nhất là gì?",
+      "options": {
+        "A": "Chờ luật hoàn chỉnh rồi làm",
+        "B": "Không lưu bất kỳ audit nào",
+        "C": "Áp dụng nguyên tắc risk-based",
+        "D": "Giao toàn bộ cho model"
+      },
+      "answer": "C",
+      "explanation": "Risk-based governance giúp kiểm soát dữ liệu, minh bạch, trách nhiệm và an toàn ngay từ đầu.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-vietnam-ai-law",
+        "midterm-ai-governance"
+      ],
+      "source_set_id": "midterm-business"
+    },
+    {
+      "id": "midterm-business-8",
+      "question": "Một pilot AI đạt accuracy cao nhưng nhân viên không dùng. Nguyên nhân cần kiểm tra trước?",
+      "options": {
+        "A": "Workflow chưa khớp thói quen",
+        "B": "Tên model chưa đủ dài",
+        "C": "Logo sản phẩm chưa nổi",
+        "D": "Máy chủ thiếu ảnh nền"
+      },
+      "answer": "A",
+      "explanation": "Adoption phụ thuộc workflow, niềm tin, training và cách tích hợp vào công việc thật.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-product-management",
+        "midterm-adoption"
+      ],
+      "source_set_id": "midterm-business"
+    },
+    {
+      "id": "midterm-business-9",
+      "question": "Khi chọn giữa build và buy giải pháp AI, yếu tố nào là trade-off chính?",
+      "options": {
+        "A": "Màu dashboard và logo thương hiệu",
+        "B": "Tên vendor có dễ đọc không",
+        "C": "Kiểm soát, chi phí và tốc độ",
+        "D": "Số emoji trong demo sản phẩm"
+      },
+      "answer": "C",
+      "explanation": "Build/buy cần so sánh kiểm soát dữ liệu, tốc độ ra mắt, chi phí, bảo trì và lock-in.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-ai-strategy"
+      ],
+      "source_set_id": "midterm-business"
+    },
+    {
+      "id": "midterm-business-10",
+      "question": "Use case AI nào nên bị loại sớm khỏi roadmap?",
+      "options": {
+        "A": "Có dữ liệu và owner rõ",
+        "B": "Có metric thành công cụ thể",
+        "C": "Không có dữ liệu kiểm chứng",
+        "D": "Có rủi ro thấp, giá trị vừa"
+      },
+      "answer": "C",
+      "explanation": "Không có dữ liệu, owner hoặc metric thì khó chứng minh giá trị và khó vận hành an toàn.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-ai-roadmap"
+      ],
+      "source_set_id": "midterm-business"
+    },
+    {
+      "id": "midterm-business-short-answer-1",
+      "question": "Hãy chọn một use case AI đầu tiên cho doanh nghiệp và nêu tiêu chí ưu tiên.",
+      "expected_answer": "Chọn use case có ROI đo được, dữ liệu sẵn, owner rõ, rủi ro thấp-vừa và có thể pilot trong thời gian ngắn.",
+      "evaluation_points": [
+        "Nêu giá trị kinh doanh cụ thể",
+        "Xét data readiness và owner",
+        "Xét rủi ro/compliance",
+        "Có tiêu chí pilot đo được"
+      ],
+      "sfia_level": "SFIA 4",
+      "competency": "Prioritize AI roadmap",
+      "hints": [
+        "Nêu quyết định chính trước, rồi giải thích trade-off.",
+        "Liên hệ câu trả lời với rủi ro hoặc chỉ số vận hành.",
+        "Kết luận bằng bước kiểm chứng hoặc tiêu chí nghiệm thu."
+      ],
+      "concepts": [
+        "midterm-business",
+        "midterm-roi"
+      ],
+      "source_set_id": "midterm-business-short-answer"
+    },
+    {
+      "id": "midterm-business-short-answer-2",
+      "question": "Một pilot AI accuracy cao nhưng adoption thấp. Bạn sẽ kiểm tra gì?",
+      "expected_answer": "Kiểm workflow thực tế, niềm tin người dùng, training, integration point, metric adoption và phản hồi định tính từ nhóm dùng thử.",
+      "evaluation_points": [
+        "Không chỉ nhìn accuracy",
+        "Có kiểm workflow và change management",
+        "Có dữ liệu adoption",
+        "Có hành động cải thiện pilot"
+      ],
+      "sfia_level": "SFIA 4",
+      "competency": "Diagnose AI adoption",
+      "hints": [
+        "Nêu quyết định chính trước, rồi giải thích trade-off.",
+        "Liên hệ câu trả lời với rủi ro hoặc chỉ số vận hành.",
+        "Kết luận bằng bước kiểm chứng hoặc tiêu chí nghiệm thu."
+      ],
+      "concepts": [
+        "midterm-product-management"
+      ],
+      "source_set_id": "midterm-business-short-answer"
+    },
+    {
+      "id": "midterm-business-short-answer-3",
+      "question": "Tóm tắt cách tính ROI cho chatbot nội bộ trong 3-4 chỉ số.",
+      "expected_answer": "Đo số ticket tự xử lý, giờ hỗ trợ tiết kiệm, giảm thời gian chờ, chi phí vận hành và mức hài lòng người dùng.",
+      "evaluation_points": [
+        "Có chỉ số chi phí/thời gian",
+        "Có chất lượng hoặc CSAT",
+        "Có baseline trước AI",
+        "Có cách đo sau rollout"
+      ],
+      "sfia_level": "SFIA 4",
+      "competency": "Measure AI ROI",
+      "hints": [
+        "Nêu quyết định chính trước, rồi giải thích trade-off.",
+        "Liên hệ câu trả lời với rủi ro hoặc chỉ số vận hành.",
+        "Kết luận bằng bước kiểm chứng hoặc tiêu chí nghiệm thu."
+      ],
+      "concepts": [
+        "midterm-roi"
+      ],
+      "source_set_id": "midterm-business-short-answer"
+    },
+    {
+      "id": "midterm-business-short-answer-4",
+      "question": "Một hệ thống AI hỗ trợ tuyển dụng cần guardrail gì trước khi production?",
+      "expected_answer": "Cần đánh giá bias, human oversight, minh bạch tiêu chí, audit log, bảo vệ dữ liệu ứng viên và quy trình khiếu nại.",
+      "evaluation_points": [
+        "Có bias/fairness review",
+        "Có human oversight",
+        "Có minh bạch và audit",
+        "Có bảo vệ dữ liệu cá nhân"
+      ],
+      "sfia_level": "SFIA 4",
+      "competency": "Govern high-risk AI",
+      "hints": [
+        "Nêu quyết định chính trước, rồi giải thích trade-off.",
+        "Liên hệ câu trả lời với rủi ro hoặc chỉ số vận hành.",
+        "Kết luận bằng bước kiểm chứng hoặc tiêu chí nghiệm thu."
+      ],
+      "concepts": [
+        "midterm-ai-governance",
+        "midterm-eu-ai-act"
+      ],
+      "source_set_id": "midterm-business-short-answer"
+    },
+    {
+      "id": "midterm-business-short-answer-5",
+      "question": "Khi luật AI Việt Nam chưa hoàn thiện, doanh nghiệp nên quản trị AI thế nào?",
+      "expected_answer": "Áp dụng quản trị risk-based: phân loại rủi ro use case, kiểm soát dữ liệu, audit, human oversight và cập nhật theo quy định mới.",
+      "evaluation_points": [
+        "Có phân loại rủi ro",
+        "Có kiểm soát dữ liệu và audit",
+        "Có trách nhiệm/human oversight",
+        "Có cơ chế cập nhật compliance"
+      ],
+      "sfia_level": "SFIA 4",
+      "competency": "Apply AI governance",
+      "hints": [
+        "Nêu quyết định chính trước, rồi giải thích trade-off.",
+        "Liên hệ câu trả lời với rủi ro hoặc chỉ số vận hành.",
+        "Kết luận bằng bước kiểm chứng hoặc tiêu chí nghiệm thu."
+      ],
+      "concepts": [
+        "midterm-vietnam-ai-law"
+      ],
+      "source_set_id": "midterm-business-short-answer"
+    },
+    {
+      "id": "midterm-infrastructure-1",
+      "question": "Data lakehouse hữu ích nhất khi team cần điều gì?",
+      "options": {
+        "A": "Kết hợp lake linh hoạt và warehouse",
+        "B": "Tách batch khỏi BI thành silo",
+        "C": "Xóa toàn bộ lineage dữ liệu nguồn",
+        "D": "Chỉ lưu file tạm cục bộ"
+      },
+      "answer": "A",
+      "explanation": "Lakehouse kết hợp lưu trữ linh hoạt với quản trị, schema và truy vấn phân tích.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-lakehouse"
+      ],
+      "source_set_id": "midterm-infrastructure"
+    },
+    {
+      "id": "midterm-infrastructure-2",
+      "question": "GPU FinOps nên bắt đầu bằng hành động nào?",
+      "options": {
+        "A": "Gắn tag cost theo workload",
+        "B": "Tăng quota cho mọi team",
+        "C": "Chỉ mua GPU lớn nhất",
+        "D": "Tắt toàn bộ monitoring"
+      },
+      "answer": "A",
+      "explanation": "Tagging theo workload/team là nền để đo chi phí, tối ưu utilization và chargeback.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-gpu-finops"
+      ],
+      "source_set_id": "midterm-infrastructure"
+    },
+    {
+      "id": "midterm-infrastructure-3",
+      "question": "Model serving production cần metric nào để phát hiện suy giảm trải nghiệm?",
+      "options": {
+        "A": "Latency p95 và error rate",
+        "B": "Số dòng README của dịch vụ",
+        "C": "Màu terminal khi deploy model",
+        "D": "Tên file checkpoint đang dùng"
+      },
+      "answer": "A",
+      "explanation": "Latency p95, error rate, throughput và saturation là các chỉ số vận hành cốt lõi.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-model-serving",
+        "midterm-observability"
+      ],
+      "source_set_id": "midterm-infrastructure"
+    },
+    {
+      "id": "midterm-infrastructure-4",
+      "question": "CI/CD cho AI khác CI/CD phần mềm thường ở điểm nào?",
+      "options": {
+        "A": "Cần kiểm model/data drift",
+        "B": "Không cần test tự động",
+        "C": "Luôn deploy thủ công",
+        "D": "Không cần rollback version"
+      },
+      "answer": "A",
+      "explanation": "AI pipeline cần kiểm data, model, eval, prompt và drift ngoài test code thông thường.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-ai-cicd"
+      ],
+      "source_set_id": "midterm-infrastructure"
+    },
+    {
+      "id": "midterm-infrastructure-5",
+      "question": "Một endpoint inference bị tăng chi phí mạnh nhưng traffic không tăng. Nên kiểm tra gì trước?",
+      "options": {
+        "A": "Số avatar người dùng",
+        "B": "Màu biểu đồ dashboard",
+        "C": "Tên miền của frontend",
+        "D": "Token usage và cache miss"
+      },
+      "answer": "D",
+      "explanation": "Chi phí có thể tăng do context dài, cache miss, model routing hoặc retry loop.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-gpu-finops",
+        "midterm-serving-cost"
+      ],
+      "source_set_id": "midterm-infrastructure"
+    },
+    {
+      "id": "midterm-infrastructure-6",
+      "question": "Bảo mật model serving nên kiểm soát bí mật như thế nào?",
+      "options": {
+        "A": "Hardcode key vào client",
+        "B": "Dùng secret manager và rotation",
+        "C": "Log token để debug nhanh",
+        "D": "Chia sẻ key qua chat"
+      },
+      "answer": "B",
+      "explanation": "Secret manager, rotation và least privilege giảm rủi ro rò rỉ credential.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-ai-security"
+      ],
+      "source_set_id": "midterm-infrastructure"
+    },
+    {
+      "id": "midterm-infrastructure-7",
+      "question": "Data pipeline đưa dữ liệu mới vào vector store. Rủi ro nào cần test hồi quy?",
+      "options": {
+        "A": "Số thư mục trong repo",
+        "B": "Logo vector store đổi màu",
+        "C": "Tên collection quá ngắn",
+        "D": "Chunking làm mất ngữ cảnh"
+      },
+      "answer": "D",
+      "explanation": "Thay đổi chunking, embedding hoặc metadata có thể làm retrieval kém dù code vẫn chạy.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-rag-ops",
+        "midterm-data-pipeline"
+      ],
+      "source_set_id": "midterm-infrastructure"
+    },
+    {
+      "id": "midterm-infrastructure-8",
+      "question": "Khi deploy nhiều model, routing rule nào giúp tối ưu chi phí?",
+      "options": {
+        "A": "Luôn dùng model đắt nhất",
+        "B": "Bỏ qua mọi giới hạn token",
+        "C": "Route theo độ khó tác vụ",
+        "D": "Retry vô hạn khi timeout"
+      },
+      "answer": "C",
+      "explanation": "Task routing giúp dùng model nhỏ cho tác vụ đơn giản và model lớn cho tác vụ khó.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-model-serving",
+        "midterm-finops"
+      ],
+      "source_set_id": "midterm-infrastructure"
+    },
+    {
+      "id": "midterm-infrastructure-9",
+      "question": "Một model endpoint trả kết quả khác nhau sau cùng input. Điều gì cần kiểm tra trước?",
+      "options": {
+        "A": "Độ dài tên branch git",
+        "B": "Tên icon trên sidebar",
+        "C": "Số tab trình duyệt mở",
+        "D": "Temperature, seed và version"
+      },
+      "answer": "D",
+      "explanation": "Reproducibility phụ thuộc tham số sampling, model version, prompt và dữ liệu context.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-serving-observability"
+      ],
+      "source_set_id": "midterm-infrastructure"
+    },
+    {
+      "id": "midterm-infrastructure-10",
+      "question": "Security scan phát hiện prompt log chứa PII. Cách xử lý đúng là gì?",
+      "options": {
+        "A": "Giữ log thô để tiện debug",
+        "B": "Gửi log qua email cá nhân",
+        "C": "Đẩy log vào public bucket",
+        "D": "Mask PII và giảm retention"
+      },
+      "answer": "D",
+      "explanation": "Log AI cần masking, retention policy, access control và audit trail phù hợp.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-ai-security",
+        "midterm-observability"
+      ],
+      "source_set_id": "midterm-infrastructure"
+    },
+    {
+      "id": "midterm-infrastructure-short-answer-1",
+      "question": "Một endpoint LLM tăng chi phí 3 lần nhưng traffic không tăng. Hãy nêu quy trình kiểm tra.",
+      "expected_answer": "Kiểm token input/output, cache hit rate, retry loop, model routing, context length và log theo workload để xác định nguồn chi phí.",
+      "evaluation_points": [
+        "Có kiểm token/caching",
+        "Có kiểm retry/model routing",
+        "Có phân tách theo workload",
+        "Có hành động tối ưu rõ ràng"
+      ],
+      "sfia_level": "SFIA 4",
+      "competency": "Diagnose AI cost",
+      "hints": [
+        "Nêu quyết định chính trước, rồi giải thích trade-off.",
+        "Liên hệ câu trả lời với rủi ro hoặc chỉ số vận hành.",
+        "Kết luận bằng bước kiểm chứng hoặc tiêu chí nghiệm thu."
+      ],
+      "concepts": [
+        "midterm-gpu-finops"
+      ],
+      "source_set_id": "midterm-infrastructure-short-answer"
+    },
+    {
+      "id": "midterm-infrastructure-short-answer-2",
+      "question": "Thiết kế CI/CD tối thiểu cho một RAG app production.",
+      "expected_answer": "Pipeline cần test code, validate schema dữ liệu, chạy eval retrieval/generation, kiểm prompt/version, scan secret và hỗ trợ rollback.",
+      "evaluation_points": [
+        "Có test code và data",
+        "Có eval RAG",
+        "Có versioning/rollback",
+        "Có security scan"
+      ],
+      "sfia_level": "SFIA 4",
+      "competency": "Design AI CI/CD",
+      "hints": [
+        "Nêu quyết định chính trước, rồi giải thích trade-off.",
+        "Liên hệ câu trả lời với rủi ro hoặc chỉ số vận hành.",
+        "Kết luận bằng bước kiểm chứng hoặc tiêu chí nghiệm thu."
+      ],
+      "concepts": [
+        "midterm-ai-cicd",
+        "midterm-rag-ops"
+      ],
+      "source_set_id": "midterm-infrastructure-short-answer"
+    },
+    {
+      "id": "midterm-infrastructure-short-answer-3",
+      "question": "Data lakehouse phục vụ AI training và BI cần governance gì?",
+      "expected_answer": "Cần catalog, schema/version, lineage, access control, quality checks và retention policy cho dữ liệu nhạy cảm.",
+      "evaluation_points": [
+        "Có catalog/lineage",
+        "Có access control",
+        "Có data quality check",
+        "Có retention/privacy policy"
+      ],
+      "sfia_level": "SFIA 4",
+      "competency": "Design data governance",
+      "hints": [
+        "Nêu quyết định chính trước, rồi giải thích trade-off.",
+        "Liên hệ câu trả lời với rủi ro hoặc chỉ số vận hành.",
+        "Kết luận bằng bước kiểm chứng hoặc tiêu chí nghiệm thu."
+      ],
+      "concepts": [
+        "midterm-lakehouse"
+      ],
+      "source_set_id": "midterm-infrastructure-short-answer"
+    },
+    {
+      "id": "midterm-infrastructure-short-answer-4",
+      "question": "Một model serving bị latency p95 cao. Bạn sẽ tối ưu theo thứ tự nào?",
+      "expected_answer": "Đo latency từng stage, kiểm batch/concurrency, cache, model size/routing, hardware saturation và tối ưu context trước khi tăng tài nguyên.",
+      "evaluation_points": [
+        "Có tracing theo stage",
+        "Có batch/cache/concurrency",
+        "Có model routing/context optimization",
+        "Không chỉ tăng GPU ngay"
+      ],
+      "sfia_level": "SFIA 4",
+      "competency": "Optimize model serving",
+      "hints": [
+        "Nêu quyết định chính trước, rồi giải thích trade-off.",
+        "Liên hệ câu trả lời với rủi ro hoặc chỉ số vận hành.",
+        "Kết luận bằng bước kiểm chứng hoặc tiêu chí nghiệm thu."
+      ],
+      "concepts": [
+        "midterm-model-serving"
+      ],
+      "source_set_id": "midterm-infrastructure-short-answer"
+    },
+    {
+      "id": "midterm-infrastructure-short-answer-5",
+      "question": "Prompt log chứa PII người dùng. Hãy đề xuất chính sách log an toàn.",
+      "expected_answer": "Mask/redact PII trước khi lưu, giới hạn retention, phân quyền truy cập log, audit truy cập và tách log debug khỏi dữ liệu nhạy cảm.",
+      "evaluation_points": [
+        "Có masking/redaction",
+        "Có retention policy",
+        "Có access control/audit",
+        "Có xử lý debug an toàn"
+      ],
+      "sfia_level": "SFIA 4",
+      "competency": "Secure AI observability",
+      "hints": [
+        "Nêu quyết định chính trước, rồi giải thích trade-off.",
+        "Liên hệ câu trả lời với rủi ro hoặc chỉ số vận hành.",
+        "Kết luận bằng bước kiểm chứng hoặc tiêu chí nghiệm thu."
+      ],
+      "concepts": [
+        "midterm-ai-security"
+      ],
+      "source_set_id": "midterm-infrastructure-short-answer"
+    },
+    {
+      "id": "midterm-app-build-1",
+      "question": "Advanced agent pattern nào phù hợp khi task cần lập kế hoạch rồi gọi nhiều tool?",
+      "options": {
+        "A": "Planner-executor có kiểm soát",
+        "B": "Static FAQ không retrieval",
+        "C": "Single prompt không trạng thái",
+        "D": "Random tool selection mỗi lượt"
+      },
+      "answer": "A",
+      "explanation": "Planner-executor tách lập kế hoạch và thực thi, dễ kiểm soát tool và audit hơn.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-agent-patterns"
+      ],
+      "source_set_id": "midterm-app-build"
+    },
+    {
+      "id": "midterm-app-build-2",
+      "question": "RAG nâng cao cần reranker khi nào?",
+      "options": {
+        "A": "Retriever trả nhiều chunk gần giống",
+        "B": "Không có dữ liệu đầu vào",
+        "C": "Chỉ cần trả lời chào hỏi",
+        "D": "Không cần citation trong trả lời"
+      },
+      "answer": "A",
+      "explanation": "Reranker giúp chọn bằng chứng tốt hơn khi vector search trả nhiều chunk nhiễu.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-advanced-rag"
+      ],
+      "source_set_id": "midterm-app-build"
+    },
+    {
+      "id": "midterm-app-build-3",
+      "question": "LoRA phù hợp nhất trong tình huống nào?",
+      "options": {
+        "A": "Cần bỏ dữ liệu huấn luyện",
+        "B": "Cần thay toàn bộ hạ tầng",
+        "C": "Cần adapter nhỏ theo miền",
+        "D": "Cần tắt mọi eval sau train"
+      },
+      "answer": "C",
+      "explanation": "LoRA thêm adapter trọng số nhỏ, phù hợp tinh chỉnh có kiểm soát và tiết kiệm tài nguyên.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-lora"
+      ],
+      "source_set_id": "midterm-app-build"
+    },
+    {
+      "id": "midterm-app-build-4",
+      "question": "RAGAS metric faithfulness đo điều gì?",
+      "options": {
+        "A": "Câu trả lời có bám context",
+        "B": "Giao diện có đẹp không",
+        "C": "Model có tên dài không",
+        "D": "Server có dùng GPU không"
+      },
+      "answer": "A",
+      "explanation": "Faithfulness đánh giá câu trả lời có được hỗ trợ bởi context truy xuất hay không.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-ragas"
+      ],
+      "source_set_id": "midterm-app-build"
+    },
+    {
+      "id": "midterm-app-build-5",
+      "question": "Code challenge yêu cầu agent gọi API ngoài. Guardrail nào nên có trong tool wrapper?",
+      "options": {
+        "A": "Cho phép mọi URL nhập vào",
+        "B": "Retry vô hạn mọi lỗi",
+        "C": "Gửi raw secret lên log",
+        "D": "Timeout, schema và allowlist URL"
+      },
+      "answer": "D",
+      "explanation": "Tool wrapper cần timeout, schema validation, allowlist và xử lý lỗi rõ ràng.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-tool-use",
+        "midterm-security"
+      ],
+      "source_set_id": "midterm-app-build"
+    },
+    {
+      "id": "midterm-app-build-6",
+      "question": "Khi RAG hallucinate dù retrieval tốt, prompt nên bổ sung ràng buộc nào?",
+      "options": {
+        "A": "Luôn đoán câu trả lời gần đúng",
+        "B": "Nếu thiếu bằng chứng thì nói rõ",
+        "C": "Bỏ citation để tự nhiên hơn",
+        "D": "Trộn context với system prompt gốc"
+      },
+      "answer": "B",
+      "explanation": "Ràng buộc abstain khi thiếu bằng chứng giúp giảm bịa và tăng độ tin cậy.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-rag",
+        "midterm-prompt-engineering"
+      ],
+      "source_set_id": "midterm-app-build"
+    },
+    {
+      "id": "midterm-app-build-7",
+      "question": "Agent memory nên lưu gì trong một ứng dụng học tập?",
+      "options": {
+        "A": "Mật khẩu người dùng dạng thô",
+        "B": "Token truy cập của backend",
+        "C": "Tiến độ và lỗi học tập",
+        "D": "Toàn bộ lịch sử nhạy cảm"
+      },
+      "answer": "C",
+      "explanation": "Memory nên lưu tín hiệu học tập cần thiết, tối thiểu hóa dữ liệu nhạy cảm.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-agent-memory",
+        "midterm-privacy"
+      ],
+      "source_set_id": "midterm-app-build"
+    },
+    {
+      "id": "midterm-app-build-8",
+      "question": "Khi test RAG với RAGAS, bộ test nên có đặc điểm nào?",
+      "options": {
+        "A": "Không lưu expected answer chuẩn",
+        "B": "Chỉ gồm câu hỏi chào hỏi",
+        "C": "Câu hỏi gắn với nguồn chuẩn",
+        "D": "Dùng dữ liệu không kiểm soát"
+      },
+      "answer": "C",
+      "explanation": "Eval cần câu hỏi, context nguồn và expected answer để đo faithfulness/relevancy.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-ragas",
+        "midterm-evaluation"
+      ],
+      "source_set_id": "midterm-app-build"
+    },
+    {
+      "id": "midterm-app-build-9",
+      "question": "Một agent có thể gọi tool thanh toán. Pattern nào giảm rủi ro nhất?",
+      "options": {
+        "A": "Cho agent tự quyết giao dịch",
+        "B": "Human approval trước mọi giao dịch",
+        "C": "Ẩn mọi bước khỏi người dùng",
+        "D": "Lưu thẻ vào prompt hệ thống"
+      },
+      "answer": "B",
+      "explanation": "Tác vụ tài chính cần xác nhận người dùng, giới hạn quyền và audit đầy đủ.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-agent-safety"
+      ],
+      "source_set_id": "midterm-app-build"
+    },
+    {
+      "id": "midterm-app-build-10",
+      "question": "Trong app build, response streaming hữu ích nhất khi nào?",
+      "options": {
+        "A": "Không cần xử lý lỗi mạng",
+        "B": "Tác vụ luôn dưới 50ms",
+        "C": "Không cần trạng thái loading",
+        "D": "Trả lời dài và chậm"
+      },
+      "answer": "D",
+      "explanation": "Streaming cải thiện cảm nhận tốc độ với tác vụ sinh câu trả lời dài hoặc nhiều bước.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-app-ux",
+        "midterm-serving"
+      ],
+      "source_set_id": "midterm-app-build"
+    },
+    {
+      "id": "midterm-app-build-short-answer-1",
+      "question": "Thiết kế tool wrapper an toàn cho agent gọi API ngoài.",
+      "expected_answer": "Wrapper cần schema validation, allowlist endpoint, timeout, retry có giới hạn, redaction secret và log request/response an toàn.",
+      "evaluation_points": [
+        "Có schema/allowlist",
+        "Có timeout và retry giới hạn",
+        "Có bảo vệ secret",
+        "Có audit log phù hợp"
+      ],
+      "sfia_level": "SFIA 4",
+      "competency": "Build safe tool use",
+      "hints": [
+        "Nêu quyết định chính trước, rồi giải thích trade-off.",
+        "Liên hệ câu trả lời với rủi ro hoặc chỉ số vận hành.",
+        "Kết luận bằng bước kiểm chứng hoặc tiêu chí nghiệm thu."
+      ],
+      "concepts": [
+        "midterm-tool-use",
+        "midterm-security"
+      ],
+      "source_set_id": "midterm-app-build-short-answer"
+    },
+    {
+      "id": "midterm-app-build-short-answer-2",
+      "question": "Khi nào nên dùng LoRA thay vì prompt engineering thuần?",
+      "expected_answer": "Dùng LoRA khi cần học phong cách/miền tri thức lặp lại từ dữ liệu đủ tốt, trong khi prompt không ổn định hoặc quá dài.",
+      "evaluation_points": [
+        "Nêu điều kiện dữ liệu",
+        "So sánh với prompt",
+        "Có trade-off chi phí/vận hành",
+        "Có yêu cầu eval sau fine-tune"
+      ],
+      "sfia_level": "SFIA 4",
+      "competency": "Choose fine-tuning approach",
+      "hints": [
+        "Nêu quyết định chính trước, rồi giải thích trade-off.",
+        "Liên hệ câu trả lời với rủi ro hoặc chỉ số vận hành.",
+        "Kết luận bằng bước kiểm chứng hoặc tiêu chí nghiệm thu."
+      ],
+      "concepts": [
+        "midterm-lora"
+      ],
+      "source_set_id": "midterm-app-build-short-answer"
+    },
+    {
+      "id": "midterm-app-build-short-answer-3",
+      "question": "Hãy đề xuất bộ RAGAS metric cho RAG trả lời chính sách nội bộ.",
+      "expected_answer": "Dùng faithfulness, answer relevancy, context precision/recall và citation correctness trên tập câu hỏi có nguồn chuẩn.",
+      "evaluation_points": [
+        "Có faithfulness",
+        "Có relevancy",
+        "Có context precision/recall",
+        "Có nguồn chuẩn/citation check"
+      ],
+      "sfia_level": "SFIA 4",
+      "competency": "Evaluate RAG quality",
+      "hints": [
+        "Nêu quyết định chính trước, rồi giải thích trade-off.",
+        "Liên hệ câu trả lời với rủi ro hoặc chỉ số vận hành.",
+        "Kết luận bằng bước kiểm chứng hoặc tiêu chí nghiệm thu."
+      ],
+      "concepts": [
+        "midterm-ragas"
+      ],
+      "source_set_id": "midterm-app-build-short-answer"
+    },
+    {
+      "id": "midterm-app-build-short-answer-4",
+      "question": "Một planner-executor agent tạo plan đúng nhưng executor gọi sai tool. Bạn debug thế nào?",
+      "expected_answer": "Kiểm tool schema, mapping action-tool, observation, prompt executor, test từng tool độc lập và thêm validation trước khi gọi tool.",
+      "evaluation_points": [
+        "Tách planner và executor",
+        "Kiểm schema/mapping tool",
+        "Có test tool độc lập",
+        "Có validation trước action"
+      ],
+      "sfia_level": "SFIA 4",
+      "competency": "Debug agent architecture",
+      "hints": [
+        "Nêu quyết định chính trước, rồi giải thích trade-off.",
+        "Liên hệ câu trả lời với rủi ro hoặc chỉ số vận hành.",
+        "Kết luận bằng bước kiểm chứng hoặc tiêu chí nghiệm thu."
+      ],
+      "concepts": [
+        "midterm-agent-patterns"
+      ],
+      "source_set_id": "midterm-app-build-short-answer"
+    },
+    {
+      "id": "midterm-app-build-short-answer-5",
+      "question": "Trong app học tập AI, memory nên lưu và không nên lưu gì?",
+      "expected_answer": "Nên lưu mastery, lỗi thường gặp, mục tiêu học; không lưu secret, PII không cần thiết hoặc toàn bộ hội thoại nhạy cảm nếu không có lý do.",
+      "evaluation_points": [
+        "Có dữ liệu học tập cần thiết",
+        "Có tối thiểu hóa PII",
+        "Có retention/consent",
+        "Có lợi ích rõ cho personalization"
+      ],
+      "sfia_level": "SFIA 4",
+      "competency": "Design agent memory",
+      "hints": [
+        "Nêu quyết định chính trước, rồi giải thích trade-off.",
+        "Liên hệ câu trả lời với rủi ro hoặc chỉ số vận hành.",
+        "Kết luận bằng bước kiểm chứng hoặc tiêu chí nghiệm thu."
+      ],
+      "concepts": [
+        "midterm-agent-memory",
+        "midterm-privacy"
+      ],
+      "source_set_id": "midterm-app-build-short-answer"
+    }
+  ]
+}

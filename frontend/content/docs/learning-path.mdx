@@ -1,0 +1,18 @@
+---
+title: Personalized Learning Path
+description: Cơ chế hoạt động của thuật toán Elo và Bayesian Knowledge Tracing (BKT) trong EduGap.
+---
+
+Hệ thống cá nhân hóa lộ trình học tập EduGap dựa trên hai trụ cột thuật toán chính:
+
+## 1. Hệ thống Đánh giá Elo
+*   **Mục tiêu:** Đo lường độ khó của câu hỏi và năng lực thực tế của học viên.
+*   **Cách thức:** Điểm Elo của học viên tăng khi trả lời đúng câu hỏi khó và ngược lại.
+
+## 2. Bayesian Knowledge Tracing (BKT)
+*   **Mục tiêu:** Theo dõi khả năng làm chủ kiến thức theo từng khái niệm (Concept).
+*   **Các tham số chính:**
+    *   $P(L_0)$: Xác suất ban đầu học sinh đã biết kiến thức.
+    *   $P(T)$: Xác suất học sinh học được kiến thức sau một lần thực hành.
+    *   $P(G)$: Xác suất đoán đúng (Guess).
+    *   $P(S)$: Xác suất làm sai do bất cẩn (Slip).

@@ -1,0 +1,210 @@
+{
+  "id": "day16-t3-basics",
+  "parent_id": "day16-agent-builder",
+  "topic_title": "Day 16: Specialization Track Selection",
+  "title": "Phần 1: Điểm Yếu Của ReAct & Khi Nào Cần Hệ Thống Multi-Agent",
+  "description": "Đánh giá kiến thức về các lỗi vận hành phổ biến của mẫu thiết kế ReAct (Single-Agent) và ma trận quyết định chuyển dịch sang Multi-Agent.",
+  "difficulty": "dễ",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Hiện tượng 'Lỗi lan tỏa' (Error Propagation) trong vòng lặp ReAct của một tác nhân (Single Agent) được hiểu là gì?",
+      "options": {
+        "A": "Mô hình AI bị cạn kiệt bộ nhớ VRAM của GPU dẫn đến việc trả về kết quả rỗng cho người dùng cuối.",
+        "B": "Việc dữ liệu huấn luyện của mô hình bị nhiễm thông tin sai lệch từ các nguồn không đáng tin cậy trên Internet.",
+        "C": "Agent tự động gọi liên tục một API ngoài cho đến khi tài khoản của người dùng bị khóa do vượt quá giới hạn cuộc gọi.",
+        "D": "Một sai lệch hoặc kết quả sai ở bước đầu chuỗi suy luận không được phát hiện, dẫn đến toàn bộ chuỗi hành động phía sau đều sai."
+      },
+      "answer": "D",
+      "explanation": "Trong ReAct loop, agent thực hiện Thought -> Action -> Observation tuần tự. Nếu ở bước 1, observation trả về kết quả sai hoặc agent đọc hiểu sai mà không có cơ chế tự phát hiện/sửa lỗi (self-correction), nó sẽ tiếp tục suy luận dựa trên dữ liệu sai đó ở bước 2, 3, khiến toàn bộ chuỗi hành động và kết luận cuối cùng bị sai hoàn toàn.",
+      "hints": [
+        "Hãy nghĩ về hiệu ứng domino khi quân cờ đầu tiên bị đổ lệch hướng.",
+        "Nếu bước đầu tiên bị sai thông tin nhưng tác nhân vẫn tự tin đi tiếp thì điều gì xảy ra?",
+        "Đáp án đúng mô tả sai lệch ở bước đầu không được phát hiện dẫn đến toàn bộ chuỗi hành động phía sau đều sai."
+      ],
+      "concepts": [
+        "d16-t3-advanced-agents"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Đâu là nguyên nhân cốt lõi khiến một ReAct agent dễ rơi vào trạng thái 'Vòng lặp vô hạn' (Infinite Loop)?",
+      "options": {
+        "A": "Do mô hình ngôn ngữ lớn được thiết lập tham số Temperature quá thấp gần bằng không trong các hướng dẫn prompt.",
+        "B": "Do phản hồi từ công cụ (tool observation) trả về thông tin gây nhiễu và agent không có cơ chế tự đánh giá để dừng lại.",
+        "C": "Do hệ thống máy chủ chạy mô hình AI bị ngắt kết nối mạng internet vật lý đột ngột trong quá trình suy luận.",
+        "D": "Do lập trình viên giới hạn số lượng token đầu ra của mô hình ở mức quá thấp khiến cho tác nhân không thể viết tiếp."
+      },
+      "answer": "B",
+      "explanation": "Khi một công cụ trả về kết quả không mong đợi hoặc gây nhiễu, ReAct agent (vốn thiếu lớp tự phản tỉnh độc lập) sẽ liên tục thử lại cùng một hành động hoặc gọi cùng một công cụ đó với hy vọng nhận được kết quả khác, dẫn đến vòng lặp vô hạn (infinite loop) tốn kém tài nguyên và token.",
+      "hints": [
+        "If tool returns junk/error and agent cannot evaluate it, what does it do?",
+        "Nó sẽ tiếp tục lặp lại hành động gọi tool đó nhiều lần.",
+        "Đáp án đúng là do phản hồi từ công cụ trả về nhiễu và agent thiếu cơ chế tự đánh giá để dừng lại."
+      ],
+      "concepts": [
+        "d16-t3-advanced-agents"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Điểm hạn chế lớn nhất của mẫu thiết kế ReAct (Single-Agent) khi phải đối mặt với các bài toán suy luận nhiều bước phức tạp (Multi-hop Reasoning) là gì?",
+      "options": {
+        "A": "Tỷ lệ chính xác (Exact Match) sụt giảm mạnh và tỷ lệ tự sửa lỗi thành công gần như bằng không.",
+        "B": "Mô hình bắt buộc phải chuyển sang sử dụng các bộ hướng dẫn hệ thống bằng tiếng Anh để hoạt động.",
+        "C": "Độ trễ thời gian trả về chữ đầu tiên (TTFT) tăng lên gấp hàng trăm lần so với ứng dụng chatbot thông thường.",
+        "D": "Không thể tích hợp được quá hai công cụ gọi ngoài (external tools) vào trong mã nguồn của hệ thống."
+      },
+      "answer": "A",
+      "explanation": "Theo thống kê thực tế (ví dụ trên tập benchmark HotpotQA), ReAct agent chỉ đạt độ chính xác Exact Match khoảng 35.1% trên các tác vụ suy luận phức tạp nhiều bước. Khi đi sai hướng, khả năng tự dừng lại để backtrack hoặc tự sửa lỗi của ReAct đơn thuần gần như bằng không do thiếu vòng lặp phản tỉnh.",
+      "hints": [
+        "Hãy nhớ lại các số liệu thống kê hiệu năng của ReAct trên các tác vụ suy luận nhiều bước (multi-hop).",
+        "Điều gì xảy ra khi ReAct đi chệch hướng ở bước trung gian?",
+        "Đáp án đúng là tỷ lệ chính xác sụt giảm mạnh và tỷ lệ tự sửa lỗi thành công gần như bằng không."
+      ],
+      "concepts": [
+        "d16-t3-advanced-agents"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Lời khuyên thực tiễn quan trọng nhất đối với các kỹ sư khi bắt đầu xây dựng hệ thống Agent trong thực tế năm 2025-2026 là gì?",
+      "options": {
+        "A": "Nên bắt đầu bằng cấu trúc Multi-Agent phức tạp nhất để đảm bảo giải quyết được mọi trường hợp lỗi của hệ thống.",
+        "B": "Bắt đầu bằng single-agent hoặc workflow đơn giản, chỉ nâng cấp lên multi-agent khi thực sự cần thiết để tối ưu chi phí và độ phức tạp.",
+        "C": "Chỉ sử dụng các mô hình ngôn ngữ lớn nguồn đóng để xây dựng tác nhân và tuyệt đối không dùng mô hình nguồn mở.",
+        "D": "Không tích hợp bất kỳ công cụ gọi ngoài nào vào hệ thống để tránh các nguy cơ tấn công prompt injection."
+      },
+      "answer": "B",
+      "explanation": "Quy tắc vàng trong thiết kế hệ thống Agent thực tế là bắt đầu đơn giản (Keep It Simple). Nhiều bài toán chỉ cần single-agent hoặc luồng xử lý tuần tự (workflows). Việc lạm dụng multi-agent quá sớm làm tăng vọt chi phí token, độ trễ và cực kỳ khó debug.",
+      "hints": [
+        "Chúng ta nên chọn thiết kế phức tạp ngay từ đầu hay đi từ đơn giản đến phức tạp?",
+        "Điều gì xảy ra với chi phí token và độ trễ khi hệ thống có quá nhiều tác nhân nói chuyện với nhau?",
+        "Đáp án đúng khuyên bắt đầu bằng single-agent hoặc workflow đơn giản, chỉ nâng cấp khi thực sự cần thiết."
+      ],
+      "concepts": [
+        "d16-t3-advanced-agents"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Trường hợp nào dưới đây chỉ ra điểm nghẽn thực sự yêu cầu hệ thống phải dịch chuyển từ Single-Agent sang Multi-Agent?",
+      "options": {
+        "A": "Khi số lượng công cụ tích hợp quá lớn gây quá tải ngữ cảnh (tool overload) hoặc khi cần phân chia trách nhiệm quản lý chuyên sâu.",
+        "B": "Khi doanh nghiệp muốn giảm thiểu tối đa chi phí thanh toán hóa đơn token hàng tháng cho nhà cung cấp mô hình.",
+        "C": "Khi giao diện người dùng của ứng dụng chatbot cần được bổ sung thêm các tính năng hiển thị biểu đồ đồ họa.",
+        "D": "Khi thời gian phản hồi trung bình của mô hình vượt quá ngưỡng hai giây trên mỗi yêu cầu của khách hàng."
+      },
+      "answer": "A",
+      "explanation": "Chuyển sang multi-agent là cần thiết khi số lượng tools quá nhiều dẫn đến mô hình bị nhầm lẫn khi chọn tool (tool overload), prompt hệ thống quá dài và phức tạp, hoặc khi bài toán yêu cầu các vai trò chuyên gia (specialist ownership) làm việc độc lập với prompt cô lập.",
+      "hints": [
+        "Hãy nghĩ về vấn đề xảy ra khi nhồi nhét 50 định nghĩa công cụ vào ngữ cảnh của một mô hình duy nhất.",
+        "Làm thế nào để phân chia nhiệm vụ cho các nhân sự chuyên môn hóa hoạt động hiệu quả hơn?",
+        "Đáp án đúng đề cập đến việc số lượng công cụ quá lớn gây quá tải ngữ cảnh hoặc cần phân chia trách nhiệm chuyên sâu."
+      ],
+      "concepts": [
+        "d16-t3-advanced-agents"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Hiện tượng 'Thiếu khả năng quay lui' (No Backtracking) của ReAct agent được giải thích như thế nào?",
+      "options": {
+        "A": "Tác nhân không thể quay lại sử dụng các phiên bản mô hình cũ hơn sau khi hệ thống đã được nâng cấp lên mô hình mới.",
+        "B": "Hệ thống cơ sở dữ liệu không hỗ trợ việc khôi phục trạng thái bộ nhớ của cuộc hội thoại về các bước tương tác trước đó.",
+        "C": "Tác nhân khi phát hiện một hướng đi hoặc hành động gọi tool bị sai lầm thì không có cơ chế tự động hủy bỏ để đi theo hướng khác.",
+        "D": "Người dùng không thể sử dụng nút quay lại (Back) trên trình duyệt web khi đang tương tác trực tiếp với tác nhân AI."
+      },
+      "answer": "C",
+      "explanation": "Trong thuật toán suy luận, khi đi vào một nhánh cụ thể và phát hiện kết quả trả về của tool không hữu ích (ngõ cụt), một agent thông minh cần quay lui (backtrack) để thử nhánh khác. ReAct đơn thuần thiếu cơ chế lưu trạng thái để quay lui, nó thường bị mắc kẹt hoặc tiếp tục suy luận sai lầm.",
+      "hints": [
+        "Backtracking means going back to try other branches when hitting dead end.",
+        "ReAct agent hoạt động theo tuyến tính bước sau nối tiếp bước trước. Nếu bước trước bị sai, nó có biết xóa bước đó đi để chọn hành động khác không?",
+        "Đáp án đúng giải thích tác nhân khi phát hiện hướng đi sai thì không có cơ chế tự động hủy bỏ để đi hướng khác."
+      ],
+      "concepts": [
+        "d16-t3-advanced-agents"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Tại sao việc nhồi nhét quá nhiều nhánh logic nghiệp vụ (business logic branches) vào một prompt của Single-Agent lại gây hại cho hiệu năng?",
+      "options": {
+        "A": "Nó làm tăng kích thước prompt dẫn đến hiện tượng mô hình bị mất tập trung (lost in the middle) và chọn sai công cụ.",
+        "B": "Nó làm cho hệ thống máy chủ GPU bị nóng lên quá nhanh dẫn đến giảm hiệu năng xử lý phần cứng.",
+        "C": "Nó bắt buộc lập trình viên phải viết lại toàn bộ mã nguồn của hệ thống bằng ngôn ngữ C++ để chạy được.",
+        "D": "Nó làm mất đi tính bảo mật thông tin của các tệp dữ liệu lưu trữ ngữ cảnh lịch sử hội thoại."
+      },
+      "answer": "A",
+      "explanation": "Khi nhét quá nhiều chỉ dẫn và định nghĩa công cụ vào một prompt (system prompt quá dài), mô hình dễ bị phân tâm, bỏ sót chỉ dẫn ở giữa (lost in the middle) và tăng tỷ lệ chọn sai tool hoặc suy luận lạc đề. Tách nhỏ ra các tác nhân chuyên biệt (multi-agent) giải quyết được vấn đề này.",
+      "hints": [
+        "Điều gì xảy ra với khả năng tuân thủ hướng dẫn của LLM khi độ dài của System Prompt tăng lên hàng chục ngàn token?",
+        "Hiện tượng mô hình chú ý nhiều đến phần đầu và phần cuối prompt mà bỏ qua phần giữa được gọi là gì?",
+        "Đáp án đúng đề cập đến việc prompt quá dài làm mô hình mất tập trung và chọn sai công cụ."
+      ],
+      "concepts": [
+        "d16-t3-advanced-agents"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Trong ma trận quyết định chọn thiết kế Agent, yếu tố 'Chi phí vận hành token' (Token Cost) của Multi-Agent so với Single-Agent thường như thế nào?",
+      "options": {
+        "A": "Multi-Agent rẻ hơn nhiều do các tác nhân trao đổi thông tin với nhau thông qua mã nén nhị phân siêu nhỏ.",
+        "B": "Single-Agent luôn đắt hơn do bắt buộc phải duy trì kết nối mạng thời gian thực liên tục với máy chủ đám mây.",
+        "C": "Không có sự khác biệt về chi phí do cả hai đều sử dụng chung một tài khoản API duy nhất từ nhà cung cấp mô hình.",
+        "D": "Multi-Agent đắt hơn đáng kể do mỗi lượt tương tác giữa các tác nhân đều tạo thêm các cuộc gọi LLM và nhân bản ngữ cảnh."
+      },
+      "answer": "D",
+      "explanation": "Hệ thống Multi-Agent sinh ra chi phí token rất lớn vì các tác nhân phải thảo luận, xác thực chéo hoặc chuyển tiếp thông tin cho nhau (Agent-to-Agent communication). Mỗi bước chuyển tiếp này đều là một lượt gọi LLM mới kèm theo việc gửi lại toàn bộ ngữ cảnh lịch sử hội thoại.",
+      "hints": [
+        "Hãy nghĩ về việc 3 tác nhân cùng thảo luận để giải quyết 1 bài toán so với 1 tác nhân tự làm việc đó.",
+        "Cuộc hội thoại qua lại giữa các tác nhân (A2A) có tiêu hao token của mô hình không?",
+        "Đáp án đúng chỉ rõ Multi-Agent đắt hơn đáng kể do mỗi lượt tương tác đều tạo thêm cuộc gọi LLM và nhân bản ngữ cảnh."
+      ],
+      "concepts": [
+        "d16-t3-advanced-agents"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Yếu tố 'Specialist Ownership' (Phân vai chuyên gia) trong thiết kế Multi-Agent mang lại ưu điểm gì cho việc bảo trì hệ thống?",
+      "options": {
+        "A": "Cho phép thay đổi hoặc nâng cấp prompt và công cụ của một tác nhân chuyên biệt mà không ảnh hưởng đến các tác nhân khác.",
+        "B": "Tự động dịch mã nguồn của từng tác nhân sang các ngôn ngữ lập trình khác nhau để chạy trên các nền tảng riêng biệt.",
+        "C": "Loại bỏ hoàn toàn sự cần thiết của việc viết các ca kiểm thử tự động (unit tests) cho hệ thống phần mềm.",
+        "D": "Đảm bảo rằng tất cả các tác nhân đều sử dụng chung một bộ hướng dẫn prompt hệ thống giống hệt nhau."
+      },
+      "answer": "A",
+      "explanation": "Specialist Ownership giúp mã nguồn và prompt của hệ thống mang tính module hóa cao (modular design). Mỗi agent chịu trách nhiệm một phạm vi công việc nhỏ (như viết code, review, chạy test). Khi cần sửa logic của bước review, ta chỉ cần chỉnh sửa prompt/tools của Review Agent mà không sợ làm hỏng logic của Code Agent.",
+      "hints": [
+        "Hãy liên tưởng đến lợi ích của việc chia nhỏ một chương trình lớn thành các hàm (functions) hoặc modules độc lập.",
+        "Nếu tất cả logic nằm chung trong 1 prompt khổng lồ, việc chỉnh sửa một câu hướng dẫn nhỏ có thể làm sai lệch các tính năng khác không?",
+        "Đáp án đúng là cho phép thay đổi prompt/công cụ của một tác nhân chuyên biệt mà không ảnh hưởng đến tác nhân khác."
+      ],
+      "concepts": [
+        "d16-t3-advanced-agents"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Khi thiết kế một tác nhân AI (Agent), khái niệm 'Trust Boundary' (Ranh giới tin cậy) cần được kiểm soát chặt chẽ nhất ở mắt xích nào?",
+      "options": {
+        "A": "Mắt xích truyền thông tin lịch sử hội thoại từ máy chủ lưu trữ dữ liệu lên trình duyệt của người dùng.",
+        "B": "Mắt xích nhận kết quả trả về từ công cụ ngoài (tool execution) và chuyển tiếp nó vào prompt của mô hình ngôn ngữ.",
+        "C": "Mắt xích tự động dịch các câu hỏi đầu vào của khách hàng từ tiếng Việt sang các ngôn ngữ quốc tế khác.",
+        "D": "Mắt xích ghi nhật ký hoạt động của các kỹ sư hệ thống trong quá trình bảo trì định kỳ máy chủ."
+      },
+      "answer": "B",
+      "explanation": "Ranh giới tin cậy (Trust Boundary) cực kỳ quan trọng tại điểm kết quả từ Tool đi vào LLM. Dữ liệu trả về từ các công cụ bên ngoài (như nội dung quét từ website, database) có thể chứa mã độc hoặc mã khai thác prompt injection ẩn (Indirect Prompt Injection). Nếu LLM tin cậy tuyệt đối dữ liệu này mà không qua kiểm duyệt/sạch hóa, hệ thống sẽ bị tấn công.",
+      "hints": [
+        "Nguồn dữ liệu nào đi vào hệ thống được coi là 'không tin cậy' và dễ bị tiêm nhiễm mã độc nhất?",
+        "Hãy nghĩ về việc gọi một công cụ tìm kiếm web rồi đưa thẳng nội dung trang web tìm được vào prompt của LLM.",
+        "Đáp án đúng là mắt xích nhận kết quả từ công cụ ngoài và chuyển tiếp vào prompt của mô hình."
+      ],
+      "concepts": [
+        "d16-t3-advanced-agents"
+      ]
+    }
+  ]
+}

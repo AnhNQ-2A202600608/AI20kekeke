@@ -1,0 +1,210 @@
+{
+  "id": "day24-t1-advanced",
+  "parent_id": "day24-ai-product",
+  "topic_title": "Day 24: Responsible AI",
+  "title": "Phần 3: Thiết Kế Test & Eval Plan Cho An Toàn Hệ Thống",
+  "description": "Đánh giá kiến thức nâng cao về thiết kế câu hỏi an toàn, xây dựng bộ kiểm thử (test set), và định nghĩa các thang đo/scoring rubrics.",
+  "difficulty": "khó",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Khi thiết kế một 'Safety Question' (câu hỏi an toàn) cho một chatbot tư vấn tài chính, cách phát biểu nào sau đây là chuẩn hóa nhất?",
+      "options": {
+        "A": "Làm thế nào để chatbot trả lời nhanh và tiết kiệm chi phí token nhất?",
+        "B": "Liệu chatbot có thể tự động viết mã Python để vẽ đồ thị chứng khoán không?",
+        "C": "Chatbot có sử dụng mô hình GPT-4o-mini để xử lý các câu hỏi phức tạp không?",
+        "D": "Trong tình huống thị trường sụp đổ, AI có tránh khuyên đầu tư liều lĩnh cho F0 không?"
+      },
+      "answer": "D",
+      "explanation": "Safety Question chuẩn hóa có cấu trúc: 'Trong tình huống X, AI có tránh được lỗi Y cho bên liên quan Z hay không?'. Đáp án D phản ánh chính xác cấu trúc này.",
+      "hints": [
+        "Safety Question phải liên kết chặt chẽ bối cảnh (context), loại lỗi (failure mode) và đối tượng chịu ảnh hưởng (stakeholder).",
+        "Tránh các câu hỏi chung chung về công nghệ hay tối ưu hóa chi phí.",
+        "Đáp án chính xác là câu hỏi về tình huống thị trường sụp đổ."
+      ],
+      "concepts": [
+        "d24-t1-responsible-ai"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Theo triết lý Evaluation-Driven Development (EDD) của Chip Huyen, quy trình thiết kế hệ thống AI nên bắt đầu bằng công đoạn nào?",
+      "options": {
+        "A": "Định nghĩa tiêu chí đánh giá và cách chấm điểm trước khi xây dựng sản phẩm.",
+        "B": "Thuê các máy chủ GPU NVIDIA để huấn luyện lại mô hình ngôn ngữ lớn.",
+        "C": "Thiết kế các biểu mẫu khảo sát sự hài lòng của người dùng sau khi launch.",
+        "D": "Thiết lập cấu hình phân quyền đăng nhập SSO cho nhân viên trong công ty."
+      },
+      "answer": "A",
+      "explanation": "EDD tương tự như Test-Driven Development (TDD) trong phần mềm truyền thống: định nghĩa cách đánh giá (evaluation metrics, rubrics, dataset) trước khi thực hiện viết prompt hay xây dựng tính năng hệ thống.",
+      "hints": [
+        "Nghĩ về cách tiếp cận hướng đánh giá (Evaluation-Driven).",
+        "Xác định thước đo trước khi tiến hành tối ưu hóa hệ thống.",
+        "Đáp án chính xác là định nghĩa tiêu chí đánh giá trước khi xây dựng sản phẩm."
+      ],
+      "concepts": [
+        "d24-t1-responsible-ai"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Khi xây dựng tiêu chí chấm điểm Pass/Fail cho một test case an toàn AI, điều kiện nào sau đây là bắt buộc để ghi nhận trạng thái 'Pass'?",
+      "options": {
+        "A": "Mô hình phản hồi câu hỏi của người dùng với tốc độ nhanh hơn 500 mili giây.",
+        "B": "AI làm đúng hành vi an toàn kỳ vọng và có trích dẫn chứng cứ cụ thể.",
+        "C": "Người dùng đánh giá hài lòng năm sao trực tiếp trên giao diện phản hồi của chatbot.",
+        "D": "Hệ thống tự động lưu câu trả lời của AI vào tệp log của máy chủ Loki."
+      },
+      "answer": "B",
+      "explanation": "Trạng thái 'Pass' chỉ được ghi nhận khi AI thực thi đúng hành vi an toàn kỳ vọng (expected safe behavior) và người chấm (hoặc judge) phải trích xuất được bằng chứng (evidence) cụ thể từ câu trả lời của AI để chứng minh.",
+      "hints": [
+        "Cần có chứng cứ thực tế (evidence-based validation) để khẳng định tính an toàn.",
+        "Tránh việc chấm điểm cảm tính hoặc chỉ dựa vào tốc độ phản hồi kỹ thuật.",
+        "Đáp án chỉ ra việc AI làm đúng hành vi an toàn kỳ vọng và trích dẫn chứng cứ cụ thể."
+      ],
+      "concepts": [
+        "d24-t1-responsible-ai"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Trong quy trình chấm điểm test set an toàn, một case được phân loại là 'Unclear' khi nào?",
+      "options": {
+        "A": "Khi hệ thống gặp sự cố mất kết nối mạng và không trả về kết quả.",
+        "B": "Khi mô hình trả lời bằng tiếng Anh thay vì tiếng Việt theo yêu cầu.",
+        "C": "Khi không đủ rõ ràng để phân định Pass/Fail, cần chuyển lên reviewer thứ hai.",
+        "D": "Khi chi phí token của câu trả lời vượt quá giới hạn ngân sách cho phép."
+      },
+      "answer": "C",
+      "explanation": "Trạng thái 'Unclear' đại diện cho vùng xám (ambiguous output). Tiêu chí xử lý là ghi nhận lý do chưa rõ ràng và chuyển giao (escalate) trường hợp này sang cho người chấm thứ hai (human reviewer) để calibrate lại rubric.",
+      "hints": [
+        "Đây là cơ chế lọc nhiễu và xử lý các phản hồi mơ hồ của mô hình sinh.",
+        "Cần sự can thiệp của con người để đưa ra phán quyết cuối cùng.",
+        "Đáp án chính xác là khi không đủ rõ để phân định Pass/Fail, cần chuyển lên reviewer thứ hai."
+      ],
+      "concepts": [
+        "d24-t1-responsible-ai"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Doanh nghiệp thiết lập quy tắc mức độ nghiêm trọng (Severity rules) cho chatbot y tế. Sự cố chatbot khuyên dùng một loại thuốc nguy hiểm sai liều lượng được xếp vào mức nào?",
+      "options": {
+        "A": "Low.",
+        "B": "Medium.",
+        "C": "High.",
+        "D": "Critical."
+      },
+      "answer": "D",
+      "explanation": "Các sự cố đe dọa trực tiếp đến tính mạng, sức khỏe nghiêm trọng (y khoa) hoặc gây trách nhiệm pháp lý nghiêm trọng lập tức cho tổ chức (như lộ lọt dữ liệu nhạy cảm PII) được phân loại là mức 'Critical'. Mức 'High' thường dành cho các thiệt hại lớn nhưng có thể đảo ngược hoặc ảnh hưởng tài chính/pháp lý gián tiếp.",
+      "hints": [
+        "Xem xét mức độ nghiêm trọng nhất trong thang đo rủi ro y tế.",
+        "Hậu quả gây nguy hiểm tính mạng trực tiếp cho người dùng.",
+        "Đáp án chính xác là Critical."
+      ],
+      "concepts": [
+        "d24-t1-responsible-ai"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Khi Red-team phát hiện một lỗi jailbreak mới chưa có trong bộ kiểm thử v0 (Test Set v0), hành động tiếp theo của đội ngũ PM là gì?",
+      "options": {
+        "A": "Cập nhật lỗi này vào Test Set v1 và thiết kế lại prompt/guardrails để phòng vệ.",
+        "B": "Lập tức kỷ luật kỹ sư viết prompt vì để xảy ra lỗi nghiêm trọng.",
+        "C": "Xóa toàn bộ các tệp log chứa lịch sử chat đối kháng của Red-team.",
+        "D": "Chuyển chatbot sang chế độ chạy offline hoàn toàn trên máy trạm của nhân viên."
+      },
+      "answer": "A",
+      "explanation": "Theo vòng lặp Iterative Eval Loop, khi phát hiện lỗi mới (Discover), đội ngũ phải cập nhật ngay lỗi này vào test set để tránh tái phát (regression), đồng thời thiết kế giải pháp giảm thiểu ở các tầng hệ thống thích hợp.",
+      "hints": [
+        "Đây là cơ chế tích lũy tri thức lỗi của vòng lặp đánh giá liên tục.",
+        "Biến các bài học thực tế thành các ca kiểm thử cố định trong tương lai.",
+        "Đáp án là cập nhật lỗi vào Test Set v1 và thiết kế lại prompt/guardrails."
+      ],
+      "concepts": [
+        "d24-t1-responsible-ai"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Tại sao việc thiết lập 'Human review queue' (hàng đợi đánh giá thủ công) lại bắt buộc phải có khi vận hành các hệ thống AI an toàn?",
+      "options": {
+        "A": "Để nhân viên nhập liệu thủ công tất cả các câu trả lời thay cho LLM.",
+        "B": "Để giải quyết các trường hợp Unclear và giám sát ngẫu nhiên chất lượng mô hình.",
+        "C": "Để tối ưu hóa chi phí điện năng tiêu thụ của máy chủ chạy mô hình.",
+        "D": "Để thay thế hoàn toàn các công cụ giám sát tự động như Prometheus."
+      },
+      "answer": "B",
+      "explanation": "Hàng đợi đánh giá thủ công (Human-in-the-loop review queue) giúp xử lý các trường hợp mơ hồ (Unclear) được hệ thống tự động đẩy lên, đồng thời thực hiện kiểm toán ngẫu nhiên (random audit) để đảm bảo chất lượng hệ thống chấm điểm tự động.",
+      "hints": [
+        "Giải quyết các trường hợp nằm trong vùng xám của rubric tự động.",
+        "Đảm bảo có sự kiểm chứng của con người (calibration) đối với các ca khó.",
+        "Đáp án chỉ ra việc giải quyết trường hợp Unclear và giám sát ngẫu nhiên."
+      ],
+      "concepts": [
+        "d24-t1-responsible-ai"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Doanh nghiệp A triển khai chatbot tư vấn luật. chatbot khuyên sai giờ mở cửa của tòa án quận. Sự cố này nên được gán mức Severity nào?",
+      "options": {
+        "A": "Low.",
+        "B": "Medium.",
+        "C": "High.",
+        "D": "Critical."
+      },
+      "answer": "B",
+      "explanation": "Khuyên sai giờ mở cửa gây bất tiện và mất thời gian của người dùng nhưng thiệt hại nhỏ, không đe dọa tính mạng hay pháp lý nghiêm trọng, có thể khắc phục dễ dàng, nên được gán mức 'Medium'.",
+      "hints": [
+        "Xem xét quy mô thiệt hại của việc đi lệch giờ.",
+        "Lỗi này gây phiền toái nhẹ nhưng hoàn toàn nằm trong khả năng sửa đổi, khắc phục.",
+        "Đáp án chính xác là Medium."
+      ],
+      "concepts": [
+        "d24-t1-responsible-ai"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Khi thiết kế một test case cho lỗi 'Over-reliance' (tin AI quá mức), input nào của người dùng thường được sử dụng làm bài test?",
+      "options": {
+        "A": "Các câu hỏi lập trình phần mềm bằng ngôn ngữ C++ có độ phức tạp cao.",
+        "B": "Các yêu cầu truy vấn dữ liệu nhạy cảm của các nhân viên trong công ty.",
+        "C": "Các prompt yêu cầu dịch thuật các văn bản pháp lý hành chính sang tiếng Việt.",
+        "D": "Các câu hỏi chứa thông tin sai lệch nhằm thử thách sự phản biện của user."
+      },
+      "answer": "D",
+      "explanation": "Để kiểm thử Over-reliance, ta đưa các input chứa thông tin sai lệch tinh vi (subtle errors) để xem giao diện UI có báo hiệu không chắc chắn và người dùng có phát hiện/phản biện lại thông tin sai đó không.",
+      "hints": [
+        "Cần kiểm tra xem người dùng có mù quáng tin vào AI khi AI đưa ra dữ liệu sai hay không.",
+        "Đưa ra các bẫy logic hoặc thông tin sai kín đáo trong prompt.",
+        "Đáp án chính xác là các câu hỏi chứa sẵn thông tin sai lệch để thử thách."
+      ],
+      "concepts": [
+        "d24-t1-responsible-ai"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Tại sao việc thiết lập 'Launch Gate' (cổng chặn ra mắt) dựa trên tỷ lệ lỗi nghiêm trọng (Severity High/Critical) lại là quy chuẩn vận hành bắt buộc?",
+      "options": {
+        "A": "Để đảm bảo hệ thống không bao giờ được phép launch nếu còn tồn tại lỗi nguy hiểm.",
+        "B": "Để giảm thiểu tối đa thời gian chờ đợi phản hồi của khách hàng ở production.",
+        "C": "Để tự động chuyển hướng toàn bộ lưu lượng truy cập sang máy chủ CPU.",
+        "D": "Để đảm bảo các kỹ sư DevOps không cần phải ghi log dữ liệu hệ thống."
+      },
+      "answer": "A",
+      "explanation": "Launch Gate quy định rõ: nếu phát hiện bất kỳ lỗi nào ở mức High hoặc Critical trong bộ test set, hệ thống sẽ bị chặn deployment tự động để bảo vệ người dùng và tránh các rủi ro pháp lý/tính mạng nghiêm trọng.",
+      "hints": [
+        "Đây là chốt chặn an toàn cuối cùng trước khi đưa sản phẩm ra thị trường.",
+        "Tránh việc đưa các sản phẩm AI lỗi nghiêm trọng ra gặp người dùng thật.",
+        "Đáp án chỉ ra việc bảo đảm hệ thống không được ra mắt nếu còn lỗi nguy hiểm."
+      ],
+      "concepts": [
+        "d24-t1-responsible-ai"
+      ]
+    }
+  ]
+}

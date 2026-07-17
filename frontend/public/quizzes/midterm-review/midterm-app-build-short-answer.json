@@ -1,0 +1,116 @@
+{
+  "id": "midterm-app-build-short-answer",
+  "parent_id": "midterm-review",
+  "topic_title": "Ôn tập giữa kỳ: Cấu trúc bài thi",
+  "title": "Phần IV - App Build - Tự luận tình huống",
+  "description": "5 câu trả lời ngắn về agent, RAGAS, LoRA, tool use và memory.",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Thiết kế tool wrapper an toàn cho agent gọi API ngoài.",
+      "expected_answer": "Wrapper cần schema validation, allowlist endpoint, timeout, retry có giới hạn, redaction secret và log request/response an toàn.",
+      "evaluation_points": [
+        "Có schema/allowlist",
+        "Có timeout và retry giới hạn",
+        "Có bảo vệ secret",
+        "Có audit log phù hợp"
+      ],
+      "sfia_level": "SFIA 4",
+      "competency": "Build safe tool use",
+      "hints": [
+        "Nêu quyết định chính trước, rồi giải thích trade-off.",
+        "Liên hệ câu trả lời với rủi ro hoặc chỉ số vận hành.",
+        "Kết luận bằng bước kiểm chứng hoặc tiêu chí nghiệm thu."
+      ],
+      "concepts": [
+        "midterm-tool-use",
+        "midterm-security"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Khi nào nên dùng LoRA thay vì prompt engineering thuần?",
+      "expected_answer": "Dùng LoRA khi cần học phong cách/miền tri thức lặp lại từ dữ liệu đủ tốt, trong khi prompt không ổn định hoặc quá dài.",
+      "evaluation_points": [
+        "Nêu điều kiện dữ liệu",
+        "So sánh với prompt",
+        "Có trade-off chi phí/vận hành",
+        "Có yêu cầu eval sau fine-tune"
+      ],
+      "sfia_level": "SFIA 4",
+      "competency": "Choose fine-tuning approach",
+      "hints": [
+        "Nêu quyết định chính trước, rồi giải thích trade-off.",
+        "Liên hệ câu trả lời với rủi ro hoặc chỉ số vận hành.",
+        "Kết luận bằng bước kiểm chứng hoặc tiêu chí nghiệm thu."
+      ],
+      "concepts": [
+        "midterm-lora"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Hãy đề xuất bộ RAGAS metric cho RAG trả lời chính sách nội bộ.",
+      "expected_answer": "Dùng faithfulness, answer relevancy, context precision/recall và citation correctness trên tập câu hỏi có nguồn chuẩn.",
+      "evaluation_points": [
+        "Có faithfulness",
+        "Có relevancy",
+        "Có context precision/recall",
+        "Có nguồn chuẩn/citation check"
+      ],
+      "sfia_level": "SFIA 4",
+      "competency": "Evaluate RAG quality",
+      "hints": [
+        "Nêu quyết định chính trước, rồi giải thích trade-off.",
+        "Liên hệ câu trả lời với rủi ro hoặc chỉ số vận hành.",
+        "Kết luận bằng bước kiểm chứng hoặc tiêu chí nghiệm thu."
+      ],
+      "concepts": [
+        "midterm-ragas"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Một planner-executor agent tạo plan đúng nhưng executor gọi sai tool. Bạn debug thế nào?",
+      "expected_answer": "Kiểm tool schema, mapping action-tool, observation, prompt executor, test từng tool độc lập và thêm validation trước khi gọi tool.",
+      "evaluation_points": [
+        "Tách planner và executor",
+        "Kiểm schema/mapping tool",
+        "Có test tool độc lập",
+        "Có validation trước action"
+      ],
+      "sfia_level": "SFIA 4",
+      "competency": "Debug agent architecture",
+      "hints": [
+        "Nêu quyết định chính trước, rồi giải thích trade-off.",
+        "Liên hệ câu trả lời với rủi ro hoặc chỉ số vận hành.",
+        "Kết luận bằng bước kiểm chứng hoặc tiêu chí nghiệm thu."
+      ],
+      "concepts": [
+        "midterm-agent-patterns"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Trong app học tập AI, memory nên lưu và không nên lưu gì?",
+      "expected_answer": "Nên lưu mastery, lỗi thường gặp, mục tiêu học; không lưu secret, PII không cần thiết hoặc toàn bộ hội thoại nhạy cảm nếu không có lý do.",
+      "evaluation_points": [
+        "Có dữ liệu học tập cần thiết",
+        "Có tối thiểu hóa PII",
+        "Có retention/consent",
+        "Có lợi ích rõ cho personalization"
+      ],
+      "sfia_level": "SFIA 4",
+      "competency": "Design agent memory",
+      "hints": [
+        "Nêu quyết định chính trước, rồi giải thích trade-off.",
+        "Liên hệ câu trả lời với rủi ro hoặc chỉ số vận hành.",
+        "Kết luận bằng bước kiểm chứng hoặc tiêu chí nghiệm thu."
+      ],
+      "concepts": [
+        "midterm-agent-memory",
+        "midterm-privacy"
+      ]
+    }
+  ]
+}

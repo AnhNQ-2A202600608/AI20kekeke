@@ -1,0 +1,210 @@
+{
+  "id": "day18-t3-basics",
+  "parent_id": "day18-agent-builder",
+  "topic_title": "Day 18: Production RAG",
+  "title": "Phần 1: Điểm Yếu Của Basic RAG & Quy Trình Ingestion Phổ Thông",
+  "description": "Đánh giá kiến thức cơ bản về các nguyên nhân thất bại của RAG ở production, phân loại chunking (Fixed, Semantic, Hierarchical), lựa chọn embedding model và RAGAS metrics.",
+  "difficulty": "dễ",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Vì sao mô hình RAG sơ khởi (Basic RAG) thường hoạt động kém khi đưa lên môi trường production thực tế?",
+      "options": {
+        "A": "Do ingestion và retrieval chưa tốt làm sai lệch ngữ cảnh nạp vào.",
+        "B": "Do mô hình ngôn ngữ lớn chạy quá chậm trên hạ tầng đám mây.",
+        "C": "Do cơ sở dữ liệu quan hệ không hỗ trợ truy vấn các bảng.",
+        "D": "Do người dùng liên tục gõ các câu hỏi bằng tiếng nước ngoài."
+      },
+      "answer": "A",
+      "explanation": "Basic RAG thường thất bại vì quá trình chuẩn bị dữ liệu thô (ingestion) và tìm kiếm thông tin liên quan (retrieval) kém, dẫn đến nạp sai ngữ cảnh cho LLM.",
+      "hints": [
+        "Hãy nghĩ đến quy tắc kinh điển trong dữ liệu: 'Rác vào thì rác ra'.",
+        "Nếu các đoạn văn bản trích xuất bị cắt vụn hoặc thiếu thông tin, LLM không thể trả lời đúng.",
+        "Đáp án chỉ ra lỗi do việc xử lý ngữ cảnh đầu vào (ingestion và retrieval) kém."
+      ],
+      "concepts": [
+        "d18-t3-production-rag"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Nhược điểm lớn nhất của chiến lược cắt phân mảnh dữ liệu kích thước cố định (Fixed-size chunking) là gì?",
+      "options": {
+        "A": "Dễ cắt giữa câu làm mất thông tin ngữ nghĩa của đoạn văn.",
+        "B": "Tiêu tốn quá nhiều tài nguyên tính toán của máy chủ GPU.",
+        "C": "Không hỗ trợ lưu trữ dữ liệu dưới định dạng Parquet trên đĩa.",
+        "D": "Làm giảm tốc độ sinh câu trả lời của mô hình ngôn ngữ."
+      },
+      "answer": "A",
+      "explanation": "Fixed-size chunking cắt văn bản theo số lượng ký tự/token cố định, dễ cắt đứt giữa câu hoặc giữa bảng biểu, làm mất ngữ nghĩa hoàn chỉnh.",
+      "hints": [
+        "Hãy tưởng tượng bạn đang đọc một câu và bị ai đó cắt đôi câu ở giữa.",
+        "Nó không quan tâm đến cấu trúc ngữ pháp hay ranh giới logic của văn bản.",
+        "Đáp án chỉ ra việc dễ bị cắt ngang giữa câu làm hỏng ý nghĩa."
+      ],
+      "concepts": [
+        "d18-t3-production-rag"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Chiến lược phân mảnh dữ liệu phân cấp (Hierarchical chunking) hoạt động dựa trên nguyên tắc nào?",
+      "options": {
+        "A": "Tách toàn bộ tài liệu thành các file nhỏ độc lập hoàn toàn.",
+        "B": "Retrieve chunks con nhỏ nhưng nạp chunks cha lớn làm ngữ cảnh.",
+        "C": "Tự động dịch chuyển toàn bộ văn bản sang ngôn ngữ tiếng Anh.",
+        "D": "Mã hóa toàn bộ thông tin nhạy cảm của người dùng trước khi gửi."
+      },
+      "answer": "B",
+      "explanation": "Hierarchical chunking chia tài liệu thành parent chunks lớn và child chunks nhỏ. Khi search sẽ match trên child chunks (tăng độ chính xác) nhưng nạp parent chunk cho LLM (giữ ngữ cảnh rộng).",
+      "hints": [
+        "Mẫu thiết kế này kết hợp điểm mạnh về độ chính xác của file nhỏ và ngữ cảnh của file lớn.",
+        "Hãy nghĩ đến mối quan hệ cha-con (parent-child) trong cấu trúc cây dữ liệu.",
+        "Đáp án là tìm kiếm trên chunks con nhỏ nhưng trả về chunks cha lớn cho LLM."
+      ],
+      "concepts": [
+        "d18-t3-production-rag"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Khi xây dựng hệ thống RAG phục vụ tiếng Việt, việc lựa chọn mô hình Embedding cần tuân thủ quy tắc nào?",
+      "options": {
+        "A": "Nên chọn mô hình chỉ hỗ trợ tiếng Anh để tối ưu hóa.",
+        "B": "Nên chọn bge-m3 hoặc multilingual-e5-large để xử lý tốt tiếng Việt.",
+        "C": "Chọn mô hình bất kỳ vì các vector đều tương tự như nhau.",
+        "D": "Bắt buộc phải tự huấn luyện mô hình embedding riêng từ đầu."
+      },
+      "answer": "B",
+      "explanation": "Đối với tiếng Việt, nên ưu tiên các mô hình đa ngôn ngữ được tối ưu tốt như bge-m3 hoặc multilingual-e5-large để đảm bảo khả năng khớp ngữ nghĩa.",
+      "hints": [
+        "Hãy tìm các mô hình nằm ở top đầu của bảng xếp hạng MTEB đa ngôn ngữ.",
+        "Các mô hình tiếng Anh thuần túy không thể hiểu được ngữ nghĩa của từ vựng tiếng Việt.",
+        "Đáp án chỉ ra các mô hình đa ngôn ngữ hàng đầu như bge-m3 hay e5."
+      ],
+      "concepts": [
+        "d18-t3-production-rag"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Hành động nào dưới đây sẽ bắt buộc bạn phải thực hiện re-index (huấn luyện/tính toán lại vector) cho toàn bộ database?",
+      "options": {
+        "A": "Thay đổi prompt mẫu yêu cầu phải re-index lại cơ sở dữ liệu.",
+        "B": "Thay đổi embedding model bắt buộc phải re-index lại toàn bộ bảng.",
+        "C": "Thay đổi mô hình LLM sinh câu trả lời yêu cầu re-index.",
+        "D": "Thay đổi nhà cung cấp hạ tầng đám mây yêu cầu re-index."
+      },
+      "answer": "B",
+      "explanation": "Không gian vector (latent space) của mỗi model embedding là khác nhau. Thay đổi model embedding bắt buộc phải encode và ghi lại toàn bộ database.",
+      "hints": [
+        "Các vector được sinh ra từ các mô hình khác nhau không thể so sánh cosine với nhau.",
+        "Việc đổi mô hình LLM tạo câu trả lời (generation) không ảnh hưởng đến vector đã lưu.",
+        "Đáp án chính xác là khi bạn thay đổi mô hình tạo embeddings."
+      ],
+      "concepts": [
+        "d18-t3-production-rag"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Chỉ số Faithfulness (Độ trung thực) trong bộ chỉ số RAGAS đo lường điều gì?",
+      "options": {
+        "A": "Đo lường mức độ trùng khớp từ khóa giữa câu hỏi và trả lời.",
+        "B": "Đo lường tốc độ sinh câu trả lời trung bình của mô hình.",
+        "C": "Đo lường việc câu trả lời có được hỗ trợ bởi context không.",
+        "D": "Đo lường mức độ an toàn của dữ liệu đầu vào hệ thống."
+      },
+      "answer": "C",
+      "explanation": "Faithfulness đo lường xem câu trả lời của mô hình có hoàn toàn dựa trên các sự thật được cung cấp trong context hay tự bịa thêm (hallucination). Target tốt là >= 0.85.",
+      "hints": [
+        "Chỉ số này kiểm tra xem mô hình có trung thực với tài liệu được nạp vào hay không.",
+        "Nó giúp phát hiện các lỗi ảo tưởng (hallucination) của LLM.",
+        "Đáp án chỉ ra việc đo lường câu trả lời có được hỗ trợ từ ngữ cảnh hay không."
+      ],
+      "concepts": [
+        "d18-t3-production-rag"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Chỉ số Context Recall (Độ phủ ngữ cảnh) trong đánh giá RAG đo lường khía cạnh nào?",
+      "options": {
+        "A": "Đo lường tính nhất quán ngữ pháp của câu trả lời sinh ra.",
+        "B": "Đo lường tổng thời gian cần thiết để truy xuất được dữ liệu.",
+        "C": "Đo lường việc hệ thống đã lấy đủ thông tin cần thiết chưa.",
+        "D": "Đo lường mức độ trùng lặp từ vựng giữa các file Parquet."
+      },
+      "answer": "C",
+      "explanation": "Context Recall đo lường xem hệ thống retrieval đã truy xuất đầy đủ các thông tin cần thiết để trả lời câu hỏi so với ground truth (đáp án chuẩn) chưa.",
+      "hints": [
+        "Chỉ số này tập trung vào hiệu suất của bộ tìm kiếm (retriever).",
+        "Nếu tài liệu chứa câu trả lời nhưng bộ tìm kiếm bỏ sót, điểm này sẽ thấp.",
+        "Đáp án là đo lường việc lấy đủ thông tin cần thiết để giải quyết câu hỏi."
+      ],
+      "concepts": [
+        "d18-t3-production-rag"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Chỉ số Context Precision (Độ chính xác ngữ cảnh) trong RAGAS kiểm tra thuộc tính nào?",
+      "options": {
+        "A": "Đo lường số lượng từ trung bình trong mỗi chunk được truy xuất.",
+        "B": "Đo lường mức độ tương đồng giữa các ảnh và đoạn văn bản.",
+        "C": "Đo lường xem các chunk lấy ra có thực sự liên quan không.",
+        "D": "Đo lường số lượng tham số của mô hình embedding đang dùng."
+      },
+      "answer": "C",
+      "explanation": "Context Precision đo lường xem các chunks được retrieved lên có chứa thông tin liên quan được xếp ở các thứ hạng đầu hay không, hạn chế các chunks rác làm nhiễu LLM.",
+      "hints": [
+        "Precision tập trung vào việc lọc bỏ nhiễu và sắp xếp thứ hạng ưu tiên.",
+        "Nó đo lường tỷ lệ thông tin hữu ích trong số các văn bản đã kéo lên.",
+        "Đáp án là đo lường xem các chunks lấy ra có thực sự liên quan không."
+      ],
+      "concepts": [
+        "d18-t3-production-rag"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Cơ chế phân tách văn bản theo ngữ nghĩa (Semantic chunking) được thực hiện như thế nào?",
+      "options": {
+        "A": "Tách văn bản theo các mốc độ dài cố định năm trăm ký tự.",
+        "B": "Yêu cầu người dùng tự chọn ranh giới phân tách các đoạn cấu.",
+        "C": "Tự động dịch chuyển toàn bộ văn bản sang dạng biểu thức chính quy.",
+        "D": "Nhóm các câu dựa trên mức độ tương đồng ngữ nghĩa cosine."
+      },
+      "answer": "D",
+      "explanation": "Semantic chunking tính toán khoảng cách cosine giữa các câu liên tiếp, nếu khoảng cách vượt quá ngưỡng chỉ định, nó sẽ tạo ranh giới cắt chunk mới, giữ các câu cùng chủ đề ở cạnh nhau.",
+      "hints": [
+        "Cách này sử dụng mô hình embedding để đo đạc độ tương đồng của các câu.",
+        "Ranh giới cắt được xác định động dựa trên sự thay đổi đột ngột của nội dung.",
+        "Đáp án là nhóm các câu dựa trên mức độ tương đồng ngữ nghĩa cosine."
+      ],
+      "concepts": [
+        "d18-t3-production-rag"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Quy trình chuẩn khi ứng dụng framework RAGAS để tối ưu hóa chất lượng hệ thống RAG là gì?",
+      "options": {
+        "A": "Optimize toàn bộ pipeline trước khi thực hiện đo lường chất lượng.",
+        "B": "Thay đổi liên tục các prompt mẫu trong suốt quá trình chạy.",
+        "C": "Tự động xóa bỏ các câu hỏi độ khó cao khỏi bộ test.",
+        "D": "Đo điểm baseline trước rồi mới tối ưu theo failure cụ thể."
+      },
+      "answer": "D",
+      "explanation": "Quy trình khoa học là chạy đo lường baseline ban đầu, phân tích các câu bị lỗi (failure analysis), sau đó áp dụng tối ưu hóa tương ứng và đo lại để kiểm chứng.",
+      "hints": [
+        "Bạn không thể cải thiện những gì bạn không đo lường được từ đầu.",
+        "Hãy xác định điểm xuất phát (baseline) và chẩn đoán lỗi trước khi sửa.",
+        "Đáp án đúng là đo điểm baseline trước rồi tối ưu hóa dựa trên lỗi cụ thể."
+      ],
+      "concepts": [
+        "d18-t3-production-rag"
+      ]
+    }
+  ]
+}

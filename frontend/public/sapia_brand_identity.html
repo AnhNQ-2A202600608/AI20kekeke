@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sapia AI - Vibrant Learning Design System (Duolingo Verified)</title>
+  <!-- Google Fonts: Plus Jakarta Sans (Headings) & Nunito Sans (Body & Labels) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Exact Color Tokens cross-checked and prioritized from react-duolingo */
+    :root {
+      --background: #f4fce8;             /* surface / background */
+      --on-background: #171e12;          /* on-surface */
+      
+      --surface-container-lowest: #ffffff;
+      --surface-container-low: #eef7e3;
+      --surface-container: #e9f1dd;
+      --surface-container-high: #e3ebd8;
+      
+      /* Green (Primary Duolingo Green) */
+      --primary-green: #58cc02;          /* base bg */
+      --primary-green-dark: #46a302;     /* depth border */
+      
+      /* Teal (Secondary Duolingo Green / Unit 3) */
+      --secondary-green: #00cd9c;        /* base bg */
+      --secondary-green-dark: #00a47d;   /* depth border */
+      
+      /* Yellow (Tertiary / Shop Stars) */
+      --tertiary-yellow: #ffc800;        /* base bg */
+      --tertiary-yellow-dark: #cc9600;   /* depth border */
+      
+      /* Orange (Accent / Flame Streak) */
+      --accent-orange: #ff9600;          /* base bg */
+      --accent-orange-dark: #cc7000;     /* depth border */
+      
+      /* Red (Error / Fail) */
+      --error-red: #ff4b4b;              /* base bg */
+      --error-red-dark: #ea2b2b;         /* depth border */
+      
+      /* Blue (Tutor Info / Active state) */
+      --primary-blue: #1cb0f6;           /* base bg */
+      --primary-blue-dark: #1899d6;      /* depth border */
+      --primary-blue-light: #ddf4ff;     /* container bg */
+      --primary-blue-border: #84d8ff;
+      
+      /* Gray (Disabled & Inactive borders) */
+      --gray-border: #e5e5e5;            /* base outline */
+      --gray-border-dark: #b7b7b7;       /* locked depth border */
+      --gray-400: #a0a0a0;
+      
+      /* Layout rhythm */
+      --unit: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Nunito Sans', sans-serif;
+      background-color: var(--background);
+      color: var(--on-background);
+      line-height: 1.6;
+      padding: 2.5rem 1.5rem;
+      min-height: 100vh;
+      font-weight: 500;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* Header in Tactile / Skeuomorphic Modern style */
+    header {
+      background: var(--surface-container-lowest);
+      border: 2px solid var(--gray-border);
+      border-bottom: 6px solid var(--gray-border);
+      border-radius: 24px;
+      padding: 2.5rem;
+      text-align: center;
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+
+    .brand-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--surface-container-low);
+      border: 2px solid var(--outline-variant, var(--gray-border));
+      color: var(--on-surface);
+      padding: 0.5rem 1.2rem;
+      border-radius: 99px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      letter-spacing: 0.05em;
+    }
+
+    h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--on-background);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    h1 span {
+      color: var(--primary-green);
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: var(--on-surface-variant, var(--on-background));
+      max-width: 650px;
+      margin: 0 auto;
+      font-weight: 700;
+    }
+
+    section {
+      background: var(--surface-container-lowest);
+      border: 2px solid var(--gray-border);
+      border-bottom: 6px solid var(--gray-border);
+      border-radius: 24px;
+      padding: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--on-background);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    h2::after {
+      content: '';
+      flex: 1;
+      height: 2px;
+      background: var(--gray-border);
+    }
+
+    /* ==========================================
+       TACTILE 3D BUTTONS
+       ========================================== */
+    .btn-3d {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.9rem 1.8rem;
+      border-radius: 16px;
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 0.875rem;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: filter 0.2s, transform 0.1s, border-bottom-width 0.1s;
+      outline: none;
+      user-select: none;
+    }
+
+    /* 3D Click Physics */
+    .btn-3d:active {
+      transform: translateY(4px) !important;
+      border-bottom-width: 0px !important;
+      margin-bottom: 4px;
+    }
+
+    /* Green Button */
+    .btn-green {
+      background-color: var(--primary-green);
+      border-bottom: 5px solid var(--primary-green-dark);
+      color: white;
+    }
+    .btn-green:hover {
+      filter: brightness(1.08);
+    }
+
+    /* Teal Button */
+    .btn-teal {
+      background-color: var(--secondary-green);
+      border-bottom: 5px solid var(--secondary-green-dark);
+      color: white;
+    }
+    .btn-teal:hover {
+      filter: brightness(1.08);
+    }
+
+    /* Yellow Button */
+    .btn-yellow {
+      background-color: var(--tertiary-yellow);
+      border-bottom: 5px solid var(--tertiary-yellow-dark);
+      color: white;
+    }
+    .btn-yellow:hover {
+      filter: brightness(1.08);
+    }
+
+    /* Orange Button */
+    .btn-orange {
+      background-color: var(--accent-orange);
+      border-bottom: 5px solid var(--accent-orange-dark);
+      color: white;
+    }
+    .btn-orange:hover {
+      filter: brightness(1.08);
+    }
+
+    /* Error Red Button */
+    .btn-red {
+      background-color: var(--error-red);
+      border-bottom: 5px solid var(--error-red-dark);
+      color: white;
+    }
+    .btn-red:hover {
+      filter: brightness(1.08);
+    }
+
+    /* Blue Button */
+    .btn-blue {
+      background-color: var(--primary-blue);
+      border-bottom: 5px solid var(--primary-blue-dark);
+      color: white;
+    }
+    .btn-blue:hover {
+      filter: brightness(1.08);
+    }
+
+    /* White Outline Button */
+    .btn-white {
+      background-color: white;
+      border: 2px solid var(--gray-border);
+      border-bottom: 5px solid var(--gray-border);
+      color: var(--primary-green);
+    }
+    .btn-white:hover {
+      background-color: var(--surface-container-low);
+      border-color: var(--gray-border-dark);
+    }
+
+    /* Disabled State */
+    .btn-disabled {
+      background-color: var(--gray-border) !important;
+      border-bottom: 5px solid var(--gray-border-dark) !important;
+      color: var(--gray-400) !important;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    /* ==========================================
+       TACTILE 3D OPTION CARDS
+       ========================================== */
+    .option-card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    @media(min-width: 600px) {
+      .option-card-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .option-card {
+      background: white;
+      border: 2px solid var(--gray-border);
+      border-bottom: 5px solid var(--gray-border);
+      border-radius: 16px;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.1s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .option-card:hover:not(.selected) {
+      background-color: var(--surface-container-low);
+      border-color: var(--gray-border-dark);
+    }
+
+    .option-card.selected {
+      background-color: var(--primary-blue-light);
+      border-color: var(--primary-blue-border);
+      border-bottom-color: var(--primary-blue-dark);
+      color: var(--primary-blue-dark);
+      font-weight: 800;
+      transform: translateY(2px);
+      border-bottom-width: 3px;
+    }
+
+    .option-card.selected-active {
+      transform: translateY(4px) !important;
+      border-bottom-width: 0px !important;
+    }
+
+    .option-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--surface-container-low);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--gray-border);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+    }
+
+    .option-card.selected .option-icon {
+      border-color: var(--primary-blue-border);
+      background: white;
+    }
+
+    /* ==========================================
+       TACTILE SHINY PROGRESS BAR
+       ========================================== */
+    .progressbar-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+      margin: 1.5rem 0;
+    }
+
+    .progressbar-bg {
+      height: 20px;
+      flex: 1;
+      background-color: var(--gray-border);
+      border-radius: 9999px;
+      position: relative;
+    }
+
+    .progressbar-fill {
+      height: 100%;
+      background-color: var(--primary-green);
+      border-radius: 9999px;
+      transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      width: 50%;
+    }
+
+    .progressbar-shine {
+      height: 6px;
+      background-color: rgba(255, 255, 255, 0.35);
+      border-radius: 9999px;
+      margin: 3px 6px 0 6px;
+    }
+
+    /* ==========================================
+       3D PROGRESS PATHS (LESSON PATH)
+       ========================================== */
+    .path-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 2rem 0;
+      position: relative;
+    }
+
+    .path-line {
+      position: absolute;
+      width: 8px;
+      background-color: var(--gray-border);
+      top: 3rem;
+      bottom: 3rem;
+      z-index: 1;
+      border-radius: 99px;
+    }
+
+    .path-node {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      cursor: pointer;
+      transition: all 0.1s ease;
+      position: relative;
+    }
+
+    .path-node:active {
+      transform: translateY(4px);
+      border-bottom-width: 0px;
+      margin-bottom: 4px;
+    }
+
+    .path-node.completed {
+      background-color: var(--tertiary-yellow);
+      border-bottom: 6px solid var(--tertiary-yellow-dark);
+      color: white;
+    }
+
+    .path-node.current {
+      background-color: var(--primary-green);
+      border-bottom: 6px solid var(--primary-green-dark);
+      color: white;
+      animation: pulse-ring 2s infinite;
+    }
+
+    .path-node.locked {
+      background-color: var(--gray-border);
+      border-bottom: 6px solid var(--gray-border-dark);
+      color: var(--gray-400);
+      cursor: not-allowed;
+    }
+
+    @keyframes pulse-ring {
+      0% {
+        box-shadow: 0 0 0 0 rgba(88, 204, 2, 0.4);
+      }
+      70% {
+        box-shadow: 0 0 0 15px rgba(88, 204, 2, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(88, 204, 2, 0);
+      }
+    }
+
+    /* ==========================================
+       3D INPUT FIELDS
+       ========================================== */
+    .input-3d {
+      width: 100%;
+      background: white;
+      border: 2px solid var(--gray-border);
+      border-bottom: 2px solid var(--gray-border-dark);
+      border-radius: 16px;
+      padding: 0.9rem 1.2rem;
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .input-3d:focus {
+      border-color: var(--primary-green);
+      border-bottom: 5px solid var(--primary-green-dark);
+      margin-bottom: -3px;
+    }
+
+    /* ==========================================
+       CHIPS & BADGES
+       ========================================== */
+    .badge-row {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .badge-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 99px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 0.85rem;
+      color: white;
+      text-transform: uppercase;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .badge-orange {
+      background-color: var(--accent-orange);
+      border: 1px solid var(--accent-orange-dark);
+    }
+
+    .badge-yellow {
+      background-color: var(--tertiary-yellow);
+      border: 1px solid var(--tertiary-yellow-dark);
+    }
+
+    /* ==========================================
+       SLIDING FEEDBACK NOTIFICATION BANNER
+       ========================================== */
+    .noti-banner {
+      position: fixed;
+      bottom: -160px; /* Hidden */
+      left: 0;
+      right: 0;
+      z-index: 100;
+      transition: bottom 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.15);
+      border-top: 2px solid transparent;
+      box-shadow: 0 -8px 32px rgba(23, 30, 18, 0.08);
+    }
+
+    .noti-banner.show {
+      bottom: 0;
+    }
+
+    .noti-banner-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    @media (min-width: 600px) {
+      .noti-banner-content {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 2.2rem 2rem;
+      }
+    }
+
+    .noti-message-flex {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .noti-avatar {
+      width: 54px;
+      height: 54px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2.5px solid transparent;
+    }
+
+    .noti-text-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .noti-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+    }
+
+    .noti-desc {
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    /* Correct (Green) Banner */
+    .noti-correct {
+      background-color: var(--surface-container-low);
+      border-top-color: var(--outline, var(--gray-border));
+    }
+    .noti-correct .noti-avatar {
+      border-color: var(--primary-green);
+    }
+    .noti-correct .noti-title {
+      color: var(--primary-green-dark);
+    }
+    .noti-correct .noti-desc {
+      color: var(--outline, var(--on-surface));
+    }
+
+    /* Socratic / Incorrect (Red) Banner */
+    .noti-incorrect {
+      background-color: var(--terracotta-light);
+      border-top-color: rgba(217, 106, 67, 0.3);
+    }
+    .noti-incorrect .noti-avatar {
+      border-color: var(--error-red);
+    }
+    .noti-incorrect .noti-title {
+      color: var(--error-red-dark);
+    }
+    .noti-incorrect .noti-desc {
+      color: var(--terracotta-coral);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- BRAND HEADER -->
+    <header>
+      <div class="brand-badge">Nhận diện chốt: Sapia AI (Vibrant Learning)</div>
+      <h1>Giao diện Mẫu <span>Sapia AI</span></h1>
+      <p class="subtitle">Đã đối chiếu trực tiếp và khớp màu sắc chuẩn hóa từ react-duolingo codebase</p>
+    </header>
+
+    <!-- SECTION 1: BADGES & CHIPS -->
+    <section>
+      <h2>Huy hiệu chỉ số (Chips & Badges)</h2>
+      <div class="badge-row">
+        <div class="badge-chip badge-orange">
+          <span>🔥</span> 10 Ngày
+        </div>
+        <div class="badge-chip badge-yellow">
+          <span>⭐</span> 850 XP
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: 3D SHINY PROGRESS BAR -->
+    <section>
+      <h2>Thanh tiến trình 3D (Shiny Progress Bar)</h2>
+      
+      <div class="progressbar-container">
+        <button class="btn-3d btn-white" style="padding: 0.5rem; border-radius: 10px;" onclick="adjustProgress(-10)">-</button>
+        <div class="progressbar-bg" role="progressbar">
+          <div class="progressbar-fill" id="progressFill" style="width: 60%;">
+            <div class="progressbar-shine"></div>
+          </div>
+        </div>
+        <button class="btn-3d btn-white" style="padding: 0.5rem; border-radius: 10px;" onclick="adjustProgress(10)">+</button>
+        <span style="font-family: 'Plus Jakarta Sans'; font-weight: 800; font-size: 0.9rem;" id="progressVal">60%</span>
+      </div>
+    </section>
+
+    <!-- SECTION 3: 3D BUTTONS & CARDS -->
+    <section>
+      <h2>Nút bấm & Thẻ lựa chọn 3D (Tactile 3D Components)</h2>
+      <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">
+        Click thử vào các nút để kiểm tra chuyển động lún 3D vật lý chính xác:
+      </p>
+
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
+        <button class="btn-3d btn-green">Check Answer</button>
+        <button class="btn-3d btn-blue">Start +10 XP</button>
+        <button class="btn-3d btn-yellow">Yellow 3D</button>
+        <button class="btn-3d btn-orange">Orange 3D</button>
+        <button class="btn-3d btn-red">Incorrect</button>
+        <button class="btn-3d btn-white">Skip</button>
+        <button class="btn-3d btn-disabled">Disabled</button>
+      </div>
+
+      <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">
+        Thẻ chọn đáp án: Bấm để chọn (Style active xanh dương nhạt ddf4ff và viền 84d8ff):
+      </p>
+      
+      <div class="option-card-grid">
+        <div class="option-card" onclick="selectCard(this)">
+          <div class="option-icon">A</div>
+          <div style="font-family: 'Plus Jakarta Sans'; font-size: 0.9rem; font-weight: 800;">Docker Compose</div>
+        </div>
+        
+        <div class="option-card" onclick="selectCard(this)">
+          <div class="option-icon">B</div>
+          <div style="font-family: 'Plus Jakarta Sans'; font-size: 0.9rem; font-weight: 800;">Dockerfile</div>
+        </div>
+
+        <div class="option-card" onclick="selectCard(this)">
+          <div class="option-icon">C</div>
+          <div style="font-family: 'Plus Jakarta Sans'; font-size: 0.9rem; font-weight: 800;">Docker Volume</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: LESSON PROGRESS PATH -->
+    <section>
+      <h2>Lộ trình học tập 3D (3D Progress Paths)</h2>
+      <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">
+        Các node hình tròn được cấu hình màu chuẩn theo trạng thái từ react-duolingo (Vàng cho hoàn thành, Xanh lá cho hiện tại, Xám cho bị khóa):
+      </p>
+
+      <div class="path-container">
+        <div class="path-line"></div>
+        
+        <!-- Completed node -->
+        <div class="path-node completed" title="Hoàn thành">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+
+        <!-- Current active node -->
+        <div class="path-node current" style="transform: translateX(20px);" title="Hiện tại">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+          </svg>
+        </div>
+
+        <!-- Locked node -->
+        <div class="path-node locked" style="transform: translateX(-20px);" title="Chưa khóa">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: 3D INPUT FIELDS -->
+    <section>
+      <h2>Ô nhập liệu (3D Input Fields)</h2>
+      <div style="max-width: 400px;">
+        <input type="text" class="input-3d" placeholder="Nhập câu trả lời tự luận...">
+      </div>
+    </section>
+
+    <!-- SECTION 6: MASCOT SOFI THE FOX -->
+    <section>
+      <h2>Linh vật thích ứng theo hệ màu mới</h2>
+      
+      <div class="mascot-grid">
+        <div class="mascot-card recommended" style="max-width: 450px; margin: 0 auto;">
+          <div class="mascot-svg-wrapper">
+            <svg viewBox="0 0 120 120" width="100%" height="100%">
+              <circle cx="60" cy="60" r="50" fill="#f4fce8" stroke="rgba(88, 204, 2, 0.2)" stroke-width="2" />
+              <!-- Fox Ears -->
+              <path d="M30 45 L15 15 L45 35 Z" fill="#ff9600" />
+              <path d="M30 45 L22 23 L40 38 Z" fill="#ffc800" />
+              <path d="M90 45 L105 15 L75 35 Z" fill="#ff9600" />
+              <path d="M90 45 L98 23 L80 38 Z" fill="#ffc800" />
+              <!-- Fox Face Base -->
+              <path d="M20 50 Q60 20 100 50 Q105 75 90 90 Q60 110 30 90 Q15 75 20 50 Z" fill="#ff9600" />
+              <!-- White Cheeks -->
+              <path d="M20 50 Q40 70 60 70 Q80 70 100 50 Q103 68 90 85 Q60 100 30 85 Q17 68 20 50 Z" fill="#ffffff" />
+              <!-- Nose Area -->
+              <path d="M50 65 Q60 62 70 65 L60 85 Z" fill="#cc7000" />
+              <polygon points="56,80 64,80 60,86" fill="#171e12" />
+              <!-- Scholar Glasses -->
+              <circle cx="43" cy="53" r="13" fill="none" stroke="#171e12" stroke-width="3" />
+              <circle cx="77" cy="53" r="13" fill="none" stroke="#171e12" stroke-width="3" />
+              <line x1="56" y1="53" x2="64" y2="53" stroke="#171e12" stroke-width="3" />
+              <path d="M38 53 Q43 49 48 53" fill="none" stroke="#171e12" stroke-width="2.5" stroke-linecap="round" />
+              <path d="M72 53 Q77 49 82 53" fill="none" stroke="#171e12" stroke-width="2.5" stroke-linecap="round" />
+              <!-- Graduation Cap overlay in primary green -->
+              <polygon points="60,8 85,18 60,28 35,18" fill="var(--primary-green-dark)" />
+              <rect x="57" y="22" width="6" height="10" fill="var(--primary-green-dark)" />
+              <path d="M35 18 L35 30" stroke="#ffc800" stroke-width="2.5" />
+            </svg>
+          </div>
+          <div class="mascot-title">Cáo Sofi</div>
+          <div class="mascot-description">Chú cáo Sofi hiếu kỳ mang màu cam ấm áp và mũ cử nhân xanh lá Duolingo đặc trưng.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: INTERACTIVE NOTIFICATION BANNER TRIGGER -->
+    <section>
+      <h2>Bảng trượt thông báo phản hồi (Check Answer Banners)</h2>
+      <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">
+        Click 2 nút dưới đây để kích hoạt thanh thông báo phản hồi trượt lên từ đáy màn hình giống hệt Duolingo:
+      </p>
+      
+      <div class="noti-trigger-area">
+        <button class="btn-3d btn-green" onclick="showNoti('correct')">Xem Đúng (Correct)</button>
+        <button class="btn-3d btn-coral" onclick="showNoti('incorrect')">Xem Sai (Socratic Alert)</button>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- SLIDING BANNER MARKUP -->
+  <div class="noti-banner" id="feedbackBanner">
+    <div class="noti-banner-content">
+      <div class="noti-message-flex">
+        <div class="noti-avatar" id="bannerAvatar">
+          <div class="mascot-avatar-inner">
+            <svg viewBox="0 0 120 120" width="36" height="36">
+              <path d="M20 50 Q60 20 100 50 Q105 75 90 90 Q60 110 30 90 Q15 75 20 50 Z" fill="#ff9600" />
+              <path d="M20 50 Q40 70 60 70 Q80 70 100 50 Q103 68 90 85 Q60 100 30 85 Q17 68 20 50 Z" fill="#ffffff" />
+              <circle cx="43" cy="53" r="6" fill="#171e12" />
+              <circle cx="77" cy="53" r="6" fill="#171e12" />
+              <polygon points="56,70 64,70 60,76" fill="#171e12" />
+            </svg>
+          </div>
+        </div>
+        <div class="noti-text-block">
+          <div class="noti-title" id="bannerTitle">Tuyệt vời!</div>
+          <div class="noti-desc" id="bannerDesc">Bạn được cộng +15 Elo và +20 XP cho câu trả lời chính xác.</div>
+        </div>
+      </div>
+      
+      <button class="btn-3d btn-green" id="bannerActionBtn" onclick="hideNoti()">Tiếp tục</button>
+    </div>
+  </div>
+
+  <script>
+    // JS for Interactive elements
+    
+    // Adjust Progress
+    function adjustProgress(amount) {
+      const fill = document.getElementById('progressFill');
+      const valText = document.getElementById('progressVal');
+      let currentWidth = parseInt(fill.style.width) || 0;
+      let newWidth = currentWidth + amount;
+      if (newWidth < 0) newWidth = 0;
+      if (newWidth > 100) newWidth = 100;
+      fill.style.width = newWidth + '%';
+      valText.innerText = newWidth + '%';
+    }
+
+    // Select Option Card
+    function selectCard(cardElement) {
+      const card = cardElement;
+      card.classList.add('selected-active');
+      setTimeout(() => {
+        const isSelected = card.classList.contains('selected');
+        document.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
+        if (!isSelected) {
+          card.classList.add('selected');
+        }
+        card.classList.remove('selected-active');
+      }, 80);
+    }
+
+    // Show Notification Banner
+    function showNoti(type) {
+      const banner = document.getElementById('feedbackBanner');
+      const title = document.getElementById('bannerTitle');
+      const desc = document.getElementById('bannerDesc');
+      const actionBtn = document.getElementById('bannerActionBtn');
+      
+      banner.className = 'noti-banner';
+      
+      if (type === 'correct') {
+        banner.classList.add('noti-correct');
+        title.innerText = 'Tuyệt vời!';
+        desc.innerText = 'Đáp án chính xác. Bạn được cộng +15 Elo và +20 XP!';
+        actionBtn.className = 'btn-3d btn-green';
+        actionBtn.innerText = 'Tiếp tục';
+      } else {
+        banner.classList.add('noti-incorrect');
+        title.innerText = 'Chưa chính xác!';
+        desc.innerText = 'Hãy nhấp vào nút Socratic Hint ở góc màn hình để được trợ lý Sofi gợi dẫn tư duy.';
+        actionBtn.className = 'btn-3d btn-coral';
+        actionBtn.innerText = 'Xem gợi ý';
+      }
+      
+      banner.classList.add('show');
+    }
+
+    // Hide Notification
+    function hideNoti() {
+      const banner = document.getElementById('feedbackBanner');
+      banner.classList.remove('show');
+    }
+  </script>
+
+</body>
+</html>

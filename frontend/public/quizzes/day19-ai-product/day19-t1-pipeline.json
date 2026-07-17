@@ -1,0 +1,210 @@
+{
+  "id": "day19-t1-pipeline",
+  "parent_id": "day19-ai-product",
+  "topic_title": "Day 19: Investor Buy-in & Pitch",
+  "title": "Phần 2: Thuyết Phục 100 Khách Hàng Đầu Tiên & Chiến Lược Build-in-Public",
+  "description": "Đánh giá hiểu biết về phương pháp vượt qua sự hoài nghi của Early Adopters, thiết lập kênh phản hồi riêng, và tận dụng Twitter/X để marketing không đồng.",
+  "difficulty": "bình thường",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Mục tiêu hàng đầu của một tech founder khi tiếp cận nhóm Early Adopters ban đầu là gì?",
+      "options": {
+        "A": "Thiết lập kênh phản hồi trực tiếp để nhanh chóng hoàn thiện sản phẩm.",
+        "B": "Thu phí dịch vụ tối đa để bù đắp chi phí gọi API OpenAI.",
+        "C": "Huấn luyện lại mô hình với tập dữ liệu quy mô lớn ngay lập tức.",
+        "D": "Chạy các chiến dịch quảng cáo trả phí trên diện rộng để lấy user."
+      },
+      "answer": "A",
+      "explanation": "Mục tiêu cốt lõi ở giai đoạn đầu là lắng nghe phản hồi của người dùng sớm để nhanh chóng sửa đổi, lặp lại sản phẩm phù hợp nhu cầu thực tế.",
+      "hints": [
+        "Lợi ích lớn nhất của người dùng sớm không phải là tiền bạc mà là dữ liệu phản hồi.",
+        "Bạn cần tìm hiểu xem họ có thực sự dùng và yêu thích giải pháp của bạn không.",
+        "Đáp án chỉ ra việc thiết lập kênh phản hồi trực tiếp để hoàn thiện sản phẩm."
+      ],
+      "concepts": [
+        "d19-t1-stakeholder-pitch"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Hoạt động cốt lõi của chiến lược 'Build in Public' (Xây dựng công khai) là gì?",
+      "options": {
+        "A": "Chia sẻ minh bạch các chỉ số doanh thu và quá trình phát triển.",
+        "B": "Tuyệt đối giữ bí mật mã nguồn và các tính năng sắp ra mắt.",
+        "C": "Chỉ công bố các lỗi kỹ thuật sau khi đã khắc phục hoàn toàn.",
+        "D": "Tự động gửi email quảng cáo sản phẩm cho toàn bộ người dùng."
+      },
+      "answer": "A",
+      "explanation": "Build in Public là chia sẻ cởi mở về quá trình xây dựng, khó khăn gặp phải, các mốc doanh thu (MRR) và tính năng mới trên các kênh mạng xã hội.",
+      "hints": [
+        "Hãy liên tưởng đến cách Pieter Levels chia sẻ MRR và roadmap trên Twitter/X.",
+        "Chiến lược này tạo dựng lòng tin và biến người dùng thành người ủng hộ nhiệt tình.",
+        "Đáp án là chia sẻ minh bạch doanh thu và tiến trình phát triển."
+      ],
+      "concepts": [
+        "d19-t1-stakeholder-pitch"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Tại sao startup AI nên nhắm vào Early Adopters thay vì khách hàng đại chúng lúc đầu?",
+      "options": {
+        "A": "Vì Early Adopters có nguồn lực tài chính lớn hơn khách hàng khác.",
+        "B": "Vì họ sẵn sàng chấp nhận sản phẩm lỗi để giải quyết nỗi đau.",
+        "C": "Vì họ không bao giờ phàn nàn hay yêu cầu hoàn lại tiền.",
+        "D": "Vì họ có khả năng viết lại mã nguồn phụ giúp đội ngũ."
+      },
+      "answer": "B",
+      "explanation": "Early Adopters là những người có nỗi đau đủ lớn, họ chấp nhận sản phẩm chưa hoàn hảo hoặc có lỗi nhỏ miễn là giải quyết được vấn đề của họ.",
+      "hints": [
+        "Khách hàng đại chúng đòi hỏi sản phẩm phải mượt mà và hoàn hảo ngay lập tức.",
+        "Người dùng sớm quan tâm đến việc giải quyết nỗi đau cốt lõi hơn là giao diện bóng bẩy.",
+        "Đáp án là họ chấp nhận dùng sản phẩm có lỗi để xử lý nỗi đau của họ."
+      ],
+      "concepts": [
+        "d19-t1-stakeholder-pitch"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Chiến lược Build in Public mang lại lợi thế lớn nhất nào cho các solo founder?",
+      "options": {
+        "A": "Giúp tối ưu hóa toàn bộ cấu trúc cơ sở dữ liệu trên cloud.",
+        "B": "Tạo ra phân phối miễn phí và thu hút sự chú ý đầu tư.",
+        "C": "Bắt buộc đối thủ cạnh tranh phải chia sẻ doanh thu với mình.",
+        "D": "Tự động loại bỏ hoàn toàn các nguy cơ bị tấn công mạng."
+      },
+      "answer": "B",
+      "explanation": "Build in Public giúp tạo ra lượng organic traffic khổng lồ (phân phối không đồng) và gửi tín hiệu thu hút các nhà đầu tư thiên thần quan tâm.",
+      "hints": [
+        "Khi bạn không có ngân sách marketing, việc kể câu chuyện xây dựng sản phẩm sẽ lôi cuốn người đọc.",
+        "Nó biến tiến trình phát triển của bạn thành một kênh truyền thông tự nhiên.",
+        "Đáp án là tạo ra phân phối miễn phí và thu hút sự chú ý của nhà đầu tư."
+      ],
+      "concepts": [
+        "d19-t1-stakeholder-pitch"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Nơi tốt nhất để tìm kiếm 100 Early Adopters đầu tiên cho sản phẩm AI là gì?",
+      "options": {
+        "A": "Chạy quảng cáo trả phí trên Facebook hướng đến khách hàng đại chúng.",
+        "B": "Các cộng đồng Reddit hoặc nhóm Facebook chuyên biệt có nỗi đau lớn.",
+        "C": "Gửi email hàng loạt cho danh sách khách hàng mua từ bên thứ ba.",
+        "D": "Tổ chức Demo Day hoành tráng tại các khách sạn năm sao nổi tiếng."
+      },
+      "answer": "B",
+      "explanation": "Tìm kiếm khách hàng đầu tiên ở các cộng đồng ngách (Reddit subreddits, Facebook groups) nơi tập trung những người đang bàn luận và tìm giải pháp cho nỗi đau đó.",
+      "hints": [
+        "Bạn cần đến nơi khách hàng tiềm năng của bạn đang sinh hoạt và thảo luận vấn đề.",
+        "Đây phải là những nơi tập trung đối tượng có nhu cầu cụ thể, tránh chạy ads đại trà.",
+        "Đáp án là các cộng đồng ngách như Reddit hoặc nhóm Facebook chuyên biệt."
+      ],
+      "concepts": [
+        "d19-t1-stakeholder-pitch"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Founder nên phản hồi như thế nào trước sự hoài nghi (skepticism) của những người dùng sớm?",
+      "options": {
+        "A": "Bỏ qua phản hồi tiêu cực và chỉ tập trung vào lời khen.",
+        "B": "Tuyên bố sản phẩm đã hoàn thiện tuyệt đối không còn lỗi kỹ thuật.",
+        "C": "Minh bạch về giới hạn sản phẩm và phản hồi nhanh chóng nhất.",
+        "D": "Khóa tài khoản của những người dùng đưa ra nhận xét tiêu cực."
+      },
+      "answer": "C",
+      "explanation": "Sự trung thực về giới hạn của sản phẩm (ví dụ: AI có thể hallucinate) đi kèm với cam kết phản hồi và sửa lỗi nhanh chóng giúp duy trì sự tôn trọng của cộng đồng.",
+      "hints": [
+        "Người dùng sớm rất thông minh và họ ghét sự thổi phồng công nghệ quá mức.",
+        "Hãy thừa nhận những điểm sản phẩm chưa tốt và đưa ra lộ trình khắc phục rõ ràng.",
+        "Đáp án chỉ ra sự minh bạch về giới hạn sản phẩm và phản hồi nhanh chóng."
+      ],
+      "concepts": [
+        "d19-t1-stakeholder-pitch"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Kênh tương tác trực tiếp hiệu quả nhất để xây dựng cộng đồng Early Adopters là gì?",
+      "options": {
+        "A": "Gửi thư tay cảm ơn đến tận nhà của từng người dùng.",
+        "B": "Đăng tải các thông cáo báo chí chính thức lên cổng thông tin.",
+        "C": "Tạo kênh Discord hoặc Slack riêng để đối thoại trực tiếp hàng ngày.",
+        "D": "Thuê đội ngũ hỗ trợ khách hàng chuyên nghiệp từ bên ngoài về."
+      },
+      "answer": "C",
+      "explanation": "Xây dựng cộng đồng trên Discord/Slack giúp founder đối thoại thời gian thực với user, nhận bug reports lập tức và cho phép user thảo luận cùng nhau.",
+      "hints": [
+        "Hãy tạo một không gian ảo nơi người dùng có cảm giác họ là một phần của dự án.",
+        "Nơi founder có thể chat trực tiếp, chia sẻ ảnh chụp màn hình và ghi nhận ý kiến.",
+        "Đáp án chính xác là tạo kênh Discord hoặc Slack riêng để đối thoại hàng ngày."
+      ],
+      "concepts": [
+        "d19-t1-stakeholder-pitch"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Tại sao việc gửi chung một mẫu báo cáo cho tất cả stakeholder lại là sai lầm?",
+      "options": {
+        "A": "Vì nó tốn quá nhiều chi phí để gửi qua hệ thống.",
+        "B": "Vì nó làm lộ thông tin bảo mật của toàn bộ startup.",
+        "C": "Vì mỗi nhóm stakeholder quan tâm đến các khía cạnh khác nhau.",
+        "D": "Vì nó khiến hệ thống máy chủ GPU bị quá tải truy cập."
+      },
+      "answer": "C",
+      "explanation": "VC muốn số liệu tài chính; Co-founder muốn chi tiết vận hành; User muốn tính năng sản phẩm. Gửi chung một email generic sẽ làm phiền tất cả.",
+      "hints": [
+        "Nhà đầu tư không quan tâm đến code bug nhỏ, còn người dùng không muốn đọc báo cáo tài chính.",
+        "Chúng ta cần tùy biến nội dung (tailor) phù hợp với mối quan tâm của từng góc ma trận.",
+        "Đáp án chỉ ra mỗi nhóm stakeholder có mối quan tâm đến khía cạnh khác nhau."
+      ],
+      "concepts": [
+        "d19-t1-stakeholder-pitch"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Khi Early Adopter liên tục yêu cầu thêm tính năng mới, founder nên xử lý thế nào?",
+      "options": {
+        "A": "Lập tức lập trình tất cả tính năng được yêu cầu để giữ chân.",
+        "B": "Từ chối thẳng thừng mọi đóng góp ý kiến từ phía người dùng.",
+        "C": "Yêu cầu họ trả thêm phí trước khi tiến hành cập nhật hệ thống.",
+        "D": "Lọc các yêu cầu trùng khớp với tầm nhìn lõi để phát triển."
+      },
+      "answer": "D",
+      "explanation": "Founder cần tỉnh táo chọn lọc các yêu cầu tính năng phù hợp với tầm nhìn sản phẩm cốt lõi (core vision) để tránh rơi vào bẫy làm chiều lòng tất cả (scope creep).",
+      "hints": [
+        "Làm theo mọi yêu cầu của khách hàng sẽ khiến sản phẩm biến thành một con quái vật lộn xộn.",
+        "Hãy đối chiếu các yêu cầu đó với lộ trình phát triển cốt lõi của công ty.",
+        "Đáp án là chọn lọc các yêu cầu trùng khớp với tầm nhìn lõi để xây dựng."
+      ],
+      "concepts": [
+        "d19-t1-stakeholder-pitch"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Rủi ro lớn nhất khi áp dụng chiến dịch chia sẻ công khai (Build in Public) là gì?",
+      "options": {
+        "A": "Hệ thống sẽ bị hacker tấn công lấy cắp toàn bộ tiền.",
+        "B": "Đối thủ cạnh tranh sẽ biết được cấu trúc mã nguồn sản phẩm.",
+        "C": "Nhà đầu tư sẽ không thèm quan tâm đến sản phẩm của bạn.",
+        "D": "Bị phơi bày kết quả kinh doanh kém nếu tăng trưởng chậm lại."
+      },
+      "answer": "D",
+      "explanation": "Build in Public là con dao hai lưỡi. Khi startup tăng trưởng tốt, nó thu hút sự chú ý lớn; nhưng khi số liệu kinh doanh đi xuống, nó bộc lộ điểm yếu trước toàn bộ công chúng.",
+      "hints": [
+        "Khi mọi thứ được minh bạch hóa, bạn không thể che giấu những tháng có doanh thu sụt giảm.",
+        "Nó có thể ảnh hưởng tiêu cực đến tâm lý của người dùng và các nhà đầu tư tương lai.",
+        "Đáp án đúng là rủi ro phơi bày kết quả kinh doanh kém khi đà tăng trưởng chững lại."
+      ],
+      "concepts": [
+        "d19-t1-stakeholder-pitch"
+      ]
+    }
+  ]
+}

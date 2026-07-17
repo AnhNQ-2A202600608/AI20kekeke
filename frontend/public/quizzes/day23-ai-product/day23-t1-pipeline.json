@@ -1,0 +1,210 @@
+{
+  "id": "day23-t1-pipeline",
+  "parent_id": "day23-ai-product",
+  "topic_title": "Day 23: Change Management & AI Adoption",
+  "title": "Phần 2: Xây Dựng Roadmap Áp Dụng & Thiết Kế Dashboard Hành Động",
+  "description": "Đánh giá kiến thức về thiết lập quy trình phản hồi, theo dõi chỉ số DAU/WAU, xây dựng roadmap 30/60/90 ngày.",
+  "difficulty": "bình thường",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Khi thiết kế Dashboard Hành Động đo lường hiệu quả tiếp nhận AI, Instructor khuyến nghị chuỗi liên kết nào sau đây?",
+      "options": {
+        "A": "Số dòng code phát triển -> số lần gọi API -> tốc độ máy chủ.",
+        "B": "Số người dùng đăng nhập -> số lượng câu lệnh -> số token trả phí.",
+        "C": "Mức độ sử dụng (Usage) -> quy trình (Workflow) -> niềm tin -> giá trị.",
+        "D": "Ngân sách phần cứng -> số lượng license mua -> số giờ đào tạo staff."
+      },
+      "answer": "C",
+      "explanation": "Theo Instructor, chỉ số đơn lẻ như login, prompt count hay active users là không đủ. Dashboard hành động phải nối kết từ usage -> workflow -> quality/trust -> value.",
+      "hints": [
+        "Hãy nghĩ về việc đo lường từ hoạt động thô đến giá trị kinh tế cuối cùng.",
+        "Cần kết nối hành vi sử dụng thực tế với mức độ tin cậy và hiệu quả công việc.",
+        "Đáp án chỉ ra chuỗi liên kết từ Usage qua Workflow đến Niềm tin và Giá trị."
+      ],
+      "concepts": [
+        "d23-t1-change-adoption"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Trong mô hình ADKAR thích ứng cho AI, khi chẩn đoán điểm nghẽn người dùng ('Barrier Point'), bước đầu tiên nhóm dự án cần làm là gì?",
+      "options": {
+        "A": "Tổ chức thêm các lớp đào tạo chuyên sâu về kỹ năng viết prompt.",
+        "B": "Tăng gấp đôi ngân sách dự phòng cho việc nâng cấp phần cứng máy chủ.",
+        "C": "Mua thêm license tài khoản Pro để thúc đẩy mong muốn của nhân viên.",
+        "D": "Khảo sát và xác định chính xác nhân viên đang bị kẹt ở bước nào."
+      },
+      "answer": "D",
+      "explanation": "Xác định Barrier Point yêu cầu nhóm dự án khảo sát và phát hiện ra điểm kẹt đầu tiên trong chuỗi ADKAR của nhân sự để tập trung sửa đổi, thay vì phỏng đoán sai nguyên nhân.",
+      "hints": [
+        "Nghĩ về cách giải quyết vấn đề có tính mục tiêu và khoa học.",
+        "Bạn không thể khắc phục điểm nghẽn nếu không xác định đúng vị trí của nó.",
+        "Đáp án chỉ ra việc khảo sát và xác định chính xác điểm kẹt."
+      ],
+      "concepts": [
+        "d23-t1-change-adoption"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Trong lộ trình áp dụng AI (Timeline), giai đoạn 'ROI Reckoning' (cuối 2024 - đầu 2025) được kích hoạt bởi yếu tố nào?",
+      "options": {
+        "A": "Các báo cáo của BCG chỉ ra ROI thấp và sự xuất hiện của DeepSeek R1.",
+        "B": "Sự ra mắt phiên bản đầu tiên của ChatGPT thu hút hàng triệu người dùng.",
+        "C": "Quyết định chuyển dịch toàn bộ cơ sở dữ liệu lên hạ tầng đám mây K8s.",
+        "D": "Sự xuất hiện của các Agent tự vận hành và các công cụ như Claude Code."
+      },
+      "answer": "A",
+      "explanation": "Giai đoạn 'ROI Reckoning' là thời điểm doanh nghiệp đối mặt với thực tế ROI thấp (báo cáo BCG cuối 2024) và cú sốc chi phí thấp từ DeepSeek R1 đầu 2025.",
+      "hints": [
+        "Giai đoạn này xảy ra khi các doanh nghiệp bắt đầu tính toán lại chi phí thực tế.",
+        "Liên quan đến các báo cáo tài chính về AI và sự tối ưu chi phí từ mô hình mới.",
+        "Đáp án nói về báo cáo BCG và sự xuất hiện của DeepSeek R1."
+      ],
+      "concepts": [
+        "d23-t1-change-adoption"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Để giải quyết điểm nghẽn ở bước 'Desire' (Mong muốn) trong mô hình ADKAR, hành động nào sau đây là phù hợp nhất?",
+      "options": {
+        "A": "Bắt buộc nhân viên ký cam kết sử dụng AI tối thiểu 2 giờ mỗi ngày.",
+        "B": "Chia sẻ case study thành công từ đồng nghiệp và cơ chế thưởng phù hợp.",
+        "C": "Gửi cho nhân viên bộ tài liệu hướng dẫn kỹ thuật dày 200 trang để đọc.",
+        "D": "Nâng cấp giao diện người dùng của hệ thống chatbot lên phiên bản mới."
+      },
+      "answer": "B",
+      "explanation": "Desire (Mong muốn) là động lực cá nhân. Để kích hoạt mong muốn, cần cho họ thấy lợi ích thực tế qua thành công của đồng nghiệp và các chính sách khích lệ, thay vì ép buộc hay hướng dẫn kỹ thuật.",
+      "hints": [
+        "Mong muốn xuất phát từ động lực và niềm tin vào lợi ích cá nhân.",
+        "Làm thế nào để nhân viên tự thấy việc dùng AI mang lại lợi thế cho họ.",
+        "Đáp án đề cập đến việc chia sẻ case study thành công và cơ chế thưởng."
+      ],
+      "concepts": [
+        "d23-t1-change-adoption"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Trong bản kế hoạch hành động 30/60/90 ngày cho việc rollout AI, trọng tâm của giai đoạn 30 ngày đầu tiên thường là gì?",
+      "options": {
+        "A": "Nâng cấp toàn bộ hạ tầng cơ sở dữ liệu sang dạng hồ sơ Vector DB.",
+        "B": "Sa thải bớt các nhân viên không chịu sử dụng công cụ AI mới.",
+        "C": "Xác định challenge, chọn product và chẩn đoán quy trình (workflow) hiện tại.",
+        "D": "Triển khai trên toàn bộ quy mô tập đoàn và cắt giảm ngân sách IT."
+      },
+      "answer": "C",
+      "explanation": "Giai đoạn 30 ngày đầu tập trung vào chẩn đoán hiện trạng, xác định challenge, chọn sản phẩm thí điểm, phân tích quy trình công việc hiện tại và thiết lập baseline.",
+      "hints": [
+        "Nghĩ về các bước chuẩn bị ban đầu trong quản trị dự án.",
+        "Trước khi mở rộng quy mô lớn, cần hiểu rõ vấn đề kẹt ở đâu và định hình MVP.",
+        "Đáp án chỉ ra việc xác định challenge, chọn product và chẩn đoán workflow."
+      ],
+      "concepts": [
+        "d23-t1-change-adoption"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Tại sao việc chỉ đo lường số lượng câu lệnh (Prompt Count) lại dễ dẫn đến hành vi sai trong đo lường giá trị AI?",
+      "options": {
+        "A": "Vì prompt count không phản ánh đúng chi phí token tiêu thụ trên đám mây.",
+        "B": "Vì hệ thống tự động lọc các prompt trùng lặp trước khi gửi đi.",
+        "C": "Vì các API của OpenAI giới hạn số lượng prompt gửi lên trong một giây.",
+        "D": "Vì nhân viên có thể spam các prompt vô nghĩa chỉ để đạt KPI số lượng."
+      },
+      "answer": "D",
+      "explanation": "Nếu chỉ đo lường số lượng prompt (output metrics), nhân viên có thể spam câu lệnh vô nghĩa để đạt KPI sử dụng, tạo ra chỉ số ảo mà không mang lại giá trị công việc thực tế.",
+      "hints": [
+        "Nghĩ về hiện tượng Goodhart's Law: khi một thước đo trở thành mục tiêu, nó không còn là thước đo tốt.",
+        "Sự khác biệt giữa số lượng hành động thô và chất lượng kết quả công việc.",
+        "Đáp án đề cập đến việc nhân viên có thể spam prompt vô nghĩa để lấy KPI."
+      ],
+      "concepts": [
+        "d23-t1-change-adoption"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Mục tiêu tối thượng của việc thiết kế lại quy trình công việc ('Workflow Redesign') khi đưa AI vào doanh nghiệp là gì?",
+      "options": {
+        "A": "Thay đổi vị trí bàn giao công việc và phân định rõ trách nhiệm mới.",
+        "B": "Giảm thiểu tối đa số lượng nhân viên kỹ thuật vận hành hệ thống IT.",
+        "C": "Loại bỏ hoàn toàn sự can thiệp của con người ra khỏi quy trình nghiệp vụ.",
+        "D": "Tăng số lượng license phần mềm mà doanh nghiệp cần mua từ đối tác."
+      },
+      "answer": "A",
+      "explanation": "Workflow Redesign nhằm mục đích định hình lại cách công việc trôi chảy, thay đổi điểm bàn giao (handoff), người chịu trách nhiệm (owner) và kiểm soát rủi ro khi AI tham gia vào.",
+      "hints": [
+        "Xem xét các yếu tố vận hành như điểm bàn giao, owner và kiểm soát rủi ro.",
+        "Workflow thay đổi để con người và AI cộng tác an toàn, hiệu quả hơn.",
+        "Đáp án nói về thay đổi vị trí bàn giao và phân định trách nhiệm mới."
+      ],
+      "concepts": [
+        "d23-t1-change-adoption"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Khi chẩn đoán sự tiếp nhận AI theo mô hình Gartner AI Maturity, một doanh nghiệp ở mức độ trưởng thành thấp thường gặp biểu hiện nào?",
+      "options": {
+        "A": "Tích hợp sâu các Agent tự trị vào toàn bộ quy trình cốt lõi.",
+        "B": "Triển khai pilot tràn lan thiếu định hướng và không đo lường được ROI.",
+        "C": "Có quy định chặt chẽ về AI Governance và ngân sách phân bổ rõ ràng.",
+        "D": "Quy trình làm việc mặc định được tối ưu hóa liên tục bằng các mô hình LLM."
+      },
+      "answer": "B",
+      "explanation": "Doanh nghiệp có mức trưởng thành AI thấp thường bị FOMO, dẫn đến việc chạy thử nghiệm (pilot) tràn lan khắp nơi nhưng không có chiến lược, không đo được hiệu quả tài chính.",
+      "hints": [
+        "Nghĩ về sự thiếu cấu trúc và tính tự phát trong các doanh nghiệp mới bắt đầu.",
+        "Tình trạng thử nghiệm nhiều nhưng không tạo ra giá trị bền vững.",
+        "Đáp án chỉ ra việc triển khai pilot tràn lan thiếu định hướng và không đo được ROI."
+      ],
+      "concepts": [
+        "d23-t1-change-adoption"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Quy trình thiết kế lại workflow tích hợp AI ('Workflow AI Insertion') yêu cầu xác định yếu tố nào sau đây trước tiên?",
+      "options": {
+        "A": "Lựa chọn nhà cung cấp GPU để thuê máy chủ đám mây giá rẻ.",
+        "B": "Chọn ra các nhân viên xuất sắc nhất để thành lập đội ngũ Champions.",
+        "C": "Xác định rõ các bước công việc hiện tại (As-Is) trước khi vẽ quy trình mới (To-Be).",
+        "D": "Mua bản quyền các công cụ như Cursor hoặc GitHub Copilot cho toàn bộ kỹ sư."
+      },
+      "answer": "C",
+      "explanation": "Để tích hợp AI thành công vào workflow, nhóm dự án phải mô tả chính xác quy trình hiện tại (As-Is) để tìm ra điểm nghẽn và cơ hội chèn AI, trước khi thiết kế quy trình tương lai (To-Be).",
+      "hints": [
+        "Nghĩ về phương pháp luận phân tích quy trình nghiệp vụ kinh điển.",
+        "So sánh trạng thái hiện tại (As-Is) và trạng thái tương lai (To-Be).",
+        "Đáp án là xác định rõ các bước công việc hiện tại trước khi vẽ quy trình mới."
+      ],
+      "concepts": [
+        "d23-t1-change-adoption"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Khi xây dựng Dashboard đo lường, chỉ số nào sau đây được coi là 'Outcome Metric' đại diện cho giá trị thực sự?",
+      "options": {
+        "A": "Thời gian hoàn thành một nghiệp vụ (Cycle Time) giảm đáng kể.",
+        "B": "Số lượng câu lệnh Prompt được thực thi thành công mỗi tuần.",
+        "C": "Số giờ tham gia các lớp học đào tạo kỹ năng AI của nhân viên.",
+        "D": "Số lượng ticket hỗ trợ kỹ thuật được chatbot trả lời tự động."
+      },
+      "answer": "A",
+      "explanation": "Cycle Time giảm là một 'Outcome Metric' phản ánh trực tiếp sự cải thiện năng suất lao động và giá trị kinh doanh, khác với các chỉ số hoạt động thô (output metrics) như prompt count hay training hours.",
+      "hints": [
+        "Phân biệt giữa kết quả kinh doanh thực tế (outcome) và sản phẩm đầu ra trung gian (output).",
+        "Chỉ số nào liên quan trực tiếp đến hiệu suất công việc và tiết kiệm chi phí.",
+        "Đáp án chính xác là thời gian hoàn thành nghiệp vụ (Cycle Time) giảm."
+      ],
+      "concepts": [
+        "d23-t1-change-adoption"
+      ]
+    }
+  ]
+}

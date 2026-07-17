@@ -1,0 +1,210 @@
+{
+  "id": "day23-t2-advanced",
+  "parent_id": "day23-rag-data",
+  "topic_title": "Day 23: Monitoring & Observability Stack",
+  "title": "Phần 3: Sampling Math, Data Drift & Burn-Rate Alerting Nâng Cao",
+  "description": "Đánh giá nâng cao về tính toán sampling rate, phát hiện drift bằng Evidently, và thiết lập burn-rate alert theo error budget.",
+  "difficulty": "khó",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Tại sao việc chèn mã `user_id` hoặc `query_text` làm nhãn (labels) trong các metric Prometheus lại là một lỗi thiết kế nghiêm trọng?",
+      "options": {
+        "A": "Làm tăng đáng kể chi phí băng thông kết nối internet của máy chủ.",
+        "B": "Khiến Prometheus không thể tự động lưu trữ dữ liệu log vào Loki.",
+        "C": "Vi phạm trực tiếp các điều khoản bảo mật dữ liệu cá nhân PDPL.",
+        "D": "Gây ra bùng nổ cardinality, làm tràn bộ nhớ và sập Prometheus."
+      },
+      "answer": "D",
+      "explanation": "Chèn các nhãn có tính duy nhất cao (như user_id với hàng triệu người dùng) gây ra bùng nổ cardinality (số lượng time series duy nhất tăng vọt). Điều này làm tiêu hao lượng RAM khổng lồ và làm sập máy chủ Prometheus hoặc làm tăng hóa đơn SaaS (như case study $65M của Coinbase).",
+      "hints": [
+        "Nghĩ về định nghĩa của Cardinality trong cơ sở dữ liệu thời gian (TSDB).",
+        "Mỗi tổ hợp nhãn duy nhất tạo ra một time series mới cần được lưu trữ trong RAM.",
+        "Đáp án chỉ ra bùng nổ cardinality làm tràn bộ nhớ và sập Prometheus."
+      ],
+      "concepts": [
+        "d23-t2-observability-stack"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Trong distributed tracing, sự khác biệt lớn giữa Head-based Sampling và Tail-based Sampling là gì?",
+      "options": {
+        "A": "Head-based quyết định sample ở đầu request, Tail-based quyết định sau khi request xong.",
+        "B": "Head-based chạy trên máy chủ FastAPI, còn Tail-based bắt buộc chạy trên Prometheus server.",
+        "C": "Head-based chỉ thu thập metrics, còn Tail-based chỉ tập trung thu thập distributed traces.",
+        "D": "Head-based có tỷ lệ chính xác 100%, còn Tail-based có độ trễ hệ thống thấp hơn."
+      },
+      "answer": "A",
+      "explanation": "Head-based Sampling đưa ra quyết định lưu trữ trace ngay tại điểm bắt đầu request (phù hợp với việc lọc ngẫu nhiên đơn giản). Tail-based Sampling đợi toàn bộ trace hoàn tất, phân tích xem có lỗi hay chậm không rồi mới quyết định lưu (phù hợp để bắt các lỗi hiếm gặp).",
+      "hints": [
+        "Nghĩ về thời điểm (timing) đưa ra quyết định lưu trữ trace (sampling decision).",
+        "Phân biệt giữa đầu (Head) và đuôi (Tail) của vòng đời request.",
+        "Đáp án chỉ ra Head-based quyết định ở đầu request, Tail-based quyết định sau khi xong."
+      ],
+      "concepts": [
+        "d23-t2-observability-stack"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Doanh nghiệp thiết lập SLO tính khả dụng là 99.9% cho dịch vụ LLM. Nếu hệ thống gặp sự cố mất 10% lượng request trong 1 giờ, tỷ lệ Burn Rate của Error Budget là bao nhiêu?",
+      "options": {
+        "A": "Burn Rate bằng 10, tiêu thụ hết 5% ngân sách lỗi của năm.",
+        "B": "Burn Rate bằng 100, tiêu thụ hết khoảng 13.7% ngân sách lỗi tháng.",
+        "C": "Burn Rate bằng 1, hệ thống hoàn toàn nằm trong ngưỡng an toàn.",
+        "D": "Burn Rate bằng 1000, tiêu thụ sạch ngân sách lỗi của cả quý."
+      },
+      "answer": "B",
+      "explanation": "Với SLO 99.9%, ngân sách lỗi (Error Budget) cho phép là 0.1% lỗi. Sự cố xảy ra với tỷ lệ lỗi 10% trong 1 giờ có nghĩa là tỷ lệ lỗi thực tế gấp 100 lần ngân sách cho phép, tương đương Burn Rate = 100. Việc chạy với Burn Rate = 100 trong 1 giờ tiêu thụ: (1 giờ / 730 giờ tháng) * 100 = 13.7% error budget tháng.",
+      "hints": [
+        "Tính toán tỷ số giữa tỷ lệ lỗi thực tế (10%) và tỷ lệ lỗi cho phép (0.1%).",
+        "Burn Rate là hệ số nhân lượng ngân sách lỗi bị tiêu thụ so với tốc độ tiêu thụ tiêu chuẩn.",
+        "Đáp án chỉ ra Burn Rate bằng 100, tiêu thụ 13.7% ngân sách lỗi tháng."
+      ],
+      "concepts": [
+        "d23-t2-observability-stack"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Khi giám sát chất lượng embedding của một Vector Search pipeline, sự khác biệt giữa Data Drift và Concept Drift là gì?",
+      "options": {
+        "A": "Data Drift do lỗi cơ sở dữ liệu, còn Concept Drift do lỗi thuật toán cosine.",
+        "B": "Data Drift xảy ra trên dữ liệu số, còn Concept Drift xảy ra trên dữ liệu chuỗi.",
+        "C": "Data Drift là phân bổ đầu vào thay đổi, Concept Drift là mối quan hệ input-output thay đổi.",
+        "D": "Data Drift làm tăng độ trễ truy vấn, còn Concept Drift làm tăng chi phí API."
+      },
+      "answer": "C",
+      "explanation": "Data Drift (Covariate Shift) xảy ra khi phân bổ của dữ liệu đầu vào thay đổi theo thời gian. Concept Drift xảy ra khi ý nghĩa thực tế hoặc mối quan hệ giữa đầu vào và nhãn đầu ra thay đổi (ví dụ: hành vi mua sắm đổi hoàn toàn sau dịch bệnh).",
+      "hints": [
+        "Nghĩ về sự khác biệt giữa phân bổ phân phối đầu vào (x) và mô hình dự đoán (y|x).",
+        "Data drift thay đổi x; Concept drift thay đổi ý nghĩa của mối quan hệ giữa x và y.",
+        "Đáp án chỉ ra Data Drift là phân bổ đầu vào thay đổi, Concept Drift là quan hệ input-output đổi."
+      ],
+      "concepts": [
+        "d23-t2-observability-stack"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Để phát hiện sớm sự suy giảm chất lượng dữ liệu và drift trên các vector store (như Qdrant) trong production, kỹ sư nên thực hiện giải pháp nào?",
+      "options": {
+        "A": "Tự động thiết lập lại toàn bộ chỉ mục HNSW của Qdrant mỗi 2 giờ.",
+        "B": "Lập tức bật cảnh báo Slack nếu khoảng cách Euclidean của 1 query > 0.5.",
+        "C": "Sử dụng các thư viện như Evidently để chạy báo cáo thống kê drift định kỳ.",
+        "D": "Chuyển đổi toàn bộ vector store sang lưu trữ trên Spark Delta Lakehouse."
+      },
+      "answer": "C",
+      "explanation": "Để đo lường drift một cách khoa học trên production, kỹ sư sử dụng các thư viện chuyên dụng như Evidently hay Great Expectations để chạy báo cáo so sánh phân phối định kỳ giữa reference dataset và production dataset.",
+      "hints": [
+        "Cần một công cụ phân tích thống kê phân phối dữ liệu (như bài học có nhắc đến Evidently).",
+        "Tránh các cảnh báo tức thời dựa trên một truy vấn duy nhất vì gây nhiễu.",
+        "Đáp án nói về việc sử dụng các thư viện như Evidently để chạy báo cáo drift."
+      ],
+      "concepts": [
+        "d23-t2-observability-stack"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Trong thiết lập giám sát burn-rate alerting, tại sao phương pháp Multi-Window Multi-Burn-Rate lại được khuyến nghị hơn cảnh báo đơn?",
+      "options": {
+        "A": "Giúp giảm alert fatigue bằng cách phân biệt giữa sự cố nghiêm trọng và sự cố ngắn.",
+        "B": "Tự động điều chỉnh tần suất scrape dữ liệu của các máy chủ Prometheus.",
+        "C": "Cho phép vẽ nhiều đồ thị màu sắc khác nhau trên cùng một bảng Grafana.",
+        "D": "Giúp tiết kiệm chi phí băng thông khi gửi dữ liệu cảnh báo qua Alertmanager."
+      },
+      "answer": "A",
+      "explanation": "Cảnh báo Multi-window kết hợp cả cửa sổ ngắn (ví dụ: 5 phút để phản ứng nhanh) và cửa sổ dài (ví dụ: 1 giờ để đảm bảo không bị báo động giả vì đột biến ngắn), giúp giảm thiểu tối đa hiện tượng nhiễu cảnh báo (alert fatigue) cho đội on-call.",
+      "hints": [
+        "Nghĩ về cách cân bằng giữa tốc độ phản ứng cảnh báo và độ chính xác của cảnh báo.",
+        "Tránh việc hệ thống bắn alert liên tục khi có một lỗi nhỏ tự phục hồi sau 1 phút.",
+        "Đáp án chỉ ra việc giảm alert fatigue bằng phân biệt sự cố nghiêm trọng và sự cố ngắn."
+      ],
+      "concepts": [
+        "d23-t2-observability-stack"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Khi viết một tài liệu Postmortem (khắc phục sự cố) sau khi hệ thống LLM gặp lỗi tràn bộ nhớ VRAM, quy tắc văn hóa quan trọng nhất là gì?",
+      "options": {
+        "A": "Tìm ra chính xác kỹ sư đã viết dòng code lỗi để trừ lương phạt cảnh cáo.",
+        "B": "Blameless postmortem – không đổ lỗi cá nhân, tập trung vào lỗi quy trình hệ thống.",
+        "C": "Che giấu thông tin sự cố để tránh ảnh hưởng đến hình ảnh của doanh nghiệp.",
+        "D": "Lập tức xóa bỏ toàn bộ file log của sự cố để dọn dẹp bộ nhớ cho máy chủ."
+      },
+      "answer": "B",
+      "explanation": "Văn hóa Postmortem hiện đại nhấn mạnh nguyên tắc Blameless (không đổ lỗi). Mục tiêu là tìm ra lỗ hổng quy trình hoặc thiết kế kỹ thuật để ngăn chặn sự cố lặp lại, thay vì trừng phạt cá nhân.",
+      "hints": [
+        "Nghĩ về văn hóa làm việc và an toàn tâm lý của các kỹ sư trong tổ chức.",
+        "Mục đích của postmortem là học hỏi từ sai lầm của hệ thống.",
+        "Đáp án có chứa cụm từ 'Blameless postmortem'."
+      ],
+      "concepts": [
+        "d23-t2-observability-stack"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Khi cân nhắc giữa giải pháp Observability tự vận hành (Self-hosted: Prometheus, Grafana, Loki) và SaaS (Datadog), trade-off chính là gì?",
+      "options": {
+        "A": "SaaS có chi phí hạ tầng máy chủ lớn hơn, còn self-hosted tốn nhiều chi phí API.",
+        "B": "SaaS yêu cầu viết code cấu hình YAML phức tạp, còn self-hosted thì tự động hoàn toàn.",
+        "C": "Self-hosted tiết kiệm tiền bản quyền nhưng tốn công vận hành và rủi ro tự sập.",
+        "D": "Self-hosted không hỗ trợ vẽ đồ thị phân vị P99, còn SaaS hỗ trợ 100%."
+      },
+      "answer": "C",
+      "explanation": "Self-hosted (tự cài) giúp tiết kiệm chi phí license phần mềm ban đầu nhưng đòi hỏi đội ngũ kỹ sư tốn nhiều thời gian và công sức để duy trì, vận hành và mở rộng quy mô khi dữ liệu tăng lớn.",
+      "hints": [
+        "Xem xét các yếu tố về chi phí trực tiếp (license) và chi phí gián tiếp (công sức nhân sự).",
+        "Rủi ro khi tự quản lý các cụm lưu trữ log/metric khổng lồ.",
+        "Đáp án chỉ ra self-hosted tiết kiệm tiền bản quyền nhưng tốn công vận hành."
+      ],
+      "concepts": [
+        "d23-t2-observability-stack"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Để giảm thiểu chi phí lưu trữ log (Loki) khổng lồ trên production mà không làm mất thông tin quan trọng khi gỡ lỗi, giải pháp nào là tối ưu?",
+      "options": {
+        "A": "Thiết lập retention policy ngắn cho log bình thường và retention dài cho log lỗi.",
+        "B": "Tắt tính năng ghi log của ứng dụng, chỉ bật lên khi có sự cố xảy ra.",
+        "C": "Chuyển hướng toàn bộ log sang lưu trữ cục bộ trên đĩa cứng của máy chủ GPU.",
+        "D": "Sử dụng các thuật toán nén ZIP để nén thủ công các tệp log mỗi ngày."
+      },
+      "answer": "A",
+      "explanation": "Bằng cách thiết lập retention policy phân cấp (ví dụ: log INFO lưu 3 ngày, log ERROR/WARN lưu 30 ngày), doanh nghiệp có thể tiết kiệm tới 70% chi phí lưu trữ mà vẫn đảm bảo dữ liệu phục vụ điều tra sự cố.",
+      "hints": [
+        "Nghĩ về cách tối ưu hóa chính sách lưu giữ dữ liệu (retention policy).",
+        "Lọc và giữ lại những log có giá trị chẩn đoán cao lâu hơn log thông thường.",
+        "Đáp án nói về việc thiết lập retention policy ngắn cho log thường và dài cho log lỗi."
+      ],
+      "concepts": [
+        "d23-t2-observability-stack"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Khi thiết lập cảnh báo dựa trên SLO, tại sao việc chỉ cảnh báo dựa trên ngưỡng tĩnh (ví dụ: Latency > 2s) lại không tối ưu cho môi trường production?",
+      "options": {
+        "A": "Vì nó gây ra alert fatigue khi có các đột biến trễ ngắn tự phục hồi ngay lập tức.",
+        "B": "Vì Prometheus không hỗ trợ viết các câu lệnh so sánh lớn hơn (> 2s) trong alert rules.",
+        "C": "Vì các máy chủ GPU NVIDIA không thể báo cáo metrics nếu latency vượt quá 2 giây.",
+        "D": "Vì ngưỡng tĩnh làm tăng dung lượng lưu trữ time series của máy chủ lên gấp đôi."
+      },
+      "answer": "A",
+      "explanation": "Cảnh báo ngưỡng tĩnh rất dễ gây nhiễu (alert fatigue) vì các đột biến tải ngắn (latency spike trong 5-10 giây) xảy ra thường xuyên và tự phục hồi mà không cần kỹ sư can thiệp. Cảnh báo burn-rate dựa trên cửa sổ thời gian giải quyết triệt để lỗi này.",
+      "hints": [
+        "Nghĩ về tính ổn định của hệ thống và việc giảm thiểu số lượng cuộc gọi đánh thức kỹ sư ban đêm.",
+        "Spikes ngắn không tiêu thụ đáng kể error budget nhưng lại kích hoạt alert tĩnh ngay lập tức.",
+        "Đáp án chỉ ra việc gây ra alert fatigue khi có các đột biến trễ ngắn tự phục hồi."
+      ],
+      "concepts": [
+        "d23-t2-observability-stack"
+      ]
+    }
+  ]
+}

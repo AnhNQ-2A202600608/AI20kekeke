@@ -1,0 +1,210 @@
+{
+  "id": "day19-t3-basics",
+  "parent_id": "day19-agent-builder",
+  "topic_title": "Day 19: GraphRAG & Knowledge Graphs",
+  "title": "Phần 1: Điểm Nghẽn Của Flat RAG & Nền Tảng Đồ Thị Tri Thức",
+  "description": "Đánh giá kiến thức cơ bản về các loại câu hỏi khiến flat RAG thất bại, cấu trúc bộ ba Triples (Subject-Predicate-Object), và so sánh GraphRAG vs Vector RAG.",
+  "difficulty": "dễ",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Giới hạn lớn nhất của bộ tìm kiếm vector phẳng (Flat RAG) khi xử lý câu hỏi quan hệ đa bước là gì?",
+      "options": {
+        "A": "Không thể tự động liên kết các thực thể nằm ở nhiều tài liệu khác nhau.",
+        "B": "Tốc độ phản hồi quá chậm trễ làm ảnh hưởng trải nghiệm của người dùng.",
+        "C": "Không hỗ trợ nén nhỏ kích thước của các tệp tin dữ liệu thô.",
+        "D": "Mô hình ngôn ngữ lớn không thể đọc được tiếng Việt có dấu đó."
+      },
+      "answer": "A",
+      "explanation": "Flat RAG chỉ trích xuất các chunks độc lập dựa trên cosine similarity của câu hỏi, không thể kết nối hoặc duyệt qua các liên kết thực thể trải rộng qua nhiều tài liệu.",
+      "hints": [
+        "Hãy nghĩ đến việc bạn có ba trang tài liệu riêng lẻ nhưng bộ tìm kiếm không thể tham chiếu chéo chúng.",
+        "Các chunks này thiếu đi sợi dây liên kết cấu trúc để kết nối thông tin.",
+        "Đáp án chính xác là không thể liên kết các thực thể ở nhiều tài liệu khác nhau."
+      ],
+      "concepts": [
+        "d19-t3-graphrag"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Cấu trúc cơ bản của một bộ ba (Triple) trong Knowledge Graph bao gồm những phần phần nào?",
+      "options": {
+        "A": "Bao gồm Subject, Predicate và Object liên kết chặt chẽ với nhau thành bộ ba.",
+        "B": "Bao gồm tên cột, kiểu dữ liệu và giá trị lưu trữ trong bảng.",
+        "C": "Bao gồm địa chỉ IP, cổng kết nối và giao thức mạng máy chủ.",
+        "D": "Bao gồm tên file, đường dẫn tuyệt đối và dung lượng của tệp tin."
+      },
+      "answer": "A",
+      "explanation": "Đơn vị cơ bản xây dựng nên đồ thị tri thức là bộ ba (Triple) gồm Subject (chủ thể) - Predicate (quan hệ/vị ngữ) - Object (tân ngữ).",
+      "hints": [
+        "Đây là cấu trúc nguyên tử cơ bản để biểu diễn tri thức dưới dạng ngữ pháp.",
+        "Ví dụ: (Sam Altman) -> [CEO_OF] -> (OpenAI).",
+        "Đáp án đúng là bao gồm Subject, Predicate và Object."
+      ],
+      "concepts": [
+        "d19-t3-graphrag"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Trong khái niệm Knowledge Graph, thành phần Cạnh (Edge) đại diện cho điều gì?",
+      "options": {
+        "A": "Là một node đại diện cho một đối tượng cụ thể trong hệ thống.",
+        "B": "Mối quan hệ có nhãn kết nối giữa hai thực thể trong đồ thị.",
+        "C": "Thuộc tính đính kèm mô tả chi tiết cho từng đối tượng riêng biệt.",
+        "D": "Đường dẫn tuyệt đối dẫn đến file Parquet lưu trữ dữ liệu thô."
+      },
+      "answer": "B",
+      "explanation": "Cạnh (Edge) trong đồ thị tri thức biểu diễn mối quan hệ (relationship/predicate) có định hướng và nhãn giữa hai thực thể (Nodes).",
+      "hints": [
+        "Nó kết nối các đỉnh của đồ thị và chỉ ra cách chúng tương tác với nhau.",
+        "Ví dụ như mối quan hệ 'DEVELOPED' hay 'FOUNDED_BY'.",
+        "Đáp án là mối quan hệ có nhãn kết nối hai thực thể trong đồ thị."
+      ],
+      "concepts": [
+        "d19-t3-graphrag"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Trong khái niệm Knowledge Graph, thành phần Đỉnh (Node) đại diện cho điều gì?",
+      "options": {
+        "A": "Mối quan hệ có hướng kết nối giữa các đối tượng khác nhau trong đó.",
+        "B": "Thực thể đại diện cho một đối tượng cụ thể hoặc một khái niệm.",
+        "C": "File JSON lưu trữ cấu trúc trắc nghiệm của toàn bộ bộ đề.",
+        "D": "Khoảng cách cosine giữa hai câu văn bản thô được trích xuất ra."
+      },
+      "answer": "B",
+      "explanation": "Đỉnh (Node) biểu diễn cho một thực thể (Entity) cụ thể như con người, tổ chức, địa điểm hoặc một khái niệm học thuật.",
+      "hints": [
+        "Đây là các điểm nút chứa các danh từ chính trong hệ thống đồ thị.",
+        "Ví dụ như 'OpenAI', 'Sam Altman' hay 'GPT-4'.",
+        "Đáp án là thực thể đại diện cho đối tượng cụ thể hoặc khái niệm."
+      ],
+      "concepts": [
+        "d19-t3-graphrag"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Điểm khác biệt cốt lõi về nguyên lý hoạt động giữa Vector RAG và GraphRAG là gì?",
+      "options": {
+        "A": "Vector RAG tìm kiếm trên đồ thị, GraphRAG tìm kiếm trên các văn bản.",
+        "B": "Vector RAG dựa trên độ tương đồng, GraphRAG dựa trên kết nối cấu trúc.",
+        "C": "Cả hai phương pháp đều sử dụng cùng một cấu trúc cơ sở dữ liệu.",
+        "D": "GraphRAG chạy nhanh hơn nhiều và tốn ít chi phí token hơn Vector RAG."
+      },
+      "answer": "B",
+      "explanation": "Vector RAG tìm kiếm dựa trên độ tương đồng ngữ nghĩa (semantic similarity), còn GraphRAG tìm kiếm dựa trên các liên kết cấu trúc đồ thị giữa các thực thể.",
+      "hints": [
+        "Một bên so khớp khoảng cách vector, một bên duyệt qua các liên kết node-edge-node.",
+        "Hãy liên tưởng đến sự khác nhau giữa tìm từ khóa trên trang web và đọc bản đồ tư duy.",
+        "Đáp án là Vector RAG dựa trên độ tương đồng còn GraphRAG dựa vào kết nối cấu trúc."
+      ],
+      "concepts": [
+        "d19-t3-graphrag"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Trong trường hợp nào hệ thống RAG phẳng (Flat RAG) vẫn được ưu tiên lựa chọn hơn GraphRAG?",
+      "options": {
+        "A": "Khi cần trả lời các câu hỏi so sánh giữa nhiều tài liệu.",
+        "B": "Khi dữ liệu đầu vào chứa nhiều mối quan hệ phức tạp giữa các node.",
+        "C": "Cho các câu hỏi tìm kiếm sự thật đơn giản trong một tài liệu.",
+        "D": "Khi bạn không có kết nối internet để gọi API các mô hình lớn."
+      },
+      "answer": "C",
+      "explanation": "Với các câu hỏi tra cứu sự thật đơn giản (single-doc factoid), Flat RAG nhanh hơn, rẻ hơn và hiệu quả hơn hẳn so với việc xây dựng và duyệt đồ thị phức tạp.",
+      "hints": [
+        "Hãy nghĩ đến những câu hỏi đơn giản như 'Dự án X được bắt đầu vào năm nào?'.",
+        "Chúng ta chỉ cần quét một đoạn văn bản chứa đúng từ khóa đó là trả lời được.",
+        "Đáp án là các câu hỏi tìm kiếm sự thật đơn giản trong phạm vi một tài liệu."
+      ],
+      "concepts": [
+        "d19-t3-graphrag"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Trong bộ ba (Subject, Predicate, Object), thành phần 'Subject' đóng vai trò gì?",
+      "options": {
+        "A": "Thuộc tính đính kèm mô tả chi tiết cho mối quan hệ đó.",
+        "B": "Tên của bảng dữ liệu quan hệ chứa toàn bộ thông tin chung.",
+        "C": "Thực thể chủ thể bắt đầu của một mối quan hệ trong đồ thị.",
+        "D": "Mô hình ngôn ngữ lớn được sử dụng để trích xuất các bộ ba."
+      },
+      "answer": "C",
+      "explanation": "Subject là thực thể chủ thể khởi đầu của mối quan hệ hướng đến Object (tân ngữ) trong một Triple.",
+      "hints": [
+        "Trong sơ đồ (An) -> [là bạn của] -> (Bình), An đóng vai trò gì?",
+        "Đây là nút gốc phát ra mũi tên mối quan hệ trong đồ thị có hướng.",
+        "Đáp án là thực thể chủ thể bắt đầu của mối quan hệ trong đồ thị."
+      ],
+      "concepts": [
+        "d19-t3-graphrag"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Tại sao Flat RAG thường thất bại ở các câu hỏi chủ đề toàn cục (Global Thematic)?",
+      "options": {
+        "A": "Vì Flat RAG không hỗ trợ tìm kiếm các từ đồng nghĩa.",
+        "B": "Vì nó tốn quá nhiều dung lượng bộ nhớ đệm khi xử lý.",
+        "C": "Vì nó chỉ truy xuất các chunk cục bộ và thiếu cái nhìn toàn cảnh.",
+        "D": "Vì mô hình ngôn ngữ lớn tự động bỏ qua các câu hỏi đó."
+      },
+      "answer": "C",
+      "explanation": "Flat RAG chỉ lấy ra top-K chunks tương tự nhất, đại diện cho góc nhìn cục bộ. Nó không thể tổng hợp toàn bộ nội dung của hàng nghìn tài liệu để rút ra chủ đề chung.",
+      "hints": [
+        "Hãy nghĩ đến câu hỏi 'Các vấn đề chính được thảo luận trong toàn bộ bộ tài liệu là gì?'.",
+        "Bộ tìm kiếm vector chỉ lấy ra vài đoạn rời rạc, làm mất đi tính toàn cảnh của corpus.",
+        "Đáp án là do nó chỉ kéo lên các chunk cục bộ và thiếu góc nhìn toàn cảnh."
+      ],
+      "concepts": [
+        "d19-t3-graphrag"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Trong bộ ba (OpenAI, DEVELOPED, GPT-4), thành phần 'DEVELOPED' được phân loại là gì?",
+      "options": {
+        "A": "Là chủ thể thực hiện hành động trong không gian dữ liệu đó.",
+        "B": "Là thực thể tân ngữ nhận tác động của mối quan hệ chung.",
+        "C": "Là thuộc tính đính kèm mô tả kích thước của mô hình lớn.",
+        "D": "Là Predicate đại diện cho mối quan hệ giữa hai thực thể trên."
+      },
+      "answer": "D",
+      "explanation": "DEVELOPED là Predicate (quan hệ/vị ngữ) mô tả kết nối giữa hai thực thể OpenAI (Subject) và GPT-4 (Object).",
+      "hints": [
+        "Đây là phần mô tả hành động hoặc quan hệ nằm trên mũi tên liên kết.",
+        "Nó nối liền chủ ngữ và tân ngữ ngữ nghĩa trong một bộ ba tri thức.",
+        "Đáp án chính xác là Predicate đại diện cho mối quan hệ giữa hai thực thể."
+      ],
+      "concepts": [
+        "d19-t3-graphrag"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Lợi ích lớn nhất của GraphRAG so với Flat RAG xét về khả năng suy luận (reasoning) là gì?",
+      "options": {
+        "A": "Tự động sửa lỗi chính tả trong câu hỏi của người dùng hệ thống.",
+        "B": "Giảm thiểu tối đa chi phí gọi API của các mô hình ngôn ngữ.",
+        "C": "Không cần sử dụng bất kỳ cơ sở dữ liệu nào để lưu trữ.",
+        "D": "Cho phép duyệt đồ thị đa bước để suy luận quan hệ chính xác."
+      },
+      "answer": "D",
+      "explanation": "Đồ thị liên kết thực thể cho phép hệ thống thực hiện duyệt đồ thị (graph traversal) qua nhiều bước (multi-hop) để suy luận ra các mối quan hệ ẩn.",
+      "hints": [
+        "Hãy nghĩ đến việc trả lời câu hỏi bắc cầu: An là bạn Bình, Bình là bạn Cường.",
+        "Đồ thị giúp ta dễ dàng lần theo các cạnh để tìm ra An và Cường có mối liên kết.",
+        "Đáp án đúng là cho phép duyệt đồ thị đa bước để suy luận quan hệ chính xác."
+      ],
+      "concepts": [
+        "d19-t3-graphrag"
+      ]
+    }
+  ]
+}

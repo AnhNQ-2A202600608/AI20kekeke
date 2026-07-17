@@ -1,0 +1,210 @@
+{
+  "id": "day14-basics",
+  "parent_id": "day14",
+  "topic_title": "Day 14: AI Evaluation & Benchmarking",
+  "title": "Phần 1: Nền tảng Đánh giá & Thiết kế Golden Dataset",
+  "description": "Kiểm tra kiến thức nền tảng về sự khác biệt giữa đánh giá GenAI và ML truyền thống, 4 chiều chất lượng đầu ra (Correctness, Relevance, Completeness, Coherence) và cách xây dựng bộ Golden Dataset chuẩn.",
+  "difficulty": "dễ",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Tại sao việc đánh giá chất lượng (evaluation) ứng dụng Generative AI lại phức tạp hơn nhiều so với mô hình Machine Learning truyền thống?",
+      "options": {
+        "A": "Vì chi phí để huấn luyện lại một mô hình Generative AI đắt hơn gấp hàng trăm lần.",
+        "B": "Vì các mô hình Generative AI chỉ chạy được trên các máy chủ đám mây của Microsoft Azure.",
+        "C": "Vì Generative AI hoạt động theo cơ chế ngẫu nhiên và không gian kết quả đầu ra là vô hạn.",
+        "D": "Vì các mô hình Generative AI không sử dụng bất kỳ hàm kích hoạt nào trong mạng nơ-ron."
+      },
+      "answer": "C",
+      "explanation": "ML truyền thống có nhãn cố định và không gian kết quả hữu hạn (phân loại n lớp, F1/Accuracy). GenAI mang tính stochastic (ngẫu nhiên, temp > 0) và đầu ra là ngôn ngữ tự nhiên mở rộng (open-ended), có nhiều cách viết câu trả lời đúng khác nhau.",
+      "hints": [
+        "Hãy so sánh đầu ra của một mô hình phân loại email spam (Spam/Not Spam) với đầu ra của một bot viết thơ tình.",
+        "Đại lượng nào có câu trả lời đúng là duy nhất, và đại lượng nào có nhiều câu trả lời đúng có cùng ý nghĩa nhưng dùng từ ngữ khác nhau?",
+        "Hãy chú ý tới tính chất ngẫu nhiên (stochastic) và độ mở (open-ended) của ngôn ngữ tự nhiên do mô hình sinh ra."
+      ],
+      "concepts": [
+        "d14-ai-evaluation"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Trong 4 chiều chất lượng đầu ra của AI Agent, chiều 'Correctness' (độ chính xác thực tế) tập trung đo lường khía cạnh nào sau đây?",
+      "options": {
+        "A": "Đo lường tốc độ phản hồi của mô hình và số lượng từ được tạo ra trên mỗi giây xử lý.",
+        "B": "Đo lường độ xác thực của thông tin và kiểm tra xem có xảy ra hiện tượng ảo giác hay không.",
+        "C": "Đo lường mức độ thân thiện của giao diện người dùng khi hiển thị kết quả hội thoại đầu ra.",
+        "D": "Đo lường số lượng tài nguyên CPU hệ thống tiêu thụ trong suốt quá trình xử lý câu hỏi đó."
+      },
+      "answer": "B",
+      "explanation": "Correctness tập trung vào việc xác minh xem các thông tin, dữ kiện trong câu trả lời của Agent có chính xác về mặt logic/thực tế hay không, và loại trừ hiện tượng hallucination (ảo giác).",
+      "hints": [
+        "Hãy liên hệ từ 'Correctness' với khái niệm 'Đúng sự thật' trong logic và khoa học dữ liệu.",
+        "Mục tiêu là phát hiện xem mô hình có bịa đặt ra các thông tin sai lệch so với nguồn tài liệu thực tế hay không.",
+        "Tìm phương án tập trung vào tính xác thực của thông tin đầu ra và sự vắng mặt của lỗi ảo giác."
+      ],
+      "concepts": [
+        "d14-ai-evaluation"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Một câu trả lời của AI Agent được đánh giá là đạt điểm cao về chiều 'Relevance' (độ phù hợp) khi nào?",
+      "options": {
+        "A": "Khi nội dung trả lời giải quyết trực tiếp câu hỏi người dùng và không chứa thông tin lạc đề.",
+        "B": "Khi nội dung trả lời có chứa các mã nguồn lập trình bằng ngôn ngữ Python hoặc Javascript.",
+        "C": "Khi nội dung trả lời được dịch tự động sang tối thiểu là 3 ngôn ngữ quốc tế khác nhau.",
+        "D": "Khi nội dung trả lời sử dụng các thuật ngữ chuyên ngành có độ phức tạp kỹ thuật rất cao."
+      },
+      "answer": "A",
+      "explanation": "Relevance (Độ phù hợp) phản ánh mức độ tập trung của câu trả lời vào đúng trọng tâm câu hỏi của người dùng, không bị lan man, dài dòng hoặc chứa thông tin không liên quan.",
+      "hints": [
+        "Nếu người dùng hỏi 'Thời tiết hôm nay thế nào?' và bot trả lời về lịch sử của chiếc nhiệt kế, câu trả lời đó có ích không?",
+        "Mức độ Relevance đo lường khả năng bám sát chủ đề và tính hữu ích trực tiếp của câu trả lời đối với yêu cầu của người dùng.",
+        "Hãy chọn phương án nhấn mạnh việc giải quyết đúng trọng tâm và loại bỏ thông tin lạc đề."
+      ],
+      "concepts": [
+        "d14-ai-evaluation"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Chiều chất lượng 'Completeness' (độ đầy đủ) của câu trả lời từ AI Agent được định nghĩa như thế nào?",
+      "options": {
+        "A": "Câu trả lời đã được mô hình tự động kiểm tra lỗi cú pháp chính tả trước khi phản hồi.",
+        "B": "Câu trả lời đã được lưu trữ an toàn trong lịch sử trò chuyện của cơ sở dữ liệu.",
+        "C": "Câu trả lời đã được dịch sang định dạng tài liệu PDF để tải về máy tính cục bộ.",
+        "D": "Câu trả lời đã cung cấp đầy đủ các chi tiết cần thiết để giải quyết trọn vẹn yêu cầu."
+      },
+      "answer": "D",
+      "explanation": "Completeness (Độ đầy đủ) đo lường xem câu trả lời đã bao phủ toàn bộ các khía cạnh và câu hỏi phụ có trong prompt của người dùng chưa, tránh việc trả lời thiếu ý hoặc bỏ sót bước xử lý.",
+      "hints": [
+        "Hãy nghĩ tới tình huống người dùng gửi một câu hỏi gồm 3 ý nhỏ, nhưng mô hình chỉ trả lời được 1 ý đầu tiên.",
+        "Độ đầy đủ yêu cầu phản hồi của Agent phải giải quyết trọn vẹn (end-to-end) tất cả các yêu cầu được đưa ra.",
+        "Tìm câu trả lời mô tả việc cung cấp đầy đủ chi tiết cần thiết để không bỏ sót thông tin giải pháp."
+      ],
+      "concepts": [
+        "d14-ai-evaluation"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Đặc tính nào sau đây mô tả rõ nhất chiều chất lượng 'Coherence' (độ mạch lạc) của văn bản do mô hình ngôn ngữ sinh ra?",
+      "options": {
+        "A": "Văn bản sử dụng nhiều định dạng Markdown như in đậm, in nghiêng và các bảng biểu số liệu.",
+        "B": "Văn bản có cấu trúc lập luận logic, các câu liên kết chặt chẽ và dễ đọc hiểu đối với người dùng.",
+        "C": "Văn bản có tổng dung lượng từ khóa vượt quá giới hạn cửa sổ ngữ cảnh đầu vào của mô hình.",
+        "D": "Văn bản chỉ chứa các câu khẳng định ngắn gọn và không sử dụng bất kỳ liên từ chuyển ý nào."
+      },
+      "answer": "B",
+      "explanation": "Coherence (Độ mạch lạc) đánh giá tính cấu trúc, tính logic dòng chảy ý tưởng, khả năng kết nối giữa các câu và đoạn văn để tạo nên một phản hồi dễ đọc, dễ hiểu.",
+      "hints": [
+        "Một văn bản có các câu đúng ngữ pháp nhưng không liên quan gì đến nhau thì có được coi là mạch lạc không?",
+        "Độ mạch lạc phản ánh dòng chảy logic xuyên suốt câu trả lời giúp người đọc không bị đứt đoạn tư duy.",
+        "Hãy tìm phương án đề cập đến cấu trúc lập luận logic và sự liên kết chặt chẽ giữa các câu văn."
+      ],
+      "concepts": [
+        "d14-ai-evaluation"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "'Golden Dataset' trong quy trình đánh giá ứng dụng Generative AI đóng vai trò là thành phần nào sau đây?",
+      "options": {
+        "A": "Bộ dữ liệu chứa mã nguồn cấu hình các tham số giải mã của mô hình ngôn ngữ lớn ở prod.",
+        "B": "Bộ dữ liệu chứa toàn bộ các prompt tấn công injection được dùng để phá vỡ hàng rào bảo mật.",
+        "C": "Bộ dữ liệu chứa các câu hỏi kiểm thử được thiết kế thủ công kèm câu trả lời tham chiếu chuẩn.",
+        "D": "Bộ dữ liệu chứa các log lỗi hệ thống thu thập được từ máy chủ trong vòng một tháng qua."
+      },
+      "answer": "C",
+      "explanation": "Golden Dataset (Tập dữ liệu vàng) là tập hợp các test cases chất lượng cao (gồm inputs/queries và ground truth/expected answers) được xây dựng thủ công hoặc kiểm duyệt nghiêm ngặt để làm mốc chuẩn (ground truth) đánh giá mô hình.",
+      "hints": [
+        "Để biết mô hình trả lời đúng hay sai một cách khoa học, chúng ta cần so sánh kết quả của nó với cái gì?",
+        "Tập dữ liệu này đóng vai trò như một đề thi chuẩn kèm đáp án mẫu do các chuyên gia biên soạn sẵn.",
+        "Hãy chọn phương án mô tả các câu hỏi kiểm thử chất lượng cao đi kèm câu trả lời chuẩn đối sánh."
+      ],
+      "concepts": [
+        "d14-ai-evaluation"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Khi xây dựng một bộ Golden Dataset để benchmark hệ thống RAG chăm sóc khách hàng, tại sao kỹ sư nên áp dụng kỹ thuật Stratified Sampling (lấy mẫu phân tầng)?",
+      "options": {
+        "A": "Để giảm thiểu tối đa chi phí sử dụng API của các nhà cung cấp mô hình ngôn ngữ lớn.",
+        "B": "Để tự động tạo ra các câu hỏi kiểm thử có độ dài từ khóa giống nhau tuyệt đối ở đầu vào.",
+        "C": "Để loại bỏ hoàn toàn các câu hỏi có độ khó cao ra khỏi quy trình đánh giá chất lượng.",
+        "D": "Để đảm bảo bộ dữ liệu kiểm thử phân bổ đều theo các chủ đề hoặc loại câu hỏi thực tế."
+      },
+      "answer": "D",
+      "explanation": "Stratified Sampling giúp đảm bảo tập test case bao phủ đồng đều tất cả các nhóm kịch bản (ví dụ: 30% câu hỏi tra cứu hóa đơn, 40% câu hỏi lỗi kỹ thuật, 30% câu hỏi chính sách bảo hành), tránh việc tập test bị lệch về một chủ đề duy nhất.",
+      "hints": [
+        "Nếu bộ đề thi của bạn có 99% câu hỏi dễ và chỉ 1% câu hỏi khó, điểm số trung bình có phản ánh đúng năng lực thật sự không?",
+        "Lấy mẫu phân tầng đảm bảo tỷ lệ các nhóm câu hỏi trong tập kiểm thử tương đồng với tỷ lệ phân phối câu hỏi trong thực tế vận hành.",
+        "Hãy tìm phương án liên quan đến việc phân bổ đều theo các chủ đề hoặc danh mục câu hỏi."
+      ],
+      "concepts": [
+        "d14-ai-evaluation"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Một test case chuẩn trong bộ Golden Dataset dành cho hệ thống RAG tối thiểu phải bao gồm những trường dữ liệu nào?",
+      "options": {
+        "A": "Tên của lập trình viên thiết kế hệ thống, thời gian chạy kiểm thử, và mã lỗi HTTP phản hồi.",
+        "B": "Câu hỏi đầu vào (Query), tài liệu ngữ cảnh (Context), và câu trả lời mong đợi (Ground Truth).",
+        "C": "Địa chỉ IP của máy chủ chạy mô hình, loại card đồ họa GPU, và tổng dung lượng bộ nhớ RAM.",
+        "D": "Tên của mô hình ngôn ngữ lớn được gọi, giá tiền cho mỗi token, và thời gian chờ timeout."
+      },
+      "answer": "B",
+      "explanation": "Một RAG test case chuẩn cần: Query (đầu vào người dùng), Context (ngữ cảnh/tài liệu chuẩn cần truy xuất) và Ground Truth (câu trả lời chuẩn để đối chiếu chất lượng sinh của LLM).",
+      "hints": [
+        "RAG hoạt động bằng cách nhận câu hỏi của người dùng, tìm kiếm tài liệu tham chiếu, và viết ra câu trả lời.",
+        "Bộ dữ liệu vàng để kiểm tra RAG cần chứa đủ 3 thành phần tương ứng để chấm điểm khâu truy xuất (Retrieval) và khâu tạo câu hỏi (Generation).",
+        "Tìm phương án chứa bộ ba: câu hỏi người dùng, tài liệu nguồn tham chiếu và kết quả chuẩn mong muốn."
+      ],
+      "concepts": [
+        "d14-ai-evaluation"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Tại sao việc đưa các 'Edge Cases' (trường hợp biên) vào bộ Golden Dataset lại là bắt buộc đối với một quy trình đánh giá hệ thống AI nghiêm túc?",
+      "options": {
+        "A": "Vì chúng giúp phát hiện ra các hành vi lỗi thầm lặng hoặc sự suy giảm hiệu năng ở các truy vấn khó.",
+        "B": "Vì các trường hợp biên giúp hệ thống RAG tự động cập nhật cơ sở dữ liệu tri thức mới.",
+        "C": "Vì các trường hợp biên có thời gian xử lý nhanh nhất nên giúp giảm thiểu đáng kể thời gian test.",
+        "D": "Vì chúng giúp tối ưu hóa dung lượng lưu trữ của các tệp tin log trên môi trường Production."
+      },
+      "answer": "A",
+      "explanation": "Edge cases (ví dụ: câu hỏi cực dài, câu hỏi chứa ký tự lạ, câu hỏi không có tài liệu bổ trợ phù hợp) giúp kiểm thử độ bền (robustness) và phát hiện ra các lỗ hổng nghiêm trọng của Agent khi gặp điều kiện không lý tưởng.",
+      "hints": [
+        "Nếu hệ thống chỉ được kiểm thử bằng các câu hỏi thông thường và lý tưởng, điều gì sẽ xảy ra khi gặp các yêu cầu phức tạp ngoài thực tế?",
+        "Chúng ta cần tìm ra các điểm gãy, lỗi logic hoặc các phản hồi nguy hiểm của AI trước khi người dùng thực tế gặp phải.",
+        "Hãy chọn câu trả lời nhấn mạnh việc phát hiện các lỗi thầm lặng và sự suy giảm chất lượng ở các tình huống khó khăn biên."
+      ],
+      "concepts": [
+        "d14-ai-evaluation"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Điểm hạn chế lớn nhất của phương pháp đánh giá thủ công (Manual Evaluation) bởi con người khi kiểm thử AI Agent ở quy mô lớn là gì?",
+      "options": {
+        "A": "Tốn kém nhiều thời gian, chi phí nhân sự cao, và kết quả đánh giá mang tính chủ quan, khó lặp lại.",
+        "B": "Phương pháp này không thể phát hiện được các lỗi liên quan đến ảo giác của mô hình ngôn ngữ.",
+        "C": "Phương pháp này yêu cầu người đánh giá phải có trình độ chuyên môn thạc sĩ về khoa học dữ liệu.",
+        "D": "Nó chỉ có thể thực hiện được trên các mô hình ngôn ngữ lớn nguồn mở và không áp dụng được cho SaaS API."
+      },
+      "answer": "A",
+      "explanation": "Đánh giá bằng con người (human evaluation) là mốc chuẩn cao nhất nhưng không thể mở rộng (scale) được do chi phí đắt đỏ, tốc độ chậm, và tính không nhất quán (chủ quan của từng người chấm khác nhau).",
+      "hints": [
+        "Nếu bạn cần chạy kiểm thử 10.000 test cases sau mỗi lần thay đổi prompt, việc thuê một đội ngũ kỹ sư đọc và chấm điểm hàng ngày có khả thi?",
+        "Con người chấm điểm có luôn thống nhất ý kiến với nhau không? Kết quả của ngày hôm nay có dễ dàng tái lập lại vào ngày mai không?",
+        "Tập trung vào các yếu tố giới hạn về mặt thời gian, tiền bạc, tính chủ quan và tính lặp lại (reproducibility) của con người."
+      ],
+      "concepts": [
+        "d14-ai-evaluation"
+      ]
+    }
+  ]
+}

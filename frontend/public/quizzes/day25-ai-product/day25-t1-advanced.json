@@ -1,0 +1,210 @@
+{
+  "id": "day25-t1-advanced",
+  "parent_id": "day25-ai-product",
+  "topic_title": "Day 25: Launch Readiness",
+  "title": "Phần 3: Dependency Mapping, Critical Path & Investor Package",
+  "description": "Đánh giá kiến thức nâng cao về vẽ bản đồ phụ thuộc, phân tích đường Critical Path, chuẩn bị phương án Plan B cho rủi ro và đóng gói Investor Package.",
+  "difficulty": "khó",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Trong quản lý dự án phát triển sản phẩm AI, khái niệm đường găng (Critical Path) được định nghĩa là gì?",
+      "options": {
+        "A": "Là đường truyền dẫn dữ liệu mạng có tốc độ kết nối nhanh nhất giữa client và máy chủ.",
+        "B": "Là tập hợp các tính năng được người dùng đánh giá năm sao nhiều nhất trên giao diện sản phẩm.",
+        "C": "Là danh sách các thư viện mã nguồn Python có dung lượng lưu trữ nặng nhất trên ổ đĩa.",
+        "D": "Là chuỗi các nhiệm vụ phụ thuộc lẫn nhau có tổng thời gian thực hiện dài nhất của dự án."
+      },
+      "answer": "D",
+      "explanation": "Critical Path là chuỗi các nhiệm vụ phụ thuộc tuần tự có tổng thời gian dài nhất. Nó quyết định thời điểm sớm nhất có thể hoàn thành và ra mắt sản phẩm (launch date).",
+      "hints": [
+        "Hãy suy nghĩ về chuỗi công việc quyết định thời gian hoàn thành dự án.",
+        "Bất kỳ sự chậm trễ nào trên chuỗi này đều làm chậm ngày ra mắt sản phẩm.",
+        "Đáp án chính xác là chuỗi các nhiệm vụ phụ thuộc lẫn nhau có tổng thời gian dài nhất."
+      ],
+      "concepts": [
+        "d25-t1-launch-readiness"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Nếu một nhiệm vụ nằm trên đường găng (Critical Path) của dự án AI bị chậm trễ 3 ngày, ngày ra mắt sản phẩm (launch date) sẽ bị ảnh hưởng thế nào?",
+      "options": {
+        "A": "Sản phẩm vẫn được ra mắt đúng hạn nhờ vào cơ chế bù trừ tự động của máy chủ.",
+        "B": "Ngày ra mắt sản phẩm sẽ chỉ bị trễ tối đa là 1 ngày nhờ vào quỹ thời gian dự phòng.",
+        "C": "Ngày ra mắt sản phẩm sẽ bị chậm trễ chính xác là 3 ngày so với kế hoạch ban đầu.",
+        "D": "Dự án sẽ bị hủy bỏ hoàn toàn do không đáp ứng được yêu cầu của nhà đầu tư."
+      },
+      "answer": "C",
+      "explanation": "Nhiệm vụ trên Critical Path không có thời gian dự phòng (zero slack). Do đó, trễ 1 ngày trên Critical Path đồng nghĩa với việc trễ launch date đúng 1 ngày.",
+      "hints": [
+        "Đường găng là chuỗi quyết định trực tiếp tiến độ ra mắt sản phẩm.",
+        "Không có bất kỳ khoảng thời gian đệm (buffer time) nào cho các công việc trên đường này.",
+        "Đáp án chính xác là ngày ra mắt sản phẩm sẽ bị chậm trễ chính xác là 3 ngày."
+      ],
+      "concepts": [
+        "d25-t1-launch-readiness"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Điểm khác biệt lớn nhất của một nhiệm vụ không nằm trên đường găng (non-critical task) so với nhiệm vụ trên đường găng là gì?",
+      "options": {
+        "A": "Nhiệm vụ đó có một khoảng thời gian dự phòng (slack/buffer) để có thể trễ mà không ảnh hưởng launch.",
+        "B": "Nhiệm vụ đó hoàn toàn không cần viết mã nguồn mà chỉ cần lập kế hoạch trên giấy tờ.",
+        "C": "Nhiệm vụ đó bắt buộc phải do chính giám đốc công nghệ (CTO) trực tiếp thực hiện hoàn toàn.",
+        "D": "Nhiệm vụ đó không tốn bất kỳ chi phí token hay chi phí thuê máy chủ GPU nào của hệ thống."
+      },
+      "answer": "A",
+      "explanation": "Non-critical tasks có buffer time (slack). Chúng có thể bị trễ một khoảng thời gian nhất định (nằm trong giới hạn buffer) mà không làm dịch chuyển ngày hoàn thành cuối cùng của dự án.",
+      "hints": [
+        "Nghĩ về khái niệm thời gian đệm hay thời gian dự phòng trong quản lý dự án.",
+        "Nhiệm vụ này có thể linh hoạt về thời gian hoàn thành hơn so với nhiệm vụ đường găng.",
+        "Đáp án chính xác là nhiệm vụ đó có một khoảng thời gian dự phòng để có thể trễ."
+      ],
+      "concepts": [
+        "d25-t1-launch-readiness"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Ví dụ nào sau đây thể hiện một external dependency (sự phụ thuộc bên ngoài) có thể đe dọa trực tiếp đến sự sống còn của AI startup?",
+      "options": {
+        "A": "Thay đổi vị trí văn phòng làm việc của đội ngũ kỹ sư phát triển phần mềm trong công ty.",
+        "B": "Giới hạn băng thông (rate limit) hoặc việc thay đổi đột ngột chính sách API của OpenAI.",
+        "C": "Việc nâng cấp phiên bản hệ điều hành Windows của máy tính cá nhân các thành viên.",
+        "D": "Số lượng email phản hồi yêu cầu hỗ trợ kỹ thuật của khách hàng giảm đi trong tuần."
+      },
+      "answer": "B",
+      "explanation": "Chính sách API hoặc rate limit của các nhà cung cấp nền tảng (như OpenAI) là external dependency nguy hiểm. Nếu họ khóa API hoặc tăng giá đột ngột, sản phẩm của startup có thể ngừng hoạt động ngay lập tức.",
+      "hints": [
+        "Tìm kiếm yếu tố nằm ngoài tầm kiểm soát trực tiếp của startup nhưng có thể làm tê liệt dịch vụ.",
+        "Liên quan đến nguồn cung cấp công nghệ cốt lõi cho mô hình ngôn ngữ lớn.",
+        "Đáp án chính xác là giới hạn băng thông hoặc việc thay đổi đột ngột chính sách API."
+      ],
+      "concepts": [
+        "d25-t1-launch-readiness"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Khi thiết kế phương án Plan B cho các rủi ro phụ thuộc bên ngoài, tiêu chí nào là bắt buộc đối với giải pháp thay thế?",
+      "options": {
+        "A": "Phải có khả năng triển khai nhanh chóng (trong vòng 7 ngày) và ước lượng rõ ràng chi phí.",
+        "B": "Phải hoàn toàn miễn phí và không tốn thêm bất kỳ tài nguyên nhân sự nào của công ty.",
+        "C": "Phải được viết bằng ngôn ngữ lập trình khác biệt hoàn toàn so với mã nguồn hiện tại.",
+        "D": "Phải đảm bảo mang lại doanh số lớn gấp đôi so với phương án chạy chính thức ban đầu."
+      },
+      "answer": "A",
+      "explanation": "Plan B hiệu quả phải mang tính khả thi cao và triển khai được nhanh chóng (thường là trong 7 ngày) để cứu dự án khi worst-case xảy ra, kèm theo việc biết rõ chi phí phát sinh để chuẩn bị ngân sách.",
+      "hints": [
+        "Phương án dự phòng phải thực tế và có thể kích hoạt ngay lập tức khi xảy ra sự cố.",
+        "Tránh các kế hoạch dự phòng quá phức tạp tốn hàng tháng trời để thiết lập.",
+        "Đáp án chính xác là phải có khả năng triển khai nhanh chóng và ước lượng rõ ràng chi phí."
+      ],
+      "concepts": [
+        "d25-t1-launch-readiness"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Thành phần nào sau đây không thuộc bộ tài liệu Investor-Ready Package (Milestone 1) đóng gói 9 trang tiêu chuẩn?",
+      "options": {
+        "A": "Tài liệu phân tích Market Analysis và PRD mô tả các sản phẩm ở trang 2-5.",
+        "B": "Bảng tính toán mô hình tài chính Financial Model và Unit Economics ở tại trang 6-7.",
+        "C": "Bản in toàn bộ mã nguồn hệ thống pipeline dữ liệu ở tại trang phụ lục.",
+        "D": "Lộ trình sản phẩm Now/Next/Later cùng với sơ đồ Dependency Map ở các trang cuối cùng."
+      },
+      "answer": "C",
+      "explanation": "Investor-Ready Package là tài liệu gọi vốn hạt giống (Seed Round) dài 9 trang hướng tới nhà đầu tư kinh doanh. Nó không chứa mã nguồn chi tiết mà chỉ chứa PRD, Financial Model, Pitch Deck, Roadmap và Dependency Map.",
+      "hints": [
+        "Nhà đầu tư mạo hiểm quan tâm đến mô hình kinh doanh và chiến lược sản phẩm.",
+        "Họ không đọc code chi tiết trong các buổi gọi vốn ban đầu.",
+        "Đáp án chính xác là bản in toàn bộ mã nguồn của hệ thống pipeline dữ liệu."
+      ],
+      "concepts": [
+        "d25-t1-launch-readiness"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Tại sao các công việc liên quan đến Data Pipeline và Legal Compliance thường nằm trên đường găng (Critical Path) của sản phẩm AI?",
+      "options": {
+        "A": "Vì đây là những công việc có chi phí mua bản quyền phần mềm đắt đỏ nhất hệ thống.",
+        "B": "Vì chúng bắt buộc phải hoàn thành tuần tự và không thể khởi chạy sản phẩm nếu thiếu.",
+        "C": "Vì hai công việc này tốn nhiều dung lượng lưu trữ trên các ổ đĩa cứng của máy chủ.",
+        "D": "Vì chúng được thực hiện bởi những kỹ sư có mức lương cao nhất trong đội ngũ startup."
+      },
+      "answer": "B",
+      "explanation": "Dự án AI không thể vận hành nếu không có dữ liệu (Data Pipeline) và không thể ra mắt hợp pháp nếu vi phạm pháp luật (Compliance). Do đó, hai công việc này tạo ra các chốt chặn tuần tự, trực tiếp quyết định launch date.",
+      "hints": [
+        "Nghĩ về tính chất tiền đề bắt buộc trước khi sản phẩm có thể go-live.",
+        "Nếu thiếu dữ liệu sạch hoặc bị cấm hoạt động do vi phạm quyền riêng tư, sản phẩm không thể chạy.",
+        "Đáp án chính xác là vì chúng bắt buộc phải hoàn thành tuần tự và không thể khởi chạy."
+      ],
+      "concepts": [
+        "d25-t1-launch-readiness"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Mục đích cốt lõi của phần Twitter Pitch (thường đặt ở trang 1 của Investor Package) là gì?",
+      "options": {
+        "A": "Để liên kết trực tiếp tài khoản mạng xã hội Twitter của founder với hệ thống chatbot.",
+        "B": "Để đăng tải tự động các thông tin quảng cáo sản phẩm lên internet nhằm tìm kiếm user.",
+        "C": "Để chia sẻ mã nguồn mở của dự án cho cộng đồng lập trình viên cùng đóng góp ý kiến.",
+        "D": "Để tóm tắt giá trị cốt lõi của sản phẩm cực kỳ ngắn gọn và thu hút trong một câu."
+      },
+      "answer": "D",
+      "explanation": "Twitter Pitch là một thông điệp siêu ngắn (1 câu, dưới 280 ký tự) nhằm định nghĩa sản phẩm một cách ấn tượng nhất, giúp nhà đầu tư hiểu ngay startup đang làm gì trong 3 giây đầu tiên.",
+      "hints": [
+        "Đây là phần kiểm tra khả năng cô đọng giá trị cốt lõi của founder.",
+        "Nó đóng vai trò như một câu slogan gọi vốn đầy uy lực.",
+        "Đáp án chính xác là để tóm tắt giá trị cốt lõi của sản phẩm cực kỳ ngắn gọn."
+      ],
+      "concepts": [
+        "d25-t1-launch-readiness"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Khi xây dựng Dependency Map, việc founder phải viết rõ 'worst-case scenario' cho từng rủi ro nhằm mục đích gì?",
+      "options": {
+        "A": "Để hù dọa và ép buộc nhân viên kỹ thuật phải tăng ca làm việc ngoài giờ hành chính.",
+        "B": "Để chứng minh cho nhà đầu tư thấy dự án này quá nguy hiểm và không nên đầu tư tiền.",
+        "C": "Để chuẩn bị tâm lý và có phương án ứng phó chủ động trước khi thảm họa xảy ra thực tế.",
+        "D": "Để tự động kích hoạt cơ chế tự hủy của hệ thống máy chủ GPU nhằm bảo mật dữ liệu."
+      },
+      "answer": "C",
+      "explanation": "Việc viết rõ kịch bản xấu nhất (worst-case scenario) giúp startup không bị rơi vào trạng thái bất ngờ, hoảng loạn khi sự cố xảy ra, từ đó có sẵn Plan B để duy trì hoạt động liên tục.",
+      "hints": [
+        "Nghĩ về triết lý quản trị rủi ro 'hy vọng điều tốt nhất, chuẩn bị cho điều xấu nhất'.",
+        "Giúp doanh nghiệp sống sót qua các cú sốc bên ngoài như sập nguồn API.",
+        "Đáp án chính xác là để chuẩn bị tâm lý và có phương án ứng phó chủ động."
+      ],
+      "concepts": [
+        "d25-t1-launch-readiness"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Nhóm tài liệu nào sau đây trong Investor Package đóng vai trò chứng minh tính khả thi kinh tế (Unit Economics) của AI startup?",
+      "options": {
+        "A": "Bảng tính toán chi tiết LTV (giá trị trọn đời) và CAC (chi phí thu hút khách hàng).",
+        "B": "Sơ đồ vẽ bản đồ phụ thuộc hệ thống và các nhiệm vụ trên đường Critical Path.",
+        "C": "Tài liệu mô tả kiến trúc mô hình ngôn ngữ lớn và cách thức nén KV Cache của CPU.",
+        "D": "Bản khảo sát ý kiến khách hàng về mức độ hài lòng đối với giao diện UI của chatbot."
+      },
+      "answer": "A",
+      "explanation": "Unit Economics tập trung vào hiệu quả kinh tế trên mỗi đơn vị khách hàng, được đo lường cụ thể qua LTV, CAC, tỷ lệ Churn và thời gian thu hồi vốn (Payback Period) trong Financial Model.",
+      "hints": [
+        "Đây là các chỉ số tài chính cốt lõi chứng minh doanh nghiệp có lãi trên mỗi khách hàng.",
+        "Liên quan trực tiếp đến chi phí quảng cáo thu hút và giá trị doanh thu từ người dùng.",
+        "Đáp án chính xác là bảng tính toán chi tiết LTV và CAC."
+      ],
+      "concepts": [
+        "d25-t1-launch-readiness"
+      ]
+    }
+  ]
+}

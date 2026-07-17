@@ -1,0 +1,70 @@
+{
+  "assetSet": "learning-soils",
+  "description": "EduGap thin, low-detail soil progress strips for mastery seed cards. Use these as compact visual progress bars; do not place text inside the asset.",
+  "stages": [
+    {
+      "stage": "locked",
+      "label": "Sắp mở khóa",
+      "progressRange": "locked alias of 0%",
+      "png": "/learning-soils/soil-empty.png",
+      "webp": "/learning-soils/soil-empty.webp",
+      "usage": "Use for locked or unavailable learning items; visually identical to empty progress."
+    },
+    {
+      "stage": "empty",
+      "label": "Chưa học",
+      "progressRange": "0%",
+      "png": "/learning-soils/soil-empty.png",
+      "webp": "/learning-soils/soil-empty.webp",
+      "usage": "Use for 0% progress."
+    },
+    {
+      "stage": "early",
+      "label": "Mới nảy mầm",
+      "progressRange": "1-24%",
+      "png": "/learning-soils/soil-early.png",
+      "webp": "/learning-soils/soil-early.webp",
+      "usage": "Use for early progress with minimal sprouts."
+    },
+    {
+      "stage": "learning",
+      "label": "Đang học",
+      "progressRange": "25-49%",
+      "png": "/learning-soils/soil-learning.png",
+      "webp": "/learning-soils/soil-learning.webp",
+      "usage": "Use for active learning progress."
+    },
+    {
+      "stage": "growing",
+      "label": "Đang lớn",
+      "progressRange": "50-69%",
+      "png": "/learning-soils/soil-growing.png",
+      "webp": "/learning-soils/soil-growing.webp",
+      "usage": "Use for mid progress."
+    },
+    {
+      "stage": "strong",
+      "label": "Gần thành thạo",
+      "progressRange": "70-89%",
+      "png": "/learning-soils/soil-strong.png",
+      "webp": "/learning-soils/soil-strong.webp",
+      "usage": "Use for high progress and review fallback when a dedicated review soil is unavailable."
+    },
+    {
+      "stage": "mastered",
+      "label": "Thành thạo",
+      "progressRange": "90-100%",
+      "png": "/learning-soils/soil-mastered.png",
+      "webp": "/learning-soils/soil-mastered.webp",
+      "usage": "Use for mastered progress."
+    },
+    {
+      "stage": "review",
+      "label": "Cần ôn",
+      "progressRange": "review uses actual progress stage",
+      "png": "/learning-soils/soil-strong.png",
+      "webp": "/learning-soils/soil-strong.webp",
+      "usage": "Do not force a separate review strip; choose the visual by actual progress and show review state through the card border/badge."
+    }
+  ]
+}

@@ -37,7 +37,7 @@ export default function AuthPage() {
             <label>Mật khẩu<input type="password" placeholder="Tối thiểu 8 ký tự" autoComplete={mode === "login" ? "current-password" : "new-password"} /></label>
             {mode === "register" && <div className="form-row"><label>Lớp<select defaultValue="7"><option>6</option><option>7</option><option>8</option><option>9</option></select></label><label>Mục tiêu<select defaultValue="Nắm chắc kiến thức"><option>Nắm chắc kiến thức</option><option>Cải thiện điểm số</option><option>Thi học sinh giỏi</option></select></label></div>}
             {mode === "login" && <div className="form-assist"><label className="check-label"><input type="checkbox" /> Ghi nhớ đăng nhập</label><button type="button">Quên mật khẩu?</button></div>}
-            <Link className="primary-action" href="/hoc-tap">{mode === "login" ? "Vào workspace" : "Tạo lộ trình"}<span>→</span></Link>
+            <Link className="primary-action" href={mode === "login" ? "/hoc-tap" : "/onboarding"}>{mode === "login" ? "Vào workspace" : "Thiết lập lộ trình"}<span>→</span></Link>
           </form>
           <p className="auth-terms">Bằng cách tiếp tục, bạn đồng ý với Điều khoản sử dụng và Chính sách bảo mật.</p>
         </div>

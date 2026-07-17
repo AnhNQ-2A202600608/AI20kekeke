@@ -1,0 +1,210 @@
+{
+  "id": "day17-t1-advanced",
+  "parent_id": "day17-ai-product",
+  "topic_title": "Day 17: PRD & Product-Market Fit",
+  "title": "Phần 3: Cấu Trúc PRD, Giả Thuyết PMF & Stress-test bằng AI",
+  "description": "Đánh giá kiến thức nâng cao về cấu trúc tài liệu PRD, lập bảng giả thuyết PMF Scorecard, đo lường chỉ số Sean Ellis và sử dụng AI để phản biện PRD.",
+  "difficulty": "khó",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Sự khác biệt căn bản nhất giữa một tài liệu PRD (Product Requirements Document) và một tài liệu thiết kế kỹ thuật (System Design) là gì?",
+      "options": {
+        "A": "PRD định nghĩa 'Cái gì' và 'Tại sao'; thiết kế kỹ thuật định nghĩa 'Làm thế nào'.",
+        "B": "PRD do khách hàng viết; thiết kế kỹ thuật do đội ngũ kỹ sư viết hoàn toàn.",
+        "C": "PRD tập trung vào sơ đồ cơ sở dữ liệu; thiết kế kỹ thuật tập trung vào giao diện.",
+        "D": "PRD chỉ dùng để gọi vốn; thiết kế kỹ thuật được dùng để lập trình thực tế."
+      },
+      "answer": "A",
+      "explanation": "PRD là tài liệu đồng thuận tập trung vào bài toán kinh doanh, nhu cầu người dùng (What & Why), còn System Design giải quyết kiến trúc công nghệ (How).",
+      "hints": [
+        "Hãy nghĩ về vai trò của Product Manager (PM) so với Tech Lead trong dự án.",
+        "PM định hình hướng đi sản phẩm, trong khi Tech Lead quyết định giải pháp triển khai cụ thể.",
+        "Đáp án chỉ ra sự phân định giữa What/Why trong PRD và How trong thiết kế kỹ thuật."
+      ],
+      "concepts": [
+        "d17-t1-prd-pmf"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Khi đo lường Product-Market Fit (PMF) bằng chỉ số Sean Ellis, kết quả khảo sát tối thiểu bao nhiêu phần trăm người dùng trả lời 'Rất thất vọng' (Very disappointed) nếu sản phẩm biến mất thì được coi là đạt PMF?",
+      "options": {
+        "A": "Tối thiểu 40% số người dùng được khảo sát trả lời rất thất vọng khi sử dụng.",
+        "B": "Tối thiểu 50% số người dùng được khảo sát trả lời rất thất vọng khi sử dụng.",
+        "C": "Tối thiểu 30% số người dùng được khảo sát trả lời rất thất vọng khi sử dụng.",
+        "D": "Tối thiểu 60% số người dùng được khảo sát trả lời rất thất vọng khi sử dụng."
+      },
+      "answer": "A",
+      "explanation": "Theo phương pháp Sean Ellis, nếu có từ 40% người dùng trở lên cảm thấy 'Rất thất vọng' khi không được dùng sản phẩm nữa, sản phẩm đó có cơ hội lớn đạt PMF.",
+      "hints": [
+        "Con số này là một benchmark nổi tiếng trong giới tăng trưởng khởi nghiệp.",
+        "Nó nhỏ hơn một nửa số lượng người tham gia khảo sát nhưng đủ lớn để chứng minh nhu cầu bền vững.",
+        "Đáp án chính xác là cột mốc bốn mươi phần trăm (40%)."
+      ],
+      "concepts": [
+        "d17-t1-prd-pmf"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Tại sao việc 'Stress-test' tài liệu PRD bằng cách sử dụng AI với vai trò 'Challenger' (Kẻ phản biện) lại có giá trị lớn trước khi coding?",
+      "options": {
+        "A": "Giúp tự động chuyển đổi toàn bộ tài liệu PRD thành các mã nguồn lập trình hoàn chỉnh.",
+        "B": "Giúp phát hiện sớm các giả định ngầm định thiếu căn cứ và các điểm mù logic.",
+        "C": "Giúp ước tính chính xác 100% chi phí vận hành hạ tầng đám mây trong tương lai.",
+        "D": "Giúp thay thế hoàn toàn các buổi họp rà soát trực tiếp giữa PM và các kỹ sư."
+      },
+      "answer": "B",
+      "explanation": "Sử dụng AI đóng vai phản biện giúp chỉ ra các lỗi tư duy logic, giả định thiếu dữ liệu kiểm chứng và các lỗ hổng trong luồng nghiệp vụ của PRD.",
+      "hints": [
+        "Hãy nghĩ về việc một trợ lý ảo thông minh liên tục đặt ra các câu hỏi khó để thử thách bạn.",
+        "AI giúp phát hiện các điểm thiếu thực tế mà người viết thường vô tình bỏ qua.",
+        "Đáp án nhấn mạnh khả năng tìm kiếm điểm mù logic và các giả định không có căn cứ."
+      ],
+      "concepts": [
+        "d17-t1-prd-pmf"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Trong bảng 'Hypothesis Table' phục vụ kiểm chứng PMF, ba yếu tố cốt lõi bắt buộc phải được định nghĩa rõ ràng cho mỗi giả thuyết là gì?",
+      "options": {
+        "A": "Tên tính năng cần xây dựng, thời gian code dự kiến, và kỹ sư chịu trách nhiệm chính.",
+        "B": "Giả thuyết kiểm chứng, chỉ số đo lường (Metric), và ngưỡng thành công định lượng cụ thể đó.",
+        "C": "Mức độ hài lòng của sếp, chi phí mua API, và công nghệ cơ sở dữ liệu sử dụng.",
+        "D": "Phân khúc khách hàng mục tiêu, doanh thu tài chính kỳ vọng, và các chiến dịch truyền thông."
+      },
+      "answer": "B",
+      "explanation": "Một bảng giả thuyết chuẩn khoa học cần có: phát biểu giả thuyết rõ ràng, cách thức/chỉ số đo lường cụ thể và tiêu chí định lượng để kết luận giả thuyết đúng hay sai.",
+      "hints": [
+        "Hãy nghĩ về phương pháp khoa học thực nghiệm: Giả thuyết -> Đo lường -> Kết luận định lượng.",
+        "Yếu tố định lượng giúp tránh việc tự huyễn hoặc bản thân về kết quả test.",
+        "Đáp án bao gồm Giả thuyết, Chỉ số đo lường và Ngưỡng thành công định lượng."
+      ],
+      "concepts": [
+        "d17-t1-prd-pmf"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Theo tài liệu Day 17, một lỗi nghiêm trọng cần tránh khi viết phần 'User Stories' trong tài liệu PRD là gì?",
+      "options": {
+        "A": "Sử dụng cấu trúc câu tiêu chuẩn 'As a... I want to... So that...' để mô tả nhu cầu.",
+        "B": "Viết mô tả thiết kế cơ sở dữ liệu và thuật toán xử lý kỹ thuật vào câu chuyện.",
+        "C": "Phân loại câu chuyện của người dùng theo độ ưu tiên từ cao xuống thấp này.",
+        "D": "Liên kết trực tiếp từng câu chuyện của người với nỗi đau cụ thể của họ."
+      },
+      "answer": "B",
+      "explanation": "User Stories chỉ nên tập trung vào nhu cầu và giá trị của người dùng đứng từ góc độ nghiệp vụ, tuyệt đối không được chỉ định cách thực hiện về mặt kỹ thuật.",
+      "hints": [
+        "Hãy nhớ quy tắc PRD giải quyết 'What/Why', không giải quyết 'How'.",
+        "Việc lồng ghép thiết kế kỹ thuật vào User Story làm hạn chế không gian sáng tạo của kỹ sư.",
+        "Đáp án chỉ ra việc đưa chi tiết triển khai công nghệ vào mô tả câu chuyện người dùng."
+      ],
+      "concepts": [
+        "d17-t1-prd-pmf"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Chỉ số nào sau đây được coi là 'Metric chính xác nhất' để đánh giá Product-Market Fit cho một sản phẩm SaaS B2B?",
+      "options": {
+        "A": "Số lượng lượt tải ứng dụng hoặc số tài khoản đăng ký mới tăng trưởng nhanh.",
+        "B": "Điểm số đánh giá trung bình trên các kho ứng dụng trực tuyến đạt mức cao.",
+        "C": "Tỷ lệ duy trì sử dụng sản phẩm (Retention Rate) ổn định sau chu kỳ 3-6 tháng.",
+        "D": "Tổng số lượng tính năng mới được cập nhật và ra mắt người dùng mỗi tháng."
+      },
+      "answer": "C",
+      "explanation": "Retention Rate (tỷ lệ giữ chân người dùng) là thước đo trung thực nhất phản ánh giá trị lâu dài của sản phẩm; nếu tỷ lệ này đi ngang và ổn định ở mức cao, sản phẩm đã đạt PMF.",
+      "hints": [
+        "Hãy phân biệt các chỉ số ảo (vanity metrics) với các chỉ số thực tế phản ánh hành vi bền vững.",
+        "Sự trung thành và tiếp tục sử dụng sản phẩm lâu dài là bằng chứng rõ ràng nhất về giá trị.",
+        "Đáp án chỉ ra Tỷ lệ duy trì sử dụng (Retention Rate) sau một khoảng thời gian ổn định."
+      ],
+      "concepts": [
+        "d17-t1-prd-pmf"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Trong phần 'Product Decisions' (Các Quyết định Sản phẩm) của PRD, tại sao PM cần phải giải thích rõ lý do chọn lựa phương án?",
+      "options": {
+        "A": "Để đổ lỗi cho các quyết định sai lầm của ban giám đốc công ty khi thất bại.",
+        "B": "Để chứng minh với các nhà đầu tư rằng team đã làm việc chăm chỉ suốt thời gian.",
+        "C": "Để ghi lịch sử tư duy và giúp team thống nhất lý do đằng sau lựa chọn thiết kế.",
+        "D": "Để kỹ sư kiểm thử phần mềm tự động hóa các ca kiểm thử giao diện dễ dàng."
+      },
+      "answer": "C",
+      "explanation": "Việc ghi chép rõ ràng lý do đưa ra quyết định giúp team đồng nhất tư duy, tránh tranh cãi lặp lại các vấn đề đã được thảo luận và đưa ra lựa chọn.",
+      "hints": [
+        "Tài liệu PRD đóng vai trò như một văn bản đồng thuận (alignment tool) của cả dự án.",
+        "Nó lưu trữ vết lập luận để bất cứ thành viên mới nào cũng có thể đọc hiểu bối cảnh.",
+        "Đáp án liên quan đến việc ghi chép tư duy thiết kế sản phẩm và duy trì sự đồng thuận lâu dài."
+      ],
+      "concepts": [
+        "d17-t1-prd-pmf"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Khi thực hiện khảo sát Sean Ellis để kiểm tra PMF, đối tượng người dùng nào nên được gửi khảo sát để có kết quả chính xác nhất?",
+      "options": {
+        "A": "Mọi người dùng đã từng đăng ký tài khoản nhưng chưa bao giờ mở lại ứng dụng.",
+        "B": "Những người dùng mới đăng ký tài khoản dưới 24 giờ và chưa thao tác nào.",
+        "C": "Những người dùng đã trải nghiệm tính năng cốt lõi sản phẩm ít nhất vài lần.",
+        "D": "Những người dùng đã hủy dịch vụ và chuyển sang sử dụng giải pháp của đối thủ."
+      },
+      "answer": "C",
+      "explanation": "Khảo sát Sean Ellis cần được gửi cho những người đã thực sự trải nghiệm và nhận được giá trị cốt lõi của sản phẩm trong thời gian gần để có phản hồi thực tế nhất.",
+      "hints": [
+        "Người chưa dùng hoặc chỉ dùng lướt qua sẽ không có cảm xúc 'thất vọng' thực tế nếu sản phẩm dừng hoạt động.",
+        "Chọn lọc tập người dùng hoạt động tích cực để phản ánh đúng giá trị cốt lõi của sản phẩm.",
+        "Đáp án chỉ ra những người đã sử dụng tính năng cốt lõi gần đây."
+      ],
+      "concepts": [
+        "d17-t1-prd-pmf"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Làm thế nào để xác định một giả thuyết trong 'Hypothesis Table' là KHÔNG THỂ KIỂM CHỨNG (Unverifiable)?",
+      "options": {
+        "A": "Khi giả thuyết đó đòi hỏi việc phát triển một thuật toán AI quá phức tạp để chạy.",
+        "B": "Khi giả thuyết đó liên quan trực tiếp đến trải nghiệm thiết kế giao diện của người dùng.",
+        "C": "Khi giả thuyết đó được đưa ra bởi những thành viên không thuộc đội ngũ quản lý.",
+        "D": "Khi giả thuyết đó không đi kèm with bất kỳ chỉ số định lượng nào để đo lường."
+      },
+      "answer": "D",
+      "explanation": "Một giả thuyết không có chỉ số định lượng và tiêu chí rõ ràng sẽ trở nên mơ hồ, khiến team không thể kết luận được kết quả thử nghiệm là đạt hay hỏng.",
+      "hints": [
+        "Hãy liên tưởng đến nguyên tắc SMART trong quản lý mục tiêu.",
+        "Giả thuyết kiểm chứng bắt buộc phải đo lường được bằng số liệu cụ thể.",
+        "Đáp án chỉ ra việc thiếu đi chỉ số định lượng cụ thể để đo lường kết quả."
+      ],
+      "concepts": [
+        "d17-t1-prd-pmf"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Một tài liệu PRD tốt cho sản phẩm AI cần mô tả cách xử lý 'Uncertainty' (Sự bất định của AI) như thế nào ở mức độ thiết kế?",
+      "options": {
+        "A": "Cam kết 100% thuật toán AI sẽ luôn đưa ra kết quả chính xác trong mọi tình huống.",
+        "B": "Yêu cầu đội kỹ sư phải viết mã nguồn sửa lỗi thủ công cho các câu trả lời sai.",
+        "C": "Bỏ qua yếu tố bất định, giả định hệ thống AI chạy hoàn hảo như phần mềm thông thường.",
+        "D": "Mô tả rõ kịch bản dự phòng (fallback) và cách hiển thị khi mô hình AI trả kết quả sai."
+      },
+      "answer": "D",
+      "explanation": "AI luôn có xác suất sai số và ảo giác, do đó PRD phải xác định trước cách thiết kế UX và logic nghiệp vụ dự phòng khi hệ thống AI hoạt động dưới mức kỳ vọng.",
+      "hints": [
+        "Hãy nghĩ về việc thiết kế sản phẩm AI khác biệt thế nào so với phần mềm logic deterministic thông thường.",
+        "Cần có phương án fallback rõ ràng để đảm bảo trải nghiệm người dùng không bị đứt gãy.",
+        "Đáp án mô tả việc chuẩn bị kịch bản dự phòng khi AI trả kết quả không chính xác."
+      ],
+      "concepts": [
+        "d17-t1-prd-pmf"
+      ]
+    }
+  ]
+}

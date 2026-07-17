@@ -1,0 +1,210 @@
+{
+  "id": "day26-t3-basics",
+  "parent_id": "day26-agent-builder",
+  "topic_title": "Day 26: Model Context Protocol (MCP)",
+  "title": "Phần 1: Vấn Đề N x M Connections & Khung Giao Thức MCP",
+  "description": "Đánh giá kiến thức cơ bản về vấn đề N x M adapters, mô hình giải quyết N + M của MCP và kiến trúc Host-Client-Server.",
+  "difficulty": "dễ",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Vấn đề N x M (Integration Nightmare) trong tích hợp công cụ gọi hàm (Function Calling) truyền thống nghĩa là gì?",
+      "options": {
+        "A": "Số lượng bug logic phát sinh tăng cấp số nhân theo thời gian huấn luyện.",
+        "B": "Phải viết adapter riêng cho từng cặp mô hình LLM và công cụ khác nhau.",
+        "C": "Chi phí thuê máy chủ GPU tăng gấp đôi mỗi khi có thêm một user đăng ký.",
+        "D": "Mô hình ngôn ngữ lớn tự động từ chối gọi tool nếu quá mười yêu cầu."
+      },
+      "answer": "B",
+      "explanation": "Trước MCP, mỗi provider (OpenAI, Anthropic, Google) có định dạng function calling riêng. Nếu bạn có N mô hình và M công cụ, bạn phải viết N x M adapters tích hợp riêng biệt, gây ra ác mộng bảo trì.",
+      "hints": [
+        "Nghĩ về việc mỗi hãng điện thoại tự phát hành một kiểu cổng sạc điện riêng.",
+        "Sự thiếu đồng bộ định dạng dữ liệu giữa các nhà sản xuất mô hình ngôn ngữ lớn.",
+        "Đáp án chính xác là phải viết adapter riêng cho từng cặp mô hình và công cụ."
+      ],
+      "concepts": [
+        "d26-t3-mcp-spec"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Giao thức Model Context Protocol (MCP) giải quyết bài toán tích hợp công cụ theo mô hình liên kết nào?",
+      "options": {
+        "A": "Mô hình N + M (chỉ cần viết một adapter duy nhất kết nối vào chuẩn chung).",
+        "B": "Mô hình N x M (bắt buộc phải nhân bản số lượng server lên gấp nhiều lần).",
+        "C": "Mô hình phân tán hoàn toàn, không cần bất kỳ adapter hay server nào cả.",
+        "D": "Mô hình tập trung, gom tất cả các công cụ vào chung một máy chủ vật lý."
+      },
+      "answer": "A",
+      "explanation": "Với MCP, mô hình LLM (Client) và công cụ (Server) chỉ cần giao tiếp thông qua một giao thức chuẩn chung duy nhất. Số lượng adapter tích hợp giảm từ N x M xuống N + M (ví dụ: 3 + 3 = 6 thay vì 3 x 3 = 9).",
+      "hints": [
+        "Nghĩ về sự ra đời của cổng USB-C giúp kết nối mọi thiết bị với nhau qua một chuẩn.",
+        "Phép cộng thay thế cho phép nhân giúp giảm thiểu số lượng cổng kết nối cần duy trì.",
+        "Đáp án chính xác là mô hình N + M."
+      ],
+      "concepts": [
+        "d26-t3-mcp-spec"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Giao thức truyền tin JSON-RPC 2.0 đóng vai trò gì trong kiến trúc hoạt động của Model Context Protocol?",
+      "options": {
+        "A": "Để mã hóa toàn bộ dữ liệu mã nguồn của các agents trước khi gửi đi.",
+        "B": "Để nén dung lượng các tệp tin lưu trữ checkpoints của tiến trình train.",
+        "C": "Để tự động dịch câu lệnh của người dùng sang tiếng Anh ở cổng mạng.",
+        "D": "Làm chuẩn truyền nhận thông điệp có cấu trúc giữa Client và Server."
+      },
+      "answer": "D",
+      "explanation": "MCP sử dụng chuẩn JSON-RPC 2.0 làm ngôn ngữ giao tiếp để gửi nhận các requests, responses và notifications (như thông báo gọi tool, trả kết quả) giữa Client và Server.",
+      "hints": [
+        "Đây là một định dạng giao thức gọi hàm từ xa gọn nhẹ dựa trên cấu trúc dữ liệu JSON.",
+        "Quy định rõ cấu trúc các trường thông tin: jsonrpc, method, params, id.",
+        "Đáp án chính xác là làm chuẩn truyền nhận thông điệp có cấu trúc giữa Client và Server."
+      ],
+      "concepts": [
+        "d26-t3-mcp-spec"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Trong kiến trúc ba thành phần của MCP, điểm khác biệt lớn nhất về vai trò giữa MCP Client và MCP Server là gì?",
+      "options": {
+        "A": "Client chỉ chạy trên môi trường di động, còn Server chỉ chạy trên cloud.",
+        "B": "Client do nhà đầu tư quản lý, còn Server do các lập trình viên viết code.",
+        "C": "Client kết nối LLM điều phối, còn Server trực tiếp quản lý/gọi tools.",
+        "D": "Client dùng để huấn luyện mô hình, còn Server chỉ dùng để suy luận."
+      },
+      "answer": "C",
+      "explanation": "MCP Client (như Claude Desktop, Cursor, ADK) là ứng dụng kết nối trực tiếp với LLM. MCP Server là ứng dụng trung gian quản lý và thực thi trực tiếp các tools/resources rồi trả kết quả về cho Client.",
+      "hints": [
+        "Một bên sở hữu 'bộ não' tư duy (LLM), bên còn lại sở hữu 'tay chân' hành động (Tools).",
+        "Client yêu cầu thực thi, Server nhận lệnh và thực thi rồi trả lại kết quả.",
+        "Đáp án chính xác là Client kết nối LLM điều phối, còn Server quản lý/gọi tools."
+      ],
+      "concepts": [
+        "d26-t3-mcp-spec"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Thành phần MCP Host trong sơ đồ kiến trúc Model Context Protocol đóng vai trò gì?",
+      "options": {
+        "A": "Là máy chủ vật lý chứa các card đồ họa GPU chuyên dụng để chạy model.",
+        "B": "Là ứng dụng người dùng chứa Client và khởi chạy các servers tiến trình.",
+        "C": "Là cơ sở dữ liệu vector dùng để lưu trữ các tài liệu tri thức RAG.",
+        "D": "Là hệ thống tường lửa bảo vệ máy chủ khỏi các cuộc tấn công mạng DDoS."
+      },
+      "answer": "B",
+      "explanation": "MCP Host là ứng dụng (như Cursor, Claude Desktop) trực tiếp chứa MCP Client, chịu trách nhiệm khởi chạy (spawn) các MCP server subprocesses và quản lý vòng đời kết nối của chúng.",
+      "hints": [
+        "Host đóng vai trò là thực thể cha bao bọc và khởi tạo các tiến trình con.",
+        "Nó có mức độ tin tưởng tuyệt đối đối với Client nằm cùng tiến trình làm việc.",
+        "Đáp án chính xác là ứng dụng chứa Client và khởi chạy các servers."
+      ],
+      "concepts": [
+        "d26-t3-mcp-spec"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Tại sao giao thức Model Context Protocol (MCP) lại thường được các kỹ sư AI ví như chuẩn kết nối USB-C?",
+      "options": {
+        "A": "Vì nó cho phép kết nối mọi LLM clients với mọi công cụ qua một chuẩn duy nhất.",
+        "B": "Vì nó bắt buộc người dùng phải sử dụng dây cáp phần cứng vật lý để chạy.",
+        "C": "Vì nó giúp tăng tốc độ sạc điện năng cho cụm máy chủ GPU đám mây.",
+        "D": "Vì nó giới hạn băng thông truyền dữ liệu của hệ thống ở mức tối đa."
+      },
+      "answer": "A",
+      "explanation": "Giống như USB-C thay thế cho hàng chục loại cổng sạc khác nhau, MCP cung cấp một cổng giao tiếp chung tiêu chuẩn, giúp bất kỳ mô hình LLM nào cũng có thể gọi bất kỳ công cụ nào tương thích MCP mà không cần viết code tích hợp lại.",
+      "hints": [
+        "Nghĩ về triết lý thiết kế 'Viết một lần, chạy ở mọi nơi' (Write once, run anywhere).",
+        "Chuẩn hóa giao tiếp phần cứng/phần mềm để tăng tính tương thích chéo.",
+        "Đáp án chính xác là cho phép kết nối mọi LLM clients với mọi công cụ qua một chuẩn."
+      ],
+      "concepts": [
+        "d26-t3-mcp-spec"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Trong kiến trúc MCP, thực thể nào chịu trách nhiệm thực thi trực tiếp các logic code của Tools khi nhận được yêu cầu từ LLM?",
+      "options": {
+        "A": "Mô hình ngôn ngữ lớn LLM trực tiếp chạy mã nguồn trong bộ nhớ GPU.",
+        "B": "MCP Client tự động biên dịch và chạy code trên máy tính của user.",
+        "C": "MCP Server chứa mã nguồn của các tools và trả về kết quả JSON-RPC.",
+        "D": "Hệ điều hành Windows tự động tìm kiếm và kích hoạt trình biên dịch."
+      },
+      "answer": "C",
+      "explanation": "MCP Server là nơi chứa mã triển khai thực tế của các Tools. Khi nhận được tin nhắn `tools/call` từ Client, Server sẽ chạy code hàm tương ứng và trả về kết quả dưới định dạng JSON-RPC response.",
+      "hints": [
+        "Tìm kiếm thực thể đóng vai trò cung cấp dịch vụ và thực thi hành động.",
+        "Nơi lưu trữ các hàm xử lý Python thực tế như đọc file, chạy lệnh terminal.",
+        "Đáp án chính xác là MCP Server chứa mã nguồn của các tools và trả về kết quả."
+      ],
+      "concepts": [
+        "d26-t3-mcp-spec"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Tại sao trong thiết kế bảo mật của MCP, Host lại đặt mức độ tin tưởng tuyệt đối (Same Process trust) đối với Client?",
+      "options": {
+        "A": "Vì Client và Host hoạt động trên hai máy chủ vật lý khác biệt hoàn toàn.",
+        "B": "Vì Client được viết bằng ngôn ngữ lập trình an toàn tuyệt đối là Rust.",
+        "C": "Vì Client chỉ làm nhiệm vụ dịch ngôn ngữ tự nhiên chứ không chạy code.",
+        "D": "Vì Client hoạt động chung tiến trình (Same Process) hoặc bộ nhớ với Host."
+      },
+      "answer": "D",
+      "explanation": "Client nằm trong cùng không gian địa chỉ bộ nhớ hoặc tiến trình của Host ứng dụng (ví dụ: Client là thư viện tích hợp trong IDE Cursor). Do đó, Host tin tưởng Client tuyệt đối, việc phân quyền bảo mật chỉ diễn ra giữa Client và Server bên ngoài.",
+      "hints": [
+        "Nghĩ về ranh giới bảo mật giữa nội bộ một ứng dụng so với giao tiếp qua mạng internet.",
+        "Các tiến trình hoạt động chung trong một vùng RAM của hệ điều hành.",
+        "Đáp án chính xác là vì Client hoạt động chung tiến trình hoặc bộ nhớ với Host."
+      ],
+      "concepts": [
+        "d26-t3-mcp-spec"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Giao thức truyền tải JSON-RPC 2.0 được sử dụng trong MCP yêu cầu dữ liệu trao đổi bắt buộc phải có định dạng nào?",
+      "options": {
+        "A": "Định dạng chuỗi văn bản JSON chuẩn chứa các trường định nghĩa quy định.",
+        "B": "Định dạng file nhị phân nén ZIP để tiết kiệm tối đa băng thông truyền.",
+        "C": "Định dạng bảng tính toán học CSV để dễ dàng biểu diễn số liệu.",
+        "D": "Định dạng hình ảnh PNG hiển thị trực quan các luồng đi của mã lệnh."
+      },
+      "answer": "A",
+      "explanation": "Tên gọi JSON-RPC chỉ rõ giao thức sử dụng định dạng dữ liệu JSON (JavaScript Object Notation) làm phương tiện mã hóa thông điệp gọi hàm và phản hồi.",
+      "hints": [
+        "Đây là định dạng biểu diễn dữ liệu dạng Key-Value cực kỳ phổ biến trong lập trình web.",
+        "Dễ đọc bởi cả con người và máy tính thông qua các cặp dấu ngoặc nhọn.",
+        "Đáp án chính xác là định dạng chuỗi văn bản JSON chuẩn."
+      ],
+      "concepts": [
+        "d26-t3-mcp-spec"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Sự khác biệt lớn nhất giữa việc gọi hàm (Function Calling) truyền thống và gọi hàm qua giao thức MCP là gì?",
+      "options": {
+        "A": "Gọi hàm qua MCP bắt buộc tốn phí bản quyền sử dụng card đồ họa GPU.",
+        "B": "MCP chuẩn hóa độc lập với nhà cung cấp LLM, truyền thống bị khóa chặt format.",
+        "C": "Function Calling truyền thống chỉ chạy offline hoàn toàn, còn MCP bắt buộc chạy trực tuyến.",
+        "D": "Gọi hàm qua MCP tự động sửa toàn bộ các lỗi logic của mã nguồn Python."
+      },
+      "answer": "B",
+      "explanation": "Function calling truyền thống đòi hỏi bạn format schema theo chuẩn riêng của OpenAI/Anthropic. MCP tách biệt vai trò, cung cấp một interface trung gian chuẩn hóa độc lập với bất kỳ nhà cung cấp LLM nào.",
+      "hints": [
+        "Nghĩ về tính độc lập (agnostic) của giao thức đối với các nhà cung cấp mô hình.",
+        "Tránh việc phải viết lại toàn bộ mã nguồn định nghĩa công cụ khi đổi nhà cung cấp LLM.",
+        "Đáp án chính xác là MCP chuẩn hóa độc lập với LLM, truyền thống bị khóa format."
+      ],
+      "concepts": [
+        "d26-t3-mcp-spec"
+      ]
+    }
+  ]
+}

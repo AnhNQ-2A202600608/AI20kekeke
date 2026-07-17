@@ -1,0 +1,210 @@
+{
+  "id": "day16-t3-advanced",
+  "parent_id": "day16-agent-builder",
+  "topic_title": "Day 16: Specialization Track Selection",
+  "title": "Phần 3: Thuật Toán Duyệt Cây LATS & Học Tập Tự Trị Voyager",
+  "description": "Đánh giá kiến thức nâng cao về thuật toán LATS (Language Agent Tree Search), cơ chế học tập tự trị Voyager, và so sánh các mẫu thiết kế Agent.",
+  "difficulty": "khó",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Điểm cải tiến cốt lõi nhất của thuật toán LATS (Language Agent Tree Search) so với các mẫu thiết kế duyệt cây khác (như Tree of Thoughts) là gì?",
+      "options": {
+        "A": "LATS tích hợp thêm khả năng gọi công cụ ngoài (tool execution) và cập nhật phản hồi thực tế từ môi trường vào nút cây.",
+        "B": "LATS hoàn toàn không sử dụng mô hình ngôn ngữ lớn để đánh giá các nhánh cây mà sử dụng các thuật toán heuristic tĩnh.",
+        "C": "LATS tự động nén toàn bộ các tệp trọng số của mô hình ngôn ngữ lớn về định dạng số nguyên nhị phân siêu nhỏ.",
+        "D": "LATS bắt buộc hệ thống phải khởi chạy đồng thời trên nhiều cụm máy chủ GPU vật lý đặt ở các quốc gia khác nhau."
+      },
+      "answer": "A",
+      "explanation": "LATS kết hợp sức mạnh của Tree of Thoughts (suy nghĩ đa nhánh), Monte Carlo Tree Search (duyệt cây MCTS) và ReAct (hành động gọi tool). Khác với các phương pháp duyệt cây thuần túy chỉ dựa trên suy luận lý thuyết của LLM, LATS thực thi hành động gọi tool ngoài, nhận kết quả thực tế (observation) để cập nhật trạng thái của nút cây, giúp việc duyệt cây thực tế và chính xác hơn.",
+      "hints": [
+        "Hãy nghĩ về việc duyệt các phương án trong đầu (suy luận thuần túy) so với việc vừa thử làm thực tế (gọi tool) vừa duyệt cây.",
+        "Sự kết hợp giữa duyệt cây và hành động gọi công cụ ngoài là điểm độc bản của LATS.",
+        "Đáp án đúng chỉ ra LATS tích hợp gọi công cụ ngoài và cập nhật phản hồi thực tế từ môi trường vào nút cây."
+      ],
+      "concepts": [
+        "d16-t3-advanced-agents"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Trong thuật toán LATS, bốn bước lặp của quá trình tìm kiếm Monte Carlo (MCTS) được tích hợp cho Agent diễn ra theo thứ tự nào?",
+      "options": {
+        "A": "Thiết lập (Setup) → Gọi công cụ (Execution) → Kiểm tra lỗi (Debugging) → Trả kết quả (Output).",
+        "B": "Lựa chọn (Selection) → Mở rộng (Expansion) → Mô phỏng/Đánh giá (Evaluation) → Lan truyền ngược (Backpropagation).",
+        "C": "Phân tích câu hỏi (Parsing) → Sinh prompt (Prompting) → Chạy mô hình (Inference) → Lưu trữ bộ nhớ (Storage).",
+        "D": "Khởi động (Boot) → Quét dữ liệu (Scanning) → Tối ưu hóa (Optimization) → Đóng kết nối (Termination)."
+      },
+      "answer": "B",
+      "explanation": "Quy trình chuẩn của LATS dựa trên MCTS bao gồm 4 giai đoạn lặp lại: 1. Selection (chọn nút tiềm năng từ cây dựa trên chỉ số UCT). 2. Expansion (mở rộng thêm các nhánh hành động mới). 3. Evaluation (thực thi hành động/gọi tool và đánh giá chất lượng bằng LLM/tests). 4. Backpropagation (lan truyền ngược giá trị điểm số lên các nút cha để cập nhật thông tin).",
+      "hints": [
+        "Đây là 4 bước kinh điển của thuật toán tìm kiếm Monte Carlo Tree Search (MCTS) được áp dụng vào tác nhân ngôn ngữ.",
+        "Mọi chu trình duyệt cây đều bắt đầu bằng việc chọn đường đi, mở rộng nhánh mới, đánh giá nhánh đó và cập nhật ngược lại điểm số lên trên.",
+        "Đáp án đúng là Lựa chọn -> Mở rộng -> Mô phỏng/Đánh giá -> Lan truyền ngược."
+      ],
+      "concepts": [
+        "d16-t3-advanced-agents"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Tác nhân tự trị Voyager (triển khai trong game Minecraft) sở hữu cơ chế độc bản nào giúp nó tự học tập trọn đời (open-ended learning)?",
+      "options": {
+        "A": "Huấn luyện lại toàn bộ mạng nơ-ron của mô hình ngôn ngữ lớn liên tục mỗi khi nhân vật trong game gặp thất bại.",
+        "B": "Sử dụng một cơ sở dữ liệu khổng lồ chứa sẵn tất cả các bước hướng dẫn chơi game do con người biên soạn từ trước.",
+        "C": "Tự động viết và liên tục tích lũy các đoạn code kỹ năng (JavaScript control code) vào một thư viện kỹ năng (Skill Library).",
+        "D": "Chỉ sử dụng các thuật toán học máy củng cố truyền thống (Reinforcement Learning) dựa trên phần thưởng điểm số của game."
+      },
+      "answer": "C",
+      "explanation": "Voyager không thay đổi trọng số của LLM. Thay vào đó, nó tự viết các hàm điều khiển bằng code (JavaScript) để thực hiện các nhiệm vụ (như chặt gỗ, chế đồ). Nếu code chạy đúng, nó sẽ lưu hàm đó vào một 'Skill Library' (Thư viện kỹ năng). Ở các thử thách khó hơn sau này, Voyager sẽ tự động gọi lại các kỹ năng cũ đã lưu để kết hợp lại, tạo ra khả năng tự học không giới hạn.",
+      "hints": [
+        "Voyager sử dụng mô hình LLM làm bộ viết mã nguồn tự động (code as policy).",
+        "Kỹ năng của Voyager được lưu trữ dưới dạng mã nguồn lập trình có thể tái sử dụng, chứ không phải trọng số mạng nơ-ron.",
+        "Đáp án đúng đề cập đến việc tự viết và liên tục tích lũy các đoạn code kỹ năng vào Thư viện kỹ năng (Skill Library)."
+      ],
+      "concepts": [
+        "d16-t3-advanced-agents"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Ba thành phần kiến trúc cốt lõi tạo nên hệ thống học tập tự trị của Voyager bao gồm những gì?",
+      "options": {
+        "A": "Mô hình ngôn ngữ lớn, Cụm máy chủ GPU hiệu năng cao, và Hệ thống cơ sở dữ liệu vector tìm kiếm ngữ nghĩa.",
+        "B": "Chương trình đề xuất nhiệm vụ tự động, Thư viện kỹ năng lưu bằng code, và Vòng lặp thực thi tự sửa lỗi code.",
+        "C": "Bộ chuyển đổi giọng nói thành văn bản, Bộ xử lý hình ảnh thời gian thực, và Thuật toán lập kế hoạch di chuyển.",
+        "D": "Trình duyệt web tự động, Hệ thống API kết nối ngoài, và Cơ chế xác thực tài khoản người dùng chuẩn doanh nghiệp."
+      },
+      "answer": "B",
+      "explanation": "Kiến trúc của Voyager gồm 3 phần chính: 1. An Automatic Curriculum (chương trình học tự động đề xuất các nhiệm vụ tăng dần độ khó phù hợp với trạng thái hiện tại). 2. A Skill Library (thư viện lưu trữ các kỹ năng dưới dạng code JavaScript). 3. An Iterative Prompting Mechanism (cơ chế sinh code, chạy thử, nhận feedback lỗi từ game và tự sửa code).",
+      "hints": [
+        "Voyager cần một bộ tự đặt mục tiêu học tập (curriculum), một nơi lưu giữ các bài học đã học dưới dạng code (skill library), và một luồng tự sửa lỗi code khi thực thi thất bại.",
+        "Hãy tìm phương án mô tả đầy đủ ba thành phần: đề xuất nhiệm vụ, thư viện kỹ năng dạng code, và vòng lặp tự sửa lỗi code.",
+        "Đáp án đúng là Chương trình đề xuất nhiệm vụ, Thư viện kỹ năng lưu bằng code, và Vòng lặp thực thi tự sửa lỗi."
+      ],
+      "concepts": [
+        "d16-t3-advanced-agents"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Tại sao việc Voyager lưu giữ kỹ năng dưới dạng 'Mã nguồn' (Code) lại vượt trội hơn so với việc lưu trữ bằng 'Trọng số mô hình' (Model Weights) hoặc 'Prompt'?",
+      "options": {
+        "A": "Vì code có tính chất chính xác, có thể tái sử dụng trực tiếp, không bị mất mát ngữ cảnh và có thể kiểm thử độc lập.",
+        "B": "Vì viết code tốn ít thời gian xử lý của mô hình ngôn ngữ lớn hơn so với việc sinh ra các văn bản prompt thông thường.",
+        "C": "Vì code có thể tự động chạy trên mọi loại chip phần cứng mà không cần cài đặt các thư viện driver tương thích.",
+        "D": "Vì code giúp bảo mật thông tin tuyệt đối và ngăn chặn hoàn toàn các cuộc tấn công prompt injection từ bên ngoài."
+      },
+      "answer": "A",
+      "explanation": "Lưu kỹ năng dưới dạng code (executable code) giúp tránh được hiện tượng quên kiến thức (catastrophic forgetting) của mạng nơ-ron, không bị giới hạn bởi độ dài của cửa sổ ngữ cảnh (như lưu bằng prompt), dễ dàng tái sử dụng và kiểm thử tính đúng đắn một cách tuyệt đối.",
+      "hints": [
+        "Điều gì xảy ra khi bạn nhồi 100 kỹ năng bằng chữ vào prompt? Còn nếu bạn chỉ import các hàm code tương ứng khi cần thì sao?",
+        "Mã nguồn có bị 'quên' hoặc bị biến đổi ngữ nghĩa ngẫu nhiên giống như LLM suy luận không?",
+        "Đáp án đúng chỉ ra code có tính chính xác, tái sử dụng được, không mất ngữ cảnh và kiểm thử độc lập được."
+      ],
+      "concepts": [
+        "d16-t3-advanced-agents"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Trong thuật toán LATS, bước 'Lan truyền ngược' (Backpropagation) thực hiện nhiệm vụ gì để tối ưu hóa quá trình tìm kiếm?",
+      "options": {
+        "A": "Tự động dịch các phản hồi lỗi từ môi trường sang định dạng JSON để gửi về cho bộ điều phối trung tâm.",
+        "B": "Thay đổi trực tiếp các tham số trọng số của mô hình ngôn ngữ lớn để nó không tạo ra các câu trả lời sai ở các lượt sau.",
+        "C": "Xóa bỏ hoàn toàn các nút con có điểm số thấp nhất trên cây để giải phóng bộ nhớ RAM của máy chủ hệ thống.",
+        "D": "Cập nhật kết quả đánh giá (điểm số chất lượng) ngược lên các nút cha trên cây để điều hướng cho các lượt lựa chọn tiếp theo."
+      },
+      "answer": "D",
+      "explanation": "Khi một nút con được đánh giá (Evaluation) bằng điểm số chất lượng (ví dụ: code chạy thành công hay thất bại), điểm số này sẽ được lan truyền ngược lên các nút tổ tiên trên cây. Chỉ số này giúp cập nhật giá trị kỳ vọng của các nút cha, từ đó thuật toán Selection ở các lượt sau sẽ chọn đúng các nhánh có tỷ lệ thành công cao nhất.",
+      "hints": [
+        "Hãy nghĩ về việc cập nhật điểm số uy tín của các con đường dựa trên kết quả thực tế thu được ở cuối con đường đó.",
+        "Điểm số này giúp các lượt tìm kiếm tiếp theo biết nên ưu tiên rẽ vào nhánh nào trên cây suy luận.",
+        "Đáp án đúng mô tả việc cập nhật kết quả đánh giá ngược lên các nút cha trên cây để điều hướng tìm kiếm."
+      ],
+      "concepts": [
+        "d16-t3-advanced-agents"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Cơ chế 'Automatic Curriculum' (Chương trình học tự động) của Voyager quyết định nhiệm vụ tiếp theo cho Agent dựa trên những thông tin nào?",
+      "options": {
+        "A": "Tổng số lượng token còn dư trong tài khoản API của người dùng và thời gian chạy thực tế của hệ thống.",
+        "B": "Trạng thái túi đồ hiện tại của nhân vật, danh sách các kỹ năng đã mở khóa, và bối cảnh môi trường xung quanh trong game.",
+        "C": "Mức độ sụt giảm hiệu năng tính toán của các máy chủ vật lý GPU đang chạy tác nhân AI thời gian thực.",
+        "D": "Ý kiến đánh giá và điểm số phê duyệt thủ công do người chơi nhập vào hệ thống qua giao diện điều khiển."
+      },
+      "answer": "B",
+      "explanation": "Automatic Curriculum sử dụng LLM để phân tích trạng thái thế giới (inventory, các kỹ năng đã có, bối cảnh như thời gian, địa hình) để tự đề xuất nhiệm vụ mới có độ khó phù hợp (ví dụ: nếu đã có gỗ và đá, nhiệm vụ tiếp theo là chế cúp đá; không đề xuất đi đánh boss khi chưa có vũ khí), giúp agent tự khám phá game một cách khoa học.",
+      "hints": [
+        "Chương trình học tự động cần biết Agent đang có những gì và đang ở đâu để đưa ra bài học tiếp theo phù hợp.",
+        "Tránh việc đề xuất một nhiệm vụ quá khó khi chưa có đủ công cụ chuẩn bị cơ bản.",
+        "Đáp án đúng là trạng thái túi đồ, danh sách kỹ năng đã mở khóa và bối cảnh môi trường xung quanh."
+      ],
+      "concepts": [
+        "d16-t3-advanced-agents"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Khi so sánh các mẫu thiết kế Agent, LATS vượt trội hơn Reflexion ở điểm cốt lõi nào?",
+      "options": {
+        "A": "LATS có thể tự động nâng cấp cấu hình phần cứng của máy chủ chạy GPU mà không cần sự can thiệp của con người.",
+        "B": "LATS không tốn bất kỳ chi phí token nào do nó sử dụng các thuật toán tìm kiếm nhị phân thông thường trên đĩa cứng.",
+        "C": "LATS duyệt và so sánh đồng thời nhiều phương án hành động (multi-path) thay vì chỉ sửa lỗi tuyến tính (single-path).",
+        "D": "LATS chỉ chạy được trên hệ điều hành Windows và không yêu cầu cài đặt thư viện Docker để vận hành."
+      },
+      "answer": "C",
+      "explanation": "Reflexion là một mẫu thiết kế sửa sai tuyến tính: chạy thử -> sai -> rút kinh nghiệm -> chạy lại trên đúng con đường đó (single-path). LATS là mẫu thiết kế duyệt cây: nó có thể tạo ra nhiều nhánh hành động khác nhau, đánh giá song song và chọn nhánh tối ưu nhất để đi tiếp (multi-path), cho phép backtrack khi gặp ngõ cụt.",
+      "hints": [
+        "Hãy nghĩ về việc chỉ sửa một bài luận nhiều lần so với việc viết thử 3 dàn ý khác nhau, chọn dàn ý tốt nhất rồi mới viết chi tiết.",
+        "Khả năng rẽ nhánh suy luận (branching) và chọn lựa đường đi tối ưu là thế mạnh của các mô hình duyệt cây.",
+        "Đáp án đúng giải thích LATS duyệt và so sánh nhiều phương án hành động (multi-path) thay vì chỉ sửa lỗi tuyến tính (single-path)."
+      ],
+      "concepts": [
+        "d16-t3-advanced-agents"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Trong thuật toán LATS, tiêu chí UCT (Upper Confidence Bound applied to Trees) được sử dụng ở giai đoạn Selection nhằm mục đích gì?",
+      "options": {
+        "A": "Tính toán tổng dung lượng bộ nhớ đệm KV cache cần thiết để chạy song song các yêu cầu suy luận của người dùng.",
+        "B": "Tự động tắt bớt các kết nối mạng không an toàn từ các máy chủ bên ngoài vào cụm hệ thống chạy mô hình.",
+        "C": "Cân bằng giữa việc khai thác các nhánh suy luận điểm cao đã biết và khám phá các nhánh mới chưa thử nghiệm.",
+        "D": "Lựa chọn ngẫu nhiên hoàn toàn một hành động gọi tool mà không cần quan tâm đến kết quả thực thi trước đó."
+      },
+      "answer": "C",
+      "explanation": "Chỉ số UCT trong MCTS/LATS giúp điều phối việc tìm kiếm: nó ưu tiên chọn các nút có điểm số trung bình cao (Exploitation - khai thác hướng đi tốt đã biết) nhưng cũng cộng thêm một trọng số ưu tiên cho các nút ít được ghé thăm (Exploration - khám phá hướng đi mới có tiềm năng), giúp thuật toán không bị sa lầy vào các ngõ cụt cục bộ.",
+      "hints": [
+        "Hãy nghĩ về bài toán kinhдени điển về sự đánh đổi giữa khai thác (Exploitation) và khám phá (Exploration) trong học máy và tìm kiếm.",
+        "Làm sao để hệ thống vừa đi theo con đường tốt nhất đã biết, vừa thỉnh thoảng đi thử các con đường mới để tìm cơ hội tốt hơn?",
+        "Đáp án đúng là cân bằng giữa khai thác nhánh điểm cao đã biết và khám phá nhánh mới chưa thử nghiệm."
+      ],
+      "concepts": [
+        "d16-t3-advanced-agents"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Ứng dụng thực tế lớn nhất của thuật toán LATS trong các hệ thống phần mềm doanh nghiệp hiện nay là gì?",
+      "options": {
+        "A": "Nén dung lượng của các tệp tin hình ảnh và video trước khi tải lên lưu trữ trên các Object Storage.",
+        "B": "Tự động thiết kế giao diện đồ họa người dùng cho các trang web thương mại điện tử quy mô lớn.",
+        "C": "Thay thế hoàn toàn các kỹ sư quản trị hệ thống trong việc thiết lập mạng ảo và tường lửa bảo mật cho cloud.",
+        "D": "Giải quyết bài toán tự động sửa lỗi, tối ưu mã nguồn phức tạp hoặc viết các truy vấn cơ sở dữ liệu nhiều bước."
+      },
+      "answer": "D",
+      "explanation": "LATS cực kỳ mạnh mẽ cho các tác vụ lập trình phức tạp (coding agent) hoặc viết câu lệnh DB nâng cao. Vì ở các tác vụ này, ta có thể dễ dàng thiết lập bộ kiểm thử tự động (tests) làm evaluator chấm điểm chính xác cho từng bước đi, giúp thuật toán duyệt cây tìm ra đường đi sinh code tối ưu nhất vượt qua các test cases phức tạp.",
+      "hints": [
+        "Tìm tác vụ mà việc đánh giá tính đúng đắn của từng hành động (Evaluation) có thể thực hiện tự động bằng code chạy máy một cách tuyệt đối.",
+        "Lập trình (coding) và viết câu lệnh cơ sở dữ liệu là các môi trường có thể chạy test tự động cực kỳ chính xác.",
+        "Đáp án đúng là giải quyết bài toán tự động sửa lỗi, tối ưu mã nguồn phức tạp hoặc viết các truy vấn cơ sở dữ liệu nhiều bước."
+      ],
+      "concepts": [
+        "d16-t3-advanced-agents"
+      ]
+    }
+  ]
+}

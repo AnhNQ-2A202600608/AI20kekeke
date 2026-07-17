@@ -1,0 +1,210 @@
+{
+  "id": "day20-t2-basics",
+  "parent_id": "day20-rag-data",
+  "topic_title": "Day 20: Model Serving & Inference Optimization",
+  "title": "Phần 1: Phân Loại Độ Trễ TTFT/TPOT, Throughput vs Goodput & Kỹ Thuật Quantization",
+  "description": "Đánh giá kiến thức cơ bản về các chỉ số độ trễ TTFT, TPOT, Goodput@SLO, các định dạng nén quantization (FP8, AWQ, GGUF) và so sánh sự đánh đổi.",
+  "difficulty": "dễ",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Chỉ số độ trễ TTFT (Time To First Token) trong hệ thống phục vụ LLM phụ thuộc nhiều nhất vào yếu tố nào?",
+      "options": {
+        "A": "Phụ thuộc chủ yếu vào thời gian tính toán Prefill và hàng chờ của hệ thống.",
+        "B": "Phụ thuộc chủ yếu vào băng thông truyền dữ liệu giữa các card đồ họa.",
+        "C": "Phụ thuộc chủ yếu vào số lượng từ vựng mà mô hình tạo ra sau này.",
+        "D": "Phụ thuộc chủ yếu vào kích thước của file cấu hình cài đặt ban đầu."
+      },
+      "answer": "A",
+      "explanation": "TTFT là thời gian từ lúc gửi request tới lúc nhận token đầu tiên. Nó phụ thuộc trực tiếp vào thời gian prefill compute (xử lý prompt đầu vào) và thời gian request phải nằm chờ trong queue.",
+      "hints": [
+        "Prefill là bước xử lý prompt ban đầu trước khi bắt đầu sinh ra từ mới.",
+        "Nếu hàng chờ (queue) quá tải, request sẽ bị kẹt và làm tăng đáng kể TTFT.",
+        "Đáp án đúng chỉ ra prefill compute và hàng chờ hệ thống."
+      ],
+      "concepts": [
+        "d20-t2-model-serving"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Tại sao việc báo cáo Throughput ở trạng thái bão hòa (saturation) mà không kèm SLO lại gây hiểu nhầm?",
+      "options": {
+        "A": "Vì nó hoàn toàn bỏ qua các ràng buộc về độ trễ cam kết SLO.",
+        "B": "Vì nó yêu cầu toàn bộ dữ liệu phải được lưu trên đĩa cứng.",
+        "C": "Vì nó tự động kích hoạt tính năng nén lượng tử của GPU NVIDIA.",
+        "D": "Vì nó bắt buộc lập trình viên phải lập trình lại mô hình toán học."
+      },
+      "answer": "A",
+      "explanation": "Throughput cực đại ở trạng thái bão hòa thường đi kèm với độ trễ (latency) rất cao, vi phạm các cam kết chất lượng dịch vụ (SLO) trên thực tế sản xuất.",
+      "hints": [
+        "Sự bão hòa hệ thống khiến người dùng phải đợi quá lâu cho mỗi token đầu ra.",
+        "Hệ thống thực tế cần cân bằng giữa số lượng xử lý và trải nghiệm người dùng.",
+        "Đáp án chỉ ra việc bỏ qua các ràng buộc độ trễ cam kết SLO."
+      ],
+      "concepts": [
+        "d20-t2-model-serving"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Chỉ số độ trễ TPOT (Time Per Output Token) được định nghĩa như thế nào trong suy luận LLM?",
+      "options": {
+        "A": "Là tổng thời gian từ khi gửi request đến khi nhận token đầu tiên.",
+        "B": "Là khoảng thời gian trung bình giữa các token được tạo ra liên tiếp.",
+        "C": "Là tỷ lệ phần trăm số lượng token bị lỗi trong quá trình chạy.",
+        "D": "Là kích thước của mô hình ngôn ngữ lớn được tải vào bộ nhớ."
+      },
+      "answer": "B",
+      "explanation": "TPOT (hoặc Inter-Token Latency - ITL) đo lường khoảng cách thời gian trung bình giữa mỗi token được sinh ra tiếp theo trong pha decoding.",
+      "hints": [
+        "Chỉ số này quyết định cảm giác đọc phản hồi mượt mà của người dùng cuối.",
+        "Nó phản ánh tốc độ của pha tự hồi quy (autoregressive decoding phase) trên mô hình.",
+        "Đáp án đúng là khoảng thời gian trung bình giữa các token được tạo liên tiếp."
+      ],
+      "concepts": [
+        "d20-t2-model-serving"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Chỉ số đo lường hiệu năng Goodput@SLO trong môi trường sản xuất thực tế đại diện cho điều gì?",
+      "options": {
+        "A": "Tổng số lượng token được sinh ra bởi hệ thống trong một giây.",
+        "B": "Số lượng request được xử lý thành công thỏa mãn các điều kiện SLO.",
+        "C": "Dung lượng bộ nhớ đồ họa được tối ưu hóa sau khi chạy nén.",
+        "D": "Số lượng lỗi kỹ thuật được phát hiện và xử lý tự động bởi GPU."
+      },
+      "answer": "B",
+      "explanation": "Goodput@SLO là metric sản xuất thực tế, đo số lượng request xử lý mỗi giây mà vẫn đảm bảo độ trễ nằm trong ngưỡng SLO cam kết (ví dụ: TTFT < 1s và TPOT < 50ms).",
+      "hints": [
+        "Throughput thuần túy không quan tâm đến việc người dùng có phải đợi quá lâu hay không.",
+        "Goodput chỉ đếm những request thực sự hữu ích và đáp ứng tiêu chuẩn trải nghiệm.",
+        "Đáp án là số request được xử lý thành công thỏa mãn điều kiện SLO."
+      ],
+      "concepts": [
+        "d20-t2-model-serving"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Lợi ích lớn nhất của việc áp dụng quantization định dạng FP8 trên GPU thế hệ Hopper là gì?",
+      "options": {
+        "A": "Tăng gấp đôi độ chính xác của mô hình so với định dạng FP16.",
+        "B": "Giảm một nửa dung lượng VRAM cần thiết với chất lượng suy giảm cực ít.",
+        "C": "Tự động sửa chữa các câu trả lời bị lỗi của mô hình.",
+        "D": "Giúp mô hình có khả năng tự động học hỏi thêm tri thức."
+      },
+      "answer": "B",
+      "explanation": "Quantization FP8 giúp tiết kiệm một nửa dung lượng bộ nhớ đồ họa VRAM mà hầu như không làm giảm độ chính xác của mô hình trên các GPU hỗ trợ phần cứng FP8 như H100.",
+      "hints": [
+        "Đây là định dạng được hỗ trợ gốc (native) từ thế hệ card đồ họa Hopper.",
+        "Nó cho phép tải các mô hình lớn hơn hoặc tăng đáng kể kích thước batch.",
+        "Đáp án chỉ ra việc giảm một nửa VRAM và chất lượng suy giảm cực ít."
+      ],
+      "concepts": [
+        "d20-t2-model-serving"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Khi nào nhà phát triển nên ưu tiên lựa chọn phương pháp nén AWQ 4-bit thay vì FP8?",
+      "options": {
+        "A": "Khi doanh nghiệp muốn đạt độ chính xác tối đa không quan tâm cost.",
+        "B": "Khi chạy mô hình trên hệ thống CPU không hỗ trợ card đồ họa.",
+        "C": "Khi bộ nhớ VRAM bị giới hạn nhưng vẫn muốn giữ chất lượng.",
+        "D": "Khi phát triển mô hình từ đầu bằng các kỹ thuật học sâu."
+      },
+      "answer": "C",
+      "explanation": "AWQ 4-bit nén mô hình xuống mức tối đa (tiết kiệm gần 75% VRAM so với FP16) nhờ bảo vệ các salient weights quan trọng nhất, thích hợp khi VRAM cực kỳ khan hiếm.",
+      "hints": [
+        "AWQ tìm kiếm các trọng số quan trọng dựa trên độ lớn kích hoạt của tensor.",
+        "Nó mang lại hiệu năng và độ chính xác vượt trội hơn các phương pháp 4-bit khác.",
+        "Đáp án chỉ ra khi VRAM bị giới hạn nhưng vẫn muốn giữ chất lượng."
+      ],
+      "concepts": [
+        "d20-t2-model-serving"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Định dạng quantization GGUF Q4_K_M thường được tối ưu hóa cho môi trường triển khai nào?",
+      "options": {
+        "A": "Định dạng nén độc quyền chỉ chạy trên các dòng chip của NVIDIA.",
+        "B": "Cơ chế tự động tối ưu hóa tài nguyên tính toán đám mây.",
+        "C": "Định dạng nén sử dụng phương pháp mixed quantization tối ưu cho edge.",
+        "D": "Thuật toán học máy tự động phân bổ luồng xử lý trên GPU."
+      },
+      "answer": "C",
+      "explanation": "GGUF Q4_K_M sử dụng kỹ thuật mixed quantization (kết hợp nén 4-bit và 6-bit tùy theo loại tensor) để tối ưu dung lượng và chất lượng khi chạy suy luận trên CPU hoặc thiết bị Edge.",
+      "hints": [
+        "Định dạng này cực kỳ phổ biến trong cộng đồng chạy local LLM trên máy tính cá nhân.",
+        "Nó cho phép offload một phần mô hình lên bộ nhớ RAM của hệ thống.",
+        "Đáp án chỉ ra định dạng sử dụng mixed quantization tối ưu hóa cho edge."
+      ],
+      "concepts": [
+        "d20-t2-model-serving"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Dung lượng bộ nhớ đồ họa VRAM tối thiểu để tải mô hình Llama-3-8B ở định dạng FP16 là bao nhiêu?",
+      "options": {
+        "A": "Yêu cầu khoảng bốn chấm năm gigabyte bộ nhớ đồ họa VRAM.",
+        "B": "Yêu cầu khoảng bảy chấm chín gigabyte bộ nhớ đồ họa VRAM.",
+        "C": "Yêu cầu khoảng mười lăm chấm tám gigabyte bộ nhớ đồ họa VRAM.",
+        "D": "Yêu cầu khoảng ba mươi mốt chút sáu gigabyte bộ nhớ đồ họa."
+      },
+      "answer": "C",
+      "explanation": "Ở định dạng FP16, mỗi tham số chiếm 2 bytes. Đối với mô hình 8 tỷ tham số, dung lượng bộ nhớ cần thiết là 8 * 2 = 16 GB VRAM.",
+      "hints": [
+        "Mỗi tham số ở định dạng 16-bit float sẽ tiêu tốn chính xác hai byte bộ nhớ.",
+        "Đây là mức baseline chất lượng tối đa trước khi thực hiện các thuật toán nén.",
+        "Đáp án chính xác là mười lăm chấm tám gigabyte bộ nhớ đồ họa VRAM."
+      ],
+      "concepts": [
+        "d20-t2-model-serving"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Điểm đặc trưng nổi bật nhất của định dạng quantization NVFP4 được giới thiệu trên kiến trúc Blackwell là gì?",
+      "options": {
+        "A": "Là giải pháp nén dữ liệu cũ chạy trên chip thế hệ Ampere.",
+        "B": "Tự động chuyển đổi các mô hình ngôn ngữ lớn sang ngôn ngữ C++.",
+        "C": "Giúp tăng gấp tám lần dung lượng bộ nhớ VRAM của hệ thống.",
+        "D": "Là định dạng nén bốn bit chạy tối ưu trên kiến trúc Blackwell."
+      },
+      "answer": "D",
+      "explanation": "NVFP4 là định dạng nén 4-bit dấu phẩy động mới nhất được hỗ trợ phần cứng gốc trên kiến trúc GPU NVIDIA Blackwell, tăng gấp 3.5 lần hiệu năng so với thế hệ trước.",
+      "hints": [
+        "Đây là định dạng mới nhất giúp khai thác tối đa SM100 tensor cores.",
+        "Nó cho phép chạy các mô hình cực lớn ở độ chính xác 4-bit cực nhanh.",
+        "Đáp án là định dạng nén bốn bit chạy tối ưu trên kiến trúc Blackwell."
+      ],
+      "concepts": [
+        "d20-t2-model-serving"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Trong trường hợp nào nhà phát triển nên giữ nguyên định dạng BF16/FP16 để phục vụ mô hình?",
+      "options": {
+        "A": "Khi muốn chạy mô hình trên thiết bị di động có cấu hình thấp.",
+        "B": "Khi tài nguyên GPU bị giới hạn và cần tiết kiệm tối đa.",
+        "C": "Khi cần tăng tốc độ xử lý dữ liệu đầu vào của hệ thống.",
+        "D": "Khi chất lượng đầu ra của mô hình được đặt lên hàng đầu."
+      },
+      "answer": "D",
+      "explanation": "BF16/FP16 giữ nguyên các giá trị trọng số nguyên bản, đảm bảo không bị suy giảm chất lượng (lossless) hay sai lệch trong quá trình sinh văn bản.",
+      "hints": [
+        "Mọi kỹ thuật nén lượng tử (quantization) đều ít nhiều gây ra mất mát thông tin.",
+        "Thích hợp khi doanh nghiệp có dư thừa hạ tầng phần cứng GPU mạnh mẽ.",
+        "Đáp án chỉ ra khi chất lượng đầu ra của mô hình đặt lên hàng đầu."
+      ],
+      "concepts": [
+        "d20-t2-model-serving"
+      ]
+    }
+  ]
+}

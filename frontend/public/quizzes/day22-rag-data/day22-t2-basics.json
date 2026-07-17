@@ -1,0 +1,210 @@
+{
+  "id": "day22-t2-basics",
+  "parent_id": "day22-rag-data",
+  "topic_title": "Day 22: LLMOps & Prompt Versioning",
+  "title": "Phần 1: LLMOps vs MLOps Truyền Thống & Các Metrics Vận Hành",
+  "description": "Đánh giá kiến thức cơ bản về sự khác biệt giữa LLMOps và MLOps truyền thống, các metrics vận hành (latency, cost, error rate, drift).",
+  "difficulty": "dễ",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Sự khác biệt cốt lõi nhất về mặt giám sát (tracking) giữa MLOps truyền thống và LLMOps là gì?",
+      "options": {
+        "A": "LLMOps giám sát các lệnh gọi mô hình và chi phí token trên từng yêu cầu.",
+        "B": "LLMOps chỉ quan tâm đến thời gian huấn luyện của các cụm máy chủ lớn.",
+        "C": "LLMOps không bao giờ ghi lại lịch sử phản hồi của người dùng hệ thống.",
+        "D": "LLMOps lưu giữ các trọng số mô hình dạng nhị phân trên máy cục bộ."
+      },
+      "answer": "A",
+      "explanation": "Trong khi MLOps truyền thống theo dõi các siêu tham số huấn luyện và metrics tĩnh như F1-score/Accuracy, LLMOps phải giám sát động các chuỗi gọi mô hình (traces) và chi phí token thực tế trên từng request.",
+      "hints": [
+        "Xem xét các đơn vị tính toán và các đối tượng cần theo dõi trong LLMOps.",
+        "Mô hình ngôn ngữ lớn hoạt động theo cơ chế tính tiền dựa trên token tiêu thụ.",
+        "Đáp án chỉ ra LLMOps giám sát lệnh gọi mô hình và chi phí token từng yêu cầu."
+      ],
+      "concepts": [
+        "d22-t2-llmops"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Tại sao LLMOps bắt buộc phải thực hiện quản lý phiên bản prompt (prompt versioning)?",
+      "options": {
+        "A": "Vì sự thay đổi nhỏ của prompt sẽ thay đổi hoàn toàn hành vi mô hình.",
+        "B": "Vì các prompt được lưu trữ hoàn toàn dưới dạng các tệp tin hình ảnh.",
+        "C": "Vì prompt không thể thay đổi sau khi mô hình đã được huấn luyện.",
+        "D": "Vì prompt do người dùng tự động sinh ra trong quá trình kiểm thử."
+      },
+      "answer": "A",
+      "explanation": "Prompt đóng vai trò như mã nguồn định hướng cho mô hình. Chỉ cần một thay đổi nhỏ trong system prompt cũng có thể làm thay đổi hoàn toàn hành vi, độ chính xác và độ dài đầu ra của LLM.",
+      "hints": [
+        "Mô hình ngôn ngữ lớn rất nhạy cảm với các thay đổi văn bản hướng dẫn.",
+        "Prompt thay đổi dẫn đến kết quả đầu ra (behavior) thay đổi ngoài tầm kiểm soát.",
+        "Đáp án là vì thay đổi nhỏ của prompt thay đổi hoàn toàn hành vi mô hình."
+      ],
+      "concepts": [
+        "d22-t2-llmops"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Mục tiêu thời gian phản hồi (Latency SLA target) ở phân vị P95 của hệ thống LLMOps nên là gì?",
+      "options": {
+        "A": "Thời gian phản hồi trung bình của hệ thống phải đạt dưới mười giây.",
+        "B": "Thời gian phản hồi P95 của hệ thống phải đạt dưới ba giây tối đa.",
+        "C": "Thời gian phản hồi của mô hình không ảnh hưởng đến trải nghiệm người dùng.",
+        "D": "Thời gian phản hồi được tối ưu hóa tự động bằng các cổng thanh toán."
+      },
+      "answer": "B",
+      "explanation": "Để đảm bảo trải nghiệm người dùng mượt mà, tiêu chuẩn công nghiệp (SLA target) cho độ trễ ở phân vị P95 (95% số request nhanh hơn mức này) phải đạt dưới 3 giây.",
+      "hints": [
+        "Chỉ số thời gian phản hồi quan trọng ảnh hưởng trực tiếp đến người dùng.",
+        "Mốc giây giới hạn cho một ứng dụng trò chuyện hoặc RAG hoạt động mượt.",
+        "Đáp án là độ trễ P95 của hệ thống phải đạt dưới ba giây tối đa."
+      ],
+      "concepts": [
+        "d22-t2-llmops"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Trong vận hành ứng dụng LLM, chỉ số tỷ lệ bịa đặt thông tin (Hallucination Rate) mục tiêu là bao nhiêu?",
+      "options": {
+        "A": "Tỷ lệ thông tin sai lệch tự bịa ra phải đạt trên năm mươi phần trăm.",
+        "B": "Tỷ lệ thông tin sai lệch tự bịa ra phải dưới năm phần trăm.",
+        "C": "Tỷ lệ này không thể đo lường được bằng các công cụ kiểm thử.",
+        "D": "Tỷ lệ này do nhà cung cấp API nước ngoài tự động cấu hình."
+      },
+      "answer": "B",
+      "explanation": "Tỷ lệ bịa đặt thông tin (hallucination rate) của hệ thống LLM sản xuất cần được kiểm soát chặt chẽ dưới 5% để bảo đảm tính chính xác và an toàn thông tin.",
+      "hints": [
+        "Một mức giới hạn sai số cực nhỏ để bảo vệ độ tin cậy của sản phẩm.",
+        "Tỷ lệ này đại diện cho độ an toàn thông tin trước khi chuyển sang người dùng.",
+        "Đáp án là tỷ lệ thông tin sai lệch tự bịa ra phải dưới năm phần trăm."
+      ],
+      "concepts": [
+        "d22-t2-llmops"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Trong hệ thống đánh giá RAGAS, chỉ số độ trung thực (Faithfulness) mục tiêu trong sản xuất là gì?",
+      "options": {
+        "A": "Chỉ số này phải đạt giá trị tuyệt đối là một điểm tối đa.",
+        "B": "Chỉ số trung thực của câu trả lời phải đạt trên không phẩy tám.",
+        "C": "Chỉ số này chỉ cần lớn hơn không phẩy năm là đạt yêu cầu.",
+        "D": "Chỉ số này do người dùng cuối tự đánh giá bằng nút thích."
+      },
+      "answer": "B",
+      "explanation": "Faithfulness đo lường tỷ lệ các khẳng định trong câu trả lời có thể được chứng minh trực tiếp từ ngữ cảnh tìm kiếm được. Target thực tế trong sản xuất phải > 0.8.",
+      "hints": [
+        "Mức độ tin cậy tối thiểu đối với một câu trả lời dựa trên ngữ cảnh.",
+        "Con số này tương ứng với giá trị lớn hơn không phẩy tám trên thang điểm.",
+        "Đáp án là chỉ số trung thực câu trả lời phải đạt trên không phẩy tám."
+      ],
+      "concepts": [
+        "d22-t2-llmops"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Tính năng giám sát chuỗi thực thi (Tracing) của nền tảng LangSmith được sử dụng nhằm mục đích gì?",
+      "options": {
+        "A": "Để tự động nén dung lượng bộ nhớ của các mô hình ngôn ngữ.",
+        "B": "Để lập kế hoạch tài chính cho việc triển khai dự án khởi nghiệp.",
+        "C": "Để ghi lại toàn bộ cây thực thi của ứng dụng mô hình lớn.",
+        "D": "Để tự động dán nhãn các nội dung do người dùng gửi lên hệ thống."
+      },
+      "answer": "C",
+      "explanation": "Tracing ghi lại toàn bộ sơ đồ cuộc gọi từ root run cho đến các child runs (truy vấn vector, gọi mô hình, gọi công cụ) để nhà phát triển dễ dàng debug và phát hiện bottlenecks.",
+      "hints": [
+        "Ghi lại toàn bộ chuỗi hành động và thời gian chạy của từng thành phần.",
+        "Dựng lại cấu trúc cây cuộc gọi của ứng dụng để phân tích hiệu năng.",
+        "Đáp án đúng là ghi lại toàn bộ cây thực thi của ứng dụng mô hình lớn."
+      ],
+      "concepts": [
+        "d22-t2-llmops"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Tính năng Datasets trong LangSmith hỗ trợ quy trình phát triển sản phẩm AI như thế nào?",
+      "options": {
+        "A": "Bằng cách tự động xóa bỏ các dữ liệu rác của người dùng.",
+        "B": "Bằng cách cung cấp mã nguồn mở của các mô hình ngôn ngữ lớn.",
+        "C": "Bằng cách trích xuất các traces thực tế để tạo tập kiểm thử.",
+        "D": "Bằng cách tự động tối ưu hóa siêu tham số huấn luyện mô hình."
+      },
+      "answer": "C",
+      "explanation": "LangSmith cho phép chuyển đổi các lượt chạy thực tế của người dùng (traces) thành các test cases trong evaluation dataset chỉ bằng một cú click chuột.",
+      "hints": [
+        "Tận dụng dữ liệu vận hành thực tế để làm giàu tập dữ liệu kiểm nghiệm.",
+        "Giúp phát hiện sự suy giảm hiệu năng (regression) khi cập nhật phiên bản mới.",
+        "Đáp án là trích xuất các traces thực tế để tạo tập kiểm thử."
+      ],
+      "concepts": [
+        "d22-t2-llmops"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Tính năng Prompt Hub của LangSmith mang lại lợi ích gì cho các đội ngũ phát triển?",
+      "options": {
+        "A": "Tự động thiết kiện giao diện đồ họa cho ứng dụng di động của bạn.",
+        "B": "Chạy thử nghiệm mô hình mà không cần kết nối mạng internet bên ngoài.",
+        "C": "Quản lý phiên bản, lưu giữ và kéo nạp các prompt thuận tiện.",
+        "D": "Tính toán hóa đơn sử dụng dịch vụ của nhà cung cấp mô hình."
+      },
+      "answer": "C",
+      "explanation": "Prompt Hub hoạt động tương tự như GitHub dành cho prompt, giúp lưu trữ tập trung, chia sẻ giữa các thành viên, quản lý phiên bản và kéo trực tiếp prompt về ứng dụng qua mã hash.",
+      "hints": [
+        "Một không gian lưu trữ tập trung và kiểm soát lịch sử thay đổi của prompt.",
+        "Hỗ trợ kéo và đẩy prompt trực tiếp bằng các mã lệnh SDK chuyên biệt.",
+        "Đáp án đúng là quản lý phiên bản, lưu giữ và kéo nạp các prompt thuận tiện."
+      ],
+      "concepts": [
+        "d22-t2-llmops"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Công cụ nào sau đây thuộc lớp công cụ quan sát (observability layer) trong ngăn xếp LLMOps?",
+      "options": {
+        "A": "Các công cụ truyền thống như MLflow hoặc DVC cho quản lý dữ liệu.",
+        "B": "Các thư viện lập trình giao diện người dùng như React hoặc Vue.",
+        "C": "Các cơ sở dữ liệu quan hệ truyền thống như PostgreSQL hoặc MySQL.",
+        "D": "Các nền tảng chuyên biệt như LangSmith hoặc Weight and Biases Weave."
+      },
+      "answer": "D",
+      "explanation": "LangSmith và W&B Weave là hai nền tảng chuyên biệt hàng đầu giúp theo dõi dấu vết các lượt chạy mô hình lớn và đánh giá hiệu năng tự động.",
+      "hints": [
+        "Các công cụ thiết kế chuyên sâu để giải quyết tính không xác định của LLM.",
+        "Chúng hỗ trợ ghi dấu vết (tracing), đánh giá và giám sát mô hình trực quan.",
+        "Đáp án đúng chứa các tên riêng: LangSmith hoặc Weight and Biases Weave."
+      ],
+      "concepts": [
+        "d22-t2-llmops"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Thuộc tính 'Không xác định' (Non-deterministic) của mô hình ngôn ngữ lớn ám chỉ điều gì?",
+      "options": {
+        "A": "Mô hình luôn đưa ra một kết quả duy nhất cho một đầu vào.",
+        "B": "Chi phí sử dụng của mô hình không bao giờ thay đổi theo thời gian.",
+        "C": "Mô hình không thể chạy được trên các thiết bị phần cứng cá nhân.",
+        "D": "Cùng một đầu vào có thể tạo ra các kết quả khác nhau."
+      },
+      "answer": "D",
+      "explanation": "Tính không xác định (non-deterministic) có nghĩa là cùng một câu hỏi đầu vào, mô hình lớn có thể đưa ra các câu trả lời với từ ngữ và cấu trúc khác nhau ở mỗi lần chạy.",
+      "hints": [
+        "Bản chất xác suất của việc sinh từ tiếp theo trong mô hình ngôn ngữ.",
+        "Gây khó khăn cho việc tái tạo lại các lỗi kỹ thuật (bugs) trong sản xuất.",
+        "Đáp án đúng là cùng một đầu vào có thể tạo ra các kết quả khác nhau."
+      ],
+      "concepts": [
+        "d22-t2-llmops"
+      ]
+    }
+  ]
+}
