@@ -64,16 +64,6 @@ class AdaptiveDatabaseInterface(ABC):
         pass
 
     @abstractmethod
-    def submit_attempt_txn(self, payload: dict) -> dict:
-        """Gọi RPC submit_attempt_txn để xử lý giao dịch nộp bài nguyên tử ở DB."""
-        pass
-
-    @abstractmethod
-    def submit_attempt_v2(self, payload: dict) -> dict:
-        """Gọi RPC submit_attempt_v2 để xử lý giao dịch nộp bài nguyên tử tích hợp BKT và Bandit."""
-        pass
-
-    @abstractmethod
     def submit_attempt_v3(self, payload: dict) -> dict:
         """Gọi RPC submit_attempt_v3 để xử lý giao dịch nộp bài nguyên tử tích hợp BKT, Bandit và lan truyền đồ thị."""
         pass

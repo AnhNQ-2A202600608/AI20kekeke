@@ -91,149 +91,111 @@ export const getFallbackMockStudents = (studentBaseSkills: Skill[]): StudentData
       name: 'Nguyễn Văn Anh',
       avatar: '👨‍💻',
       email: 'vananh.nguyen@example.com',
-      xp: 2380,
-      streak: 8,
-      accuracyRate: 74,
-      activeDaysCount: 19,
-      aiChatCount: 32,
+      xp: 3450,
+      streak: 12,
+      accuracyRate: 92,
+      activeDaysCount: 25,
+      aiChatCount: 21,
       skills: studentBaseSkills.map((skill) => {
-        if (skill.id === 'agent-security-debug' || skill.id === 'tool-calling-execution') {
-          return { ...skill, elo: 820, masteryScore: 5, status: 'WEAK' as const };
+        if (skill.id === 'M7.SDS.05') {
+          return { ...skill, elo: 1420, masteryScore: 95, status: 'MASTERED' as const };
         }
-        if (skill.id === 'transformer-foundations') {
-          return { ...skill, elo: 1420, masteryScore: 88, status: 'MASTERED' as const };
+        if (skill.id === 'M6.SDS.03') {
+          return { ...skill, elo: 1480, masteryScore: 98, status: 'MASTERED' as const };
         }
-        return { ...skill, elo: 1120, masteryScore: 45, status: 'LEARNING' as const };
+        if (skill.id === 'M5.SDS.02') {
+          return { ...skill, elo: 1510, masteryScore: 99, status: 'MASTERED' as const };
+        }
+        return { ...skill, elo: 1300, masteryScore: 90, status: 'MASTERED' as const };
       }),
       attemptLogs: [
         {
           id: 'attempt-1',
-          quizTitle: 'Day 08 - Metadata Filtering',
+          quizTitle: 'Tìm x trong tỉ lệ thức x/4 = 9/12',
           completedAt: '23/06/2026 09:10',
-          durationMinutes: 16,
-          score: 7,
-          accuracyRate: 70,
-        },
-        {
-          id: 'attempt-2',
-          quizTitle: 'Tool Calling Debug Lab',
-          completedAt: '22/06/2026 19:45',
-          durationMinutes: 24,
-          score: 6,
-          accuracyRate: 60,
+          durationMinutes: 12,
+          score: 10,
+          accuracyRate: 100,
         },
       ],
-      mentorNotes: [
-        'Có xu hướng hiểu nhanh phần nền tảng nhưng hụt khi câu hỏi chuyển sang execution detail.',
-      ],
-      interventions: [
-        {
-          id: 'itv-1',
-          title: 'Giao thêm quiz về tool calling',
-          createdAt: '22/06/2026',
-          type: 'Bài tập',
-          detail: 'Bổ dung 3 câu hỏi nâng dần độ khó để củng cố reasoning theo schema.',
-        },
-      ],
+      mentorNotes: ['Thành tích xuất sắc, nắm vững toàn bộ kiến thức nền tảng và đại lượng tỉ lệ.'],
+      interventions: [],
     },
     {
       id: 'std2',
       name: 'Trần Thị Bình',
       avatar: '👩‍💻',
       email: 'binh.tran@example.com',
-      xp: 3210,
-      streak: 14,
-      accuracyRate: 92,
+      xp: 2400,
+      streak: 5,
+      accuracyRate: 81,
       activeDaysCount: 25,
       aiChatCount: 21,
       skills: studentBaseSkills.map((skill) => {
-        if (
-          skill.id === 'transformer-foundations' ||
-          skill.id === 'ai-problem-formulation' ||
-          skill.id === 'data-eval-strategy'
-        ) {
-          return { ...skill, elo: 1480, masteryScore: 97, status: 'MASTERED' as const };
+        if (skill.id === 'M7.SDS.05') {
+          return { ...skill, elo: 1120, masteryScore: 72, status: 'LEARNING' as const };
         }
-        return { ...skill, elo: 1210, masteryScore: 58, status: 'LEARNING' as const };
+        if (skill.id === 'M6.SDS.03') {
+          return { ...skill, elo: 1250, masteryScore: 89, status: 'MASTERED' as const };
+        }
+        if (skill.id === 'M5.SDS.02') {
+          return { ...skill, elo: 1300, masteryScore: 92, status: 'MASTERED' as const };
+        }
+        return { ...skill, elo: 1150, masteryScore: 70, status: 'LEARNING' as const };
       }),
       attemptLogs: [
         {
-          id: 'attempt-3',
-          quizTitle: 'GraphRAG Concept Review',
+          id: 'attempt-2',
+          quizTitle: 'Tìm x trong tỉ lệ thức x/4 = 9/12',
           completedAt: '23/06/2026 08:25',
-          durationMinutes: 12,
-          score: 9,
-          accuracyRate: 90,
-        },
-        {
-          id: 'attempt-4',
-          quizTitle: 'Context Engineering Sprint',
-          completedAt: '21/06/2026 20:02',
           durationMinutes: 15,
-          score: 10,
-          accuracyRate: 100,
+          score: 8,
+          accuracyRate: 80,
         },
       ],
-      mentorNotes: ['Có thể giao vai trò peer-review cho các bộ câu hỏi draft khó hơn.'],
-      interventions: [
-        {
-          id: 'itv-2',
-          title: 'Mời review câu hỏi GraphRAG',
-          createdAt: '21/06/2026',
-          type: 'Mentoring',
-          detail: 'Cho tham gia review distractor để tăng chiều sâu phản biện.',
-        },
-      ],
+      mentorNotes: ['Học lực khá tốt, nắm chắc khái niệm tỉ lệ thức, đang hoàn thiện kỹ năng thực hành.'],
+      interventions: [],
     },
     {
       id: 'std3',
       name: 'Lê Hoàng Minh',
       avatar: '👨‍🎓',
       email: 'hoangminh.le@example.com',
-      xp: 1460,
-      streak: 3,
+      xp: 1350,
+      streak: 2,
       accuracyRate: 49,
       activeDaysCount: 11,
       aiChatCount: 27,
       skills: studentBaseSkills.map((skill) => {
-        if (
-          skill.id === 'embedding-vector-stores' ||
-          skill.id === 'rag-pipelines' ||
-          skill.id === 'roi-risk-management'
-        ) {
-          return { ...skill, elo: 780, masteryScore: 0, status: 'WEAK' as const };
+        if (skill.id === 'M7.SDS.05') {
+          return { ...skill, elo: 720, masteryScore: 2, status: 'WEAK' as const };
         }
-        if (skill.id === 'context-engineering' || skill.id === 'react-loop-foundations') {
-          return { ...skill, elo: 810, masteryScore: 2, status: 'WEAK' as const };
+        if (skill.id === 'M6.SDS.03') {
+          return { ...skill, elo: 780, masteryScore: 5, status: 'WEAK' as const };
         }
-        return { ...skill, elo: 950, masteryScore: 21, status: 'NOT_STARTED' as const };
+        if (skill.id === 'M5.SDS.02') {
+          return { ...skill, elo: 810, masteryScore: 12, status: 'WEAK' as const };
+        }
+        return { ...skill, elo: 850, masteryScore: 20, status: 'WEAK' as const };
       }),
       attemptLogs: [
         {
-          id: 'attempt-5',
-          quizTitle: 'RAG Pipeline Stability Check',
+          id: 'attempt-3',
+          quizTitle: 'Tỉ lệ thức là đẳng thức của hai tỉ số. Đúng hay sai?',
           completedAt: '23/06/2026 07:54',
           durationMinutes: 21,
-          score: 4,
-          accuracyRate: 40,
-        },
-        {
-          id: 'attempt-6',
-          quizTitle: 'Embedding Fundamentals',
-          completedAt: '22/06/2026 17:18',
-          durationMinutes: 18,
-          score: 5,
-          accuracyRate: 50,
+          score: 0,
+          accuracyRate: 0,
         },
       ],
-      mentorNotes: ['Cần lộ trình bù kiến thức nền trước khi giao thêm bài multi-hop reasoning.'],
+      mentorNotes: ['Mất gốc nặng phân số lớp 5 và tỉ số lớp 6, dẫn tới không giải quyết được tỉ lệ thức lớp 7.'],
       interventions: [
         {
-          id: 'itv-3',
-          title: 'Gửi email nhắc lịch ôn tập',
+          id: 'itv-1',
+          title: 'Giao lại chuyên đề Phân số lớp 5',
           createdAt: '23/06/2026',
-          type: 'Email',
-          detail: 'Nhắc học viên ôn lại chunking, vector store và retrieval flow.',
+          type: 'Bài tập',
+          detail: 'Bổ sung 5 bài tập nhận biết phân số bằng nhau để củng cố lại gốc rễ.',
         },
       ],
     },
@@ -242,66 +204,78 @@ export const getFallbackMockStudents = (studentBaseSkills: Skill[]): StudentData
       name: 'Phạm Thanh Thảo',
       avatar: '👩‍🎓',
       email: 'thao.pham@example.com',
-      xp: 2140,
-      streak: 10,
-      accuracyRate: 81,
+      xp: 2100,
+      streak: 0,
+      accuracyRate: 68,
       activeDaysCount: 20,
       aiChatCount: 18,
-      skills: studentBaseSkills.map((skill) => ({
-        ...skill,
-        elo: 1080,
-        masteryScore: 40,
-        status: 'LEARNING' as const,
-      })),
+      skills: studentBaseSkills.map((skill) => {
+        if (skill.id === 'M7.SDS.05') {
+          return { ...skill, elo: 830, masteryScore: 4, status: 'WEAK' as const };
+        }
+        if (skill.id === 'M6.SDS.03') {
+          return { ...skill, elo: 1140, masteryScore: 82, status: 'LEARNING' as const };
+        }
+        if (skill.id === 'M5.SDS.02') {
+          return { ...skill, elo: 1210, masteryScore: 90, status: 'MASTERED' as const };
+        }
+        return { ...skill, elo: 1100, masteryScore: 75, status: 'LEARNING' as const };
+      }),
       attemptLogs: [
         {
-          id: 'attempt-7',
-          quizTitle: 'Mentor HITL Practice',
+          id: 'attempt-4',
+          quizTitle: 'Biết x và y tỉ lệ thuận với nhau và khi x = 2 thì y = 6. Tìm hệ số tỉ lệ k',
           completedAt: '22/06/2026 15:42',
           durationMinutes: 14,
-          score: 8,
-          accuracyRate: 80,
+          score: 0,
+          accuracyRate: 0,
         },
       ],
-      mentorNotes: ['Ổn định, chỉ cần thêm bài tập tốc độ cho các vòng review.'],
-      interventions: [],
+      mentorNotes: ['Yếu phần đại lượng tỉ lệ thuận/nghịch lớp 7, cần hướng dẫn thêm tính chất dãy tỉ số bằng nhau.'],
+      interventions: [
+        {
+          id: 'itv-2',
+          title: 'Kèm cặp 1:1 về Đại lượng tỉ lệ',
+          createdAt: '22/06/2026',
+          type: 'Mentoring',
+          detail: 'Hướng dẫn lại cách lập tỉ số từ đại lượng tỉ lệ thuận.',
+        },
+      ],
     },
     {
       id: 'std5',
       name: 'Vũ Quốc Khánh',
       avatar: '🧑‍💻',
       email: 'khanh.vu@example.com',
-      xp: 2010,
-      streak: 6,
-      accuracyRate: 68,
+      xp: 1950,
+      streak: 4,
+      accuracyRate: 74,
       activeDaysCount: 17,
       aiChatCount: 29,
       skills: studentBaseSkills.map((skill) => {
-        if (skill.id === 'rag-pipelines') {
-          return { ...skill, elo: 830, masteryScore: 4, status: 'WEAK' as const };
+        if (skill.id === 'M7.SDS.05') {
+          return { ...skill, elo: 1050, masteryScore: 52, status: 'LEARNING' as const };
         }
-        return { ...skill, elo: 1150, masteryScore: 50, status: 'LEARNING' as const };
+        if (skill.id === 'M6.SDS.03') {
+          return { ...skill, elo: 1110, masteryScore: 74, status: 'LEARNING' as const };
+        }
+        if (skill.id === 'M5.SDS.02') {
+          return { ...skill, elo: 1180, masteryScore: 81, status: 'LEARNING' as const };
+        }
+        return { ...skill, elo: 1120, masteryScore: 75, status: 'LEARNING' as const };
       }),
       attemptLogs: [
         {
-          id: 'attempt-8',
-          quizTitle: 'Citation Validation Audit',
+          id: 'attempt-5',
+          quizTitle: 'Tìm x trong tỉ lệ thức x/4 = 9/12',
           completedAt: '22/06/2026 11:31',
           durationMinutes: 17,
-          score: 6,
-          accuracyRate: 60,
+          score: 10,
+          accuracyRate: 100,
         },
       ],
-      mentorNotes: ['Đã có cải thiện sau lần review trước, nhưng vẫn cần củng cố citation coverage.'],
-      interventions: [
-        {
-          id: 'itv-4',
-          title: 'Mentoring 1:1 về citation validation',
-          createdAt: '20/06/2026',
-          type: 'Mentoring',
-          detail: 'Đi qua từng lỗi thiếu nguồn và cách tự kiểm tra trước khi nộp.',
-        },
-      ],
+      mentorNotes: ['Đang có tiến bộ đều ở các chủ đề đại số lớp 5-7.'],
+      interventions: [],
     },
   ];
 
