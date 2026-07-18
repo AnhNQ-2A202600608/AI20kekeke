@@ -252,14 +252,14 @@ class TestOfflineSocraticFallback:
 
         diagnostic = {
             "status": "PROBE",
-            "probe_node": "M7.SDS.05",
-            "questions": ["q_m7_1"],
+            "probe_node": "ti-so",
+            "questions": ["q_tiso_p1"],
             "message": "Kiểm tra thêm",
         }
         res = build_offline_response("student_123", diagnostic)
         assert "chế độ offline" in res
-        assert "Vận dụng tính chất" in res
-        assert "Tìm x trong tỉ lệ thức" in res
+        assert "Hiểu và tính tỉ số" in res
+        assert "Tỉ số của 6 và 8" in res
         assert "Gợi ý" in res
 
     @patch("src.config.get_settings")
@@ -273,17 +273,17 @@ class TestOfflineSocraticFallback:
             "status": "DIAGNOSIS_COMPLETE",
             "weakness_flag": True,
             "root_cause": {
-                "id": "M7.SDS.05",
-                "mo_ta": "Tỉ lệ thức",
-                "lop": 7,
+                "id": "tinh-chat-co-ban-cua-phan-so",
+                "mo_ta": "Tính chất cơ bản của phân số",
+                "lop": 5,
             },
-            "confidence": 0.9,
-            "suggested_path": ["M7.SDS.05"],
+            "confidence": 0.83,
+            "suggested_path": ["tinh-chat-co-ban-cua-phan-so", "ti-so", "ti-le-thuc"],
         }
         res = build_offline_response("student_123", diagnostic)
         assert "chế độ offline" in res
-        assert "Tỉ lệ thức" in res
-        assert "Tìm x trong tỉ lệ thức" in res
+        assert "Tính chất cơ bản của phân số" in res
+        assert "Nhân cả tử và mẫu" in res
 
     @pytest.mark.asyncio
     @patch("src.agents.nodes.respond_node.get_llm")
@@ -300,12 +300,12 @@ class TestOfflineSocraticFallback:
             "status": "DIAGNOSIS_COMPLETE",
             "weakness_flag": True,
             "root_cause": {
-                "id": "M7.SDS.05",
-                "mo_ta": "Tỉ lệ thức",
-                "lop": 7,
+                "id": "tinh-chat-co-ban-cua-phan-so",
+                "mo_ta": "Tính chất cơ bản của phân số",
+                "lop": 5,
             },
-            "confidence": 0.9,
-            "suggested_path": ["M7.SDS.05"],
+            "confidence": 0.83,
+            "suggested_path": ["tinh-chat-co-ban-cua-phan-so", "ti-so", "ti-le-thuc"],
         }
         state = {
             "query": "giúp em với",
