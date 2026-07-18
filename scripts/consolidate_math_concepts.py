@@ -1,6 +1,6 @@
 import sys
-import os
 from pathlib import Path
+
 from dotenv import load_dotenv
 from supabase import Client, create_client
 
@@ -47,7 +47,6 @@ CONSOLIDATION_MAP = {
     "so-nguyen": ["so-nguyen-duong"],
     "phep-cong-hai-phan-so-cung-mau": ["tinh-chat-cua-phep-cong-phan-so"],
     "dau-hieu-chia-het": ["tong-gia-tri-chu-so"],
-    "quy-tac-chia-hai-phan-so": ["luu-y-khi-tinh-phan-so"],
 
     # 2. 48 skill concepts
     "phep-cong": ["cong-hai-so-tu-nhien"],
@@ -88,7 +87,7 @@ def main():
     print("[*] Fetching all active concepts for the Math course...")
     res = supabase.schema("app").table("concepts").select("id, code, aliases, status").eq("course_id", COURSE_ID).eq("status", "active").execute()
     concepts = res.data or []
-    
+
     concept_map = {c["code"]: c for c in concepts}
     print(f"[+] Loaded {len(concepts)} active concepts.")
 
@@ -99,37 +98,37 @@ def main():
         if main_code not in concept_map:
             print(f"[WARNING] Main concept '{main_code}' not found in active concepts.")
             continue
-        
+
         main_concept = concept_map[main_code]
         existing_aliases = main_concept.get("aliases") or []
         new_aliases = list(existing_aliases)
-        
+
         concepts_to_archive = []
-        
+
         for alias_code in aliases:
             if alias_code not in concept_map:
                 print(f"  [INFO] Alias concept '{alias_code}' not found (or already processed).")
                 continue
-            
+
             alias_concept = concept_map[alias_code]
             concepts_to_archive.append(alias_concept)
-            
+
             if alias_code not in new_aliases:
                 new_aliases.append(alias_code)
-                
+
         if concepts_to_archive:
             # 1. Update main concept's aliases in DB
             print(f"[*] Updating main concept '{main_code}' aliases to {new_aliases}...")
             supabase.schema("app").table("concepts").update({"aliases": new_aliases}).eq("id", main_concept["id"]).execute()
             updated_main_count += 1
-            
+
             # 2. Update status of alias concepts to 'archived'
             for ac in concepts_to_archive:
                 print(f"  [+] Archiving alias concept '{ac['code']}'...")
                 supabase.schema("app").table("concepts").update({"status": "archived"}).eq("id", ac["id"]).execute()
                 archived_count += 1
 
-    print(f"\n[SUCCESS] Consolidation finished.")
+    print("\n[SUCCESS] Consolidation finished.")
     print(f"  - Updated {updated_main_count} main concepts with new aliases.")
     print(f"  - Archived {archived_count} redundant concepts.")
 

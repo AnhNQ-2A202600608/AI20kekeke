@@ -71,22 +71,27 @@ def detect_test_framework(project_path: Path) -> dict:
         result["type"] = "python"
         result["framework"] = "pytest"
         
-        # Resolve local virtualenv python to avoid global Anaconda conflicts on Windows
-        python_exe = project_path / ".venv" / "Scripts" / "python.exe"
-        if not python_exe.exists():
-            python_exe = project_path / ".venv" / "bin" / "python"
+        import shutil
+        if shutil.which("uv"):
+            result["cmd"] = ["uv", "run", "pytest", "tests/", "-v"]
+            result["coverage_cmd"] = ["uv", "run", "pytest", "tests/", "--cov", "--cov-report=term-missing", "-v"]
+        else:
+            # Resolve local virtualenv python to avoid global Anaconda conflicts on Windows
+            python_exe = project_path / ".venv" / "Scripts" / "python.exe"
             if not python_exe.exists():
-                python_exe = Path(sys.executable)
-                
-        # Force absolute path isolation by filtering sys.path in an inline python script
-        inline_script = (
-            "import sys, os; "
-            "sys.path = [p for p in sys.path if 'site-packages' not in p.lower() or '.venv' in p]; "
-            "import pytest; "
-            "sys.exit(pytest.main())"
-        )
-        result["cmd"] = [str(python_exe), "-I", "-c", inline_script, "-v", "-s"]
-        result["coverage_cmd"] = [str(python_exe), "-I", "-c", inline_script, "--cov", "--cov-report=term-missing", "-v", "-s"]
+                python_exe = project_path / ".venv" / "bin" / "python"
+                if not python_exe.exists():
+                    python_exe = Path(sys.executable)
+                    
+            # Force absolute path isolation by filtering sys.path in an inline python script
+            inline_script = (
+                "import sys, os; "
+                "sys.path = [p for p in sys.path if 'site-packages' not in p.lower() or '.venv' in p]; "
+                "import pytest; "
+                "sys.exit(pytest.main())"
+            )
+            result["cmd"] = [str(python_exe), "-I", "-c", inline_script, "-v", "-s"]
+            result["coverage_cmd"] = [str(python_exe), "-I", "-c", inline_script, "--cov", "--cov-report=term-missing", "-v", "-s"]
     
     return result
 
@@ -116,7 +121,8 @@ def run_tests(cmd: list, cwd: Path) -> dict:
         if "PYTHONHOME" in env:
             del env["PYTHONHOME"]
         env["UV_NO_PROGRESS"] = "1"
-        env["PYTEST_DISABLE_PLUGIN_AUTOLOAD"] = "1"
+        env.setdefault("APP_ENV", "test")
+        env.setdefault("OPENAI_API_KEY", "test-key")
 
         proc = subprocess.run(
             cmd,

@@ -1,9 +1,9 @@
 import sys
-import os
+from collections import defaultdict, deque
 from pathlib import Path
+
 from dotenv import load_dotenv
 from supabase import Client, create_client
-from collections import defaultdict, deque
 
 # Add root folder to python path to resolve config
 root_dir = Path(__file__).parent.parent
@@ -205,11 +205,6 @@ def calculate_dag_depths(concepts):
         .eq("status", "approved")\
         .execute()
     relations = res.data or []
-    print(f"[+] Found {len(relations)} approved relations.")
-
-    id_to_concept = {c["id"]: c for c in concepts}
-    concept_to_id = {c["code"]: c["id"] for c in concepts}
-
     # Build adjacency list
     adj = defaultdict(list)
     in_degree = defaultdict(int)
@@ -252,7 +247,7 @@ def populate_metadata(verify_only=False):
         .execute()
     all_concepts = res.data or []
     active_concepts = [c for c in all_concepts if c["status"] == "active"]
-    
+
     print(f"[+] Active concepts in DB: {len(active_concepts)}")
 
     # Check for unmapped active concepts
@@ -260,9 +255,9 @@ def populate_metadata(verify_only=False):
     for c in active_concepts:
         if c["code"] not in CURRICULUM_MAP:
             unmapped.append(c["code"])
-            
+
     if unmapped:
-        print(f"[WARNING] The following active concepts are not mapped in CURRICULUM_MAP:")
+        print("[WARNING] The following active concepts are not mapped in CURRICULUM_MAP:")
         for code in unmapped:
             print(f"  - {code}")
 

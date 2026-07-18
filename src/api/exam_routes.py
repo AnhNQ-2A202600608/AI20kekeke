@@ -99,7 +99,7 @@ async def list_exam_sets(
 
     except Exception as e:
         logger.error("Lỗi khi lấy danh sách bộ đề thi: %s", e, exc_info=True)
-        raise HTTPException(status_code=500, detail="Không thể truy cập dữ liệu bộ đề thi lúc này.")
+        raise HTTPException(status_code=503, detail="Không thể truy cập dữ liệu bộ đề thi lúc này.")
 
 
 @router.get("/{exam_set_id}", response_model=ExamDetailsResponse)
@@ -205,7 +205,7 @@ async def get_exam_details(
         raise
     except Exception as e:
         logger.error("Lỗi khi lấy chi tiết bộ đề: %s", e, exc_info=True)
-        raise HTTPException(status_code=500, detail="Không thể truy cập chi tiết đề thi lúc này.")
+        raise HTTPException(status_code=503, detail="Không thể truy cập chi tiết đề thi lúc này.")
 
 
 @router.post("/{exam_set_id}/start", response_model=ExamStartResponse)
@@ -248,7 +248,7 @@ async def start_exam(
 
         attempt_resp = db.app_client.table("exam_attempts").insert(attempt_data).execute()
         if not attempt_resp.data:
-            raise HTTPException(status_code=500, detail="Không thể lưu trữ lượt thi mới.")
+            raise HTTPException(status_code=503, detail="Không thể lưu trữ lượt thi mới.")
 
         inserted = attempt_resp.data[0]
         return ExamStartResponse(
@@ -262,7 +262,7 @@ async def start_exam(
         raise
     except Exception as e:
         logger.error("Lỗi khi bắt đầu làm bài thi: %s", e, exc_info=True)
-        raise HTTPException(status_code=500, detail="Không thể bắt đầu lượt thi mới.")
+        raise HTTPException(status_code=503, detail="Không thể bắt đầu lượt thi mới.")
 
 
 @router.post("/attempts/{attempt_id}/submit", response_model=ExamResultResponse)
@@ -487,7 +487,7 @@ async def submit_exam(
         raise
     except Exception as e:
         logger.error("Lỗi khi nộp bài thi giữa kỳ/cuối kỳ: %s", e, exc_info=True)
-        raise HTTPException(status_code=500, detail="Không thể chấm điểm và lưu kết quả bài thi.")
+        raise HTTPException(status_code=503, detail="Không thể chấm điểm và lưu kết quả bài thi.")
 
 
 @router.get("/attempts/{attempt_id}/result", response_model=ExamResultResponse)
@@ -584,4 +584,4 @@ async def get_exam_result(
         raise
     except Exception as e:
         logger.error("Lỗi khi lấy kết quả bài thi: %s", e, exc_info=True)
-        raise HTTPException(status_code=500, detail="Không thể truy cập kết quả bài thi lúc này.")
+        raise HTTPException(status_code=503, detail="Không thể truy cập kết quả bài thi lúc này.")

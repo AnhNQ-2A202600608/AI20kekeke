@@ -1,8 +1,8 @@
 import sys
-import os
 import uuid
-from pathlib import Path
 from collections import defaultdict
+from pathlib import Path
+
 from dotenv import load_dotenv
 from supabase import Client, create_client
 
@@ -171,9 +171,9 @@ def detect_cycles(edges):
     adj = defaultdict(list)
     for src, dst in edges:
         adj[src].append(dst)
-        
+
     visited = {}
-    
+
     def dfs(node):
         visited[node] = 1 # Visiting
         for neighbor in adj[node]:
@@ -209,8 +209,8 @@ def main():
 
     # 3. Clean existing relations for this course
     print("[*] Cleaning existing concept relations for the course...")
-    del_res = supabase.schema("app").table("concept_relations").delete().eq("course_id", COURSE_ID).execute()
-    print(f"[+] Deleted existing relations from DB.")
+    supabase.schema("app").table("concept_relations").delete().eq("course_id", COURSE_ID).execute()
+    print("[+] Deleted existing relations from DB.")
 
     # 4. Insert new relations
     relations_to_insert = []
@@ -219,7 +219,7 @@ def main():
     for src_code, dst_code in RAW_EDGES:
         src_id = concept_map.get(src_code)
         dst_id = concept_map.get(dst_code)
-        
+
         if not src_id:
             print(f"[WARNING] Skipping relation: source concept '{src_code}' not found or archived in DB.")
             skipped_count += 1
@@ -228,9 +228,9 @@ def main():
             print(f"[WARNING] Skipping relation: target concept '{dst_code}' not found or archived in DB.")
             skipped_count += 1
             continue
-            
+
         rel_id = get_relation_uuid(COURSE_CODE, src_code, RELATION_TYPE, dst_code)
-        
+
         payload = {
             "id": rel_id,
             "course_id": COURSE_ID,
@@ -256,7 +256,7 @@ def main():
     check_res = supabase.schema("app").table("concept_relations").select("id").eq("course_id", COURSE_ID).execute()
     db_count = len(check_res.data or [])
     print(f"  - Relations count in DB: {db_count} (Expected: {len(relations_to_insert)})")
-    
+
     # Orphan check
     all_active_codes = set(concept_map.keys())
     connected_codes = set()
@@ -264,7 +264,7 @@ def main():
         if s in concept_map and t in concept_map:
             connected_codes.add(s)
             connected_codes.add(t)
-            
+
     orphans = all_active_codes - connected_codes
     print(f"  - Active concepts: {len(all_active_codes)}")
     print(f"  - Connected concepts: {len(connected_codes)}")
