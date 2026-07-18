@@ -11,6 +11,12 @@ root_dir = Path(__file__).parent.parent
 if str(root_dir) not in sys.path:
     sys.path.insert(0, str(root_dir))
 
+# Reconfigure stdout/stderr to support Vietnamese Unicode printing on Windows
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8")
+
 from src.services.supabase_config import get_backend_supabase_config  # noqa: E402
 
 # Load environment variables

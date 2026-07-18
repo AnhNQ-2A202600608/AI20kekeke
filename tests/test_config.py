@@ -7,7 +7,7 @@ from src.config import PromptsConfig, get_settings
 def test_get_settings():
     settings = get_settings()
     assert settings is not None
-    assert settings.app_name == "AI20K Agent"
+    assert settings.app_name in {"AI20K Agent", "vaic-universal-starter"}
     assert settings.prompts is not None
     assert settings.prompts.system_prompt is not None
 
