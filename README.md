@@ -477,8 +477,11 @@ Bonus DevOps evidence:
 
 ## 👥 Đội ngũ phát triển (Team)
 
-| Thành viên | MSSV | Vai trò |
+| Thành viên | Email | Vai trò |
 |---|---|---|
-| Hồ Tất Bảo Hoàng | 2A202600699 | Product, UX, adaptive learning validation |
-| Nguyễn Phương Nam | 2A202600962 | Full-stack engineering, AI/RAG integration, documentation |
-| Nguyễn Vũ Trọng | 2A202600960 | Backend, data pipeline, evaluation evidence |
+| **Nguyễn Phương Nam** | nguyennam210601@gmail.com | Quản lý Dự án / Chương trình (Đội trưởng) |
+| **Nguyễn Quang Anh** | quanganhptit030@gmail.com | AI/ML · Nghiên cứu · Web Development |
+| **Lương Thị Hồng Nhung** | luongnhung0805@gmail.com | AI/ML · Backend · DevOps · Vibe Coding · Python |
+| **Lê Quang Minh (22bi13286)** | minhlq.281004@gmail.com | Trí tuệ nhân tạo / Dữ liệu / Học máy · Kỹ thuật / Developer |
+| **Nguyễn Vũ Trọng** | 20trongvu02@gmail.com | Kỹ thuật / Developer |
+| **Lê Đức Việt** | ducleviet111973@gmail.com | API / Tích hợp hệ thống · Vibe Coding · Quản lý Sản phẩm · UI/UX · Web Development |
