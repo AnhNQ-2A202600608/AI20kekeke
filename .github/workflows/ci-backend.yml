@@ -32,7 +32,7 @@ permissions:
 jobs:
   test-and-lint:
     name: Backend Test & Lint
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
@@ -48,6 +48,9 @@ jobs:
 
       - name: Lint with ruff
         run: uv run ruff check src/ tests/
+
+      - name: Generate Mock Graphs for Tests
+        run: uv run python scripts/generate_mock_graphs.py
 
       - name: Run tests
         run: uv run pytest tests/ -v --tb=short

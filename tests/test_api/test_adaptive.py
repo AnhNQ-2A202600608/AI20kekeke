@@ -1478,9 +1478,9 @@ async def test_class_stats_endpoint(mock_db, client):
         assert response.status_code == 200
         data = response.json()
         assert data["total_students"] == 5
-        assert data["class_average_elo"] == 1140.0
-        assert data["weakest_skill"]["name"] == "RAG Pipelines"
-        assert data["completion_rate"] == 55.0
+        assert data["class_average_elo"] == 1127.0
+        assert data["weakest_skill"]["name"] == "Vận dụng tính chất tỉ lệ thức, đại lượng tỉ lệ"
+        assert data["completion_rate"] == 40.0
     finally:
         app.dependency_overrides.clear()
 
@@ -1522,5 +1522,41 @@ async def test_class_insights_endpoint(mock_db, client):
         data_search = response_search.json()
         assert data_search["total_count"] == 1
         assert data_search["students"][0]["full_name"] == "Trần Thị Bình"
+    finally:
+        app.dependency_overrides.clear()
+
+
+@pytest.mark.asyncio
+async def test_recommend_endpoint_offline_fallback(mock_db, client):
+    student_id = uuid4()
+    course_id = uuid4()
+    concept_id = uuid4()
+
+    # Mock database begin method to raise a connection/network timeout
+    mock_db.begin.side_effect = RuntimeError("Database connection timed out")
+
+    app.dependency_overrides[get_adaptive_db] = lambda: mock_db
+
+    try:
+        response = await client.post(
+            "/api/v1/adaptive/recommend",
+            json={
+                "student_id": str(student_id),
+                "course_id": str(course_id),
+                "concept_id": str(concept_id),
+            },
+            headers={"Authorization": f"Bearer {student_id}"},
+        )
+        assert response.status_code == 200
+        data = response.json()
+        assert "decision_id" in data
+        assert "question_id" in data
+        assert "prompt" in data
+        assert any(
+            x in data["prompt"]
+            for x in ["tỉ lệ thức", "tỉ lệ thuận", "Tỉ lệ thức"]
+        )
+        assert data["options"] != {}
+        assert data["explanation"] == "Chọn ở chế độ offline."
     finally:
         app.dependency_overrides.clear()

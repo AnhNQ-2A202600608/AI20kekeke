@@ -1,0 +1,1260 @@
+{
+  "source_filename": "SGK LỊCH SỬ VÀ ĐỊA LÍ 8 KNTT.pdf",
+  "title": "SGK LỊCH SỬ VÀ ĐỊA LÍ 8 KNTT",
+  "grade": 8,
+  "checksum_sha256": "2d934246962063d0da611cd6aa0b9e97bbd569c547cc8bab5c3d4906bdf13959",
+  "page_count": 178,
+  "pages_processed": 178,
+  "ocr_pages": 178,
+  "text_layer_pages": 0,
+  "empty_pages": 0,
+  "processed_at": "2026-07-17T13:20:34.732456+00:00",
+  "pages": [
+    {
+      "page_number": 1,
+      "source": "ocr",
+      "char_count": 40,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 2,
+      "source": "ocr",
+      "char_count": 332,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 3,
+      "source": "ocr",
+      "char_count": 1594,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 4,
+      "source": "ocr",
+      "char_count": 1790,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 5,
+      "source": "ocr",
+      "char_count": 958,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 6,
+      "source": "ocr",
+      "char_count": 3829,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 7,
+      "source": "ocr",
+      "char_count": 8,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 8,
+      "source": "ocr",
+      "char_count": 373,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 9,
+      "source": "ocr",
+      "char_count": 1412,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 10,
+      "source": "ocr",
+      "char_count": 2111,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 11,
+      "source": "ocr",
+      "char_count": 1791,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 12,
+      "source": "ocr",
+      "char_count": 2165,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 13,
+      "source": "ocr",
+      "char_count": 1718,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 14,
+      "source": "ocr",
+      "char_count": 2146,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 15,
+      "source": "ocr",
+      "char_count": 2347,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 16,
+      "source": "ocr",
+      "char_count": 1440,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 17,
+      "source": "ocr",
+      "char_count": 1398,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 18,
+      "source": "ocr",
+      "char_count": 2041,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 19,
+      "source": "ocr",
+      "char_count": 1421,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 20,
+      "source": "ocr",
+      "char_count": 1291,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 21,
+      "source": "ocr",
+      "char_count": 1511,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 22,
+      "source": "ocr",
+      "char_count": 2012,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 23,
+      "source": "ocr",
+      "char_count": 1697,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 24,
+      "source": "ocr",
+      "char_count": 1667,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 25,
+      "source": "ocr",
+      "char_count": 779,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 26,
+      "source": "ocr",
+      "char_count": 2281,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 27,
+      "source": "ocr",
+      "char_count": 2193,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 28,
+      "source": "ocr",
+      "char_count": 1378,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 29,
+      "source": "ocr",
+      "char_count": 1591,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 30,
+      "source": "ocr",
+      "char_count": 2266,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 31,
+      "source": "ocr",
+      "char_count": 2078,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 32,
+      "source": "ocr",
+      "char_count": 748,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 33,
+      "source": "ocr",
+      "char_count": 1565,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 34,
+      "source": "ocr",
+      "char_count": 1333,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 35,
+      "source": "ocr",
+      "char_count": 1586,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 36,
+      "source": "ocr",
+      "char_count": 1544,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 37,
+      "source": "ocr",
+      "char_count": 2224,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 38,
+      "source": "ocr",
+      "char_count": 1508,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 39,
+      "source": "ocr",
+      "char_count": 1813,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 40,
+      "source": "ocr",
+      "char_count": 1901,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 41,
+      "source": "ocr",
+      "char_count": 1557,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 42,
+      "source": "ocr",
+      "char_count": 1459,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 43,
+      "source": "ocr",
+      "char_count": 2061,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 44,
+      "source": "ocr",
+      "char_count": 1907,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 45,
+      "source": "ocr",
+      "char_count": 1047,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 46,
+      "source": "ocr",
+      "char_count": 2462,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 47,
+      "source": "ocr",
+      "char_count": 2111,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 48,
+      "source": "ocr",
+      "char_count": 2133,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 49,
+      "source": "ocr",
+      "char_count": 1440,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 50,
+      "source": "ocr",
+      "char_count": 2418,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 51,
+      "source": "ocr",
+      "char_count": 2635,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 52,
+      "source": "ocr",
+      "char_count": 1902,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 53,
+      "source": "ocr",
+      "char_count": 1195,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 54,
+      "source": "ocr",
+      "char_count": 1888,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 55,
+      "source": "ocr",
+      "char_count": 1647,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 56,
+      "source": "ocr",
+      "char_count": 1982,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 57,
+      "source": "ocr",
+      "char_count": 1364,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 58,
+      "source": "ocr",
+      "char_count": 2219,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 59,
+      "source": "ocr",
+      "char_count": 2315,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 60,
+      "source": "ocr",
+      "char_count": 1058,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 61,
+      "source": "ocr",
+      "char_count": 1806,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 62,
+      "source": "ocr",
+      "char_count": 1564,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 63,
+      "source": "ocr",
+      "char_count": 2171,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 64,
+      "source": "ocr",
+      "char_count": 931,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 65,
+      "source": "ocr",
+      "char_count": 1536,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 66,
+      "source": "ocr",
+      "char_count": 1442,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 67,
+      "source": "ocr",
+      "char_count": 2099,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 68,
+      "source": "ocr",
+      "char_count": 1866,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 69,
+      "source": "ocr",
+      "char_count": 1721,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 70,
+      "source": "ocr",
+      "char_count": 1386,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 71,
+      "source": "ocr",
+      "char_count": 811,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 72,
+      "source": "ocr",
+      "char_count": 2325,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 73,
+      "source": "ocr",
+      "char_count": 1431,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 74,
+      "source": "ocr",
+      "char_count": 2488,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 75,
+      "source": "ocr",
+      "char_count": 908,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 76,
+      "source": "ocr",
+      "char_count": 1241,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 77,
+      "source": "ocr",
+      "char_count": 1944,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 78,
+      "source": "ocr",
+      "char_count": 1637,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 79,
+      "source": "ocr",
+      "char_count": 2090,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 80,
+      "source": "ocr",
+      "char_count": 1784,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 81,
+      "source": "ocr",
+      "char_count": 1946,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 82,
+      "source": "ocr",
+      "char_count": 1389,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 83,
+      "source": "ocr",
+      "char_count": 1628,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 84,
+      "source": "ocr",
+      "char_count": 989,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 85,
+      "source": "ocr",
+      "char_count": 1981,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 86,
+      "source": "ocr",
+      "char_count": 1197,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 87,
+      "source": "ocr",
+      "char_count": 1725,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 88,
+      "source": "ocr",
+      "char_count": 2099,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 89,
+      "source": "ocr",
+      "char_count": 2192,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 90,
+      "source": "ocr",
+      "char_count": 1567,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 91,
+      "source": "ocr",
+      "char_count": 1111,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 92,
+      "source": "ocr",
+      "char_count": 40,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 93,
+      "source": "ocr",
+      "char_count": 338,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 94,
+      "source": "ocr",
+      "char_count": 1431,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 95,
+      "source": "ocr",
+      "char_count": 811,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 96,
+      "source": "ocr",
+      "char_count": 2021,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 97,
+      "source": "ocr",
+      "char_count": 598,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 98,
+      "source": "ocr",
+      "char_count": 1461,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 99,
+      "source": "ocr",
+      "char_count": 76,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 100,
+      "source": "ocr",
+      "char_count": 1910,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 101,
+      "source": "ocr",
+      "char_count": 967,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 102,
+      "source": "ocr",
+      "char_count": 2187,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 103,
+      "source": "ocr",
+      "char_count": 289,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 104,
+      "source": "ocr",
+      "char_count": 852,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 105,
+      "source": "ocr",
+      "char_count": 1028,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 106,
+      "source": "ocr",
+      "char_count": 1516,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 107,
+      "source": "ocr",
+      "char_count": 2026,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 108,
+      "source": "ocr",
+      "char_count": 1530,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 109,
+      "source": "ocr",
+      "char_count": 846,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 110,
+      "source": "ocr",
+      "char_count": 1845,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 111,
+      "source": "ocr",
+      "char_count": 1637,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 112,
+      "source": "ocr",
+      "char_count": 247,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 113,
+      "source": "ocr",
+      "char_count": 1734,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 114,
+      "source": "ocr",
+      "char_count": 1062,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 115,
+      "source": "ocr",
+      "char_count": 1723,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 116,
+      "source": "ocr",
+      "char_count": 374,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 117,
+      "source": "ocr",
+      "char_count": 1659,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 118,
+      "source": "ocr",
+      "char_count": 1061,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 119,
+      "source": "ocr",
+      "char_count": 1015,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 120,
+      "source": "ocr",
+      "char_count": 1418,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 121,
+      "source": "ocr",
+      "char_count": 79,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 122,
+      "source": "ocr",
+      "char_count": 1074,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 123,
+      "source": "ocr",
+      "char_count": 1352,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 124,
+      "source": "ocr",
+      "char_count": 949,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 125,
+      "source": "ocr",
+      "char_count": 1729,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 126,
+      "source": "ocr",
+      "char_count": 1284,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 127,
+      "source": "ocr",
+      "char_count": 1692,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 128,
+      "source": "ocr",
+      "char_count": 1568,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 129,
+      "source": "ocr",
+      "char_count": 1915,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 130,
+      "source": "ocr",
+      "char_count": 1471,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 131,
+      "source": "ocr",
+      "char_count": 1139,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 132,
+      "source": "ocr",
+      "char_count": 1880,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 133,
+      "source": "ocr",
+      "char_count": 1874,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 134,
+      "source": "ocr",
+      "char_count": 917,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 135,
+      "source": "ocr",
+      "char_count": 1674,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 136,
+      "source": "ocr",
+      "char_count": 1862,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 137,
+      "source": "ocr",
+      "char_count": 103,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 138,
+      "source": "ocr",
+      "char_count": 1335,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 139,
+      "source": "ocr",
+      "char_count": 1951,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 140,
+      "source": "ocr",
+      "char_count": 1377,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 141,
+      "source": "ocr",
+      "char_count": 568,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 142,
+      "source": "ocr",
+      "char_count": 1657,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 143,
+      "source": "ocr",
+      "char_count": 338,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 144,
+      "source": "ocr",
+      "char_count": 2285,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 145,
+      "source": "ocr",
+      "char_count": 1923,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 146,
+      "source": "ocr",
+      "char_count": 1279,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 147,
+      "source": "ocr",
+      "char_count": 525,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 148,
+      "source": "ocr",
+      "char_count": 881,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 149,
+      "source": "ocr",
+      "char_count": 880,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 150,
+      "source": "ocr",
+      "char_count": 2036,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 151,
+      "source": "ocr",
+      "char_count": 814,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 152,
+      "source": "ocr",
+      "char_count": 1171,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 153,
+      "source": "ocr",
+      "char_count": 2405,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 154,
+      "source": "ocr",
+      "char_count": 541,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 155,
+      "source": "ocr",
+      "char_count": 2024,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 156,
+      "source": "ocr",
+      "char_count": 2255,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 157,
+      "source": "ocr",
+      "char_count": 1321,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 158,
+      "source": "ocr",
+      "char_count": 1540,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 159,
+      "source": "ocr",
+      "char_count": 1643,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 160,
+      "source": "ocr",
+      "char_count": 1373,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 161,
+      "source": "ocr",
+      "char_count": 1710,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 162,
+      "source": "ocr",
+      "char_count": 1781,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 163,
+      "source": "ocr",
+      "char_count": 2311,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 164,
+      "source": "ocr",
+      "char_count": 1518,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 165,
+      "source": "ocr",
+      "char_count": 1529,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 166,
+      "source": "ocr",
+      "char_count": 1635,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 167,
+      "source": "ocr",
+      "char_count": 2052,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 168,
+      "source": "ocr",
+      "char_count": 2491,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 169,
+      "source": "ocr",
+      "char_count": 2203,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 170,
+      "source": "ocr",
+      "char_count": 2062,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 171,
+      "source": "ocr",
+      "char_count": 1611,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 172,
+      "source": "ocr",
+      "char_count": 2365,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 173,
+      "source": "ocr",
+      "char_count": 2591,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 174,
+      "source": "ocr",
+      "char_count": 2184,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 175,
+      "source": "ocr",
+      "char_count": 515,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 176,
+      "source": "ocr",
+      "char_count": 822,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 177,
+      "source": "ocr",
+      "char_count": 1141,
+      "status": "ok",
+      "ocr_error": null
+    },
+    {
+      "page_number": 178,
+      "source": "ocr",
+      "char_count": 917,
+      "status": "ok",
+      "ocr_error": null
+    }
+  ]
+}

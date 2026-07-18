@@ -83,10 +83,22 @@ def _cache_auth_user(token: str, user: AuthenticatedUser) -> AuthenticatedUser:
 
 
 def allow_dev_tokens() -> bool:
+    try:
+        from src.config import get_settings
+        if get_settings().app_env.lower() == "production":
+            return False
+    except Exception:
+        pass
     return os.environ.get("AUTH_ALLOW_DEV_TOKENS", "").strip().lower() in {"1", "true", "yes", "on"}
 
 
 def allow_service_role_bypass() -> bool:
+    try:
+        from src.config import get_settings
+        if get_settings().app_env.lower() == "production":
+            return False
+    except Exception:
+        pass
     return os.environ.get("AUTH_ALLOW_SERVICE_ROLE_BYPASS", "").strip().lower() in {"1", "true", "yes", "on"}
 
 
@@ -478,6 +490,56 @@ def recommend_question(
         logger.error(f"Lỗi gợi ý câu hỏi: {str(e)}", exc_info=True)
         if is_adaptive_dependency_error(e):
             raise HTTPException(status_code=503, detail="Kho dữ liệu adaptive hiện không sẵn sàng.")
+
+        # Attempt local offline JSON fallback using local questions
+        try:
+            from src.services.diagnostic_engine import DiagnosticEngine
+            from uuid import uuid4
+            engine = DiagnosticEngine()
+            concept_id_str = str(request.concept_id)
+
+            # Find candidate questions matching this concept YCCD
+            candidates = [
+                q for q in engine.questions_data
+                if concept_id_str in q.get("yccd", []) and q.get("question_id") not in request.excluded_question_ids
+            ]
+            if not candidates:
+                candidates = [q for q in engine.questions_data if concept_id_str in q.get("yccd", [])]
+            if not candidates:
+                candidates = engine.questions_data
+
+            if candidates:
+                selected_q = candidates[0]
+                options_dict = selected_q.get("options", {})
+
+                # Format hints
+                levels = ["light", "medium", "deep"]
+                formatted_hints = [
+                    {"level": levels[i], "content": text}
+                    for i, text in enumerate(selected_q.get("socratic_hints", []))
+                    if i < 3
+                ]
+
+                return RecommendResponse(
+                    decision_id=uuid4(),
+                    question_id=uuid4(),
+                    type="mcq" if options_dict else "short_answer",
+                    prompt=selected_q.get("text", "Câu hỏi luyện tập"),
+                    options=options_dict,
+                    answer=selected_q.get("dap_an"),
+                    explanation="Chọn ở chế độ offline.",
+                    expected_answer=selected_q.get("dap_an") if not options_dict else None,
+                    evaluation_points=[],
+                    sfia_level="3",
+                    competency="Kiến thức nền",
+                    hints=formatted_hints,
+                    expected_success=0.75,
+                    expected_reward=0.75,
+                    question_difficulty_elo=1200.0,
+                )
+        except Exception as fallback_err:
+            logger.error(f"Offline recommendation fallback failed: {fallback_err}", exc_info=True)
+
         raise HTTPException(status_code=503, detail="Kho dữ liệu adaptive hiện không sẵn sàng.")
 
 
@@ -646,7 +708,55 @@ def submit_attempt(
         }
 
         txn_start = time.perf_counter()
-        txn_result = db.submit_attempt_v3(payload)
+        txn_result = None
+
+        # Nếu database ở stub mode hoặc ngoại tuyến, ghi offline
+        is_mock = "mock" in type(db).__name__.lower()
+        is_stub = False if is_mock else bool(getattr(db, "_stub_mode", False))
+        is_offline = False if is_mock else (getattr(db, "app_client", None) is None)
+
+        if is_stub or is_offline:
+            try:
+                from src.services.diagnostic_engine import DiagnosticEngine
+                engine = DiagnosticEngine()
+                engine.queue_offline_attempt(payload)
+                import uuid
+                txn_result = {
+                    "attempt_id": str(uuid.uuid4()),
+                    "new_student_elo": old_elo,
+                    "expected_success": expected_success,
+                    "new_bkt": old_bkt,
+                    "new_state": mastery.get("mastery_state", "not_started"),
+                    "weakness_flag": mastery.get("weakness_flag", False),
+                    "is_correct": is_correct,
+                    "offline_saved": True,
+                }
+            except Exception as offline_err:
+                logger.error(f"Lỗi khi ghi attempt offline trong stub mode: {offline_err}", exc_info=True)
+        else:
+            try:
+                txn_result = db.submit_attempt_v3(payload)
+            except Exception as api_err:
+                logger.warning(f"Supabase submit_attempt_v3 failed: {api_err}. Fallback to offline SQLite queue.")
+                try:
+                    from src.services.diagnostic_engine import DiagnosticEngine
+                    engine = DiagnosticEngine()
+                    engine.queue_offline_attempt(payload)
+                    import uuid
+                    txn_result = {
+                        "attempt_id": str(uuid.uuid4()),
+                        "new_student_elo": old_elo,
+                        "expected_success": expected_success,
+                        "new_bkt": old_bkt,
+                        "new_state": mastery.get("mastery_state", "not_started"),
+                        "weakness_flag": mastery.get("weakness_flag", False),
+                        "is_correct": is_correct,
+                        "offline_saved": True,
+                    }
+                except Exception as offline_err:
+                    logger.error(f"Lỗi khi ghi attempt offline trong fallback: {offline_err}", exc_info=True)
+                    raise api_err
+
         txn_ms = (time.perf_counter() - txn_start) * 1000
         if not txn_result:
             raise HTTPException(status_code=503, detail="Kho dữ liệu adaptive hiện không sẵn sàng.")
@@ -1009,9 +1119,9 @@ def get_class_stats_endpoint(
         if db._stub_mode or db.app_client is None:
             return ClassStatsResponse(
                 total_students=5,
-                class_average_elo=1140.0,
-                weakest_skill=WeakestSkillResponse(id="rag-pipelines", name="RAG Pipelines", avg_elo=830.0),
-                completion_rate=55.0,
+                class_average_elo=1127.0,
+                weakest_skill=WeakestSkillResponse(id="M7.SDS.05", name="Vận dụng tính chất tỉ lệ thức, đại lượng tỉ lệ", avg_elo=1028.0),
+                completion_rate=40.0,
             )
 
         # 2. Đọc dữ liệu từ cache để phản hồi tức thì
@@ -1251,48 +1361,62 @@ def get_mock_backend_students() -> list[dict]:
             "full_name": "Nguyễn Văn Anh",
             "email": "vananh.nguyen@example.com",
             "mssv": "2A202611111",
-            "accuracy_rate": 74.0,
-            "total_attempts": 14,
-            "total_correct": 10,
-            "active_days_count": 19,
-            "ai_chat_count": 32,
+            "accuracy_rate": 92.0,
+            "total_attempts": 25,
+            "total_correct": 23,
+            "active_days_count": 25,
+            "ai_chat_count": 21,
             "last_active_at": "2026-06-23T09:10:00Z",
-            "streak": 5,
+            "streak": 12,
             "skills": [
                 {
                     "concept_id": "00000000-0000-0000-0000-000000000010",
-                    "code": "transformer-foundations",
-                    "name": "Transformer Foundations",
+                    "code": "M7.SDS.05",
+                    "name": "Vận dụng tính chất tỉ lệ thức, đại lượng tỉ lệ",
                     "elo": 1420.0,
-                    "bkt_mastery_probability": 0.88,
-                    "bkt_mastery_probability_stored": 0.88,
+                    "bkt_mastery_probability": 0.95,
+                    "bkt_mastery_probability_stored": 0.95,
                     "mastery_state": "mastered",
                     "weakness_flag": False,
                     "attempt_count": 12,
-                    "correct_count": 10,
+                    "correct_count": 11,
                     "last_practiced_at": "2026-06-23T09:10:00Z",
-                    "stability_days": 4.5,
+                    "stability_days": 15.0,
                 },
                 {
                     "concept_id": "00000000-0000-0000-0000-000000000011",
-                    "code": "agent-security-debug",
-                    "name": "Agent Security & Debug",
-                    "elo": 820.0,
-                    "bkt_mastery_probability": 0.05,
-                    "bkt_mastery_probability_stored": 0.05,
-                    "mastery_state": "weak",
-                    "weakness_flag": True,
-                    "attempt_count": 2,
-                    "correct_count": 0,
+                    "code": "M6.SDS.03",
+                    "name": "Hiểu tỉ số của hai đại lượng",
+                    "elo": 1480.0,
+                    "bkt_mastery_probability": 0.98,
+                    "bkt_mastery_probability_stored": 0.98,
+                    "mastery_state": "mastered",
+                    "weakness_flag": False,
+                    "attempt_count": 8,
+                    "correct_count": 8,
                     "last_practiced_at": "2026-06-23T09:10:00Z",
-                    "stability_days": 3.0,
+                    "stability_days": 15.0,
                 },
+                {
+                    "concept_id": "00000000-0000-0000-0000-000000000012",
+                    "code": "M5.SDS.02",
+                    "name": "Nhận biết hai phân số bằng nhau",
+                    "elo": 1510.0,
+                    "bkt_mastery_probability": 0.99,
+                    "bkt_mastery_probability_stored": 0.99,
+                    "mastery_state": "mastered",
+                    "weakness_flag": False,
+                    "attempt_count": 5,
+                    "correct_count": 4,
+                    "last_practiced_at": "2026-06-23T09:10:00Z",
+                    "stability_days": 15.0,
+                }
             ],
             "recent_attempts": [
                 {
                     "id": "11111111-1111-1111-1111-111111111110",
-                    "question_prompt": "Mô tả cơ chế Attention trong Transformer?",
-                    "concept_name": "Transformer Foundations",
+                    "question_prompt": "Tìm x trong tỉ lệ thức x/4 = 9/12",
+                    "concept_name": "Vận dụng tính chất tỉ lệ thức, đại lượng tỉ lệ",
                     "is_correct": True,
                     "actual_score": 1.0,
                     "hint_count": 0,
@@ -1306,25 +1430,53 @@ def get_mock_backend_students() -> list[dict]:
             "full_name": "Trần Thị Bình",
             "email": "binh.tran@example.com",
             "mssv": "2A202611112",
-            "accuracy_rate": 92.0,
-            "total_attempts": 25,
-            "total_correct": 23,
+            "accuracy_rate": 81.0,
+            "total_attempts": 18,
+            "total_correct": 15,
             "active_days_count": 25,
             "ai_chat_count": 21,
             "last_active_at": "2026-06-23T08:25:00Z",
-            "streak": 12,
+            "streak": 5,
             "skills": [
                 {
                     "concept_id": "00000000-0000-0000-0000-000000000010",
-                    "code": "transformer-foundations",
-                    "name": "Transformer Foundations",
-                    "elo": 1480.0,
-                    "bkt_mastery_probability": 0.97,
-                    "bkt_mastery_probability_stored": 0.97,
+                    "code": "M7.SDS.05",
+                    "name": "Vận dụng tính chất tỉ lệ thức, đại lượng tỉ lệ",
+                    "elo": 1120.0,
+                    "bkt_mastery_probability": 0.72,
+                    "bkt_mastery_probability_stored": 0.72,
+                    "mastery_state": "learning",
+                    "weakness_flag": False,
+                    "attempt_count": 10,
+                    "correct_count": 8,
+                    "last_practiced_at": "2026-06-23T08:25:00Z",
+                    "stability_days": 4.5,
+                },
+                {
+                    "concept_id": "00000000-0000-0000-0000-000000000011",
+                    "code": "M6.SDS.03",
+                    "name": "Hiểu tỉ số của hai đại lượng",
+                    "elo": 1250.0,
+                    "bkt_mastery_probability": 0.89,
+                    "bkt_mastery_probability_stored": 0.89,
                     "mastery_state": "mastered",
                     "weakness_flag": False,
-                    "attempt_count": 15,
-                    "correct_count": 14,
+                    "attempt_count": 5,
+                    "correct_count": 5,
+                    "last_practiced_at": "2026-06-23T08:25:00Z",
+                    "stability_days": 15.0,
+                },
+                {
+                    "concept_id": "00000000-0000-0000-0000-000000000012",
+                    "code": "M5.SDS.02",
+                    "name": "Nhận biết hai phân số bằng nhau",
+                    "elo": 1300.0,
+                    "bkt_mastery_probability": 0.92,
+                    "bkt_mastery_probability_stored": 0.92,
+                    "mastery_state": "mastered",
+                    "weakness_flag": False,
+                    "attempt_count": 3,
+                    "correct_count": 2,
                     "last_practiced_at": "2026-06-23T08:25:00Z",
                     "stability_days": 15.0,
                 }
@@ -1332,10 +1484,10 @@ def get_mock_backend_students() -> list[dict]:
             "recent_attempts": [
                 {
                     "id": "11111111-1111-1111-1111-111111111111",
-                    "question_prompt": "Phân tích kiến trúc GraphRAG...",
-                    "concept_name": "Transformer Foundations",
+                    "question_prompt": "Tìm x trong tỉ lệ thức x/4 = 9/12",
+                    "concept_name": "Vận dụng tính chất tỉ lệ thức, đại lượng tỉ lệ",
                     "is_correct": True,
-                    "actual_score": 0.9,
+                    "actual_score": 1.0,
                     "hint_count": 0,
                     "submitted_at": "2026-06-23T08:25:00Z",
                     "response_time_ms": 12000,
@@ -1356,16 +1508,44 @@ def get_mock_backend_students() -> list[dict]:
             "streak": 2,
             "skills": [
                 {
-                    "concept_id": "00000000-0000-0000-0000-000000000012",
-                    "code": "embedding-vector-stores",
-                    "name": "Embedding & Vector Stores",
-                    "elo": 780.0,
-                    "bkt_mastery_probability": 0.0,
-                    "bkt_mastery_probability_stored": 0.0,
+                    "concept_id": "00000000-0000-0000-0000-000000000010",
+                    "code": "M7.SDS.05",
+                    "name": "Vận dụng tính chất tỉ lệ thức, đại lượng tỉ lệ",
+                    "elo": 720.0,
+                    "bkt_mastery_probability": 0.02,
+                    "bkt_mastery_probability_stored": 0.02,
                     "mastery_state": "weak",
                     "weakness_flag": True,
-                    "attempt_count": 20,
+                    "attempt_count": 15,
+                    "correct_count": 6,
+                    "last_practiced_at": "2026-06-23T07:54:00Z",
+                    "stability_days": 3.0,
+                },
+                {
+                    "concept_id": "00000000-0000-0000-0000-000000000011",
+                    "code": "M6.SDS.03",
+                    "name": "Hiểu tỉ số của hai đại lượng",
+                    "elo": 780.0,
+                    "bkt_mastery_probability": 0.05,
+                    "bkt_mastery_probability_stored": 0.05,
+                    "mastery_state": "weak",
+                    "weakness_flag": True,
+                    "attempt_count": 14,
                     "correct_count": 8,
+                    "last_practiced_at": "2026-06-23T07:54:00Z",
+                    "stability_days": 3.0,
+                },
+                {
+                    "concept_id": "00000000-0000-0000-0000-000000000012",
+                    "code": "M5.SDS.02",
+                    "name": "Nhận biết hai phân số bằng nhau",
+                    "elo": 810.0,
+                    "bkt_mastery_probability": 0.12,
+                    "bkt_mastery_probability_stored": 0.12,
+                    "mastery_state": "weak",
+                    "weakness_flag": True,
+                    "attempt_count": 10,
+                    "correct_count": 5,
                     "last_practiced_at": "2026-06-23T07:54:00Z",
                     "stability_days": 3.0,
                 }
@@ -1373,10 +1553,10 @@ def get_mock_backend_students() -> list[dict]:
             "recent_attempts": [
                 {
                     "id": "11111111-1111-1111-1111-111111111112",
-                    "question_prompt": "Giải thích RAG Pipeline...",
-                    "concept_name": "Embedding & Vector Stores",
+                    "question_prompt": "Tỉ lệ thức là đẳng thức của hai tỉ số. Đúng hay sai?",
+                    "concept_name": "Vận dụng tính chất tỉ lệ thức, đại lượng tỉ lệ",
                     "is_correct": False,
-                    "actual_score": 0.4,
+                    "actual_score": 0.0,
                     "hint_count": 2,
                     "submitted_at": "2026-06-23T07:54:00Z",
                     "response_time_ms": 21000,
@@ -1388,36 +1568,64 @@ def get_mock_backend_students() -> list[dict]:
             "full_name": "Phạm Thanh Thảo",
             "email": "thao.pham@example.com",
             "mssv": "2A202611114",
-            "accuracy_rate": 81.0,
-            "total_attempts": 10,
-            "total_correct": 8,
+            "accuracy_rate": 68.0,
+            "total_attempts": 22,
+            "total_correct": 15,
             "active_days_count": 20,
             "ai_chat_count": 18,
             "last_active_at": "2026-06-22T15:42:00Z",
-            "streak": 8,
+            "streak": 0,
             "skills": [
                 {
                     "concept_id": "00000000-0000-0000-0000-000000000010",
-                    "code": "transformer-foundations",
-                    "name": "Transformer Foundations",
-                    "elo": 1080.0,
-                    "bkt_mastery_probability": 0.4,
-                    "bkt_mastery_probability_stored": 0.4,
+                    "code": "M7.SDS.05",
+                    "name": "Vận dụng tính chất tỉ lệ thức, đại lượng tỉ lệ",
+                    "elo": 830.0,
+                    "bkt_mastery_probability": 0.04,
+                    "bkt_mastery_probability_stored": 0.04,
+                    "mastery_state": "weak",
+                    "weakness_flag": True,
+                    "attempt_count": 12,
+                    "correct_count": 5,
+                    "last_practiced_at": "2026-06-22T15:42:00Z",
+                    "stability_days": 3.0,
+                },
+                {
+                    "concept_id": "00000000-0000-0000-0000-000000000011",
+                    "code": "M6.SDS.03",
+                    "name": "Hiểu tỉ số của hai đại lượng",
+                    "elo": 1140.0,
+                    "bkt_mastery_probability": 0.82,
+                    "bkt_mastery_probability_stored": 0.82,
                     "mastery_state": "learning",
                     "weakness_flag": False,
-                    "attempt_count": 10,
-                    "correct_count": 8,
+                    "attempt_count": 7,
+                    "correct_count": 7,
                     "last_practiced_at": "2026-06-22T15:42:00Z",
-                    "stability_days": 3.5,
+                    "stability_days": 3.0,
+                },
+                {
+                    "concept_id": "00000000-0000-0000-0000-000000000012",
+                    "code": "M5.SDS.02",
+                    "name": "Nhận biết hai phân số bằng nhau",
+                    "elo": 1210.0,
+                    "bkt_mastery_probability": 0.90,
+                    "bkt_mastery_probability_stored": 0.90,
+                    "mastery_state": "mastered",
+                    "weakness_flag": False,
+                    "attempt_count": 3,
+                    "correct_count": 3,
+                    "last_practiced_at": "2026-06-22T15:42:00Z",
+                    "stability_days": 3.0,
                 }
             ],
             "recent_attempts": [
                 {
                     "id": "11111111-1111-1111-1111-111111111113",
-                    "question_prompt": "Thế nào là Human in the Loop (HITL)...",
-                    "concept_name": "Transformer Foundations",
-                    "is_correct": True,
-                    "actual_score": 0.8,
+                    "question_prompt": "Biết x và y tỉ lệ thuận với nhau và khi x = 2 thì y = 6. Tìm hệ số tỉ lệ k",
+                    "concept_name": "Vận dụng tính chất tỉ lệ thức, đại lượng tỉ lệ",
+                    "is_correct": False,
+                    "actual_score": 0.0,
                     "hint_count": 0,
                     "submitted_at": "2026-06-22T15:42:00Z",
                     "response_time_ms": 14000,
@@ -1429,25 +1637,53 @@ def get_mock_backend_students() -> list[dict]:
             "full_name": "Vũ Quốc Khánh",
             "email": "khanh.vu@example.com",
             "mssv": "2A202611115",
-            "accuracy_rate": 68.0,
-            "total_attempts": 22,
-            "total_correct": 15,
+            "accuracy_rate": 74.0,
+            "total_attempts": 12,
+            "total_correct": 9,
             "active_days_count": 17,
             "ai_chat_count": 29,
             "last_active_at": "2026-06-22T11:31:00Z",
-            "streak": 0,
+            "streak": 4,
             "skills": [
                 {
-                    "concept_id": "00000000-0000-0000-0000-000000000013",
-                    "code": "rag-pipelines",
-                    "name": "RAG Pipelines",
-                    "elo": 830.0,
-                    "bkt_mastery_probability": 0.04,
-                    "bkt_mastery_probability_stored": 0.04,
-                    "mastery_state": "weak",
-                    "weakness_flag": True,
-                    "attempt_count": 12,
-                    "correct_count": 5,
+                    "concept_id": "00000000-0000-0000-0000-000000000010",
+                    "code": "M7.SDS.05",
+                    "name": "Vận dụng tính chất tỉ lệ thức, đại lượng tỉ lệ",
+                    "elo": 1050.0,
+                    "bkt_mastery_probability": 0.52,
+                    "bkt_mastery_probability_stored": 0.52,
+                    "mastery_state": "learning",
+                    "weakness_flag": False,
+                    "attempt_count": 6,
+                    "correct_count": 4,
+                    "last_practiced_at": "2026-06-22T11:31:00Z",
+                    "stability_days": 3.0,
+                },
+                {
+                    "concept_id": "00000000-0000-0000-0000-000000000011",
+                    "code": "M6.SDS.03",
+                    "name": "Hiểu tỉ số của hai đại lượng",
+                    "elo": 1110.0,
+                    "bkt_mastery_probability": 0.74,
+                    "bkt_mastery_probability_stored": 0.74,
+                    "mastery_state": "learning",
+                    "weakness_flag": False,
+                    "attempt_count": 4,
+                    "correct_count": 3,
+                    "last_practiced_at": "2026-06-22T11:31:00Z",
+                    "stability_days": 3.0,
+                },
+                {
+                    "concept_id": "00000000-0000-0000-0000-000000000012",
+                    "code": "M5.SDS.02",
+                    "name": "Nhận biết hai phân số bằng nhau",
+                    "elo": 1180.0,
+                    "bkt_mastery_probability": 0.81,
+                    "bkt_mastery_probability_stored": 0.81,
+                    "mastery_state": "learning",
+                    "weakness_flag": False,
+                    "attempt_count": 2,
+                    "correct_count": 2,
                     "last_practiced_at": "2026-06-22T11:31:00Z",
                     "stability_days": 3.0,
                 }
@@ -1455,10 +1691,10 @@ def get_mock_backend_students() -> list[dict]:
             "recent_attempts": [
                 {
                     "id": "11111111-1111-1111-1111-111111111114",
-                    "question_prompt": "Cơ chế kiểm chứng Citation...",
-                    "concept_name": "RAG Pipelines",
-                    "is_correct": False,
-                    "actual_score": 0.6,
+                    "question_prompt": "Tìm x trong tỉ lệ thức x/4 = 9/12",
+                    "concept_name": "Vận dụng tính chất tỉ lệ thức, đại lượng tỉ lệ",
+                    "is_correct": True,
+                    "actual_score": 1.0,
                     "hint_count": 1,
                     "submitted_at": "2026-06-22T11:31:00Z",
                     "response_time_ms": 17000,

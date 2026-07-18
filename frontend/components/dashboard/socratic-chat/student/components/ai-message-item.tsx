@@ -1,13 +1,13 @@
 import React, { useMemo, useState } from 'react';
 import {
   Brain,
-  ChevronRight, 
-  Check, 
-  GraduationCap, 
-  AlertTriangle, 
-  Sparkles, 
-  BookOpen, 
-  ThumbsUp, 
+  ChevronRight,
+  Check,
+  GraduationCap,
+  AlertTriangle,
+  Sparkles,
+  BookOpen,
+  ThumbsUp,
   ThumbsDown,
   Database,
   Wrench,
@@ -71,8 +71,8 @@ export const SocraticMarkdown: React.FC<SocraticMarkdownProps> = ({ text, classN
       if (inCodeBlock) {
         inCodeBlock = false;
         elements.push(
-          <pre 
-            key={`codeblock-${lineIdx}`} 
+          <pre
+            key={`codeblock-${lineIdx}`}
             className="bg-stone-900 text-stone-200 p-3.5 rounded-xl border border-stone-800 font-mono text-[11px] overflow-x-auto whitespace-pre my-3 max-w-full shadow-inner leading-relaxed"
           >
             <code className={codeBlockLang ? `language-${codeBlockLang}` : ''}>
@@ -616,8 +616,8 @@ export const AIMessageItem: React.FC<AIMessageItemProps> = ({
     setIsSlidePanelOpen(true);
     if (msg.slides && msg.slides.length > 0) {
       setRetrievedSlides(msg.slides);
-      const matchedIdx = msg.slides.findIndex((s: Slide) => 
-        s.slide_number === cit.page && 
+      const matchedIdx = msg.slides.findIndex((s: Slide) =>
+        s.slide_number === cit.page &&
         cit.source &&
         s.document_name.toLowerCase().includes(cit.source.toLowerCase())
       );
@@ -688,16 +688,16 @@ export const AIMessageItem: React.FC<AIMessageItemProps> = ({
             </div>
           </div>
         ) : (
-          <div 
+          <div
             className={`relative rounded-2xl border p-3.5 transition-colors ${
-              isAI 
-                ? 'bg-white border-gray-border rounded-tl-none text-stone-800' 
+              isAI
+                ? 'bg-white border-gray-border rounded-tl-none text-stone-800'
                 : 'bg-primary-green border-primary-green/70 text-white rounded-tr-none'
             }`}
           >
             {isAI ? (
-              <AIMessageContent 
-                msg={msg} 
+              <AIMessageContent
+                msg={msg}
                 onSelectOption={(option) => {
                   handleSendMessage(
                     undefined,
@@ -749,13 +749,65 @@ export const AIMessageItem: React.FC<AIMessageItemProps> = ({
                 </div>
               </div>
             )}
+
+            {/* Visual Suggested Path (ZPD Roadmap) */}
+            {isAI && msg.diagnostic && msg.diagnostic.status === 'DIAGNOSIS_COMPLETE' && (
+              <div className="mt-3 pt-2.5 border-t border-stone-200/60 space-y-2">
+                <p className="text-[10px] text-stone-400 font-black uppercase tracking-wider flex items-center gap-1 font-mono">
+                  <Brain className="w-3.5 h-3.5 text-primary-green shrink-0 animate-pulse" />
+                  <span>Lộ trình ôn tập gợi ý (ZPD Roadmap)</span>
+                </p>
+                <div className="rounded-xl border border-stone-200 bg-stone-50/60 p-3">
+                  <p className="text-[11px] text-stone-600 mb-2 leading-relaxed">
+                    Hệ thống chẩn đoán em chưa vững kiến thức nền: <strong className="text-stone-900">{msg.diagnostic.root_cause?.mo_ta || msg.diagnostic.root_cause?.id}</strong> (Lớp {msg.diagnostic.root_cause?.lop || '?'}).
+                  </p>
+                  <div className="flex flex-wrap items-center gap-1.5 mt-2">
+                    {msg.diagnostic.suggested_path && msg.diagnostic.suggested_path.map((node: string, index: number, arr: string[]) => {
+                      const isRoot = index === 0;
+                      const isSurface = index === arr.length - 1;
+                      let badgeClass = 'border-stone-200 bg-white text-stone-600';
+                      if (isRoot) badgeClass = 'border-error-red/30 bg-error-red-light/20 text-error-red-dark';
+                      else if (isSurface) badgeClass = 'border-primary-green/30 bg-primary-green/10 text-primary-green-dark';
+
+                      return (
+                        <React.Fragment key={node}>
+                          <div className={`flex flex-col rounded-lg border px-2.5 py-1 text-center font-bold text-[9px] shadow-sm select-none ${badgeClass}`}>
+                            <span className="font-extrabold">{node}</span>
+                            {isRoot && <span className="text-[7px] text-error-red font-black uppercase tracking-wide">Gốc rễ</span>}
+                            {isSurface && <span className="text-[7px] text-primary-green font-black uppercase tracking-wide">Bề mặt</span>}
+                          </div>
+                          {index < arr.length - 1 && (
+                            <ChevronRight className="w-3 h-3 text-stone-400 shrink-0" />
+                          )}
+                        </React.Fragment>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Visual Probe Indicator */}
+            {isAI && msg.diagnostic && msg.diagnostic.status === 'PROBE' && (
+              <div className="mt-3 pt-2.5 border-t border-stone-200/60 space-y-2">
+                <p className="text-[10px] text-stone-400 font-black uppercase tracking-wider flex items-center gap-1 font-mono">
+                  <Brain className="w-3.5 h-3.5 text-primary-green shrink-0 animate-pulse" />
+                  <span>Thăm dò lỗ hổng (Diagnostic Probe)</span>
+                </p>
+                <div className="rounded-xl border border-stone-200 bg-stone-50/60 p-3">
+                  <p className="text-[11px] text-stone-600 leading-relaxed">
+                    Hệ thống đang kiểm tra thêm kiến thức ở node: <strong className="text-stone-900">{msg.diagnostic.probe_node}</strong> trước khi kết luận lỗ hổng gốc rễ.
+                  </p>
+                </div>
+              </div>
+            )}
           </div>
         )}
 
         {/* Chat Bubble Footer Actions */}
         {isAI && (
           <div className="flex items-center gap-3.5 ml-2 text-stone-400 opacity-45 hover:opacity-100 transition-opacity duration-200">
-            <button 
+            <button
               onClick={handleThumbsUpClick}
               className={`p-1 hover:text-primary-green transition-all cursor-pointer rounded hover:scale-115 active:scale-95 ${
                 msg.isFeedbackGiven === 'up' ? 'text-primary-green font-bold' : ''
@@ -764,7 +816,7 @@ export const AIMessageItem: React.FC<AIMessageItemProps> = ({
             >
               <ThumbsUp className="w-3.5 h-3.5" />
             </button>
-            <button 
+            <button
               onClick={handleThumbsDownClick}
               className={`p-1 hover:text-error-red transition-all cursor-pointer rounded hover:scale-115 active:scale-95 ${
                 msg.isFeedbackGiven === 'down' ? 'text-error-red font-bold' : ''
@@ -773,7 +825,7 @@ export const AIMessageItem: React.FC<AIMessageItemProps> = ({
             >
               <ThumbsDown className="w-3.5 h-3.5" />
             </button>
-            <button 
+            <button
               onClick={handleReportCitationError}
               className="p-1 hover:text-accent-orange transition-all cursor-pointer rounded flex items-center gap-1.5 text-[11px] font-extrabold hover:scale-105 active:scale-95"
               title="Kiểm tra lại nguồn học liệu"
