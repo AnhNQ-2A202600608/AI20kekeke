@@ -1,0 +1,210 @@
+{
+  "id": "day13-pipeline",
+  "parent_id": "day13",
+  "topic_title": "Day 13: Monitoring, Logging & Observability",
+  "title": "Phần 2: Structured Logging & Distributed Tracing",
+  "description": "Đánh giá kỹ năng thiết lập structured logging với correlation ID, xử lý/redact dữ liệu PII nhạy cảm, log sampling và cấu hình distributed tracing bằng OpenTelemetry/Langfuse.",
+  "difficulty": "bình thường",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Khi xây dựng pipeline giám sát cho AI Agent, tại sao cấu trúc log dạng JSON (Structured Logging) lại vượt trội hơn log dạng text truyền thống?",
+      "options": {
+        "A": "Vì log JSON tự động mã hóa dữ liệu đầu vào của mô hình để đảm bảo an toàn bảo mật thông tin.",
+        "B": "Vì log JSON có kích thước lưu trữ nhỏ hơn 10 lần so với các tệp tin log dạng văn bản thuần.",
+        "C": "Vì log JSON giúp các công cụ gom log dễ dàng tìm kiếm, lọc và thống kê các trường dữ liệu cụ thể.",
+        "D": "Vì log JSON tự động sửa đổi mã nguồn của Agent khi phát hiện mô hình sinh câu trả lời bị lỗi."
+      },
+      "answer": "C",
+      "explanation": "Structured logging (đặc biệt là định dạng JSON) giúp các hệ thống Log Aggregation (như ELK, Loki) phân tích cú pháp tự động và cho phép lập trình viên chạy truy vấn SQL/KQL phức tạp trên từng trường dữ liệu (như latency, token count).",
+      "hints": [
+        "Hãy tưởng tượng bạn cần lọc ra toàn bộ các log có lỗi của mô hình 'gpt-4o' trong 24 giờ qua. Dạng log nào dễ parse bằng code hơn?",
+        "Log truyền thống chỉ là một chuỗi ký tự dài (unstructured string), yêu cầu viết regex phức tạp để bóc tách thông tin.",
+        "Định dạng JSON biến mỗi log entry thành một bản ghi có cấu trúc key-value rõ ràng giúp lập chỉ mục (index) dễ dàng."
+      ],
+      "concepts": [
+        "d13-monitoring-observability"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Trong một ứng dụng AI Agent viết bằng Python sử dụng cơ chế bất đồng bộ (asyncio), thư viện nào được khuyến nghị để tự động đính kèm correlation_id vào mọi log entry của cùng một request?",
+      "options": {
+        "A": "Thư viện multiprocessing để tách biệt các tiến trình lưu trữ dữ liệu log.",
+        "B": "Thư viện contextvars để quản lý trạng thái ngữ cảnh riêng cho mỗi luồng xử lý.",
+        "C": "Thư viện hashlib để tạo ra các khóa bảo mật cho tệp tin cấu hình hệ thống.",
+        "D": "Thư viện socket để thiết lập các kết nối mạng trực tiếp tới máy chủ lưu log."
+      },
+      "answer": "B",
+      "explanation": "contextvars (thường tích hợp trong structlog) giúp lưu trữ và tự động liên kết dữ liệu ngữ cảnh (như correlation_id, user_id) xuyên suốt các tác vụ không đồng bộ (asyncio task) của cùng một request mà không bị lẫn lộn giữa các người dùng.",
+      "hints": [
+        "Trong lập trình bất đồng bộ (async/await), nhiều request chia sẻ cùng một luồng (thread). Việc sử dụng biến Thread-Local có an toàn không?",
+        "Chúng ta cần một cơ chế lưu trữ ngữ cảnh có thể 'di chuyển' đi theo dòng chảy của từng Task bất đồng bộ.",
+        "Đây là tính năng chuẩn của Python (từ bản 3.7) để quản lý dữ liệu cục bộ theo ngữ cảnh thực thi, viết tắt của 'Context Variables'."
+      ],
+      "concepts": [
+        "d13-monitoring-observability"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Header nào tuân theo chuẩn W3C thường được truyền qua các HTTP request để duy trì và đồng bộ hóa Correlation ID xuyên suốt các microservices trong hệ thống?",
+      "options": {
+        "A": "Header traceparent chứa các trường định danh trace ID và span ID của yêu cầu.",
+        "B": "Header x-correlation-id chứa thông tin định danh duy nhất của người dùng hiện tại.",
+        "C": "Header authorization chứa mã thông báo bảo mật JWT để xác thực quyền truy cập.",
+        "D": "Header content-type xác định định dạng dữ liệu truyền tải giữa các máy chủ dịch vụ."
+      },
+      "answer": "A",
+      "explanation": "Chuẩn W3C Trace Context định nghĩa header traceparent (ví dụ: 00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01) gồm trace_id và span_id để truyền ngữ cảnh trace qua các ranh giới mạng (network boundaries).",
+      "hints": [
+        "Chuẩn này được thiết kế bởi W3C để đồng nhất hóa cách truyền ngữ cảnh giám sát phân tán (Context Propagation).",
+        "Tên của header này là sự kết hợp giữa từ chỉ hành trình theo dõi vết (trace) và thực thể cha (parent) quản lý nó.",
+        "Hãy tìm một header chứa các thông tin có cấu trúc để định vị nguồn gốc của trace và span hiện tại."
+      ],
+      "concepts": [
+        "d13-monitoring-observability"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Để tuân thủ các quy định bảo mật dữ liệu (GDPR/PDPA), lập trình viên nên xử lý thông tin nhạy cảm (PII) trong log của AI Agent như thế nào trước khi ghi log?",
+      "options": {
+        "A": "Mã hóa toàn bộ tệp tin log bằng thuật toán AES-256 rồi gửi trực tiếp tới máy chủ lưu trữ.",
+        "B": "Yêu cầu mô hình tự động phát hiện và xóa dữ liệu nhạy cảm bằng cách chèn system prompt.",
+        "C": "Chỉ thực hiện ghi log vào ban đêm khi hệ thống ít có lưu lượng truy cập từ người dùng.",
+        "D": "Sử dụng các bộ lọc regex hoặc Microsoft Presidio để thay thế PII bằng các thẻ redaction."
+      },
+      "answer": "D",
+      "explanation": "PII sanitization (như dùng regex hoặc thư viện Microsoft Presidio) giúp phát hiện và che giấu các thông tin nhạy cảm (email, số điện thoại, số thẻ tín dụng) trong log đầu vào/đầu ra trước khi chúng được đẩy lên hệ thống tập trung.",
+      "hints": [
+        "Quy trình này gọi là PII Sanitization hoặc PII Scrubbing (làm sạch dữ liệu nhạy cảm).",
+        "Nếu gửi email hoặc số điện thoại của người dùng lên các dịch vụ log bên thứ ba như Datadog, bạn sẽ vi phạm quy định gì? Làm thế nào để thay thế chúng bằng nhãn '[REDACTED]'?",
+        "Chúng ta có thể dùng biểu thức chính quy (regex) để quét nhanh hoặc dùng các thư viện phân tích ngôn ngữ tự nhiên chuyên dụng như Presidio."
+      ],
+      "concepts": [
+        "d13-monitoring-observability"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Trong một hệ thống AI Agent có lưu lượng truy cập cực kỳ lớn, chiến lược log sampling nào sau đây giúp tối ưu chi phí lưu trữ tốt nhất mà vẫn đảm bảo khả năng debug lỗi?",
+      "options": {
+        "A": "Giữ lại toàn bộ dữ liệu log của môi trường dev và tắt hoàn toàn tính năng ghi log ở môi trường prod.",
+        "B": "Ghi lại toàn bộ các log ERROR/WARN và chỉ lưu trữ một tỷ lệ nhỏ (ví dụ 10%) các log INFO thông thường.",
+        "C": "Chỉ ghi lại dữ liệu log của các yêu cầu có độ trễ nhỏ hơn 100 miligiây để tối ưu hóa tốc độ.",
+        "D": "Tự động xóa tất cả các tệp tin log cũ sau khi chúng đã được lưu trữ trong vòng 24 giờ liên tục."
+      },
+      "answer": "B",
+      "explanation": "Lưu trữ 100% ERROR/WARN đảm bảo thu thập đủ lỗi để gỡ lỗi (debug), trong khi chỉ lưu mẫu (sample) một phần INFO giúp cắt giảm chi phí hạ tầng log một cách đáng kể.",
+      "hints": [
+        "Mục tiêu là cắt giảm khối lượng log khổng lồ của các giao dịch thành công thông thường, nhưng tuyệt đối không được làm mất các vết lỗi.",
+        "Nếu hệ thống bị lỗi, bạn có muốn bị mất log của lỗi đó do chính sách lấy mẫu (sampling) không?",
+        "Hãy áp dụng tỷ lệ lấy mẫu khác nhau cho các mức độ nghiêm trọng (log levels) khác nhau."
+      ],
+      "concepts": [
+        "d13-monitoring-observability"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Khi vận hành ứng dụng AI Agent trên môi trường Production, log level mặc định nào được khuyến nghị để ghi lại các cột mốc quan trọng của hệ thống mà không gây tràn ổ đĩa?",
+      "options": {
+        "A": "Mức DEBUG để ghi lại mọi bước trung gian của prompt và chuỗi suy nghĩ từ mô hình.",
+        "B": "Mức ERROR để chỉ ghi nhận các trường hợp sự cố gây gián đoạn hoàn toàn dịch vụ.",
+        "C": "Mức INFO để theo dõi các sự kiện chính như nhận yêu cầu và gửi phản hồi thành công.",
+        "D": "Mức CRITICAL để giám sát trạng thái kết nối mạng của các thiết bị phần cứng vật lý."
+      },
+      "answer": "C",
+      "explanation": "Môi trường Production nên chạy ở mức INFO để cân bằng giữa chi phí lưu trữ và thông tin giám sát tiến trình. Mức DEBUG chỉ nên bật tạm thời khi cần chẩn đoán sâu một luồng lỗi cụ thể.",
+      "hints": [
+        "Mức log nào quá chi tiết (verbose) khiến đĩa cứng đầy nhanh? Mức nào quá ít thông tin khiến ta không biết hệ thống chạy thế nào khi bình thường?",
+        "Chúng ta cần ghi lại các mốc sự kiện bình thường nhưng mang tính cột mốc của hệ thống (như khởi động dịch vụ, hoàn thành request).",
+        "Mức log chuẩn cho vận hành ứng dụng thông thường là mức 'Information'."
+      ],
+      "concepts": [
+        "d13-monitoring-observability"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Trong mô hình Distributed Tracing (theo dõi phân tán), mối quan hệ giữa khái niệm Trace và Span được mô tả như thế nào?",
+      "options": {
+        "A": "Một Span đại diện cho tài nguyên CPU tiêu thụ, còn Trace đại diện cho dung lượng bộ nhớ RAM được cấp phát.",
+        "B": "Một Span đại diện cho toàn bộ hệ thống máy chủ, còn Trace là các kết nối mạng giữa các máy chủ đó.",
+        "C": "Một Trace chỉ ghi lại các lỗi của hệ thống, còn Span chỉ ghi nhận thời gian thực thi của các dòng code.",
+        "D": "Một Trace đại diện cho toàn bộ hành trình của một yêu cầu, và nó chứa nhiều Span là các bước xử lý con."
+      },
+      "answer": "D",
+      "explanation": "Trace là cây công việc biểu diễn hành trình end-to-end của 1 request. Span là các nút (node) trong cây, biểu diễn một công việc hoặc tác vụ cụ thể có thời gian bắt đầu và kết thúc (như LLM call, DB query).",
+      "hints": [
+        "Hãy liên tưởng tới cấu trúc cây (Tree) và các nút (Nodes). Thành phần nào là toàn bộ cái cây và thành phần nào là một cành cây cụ thể?",
+        "Khi một request đi từ Gateway qua Auth Service, đến Agent Core rồi gọi Database, toàn bộ hành trình đó được gọi là gì?",
+        "Trace đại diện cho dòng chảy đầu cuối (end-to-end trace_id), còn mỗi hành động đơn lẻ trong đó là một Span (span_id)."
+      ],
+      "concepts": [
+        "d13-monitoring-observability"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Thành phần OpenTelemetry Collector đóng vai trò gì trong kiến trúc giám sát hệ thống AI Agent sử dụng chuẩn OpenTelemetry?",
+      "options": {
+        "A": "Nó trực tiếp biên dịch mã nguồn Python của Agent sang mã máy để tối ưu hóa tốc độ thực thi.",
+        "B": "Nó tiếp nhận, xử lý và xuất dữ liệu giám sát tới các hệ thống lưu trữ và phân tích khác nhau.",
+        "C": "Nó tự động chặn các cuộc tấn công prompt injection từ người dùng trước khi gửi tới mô hình.",
+        "D": "Nó thay thế hoàn toàn các nhà cung cấp dịch vụ đám mây bằng cách tự xây dựng các máy chủ ảo."
+      },
+      "answer": "B",
+      "explanation": "OpenTelemetry Collector nhận dữ liệu (metrics, logs, traces) từ các SDK trong ứng dụng, xử lý chúng (filtering, batching, masking) và gửi (export) tới các công cụ phân tích (như Jaeger, Langfuse, Datadog).",
+      "hints": [
+        "Thành phần này đóng vai trò như một proxy trung gian chuyên xử lý dữ liệu telemetry thu được.",
+        "Nhiệm vụ của nó là gom dữ liệu từ ứng dụng phát ra (Receive), làm sạch/gom cụm dữ liệu (Process) và đẩy tới công cụ lưu trữ (Export).",
+        "Hãy tìm phương án mô tả các chức năng nhận (Receiver), xử lý (Processor) và xuất dữ liệu (Exporter) của Collector."
+      ],
+      "concepts": [
+        "d13-monitoring-observability"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Khi triển khai OpenTelemetry cho các cuộc gọi API LLM, thuộc tính (attribute) nào sau đây tuân theo chuẩn GenAI Semantic Conventions của OTel?",
+      "options": {
+        "A": "Thuộc tính gen_ai.request.model để lưu tên mô hình ngôn ngữ lớn được yêu cầu.",
+        "B": "Thuộc tính db.system để xác định loại cơ sở dữ liệu quan hệ đang sử dụng.",
+        "C": "Thuộc tính http.status_code để ghi lại mã phản hồi của máy chủ ứng dụng web.",
+        "D": "Thuộc tính user.ip_address để theo dõi địa chỉ mạng vật lý của khách hàng truy cập."
+      },
+      "answer": "A",
+      "explanation": "GenAI Semantic Conventions của OTel định nghĩa các thuộc tính chuẩn hóa dành riêng cho AI như gen_ai.request.model, gen_ai.usage.input_tokens, và gen_ai.response.id.",
+      "hints": [
+        "Chuẩn GenAI Semantic Conventions định nghĩa các nhãn thống nhất cho các cuộc gọi tới mô hình ngôn ngữ lớn.",
+        "Hãy tìm một thuộc tính bắt đầu bằng tiền tố quy định riêng cho lĩnh vực trí tuệ nhân tạo tạo sinh (GenAI).",
+        "Thuộc tính này ghi nhận cấu hình mô hình mà mã nguồn yêu cầu gọi tới (ví dụ: 'gpt-4o' hoặc 'claude-3-5-sonnet')."
+      ],
+      "concepts": [
+        "d13-monitoring-observability"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Tại sao các công cụ chuyên biệt như Langfuse hay LangSmith lại thường được chọn để tracing ứng dụng AI thay vì các công cụ APM truyền thống như Jaeger?",
+      "options": {
+        "A": "Vì chúng được tối ưu để hiển thị chuỗi hội thoại, prompt version, và tính toán chi phí token trực quan.",
+        "B": "Vì Langfuse và LangSmith hỗ trợ vẽ biểu đồ đo nhiệt độ vật lý của các máy chủ GPU tốt hơn Jaeger.",
+        "C": "Vì Jaeger chỉ hoạt động trên các ứng dụng viết bằng Java và không tương thích với ngôn ngữ Python.",
+        "D": "Vì các công cụ chuyên biệt này hoàn toàn miễn phí và không giới hạn dung lượng lưu trữ trên đám mây."
+      },
+      "answer": "A",
+      "explanation": "Các công cụ APM GenAI-native như Langfuse/LangSmith được thiết kế riêng để hiển thị các khái niệm của LLM (conversational playground, prompt templates tracking, token price tables, evaluator feedback) mà các công cụ APM truyền thống như Jaeger không hỗ trợ.",
+      "hints": [
+        "Jaeger là một công cụ tracing tuyệt vời cho microservices truyền thống. Nhưng nó có hiểu được khái niệm 'Prompt', 'Token', hay 'LLM Cost' không?",
+        "Các công cụ GenAI-native cung cấp giao diện trực quan hóa các chuỗi hội thoại của người dùng, chi phí hóa đơn cho từng bước gọi mô hình và khả năng gắn điểm phản hồi (feedback).",
+        "Hãy chọn phương án nhấn mạnh các chức năng quản lý prompt, token và chi phí API đặc thù của mô hình ngôn ngữ lớn."
+      ],
+      "concepts": [
+        "d13-monitoring-observability"
+      ]
+    }
+  ]
+}

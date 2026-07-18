@@ -1,0 +1,210 @@
+{
+  "id": "day25-t1-basics",
+  "parent_id": "day25-ai-product",
+  "topic_title": "Day 25: Launch Readiness",
+  "title": "Phần 1: Product Roadmap & Lựa Chọn Độ Ưu Tiên RICE",
+  "description": "Đánh giá kiến thức về phân biệt Output vs Outcome, công thức tính điểm RICE (Reach, Impact, Confidence, Effort) và ma trận Value-Effort.",
+  "difficulty": "dễ",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Sự khác biệt cốt lõi giữa hai khái niệm Output (đầu ra) và Outcome (kết quả) trong phát triển sản phẩm AI là gì?",
+      "options": {
+        "A": "Output đo lường tốc độ xử lý GPU, còn Outcome đo lường mức độ hao phí điện năng.",
+        "B": "Output đo lường khối lượng tính năng đã làm, còn Outcome đo lường giá trị thực tế tạo ra.",
+        "C": "Output đo lường chi phí thuê hạ tầng đám mây, còn Outcome đo lường doanh thu của dự án.",
+        "D": "Output đo lường số lượng nhân sự tham gia dự án, còn Outcome đo lường số giờ làm việc."
+      },
+      "answer": "B",
+      "explanation": "Output tập trung vào hành động và số lượng bàn giao (ví dụ: ship 10 tính năng), trong khi Outcome tập trung vào kết quả tác động kinh doanh hoặc giá trị người dùng nhận được (ví dụ: giảm 5% tỷ lệ khách hàng rời bỏ).",
+      "hints": [
+        "Nghĩ về câu nói nổi tiếng 'code 10.000 dòng' so với 'giúp user tiết kiệm 1.7 giờ mỗi ngày'.",
+        "VC và nhà đầu tư luôn quan tâm đến tác động thực tế của sản phẩm hơn là số lượng dòng code.",
+        "Đáp án chính xác là Output đo lường khối lượng tính năng đã làm, còn Outcome đo lường giá trị."
+      ],
+      "concepts": [
+        "d25-t1-launch-readiness"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Trong công thức tính điểm ưu tiên RICE, chỉ số Reach (Khả năng tiếp cận) được đo lường bằng gì?",
+      "options": {
+        "A": "Số lượng người dùng mà tính năng đó tiếp cận được trong một khoảng thời gian.",
+        "B": "Số lượng máy chủ GPU cần thiết để vận hành tính năng đó trên hệ thống đám mây.",
+        "C": "Số lượng dòng code cần phải viết để hoàn thành toàn bộ tính năng sản phẩm đó.",
+        "D": "Số lượng nhân viên kỹ thuật cần huy động để triển khai tính năng đó ra thực tế."
+      },
+      "answer": "A",
+      "explanation": "Reach đo lường số lượng khách hàng/người dùng tiếp cận hoặc bị tác động bởi tính năng đó trong một khoảng thời gian cụ thể (ví dụ: số người dùng hoạt động mỗi tháng).",
+      "hints": [
+        "Hãy liên tưởng đến định nghĩa về độ bao phủ khách hàng.",
+        "Đây là con số định lượng thể hiện số người dùng chịu ảnh hưởng bởi một thay đổi.",
+        "Đáp án chính xác là số lượng người dùng mà tính năng tiếp cận được trong một khoảng thời gian."
+      ],
+      "concepts": [
+        "d25-t1-launch-readiness"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Công thức chuẩn để tính toán RICE Score phục vụ xếp hạng ưu tiên tính năng sản phẩm là gì?",
+      "options": {
+        "A": "Reach cộng với Impact rồi tất cả đem nhân với Confidence và chia cho Effort.",
+        "B": "Reach nhân với Impact rồi tất cả đem chia cho tích Confidence nhân với Effort.",
+        "C": "Reach nhân với Impact rồi nhân tiếp với Confidence rồi đem chia cho Effort.",
+        "D": "Reach nhân với Impact rồi cộng với Confidence rồi đem chia cho Effort."
+      },
+      "answer": "C",
+      "explanation": "RICE Score = (Reach * Impact * Confidence) / Effort. Công thức này giúp chuẩn hóa việc đánh giá mức độ ưu tiên bằng cách cân bằng giữa giá trị kỳ vọng và chi phí thực hiện.",
+      "hints": [
+        "Đây là tích của ba tham số đầu tiên rồi đem chia cho tham số thứ tư.",
+        "Confidence nằm ở tử số để giảm bớt sự tự tin thái quá của product managers.",
+        "Đáp án chính xác là Reach nhân Impact nhân Confidence rồi chia cho Effort."
+      ],
+      "concepts": [
+        "d25-t1-launch-readiness"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Thang đo chuẩn của chỉ số Impact (Tác động) trong công thức RICE quy định mức tác động cực lớn (Massive Impact) nhận giá trị điểm nào?",
+      "options": {
+        "A": "Nhận giá trị điểm là 1.",
+        "B": "Nhận giá trị điểm là 2.",
+        "C": "Nhận giá trị điểm là 3.",
+        "D": "Nhận giá trị điểm là 5."
+      },
+      "answer": "C",
+      "explanation": "Theo Sean McBride (Intercom), thang đo Impact gồm: 3 (Massive Impact), 2 (High), 1 (Medium), 0.5 (Low), 0.25 (Minimal).",
+      "hints": [
+        "Thang điểm này không tuyến tính và tối đa là ba.",
+        "Mức điểm này đại diện cho tác động thay đổi cuộc chơi lớn nhất đối với dự án.",
+        "Đáp án chính xác là 3."
+      ],
+      "concepts": [
+        "d25-t1-launch-readiness"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Trong công thức RICE, tham số Confidence (Mức độ tự tin) được đưa vào nhằm giải quyết vấn đề gì của Product Manager?",
+      "options": {
+        "A": "Vấn đề thiếu kinh nghiệm làm việc với các hệ thống hạ tầng dữ liệu lớn.",
+        "B": "Vấn đề thiên kiến cá nhân và dự đoán không có dữ liệu thực tế chứng minh.",
+        "C": "Vấn đề thiếu kinh phí thuê tài nguyên tính toán GPU trên môi trường đám mây.",
+        "D": "Vấn đề mâu thuẫn nội bộ giữa đội ngũ kỹ sư phát triển phần phần mềm và sales."
+      },
+      "answer": "B",
+      "explanation": "Confidence (đo bằng %) giúp điều chỉnh các dự đoán thiên lệch hoặc cảm tính của PM. Nếu có ý tưởng rất hay nhưng không có dữ liệu chứng minh, Confidence sẽ thấp (ví dụ: 50%), làm giảm RICE Score tổng thể.",
+      "hints": [
+        "Ý tưởng của chúng ta thường nghe có vẻ rất hay nhưng lại thiếu bằng chứng thực nghiệm.",
+        "Chỉ số này giúp hạ điểm những tính năng mang tính võ đoán hoặc cảm tính.",
+        "Đáp án chính xác là vấn đề thiên kiến cá nhân và dự đoán không có dữ liệu."
+      ],
+      "concepts": [
+        "d25-t1-launch-readiness"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Trong ma trận 2x2 định hướng độ ưu tiên (Value vs Effort), nhóm tính năng 'High Value, Low Effort' được định nghĩa là gì?",
+      "options": {
+        "A": "Nhóm Quick Wins hay thành quả nhanh.",
+        "B": "Nhóm Major Projects hay dự án lớn.",
+        "C": "Nhóm Fill-ins hay việc làm rảnh rỗi.",
+        "D": "Nhóm Thankless Tasks hay tốn công sức."
+      },
+      "answer": "A",
+      "explanation": "High Value, Low Effort đại diện cho nhóm Quick Wins - những tính năng đem lại giá trị cao nhưng tốn ít nguồn lực để triển khai, cần được ưu tiên thực hiện trước.",
+      "hints": [
+        "Đây là nhóm tạo ra quả ngọt ngay lập tức với công sức bỏ ra tối thiểu.",
+        "Tên của nó dịch ra tiếng Việt có nghĩa là 'những chiến thắng nhanh chóng'.",
+        "Đáp án chính xác là nhóm Quick Wins."
+      ],
+      "concepts": [
+        "d25-t1-launch-readiness"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Lý do quan trọng nhất khiến các Quỹ đầu tư mạo hiểm (VC) đánh giá cao một AI startup tập trung vào Outcome thay vì Output là gì?",
+      "options": {
+        "A": "Vì Outcome thể hiện khả năng xây dựng mô hình LLM có độ chính xác cao nhất.",
+        "B": "Vì Outcome chứng minh mô hình kinh doanh có giá trị thực tế và khách hàng trả tiền.",
+        "C": "Vì Outcome giúp giảm bớt số lượng nhân sự kỹ thuật phải thuê trong giai đoạn đầu.",
+        "D": "Vì Outcome đảm bảo hệ thống mã nguồn của startup không bao giờ gặp lỗi crash."
+      },
+      "answer": "B",
+      "explanation": "Nhà đầu tư quan tâm đến business thực tế. Outcome (ví dụ: churn giảm, doanh số tăng) chứng minh tính khả thi tài chính và nhu cầu thị trường, trong khi Output (đăng 12 tính năng) chỉ chứng minh team có làm việc nhưng không rõ có ai dùng hay không.",
+      "hints": [
+        "Nghĩ về ngôn ngữ của kinh doanh và dòng tiền của doanh nghiệp.",
+        "Output chỉ đo lường hành vi viết code, không đo lường sức mua của khách hàng.",
+        "Đáp án chính xác là vì Outcome chứng minh mô hình kinh doanh có giá trị thực tế."
+      ],
+      "concepts": [
+        "d25-t1-launch-readiness"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Công thức ưu tiên RICE nổi tiếng được phát minh và thử nghiệm thành công lần đầu tiên tại tổ chức nào?",
+      "options": {
+        "A": "Công ty phát triển hệ thống cơ sở dữ liệu Oracle.",
+        "B": "Công ty cung cấp dịch vụ máy chủ đám mây AWS.",
+        "C": "Công ty xây dựng phần mềm hội thoại khách hàng Intercom.",
+        "D": "Công ty chuyên huấn luyện mô hình ngôn ngữ lớn OpenAI."
+      },
+      "answer": "C",
+      "explanation": "RICE framework được phát minh bởi Sean McBride tại Intercom vào năm 2015 nhằm giải quyết khủng hoảng quá tải ý tưởng (Idea Overload) và cắt giảm các tranh luận cảm tính trong việc lên roadmap.",
+      "hints": [
+        "Đây là một công ty SaaS nổi tiếng về hệ thống live chat và khách hàng trực tuyến.",
+        "Tên công ty bắt đầu bằng chữ 'I'.",
+        "Đáp án chính xác là Intercom."
+      ],
+      "concepts": [
+        "d25-t1-launch-readiness"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Trong các ví dụ đo lường hiệu năng làm việc sau đây, ví dụ nào thể hiện một chỉ số Output điển hình?",
+      "options": {
+        "A": "Đã thiết lập thành công mười hai tính năng mới trong tháng này.",
+        "B": "Giúp người dùng cuối tiết kiệm trung bình 1.7 giờ làm việc mỗi ngày.",
+        "C": "Giảm tỷ lệ khách hàng hủy dịch vụ của sản phẩm xuống còn ba phần trăm.",
+        "D": "Tăng thêm được năm mươi khách hàng mới ký hợp đồng trả phí hàng tháng."
+      },
+      "answer": "A",
+      "explanation": "Số lượng tính năng hoàn thành (12 tính năng mới) là Output vì nó chỉ đếm số lượng bàn giao kỹ thuật, chưa đo lường tác động thực tế của chúng đối với doanh nghiệp hay người dùng.",
+      "hints": [
+        "Chỉ số này chỉ phản ánh khối lượng công việc được hoàn thành.",
+        "Nó không cho biết liệu công việc đó có mang lại doanh thu hay sự hài lòng của khách hàng hay không.",
+        "Đáp án chính xác là đã thiết lập thành công mười hai tính năng mới."
+      ],
+      "concepts": [
+        "d25-t1-launch-readiness"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Trong ma trận 2x2 định hướng độ ưu tiên (Value vs Effort), nhóm tính năng 'High Value, High Effort' nên được xử lý thế nào?",
+      "options": {
+        "A": "Loại bỏ hoàn toàn khỏi roadmap để tiết kiệm tối đa nguồn lực GPU.",
+        "B": "Lập kế hoạch chi tiết, chia nhỏ thành các phần để thực hiện dần.",
+        "C": "Thực hiện ngay lập tức trước tất cả các nhóm tính năng khác trong team.",
+        "D": "Giao cho nhân viên tập sự tự nghiên cứu và triển khai trong thời gian rảnh."
+      },
+      "answer": "B",
+      "explanation": "High Value, High Effort thuộc nhóm Major Projects. Đây là những dự án chiến lược đem lại giá trị lớn nhưng tốn sức, cần được lập kế hoạch kỹ lưỡng, chia nhỏ (break down) để giải quyết dần thay vì lao vào làm ngay lập tức.",
+      "hints": [
+        "Lao vào làm ngay một dự án khổng lồ không chia nhỏ có thể làm cạn tiền startup trước khi kịp launch.",
+        "Cần chia nhỏ thành các mốc bàn giao nhỏ hơn để liên tục có Quick Wins kiểm thử.",
+        "Đáp án chính xác là lập kế hoạch chi tiết, chia nhỏ thành các phần để thực hiện dần."
+      ],
+      "concepts": [
+        "d25-t1-launch-readiness"
+      ]
+    }
+  ]
+}

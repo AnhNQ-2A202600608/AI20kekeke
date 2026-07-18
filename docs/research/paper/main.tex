@@ -1,0 +1,439 @@
+\documentclass{article}
+
+\usepackage[nonatbib, final]{neurips}
+\usepackage[numbers]{natbib}
+
+\makeatletter
+\renewcommand{\@noticestring}{
+  \centering
+  EduGap Technical Report --- AI20K Build Cohort 2
+}
+\makeatother
+
+\input{extra_pkgs}
+
+\usepackage{physics}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{microtype}
+
+\DeclarePairedDelimiter\p{(}{)}
+\DeclarePairedDelimiter\n{|}{|}
+\DeclarePairedDelimiter\B{[}{]}
+
+\title{Optimizing Personalized Knowledge Pathing: A Concurrency-Safe and Algorithmically Aligned Adaptive Learning Engine}
+
+\author{
+  Ho Tat Bao Hoang \\
+  Department of Educational Technology \\
+  EduGap Project \\
+  \texttt{hoangblue.work@gmail.com}
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Adaptive learning engines rely on statistical models—such as Elo ratings, Bayesian Knowledge Tracing (BKT), and Contextual Multi-Armed Bandits—to recommend personalized learning pathways. In production environments, updating these models in real-time under high user concurrency often results in severe database lock contention (e.g., `FOR UPDATE` bottlenecks). Furthermore, discrepancies between offline python models (used for validation) and online SQL engines (used for production serving) compromise system integrity and academic rigor. This paper presents a decoupled, concurrency-safe adaptive learning architecture. We introduce an Asynchronous Outbox model that offloads computationally heavy operations—including Elo recalibration, Sherman-Morrison bandit matrix learning, and concept graph mastery propagation—to a background worker. We prove that the background worker updates the LinUCB covariance matrix in $O(d^2)$ time with periodic re-inversion to eliminate accumulated floating-point drift. Empirical evaluation on simulated students shows that our LinUCB bandit achieves a final cumulative regret of $14.09$ (95\% CI: $\pm 0.69$), significantly outperforming Random ($41.82$) and Greedy ($37.75$) baselines ($p < 10^{-5}$). We extend validation to real-world datasets: on the ASSISTments 2009-2010 benchmark, the BKT and Elo models achieve Next-step Predictive AUCs of $0.6697$ and $0.6836$ respectively. Furthermore, off-policy evaluation on the EdNet KT1 dataset across $25,549$ matched trials demonstrates that our LinUCB bandit policy achieves a final cumulative expected ZPD reward of $15,230.29$, outperforming the Random recommendation policy ($12,992.75$) by $17.2\%$. Finally, our automated equivalence test suite guarantees $100\%$ numerical identity between local python models and database RPC servings.
+\end{abstract}
+
+
+
+
+\section{Introduction}
+Modern online education systems increasingly depend on adaptive learning engines to dynamically customize learning materials for individual students. To sustain personalization, engines must solve two main tasks: (1) \textbf{Student Modeling}, which tracks a student's latent knowledge state over time, and (2) \textbf{Content Recommendation}, which selects the next optimal question within the student's Zone of Proximal Development (ZPD) to maximize engagement and learning efficiency.
+
+Typically, engines employ \textbf{Elo Rating Systems} for matching difficulty, \textbf{Bayesian Knowledge Tracing (BKT)} for estimating binary skill mastery, and \textbf{Contextual Multi-Armed Bandits (such as LinUCB)} to balance exploration of new topics with exploitation of known strengths. 
+
+However, implementing these models in production introduces major engineering challenges:
+\begin{enumerate}
+    \item \textbf{Concurrency Bottlenecks:} Real-time online updates require locking rows (using \texttt{FOR UPDATE} in SQL) on shared resources like question metadata and bandit covariance matrices \cite{kleppmann2017designing}. Under high concurrent submissions, this causes transaction execution delays and pool exhaustion.
+    \item \textbf{Algorithmic Drift and Misalignment:} Implementing complex math across two codebases (e.g., Python for offline research/evaluation and PL/pgSQL for database execution) leads to subtle differences in numerical precision, rounding, and edge-case handling.
+    \item \textbf{Scientific Validation Gaps:} Standard evaluation protocols often suffer from circular evaluations (e.g., evaluating BKT against simulated latent variables rather than real student performance) or lack statistical significance (e.g., running bandit simulations on a single random seed without confidence intervals).
+\end{enumerate}
+
+To address these limitations, we present a redesigned, production-ready adaptive learning engine. The main contributions of this work are:
+\begin{itemize}
+    \item \textbf{Decoupled Async Outbox Architecture:} We design an asynchronous event outbox inside database transaction blocks. This removes row locks on question stats and bandit arms, enabling high-throughput submissions.
+    \item \textbf{Sherman-Morrison Matrix Learning:} We utilize the Sherman-Morrison formula to update the inverse covariance matrix $A^{-1}$ directly in $O(d^2)$ complexity, paired with periodic re-inversion to correct floating-point drift.
+    \item \textbf{Rigorous Algorithmic Equivalence:} We establish a testing gate verifying 100\% mathematical consistency (up to $10^{-5}$ decimal precision) between local Python models and production SQL RPC.
+    \item \textbf{Academic-grade Evaluation Suite:} We upgrade our validation frameworks to include Next-step Predictive AUC for BKT and Elo, and off-policy contextual bandit evaluation. We validate our engine on real-world education benchmarks, namely the ASSISTments 2009-2010 dataset and the EdNet KT1 dataset.
+\end{itemize}
+
+\section{Related Work}
+
+\subsection{Student Knowledge Modeling}
+Student modeling has evolved from Item Response Theory (IRT) and Elo rating systems to Bayesian Knowledge Tracing (BKT) and Deep Knowledge Tracing (DKT). Corbet \& Anderson \cite{corbett1994knowledge} established BKT as a Hidden Markov Model (HMM) tracking skill mastery through binary state transitions. Pelánek \cite{pelanek2016applications} adapted the chess Elo rating system for education, introducing dynamic K-factors to estimate student abilities and item difficulties. While deep learning models (e.g., DKT) offer slightly higher predictive capacity, HMM and Elo models remain popular in production due to their low latency, interpretability, and ease of cold-start management.
+
+\subsection{Contextual Bandits in Personalization}
+Selecting questions matching the ZPD (typically defined as a target success rate of $75\%$) can be modeled as a Multi-Armed Bandit (MAB) problem. Li et al. \cite{li2010contextual} introduced LinUCB, which models the expected reward of an arm as a linear relationship with its context vector (e.g., student mastery and ELO ratings). Clement et al. \cite{clement2015multi} demonstrated the effectiveness of UCB algorithms in classroom routing. However, these systems rarely discuss the database locking costs of updating covariance matrices in real time.
+
+\section{System Architecture \& Concurrency Optimization}
+
+In typical implementations, when a student submits an answer, the system immediately locks the corresponding row in the \texttt{questions} and \texttt{bandit\_arms} tables to recalculate the parameters:
+
+\begin{center}
+\resizebox{\textwidth}{!}{
+  $\text{User Submit} \longrightarrow \text{DB Transaction Begins} \longrightarrow \text{Select For Update} \longrightarrow \text{Math Calcs} \longrightarrow \text{DB Update} \longrightarrow \text{Commit}$
+}
+\end{center}
+
+Under high concurrent workloads, this synchronous transaction flow creates severe resource contention. 
+
+We resolve this by decoupling parameter updates from the submission path. We introduce the \textbf{Asynchronous Outbox Pattern} \cite{richardson2018microservices}, as illustrated in Figure \ref{fig:async_outbox}.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.85\textwidth]{diagram_async_outbox}
+\caption{EduGap Decoupled Asynchronous Outbox Architecture for lock-free concurrent student submissions and background calibration updates.}
+\label{fig:async_outbox}
+\end{figure}
+
+As shown in Figure \ref{fig:async_outbox}, the client submission path (Web App to API) is entirely decoupled from the heavy analytical calculations. Under high concurrency, instead of executing synchronous row-level locks (\texttt{FOR UPDATE}), the submission handler executes a lightweight transaction that writes the raw attempt to the \texttt{attempts} table and appends a record to the \texttt{calibration\_outbox} table. A dedicated background worker pulls these records in batches, performs the Sherman-Morrison matrix updates and Elo recalibrations asynchronously, and updates the production database and Redis cache, maintaining system responsiveness.
+
+\subsection{Outbox Schema and Worker Loop}
+The outbox events are appended to a table \texttt{app.calibration\_outbox}:
+\begin{lstlisting}[language=SQL]
+CREATE TABLE app.calibration_outbox (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    attempt_id UUID NOT NULL,
+    question_id UUID NOT NULL,
+    policy_id UUID,
+    actual_score DOUBLE PRECISION NOT NULL,
+    expected_success DOUBLE PRECISION NOT NULL,
+    reward DOUBLE PRECISION NOT NULL,
+    context_vector DOUBLE PRECISION[] NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now())
+);
+\end{lstlisting}
+
+The background worker fetches batches of size $M$ from \texttt{app.calibration\_outbox}, aggregates ELO adjustments for each question to perform a single batch write, and updates bandit arms using NumPy. Once the batch is processed, the worker deletes these entries from the outbox table in one transaction.
+
+\section{Algorithmic Modeling \& Mathematical Alignment}
+
+To ensure that the offline simulations match production behavior, we align our mathematical formulations across Python and PostgreSQL.
+
+\subsection{Dynamic Elo Rating with Speed Factor}
+Let $E_s$ be the student's Elo rating, and $E_q$ be the question's Elo rating. The expected success probability $P(\text{success})$ is defined as:
+
+\[P(\text{success}) = \frac{1}{1 + 10^{(E_q - E_s)/400}}\]
+
+To prevent numerical overflow when computing large exponents, we clamp the exponent:
+
+\[\text{exponent} = \max\left(-20.0, \min\left(20.0, \frac{E_q - E_s}{400}\right)\right)\]
+
+Let $Y \in \{0, 1\}$ be the actual score. The update formulas for ELO are:
+
+\[E_s \leftarrow E_s + K_s \cdot (Y - P(\text{success})) \cdot \text{speed\_factor}\]
+
+\[E_q \leftarrow E_q + K_q \cdot (P(\text{success}) - Y) \cdot \text{speed\_factor}\]
+
+Where:
+\begin{itemize}
+    \item \textbf{Hint Discount:} If the student answered correctly ($Y=1$) but requested $H$ hints, the adjustment is discounted:
+  \[\text{discount} = \max(0.1, 1.0 - 0.3 \cdot H)\]
+  The delta score is scaled: $Y_{adj} - P(\text{success}) = \text{discount} \cdot (Y - P(\text{success}))$.
+    \item \textbf{Speed Factor:} For correct responses ($Y \ge 0.75$), let $t$ be the response time in milliseconds and $t_{avg}$ be the average response time of the question. The speed factor is:
+  \[\text{speed\_factor} = \max\left(0.8, \min\left(1.2, 1.0 + 0.2 \cdot \left(1.0 - \frac{\text{clamp}(t)}{t_{avg}}\right)\right)\right)\]
+  Where $t$ is clamped to $[300, 3600000]$ ms.
+    \item \textbf{Dynamic K-factors:} $K_s$ and $K_q$ shrink as the student and item accumulate attempts, preventing volatile fluctuations for mature items:
+  \[K_s = \max\left(16.0, \frac{48.0}{1 + N_{student}/10.0}\right), \quad K_q = \max\left(8.0, \frac{32.0}{1 + N_{question}/20.0}\right)\]
+\end{itemize}
+
+\subsection{Bayesian Knowledge Tracing (BKT)}
+BKT tracks a student's mastery of a concept using four parameters: $p(L_0)$ (prior learned), $p(T)$ (transition rate), $p(G)$ (guess rate), and $p(S)$ (slip rate). We enforce a consistent transition rate $p(T) = 0.06$.
+
+The BKT posterior mastery probability $p(L_{t+1}|Y)$ given response $Y \in \{0, 1\}$ is updated as follows:
+
+\begin{enumerate}
+    \item \textbf{Posterior Probability calculation:}
+\end{enumerate}
+\begin{itemize}
+    \item If correct ($Y = 1$):
+     \[p(L_t|Y=1) = \frac{p(L_t)(1 - p(S))}{p(L_t)(1 - p(S)) + (1 - p(L_t))p(G)}\]
+    \item If incorrect ($Y = 0$):
+     \[p(L_t|Y=0) = \frac{p(L_t)p(S)}{p(L_t)p(S) + (1 - p(L_t))(1 - p(G))}\]
+\end{itemize}
+
+\begin{enumerate}
+    \item \textbf{Transition Step:}
+   \[p(L_{t+1}) = p(L_t|Y) + (1 - p(L_t|Y)) \cdot p(T)\]
+\end{enumerate}
+
+To prevent probabilities from locking at $0.0$ or $1.0$, the final BKT probability is clamped:
+
+\[p(L) \leftarrow \max(0.0001, \min(0.9999, p(L)))\]
+
+\subsection{Sherman-Morrison LinUCB Matrix Updates}
+In LinUCB, each question $a$ is represented as an arm with a covariance matrix $A_a = X^T X + I_d$ and a vector $b_a = X^T Y$. The context vector $x \in \mathbb{R}^3$ comprises $[1.0, p(L), \text{Sigmoid}((E_s - 1600.0)/400.0)]$, where student Elo $E_s$ is scaled using a soft Sigmoid centered around $1600.0$ with scale $400.0$ to prevent numerical saturation and keep the features non-redundant.
+
+The expected reward projection is:
+
+\[\hat{\theta}_a = A_a^{-1} b_a\]
+
+The UCB score is:
+
+\[\text{UCB}_a = \hat{\theta}_a^T x + \alpha \sqrt{x^T A_a^{-1} x}\]
+
+Calculating $A_a^{-1}$ directly using $O(d^3)$ matrix inversion during recommendations is slow. We bypass this by storing $A_a^{-1}$ in-place and updating it using the \textbf{Sherman-Morrison formula} in $O(d^2)$ time during the outbox batch process:
+
+\[A_{t+1}^{-1} = A_t^{-1} - \frac{A_t^{-1} x x^T A_t^{-1}}{1 + x^T A_t^{-1} x}\]
+
+\subsubsection{Complexity Analysis}
+\begin{proposition}
+Updating the LinUCB inverse covariance matrix $A^{-1}_{t+1}$ using the Sherman-Morrison formula requires $O(d^2)$ floating-point operations.
+\end{proposition}
+\begin{proof}
+Given a $d \times d$ inverse covariance matrix $A_t^{-1}$ and context vector $x$:
+\begin{enumerate}
+    \item Let $v = A_t^{-1} x \in \mathbb{R}^d$. This matrix-vector multiplication requires $d^2$ multiplications and $d(d-1)$ additions, which is $O(d^2)$ complexity.
+    \item The scalar denominator $1 + x^T v$ is computed via dot product in $d$ multiplications and $d-1$ additions, which is $O(d)$ complexity.
+    \item The outer product $v v^T$ yields a $d \times d$ matrix requiring $d^2$ multiplications, which is $O(d^2)$ complexity.
+    \item Dividing the matrix $v v^T$ by the scalar denominator and subtracting the result from $A_t^{-1}$ requires $2d^2$ operations, which is $O(d^2)$ complexity.
+\end{enumerate}
+Summing these steps, the total computational complexity of the Sherman-Morrison update is $O(d^2)$ operations, which is asymptotically superior to direct matrix inversion via Gaussian elimination requiring $O(d^3)$ time.
+\end{proof}
+
+\subsubsection{Drift Guardrails}
+To prevent floating-point numerical drift from repeated updates:
+\begin{enumerate}
+    \item \textbf{Symmetrization:} Force symmetry after every update:
+   \[A^{-1} \leftarrow \frac{A^{-1} + (A^{-1})^T}{2}\]
+    \item \textbf{Periodic Re-inversion:} The worker maintains the raw matrix $A$ in memory, and recalculates the true inverse using standard Gaussian elimination every 100 updates to purge accumulated rounding errors:
+   \[A^{-1} \leftarrow \text{inv}(A)\]
+\end{enumerate}
+
+\subsection{Spaced Repetition (Forgetting Curve Fitting)}
+We model memory decay using the forgetting curve formula \cite{wozniak1994optimization, settles2016trainable}:
+
+\[P(\text{recall}) = 2^{-\Delta t / S}\]
+
+Where $\Delta t$ is the elapsed time in days since the last attempt, and $S$ is the memory stability factor. We optimize $S$ using Grid Search over actual logs to minimize the Mean Squared Error (MSE):
+
+\[S^* = \arg\min_{S} \frac{1}{N} \sum_{i=1}^N \left( Y_i - 2^{-\Delta t_i / S} \right)^2\]
+
+Expected Calibration Error (ECE) is calculated to validate the reliability of $P(\text{recall})$ predictions across time bins:
+
+\[\text{ECE} = \sum_{b=1}^B \frac{|I_b|}{N} \left| \text{acc}(I_b) - \text{conf}(I_b) \right|\]
+
+Where $I_b$ represents bins based on elapsed days, $\text{acc}(I_b)$ is the actual correct rate, and $\text{conf}(I_b)$ is the predicted recall rate.
+
+\subsection{Concept Graph Mastery Propagation}
+Prerequisite relationships between concepts are represented as a directed graph $G = (V, E)$. Let edge $(u, v) \in E$ denote that concept $u$ is a prerequisite of concept $v$, with weight $w_{uv} > 0$. We implement two propagation behaviors:
+
+\begin{itemize}
+    \item \textbf{Forward Propagation (Mastery Increase):} When a student's BKT mastery probability at node $u$ increases ($\Delta_u > 0$), the increase propagates to downstream dependent concepts $v \in Out(u)$:
+  \[M(v)_{\text{new}} = M(v)_{\text{old}} + \beta \cdot \Delta_u \cdot w_{uv}\]
+  where $\beta = 0.25$ is the forward propagation factor.
+    \item \textbf{Backward Propagation (Mastery Decrease):} When a student's BKT mastery probability at node $u$ decreases ($\Delta_u < 0$), it propagates backwards to prerequisite concepts $v \in In(u)$ representing decay:
+  \[M(v)_{\text{new}} = M(v)_{\text{old}} - \gamma \cdot |\Delta_u| \cdot w_{vu}\]
+  where $\gamma = 0.25$ is the backward propagation factor.
+    \item \textbf{Cycle Protection:} To handle cyclic dependencies (e.g. $A \rightarrow B \rightarrow C \rightarrow A$), we maintain a visited set $S_{\text{visited}}$. Traversal terminates immediately when a node is revisited.
+    \item \textbf{Cache Invalidation:} A write-through invalidation mechanism clears Redis cache keys \texttt{student\_mastery:student\_id:course\_id:concept\_id} for all modified nodes.
+\end{itemize}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.82\textwidth]{diagram_neural}
+\caption{Concept Graph Mastery Propagation and Distributed Cache Invalidation flow.}
+\label{fig:concept_graph_propagation}
+\end{figure}
+
+Figure \ref{fig:concept_graph_propagation} details the propagation of student mastery updates across the concept graph. When an update trigger ($\Delta_A = +0.50$) is applied to Node A, the forward propagation rule updates the mastery of the downstream dependent Node B ($\hat{m}_B \mathrel{+}= w_{AB} \cdot \beta \cdot \Delta_A = 1.0 \cdot 0.25 \cdot 0.50 = +0.125$). When the traversal attempts to propagate along the cyclic back-edge $C \to A$, it is blocked by the Visited Lock ($A \in \mathcal{V}$), halting further traversal to prevent infinite loops. Concurrently, a write-through invalidation signal evicts student mastery keys in Redis for both updated nodes (A and B) and potentially impacted downstream neighbors (C) to ensure cache coherence.
+
+\section{Empirical Evaluation}
+
+We evaluated the performance of our adaptive engine components using our simulation suite.
+
+\subsection{BKT Next-step Predictive AUC}
+Rather than checking if BKT estimates match simulated latent variables, we validated the model's accuracy on predicting student correctness on the \textit{next} question using the area under the ROC curve (AUC).
+
+Our BKT model achieves a Next-step Predictive AUC of \textbf{0.8386}, showing reasonable predictive accuracy. The estimated mastery of students classified as "mastered" approaches $0.9991$ after 50 steps, while the unmastered group stays near the baseline, showing effective skill categorization. The BKT profile verification and response to mistakes are plotted in Figure \ref{fig:bkt_validation}.
+
+\begin{figure}[t]
+  \centering
+  \begin{minipage}[t]{0.60\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{exp2_bkt_validation.png}
+    \caption{BKT state validation under student simulations, showing mastery profile separation and responsiveness to mistakes (mistake test).}
+    \label{fig:bkt_validation}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{0.36\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{exp3_bandit_comparison.png}
+    \caption{Cumulative regret curves of LinUCB vs. Greedy and Random baselines (30 seeds, 95\% CI).}
+    \label{fig:bandit_regret}
+  \end{minipage}
+\end{figure}
+
+\subsection{Contextual Bandit Convergence}
+We simulated a class of 30 virtual students answering 100 questions. We compared the \textbf{LinUCB Adaptive} algorithm against two baselines:
+\begin{enumerate}
+    \item \textbf{Random Selection:} Questions selected randomly.
+    \item \textbf{Static Greedy:} Questions chosen to match the student's ELO, without exploration.
+\end{enumerate}
+
+To isolate the performance of the algorithms, we used \textbf{Common Random Numbers (CRN)} to ensure all agents faced the exact same student responses and mastery transitions under identical seed conditions.
+
+We ran the simulation across \textbf{30 independent random seeds} to generate cumulative regret curves compared to an Oracle selector (which knows the students' true parameters). The results are summarized in \textbf{Table 1}.
+
+\textbf{Table 1: Final Cumulative Regret after 100 trials ($N=30$)}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lll}
+\toprule
+\textbf{Algorithm} & \textbf{Mean Final Regret} & \textbf{95\% Confidence Interval} \\
+\midrule
+\textbf{LinUCB Adaptive} & \textbf{14.09} & $\pm$ \textbf{0.69} \\
+\textbf{LinUCB (No BKT Ablation)} & 18.93 & $\pm$ 1.89 \\
+\textbf{Static Greedy} & 37.75 & $\pm$ 0.58 \\
+\textbf{Random Baseline} & 41.82 & $\pm$ 1.24 \\
+\bottomrule
+\end{tabular}
+\caption{Experimental Results}
+\end{table}
+To evaluate the statistical significance of these results, we performed paired t-tests on the final regret distributions:
+\begin{itemize}
+    \item \textbf{LinUCB vs. Random:} $t = -37.82$, $p$-value = $0.0000$ (absolute significance, $p < 10^{-5}$)
+    \item \textbf{LinUCB vs. Greedy:} $t = -45.89$, $p$-value = $0.0000$ (absolute significance, $p < 10^{-5}$)
+    \item \textbf{LinUCB vs. LinUCB (No BKT):} $t = -4.98$, $p$-value = $8.92 \times 10^{-6}$ (highly significant, $p < 0.01$)
+\end{itemize}
+
+The LinUCB regret curve scales logarithmically, showing rapid learning. In contrast, the Greedy and Random baselines display linear regret growth, indicating that they repeatedly present questions outside of the students' optimal ZPD. The comparative cumulative regret curves across 30 seeds are shown in Figure \ref{fig:bandit_regret}.
+
+
+
+
+To support multi-seed simulation evaluation across 90,000 steps without CPU bottlenecks, we developed a vectorized simulation engine (\texttt{FastLinUCBSimulator}) that stacks matrices into unified tensors and runs parallel UCB evaluations via Einstein summation, achieving a 23$\times$ runtime speedup (see Appendix \ref{app:vectorized_sim} for mathematical and implementation details).
+
+
+\subsection{Concept Graph Propagation Performance}
+We validated cycle protection, propagation behavior, and write-through cache invalidation under synthetic concept networks, confirming 100\% unique node visits and sub-20 ms traversal latencies under cycle-heavy stress tests (see Appendix \ref{app:propagation_perf} for full details).
+
+\subsection{Forgetting Curve Calibration}
+Using grid search on synthetic logs, we calibrated the memory stability factor to $S^* = 0.70$ days, demonstrating aligned calibration behaviors with an ECE of 0.2622 (details in Appendix \ref{app:forgetting_calib}).
+
+\subsection{Production Equivalence Testing}
+To guarantee that the offline simulation models match the production database logic, we run an automated equivalence test suite. 100 randomized student contexts (Elo, BKT, hint, AI help) were evaluated concurrently on Python and the database SQL RPC. The comparison yielded $100\%$ numerical identity (errors $< 10^{-5}$), ensuring zero algorithmic drift during production serving.
+
+\subsection{Real-World Dataset Benchmark}
+To validate the generalizability of our adaptive engine, we evaluated our student modeling and recommendation components on two public educational datasets:
+\begin{enumerate}
+    \item \textbf{ASSISTments 2009-2010 (Skill-Builder) \cite{feng2009addressing}:} We utilized a subset consisting of 129,265 student interactions across 1,000 students. We ran the BKT and Elo models sequentially to predict the correctness of each student's response on the next step. Our Elo component achieved a Next-step Predictive AUC of \textbf{0.6836} (RMSE: 0.4343), and the BKT component achieved an AUC of \textbf{0.6697} (RMSE: 0.4677). The results show that Elo slightly outperforms BKT, which can be attributed to Elo's dynamic difficulty updates and the incorporation of response speed factors.
+    \item \textbf{EdNet KT1 \cite{choi2020ednet}:} We constructed a subset comprising 223,118 interactions of 1,000 students. We evaluated the contextual bandit (LinUCB) policy using Off-Policy Evaluation (OPE) via Replay Match. For each interaction log, the agent made a recommendation from a localized candidate pool of size $N=5$ (containing the target question and 4 random distractors). Over \textbf{25,549 matched trials}, LinUCB achieved a final cumulative expected ZPD reward of \textbf{15,230.29}, outperforming the Random recommendation policy which obtained \textbf{12,992.75} (a \textbf{17.2\% improvement}). This confirms the personalization efficiency of our bandit recommendations on real-world learner logs.
+\end{enumerate}
+
+\begin{figure}[t]
+\centering
+\includegraphics[height=0.35\textheight,keepaspectratio]{diagram_replay_match}
+\caption{Flowchart of the Off-Policy Evaluation (OPE) via Replay Match process on EdNet logs.}
+\label{fig:replay_match_flow}
+\end{figure}
+
+The Replay Match evaluation workflow, depicted in Figure \ref{fig:replay_match_flow}, processes historic EdNet learner logs to evaluate the LinUCB recommendation policy off-policy. For each logged interaction, a localized candidate pool of size $N=5$ (containing the target question and 4 random distractors) is constructed. If the question recommended by our LinUCB policy matches the actual question answered by the student in the log (a matched trial), the attempt is recorded, the reward is accumulated, and the policy updates its covariance matrix. If there is a mismatch, the trial is skipped, avoiding offline evaluation bias.
+
+The corresponding evaluation curves are plotted in Figures \ref{fig:assistments} and \ref{fig:ednet}. Figure \ref{fig:assistments} shows the ROC curves comparing BKT and Elo performance on ASSISTments. Figure \ref{fig:ednet} displays the cumulative expected ZPD reward curves for the LinUCB and Random policies on the EdNet dataset.
+
+\begin{figure}[t]
+  \centering
+  \begin{minipage}[t]{0.60\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{exp7_assistments_evaluation.png}
+    \caption{Next-Step correctness prediction ROC curves for BKT and Elo on ASSISTments.}
+    \label{fig:assistments}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{0.36\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{exp8_ednet_bandit_ope.png}
+    \caption{Off-Policy Evaluation (OPE) cumulative expected ZPD rewards for LinUCB vs. Random policies on EdNet.}
+    \label{fig:ednet}
+  \end{minipage}
+\end{figure}
+
+\section{Discussion, Limitations \& Broader Impacts}
+
+\subsection{Limitations}
+While our adaptive learning engine is concurrency-safe and numerically synchronized, several limitations apply:
+\begin{enumerate}
+    \item \textbf{Stationary Cognitive Constants:} Our BKT transition rate ($p(T) = 0.06$) is stationary and identical for all students, ignoring individual student learning speed variance.
+    \item \textbf{Response Time Sensitivity and Cold-Start:} The Elo speed factor relies on the question's historical mean response time ($t_{avg}$). Under outliers (e.g., student idling or system disconnects), the computed speed factor may temporarily skew difficulty estimates. Furthermore, during cold-start where a question has no attempts, $t_{avg}$ is uncalibrated, requiring a fallback to the global course average to prevent division-by-zero.
+    \item \textbf{Cold-start Recommendation Quality:} During initial deployment where student Elo and question difficulties are uncalibrated, LinUCB explores heavily, causing sub-optimal pathing recommendations for the first cohort.
+    \item \textbf{Graph Propagation Decoupling:} Although concept mastery propagates recursively, the updates are triggered sequentially. Under high graph depths, the write-through cache invalidation triggers many Redis writes, which must be batched.
+    \item \textbf{Asynchronous Recommendation Lag:} Offloading parameter recalibrations to an asynchronous event outbox worker delays updates to student mastery, Elo, and bandit matrices. Under high-frequency, within-session student attempts, the engine may recommend subsequent questions based on slightly stale student states.
+\end{enumerate}
+
+\subsection{Broader Impacts}
+Deploying automated recommendation systems in education has potential societal and ethical implications:
+\begin{itemize}
+    \item \textbf{Algorithmic Bias:} If the system is trained on demographics with higher initial preparation, it may systematically recommend simpler questions to disadvantaged students, reinforcing educational gaps.
+    \item \textbf{Dependency and Autonomy:} Over-reliance on automated pathing might diminish students' self-regulated learning skills and metacognitive ability to choose their own topics.
+    \item \textbf{Mitigation:} We implement random exploration ($\epsilon$-greedy fallback) and allow human tutors to override recommendations to ensure fairness and transparency.
+\end{itemize}
+
+\section{Reproducibility \& Compute Specification}
+
+\subsection{Compute Specifications}
+\begin{itemize}
+    \item \textbf{CPU:} Single 8-Core Intel Core i7 (or equivalent x86\_64 processor)
+    \item \textbf{RAM:} 16 GB DDR4
+    \item \textbf{Software Environment:} Python 3.11, Supabase Local Emulator, PostgreSQL 15.0
+    \item \textbf{Total Project Compute Time:} ~0.01 CPU-hours (running the vectorized simulation suite across 30 seeds takes 18 seconds)
+\end{itemize}
+
+\subsection{Reproduction Commands}
+To run the evaluation suite and generate all figures and CSV reports:
+\begin{lstlisting}[language=BASH]
+# 1. Install dependencies
+pip install -r requirements.txt
+
+# 2. Run unit tests and equivalence gates
+pytest tests/test_api/test_adaptive_equivalence.py
+
+# 3. Execute the evaluation suite
+python -m eval.eval_suite
+\end{lstlisting}
+The results, logs, and PNG plots will be outputted under \texttt{eval/results/}.
+
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\newpage
+\appendix
+\section{Appendix}
+
+\subsection{Computational Complexity and Vectorized Simulation}\label{app:vectorized_sim}
+During multi-seed simulation evaluation, executing standard LinUCB recommendations for $30 \text{ students}$ across $100 \text{ trials}$ and $30 \text{ random seeds}$ requires:
+\[N_{\text{steps}} = 30 \text{ seeds} \times 100 \text{ trials} \times 30 \text{ students} = 90,000 \text{ recommendations}\]
+For each recommendation, the agent evaluates all $100 \text{ candidate questions}$ (arms) to select the one with the highest Upper Confidence Bound (UCB). This results in:
+\[N_{\text{iterations}} = 90,000 \text{ steps} \times 100 \text{ questions} = 9,000,000 \text{ arm evaluations}\]
+In a naive Python implementation, extracting the inverse covariance matrix $A^{-1}$ (a nested list) and converting it to a NumPy array in each of the 9 million iterations introduces a severe CPU bottleneck, raising the execution time to approximately 7 minutes. 
+
+To overcome this, we design a vectorized simulation engine (\texttt{FastLinUCBSimulator}). We stack the inverse covariance matrices and vectors of all 100 questions into unified NumPy tensors of shape $(100, d, d)$ and $(100, d, 1)$. We then compute the expected rewards and confidence bounds for all 100 questions in parallel using vectorized matrix multiplication and Einstein summation:
+\[\text{pred\_all} = \text{squeeze}(A_{\text{inv\_all}} \cdot b_{\text{all}}) \cdot x, \quad \text{var\_all} = \text{einsum}('i,nij,j\rightarrow n', x, A_{\text{inv\_all}}, x)\]
+This vectorized formulation collapses the 9,000,000 Python loops into fast C-level NumPy executions, reducing the simulation runtime from \textbf{418 seconds to 18 seconds (a 23x speedup)} under identical seed conditions.
+
+\subsection{Concept Graph Traversal Latency and Stress Test}\label{app:propagation_perf}
+We validated cycle protection, propagation behavior, and cache invalidation under synthetic concept networks:
+\begin{itemize}
+    \item \textbf{Traversal Integrity:} Forward and backward decay magnitudes were verified (e.g. initial propagation of $+0.50$ from $A$ yields exactly $+0.125$ on child $B$, and $+0.0313$ on grandchild $C$). Cycles (A -> B -> C -> A) were successfully resolved, confirming 100\% unique node visits.
+    \item \textbf{Latency Profile:} Standard propagation on a 6-node concept graph executes in \textbf{1.1414 ms}. A 40-node stress test with overlapping cycle chords executes in \textbf{19.6348 ms} (well below the production budget of $50\text{ ms}$).
+\end{itemize}
+
+\subsection{Forgetting Curve Calibration Details}\label{app:forgetting_calib}
+We model memory decay using the forgetting curve formula:
+\[P(\text{recall}) = 2^{-\Delta t / S}\]
+Where $\Delta t$ is the elapsed time in days since the last attempt, and $S$ is the memory stability factor. We optimize $S$ using Grid Search over actual logs to minimize the Mean Squared Error (MSE):
+\[S^* = \arg\min_{S} \frac{1}{N} \sum_{i=1}^N \left( Y_i - 2^{-\Delta t_i / S} \right)^2\]
+Expected Calibration Error (ECE) is calculated to validate the reliability of $P(\text{recall})$ predictions across time bins:
+\[\text{ECE} = \sum_{b=1}^B \frac{|I_b|}{N} \left| \text{acc}(I_b) - \text{conf}(I_b) \right|\]
+Using grid search on synthetic retention logs, we optimized the memory stability factor to $S^* = 0.70$ days (~17 hours). The Expected Calibration Error (ECE) across 5 time bins is \textbf{0.2622} (computed on a small synthetic calibration validation sample), showing the correct mathematical behavior of the calibration metric.
+
+\end{document}

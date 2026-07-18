@@ -1,0 +1,57 @@
+{
+  "diagnostic": {
+    "overall_accuracy": 1.0,
+    "by_case_type": {
+      "happy": 1.0,
+      "noise": 1.0,
+      "adversarial": 1.0
+    },
+    "cases": [
+      {
+        "case_id": "diag_math_happy_1",
+        "loai_ca": "happy",
+        "expected_root_cause": "M6.SDS.03",
+        "actual_root_cause": "M6.SDS.03",
+        "is_correct": true
+      },
+      {
+        "case_id": "diag_math_noise_1",
+        "loai_ca": "noise",
+        "expected_root_cause": "M6.SDS.03",
+        "actual_root_cause": "M6.SDS.03",
+        "is_correct": true
+      },
+      {
+        "case_id": "diag_math_adversarial_1",
+        "loai_ca": "adversarial",
+        "expected_root_cause": "M5.SDS.02",
+        "actual_root_cause": "M5.SDS.02",
+        "is_correct": true
+      }
+    ]
+  },
+  "rag_and_hallucination": {
+    "cloud": {
+      "total_queries": 1,
+      "citation_miss_count": 0,
+      "hallucination_count": 0,
+      "pedagogical_leak_count": 0
+    }
+  },
+  "graph_analysis": {
+    "total_nodes": 4,
+    "total_edges": 3,
+    "grade_distribution": {
+      "7": 1,
+      "6": 1,
+      "5": 1,
+      "4": 1
+    },
+    "subject_distribution": {
+      "Toán": 4
+    },
+    "content_distribution": {
+      "Số và Đại số": 4
+    }
+  }
+}

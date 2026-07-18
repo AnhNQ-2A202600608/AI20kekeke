@@ -1,0 +1,2988 @@
+{
+  "generated": "2026-06-28T09:14:58.799789+00:00",
+  "event_count": 100,
+  "trace_count": 16,
+  "span_summary": {
+    "chat.stream": {
+      "count": 7,
+      "p50_ms": 8612.04,
+      "p95_ms": 10531.75,
+      "max_ms": 10782.16
+    },
+    "LangGraph": {
+      "count": 7,
+      "p50_ms": 8610.83,
+      "p95_ms": 9700.42,
+      "max_ms": 9946.38
+    },
+    "respond_academic": {
+      "count": 8,
+      "p50_ms": 5857.23,
+      "p95_ms": 8341.02,
+      "max_ms": 8536.93
+    },
+    "llm.respond_stream": {
+      "count": 8,
+      "p50_ms": 5852.82,
+      "p95_ms": 8336.0,
+      "max_ms": 8531.81
+    },
+    "ChatOpenAI": {
+      "count": 9,
+      "p50_ms": 5561.78,
+      "p95_ms": 8306.25,
+      "max_ms": 8529.8
+    },
+    "Chat Completion": {
+      "count": 9,
+      "p50_ms": 5557.91,
+      "p95_ms": 8302.84,
+      "max_ms": 8526.18
+    },
+    "rag.embedding": {
+      "count": 3,
+      "p50_ms": 833.95,
+      "p95_ms": 1291.73,
+      "max_ms": 1342.59
+    },
+    "Embedding": {
+      "count": 3,
+      "p50_ms": 831.88,
+      "p95_ms": 1087.87,
+      "max_ms": 1116.31
+    },
+    "analyze": {
+      "count": 8,
+      "p50_ms": 630.92,
+      "p95_ms": 3420.46,
+      "max_ms": 3763.44
+    },
+    "chat.session_validate": {
+      "count": 1,
+      "p50_ms": 601.51,
+      "p95_ms": 601.51,
+      "max_ms": 601.51
+    },
+    "chat.message_save": {
+      "count": 1,
+      "p50_ms": 451.55,
+      "p95_ms": 451.55,
+      "max_ms": 451.55
+    },
+    "rag.vector_rpc": {
+      "count": 3,
+      "p50_ms": 429.98,
+      "p95_ms": 455.46,
+      "max_ms": 458.29
+    },
+    "chat.memory_load": {
+      "count": 1,
+      "p50_ms": 239.54,
+      "p95_ms": 239.54,
+      "max_ms": 239.54
+    },
+    "chat.history_load": {
+      "count": 1,
+      "p50_ms": 136.96,
+      "p95_ms": 136.96,
+      "max_ms": 136.96
+    },
+    "check_reflection": {
+      "count": 8,
+      "p50_ms": 2.06,
+      "p95_ms": 2.69,
+      "max_ms": 2.71
+    },
+    "should_continue": {
+      "count": 8,
+      "p50_ms": 0.99,
+      "p95_ms": 1.15,
+      "max_ms": 1.17
+    },
+    "rag.retrieve": {
+      "count": 8,
+      "p50_ms": 0.36,
+      "p95_ms": 2698.53,
+      "max_ms": 2984.66
+    },
+    "chat.profile_load": {
+      "count": 7,
+      "p50_ms": 0.15,
+      "p95_ms": 0.62,
+      "max_ms": 0.79
+    }
+  },
+  "trace_rows": [
+    {
+      "root_span_id": "83d49b8a-8771-4ad2-ab80-ee3239b7b5f7",
+      "event_count": 2,
+      "created": "2026-06-28T09:13:52.355Z",
+      "total_observed_ms": 2447.19,
+      "spans": [
+        "ChatOpenAI",
+        "Chat Completion"
+      ]
+    },
+    {
+      "root_span_id": "bdeca9df-0302-4a1a-8680-4fdbb23ba1d0",
+      "event_count": 17,
+      "created": "2026-06-28T09:13:40.307Z",
+      "total_observed_ms": 10782.16,
+      "spans": [
+        "chat.session_validate",
+        "chat.stream",
+        "chat.history_load",
+        "chat.memory_load",
+        "LangGraph",
+        "analyze",
+        "rag.embedding",
+        "rag.retrieve",
+        "Embedding",
+        "rag.vector_rpc",
+        "should_continue",
+        "respond_academic",
+        "llm.respond_stream",
+        "ChatOpenAI",
+        "Chat Completion",
+        "check_reflection",
+        "chat.message_save"
+      ]
+    },
+    {
+      "root_span_id": "6b0c7a51-deb9-4a5c-b8ee-d546b6a277c7",
+      "event_count": 1,
+      "created": "2026-06-28T09:13:39.559Z",
+      "total_observed_ms": 0.79,
+      "spans": [
+        "chat.profile_load"
+      ]
+    },
+    {
+      "root_span_id": "da5ade3c-6ab0-40ff-903d-3231f88b2028",
+      "event_count": 10,
+      "created": "2026-06-28T09:07:40.194Z",
+      "total_observed_ms": 8612.04,
+      "spans": [
+        "chat.stream",
+        "LangGraph",
+        "analyze",
+        "rag.retrieve",
+        "should_continue",
+        "respond_academic",
+        "llm.respond_stream",
+        "ChatOpenAI",
+        "Chat Completion",
+        "check_reflection"
+      ]
+    },
+    {
+      "root_span_id": "e37d2a3d-3531-478e-bc88-45adeb43aa71",
+      "event_count": 1,
+      "created": "2026-06-28T09:07:39.574Z",
+      "total_observed_ms": 0.14,
+      "spans": [
+        "chat.profile_load"
+      ]
+    },
+    {
+      "root_span_id": "198b2cec-dbad-40cd-9cf0-d7091a156b92",
+      "event_count": 10,
+      "created": "2026-06-28T09:07:29.823Z",
+      "total_observed_ms": 9119.05,
+      "spans": [
+        "chat.stream",
+        "LangGraph",
+        "analyze",
+        "rag.retrieve",
+        "should_continue",
+        "respond_academic",
+        "llm.respond_stream",
+        "ChatOpenAI",
+        "Chat Completion",
+        "check_reflection"
+      ]
+    },
+    {
+      "root_span_id": "4af7a247-2d73-482a-8cc2-0cbd986c1411",
+      "event_count": 1,
+      "created": "2026-06-28T09:07:29.216Z",
+      "total_observed_ms": 0.22,
+      "spans": [
+        "chat.profile_load"
+      ]
+    },
+    {
+      "root_span_id": "c00d5c03-37c5-4f6d-b425-12ea2019d432",
+      "event_count": 13,
+      "created": "2026-06-28T09:07:18.637Z",
+      "total_observed_ms": 9947.45,
+      "spans": [
+        "chat.stream",
+        "LangGraph",
+        "analyze",
+        "rag.embedding",
+        "rag.retrieve",
+        "Embedding",
+        "rag.vector_rpc",
+        "should_continue",
+        "respond_academic",
+        "ChatOpenAI",
+        "llm.respond_stream",
+        "Chat Completion",
+        "check_reflection"
+      ]
+    },
+    {
+      "root_span_id": "44e4b2fd-bd45-46ed-89b4-8be2c4c475b1",
+      "event_count": 1,
+      "created": "2026-06-28T09:07:17.992Z",
+      "total_observed_ms": 0.14,
+      "spans": [
+        "chat.profile_load"
+      ]
+    },
+    {
+      "root_span_id": "28d8d4fb-0ab7-40c7-8532-8aaa4dc87892",
+      "event_count": 10,
+      "created": "2026-06-28T09:07:11.156Z",
+      "total_observed_ms": 6203.39,
+      "spans": [
+        "LangGraph",
+        "chat.stream",
+        "analyze",
+        "rag.retrieve",
+        "should_continue",
+        "respond_academic",
+        "llm.respond_stream",
+        "Chat Completion",
+        "ChatOpenAI",
+        "check_reflection"
+      ]
+    },
+    {
+      "root_span_id": "08b0d187-8274-4526-8261-db5fcfa941ae",
+      "event_count": 1,
+      "created": "2026-06-28T09:07:10.536Z",
+      "total_observed_ms": 0.22,
+      "spans": [
+        "chat.profile_load"
+      ]
+    },
+    {
+      "root_span_id": "74b484e1-3d5a-4bd1-be17-dff4a3369b15",
+      "event_count": 10,
+      "created": "2026-06-28T09:07:03.175Z",
+      "total_observed_ms": 6750.93,
+      "spans": [
+        "chat.stream",
+        "LangGraph",
+        "analyze",
+        "rag.retrieve",
+        "should_continue",
+        "respond_academic",
+        "ChatOpenAI",
+        "llm.respond_stream",
+        "Chat Completion",
+        "check_reflection"
+      ]
+    },
+    {
+      "root_span_id": "56e3f77e-ea07-49e5-a0bc-a9fb14ab95b8",
+      "event_count": 1,
+      "created": "2026-06-28T09:07:02.526Z",
+      "total_observed_ms": 0.15,
+      "spans": [
+        "chat.profile_load"
+      ]
+    },
+    {
+      "root_span_id": "8e660e4e-3d30-4741-8aec-178c08290536",
+      "event_count": 13,
+      "created": "2026-06-28T09:06:53.651Z",
+      "total_observed_ms": 8261.34,
+      "spans": [
+        "chat.stream",
+        "LangGraph",
+        "analyze",
+        "rag.embedding",
+        "rag.retrieve",
+        "Embedding",
+        "rag.vector_rpc",
+        "should_continue",
+        "respond_academic",
+        "llm.respond_stream",
+        "Chat Completion",
+        "ChatOpenAI",
+        "check_reflection"
+      ]
+    },
+    {
+      "root_span_id": "4df3d353-76c8-4bdd-802a-5b991f3b9a1e",
+      "event_count": 1,
+      "created": "2026-06-28T09:06:53.059Z",
+      "total_observed_ms": 0.15,
+      "spans": [
+        "chat.profile_load"
+      ]
+    },
+    {
+      "root_span_id": "f3502d02-a612-4543-b071-9b7780237acd",
+      "event_count": 8,
+      "created": "2026-06-28T09:06:47.581Z",
+      "total_observed_ms": 4212.91,
+      "spans": [
+        "analyze",
+        "rag.retrieve",
+        "should_continue",
+        "respond_academic",
+        "ChatOpenAI",
+        "llm.respond_stream",
+        "Chat Completion",
+        "check_reflection"
+      ]
+    }
+  ],
+  "errors": [],
+  "events": [
+    {
+      "id": "af317f3a-010a-4f91-9116-7e8b9e439bed",
+      "created": "2026-06-28T09:13:52.356Z",
+      "span_id": "a94a6235-c5ac-4837-830a-67bcb544e7cd",
+      "root_span_id": "83d49b8a-8771-4ad2-ab80-ee3239b7b5f7",
+      "parent_span_id": null,
+      "name": "Chat Completion",
+      "error": null,
+      "metrics": {
+        "completion_audio_tokens": 0.0,
+        "completion_image_tokens": 0.0,
+        "completion_reasoning_tokens": 0.0,
+        "completion_tokens": 41.0,
+        "cost": 0.0001,
+        "end": 1782638034.8007,
+        "prompt_audio_tokens": 0.0,
+        "prompt_cache_write_tokens": 0.0,
+        "prompt_cached_tokens": 0.0,
+        "prompt_tokens": 586.0,
+        "prompt_video_tokens": 0.0,
+        "start": 1782638032.356,
+        "time_to_first_token": 2.4444,
+        "tokens": 627.0,
+        "duration_ms": 2444.6
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "extra_headers",
+        "model",
+        "provider",
+        "stream",
+        "temperature"
+      ],
+      "input_preview": "[{\"content\": \"Bạn là một trợ lý AI trích xuất thông tin cá nhân của học sinh để giúp cá nhân hóa giáo dục.\\nHãy phân tích lượt chat mới nhất của học sinh và trợ lý, sau đó cập nhật và trả về cấu trúc thông tin học sinh dưới dạng JSON.\\nHãy...",
+      "output_preview": "[{\"finish_reason\": \"stop\", \"index\": 0, \"logprobs\": null, \"message\": {\"annotations\": null, \"audio\": null, \"content\": \"{\\n    \\\"name\\\": \\\"\\\",\\n    \\\"prefer_language\\\": \\\"\\\",\\n    \\\"struggles_with\\\": [\\\"Khái niệm RAG\\\"],\\n    \\\"strengths\\\": [..."
+    },
+    {
+      "id": "b777fb19-a34b-4eff-a11d-3545a61a4552",
+      "created": "2026-06-28T09:13:52.355Z",
+      "span_id": "83d49b8a-8771-4ad2-ab80-ee3239b7b5f7",
+      "root_span_id": "83d49b8a-8771-4ad2-ab80-ee3239b7b5f7",
+      "parent_span_id": null,
+      "name": "ChatOpenAI",
+      "error": null,
+      "metrics": {
+        "completion_tokens": 41.0,
+        "end": 1782638034.8024,
+        "prompt_cached_tokens": 0.0,
+        "prompt_tokens": 586.0,
+        "start": 1782638032.3552,
+        "tokens": 627.0,
+        "total_tokens": 627.0,
+        "duration_ms": 2447.19
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "batch_size",
+        "braintrust",
+        "invocation_params",
+        "metadata",
+        "model",
+        "name",
+        "options",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "[[{\"additional_kwargs\": {}, \"content\": \"Bạn là một trợ lý AI trích xuất thông tin cá nhân của học sinh để giúp cá nhân hóa giáo dục.\\nHãy phân tích lượt chat mới nhất của học sinh và trợ lý, sau đó cập nhật và trả về cấu trúc thông tin học...",
+      "output_preview": "{\"generations\": [[{\"generation_info\": {\"finish_reason\": \"stop\", \"logprobs\": null}, \"message\": {\"additional_kwargs\": {\"refusal\": null}, \"content\": \"{\\n    \\\"name\\\": \\\"\\\",\\n    \\\"prefer_language\\\": \\\"\\\",\\n    \\\"struggles_with\\\": [\\\"Khái niệm..."
+    },
+    {
+      "id": "1d603445-48de-4c08-a469-dbd5690d4ff4",
+      "created": "2026-06-28T09:13:50.637Z",
+      "span_id": "fe0d2b1f-1062-4cb5-bad9-90c02fafcf55",
+      "root_span_id": "bdeca9df-0302-4a1a-8680-4fdbb23ba1d0",
+      "parent_span_id": null,
+      "name": "chat.message_save",
+      "error": null,
+      "metrics": {
+        "end": 1782638031.0888,
+        "start": 1782638030.6373,
+        "duration_ms": 451.55
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "has_session"
+      ],
+      "input_preview": null,
+      "output_preview": null
+    },
+    {
+      "id": "6c439c85-0151-448b-ac07-6c166a4650a8",
+      "created": "2026-06-28T09:13:50.633Z",
+      "span_id": "b33335de-eab4-4de7-8c5b-96f465ad8bd0",
+      "root_span_id": "bdeca9df-0302-4a1a-8680-4fdbb23ba1d0",
+      "parent_span_id": null,
+      "name": "check_reflection",
+      "error": null,
+      "metrics": {
+        "end": 1782638030.6357,
+        "start": 1782638030.6338,
+        "duration_ms": 1.91
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "braintrust",
+        "metadata",
+        "name",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "{\"analysis\": \"Tìm kiếm RAG hoàn tất. Tìm thấy 6 slide liên quan.\", \"chat_history\": [{\"content\": \"rag là gì\", \"role\": \"student\"}, {\"content\": \"RAG, hay Retrieval-Augmented Generation, là một kỹ thuật kết hợp giữa truy xuất thông tin (retrie...",
+      "output_preview": "\"__end__\""
+    },
+    {
+      "id": "7f12c229-0422-4dbb-b980-91d59edec469",
+      "created": "2026-06-28T09:13:45.963Z",
+      "span_id": "6ee1d45a-d00f-4a66-8546-dcb308b6ab2f",
+      "root_span_id": "bdeca9df-0302-4a1a-8680-4fdbb23ba1d0",
+      "parent_span_id": null,
+      "name": "Chat Completion",
+      "error": null,
+      "metrics": {
+        "completion_audio_tokens": 0.0,
+        "completion_image_tokens": 0.0,
+        "completion_reasoning_tokens": 0.0,
+        "completion_tokens": 310.0,
+        "cost": 0.0005,
+        "end": 1782638030.6282,
+        "prompt_audio_tokens": 0.0,
+        "prompt_cache_write_tokens": 0.0,
+        "prompt_cached_tokens": 0.0,
+        "prompt_tokens": 2078.0,
+        "prompt_video_tokens": 0.0,
+        "start": 1782638025.9638,
+        "time_to_first_token": 1.4153,
+        "tokens": 2388.0,
+        "duration_ms": 4664.42
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "model",
+        "provider",
+        "stream",
+        "temperature"
+      ],
+      "input_preview": "[{\"content\": \"Bạn là một Gia sư AI cá nhân hóa (AI Tutor) xuất sắc tại Đại học VinUniversity.\\nNhiệm vụ của bạn là hỗ trợ sinh viên học tập theo phương pháp Socratic (Socratic ladder).\\n\\n[LUẬT AN TOÀN HỌC THUẬT (ACADEMIC INTEGRITY GUARDRA...",
+      "output_preview": "[{\"finish_reason\": \"stop\", \"index\": 0, \"logprobs\": null, \"message\": {\"content\": \"RAG, hay Retrieval-Augmented Generation, là một kỹ thuật kết hợp giữa truy xuất thông tin (retrieval) và sinh ngôn ngữ (generation) để giúp các mô hình ngôn n..."
+    },
+    {
+      "id": "9dc52b49-97a2-48db-af13-0926510bc4a3",
+      "created": "2026-06-28T09:13:45.959Z",
+      "span_id": "0ade7e38-57b3-4154-9b78-ea38832158f8",
+      "root_span_id": "bdeca9df-0302-4a1a-8680-4fdbb23ba1d0",
+      "parent_span_id": null,
+      "name": "ChatOpenAI",
+      "error": null,
+      "metrics": {
+        "completion_tokens": 310.0,
+        "end": 1782638030.631,
+        "prompt_cached_tokens": 0.0,
+        "prompt_tokens": 2078.0,
+        "start": 1782638025.9599,
+        "time_to_first_token": 1.4199,
+        "tokens": 2388.0,
+        "total_tokens": 2388.0,
+        "duration_ms": 4671.14
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "batch_size",
+        "braintrust",
+        "invocation_params",
+        "metadata",
+        "model",
+        "name",
+        "options",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "[[{\"additional_kwargs\": {}, \"content\": \"Bạn là một Gia sư AI cá nhân hóa (AI Tutor) xuất sắc tại Đại học VinUniversity.\\nNhiệm vụ của bạn là hỗ trợ sinh viên học tập theo phương pháp Socratic (Socratic ladder).\\n\\n[LUẬT AN TOÀN HỌC THUẬT (...",
+      "output_preview": "{\"generations\": [[{\"generation_info\": {\"finish_reason\": \"stopstop\", \"model_name\": \"openai/gpt-4o-miniopenai/gpt-4o-mini\", \"system_fingerprint\": \"fp_965c8b9ecffp_965c8b9ecf\"}, \"message\": {\"additional_kwargs\": {}, \"content\": \"RAG, hay Retrie..."
+    },
+    {
+      "id": "4fa9bde6-21e4-4ff7-8599-e7205d0505b2",
+      "created": "2026-06-28T09:13:45.958Z",
+      "span_id": "8ea48b61-0a0a-4c7c-a1ac-d6326fca6389",
+      "root_span_id": "bdeca9df-0302-4a1a-8680-4fdbb23ba1d0",
+      "parent_span_id": null,
+      "name": "llm.respond_stream",
+      "error": null,
+      "metrics": {
+        "end": 1782638030.6332,
+        "start": 1782638025.9588,
+        "duration_ms": 4674.41
+      },
+      "timings_ms": {
+        "llm_first_token": 1421.94,
+        "llm_total": 4674.39
+      },
+      "metadata_keys": [
+        "intent",
+        "mode",
+        "timings_ms"
+      ],
+      "input_preview": "{\"message_count\": 7, \"query\": \"rag là gì\"}",
+      "output_preview": "{\"answer_chars\": 1156}"
+    },
+    {
+      "id": "95988f15-58f8-4f62-8214-cbff541cc388",
+      "created": "2026-06-28T09:13:45.278Z",
+      "span_id": "86db46b8-2fd0-4732-b217-6d7524af02d6",
+      "root_span_id": "bdeca9df-0302-4a1a-8680-4fdbb23ba1d0",
+      "parent_span_id": null,
+      "name": "respond_academic",
+      "error": null,
+      "metrics": {
+        "end": 1782638030.6361,
+        "start": 1782638025.2782,
+        "duration_ms": 5357.95
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "braintrust",
+        "metadata",
+        "name",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "{\"analysis\": \"Tìm kiếm RAG hoàn tất. Tìm thấy 6 slide liên quan.\", \"chat_history\": [{\"content\": \"rag là gì\", \"role\": \"student\"}, {\"content\": \"RAG, hay Retrieval-Augmented Generation, là một kỹ thuật kết hợp giữa truy xuất thông tin (retrie...",
+      "output_preview": "{\"metadata\": {\"active_quiz\": false, \"bkt\": 0.25, \"citation_validation\": {\"invalid_citations\": [], \"is_valid\": true, \"valid_citations\": []}, \"elo\": 1200, \"intent\": \"academic\", \"mode\": \"Explain\", \"mode_instructions\": \"CHẾ ĐỘ: GIẢI THÍCH (Exp..."
+    },
+    {
+      "id": "f7ac734a-fe2c-4c5d-b8d8-e5ca7cf78966",
+      "created": "2026-06-28T09:13:45.274Z",
+      "span_id": "513dac5b-777f-4025-9672-c25313aee989",
+      "root_span_id": "bdeca9df-0302-4a1a-8680-4fdbb23ba1d0",
+      "parent_span_id": null,
+      "name": "should_continue",
+      "error": null,
+      "metrics": {
+        "end": 1782638025.2758,
+        "start": 1782638025.2746,
+        "duration_ms": 1.17
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "braintrust",
+        "metadata",
+        "name",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "{\"analysis\": \"Tìm kiếm RAG hoàn tất. Tìm thấy 6 slide liên quan.\", \"chat_history\": [{\"content\": \"rag là gì\", \"role\": \"student\"}, {\"content\": \"RAG, hay Retrieval-Augmented Generation, là một kỹ thuật kết hợp giữa truy xuất thông tin (retrie...",
+      "output_preview": "\"respond_academic\""
+    },
+    {
+      "id": "7027b3a2-863c-4737-b444-806a10bbb7bf",
+      "created": "2026-06-28T09:13:43.994Z",
+      "span_id": "1ebe43d1-1d68-4f8c-a85b-28ffeb9fb8da",
+      "root_span_id": "bdeca9df-0302-4a1a-8680-4fdbb23ba1d0",
+      "parent_span_id": null,
+      "name": "rag.vector_rpc",
+      "error": null,
+      "metrics": {
+        "end": 1782638024.4241,
+        "start": 1782638023.9941,
+        "duration_ms": 429.98
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "elapsed_ms",
+        "has_filter",
+        "match_count"
+      ],
+      "input_preview": null,
+      "output_preview": null
+    },
+    {
+      "id": "c176b321-c246-4d79-9f58-d67ec702151b",
+      "created": "2026-06-28T09:13:42.512Z",
+      "span_id": "a3288063-c10a-4b87-9354-9919360ac765",
+      "root_span_id": "bdeca9df-0302-4a1a-8680-4fdbb23ba1d0",
+      "parent_span_id": null,
+      "name": "Embedding",
+      "error": null,
+      "metrics": {
+        "cost": 0.0,
+        "end": 1782638023.6286,
+        "prompt_tokens": 4.0,
+        "start": 1782638022.5123,
+        "tokens": 4.0,
+        "duration_ms": 1116.31
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "model",
+        "provider"
+      ],
+      "input_preview": "[[4193, 39015, 342, 24439]]",
+      "output_preview": "{\"embedding_length\": 1536}"
+    },
+    {
+      "id": "6f382198-d843-490e-9695-550c72ede00e",
+      "created": "2026-06-28T09:13:42.288Z",
+      "span_id": "2cc8a568-3776-4bbe-b83d-a59dfe5b828a",
+      "root_span_id": "bdeca9df-0302-4a1a-8680-4fdbb23ba1d0",
+      "parent_span_id": null,
+      "name": "rag.embedding",
+      "error": null,
+      "metrics": {
+        "end": 1782638023.6311,
+        "start": 1782638022.2885,
+        "duration_ms": 1342.59
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "elapsed_ms"
+      ],
+      "input_preview": "{\"query\": \"rag là gì\"}",
+      "output_preview": null
+    },
+    {
+      "id": "5aafb59b-7e0f-4e37-9181-44a3cc7d5498",
+      "created": "2026-06-28T09:13:42.288Z",
+      "span_id": "e7e3193c-e9ec-4cfa-a7cb-8b5e61685a7f",
+      "root_span_id": "bdeca9df-0302-4a1a-8680-4fdbb23ba1d0",
+      "parent_span_id": null,
+      "name": "rag.retrieve",
+      "error": null,
+      "metrics": {
+        "end": 1782638025.2727,
+        "start": 1782638022.288,
+        "duration_ms": 2984.66
+      },
+      "timings_ms": {
+        "rag_cache_lookup": 0.01,
+        "rag_embedding": 1342.56,
+        "rag_keyword_search": 472.53,
+        "rag_neighbor_fetch": 465.63,
+        "rag_vector_rpc": 429.82
+      },
+      "metadata_keys": [
+        "concept_id",
+        "course_id",
+        "timings_ms"
+      ],
+      "input_preview": "{\"query\": \"rag là gì\"}",
+      "output_preview": "{\"count\": 6, \"top_similarity\": 0.473187163599781}"
+    },
+    {
+      "id": "019fdc3b-50a1-4c4f-8c2f-bc98c0260080",
+      "created": "2026-06-28T09:13:41.513Z",
+      "span_id": "b3c914c6-c8c1-4f61-8e7a-64c9d21b054c",
+      "root_span_id": "bdeca9df-0302-4a1a-8680-4fdbb23ba1d0",
+      "parent_span_id": null,
+      "name": "analyze",
+      "error": null,
+      "metrics": {
+        "end": 1782638025.2765,
+        "start": 1782638021.513,
+        "duration_ms": 3763.44
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "braintrust",
+        "metadata",
+        "name",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "{\"chat_history\": [{\"content\": \"rag là gì\", \"role\": \"student\"}, {\"content\": \"RAG, hay Retrieval-Augmented Generation, là một kỹ thuật kết hợp giữa truy xuất thông tin (retrieval) và sinh ngôn ngữ (generation) để giúp các mô hình ngôn ngữ lớ...",
+      "output_preview": "{\"analysis\": \"Tìm kiếm RAG hoàn tất. Tìm thấy 6 slide liên quan.\", \"context\": \"- Tài liệu 1: 1-day08-rag-pipeline-v2 | Slide 10 | 2.1 RAG Là Gì? RAG — Retrieval-Augmented Generation — Kỹthuật kết hợp truy xuất thông tin (retrieval) với sin..."
+    },
+    {
+      "id": "d759a9af-1d36-48d6-bf4b-a48d4af01f11",
+      "created": "2026-06-28T09:13:41.510Z",
+      "span_id": "5da28a30-560b-427d-9ced-4a61e36aeb7f",
+      "root_span_id": "bdeca9df-0302-4a1a-8680-4fdbb23ba1d0",
+      "parent_span_id": null,
+      "name": "LangGraph",
+      "error": null,
+      "metrics": {
+        "end": 1782638030.6368,
+        "start": 1782638021.5103,
+        "duration_ms": 9126.5
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "braintrust",
+        "metadata",
+        "name",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "{\"chat_history\": [{\"content\": \"rag là gì\", \"role\": \"student\"}, {\"content\": \"RAG, hay Retrieval-Augmented Generation, là một kỹ thuật kết hợp giữa truy xuất thông tin (retrieval) và sinh ngôn ngữ (generation) để giúp các mô hình ngôn ngữ lớ...",
+      "output_preview": "{\"analysis\": \"Tìm kiếm RAG hoàn tất. Tìm thấy 6 slide liên quan.\", \"chat_history\": [{\"content\": \"rag là gì\", \"role\": \"student\"}, {\"content\": \"RAG, hay Retrieval-Augmented Generation, là một kỹ thuật kết hợp giữa truy xuất thông tin (retrie..."
+    },
+    {
+      "id": "e6cfe0d6-83b6-4457-b7f5-773d239348cd",
+      "created": "2026-06-28T09:13:41.046Z",
+      "span_id": "c85af1cf-3056-4d15-be64-267a8b6367c8",
+      "root_span_id": "bdeca9df-0302-4a1a-8680-4fdbb23ba1d0",
+      "parent_span_id": null,
+      "name": "chat.memory_load",
+      "error": null,
+      "metrics": {
+        "end": 1782638021.2857,
+        "start": 1782638021.0462,
+        "duration_ms": 239.54
+      },
+      "timings_ms": {},
+      "metadata_keys": [],
+      "input_preview": null,
+      "output_preview": null
+    },
+    {
+      "id": "9e2089c4-6378-49f3-a219-e0eab1e8fc5a",
+      "created": "2026-06-28T09:13:40.909Z",
+      "span_id": "1201dd46-7b0d-46f9-b9b6-887bba0085ba",
+      "root_span_id": "bdeca9df-0302-4a1a-8680-4fdbb23ba1d0",
+      "parent_span_id": null,
+      "name": "chat.history_load",
+      "error": null,
+      "metrics": {
+        "end": 1782638021.046,
+        "start": 1782638020.909,
+        "duration_ms": 136.96
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "limit"
+      ],
+      "input_preview": null,
+      "output_preview": null
+    },
+    {
+      "id": "d7316237-1c47-4351-856c-68faf8fc4c67",
+      "created": "2026-06-28T09:13:40.307Z",
+      "span_id": "357e7592-d803-4d90-aeb9-b764785169a7",
+      "root_span_id": "bdeca9df-0302-4a1a-8680-4fdbb23ba1d0",
+      "parent_span_id": null,
+      "name": "chat.session_validate",
+      "error": null,
+      "metrics": {
+        "end": 1782638020.9089,
+        "start": 1782638020.3074,
+        "duration_ms": 601.51
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "has_session_id"
+      ],
+      "input_preview": null,
+      "output_preview": null
+    },
+    {
+      "id": "6c259bb2-3593-4a3f-aff9-fcb2c9f9ce5d",
+      "created": "2026-06-28T09:13:40.307Z",
+      "span_id": "bdeca9df-0302-4a1a-8680-4fdbb23ba1d0",
+      "root_span_id": "bdeca9df-0302-4a1a-8680-4fdbb23ba1d0",
+      "parent_span_id": null,
+      "name": "chat.stream",
+      "error": null,
+      "metrics": {
+        "end": 1782638031.0892,
+        "start": 1782638020.307,
+        "duration_ms": 10782.16
+      },
+      "timings_ms": {
+        "llm_first_token": 1421.94,
+        "llm_total": 4674.39,
+        "rag_embedding": 1342.56,
+        "rag_vector_rpc": 429.82,
+        "total": 11529.22
+      },
+      "metadata_keys": [
+        "mode",
+        "timings_ms"
+      ],
+      "input_preview": "{\"has_context\": true, \"mode\": \"Explain\", \"stream\": true}",
+      "output_preview": "{\"answer_chars\": 1156}"
+    },
+    {
+      "id": "ad59ad89-6b4b-4b26-bfd8-5435e3e487ec",
+      "created": "2026-06-28T09:13:39.559Z",
+      "span_id": "6b0c7a51-deb9-4a5c-b8ee-d546b6a277c7",
+      "root_span_id": "6b0c7a51-deb9-4a5c-b8ee-d546b6a277c7",
+      "parent_span_id": null,
+      "name": "chat.profile_load",
+      "error": null,
+      "metrics": {
+        "end": 1782638019.5607,
+        "start": 1782638019.5599,
+        "duration_ms": 0.79
+      },
+      "timings_ms": {},
+      "metadata_keys": [],
+      "input_preview": null,
+      "output_preview": null
+    },
+    {
+      "id": "edfe5003-30bb-459c-b009-7601d959ca62",
+      "created": "2026-06-28T09:07:48.802Z",
+      "span_id": "8d436200-4069-4d51-a009-d75a07b16eaf",
+      "root_span_id": "da5ade3c-6ab0-40ff-903d-3231f88b2028",
+      "parent_span_id": null,
+      "name": "check_reflection",
+      "error": null,
+      "metrics": {
+        "end": 1782637668.8052,
+        "start": 1782637668.8024,
+        "duration_ms": 2.71
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "braintrust",
+        "metadata",
+        "name",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "{\"analysis\": \"Tìm kiếm RAG hoàn tất. Tìm thấy 6 slide liên quan.\", \"chat_history\": [], \"context\": \"- Tài liệu 1: Day 07 Slides C401 | Slide 53 | 4 Ý Cần NhớSau Buổi Học 1. Data quality thường quan trọng hơn đổi sang model đắt hơn. 2. Embed...",
+      "output_preview": "\"__end__\""
+    },
+    {
+      "id": "ca3d5ec4-e43d-4f36-839d-106f5bffee0d",
+      "created": "2026-06-28T09:07:40.831Z",
+      "span_id": "792ada80-8585-42a1-9024-6415f99750f5",
+      "root_span_id": "da5ade3c-6ab0-40ff-903d-3231f88b2028",
+      "parent_span_id": null,
+      "name": "Chat Completion",
+      "error": null,
+      "metrics": {
+        "completion_audio_tokens": 0.0,
+        "completion_image_tokens": 0.0,
+        "completion_reasoning_tokens": 0.0,
+        "completion_tokens": 235.0,
+        "cost": 0.0003,
+        "end": 1782637668.7989,
+        "prompt_audio_tokens": 0.0,
+        "prompt_cache_write_tokens": 0.0,
+        "prompt_cached_tokens": 1536.0,
+        "prompt_tokens": 1663.0,
+        "prompt_video_tokens": 0.0,
+        "start": 1782637660.8311,
+        "time_to_first_token": 1.1343,
+        "tokens": 1898.0,
+        "duration_ms": 7967.82
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "model",
+        "provider",
+        "stream",
+        "temperature"
+      ],
+      "input_preview": "[{\"content\": \"Bạn là một Gia sư AI cá nhân hóa (AI Tutor) xuất sắc tại Đại học VinUniversity.\\nNhiệm vụ của bạn là hỗ trợ sinh viên học tập theo phương pháp Socratic (Socratic ladder).\\n\\n[LUẬT AN TOÀN HỌC THUẬT (ACADEMIC INTEGRITY GUARDRA...",
+      "output_preview": "[{\"finish_reason\": \"stop\", \"index\": 0, \"logprobs\": null, \"message\": {\"content\": \"Embedding và retrieval là hai khái niệm quan trọng trong xử lý ngôn ngữ tự nhiên và hệ thống AI.\\n\\n1. **Embedding**: Đây là quá trình chuyển đổi từ ngữ hoặc..."
+    },
+    {
+      "id": "a83a3d0b-2b33-4836-ae2c-e66573a35ebc",
+      "created": "2026-06-28T09:07:40.830Z",
+      "span_id": "9ab5b6a7-3515-44f6-be23-19155268eda2",
+      "root_span_id": "da5ade3c-6ab0-40ff-903d-3231f88b2028",
+      "parent_span_id": null,
+      "name": "ChatOpenAI",
+      "error": null,
+      "metrics": {
+        "completion_tokens": 235.0,
+        "end": 1782637668.8014,
+        "prompt_cached_tokens": 1536.0,
+        "prompt_tokens": 1663.0,
+        "start": 1782637660.8304,
+        "time_to_first_token": 1.1354,
+        "tokens": 1898.0,
+        "total_tokens": 1898.0,
+        "duration_ms": 7970.92
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "batch_size",
+        "braintrust",
+        "invocation_params",
+        "metadata",
+        "model",
+        "name",
+        "options",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "[[{\"additional_kwargs\": {}, \"content\": \"Bạn là một Gia sư AI cá nhân hóa (AI Tutor) xuất sắc tại Đại học VinUniversity.\\nNhiệm vụ của bạn là hỗ trợ sinh viên học tập theo phương pháp Socratic (Socratic ladder).\\n\\n[LUẬT AN TOÀN HỌC THUẬT (...",
+      "output_preview": "{\"generations\": [[{\"generation_info\": {\"finish_reason\": \"stopstop\", \"model_name\": \"openai/gpt-4o-miniopenai/gpt-4o-mini\", \"system_fingerprint\": \"fp_42e6cfce1bfp_42e6cfce1b\"}, \"message\": {\"additional_kwargs\": {}, \"content\": \"Embedding và re..."
+    },
+    {
+      "id": "b8657061-79db-45c5-b363-4da36ae71e21",
+      "created": "2026-06-28T09:07:40.829Z",
+      "span_id": "ced4c8c3-a9f7-43f2-8986-6479b021abd8",
+      "root_span_id": "da5ade3c-6ab0-40ff-903d-3231f88b2028",
+      "parent_span_id": null,
+      "name": "llm.respond_stream",
+      "error": null,
+      "metrics": {
+        "end": 1782637668.8021,
+        "start": 1782637660.8298,
+        "duration_ms": 7972.34
+      },
+      "timings_ms": {
+        "llm_first_token": 1136.33,
+        "llm_total": 7972.3
+      },
+      "metadata_keys": [
+        "intent",
+        "mode",
+        "timings_ms"
+      ],
+      "input_preview": "{\"message_count\": 3, \"query\": \"nhắc lại ngắn gọn điểm chính về embedding và retrieval\"}",
+      "output_preview": "{\"answer_chars\": 912}"
+    },
+    {
+      "id": "90ae9345-3bed-4d13-b075-a62253efb0c0",
+      "created": "2026-06-28T09:07:40.828Z",
+      "span_id": "41949762-12fe-42af-b1fe-6180c8ebcf19",
+      "root_span_id": "da5ade3c-6ab0-40ff-903d-3231f88b2028",
+      "parent_span_id": null,
+      "name": "respond_academic",
+      "error": null,
+      "metrics": {
+        "end": 1782637668.8056,
+        "start": 1782637660.8284,
+        "duration_ms": 7977.2
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "braintrust",
+        "metadata",
+        "name",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "{\"analysis\": \"Tìm kiếm RAG hoàn tất. Tìm thấy 6 slide liên quan.\", \"chat_history\": [], \"context\": \"- Tài liệu 1: Day 07 Slides C401 | Slide 53 | 4 Ý Cần NhớSau Buổi Học 1. Data quality thường quan trọng hơn đổi sang model đắt hơn. 2. Embed...",
+      "output_preview": "{\"metadata\": {\"active_quiz\": false, \"bkt\": 0.25, \"citation_validation\": {\"invalid_citations\": [], \"is_valid\": true, \"valid_citations\": []}, \"elo\": 1200, \"intent\": \"academic\", \"mode\": \"Explain\", \"mode_instructions\": \"CHẾ ĐỘ: GIẢI THÍCH (Exp..."
+    },
+    {
+      "id": "f0e1fbc0-fc9e-4d5c-b7ff-33e4c05cad67",
+      "created": "2026-06-28T09:07:40.826Z",
+      "span_id": "6bb5250a-62e6-4d15-9408-4ab7a54853a0",
+      "root_span_id": "da5ade3c-6ab0-40ff-903d-3231f88b2028",
+      "parent_span_id": null,
+      "name": "should_continue",
+      "error": null,
+      "metrics": {
+        "end": 1782637660.827,
+        "start": 1782637660.8261,
+        "duration_ms": 0.91
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "braintrust",
+        "metadata",
+        "name",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "{\"analysis\": \"Tìm kiếm RAG hoàn tất. Tìm thấy 6 slide liên quan.\", \"chat_history\": [], \"context\": \"- Tài liệu 1: Day 07 Slides C401 | Slide 53 | 4 Ý Cần NhớSau Buổi Học 1. Data quality thường quan trọng hơn đổi sang model đắt hơn. 2. Embed...",
+      "output_preview": "\"respond_academic\""
+    },
+    {
+      "id": "857ff863-cc71-4ea4-9870-35fd4a9267b1",
+      "created": "2026-06-28T09:07:40.824Z",
+      "span_id": "fb8c9bf4-e3e5-4207-950f-c21cee3de72a",
+      "root_span_id": "da5ade3c-6ab0-40ff-903d-3231f88b2028",
+      "parent_span_id": null,
+      "name": "rag.retrieve",
+      "error": null,
+      "metrics": {
+        "end": 1782637660.8249,
+        "start": 1782637660.8245,
+        "duration_ms": 0.4
+      },
+      "timings_ms": {
+        "rag_cache_lookup": 0
+      },
+      "metadata_keys": [
+        "concept_id",
+        "course_id",
+        "timings_ms"
+      ],
+      "input_preview": "{\"query\": \"nhắc lại ngắn gọn điểm chính về embedding và retrieval\"}",
+      "output_preview": "{\"count\": 6, \"top_similarity\": 0.61076642888233}"
+    },
+    {
+      "id": "a3787132-6d66-4ebc-9cc0-6758c56a51f1",
+      "created": "2026-06-28T09:07:40.196Z",
+      "span_id": "9655b03d-526a-4467-b32c-fa9ce6747760",
+      "root_span_id": "da5ade3c-6ab0-40ff-903d-3231f88b2028",
+      "parent_span_id": null,
+      "name": "analyze",
+      "error": null,
+      "metrics": {
+        "end": 1782637660.8275,
+        "start": 1782637660.1967,
+        "duration_ms": 630.78
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "braintrust",
+        "metadata",
+        "name",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "{\"chat_history\": [], \"long_term_facts\": {}, \"mode\": \"Explain\", \"query\": \"nhắc lại ngắn gọn điểm chính về embedding và retrieval\", \"session_id\": null, \"student_profile\": {\"bkt_mastery_probability\": 0.25, \"elo_score\": 1200, \"mastery_state\":...",
+      "output_preview": "{\"analysis\": \"Tìm kiếm RAG hoàn tất. Tìm thấy 6 slide liên quan.\", \"context\": \"- Tài liệu 1: Day 07 Slides C401 | Slide 53 | 4 Ý Cần NhớSau Buổi Học 1. Data quality thường quan trọng hơn đổi sang model đắt hơn. 2. Embedding là lớp dịch ngô..."
+    },
+    {
+      "id": "7f4356e7-e2e4-420f-a4e5-8ae2dc7f988a",
+      "created": "2026-06-28T09:07:40.195Z",
+      "span_id": "0e71363d-218b-43fd-a4ad-23051b78ab1d",
+      "root_span_id": "da5ade3c-6ab0-40ff-903d-3231f88b2028",
+      "parent_span_id": null,
+      "name": "LangGraph",
+      "error": null,
+      "metrics": {
+        "end": 1782637668.8063,
+        "start": 1782637660.1954,
+        "duration_ms": 8610.83
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "braintrust",
+        "metadata",
+        "name",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "{\"chat_history\": [], \"concept_id\": null, \"course_id\": null, \"long_term_facts\": {}, \"mode\": \"Explain\", \"query\": \"nhắc lại ngắn gọn điểm chính về embedding và retrieval\", \"session_id\": null, \"student_profile\": {\"bkt_mastery_probability\": 0.2...",
+      "output_preview": "{\"analysis\": \"Tìm kiếm RAG hoàn tất. Tìm thấy 6 slide liên quan.\", \"chat_history\": [], \"context\": \"- Tài liệu 1: Day 07 Slides C401 | Slide 53 | 4 Ý Cần NhớSau Buổi Học 1. Data quality thường quan trọng hơn đổi sang model đắt hơn. 2. Embed..."
+    },
+    {
+      "id": "0685db57-03ce-4527-8810-2cd9a19d064f",
+      "created": "2026-06-28T09:07:40.194Z",
+      "span_id": "da5ade3c-6ab0-40ff-903d-3231f88b2028",
+      "root_span_id": "da5ade3c-6ab0-40ff-903d-3231f88b2028",
+      "parent_span_id": null,
+      "name": "chat.stream",
+      "error": null,
+      "metrics": {
+        "end": 1782637668.8067,
+        "start": 1782637660.1947,
+        "duration_ms": 8612.04
+      },
+      "timings_ms": {
+        "llm_first_token": 1136.33,
+        "llm_total": 7972.3,
+        "total": 9232.03
+      },
+      "metadata_keys": [
+        "mode",
+        "timings_ms"
+      ],
+      "input_preview": "{\"has_context\": false, \"mode\": \"Explain\", \"stream\": true}",
+      "output_preview": "{\"answer_chars\": 912}"
+    },
+    {
+      "id": "603dc37a-ae23-4077-8ac7-0fb098b639f7",
+      "created": "2026-06-28T09:07:39.574Z",
+      "span_id": "e37d2a3d-3531-478e-bc88-45adeb43aa71",
+      "root_span_id": "e37d2a3d-3531-478e-bc88-45adeb43aa71",
+      "parent_span_id": null,
+      "name": "chat.profile_load",
+      "error": null,
+      "metrics": {
+        "end": 1782637659.5748,
+        "start": 1782637659.5747,
+        "duration_ms": 0.14
+      },
+      "timings_ms": {},
+      "metadata_keys": [],
+      "input_preview": null,
+      "output_preview": null
+    },
+    {
+      "id": "bd5dd472-a893-4395-b22f-aaf216ba2012",
+      "created": "2026-06-28T09:07:38.937Z",
+      "span_id": "4529841a-0963-445d-9a1e-0fd28883ebdd",
+      "root_span_id": "198b2cec-dbad-40cd-9cf0-d7091a156b92",
+      "parent_span_id": null,
+      "name": "check_reflection",
+      "error": null,
+      "metrics": {
+        "end": 1782637658.9398,
+        "start": 1782637658.9372,
+        "duration_ms": 2.66
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "braintrust",
+        "metadata",
+        "name",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "{\"analysis\": \"Tìm kiếm RAG hoàn tất. Tìm thấy 6 slide liên quan.\", \"chat_history\": [], \"context\": \"- Tài liệu 1: Day 07 Slides C401 | Slide 53 | 4 Ý Cần NhớSau Buổi Học 1. Data quality thường quan trọng hơn đổi sang model đắt hơn. 2. Embed...",
+      "output_preview": "\"__end__\""
+    },
+    {
+      "id": "0ecc20b0-c76d-4bdb-899e-0f04f1f70f51",
+      "created": "2026-06-28T09:07:30.406Z",
+      "span_id": "bef15493-8f4d-447d-a05e-5118d9582977",
+      "root_span_id": "198b2cec-dbad-40cd-9cf0-d7091a156b92",
+      "parent_span_id": null,
+      "name": "Chat Completion",
+      "error": null,
+      "metrics": {
+        "completion_audio_tokens": 0.0,
+        "completion_image_tokens": 0.0,
+        "completion_reasoning_tokens": 0.0,
+        "completion_tokens": 256.0,
+        "cost": 0.0003,
+        "end": 1782637658.9328,
+        "prompt_audio_tokens": 0.0,
+        "prompt_cache_write_tokens": 0.0,
+        "prompt_cached_tokens": 1536.0,
+        "prompt_tokens": 1663.0,
+        "prompt_video_tokens": 0.0,
+        "start": 1782637650.4067,
+        "time_to_first_token": 1.4903,
+        "tokens": 1919.0,
+        "duration_ms": 8526.18
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "model",
+        "provider",
+        "stream",
+        "temperature"
+      ],
+      "input_preview": "[{\"content\": \"Bạn là một Gia sư AI cá nhân hóa (AI Tutor) xuất sắc tại Đại học VinUniversity.\\nNhiệm vụ của bạn là hỗ trợ sinh viên học tập theo phương pháp Socratic (Socratic ladder).\\n\\n[LUẬT AN TOÀN HỌC THUẬT (ACADEMIC INTEGRITY GUARDRA...",
+      "output_preview": "[{\"finish_reason\": \"stop\", \"index\": 0, \"logprobs\": null, \"message\": {\"content\": \"Embedding và retrieval là hai khái niệm quan trọng trong lĩnh vực học máy và xử lý ngôn ngữ tự nhiên.\\n\\n1. **Embedding**: Đây là quá trình chuyển đổi dữ liệu..."
+    },
+    {
+      "id": "d76520b7-cb95-4898-abe4-e9973806844c",
+      "created": "2026-06-28T09:07:30.405Z",
+      "span_id": "91fb985d-aaf9-4f44-9e7e-843a3306992d",
+      "root_span_id": "198b2cec-dbad-40cd-9cf0-d7091a156b92",
+      "parent_span_id": null,
+      "name": "ChatOpenAI",
+      "error": null,
+      "metrics": {
+        "completion_tokens": 256.0,
+        "end": 1782637658.9357,
+        "prompt_cached_tokens": 1536.0,
+        "prompt_tokens": 1663.0,
+        "start": 1782637650.4059,
+        "time_to_first_token": 1.4916,
+        "tokens": 1919.0,
+        "total_tokens": 1919.0,
+        "duration_ms": 8529.8
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "batch_size",
+        "braintrust",
+        "invocation_params",
+        "metadata",
+        "model",
+        "name",
+        "options",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "[[{\"additional_kwargs\": {}, \"content\": \"Bạn là một Gia sư AI cá nhân hóa (AI Tutor) xuất sắc tại Đại học VinUniversity.\\nNhiệm vụ của bạn là hỗ trợ sinh viên học tập theo phương pháp Socratic (Socratic ladder).\\n\\n[LUẬT AN TOÀN HỌC THUẬT (...",
+      "output_preview": "{\"generations\": [[{\"generation_info\": {\"finish_reason\": \"stopstop\", \"model_name\": \"openai/gpt-4o-miniopenai/gpt-4o-mini\", \"system_fingerprint\": \"fp_42e6cfce1bfp_42e6cfce1b\"}, \"message\": {\"additional_kwargs\": {}, \"content\": \"Embedding và re..."
+    },
+    {
+      "id": "0447dc12-f870-475a-bc69-e14f5bd0e4d3",
+      "created": "2026-06-28T09:07:30.404Z",
+      "span_id": "e5223f7b-84bf-48d6-b4db-0a78fc8d492f",
+      "root_span_id": "198b2cec-dbad-40cd-9cf0-d7091a156b92",
+      "parent_span_id": null,
+      "name": "llm.respond_stream",
+      "error": null,
+      "metrics": {
+        "end": 1782637658.9368,
+        "start": 1782637650.405,
+        "duration_ms": 8531.81
+      },
+      "timings_ms": {
+        "llm_first_token": 1493.17,
+        "llm_total": 8531.76
+      },
+      "metadata_keys": [
+        "intent",
+        "mode",
+        "timings_ms"
+      ],
+      "input_preview": "{\"message_count\": 3, \"query\": \"nhắc lại ngắn gọn điểm chính về embedding và retrieval\"}",
+      "output_preview": "{\"answer_chars\": 1079}"
+    },
+    {
+      "id": "6d96e192-424a-4ca8-9088-9fbc09fedb4e",
+      "created": "2026-06-28T09:07:30.403Z",
+      "span_id": "11d25faf-c176-42bc-9f38-b4788f5f5fdf",
+      "root_span_id": "198b2cec-dbad-40cd-9cf0-d7091a156b92",
+      "parent_span_id": null,
+      "name": "respond_academic",
+      "error": null,
+      "metrics": {
+        "end": 1782637658.9406,
+        "start": 1782637650.4037,
+        "duration_ms": 8536.93
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "braintrust",
+        "metadata",
+        "name",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "{\"analysis\": \"Tìm kiếm RAG hoàn tất. Tìm thấy 6 slide liên quan.\", \"chat_history\": [], \"context\": \"- Tài liệu 1: Day 07 Slides C401 | Slide 53 | 4 Ý Cần NhớSau Buổi Học 1. Data quality thường quan trọng hơn đổi sang model đắt hơn. 2. Embed...",
+      "output_preview": "{\"metadata\": {\"active_quiz\": false, \"bkt\": 0.25, \"citation_validation\": {\"invalid_citations\": [], \"is_valid\": true, \"valid_citations\": []}, \"elo\": 1200, \"intent\": \"academic\", \"mode\": \"Explain\", \"mode_instructions\": \"CHẾ ĐỘ: GIẢI THÍCH (Exp..."
+    },
+    {
+      "id": "e9e6b7cd-e5ce-4f6b-8b0e-e28692f4fbd3",
+      "created": "2026-06-28T09:07:30.401Z",
+      "span_id": "13a97d65-9183-47dc-9033-dea2e9d3ba00",
+      "root_span_id": "198b2cec-dbad-40cd-9cf0-d7091a156b92",
+      "parent_span_id": null,
+      "name": "should_continue",
+      "error": null,
+      "metrics": {
+        "end": 1782637650.4024,
+        "start": 1782637650.4015,
+        "duration_ms": 0.93
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "braintrust",
+        "metadata",
+        "name",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "{\"analysis\": \"Tìm kiếm RAG hoàn tất. Tìm thấy 6 slide liên quan.\", \"chat_history\": [], \"context\": \"- Tài liệu 1: Day 07 Slides C401 | Slide 53 | 4 Ý Cần NhớSau Buổi Học 1. Data quality thường quan trọng hơn đổi sang model đắt hơn. 2. Embed...",
+      "output_preview": "\"respond_academic\""
+    },
+    {
+      "id": "9e06ea65-7b14-4381-9a3e-4cc8603dc21e",
+      "created": "2026-06-28T09:07:30.400Z",
+      "span_id": "64d77905-ea85-45c0-b339-6667a8b3cb8a",
+      "root_span_id": "198b2cec-dbad-40cd-9cf0-d7091a156b92",
+      "parent_span_id": null,
+      "name": "rag.retrieve",
+      "error": null,
+      "metrics": {
+        "end": 1782637650.4006,
+        "start": 1782637650.4003,
+        "duration_ms": 0.3
+      },
+      "timings_ms": {
+        "rag_cache_lookup": 0
+      },
+      "metadata_keys": [
+        "concept_id",
+        "course_id",
+        "timings_ms"
+      ],
+      "input_preview": "{\"query\": \"nhắc lại ngắn gọn điểm chính về embedding và retrieval\"}",
+      "output_preview": "{\"count\": 6, \"top_similarity\": 0.61076642888233}"
+    },
+    {
+      "id": "eebd9b19-7019-4851-b844-eea7500ebfc2",
+      "created": "2026-06-28T09:07:29.825Z",
+      "span_id": "636c92f3-e85a-45db-aa0b-35b98f528ef6",
+      "root_span_id": "198b2cec-dbad-40cd-9cf0-d7091a156b92",
+      "parent_span_id": null,
+      "name": "analyze",
+      "error": null,
+      "metrics": {
+        "end": 1782637650.4029,
+        "start": 1782637649.8256,
+        "duration_ms": 577.33
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "braintrust",
+        "metadata",
+        "name",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "{\"chat_history\": [], \"long_term_facts\": {}, \"mode\": \"Explain\", \"query\": \"nhắc lại ngắn gọn điểm chính về embedding và retrieval\", \"session_id\": null, \"student_profile\": {\"bkt_mastery_probability\": 0.25, \"elo_score\": 1200, \"mastery_state\":...",
+      "output_preview": "{\"analysis\": \"Tìm kiếm RAG hoàn tất. Tìm thấy 6 slide liên quan.\", \"context\": \"- Tài liệu 1: Day 07 Slides C401 | Slide 53 | 4 Ý Cần NhớSau Buổi Học 1. Data quality thường quan trọng hơn đổi sang model đắt hơn. 2. Embedding là lớp dịch ngô..."
+    },
+    {
+      "id": "1159b5fa-4ad0-4667-a57b-c3f094f89540",
+      "created": "2026-06-28T09:07:29.824Z",
+      "span_id": "a4ec70be-a036-45a4-ad76-354dd2d26257",
+      "root_span_id": "198b2cec-dbad-40cd-9cf0-d7091a156b92",
+      "parent_span_id": null,
+      "name": "LangGraph",
+      "error": null,
+      "metrics": {
+        "end": 1782637658.9416,
+        "start": 1782637649.824,
+        "duration_ms": 9117.54
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "braintrust",
+        "metadata",
+        "name",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "{\"chat_history\": [], \"concept_id\": null, \"course_id\": null, \"long_term_facts\": {}, \"mode\": \"Explain\", \"query\": \"nhắc lại ngắn gọn điểm chính về embedding và retrieval\", \"session_id\": null, \"student_profile\": {\"bkt_mastery_probability\": 0.2...",
+      "output_preview": "{\"analysis\": \"Tìm kiếm RAG hoàn tất. Tìm thấy 6 slide liên quan.\", \"chat_history\": [], \"context\": \"- Tài liệu 1: Day 07 Slides C401 | Slide 53 | 4 Ý Cần NhớSau Buổi Học 1. Data quality thường quan trọng hơn đổi sang model đắt hơn. 2. Embed..."
+    },
+    {
+      "id": "81375684-d793-4760-8310-baf86b4f8182",
+      "created": "2026-06-28T09:07:29.823Z",
+      "span_id": "198b2cec-dbad-40cd-9cf0-d7091a156b92",
+      "root_span_id": "198b2cec-dbad-40cd-9cf0-d7091a156b92",
+      "parent_span_id": null,
+      "name": "chat.stream",
+      "error": null,
+      "metrics": {
+        "end": 1782637658.9422,
+        "start": 1782637649.8231,
+        "duration_ms": 9119.05
+      },
+      "timings_ms": {
+        "llm_first_token": 1493.17,
+        "llm_total": 8531.76,
+        "total": 9725.74
+      },
+      "metadata_keys": [
+        "mode",
+        "timings_ms"
+      ],
+      "input_preview": "{\"has_context\": false, \"mode\": \"Explain\", \"stream\": true}",
+      "output_preview": "{\"answer_chars\": 1079}"
+    },
+    {
+      "id": "193838c8-f3d4-4181-93c7-a7d7275f5f0c",
+      "created": "2026-06-28T09:07:29.216Z",
+      "span_id": "4af7a247-2d73-482a-8cc2-0cbd986c1411",
+      "root_span_id": "4af7a247-2d73-482a-8cc2-0cbd986c1411",
+      "parent_span_id": null,
+      "name": "chat.profile_load",
+      "error": null,
+      "metrics": {
+        "end": 1782637649.2167,
+        "start": 1782637649.2164,
+        "duration_ms": 0.22
+      },
+      "timings_ms": {},
+      "metadata_keys": [],
+      "input_preview": null,
+      "output_preview": null
+    },
+    {
+      "id": "c78b6b61-6b3a-450a-b5b6-47791e6c7107",
+      "created": "2026-06-28T09:07:28.582Z",
+      "span_id": "711d1dbe-f655-43bb-95d4-bbb05cc961b4",
+      "root_span_id": "c00d5c03-37c5-4f6d-b425-12ea2019d432",
+      "parent_span_id": null,
+      "name": "check_reflection",
+      "error": null,
+      "metrics": {
+        "end": 1782637648.5839,
+        "start": 1782637648.5821,
+        "duration_ms": 1.73
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "braintrust",
+        "metadata",
+        "name",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "{\"analysis\": \"Tìm kiếm RAG hoàn tất. Tìm thấy 6 slide liên quan.\", \"chat_history\": [], \"context\": \"- Tài liệu 1: Day 07 Slides C401 | Slide 53 | 4 Ý Cần NhớSau Buổi Học 1. Data quality thường quan trọng hơn đổi sang model đắt hơn. 2. Embed...",
+      "output_preview": "\"__end__\""
+    },
+    {
+      "id": "15a4b332-0fa0-4f9e-be18-b03a6d31695c",
+      "created": "2026-06-28T09:07:21.405Z",
+      "span_id": "ac304b18-7283-4f31-a7d6-947155bc2c17",
+      "root_span_id": "c00d5c03-37c5-4f6d-b425-12ea2019d432",
+      "parent_span_id": null,
+      "name": "Chat Completion",
+      "error": null,
+      "metrics": {
+        "completion_audio_tokens": 0.0,
+        "completion_image_tokens": 0.0,
+        "completion_reasoning_tokens": 0.0,
+        "completion_tokens": 208.0,
+        "cost": 0.0004,
+        "end": 1782637648.5772,
+        "prompt_audio_tokens": 0.0,
+        "prompt_cache_write_tokens": 0.0,
+        "prompt_cached_tokens": 0.0,
+        "prompt_tokens": 1663.0,
+        "prompt_video_tokens": 0.0,
+        "start": 1782637641.4056,
+        "time_to_first_token": 1.1435,
+        "tokens": 1871.0,
+        "duration_ms": 7171.58
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "model",
+        "provider",
+        "stream",
+        "temperature"
+      ],
+      "input_preview": "[{\"content\": \"Bạn là một Gia sư AI cá nhân hóa (AI Tutor) xuất sắc tại Đại học VinUniversity.\\nNhiệm vụ của bạn là hỗ trợ sinh viên học tập theo phương pháp Socratic (Socratic ladder).\\n\\n[LUẬT AN TOÀN HỌC THUẬT (ACADEMIC INTEGRITY GUARDRA...",
+      "output_preview": "[{\"finish_reason\": \"stop\", \"index\": 0, \"logprobs\": null, \"message\": {\"content\": \"Embedding và retrieval là hai khái niệm quan trọng trong hệ thống AI.\\n\\n1. **Embedding**: Đây là quá trình chuyển đổi ngôn ngữ thành các biểu diễn số trong k..."
+    },
+    {
+      "id": "d8639d7a-7a5c-4578-b9f3-b6e8b1c69d08",
+      "created": "2026-06-28T09:07:21.404Z",
+      "span_id": "b31bf551-c9c7-4f7c-8f9c-fb9bb23b1da2",
+      "root_span_id": "c00d5c03-37c5-4f6d-b425-12ea2019d432",
+      "parent_span_id": null,
+      "name": "ChatOpenAI",
+      "error": null,
+      "metrics": {
+        "completion_tokens": 208.0,
+        "end": 1782637648.5804,
+        "prompt_cached_tokens": 0.0,
+        "prompt_tokens": 1663.0,
+        "start": 1782637641.4049,
+        "time_to_first_token": 1.1445,
+        "tokens": 1871.0,
+        "total_tokens": 1871.0,
+        "duration_ms": 7175.45
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "batch_size",
+        "braintrust",
+        "invocation_params",
+        "metadata",
+        "model",
+        "name",
+        "options",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "[[{\"additional_kwargs\": {}, \"content\": \"Bạn là một Gia sư AI cá nhân hóa (AI Tutor) xuất sắc tại Đại học VinUniversity.\\nNhiệm vụ của bạn là hỗ trợ sinh viên học tập theo phương pháp Socratic (Socratic ladder).\\n\\n[LUẬT AN TOÀN HỌC THUẬT (...",
+      "output_preview": "{\"generations\": [[{\"generation_info\": {\"finish_reason\": \"stopstop\", \"model_name\": \"openai/gpt-4o-miniopenai/gpt-4o-mini\", \"system_fingerprint\": \"fp_42e6cfce1bfp_42e6cfce1b\"}, \"message\": {\"additional_kwargs\": {}, \"content\": \"Embedding và re..."
+    },
+    {
+      "id": "090c6a80-9fe6-4770-b1ab-0b80faffc161",
+      "created": "2026-06-28T09:07:21.404Z",
+      "span_id": "cfbd7901-66d1-4dfe-a8da-efb8a8095bac",
+      "root_span_id": "c00d5c03-37c5-4f6d-b425-12ea2019d432",
+      "parent_span_id": null,
+      "name": "llm.respond_stream",
+      "error": null,
+      "metrics": {
+        "end": 1782637648.5818,
+        "start": 1782637641.4042,
+        "duration_ms": 7177.56
+      },
+      "timings_ms": {
+        "llm_first_token": 1145.47,
+        "llm_total": 7177.51
+      },
+      "metadata_keys": [
+        "intent",
+        "mode",
+        "timings_ms"
+      ],
+      "input_preview": "{\"message_count\": 3, \"query\": \"nhắc lại ngắn gọn điểm chính về embedding và retrieval\"}",
+      "output_preview": "{\"answer_chars\": 845}"
+    },
+    {
+      "id": "fce85448-cdb3-481e-915b-94f5fbaada18",
+      "created": "2026-06-28T09:07:21.402Z",
+      "span_id": "c6b22c43-1cc3-4041-9b51-717462b6a225",
+      "root_span_id": "c00d5c03-37c5-4f6d-b425-12ea2019d432",
+      "parent_span_id": null,
+      "name": "respond_academic",
+      "error": null,
+      "metrics": {
+        "end": 1782637648.5844,
+        "start": 1782637641.4029,
+        "duration_ms": 7181.55
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "braintrust",
+        "metadata",
+        "name",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "{\"analysis\": \"Tìm kiếm RAG hoàn tất. Tìm thấy 6 slide liên quan.\", \"chat_history\": [], \"context\": \"- Tài liệu 1: Day 07 Slides C401 | Slide 53 | 4 Ý Cần NhớSau Buổi Học 1. Data quality thường quan trọng hơn đổi sang model đắt hơn. 2. Embed...",
+      "output_preview": "{\"metadata\": {\"active_quiz\": false, \"bkt\": 0.25, \"citation_validation\": {\"invalid_citations\": [], \"is_valid\": true, \"valid_citations\": []}, \"elo\": 1200, \"intent\": \"academic\", \"mode\": \"Explain\", \"mode_instructions\": \"CHẾ ĐỘ: GIẢI THÍCH (Exp..."
+    },
+    {
+      "id": "dedc37f8-4524-4492-af99-99dabd51ef33",
+      "created": "2026-06-28T09:07:21.400Z",
+      "span_id": "f05e468d-fa7f-44ef-b7c5-757632abd088",
+      "root_span_id": "c00d5c03-37c5-4f6d-b425-12ea2019d432",
+      "parent_span_id": null,
+      "name": "should_continue",
+      "error": null,
+      "metrics": {
+        "end": 1782637641.4013,
+        "start": 1782637641.4002,
+        "duration_ms": 1.11
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "braintrust",
+        "metadata",
+        "name",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "{\"analysis\": \"Tìm kiếm RAG hoàn tất. Tìm thấy 6 slide liên quan.\", \"chat_history\": [], \"context\": \"- Tài liệu 1: Day 07 Slides C401 | Slide 53 | 4 Ý Cần NhớSau Buổi Học 1. Data quality thường quan trọng hơn đổi sang model đắt hơn. 2. Embed...",
+      "output_preview": "\"respond_academic\""
+    },
+    {
+      "id": "08e85aad-2405-40d9-891d-a17319b09d12",
+      "created": "2026-06-28T09:07:20.393Z",
+      "span_id": "4f6ee8d2-037e-4a9f-810a-bab1290cfb81",
+      "root_span_id": "c00d5c03-37c5-4f6d-b425-12ea2019d432",
+      "parent_span_id": null,
+      "name": "rag.vector_rpc",
+      "error": null,
+      "metrics": {
+        "end": 1782637640.7896,
+        "start": 1782637640.3932,
+        "duration_ms": 396.44
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "elapsed_ms",
+        "has_filter",
+        "match_count"
+      ],
+      "input_preview": null,
+      "output_preview": null
+    },
+    {
+      "id": "b2835258-0d6d-41f1-8687-3ee0a0988f52",
+      "created": "2026-06-28T09:07:19.250Z",
+      "span_id": "ef655eb6-7693-465b-bfec-3ebc2005f777",
+      "root_span_id": "c00d5c03-37c5-4f6d-b425-12ea2019d432",
+      "parent_span_id": null,
+      "name": "Embedding",
+      "error": null,
+      "metrics": {
+        "cost": 0.0,
+        "end": 1782637640.0481,
+        "prompt_tokens": 19.0,
+        "start": 1782637639.2501,
+        "tokens": 19.0,
+        "duration_ms": 798.05
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "model",
+        "provider"
+      ],
+      "input_preview": "[[17134, 62202, 66, 86952, 7933, 62202, 77, 342, 80923, 74686, 89588, 523, 2483, 17134, 348, 41038, 40188, 48842, 57470]]",
+      "output_preview": "{\"embedding_length\": 1536}"
+    },
+    {
+      "id": "49dc1468-a28f-4edc-af11-28219c8e313e",
+      "created": "2026-06-28T09:07:19.249Z",
+      "span_id": "68d16d9d-144d-4d26-9dd1-87ca74c62d36",
+      "root_span_id": "c00d5c03-37c5-4f6d-b425-12ea2019d432",
+      "parent_span_id": null,
+      "name": "rag.embedding",
+      "error": null,
+      "metrics": {
+        "end": 1782637640.0495,
+        "start": 1782637639.2496,
+        "duration_ms": 799.92
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "elapsed_ms"
+      ],
+      "input_preview": "{\"query\": \"nhắc lại ngắn gọn điểm chính về embedding và retrieval\"}",
+      "output_preview": null
+    },
+    {
+      "id": "4096b624-5d70-4825-a686-5f7238f4622c",
+      "created": "2026-06-28T09:07:19.249Z",
+      "span_id": "a5368562-06ce-4a67-b099-ac325cbbfe2c",
+      "root_span_id": "c00d5c03-37c5-4f6d-b425-12ea2019d432",
+      "parent_span_id": null,
+      "name": "rag.retrieve",
+      "error": null,
+      "metrics": {
+        "end": 1782637641.3992,
+        "start": 1782637639.2493,
+        "duration_ms": 2149.85
+      },
+      "timings_ms": {
+        "rag_cache_lookup": 0,
+        "rag_embedding": 799.89,
+        "rag_keyword_search": 396.7,
+        "rag_neighbor_fetch": 304.76,
+        "rag_vector_rpc": 396.42
+      },
+      "metadata_keys": [
+        "concept_id",
+        "course_id",
+        "timings_ms"
+      ],
+      "input_preview": "{\"query\": \"nhắc lại ngắn gọn điểm chính về embedding và retrieval\"}",
+      "output_preview": "{\"count\": 6, \"top_similarity\": 0.61076642888233}"
+    },
+    {
+      "id": "8fd792cc-ac0d-4eb1-9e65-a633203737f8",
+      "created": "2026-06-28T09:07:18.639Z",
+      "span_id": "c544e947-fd3f-43a1-a370-52c997198257",
+      "root_span_id": "c00d5c03-37c5-4f6d-b425-12ea2019d432",
+      "parent_span_id": null,
+      "name": "analyze",
+      "error": null,
+      "metrics": {
+        "end": 1782637641.402,
+        "start": 1782637638.6399,
+        "duration_ms": 2762.01
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "braintrust",
+        "metadata",
+        "name",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "{\"chat_history\": [], \"long_term_facts\": {}, \"mode\": \"Explain\", \"query\": \"nhắc lại ngắn gọn điểm chính về embedding và retrieval\", \"session_id\": null, \"student_profile\": {\"bkt_mastery_probability\": 0.25, \"elo_score\": 1200, \"mastery_state\":...",
+      "output_preview": "{\"analysis\": \"Tìm kiếm RAG hoàn tất. Tìm thấy 6 slide liên quan.\", \"context\": \"- Tài liệu 1: Day 07 Slides C401 | Slide 53 | 4 Ý Cần NhớSau Buổi Học 1. Data quality thường quan trọng hơn đổi sang model đắt hơn. 2. Embedding là lớp dịch ngô..."
+    },
+    {
+      "id": "1ebf1fb4-233d-405f-b16f-9f9bca991ab5",
+      "created": "2026-06-28T09:07:18.638Z",
+      "span_id": "a7f5e226-c633-4951-b6a4-d331d0fe6ab5",
+      "root_span_id": "c00d5c03-37c5-4f6d-b425-12ea2019d432",
+      "parent_span_id": null,
+      "name": "LangGraph",
+      "error": null,
+      "metrics": {
+        "end": 1782637648.585,
+        "start": 1782637638.6386,
+        "duration_ms": 9946.38
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "braintrust",
+        "metadata",
+        "name",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "{\"chat_history\": [], \"concept_id\": null, \"course_id\": null, \"long_term_facts\": {}, \"mode\": \"Explain\", \"query\": \"nhắc lại ngắn gọn điểm chính về embedding và retrieval\", \"session_id\": null, \"student_profile\": {\"bkt_mastery_probability\": 0.2...",
+      "output_preview": "{\"analysis\": \"Tìm kiếm RAG hoàn tất. Tìm thấy 6 slide liên quan.\", \"chat_history\": [], \"context\": \"- Tài liệu 1: Day 07 Slides C401 | Slide 53 | 4 Ý Cần NhớSau Buổi Học 1. Data quality thường quan trọng hơn đổi sang model đắt hơn. 2. Embed..."
+    },
+    {
+      "id": "bd8d3623-8bd0-4dbc-b495-32cdd8b2b0f9",
+      "created": "2026-06-28T09:07:18.637Z",
+      "span_id": "c00d5c03-37c5-4f6d-b425-12ea2019d432",
+      "root_span_id": "c00d5c03-37c5-4f6d-b425-12ea2019d432",
+      "parent_span_id": null,
+      "name": "chat.stream",
+      "error": null,
+      "metrics": {
+        "end": 1782637648.5854,
+        "start": 1782637638.6379,
+        "duration_ms": 9947.45
+      },
+      "timings_ms": {
+        "llm_first_token": 1145.47,
+        "llm_total": 7177.51,
+        "rag_embedding": 799.89,
+        "rag_vector_rpc": 396.42,
+        "total": 10592.82
+      },
+      "metadata_keys": [
+        "mode",
+        "timings_ms"
+      ],
+      "input_preview": "{\"has_context\": false, \"mode\": \"Explain\", \"stream\": true}",
+      "output_preview": "{\"answer_chars\": 845}"
+    },
+    {
+      "id": "9bcc48fe-670c-486e-9255-8d8721815d9b",
+      "created": "2026-06-28T09:07:17.992Z",
+      "span_id": "44e4b2fd-bd45-46ed-89b4-8be2c4c475b1",
+      "root_span_id": "44e4b2fd-bd45-46ed-89b4-8be2c4c475b1",
+      "parent_span_id": null,
+      "name": "chat.profile_load",
+      "error": null,
+      "metrics": {
+        "end": 1782637637.9927,
+        "start": 1782637637.9925,
+        "duration_ms": 0.14
+      },
+      "timings_ms": {},
+      "metadata_keys": [],
+      "input_preview": null,
+      "output_preview": null
+    },
+    {
+      "id": "aae6dab6-8519-4eb2-9bdd-3fef0df5ad04",
+      "created": "2026-06-28T09:07:17.355Z",
+      "span_id": "abeebc06-e451-4f57-abb6-24070745fc22",
+      "root_span_id": "28d8d4fb-0ab7-40c7-8532-8aaa4dc87892",
+      "parent_span_id": null,
+      "name": "check_reflection",
+      "error": null,
+      "metrics": {
+        "end": 1782637637.3581,
+        "start": 1782637637.356,
+        "duration_ms": 2.17
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "braintrust",
+        "metadata",
+        "name",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "{\"analysis\": \"Tìm kiếm RAG hoàn tất. Tìm thấy 6 slide liên quan.\", \"chat_history\": [], \"context\": \"- Tài liệu 1: 1-day07-data-foundations-embedding-vector-store | Slide 34 | Vector Database Landscape DB Hosting Language Filtering Scale Bes...",
+      "output_preview": "\"__end__\""
+    },
+    {
+      "id": "d14007ce-dcca-4db5-922f-a41d5c83e0a9",
+      "created": "2026-06-28T09:07:11.792Z",
+      "span_id": "91bf0081-1335-4d24-a98d-1f144311615d",
+      "root_span_id": "28d8d4fb-0ab7-40c7-8532-8aaa4dc87892",
+      "parent_span_id": null,
+      "name": "Chat Completion",
+      "error": null,
+      "metrics": {
+        "completion_audio_tokens": 0.0,
+        "completion_image_tokens": 0.0,
+        "completion_reasoning_tokens": 0.0,
+        "completion_tokens": 424.0,
+        "cost": 0.0004,
+        "end": 1782637637.3507,
+        "prompt_audio_tokens": 0.0,
+        "prompt_cache_write_tokens": 0.0,
+        "prompt_cached_tokens": 1536.0,
+        "prompt_tokens": 1656.0,
+        "prompt_video_tokens": 0.0,
+        "start": 1782637631.7928,
+        "time_to_first_token": 1.3551,
+        "tokens": 2080.0,
+        "duration_ms": 5557.91
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "model",
+        "provider",
+        "stream",
+        "temperature"
+      ],
+      "input_preview": "[{\"content\": \"Bạn là một Gia sư AI cá nhân hóa (AI Tutor) xuất sắc tại Đại học VinUniversity.\\nNhiệm vụ của bạn là hỗ trợ sinh viên học tập theo phương pháp Socratic (Socratic ladder).\\n\\n[LUẬT AN TOÀN HỌC THUẬT (ACADEMIC INTEGRITY GUARDRA...",
+      "output_preview": "[{\"finish_reason\": \"stop\", \"index\": 0, \"logprobs\": null, \"message\": {\"content\": \"Vector database trong ngữ cảnh production RAG (Retrieval-Augmented Generation) là một loại cơ sở dữ liệu được tối ưu hóa để lưu trữ và truy xuất các embedding..."
+    },
+    {
+      "id": "1071ccd9-a269-4e92-95e1-19e34dc78ed8",
+      "created": "2026-06-28T09:07:11.792Z",
+      "span_id": "b8ac9b78-031f-48d0-b470-f6c37a6b113f",
+      "root_span_id": "28d8d4fb-0ab7-40c7-8532-8aaa4dc87892",
+      "parent_span_id": null,
+      "name": "ChatOpenAI",
+      "error": null,
+      "metrics": {
+        "completion_tokens": 424.0,
+        "end": 1782637637.3538,
+        "prompt_cached_tokens": 1536.0,
+        "prompt_tokens": 1656.0,
+        "start": 1782637631.792,
+        "time_to_first_token": 1.3565,
+        "tokens": 2080.0,
+        "total_tokens": 2080.0,
+        "duration_ms": 5561.78
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "batch_size",
+        "braintrust",
+        "invocation_params",
+        "metadata",
+        "model",
+        "name",
+        "options",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "[[{\"additional_kwargs\": {}, \"content\": \"Bạn là một Gia sư AI cá nhân hóa (AI Tutor) xuất sắc tại Đại học VinUniversity.\\nNhiệm vụ của bạn là hỗ trợ sinh viên học tập theo phương pháp Socratic (Socratic ladder).\\n\\n[LUẬT AN TOÀN HỌC THUẬT (...",
+      "output_preview": "{\"generations\": [[{\"generation_info\": {\"finish_reason\": \"stopstop\", \"model_name\": \"openai/gpt-4o-miniopenai/gpt-4o-mini\", \"system_fingerprint\": \"fp_965c8b9ecffp_965c8b9ecf\"}, \"message\": {\"additional_kwargs\": {}, \"content\": \"Vector database..."
+    },
+    {
+      "id": "d8a784df-7602-4432-a27b-53cf845aa074",
+      "created": "2026-06-28T09:07:11.791Z",
+      "span_id": "cd1cf9eb-f57e-4e21-9064-2da1ccbf3245",
+      "root_span_id": "28d8d4fb-0ab7-40c7-8532-8aaa4dc87892",
+      "parent_span_id": null,
+      "name": "llm.respond_stream",
+      "error": null,
+      "metrics": {
+        "end": 1782637637.3556,
+        "start": 1782637631.7913,
+        "duration_ms": 5564.3
+      },
+      "timings_ms": {
+        "llm_first_token": 1357.54,
+        "llm_total": 5564.24
+      },
+      "metadata_keys": [
+        "intent",
+        "mode",
+        "timings_ms"
+      ],
+      "input_preview": "{\"message_count\": 3, \"query\": \"giải thích vector database trong production RAG\"}",
+      "output_preview": "{\"answer_chars\": 1712}"
+    },
+    {
+      "id": "bef8cef3-dc60-40c3-b61c-faed228d39f1",
+      "created": "2026-06-28T09:07:11.790Z",
+      "span_id": "8132d610-cff6-4668-b07a-06dd08dd473e",
+      "root_span_id": "28d8d4fb-0ab7-40c7-8532-8aaa4dc87892",
+      "parent_span_id": null,
+      "name": "respond_academic",
+      "error": null,
+      "metrics": {
+        "end": 1782637637.3586,
+        "start": 1782637631.79,
+        "duration_ms": 5568.56
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "braintrust",
+        "metadata",
+        "name",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "{\"analysis\": \"Tìm kiếm RAG hoàn tất. Tìm thấy 6 slide liên quan.\", \"chat_history\": [], \"context\": \"- Tài liệu 1: 1-day07-data-foundations-embedding-vector-store | Slide 34 | Vector Database Landscape DB Hosting Language Filtering Scale Bes...",
+      "output_preview": "{\"metadata\": {\"active_quiz\": false, \"bkt\": 0.25, \"citation_validation\": {\"invalid_citations\": [], \"is_valid\": true, \"valid_citations\": []}, \"elo\": 1200, \"intent\": \"academic\", \"mode\": \"Explain\", \"mode_instructions\": \"CHẾ ĐỘ: GIẢI THÍCH (Exp..."
+    },
+    {
+      "id": "c8f052cc-574c-460b-afa8-4f871b0ae198",
+      "created": "2026-06-28T09:07:11.787Z",
+      "span_id": "2c53861f-8189-4351-83fe-c61eefd6d186",
+      "root_span_id": "28d8d4fb-0ab7-40c7-8532-8aaa4dc87892",
+      "parent_span_id": null,
+      "name": "should_continue",
+      "error": null,
+      "metrics": {
+        "end": 1782637631.7884,
+        "start": 1782637631.7873,
+        "duration_ms": 1.07
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "braintrust",
+        "metadata",
+        "name",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "{\"analysis\": \"Tìm kiếm RAG hoàn tất. Tìm thấy 6 slide liên quan.\", \"chat_history\": [], \"context\": \"- Tài liệu 1: 1-day07-data-foundations-embedding-vector-store | Slide 34 | Vector Database Landscape DB Hosting Language Filtering Scale Bes...",
+      "output_preview": "\"respond_academic\""
+    },
+    {
+      "id": "64db1d08-3310-4a91-9168-055d1309ce3f",
+      "created": "2026-06-28T09:07:11.785Z",
+      "span_id": "84f36999-1ef4-4423-8519-724823e58b52",
+      "root_span_id": "28d8d4fb-0ab7-40c7-8532-8aaa4dc87892",
+      "parent_span_id": null,
+      "name": "rag.retrieve",
+      "error": null,
+      "metrics": {
+        "end": 1782637631.7863,
+        "start": 1782637631.786,
+        "duration_ms": 0.32
+      },
+      "timings_ms": {
+        "rag_cache_lookup": 0
+      },
+      "metadata_keys": [
+        "concept_id",
+        "course_id",
+        "timings_ms"
+      ],
+      "input_preview": "{\"query\": \"giải thích vector database trong production RAG\"}",
+      "output_preview": "{\"count\": 6, \"top_similarity\": 0.633069622833629}"
+    },
+    {
+      "id": "9f668e58-ab22-4d9b-a8e5-e4472d842b83",
+      "created": "2026-06-28T09:07:11.157Z",
+      "span_id": "2a472904-164f-4194-a9a9-b7e03f0a1471",
+      "root_span_id": "28d8d4fb-0ab7-40c7-8532-8aaa4dc87892",
+      "parent_span_id": null,
+      "name": "analyze",
+      "error": null,
+      "metrics": {
+        "end": 1782637631.789,
+        "start": 1782637631.1579,
+        "duration_ms": 631.06
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "braintrust",
+        "metadata",
+        "name",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "{\"chat_history\": [], \"long_term_facts\": {}, \"mode\": \"Explain\", \"query\": \"giải thích vector database trong production RAG\", \"session_id\": null, \"student_profile\": {\"bkt_mastery_probability\": 0.25, \"elo_score\": 1200, \"mastery_state\": \"not_st...",
+      "output_preview": "{\"analysis\": \"Tìm kiếm RAG hoàn tất. Tìm thấy 6 slide liên quan.\", \"context\": \"- Tài liệu 1: 1-day07-data-foundations-embedding-vector-store | Slide 34 | Vector Database Landscape DB Hosting Language Filtering Scale Best for Chroma Local P..."
+    },
+    {
+      "id": "243ad862-f049-4603-b918-64a6e151b932",
+      "created": "2026-06-28T09:07:11.156Z",
+      "span_id": "6743e778-c3c6-4f1d-977f-38603c91e720",
+      "root_span_id": "28d8d4fb-0ab7-40c7-8532-8aaa4dc87892",
+      "parent_span_id": null,
+      "name": "LangGraph",
+      "error": null,
+      "metrics": {
+        "end": 1782637637.3592,
+        "start": 1782637631.1568,
+        "duration_ms": 6202.42
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "braintrust",
+        "metadata",
+        "name",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "{\"chat_history\": [], \"concept_id\": null, \"course_id\": null, \"long_term_facts\": {}, \"mode\": \"Explain\", \"query\": \"giải thích vector database trong production RAG\", \"session_id\": null, \"student_profile\": {\"bkt_mastery_probability\": 0.25, \"elo...",
+      "output_preview": "{\"analysis\": \"Tìm kiếm RAG hoàn tất. Tìm thấy 6 slide liên quan.\", \"chat_history\": [], \"context\": \"- Tài liệu 1: 1-day07-data-foundations-embedding-vector-store | Slide 34 | Vector Database Landscape DB Hosting Language Filtering Scale Bes..."
+    },
+    {
+      "id": "82fc797c-2344-4ece-b072-235156a7c7fc",
+      "created": "2026-06-28T09:07:11.156Z",
+      "span_id": "28d8d4fb-0ab7-40c7-8532-8aaa4dc87892",
+      "root_span_id": "28d8d4fb-0ab7-40c7-8532-8aaa4dc87892",
+      "parent_span_id": null,
+      "name": "chat.stream",
+      "error": null,
+      "metrics": {
+        "end": 1782637637.3596,
+        "start": 1782637631.1562,
+        "duration_ms": 6203.39
+      },
+      "timings_ms": {
+        "llm_first_token": 1357.54,
+        "llm_total": 5564.24,
+        "total": 6823.39
+      },
+      "metadata_keys": [
+        "mode",
+        "timings_ms"
+      ],
+      "input_preview": "{\"has_context\": false, \"mode\": \"Explain\", \"stream\": true}",
+      "output_preview": "{\"answer_chars\": 1712}"
+    },
+    {
+      "id": "862ac10e-718a-46cf-8764-d33accc1715b",
+      "created": "2026-06-28T09:07:10.536Z",
+      "span_id": "08b0d187-8274-4526-8261-db5fcfa941ae",
+      "root_span_id": "08b0d187-8274-4526-8261-db5fcfa941ae",
+      "parent_span_id": null,
+      "name": "chat.profile_load",
+      "error": null,
+      "metrics": {
+        "end": 1782637630.5364,
+        "start": 1782637630.5362,
+        "duration_ms": 0.22
+      },
+      "timings_ms": {},
+      "metadata_keys": [],
+      "input_preview": null,
+      "output_preview": null
+    },
+    {
+      "id": "6751f6a0-e113-4b12-a0fc-05b394e3eb6f",
+      "created": "2026-06-28T09:07:09.923Z",
+      "span_id": "4ab1ffbc-29ae-4a30-9504-b13631fe495e",
+      "root_span_id": "74b484e1-3d5a-4bd1-be17-dff4a3369b15",
+      "parent_span_id": null,
+      "name": "check_reflection",
+      "error": null,
+      "metrics": {
+        "end": 1782637629.9252,
+        "start": 1782637629.9231,
+        "duration_ms": 2.15
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "braintrust",
+        "metadata",
+        "name",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "{\"analysis\": \"Tìm kiếm RAG hoàn tất. Tìm thấy 6 slide liên quan.\", \"chat_history\": [], \"context\": \"- Tài liệu 1: 1-day07-data-foundations-embedding-vector-store | Slide 34 | Vector Database Landscape DB Hosting Language Filtering Scale Bes...",
+      "output_preview": "\"__end__\""
+    },
+    {
+      "id": "bc29fe9d-1af1-48e1-a945-d95c83b098c1",
+      "created": "2026-06-28T09:07:03.782Z",
+      "span_id": "b4b4f799-3a06-4bd3-9c92-e4f9fedddf63",
+      "root_span_id": "74b484e1-3d5a-4bd1-be17-dff4a3369b15",
+      "parent_span_id": null,
+      "name": "Chat Completion",
+      "error": null,
+      "metrics": {
+        "completion_audio_tokens": 0.0,
+        "completion_image_tokens": 0.0,
+        "completion_reasoning_tokens": 0.0,
+        "completion_tokens": 491.0,
+        "cost": 0.0004,
+        "end": 1782637629.9172,
+        "prompt_audio_tokens": 0.0,
+        "prompt_cache_write_tokens": 0.0,
+        "prompt_cached_tokens": 1536.0,
+        "prompt_tokens": 1656.0,
+        "prompt_video_tokens": 0.0,
+        "start": 1782637623.7824,
+        "time_to_first_token": 1.2546,
+        "tokens": 2147.0,
+        "duration_ms": 6134.82
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "model",
+        "provider",
+        "stream",
+        "temperature"
+      ],
+      "input_preview": "[{\"content\": \"Bạn là một Gia sư AI cá nhân hóa (AI Tutor) xuất sắc tại Đại học VinUniversity.\\nNhiệm vụ của bạn là hỗ trợ sinh viên học tập theo phương pháp Socratic (Socratic ladder).\\n\\n[LUẬT AN TOÀN HỌC THUẬT (ACADEMIC INTEGRITY GUARDRA...",
+      "output_preview": "[{\"finish_reason\": \"stop\", \"index\": 0, \"logprobs\": null, \"message\": {\"content\": \"Vector database là một loại cơ sở dữ liệu được thiết kế để lưu trữ và truy vấn các vector, đặc biệt là trong các ứng dụng học sâu (deep learning) và xử lý ngô..."
+    },
+    {
+      "id": "aba790f0-c3ed-403e-bd13-00525dd42447",
+      "created": "2026-06-28T09:07:03.781Z",
+      "span_id": "78d6607b-e187-476b-bc2c-1edea5ca06cd",
+      "root_span_id": "74b484e1-3d5a-4bd1-be17-dff4a3369b15",
+      "parent_span_id": null,
+      "name": "ChatOpenAI",
+      "error": null,
+      "metrics": {
+        "completion_tokens": 491.0,
+        "end": 1782637629.9204,
+        "prompt_cached_tokens": 1536.0,
+        "prompt_tokens": 1656.0,
+        "start": 1782637623.7818,
+        "time_to_first_token": 1.2557,
+        "tokens": 2147.0,
+        "total_tokens": 2147.0,
+        "duration_ms": 6138.54
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "batch_size",
+        "braintrust",
+        "invocation_params",
+        "metadata",
+        "model",
+        "name",
+        "options",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "[[{\"additional_kwargs\": {}, \"content\": \"Bạn là một Gia sư AI cá nhân hóa (AI Tutor) xuất sắc tại Đại học VinUniversity.\\nNhiệm vụ của bạn là hỗ trợ sinh viên học tập theo phương pháp Socratic (Socratic ladder).\\n\\n[LUẬT AN TOÀN HỌC THUẬT (...",
+      "output_preview": "{\"generations\": [[{\"generation_info\": {\"finish_reason\": \"stopstop\", \"model_name\": \"openai/gpt-4o-miniopenai/gpt-4o-mini\", \"system_fingerprint\": \"fp_965c8b9ecffp_965c8b9ecf\"}, \"message\": {\"additional_kwargs\": {}, \"content\": \"Vector database..."
+    },
+    {
+      "id": "51e558e9-cf7a-4d4b-acf5-037a55c3cd9e",
+      "created": "2026-06-28T09:07:03.781Z",
+      "span_id": "6b6c8ce8-a64b-495e-9a37-296becd2d561",
+      "root_span_id": "74b484e1-3d5a-4bd1-be17-dff4a3369b15",
+      "parent_span_id": null,
+      "name": "llm.respond_stream",
+      "error": null,
+      "metrics": {
+        "end": 1782637629.9226,
+        "start": 1782637623.7813,
+        "duration_ms": 6141.33
+      },
+      "timings_ms": {
+        "llm_first_token": 1256.66,
+        "llm_total": 6141.24
+      },
+      "metadata_keys": [
+        "intent",
+        "mode",
+        "timings_ms"
+      ],
+      "input_preview": "{\"message_count\": 3, \"query\": \"giải thích vector database trong production RAG\"}",
+      "output_preview": "{\"answer_chars\": 1927}"
+    },
+    {
+      "id": "b6712c02-f117-48d8-a334-cefd624bad7c",
+      "created": "2026-06-28T09:07:03.779Z",
+      "span_id": "643685f8-1f6d-496d-ab36-756beb98924b",
+      "root_span_id": "74b484e1-3d5a-4bd1-be17-dff4a3369b15",
+      "parent_span_id": null,
+      "name": "respond_academic",
+      "error": null,
+      "metrics": {
+        "end": 1782637629.9258,
+        "start": 1782637623.7799,
+        "duration_ms": 6145.9
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "braintrust",
+        "metadata",
+        "name",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "{\"analysis\": \"Tìm kiếm RAG hoàn tất. Tìm thấy 6 slide liên quan.\", \"chat_history\": [], \"context\": \"- Tài liệu 1: 1-day07-data-foundations-embedding-vector-store | Slide 34 | Vector Database Landscape DB Hosting Language Filtering Scale Bes...",
+      "output_preview": "{\"metadata\": {\"active_quiz\": false, \"bkt\": 0.25, \"citation_validation\": {\"invalid_citations\": [], \"is_valid\": true, \"valid_citations\": []}, \"elo\": 1200, \"intent\": \"academic\", \"mode\": \"Explain\", \"mode_instructions\": \"CHẾ ĐỘ: GIẢI THÍCH (Exp..."
+    },
+    {
+      "id": "2712c142-62a2-4dd0-94d7-319b36929cc9",
+      "created": "2026-06-28T09:07:03.777Z",
+      "span_id": "62c7ebe8-3ba7-46e6-8284-7702948a4a8e",
+      "root_span_id": "74b484e1-3d5a-4bd1-be17-dff4a3369b15",
+      "parent_span_id": null,
+      "name": "should_continue",
+      "error": null,
+      "metrics": {
+        "end": 1782637623.7785,
+        "start": 1782637623.7777,
+        "duration_ms": 0.78
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "braintrust",
+        "metadata",
+        "name",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "{\"analysis\": \"Tìm kiếm RAG hoàn tất. Tìm thấy 6 slide liên quan.\", \"chat_history\": [], \"context\": \"- Tài liệu 1: 1-day07-data-foundations-embedding-vector-store | Slide 34 | Vector Database Landscape DB Hosting Language Filtering Scale Bes...",
+      "output_preview": "\"respond_academic\""
+    },
+    {
+      "id": "5d0d5149-a2dc-4bd4-bb16-602a51c0342b",
+      "created": "2026-06-28T09:07:03.776Z",
+      "span_id": "584493de-dd79-42cb-9c92-b42fd8069cd4",
+      "root_span_id": "74b484e1-3d5a-4bd1-be17-dff4a3369b15",
+      "parent_span_id": null,
+      "name": "rag.retrieve",
+      "error": null,
+      "metrics": {
+        "end": 1782637623.7767,
+        "start": 1782637623.7764,
+        "duration_ms": 0.29
+      },
+      "timings_ms": {
+        "rag_cache_lookup": 0
+      },
+      "metadata_keys": [
+        "concept_id",
+        "course_id",
+        "timings_ms"
+      ],
+      "input_preview": "{\"query\": \"giải thích vector database trong production RAG\"}",
+      "output_preview": "{\"count\": 6, \"top_similarity\": 0.633069622833629}"
+    },
+    {
+      "id": "d588c4c7-5fc1-4df9-ade7-4b9f770c9fc6",
+      "created": "2026-06-28T09:07:03.177Z",
+      "span_id": "d88410d1-b0b1-4d1f-a38e-0d5e623318e4",
+      "root_span_id": "74b484e1-3d5a-4bd1-be17-dff4a3369b15",
+      "parent_span_id": null,
+      "name": "analyze",
+      "error": null,
+      "metrics": {
+        "end": 1782637623.779,
+        "start": 1782637623.1776,
+        "duration_ms": 601.42
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "braintrust",
+        "metadata",
+        "name",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "{\"chat_history\": [], \"long_term_facts\": {}, \"mode\": \"Explain\", \"query\": \"giải thích vector database trong production RAG\", \"session_id\": null, \"student_profile\": {\"bkt_mastery_probability\": 0.25, \"elo_score\": 1200, \"mastery_state\": \"not_st...",
+      "output_preview": "{\"analysis\": \"Tìm kiếm RAG hoàn tất. Tìm thấy 6 slide liên quan.\", \"context\": \"- Tài liệu 1: 1-day07-data-foundations-embedding-vector-store | Slide 34 | Vector Database Landscape DB Hosting Language Filtering Scale Best for Chroma Local P..."
+    },
+    {
+      "id": "73b0c23b-a1c9-41d9-ae80-83986ae28827",
+      "created": "2026-06-28T09:07:03.176Z",
+      "span_id": "b61efcff-e4f0-4b64-a815-707601556d47",
+      "root_span_id": "74b484e1-3d5a-4bd1-be17-dff4a3369b15",
+      "parent_span_id": null,
+      "name": "LangGraph",
+      "error": null,
+      "metrics": {
+        "end": 1782637629.9265,
+        "start": 1782637623.1765,
+        "duration_ms": 6750.0
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "braintrust",
+        "metadata",
+        "name",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "{\"chat_history\": [], \"concept_id\": null, \"course_id\": null, \"long_term_facts\": {}, \"mode\": \"Explain\", \"query\": \"giải thích vector database trong production RAG\", \"session_id\": null, \"student_profile\": {\"bkt_mastery_probability\": 0.25, \"elo...",
+      "output_preview": "{\"analysis\": \"Tìm kiếm RAG hoàn tất. Tìm thấy 6 slide liên quan.\", \"chat_history\": [], \"context\": \"- Tài liệu 1: 1-day07-data-foundations-embedding-vector-store | Slide 34 | Vector Database Landscape DB Hosting Language Filtering Scale Bes..."
+    },
+    {
+      "id": "e3893fd9-65dc-4667-90bf-fc208073b5cf",
+      "created": "2026-06-28T09:07:03.175Z",
+      "span_id": "74b484e1-3d5a-4bd1-be17-dff4a3369b15",
+      "root_span_id": "74b484e1-3d5a-4bd1-be17-dff4a3369b15",
+      "parent_span_id": null,
+      "name": "chat.stream",
+      "error": null,
+      "metrics": {
+        "end": 1782637629.9269,
+        "start": 1782637623.1759,
+        "duration_ms": 6750.93
+      },
+      "timings_ms": {
+        "llm_first_token": 1256.66,
+        "llm_total": 6141.24,
+        "total": 7400.78
+      },
+      "metadata_keys": [
+        "mode",
+        "timings_ms"
+      ],
+      "input_preview": "{\"has_context\": false, \"mode\": \"Explain\", \"stream\": true}",
+      "output_preview": "{\"answer_chars\": 1927}"
+    },
+    {
+      "id": "8e3ff5d2-44f5-46d1-9bae-ca5411ff9f37",
+      "created": "2026-06-28T09:07:02.526Z",
+      "span_id": "56e3f77e-ea07-49e5-a0bc-a9fb14ab95b8",
+      "root_span_id": "56e3f77e-ea07-49e5-a0bc-a9fb14ab95b8",
+      "parent_span_id": null,
+      "name": "chat.profile_load",
+      "error": null,
+      "metrics": {
+        "end": 1782637622.5263,
+        "start": 1782637622.5261,
+        "duration_ms": 0.15
+      },
+      "timings_ms": {},
+      "metadata_keys": [],
+      "input_preview": null,
+      "output_preview": null
+    },
+    {
+      "id": "5b32ee29-3cfe-4010-9d7c-59792f987bbb",
+      "created": "2026-06-28T09:07:01.910Z",
+      "span_id": "8a1ad293-32ea-4737-928b-61134a78aaa9",
+      "root_span_id": "8e660e4e-3d30-4741-8aec-178c08290536",
+      "parent_span_id": null,
+      "name": "check_reflection",
+      "error": null,
+      "metrics": {
+        "end": 1782637621.9116,
+        "start": 1782637621.9102,
+        "duration_ms": 1.45
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "braintrust",
+        "metadata",
+        "name",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "{\"analysis\": \"Tìm kiếm RAG hoàn tất. Tìm thấy 6 slide liên quan.\", \"chat_history\": [], \"context\": \"- Tài liệu 1: 1-day07-data-foundations-embedding-vector-store | Slide 34 | Vector Database Landscape DB Hosting Language Filtering Scale Bes...",
+      "output_preview": "\"__end__\""
+    },
+    {
+      "id": "4facea5f-83f4-45cb-bea1-437ce48ca4f6",
+      "created": "2026-06-28T09:06:56.440Z",
+      "span_id": "297bf484-4202-49bc-b126-c0e4dfbf43c1",
+      "root_span_id": "8e660e4e-3d30-4741-8aec-178c08290536",
+      "parent_span_id": null,
+      "name": "Chat Completion",
+      "error": null,
+      "metrics": {
+        "completion_audio_tokens": 0.0,
+        "completion_image_tokens": 0.0,
+        "completion_reasoning_tokens": 0.0,
+        "completion_tokens": 436.0,
+        "cost": 0.0004,
+        "end": 1782637621.9047,
+        "prompt_audio_tokens": 0.0,
+        "prompt_cache_write_tokens": 0.0,
+        "prompt_cached_tokens": 1536.0,
+        "prompt_tokens": 1656.0,
+        "prompt_video_tokens": 0.0,
+        "start": 1782637616.441,
+        "time_to_first_token": 1.2868,
+        "tokens": 2092.0,
+        "duration_ms": 5463.69
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "model",
+        "provider",
+        "stream",
+        "temperature"
+      ],
+      "input_preview": "[{\"content\": \"Bạn là một Gia sư AI cá nhân hóa (AI Tutor) xuất sắc tại Đại học VinUniversity.\\nNhiệm vụ của bạn là hỗ trợ sinh viên học tập theo phương pháp Socratic (Socratic ladder).\\n\\n[LUẬT AN TOÀN HỌC THUẬT (ACADEMIC INTEGRITY GUARDRA...",
+      "output_preview": "[{\"finish_reason\": \"stop\", \"index\": 0, \"logprobs\": null, \"message\": {\"content\": \"Trong bối cảnh của RAG (Retrieval-Augmented Generation), vector database đóng một vai trò quan trọng trong việc lưu trữ và truy xuất thông tin một cách hiệu q..."
+    },
+    {
+      "id": "df3ca580-2e93-4088-afcb-625de15de154",
+      "created": "2026-06-28T09:06:56.440Z",
+      "span_id": "c82a33e2-2531-4a76-8059-97c1b404abfc",
+      "root_span_id": "8e660e4e-3d30-4741-8aec-178c08290536",
+      "parent_span_id": null,
+      "name": "ChatOpenAI",
+      "error": null,
+      "metrics": {
+        "completion_tokens": 436.0,
+        "end": 1782637621.9076,
+        "prompt_cached_tokens": 1536.0,
+        "prompt_tokens": 1656.0,
+        "start": 1782637616.4403,
+        "time_to_first_token": 1.2879,
+        "tokens": 2092.0,
+        "total_tokens": 2092.0,
+        "duration_ms": 5467.27
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "batch_size",
+        "braintrust",
+        "invocation_params",
+        "metadata",
+        "model",
+        "name",
+        "options",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "[[{\"additional_kwargs\": {}, \"content\": \"Bạn là một Gia sư AI cá nhân hóa (AI Tutor) xuất sắc tại Đại học VinUniversity.\\nNhiệm vụ của bạn là hỗ trợ sinh viên học tập theo phương pháp Socratic (Socratic ladder).\\n\\n[LUẬT AN TOÀN HỌC THUẬT (...",
+      "output_preview": "{\"generations\": [[{\"generation_info\": {\"finish_reason\": \"stopstop\", \"model_name\": \"openai/gpt-4o-miniopenai/gpt-4o-mini\", \"system_fingerprint\": \"fp_965c8b9ecffp_965c8b9ecf\"}, \"message\": {\"additional_kwargs\": {}, \"content\": \"Trong bối cảnh..."
+    },
+    {
+      "id": "d8017577-970a-4baa-ae60-f7c92a12a244",
+      "created": "2026-06-28T09:06:56.439Z",
+      "span_id": "c2e1b122-32b6-4693-b196-4ef419d2d49b",
+      "root_span_id": "8e660e4e-3d30-4741-8aec-178c08290536",
+      "parent_span_id": null,
+      "name": "llm.respond_stream",
+      "error": null,
+      "metrics": {
+        "end": 1782637621.9098,
+        "start": 1782637616.4397,
+        "duration_ms": 5470.14
+      },
+      "timings_ms": {
+        "llm_first_token": 1288.91,
+        "llm_total": 5470.09
+      },
+      "metadata_keys": [
+        "intent",
+        "mode",
+        "timings_ms"
+      ],
+      "input_preview": "{\"message_count\": 3, \"query\": \"giải thích vector database trong production RAG\"}",
+      "output_preview": "{\"answer_chars\": 1692}"
+    },
+    {
+      "id": "e4c9e3c7-7c58-46bd-8496-9ec1c4b4e81d",
+      "created": "2026-06-28T09:06:56.438Z",
+      "span_id": "e531ef39-37ab-4dae-8b37-047467c2331c",
+      "root_span_id": "8e660e4e-3d30-4741-8aec-178c08290536",
+      "parent_span_id": null,
+      "name": "respond_academic",
+      "error": null,
+      "metrics": {
+        "end": 1782637621.912,
+        "start": 1782637616.4383,
+        "duration_ms": 5473.68
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "braintrust",
+        "metadata",
+        "name",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "{\"analysis\": \"Tìm kiếm RAG hoàn tất. Tìm thấy 6 slide liên quan.\", \"chat_history\": [], \"context\": \"- Tài liệu 1: 1-day07-data-foundations-embedding-vector-store | Slide 34 | Vector Database Landscape DB Hosting Language Filtering Scale Bes...",
+      "output_preview": "{\"metadata\": {\"active_quiz\": false, \"bkt\": 0.25, \"citation_validation\": {\"invalid_citations\": [], \"is_valid\": true, \"valid_citations\": []}, \"elo\": 1200, \"intent\": \"academic\", \"mode\": \"Explain\", \"mode_instructions\": \"CHẾ ĐỘ: GIẢI THÍCH (Exp..."
+    },
+    {
+      "id": "2f37234f-7d31-4a6d-b871-ca3fa2236695",
+      "created": "2026-06-28T09:06:56.435Z",
+      "span_id": "b199bec1-55d0-497b-823c-835ab7fafa05",
+      "root_span_id": "8e660e4e-3d30-4741-8aec-178c08290536",
+      "parent_span_id": null,
+      "name": "should_continue",
+      "error": null,
+      "metrics": {
+        "end": 1782637616.437,
+        "start": 1782637616.4359,
+        "duration_ms": 1.04
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "braintrust",
+        "metadata",
+        "name",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "{\"analysis\": \"Tìm kiếm RAG hoàn tất. Tìm thấy 6 slide liên quan.\", \"chat_history\": [], \"context\": \"- Tài liệu 1: 1-day07-data-foundations-embedding-vector-store | Slide 34 | Vector Database Landscape DB Hosting Language Filtering Scale Bes...",
+      "output_preview": "\"respond_academic\""
+    },
+    {
+      "id": "4d82e1c5-6831-4a67-9a31-dd9d5faef2a2",
+      "created": "2026-06-28T09:06:55.393Z",
+      "span_id": "e22c7784-7abc-4851-8166-b255158a079d",
+      "root_span_id": "8e660e4e-3d30-4741-8aec-178c08290536",
+      "parent_span_id": null,
+      "name": "rag.vector_rpc",
+      "error": null,
+      "metrics": {
+        "end": 1782637615.8517,
+        "start": 1782637615.3934,
+        "duration_ms": 458.29
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "elapsed_ms",
+        "has_filter",
+        "match_count"
+      ],
+      "input_preview": null,
+      "output_preview": null
+    },
+    {
+      "id": "bd4a017c-8195-45b5-ad7d-54cb0b7db4c5",
+      "created": "2026-06-28T09:06:54.268Z",
+      "span_id": "ed2d1a71-74a9-492b-a5d3-8e9ba8f3aec1",
+      "root_span_id": "8e660e4e-3d30-4741-8aec-178c08290536",
+      "parent_span_id": null,
+      "name": "Embedding",
+      "error": null,
+      "metrics": {
+        "cost": 0.0,
+        "end": 1782637615.1002,
+        "prompt_tokens": 10.0,
+        "start": 1782637614.2683,
+        "tokens": 10.0,
+        "duration_ms": 831.88
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "model",
+        "provider"
+      ],
+      "input_preview": "[[8376, 76150, 270, 2483, 331, 4724, 4729, 70186, 5788, 21108]]",
+      "output_preview": "{\"embedding_length\": 1536}"
+    },
+    {
+      "id": "7dd113e9-116f-4302-9428-cd136a8087a7",
+      "created": "2026-06-28T09:06:54.267Z",
+      "span_id": "3ec71a55-a85c-42da-bb0c-f52b05497847",
+      "root_span_id": "8e660e4e-3d30-4741-8aec-178c08290536",
+      "parent_span_id": null,
+      "name": "rag.embedding",
+      "error": null,
+      "metrics": {
+        "end": 1782637615.1016,
+        "start": 1782637614.2676,
+        "duration_ms": 833.95
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "elapsed_ms"
+      ],
+      "input_preview": "{\"query\": \"giải thích vector database trong production RAG\"}",
+      "output_preview": null
+    },
+    {
+      "id": "d1a49b32-eab4-430c-9ac8-b2fdd7bf3395",
+      "created": "2026-06-28T09:06:54.267Z",
+      "span_id": "6f09fba4-5504-42c3-aa3c-addfaaa77725",
+      "root_span_id": "8e660e4e-3d30-4741-8aec-178c08290536",
+      "parent_span_id": null,
+      "name": "rag.retrieve",
+      "error": null,
+      "metrics": {
+        "end": 1782637616.4345,
+        "start": 1782637614.2674,
+        "duration_ms": 2167.14
+      },
+      "timings_ms": {
+        "rag_cache_lookup": 0,
+        "rag_embedding": 833.93,
+        "rag_keyword_search": 458.55,
+        "rag_neighbor_fetch": 281.41,
+        "rag_vector_rpc": 458.24
+      },
+      "metadata_keys": [
+        "concept_id",
+        "course_id",
+        "timings_ms"
+      ],
+      "input_preview": "{\"query\": \"giải thích vector database trong production RAG\"}",
+      "output_preview": "{\"count\": 6, \"top_similarity\": 0.633069622833629}"
+    },
+    {
+      "id": "5c647ef5-a22d-45de-80ff-23e757329489",
+      "created": "2026-06-28T09:06:53.653Z",
+      "span_id": "a3c52487-f382-4b7b-ab92-af7e51715de3",
+      "root_span_id": "8e660e4e-3d30-4741-8aec-178c08290536",
+      "parent_span_id": null,
+      "name": "analyze",
+      "error": null,
+      "metrics": {
+        "end": 1782637616.4374,
+        "start": 1782637613.6539,
+        "duration_ms": 2783.51
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "braintrust",
+        "metadata",
+        "name",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "{\"chat_history\": [], \"long_term_facts\": {}, \"mode\": \"Explain\", \"query\": \"giải thích vector database trong production RAG\", \"session_id\": null, \"student_profile\": {\"bkt_mastery_probability\": 0.25, \"elo_score\": 1200, \"mastery_state\": \"not_st...",
+      "output_preview": "{\"analysis\": \"Tìm kiếm RAG hoàn tất. Tìm thấy 6 slide liên quan.\", \"context\": \"- Tài liệu 1: 1-day07-data-foundations-embedding-vector-store | Slide 34 | Vector Database Landscape DB Hosting Language Filtering Scale Best for Chroma Local P..."
+    },
+    {
+      "id": "ec9b9c37-2760-4081-9c7d-ff7e3711e5e2",
+      "created": "2026-06-28T09:06:53.652Z",
+      "span_id": "51283eb7-c704-400a-b7aa-6879f6c5d9d9",
+      "root_span_id": "8e660e4e-3d30-4741-8aec-178c08290536",
+      "parent_span_id": null,
+      "name": "LangGraph",
+      "error": null,
+      "metrics": {
+        "end": 1782637621.9126,
+        "start": 1782637613.6523,
+        "duration_ms": 8260.26
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "braintrust",
+        "metadata",
+        "name",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "{\"chat_history\": [], \"concept_id\": null, \"course_id\": null, \"long_term_facts\": {}, \"mode\": \"Explain\", \"query\": \"giải thích vector database trong production RAG\", \"session_id\": null, \"student_profile\": {\"bkt_mastery_probability\": 0.25, \"elo...",
+      "output_preview": "{\"analysis\": \"Tìm kiếm RAG hoàn tất. Tìm thấy 6 slide liên quan.\", \"chat_history\": [], \"context\": \"- Tài liệu 1: 1-day07-data-foundations-embedding-vector-store | Slide 34 | Vector Database Landscape DB Hosting Language Filtering Scale Bes..."
+    },
+    {
+      "id": "6da0734f-e4b9-4230-88c2-971d7515dfca",
+      "created": "2026-06-28T09:06:53.651Z",
+      "span_id": "8e660e4e-3d30-4741-8aec-178c08290536",
+      "root_span_id": "8e660e4e-3d30-4741-8aec-178c08290536",
+      "parent_span_id": null,
+      "name": "chat.stream",
+      "error": null,
+      "metrics": {
+        "end": 1782637621.9129,
+        "start": 1782637613.6516,
+        "duration_ms": 8261.34
+      },
+      "timings_ms": {
+        "llm_first_token": 1288.91,
+        "llm_total": 5470.09,
+        "rag_embedding": 833.93,
+        "rag_vector_rpc": 458.24,
+        "total": 8853.18
+      },
+      "metadata_keys": [
+        "mode",
+        "timings_ms"
+      ],
+      "input_preview": "{\"has_context\": false, \"mode\": \"Explain\", \"stream\": true}",
+      "output_preview": "{\"answer_chars\": 1692}"
+    },
+    {
+      "id": "3e589ee8-9471-4a2d-a5b3-0ae0091cbe5c",
+      "created": "2026-06-28T09:06:53.059Z",
+      "span_id": "4df3d353-76c8-4bdd-802a-5b991f3b9a1e",
+      "root_span_id": "4df3d353-76c8-4bdd-802a-5b991f3b9a1e",
+      "parent_span_id": null,
+      "name": "chat.profile_load",
+      "error": null,
+      "metrics": {
+        "end": 1782637613.0599,
+        "start": 1782637613.0597,
+        "duration_ms": 0.15
+      },
+      "timings_ms": {},
+      "metadata_keys": [],
+      "input_preview": null,
+      "output_preview": null
+    },
+    {
+      "id": "1a7b2597-65c3-4bc7-8cfd-9f6fe3cc5028",
+      "created": "2026-06-28T09:06:52.415Z",
+      "span_id": "cfc87bc1-6421-47f6-9481-bf8032b3d9e9",
+      "root_span_id": "f3502d02-a612-4543-b071-9b7780237acd",
+      "parent_span_id": null,
+      "name": "check_reflection",
+      "error": null,
+      "metrics": {
+        "end": 1782637612.4175,
+        "start": 1782637612.4155,
+        "duration_ms": 1.97
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "braintrust",
+        "metadata",
+        "name",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "{\"analysis\": \"Tìm kiếm RAG hoàn tất. Tìm thấy 6 slide liên quan.\", \"chat_history\": [], \"context\": \"- Tài liệu 1: 1-Day 08 Lecture Slides_Detailed version | Slide 9 | Fine-tuning vs. RAG (Hai Cách Tiếp Cận Khác Nhau) Fine-tuning (Học phong...",
+      "output_preview": "\"__end__\""
+    },
+    {
+      "id": "1e67238f-b0c5-46c4-b181-4c4b4c3ab0f0",
+      "created": "2026-06-28T09:06:48.207Z",
+      "span_id": "e0af70be-91fd-40c0-a766-03a22e77cd85",
+      "root_span_id": "f3502d02-a612-4543-b071-9b7780237acd",
+      "parent_span_id": null,
+      "name": "Chat Completion",
+      "error": null,
+      "metrics": {
+        "completion_audio_tokens": 0.0,
+        "completion_image_tokens": 0.0,
+        "completion_reasoning_tokens": 0.0,
+        "completion_tokens": 274.0,
+        "cost": 0.0003,
+        "end": 1782637612.4105,
+        "prompt_audio_tokens": 0.0,
+        "prompt_cache_write_tokens": 0.0,
+        "prompt_cached_tokens": 1664.0,
+        "prompt_tokens": 1723.0,
+        "prompt_video_tokens": 0.0,
+        "start": 1782637608.2074,
+        "time_to_first_token": 1.3257,
+        "tokens": 1997.0,
+        "duration_ms": 4203.07
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "model",
+        "provider",
+        "stream",
+        "temperature"
+      ],
+      "input_preview": "[{\"content\": \"Bạn là một Gia sư AI cá nhân hóa (AI Tutor) xuất sắc tại Đại học VinUniversity.\\nNhiệm vụ của bạn là hỗ trợ sinh viên học tập theo phương pháp Socratic (Socratic ladder).\\n\\n[LUẬT AN TOÀN HỌC THUẬT (ACADEMIC INTEGRITY GUARDRA...",
+      "output_preview": "[{\"finish_reason\": \"stop\", \"index\": 0, \"logprobs\": null, \"message\": {\"content\": \"RAG (Retrieval-Augmented Generation) và fine-tuning là hai phương pháp khác nhau trong việc cải thiện khả năng của các mô hình học máy. \\n\\n1. **Fine-tuning**..."
+    },
+    {
+      "id": "eb2c9fca-c549-49e4-9ce5-650d5ac15938",
+      "created": "2026-06-28T09:06:48.206Z",
+      "span_id": "bfdb6ecb-72bd-4c56-9b2d-ef6b3c93f570",
+      "root_span_id": "f3502d02-a612-4543-b071-9b7780237acd",
+      "parent_span_id": null,
+      "name": "ChatOpenAI",
+      "error": null,
+      "metrics": {
+        "completion_tokens": 274.0,
+        "end": 1782637612.4132,
+        "prompt_cached_tokens": 1664.0,
+        "prompt_tokens": 1723.0,
+        "start": 1782637608.2069,
+        "time_to_first_token": 1.3267,
+        "tokens": 1997.0,
+        "total_tokens": 1997.0,
+        "duration_ms": 4206.37
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "batch_size",
+        "braintrust",
+        "invocation_params",
+        "metadata",
+        "model",
+        "name",
+        "options",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "[[{\"additional_kwargs\": {}, \"content\": \"Bạn là một Gia sư AI cá nhân hóa (AI Tutor) xuất sắc tại Đại học VinUniversity.\\nNhiệm vụ của bạn là hỗ trợ sinh viên học tập theo phương pháp Socratic (Socratic ladder).\\n\\n[LUẬT AN TOÀN HỌC THUẬT (...",
+      "output_preview": "{\"generations\": [[{\"generation_info\": {\"finish_reason\": \"stopstop\", \"model_name\": \"openai/gpt-4o-miniopenai/gpt-4o-mini\", \"system_fingerprint\": \"fp_965c8b9ecffp_965c8b9ecf\"}, \"message\": {\"additional_kwargs\": {}, \"content\": \"RAG (Retrieval-..."
+    },
+    {
+      "id": "9787cce4-99a6-4070-9f7b-5cab219b10fa",
+      "created": "2026-06-28T09:06:48.206Z",
+      "span_id": "627a9971-b619-47cb-bbb2-d115627932a7",
+      "root_span_id": "f3502d02-a612-4543-b071-9b7780237acd",
+      "parent_span_id": null,
+      "name": "llm.respond_stream",
+      "error": null,
+      "metrics": {
+        "end": 1782637612.4151,
+        "start": 1782637608.2063,
+        "duration_ms": 4208.81
+      },
+      "timings_ms": {
+        "llm_first_token": 1327.55,
+        "llm_total": 4208.74
+      },
+      "metadata_keys": [
+        "intent",
+        "mode",
+        "timings_ms"
+      ],
+      "input_preview": "{\"message_count\": 3, \"query\": \"RAG khác fine-tuning thế nào?\"}",
+      "output_preview": "{\"answer_chars\": 1042}"
+    },
+    {
+      "id": "935ca258-281f-44b0-ab27-9296d7df87d1",
+      "created": "2026-06-28T09:06:48.205Z",
+      "span_id": "c424acb4-da14-4e71-89f3-32a1dc31d9b1",
+      "root_span_id": "f3502d02-a612-4543-b071-9b7780237acd",
+      "parent_span_id": null,
+      "name": "respond_academic",
+      "error": null,
+      "metrics": {
+        "end": 1782637612.418,
+        "start": 1782637608.2051,
+        "duration_ms": 4212.91
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "braintrust",
+        "metadata",
+        "name",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "{\"analysis\": \"Tìm kiếm RAG hoàn tất. Tìm thấy 6 slide liên quan.\", \"chat_history\": [], \"context\": \"- Tài liệu 1: 1-Day 08 Lecture Slides_Detailed version | Slide 9 | Fine-tuning vs. RAG (Hai Cách Tiếp Cận Khác Nhau) Fine-tuning (Học phong...",
+      "output_preview": "{\"metadata\": {\"active_quiz\": false, \"bkt\": 0.25, \"citation_validation\": {\"invalid_citations\": [], \"is_valid\": true, \"valid_citations\": []}, \"elo\": 1200, \"intent\": \"academic\", \"mode\": \"Explain\", \"mode_instructions\": \"CHẾ ĐỘ: GIẢI THÍCH (Exp..."
+    },
+    {
+      "id": "4ff8f36f-0776-4be1-998b-91e8f0b071ed",
+      "created": "2026-06-28T09:06:48.202Z",
+      "span_id": "58237dad-afde-43f2-a968-b77f9beac09e",
+      "root_span_id": "f3502d02-a612-4543-b071-9b7780237acd",
+      "parent_span_id": null,
+      "name": "should_continue",
+      "error": null,
+      "metrics": {
+        "end": 1782637608.2038,
+        "start": 1782637608.203,
+        "duration_ms": 0.82
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "braintrust",
+        "metadata",
+        "name",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "{\"analysis\": \"Tìm kiếm RAG hoàn tất. Tìm thấy 6 slide liên quan.\", \"chat_history\": [], \"context\": \"- Tài liệu 1: 1-Day 08 Lecture Slides_Detailed version | Slide 9 | Fine-tuning vs. RAG (Hai Cách Tiếp Cận Khác Nhau) Fine-tuning (Học phong...",
+      "output_preview": "\"respond_academic\""
+    },
+    {
+      "id": "4872723f-e04d-44d2-bec6-7b146a3d3f04",
+      "created": "2026-06-28T09:06:48.201Z",
+      "span_id": "008f6b9e-d5b6-4f05-99b2-50bf6d787f58",
+      "root_span_id": "f3502d02-a612-4543-b071-9b7780237acd",
+      "parent_span_id": null,
+      "name": "rag.retrieve",
+      "error": null,
+      "metrics": {
+        "end": 1782637608.2019,
+        "start": 1782637608.2016,
+        "duration_ms": 0.33
+      },
+      "timings_ms": {
+        "rag_cache_lookup": 0
+      },
+      "metadata_keys": [
+        "concept_id",
+        "course_id",
+        "timings_ms"
+      ],
+      "input_preview": "{\"query\": \"RAG khác fine-tuning thế nào?\"}",
+      "output_preview": "{\"count\": 6, \"top_similarity\": 0.602751220977486}"
+    },
+    {
+      "id": "ec2a252e-7663-4cfb-9bbf-8dfceb0115be",
+      "created": "2026-06-28T09:06:47.581Z",
+      "span_id": "03d3ce7b-03d9-409b-b56c-f4013e2dedf1",
+      "root_span_id": "f3502d02-a612-4543-b071-9b7780237acd",
+      "parent_span_id": null,
+      "name": "analyze",
+      "error": null,
+      "metrics": {
+        "end": 1782637608.2043,
+        "start": 1782637607.5818,
+        "duration_ms": 622.48
+      },
+      "timings_ms": {},
+      "metadata_keys": [
+        "braintrust",
+        "metadata",
+        "name",
+        "parent_run_id",
+        "run_id",
+        "serialized",
+        "tags"
+      ],
+      "input_preview": "{\"chat_history\": [], \"long_term_facts\": {}, \"mode\": \"Explain\", \"query\": \"RAG khác fine-tuning thế nào?\", \"session_id\": null, \"student_profile\": {\"bkt_mastery_probability\": 0.25, \"elo_score\": 1200, \"mastery_state\": \"not_started\", \"weakness_...",
+      "output_preview": "{\"analysis\": \"Tìm kiếm RAG hoàn tất. Tìm thấy 6 slide liên quan.\", \"context\": \"- Tài liệu 1: 1-Day 08 Lecture Slides_Detailed version | Slide 9 | Fine-tuning vs. RAG (Hai Cách Tiếp Cận Khác Nhau) Fine-tuning (Học phong cách) Phù hợp để tha..."
+    }
+  ]
+}

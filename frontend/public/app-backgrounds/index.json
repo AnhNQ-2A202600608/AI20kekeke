@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "description": "EduGap Code Bay app-level background assets. Use these as the outermost dashboard/page background behind major UI surfaces, not inside individual cards.",
+  "basePath": "/app-backgrounds",
+  "runtimeFormat": "webp",
+  "usageRules": [
+    "Use WebP files in runtime UI; PNG files are source/reference copies.",
+    "Use as decorative background with alt=\"\" and aria-hidden=\"true\".",
+    "Place at the outer app/page shell level, behind all cards and panels.",
+    "Keep a light overlay above the image so dense text cards stay readable.",
+    "Do not place this image inside individual cards or content panels."
+  ],
+  "assets": [
+    {
+      "id": "code-bay-app-shell-bg",
+      "title": "Code Bay App Shell Background",
+      "description": "Soft Code Bay learning garden scene for the outer dashboard shell across app pages.",
+      "bestFor": ["app shell", "dashboard background", "learning pages", "skills page"],
+      "avoidFor": ["individual cards", "button backgrounds", "dense text panels"],
+      "files": {
+        "pngSource": "/app-backgrounds/code-bay-app-shell-bg.png",
+        "webp": "/app-backgrounds/code-bay-app-shell-bg.webp"
+      },
+      "recommendedOpacity": "0.28-0.45"
+    },
+    {
+      "id": "code-bay-profile-bg",
+      "title": "Code Bay Profile Background",
+      "description": "Personal progress garden scene for the outer profile page shell.",
+      "bestFor": ["profile page", "personal progress dashboard", "student identity surfaces"],
+      "avoidFor": ["quiz cards", "mentor analytics", "small side panels"],
+      "files": {
+        "pngSource": "/app-backgrounds/code-bay-profile-bg.png",
+        "webp": "/app-backgrounds/code-bay-profile-bg.webp"
+      },
+      "recommendedOpacity": "0.30-0.48"
+    }
+  ]
+}

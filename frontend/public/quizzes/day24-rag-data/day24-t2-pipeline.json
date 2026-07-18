@@ -1,0 +1,210 @@
+{
+  "id": "day24-t2-pipeline",
+  "parent_id": "day24-rag-data",
+  "topic_title": "Day 24: Data Governance & Security",
+  "title": "Phần 2: Triển Khai RBAC, IAM & Pipeline Anonymization PII",
+  "description": "Đánh giá kiến thức về thiết lập RBAC/IAM trên nền tảng AI, mã hóa dữ liệu và xây dựng PII anonymization pipeline bằng Presidio.",
+  "difficulty": "bình thường",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Sự khác biệt chính giữa kiểm soát truy cập dựa trên vai trò (RBAC) và kiểm soát truy cập dựa trên thuộc tính (ABAC) là gì?",
+      "options": {
+        "A": "RBAC dựa vào vai trò định sẵn, còn ABAC dựa vào thuộc tính động như dự án hay IP.",
+        "B": "RBAC chỉ phân quyền trên database SQL, còn ABAC phân quyền trên tất cả các tập tin văn bản.",
+        "C": "RBAC bắt buộc phải sử dụng mã hóa khóa công khai, còn ABAC sử dụng mã hóa đối xứng.",
+        "D": "RBAC phân quyền thủ công bằng tay, còn ABAC tự động phân quyền thông qua mô hình học máy."
+      },
+      "answer": "A",
+      "explanation": "RBAC phân quyền dựa trên vai trò tĩnh (ví dụ: MLEngineer, Analyst). ABAC linh hoạt và dễ mở rộng hơn nhờ phân quyền dựa trên thuộc tính (attributes) của user, resource và môi trường (ví dụ: user.team == data.owner_team).",
+      "hints": [
+        "Nghĩ về tính linh hoạt giữa việc cấp quyền theo chức vụ cố định và các điều kiện ngữ cảnh.",
+        "ABAC viết tắt của Attribute-Based Access Control.",
+        "Đáp án chỉ ra RBAC dựa trên vai trò định sẵn, còn ABAC dựa trên thuộc tính/điều kiện động."
+      ],
+      "concepts": [
+        "d24-t2-data-governance"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Trong cơ chế mã hóa phong bì (Envelope Encryption), luồng xử lý khóa dữ liệu diễn ra như thế nào?",
+      "options": {
+        "A": "Dữ liệu được mã hóa bằng khóa KEK, sau đó khóa KEK được mã hóa bằng khóa DEK.",
+        "B": "Dữ liệu được mã hóa bằng khóa DEK, sau đó khóa DEK được mã hóa bằng khóa KEK.",
+        "C": "Cả dữ liệu và khóa giải mã đều được gửi lên máy chủ KMS để mã hóa đồng thời.",
+        "D": "Dữ liệu được chia nhỏ thành nhiều phần, mỗi phần mã hóa bằng một khóa riêng biệt."
+      },
+      "answer": "B",
+      "explanation": "Envelope Encryption hoạt động bằng cách mã hóa dữ liệu bằng Data Encryption Key (DEK). Sau đó, DEK được mã hóa bằng Key Encryption Key (KEK) quản lý bởi KMS. Plaintext DEK bị hủy lập tức sau khi dùng, chỉ lưu trữ encrypted DEK đi kèm dữ liệu.",
+      "hints": [
+        "Khóa DEK dùng trực tiếp để mã hóa dữ liệu (Data Encryption Key).",
+        "Khóa KEK dùng để khóa lại chiếc phong bì chứa DEK (Key Encryption Key).",
+        "Đáp án chính xác là dữ liệu được mã hóa bằng khóa DEK, sau đó khóa DEK được mã hóa bằng khóa KEK."
+      ],
+      "concepts": [
+        "d24-t2-data-governance"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Thành phần AnalyzerEngine của thư viện Microsoft Presidio thực hiện nhiệm vụ gì trong pipeline xử lý PII?",
+      "options": {
+        "A": "Thực hiện mã hóa một chiều toàn bộ chuỗi văn bản đầu vào.",
+        "B": "Tự động dịch dữ liệu nhạy cảm của khách hàng sang tiếng Anh.",
+        "C": "Phát hiện và nhận diện các thực thể dữ liệu nhạy cảm (PII) trong text.",
+        "D": "Thay thế các thực thể nhạy cảm bằng dữ liệu giả lập hoặc dấu sao."
+      },
+      "answer": "C",
+      "explanation": "Microsoft Presidio có hai thành phần chính: AnalyzerEngine dùng để phân tích văn bản và phát hiện PII bằng Regex, Spacy NER... và AnonymizerEngine dùng để ẩn danh/mask các thực thể PII tìm thấy.",
+      "hints": [
+        "Phân biệt giữa bước nhận diện (analysis) và bước ẩn danh hóa (anonymization).",
+        "Analyzer làm việc trước để tìm ra vị trí và loại PII.",
+        "Đáp án chính xác là phát hiện và nhận diện các thực thể dữ liệu nhạy cảm."
+      ],
+      "concepts": [
+        "d24-t2-data-governance"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Để nhận diện số Căn cước công dân (CCCD) Việt Nam trong văn bản, kỹ thuật custom recognizer nào dễ triển khai nhất?",
+      "options": {
+        "A": "Sử dụng mô hình mạng nơ-ron Transformer đồ sộ để dịch chuỗi.",
+        "B": "Sử dụng mô hình dự đoán phân lớp ảnh nhị phân của chữ số.",
+        "C": "Gửi dữ liệu trực tiếp sang chatbot để phân tích ý định của số.",
+        "D": "Xây dựng Custom Pattern Recognizer dựa trên Regex quét 12 chữ số."
+      },
+      "answer": "D",
+      "explanation": "CCCD Việt Nam có cấu trúc định dạng chuẩn gồm 12 chữ số liên tiếp. Cách nhận diện chính xác và hiệu quả nhất là dùng Regex Pattern Recognizer trong Presidio.",
+      "hints": [
+        "CCCD có cấu trúc chiều dài cố định và toàn bộ là chữ số.",
+        "Đây là phương pháp khớp chuỗi dựa trên quy tắc biểu thức chính quy.",
+        "Đáp án chỉ ra xây dựng Custom Pattern Recognizer dựa trên Regex 12 chữ số."
+      ],
+      "concepts": [
+        "d24-t2-data-governance"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Kỹ thuật ẩn danh hóa nào sau đây giúp biến đổi thông tin độ tuổi cụ thể '32 tuổi' thành 'khoảng 30-39 tuổi'?",
+      "options": {
+        "A": "Generalization khái quát hóa data.",
+        "B": "Hashing mã hóa một chiều.",
+        "C": "Redaction cắt bỏ dữ liệu.",
+        "D": "Masking che dấu ký tự."
+      },
+      "answer": "A",
+      "explanation": "Generalization (khái quát hóa/gom nhóm) là kỹ thuật làm giảm độ mịn của dữ liệu nhạy cảm (ví dụ: tuổi cụ thể thành khoảng tuổi, địa chỉ số nhà thành quận/thành phố) để bảo vệ danh tính mà vẫn giữ giá trị thống kê.",
+      "hints": [
+        "Đây là kỹ thuật nâng cao thuộc tính lên một mức phân cấp rộng hơn.",
+        "Giúp dữ liệu đạt chuẩn k-anonymity tốt hơn.",
+        "Đáp án chính xác là Generalization."
+      ],
+      "concepts": [
+        "d24-t2-data-governance"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Quy tắc vàng về thời điểm thực hiện ẩn danh hóa dữ liệu (PII anonymization) trong vòng đời huấn luyện mô hình AI là gì?",
+      "options": {
+        "A": "Thực hiện ngay sau khi mô hình đã hoàn thành huấn luyện tham số.",
+        "B": "Thực hiện trước khi toàn bộ dữ liệu được nạp vào trong training pipeline.",
+        "C": "Thực hiện ở client của người dùng cuối khi nhận kết quả từ chatbot.",
+        "D": "Thực hiện định kỳ mỗi năm một lần đối với trọng số mô hình."
+      },
+      "answer": "B",
+      "explanation": "Quy tắc cốt lõi: Anonymize trước khi nạp vào training pipeline. Một khi PII lọt vào trọng số mô hình (weights), nó sẽ nằm lại đó vĩnh viễn và trở thành gánh nặng pháp lý (liability) không thể xóa sạch.",
+      "hints": [
+        "Nếu để mô hình 'học thuộc lòng' (memorize) dữ liệu nhạy cảm, bạn sẽ không thể bóc tách nó ra dễ dàng.",
+        "Việc xử lý sau khi huấn luyện là vô cùng tốn kém và không triệt để.",
+        "Đáp án chính xác là thực hiện trước khi dữ liệu được nạp vào training pipeline."
+      ],
+      "concepts": [
+        "d24-t2-data-governance"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Kỹ thuật phân quyền bảo mật nào trong các Lakehouse hiện đại (như Unity Catalog) giúp che dấu số tài khoản ngân hàng chỉ hiển thị 4 số cuối?",
+      "options": {
+        "A": "VPC Service Controls.",
+        "B": "TLS Certificate Pinning.",
+        "C": "Dynamic Data Masking.",
+        "D": "Symmetric Keys Rotation."
+      },
+      "answer": "C",
+      "explanation": "Dynamic Data Masking (mặt nạ dữ liệu động) cho phép che giấu cột nhạy cảm theo thời gian thực dựa trên quyền của user truy vấn (ví dụ: nhân viên CSKH chỉ thấy số thẻ ẩn ***1234).",
+      "hints": [
+        "Cho phép che giấu thông tin hiển thị mà không làm thay đổi dữ liệu gốc trong storage.",
+        "Tên kỹ thuật có từ khóa liên quan đến việc che mặt nạ (masking).",
+        "Đáp án chính xác là Dynamic Data Masking."
+      ],
+      "concepts": [
+        "d24-t2-data-governance"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Trong quản lý xoay vòng khóa mã hóa (Keys Rotation), chu kỳ quay vòng hợp lý nhất cho các thành phần (KMS KEK, DEK, Service Credentials) lần lượt là gì?",
+      "options": {
+        "A": "KEK xoay vòng mỗi ngày, DEK xoay vòng mỗi tuần, Credentials xoay vòng mỗi tháng.",
+        "B": "KEK xoay vòng mỗi tháng, DEK xoay vòng mỗi tuần, Credentials xoay vòng mỗi ngày.",
+        "C": "KEK không bao giờ xoay vòng, DEK xoay vòng mỗi năm, Credentials xoay vòng mỗi tuần.",
+        "D": "KEK xoay vòng hàng năm, DEK xoay vòng hàng tháng, Credentials xoay vòng hàng tuần."
+      },
+      "answer": "D",
+      "explanation": "Theo khuyến nghị bảo mật tốt nhất: KEK xoay vòng hàng năm (thường do KMS auto), DEK xoay vòng hàng tháng, còn thông tin xác thực dịch vụ (Credentials) xoay vòng hàng tuần để giảm thiểu tối đa cửa sổ rủi ro.",
+      "hints": [
+        "Khóa gốc (KEK) có tuổi thọ dài nhất, thông tin xác thực dịch vụ (Credentials) có tuổi thọ ngắn nhất.",
+        "Nghĩ về chu kỳ: Hàng năm -> Hàng tháng -> Hàng tuần.",
+        "Đáp án chính xác là KEK xoay vòng hàng năm, DEK xoay vòng hàng tháng, Credentials xoay vòng hàng tuần."
+      ],
+      "concepts": [
+        "d24-t2-data-governance"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Kỹ thuật ẩn danh nào sử dụng hàm băm một chiều kèm chuỗi muối (Salted Hash) để phục vụ phân tích hành vi người dùng không định danh?",
+      "options": {
+        "A": "Pseudonymization giả danh dữ liệu.",
+        "B": "Generalization khái quát dữ liệu.",
+        "C": "Synthetic data sinh dữ liệu.",
+        "D": "Random Noise thêm nhiễu số."
+      },
+      "answer": "A",
+      "explanation": "Pseudonymization (giả danh hóa) thay thế PII bằng các ID giả danh nhất quán (ví dụ: băm SHA256 kèm salt). Kỹ thuật này có tính chất reversible nếu có bảng lookup, giúp phân tích hành vi liên tục mà không lộ danh tính thật.",
+      "hints": [
+        "Thay thế định danh thật bằng một định danh giả có tính nhất quán.",
+        "Vẫn giữ nguyên tính liên kết của dữ liệu phục vụ mục đích phân tích luồng hành vi khách hàng.",
+        "Đáp án chính xác là Pseudonymization."
+      ],
+      "concepts": [
+        "d24-t2-data-governance"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Tại sao việc tích hợp OPA (Open Policy Agent) trong CI/CD pipeline lại giúp tự động hóa việc thực thi chính sách tuân thủ (Compliance)?",
+      "options": {
+        "A": "Vì OPA tự động viết các prompt chặn jailbreak bằng thuật toán học sâu.",
+        "B": "Vì OPA định nghĩa chính sách dưới dạng code để kiểm thử tự động.",
+        "C": "Vì OPA tự động quét sạch virus và mã độc trong các container image.",
+        "D": "Vì OPA tự động tăng cường băng thông mạng cho các máy chủ GPU."
+      },
+      "answer": "B",
+      "explanation": "OPA cho phép định nghĩa các quy tắc tuân thủ dưới dạng ngôn ngữ khai báo (Rego - Policy as Code). Nhờ đó, CI/CD pipeline có thể tự động chạy kiểm thử chính sách bảo mật trước khi triển khai (ví dụ: chặn deploy nếu quyền hạn service account vượt mức cho phép).",
+      "hints": [
+        "Nghĩ về xu hướng hiện đại biến chính sách hành chính thành code có thể tự kiểm thử tự động.",
+        "OPA viết tắt của Open Policy Agent.",
+        "Đáp án chỉ ra OPA định nghĩa chính sách dưới dạng code (Policy as Code)."
+      ],
+      "concepts": [
+        "d24-t2-data-governance"
+      ]
+    }
+  ]
+}

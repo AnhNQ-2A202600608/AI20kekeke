@@ -1,0 +1,210 @@
+{
+  "id": "day17-t2-advanced",
+  "parent_id": "day17-rag-data",
+  "topic_title": "Day 17: AI Data Engineering Foundations",
+  "title": "Phần 3: Data Contracts, Kiểm Định Dữ Liệu & Pipeline Đặc Thù Cho AI",
+  "description": "Đánh giá kiến thức chuyên sâu về Data Contracts, Pandera/GX validation suite, xử lý dữ liệu lỗi và các tối ưu hóa pipeline đặc thù cho AI (deduplication, feature skew, data flywheel).",
+  "difficulty": "khó",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Khái niệm 'Data Contract' (Hợp đồng dữ liệu) được sử dụng để giải quyết vấn đề nhức nhối nào sau đây giữa team phát triển ứng dụng và team kỹ sư dữ liệu?",
+      "options": {
+        "A": "Ngăn chặn việc thay đổi cấu trúc dữ liệu ở ứng dụng làm hỏng các pipeline dữ liệu.",
+        "B": "Xác định giới hạn chi phí sử dụng dịch vụ đám mây tối đa của các phòng ban.",
+        "C": "Quy định chi tiết mức lương và chế độ đãi ngộ của kỹ sư trong dự án.",
+        "D": "Tự động hóa hoàn toàn việc sinh các mã kiểm thử đơn vị cho ứng dụng web."
+      },
+      "answer": "A",
+      "explanation": "Data Contract là cam kết rõ ràng về định dạng schema và chất lượng dữ liệu giữa bên sản xuất (ứng dụng) và bên tiêu thụ (data team), tránh lỗi Schema Drift bất ngờ.",
+      "hints": [
+        "Hãy nghĩ về việc một thay đổi nhỏ ở database của app làm sập toàn bộ hệ thống báo cáo phía sau.",
+        "Data Contract đóng vai trò như một thỏa thuận giao tiếp chính thức về mặt kỹ thuật.",
+        "Đáp án mô tả việc ngăn chặn các thay đổi cấu trúc dữ liệu bất ngờ làm hỏng pipeline."
+      ],
+      "concepts": [
+        "d17-t2-data-eng-foundations"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Vì sao việc thực hiện loại bỏ trùng lặp dữ liệu (Deduplication) lại cực kỳ quan trọng đối với pipeline chuẩn bị dữ liệu huấn luyện (training data) cho LLM?",
+      "options": {
+        "A": "Để ngăn model ghi nhớ các dữ liệu lặp lại, từ đó giảm thiểu ảo giác.",
+        "B": "Để đảm bảo tốc độ huấn luyện mô hình đạt mức tối đa trên mọi cụm GPU.",
+        "C": "Để tự động dịch ngôn ngữ của tập dữ liệu huấn luyện sang tiếng Việt chuẩn.",
+        "D": "Để loại bỏ hoàn toàn nhu cầu dùng bộ lọc nội dung độc hại của hệ thống."
+      },
+      "answer": "A",
+      "explanation": "If the training set contains many duplicate records, the model will tend to memorize them, leading to overfitting and hallucinations during production.",
+      "hints": [
+        "Hãy nhớ lại bài học thất bại trị giá 8K USD GPU được nhắc đến trong slide bài giảng.",
+        "Dữ liệu trùng lặp làm méo mó phân phối xác suất từ khóa mà model học được.",
+        "Đáp án nhấn mạnh việc ngăn chặn model học vẹt dữ liệu lặp và hạn chế ảo giác."
+      ],
+      "concepts": [
+        "d17-t2-data-eng-foundations"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Khi một bản ghi dữ liệu không vượt qua được bài test của 'Quality Gate' (như Pandera validation), phương thức xử lý an toàn nhất trong production pipeline là gì?",
+      "options": {
+        "A": "Ngay lập tức dừng toàn bộ pipeline và xóa sạch mọi dữ liệu cũ đó.",
+        "B": "Ghi bản ghi lỗi vào khu vực cách ly (quarantine) và gửi cảnh báo rà soát.",
+        "C": "Bỏ qua lỗi, tự động điền các giá trị ngẫu nhiên vào các trường bị thiếu.",
+        "D": "Tự động gửi email yêu cầu khách hàng nhập lại thông tin ngay trên giao diện."
+      },
+      "answer": "B",
+      "explanation": "Để pipeline hoạt động liên tục mà không bị nghẽn, các dữ liệu không đạt chuẩn sẽ được chuyển hướng vào phân vùng quarantine để rà soát thủ công, tránh làm ô nhiễm Silver/Gold layers.",
+      "hints": [
+        "Cân bằng giữa tính liên tục của hệ thống và tính sạch sẽ của dữ liệu.",
+        "Không nên làm sập pipeline ngay lập tức, nhưng cũng không được để dữ liệu bẩn lọt qua.",
+        "Đáp án mô tả việc đưa bản ghi lỗi vào khu vực cách ly và phát cảnh báo rà soát."
+      ],
+      "concepts": [
+        "d17-t2-data-eng-foundations"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Hiện tượng 'Training-Serving Skew' (Lệch pha huấn luyện và suy luận) trong các hệ thống AI thường bắt nguồn từ nguyên nhân kỹ thuật nào sau đây?",
+      "options": {
+        "A": "Sự chênh lệch về tốc độ mạng giữa máy chủ huấn luyện và máy chủ thực.",
+        "B": "Logic tính toán đặc trưng (features) lúc huấn luyện khác biệt khi chạy thực tế.",
+        "C": "Việc sử dụng các phiên bản thư viện lập trình Python không đồng bộ trên server.",
+        "D": "Mức độ bảo mật thông tin tập dữ liệu huấn luyện cao hơn tập thực tế."
+      },
+      "answer": "B",
+      "explanation": "Lệch pha xảy ra khi code trích xuất feature phục vụ train model viết một đường, nhưng code trích xuất feature khi user query lại viết một nẻo.",
+      "hints": [
+        "Hãy nghĩ về việc model được dạy một kiểu nhưng khi thi lại được cung cấp đề bài định dạng khác.",
+        "Nguyên nhân thường do sự bất đồng bộ trong logic tiền xử lý dữ liệu giữa offline và online.",
+        "Đáp án mô tả sự khác biệt về mặt logic tính toán đặc trưng giữa hai môi trường."
+      ],
+      "concepts": [
+        "d17-t2-data-eng-foundations"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Trong thiết kế 'Data Flywheel' (Bánh đà dữ liệu) cho Agent, luồng dữ liệu phản hồi từ người dùng thực tế được tái sử dụng như thế nào?",
+      "options": {
+        "A": "Dữ liệu trò chuyện của người dùng được gửi trực tiếp đến đối thủ cạnh tranh.",
+        "B": "Agent traces được lọc sạch, gán nhãn chất lượng rồi đưa lại vào tập train.",
+        "C": "Toàn bộ lịch sử chat được ghi đè trực tiếp vào system prompt của Agent.",
+        "D": "Hệ thống tự động dùng dữ liệu thô để huấn luyện lại mô hình từ đầu."
+      },
+      "answer": "B",
+      "explanation": "Bánh đà dữ liệu thu thập các vết tương tác (traces) của agent, sử dụng quality gates để lọc bỏ dữ liệu bẩn/nhiễu (decontaminate), gán nhãn chất lượng để làm giàu tài nguyên huấn luyện liên tục.",
+      "hints": [
+        "Hãy nghĩ về cách một sản phẩm AI liên tục tự cải thiện độ chính xác theo thời gian thông qua tương tác thực tế.",
+        "Đây là chu trình khép kín giúp nâng cấp chất lượng mô hình một cách tự động và thông minh.",
+        "Đáp án liên quan đến việc lọc sạch traces người dùng để bổ sung vào tập dữ liệu fine-tune."
+      ],
+      "concepts": [
+        "d17-t2-data-eng-foundations"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Thư viện `Pandera` trong Python hỗ trợ đắc lực nhất cho kỹ sư dữ liệu ở công việc nào sau đây trong pipeline?",
+      "options": {
+        "A": "Tự động sinh các câu lệnh SQL để tạo chỉ mục tối ưu trong database.",
+        "B": "Nén các file dữ liệu thô có dung lượng lớn thành định dạng file nén.",
+        "C": "Kiểm định schema cấu trúc và kiểm tra logic các ràng buộc của Pandas DataFrame.",
+        "D": "Trực quan hóa luồng di chuyển dữ liệu giữa các máy chủ dưới dạng đồ thị."
+      },
+      "answer": "C",
+      "explanation": "Pandera cung cấp cơ chế khai báo schema cho DataFrame, cho phép kiểm tra kiểu dữ liệu, miền giá trị và các quy tắc nghiệp vụ ngay khi dữ liệu đang chạy qua pipeline.",
+      "hints": [
+        "Hãy nghĩ về việc làm thế nào để đảm bảo cột 'age' luôn chứa số nguyên dương nhỏ hơn 120 trong DataFrame.",
+        "Nó đóng vai trò như một chốt chặn kiểm định chất lượng dữ liệu dạng bảng.",
+        "Đáp án liên quan đến việc kiểm định schema và ràng buộc logic trên DataFrame."
+      ],
+      "concepts": [
+        "d17-t2-data-eng-foundations"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Sự cố nghiêm trọng của hãng Zillow Offers năm 2021 dẫn đến việc phải đóng cửa mảng kinh doanh và sa thải 25% nhân sự là do lỗi pipeline nào?",
+      "options": {
+        "A": "Hệ thống bị tin tặc tấn công làm rò rỉ thông tin cá nhân khách hàng.",
+        "B": "Hệ thống máy chủ bị sập liên tục do lỗi lập lịch của công cụ Airflow.",
+        "C": "Pipeline thiếu cơ chế kiểm soát drift dữ liệu khiến model định giá sai đó.",
+        "D": "Kỹ sư dữ liệu vô tình xóa sạch toàn bộ cơ sở dữ liệu giao dịch gốc."
+      },
+      "answer": "C",
+      "explanation": "Model định giá nhà của Zillow gặp hiện tượng trôi lệch phân phối dữ liệu nhưng pipeline không có cơ chế cảnh báo, dẫn đến việc model định giá quá cao so với giá thị trường thực tế.",
+      "hints": [
+        "Lỗi này liên quan đến sự thay đổi của thị trường thực tế ngoài đời thực so với dữ liệu huấn luyện.",
+        "Mô hình vẫn hoạt động bình thường về mặt kỹ thuật nhưng đưa ra quyết định sai lầm gây thiệt hại hàng trăm triệu USD.",
+        "Đáp án đề cập đến việc thiếu kiểm soát drift dữ liệu dẫn đến định giá sai lệch."
+      ],
+      "concepts": [
+        "d17-t2-data-eng-foundations"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Khi trích xuất và biến đổi dữ liệu phi cấu trúc (như file PDF) thành các embeddings để lưu vào Vector DB, lỗi pipeline nào sau đây gây ảnh hưởng nghiêm trọng nhất đến chất lượng RAG?",
+      "options": {
+        "A": "Sử dụng các khóa chính có độ dài không đồng bộ giữa các file JSON.",
+        "B": "Lưu trữ tệp tin thô trên các hệ thống lưu trữ đám mây chi phí thấp.",
+        "C": "Cắt đoạn (chunking) sai ngữ cảnh hoặc làm mất liên kết giữa các bảng số.",
+        "D": "Không thực hiện mã hóa bảo mật thông tin đường truyền của tệp tin PDF."
+      },
+      "answer": "C",
+      "explanation": "Nếu thuật toán chunking cắt nhỏ văn bản bừa bãi làm mất đi ý nghĩa trọn vẹn của câu hoặc làm đứt gãy thông tin bảng biểu, vector sinh ra sẽ thiếu chính xác, khiến kết quả tìm kiếm của RAG bị lỗi.",
+      "hints": [
+        "Chất lượng của RAG phụ thuộc rất lớn vào việc các đoạn văn bản được cắt ra có giữ được ngữ cảnh độc lập hay không.",
+        "Cần thiết kế chiến lược chunking thông minh và giữ siêu dữ liệu (metadata) đầy đủ.",
+        "Đáp án liên quan đến việc cắt đoạn văn bản sai ngữ cảnh và làm mất thông tin bảng biểu."
+      ],
+      "concepts": [
+        "d17-t2-data-eng-foundations"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Theo thống kê thực tế được nêu trong bài học, tỷ lệ trung bình các bảng dữ liệu gặp sự cố chất lượng mỗi năm trong doanh nghiệp là bao nhiêu?",
+      "options": {
+        "A": "Khoảng 1 trên mỗi 100 bảng dữ liệu gặp sự cố chất lượng hàng năm.",
+        "B": "Khoảng 1 trên mỗi 50 bảng dữ liệu gặp sự cố chất lượng hàng năm.",
+        "C": "Khoảng 1 trên mỗi 5 bảng dữ liệu gặp sự cố chất lượng hàng năm.",
+        "D": "Khoảng 1 trên mỗi 10 bảng dữ liệu gặp sự cố chất lượng hàng năm."
+      },
+      "answer": "D",
+      "explanation": "Theo khảo sát của Monte Carlo trên 11 triệu bảng dữ liệu, trung bình 1/10 bảng dữ liệu gặp ít nhất một sự cố chất lượng mỗi năm.",
+      "hints": [
+        "Con số này cho thấy chất lượng dữ liệu là một vấn đề cực kỳ phổ biến và diễn ra hàng ngày.",
+        "Nó là tỷ lệ mười phần trăm (10%) số lượng bảng dữ liệu.",
+        "Đáp án chính xác là tỷ lệ một trên mười (1/10)."
+      ],
+      "concepts": [
+        "d17-t2-data-eng-foundations"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Tại sao một 'Data Contract' tốt cần phải định nghĩa cả phần 'SLA/SLO' (như tần suất cập nhật dữ liệu và độ trễ tối đa)?",
+      "options": {
+        "A": "Để bắt buộc đội ngũ phát triển ứng dụng phải trả thêm chi phí bảo trì.",
+        "B": "Để tự động tăng tốc độ xử lý phần cứng của các máy chủ cơ sở.",
+        "C": "Để thay thế cho toàn bộ các tài liệu hướng dẫn sử dụng sản phẩm web.",
+        "D": "Để tránh ứng dụng đọc dữ liệu quá cũ, làm sai lệch quyết định của AI."
+      },
+      "answer": "D",
+      "explanation": "Độ tươi mới của dữ liệu (data freshness) rất quan trọng đối với AI thực tế; nếu dữ liệu bị trễ quá lâu, model AI sẽ đưa ra các dự đoán lỗi thời hoặc không còn chính xác.",
+      "hints": [
+        "Hãy nghĩ về việc một hệ thống phát hiện gian lận thẻ tín dụng sử dụng dữ liệu giao dịch bị trễ 24 giờ.",
+        "Các cam kết về thời gian cập nhật giúp bên tiêu thụ chủ động thiết kế cơ chế cảnh báo phù hợp.",
+        "Đáp án nhấn mạnh việc bảo vệ ứng dụng khỏi dữ liệu cũ làm sai lệch quyết định của AI."
+      ],
+      "concepts": [
+        "d17-t2-data-eng-foundations"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+[project]
+name = "c2-app-125"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi>=0.115.0",
+    "httpx>=0.28.0",
+    "braintrust>=0.0.205",
+    "langchain>=0.3.0",
+    "langchain-openai>=0.3.0",
+    "langgraph>=0.2.0",
+    "numpy>=2.4.6",
+    "openai>=1.0.0",
+    "pandas>=3.0.3",
+    "plotly>=6.8.0",
+    "pydantic>=2.10.0",
+    "pydantic-settings>=2.7.0",
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.24.0",
+    "python-dotenv>=1.0.0",
+    "python-multipart>=0.0.32",
+    "redis>=8.0.0",
+    "ruff>=0.8.0",
+    "streamlit>=1.58.0",
+    "supabase>=2.31.0",
+    "pyjwt[crypto]>=2.13.0",
+    "uvicorn[standard]>=0.34.0",
+    "pymupdf>=1.24.0",
+    "pre-commit>=4.6.0",
+    "scikit-learn>=1.9.0",
+    "pytesseract>=0.3.10",
+    "pillow>=10.0.0",
+]
+
+[tool.mypy]
+ignore_errors = true
+exclude = [
+    '^docs/',
+    '^eval/',
+    '^scripts/',
+]
+ignore_missing_imports = true
+disable_error_code = [
+    'import-untyped',
+]

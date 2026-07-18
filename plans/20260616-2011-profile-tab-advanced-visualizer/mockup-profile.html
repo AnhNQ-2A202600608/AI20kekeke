@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mockup: Advanced Profile Dashboard Visualizer</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Chart.js CDN for plotting real interactive math curves & radars -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'warm-cream': '#fdfbf7',
+            'warm-cream-light': '#fffdf9',
+            'warm-cream-dark': '#fcfbfa',
+            'primary-green': '#58cc02',
+            'primary-green-dark': '#46a302',
+            'primary-green-light': '#d7ffb8',
+            'tertiary-yellow': '#ffc800',
+            'tertiary-yellow-dark': '#cc9600',
+            'accent-orange': '#ff9600',
+            'accent-orange-dark': '#cc7000',
+            'accent-orange-light': '#ffdf92',
+            'accent-orange-border': '#ddad00',
+            'error-red': '#ff4b4b',
+            'error-red-dark': '#ea2b2b',
+            'error-red-light': '#ffd8d8',
+            'primary-blue': '#1cb0f6',
+            'primary-blue-dark': '#1899d6',
+            'primary-blue-light': '#ddf4ff',
+          },
+          fontFamily: {
+            sans: ['Be Vietnam Pro', 'sans-serif'],
+            serif: ['Fraunces', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* 3D Tactile Buttons inspired by Duolingo */
+    .btn-3d {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 16px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: filter 0.2s, transform 0.1s, border-bottom-width 0.1s;
+      outline: none;
+      user-select: none;
+    }
+    .btn-3d:active {
+      transform: translateY(4px) !important;
+      border-bottom-width: 0px !important;
+      margin-bottom: 4px;
+    }
+    .btn-orange {
+      background-color: #ff9600 !important;
+      border-bottom: 5px solid #cc7000 !important;
+      color: white !important;
+    }
+    .btn-orange:hover {
+      filter: brightness(1.08);
+    }
+    .btn-green {
+      background-color: #58cc02 !important;
+      border-bottom: 5px solid #46a302 !important;
+      color: white !important;
+    }
+    .btn-green:hover {
+      filter: brightness(1.08);
+    }
+    .btn-blue {
+      background-color: #1cb0f6 !important;
+      border-bottom: 5px solid #1899d6 !important;
+      color: white !important;
+    }
+    .btn-blue:hover {
+      filter: brightness(1.08);
+    }
+    .btn-white {
+      background-color: white !important;
+      border: 2px solid #e5e5e5 !important;
+      border-bottom: 5px solid #e5e5e5 !important;
+      color: #58cc02 !important;
+    }
+    .btn-white:hover {
+      background-color: #eef7e3 !important;
+      border-color: #b7b7b7 !important;
+    }
+
+    /* Mastery Bar Uncertainty Overlay pattern */
+    .uncertainty-pattern {
+      background-image: repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.2) 0px,
+        rgba(255, 255, 255, 0.2) 2px,
+        transparent 2px,
+        transparent 8px
+      );
+    }
+  </style>
+</head>
+<body class="bg-warm-cream min-h-screen py-10 px-4 md:px-8 font-sans text-stone-800">
+
+  <div class="max-w-3xl mx-auto space-y-6">
+
+    <!-- 1. Header & Quick Identity -->
+    <header class="bg-white border border-tertiary-yellow/30 rounded-3xl p-6 shadow-sm flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+      <div class="flex items-center gap-4 text-left">
+        <div class="h-16 w-16 rounded-full bg-gradient-to-tr from-accent-orange to-tertiary-yellow text-white flex items-center justify-center font-bold text-xl shadow-md uppercase shrink-0">
+          HA
+        </div>
+        <div class="space-y-0.5">
+          <h1 class="text-lg md:text-xl font-black text-stone-900 tracking-tight font-serif">Học viên AI Thực Chiến</h1>
+          <p class="text-[11px] text-stone-400 font-mono font-bold uppercase tracking-wider">@hocvien_aithucchien</p>
+          <p class="text-[10px] text-stone-500 font-semibold font-mono">Bắt đầu học: 06/2026</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="bg-primary-green-light border border-primary-green/30 text-primary-green-dark px-3 py-1.5 rounded-2xl text-xs font-extrabold uppercase font-mono">
+          🔥 Streak: 5 ngày
+        </div>
+        <div class="bg-accent-orange-light/40 border border-accent-orange/30 text-accent-orange-dark px-3 py-1.5 rounded-2xl text-xs font-extrabold uppercase font-mono">
+          🎯 Elo: 1080
+        </div>
+      </div>
+    </header>
+
+    <!-- 2. AI Bandit Recommendation Widget -->
+    <section class="bg-violet-50/70 border border-violet-200 rounded-3xl p-5 shadow-sm flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+      <div class="flex gap-4 text-left">
+        <div class="w-12 h-12 rounded-2xl bg-violet-100 flex items-center justify-center text-violet-600 shrink-0 text-2xl shadow-inner">
+          🦊
+        </div>
+        <div class="space-y-1">
+          <h4 class="text-sm font-black text-violet-950">AI Bandit đề xuất: luyện tập "Định hình bài toán AI"</h4>
+          <p class="text-[11px] text-violet-800/80 leading-relaxed font-medium">
+            Elo hiện tại: <span class="font-bold font-mono">892</span> · ZPD Target: <span class="font-bold font-mono">980</span> · Dự kiến: <span class="font-mono text-emerald-600 font-extrabold">+28 Elo</span>
+            <span class="ml-2 inline-flex items-center text-[9px] font-black uppercase text-rose-600 bg-rose-50 border border-rose-100 px-1.5 py-0.5 rounded-md">
+              ⚠️ Trí nhớ giảm (Decay)
+            </span>
+          </p>
+        </div>
+      </div>
+      <button onclick="alert('Đang chuyển hướng đến bài học thích ứng...')" class="btn-3d btn-orange text-xs px-5 py-3 shrink-0 w-full sm:w-auto">Bắt đầu ngay</button>
+    </section>
+
+    <!-- 3. Navigation Tabs Visualizer -->
+    <nav class="flex border-b border-stone-200">
+      <button onclick="switchTab('charts')" id="tab-charts" class="flex-1 py-3 text-xs font-black uppercase tracking-wider border-b-4 border-primary-green text-primary-green transition-all">
+        Biểu đồ năng lực
+      </button>
+      <button onclick="switchTab('skill_tree')" id="tab-skill_tree" class="flex-1 py-3 text-xs font-black uppercase tracking-wider border-b-4 border-transparent text-stone-500 hover:text-stone-700 transition-all">
+        Cây kỹ năng (DAG)
+      </button>
+      <button onclick="switchTab('memory_decay')" id="tab-memory_decay" class="flex-1 py-3 text-xs font-black uppercase tracking-wider border-b-4 border-transparent text-stone-500 hover:text-stone-700 transition-all">
+        Đồ thị lãng quên (%)
+      </button>
+    </nav>
+
+    <!-- 4. Tab Contents -->
+    <main class="bg-white border border-stone-200 rounded-3xl p-6 shadow-sm min-h-[440px] relative overflow-hidden">
+      
+      <!-- TAB 1: CHARTS -->
+      <div id="content-charts" class="space-y-6">
+        <div class="text-left">
+          <h3 class="text-sm font-black text-accent-orange-dark uppercase tracking-wider font-serif">Ma trận Năng lực & Đường Elo tiến bộ</h3>
+          <p class="text-xs text-stone-400 mt-0.5">Biểu diễn Elo đa chiều và tiến trình Elo thực tế trong 30 ngày.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+          <!-- Real Radar Chart -->
+          <div class="border border-stone-100 bg-stone-50/50 rounded-2xl p-4 flex flex-col items-center justify-center min-h-[300px]">
+            <span class="text-[10px] text-stone-400 font-extrabold uppercase mb-2">Biểu đồ Radar Năng lực</span>
+            <div class="w-full max-h-[240px]">
+              <canvas id="radarChartCanvas"></canvas>
+            </div>
+          </div>
+          
+          <!-- Real Line Chart -->
+          <div class="border border-stone-100 bg-stone-50/50 rounded-2xl p-4 flex flex-col justify-between min-h-[300px]">
+            <div class="flex justify-between items-center w-full mb-2">
+              <span class="text-[10px] text-stone-400 font-extrabold uppercase">Đường Elo 30 ngày gần đây</span>
+            </div>
+            <div class="w-full max-h-[240px]">
+              <canvas id="lineChartCanvas"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: SKILL TREE (DAG) -->
+      <div id="content-skill_tree" class="hidden space-y-6">
+        <div class="text-left flex justify-between items-start flex-wrap gap-2">
+          <div>
+            <h3 class="text-sm font-black text-accent-orange-dark uppercase tracking-wider font-serif">Đồ thị Phụ thuộc Khái niệm (DAG Map)</h3>
+            <p class="text-xs text-stone-400 mt-0.5">Click vào các node để xem chi tiết BKT, Elo và yêu cầu tiên quyết.</p>
+          </div>
+          <span class="text-[9px] bg-primary-green/10 text-primary-green-dark border border-primary-green/20 px-2 py-0.5 rounded font-black uppercase font-mono">Graphusion Engine active</span>
+        </div>
+
+        <!-- Simulated Skill Tree Map -->
+        <div class="relative w-full border border-stone-100 rounded-3xl p-4 bg-stone-50/50 overflow-auto min-h-[320px] flex flex-col items-center py-8">
+          <!-- SVG Connections between concepts -->
+          <svg class="absolute inset-0 w-full h-full pointer-events-none" style="min-width: 600px; min-height: 300px;">
+            <!-- Connection 1: LLM Foundation -> Prompt -->
+            <line x1="300" y1="50" x2="150" y2="150" stroke="#b7b7b7" stroke-width="2" stroke-dasharray="4" />
+            <!-- Connection 2: LLM Foundation -> RAG -->
+            <line x1="300" y1="50" x2="300" y2="150" stroke="#b7b7b7" stroke-width="2" stroke-dasharray="4" />
+            <!-- Connection 3: LLM Foundation -> ReAct -->
+            <line x1="300" y1="50" x2="450" y2="150" stroke="#b7b7b7" stroke-width="2" stroke-dasharray="4" />
+            <!-- Connection 4: RAG -> Embedding -->
+            <line x1="300" y1="150" x2="300" y2="250" stroke="#b7b7b7" stroke-width="2" stroke-dasharray="4" />
+            <!-- Connection 5: Dinh Hinh Bai Toan -> RAG -->
+            <line x1="120" y1="50" x2="300" y2="150" stroke="#ea2b2b" stroke-width="2" />
+          </svg>
+
+          <!-- Nodes Layout -->
+          <!-- Level 1 -->
+          <div class="relative z-10 flex gap-16 mb-16">
+            <button onclick="openDrawer('ai_problem')" class="w-28 h-28 rounded-full border-4 border-error-red bg-error-red-light/80 hover:scale-105 active:scale-95 transition-all text-center flex flex-col items-center justify-center p-2 shadow-md">
+              <span class="text-[9px] font-black text-error-red-dark uppercase leading-tight font-serif">Định hình bài toán AI</span>
+              <span class="text-[9px] font-bold font-mono text-error-red mt-1">892 Elo</span>
+            </button>
+            
+            <button onclick="openDrawer('llm')" class="w-28 h-28 rounded-full border-4 border-tertiary-yellow bg-accent-orange-light/20 hover:scale-105 active:scale-95 transition-all text-center flex flex-col items-center justify-center p-2 shadow-md">
+              <span class="text-[9px] font-black text-tertiary-yellow-dark uppercase leading-tight font-serif">AI & LLM Foundation</span>
+              <span class="text-[9px] font-bold font-mono text-stone-600 mt-1">1080 Elo</span>
+            </button>
+          </div>
+
+          <!-- Level 2 -->
+          <div class="relative z-10 flex gap-20 mb-16">
+            <button onclick="openDrawer('prompt')" class="w-28 h-28 rounded-full border-4 border-primary-green bg-primary-green-light/60 hover:scale-105 active:scale-95 transition-all text-center flex flex-col items-center justify-center p-2 shadow-md">
+              <span class="text-[9px] font-black text-primary-green-dark uppercase leading-tight font-serif">Prompt Engineering</span>
+              <span class="text-[9px] font-bold font-mono text-stone-600 mt-1">1248 Elo</span>
+            </button>
+
+            <button onclick="openDrawer('rag')" class="w-28 h-28 rounded-full border-4 border-tertiary-yellow bg-accent-orange-light/20 hover:scale-105 active:scale-95 transition-all text-center flex flex-col items-center justify-center p-2 shadow-md">
+              <span class="text-[9px] font-black text-tertiary-yellow-dark uppercase leading-tight font-serif">RAG Pipeline</span>
+              <span class="text-[9px] font-bold font-mono text-stone-600 mt-1">980 Elo</span>
+            </button>
+
+            <button onclick="openDrawer('react_pattern')" class="w-28 h-28 rounded-full border-4 border-stone-300 bg-stone-100 hover:scale-105 active:scale-95 transition-all text-center flex flex-col items-center justify-center p-2 shadow-md">
+              <span class="text-[9px] font-black text-stone-500 uppercase leading-tight font-serif">Design Pattern ReAct</span>
+              <span class="text-[9px] font-bold font-mono text-stone-400 mt-1">800 Elo</span>
+            </button>
+          </div>
+
+          <!-- Level 3 -->
+          <div class="relative z-10">
+            <button onclick="openDrawer('embedding')" class="w-28 h-28 rounded-full border-4 border-stone-300 bg-stone-100 hover:scale-105 active:scale-95 transition-all text-center flex flex-col items-center justify-center p-2 shadow-md">
+              <span class="text-[9px] font-black text-stone-500 uppercase leading-tight font-serif">Embedding & Vector DB</span>
+              <span class="text-[9px] font-bold font-mono text-stone-400 mt-1">800 Elo</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: MEMORY DECAY -->
+      <div id="content-memory_decay" class="hidden space-y-6">
+        <div class="text-left flex justify-between items-start flex-wrap gap-2">
+          <div>
+            <h3 class="text-sm font-black text-accent-orange-dark uppercase tracking-wider font-serif">Đồ thị Lãng quên (Ebbinghaus Forgetting Curve)</h3>
+            <p class="text-xs text-stone-400 mt-0.5">Biểu diễn mô hình suy giảm trí nhớ thực tế. Hãy ôn tập kịp thời trước khi độ bền giảm mạnh!</p>
+          </div>
+          <span class="text-[9px] bg-rose-500/10 text-rose-700 border border-rose-500/20 px-2 py-0.5 rounded font-black uppercase font-mono">Ebbinghaus Curve</span>
+        </div>
+
+        <!-- Plotted Forgetting Curve Chart (Chart.js) -->
+        <div class="border border-stone-100 bg-stone-50/50 rounded-2xl p-4 flex flex-col items-center justify-center min-h-[220px]">
+          <span class="text-[10px] text-stone-400 font-extrabold uppercase mb-2">Đường cong suy giảm trí nhớ thực tế & Vị trí hiện tại</span>
+          <div class="w-full max-h-[180px]">
+            <canvas id="forgettingCurveCanvas"></canvas>
+          </div>
+        </div>
+
+        <!-- Concept Memory List -->
+        <div class="space-y-3" id="memory-list">
+          
+          <!-- Item 1: Prompt -->
+          <div class="p-4 rounded-2xl border border-stone-250/70 bg-stone-50/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-left">
+            <div class="space-y-1 flex-1">
+              <div class="flex items-center gap-2">
+                <h4 class="text-xs font-black text-stone-900">Prompt Engineering</h4>
+                <span class="text-[8px] bg-primary-green-light border border-primary-green/20 text-primary-green-dark px-2 py-0.2 rounded font-black font-mono">Trí nhớ Tốt</span>
+              </div>
+              <p class="text-[10px] text-stone-500 font-medium">Lần ôn tập cuối: 2 ngày trước (14/06) · Độ bền ước tính: <span class="font-bold">75.8%</span></p>
+              
+              <div class="w-full bg-stone-200 h-2.5 rounded-full overflow-hidden relative">
+                <div id="memory-prompt-bar" class="bg-primary-green h-full rounded-full transition-all duration-300" style="width: 75.8%"></div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 shrink-0">
+              <span id="memory-prompt-txt" class="text-xs font-mono font-black text-primary-green-dark">75.8%</span>
+              <button onclick="recharge('prompt')" class="btn-3d btn-white text-[9px] px-3.5 py-2">Sạc Elo ⚡</button>
+            </div>
+          </div>
+
+          <!-- Item 2: AI & LLM Foundation -->
+          <div class="p-4 rounded-2xl border border-stone-250/70 bg-stone-50/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-left">
+            <div class="space-y-1 flex-1">
+              <div class="flex items-center gap-2">
+                <h4 class="text-xs font-black text-stone-900">AI & LLM Foundation</h4>
+                <span class="text-[8px] bg-tertiary-yellow/10 border border-tertiary-yellow/20 text-tertiary-yellow-dark px-2 py-0.2 rounded font-black font-mono">Bình thường</span>
+              </div>
+              <p class="text-[10px] text-stone-500 font-medium">Lần ôn tập cuối: 3 ngày trước (13/06) · Độ bền ước tính: <span class="font-bold">66.0%</span></p>
+              
+              <div class="w-full bg-stone-200 h-2.5 rounded-full overflow-hidden relative">
+                <div id="memory-llm-bar" class="bg-tertiary-yellow h-full rounded-full transition-all duration-300" style="width: 66.0%"></div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 shrink-0">
+              <span id="memory-llm-txt" class="text-xs font-mono font-black text-tertiary-yellow-dark">66.0%</span>
+              <button onclick="recharge('llm')" class="btn-3d btn-white text-[9px] px-3.5 py-2">Sạc Elo ⚡</button>
+            </div>
+          </div>
+
+          <!-- Item 3: RAG Pipeline -->
+          <div class="p-4 rounded-2xl border border-stone-250/70 bg-stone-50/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-left">
+            <div class="space-y-1 flex-1">
+              <div class="flex items-center gap-2">
+                <h4 class="text-xs font-black text-stone-900">RAG Pipeline</h4>
+                <span class="text-[8px] bg-primary-green-light border border-primary-green/20 text-primary-green-dark px-2 py-0.2 rounded font-black font-mono">Trí nhớ Tốt</span>
+              </div>
+              <p class="text-[10px] text-stone-500 font-medium">Lần ôn tập cuối: 1 ngày trước (15/06) · Độ bền ước tính: <span class="font-bold">87.0%</span></p>
+              
+              <div class="w-full bg-stone-200 h-2.5 rounded-full overflow-hidden relative">
+                <div id="memory-rag-bar" class="bg-primary-green h-full rounded-full transition-all duration-300" style="width: 87.0%"></div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 shrink-0">
+              <span id="memory-rag-txt" class="text-xs font-mono font-black text-primary-green-dark">87.0%</span>
+              <button onclick="recharge('rag')" class="btn-3d btn-white text-[9px] px-3.5 py-2">Sạc Elo ⚡</button>
+            </div>
+          </div>
+
+          <!-- Item 4: Dinh Hinh Bai Toan AI -->
+          <div class="p-4 rounded-2xl border border-error-red-light bg-rose-50/40 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-left">
+            <div class="space-y-1 flex-1">
+              <div class="flex items-center gap-2">
+                <h4 class="text-xs font-black text-stone-900">Định hình bài toán AI</h4>
+                <span class="text-[8px] bg-error-red-light border border-error-red/20 text-error-red-dark px-2 py-0.2 rounded font-black font-mono">⚠️ SẮP QUÊN (Decay)</span>
+              </div>
+              <p class="text-[10px] text-stone-500 font-medium">Lần ôn tập cuối: 4 ngày trước (12/06) · Độ bền ước tính: <span class="font-bold text-error-red-dark">57.3%</span></p>
+              
+              <div class="w-full bg-stone-200 h-2.5 rounded-full overflow-hidden relative">
+                <div id="memory-ai_problem-bar" class="bg-error-red h-full rounded-full transition-all duration-300" style="width: 57.3%"></div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 shrink-0">
+              <span id="memory-ai_problem-txt" class="text-xs font-mono font-black text-error-red-dark">57.3%</span>
+              <button onclick="recharge('ai_problem')" class="btn-3d btn-orange text-[9px] px-3.5 py-2">Sạc Elo ⚡</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    <!-- 5. Traditional Profile Map list with BKT uncertainty and ZPD (Always visible underneath) -->
+    <section class="bg-white border border-stone-200 rounded-3xl p-6 shadow-sm space-y-4">
+      <div class="text-left border-b border-stone-150 pb-3 flex justify-between items-center">
+        <h3 class="text-xs font-black uppercase tracking-wider text-accent-orange-dark font-serif">Bản đồ Năng lực Thích ứng (Elo + BKT)</h3>
+        <span class="text-[9px] text-stone-400 font-bold uppercase font-mono">ZPD Target active</span>
+      </div>
+
+      <div class="space-y-5">
+        <!-- 1. Prompt Engineering -->
+        <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+          <div class="w-full sm:w-40 text-xs font-black text-stone-900 text-left">Prompt Engineering</div>
+          <div class="flex-1 relative h-3 bg-stone-100 rounded-full border border-stone-200/30 overflow-visible">
+            <!-- Elo bar (filled to 56%) -->
+            <div class="absolute top-0 bottom-0 left-0 bg-primary-green rounded-full" style="width: 56%"></div>
+            <!-- BKT uncertainty (eloMin to eloMax, 52% to 58.7%) -->
+            <div class="absolute top-0 bottom-0 bg-primary-green-light/40 rounded uncertainty-pattern" style="left: 52.5%; width: 6.25%"></div>
+            <!-- ZPD marker (50%) -->
+            <div class="absolute w-0.5 h-5 -top-1 bg-violet-500 rounded shadow-sm z-10" style="left: 50%" title="Ngưỡng ZPD: 1200"></div>
+          </div>
+          <div class="flex items-center justify-between sm:justify-end gap-3 shrink-0">
+            <span class="text-xs font-mono font-bold text-stone-700 w-10 text-right">1248</span>
+            <span class="px-2.5 py-0.5 rounded-full border text-[9px] font-bold shrink-0 uppercase tracking-wider bg-primary-green-light/20 text-primary-green-dark border-primary-green/20">Thành thạo</span>
+            <span class="text-[10px] text-emerald-600 font-bold px-2 block w-20 text-center">✓ Đạt</span>
+          </div>
+        </div>
+
+        <!-- 2. AI & LLM Foundation -->
+        <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+          <div class="w-full sm:w-40 text-xs font-black text-stone-900 text-left">AI & LLM Foundation</div>
+          <div class="flex-1 relative h-3 bg-stone-100 rounded-full border border-stone-200/30 overflow-visible">
+            <div class="absolute top-0 bottom-0 left-0 bg-tertiary-yellow rounded-full" style="width: 35%"></div>
+            <div class="absolute top-0 bottom-0 bg-tertiary-yellow/30 rounded uncertainty-pattern" style="left: 30%; width: 10%"></div>
+            <div class="absolute w-0.5 h-5 -top-1 bg-violet-500 rounded shadow-sm z-10" style="left: 43.75%" title="Ngưỡng ZPD: 1150"></div>
+          </div>
+          <div class="flex items-center justify-between sm:justify-end gap-3 shrink-0">
+            <span class="text-xs font-mono font-bold text-stone-700 w-10 text-right">1080</span>
+            <span class="px-2.5 py-0.5 rounded-full border text-[9px] font-bold shrink-0 uppercase tracking-wider bg-warm-cream text-tertiary-yellow-dark border-tertiary-yellow/30">Lớp ZPD</span>
+            <button onclick="alert('Đang chuyển hướng sang bài luyện...')" class="btn-3d btn-green text-[9px] px-3.5 py-1.5 w-20">Luyện tập</button>
+          </div>
+        </div>
+
+        <!-- 3. RAG Pipeline -->
+        <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+          <div class="w-full sm:w-40 text-xs font-black text-stone-900 text-left">RAG Pipeline</div>
+          <div class="flex-1 relative h-3 bg-stone-100 rounded-full border border-stone-200/30 overflow-visible">
+            <div class="absolute top-0 bottom-0 left-0 bg-tertiary-yellow rounded-full" style="width: 22.5%"></div>
+            <div class="absolute top-0 bottom-0 bg-tertiary-yellow/30 rounded uncertainty-pattern" style="left: 16.25%; width: 12.5%"></div>
+            <div class="absolute w-0.5 h-5 -top-1 bg-violet-500 rounded shadow-sm z-10" style="left: 31.25%" title="Ngưỡng ZPD: 1050"></div>
+          </div>
+          <div class="flex items-center justify-between sm:justify-end gap-3 shrink-0">
+            <span class="text-xs font-mono font-bold text-stone-700 w-10 text-right">980</span>
+            <span class="px-2.5 py-0.5 rounded-full border text-[9px] font-bold shrink-0 uppercase tracking-wider bg-warm-cream text-tertiary-yellow-dark border-tertiary-yellow/30">Đang học</span>
+            <button onclick="alert('Đang chuyển hướng sang bài luyện...')" class="btn-3d btn-green text-[9px] px-3.5 py-1.5 w-20">Luyện tập</button>
+          </div>
+        </div>
+
+        <!-- 4. Định hình bài toán AI -->
+        <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+          <div class="w-full sm:w-40 text-xs font-black text-stone-900 text-left">Định hình bài toán AI</div>
+          <div class="flex-1 relative h-3 bg-stone-100 rounded-full border border-stone-200/30 overflow-visible">
+            <div class="absolute top-0 bottom-0 left-0 bg-error-red rounded-full" style="width: 11.5%"></div>
+            <div class="absolute top-0 bottom-0 bg-error-red-light/40 rounded uncertainty-pattern" style="left: 2.5%; width: 17.5%"></div>
+            <div class="absolute w-0.5 h-5 -top-1 bg-violet-500 rounded shadow-sm z-10" style="left: 22.5%" title="Ngưỡng ZPD: 980"></div>
+          </div>
+          <div class="flex items-center justify-between sm:justify-end gap-3 shrink-0">
+            <span class="text-xs font-mono font-bold text-stone-700 w-10 text-right">892</span>
+            <span class="px-2.5 py-0.5 rounded-full border text-[9px] font-bold shrink-0 uppercase tracking-wider bg-error-red-light/20 text-error-red-dark border-error-red/20">Cần ôn tập</span>
+            <button onclick="alert('Đang chuyển hướng sang bài luyện...')" class="btn-3d btn-orange text-[9px] px-3.5 py-1.5 w-20">Ôn ngay</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Bottom Drawer Dialog Mockup (BottomSheet) -->
+  <div id="bottom-drawer" class="fixed inset-0 bg-black/40 z-50 flex items-end justify-center hidden" onclick="closeDrawer()">
+    <div class="bg-white rounded-t-3xl max-w-lg w-full p-6 space-y-4 shadow-2xl animate-slide-up transform translate-y-0 text-left" onclick="event.stopPropagation()">
+      <div class="flex justify-between items-center border-b border-stone-100 pb-2">
+        <h3 id="drawer-title" class="font-black text-stone-900 text-md font-serif">Concept Details</h3>
+        <button onclick="closeDrawer()" class="text-stone-400 hover:text-stone-600 font-bold text-lg">×</button>
+      </div>
+      
+      <!-- Drawer Stats -->
+      <div class="space-y-3 text-xs leading-relaxed text-stone-600">
+        <div class="grid grid-cols-2 gap-3">
+          <div class="p-3 bg-stone-50 rounded-xl border border-stone-150">
+            <p class="text-[9px] font-extrabold text-stone-400 uppercase">Điểm Elo Năng lực</p>
+            <p id="drawer-elo" class="text-lg font-mono font-black text-accent-orange mt-1">1080</p>
+          </div>
+          <div class="p-3 bg-stone-50 rounded-xl border border-stone-150">
+            <p class="text-[9px] font-extrabold text-stone-400 uppercase">Trạng thái BKT Mastery</p>
+            <p id="drawer-bkt" class="text-lg font-mono font-black text-primary-green-dark mt-1">75%</p>
+          </div>
+        </div>
+
+        <div class="p-3.5 bg-warm-cream border border-accent-orange/20 rounded-xl space-y-1">
+          <p class="font-bold text-[10px] text-accent-orange-dark uppercase tracking-wider font-mono">BKT Parameters</p>
+          <div class="grid grid-cols-4 gap-2 text-center text-[9px] font-semibold text-stone-500 pt-1">
+            <div>
+              <p>Prior P(L)</p>
+              <p class="font-mono text-stone-800 font-bold mt-0.5">0.25</p>
+            </div>
+            <div>
+              <p>Transition P(T)</p>
+              <p class="font-mono text-stone-800 font-bold mt-0.5">0.10</p>
+            </div>
+            <div>
+              <p>Guess P(G)</p>
+              <p class="font-mono text-stone-800 font-bold mt-0.5">0.20</p>
+            </div>
+            <div>
+              <p>Slip P(S)</p>
+              <p class="font-mono text-stone-800 font-bold mt-0.5">0.10</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-3 bg-stone-50 rounded-xl border border-stone-150 text-[11px] space-y-1">
+          <p class="font-bold text-stone-700">Mối quan hệ tiên quyết (Prerequisites DAG):</p>
+          <p id="drawer-prereq">Chủ đề gốc cần nắm vững để unlock kỹ năng nâng cao.</p>
+        </div>
+      </div>
+
+      <button onclick="closeDrawer()" class="btn-3d btn-orange w-full py-3 text-xs">Đóng lại</button>
+    </div>
+  </div>
+
+  <script>
+    // Tab switching logic
+    function switchTab(tabId) {
+      document.getElementById('content-charts').classList.add('hidden');
+      document.getElementById('content-skill_tree').classList.add('hidden');
+      document.getElementById('content-memory_decay').classList.add('hidden');
+
+      const tabs = ['charts', 'skill_tree', 'memory_decay'];
+      tabs.forEach(id => {
+        const tabEl = document.getElementById(`tab-${id}`);
+        tabEl.classList.remove('border-primary-green', 'text-primary-green');
+        tabEl.classList.add('border-transparent', 'text-stone-500');
+      });
+
+      document.getElementById(`content-${tabId}`).classList.remove('hidden');
+      const activeTab = document.getElementById(`tab-${tabId}`);
+      activeTab.classList.remove('border-transparent', 'text-stone-500');
+      activeTab.classList.add('border-primary-green', 'text-primary-green');
+    }
+
+    // Chart variables to update on recharge
+    let forgettingCurveChart = null;
+
+    // Initialize Chart.js graphs on window load
+    window.addEventListener('DOMContentLoaded', () => {
+      // 1. Radar Chart Setup
+      const ctxRadar = document.getElementById('radarChartCanvas').getContext('2d');
+      new Chart(ctxRadar, {
+        type: 'radar',
+        data: {
+          labels: ['Prompt Engineering', 'AI & LLM Foundation', 'RAG Pipeline', 'Design Pattern ReAct', 'Embedding & Vector DB'],
+          datasets: [{
+            label: 'Năng lực Elo học viên',
+            data: [1248, 1080, 980, 800, 800],
+            backgroundColor: 'rgba(88, 204, 2, 0.2)',
+            borderColor: '#58cc02',
+            borderWidth: 2,
+            pointBackgroundColor: '#58cc02',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: '#58cc02'
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false }
+          },
+          scales: {
+            r: {
+              angleLines: { display: true },
+              suggestedMin: 600,
+              suggestedMax: 1400,
+              ticks: { stepSize: 200, display: false }
+            }
+          }
+        }
+      });
+
+      // 2. Line Chart Setup
+      const ctxLine = document.getElementById('lineChartCanvas').getContext('2d');
+      new Chart(ctxLine, {
+        type: 'line',
+        data: {
+          labels: Array.from({length: 30}, (_, i) => `${i+1}/6`),
+          datasets: [
+            {
+              label: 'Prompt Engineering',
+              data: Array.from({length: 30}, (_, i) => 1000 + (1248-1000)*(i/29) + (Math.sin(i)*10)),
+              borderColor: '#58cc02',
+              borderWidth: 2,
+              fill: false,
+              tension: 0.1,
+              pointRadius: 0
+            },
+            {
+              label: 'AI & LLM Foundation',
+              data: Array.from({length: 30}, (_, i) => 1000 + (1080-1000)*(i/29) + (Math.cos(i)*8)),
+              borderColor: '#ff9600',
+              borderWidth: 2,
+              fill: false,
+              tension: 0.1,
+              pointRadius: 0
+            },
+            {
+              label: 'RAG Pipeline',
+              data: Array.from({length: 30}, (_, i) => 900 + (980-900)*(i/29) + (Math.sin(i*2)*12)),
+              borderColor: '#ffc800',
+              borderWidth: 2,
+              fill: false,
+              tension: 0.1,
+              pointRadius: 0
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: { boxWidth: 10, font: { size: 9 } }
+            }
+          },
+          scales: {
+            y: {
+              suggestedMin: 800,
+              suggestedMax: 1400
+            }
+          }
+        }
+      });
+
+      // 3. Forgetting Curve Setup (Real mathematical plotted curve)
+      const ctxForgetting = document.getElementById('forgettingCurveCanvas').getContext('2d');
+      
+      // Calculate curve points R(t) = 100 * e^(-0.1386 * t)
+      const curveData = [];
+      const labels = [];
+      for (let t = 0; t <= 15; t += 0.5) {
+        labels.push(t);
+        curveData.push(Math.round(100 * Math.exp(-0.1386 * t) * 10) / 10);
+      }
+
+      forgettingCurveChart = new Chart(ctxForgetting, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: 'Đường cong lãng quên R(t)',
+              data: curveData,
+              borderColor: '#b7b7b7',
+              borderWidth: 2,
+              borderDash: [5, 5],
+              fill: false,
+              tension: 0.1,
+              pointRadius: 0
+            },
+            {
+              label: 'Trình độ hiện tại các Concept',
+              data: [
+                {x: 1, y: 87.0, label: 'RAG Pipeline'},
+                {x: 2, y: 75.8, label: 'Prompt Eng.'},
+                {x: 3, y: 66.0, label: 'AI & LLM'},
+                {x: 4, y: 57.3, label: 'Định hình bài toán'}
+              ],
+              backgroundColor: ['#58cc02', '#58cc02', '#ffc800', '#ff4b4b'],
+              borderColor: '#fff',
+              borderWidth: 2,
+              pointRadius: 6,
+              pointHoverRadius: 8,
+              type: 'scatter'
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  if (context.datasetIndex === 1) {
+                    const raw = context.raw;
+                    return `${raw.label}: ${raw.y}% (Ngày học thứ ${raw.x})`;
+                  }
+                  return `Độ bền trí nhớ: ${context.parsed.y}% (Ngày thứ ${context.parsed.x})`;
+                }
+              }
+            }
+          },
+          scales: {
+            x: {
+              type: 'linear',
+              position: 'bottom',
+              min: 0,
+              max: 15,
+              title: {
+                display: true,
+                text: 'Số ngày trôi qua (t)',
+                font: { size: 9, weight: 'bold' }
+              }
+            },
+            y: {
+              min: 0,
+              max: 100,
+              title: {
+                display: true,
+                text: 'Độ bền trí nhớ R(t) %',
+                font: { size: 9, weight: 'bold' }
+              }
+            }
+          }
+        }
+      });
+    });
+
+    // Mock recharge logic updating Forgetting Curve Graph dynamically!
+    function recharge(conceptId) {
+      const bar = document.getElementById(`memory-${conceptId}-bar`);
+      const txt = document.getElementById(`memory-${conceptId}-txt`);
+      
+      bar.style.width = '100%';
+      txt.innerText = '100.0%';
+      txt.className = 'text-xs font-mono font-black text-primary-green-dark';
+      
+      const parentDiv = bar.closest('.p-4');
+      const badge = parentDiv.querySelector('.text-\\[8px\\]');
+      badge.className = 'text-[8px] bg-primary-green-light border border-primary-green/20 text-primary-green-dark px-2 py-0.2 rounded font-black font-mono';
+      badge.innerText = 'Trí nhớ Tốt';
+      parentDiv.className = 'p-4 rounded-2xl border border-stone-250/70 bg-stone-50/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-left';
+
+      // Update Chart.js Scatter dataset point to day 0 (x:0, y:100%)
+      if (forgettingCurveChart) {
+        const scatterDataset = forgettingCurveChart.data.datasets[1];
+        const labelMap = {
+          'prompt': 'Prompt Eng.',
+          'llm': 'AI & LLM',
+          'rag': 'RAG Pipeline',
+          'ai_problem': 'Định hình bài toán'
+        };
+        const searchLabel = labelMap[conceptId];
+        const point = scatterDataset.data.find(p => p.label === searchLabel);
+        if (point) {
+          point.x = 0;
+          point.y = 100;
+          // Set color of this point to green
+          forgettingCurveChart.update();
+        }
+      }
+
+      alert(`Sạc Elo thành công cho Concept '${conceptId}'! Bộ nhớ đã được phục hồi 100% trên Đồ thị lãng quên.`);
+    }
+
+    // Bottom Drawer Dialog
+    const conceptsData = {
+      ai_problem: {
+        title: 'Định hình bài toán AI',
+        elo: '892',
+        bkt: '22%',
+        prereq: 'Là chủ đề gốc tiên quyết dẫn dắt trực tiếp vào RAG Pipeline.'
+      },
+      llm: {
+        title: 'AI & LLM Foundation',
+        elo: '1080',
+        bkt: '65%',
+        prereq: 'Chủ đề nền tảng. Tiên quyết của Prompt Engineering, RAG Pipeline và Design Pattern ReAct.'
+      },
+      prompt: {
+        title: 'Prompt Engineering',
+        elo: '1248',
+        bkt: '92% (Mastered)',
+        prereq: 'Kế thừa trực tiếp từ LLM Foundation.'
+      },
+      rag: {
+        title: 'RAG Pipeline',
+        elo: '980',
+        bkt: '48%',
+        prereq: 'Kế thừa đồng thời từ LLM Foundation và Định hình bài toán AI. Tiên quyết của Embedding & Vector DB.'
+      },
+      react_pattern: {
+        title: 'Design Pattern ReAct',
+        elo: '800 (Cold Start)',
+        bkt: '5%',
+        prereq: 'Kế thừa từ LLM Foundation.'
+      },
+      embedding: {
+        title: 'Embedding & Vector DB',
+        elo: '800 (Cold Start)',
+        bkt: '3%',
+        prereq: 'Kế thừa từ RAG Pipeline.'
+      }
+    };
+
+    function openDrawer(conceptId) {
+      const data = conceptsData[conceptId];
+      if (!data) return;
+
+      document.getElementById('drawer-title').innerText = data.title;
+      document.getElementById('drawer-elo').innerText = data.elo;
+      document.getElementById('drawer-bkt').innerText = data.bkt;
+      document.getElementById('drawer-prereq').innerText = data.prereq;
+
+      const drawer = document.getElementById('bottom-drawer');
+      drawer.classList.remove('hidden');
+    }
+
+    function closeDrawer() {
+      const drawer = document.getElementById('bottom-drawer');
+      drawer.classList.add('hidden');
+    }
+  </script>
+</body>
+</html>

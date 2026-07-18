@@ -1,0 +1,213 @@
+{
+  "id": "midterm-business",
+  "parent_id": "midterm-review",
+  "topic_title": "Ôn tập giữa kỳ: Cấu trúc bài thi",
+  "title": "Phần II - Business",
+  "description": "10 câu trắc nghiệm về product management, ROI, roadmap và AI governance.",
+  "difficulty": "khó",
+  "questions": [
+    {
+      "id": 1,
+      "question": "PM muốn ưu tiên use case AI đầu tiên cho doanh nghiệp. Tiêu chí nào nên đứng đầu?",
+      "options": {
+        "A": "Demo nhiều hiệu ứng thị giác",
+        "B": "Model mới nhất trên thị trường",
+        "C": "ROI rõ và dữ liệu sẵn sàng",
+        "D": "Tên dự án nghe hấp dẫn"
+      },
+      "answer": "C",
+      "explanation": "Use case đầu tiên nên cân bằng giá trị kinh doanh, dữ liệu, rủi ro và khả năng triển khai.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-business",
+        "midterm-roi"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Một AI roadmap tốt cho 6 tháng đầu nên tránh điều gì?",
+      "options": {
+        "A": "Pilot nhỏ có tiêu chí đo",
+        "B": "Chọn use case ít rủi ro",
+        "C": "Triển khai toàn công ty ngay",
+        "D": "Thiết lập governance cơ bản"
+      },
+      "answer": "C",
+      "explanation": "Triển khai diện rộng khi chưa có eval, adoption và guardrail thường làm tăng rủi ro.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-ai-roadmap"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Khi tính ROI cho chatbot hỗ trợ nội bộ, chỉ số nào đáng tin hơn vanity metric?",
+      "options": {
+        "A": "Giờ hỗ trợ tiết kiệm được",
+        "B": "Số lượt mở trang chủ",
+        "C": "Số màu trong giao diện",
+        "D": "Số slide trong proposal nội bộ"
+      },
+      "answer": "A",
+      "explanation": "ROI nên gắn với thời gian tiết kiệm, tỉ lệ giải quyết, chi phí giảm hoặc doanh thu tăng.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-roi"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "EU AI Act thường yêu cầu quản trị chặt hơn với nhóm hệ thống nào?",
+      "options": {
+        "A": "Ứng dụng thay ảnh đại diện",
+        "B": "Hệ thống rủi ro cao",
+        "C": "Bộ lọc màu cá nhân",
+        "D": "Trang FAQ tĩnh nội bộ"
+      },
+      "answer": "B",
+      "explanation": "Các hệ thống rủi ro cao cần quản trị, giám sát, tài liệu và kiểm soát nghiêm hơn.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-eu-ai-act"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Một team muốn dùng AI chấm điểm tuyển dụng tự động. PM nên làm gì trước?",
+      "options": {
+        "A": "Đánh giá rủi ro và bias",
+        "B": "Ẩn tiêu chí khỏi ứng viên",
+        "C": "Bỏ human review để chạy nhanh",
+        "D": "Dùng điểm AI làm quyết định cuối"
+      },
+      "answer": "A",
+      "explanation": "Tuyển dụng là bối cảnh nhạy cảm; cần đánh giá rủi ro, bias, minh bạch và human oversight.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-ai-governance"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Khi stakeholder yêu cầu AI 'thông minh hơn', PM nên chuyển yêu cầu thành gì?",
+      "options": {
+        "A": "Một model lớn hơn mặc định",
+        "B": "Một bộ metric đo được",
+        "C": "Một khẩu hiệu marketing mới",
+        "D": "Một sprint không tiêu chí"
+      },
+      "answer": "B",
+      "explanation": "Yêu cầu mơ hồ cần chuyển thành metric như accuracy, resolution rate, latency, CSAT.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-product-management"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Luật/quy định AI Việt Nam còn đang phát triển. Cách quản trị thực tế nhất là gì?",
+      "options": {
+        "A": "Chờ luật hoàn chỉnh rồi làm",
+        "B": "Không lưu bất kỳ audit nào",
+        "C": "Giao toàn bộ cho model",
+        "D": "Áp dụng nguyên tắc risk-based"
+      },
+      "answer": "D",
+      "explanation": "Risk-based governance giúp kiểm soát dữ liệu, minh bạch, trách nhiệm và an toàn ngay từ đầu.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-vietnam-ai-law",
+        "midterm-ai-governance"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Một pilot AI đạt accuracy cao nhưng nhân viên không dùng. Nguyên nhân cần kiểm tra trước?",
+      "options": {
+        "A": "Workflow chưa khớp thói quen",
+        "B": "Tên model chưa đủ dài",
+        "C": "Logo sản phẩm chưa nổi",
+        "D": "Máy chủ thiếu ảnh nền"
+      },
+      "answer": "A",
+      "explanation": "Adoption phụ thuộc workflow, niềm tin, training và cách tích hợp vào công việc thật.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-product-management",
+        "midterm-adoption"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Khi chọn giữa build và buy giải pháp AI, yếu tố nào là trade-off chính?",
+      "options": {
+        "A": "Màu dashboard và logo thương hiệu",
+        "B": "Kiểm soát, chi phí và tốc độ",
+        "C": "Tên vendor có dễ đọc không",
+        "D": "Số emoji trong demo sản phẩm"
+      },
+      "answer": "B",
+      "explanation": "Build/buy cần so sánh kiểm soát dữ liệu, tốc độ ra mắt, chi phí, bảo trì và lock-in.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-ai-strategy"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Use case AI nào nên bị loại sớm khỏi roadmap?",
+      "options": {
+        "A": "Có dữ liệu và owner rõ",
+        "B": "Có metric thành công cụ thể",
+        "C": "Có rủi ro thấp, giá trị vừa",
+        "D": "Không có dữ liệu kiểm chứng"
+      },
+      "answer": "D",
+      "explanation": "Không có dữ liệu, owner hoặc metric thì khó chứng minh giá trị và khó vận hành an toàn.",
+      "hints": [
+        "Xác định mục tiêu chính của tình huống.",
+        "Loại phương án đúng về lý thuyết nhưng sai thứ tự.",
+        "Chọn phương án giảm rủi ro mà vẫn giữ được luồng vận hành."
+      ],
+      "concepts": [
+        "midterm-ai-roadmap"
+      ]
+    }
+  ]
+}

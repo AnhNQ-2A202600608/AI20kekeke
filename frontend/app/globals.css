@@ -1,89 +1,344 @@
-:root {
-  --background: #0f172a;
-  --foreground: #f8fafc;
-  --card: #1e293b;
-  --card-border: #334155;
-  --primary: #3b82f6;
-  --primary-hover: #2563eb;
-  --secondary: #64748b;
-  --muted: #475569;
-  --success: #10b981;
-  --error: #ef4444;
-  --warning: #f59e0b;
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+@import "tailwindcss";
+
+html {
+  font-size: 18px;
+  scrollbar-gutter: stable;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+@theme {
+  --color-background: #f4fce8;
+  --color-on-background: #171e12;
+  
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #eef7e3;
+  --color-surface-container: #e9f1dd;
+  --color-surface-container-high: #e3ebd8;
+
+  --color-primary-green: #58cc02;
+  --color-primary-green-dark: #46a302;
+  
+  --color-secondary-green: #00cd9c;
+  --color-secondary-green-dark: #00a47d;
+
+  --color-tertiary-yellow: #ffc800;
+  --color-tertiary-yellow-dark: #cc9600;
+
+  --color-accent-orange: #ff9600;
+  --color-accent-orange-dark: #cc7000;
+
+  --color-error-red: #ff4b4b;
+  --color-error-red-dark: #ea2b2b;
+
+  --color-primary-blue: #1cb0f6;
+  --color-primary-blue-dark: #1899d6;
+  --color-primary-blue-light: #ddf4ff;
+  --color-primary-blue-border: #84d8ff;
+
+  --color-warm-cream: #fdfbf7;
+  --color-warm-cream-light: #fffdf9;
+  --color-warm-cream-dark: #fcfbfa;
+
+  --color-primary-green-light: #d7ffb8;
+  --color-error-red-light: #ffd8d8;
+  --color-accent-orange-light: #ffdf92;
+  --color-accent-orange-border: #ddad00;
+
+  --color-gray-border: #e5e5e5;
+  --color-gray-border-dark: #b7b7b7;
+  
+  --font-fraunces: var(--font-fraunces), serif;
+  --font-be-vietnam-pro: var(--font-be-vietnam-pro), sans-serif;
+
+  --text-annotation-micro: 7px;
+  --text-progress-micro: 7.5px;
+  --text-badge-micro: 8px;
+  --text-kicker-micro: 9px;
+  --text-helper-micro: 9.5px;
+  --text-caption-tight: 10px;
+  --text-card-title-micro: 10.5px;
+  --text-label-tight: 11px;
+  --text-node-label: 12px;
+  --text-body-dense: 13px;
+  --text-control-label: 14px;
+  --text-body-compact: 15px;
+  --text-form-base: 16px;
+  --text-question-title-sm: 22px;
+  --text-question-title-lg: 24px;
+  --text-auth-title-sm: 25px;
+  --text-auth-title-md: 28px;
+  --text-display-auth: 36px;
 }
 
 body {
-  background-color: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans);
-  min-height: 100vh;
-  line-height: 1.5;
+  font-family: var(--font-be-vietnam-pro);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+html.chat-page-scroll-lock,
+body.chat-page-scroll-lock {
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
 }
 
-button, input, select, textarea {
-  font-family: inherit;
+/* Override browser autofill background/text styling to match design system */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #f9fafb inset !important;
+  -webkit-text-fill-color: #1f2937 !important;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
-/* Utilities */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-fraunces);
 }
 
-.flex {
-  display: flex;
+/* Custom Scrollbar Styles */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(88, 204, 2, 0.34) transparent;
+  overscroll-behavior: contain;
 }
 
-.align-center {
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(88, 204, 2, 0.28);
+  border-radius: 999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(70, 163, 2, 0.46);
+}
+
+.custom-scrollbar::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* Reusable 3D Tactile Buttons & Cards */
+.btn-3d {
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 16px;
+  font-family: var(--font-be-vietnam-pro);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: filter 0.2s, transform 0.1s, border-bottom-width 0.1s;
+  outline: none;
+  user-select: none;
 }
 
-.justify-between {
-  justify-content: space-between;
+.btn-3d:active {
+  transform: translateY(4px) !important;
+  border-bottom-width: 0px !important;
+  margin-bottom: 4px;
 }
 
-.gap-1 {
-  gap: 0.5rem;
+.btn-green {
+  background-color: var(--color-primary-green) !important;
+  border-bottom: 5px solid var(--color-primary-green-dark) !important;
+  color: white !important;
+}
+.btn-green:hover {
+  filter: brightness(1.08);
 }
 
-.gap-2 {
-  gap: 1rem;
+.btn-teal {
+  background-color: var(--color-secondary-green) !important;
+  border-bottom: 5px solid var(--color-secondary-green-dark) !important;
+  color: white !important;
+}
+.btn-teal:hover {
+  filter: brightness(1.08);
 }
 
-.gap-4 {
-  gap: 2rem;
+.btn-yellow {
+  background-color: var(--color-tertiary-yellow) !important;
+  border-bottom: 5px solid var(--color-tertiary-yellow-dark) !important;
+  color: white !important;
+}
+.btn-yellow:hover {
+  filter: brightness(1.08);
 }
 
-.grid {
-  display: grid;
+.btn-orange {
+  background-color: var(--color-accent-orange) !important;
+  border-bottom: 5px solid var(--color-accent-orange-dark) !important;
+  color: white !important;
+}
+.btn-orange:hover {
+  filter: brightness(1.08);
 }
 
-.grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+.btn-red {
+  background-color: var(--color-error-red) !important;
+  border-bottom: 5px solid var(--color-error-red-dark) !important;
+  color: white !important;
+}
+.btn-red:hover {
+  filter: brightness(1.08);
 }
 
-.grid-cols-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+.btn-blue {
+  background-color: var(--color-primary-blue) !important;
+  border-bottom: 5px solid var(--color-primary-blue-dark) !important;
+  color: white !important;
+}
+.btn-blue:hover {
+  filter: brightness(1.08);
 }
 
-@media (max-width: 768px) {
-  .grid-cols-2, .grid-cols-3 {
-    grid-template-columns: 1fr;
-  }
-  .sidebar-layout {
-    flex-direction: column;
+.btn-white {
+  background-color: white !important;
+  border: 2px solid var(--color-gray-border) !important;
+  border-bottom: 5px solid var(--color-gray-border) !important;
+  color: var(--color-primary-green) !important;
+}
+.btn-white:hover {
+  background-color: var(--color-surface-container-low) !important;
+  border-color: var(--color-gray-border-dark) !important;
+}
+
+.btn-disabled {
+  background-color: var(--color-gray-border) !important;
+  border-bottom: 5px solid var(--color-gray-border-dark) !important;
+  color: var(--color-gray-400) !important;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Hover-to-reveal scrollbar styling (Webkit) */
+.hover-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.hover-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.hover-scrollbar::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 3px;
+  transition: background-color 0.2s ease;
+}
+.hover-scrollbar:hover::-webkit-scrollbar-thumb {
+  background: rgba(88, 204, 2, 0.28);
+}
+.hover-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(70, 163, 2, 0.46);
+}
+.hover-scrollbar::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* Hover-to-reveal scrollbar styling (Firefox) */
+.hover-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  transition: scrollbar-color 0.2s ease;
+}
+.hover-scrollbar:hover {
+  scrollbar-color: rgba(88, 204, 2, 0.34) transparent;
+}
+
+/* Learning-page scroll areas keep visible, low-noise bars for scroll affordance. */
+.learning-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(88, 204, 2, 0.32) transparent;
+  overscroll-behavior: contain;
+}
+
+.learning-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.learning-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.learning-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(88, 204, 2, 0.26);
+  border-radius: 999px;
+}
+
+.learning-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(70, 163, 2, 0.44);
+}
+
+.learning-scrollbar::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* Sofi search animation (used in Socratic chat typing indicator) */
+@keyframes searchMotion {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(4px, -3px) rotate(10deg); }
+  50% { transform: translate(8px, 0) rotate(0deg); }
+  75% { transform: translate(4px, 5px) rotate(-10deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+.anim-search {
+  animation: searchMotion 3s infinite ease-in-out;
+}
+
+@keyframes pulseSoft {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+.anim-pulse-soft {
+  animation: pulseSoft 1.5s infinite ease-in-out;
+}
+
+@keyframes wave-flow {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes wave-flow-reverse {
+  0% { transform: translate3d(-50%, 0, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+.wave-progress-flow {
+  animation: wave-flow 8s linear infinite;
+}
+
+.wave-progress-flow-reverse {
+  animation: wave-flow-reverse 6s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wave-progress-flow,
+  .wave-progress-flow-reverse {
+    animation: none;
   }
 }

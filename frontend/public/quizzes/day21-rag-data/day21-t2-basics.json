@@ -1,0 +1,210 @@
+{
+  "id": "day21-t2-basics",
+  "parent_id": "day21-rag-data",
+  "topic_title": "Day 21: CI/CD for AI Systems",
+  "title": "Phần 1: Experiment Tracking & Model Registry với MLflow",
+  "description": "Đánh giá kiến thức cơ bản về ghi nhận tham số, metrics, artifacts, signatures trong MLflow, autologging cho LLM và quản lý vòng đời model.",
+  "difficulty": "dễ",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Bốn thành phần cốt lõi của nền tảng MLflow quản trị vòng đời ML là gì?",
+      "options": {
+        "A": "Bao gồm Tracking (Theo dõi), Projects (Dự án), Models (Mô hình) và Registry (Kho đăng ký).",
+        "B": "Bao gồm Pipeline (Đường ống), Datasets (Dữ liệu), Training (Huấn luyện) và Inference (Suy luận).",
+        "C": "Bao gồm Storage (Lưu trữ), Compute (Tính toán), Networking (Mạng) và Security (Bảo mật).",
+        "D": "Bao gồm Parsing (Phân tích), Cleaning (Lọc), Embedding (Nhúng) và Retrieval (Truy xuất)."
+      },
+      "answer": "A",
+      "explanation": "MLflow được chia thành bốn thành phần chính: Tracking (Log thực nghiệm), Projects (Đóng gói code), Models (Đóng gói model), và Model Registry (Quản lý vòng đời).",
+      "hints": [
+        "Các thành phần này hỗ trợ quản lý từ thí nghiệm cho đến triển khai.",
+        "Mỗi thành phần giải quyết một bài toán cụ thể về tính nhất quán và quản lý.",
+        "Đáp án đúng chứa cả bốn từ khóa: Tracking, Projects, Models, và Registry."
+      ],
+      "concepts": [
+        "d21-t2-cicd"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Trong MLflow Tracking, khái niệm tham số (Parameters) dùng để chỉ loại thông tin nào?",
+      "options": {
+        "A": "Các cấu hình, siêu tham số và phiên bản dữ liệu bất biến trong một run.",
+        "B": "Các chỉ số độ chính xác thay đổi liên tục trong suốt quá trình chạy.",
+        "C": "Các tệp đồ thị ma trận nhầm lẫn được lưu trữ cùng với mô hình.",
+        "D": "Sơ đồ đầu vào và đầu ra tự động được tạo ra khi serving."
+      },
+      "answer": "A",
+      "explanation": "Parameters (params) trong MLflow là các giá trị cố định, bất biến trong suốt quá trình chạy của một run, ví dụ như learning rate, batch size, hoặc data version.",
+      "hints": [
+        "Đây là các siêu tham số đầu vào dùng để thiết lập quá trình chạy.",
+        "Chúng không thay đổi giá trị theo từng epoch hay step của quá trình huấn luyện.",
+        "Đáp án đúng là các cấu hình, siêu tham số và phiên bản dữ liệu bất biến."
+      ],
+      "concepts": [
+        "d21-t2-cicd"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Trong MLflow Tracking, các chỉ số (Metrics) được sử dụng để làm gì?",
+      "options": {
+        "A": "Các tệp cấu hình ban đầu không bao giờ thay đổi trong một lượt chạy.",
+        "B": "Các giá trị độ chính xác, hàm mất mát được ghi lại tại mỗi step.",
+        "C": "Các đoạn mã nguồn dùng để tiền xử lý dữ liệu đầu vào hệ thống.",
+        "D": "Đường dẫn liên kết đến kho lưu trữ dữ liệu lớn từ xa của dự án."
+      },
+      "answer": "B",
+      "explanation": "Metrics là các giá trị số có thể thay đổi và được log định kỳ tại các step hay epoch khác nhau, ví dụ như train loss, validation accuracy để vẽ đồ thị so sánh.",
+      "hints": [
+        "Đây là các kết quả đầu ra phản ánh chất lượng huấn luyện qua thời gian.",
+        "Chúng giúp lập trình viên giám sát quá trình hội tụ hoặc quá khớp của model.",
+        "Đáp án đúng nói về các giá trị độ chính xác, hàm mất mát ghi lại mỗi step."
+      ],
+      "concepts": [
+        "d21-t2-cicd"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Khái niệm tệp tin đầu ra (Artifacts) trong MLflow dùng để chỉ cái gì?",
+      "options": {
+        "A": "Các siêu tham số dùng để cấu hình kích thước của mô hình ngôn ngữ.",
+        "B": "Các tệp đầu ra như đồ thị, ảnh ma trận nhầm lẫn hoặc file config.",
+        "C": "Sơ đồ dữ liệu đầu vào và đầu ra của mô hình dùng serving.",
+        "D": "Các nhãn phân loại dữ liệu do con người tự gán cho tệp tin."
+      },
+      "answer": "B",
+      "explanation": "Artifacts là các file kết quả đầu ra của quá trình huấn luyện được lưu trữ đi kèm với run, ví dụ như đồ thị huấn luyện, file trọng số, hoặc file cấu hình YAML.",
+      "hints": [
+        "Đây là các dữ liệu nhị phân hoặc văn bản được tạo ra sau run.",
+        "Giúp lập trình viên lưu trữ và tải về các trực quan hóa hay cấu hình chạy.",
+        "Đáp án đúng chỉ ra các tệp đầu ra như đồ thị, ma trận nhầm lẫn."
+      ],
+      "concepts": [
+        "d21-t2-cicd"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Model Signature trong MLflow đóng vai trò quan trọng gì trong việc triển khai?",
+      "options": {
+        "A": "Tên đăng ký duy nhất của mô hình trên máy chủ lưu trữ đám mây.",
+        "B": "Sơ đồ kiểu dữ liệu đầu vào và đầu ra cần thiết cho việc serving.",
+        "C": "Đoạn mã băm bảo mật dùng để xác thực quyền truy cập của người dùng.",
+        "D": "Chữ ký số của lập trình viên đã phê duyệt mô hình lên staging."
+      },
+      "answer": "B",
+      "explanation": "Model Signature mô tả cấu trúc dữ liệu đầu vào (inputs) và đầu ra (outputs) của mô hình. Đây là điều kiện bắt buộc để các công cụ tự động tạo serving endpoint chính xác.",
+      "hints": [
+        "Nó đóng vai trò như một hợp đồng dữ liệu (data contract) của mô hình.",
+        "Giúp phát hiện sớm các lỗi sai lệch kiểu dữ liệu trước khi gửi request.",
+        "Đáp án đúng là sơ đồ kiểu dữ liệu đầu vào và đầu ra cho serving."
+      ],
+      "concepts": [
+        "d21-t2-cicd"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Tính năng LLM Autologging trong MLflow (phiên bản 2.8 trở lên) đem lại lợi ích gì?",
+      "options": {
+        "A": "Tự động dịch các phản hồi của mô hình sang nhiều ngôn ngữ khác.",
+        "B": "Tự động tắt nguồn máy chủ khi mô hình gặp lỗi quá tải bộ nhớ.",
+        "C": "Tự động ghi nhận prompts, responses, độ trễ và token mà không sửa code.",
+        "D": "Tự động tải các tệp dữ liệu lớn từ kho lưu trữ đám mây."
+      },
+      "answer": "C",
+      "explanation": "LLM Autologging tự động theo dõi và ghi lại các thông tin như prompt templates, prompt/response content, token usage, và latency mà không cần lập trình viên thay đổi code chạy.",
+      "hints": [
+        "Chỉ cần gọi một hàm autolog duy nhất trước khi gọi API mô hình.",
+        "Hỗ trợ ghi nhận thông tin hội thoại để phân tích chất lượng RAG sau này.",
+        "Đáp án là tự động ghi prompts, responses, độ trễ và token không sửa code."
+      ],
+      "concepts": [
+        "d21-t2-cicd"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Những thư viện hoặc dịch vụ AI nào được hỗ trợ bởi tính năng LLM Autologging của MLflow?",
+      "options": {
+        "A": "Chỉ hỗ trợ thư viện PyTorch và TensorFlow cho các mô hình học sâu.",
+        "B": "Chỉ hỗ trợ các API của Google Cloud và Amazon Web Services phục vụ.",
+        "C": "Nó hỗ trợ các thư viện phổ biến gồm OpenAI, LangChain, LlamaIndex và Anthropic Claude.",
+        "D": "Hỗ trợ các cơ sở dữ liệu quan hệ như PostgreSQL và MySQL cho dự án."
+      },
+      "answer": "C",
+      "explanation": "LLM Autologging trong MLflow hỗ trợ tích hợp trực tiếp với các thư viện phổ biến bao gồm OpenAI, LangChain, LlamaIndex, và Anthropic Claude.",
+      "hints": [
+        "Các framework phát triển ứng dụng dựa trên mô hình ngôn ngữ lớn (LLM).",
+        "Giúp tự động hóa việc theo dõi luồng dữ liệu của các tác tử hoặc RAG.",
+        "Đáp án chứa các thư viện: OpenAI, LangChain, LlamaIndex và Anthropic."
+      ],
+      "concepts": [
+        "d21-t2-cicd"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Khi một phiên bản mô hình mới được đăng ký (register) vào MLflow Registry, trạng thái mặc định của nó là gì?",
+      "options": {
+        "A": "Phiên bản mới sẽ tự động được đưa thẳng lên giai đoạn Production.",
+        "B": "Phiên bản mới sẽ tự động bị lưu trữ vào giai đoạn Archived luôn.",
+        "C": "Phiên bản mới sẽ mặc định bắt đầu ở giai đoạn None ban đầu.",
+        "D": "Phiên bản mới sẽ tự động được đưa lên giai đoạn Staging kiểm thử."
+      },
+      "answer": "C",
+      "explanation": "Một phiên bản mô hình mới đăng ký vào Registry sẽ luôn bắt đầu ở giai đoạn mặc định là 'None', trước khi được chuyển đổi stage bằng tay hoặc bằng webhook.",
+      "hints": [
+        "Đây là trạng thái khởi tạo chưa được gán bất kỳ vai trò thử nghiệm nào.",
+        "Lập trình viên hoặc CI/CD pipeline phải chủ động chuyển stage cho nó.",
+        "Đáp án đúng là bắt đầu ở giai đoạn None ban đầu."
+      ],
+      "concepts": [
+        "d21-t2-cicd"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Bốn giai đoạn vòng đời (stages) của một phiên bản mô hình trong MLflow Model Registry là gì?",
+      "options": {
+        "A": "Bao gồm Development (Phát triển), Testing (Kiểm thử), Staging (Thử nghiệm) và Production (Vận hành).",
+        "B": "Bao gồm Raw (Thô), Processed (Đã xử lý), Feature (Đặc trưng) và Model (Mô hình).",
+        "C": "Bao gồm None (Không), Draft (Nháp), Review (Đánh giá) và Approved (Phê duyệt) hệ thống.",
+        "D": "Bao gồm None (Mới), Staging (Thử nghiệm), Production (Vận hành) và Archived (Lưu trữ)."
+      },
+      "answer": "D",
+      "explanation": "Vòng đời chuẩn của một model version trong MLflow Registry bao gồm bốn stages duy nhất: None -> Staging -> Production -> Archived.",
+      "hints": [
+        "Các trạng thái này giúp kiểm soát luồng kiểm thử và triển khai mô hình.",
+        "Mô hình cũ bị thay thế ở Production sẽ được chuyển sang Archived để dự phòng.",
+        "Đáp án đúng chứa các stage: None, Staging, Production và Archived."
+      ],
+      "concepts": [
+        "d21-t2-cicd"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Cách chuẩn mực nhất để load một mô hình cụ thể từ MLflow Registry để chạy suy luận là gì?",
+      "options": {
+        "A": "Sử dụng đường dẫn URL trực tiếp đến thư mục chứa code của bạn.",
+        "B": "Tải toàn bộ lịch sử các phiên bản của mô hình từ git.",
+        "C": "Sử dụng mã băm bảo mật của lần commit cuối cùng trên GitHub.",
+        "D": "Sử dụng URI chỉ rõ tên mô hình và alias hoặc version đăng ký."
+      },
+      "answer": "D",
+      "explanation": "Bạn nên load mô hình bằng URI dạng 'models:/<model_name>/<version>' hoặc dùng alias đã cấu hình như 'models:/<model_name>@champion' để đảm bảo tải đúng phiên bản mong muốn.",
+      "hints": [
+        "MLflow cung cấp giao thức URI chuẩn để truy cập mô hình trong Registry.",
+        "Sử dụng alias giúp mã nguồn không bị hardcode số phiên bản cụ thể.",
+        "Đáp án chỉ ra sử dụng URI chỉ rõ tên mô hình và alias/version."
+      ],
+      "concepts": [
+        "d21-t2-cicd"
+      ]
+    }
+  ]
+}

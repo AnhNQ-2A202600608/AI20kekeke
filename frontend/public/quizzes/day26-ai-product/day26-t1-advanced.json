@@ -1,0 +1,210 @@
+{
+  "id": "day26-t1-advanced",
+  "parent_id": "day26-ai-product",
+  "topic_title": "Day 26: Fundraising",
+  "title": "Phần 3: Tính Toán Cap Table & Điều Khoản Veto/Anti-Dilution",
+  "description": "Đánh giá kiến thức nâng cao về tính toán pha loãng Cap Table, ảnh hưởng của liquidation multiplier, các quyền veto và bối cảnh gọi vốn Việt Nam.",
+  "difficulty": "khó",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Sự khác biệt cốt lõi về bản chất bảo vệ quyền lợi giữa hai điều khoản Drag-along (Quyền kéo theo) và Tag-along (Quyền đi theo) là gì?",
+      "options": {
+        "A": "Drag-along bảo vệ founders không bị sa thải, Tag-along giúp nhân sự có thưởng.",
+        "B": "Drag-along buộc đối tác phải rót thêm vốn, Tag-along cho phép rút vốn trước.",
+        "C": "Drag-along bảo vệ cổ đông thiểu số, Tag-along bảo vệ nhóm cổ đông kiểm soát.",
+        "D": "Drag-along buộc thiểu số phải bán cổ phần, Tag-along cho thiểu số cùng bán."
+      },
+      "answer": "D",
+      "explanation": "Drag-along cho phép cổ đông đa số buộc cổ đông thiểu số phải bán cổ phần của họ khi có thương vụ thâu tóm toàn bộ công ty. Tag-along bảo vệ cổ đông thiểu số bằng cách cho họ quyền tham gia bán cổ phần của mình chung với cổ đông đa số khi họ thoái vốn.",
+      "hints": [
+        "Nghĩ về hành động cưỡng chế bán (drag) so với hành động xin tham gia bán chung (tag).",
+        "Drag-along giúp dọn đường cho các thương vụ M&A diễn ra trơn tru mà không bị cổ đông nhỏ cản trở.",
+        "Đáp án chính xác là Drag-along buộc thiểu số bán cổ phần, Tag-along cho thiểu số cùng bán."
+      ],
+      "concepts": [
+        "d26-t1-fundraising"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Cơ chế chống pha loãng Full Ratchet (Chống pha loãng tuyệt đối) bảo vệ nhà đầu tư thế nào khi startup gọi vốn vòng sau với định giá thấp hơn (Down-round)?",
+      "options": {
+        "A": "Tự động hạ giá chuyển đổi của nhà đầu tư cũ bằng đúng giá của vòng mới phát hành.",
+        "B": "Tự động hoàn trả toàn bộ số tiền mặt ban đầu kèm lãi suất ngân hàng cho nhà đầu tư.",
+        "C": "Yêu cầu các founders phải chuyển nhượng toàn bộ nhà cửa cá nhân làm tài sản thế chấp.",
+        "D": "Buộc startup phải dừng hoạt động kinh doanh ngay lập tức để thực hiện thanh lý tài sản."
+      },
+      "answer": "A",
+      "explanation": "Full Ratchet là cơ chế chống pha loãng khắc nghiệt nhất. Khi xảy ra down-round, giá cổ phiếu của nhà đầu tư cũ sẽ được điều chỉnh giảm bằng đúng mức giá của vòng mới, bất kể số lượng cổ phiếu vòng mới phát hành là bao nhiêu, gây pha loãng cực nặng cho founders.",
+      "hints": [
+        "Đây là cơ chế 'san bằng giá' không tính đến trọng số khối lượng cổ phần mới phát hành.",
+        "Toàn bộ gánh nặng bù đắp giá trị cổ phiếu giảm được trích từ phần sở hữu của founders.",
+        "Đáp án chính xác là tự động hạ giá chuyển đổi của nhà đầu tư cũ bằng giá vòng mới."
+      ],
+      "concepts": [
+        "d26-t1-fundraising"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Điểm khác biệt chính giữa hai phương pháp chống pha loãng Weighted Average (Trung bình gia quyền) và Full Ratchet là gì?",
+      "options": {
+        "A": "Weighted Average chỉ áp dụng cho các startup công nghệ sinh học chứ không dùng cho AI.",
+        "B": "Weighted Average bảo vệ quyền kiểm soát biểu quyết, còn Full Ratchet bảo vệ dòng tiền mặt.",
+        "C": "Weighted Average tính đến khối lượng cổ phần mới phát hành, Full Ratchet thì không.",
+        "D": "Weighted Average bắt buộc phải thông qua sự phê duyệt của tòa án kinh tế quốc tế."
+      },
+      "answer": "C",
+      "explanation": "Weighted Average (gồm Broad-based và Narrow-based) điều chỉnh giá chuyển đổi dựa trên cả mức giá mới và khối lượng cổ phần mới phát hành (mức độ pha loãng nhẹ nhàng hơn). Full Ratchet bỏ qua khối lượng, chỉ lấy mức giá thấp nhất làm chuẩn.",
+      "hints": [
+        "Nghĩ về cụm từ 'trung bình gia quyền' - tính toán có trọng số dựa trên số lượng phần tử.",
+        "Weighted Average mang tính công bằng và thân thiện hơn với đội ngũ founders trong các down-round.",
+        "Đáp án chính xác là Weighted Average tính đến khối lượng cổ phần mới phát hành, Full Ratchet thì không."
+      ],
+      "concepts": [
+        "d26-t1-fundraising"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Theo số liệu thống kê năm 2025 trong tài liệu học tập, thị trường đầu tư mạo hiểm (VC) tại Việt Nam ghi nhận sự suy giảm thế nào so với giai đoạn trước?",
+      "options": {
+        "A": "Số lượng thương vụ tăng mạnh lên mức kỷ lục nhưng tổng giá trị deal giảm nhẹ.",
+        "B": "Số lượng thương vụ co hẹp mạnh xuống còn 41 deal và tổng giá trị giảm còn 215M USD.",
+        "C": "Thị trường hoàn toàn đóng băng, không ghi nhận bất kỳ thương vụ gọi vốn thành công nào.",
+        "D": "Tổng giá trị deal tăng vọt gấp đôi nhờ vào làn sóng đầu tư mạnh mẽ vào các mô hình LLM."
+      },
+      "answer": "B",
+      "explanation": "Năm 2025, hoạt động VC tại Việt Nam tiếp tục xu hướng suy giảm từ đỉnh 2021, số lượng deal giảm mạnh xuống còn 41 deals và tổng giá trị deal chỉ đạt 215 triệu USD, phản ánh sự thận trọng cao độ của dòng vốn ngoại.",
+      "hints": [
+        "Đây là con số phản ánh mùa đông gọi vốn (funding winter) kéo dài.",
+        "Số lượng deal giảm xuống dưới mốc năm mươi thương vụ trong cả năm.",
+        "Đáp án chính xác là số lượng thương vụ co hẹp còn 41 deal và tổng giá trị còn 215M USD."
+      ],
+      "concepts": [
+        "d26-t1-fundraising"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Đâu là nguyên nhân cốt lõi dẫn đến sự chuyển dịch khẩu vị đầu tư của các quỹ VC tại thị trường Việt Nam giai đoạn 2025-2026?",
+      "options": {
+        "A": "Sự xuất hiện của các quy định pháp luật cấm hoàn toàn hoạt động đầu tư mạo hiểm.",
+        "B": "Sự suy giảm khẩu vị với các mô hình chưa chứng minh được hiệu quả unit economics.",
+        "C": "Toàn bộ các nhà sáng lập startup công nghệ chuyển hướng sang làm việc cho tập đoàn lớn.",
+        "D": "Chi phí thuê tài nguyên tính toán GPU tại thị trường Việt Nam rẻ hơn các nước khác."
+      },
+      "answer": "B",
+      "explanation": "Nhà đầu tư đã rút kinh nghiệm từ chu kỳ 5 năm trước. Họ giảm appetite (khẩu vị) cho các mô hình kinh doanh chưa được chứng minh (unproven business models) và tập trung dòng vốn vào các startup có Unit Economics bền vững và khả năng sinh lời thực tế.",
+      "hints": [
+        "Nhà đầu tư không còn vung tiền cho các tăng trưởng nóng đốt tiền vô tội vạ.",
+        "Họ yêu cầu các câu trả lời rõ ràng về dòng tiền và khả năng tự nuôi sống của doanh nghiệp.",
+        "Đáp án chính xác là sự suy giảm khẩu vị với các mô hình chưa chứng minh unit economics."
+      ],
+      "concepts": [
+        "d26-t1-fundraising"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Trong CAP Table, làm thế nào để tính toán đơn giá mỗi cổ phần (Share Price) mới phát hành cho nhà đầu tư ở vòng gọi vốn hiện tại?",
+      "options": {
+        "A": "Lấy định giá Pre-money chia cho tổng số lượng cổ phần lưu hành trước gọi vốn.",
+        "B": "Lấy định giá Post-money nhân với tỷ lệ pha loãng dự kiến của đội ngũ founders.",
+        "C": "Chia đều tổng số tiền đầu tư mới cho số lượng thành viên sáng lập trong công ty.",
+        "D": "Lấy định giá Pre-money cộng với số tiền đầu tư mới rồi đem nhân với mười phần trăm."
+      },
+      "answer": "A",
+      "explanation": "Share Price = Pre-money Valuation / Pre-money Outstanding Shares. Đây là công thức chuẩn để xác định giá trị của một cổ phần trước khi khoản tiền đầu tư mới được đưa vào.",
+      "hints": [
+        "Giá trị mỗi cổ phần được xác định trước khi dòng tiền mới làm thay đổi số lượng cổ phiếu.",
+        "Chia định giá trước gọi vốn cho tổng số lượng cổ phần đang lưu hành của các cổ đông cũ.",
+        "Đáp án chính xác là lấy định giá Pre-money chia cho tổng số lượng cổ phần lưu hành trước."
+      ],
+      "concepts": [
+        "d26-t1-fundraising"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Nếu một nhà đầu tư sở hữu quyền Tag-along (Quyền đi theo), khi founders quyết định bán 30% cổ phần của họ cho bên thứ ba, nhà đầu tư có quyền gì?",
+      "options": {
+        "A": "Chặn đứng hoàn toàn thương vụ bán cổ phần đó của founders bằng quyền phủ quyết veto.",
+        "B": "Yêu cầu các founders phải mua lại toàn bộ cổ phần của mình với giá gốc ban đầu.",
+        "C": "Buộc bên mua phải mua một tỷ lệ cổ phần của nhà đầu tư theo cùng mức giá và điều kiện.",
+        "D": "Tự động tiếp quản vị trí giám đốc điều hành (CEO) của công ty sau khi founders bán xong."
+      },
+      "answer": "C",
+      "explanation": "Quyền Tag-along đảm bảo nhà đầu tư nhỏ không bị bỏ lại phía sau khi founders tìm được mối bán cổ phần tốt. Bên mua bắt buộc phải mua một lượng cổ phần tương ứng của nhà đầu tư theo cùng mức giá.",
+      "hints": [
+        "Đây là quyền 'đu theo' thương vụ để rút vốn an toàn cùng với người sáng lập.",
+        "Bảo vệ nhà đầu tư khỏi việc bị kẹt lại với một đối tác quản lý mới không quen biết.",
+        "Đáp án chính xác là buộc bên mua phải mua một tỷ lệ cổ phần của nhà đầu tư."
+      ],
+      "concepts": [
+        "d26-t1-fundraising"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Tại sao điều khoản Drag-along (Quyền kéo theo) lại là một yêu cầu bắt buộc của nhà đầu tư đa số khi có thương vụ thâu tóm M&A?",
+      "options": {
+        "A": "Để ép buộc các cổ đông thiểu số phải chịu trách nhiệm pháp lý thay cho founders.",
+        "B": "Để giảm bớt số tiền thuế thu nhập doanh nghiệp phát sinh từ thương vụ thâu tóm.",
+        "C": "Để tự động tăng giá trị của thương vụ thâu tóm lên gấp đôi so với giá trị ban đầu.",
+        "D": "Ngăn chặn cổ đông nhỏ dùng quyền sở hữu lẻ tẻ để cản trở hoặc phủ quyết việc bán công ty."
+      },
+      "answer": "D",
+      "explanation": "Bên mua (Acquirer) thường yêu cầu mua 100% công ty để nắm toàn quyền quyết định. Nếu không có Drag-along, một cổ đông nhỏ nắm 1% có thể từ chối bán, làm đổ bể toàn bộ thương vụ M&A lớn của công ty.",
+      "hints": [
+        "Nghĩ về việc một nhóm cổ đông nhỏ gây khó dễ để đòi hỏi mức giá cao hơn vô lý.",
+        "Giúp tạo ra sự thống nhất hành động tuyệt đối khi đa số cổ đông đã đồng ý bán.",
+        "Đáp án chính xác là ngăn chặn cổ đông nhỏ dùng quyền lẻ tẻ để cản trở bán công ty."
+      ],
+      "concepts": [
+        "d26-t1-fundraising"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Khi xảy ra sự kiện Down-round, điều khoản Full Ratchet gây ra tác hại nghiêm trọng nào đối với đội ngũ sáng lập (founders)?",
+      "options": {
+        "A": "Pha loãng cực kỳ nặng nề tỷ lệ sở hữu của founders vì phải bù thêm nhiều cổ phần.",
+        "B": "Buộc các founders phải hoàn trả lại toàn bộ tiền lương đã nhận trong năm qua.",
+        "C": "Hệ thống máy chủ đám mây của startup sẽ bị ngắt kết nối tự động do thiếu tiền.",
+        "D": "Founders bị tước bỏ hoàn toàn quyền biểu quyết trong mọi cuộc họp hội đồng quản trị."
+      },
+      "answer": "A",
+      "explanation": "Để hạ giá cổ phần của nhà đầu tư cũ xuống bằng giá mới, công ty bắt buộc phải phát hành thêm một lượng lớn cổ phần mới cho nhà đầu tư cũ hoàn toàn miễn phí. Lượng cổ phần mới này làm pha loãng nghiêm trọng tỷ lệ sở hữu của founders.",
+      "hints": [
+        "Nghĩ về việc phải in thêm cổ phiếu để đền bù giá trị cho nhà đầu tư cũ.",
+        "Mọi sự đền bù này đều trực tiếp cắt máu từ phần sở hữu cổ phần còn lại của founders.",
+        "Đáp án chính xác là pha loãng cực kỳ nặng nề tỷ lệ sở hữu của founders."
+      ],
+      "concepts": [
+        "d26-t1-fundraising"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Sự sụt giảm mạnh về cả số lượng deal và tổng giá trị gọi vốn của Việt Nam năm 2025 phản ánh thực tế nào của thị trường?",
+      "options": {
+        "A": "Sự biến mất hoàn toàn của các nhân sự lập trình viên AI chất lượng cao tại Việt Nam.",
+        "B": "Sự chuyển dịch dòng vốn mạo hiểm sang các thị trường châu Phi và Nam Mỹ hoàn toàn.",
+        "C": "Thời kỳ dòng tiền dễ (easy money) đã kết thúc, thị trường bước vào giai đoạn chọn lọc khốc liệt.",
+        "D": "Các startup Việt Nam đã tự chủ tài chính hoàn toàn và không có nhu cầu gọi vốn ngoài."
+      },
+      "answer": "C",
+      "explanation": "Sự sụt giảm phản ánh giai đoạn cuối của thời kỳ tiền rẻ. Các nhà đầu tư thắt chặt hầu bao, tăng cường thẩm định (due diligence) và chỉ rót vốn cho những mô hình kinh doanh có hiệu quả thực tế rõ ràng.",
+      "hints": [
+        "Nghĩ về khái niệm 'Mùa đông gọi vốn' (Funding Winter) trong giới công nghệ toàn cầu.",
+        "Dòng vốn trở nên kén chọn và khắt khe hơn với các lời hứa tăng trưởng ảo.",
+        "Đáp án chính xác là thời kỳ dòng tiền dễ đã kết thúc, thị trường bước vào giai đoạn chọn lọc."
+      ],
+      "concepts": [
+        "d26-t1-fundraising"
+      ]
+    }
+  ]
+}

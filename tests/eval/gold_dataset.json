@@ -1,0 +1,94 @@
+{
+  "__note__": "Bộ tập dữ liệu vàng (Gold Dataset) dùng cho kiểm định chất lượng RAG/Citation và chẩn đoán năng lực. Bản mẫu này chứa cả ca kiểm thử thực tế và các placeholder dành cho giáo viên biên soạn.",
+  "teacher_guide": {
+    "step_1": "Nhân bản các phần tử có 'is_placeholder': true và đổi thành 'is_placeholder': false.",
+    "step_2": "Điền câu hỏi của học sinh vào trường 'query' cho ca RAG.",
+    "step_3": "Chỉ định các slide tham chiếu thực tế vào trường 'expected_citations' dưới dạng mảng của [Tên tài liệu, Slide].",
+    "step_4": "Với ca chẩn đoán, thiết lập chuỗi nộp bài (attempts) gồm question_id và kết quả đúng/sai (is_correct), cùng với nút hổng gốc rễ thực tế mong muốn (expected_root_cause)."
+  },
+  "rag_citation_cases": [
+    {
+      "case_id": "rag_math_01",
+      "query": "Tỉ lệ bản đồ là gì?",
+      "expected_citations": [
+        ["SGK Lịch sử và địa lí 6 KNTT.pdf", 107]
+      ],
+      "expected_answer": "Tỉ lệ bản đồ cho biết mức độ thu nhỏ độ dài giữa các đối tượng trên bản đồ so với thực tế.",
+      "is_placeholder": false
+    },
+    {
+      "case_id": "rag_teacher_placeholder_1",
+      "query": "PLACEHOLDER_TEACHER_QUESTION_HERE",
+      "expected_citations": [
+        ["Tên_Sách_Hoặc_Slide.pdf", 1]
+      ],
+      "expected_answer": "PLACEHOLDER_TEACHER_EXPECTED_ANSWER_HERE",
+      "is_placeholder": true
+    }
+  ],
+  "diagnostic_cases": [
+    {
+      "case_id": "diag_math_happy_1",
+      "student_id": "student_happy_eval",
+      "surface_node": "M7.SDS.05",
+      "attempts": [
+        {"question_id": "q_m7_1", "is_correct": false},
+        {"question_id": "q_m7_2", "is_correct": false},
+        {"question_id": "q_m6_p1", "is_correct": false},
+        {"question_id": "q_m6_p2", "is_correct": false},
+        {"question_id": "q_m5_p1", "is_correct": true},
+        {"question_id": "q_m5_p2", "is_correct": true}
+      ],
+      "expected_root_cause": "M6.SDS.03",
+      "loai_ca": "happy",
+      "is_placeholder": false
+    },
+    {
+      "case_id": "diag_math_noise_1",
+      "student_id": "student_noise_eval",
+      "surface_node": "M7.SDS.05",
+      "attempts": [
+        {"question_id": "q_m7_1", "is_correct": false},
+        {"question_id": "q_m7_2", "is_correct": false},
+        {"question_id": "q_m6_p1", "is_correct": false},
+        {"question_id": "q_m6_p2", "is_correct": true},
+        {"question_id": "q_m6_p1", "is_correct": false},
+        {"question_id": "q_m5_p1", "is_correct": true},
+        {"question_id": "q_m5_p2", "is_correct": true}
+      ],
+      "expected_root_cause": "M6.SDS.03",
+      "loai_ca": "noise",
+      "is_placeholder": false
+    },
+    {
+      "case_id": "diag_math_adversarial_1",
+      "student_id": "student_adv_eval",
+      "surface_node": "M7.SDS.05",
+      "attempts": [
+        {"question_id": "q_m7_1", "is_correct": false},
+        {"question_id": "q_m7_2", "is_correct": false},
+        {"question_id": "q_m6_p1", "is_correct": false},
+        {"question_id": "q_m6_p2", "is_correct": false},
+        {"question_id": "q_m5_p1", "is_correct": false},
+        {"question_id": "q_m5_p2", "is_correct": false},
+        {"question_id": "q_m4_p1", "is_correct": true},
+        {"question_id": "q_m4_p2", "is_correct": true}
+      ],
+      "expected_root_cause": "M5.SDS.02",
+      "loai_ca": "adversarial",
+      "is_placeholder": false
+    },
+    {
+      "case_id": "diag_teacher_placeholder_2",
+      "student_id": "student_placeholder",
+      "surface_node": "Mã_YCCĐ_Bề_Mặt",
+      "attempts": [
+        {"question_id": "ID_Câu_Hỏi_1", "is_correct": false},
+        {"question_id": "ID_Câu_Hỏi_2", "is_correct": false}
+      ],
+      "expected_root_cause": "Mã_YCCĐ_Lỗ_Hổng_Gốc_Rễ_Mong_Đợi",
+      "loai_ca": "happy",
+      "is_placeholder": true
+    }
+  ]
+}

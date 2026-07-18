@@ -1,0 +1,210 @@
+{
+  "id": "day21-t2-pipeline",
+  "parent_id": "day21-rag-data",
+  "topic_title": "Day 21: CI/CD for AI Systems",
+  "title": "Phần 2: Quản Lý Phiên Bản Dữ Liệu DVC & Xây Dựng Reproducible Pipelines",
+  "description": "Đánh giá kiến thức về Data Version Control (DVC), quản lý tệp con trỏ .dvc, cấu hình remote storage S3/GCS và thực thi dvc repro tái tạo pipeline.",
+  "difficulty": "bình thường",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Lý do quan trọng nhất khiến việc quản lý phiên bản dữ liệu (data versioning) bằng Git không hiệu quả là gì?",
+      "options": {
+        "A": "Git không thể theo dõi hiệu quả các tệp dữ liệu lớn hàng Gigabyte.",
+        "B": "DVC giúp mô hình tự động sửa lỗi lập trình trong mã nguồn của bạn.",
+        "C": "Git đòi hỏi lập trình viên phải trả rất nhiều tiền bản quyền sử dụng.",
+        "D": "DVC tự động thực hiện việc mã hóa dữ liệu khách hàng an toàn."
+      },
+      "answer": "A",
+      "explanation": "Git được thiết kế để quản lý mã nguồn dạng text. Khi lưu trữ các file dữ liệu nhị phân lớn (như ảnh, video, parquet), Git sẽ bị phình to kích thước kho chứa và làm chậm hiệu năng trầm trọng.",
+      "hints": [
+        "Hãy nghĩ về hiệu năng và kích thước của thư mục .git khi lưu trữ file lớn.",
+        "Git thiếu các cơ chế lưu trữ phân tán và tối ưu cho dữ liệu nhị phân.",
+        "Đáp án đúng là Git không thể theo dõi hiệu quả các tệp dữ liệu lớn."
+      ],
+      "concepts": [
+        "d21-t2-cicd"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Tệp tin con trỏ dạng `.dvc` (ví dụ: `dataset.parquet.dvc`) thực chất chứa thông tin gì?",
+      "options": {
+        "A": "Tệp tin văn bản nhỏ chứa mã băm nội dung của tệp dữ liệu.",
+        "B": "File chứa toàn bộ nội dung nhị phân của mô hình ngôn ngữ lớn.",
+        "C": "Đoạn mã cấu hình các quyền truy cập của lập trình viên vào hệ thống.",
+        "D": "Đồ thị trực quan hóa các giai đoạn thực thi của đường ống dẫn dữ liệu."
+      },
+      "answer": "A",
+      "explanation": "File `.dvc` là một file text siêu nhỏ lưu trữ mã băm md5 của tệp dữ liệu và kích thước của nó. File này được commit lên Git thay thế cho file dữ liệu thật.",
+      "hints": [
+        "Nó đóng vai trò như một liên kết hoặc con trỏ đại diện cho dữ liệu thực tế.",
+        "Chỉ chứa siêu dữ liệu (metadata) mô tả để Git có thể theo dõi dễ dàng.",
+        "Đáp án đúng là tệp tin văn bản nhỏ chứa mã băm nội dung của tệp."
+      ],
+      "concepts": [
+        "d21-t2-cicd"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Cơ chế 'Content-Addressable Storage' (Lưu trữ theo nội dung) trong DVC hoạt động ra sao?",
+      "options": {
+        "A": "Dữ liệu được lưu trữ dựa trên địa chỉ IP của máy chủ gốc.",
+        "B": "Dữ liệu được lưu trữ dựa trên mã băm nội dung của chính nó.",
+        "C": "Dữ liệu được tự động gửi đến địa chỉ email của các nhà đầu tư.",
+        "D": "Dữ liệu được sắp xếp theo bảng chữ cái của tên tệp tin ban đầu."
+      },
+      "answer": "B",
+      "explanation": "Content-Addressable nghĩa là dữ liệu được lưu trữ dưới tên tệp chính là mã băm md5 nội dung của nó. Giúp loại bỏ trùng lặp dữ liệu (deduplication) khi nhiều phiên bản có cùng nội dung.",
+      "hints": [
+        "Tên của file trong bộ nhớ cache của DVC được đặt theo giá trị md5 băm.",
+        "Dù bạn đổi tên file ở ngoài, nội dung không đổi thì không tốn thêm dung lượng.",
+        "Đáp án đúng là dữ liệu được lưu trữ dựa trên mã băm nội dung."
+      ],
+      "concepts": [
+        "d21-t2-cicd"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Trong môi trường production, tệp dữ liệu thật được DVC đẩy lên lưu trữ ở đâu?",
+      "options": {
+        "A": "Trên kho lưu trữ mã nguồn công cộng GitHub của doanh nghiệp mình.",
+        "B": "Trên các dịch vụ lưu trữ đám mây như Amazon S3 hoặc GCS.",
+        "C": "Trong bộ nhớ cache tạm thời trên máy tính của lập trình viên.",
+        "D": "Trong các cơ sở dữ liệu quan hệ như PostgreSQL hoặc MySQL hệ thống."
+      },
+      "answer": "B",
+      "explanation": "DVC hỗ trợ cấu hình remote storage trên các dịch vụ lưu trữ đối tượng đám mây như Amazon S3, Google Cloud Storage (GCS), Azure Blob hoặc máy chủ SSH từ xa.",
+      "hints": [
+        "Đây là các kho lưu trữ lưu dung lượng lớn, giá rẻ và bảo mật cao.",
+        "Cho phép toàn bộ thành viên trong dự án dễ dàng tải về qua lệnh pull.",
+        "Đáp án chỉ ra trên dịch vụ đám mây như Amazon S3 hoặc GCS."
+      ],
+      "concepts": [
+        "d21-t2-cicd"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Tệp tin cấu hình `dvc.yaml` trong một dự án máy học đóng vai trò gì?",
+      "options": {
+        "A": "Các siêu tham số dùng để cấu hình kích thước của mô hình.",
+        "B": "Các giai đoạn thực thi của pipeline bao gồm lệnh, dependencies và outputs.",
+        "C": "Bảng ghi nhận kết quả so sánh hiệu năng giữa các lần chạy.",
+        "D": "Toàn bộ thông tin tài khoản truy cập vào cơ sở dữ liệu Supabase."
+      },
+      "answer": "B",
+      "explanation": "Tệp `dvc.yaml` khai báo cấu trúc pipeline thực thi bao gồm các stages (bước chuẩn bị, huấn luyện, đánh giá), câu lệnh chạy, các tệp phụ thuộc (deps) và kết quả đầu ra (outs/metrics).",
+      "hints": [
+        "Nó đóng vai trò định nghĩa đường ống dẫn dữ liệu (pipeline DAG) có tính tái tạo.",
+        "Mô tả mối quan hệ phụ thuộc giữa các file code và file dữ liệu đầu ra.",
+        "Đáp án là các giai đoạn thực thi pipeline gồm lệnh, dependencies và outputs."
+      ],
+      "concepts": [
+        "d21-t2-cicd"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Hành vi thông minh mặc định của lệnh `dvc repro` khi chạy lại pipeline là gì?",
+      "options": {
+        "A": "Tải toàn bộ dữ liệu từ kho lưu trữ đám mây về máy tính.",
+        "B": "Xóa toàn bộ bộ nhớ cache tạm thời của hệ thống dữ liệu.",
+        "C": "Chỉ chạy lại các giai đoạn có sự thay đổi về dependencies.",
+        "D": "Tự động đẩy toàn bộ kết quả thực nghiệm lên máy chủ MLflow."
+      },
+      "answer": "C",
+      "explanation": "Lệnh `dvc repro` kiểm tra xem các file dependencies của từng stage có thay đổi không. Nếu không đổi, nó bỏ qua việc chạy lại và lấy luôn output từ cache, tiết kiệm tối đa thời gian tính toán.",
+      "hints": [
+        "Cơ chế smart caching dựa trên dấu vân tay (hashes) của các dependencies.",
+        "Tránh việc chạy lại các tiến trình huấn luyện tốn kém khi không cần thiết.",
+        "Đáp án đúng là chỉ chạy lại giai đoạn có sự đổi về dependencies."
+      ],
+      "concepts": [
+        "d21-t2-cicd"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Lệnh `dvc dag` trong terminal cung cấp cho nhà phát triển thông tin gì?",
+      "options": {
+        "A": "So sánh kết quả độ chính xác giữa hai phiên bản mô hình.",
+        "B": "Tự động thiết lập kết nối đến máy chủ từ xa của DVC.",
+        "C": "Hiển thị sơ đồ dạng đồ thị các dependencies giữa các giai đoạn.",
+        "D": "Xóa toàn bộ các tệp tin con trỏ trong thư mục dự án."
+      },
+      "answer": "C",
+      "explanation": "Lệnh `dvc dag` hiển thị sơ đồ mạng lưới dependencies dạng đồ thị định hướng không chu trình (DAG) giữa các stages trực tiếp trong terminal.",
+      "hints": [
+        "Giúp lập trình viên kiểm tra trực quan các luồng xử lý của pipeline.",
+        "Xem giai đoạn nào phụ thuộc vào kết quả của giai đoạn nào trước đó.",
+        "Đáp án đúng là hiển thị sơ đồ dạng đồ thị các dependencies giữa stages."
+      ],
+      "concepts": [
+        "d21-t2-cicd"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Làm thế nào để so sánh các chỉ số hiệu năng (metrics) giữa các commits khác nhau bằng DVC?",
+      "options": {
+        "A": "Sử dụng công cụ trực quan hóa đồ thị của thư viện Matplotlib.",
+        "B": "Sử dụng giao diện web UI của hệ thống lưu trữ Amazon S3.",
+        "C": "Sử dụng lệnh dvc metrics show để xem sự chênh lệch số liệu.",
+        "D": "Mở trực tiếp các tệp tin log của hệ thống để so sánh."
+      },
+      "answer": "C",
+      "explanation": "Lệnh `dvc metrics show` hoặc `dvc metrics diff` hiển thị sự khác biệt về các thông số hiệu năng (như loss, accuracy) giữa commit hiện tại và các commit cũ trong Git.",
+      "hints": [
+        "DVC đọc các tệp tin metrics được khai báo trong dvc.yaml để so sánh.",
+        "Giúp đánh giá nhanh xem code mới có làm giảm chất lượng mô hình không.",
+        "Đáp án chỉ ra dùng lệnh dvc metrics show để xem chênh lệch số liệu."
+      ],
+      "concepts": [
+        "d21-t2-cicd"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Tính năng DVC Experiments đem lại ưu điểm gì lớn cho quá trình tối ưu siêu tham số?",
+      "options": {
+        "A": "Tự động thay đổi mã nguồn của mô hình ngôn ngữ lớn gốc.",
+        "B": "Tự động tăng giá trị của siêu tham số cho đến khi sập nguồn.",
+        "C": "Tự động gửi email báo cáo hiệu năng đến các nhà đầu tư.",
+        "D": "Cho phép chạy và so sánh nhiều thực nghiệm mà không tạo branch."
+      },
+      "answer": "D",
+      "explanation": "DVC Experiments cho phép lập trình viên chạy hàng chục lượt thử nghiệm tham số khác nhau và lưu giữ kết quả tạm thời mà không cần tạo hàng loạt branch Git rác.",
+      "hints": [
+        "Mỗi thực nghiệm được gán một định danh ngẫu nhiên và lưu trong DVC ref.",
+        "Sau khi tìm được cấu hình tốt nhất, bạn mới apply kết quả vào main workspace.",
+        "Đáp án là cho phép chạy và so sánh nhiều thực nghiệm không tạo branch."
+      ],
+      "concepts": [
+        "d21-t2-cicd"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Làm thế nào để một thành viên mới trong dự án tái tạo chính xác kết quả mô hình của bạn?",
+      "options": {
+        "A": "Chỉ cần chạy lệnh git checkout đến phiên bản code cuối cùng.",
+        "B": "Chỉ cần tải toàn bộ dữ liệu từ Google Drive của bạn về.",
+        "C": "Chạy lệnh cài đặt lại toàn bộ hệ điều hành máy tính của họ.",
+        "D": "Chạy lệnh git clone kết hợp lệnh dvc pull để tải data."
+      },
+      "answer": "D",
+      "explanation": "Thành viên mới chỉ cần chạy `git clone <repo>` để lấy mã nguồn và tệp con trỏ `.dvc`, sau đó chạy `dvc pull` để tải về đúng phiên bản dữ liệu nhị phân tương thích để huấn luyện lại.",
+      "hints": [
+        "Sự kết hợp giữa Git để quản lý code và DVC để quản lý dữ liệu lớn.",
+        "Hai lệnh này đồng bộ hoàn hảo phiên bản mã nguồn và phiên bản dữ liệu.",
+        "Đáp án đúng là chạy git clone kết hợp dvc pull để tải data."
+      ],
+      "concepts": [
+        "d21-t2-cicd"
+      ]
+    }
+  ]
+}

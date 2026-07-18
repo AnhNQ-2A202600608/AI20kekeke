@@ -1,0 +1,210 @@
+{
+  "id": "day15-advanced",
+  "parent_id": "day15",
+  "topic_title": "Day 15: Real-World Deployment & Operating Cost",
+  "title": "Phần 3: Thiết kế Hệ thống Tin cậy, Định hướng Chuyên sâu & Sự nghiệp",
+  "description": "Đánh giá kiến thức nâng cao về các mẫu thiết kế tăng độ tin cậy (queues, circuit breaker, stateless scaling), SLA, và 3 specialization tracks của Giai đoạn 2.",
+  "difficulty": "khó",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Khi hệ thống AI Agent gặp tình trạng lưu lượng truy cập tăng đột biến (traffic spike) vượt quá tốc độ xử lý (rate limits) của LLM API, mẫu thiết kế nào giúp tránh lỗi nghẽn và timeout?",
+      "options": {
+        "A": "Thiết lập hàng đợi yêu cầu (Request Queue) để xử lý tuần tự và mượt hóa tải hệ thống.",
+        "B": "Tự động nhân bản cơ sở dữ liệu vector sang nhiều phân vùng đệm khác nhau trên ổ đĩa.",
+        "C": "Tăng giới hạn số lượng token đầu ra tối đa của mô hình lên mức cao nhất có thể.",
+        "D": "Tắt bớt các bộ lọc kiểm soát an toàn dữ liệu đầu vào để tăng tốc độ phản hồi."
+      },
+      "answer": "A",
+      "explanation": "Mẫu Request Queue (dùng Redis Queue, Celery, Bull, v.v.) giúp xếp hàng các yêu cầu khi bị quá tải, xử lý chúng theo tốc độ giới hạn (rate limits) của API và trả về giao diện trạng thái 'đang xử lý' thay vì trả về lỗi Timeout hoặc Rate Limit Exceeded cho user.",
+      "hints": [
+        "Làm thế nào để điều hòa tải (smooth out spikes) khi số yêu cầu gửi đến lớn hơn khả năng xử lý tức thời của API?",
+        "Hãy nhớ tới khái niệm xếp hàng đợi trong lập trình hệ thống phân tán.",
+        "Phương án đúng chứa cơ chế hàng đợi yêu cầu (Request Queue) để lưu tạm và xử lý dần."
+      ],
+      "concepts": [
+        "d15-production-deployment-cost"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Trong các mẫu thiết kế tăng độ tin cậy hệ thống (Resilience Patterns), cơ chế 'Circuit Breaker' hoạt động ở trạng thái 'Open' (Mở) sẽ thực hiện hành động nào sau đây?",
+      "options": {
+        "A": "Chuyển hướng các cuộc gọi API sang một nhà cung cấp mạng viễn thông hoàn toàn mới.",
+        "B": "Tiếp tục gửi toàn bộ yêu cầu đến API bất kể tỷ lệ lỗi của hệ thống là bao nhiêu.",
+        "C": "Tự động khởi động lại toàn bộ các máy chủ vật lý đang lưu trữ cơ sở dữ liệu.",
+        "D": "Tự động chặn các cuộc gọi đến API đang lỗi và trả về ngay thông báo lỗi fallback."
+      },
+      "answer": "D",
+      "explanation": "Trạng thái Open (Mở mạch) xảy ra khi tỷ lệ lỗi gọi API vượt ngưỡng. Hệ thống sẽ chặn ngay lập tức (short-circuit) các cuộc gọi tiếp theo đến API lỗi đó và trả về ngay cached response hoặc fallback message để tránh làm quá tải API và giảm thiểu thời gian chờ của người dùng.",
+      "hints": [
+        "Cơ chế Circuit Breaker (Cầu dao) hoạt động giống như cầu dao điện trong nhà khi bị chập điện.",
+        "Khi mạch 'Mở' (Open), dòng điện có chạy qua được không? Tương tự, yêu cầu có được gửi tới API bị lỗi không?",
+        "Chọn câu trả lời mô tả việc tự động chặn các cuộc gọi đến dịch vụ đang lỗi để trả về thông điệp fallback dự phòng."
+      ],
+      "concepts": [
+        "d15-production-deployment-cost"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Một doanh nghiệp ký cam kết chất lượng dịch vụ (SLA) với khách hàng yêu cầu tỷ lệ thời gian hoạt động liên tục (uptime) đạt 99.9%. Điều này đồng nghĩa với thời gian ngừng hoạt động (downtime) tối đa cho phép trong một năm là bao nhiêu?",
+      "options": {
+        "A": "Thời gian ngừng hoạt động tối đa cho phép là khoảng 8.7 giờ mỗi năm.",
+        "B": "Thời gian ngừng hoạt động tối đa cho phép là khoảng 87.0 giờ mỗi năm.",
+        "C": "Thời gian ngừng hoạt động tối đa cho phép là khoảng 3.6 ngày mỗi năm.",
+        "D": "Thời gian ngừng hoạt động tối đa cho phép là khoảng 36.5 ngày mỗi năm."
+      },
+      "answer": "A",
+      "explanation": "Với Uptime SLA 99.9% (thường gọi là 3 số 9), tổng thời gian downtime tối đa cho phép trong một năm (365 ngày * 24 giờ = 8760 giờ) là 0.1% * 8760 = 8.76 giờ (khoảng 8 giờ 45 phút). Điều này đòi hỏi kiến trúc hệ thống phải có tính dự phòng (redundancy) và tự động khôi phục (failover).",
+      "hints": [
+        "Hãy tính tổng số giờ trong một năm bằng cách nhân 365 ngày với 24 giờ.",
+        "Lấy tổng số giờ vừa tính được nhân với tỷ lệ phần trăm ngừng hoạt động tương ứng (100% - 99.9% = 0.1%).",
+        "Kết quả tính toán sẽ giúp bạn chọn ra thời gian downtime tối đa khoảng hơn 8 giờ một chút."
+      ],
+      "concepts": [
+        "d15-production-deployment-cost"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Một lập trình viên muốn theo đuổi vai trò Kỹ sư MLOps (MLOps Engineer) hoặc Kỹ sư Dữ liệu AI (AI Data Engineer). Lập trình viên này nên lựa chọn Track chuyên sâu nào trong Giai đoạn 2 của khóa học?",
+      "options": {
+        "A": "Track 1: AI Business & Product.",
+        "B": "Track 2: AI Infrastructure & Data.",
+        "C": "Track 3: AI Application & Agent.",
+        "D": "Track 4: AI Security & Guardrails."
+      },
+      "answer": "B",
+      "explanation": "Track 2 (AI Infrastructure & Data) tập trung đào tạo các kỹ năng: Lakehouse & Feature Store, vLLM deployment & optimization, CI/CD cho AI (LLMOps), GPU FinOps, và production data pipeline. Đây là các kỹ năng cốt lõi cho các vị trí AI Data Engineer, Platform Engineer, và MLOps Engineer.",
+      "hints": [
+        "MLOps và Data Engineer là những công việc thiên về lập trình ứng dụng (Application) hay quản lý hạ tầng và dữ liệu (Infrastructure & Data)?",
+        "Hãy xem lại nội dung chính của các track được giới thiệu trong buổi wrap-up ngày 15.",
+        "Chọn track tập trung trực tiếp vào cơ sở hạ tầng (Infrastructure) và đường ống dữ liệu (Data)."
+      ],
+      "concepts": [
+        "d15-production-deployment-cost"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Khi thiết kế một ứng dụng AI Agent có khả năng tự động mở rộng (auto-scaling) mượt mà trên môi trường Production đám mây, quy tắc thiết kế kiến trúc cốt lõi nào cần phải tuân thủ?",
+      "options": {
+        "A": "Lưu trữ toàn bộ lịch sử hội thoại của người dùng trong bộ nhớ đệm RAM cục bộ của từng instance.",
+        "B": "Tự động khởi động lại toàn bộ hệ thống mỗi khi nhận thấy số lượng người dùng tăng lên.",
+        "C": "Chỉ sử dụng một máy chủ vật lý duy nhất để tránh việc phân tán và đồng bộ dữ liệu.",
+        "D": "Đảm bảo thiết kế các Agent instances ở dạng Stateless và lưu trữ State trong một DB độc lập."
+      },
+      "answer": "D",
+      "explanation": "Để hệ thống có thể scale chiều ngang (thêm/bớt instances tùy theo tải), các instances phải thiết kế dạng stateless (không lưu trạng thái hội thoại trong RAM cục bộ). Trạng thái (session state, chat history, memory) phải được lưu trữ tập trung ở database bên ngoài (Redis, PostgreSQL, v.v.).",
+      "hints": [
+        "Nếu một instance bị sập hoặc một instance mới được dựng lên, làm thế nào để nó vẫn biết được lịch sử trò chuyện trước đó của user?",
+        "Nếu dữ liệu lưu trong bộ nhớ trong (RAM) của máy chủ A, máy chủ B có đọc được không?",
+        "Do đó, thiết kế hệ thống phải là không lưu trạng thái cục bộ (stateless) và đưa trạng thái ra ngoài."
+      ],
+      "concepts": [
+        "d15-production-deployment-cost"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Mục tiêu chính của Giai đoạn 2 - Track 3 (AI Application) là giúp học viên làm chủ các kỹ năng và xây dựng những sản phẩm nào sau đây để phát triển sự nghiệp?",
+      "options": {
+        "A": "Xây dựng kế hoạch kinh doanh, mô hình tài chính ROI và các quy định pháp lý về AI.",
+        "B": "Thiết lập hệ thống CI/CD cho hạ tầng, tối ưu hóa vLLM và quản lý chi phí GPU.",
+        "C": "Thiết kế các Agent nâng cao, bộ nhớ dài hạn, GraphRAG và hệ thống đánh giá tự động.",
+        "D": "Thiết kế giao diện đồ họa trên thiết bị di động và các chiến dịch quảng bá sản phẩm."
+      },
+      "answer": "C",
+      "explanation": "Track 3 (AI Application) hướng đến đào tạo kỹ sư AI/LLM chuyên sâu với các nội dung nâng cao: Advanced Agent patterns, Memory & long-term context, GraphRAG, Fine-tuning, và production evaluation systems.",
+      "hints": [
+        "Lập trình ứng dụng AI (AI Application) tập trung vào các mẫu Agent nâng cao, cơ chế nhớ dài hạn hay các bài toán tối ưu hạ tầng?",
+        "Những khái niệm như GraphRAG, custom fine-tuning và đánh giá chất lượng thuộc về lập trình ứng dụng hay quản trị kinh doanh?",
+        "Hãy chọn phương án đề cập đến Agent nâng cao, GraphRAG và hệ thống đánh giá."
+      ],
+      "concepts": [
+        "d15-production-deployment-cost"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Tại sao việc thiết kế cơ chế fallback (dự phòng) bằng cách sử dụng các mô hình nhỏ tự chạy local khi kết nối Cloud API gặp sự cố lại rất quan trọng cho các ứng dụng AI doanh nghiệp?",
+      "options": {
+        "A": "Giúp đảm bảo hệ thống không bị gián đoạn hoàn toàn và duy trì dịch vụ ở mức tối thiểu.",
+        "B": "Giúp cải thiện độ chính xác và tính sáng tạo của mô hình lớn khi trả lời câu hỏi.",
+        "C": "Giúp loại bỏ hoàn toàn nhu cầu sử dụng đường truyền Internet kết nối ra bên ngoài doanh nghiệp.",
+        "D": "Giúp hệ thống tự động sửa chữa các lỗi lập trình có trong mã nguồn của ứng dụng."
+      },
+      "answer": "A",
+      "explanation": "Sử dụng mô hình local nhỏ làm fallback giúp ứng dụng có tính kháng lỗi cao (resilience), bảo đảm tính liên tục của dịch vụ (uptime) khi Cloud API gặp sự cố sập nguồn hoặc quá tải mạng, tránh việc người dùng gặp màn hình lỗi hoàn toàn.",
+      "hints": [
+        "Điều gì xảy ra nếu OpenAI bị sập trong 2 tiếng và ứng dụng chăm sóc khách hàng của bạn không có phương án dự phòng?",
+        "Một mô hình nhỏ hơn (như Llama local) có thể không thông minh bằng nhưng có giúp duy trì dịch vụ tạm thời không?",
+        "Hãy chọn phương án nhấn mạnh việc duy trì hoạt động tối thiểu của dịch vụ để đảm bảo trải nghiệm người dùng liên tục."
+      ],
+      "concepts": [
+        "d15-production-deployment-cost"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Một kỹ sư AI muốn tìm hiểu sâu về kỹ thuật tinh chỉnh mô hình (Fine-tuning), thiết kế bộ nhớ dài hạn cho Agent và ứng dụng đồ thị tri thức GraphRAG. Kỹ sư này nên chọn track nào?",
+      "options": {
+        "A": "Track 1: AI Business & Product.",
+        "B": "Track 2: AI Infrastructure & Data.",
+        "C": "Track 3: AI Application & Agent.",
+        "D": "Track 4: AI Security & Guardrails."
+      },
+      "answer": "C",
+      "explanation": "Các kỹ thuật nâng cao về mô hình và tác vụ như Fine-tuning, Memory & long-term context, GraphRAG, và Production evaluation systems là nội dung chính của Track 3 (AI Application).",
+      "hints": [
+        "Các chủ đề như GraphRAG, Fine-tuning, và Memory là các chủ đề cốt lõi của việc phát triển ứng dụng Agent thông minh.",
+        "Hãy liên hệ với vai trò AI Engineer hay LLM Engineer - những người trực tiếp lập trình Agent.",
+        "Phương án đúng sẽ chỉ ra Track 3: AI Application."
+      ],
+      "concepts": [
+        "d15-production-deployment-cost"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Trong 3 trụ cột năng lực (Competency Pillars) đã tích lũy sau 15 ngày, các kỹ năng về PRD, Risk Assessment, và ROI Analysis thuộc về cột năng lực nào?",
+      "options": {
+        "A": "Trụ cột năng lực Kỹ thuật AI (AI Engineering).",
+        "B": "Trụ cột năng lực Quản trị Kinh doanh (Business).",
+        "C": "Trụ cột năng lực Hạ tầng Công nghệ (Infrastructure).",
+        "D": "Trụ cột năng lực Thiết kế Giao diện (UX/UI)."
+      },
+      "answer": "B",
+      "explanation": "Các kỹ năng PRD (Product Requirement Document), Risk Assessment (Đánh giá rủi ro), và ROI Analysis (Phân tích tỷ suất hoàn vốn) thuộc trụ cột năng lực CP1: Business, chuẩn bị cho vai trò AI PM, AI BA, AI Strategist.",
+      "hints": [
+        "Phân tích lợi nhuận đầu tư (ROI) hay viết tài liệu yêu cầu sản phẩm (PRD) là công việc của kỹ sư lập trình hay quản lý dự án/kinh doanh?",
+        "Hãy xem lại Skills Map được chia thành 3 phần: Business, Infrastructure và AI Engineering.",
+        "Chọn phương án liên quan đến trụ cột Quản trị Kinh doanh (Business)."
+      ],
+      "concepts": [
+        "d15-production-deployment-cost"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Khi một hệ thống AI Agent gặp lỗi lặp đi lặp lại ở một bước gọi công cụ cụ thể, kỹ sư SRE phát hiện ra rằng lỗi này làm cạn kiệt tài nguyên kết nối. Biện pháp xử lý tốt nhất ở API Gateway là gì?",
+      "options": {
+        "A": "Tăng thời gian chờ timeout của yêu cầu lên mức tối đa để Agent có thêm thời gian chạy.",
+        "B": "Xóa bỏ toàn bộ các bản ghi nhật ký hoạt động cũ để giải phóng dung lượng ổ đĩa.",
+        "C": "Thiết lập cấu hình giới hạn tần suất (Rate Limiting) trên mỗi khóa API của người dùng hệ thống.",
+        "D": "Thay đổi toàn bộ kiến trúc ứng dụng từ dạng Stateless sang dạng Stateful để đồng bộ hơn."
+      },
+      "answer": "C",
+      "explanation": "Thiết lập Rate Limiting tại API Gateway giúp ngăn chặn một API key bị lỗi lặp (looping) tiêu thụ quá nhiều tài nguyên, bảo vệ hạ tầng chung của hệ thống không bị sập do cạn kiệt connection pool hoặc token budget.",
+      "hints": [
+        "Làm thế nào để giới hạn số lượng cuộc gọi tối đa từ một người dùng hoặc một Agent trong một phút?",
+        "Rate Limiting (Giới hạn tần suất) tại Gateway đóng vai trò như chốt chặn ngăn chặn việc spam hoặc vòng lặp vô hạn.",
+        "Tìm câu trả lời nhắc đến việc cấu hình giới hạn tần suất (Rate Limiting) cho các khóa API."
+      ],
+      "concepts": [
+        "d15-production-deployment-cost"
+      ]
+    }
+  ]
+}

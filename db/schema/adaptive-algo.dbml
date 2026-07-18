@@ -1,0 +1,355 @@
+// Algo-focused Adaptive Learning Engine Database Schema
+// Paste into https://dbdiagram.io/d to visualize.
+
+Project adaptive_learning_algo_focus {
+  database_type: 'PostgreSQL'
+  Note: '''
+  Database schema focusing entirely on the adaptive learning engine algorithms: ELO, BKT, and LinUCB Contextual Bandit.
+  '''
+}
+
+Enum mastery_state {
+  not_started
+  weak
+  learning
+  mastered
+}
+
+Enum question_type {
+  mcq
+  short_answer
+  code
+  flashcard
+}
+
+Enum calibration_status {
+  draft
+  calibrating
+  published
+  retired
+}
+
+Enum grading_method {
+  deterministic
+  ai
+  manual
+}
+
+Enum policy_status {
+  draft
+  active
+  retired
+}
+
+Enum decision_type {
+  question
+  concept
+  review
+  hint_style
+}
+
+Enum exploration_mode {
+  explore
+  exploit
+  fallback
+}
+
+Enum mastery_source_type {
+  quiz_attempt
+  flashcard_review
+  manual_adjustment
+  diagnostic
+}
+
+Enum concept_relation_type {
+  Prerequisite_of
+  Used_for
+  Compare
+  Conjunction
+  Hyponym_of
+  Evaluate_for
+  Part_of
+}
+
+Enum concept_relation_status {
+  draft
+  approved
+  rejected
+}
+
+Table app_users as users {
+  id uuid [pk]
+  email text [not null, unique]
+  full_name text [not null]
+}
+
+Table app_courses as courses {
+  id uuid [pk]
+  code text [not null, unique]
+  title text [not null]
+}
+
+Table app_concepts as concepts {
+  id uuid [pk]
+  course_id uuid [not null]
+  code text [not null]
+  name text [not null]
+  parent_concept_id uuid
+}
+
+Table app_concept_relations as concept_relations {
+  id uuid [pk]
+  course_id uuid [not null]
+  source_concept_id uuid [not null]
+  target_concept_id uuid [not null]
+  relation_type concept_relation_type [not null]
+  weight decimal [not null, default: 1.0, note: 'CHECK: >= 0.0 AND <= 1.0']
+  status concept_relation_status [not null, default: 'draft']
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+
+  Note: 'Concept Knowledge Graph relations with RLS enabled.'
+
+  indexes {
+    course_id
+    (source_concept_id, target_concept_id, relation_type) [unique]
+  }
+}
+
+Table app_student_concept_mastery as student_concept_mastery {
+  student_id uuid [not null]
+  course_id uuid [not null]
+  concept_id uuid [not null]
+  elo_score decimal [not null, default: 1200]
+  bkt_mastery_probability decimal [not null, default: 0.25]
+  mastery_state mastery_state [not null, default: 'not_started']
+  weakness_flag boolean [not null, default: false]
+  attempt_count integer [not null, default: 0]
+  correct_count integer [not null, default: 0]
+  last_practiced_at timestamptz
+  updated_at timestamptz [not null]
+
+  indexes {
+    (student_id, course_id, concept_id) [pk]
+    (student_id, course_id)
+  }
+  Note: 'Core student state (Elo, BKT) per concept with RLS enabled.'
+}
+
+Table app_questions as questions {
+  id uuid [pk]
+  course_id uuid [not null]
+  concept_id uuid [not null]
+  type question_type [not null]
+  prompt text [not null]
+  answer_key json [not null]
+  difficulty_elo decimal [not null, default: 1200]
+  calibration_status calibration_status [not null, default: 'draft']
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+
+  indexes {
+    (course_id, concept_id, calibration_status)
+  }
+}
+
+Table app_question_hints as question_hints {
+  id uuid [pk]
+  question_id uuid [not null]
+  level integer [not null]
+  hint_text text [not null]
+
+  indexes {
+    (question_id, level) [unique]
+  }
+  Note: 'Socratic hint ladders for ELO discount calculation.'
+}
+
+Table app_hint_logs as hint_logs {
+  id uuid [pk]
+  student_id uuid [not null]
+  course_id uuid [not null]
+  question_id uuid [not null]
+  decision_id uuid
+  hint_level integer [not null, default: 1]
+  created_at timestamptz [not null]
+
+  indexes {
+    (student_id, question_id)
+  }
+  Note: 'Server-side logging of hints consumed during a quiz session.'
+}
+
+Table audit_adaptive_policies as adaptive_policies {
+  id uuid [pk]
+  course_id uuid [not null]
+  name text [not null]
+  version text [not null]
+  status policy_status [not null, default: 'draft']
+  config json [not null]
+  created_at timestamptz [not null]
+
+  indexes {
+    (course_id, name, status)
+  }
+}
+
+Table audit_bandit_arms as bandit_arms {
+  policy_id uuid [not null]
+  arm_id text [not null]
+  a_inv json [not null]
+  b json [not null]
+  updated_at timestamptz [not null]
+
+  indexes {
+    (policy_id, arm_id) [pk]
+  }
+  Note: 'Per-arm LinUCB parameters (A_inv, b) updated in-place.'
+}
+
+Table audit_adaptive_decisions as adaptive_decisions {
+  id uuid [pk]
+  policy_id uuid [not null]
+  student_id uuid [not null]
+  course_id uuid [not null]
+  concept_id uuid
+  decision_type decision_type [not null, default: 'question']
+  selected_action_id uuid
+  selected_action_type text [not null, default: 'question']
+  candidate_action_ids json [not null]
+  context_snapshot json [not null]
+  model_snapshot json [not null]
+  expected_reward decimal
+  expected_success decimal
+  exploration_mode exploration_mode [not null, default: 'exploit']
+  consumed_at timestamptz
+  created_at timestamptz [not null]
+
+  indexes {
+    (student_id, created_at)
+  }
+  Note: 'Decision logs containing context and predictions.'
+}
+
+Table app_quiz_attempts as quiz_attempts {
+  id uuid [pk]
+  student_id uuid [not null]
+  course_id uuid [not null]
+  question_id uuid [not null]
+  concept_id uuid [not null]
+  adaptive_decision_id uuid
+  student_answer json [not null]
+  is_correct boolean
+  actual_score decimal [not null]
+  expected_success decimal
+  hint_count integer [not null, default: 0]
+  used_ai_help boolean [not null, default: false]
+  grading_method grading_method [not null, default: 'deterministic']
+  submitted_at timestamptz [not null]
+
+  indexes {
+    (student_id, course_id, submitted_at)
+  }
+}
+
+Table audit_adaptive_rewards as adaptive_rewards {
+  id uuid [pk]
+  adaptive_decision_id uuid [not null]
+  quiz_attempt_id uuid
+  reward_value decimal [not null]
+  reward_formula text [not null]
+  observed_success decimal
+  target_success decimal [not null, default: 0.75]
+  created_at timestamptz [not null]
+}
+
+Table audit_bkt_parameters as bkt_parameters {
+  id uuid [pk]
+  course_id uuid [not null]
+  concept_id uuid [not null]
+  prior_learned decimal [not null]
+  transition_learn decimal [not null]
+  guess decimal [not null]
+  slip decimal [not null]
+  version text [not null]
+  status policy_status [not null, default: 'active']
+  created_at timestamptz [not null]
+}
+
+Table audit_mastery_events as mastery_events {
+  id uuid [pk]
+  student_id uuid [not null]
+  course_id uuid [not null]
+  concept_id uuid [not null]
+  source_type mastery_source_type [not null]
+  source_id uuid
+  elo_before decimal [not null]
+  elo_after decimal [not null]
+  elo_delta decimal [not null]
+  bkt_before decimal [not null]
+  bkt_after decimal [not null]
+  bkt_delta decimal [not null]
+  state_before mastery_state [not null]
+  state_after mastery_state [not null]
+  created_at timestamptz [not null]
+}
+
+Table audit_question_elo_events as question_elo_events {
+  id uuid [pk]
+  question_id uuid [not null]
+  quiz_attempt_id uuid [not null]
+  difficulty_before decimal [not null]
+  difficulty_after decimal [not null]
+  difficulty_delta decimal [not null]
+  created_at timestamptz [not null]
+}
+
+// Relationships
+
+Ref: concepts.course_id > courses.id [delete: cascade]
+Ref: concepts.parent_concept_id > concepts.id [delete: set null]
+
+Ref: concept_relations.course_id > courses.id [delete: cascade]
+Ref: concept_relations.source_concept_id > concepts.id [delete: cascade]
+Ref: concept_relations.target_concept_id > concepts.id [delete: cascade]
+
+Ref: student_concept_mastery.student_id > users.id [delete: cascade]
+Ref: student_concept_mastery.course_id > courses.id [delete: cascade]
+Ref: student_concept_mastery.concept_id > concepts.id [delete: cascade]
+
+Ref: questions.course_id > courses.id [delete: cascade]
+Ref: questions.concept_id > concepts.id [delete: cascade]
+
+Ref: question_hints.question_id > questions.id [delete: cascade]
+
+Ref: hint_logs.student_id > users.id [delete: cascade]
+Ref: hint_logs.course_id > courses.id [delete: cascade]
+Ref: hint_logs.question_id > questions.id [delete: cascade]
+Ref: hint_logs.decision_id > adaptive_decisions.id [delete: set null]
+
+Ref: adaptive_policies.course_id > courses.id [delete: cascade]
+Ref: bandit_arms.policy_id > adaptive_policies.id [delete: cascade]
+
+Ref: adaptive_decisions.policy_id > adaptive_policies.id
+Ref: adaptive_decisions.student_id > users.id [delete: cascade]
+Ref: adaptive_decisions.course_id > courses.id [delete: cascade]
+Ref: adaptive_decisions.concept_id > concepts.id [delete: set null]
+
+Ref: quiz_attempts.student_id > users.id [delete: cascade]
+Ref: quiz_attempts.course_id > courses.id [delete: cascade]
+Ref: quiz_attempts.question_id > questions.id [delete: cascade]
+Ref: quiz_attempts.concept_id > concepts.id [delete: cascade]
+Ref: quiz_attempts.adaptive_decision_id > adaptive_decisions.id [delete: set null]
+
+Ref: adaptive_rewards.adaptive_decision_id > adaptive_decisions.id [delete: cascade]
+Ref: adaptive_rewards.quiz_attempt_id > quiz_attempts.id [delete: set null]
+
+Ref: bkt_parameters.course_id > courses.id [delete: cascade]
+Ref: bkt_parameters.concept_id > concepts.id [delete: cascade]
+
+Ref: mastery_events.student_id > users.id [delete: cascade]
+Ref: mastery_events.course_id > courses.id [delete: cascade]
+Ref: mastery_events.concept_id > concepts.id [delete: cascade]
+
+Ref: question_elo_events.question_id > questions.id [delete: cascade]
+Ref: question_elo_events.quiz_attempt_id > quiz_attempts.id [delete: cascade]

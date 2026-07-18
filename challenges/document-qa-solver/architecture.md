@@ -1,1 +1,0 @@
-# Proposed Architecture Design

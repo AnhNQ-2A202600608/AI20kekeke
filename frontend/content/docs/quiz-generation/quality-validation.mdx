@@ -1,0 +1,71 @@
+---
+title: Kiểm duyệt Chất lượng & Hiệu chuẩn
+description: Đặc tả quy trình 2-Agent Quality Gate, cơ chế hợp nhất đồ thị toàn cục, bẻ gãy chu trình và hiệu chuẩn khởi đầu lạnh cho câu hỏi mới.
+---
+
+Tất cả các thực thể câu hỏi và quan hệ tiên quyết được sinh ra tự động đều phải đi qua hàng rào kiểm duyệt chất lượng nghiêm ngặt và thuật toán hiệu chuẩn toàn cục trước khi phân phối đến học viên.
+
+## 1. Vòng bảo vệ 1: 2-Agent Quality Gate
+
+Hệ thống thiết lập quy trình phản biện đa tác nhân (Multi-Agent Debate) để lọc câu hỏi:
+
+```
+[Generator Agent] ──(Tạo câu hỏi & Đáp án)──> [Evaluator Agent] ──(Đánh giá chất lượng)──> [Top 50 câu hỏi xuất sắc]
+```
+
+*   **Generator Agent**: Nhận tài liệu học tập và concept để tạo câu hỏi kèm theo đáp án, các câu hỏi nhiễu, cùng với thang gợi ý Socratic 3 bậc đầu tiên.
+*   **Evaluator Agent**: Đóng vai trò phản biện độc lập, đánh giá câu hỏi dựa trên các tiêu chí:
+    *   Tính duy nhất và chính xác của đáp án đúng.
+    *   Sự mạch lạc của câu chữ, không mập mờ ngữ nghĩa.
+    *   Độ tương thích với concept mục tiêu.
+    *   Nếu phát hiện lỗi, Evaluator sẽ phản hồi để Generator sửa đổi. Chỉ những câu hỏi đạt điểm chất lượng cao mới được xếp vào danh sách rút gọn.
+
+---
+
+## 2. Hợp nhất Đồ thị & Hiệu chỉnh Chu trình (Global Fusion & DAG Calibration)
+
+Khi gộp dữ liệu từ nhiều ngày học, hệ thống chạy thuật toán **Pha 3: Global Fusion** để xử lý xung đột và làm sạch đồ thị:
+
+### A. Hợp nhất Thực thể Đồng nghĩa (Semantic Entity Merging)
+Hệ thống quét định kỳ bảng `app.concepts` bằng mô hình Embedding và LLM để phát hiện các khái niệm trùng lặp.
+*   **Thuật toán**:
+    1. Tính cosine similarity giữa các vector biểu diễn của các concept:
+       $$\text{sim}(c_i, c_j) = \frac{\vec{v}_i \cdot \vec{v}_j}{\|\vec{v}_i\| \|\vec{v}_j\|}$$
+    2. Nếu $\text{sim}(c_i, c_j) \ge 0.85$, gửi 2 thực thể kèm định nghĩa của chúng đến LLM.
+    3. LLM thực hiện gộp (merge) chúng thành một thực thể duy nhất, giữ lại tên gọi tối ưu, mạch lạc và cụ thể nhất.
+    4. Cập nhật các bản ghi liên quan trong Q-Matrix và lịch sử làm bài của học viên sang ID thực thể mới.
+
+### B. Phát hiện Chu trình và Bẻ gãy Xung đột (Cycle Detection & Conflict Resolution)
+Quan hệ tiền đề khái niệm phải là đồ thị có hướng không chu trình (DAG) để thuật toán lan truyền năng lực BKT hoạt động đúng. Nếu xuất hiện chu trình (ví dụ: Day 1 có $A \rightarrow B$, Day 5 có $B \rightarrow A$), hệ thống sẽ giải quyết:
+1.  **Phát hiện chu trình**: Sử dụng thuật toán **DFS (Depth-First Search)** hoặc **Tarjan** để tìm các thành phần liên thông mạnh (Strongly Connected Components - SCC) hoặc các cạnh ngược (back-edges):
+    ```
+    Nếu phát hiện chu trình (e.g. A -> B -> C -> A):
+        Kích hoạt bộ giải quyết xung đột (Conflict Resolver).
+    ```
+2.  **Bẻ gãy chu trình bằng LLM (LLM Conflict Breaker)**:
+    *   Hệ thống trích xuất toàn bộ ngữ cảnh slide của các khái niệm $A, B, C$ liên quan đến chu trình.
+    *   Gửi ngữ cảnh và danh sách quan hệ gây xung đột đến LLM với prompt:
+        ```text
+        Dựa trên ngữ cảnh học thuật sau đây, hãy xác định đâu là quan hệ tiền đề (Prerequisite) hợp logic nhất.
+        Ràng buộc: Đồ thị đầu ra bắt buộc phải là một DAG (không chứa vòng lặp). Hãy chọn ra quan hệ cần lược bỏ hoặc đảo ngược.
+        ```
+    *   LLM đưa ra quyết định loại bỏ hoặc đảo chiều liên kết sai (ví dụ: loại bỏ liên kết $C \rightarrow A$), khôi phục cấu trúc DAG sạch cho hệ thống.
+
+---
+
+## 3. Vòng bảo vệ 2: Human-In-The-Loop (HITL)
+
+Sau khi bộ lọc tự động hoàn tất, các câu hỏi và quan hệ được lưu trữ dưới trạng thái nháp (`calibration_status = 'draft'`).
+*   **Teacher Interface**: Giảng viên hoặc Mentor truy cập giao diện Admin Dashboard để xem xét trực quan danh sách câu hỏi.
+*   **Approve & Publish**: Giảng viên có thể chỉnh sửa câu chữ, điều chỉnh phân loại độ khó hoặc xóa bỏ câu hỏi không phù hợp, sau đó bấm phê duyệt để chuyển trạng thái sang `published` đưa vào ngân hàng đề phân phối.
+
+---
+
+## 4. Hiệu chuẩn Khởi đầu lạnh (Cold Start Calibration)
+
+Khi một câu hỏi mới được xuất bản, nó chưa có dữ liệu lịch sử làm bài để xác định độ khó Elo thực tế của câu hỏi ($b$).
+*   **Cờ khởi đầu lạnh**: Hệ thống gán nhãn `is_cold_start = True` cho câu hỏi mới.
+*   **Hệ số K lớn**: Trong **10 lượt trả lời đầu tiên** của học viên đối với câu hỏi này, hệ thống áp dụng hệ số học tập lớn $K_{\text{question}} = 64$ (thay vì $K_{\text{question}} = 16$ thông thường) trong công thức cập nhật Elo:
+    $$b_{\text{new}} = b_{\text{old}} + K_{\text{question}} \cdot (P(\text{correct}) - S)$$
+    Điều này giúp điểm Elo độ khó của câu hỏi nhanh chóng hội tụ về đúng giá trị thực tế chỉ sau vài lượt làm bài.
+*   **Gỡ cờ**: Sau lượt làm bài thứ 10, hệ thống tự động gỡ cờ `is_cold_start` và chuyển hệ số cập nhật về $K_{\text{question}} = 16$ để duy trì tính ổn định.

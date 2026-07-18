@@ -1,0 +1,210 @@
+{
+  "id": "day22-t2-pipeline",
+  "parent_id": "day22-rag-data",
+  "topic_title": "Day 22: LLMOps & Prompt Versioning",
+  "title": "Phần 2: Giám Sát Chi Tiết Với LangSmith Tracing & Prompt Versioning",
+  "description": "Đánh giá kiến thức về thiết lập auto-instrumentation, phân tích trace anatomy gỡ lỗi bottlenecks, và sử dụng Prompt Hub để quản lý phiên bản prompt.",
+  "difficulty": "bình thường",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Làm thế nào để kích hoạt tính năng tự động ghi vết (auto-instrumentation) cho LangChain trong mã nguồn Python?",
+      "options": {
+        "A": "Thiết lập biến môi trường LANGCHAIN_TRACING_V2 bằng giá trị true và cung cấp API key.",
+        "B": "Cài đặt thêm các gói thư viện tối ưu hóa hiệu năng máy chủ di động.",
+        "C": "Viết lại toàn bộ mã nguồn gọi API của mô hình ngôn ngữ lớn từ đầu.",
+        "D": "Chạy một dịch vụ ảo hóa cơ sở dữ liệu trên máy tính cá nhân."
+      },
+      "answer": "A",
+      "explanation": "LangChain hỗ trợ tự động ghi nhận vết (zero code change) khi thiết lập biến môi trường `LANGCHAIN_TRACING_V2='true'` và cấu hình khóa API key hợp lệ.",
+      "hints": [
+        "Sử dụng cơ chế biến môi trường (environment variables) để kích hoạt tự động.",
+        "Không cần thay đổi bất kỳ dòng mã logic gọi mô hình nào trong dự án.",
+        "Đáp án chỉ ra thiết lập biến LANGCHAIN_TRACING_V2 bằng true và cung cấp API key."
+      ],
+      "concepts": [
+        "d22-t2-llmops"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Đối với các hàm Python tự viết ngoài LangChain, làm thế nào để tích hợp chúng vào trace của LangSmith?",
+      "options": {
+        "A": "Sử dụng decorator traceable được import trực tiếp từ thư viện sdk của LangSmith.",
+        "B": "Viết thêm các đoạn mã in log truyền thống ra màn hình điều khiển.",
+        "C": "Tự động thiết lập cấu hình của cổng kết nối dữ liệu máy chủ.",
+        "D": "Đăng ký tài khoản doanh nghiệp trên cổng thông tin của Bộ KH&CN."
+      },
+      "answer": "A",
+      "explanation": "Các hàm logic tùy biến (non-LangChain code) có thể được đưa vào cây tracing dưới dạng các span con bằng cách sử dụng `@traceable` decorator.",
+      "hints": [
+        "Sử dụng một decorator chuyên biệt do SDK của LangSmith cung cấp.",
+        "Giúp bọc các chức năng tìm kiếm cơ sở dữ liệu hoặc xử lý văn bản.",
+        "Đáp án chỉ ra sử dụng decorator traceable được import từ thư viện sdk LangSmith."
+      ],
+      "concepts": [
+        "d22-t2-llmops"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Phân tích một trace: RAG pipeline chạy mất 1.5s, vector store search mất 120ms, prompt format mất 5ms, LLM call mất 1.38s. Bottleneck ở đâu?",
+      "options": {
+        "A": "Nút thắt cổ chai nằm ở bước tìm kiếm văn bản tương đồng của vector store.",
+        "B": "Nút thắt cổ chai nằm ở lượt gọi mô hình ngôn ngữ lớn gpt sinh phản hồi.",
+        "C": "Nút thắt cổ chai nằm ở bước chuyển đổi định dạng và ghép nối prompt.",
+        "D": "Không có bất kỳ nút thắt cổ chai nào trong toàn bộ luồng xử lý trên."
+      },
+      "answer": "B",
+      "explanation": "Lượt gọi mô hình (LLM call) tiêu tốn 1.38s trên tổng số 1.5s (khoảng 92% thời gian chạy), đây chính là điểm nghẽn (bottleneck) lớn nhất của hệ thống.",
+      "hints": [
+        "So sánh các khoảng thời gian thực thi của từng thành phần trong trace.",
+        "Thành phần nào chiếm phần lớn thời gian phản hồi của luồng xử lý.",
+        "Đáp án đúng là nút thắt cổ chai nằm ở lượt gọi mô hình lớn sinh phản hồi."
+      ],
+      "concepts": [
+        "d22-t2-llmops"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Một quy chuẩn vận hành tốt (production best practice) khi kéo prompt template từ Prompt Hub về hệ thống là gì?",
+      "options": {
+        "A": "Luôn luôn nạp phiên bản mới nhất của prompt mà không cần kiểm chứng.",
+        "B": "Khóa phiên bản prompt cố định bằng cách chỉ định mã commit hash cụ thể.",
+        "C": "Tự động thay đổi nội dung prompt ngẫu nhiên cho mỗi lượt gọi mô hình.",
+        "D": "Sử dụng các prompt mẫu được chia sẻ công khai bởi cộng đồng mạng."
+      },
+      "answer": "B",
+      "explanation": "Để tránh việc mô hình đột ngột thay đổi hành vi ngoài ý muốn khi có ai đó vô tình cập nhật Prompt Hub, trong môi trường Production luôn phải chỉ định rõ mã hash cố định.",
+      "hints": [
+        "Nhằm cô lập mã nguồn prompt hoạt động, tránh các bất ngờ khi chạy thật.",
+        "Cách khóa phiên bản tương tự như khóa commit hash trong Git.",
+        "Đáp án đúng là khóa phiên bản prompt cố định bằng mã commit hash cụ thể."
+      ],
+      "concepts": [
+        "d22-t2-llmops"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Cú pháp chuẩn của SDK LangSmith để tải một prompt mẫu có chỉ định phiên bản (commit hash) là gì?",
+      "options": {
+        "A": "Sử dụng hàm load_prompt với tham số truyền vào là đường dẫn cục bộ.",
+        "B": "Gọi hàm hub.pull truyền vào tên prompt kèm dấu hai chấm và hash.",
+        "C": "Sử dụng lệnh git pull trực tiếp từ kho chứa mã nguồn của dự án.",
+        "D": "Chạy một script tự động tải tệp tin văn bản từ máy chủ đám mây."
+      },
+      "answer": "B",
+      "explanation": "Để kéo một phiên bản prompt cụ thể từ Hub, lập trình viên sử dụng hàm `hub.pull('tên-prompt:mã-hash')`.",
+      "hints": [
+        "Phương thức gọi SDK sử dụng cú pháp dấu hai chấm để phân tách hash.",
+        "Sử dụng đối tượng import từ langchain hub để thực hiện lệnh kéo.",
+        "Đáp án đúng là gọi hàm hub.pull truyền vào tên prompt kèm hai chấm và hash."
+      ],
+      "concepts": [
+        "d22-t2-llmops"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Lợi thế chính của việc áp dụng Conventional Commits cho các phiên bản prompt trên Hub là gì?",
+      "options": {
+        "A": "Giúp tự động giảm thiểu chi phí thanh toán token cho các nhà cung cấp.",
+        "B": "Tự động tối ưu hóa tốc độ phản hồi của các mô hình ngôn ngữ.",
+        "C": "Tạo nhật ký thay đổi rõ ràng, dễ theo dõi mục đích chỉnh sửa.",
+        "D": "Giúp loại bỏ hoàn toàn các lỗi bảo mật thông tin cá nhân PII."
+      },
+      "answer": "C",
+      "explanation": "Conventional Commits (như feat/fix/refactor) tạo ra một lịch sử chỉnh sửa rõ ràng giúp team hiểu mục đích thay đổi và dễ dàng truy vết nguồn gốc thay đổi prompt.",
+      "hints": [
+        "Lợi ích về quản lý quy trình phối hợp làm việc và theo dõi lịch sử.",
+        "Giúp phân biệt giữa sửa lỗi prompt hay thêm tính năng mới cho prompt.",
+        "Đáp án đúng là tạo nhật ký thay đổi rõ ràng, dễ theo dõi mục đích sửa."
+      ],
+      "concepts": [
+        "d22-t2-llmops"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Quy trình quản lý phiên bản prompt Git-native (thay thế Prompt Hub) được thiết lập thế nào?",
+      "options": {
+        "A": "Sử dụng các tệp tin hình ảnh để lưu giữ nội dung hướng dẫn.",
+        "B": "Lưu trữ prompt trực tiếp vào cơ sở dữ liệu quan hệ của hệ thống.",
+        "C": "Lưu trữ prompt dưới dạng các tệp tin YAML trong kho chứa Git.",
+        "D": "Tự động sinh prompt ngẫu nhiên bằng cách gọi các API dịch vụ."
+      },
+      "answer": "C",
+      "explanation": "Cách tiếp cận Git-native lưu giữ prompt trong các tệp cấu hình YAML đặt trong repository Git của dự án, quản lý thay đổi qua cơ chế Pull Request thông thường.",
+      "hints": [
+        "Tận dụng thế mạnh kiểm soát lịch sử của Git mà không dùng bên thứ ba.",
+        "Định nghĩa cấu trúc prompt rõ ràng trong tệp tin định dạng cấu hình.",
+        "Đáp án đúng là lưu trữ prompt dạng các tệp tin YAML trong kho chứa Git."
+      ],
+      "concepts": [
+        "d22-t2-llmops"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Khi nào đội ngũ phát triển nên ưu tiên sử dụng cấu hình Git-native YAML thay vì Prompt Hub?",
+      "options": {
+        "A": "Khi cần so sánh hiệu năng của nhiều mô hình khác nhau trực quan.",
+        "B": "Khi dự án có sự tham gia của nhiều nhân sự phi kỹ thuật.",
+        "C": "Khi quy trình tập trung vào lập trình viên và tích hợp CI/CD.",
+        "D": "Khi chi phí sử dụng tài nguyên máy chủ đạt ngưỡng quá giới hạn."
+      },
+      "answer": "C",
+      "explanation": "Lưu prompt dạng YAML trong Git phù hợp cho các dự án tập trung vào lập trình viên (developer-centric), muốn tích hợp chặt chẽ với CI/CD pipeline và thực hiện code review nghiêm ngặt.",
+      "hints": [
+        "Liên quan đến quy trình làm việc tự động của các lập trình viên phần mềm.",
+        "Nơi các thay đổi mã nguồn phải đi qua vòng kiểm duyệt tự động CI/CD.",
+        "Đáp án đúng là khi quy trình tập trung vào lập trình viên và tích hợp CI/CD."
+      ],
+      "concepts": [
+        "d22-t2-llmops"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Tại sao việc gọi prompt phiên bản mới nhất (latest) trực tiếp trên production được xem là hành động nguy hiểm?",
+      "options": {
+        "A": "Nó sẽ làm tăng chi phí sử dụng tài nguyên của máy chủ đám mây.",
+        "B": "Mô hình ngôn ngữ lớn sẽ từ chối phản hồi các yêu cầu từ phía bạn.",
+        "C": "Cơ sở dữ liệu tìm kiếm vector sẽ tự động bị mất kết nối.",
+        "D": "Bất kỳ cập nhật vô tình nào trên Hub cũng làm ảnh hưởng hệ thống."
+      },
+      "answer": "D",
+      "explanation": "Nếu gọi bản latest, mọi thay đổi chưa qua kiểm định của thành viên khác trên Prompt Hub sẽ ngay lập tức được áp dụng lên môi trường Production, dễ gây lỗi hệ thống đột ngột.",
+      "hints": [
+        "Tính thiếu cô lập phiên bản chạy và sự bất ngờ khi cập nhật bên ngoài.",
+        "Bất kỳ ai cập nhật nhầm prompt cũng có thể làm lỗi hệ thống đang chạy.",
+        "Đáp án đúng là bất kỳ cập nhật vô tình nào trên Hub cũng làm ảnh hưởng hệ thống."
+      ],
+      "concepts": [
+        "d22-t2-llmops"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Trong thử nghiệm A/B Testing prompt, thông tin metadata nào bắt buộc phải được gắn kèm vào mỗi trace?",
+      "options": {
+        "A": "Độ dài của tệp tin cấu hình và thời gian lưu trữ dữ liệu.",
+        "B": "Số lượng tham số của mô hình ngôn ngữ lớn đang được sử dụng.",
+        "C": "Địa chỉ IP của người dùng và thông tin về mạng kết nối.",
+        "D": "Phiên bản prompt cụ thể được phân bổ cho yêu cầu giao dịch."
+      },
+      "answer": "D",
+      "explanation": "Để so sánh chính xác hiệu quả giữa hai phiên bản prompt, mỗi trace chạy phải được gắn thẻ (tag) định danh phiên bản prompt tương ứng (ví dụ: prompt_v1 hoặc prompt_v2).",
+      "hints": [
+        "Thông tin giúp phân nhóm và thống kê các chỉ số chất lượng tương ứng.",
+        "Gắn định danh để biết yêu cầu này chạy trên prompt cụ thể nào.",
+        "Đáp án đúng là phiên bản prompt cụ thể được phân bổ cho yêu cầu giao dịch."
+      ],
+      "concepts": [
+        "d22-t2-llmops"
+      ]
+    }
+  ]
+}

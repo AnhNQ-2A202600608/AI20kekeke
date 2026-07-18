@@ -1,0 +1,216 @@
+{
+  "id": "day2-basics",
+  "parent_id": "day2",
+  "topic_title": "Day 2: Xác định Bài toán cho AI",
+  "title": "Phần 1: Định hình bài toán",
+  "description": "Cách xác định tính khả thi và lựa chọn mô hình phù hợp cho bài toán thực tế.",
+  "difficulty": "dễ",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Khi bắt đầu một dự án AI, bước nào cần được ưu tiên thực hiện trước nhất để định hình bài toán?",
+      "options": {
+        "A": "Lựa chọn dòng card đồ họa GPU đắt tiền nhất để chạy.",
+        "B": "Xác định rõ vấn đề kinh doanh, mục tiêu và nguồn dữ liệu.",
+        "C": "Viết code huấn luyện các mô hình học sâu phức tạp ngay.",
+        "D": "Thiết kế giao diện người dùng frontend thật bắt mắt cho app."
+      },
+      "answer": "B",
+      "explanation": "Định nghĩa rõ ràng mục tiêu kinh doanh và chuẩn bị dữ liệu sạch là bước quyết định sự thành bại của bất kỳ dự án AI nào trước khi chọn mô hình hoặc hạ tầng phần cứng.",
+      "hints": [
+        "Hãy nghĩ về việc bắt đầu một dự án giống như việc xây dựng một ngôi nhà, điều gì cần được xác định trước khi bắt đầu xây dựng?",
+        "Nếu không xác định rõ vấn đề kinh doanh, bạn có thể xây dựng một ngôi nhà không phù hợp với nhu cầu của người sử dụng.",
+        "Hãy xem xét các lựa chọn và hỏi bản thân về mục tiêu cuối cùng của dự án, liệu có điều gì quan trọng hơn việc hiểu rõ vấn đề không?"
+      ],
+      "concepts": [
+        "d2-ai-problem-framing"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Sự khác biệt cơ bản nhất giữa tác vụ tự động hóa hoàn toàn (Automation) và hỗ trợ tăng cường (Augmentation) là gì?",
+      "options": {
+        "A": "Chi phí thuê máy chủ đám mây để chạy mô hình AI.",
+        "B": "Độ dài tối đa của Context Window được mô hình hỗ trợ.",
+        "C": "Số lượng tham số huấn luyện của mô hình ngôn ngữ lớn.",
+        "D": "Mức độ can thiệp trực tiếp của con người vào quyết định."
+      },
+      "answer": "D",
+      "explanation": "Automation thay thế hoàn toàn con người trong quy trình, còn Augmentation giữ con người lại để duyệt hoặc điều phối (human-in-the-loop) nhằm giảm thiểu sai số.",
+      "hints": [
+        "Suy nghĩ về cách mà con người và máy móc tương tác trong một quy trình làm việc.",
+        "Có những tình huống nào mà con người vẫn cần phải tham gia vào việc ra quyết định?",
+        "Hãy phân tích từng lựa chọn và xem liệu có yếu tố nào liên quan đến sự can thiệp của con người không?"
+      ],
+      "concepts": [
+        "d2-ai-problem-framing",
+        "d3-agentic-react"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Trong nghiên cứu tính khả thi dữ liệu (data feasibility) cho AI, yếu tố nào cần đánh giá đầu tiên?",
+      "options": {
+        "A": "Sự tồn tại và khả năng truy cập hợp pháp nguồn dữ liệu.",
+        "B": "Các thuật toán mã hóa bảo mật dữ liệu trên máy chủ.",
+        "C": "Tốc độ đường truyền internet dùng để tải dữ liệu xuống.",
+        "D": "Định dạng lưu trữ của dữ liệu là SQL hay NoSQL."
+      },
+      "answer": "A",
+      "explanation": "Trước khi xem xét thuật toán hay định dạng, ta phải chắc chắn dữ liệu cần thiết có tồn tại và doanh nghiệp được phép truy cập, thu thập hợp pháp.",
+      "hints": [
+        "Khi bắt đầu một dự án, yếu tố nào là nền tảng giúp bạn đảm bảo rằng bạn đang đi đúng hướng?",
+        "Trước khi xem xét cách sử dụng dữ liệu, bạn có chắc chắn rằng bạn có quyền truy cập vào chúng không?",
+        "Hãy xem xét các lựa chọn và đặt câu hỏi về tính hợp pháp và khả năng truy cập của dữ liệu bạn cần."
+      ],
+      "concepts": [
+        "d2-ai-problem-framing",
+        "d7-data-foundations"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Một doanh nghiệp muốn ứng dụng AI để phân loại email phản hồi của khách hàng thành 3 nhóm: Khiếu nại, Khen ngợi và Hỏi thông tin. Đây thuộc loại bài toán nào?",
+      "options": {
+        "A": "Bài toán học không giám sát phát hiện bất thường ngữ nghĩa.",
+        "B": "Bài toán hồi quy dự đoán giá trị số thực liên tục.",
+        "C": "Bài toán học có giám sát phân loại nhiều lớp dữ liệu.",
+        "D": "Bài toán tìm kiếm tương đồng ngữ nghĩa trong không gian vector."
+      },
+      "answer": "C",
+      "explanation": "Đây là bài toán học có giám sát vì dữ liệu đầu vào cần có nhãn trước, và đầu ra là phân loại vào một trong ba lớp (nhiều hơn 2 lớp gọi là Multi-class classification).",
+      "hints": [
+        "Hãy xem xét các vấn đề mà bạn cần giải quyết và cách mà chúng có thể được phân loại.",
+        "Điều gì sẽ xảy ra nếu bạn không có nhãn cho dữ liệu đầu vào trong bài toán này?",
+        "Phân tích từng lựa chọn và xác định liệu chúng có liên quan đến việc phân loại hay không."
+      ],
+      "concepts": [
+        "d2-ai-problem-framing"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Khi nào doanh nghiệp nên lựa chọn giải pháp Augmentation thay vì Automation cho một quy trình vận hành?",
+      "options": {
+        "A": "Khi quy trình cực kỳ đơn giản và không có rủi ro.",
+        "B": "Khi quy trình đòi hỏi trách nhiệm pháp lý và thẩm định.",
+        "C": "Khi chi phí thuê API của nhà cung cấp bên ngoài rẻ.",
+        "D": "Khi thời gian xử lý của mô hình AI đạt dưới 1 giây."
+      },
+      "answer": "B",
+      "explanation": "Khi sai sót có thể dẫn đến rủi ro pháp lý lớn hoặc tổn thất tài chính nghiêm trọng, việc giữ con người trong vòng lặp quyết định (Augmentation) là bắt buộc.",
+      "hints": [
+        "Khi cân nhắc giữa hai giải pháp, hãy nghĩ về những rủi ro và lợi ích mà mỗi giải pháp mang lại.",
+        "Có những tình huống nào mà việc giữ con người trong vòng lặp sẽ giúp giảm thiểu rủi ro?",
+        "Hãy so sánh các lựa chọn và xem xét đâu là tình huống mà con người cần phải tham gia."
+      ],
+      "concepts": [
+        "d2-ai-problem-framing",
+        "d3-agentic-react"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Rủi ro lớn nhất khi định hình bài toán AI mà không xác định rõ chỉ số đo lường (KPI) từ đầu là gì?",
+      "options": {
+        "A": "Không lựa chọn được thư viện lập trình phù hợp để chạy.",
+        "B": "Không cài đặt được môi trường ảo hóa Docker trên máy chủ.",
+        "C": "Kích thước mô hình AI tự động tăng lên sau huấn luyện.",
+        "D": "Không thể đánh giá được hiệu quả thực tế của mô hình."
+      },
+      "answer": "D",
+      "explanation": "Nếu không có KPI cụ thể, nhóm phát triển không thể đo lường xem mô hình AI có thực sự giải quyết được bài toán kinh doanh và có đem lại giá trị thực tế hay không.",
+      "hints": [
+        "Hãy nghĩ về các chỉ số mà bạn cần để đánh giá hiệu quả của một mô hình.",
+        "Liệu có điều gì quan trọng hơn việc đánh giá hiệu quả thực tế của mô hình không?",
+        "Xem xét các lựa chọn và xác định yếu tố nào ảnh hưởng đến khả năng đo lường kết quả."
+      ],
+      "concepts": [
+        "d2-ai-problem-framing",
+        "d14-ai-evaluation"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Bạn được giao thiết kế hệ thống phê duyệt khoản vay ngân hàng tự động. Do tính chất rủi ro tài chính cao, thiết kế hệ thống nào sau đây là an toàn nhất?",
+      "options": {
+        "A": "Human in loop: AI đề xuất và con người duyệt cuối.",
+        "B": "Automation: AI tự động duyệt và tự chuyển khoản đi luôn.",
+        "C": "No code: Sử dụng các chatbot tĩnh tự động trả lời.",
+        "D": "Offline: Mô hình chạy trên máy tính cá nhân nội bộ."
+      },
+      "answer": "A",
+      "explanation": "Cơ chế Human-in-the-loop giúp tận dụng tốc độ xử lý của AI để đề xuất và lọc hồ sơ, nhưng giữ lại quyền phê duyệt cuối cùng cho chuyên viên tín dụng để quản trị rủi ro tài chính.",
+      "hints": [
+        "Trong một quy trình mang tính rủi ro cao, có những yếu tố nào bạn cần cân nhắc để đảm bảo an toàn?",
+        "Cách nào tốt nhất để kết hợp giữa tốc độ xử lý và sự an toàn trong quyết định?",
+        "Hãy phân tích sự khác biệt giữa các lựa chọn, đặc biệt là vai trò của con người trong quy trình."
+      ],
+      "concepts": [
+        "d2-ai-problem-framing",
+        "d11-guardrails-safety"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Một công ty thương mại điện tử muốn dự đoán khách hàng có rời bỏ nền tảng (churn prediction) hay không. Họ có dữ liệu hành vi của 5 năm qua. Yếu tố dữ liệu nào là quan trọng nhất để đánh giá độ khả thi kỹ thuật?",
+      "options": {
+        "A": "Các thuật toán nén dung lượng file dữ liệu trên đĩa.",
+        "B": "Mức độ trực quan hóa của các biểu đồ dữ liệu.",
+        "C": "Sự đồng nhất nhãn dữ liệu của khách hàng rời bỏ.",
+        "D": "Tốc độ phản hồi của hệ cơ sở dữ liệu SQL."
+      },
+      "answer": "C",
+      "explanation": "Để xây dựng mô hình dự đoán rời bỏ (churn), ta bắt buộc phải có nhãn rõ ràng về việc khách hàng đó có thực sự rời bỏ hay không (ground truth). Không có nhãn, bài toán học có giám sát không khả thi.",
+      "hints": [
+        "Hãy nghĩ về việc xây dựng một mô hình dự đoán và những yếu tố nào quyết định độ chính xác của nó.",
+        "Có điều gì quan trọng hơn việc có nhãn rõ ràng cho dữ liệu đầu vào không?",
+        "Phân tích từng lựa chọn và xác định yếu tố nào là cần thiết nhất để xây dựng mô hình."
+      ],
+      "concepts": [
+        "d2-ai-problem-framing",
+        "d7-data-foundations"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Tại sao việc xây dựng một mô hình baseline đơn giản lại là bắt buộc trong giai đoạn đầu định hình bài toán AI?",
+      "options": {
+        "A": "Để chứng minh tính khả thi của mô hình lập tức.",
+        "B": "Để làm cột mốc đánh giá hiệu suất mô hình sau.",
+        "C": "Để giảm tối đa chi phí mua sắm thiết bị GPU.",
+        "D": "Để hoàn thành nhanh chóng báo cáo dự án cho sếp."
+      },
+      "answer": "B",
+      "explanation": "Mô hình baseline (ví dụ heuristic hoặc luật đơn giản) giúp thiết lập một điểm chuẩn hiệu năng. Các mô hình phức tạp hơn sau đó bắt buộc phải chứng minh được giá trị bằng cách vượt trội hơn baseline này.",
+      "hints": [
+        "Mô hình baseline giống như một điểm chuẩn, vậy tại sao nó lại quan trọng trong giai đoạn đầu?",
+        "Có những lý do nào mà bạn không thể bỏ qua việc thiết lập một mô hình đơn giản trước khi phát triển thêm?",
+        "Hãy xem xét các lựa chọn và xác định vai trò của mô hình baseline trong việc đánh giá hiệu suất."
+      ],
+      "concepts": [
+        "d2-ai-problem-framing"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Trong phân tích tính khả thi vận hành (operational feasibility), câu hỏi cốt lõi nào cần phải trả lời?",
+      "options": {
+        "A": "Đội ngũ nhân viên có đủ năng lực vận hành hệ?",
+        "B": "Mô hình có chạy trên hệ điều hành Linux hay Windows?",
+        "C": "Số lượng dòng code của mô hình là bao nhiêu dòng?",
+        "D": "Bảng màu sắc của giao diện người dùng có phù hợp không?"
+      },
+      "answer": "A",
+      "explanation": "Khả thi vận hành tập trung vào việc quy trình làm việc của con người và tổ chức có thể thích ứng, vận hành, bảo trì và sử dụng sản phẩm AI một cách hiệu quả hay không.",
+      "hints": [
+        "Trong một quy trình vận hành, điều gì là quan trọng nhất để đảm bảo rằng mọi thứ diễn ra suôn sẻ?",
+        "Có những yếu tố nào quyết định khả năng vận hành của hệ thống mà bạn không thể bỏ qua?",
+        "Hãy xem xét các lựa chọn và phân tích điều gì là cần thiết để đảm bảo khả năng vận hành hiệu quả."
+      ],
+      "concepts": [
+        "d2-ai-problem-framing"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "summary": {
+    "general": {
+      "runs": 1,
+      "client_total_ms": {
+        "p50": 3742.3,
+        "p95": 3742.3
+      },
+      "first_token_ms": {
+        "p50": 3437.79,
+        "p95": 3437.79
+      },
+      "server_total_ms": {
+        "p50": 3096.28,
+        "p95": 3096.28
+      }
+    },
+    "academic_cached": {
+      "runs": 1,
+      "client_total_ms": {
+        "p50": 15129.57,
+        "p95": 15129.57
+      },
+      "first_token_ms": {
+        "p50": 8040.48,
+        "p95": 8040.48
+      },
+      "server_total_ms": {
+        "p50": 14435.57,
+        "p95": 14435.57
+      }
+    },
+    "academic_cold": {
+      "runs": 1,
+      "client_total_ms": {
+        "p50": 10839.8,
+        "p95": 10839.8
+      },
+      "first_token_ms": {
+        "p50": 6676.93,
+        "p95": 6676.93
+      },
+      "server_total_ms": {
+        "p50": 10240.26,
+        "p95": 10240.26
+      }
+    },
+    "long_history": {
+      "runs": 1,
+      "client_total_ms": {
+        "p50": 8024.51,
+        "p95": 8024.51
+      },
+      "first_token_ms": {
+        "p50": 6869.49,
+        "p95": 6869.49
+      },
+      "server_total_ms": {
+        "p50": 7383.34,
+        "p95": 7383.34
+      }
+    }
+  },
+  "rows": [
+    {
+      "category": "general",
+      "message": "chào bạn",
+      "run_index": 0,
+      "warmup": false,
+      "client_total_ms": 3742.3,
+      "ttfb_ms": 1553.48,
+      "first_token_ms": 3437.79,
+      "timings_ms": {
+        "total": 3096.28,
+        "llm_first_token": 1247.49,
+        "llm_total": 1550.2
+      },
+      "answer_chars": 46,
+      "session_id": null,
+      "error": null
+    },
+    {
+      "category": "academic_cached",
+      "message": "RAG khác fine-tuning thế nào?",
+      "run_index": 0,
+      "warmup": false,
+      "client_total_ms": 15129.57,
+      "ttfb_ms": 1400.53,
+      "first_token_ms": 8040.48,
+      "timings_ms": {
+        "total": 14435.57,
+        "rag_embedding": 1079.44,
+        "rag_vector_rpc": 1633.12,
+        "llm_first_token": 1147.17,
+        "llm_total": 8231.53
+      },
+      "answer_chars": 1286,
+      "session_id": null,
+      "error": null
+    },
+    {
+      "category": "academic_cold",
+      "message": "giải thích vector database trong production RAG",
+      "run_index": 0,
+      "warmup": false,
+      "client_total_ms": 10839.8,
+      "ttfb_ms": 1265.9,
+      "first_token_ms": 6676.93,
+      "timings_ms": {
+        "total": 10240.26,
+        "rag_embedding": 787.92,
+        "rag_vector_rpc": 422.16,
+        "llm_first_token": 1532.94,
+        "llm_total": 5690.04
+      },
+      "answer_chars": 1722,
+      "session_id": null,
+      "error": null
+    },
+    {
+      "category": "long_history",
+      "message": "nhắc lại ngắn gọn điểm chính về embedding và retrieval",
+      "run_index": 0,
+      "warmup": false,
+      "client_total_ms": 8024.51,
+      "ttfb_ms": 1317.42,
+      "first_token_ms": 6869.49,
+      "timings_ms": {
+        "total": 7383.34,
+        "rag_embedding": 753.52,
+        "rag_vector_rpc": 585.54,
+        "llm_first_token": 1306.5,
+        "llm_total": 2457.3
+      },
+      "answer_chars": 540,
+      "session_id": null,
+      "error": null
+    }
+  ]
+}

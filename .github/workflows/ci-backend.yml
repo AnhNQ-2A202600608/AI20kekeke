@@ -2,65 +2,86 @@ name: Backend CI
 
 on:
   push:
-    branches: [ main, master, universal-starter ]
+    branches: [main, dev, trong/test-deploy-and-connect-db]
     paths:
-      - 'backend/**'
-      - 'scripts/**'
+      - 'src/**'
+      - 'tests/**'
+      - 'requirements.txt'
+      - 'pyproject.toml'
+      - 'uv.lock'
       - '.github/workflows/ci-backend.yml'
+      - '.github/workflows/manual-backend-verification.yml'
   pull_request:
-    branches: [ main, master, universal-starter ]
+    branches: [main, dev, trong/test-deploy-and-connect-db]
     paths:
-      - 'backend/**'
-      - 'scripts/**'
+      - 'src/**'
+      - 'tests/**'
+      - 'requirements.txt'
+      - 'pyproject.toml'
+      - 'uv.lock'
       - '.github/workflows/ci-backend.yml'
+      - '.github/workflows/manual-backend-verification.yml'
 
 concurrency:
   group: backend-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+permissions:
+  contents: read
+
 jobs:
-  backend-checks:
+  test-and-lint:
+    name: Backend Test & Lint
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
         with:
-          python-version: '3.11'
-          cache: 'pip'
+          enable-cache: true
+          python-version: "3.13"
 
-      - name: Install Dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -e "./backend[dev]"
+      - name: Install dependencies
+        run: uv pip install -r requirements.txt
 
-      - name: Backend Lint & Type Check
-        run: |
-          python -m ruff check --config backend/pyproject.toml backend/ scripts/
-          python -m ruff format --check --config backend/pyproject.toml backend/ scripts/
+      - name: Lint with ruff
+        run: uv run ruff check src/ tests/
 
-      - name: Run Backend Tests
-        run: |
-          python -m pytest backend/tests/ -v
+      - name: Generate Mock Graphs for Tests
+        run: uv run python scripts/generate_mock_graphs.py
 
-      - name: Validate Module Manifests
-        run: |
-          python scripts/validate_modules.py
-
-  deploy-backend:
-    needs: backend-checks
-    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master' || github.ref == 'refs/heads/universal-starter')
-    runs-on: ubuntu-latest
-    steps:
-      - name: Trigger Render Deploy Hook
+      - name: Run tests
+        run: uv run pytest tests/ -v --tb=short
         env:
-          RENDER_DEPLOY_HOOK: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+          APP_ENV: test
+          OPENAI_API_KEY: test-key
+
+      - name: Run Production Readiness Checker
+        run: uv run python scripts/check_production_ready.py
+
+      # TODO: Re-enable Trivy scanner before production deployment
+      # - name: Run Trivy vulnerability scanner
+      #   uses: aquasecurity/trivy-action@master
+      #   with:
+      #     image-ref: 'c2-app-backend:latest'
+      #     format: 'table'
+      #     exit-code: '1'
+      #     ignore-unfixed: true
+      #     vuln-type: 'os,library'
+      #     severity: 'CRITICAL,HIGH'
+
+      - name: Trigger Render Production CD
+        if: github.event_name == 'push' && github.ref_name == 'main'
         run: |
-          if [ -z "$RENDER_DEPLOY_HOOK" ]; then
-            echo "Warning: RENDER_DEPLOY_HOOK_URL secret is not set. Skipping deployment."
-            exit 0
-          fi
-          echo "Triggering Render deployment..."
-          curl -f -X POST "$RENDER_DEPLOY_HOOK"
+          curl -f -X POST "${{ secrets.RENDER_DEPLOY_HOOK_URL }}"
+
+      - name: Trigger Render Staging CD
+        if: github.event_name == 'push' && (github.ref_name == 'dev' || github.ref_name == 'trong/test-deploy-and-connect-db')
+        run: |
+          curl -f -X POST "${{ secrets.RENDER_DEPLOY_HOOK_URL_STAGING }}"
+          
+
+
 

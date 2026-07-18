@@ -1,0 +1,210 @@
+{
+  "id": "day28-t3-basics",
+  "parent_id": "day28-agent-builder",
+  "topic_title": "Day 28: Real-World System Architecture",
+  "title": "Phần 1: Lăng Kính 6 Lớp Hệ Thống AI & Đánh Giá Bề Mặt Rủi Ro",
+  "description": "Đánh giá kiến thức nền tảng về lăng kính 6 lớp kiến trúc (Data, Perception, World State, Decision, Action, Ops/Safety) chung cho các hệ thống AI thực tế và phân tích bề mặt rủi ro (Risk Surface) cùng ràng buộc trễ (Latency).",
+  "difficulty": "dễ",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Trong lăng kính kiến trúc 6 lớp của hệ thống AI thực tế, lớp nào chịu trách nhiệm lập kế hoạch hành động?",
+      "options": {
+        "A": "Lớp Sensor/Data chịu trách nhiệm thu nhận tín hiệu đầu vào.",
+        "B": "Lớp Perception chịu trách nhiệm phân tích và gắn nhãn ảnh.",
+        "C": "Lớp Decision/Policy chịu trách nhiệm sinh quỹ đạo di chuyển.",
+        "D": "Lớp Ops/Safety chịu trách nhiệm giám sát vùng hoạt động ODD."
+      },
+      "answer": "C",
+      "explanation": "Lớp Decision/Policy chịu trách nhiệm ra quyết định, lập kế hoạch quỹ đạo (motion planner) hoặc sử dụng các mô hình hành động (VLA/RL policy).",
+      "hints": [
+        "Nơi chuyển hóa trạng thái thế giới (world state) thành chỉ thị hành động.",
+        "Chứa các mô hình tối ưu hóa hành vi như MPC, PID hay planners.",
+        "Đó chính là lớp Decision/Policy chịu trách nhiệm sinh quỹ đạo di chuyển."
+      ],
+      "concepts": [
+        "d28-t3-real-world-architectures"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Hệ thống xe tự hành ADAS yêu cầu ràng buộc độ trễ (latency constraint) ở mức độ nào để an toàn?",
+      "options": {
+        "A": "Độ trễ ở mức mili-giây (ms) xử lý trực tiếp tại thiết bị biên.",
+        "B": "Độ trễ ở mức vài giây xử lý thông qua máy chủ đám mây trung tâm.",
+        "C": "Độ trễ xử lý dạng batch theo ngày để tối ưu chi phí hạ tầng.",
+        "D": "Độ trễ ở mức phút thông qua kết nối truyền thông không dây."
+      },
+      "answer": "A",
+      "explanation": "ADAS điều khiển xe chạy tốc độ cao, yêu cầu độ trễ cực thấp ở mức mili-giây (ms) chạy trực tiếp tại edge để đảm bảo tránh va chạm thời gian thực.",
+      "hints": [
+        "Xe chạy tốc độ cao sẽ di chuyển quãng đường dài chỉ trong 1 giây.",
+        "Bất kỳ độ trễ truyền thông nào lên cloud đều gây nguy hiểm tính mạng.",
+        "Đó chính là độ trễ ở mức mili-giây (ms) xử lý trực tiếp tại thiết bị biên."
+      ],
+      "concepts": [
+        "d28-t3-real-world-architectures"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Sự khác biệt cốt lõi về bề mặt rủi ro (Risk Surface) giữa hệ thống xe tự hành ADAS và GeoAI vệ tinh là gì?",
+      "options": {
+        "A": "GeoAI vệ tinh có rủi ro cao liên quan trực tiếp đến tính mạng con người.",
+        "B": "ADAS tác động trực tiếp lên cơ cấu chấp hành vật lý gây rủi ro tai nạn.",
+        "C": "GeoAI vệ tinh yêu cầu hệ thống validation và safety shell phức tạp hơn.",
+        "D": "ADAS chỉ đóng vai trò hỗ trợ quyết định gián tiếp cho người vận hành."
+      },
+      "answer": "B",
+      "explanation": "ADAS điều khiển trực tiếp cơ cấu chấp hành (actuators) như phanh, vô lăng nên có bề mặt rủi ro vật lý cực cao. GeoAI vệ tinh chủ yếu hỗ trợ quyết định gián tiếp (decision-support).",
+      "hints": [
+        "Hãy nghĩ về hậu quả khi mô hình AI của mỗi hệ thống đưa ra phán đoán sai.",
+        "ADAS kết nối trực tiếp với động cơ vật lý di chuyển ngoài đời thực.",
+        "Đó là ADAS tác động trực tiếp lên cơ cấu chấp hành vật lý gây rủi ro tai nạn."
+      ],
+      "concepts": [
+        "d28-t3-real-world-architectures"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Dữ liệu đầu vào nào sau đây thuộc lớp Sensor/Data của hệ thống ảnh vệ tinh GeoAI?",
+      "options": {
+        "A": "Các cảm biến LiDAR và cảm biến siêu âm gắn xung quanh xe tự hành.",
+        "B": "Dữ liệu ảnh vệ tinh đa phổ kết hợp với bản đồ địa lý GIS.",
+        "C": "Các vết log kiểm toán request audit trail lưu trữ trên Delta Lake.",
+        "D": "Dữ liệu sự kiện MQTT dedupe gửi về từ IP camera an ninh biên."
+      },
+      "answer": "B",
+      "explanation": "Sensor/Data layer của GeoAI xử lý ảnh vệ tinh (satellite imagery), dữ liệu bản đồ GIS và các dữ liệu quan sát trái đất đa thời gian.",
+      "hints": [
+        "GeoAI tập trung vào các bài toán quan sát địa lý vĩ mô từ không gian.",
+        "Dữ liệu đầu vào thu nhận từ các vệ tinh quay quanh trái đất.",
+        "Đó chính là dữ liệu ảnh vệ tinh đa phổ kết hợp với dữ liệu bản đồ địa lý GIS."
+      ],
+      "concepts": [
+        "d28-t3-real-world-architectures"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Thành phần dữ liệu nào sau đây thuộc lớp World State của hệ thống xe tự hành ADAS?",
+      "options": {
+        "A": "Ảnh thô từ camera góc rộng trước khi tiến hành cân hiệu chỉnh.",
+        "B": "Bản đồ BEV kết hợp HD map online và dự đoán quỹ đạo vật thể.",
+        "C": "Tín hiệu điều khiển CAN bus gửi đến hệ thống phanh khẩn cấp.",
+        "D": "Báo cáo lỗi telemetry gửi về máy chủ giám sát trung tâm hệ thống."
+      },
+      "answer": "B",
+      "explanation": "World State (trạng thái thế giới) của xe tự hành là không gian BEV (Bird's Eye View), bản đồ độ nét cao (HD Map) và thông tin dự báo chuyển động của các đối tác xung quanh.",
+      "hints": [
+        "Lớp này mô tả góc nhìn toàn cảnh về môi trường xung quanh xe từ trên xuống.",
+        "Giúp xe hiểu cấu trúc không gian và dự đoán hành vi tiếp theo của vật thể.",
+        "Đó là Bản đồ BEV kết hợp với HD map online và quỹ đạo dự đoán."
+      ],
+      "concepts": [
+        "d28-t3-real-world-architectures"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Mục tiêu cốt lõi của việc thiết kế Operational Design Domain (ODD) cho xe tự hành ADAS là gì?",
+      "options": {
+        "A": "Tối ưu hóa tốc độ tải trọng của các cụm GPU xử lý offboard.",
+        "B": "Xác định rõ giới hạn điều kiện hoạt động an toàn của hệ thống.",
+        "C": "Tự động sinh ra các kịch bản kiểm thử tích hợp dạng happy path.",
+        "D": "Loại bỏ hoàn toàn sự can thiệp của con người trong khâu gán nhãn."
+      },
+      "answer": "B",
+      "explanation": "ODD giới hạn phạm vi hoạt động an toàn của xe tự hành (ví dụ: chỉ chạy khi trời nắng, đường cao tốc, tốc độ <60km/h, cảm biến hoạt động tốt).",
+      "hints": [
+        "AI vật lý không thể hoạt động tốt trong mọi hoàn cảnh mơ hồ ngoài đời.",
+        "Chúng ta cần định nghĩa biên giới an toàn về thời tiết, loại đường, tốc độ.",
+        "Đó chính là xác định rõ giới hạn điều kiện hoạt động an toàn của hệ thống."
+      ],
+      "concepts": [
+        "d28-t3-real-world-architectures"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Hệ thống Safety Shell (lớp bảo vệ an toàn vật lý) trong humanoid robot hoạt động như thế nào?",
+      "options": {
+        "A": "Tự động cập nhật các phiên bản mô hình ngôn ngữ lớn mới qua OTA.",
+        "B": "Kiểm tra va chạm vật lý và kích hoạt dừng khẩn cấp độc lập với AI.",
+        "C": "Quét phát hiện mã độc trong các tệp tin cấu hình GitOps hệ thống.",
+        "D": "Tự động gửi báo cáo hiệu năng sử dụng pin về máy chủ giám sát."
+      },
+      "answer": "B",
+      "explanation": "Safety Shell chạy độc lập với mô hình AI chính (như VLA/RL), liên tục kiểm tra các ràng buộc vật lý, giới hạn mô-men xoắn motor và kích hoạt dừng khẩn cấp (handover/fallback) nếu AI chính đưa ra lệnh nguy hiểm.",
+      "hints": [
+        "Đây là chốt chặn an toàn cuối cùng bảo vệ phần cứng và con người xung quanh.",
+        "Nó phải hoạt động deterministic và không phụ thuộc vào độ trễ của mô hình AI.",
+        "Đó là kiểm tra va chạm vật lý và kích hoạt dừng khẩn cấp độc lập với AI."
+      ],
+      "concepts": [
+        "d28-t3-real-world-architectures"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Kết quả đầu ra của lớp Action/Product trong kiến trúc 6 lớp của hệ thống CCTV AI thông minh là gì?",
+      "options": {
+        "A": "Ảnh nén chất lượng cao lưu trữ trong Delta Lake phục vụ training.",
+        "B": "Cảnh báo xâm nhập gửi tới người dùng hoặc giao diện dashboard giám sát.",
+        "C": "Tín hiệu điều khiển động cơ quay của camera an ninh thời gian thực.",
+        "D": "Mã hash của video đầu vào phục vụ kiểm tra an toàn dữ liệu PII."
+      },
+      "answer": "B",
+      "explanation": "Action/Product của CCTV AI là gửi cảnh báo vi phạm, hiển thị sự kiện nghi vấn lên dashboard, hoặc tự động kích hoạt quy trình điều tra của nhân viên an ninh.",
+      "hints": [
+        "Đây là đầu ra hướng tới người dùng cuối để xử lý nghiệp vụ.",
+        "Giúp chuyển hóa phân tích video thành hành động bảo vệ thực tế.",
+        "Đó là Cảnh báo xâm nhập gửi tới người dùng hoặc giao diện dashboard giám sát."
+      ],
+      "concepts": [
+        "d28-t3-real-world-architectures"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Cơ chế Human-in-the-loop (con người trong vòng lặp) xuất hiện ở khâu nào của robot giao hàng tự động?",
+      "options": {
+        "A": "Hệ thống tự động sạc pin khi robot di chuyển về trạm docking.",
+        "B": "Hỗ trợ điều khiển từ xa (remote assist) khi robot gặp vật cản kẹt.",
+        "C": "Tự động phân tích logs lỗi telemetry gửi về máy chủ Grafana.",
+        "D": "Quá trình nén và mã hóa dữ liệu video trước khi truyền lên cloud."
+      },
+      "answer": "B",
+      "explanation": "Robot giao hàng tự động (như Starship/Serve) sử dụng cơ chế Hybrid Autonomy, cho phép một operator giám sát từ xa can thiệp hỗ trợ (remote assist) khi robot gặp tình huống kẹt hoặc mơ hồ.",
+      "hints": [
+        "Mô hình vận hành tối ưu chi phí: một người giám sát nhiều robot.",
+        "Khi gặp công trình xây dựng hoặc đám đông cản đường, robot sẽ dừng xin cứu viện.",
+        "Đó là Hỗ trợ điều khiển từ xa (remote assist) khi robot gặp vật cản kẹt."
+      ],
+      "concepts": [
+        "d28-t3-real-world-architectures"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Tại sao các hệ thống AI điều khiển cơ cấu chấp hành (actuator) cần quy trình Validation nghiêm ngặt hơn?",
+      "options": {
+        "A": "Do chi phí đầu tư các cụm máy chủ GPU huấn luyện mô hình quá lớn.",
+        "B": "Do sai lệch quyết định của mô hình gây ra tai nạn vật lý thực tế.",
+        "C": "Do giới hạn về băng thông truyền thông tin dữ liệu vệ tinh GeoAI.",
+        "D": "Do các quy định kiểm toán về mã băm dữ liệu thô của luật quốc tế."
+      },
+      "answer": "B",
+      "explanation": "Hệ thống điều khiển cơ cấu chấp hành (như xe tự hành, robot, cánh tay máy) tác động trực tiếp vào thế giới vật lý. Một lỗi nhỏ của AI có thể gây tai nạn nghiêm trọng, đòi hỏi validation ngặt nghèo (HIL, simulation, ODD testing).",
+      "hints": [
+        "Hãy nghĩ về hậu quả khác nhau giữa việc dịch sai một từ và xe tự hành phanh lỗi.",
+        "Hệ thống vật lý có bề mặt rủi ro trực tiếp đến an toàn tính mạng con người.",
+        "Đó chính là do sai lệch quyết định của mô hình gây ra tai nạn vật lý thực tế."
+      ],
+      "concepts": [
+        "d28-t3-real-world-architectures"
+      ]
+    }
+  ]
+}
