@@ -178,4 +178,135 @@ export class NextjsAdaptiveDatabase {
       {} as Record<string, QuestionHint[]>
     );
   }
+
+  public async getPublishedExamSets(courseId: string) {
+    const { data, error } = await this.appClient
+      .from('exam_sets')
+      .select('id, code, title, description, exam_type, difficulty, duration_minutes, max_score')
+      .eq('course_id', courseId)
+      .eq('status', 'published');
+
+    if (error) {
+      console.error('[NextjsAdaptiveDatabase] Error getting published exam sets:', error);
+      throw error;
+    }
+
+    // Lấy số lượng câu hỏi trong mỗi bộ đề từ bảng junction exam_questions
+    const { data: qData, error: qError } = await this.appClient
+      .from('exam_questions')
+      .select('exam_set_id');
+
+    if (qError) {
+      console.error('[NextjsAdaptiveDatabase] Error getting exam questions counts:', qError);
+      throw qError;
+    }
+
+    const counts: Record<string, number> = {};
+    for (const row of (qData || [])) {
+      const sid = row.exam_set_id;
+      counts[sid] = (counts[sid] || 0) + 1;
+    }
+
+    return (data || []).map((row: any) => ({
+      id: row.id,
+      code: row.code,
+      title: row.title,
+      description: row.description,
+      exam_type: row.exam_type,
+      difficulty: row.difficulty,
+      duration_minutes: row.duration_minutes,
+      max_score: Number(row.max_score),
+      question_count: counts[row.id] || 0,
+    }));
+  }
+
+  public async getExamDetails(examSetId: string) {
+    const { data: examData, error: examError } = await this.appClient
+      .from('exam_sets')
+      .select('id, code, title, description, exam_type, difficulty, duration_minutes, max_score')
+      .eq('id', examSetId)
+      .maybeSingle();
+
+    if (examError) {
+      console.error('[NextjsAdaptiveDatabase] Error getting exam set details:', examError);
+      throw examError;
+    }
+
+    if (!examData) {
+      throw new Error(`Exam set with id ${examSetId} not found.`);
+    }
+
+    // Lấy danh sách câu hỏi trong bộ đề và thông tin tương ứng
+    const { data: eqData, error: eqError } = await this.appClient
+      .from('exam_questions')
+      .select('sort_order, weight, questions(id, prompt, answer_key)')
+      .eq('exam_set_id', examSetId);
+
+    if (eqError) {
+      console.error('[NextjsAdaptiveDatabase] Error getting exam questions:', eqError);
+      throw eqError;
+    }
+
+    const questionsList = (eqData || [])
+      .map((item: any) => {
+        const q = item.questions;
+        if (!q) return null;
+        return {
+          id: q.id,
+          sort_order: item.sort_order,
+          weight: Number(item.weight),
+          prompt: q.prompt,
+          options: q.answer_key?.options || {},
+        };
+      })
+      .filter(Boolean) as any[];
+
+    questionsList.sort((a, b) => a.sort_order - b.sort_order);
+
+    return {
+      exam: {
+        id: examData.id,
+        code: examData.code,
+        title: examData.title,
+        description: examData.description,
+        exam_type: examData.exam_type,
+        difficulty: examData.difficulty,
+        duration_minutes: examData.duration_minutes,
+        max_score: Number(examData.max_score),
+        question_count: questionsList.length,
+      },
+      questions: questionsList,
+    };
+  }
+
+  public async startExamAttempt(examSetId: string, token: string) {
+    const backendUrl = process.env.BACKEND_API_URL || 'http://127.0.0.1:8000';
+    const response = await fetch(`${backendUrl}/api/v1/exams/${examSetId}/start`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      }
+    });
+    if (!response.ok) {
+      throw new Error(`Failed to start exam attempt: ${response.statusText}`);
+    }
+    return response.json();
+  }
+
+  public async submitExamAttempt(attemptId: string, answers: any[], token: string) {
+    const backendUrl = process.env.BACKEND_API_URL || 'http://127.0.0.1:8000';
+    const response = await fetch(`${backendUrl}/api/v1/exams/attempts/${attemptId}/submit`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      },
+      body: JSON.stringify({ answers })
+    });
+    if (!response.ok) {
+      throw new Error(`Failed to submit exam attempt: ${response.statusText}`);
+    }
+    return response.json();
+  }
 }
