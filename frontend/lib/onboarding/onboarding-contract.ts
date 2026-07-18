@@ -205,7 +205,7 @@ export const CADENCE_OPTIONS: Array<{ id: LearningCadence; label: string; detail
   { id: 'daily_short', label: 'Mỗi ngày một ít', detail: 'Phiên 10-20 phút để giữ streak.' },
   { id: 'weekend_block', label: 'Cuối tuần học sâu', detail: 'Một block dài để làm lab.' },
   { id: 'deadline_based', label: 'Theo deadline', detail: 'Ưu tiên phần sắp phải nộp.' },
-  { id: 'unsure', label: 'Chưa chắc', detail: 'Để Mentora đề xuất lịch dễ theo.' },
+  { id: 'unsure', label: 'Chưa chắc', detail: 'Để EduGap đề xuất lịch dễ theo.' },
 ];
 
 export const EMPTY_ONBOARDING_DRAFT: OnboardingDraft = {

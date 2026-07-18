@@ -2,55 +2,53 @@
 
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
-import { ReactNode, useEffect, useState, Suspense } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import {
   BookOpenText,
-  Books,
+  CaretDown,
   Calculator,
   ChartBar,
   ChatCircleDots,
+  ClipboardText,
   Fire,
-  Flask,
   Graph,
   Plus,
+  SignOut,
   SidebarSimple,
-  Translate,
   Trophy,
+  UserCircle,
 } from "@phosphor-icons/react";
 import { activeLearningLevel, levelThemes, subjectPrograms, subjects } from "../data";
 import { useSubjectProfiles } from "../hooks/useOnboardingProfile";
+import shellStyles from "./app-shell.module.css";
 
 const navItems = [
-  { href: "/hoc-tap", label: "Học tập", icon: BookOpenText },
-  { href: "/skill-graph", label: "Skill Graph", icon: Graph },
-  { href: "/hoi-dap-ai", label: "Hỏi đáp AI", icon: ChatCircleDots },
-  { href: "/dashboard", label: "Dashboard", icon: ChartBar },
-  { href: "/thanh-tich", label: "Thành tích", icon: Trophy },
+  { href: "/hoc-tap", label: "Ôn tập", icon: BookOpenText },
+  { href: "/on-thi", label: "Ôn thi", icon: ClipboardText },
+];
+
+const profileMenuItems = [
+  { href: "/dashboard", label: "Dashboard", description: "Tiến độ và nhận xét", icon: ChartBar },
+  { href: "/skill-graph", label: "Kỹ năng", description: "Bản đồ năng lực", icon: Graph },
+  { href: "/hoi-dap-ai", label: "Hỏi đáp AI", description: "Giải đáp theo bài học", icon: ChatCircleDots },
+  { href: "/thanh-tich", label: "Thành tích", description: "Huy hiệu và bảng xếp hạng", icon: Trophy },
+  { href: "/ho-so", label: "Hồ sơ", description: "Tài khoản và cài đặt", icon: UserCircle },
 ];
 
 const subjectIcons = {
   TO: Calculator,
-  NV: Books,
-  TA: Translate,
-  KH: Flask,
 };
 
 export function AppShell({ children, compact = false }: { children: ReactNode; compact?: boolean }) {
-  return (
-    <Suspense fallback={<div className="app-shell-loading">Đang tải...</div>}>
-      <AppShellInner compact={compact}>{children}</AppShellInner>
-    </Suspense>
-  );
-}
-
-function AppShellInner({ children, compact = false }: { children: ReactNode; compact?: boolean }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [profileMenuOpen, setProfileMenuOpen] = useState(false);
   const isProfilePage = pathname.startsWith("/ho-so");
   const isAiQuestionPage = pathname.startsWith("/hoi-dap-ai");
   const isSkillGraphPage = pathname.startsWith("/skill-graph");
-  const hideSidebar = compact || isProfilePage || isAiQuestionPage || isSkillGraphPage;
+  const isExamPage = pathname.startsWith("/on-thi");
+  const hideSidebar = compact || isProfilePage || isAiQuestionPage || isSkillGraphPage || isExamPage;
   const selectedSubjectCode = searchParams.get("subject") || "TO";
   const selectedSubject = subjects.find((subject) => subject.code === selectedSubjectCode) || subjects[0];
   const currentProgram = subjectPrograms[selectedSubject.code as keyof typeof subjectPrograms] || subjectPrograms.TO;
@@ -58,16 +56,13 @@ function AppShellInner({ children, compact = false }: { children: ReactNode; com
   const subjectProfiles = useSubjectProfiles();
 
   useEffect(() => {
-    const isCollapsed = window.localStorage.getItem("mentora-sidebar-collapsed") === "true";
-    setTimeout(() => {
-      setSidebarCollapsed(isCollapsed);
-    }, 0);
+    setSidebarCollapsed(window.localStorage.getItem("orbitlearn-sidebar-collapsed") === "true");
   }, []);
 
   const handleToggleSidebar = () => {
     setSidebarCollapsed((value) => {
       const nextValue = !value;
-      window.localStorage.setItem("mentora-sidebar-collapsed", String(nextValue));
+      window.localStorage.setItem("orbitlearn-sidebar-collapsed", String(nextValue));
       return nextValue;
     });
   };
@@ -79,7 +74,7 @@ function AppShellInner({ children, compact = false }: { children: ReactNode; com
         <div className="header-leading">
           <Link className="brand" href="/hoc-tap" aria-label="Về trang học tập">
             <span className="brand-symbol">OL</span>
-            <span>Mentora</span>
+            <span>OrbitLearn</span>
           </Link>
         </div>
         <nav className="main-nav" aria-label="Điều hướng chính">
@@ -96,14 +91,40 @@ function AppShellInner({ children, compact = false }: { children: ReactNode; com
           })}
         </nav>
         <div className="header-account-actions">
-          <Link className="profile-summary" href="/ho-so" aria-label="Mở hồ sơ Hoàng Nam">
-            <span className="header-streak" title={`${activeLearningLevel.streak} ngày học liên tiếp`}>
-              <Fire size={15} weight="fill" />
-              <strong>{activeLearningLevel.streak}</strong>
-            </span>
-            <span className="avatar">HN</span>
-          </Link>
-          <Link className="logout-action" href="/dang-xuat">Đăng xuất</Link>
+          <div className={shellStyles.profileMenu}>
+            <button
+              className="profile-summary"
+              type="button"
+              aria-label="Mở menu tài khoản Hoàng Nam"
+              aria-expanded={profileMenuOpen}
+              onClick={() => setProfileMenuOpen((open) => !open)}
+            >
+              <span className="header-streak" title={`${activeLearningLevel.streak} ngày học liên tiếp`}>
+                <Fire size={15} weight="fill" />
+                <strong>{activeLearningLevel.streak}</strong>
+              </span>
+              <span className="avatar">HN</span>
+              <CaretDown className={profileMenuOpen ? shellStyles.menuCaretOpen : shellStyles.menuCaret} size={15} weight="bold" />
+            </button>
+            {profileMenuOpen && (
+              <div className={shellStyles.profileDropdown} role="menu" aria-label="Tiện ích tài khoản">
+                <div className={shellStyles.profileDropdownHeader}>
+                  <span className="avatar">HN</span>
+                  <div><strong>Hoàng Nam</strong><small>{activeLearningLevel.title}</small></div>
+                </div>
+                <div className={shellStyles.profileMenuLinks}>
+                  {profileMenuItems.map((item) => {
+                    const Icon = item.icon;
+                    return <Link href={`${item.href}?subject=${selectedSubject.code}`} key={item.href} onClick={() => setProfileMenuOpen(false)}>
+                      <Icon size={18} weight="regular" />
+                      <span><strong>{item.label}</strong><small>{item.description}</small></span>
+                    </Link>;
+                  })}
+                </div>
+                <Link className={shellStyles.profileLogout} href="/dang-xuat" onClick={() => setProfileMenuOpen(false)}><SignOut size={17} weight="bold" />Đăng xuất</Link>
+              </div>
+            )}
+          </div>
         </div>
       </header>
 

@@ -10,16 +10,16 @@ export default function AuthPage() {
   return (
     <main className="auth-page auth-page-refined">
       <section className="auth-visual">
-        <Link className="brand auth-brand" href="/auth"><span className="brand-symbol">OL</span><span>Mentora</span></Link>
+        <Link className="brand auth-brand" href="/auth"><span className="brand-symbol">OL</span><span>OrbitLearn</span></Link>
         <div className="auth-intro">
           <span className="overline">Lộ trình dành riêng cho bạn</span>
           <h1>Một nơi để biết hôm nay nên học gì.</h1>
-          <p>Mentora gom lộ trình, skill graph, bài luyện và trợ giảng AI vào một không gian rõ ràng cho từng học sinh.</p>
+          <p>OrbitLearn gom lộ trình, skill graph, bài luyện và trợ giảng AI vào một không gian rõ ràng cho từng học sinh.</p>
         </div>
         <div className="auth-learning-preview auth-system-preview" aria-label="Mô hình học tập cá nhân hóa">
           <div className="auth-preview-head">
             <div>
-              <span>Cách Mentora tạo lộ trình</span>
+              <span>Cách OrbitLearn tạo lộ trình</span>
               <strong>Mỗi học sinh có một bản đồ học khác nhau</strong>
             </div>
             <span className="auth-level-chip">Cá nhân hóa sau đăng nhập</span>

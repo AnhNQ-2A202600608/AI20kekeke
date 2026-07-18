@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "description": "Decorative Mentora learning scenery assets. Use these as non-essential UI illustrations for cards, side panels, empty states, and onboarding. Runtime UI should use WebP variants, not PNG source files.",
+  "description": "Decorative EduGap learning scenery assets. Use these as non-essential UI illustrations for cards, side panels, empty states, and onboarding. Runtime UI should use WebP variants, not PNG source files.",
   "basePath": "/learning-scenery",
   "sizes": {
     "320": "Small cards, mobile UI, dense lists",

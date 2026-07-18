@@ -1,6 +1,6 @@
 # Academic Citations & Scientific Foundations
 
-This document provides the scientific citations, academic papers, and mathematical foundations for the adaptive learning algorithms implemented in the **Mentora** engine. These publications serve as the mathematical "Source of Truth" for both our production implementation and the verification gates in our evaluation suite.
+This document provides the scientific citations, academic papers, and mathematical foundations for the adaptive learning algorithms implemented in the **EduGap** engine. These publications serve as the mathematical "Source of Truth" for both our production implementation and the verification gates in our evaluation suite.
 
 ---
 

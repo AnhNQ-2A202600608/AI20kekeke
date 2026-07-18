@@ -614,7 +614,7 @@ function DetailPanel({
             </div>
             <div>
               <p className="text-stone-400">Người học</p>
-              <p className="mt-1 truncate text-on-background">{item.student_name || 'Mentora learner'}</p>
+              <p className="mt-1 truncate text-on-background">{item.student_name || 'EduGap learner'}</p>
             </div>
           </div>
         </div>

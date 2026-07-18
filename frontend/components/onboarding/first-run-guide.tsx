@@ -63,7 +63,7 @@ const steps = [
   {
     id: 'practice-cta',
     title: 'Bắt đầu phiên ngắn',
-    body: 'Một phiên 15-20 phút là đủ để Mentora cập nhật Elo/BKT và đề xuất bước tiếp theo chính xác hơn.',
+    body: 'Một phiên 15-20 phút là đủ để EduGap cập nhật Elo/BKT và đề xuất bước tiếp theo chính xác hơn.',
   },
 ];
 
@@ -251,7 +251,7 @@ export function FirstRunGuide({ activeTab, isStudent, userId }: FirstRunGuidePro
         ].join(' ')}
         style={isMobile ? undefined : calloutStyle ?? { left: 16, top: 16 }}
         role="dialog"
-        aria-label="Hướng dẫn Mentora lần đầu"
+        aria-label="Hướng dẫn EduGap lần đầu"
       >
         <div className="flex items-start gap-2.5">
           <div className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-primary-green/25 bg-primary-green/10 text-primary-green-dark">

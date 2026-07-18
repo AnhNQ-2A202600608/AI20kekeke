@@ -16,8 +16,8 @@ import type {
 } from './socratic-chat/components/knowledge-graph/types';
 
 const COURSE_UUID = '00000000-0000-0000-0000-000000000001';
-export const OPEN_KNOWLEDGE_GRAPH_EVENT = 'mentora:open-knowledge-graph';
-const GRAPH_CACHE_KEY = `mentora_knowledge_graph_${COURSE_UUID}`;
+export const OPEN_KNOWLEDGE_GRAPH_EVENT = 'edugap:open-knowledge-graph';
+const GRAPH_CACHE_KEY = `edugap_knowledge_graph_${COURSE_UUID}`;
 const GRAPH_CACHE_VERSION = 3;
 const GRAPH_CACHE_TTL_MS = 6 * 60 * 60 * 1000;
 let graphRequest: Promise<{

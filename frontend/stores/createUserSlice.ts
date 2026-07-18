@@ -73,13 +73,13 @@ export const createUserSlice: StateCreator<
 
       if (typeof window !== 'undefined') {
         if (!isSameUser) {
-          localStorage.removeItem('mentora_answers_history');
-          localStorage.removeItem('mentora_pre_submitted');
+          localStorage.removeItem('edugap_answers_history');
+          localStorage.removeItem('edugap_pre_submitted');
         }
         if (isDemoAccount) {
-          localStorage.removeItem(`mentora_onboarding_v1:${userData.userId}`);
-          localStorage.removeItem(`mentora_onboarding_status_v1:${userData.userId}`);
-          localStorage.removeItem(`mentora_first_run_v1:${userData.userId}`);
+          localStorage.removeItem(`edugap_onboarding_v1:${userData.userId}`);
+          localStorage.removeItem(`edugap_onboarding_status_v1:${userData.userId}`);
+          localStorage.removeItem(`edugap_first_run_v1:${userData.userId}`);
         }
       }
 
@@ -115,8 +115,8 @@ export const createUserSlice: StateCreator<
   }),
   logOut: () => set(() => {
     if (typeof window !== 'undefined') {
-      localStorage.removeItem('mentora_answers_history');
-      localStorage.removeItem('mentora_pre_submitted');
+      localStorage.removeItem('edugap_answers_history');
+      localStorage.removeItem('edugap_pre_submitted');
       void signOutSupabaseBrowser();
     }
     return { 

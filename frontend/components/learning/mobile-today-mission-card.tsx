@@ -34,7 +34,7 @@ function MissionMascotArt({
       aria-hidden="true"
     >
       <Image
-        src="/mascot/sofi/512/mentora-fox-quiz-coach.webp"
+        src="/mascot/sofi/512/edugap-fox-quiz-coach.webp"
         alt=""
         fill
         sizes={compact ? '(max-width: 1280px) 48px, 64px' : '(max-width: 1280px) 64px, 96px'}

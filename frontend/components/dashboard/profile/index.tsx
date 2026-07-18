@@ -413,7 +413,7 @@ export function ProfileTab({
           title="Hồ sơ học tập"
           subtitle="Nhân vật học tập, khu vườn kỹ năng và nhiệm vụ tiếp theo"
           averageElo={Math.round(averageElo)}
-          displayName={name || username || 'Học viên Mentora'}
+          displayName={name || username || 'Học viên EduGap'}
           eloHistoryEvents={eloHistoryEvents}
           initial={(name || username || 'N').trim().charAt(0).toUpperCase() || 'N'}
           loggedIn={loggedIn}

@@ -93,9 +93,9 @@ function LoopSection() {
       <div className="mx-auto w-full max-w-[82rem] px-4">
         <div className="grid gap-5 lg:grid-cols-[0.34fr_0.66fr] lg:items-start">
           <div className="lg:sticky lg:top-20">
-            <SectionEyebrow>Cách gia sư AI Mentora hoạt động</SectionEyebrow>
+            <SectionEyebrow>Cách gia sư AI EduGap hoạt động</SectionEyebrow>
             <h2 className="mt-2 font-fraunces text-question-title-lg font-black leading-tight text-on-background md:text-auth-title-md">
-              Mentora biến học liệu khóa học thành hint, practice và next step
+              EduGap biến học liệu khóa học thành hint, practice và next step
             </h2>
             <p className="mt-3 text-control-label font-semibold leading-6 text-stone-600">
               Đây là learning loop trong pitch deck: course docs, cited Socratic hints, adaptive practice, mastery update, rồi next review focus.
@@ -335,7 +335,7 @@ function GuardrailsSection() {
       <div className="mx-auto grid w-full max-w-[82rem] gap-3 px-4 lg:grid-cols-[0.85fr_1.15fr]">
         <TactileCard className="p-4">
           <SectionEyebrow>Socratic RAG & guardrails</SectionEyebrow>
-          <h2 className="mt-2 font-fraunces text-question-title-sm font-black leading-tight text-on-background">Chatbot trả lời. LMS lưu bài. Mentora xây feedback loop học tập.</h2>
+          <h2 className="mt-2 font-fraunces text-question-title-sm font-black leading-tight text-on-background">Chatbot trả lời. LMS lưu bài. EduGap xây feedback loop học tập.</h2>
           <p className="mt-3 text-control-label font-semibold leading-6 text-stone-600">
             Moat không nằm ở model. Tài sản là vòng lặp học liệu chính thức, hint có citation, quiz attempt, mastery update và next-review guidance.
           </p>
@@ -372,7 +372,7 @@ function FinalCtaSection() {
                 Tạo hồ sơ học tập AI đầu tiên
               </h2>
               <p className="mt-2 text-control-label font-semibold leading-6 text-stone-600">
-                Làm bài chẩn đoán ngắn để Mentora tạo learning profile, mastery map và hàng đợi luyện tập cá nhân hóa.
+                Làm bài chẩn đoán ngắn để EduGap tạo learning profile, mastery map và hàng đợi luyện tập cá nhân hóa.
               </p>
               <div className="mt-3 flex flex-wrap gap-2 text-caption-tight font-black text-primary-green-dark">
                 {['Không cần setup lớp ngay', 'Có thể bắt đầu từ diagnose', 'Phù hợp học AI/LLM'].map((item) => (
@@ -398,16 +398,16 @@ function FinalCtaSection() {
 
 const landingFaqItems = [
   {
-    question: 'Mentora phù hợp với ai?',
-    answer: 'Mentora phù hợp với học viên AI/LLM trong cohort, bootcamp, lớp đại học và mentor cần theo dõi tiến độ học theo concept.',
+    question: 'EduGap phù hợp với ai?',
+    answer: 'EduGap phù hợp với học viên AI/LLM trong cohort, bootcamp, lớp đại học và mentor cần theo dõi tiến độ học theo concept.',
   },
   {
     question: 'Gia sư AI Socratic khác chatbot thường ở điểm nào?',
-    answer: 'Socratic AI tutor của Mentora ưu tiên gợi mở từng bước, dùng citation từ học liệu khóa học và tránh đưa lời giải trực tiếp.',
+    answer: 'Socratic AI tutor của EduGap ưu tiên gợi mở từng bước, dùng citation từ học liệu khóa học và tránh đưa lời giải trực tiếp.',
   },
   {
     question: 'Quiz thích ứng hoạt động như thế nào?',
-    answer: 'Mentora dùng tín hiệu mastery, Elo/BKT và lịch sử làm bài để chọn câu hỏi gần vùng phát triển hiện tại của học viên.',
+    answer: 'EduGap dùng tín hiệu mastery, Elo/BKT và lịch sử làm bài để chọn câu hỏi gần vùng phát triển hiện tại của học viên.',
   },
   {
     question: 'Giảng viên nhận được dữ liệu gì?',
@@ -422,7 +422,7 @@ function FaqSection() {
         <div className="max-w-2xl">
           <SectionEyebrow>FAQ</SectionEyebrow>
           <h2 className="mt-2 font-fraunces text-question-title-sm font-black leading-tight text-on-background md:text-question-title-lg">
-            Câu hỏi thường gặp về gia sư AI Mentora
+            Câu hỏi thường gặp về gia sư AI EduGap
           </h2>
         </div>
         <div className="mt-5 grid gap-3 md:grid-cols-2">
@@ -444,7 +444,7 @@ export function LandingPage() {
     '@graph': [
       {
         '@type': 'SoftwareApplication',
-        name: 'Mentora',
+        name: 'EduGap',
         applicationCategory: 'EducationalApplication',
         operatingSystem: 'Web',
         inLanguage: 'vi-VN',
@@ -505,7 +505,7 @@ export function LandingPage() {
             <a href="#product" className="hover:text-primary-green-dark">Sản phẩm gia sư AI</a>
             <a href="#guardrails" className="hover:text-primary-green-dark">Guardrails & citation</a>
             <a href="#faq" className="hover:text-primary-green-dark">FAQ</a>
-            <span>© 2026 Mentora. All rights reserved.</span>
+            <span>© 2026 EduGap. All rights reserved.</span>
           </div>
         </div>
       </footer>

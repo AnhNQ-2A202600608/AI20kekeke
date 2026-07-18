@@ -2,7 +2,7 @@
 
 ## Overview
 
-The frontend should present Mentora as an Adaptive-first AI Tutor for higher education. The current UI already supports a learning path, quiz practice, profile progress, leaderboard, lightweight auth modal, and progress sidebar. The MVP vision extends this into Socratic RAG chat, concept-level mastery, lecturer insights, material ingestion, and academic-integrity guardrails.
+The frontend should present EduGap as an Adaptive-first AI Tutor for higher education. The current UI already supports a learning path, quiz practice, profile progress, leaderboard, lightweight auth modal, and progress sidebar. The MVP vision extends this into Socratic RAG chat, concept-level mastery, lecturer insights, material ingestion, and academic-integrity guardrails.
 
 ## Product Direction
 

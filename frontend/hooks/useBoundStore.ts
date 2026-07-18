@@ -15,7 +15,7 @@ export const useBoundStore = create<BoundState>()(
       ...createPracticeSlice(...a),
     }),
     {
-      name: "mentora_bound_store", // Key used in local storage
+      name: "edugap_bound_store", // Key used in local storage
     }
   )
 );

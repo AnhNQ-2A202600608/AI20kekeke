@@ -185,7 +185,7 @@ function buildDiagnosticTransition(
       type: 'difficulty',
       eyebrow: 'Độ khó đã tăng',
       title: `${before.label} -> ${after.label}`,
-      body: 'Bạn vừa trả lời đủ tốt để Mentora nâng mức thử thách ở câu kế tiếp.',
+      body: 'Bạn vừa trả lời đủ tốt để EduGap nâng mức thử thách ở câu kế tiếp.',
     };
   }
   if (currentQuestion.concept_id !== nextQuestion.concept_id) {
@@ -316,7 +316,7 @@ export function OnboardingPage() {
       <main className="grid h-[100dvh] place-items-center bg-warm-cream px-6 text-on-background font-be-vietnam-pro">
         <div className="rounded-2xl border border-primary-green/15 bg-white px-5 py-4 text-center shadow-sm">
           <p className="text-control-label font-black text-neutral-900">Đang mở trang đăng nhập...</p>
-          <p className="mt-1 text-node-label font-semibold text-neutral-500">Bạn cần tài khoản Mentora để thiết lập lộ trình học.</p>
+          <p className="mt-1 text-node-label font-semibold text-neutral-500">Bạn cần tài khoản EduGap để thiết lập lộ trình học.</p>
         </div>
       </main>
     );
@@ -608,7 +608,7 @@ export function OnboardingPage() {
                     insight={{
                       eyebrow: 'Nhịp học',
                       title: 'Đặt nhịp vừa đủ để không bỏ cuộc giữa chừng.',
-                      body: 'Mentora dùng thời lượng này để giới hạn số bài luyện mỗi tuần, nhịp nhắc học và độ dài phiên Socratic tutor.',
+                      body: 'EduGap dùng thời lượng này để giới hạn số bài luyện mỗi tuần, nhịp nhắc học và độ dài phiên Socratic tutor.',
                       stats: ['Ước lượng tải học', 'Giữ streak thực tế', 'Cân bằng quiz và lab'],
                     }}
                   >
@@ -1032,7 +1032,7 @@ function DiagnosticTip() {
       <div className="min-w-0">
         <p className="text-caption-tight font-black uppercase">Trả lời theo năng lực hiện tại</p>
         <p className="mt-1 text-node-label font-semibold leading-relaxed">
-          Câu trả lời đầu tiên giúp Mentora chọn bài luyện vừa sức hơn. Không cần cố đạt điểm cao ở bước này.
+          Câu trả lời đầu tiên giúp EduGap chọn bài luyện vừa sức hơn. Không cần cố đạt điểm cao ở bước này.
         </p>
       </div>
     </div>
@@ -1169,7 +1169,7 @@ function MasteryJudgmentExplanation({ summary }: { summary: ReturnType<typeof bu
         <div>
           <p className="text-control-label font-black text-on-background">Vì sao hệ thống phán đoán như vậy?</p>
           <p className="mt-1 max-w-2xl text-node-label font-semibold leading-relaxed text-stone-600">
-            Mentora kết hợp đúng/sai, độ khó câu hỏi, concept liên quan và số tín hiệu thu được để seed hồ sơ ban đầu. Đây là điểm xuất phát, không phải kết luận cố định.
+            EduGap kết hợp đúng/sai, độ khó câu hỏi, concept liên quan và số tín hiệu thu được để seed hồ sơ ban đầu. Đây là điểm xuất phát, không phải kết luận cố định.
           </p>
         </div>
         <span className="rounded-full bg-white px-2.5 py-1 text-label-tight font-black text-primary-blue-dark">

@@ -1,0 +1,103 @@
+.profileMenu {
+  position: relative;
+}
+
+.profileMenu :global(.profile-summary) {
+  border: 0;
+  cursor: pointer;
+}
+
+.menuCaret,
+.menuCaretOpen {
+  color: var(--muted);
+  transition: transform .22s ease;
+}
+
+.menuCaretOpen {
+  transform: rotate(180deg);
+}
+
+.profileDropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  z-index: 40;
+  width: min(330px, calc(100vw - 28px));
+  padding: 10px;
+  border-radius: 18px;
+  background: rgba(255,255,255,.96);
+  box-shadow: 0 24px 64px rgba(22,55,45,.18), inset 0 1px 0 white, inset 0 0 0 1px var(--line);
+  backdrop-filter: blur(20px);
+  animation: dropdownIn .22s ease both;
+}
+
+@keyframes dropdownIn {
+  from { opacity: 0; transform: translateY(-7px) scale(.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.profileDropdownHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 11px 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.profileDropdownHeader :global(.avatar) {
+  width: 38px;
+  height: 38px;
+}
+
+.profileDropdownHeader div,
+.profileMenuLinks a span {
+  display: grid;
+  gap: 1px;
+}
+
+.profileDropdownHeader strong,
+.profileMenuLinks strong {
+  color: var(--ink);
+  font-size: .82rem;
+}
+
+.profileDropdownHeader small,
+.profileMenuLinks small {
+  color: var(--muted);
+  font-size: .68rem;
+}
+
+.profileMenuLinks {
+  display: grid;
+  gap: 3px;
+  padding: 8px 0;
+}
+
+.profileMenuLinks a {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  align-items: center;
+  gap: 9px;
+  min-height: 48px;
+  padding: 7px 9px;
+  border-radius: 11px;
+  color: var(--accent-dark);
+  transition: background .2s ease, transform .2s ease;
+}
+
+.profileMenuLinks a:hover {
+  transform: translateX(2px);
+  background: var(--accent-soft);
+}
+
+.profileLogout {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 0 10px;
+  border-top: 1px solid var(--line);
+  color: var(--danger);
+  font-size: .76rem;
+  font-weight: 850;
+}

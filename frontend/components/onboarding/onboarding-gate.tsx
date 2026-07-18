@@ -130,7 +130,7 @@ export function OnboardingGate({ children }: { children: ReactNode }) {
     <div className="flex min-h-screen items-center justify-center bg-background px-6 text-on-background">
       <MascotLoadingBlock
         title={gateState === 'redirecting' ? 'Sofi đang mở onboarding...' : hydrated ? 'Sofi đang kiểm tra hồ sơ học tập...' : 'Sofi đang đồng bộ hồ sơ...'}
-        description="Mentora chuẩn bị lộ trình phù hợp cho bạn"
+        description="EduGap chuẩn bị lộ trình phù hợp cho bạn"
         className="max-w-md border-2 border-primary-green/15 border-b-[5px] shadow-soft"
         mascotClassName="scale-[0.82]"
       />

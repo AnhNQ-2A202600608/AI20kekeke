@@ -2,12 +2,12 @@
 
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { useState, Suspense } from "react";
+import { useState } from "react";
 import { AppShell, ProgressBar } from "../../components/AppShell";
 
 const sections = ["Mục tiêu dạng bài", "Quy đồng mẫu số", "Ví dụ minh họa", "Ghi nhớ"];
 
-function LessonContent() {
+export default function LessonPage() {
   const searchParams = useSearchParams();
   const subjectCode = searchParams.get("subject") || "TO";
   const [active, setActive] = useState(1);
@@ -37,13 +37,5 @@ function LessonContent() {
         </article>
       </div>
     </AppShell>
-  );
-}
-
-export default function LessonPage() {
-  return (
-    <Suspense fallback={<div>Đang tải...</div>}>
-      <LessonContent />
-    </Suspense>
   );
 }

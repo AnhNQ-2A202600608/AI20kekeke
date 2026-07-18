@@ -210,8 +210,8 @@ function HeroLaptopMockup() {
       <div className="mx-auto h-5 w-[78%] rounded-b-[30px] bg-[linear-gradient(180deg,#d7dad8,#bfc4c1)] shadow-[0_12px_24px_rgba(74,89,57,0.14)]" />
 
       <Image
-        src="/mascot/sofi/1024/mentora-fox-quiz-coach.webp"
-        alt="Sofi, mascot Mentora đang cầm bảng học tập"
+        src="/mascot/sofi/1024/edugap-fox-quiz-coach.webp"
+        alt="Sofi, mascot EduGap đang cầm bảng học tập"
         width={320}
         height={320}
         priority
@@ -235,7 +235,7 @@ export function LandingHeroSection() {
             Học AI để hiểu, không chỉ lấy đáp án
           </h1>
           <p className="mt-3 max-w-[25rem] text-[0.8rem] font-semibold leading-6 text-stone-600 md:text-[0.85rem]">
-            Mentora biến học liệu chính thức thành gợi ý Socratic có citation, quiz thích ứng và mastery map để học viên biết mình hổng gì, nên luyện gì tiếp.
+            EduGap biến học liệu chính thức thành gợi ý Socratic có citation, quiz thích ứng và mastery map để học viên biết mình hổng gì, nên luyện gì tiếp.
           </p>
           <div className="mt-4">
             <LandingCta />

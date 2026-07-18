@@ -427,7 +427,6 @@ export const QuizEditorTab: React.FC<QuizEditorTabProps> = ({
     return () => {
       ignore = true;
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [demoMode, statusFilter, sourceFilter, conceptFilter, debouncedSearch, token]);
 
   // Load status counts from API when in real mode

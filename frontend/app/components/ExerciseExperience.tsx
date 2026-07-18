@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { useState, Suspense } from "react";
+import { useState } from "react";
 import { AppShell, ProgressBar } from "./AppShell";
 import { updateSubjectLearningProgress, useOnboardingProfile } from "../hooks/useOnboardingProfile";
 
@@ -14,14 +14,6 @@ const answers = [
 ];
 
 export function ExerciseExperience({ mode }: { mode: "practice" | "test" }) {
-  return (
-    <Suspense fallback={<div>Đang tải bài tập...</div>}>
-      <ExerciseExperienceInner mode={mode} />
-    </Suspense>
-  );
-}
-
-function ExerciseExperienceInner({ mode }: { mode: "practice" | "test" }) {
   const searchParams = useSearchParams();
   const subjectCode = searchParams.get("subject") || "TO";
   const learningLevel = useOnboardingProfile(subjectCode);
