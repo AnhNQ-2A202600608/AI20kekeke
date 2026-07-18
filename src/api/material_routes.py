@@ -21,6 +21,17 @@ class QuizGenRequest(BaseModel):
     difficulty: str = "bình thường"
     socratic_hints: bool = True
     concept_code: str
+    prompt_override: str | None = None
+
+
+class WeaknessQuizGenRequest(BaseModel):
+    student_id: str
+    concept_code: str
+    document_name: str | None = None
+    num_questions: int = 5
+    difficulty: str = "bình thường"
+    socratic_hints: bool = True
+    prompt_override: str | None = None
 
 
 @router.get("")
@@ -354,10 +365,62 @@ async def generate_quizzes(
         socratic_hints=req.socratic_hints,
         concept_code=req.concept_code,
         user_id=str(user.id),
+        prompt_override=req.prompt_override,
     )
     return {
         "status": "accepted",
         "document_name": document_name,
         "num_questions_requested": req.num_questions,
         "message": "AI quiz generation pipeline has been triggered in the background.",
+    }
+
+
+def get_document_name_for_concept(concept_code: str) -> str:
+    # Match standard curriculum concepts to slide document names
+    mapping = {
+        "d1-ai-llm-foundations": "Day 01 - AI & LLM Foundations.pdf",
+        "d2-ai-problem-framing": "Day 02 - Problem Framing.pdf",
+        "d4-prompt-engineering": "Day 04 - Prompt Engineering.pdf",
+        "d8-rag-pipeline": "Day 08 - Production RAG.pdf",
+        "d10-observability": "Day 10 - Data Observability.pdf",
+    }
+    # Clean concept_code to try finding match
+    for k, v in mapping.items():
+        if k in concept_code.lower():
+            return v
+    # Fallback to a default if not found
+    return "Day 08 - Production RAG.pdf"
+
+
+@router.post("/generate-by-weakness", status_code=202)
+async def generate_quizzes_by_weakness(
+    req: WeaknessQuizGenRequest,
+    background_tasks: BackgroundTasks,
+    user: AuthenticatedUser = Depends(require_role(["mentor", "admin", "dev"])),
+):
+    """
+    Trigger background task to generate quiz questions tailored for a student's weak concept.
+    """
+    doc_name = req.document_name
+    if not doc_name:
+        doc_name = get_document_name_for_concept(req.concept_code)
+
+    background_tasks.add_task(
+        generate_quizzes_from_slides_task,
+        document_name=doc_name,
+        num_questions=req.num_questions,
+        difficulty=req.difficulty,
+        socratic_hints=req.socratic_hints,
+        concept_code=req.concept_code,
+        user_id=str(user.id),
+        prompt_override=req.prompt_override,
+        is_weakness_targeted=True,
+    )
+    return {
+        "status": "accepted",
+        "student_id": req.student_id,
+        "concept_code": req.concept_code,
+        "document_name": doc_name,
+        "num_questions_requested": req.num_questions,
+        "message": "AI targeted quiz generation pipeline for student weakness has been triggered in the background.",
     }

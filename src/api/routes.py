@@ -924,65 +924,38 @@ async def get_student_recent_sessions(
         return []
 
     try:
-        events_resp = (
-            db.app_client.table("student_recent_events")
-            .select("id, created_at, elo_delta, concept_id, source_type, source_id")
+        attempts_resp = (
+            db.app_client.table("quiz_attempts")
+            .select("id, submitted_at, concept_id, hint_count, is_correct, concepts(name)")
             .eq("student_id", str(student_id))
-            .order("created_at", desc=True)
+            .order("submitted_at", desc=True)
             .limit(5)
             .execute()
         )
 
-        events = events_resp.data or []
-        if not events:
+        attempts = attempts_resp.data or []
+        if not attempts:
             return []
 
-        concept_ids = list(set(str(e["concept_id"]) for e in events if e.get("concept_id")))
-        source_ids = list(
-            set(str(e["source_id"]) for e in events if e.get("source_id") and e.get("source_type") == "quiz_attempt")
-        )
-
-        concepts_map = {}
-        if concept_ids:
-            concepts_resp = db.app_client.table("concepts").select("id, name").in_("id", concept_ids).execute()
-            for c in concepts_resp.data or []:
-                concepts_map[str(c["id"])] = c["name"]
-
-        quiz_attempts_map = {}
-        if source_ids:
-            attempts_resp = (
-                db.app_client.table("quiz_attempts")
-                .select("id, hint_count, is_correct")
-                .in_("id", source_ids)
-                .execute()
-            )
-            for a in attempts_resp.data or []:
-                quiz_attempts_map[str(a["id"])] = a
-
         result = []
-        for e in events:
-            concept_name = concepts_map.get(str(e["concept_id"]), "Chủ đề ẩn")
-            hint_count = 0
-            questions_count = 1
+        for a in attempts:
+            concept_name = "Chủ đề ẩn"
+            if "concepts" in a and isinstance(a["concepts"], dict):
+                concept_name = a["concepts"].get("name", "Chủ đề ẩn")
 
-            if e["source_type"] == "quiz_attempt" and str(e["source_id"]) in quiz_attempts_map:
-                attempt_info = quiz_attempts_map[str(e["source_id"])]
-                hint_count = attempt_info.get("hint_count") or 0
-
+            hint_count = a.get("hint_count") or 0
             hint_penalty = min(100, hint_count * 15)
 
-            try:
-                elo_delta_val = float(e["elo_delta"])
-            except Exception:
-                elo_delta_val = 0.0
+            is_correct = bool(a.get("is_correct"))
+            elo_delta_val = 15.0 if is_correct else -10.0
 
             result.append(
                 {
-                    "id": str(e["id"]),
+                    "id": str(a["id"]),
                     "conceptName": concept_name,
-                    "type": "quiz" if e["source_type"] == "quiz_attempt" else "tutor_chat",
-                    "date": e["created_at"],
-                    "questionsCount": questions_count,
+                    "type": "quiz",
+                    "date": a["submitted_at"],
+                    "questionsCount": 1,
                     "hintsUsed": hint_count,
                     "hintPenaltyPct": hint_penalty,
                     "eloDelta": round(elo_delta_val, 1),

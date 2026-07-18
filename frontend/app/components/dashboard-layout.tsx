@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, type ReactNode } from 'react';
+import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { usePathname, useRouter } from 'next/navigation';
@@ -131,6 +131,7 @@ export function DashboardLayout({ quiz, onOpenAuth }: DashboardLayoutProps) {
   const conceptMasteries = useBoundStore((state) => state.conceptMasteries);
   const useAppFloatingNav = true;
   const showRightBar = false;
+  const [quizEditorSearchQuery, setQuizEditorSearchQuery] = useState<string | undefined>(undefined);
   const isStudentWorkspaceTab = quiz.activeTab === 'learn' || quiz.activeTab === 'skills' || quiz.activeTab === 'skill-graph';
   const showSharedAppTopNav = !isStudentWorkspaceTab && quiz.activeTab !== 'chat' && quiz.activeTab !== 'profile';
   const usesCodeBayBackground = quiz.activeTab !== 'chat' || quiz.selectedPersona === 'student';
@@ -324,7 +325,12 @@ export function DashboardLayout({ quiz, onOpenAuth }: DashboardLayoutProps) {
             {!isStudentWorkspaceTab && quiz.activeTab === 'ingestion' && (
               <motion.div key="ingestion-tab" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
                 <MentorTabWrapper>
-                  <IngestionTab />
+                  <IngestionTab
+                    onNavigateToQuizEditor={(searchQuery) => {
+                      setQuizEditorSearchQuery(searchQuery);
+                      setActiveRouteTab('quiz-editor');
+                    }}
+                  />
                 </MentorTabWrapper>
               </motion.div>
             )}
@@ -332,7 +338,10 @@ export function DashboardLayout({ quiz, onOpenAuth }: DashboardLayoutProps) {
             {!isStudentWorkspaceTab && quiz.activeTab === 'quiz-editor' && (
               <motion.div key="quiz-editor-tab" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
                 <MentorTabWrapper>
-                  <QuizManagementTab />
+                  <QuizManagementTab
+                    initialSourceFilter={quizEditorSearchQuery}
+                    onClearSourceFilter={() => setQuizEditorSearchQuery(undefined)}
+                  />
                 </MentorTabWrapper>
               </motion.div>
             )}

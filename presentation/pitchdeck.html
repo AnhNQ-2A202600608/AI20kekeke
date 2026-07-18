@@ -1,0 +1,1842 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduGap Pitch Deck - Adaptive Tutor for Mixed-Ability Classroom</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Design System Philosophy (Blue Ocean / EdTech Blueprint) */
+        :root {
+            --primary: #0284c7;        /* Ocean Blue */
+            --primary-dark: #0369a1;   /* Darker Ocean Blue */
+            --primary-light: #e0f2fe;  /* Very Light Blue */
+            --text-dark: #0f172a;      /* Navy/Slate Dark */
+            --text-muted: #475569;     /* Slate Muted */
+            --bg-page: #f1f5f9;        /* Warm light grey for page background */
+            --bg-container: #fafaf9;   /* Warm off-white for slide container */
+            --bg-card: #ffffff;        /* Tactile white cards */
+            --success: #10b981;        /* Emerald Green for Success */
+            --warning: #f59e0b;        /* Amber Orange for Warning */
+            --danger: #ef4444;         /* Red for Gaps/Errors */
+            --border-color: rgba(15, 23, 42, 0.06);
+            --shadow-tactile: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -2px rgba(0, 0, 0, 0.02);
+            --shadow-card: 0 10px 15px -3px rgba(0, 0, 0, 0.03), 0 4px 6px -4px rgba(0, 0, 0, 0.03);
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-dark);
+            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        /* 16:9 Auto Scaling Container */
+        .presentation-container {
+            width: 1920px;
+            height: 1080px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(1);
+            transform-origin: center center;
+            background-color: var(--bg-container);
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.15);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(15, 23, 42, 0.08);
+        }
+
+        /* Slide layout styles */
+        .slides-wrapper {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 60px 80px 100px 80px;
+            display: none;
+            flex-direction: column;
+            justify-content: flex-start;
+            opacity: 0;
+            transition: opacity var(--transition-speed) ease-in-out;
+        }
+
+        .slide.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        /* Slide Title & Headers */
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 20px;
+        }
+
+        .slide-title-group {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .slide-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--text-dark);
+            letter-spacing: -0.02em;
+        }
+
+        .slide-tag {
+            background-color: var(--primary-light);
+            color: var(--primary-dark);
+            padding: 6px 14px;
+            border-radius: 9999px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .slide-number {
+            font-family: 'Fira Code', monospace;
+            font-size: 20px;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        /* Common Elements: Tactile Cards */
+        .card {
+            background: var(--bg-card);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            box-shadow: var(--shadow-tactile);
+            transition: all var(--transition-speed) ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-card);
+            border-color: rgba(2, 132, 199, 0.2);
+        }
+
+        /* Grid layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            height: 100%;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+        }
+
+        /* Slide 1: Cover Page */
+        .cover-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            text-align: center;
+            padding-bottom: 40px;
+        }
+
+        .cover-logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .cover-logo-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 32px;
+            font-family: 'Outfit', sans-serif;
+            box-shadow: 0 8px 16px rgba(2, 132, 199, 0.2);
+        }
+
+        .cover-logo-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 52px;
+            font-weight: 800;
+            color: var(--text-dark);
+            letter-spacing: -0.03em;
+        }
+
+        .cover-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 64px;
+            font-weight: 800;
+            color: var(--text-dark);
+            line-height: 1.15;
+            margin-bottom: 30px;
+            max-width: 1400px;
+            letter-spacing: -0.02em;
+        }
+
+        .cover-title span {
+            color: var(--primary);
+        }
+
+        /* Blinking Alarm Banner (Hook Engine) */
+        .alarm-banner {
+            background-color: rgba(245, 158, 11, 0.08);
+            border: 1.5px dashed var(--warning);
+            border-radius: 8px;
+            padding: 20px 40px;
+            margin-bottom: 50px;
+            max-width: 1100px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            animation: pulse-border 2s infinite ease-in-out;
+        }
+
+        .alarm-icon {
+            font-size: 24px;
+            animation: blink 1.2s infinite steps(2, start);
+        }
+
+        .alarm-text {
+            font-size: 20px;
+            font-weight: 600;
+            color: #d97706; /* Darker amber text */
+            text-align: left;
+            line-height: 1.4;
+        }
+
+        @keyframes pulse-border {
+            0% { border-color: rgba(245, 158, 11, 0.4); }
+            50% { border-color: rgba(245, 158, 11, 1); }
+            100% { border-color: rgba(245, 158, 11, 0.4); }
+        }
+
+        @keyframes blink {
+            to { visibility: hidden; }
+        }
+
+        .cover-hooks {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .hook-card {
+            text-align: left;
+        }
+
+        .hook-num {
+            font-family: 'Outfit', sans-serif;
+            font-size: 38px;
+            font-weight: 800;
+            color: var(--danger);
+            margin-bottom: 10px;
+        }
+
+        .hook-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .hook-desc {
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Slide 2: Value One-Liner (JSON Code Panel) */
+        .one-liner-content {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .one-liner-statement {
+            font-family: 'Outfit', sans-serif;
+            font-size: 38px;
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.4;
+            max-width: 1500px;
+            border-left: 6px solid var(--primary);
+            padding-left: 30px;
+        }
+
+        .one-liner-statement mark {
+            background-color: var(--primary-light);
+            color: var(--primary-dark);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .code-panel {
+            background-color: #0f172a; /* Slate 900 */
+            border-radius: 8px;
+            padding: 35px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            font-family: 'Fira Code', monospace;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #f8fafc;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .code-key { color: #38bdf8; }     /* Sky blue */
+        .code-val { color: #f43f5e; }     /* Rose red */
+        .code-string { color: #34d399; }  /* Emerald Green */
+        .code-comment { color: #64748b; font-style: italic; }
+
+        /* Slide 3: Problem Deep Dive (Split Screen with Flowchart) */
+        .problem-content {
+            display: flex;
+            gap: 50px;
+            height: calc(100% - 100px);
+        }
+
+        .problem-visual {
+            flex: 1.1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffffff;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            padding: 40px;
+            box-shadow: var(--shadow-tactile);
+        }
+
+        .diagram-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+            align-self: flex-start;
+        }
+
+        .diagram-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            width: 100%;
+        }
+
+        .diagram-row {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .diagram-label {
+            width: 160px;
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-muted);
+        }
+
+        .diagram-flow {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .flow-node {
+            background-color: var(--bg-page);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 12px 18px;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+            position: relative;
+            flex: 1;
+        }
+
+        .flow-node.danger {
+            background-color: #fef2f2;
+            border-color: #fca5a5;
+            color: var(--danger);
+        }
+
+        .flow-node.success {
+            background-color: #ecfdf5;
+            border-color: #a7f3d0;
+            color: var(--success);
+        }
+
+        .flow-node.active-node {
+            background-color: var(--primary-light);
+            border-color: rgba(2, 132, 199, 0.3);
+            color: var(--primary-dark);
+        }
+
+        .flow-arrow {
+            color: var(--text-muted);
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .problem-cards {
+            flex: 0.9;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            justify-content: center;
+        }
+
+        .prob-card {
+            border-left: 4px solid var(--warning);
+        }
+
+        .prob-card.danger-left {
+            border-left: 4px solid var(--danger);
+        }
+
+        .prob-card-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .prob-card-desc {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Slide 4: Technical Stack & Architecture */
+        .arch-content {
+            display: flex;
+            gap: 40px;
+            height: calc(100% - 100px);
+        }
+
+        .arch-stack {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .arch-block {
+            background-color: var(--bg-card);
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 25px 35px;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow-tactile);
+        }
+
+        .arch-block:hover {
+            border-color: var(--primary);
+            background-color: var(--primary-light);
+            transform: translateX(5px);
+        }
+
+        .arch-block.active {
+            border-color: var(--primary);
+            background-color: var(--primary-light);
+            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.1);
+        }
+
+        .arch-block-info {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .arch-block-layer {
+            font-family: 'Fira Code', monospace;
+            font-size: 13px;
+            color: var(--primary-dark);
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .arch-block-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .arch-block-arrow {
+            font-size: 20px;
+            color: var(--text-muted);
+            transition: transform 0.2s;
+        }
+
+        .arch-block.active .arch-block-arrow {
+            color: var(--primary);
+            transform: rotate(90deg);
+        }
+
+        .arch-details {
+            flex: 1.1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .arch-detail-card {
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .arch-detail-header {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .arch-detail-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .arch-detail-body {
+            font-size: 16px;
+            color: var(--text-muted);
+            line-height: 1.7;
+            flex: 1;
+        }
+
+        .arch-tech-list {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .arch-tech-badge {
+            background-color: var(--bg-page);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 6px 12px;
+            font-family: 'Fira Code', monospace;
+            font-size: 13px;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        /* Slide 5: Live Demo Storyboard (Typing Terminal) */
+        .demo-content {
+            display: flex;
+            flex-direction: column;
+            height: calc(100% - 100px);
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .demo-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            padding: 0 40px;
+        }
+
+        .demo-steps::after {
+            content: '';
+            position: absolute;
+            top: 35px;
+            left: 80px;
+            right: 80px;
+            height: 4px;
+            background-color: var(--border-color);
+            z-index: 1;
+        }
+
+        .demo-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            z-index: 2;
+            width: 220px;
+        }
+
+        .demo-step-num {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: var(--bg-card);
+            border: 3px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-muted);
+            transition: all 0.2s ease-in-out;
+            box-shadow: var(--shadow-tactile);
+        }
+
+        .demo-step:hover .demo-step-num {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: scale(1.05);
+        }
+
+        .demo-step.active .demo-step-num {
+            border-color: var(--primary);
+            background-color: var(--primary);
+            color: white;
+            box-shadow: 0 0 15px rgba(2, 132, 199, 0.4);
+        }
+
+        .demo-step-label {
+            margin-top: 15px;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-align: center;
+            transition: color 0.2s;
+        }
+
+        .demo-step.active .demo-step-label {
+            color: var(--primary-dark);
+        }
+
+        .terminal-window {
+            background-color: #090d16;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .terminal-header {
+            background-color: #121824;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .terminal-dots {
+            display: flex;
+            gap: 8px;
+        }
+
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        .dot-red { background-color: #ef4444; }
+        .dot-yellow { background-color: #f59e0b; }
+        .dot-green { background-color: #10b981; }
+
+        .terminal-title {
+            color: #64748b;
+            font-family: 'Fira Code', monospace;
+            font-size: 13px;
+        }
+
+        .terminal-body {
+            padding: 30px;
+            flex: 1;
+            font-family: 'Fira Code', monospace;
+            font-size: 16px;
+            color: #38bdf8; /* terminal blue */
+            line-height: 1.6;
+            overflow-y: auto;
+            text-align: left;
+        }
+
+        .terminal-cursor {
+            display: inline-block;
+            width: 8px;
+            height: 18px;
+            background-color: #38bdf8;
+            margin-left: 4px;
+            animation: terminal-blink 0.8s infinite;
+            vertical-align: middle;
+        }
+
+        @keyframes terminal-blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Slide 6: Feasibility & MVP (Animating counters) */
+        .feasibility-content {
+            display: flex;
+            flex-direction: column;
+            height: calc(100% - 100px);
+            justify-content: center;
+            gap: 50px;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .metric-card {
+            text-align: center;
+            padding: 50px 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .metric-number-wrapper {
+            font-family: 'Outfit', sans-serif;
+            font-size: 78px;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .metric-number {
+            display: inline-block;
+        }
+
+        .metric-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .metric-desc {
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            max-width: 320px;
+        }
+
+        .metric-progress-bg {
+            width: 100%;
+            height: 8px;
+            background-color: var(--bg-page);
+            border-radius: 9999px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .metric-progress-bar {
+            height: 100%;
+            background-color: var(--primary);
+            border-radius: 9999px;
+            width: 0%;
+            transition: width 1.5s cubic-bezier(0.1, 0.8, 0.25, 1);
+        }
+
+        /* Slide 7: Roadmap & Compliance */
+        .roadmap-content {
+            display: flex;
+            flex-direction: column;
+            height: calc(100% - 100px);
+            justify-content: space-between;
+            padding: 30px 0;
+        }
+
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 50px;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 50px;
+            right: 50px;
+            height: 3px;
+            background-color: var(--border-color);
+            z-index: 1;
+        }
+
+        .timeline-node {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            z-index: 2;
+            width: 30%;
+            background-color: var(--bg-container);
+            padding-right: 20px;
+        }
+
+        .timeline-dot {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary-light);
+            border: 4px solid var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            font-size: 18px;
+            box-shadow: var(--shadow-tactile);
+        }
+
+        .timeline-date {
+            font-family: 'Outfit', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+
+        .timeline-desc-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .timeline-desc-list li {
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.5;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .timeline-desc-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .compliance-section {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .compliance-badge {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 15px 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-tactile);
+        }
+
+        .compliance-icon {
+            font-size: 24px;
+            color: var(--success);
+        }
+
+        .compliance-text {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        /* Slide 8: Ask & Vision */
+        .ask-content {
+            display: flex;
+            flex-direction: column;
+            height: calc(100% - 100px);
+            justify-content: space-between;
+            padding: 20px 0;
+        }
+
+        .ask-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .ask-card-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .ask-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            list-style: none;
+        }
+
+        .ask-list li {
+            font-size: 16px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .ask-list li::before {
+            content: '•';
+            position: absolute;
+            left: 5px;
+            color: var(--primary);
+            font-size: 22px;
+            line-height: 1;
+        }
+
+        .vision-block {
+            border-top: 2px solid var(--primary-light);
+            padding-top: 30px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .vision-quote {
+            font-family: 'Outfit', sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            font-style: italic;
+            color: var(--text-dark);
+            max-width: 1100px;
+            margin: 0 auto;
+            line-height: 1.5;
+            position: relative;
+        }
+
+        .vision-quote::before {
+            content: '“';
+            font-size: 80px;
+            color: var(--primary-light);
+            position: absolute;
+            top: -45px;
+            left: -40px;
+            font-family: serif;
+        }
+
+        .vision-quote::after {
+            content: '”';
+            font-size: 80px;
+            color: var(--primary-light);
+            position: absolute;
+            bottom: -80px;
+            right: -40px;
+            font-family: serif;
+        }
+
+        /* Control Panel (Footer) */
+        .presentation-footer {
+            background-color: var(--bg-card);
+            border-top: 1px solid var(--border-color);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            z-index: 100;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            background-color: var(--bg-page);
+            border: 1px solid var(--border-color);
+            color: var(--text-dark);
+            padding: 8px 18px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn:hover {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .btn-active {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .slide-dots {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #cbd5e1; /* slate 300 */
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .dot.active {
+            background-color: var(--primary);
+            transform: scale(1.3);
+        }
+
+        .controls-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .keyboard-hint {
+            font-size: 13px;
+            color: var(--text-muted);
+            background-color: var(--bg-page);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-family: 'Fira Code', monospace;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Presenter Notes Overlay / Drawer */
+        .notes-drawer {
+            position: absolute;
+            bottom: 80px;
+            left: 0;
+            right: 0;
+            height: 160px;
+            background-color: #1e293b; /* Slate 800 */
+            color: #f8fafc;
+            border-top: 2px solid var(--primary);
+            padding: 20px 40px;
+            display: none;
+            flex-direction: column;
+            z-index: 90;
+            text-align: left;
+            box-shadow: 0 -10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .notes-drawer.open {
+            display: flex;
+        }
+
+        .notes-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .notes-content {
+            font-size: 15px;
+            line-height: 1.5;
+            color: #cbd5e1;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="presentation-container">
+        
+        <div class="slides-wrapper">
+            
+            <!-- SLIDE 1: Cover & The Hook -->
+            <div class="slide active" id="slide-1">
+                <div class="slide-header">
+                    <div class="slide-title-group">
+                        <div class="slide-logo-square cover-logo-icon">E</div>
+                        <span class="slide-tag">AI-Native EdTech</span>
+                    </div>
+                    <span class="slide-number">01 / 08</span>
+                </div>
+                
+                <div class="cover-content">
+                    <div class="cover-logo-area">
+                        <div class="cover-logo-icon">E</div>
+                        <span class="cover-logo-text">EduGap</span>
+                    </div>
+                    <h1 class="cover-title">Gia Sư Thích Ứng Cho <span>Lớp Học Phân Hóa</span></h1>
+                    
+                    <!-- Blinking Alarm Banner (Hook Engine) -->
+                    <div class="alarm-banner">
+                        <span class="alarm-icon">⚠️</span>
+                        <div class="alarm-text">
+                            <strong>Thực trạng giáo dục:</strong> 82% học sinh tiểu học gặp khó khăn do hổng kiến thức gốc từ các lớp dưới, nhưng các hệ thống hiện hành vẫn ép học sinh tiếp tục học theo tiến trình chung!
+                        </div>
+                    </div>
+                    
+                    <div class="cover-hooks">
+                        <div class="card hook-card">
+                            <div class="hook-num">> 3 lớp</div>
+                            <div class="hook-title">Hổng Kiến Thức Sâu</div>
+                            <div class="hook-desc">Lỗi làm Toán lớp 5 thường có căn nguyên từ sự thiếu hiểu biết về Giá Trị Hàng của lớp 3.</div>
+                        </div>
+                        <div class="card hook-card">
+                            <div class="hook-num">40+ em</div>
+                            <div class="hook-title">Quá Tải Phân Hóa</div>
+                            <div class="hook-desc">Một giáo viên không thể kèm cặp 40 trình độ khác nhau cùng lúc với giáo án tuyến tính truyền thống.</div>
+                        </div>
+                        <div class="card hook-card">
+                            <div class="hook-num">100%</div>
+                            <div class="hook-title">Rào Cản Kết Nối</div>
+                            <div class="hook-desc">Các phần mềm đám mây (Cloud-only) tê liệt hoàn toàn khi đưa về các điểm trường vùng khó khăn.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 2: Value One-Liner (JSON Code Panel) -->
+            <div class="slide" id="slide-2">
+                <div class="slide-header">
+                    <div class="slide-title-group">
+                        <span class="slide-title">Tuyên Ngôn Sản Phẩm</span>
+                        <span class="slide-tag">Value Proposition</span>
+                    </div>
+                    <span class="slide-number">02 / 08</span>
+                </div>
+                
+                <div class="one-liner-content">
+                    <h2 class="one-liner-statement">
+                        EduGap là hệ thống gia sư thích ứng đa môn cấp tiểu học giúp <mark>chẩn đoán khoảng hổng kiến thức gốc</mark> xuyên lớp, tự động hóa <mark>lộ trình khắc phục siêu cá nhân</mark>, hỗ trợ giáo viên phân nhóm và chỉ đạo giảng dạy thời gian thực.
+                    </h2>
+                    
+                    <div class="code-panel">
+                        <span class="code-comment">// Cấu trúc kỹ thuật cốt lõi của giải pháp EduGap</span><br>
+                        {<br>
+                        &nbsp;&nbsp;<span class="code-key">"mục_tiêu"</span>: <span class="code-string">"Học tập thích ứng bám sát chương trình GDPT 2018"</span>,<br>
+                        &nbsp;&nbsp;<span class="code-key">"phương_pháp"</span>: {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-key">"chẩn_đoán"</span>: <span class="code-string">"Truy vết đồ thị tiên quyết (Root-cause Diagnosis)"</span>,<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-key">"khắc_phục"</span>: <span class="code-string">"Lộ trình micro-remediation cá nhân hóa tức thời"</span><br>
+                        &nbsp;&nbsp;},<br>
+                        &nbsp;&nbsp;<span class="code-key">"môi_trường"</span>: <span class="code-string">"Offline-first (Chạy hoàn chỉnh không cần Internet liên tục)"</span>,<br>
+                        &nbsp;&nbsp;<span class="code-key">"người_dùng"</span>: [<span class="code-string">"Học sinh tiểu học 1-5"</span>, <span class="code-string">"Giáo viên đứng lớp"</span>]<br>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 3: Problem Deep Dive (Split Screen with Flowchart) -->
+            <div class="slide" id="slide-3">
+                <div class="slide-header">
+                    <div class="slide-title-group">
+                        <span class="slide-title">Phân Tích Sâu Vấn Đề</span>
+                        <span class="slide-tag">Problem Deep Dive</span>
+                    </div>
+                    <span class="slide-number">03 / 08</span>
+                </div>
+                
+                <div class="problem-content">
+                    <!-- Left: CSS Flowchart comparing traditional vs EduGap adaptive loop -->
+                    <div class="problem-visual">
+                        <div class="diagram-title">LUỒNG TRẢI NGHIỆM HỌC TẬP</div>
+                        
+                        <div class="diagram-container">
+                            <div class="diagram-row">
+                                <div class="diagram-label">Mô hình Tuyến tính</div>
+                                <div class="diagram-flow">
+                                    <div class="flow-node danger">Làm sai bài Lớp 5</div>
+                                    <div class="flow-arrow">→</div>
+                                    <div class="flow-node danger">Làm lại bài Lớp 5</div>
+                                    <div class="flow-arrow">→</div>
+                                    <div class="flow-node danger">Học sinh nản / Bỏ cuộc</div>
+                                </div>
+                            </div>
+                            
+                            <div style="text-align: center; color: var(--text-muted); font-size: 20px; font-weight: bold; margin: 10px 0;">VS.</div>
+                            
+                            <div class="diagram-row">
+                                <div class="diagram-label" style="color: var(--primary);">Mô hình Thích ứng</div>
+                                <div class="diagram-flow">
+                                    <div class="flow-node danger">Làm sai bài Lớp 5</div>
+                                    <div class="flow-arrow">→</div>
+                                    <div class="flow-node active-node">Dò tìm hổng Lớp 4/3</div>
+                                    <div class="flow-arrow">→</div>
+                                    <div class="flow-node success">Khắc phục gốc rễ</div>
+                                    <div class="flow-arrow">→</div>
+                                    <div class="flow-node success">Vượt qua bài Lớp 5</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right: Core pain point list -->
+                    <div class="problem-cards">
+                        <div class="card prob-card danger-left">
+                            <div class="prob-card-title">Mất Gốc Lũy Tiến (Cumulative Loss)</div>
+                            <div class="prob-card-desc">Lỗi ở lớp trên bắt nguồn từ khái niệm lớp dưới. Các công cụ hiện tại chỉ kiểm tra đúng/sai phẳng, không có khả năng truy vết và giải quyết gốc rễ.</div>
+                        </div>
+                        <div class="card prob-card">
+                            <div class="prob-card-title">Giáo Viên Quá Tải Chỉ Đạo</div>
+                            <div class="prob-card-desc">Thiếu dữ liệu phân nhóm thực tế. Giáo viên không biết bắt đầu giảng dạy lại từ đâu khi đối mặt với phổ học lực quá rộng trong một lớp học.</div>
+                        </div>
+                        <div class="card prob-card">
+                            <div class="prob-card-title">Hạ Tầng Kết Nối Bất Ổn</div>
+                            <div class="prob-card-desc">Phần lớn các giải pháp đòi hỏi Internet băng thông rộng liên tục, loại bỏ cơ hội học tập bình đẳng tại các địa phương khó khăn.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 4: Technical Stack & Architecture -->
+            <div class="slide" id="slide-4">
+                <div class="slide-header">
+                    <div class="slide-title-group">
+                        <span class="slide-title">Kiến Trúc & Giải Pháp Kỹ Thuật</span>
+                        <span class="slide-tag">Technical Moat</span>
+                    </div>
+                    <span class="slide-number">04 / 08</span>
+                </div>
+                
+                <div class="arch-content">
+                    <!-- Left stacked blocks -->
+                    <div class="arch-stack">
+                        <div class="arch-block active" onclick="showArchDetails(1)">
+                            <div class="arch-block-info">
+                                <span class="arch-block-layer">Layer 1: UI & Client Engine</span>
+                                <span class="arch-block-name">Offline-first Client SPA</span>
+                            </div>
+                            <span class="arch-block-arrow">➔</span>
+                        </div>
+                        
+                        <div class="arch-block" onclick="showArchDetails(2)">
+                            <div class="arch-block-info">
+                                <span class="arch-block-layer">Layer 2: Core Processing Layer</span>
+                                <span class="arch-block-name">Động Cơ Chẩn Đoán Thích Ứng</span>
+                            </div>
+                            <span class="arch-block-arrow">➔</span>
+                        </div>
+                        
+                        <div class="arch-block" onclick="showArchDetails(3)">
+                            <div class="arch-block-info">
+                                <span class="arch-block-layer">Layer 3: Data & Schema Integration</span>
+                                <span class="arch-block-name">Bản Đồ Học Liệu GDPT 2018</span>
+                            </div>
+                            <span class="arch-block-arrow">➔</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Right details panel -->
+                    <div class="arch-details">
+                        <div class="card arch-detail-card">
+                            <div class="arch-detail-header">
+                                <h3 class="arch-detail-title" id="arch-title">Offline-first Client SPA</h3>
+                            </div>
+                            <div class="arch-detail-body" id="arch-body">
+                                Ứng dụng client Next.js đóng gói chạy độc lập trên trình duyệt. Quản lý trạng thái học tập ngoại tuyến hoàn toàn qua LocalStorage và IndexedDB. Đồng bộ hóa tiến trình hai chiều (Two-way Sync) mượt mà ngay khi phát hiện kết nối mà không làm trùng lặp hoặc ghi đè dữ liệu.
+                            </div>
+                            <div class="arch-tech-list" id="arch-techs">
+                                <span class="arch-tech-badge">Next.js SPA</span>
+                                <span class="arch-tech-badge">IndexedDB</span>
+                                <span class="arch-tech-badge">Service Workers</span>
+                                <span class="arch-tech-badge">PWA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 5: Live Demo Storyboard -->
+            <div class="slide" id="slide-5">
+                <div class="slide-header">
+                    <div class="slide-title-group">
+                        <span class="slide-title">Kịch Bản Demo Thực Tế</span>
+                        <span class="slide-tag">Live Demo Story</span>
+                    </div>
+                    <span class="slide-number">05 / 08</span>
+                </div>
+                
+                <div class="demo-content">
+                    <!-- Progress stepper -->
+                    <div class="demo-steps">
+                        <div class="demo-step active" onclick="triggerStep(1)">
+                            <div class="demo-step-num">1</div>
+                            <div class="demo-step-label">Bài Test Thích Ứng</div>
+                        </div>
+                        <div class="demo-step" onclick="triggerStep(2)">
+                            <div class="demo-step-num">2</div>
+                            <div class="demo-step-label">Chẩn Đoán Hổng Gốc</div>
+                        </div>
+                        <div class="demo-step" onclick="triggerStep(3)">
+                            <div class="demo-step-num">3</div>
+                            <div class="demo-step-label">Luyện Tập Khắc Phục</div>
+                        </div>
+                        <div class="demo-step" onclick="triggerStep(4)">
+                            <div class="demo-step-num">4</div>
+                            <div class="demo-step-label">Quay Lại Bài Lớp Hiện Tại</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Terminal Simulator -->
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <div class="terminal-dot dot-red"></div>
+                                <div class="terminal-dot dot-yellow"></div>
+                                <div class="terminal-dot dot-green"></div>
+                            </div>
+                            <div class="terminal-title">edugap-adaptive-engine ~ bash</div>
+                            <div style="width: 50px;"></div>
+                        </div>
+                        <div class="terminal-body" id="demo-terminal">
+                            Học sinh gặp khó ở bài kiểm tra Số Thập Phân lớp 5. Hệ thống kích hoạt dò tìm các năng lực tiên quyết liên quan... Click vào từng bước để theo dõi tiến trình xử lý chi tiết.
+                            <span class="terminal-cursor"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 6: Technical Feasibility & MVP -->
+            <div class="slide" id="slide-6">
+                <div class="slide-header">
+                    <div class="slide-title-group">
+                        <span class="slide-title">Tính Khả Thi & Bản Thử Nghiệm MVP</span>
+                        <span class="slide-tag">MVP Feasibility</span>
+                    </div>
+                    <span class="slide-number">06 / 08</span>
+                </div>
+                
+                <div class="feasibility-content">
+                    <div class="metrics-grid">
+                        <div class="card metric-card">
+                            <div class="metric-number-wrapper">
+                                <span class="metric-number" data-target="92">0</span>%
+                            </div>
+                            <div class="metric-title">Tỷ Lệ Khắc Phục Hổng</div>
+                            <div class="metric-desc">Tỷ lệ học sinh vá thành công lỗ hổng gốc và quay lại làm chủ mục tiêu lớp hiện tại trong các thử nghiệm mô phỏng.</div>
+                            <div class="metric-progress-bg">
+                                <div class="metric-progress-bar" id="bar-1"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="card metric-card">
+                            <div class="metric-number-wrapper">
+                                <span class="metric-number" data-target="98">0</span>%
+                            </div>
+                            <div class="metric-title">Hiệu Quả Chẩn Đoán</div>
+                            <div class="metric-desc">Độ chính xác định vị nguyên nhân gốc rễ (place value, decimal basics) dựa trên ma trận tiên quyết bám sát GDPT 2018.</div>
+                            <div class="metric-progress-bg">
+                                <div class="metric-progress-bar" id="bar-2"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="card metric-card">
+                            <div class="metric-number-wrapper">
+                                <span class="metric-number" data-target="100">0</span>%
+                            </div>
+                            <div class="metric-title">Chất Lượng Đồng Bộ</div>
+                            <div class="metric-desc">Mọi lịch sử bài làm ngoại tuyến (20+ bài tập) đều được đồng bộ thành công về máy chủ khi có mạng mà không mất mát dữ liệu.</div>
+                            <div class="metric-progress-bg">
+                                <div class="metric-progress-bar" id="bar-3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 7: Pilot Roadmap & Compliance -->
+            <div class="slide" id="slide-7">
+                <div class="slide-header">
+                    <div class="slide-title-group">
+                        <span class="slide-title">Lộ Trình Thử Nghiệm & Tính Tuân Thủ</span>
+                        <span class="slide-tag">Roadmap & Compliance</span>
+                    </div>
+                    <span class="slide-number">07 / 08</span>
+                </div>
+                
+                <div class="roadmap-content">
+                    <!-- Timeline diagram -->
+                    <div class="timeline">
+                        <div class="timeline-node">
+                            <div class="timeline-dot">1</div>
+                            <div class="timeline-date">Tháng 1 - 2</div>
+                            <ul class="timeline-desc-list">
+                                <li>Triển khai thí điểm tại 5 trường tiểu học khu vực ngoại thành khó khăn</li>
+                                <li>Thu thập chỉ số học tập cơ sở (baseline data)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="timeline-node">
+                            <div class="timeline-dot">2</div>
+                            <div class="timeline-date">Tháng 3 - 5</div>
+                            <ul class="timeline-desc-list">
+                                <li>Mở rộng ngân hàng câu hỏi & Bản đồ tiên quyết liên môn</li>
+                                <li>Tối ưu hóa thuật toán đề xuất lộ trình khắc phục</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="timeline-node">
+                            <div class="timeline-dot">3</div>
+                            <div class="timeline-date">Tháng 6+</div>
+                            <ul class="timeline-desc-list">
+                                <li>Đóng gói bộ thư viện SDK học tập thích ứng (Adaptive SDK)</li>
+                                <li>Bàn giao diện rộng chế độ ngoại tuyến cho các vùng sâu vùng xa</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Compliance badges -->
+                    <div class="compliance-section">
+                        <div class="compliance-badge">
+                            <span class="compliance-icon">✓</span>
+                            <span class="compliance-text">Bám sát 100% Yêu Cân Đạt của Chương Trình GDPT 2018</span>
+                        </div>
+                        <div class="compliance-badge">
+                            <span class="compliance-icon">🛡️</span>
+                            <span class="compliance-text">Tuân thủ nghiêm ngặt Luật Bảo Vệ Dữ Liệu Trẻ Em (Nghị định 13/2023)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 8: The Ask & Vision -->
+            <div class="slide" id="slide-8">
+                <div class="slide-header">
+                    <div class="slide-title-group">
+                        <span class="slide-title">Kêu Gọi Hành Động & Tầm Nhìn</span>
+                        <span class="slide-tag">The Ask & Vision</span>
+                    </div>
+                    <span class="slide-number">08 / 08</span>
+                </div>
+                
+                <div class="ask-content">
+                    <div class="ask-cards">
+                        <div class="card">
+                            <h3 class="ask-card-title">🤝 Đề xuất hỗ trợ</h3>
+                            <ul class="ask-list">
+                                <li>Kết nối thí điểm rộng rãi với các trường tiểu học công lập khu vực ngoại ô & điểm trường khó khăn.</li>
+                                <li>Hợp tác với các chuyên gia giáo dục để thẩm định bản đồ tiên quyết liên môn.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="card">
+                            <h3 class="ask-card-title">📦 Sản phẩm bàn giao</h3>
+                            <ul class="ask-list">
+                                <li>Ứng dụng EduGap offline-first đóng gói container Docker-compose sẵn sàng khởi chạy lập tức.</li>
+                                <li>Bộ SDK chẩn đoán thích ứng mã nguồn mở đầu tiên tối ưu hóa cho giáo dục phổ thông Việt Nam.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="vision-block">
+                        <blockquote class="vision-quote">
+                            "EduGap: Không học sinh nào bị bỏ lại phía sau, không giáo viên nào phải đơn độc đối phó với lớp học phân hóa."
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- End slides wrapper -->
+
+        <!-- Presenter Notes Drawer -->
+        <div class="notes-drawer" id="presenter-notes">
+            <div class="notes-title">Ghi Chú Người Thuyết Trình (Presenter Notes)</div>
+            <div class="notes-content" id="notes-text">
+                Chào mừng ban giám khảo. Tôi là Antigravity, đại diện dự án EduGap. Hãy cùng tìm hiểu về giải pháp giải quyết vấn đề phân hóa trong lớp học bằng công nghệ thích ứng AI-native.
+            </div>
+        </div>
+
+        <!-- Footer Control Panel -->
+        <div class="presentation-footer">
+            <div class="nav-buttons">
+                <button class="btn" onclick="prevSlide()">◀ Trước</button>
+                <button class="btn" onclick="nextSlide()">Sau ▶</button>
+            </div>
+            
+            <div class="slide-dots">
+                <div class="dot active" onclick="goToSlide(1)"></div>
+                <div class="dot" onclick="goToSlide(2)"></div>
+                <div class="dot" onclick="goToSlide(3)"></div>
+                <div class="dot" onclick="goToSlide(4)"></div>
+                <div class="dot" onclick="goToSlide(5)"></div>
+                <div class="dot" onclick="goToSlide(6)"></div>
+                <div class="dot" onclick="goToSlide(7)"></div>
+                <div class="dot" onclick="goToSlide(8)"></div>
+            </div>
+            
+            <div class="controls-right">
+                <button class="btn" id="btn-notes" onclick="toggleNotes()">📝 Ghi Chú (N)</button>
+                <button class="btn" id="btn-autoplay" onclick="toggleAutoplay()">▶ Tự Động (A)</button>
+                <button class="btn" onclick="toggleFullscreen()">全 Toàn Màn Hình (F)</button>
+                <span class="keyboard-hint">⌨ Mũi tên để di chuyển</span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        let currentSlideIndex = 1;
+        const totalSlides = 8;
+        let autoplayInterval = null;
+        let isAutoplayActive = false;
+        
+        // Presenter Notes Database
+        const notesDb = {
+            1: "<b>Slide 1: Trang bìa & Hook</b><br>Chào mừng Ban giám khảo. EduGap là giải pháp AI-native đầu tiên giải quyết trúng nỗi đau phân hóa học sinh tiểu học Việt Nam. Bằng chứng số liệu: 82% học sinh gặp tình trạng hổng kiến thức lũy tiến. Tuyến học tập tuyến tính truyền thống bắt buộc đẩy học sinh đi tiếp lớp trên khi chưa vững lớp dưới khiến lỗ hổng phình to.",
+            2: "<b>Slide 2: Tuyên Ngôn Một Dòng</b><br>Định nghĩa nhanh về giải pháp: EduGap chẩn đoán nguyên nhân cốt lõi xuyên lớp nhờ bản đồ mục tiêu GDPT 2018, vá khoảng hổng bằng lộ trình cá nhân hóa siêu nhỏ và giải phóng giáo viên nhờ phân nhóm tự động. Panel JSON phía dưới đại diện cho cấu trúc kỹ thuật hướng modular của hệ thống.",
+            3: "<b>Slide 3: Phân Tích Sâu Vấn Đề</b><br>Mô tả sự khác biệt giữa hai mô hình: Lối học cũ ép học sinh làm lại các bài tập cùng cấp khi sai, dẫn đến chán nản. EduGap thích ứng bằng cách đẩy các câu hỏi chẩn đoán tiên quyết ở lớp 3-4 để tìm hổng cốt lõi, sửa đúng lỗ hổng đó rồi mới trả học sinh lại lớp 5.",
+            4: "<b>Slide 4: Kiến Trúc & Giải Pháp Kỹ Thuật</b><br>Mạng lưới của EduGap gồm 3 lớp: Client SPA ngoại tuyến (Next.js/IndexedDB) giúp lưu vết học tập không mạng; Lớp động cơ thích ứng xử lý suy diễn khoảng hổng; và Lớp Data tích hợp sẵn bản đồ GDPT 2018.",
+            5: "<b>Slide 5: Kịch Bản Demo Thực Tế</b><br>Trình diễn luồng học sinh: Từ làm bài kiểm tra lớp 5 thất bại, hệ thống tự động suy luận ra hổng kiến thức 'Giá trị hàng' của lớp 3, kích hoạt lộ trình vá hổng cá nhân hóa và đồng bộ báo cáo về cho giáo viên khi có kết nối trở lại.",
+            6: "<b>Slide 6: Tính Khả Thi & Thử Nghiệm MVP</b><br>Trong cuộc thi Hackathon 48 giờ, chúng tôi đạt kết quả mô phỏng xuất sắc: 92% vá hổng thành công, thời gian suy diễn thích ứng < 1.8 giây, và 100% đồng bộ toàn vẹn dữ liệu Offline.",
+            7: "<b>Slide 7: Lộ Trình & Tính Tuân Thủ</b><br>Lộ trình 6 tháng rõ ràng: Thí điểm 5 trường vùng khó khăn để lấy dữ liệu cơ sở; tiếp theo mở rộng bản đồ môn học; và tiến tới phổ biến Adaptive SDK. Giải pháp bám sát 100% mục tiêu GDPT 2018 và tuân thủ chặt chẽ Nghị định 13 bảo vệ dữ liệu trẻ em.",
+            8: "<b>Slide 8: Kêu Gọi Hành Động & Tầm Nhìn</b><br>Chúng tôi đề xuất cơ hội thí điểm và chuyên gia sư phạm tham gia đóng góp. Bàn giao bao gồm mã nguồn mở Docker-compose sẵn sàng chạy ngoại tuyến. Tầm nhìn của EduGap: Không học sinh nào bị bỏ lại phía sau, không giáo viên nào đơn độc trong lớp phân hóa."
+        };
+
+        // Tech Stack details info database for Slide 4
+        const archDb = {
+            1: {
+                title: "Layer 1: Offline-first Client SPA",
+                body: "Ứng dụng Client được thiết kế dạng Single Page Application bằng Next.js, có khả năng chạy độc lập ngoại tuyến. Dữ liệu bài làm của học sinh được lưu trữ an toàn trong IndexedDB của trình duyệt. Cơ chế đồng bộ hóa mượt mà (Two-way Syncing) sẽ tự động kích hoạt khi có mạng trở lại mà không tạo ra các bản ghi trùng lặp.",
+                techs: ["Next.js SPA", "IndexedDB", "Service Workers", "PWA Manifest"]
+            },
+            2: {
+                title: "Layer 2: Động Cơ Chẩn Đoán Thích Ứng",
+                body: "Lớp xử lý trung tâm (Core Logic) chịu trách nhiệm chạy các thuật toán thích ứng (Adaptive Algorithms). Thay vì phân tích đúng/sai đơn giản, động cơ sử dụng lý thuyết phản hồi câu hỏi (IRT) kết hợp suy diễn đồ thị tiên quyết để xác định chính xác kiến thức rễ bị khuyết, đồng thời tự động sinh lộ trình Remediation vừa sức.",
+                techs: ["Python FastAPI", "Adaptive IRT Engine", "Prerequisite Tracker", "Path Planner"]
+            },
+            3: {
+                title: "Layer 3: Bản Đồ Học Liệu GDPT 2018",
+                body: "Cơ sở dữ liệu lưu trữ bản đồ kiến thức liên môn tiểu học, ánh xạ 1-1 với các Yêu Cầu Cần Đạt trong Chương trình Giáo dục Phổ thông 2018. Tất cả học liệu, câu hỏi, rubric đều được lưu trữ theo các phiên bản (version control) để đảm bảo tính truy nguyên lịch sử học tập sau khi cập nhật nội dung.",
+                techs: ["SQLite DB", "GDPT 2018 Schema", "Content Versioning", "Audit Logs"]
+            }
+        };
+
+        // CLI terminal demo text for Slide 5 steps
+        const demoTerminalTexts = {
+            1: `[INIT] Khởi động phiên thích ứng cho Học sinh: Nguyễn Văn A (Lớp 5A)\n[TESTING] Đang tải bài kiểm tra mục tiêu hiện tại: "Số thập phân"...\n[WARNING] Học sinh trả lời SAI liên tiếp 3 câu hỏi.\n[ENGINE] Phát hiện dấu hiệu hổng kiến thức tiên quyết. Đang tải các câu hỏi chẩn đoán bổ trợ...`,
+            2: `[ANALYSIS] Đang đánh giá kết quả các câu hỏi chẩn đoán tiên quyết...\n[PROBING] Kiểm tra độ vững kiến thức: "Phân số" (Lớp 4) -> ĐẠT.\n[PROBING] Kiểm tra độ vững kiến thức: "Giá trị hàng" (Lớp 3) -> THẤT BẠI.\n[RESULT] Phát hiện khoảng hổng gốc: "Khái niệm Giá trị hàng - Lớp 3".\n[STATS] Mức độ làm chủ ước tính: 15% (Độ tin cậy: 94%).`,
+            3: `[REMEDIATION] Tạo lộ trình khắc phục gồm 3 hoạt động vi mô (Micro-activities):\n - Bước 1: Xem hoạt họa trực quan về cấu trúc Giá trị hàng (Lớp 3).\n - Bước 2: Bài tập luyện tập có gợi ý theo 3 cấp độ.\n - Bước 3: Bài test vá hổng (3 câu hỏi ngắn).\n[REMEDIATION] Học sinh hoàn thành lộ trình. Hệ thống ghi nhận độ làm chủ đạt 95%! Vá hổng thành công.`,
+            4: `[SYNC] Học sinh được kết nối lại mạng. Đang tự động gửi dữ liệu bài làm...\n[SYNC] Đồng bộ thành công 24 lịch sử thao tác ngoại tuyến lên Dashboard của Giáo viên.\n[ROUTING] Chuyển hướng học sinh quay lại mục tiêu lớp 5: "Cộng số thập phân".\n[STATUS] Học sinh hoàn thành bài kiểm tra mục tiêu chính xác 100%! Kết thúc phiên.`
+        };
+
+        // 1. Auto Scaling Mechanism
+        function scalePresentation() {
+            const container = document.querySelector('.presentation-container');
+            const baseWidth = 1920;
+            const baseHeight = 1080;
+            const winWidth = window.innerWidth;
+            const winHeight = window.innerHeight;
+            
+            // Calculate scale ratio
+            const scaleX = winWidth / baseWidth;
+            const scaleY = winHeight / baseHeight;
+            const scale = Math.min(scaleX, scaleY);
+            
+            container.style.transform = `translate(-50%, -50%) scale(${scale})`;
+        }
+        window.addEventListener('resize', scalePresentation);
+        window.addEventListener('load', scalePresentation);
+
+        // 2. Slide Navigation Logic
+        function updateSlideUI() {
+            // Toggle active slide class
+            document.querySelectorAll('.slide').forEach((slide, index) => {
+                if (index + 1 === currentSlideIndex) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+
+            // Toggle active dot class
+            document.querySelectorAll('.dot').forEach((dot, index) => {
+                if (index + 1 === currentSlideIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+
+            // Update presenter notes content
+            document.getElementById('notes-text').innerHTML = notesDb[currentSlideIndex];
+
+            // Trigger slide-specific animations
+            if (currentSlideIndex === 6) {
+                animateMetrics();
+                triggerProgressBars();
+            } else {
+                resetMetrics();
+            }
+
+            if (currentSlideIndex === 5) {
+                triggerStep(1); // default step 1 for demo slide
+            }
+        }
+
+        function nextSlide() {
+            if (currentSlideIndex < totalSlides) {
+                currentSlideIndex++;
+                updateSlideUI();
+            } else if (isAutoplayActive) {
+                // Wrap around in autoplay mode
+                currentSlideIndex = 1;
+                updateSlideUI();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlideIndex > 1) {
+                currentSlideIndex--;
+                updateSlideUI();
+            }
+        }
+
+        function goToSlide(index) {
+            currentSlideIndex = index;
+            updateSlideUI();
+        }
+
+        // 3. Technical Stack Interactivity (Slide 4)
+        function showArchDetails(layerIndex) {
+            // Update active state in list
+            document.querySelectorAll('.arch-block').forEach((block, index) => {
+                if (index + 1 === layerIndex) {
+                    block.classList.add('active');
+                } else {
+                    block.classList.remove('active');
+                }
+            });
+
+            // Update content details
+            const data = archDb[layerIndex];
+            document.getElementById('arch-title').textContent = data.title;
+            document.getElementById('arch-body').textContent = data.body;
+            
+            // Update badges
+            const badgesContainer = document.getElementById('arch-techs');
+            badgesContainer.innerHTML = '';
+            data.techs.forEach(tech => {
+                const badge = document.createElement('span');
+                badge.className = 'arch-tech-badge';
+                badge.textContent = tech;
+                badgesContainer.appendChild(badge);
+            });
+        }
+
+        // 4. Live Demo Simulator Typing Effect (Slide 5)
+        let typingInterval = null;
+        function typeTerminalText(elementId, textToType, speed = 15) {
+            const element = document.getElementById(elementId);
+            if (!element) return;
+            
+            clearInterval(typingInterval);
+            element.innerHTML = "";
+            let index = 0;
+            
+            typingInterval = setInterval(() => {
+                if (index < textToType.length) {
+                    const char = textToType.charAt(index);
+                    if (char === '\n') {
+                        element.innerHTML += '<br>';
+                    } else {
+                        element.innerHTML += char;
+                    }
+                    index++;
+                    // keep cursor at the end
+                    element.innerHTML += '<span class="terminal-cursor"></span>';
+                    const cursor = element.querySelector('.terminal-cursor');
+                    if (cursor && element.lastChild !== cursor) {
+                        element.appendChild(cursor);
+                    }
+                } else {
+                    clearInterval(typingInterval);
+                }
+            }, speed);
+        }
+
+        function triggerStep(stepIndex) {
+            // Update step indicators
+            document.querySelectorAll('.demo-step').forEach((step, index) => {
+                if (index + 1 === stepIndex) {
+                    step.classList.add('active');
+                } else {
+                    step.classList.remove('active');
+                }
+            });
+
+            // Trigger typing simulator in terminal
+            const text = demoTerminalTexts[stepIndex];
+            typeTerminalText('demo-terminal', text);
+        }
+
+        // 5. Animating Metrics & Progress Bars (Slide 6)
+        function animateMetrics() {
+            const metricElements = document.querySelectorAll('.metric-number');
+            metricElements.forEach(el => {
+                const target = parseInt(el.getAttribute('data-target'));
+                let current = 0;
+                
+                // Clear any existing intervals
+                if (el.dataset.intervalId) {
+                    clearInterval(parseInt(el.dataset.intervalId));
+                }
+                
+                const countInterval = setInterval(() => {
+                    if (current < target) {
+                        current += Math.ceil(target / 15);
+                        if (current > target) current = target;
+                        el.textContent = current;
+                    } else {
+                        clearInterval(countInterval);
+                        el.textContent = target;
+                    }
+                }, 40);
+                
+                el.dataset.intervalId = countInterval;
+            });
+        }
+
+        function triggerProgressBars() {
+            setTimeout(() => {
+                document.getElementById('bar-1').style.width = '92%';
+                document.getElementById('bar-2').style.width = '98%';
+                document.getElementById('bar-3').style.width = '100%';
+            }, 100);
+        }
+
+        function resetMetrics() {
+            document.querySelectorAll('.metric-number').forEach(el => {
+                el.textContent = '0';
+                if (el.dataset.intervalId) {
+                    clearInterval(parseInt(el.dataset.intervalId));
+                }
+            });
+            document.getElementById('bar-1').style.width = '0%';
+            document.getElementById('bar-2').style.width = '0%';
+            document.getElementById('bar-3').style.width = '0%';
+        }
+
+        // 6. Keyboard & Controls Interactivity
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'ArrowRight' || event.key === ' ' || event.key === 'Enter') {
+                event.preventDefault();
+                nextSlide();
+            } else if (event.key === 'ArrowLeft' || event.key === 'Backspace') {
+                event.preventDefault();
+                prevSlide();
+            } else if (event.key === 'N' || event.key === 'n') {
+                toggleNotes();
+            } else if (event.key === 'A' || event.key === 'a') {
+                toggleAutoplay();
+            } else if (event.key === 'F' || event.key === 'f') {
+                toggleFullscreen();
+            }
+        });
+
+        function toggleNotes() {
+            const drawer = document.getElementById('presenter-notes');
+            const btn = document.getElementById('btn-notes');
+            if (drawer.classList.contains('open')) {
+                drawer.classList.remove('open');
+                btn.classList.remove('btn-active');
+            } else {
+                drawer.classList.add('open');
+                btn.classList.add('btn-active');
+            }
+        }
+
+        function toggleAutoplay() {
+            const btn = document.getElementById('btn-autoplay');
+            if (isAutoplayActive) {
+                clearInterval(autoplayInterval);
+                isAutoplayActive = false;
+                btn.classList.remove('btn-active');
+                btn.innerHTML = '▶ Tự Động (A)';
+            } else {
+                isAutoplayActive = true;
+                btn.classList.add('btn-active');
+                btn.innerHTML = '⏸ Tạm Dừng (A)';
+                autoplayInterval = setInterval(nextSlide, 8000); // changes slide every 8 seconds
+            }
+        }
+
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(err => {
+                    alert(`Không thể kích hoạt chế độ toàn màn hình: ${err.message}`);
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        }
+        
+        // Initial setup
+        updateSlideUI();
+    </script>
+</body>
+</html>
