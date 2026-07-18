@@ -26,7 +26,7 @@ Không được thu gọn Mentora thành một trong các mô tả sai sau:
 ```yaml
 project:
   name: Mentora
-  repository: AI20K-C2-App-125
+  repository: AI20K-ai20kekeke
   stage: production-oriented MVP / Demo Day
   primary_language:
     product_copy: Vietnamese

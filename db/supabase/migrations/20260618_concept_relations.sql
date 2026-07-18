@@ -1,5 +1,5 @@
 -- ============================================================================
--- C2-App-125 | Concept Graph Relations (DATA-ADAPTIVE-GRAPH-HITL)
+-- ai20kekeke | Concept Graph Relations (DATA-ADAPTIVE-GRAPH-HITL)
 -- Target: Supabase PostgreSQL 17
 -- Re-run safe: YES
 -- ============================================================================

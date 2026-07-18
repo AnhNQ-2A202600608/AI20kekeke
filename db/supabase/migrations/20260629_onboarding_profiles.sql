@@ -1,5 +1,5 @@
 -- ============================================================================
--- C2-App-125 | Student Onboarding Profiles
+-- ai20kekeke | Student Onboarding Profiles
 -- Target: Supabase PostgreSQL
 -- Re-run safe: YES
 -- ============================================================================

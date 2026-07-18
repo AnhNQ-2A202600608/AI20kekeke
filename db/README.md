@@ -67,4 +67,4 @@ Sơ đồ cơ sở dữ liệu này được thiết kế tinh giản, tập tru
 
 ## Visualization
 
-Paste nội dung file [adaptive-algo.dbml](file:///D:/CODE/AITHUCCHIEN/PROJECT/C2-App-125/db/schema/adaptive-algo.dbml) vào [dbdiagram.io](https://dbdiagram.io/d) để xem sơ đồ trực quan.
+Paste nội dung file [adaptive-algo.dbml](file:///d:/code/AI20kekeke/db/schema/adaptive-algo.dbml) vào [dbdiagram.io](https://dbdiagram.io/d) để xem sơ đồ trực quan.

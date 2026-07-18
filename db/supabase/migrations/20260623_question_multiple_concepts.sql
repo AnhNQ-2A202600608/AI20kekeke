@@ -1,5 +1,5 @@
 -- ============================================================================
--- C2-App-125 | Add question_concepts table for many-to-many relationship
+-- ai20kekeke | Add question_concepts table for many-to-many relationship
 -- Target: Supabase PostgreSQL 17
 -- ============================================================================
 

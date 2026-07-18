@@ -5,7 +5,7 @@
 
 ## Bối cảnh (Context)
 
-Hiện tại hệ thống học tập thích ứng (Adaptive Learning) của dự án **C2-App-125** đang theo dõi năng lực học sinh qua các kỹ năng độc lập (Flat Skills Model). Điều này dẫn đến 3 hạn chế lớn:
+Hiện tại hệ thống học tập thích ứng (Adaptive Learning) của dự án **ai20kekeke** đang theo dõi năng lực học sinh qua các kỹ năng độc lập (Flat Skills Model). Điều này dẫn đến 3 hạn chế lớn:
 1. **Khởi đầu lạnh (Cold Start) từng ngày:** Khi học sinh chuyển sang ngày học mới (chủ đề mới), hệ thống chưa có dữ liệu làm bài để đánh giá năng lực của học sinh trên kỹ năng mới này, dẫn đến việc gợi ý câu hỏi phải làm lại từ đầu.
 2. **Chatbot RAG rời rạc:** Hệ thống chatbot Socratic RAG truy vấn bằng Vector Search thông thường chỉ so khớp ngữ nghĩa trên các chunk văn bản thô, dẫn đến câu trả lời thiếu tính liên kết sư phạm chặt chẽ giữa các ngày học.
 3. **Chi phí thiết kế bản đồ kỹ năng cao:** Việc xây dựng bản đồ kỹ năng (Skill Map) thủ công đòi hỏi tốn kém nhiều thời gian của chuyên gia sư phạm.

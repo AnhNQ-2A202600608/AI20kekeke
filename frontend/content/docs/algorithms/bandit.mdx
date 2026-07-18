@@ -1,0 +1,103 @@
+---
+title: Contextual Bandit (LinUCB)
+description: Gợi ý câu hỏi tối ưu hóa trong Vùng Phát triển Gần nhất (ZPD) sử dụng thuật toán LinUCB và cập nhật Sherman-Morrison.
+---
+
+Trong hệ thống học tập thích ứng của **EduGap**, thuật toán **Contextual Bandit (LinUCB)** (dựa trên nghiên cứu của **[Li et al. (2010)](/docs/academic-citations#3-contextual-multi-armed-bandits-linucb)** và các chuyển đổi sư phạm của **[Clement et al. (2015)](/docs/academic-citations#3-contextual-multi-armed-bandits-linucb)**) được sử dụng làm bộ điều phối gợi ý câu hỏi luyện tập. Mục tiêu là chọn ra câu hỏi nằm trong **Vùng Phát triển Gần nhất (Zone of Proximal Development - ZPD)** của học sinh — nơi câu hỏi không quá dễ (gây chán nản) và không quá khó (gây nản lòng).
+
+---
+
+## 1. Vector Ngữ cảnh 3 Chiều (Student Context)
+
+Mỗi khi gợi ý câu hỏi, hệ thống xây dựng một vector ngữ cảnh $x \in \mathbb{R}^3$ đặc trưng cho trình độ hiện tại của học viên:
+
+$$x = \begin{bmatrix} 1.0 \\ P(L) \\ \sigma(\theta) \end{bmatrix}$$
+
+Trong đó:
+*   **$1.0$ (Bias):** Hệ số chặn (intercept) của mô hình tuyến tính.
+*   **$P(L)$:** Xác suất làm chủ kiến thức hiện tại lấy từ mô hình BKT của Concept mục tiêu.
+*   **$\sigma(\theta)$:** Điểm Elo tổng quát của học sinh được chuẩn hóa mềm bằng hàm Sigmoid quanh giá trị trung vị $1600$:
+    $$\sigma(\theta) = \frac{1}{1 + e^{-\frac{\theta - 1600}{400}}}$$
+
+---
+
+## 2. Tính Điểm UCB (Upper Confidence Bound)
+
+Mỗi câu hỏi ứng viên (arm) $a$ lưu trữ một ma trận hiệp biến nghịch đảo $A_a^{-1}$ và một vector hồi quy $b_a$. Điểm UCB của câu hỏi được tính toán trong thời gian thực:
+
+1.  **Ước lượng tham số $\hat{w}_a$:**
+    $$\hat{w}_a = A_a^{-1} b_a$$
+2.  **Dự báo phần thưởng kỳ vọng (Expected Reward):**
+    $$\text{pred}_a = \hat{w}_a^T x$$
+3.  **Tính phương sai dự báo (Variance):**
+    $$\text{var}_a = x^T A_a^{-1} x$$
+4.  **Tính điểm UCB:**
+    $$\text{ucb}_a = \text{pred}_a + \alpha \sqrt{\text{var}_a}$$
+
+*Với $\alpha$ là tham số kiểm soát mức độ thử nghiệm (Exploration, mặc định = $1.0$).*
+
+---
+
+## 3. Cập nhật In-place qua Công thức Sherman-Morrison
+
+De loại bỏ hoàn toàn việc đảo ma trận trực tiếp $O(d^3)$ lúc runtime (gây trễ giao diện), hệ thống lưu trữ trực tiếp ma trận nghịch đảo $A_a^{-1}$ và cập nhật nó sau mỗi tương tác bằng công thức **Sherman-Morrison rank-1** với độ phức tạp chỉ $O(d^2)$.
+
+> **Note:** Công thức sử dụng phép **trừ** (subtraction) vì $A_{\text{new}} = A_{\text{old}} + xx^T$ — đây là chuẩn Sherman-Morrison cho trường hợp thêm (rank-1 update), dẫn đến nghịch đảo giảm. Khác với trường hợp xóa (rank-1 downdate) sử dụng cộng (+).
+
+$$A_{a, \text{new}}^{-1} = A_{a, \text{old}}^{-1} - \frac{A_{a, \text{old}}^{-1} x x^T A_{a, \text{old}}^{-1}}{1 + x^T A_{a, \text{old}}^{-1} x}$$
+
+$$b_{a, \text{new}} = b_{a, \text{old}} + R \cdot x$$
+
+
+### Đảm bảo Tính Ổn định Số học (Numerical Stability)
+
+Trong tính toán số thực dấu phẩy động (floating-point), ma trận $A_a^{-1}$ có thể bị trôi giá trị và mất tính đối xứng sau nhiều lượt cập nhật. Hệ thống ép ma trận về dạng đối xứng sau mỗi lượt tính toán:
+
+$$A_{a, \text{new}}^{-1} = \frac{A_{a, \text{new}}^{-1} + (A_{a, \text{new}}^{-1})^T}{2}$$
+
+---
+
+## 4. Hàm Phần thưởng Định hướng ZPD (ZPD Reward Function)
+
+Hàm thưởng được thiết kế nhằm tối ưu hóa việc phân phối câu hỏi quanh đích **$75\%$ xác suất làm đúng** (điểm ngọt ngào sư phạm):
+
+$$R = S \cdot \left(1 - 2 \cdot |P(\text{correct}) - 0.75|\right)$$
+
+Trong đó:
+*   $S \in [0.0, 1.0]$ là điểm số thực tế học viên đạt được (actual score).
+*   $P(\text{correct})$ là xác suất làm đúng kỳ vọng tính từ Elo trước lượt làm bài.
+
+Nếu câu hỏi được gợi ý có xác suất làm đúng đúng bằng $75\%$, reward nhận được sẽ là tối đa ($1.0 \times S$). Nếu câu hỏi quá dễ ($100\%$ đúng) hoặc quá khó ($0\%$ đúng), phần thưởng nhận được sẽ bị phạt nặng.
+
+---
+
+## 5. Cài đặt Python tham chiếu
+
+Cài đặt chi tiết LinUCB nằm tại [bandit.py](file:///d:/code/AI20kekeke/src/services/adaptive/bandit.py):
+
+```python
+# Cập nhật Sherman-Morrison trong bandit.py
+def update_arm(
+    self,
+    arm_id: str,
+    context_vector: list[float],
+    reward: float,
+    arms_states: dict[str, dict[str, Any]],
+) -> dict[str, Any]:
+    x = np.array(context_vector).reshape(-1, 1)
+    arm_state = arms_states.get(arm_id)
+    A_inv = np.array(arm_state["A_inv"])
+    b = np.array(arm_state["b"]).reshape(-1, 1)
+
+    # 1. Tính mẫu số
+    denominator = 1.0 + float(x.T.dot(A_inv).dot(x)[0][0])
+
+    # 2. Áp dụng Sherman-Morrison
+    A_inv_new = A_inv - (A_inv.dot(x).dot(x.T).dot(A_inv)) / denominator
+
+    # Đảm bảo tính đối xứng
+    A_inv_new = (A_inv_new + A_inv_new.T) / 2.0
+
+    # 3. Cập nhật b
+    b_new = b + reward * x
+```

@@ -1,5 +1,5 @@
 # BÁO CÁO KIỂM ĐỊNH BẢO MẬT & THUẬT TOÁN — ADAPTIVE LEARNING CORE
-**Mã dự án:** C2-App-125 · **Ngày:** 2026-06-18 · **Phạm vi:** `src/services/adaptive/*`, `src/api/adaptive_routes.py`, `adaptive_schemas.py`, migration `concept_relations.sql`, `test_adaptive.py`
+**Mã dự án:** ai20kekeke · **Ngày:** 2026-06-18 · **Phạm vi:** `src/services/adaptive/*`, `src/api/adaptive_routes.py`, `adaptive_schemas.py`, migration `concept_relations.sql`, `test_adaptive.py`
 **Kết luận tổng quan:** KHÔNG ĐẠT (Not production-ready). 9 lỗi CRITICAL, 8 MAJOR. Toàn bộ trụ cột "Atomicity – Pessimistic Locking – Anti-Replay" hiện tại **không tồn tại trong code kiểm định được** hoặc là **no-op rỗng**.
 
 ---

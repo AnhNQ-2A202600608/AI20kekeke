@@ -1,5 +1,5 @@
 -- ============================================================================
--- C2-App-125 | Onboarding diagnostic question-bank sessions
+-- ai20kekeke | Onboarding diagnostic question-bank sessions
 -- Target: Supabase PostgreSQL
 -- Re-run safe: YES
 -- ============================================================================

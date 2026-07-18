@@ -1,95 +1,190 @@
-uv : WARN Ignoring `SSL_CERT_DIR`. No valid certificates found in: C:\Users\ADMIN\anaconda3\Library\ssl\certs.
-At line:2 char:79
-+ ... | Out-Null; uv run --with pytest-cov python -m pytest tests\test_chat ...
-+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : NotSpecified: (WARN Ignoring `...rary\ssl\certs.:String) [], RemoteException
-    + FullyQualifiedErrorId : NativeCommandError
- 
-WARN Ignoring `SSL_CERT_DIR`. No valid certificates found in: C:\Users\ADMIN\anaconda3\Library\ssl\certs.
-WARN Ignoring `SSL_CERT_DIR`. No valid certificates found in: C:\Users\ADMIN\anaconda3\Library\ssl\certs.
-WARN Ignoring `SSL_CERT_DIR`. No valid certificates found in: C:\Users\ADMIN\anaconda3\Library\ssl\certs.
-Installed 8 packages in 610ms
-........................................................................ [ 91%]
-.......                                                                  [100%]
-============================== warnings summary ===============================
-tests/test_api/test_routes.py::test_ready
-  D:\AI Invidual Tutor\Source code\C2-App-125\.venv\Lib\site-packages\supabase\_sync\client.py:309: DeprecationWarning: The 'timeout' parameter is deprecated. Please configure it in the http client instead.
-    return SyncPostgrestClient(
-
-tests/test_api/test_routes.py::test_ready
-  D:\AI Invidual Tutor\Source code\C2-App-125\.venv\Lib\site-packages\supabase\_sync\client.py:309: DeprecationWarning: The 'verify' parameter is deprecated. Please configure it in the http client instead.
-    return SyncPostgrestClient(
-
--- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-=============================== tests coverage ================================
-_______________ coverage: platform win32, python 3.13.5-final-0 _______________
-
-Name                                              Stmts   Miss  Cover   Missing
--------------------------------------------------------------------------------
-src\__init__.py                                       0      0   100%
-src\agents\__init__.py                                0      0   100%
-src\agents\graph.py                                  43     16    63%   15, 20, 25-50, 55-57
-src\agents\nodes\__init__.py                          0      0   100%
-src\agents\nodes\analyze_node.py                    109     19    83%   116-121, 139-142, 152, 171-172, 261-267
-src\agents\nodes\example_node.py                     17     17     0%   7-36
-src\agents\nodes\pedagogical_reflection_node.py      61     49    20%   44-50, 55-119
-src\agents\nodes\respond_general_node.py             73     28    62%   31-33, 46-51, 57-66, 70-75, 101-103
-src\agents\nodes\respond_node.py                    102     89    13%   30-36, 41-187
-src\agents\nodes\tutor_node.py                       39     39     0%   1-103
-src\agents\state.py                                  19      0   100%
-src\agents\tools\__init__.py                          2      0   100%
-src\agents\tools\tutor_tools.py                      51     11    78%   34, 36-39, 43, 101, 107, 109-111
-src\api\__init__.py                                   0      0   100%
-src\api\adaptive_routes.py                          474    362    24%   45, 55, 72-76, 93, 105, 122, 127, 139-153, 157-158, 177-215, 223-228, 236, 240-251, 255-259, 267-269, 273-278, 290-462, 466-489, 501-504, 517-711, 735-742, 754-780, 794-799, 811-835, 848-869, 881-894
-src\api\admin_braintrust_routes.py                   28      8    71%   24, 33, 42, 51, 60, 69, 78, 87
-src\api\auth_routes.py                              187     41    78%   26-27, 31-32, 60-61, 72-78, 82-119, 129-132, 144, 236, 244-247, 256-257, 282, 304, 311, 318-319, 339, 375-376, 402-404, 418-420
-src\api\onboarding_routes.py                        410    298    27%   164, 168, 172-179, 183, 190-198, 202-238, 261-265, 269-271, 282-352, 356-369, 373-376, 380-383, 387-404, 408-457, 475-482, 486-491, 495-540, 544-550, 561-590, 594-602, 609-610, 622-653, 662-687, 696-728, 744-797
-src\api\quiz_error_routes.py                         16      4    75%   27, 44, 54, 64
-src\api\routes.py                                   902    438    51%   73-95, 207, 228, 242-289, 321-322, 394-402, 409, 413-414, 418-419, 424, 460, 467-469, 481-483, 496, 507, 511-515, 519, 523-527, 549-551, 562, 574, 588-616, 619, 622, 627-630, 653, 684, 714-722, 732-733, 737-738, 757-820, 827, 848, 851, 863-894, 907, 910, 922-978, 1007-1207, 1227-1292, 1325-1361, 1373-1376, 1385-1396, 1422-1427, 1446, 1454-1456, 1468, 1472-1474, 1500-1501, 1510-1512, 1532, 1537-1552, 1572-1575, 1586-1594, 1605-1613, 1650-1727, 1734-1735, 1738-1739, 1742-1744, 1757, 1794, 1798-1835, 1854-1857, 1874-1882, 1915
-src\config.py                                       115      4    97%   71-73, 173
-src\main.py                                          85     20    76%   35-43, 80, 89-99, 140, 152, 155-157
-src\models\__init__.py                                0      0   100%
-src\models\adaptive_schemas.py                       64      0   100%
-src\models\chat_contracts.py                        127      3    98%   167, 185-186
-src\models\schemas.py                                16      0   100%
-src\pipeline\__init__.py                              0      0   100%
-src\pipeline\config.py                               17     17     0%   1-24
-src\pipeline\ingest\__init__.py                       0      0   100%
-src\pipeline\ingest\init_db.py                       34     34     0%   1-51
-src\pipeline\ingest\lms_fetcher.py                   27     27     0%   1-44
-src\pipeline\ingest\rag_ingestion.py                127     93    27%   14-15, 19-20, 26, 51, 67-201, 205-210
-src\pipeline\lms_slide_pipeline.py                   75     75     0%   2-121
-src\pipeline\transform\__init__.py                    0      0   100%
-src\pipeline\transform\doc_converter.py             109    109     0%   1-199
-src\services\__init__.py                              0      0   100%
-src\services\academic_fast_path.py                   42     32    24%   9-10, 19-21, 25, 29-57, 61-68, 77-90
-src\services\adaptive\bandit.py                      80     69    14%   32-33, 41-43, 54-86, 98-122, 136-158, 167-170, 178-180
-src\services\adaptive\bkt.py                         26     21    19%   30-33, 45-54, 66-73, 83-88
-src\services\adaptive\database_interface.py         135     44    67%   10, 25, 30, 35, 40, 45, 50, 55, 59, 64, 69, 74, 79, 92, 106, 123, 128, 146, 153, 170, 177, 182, 187, 192, 205, 212, 217, 223, 228, 233, 238, 243, 248, 253, 258, 263, 268, 273, 278, 283, 290, 297, 304, 323
-src\services\adaptive\elo.py                         15     13    13%   40-43, 58-73
-src\services\adaptive\forgetting.py                  28     24    14%   21-49, 64-71
-src\services\adaptive\graph_propagation.py           87     78    10%   29-188, 192-201
-src\services\adaptive\supabase_database.py          532    457    14%   21-25, 40-42, 48-55, 58-59, 62-96, 100-112, 115-200, 222-233, 249-307, 310-335, 338-340, 345-377, 380-382, 385-406, 409-433, 436-450, 455-471, 486-502, 505-530, 546-563, 572-582, 597-614, 623-632, 635-640, 644-649, 652-672, 684-691, 716-723, 739-770, 773-778, 781-787, 798-811, 816-826, 829-835, 838, 841, 844, 847-859, 862-904, 907-921, 924-945, 950-976, 979-990, 993-1004, 1007-1022, 1025-1031, 1034-1060, 1065-1077, 1082-1132, 1149-1198
-src\services\ai_response_feedback.py                117    100    15%   18-21, 25-29, 33-47, 60-105, 115-278, 290-332
-src\services\auth\__init__.py                         0      0   100%
-src\services\auth\supabase_jwt.py                    74     54    27%   20, 24, 28, 32-35, 39-50, 54-60, 64, 68-105
-src\services\braintrust_dashboard.py                340    211    38%   149-158, 162-167, 171-179, 183-188, 192-205, 209, 220, 231, 240-242, 246-248, 252-261, 265-274, 278, 282-290, 294, 298-305, 309-310, 321-351, 362-365, 377-560, 610-628
-src\services\braintrust_observability.py             69     31    55%   26, 39-45, 56, 59-81, 105-106
-src\services\cache\__init__.py                       15      3    80%   9-10, 17
-src\services\cache\base.py                           14      4    71%   10, 15, 20, 25
-src\services\cache\in_memory.py                      24      7    71%   20-21, 33-36, 40
-src\services\cache\redis_store.py                    73     58    21%   7-8, 17-23, 26-44, 48-50, 53-63, 66-75, 78-85, 88-95
-src\services\cache_keys.py                            7      0   100%
-src\services\chat_fast_path.py                       54      8    85%   25-26, 35-36, 58, 63, 67, 75
-src\services\chat_optimization.py                    86     39    55%   27-32, 39, 44, 50, 54, 79, 89-92, 108-153, 158-176
-src\services\citation_validator.py                   57     10    82%   43-59, 65, 82, 111
-src\services\llm.py                                  31     13    58%   24, 32-55
-src\services\quiz_error_cases.py                    285    203    29%   28-31, 36-39, 52-55, 60-68, 73-76, 81-84, 89-92, 98, 110-165, 182-202, 211-228, 236-263, 267-291, 299, 304-307, 312, 315, 327, 331-332, 336-345, 349-353, 357-361, 365-379, 393-417, 428, 436-441, 445-454, 458-461, 465-470, 474-480
-src\services\rag.py                                 306     92    70%   42, 64, 91, 99-100, 221, 227, 230-231, 244-246, 259, 282, 285-286, 300-302, 319-320, 338-341, 345-393, 419, 449-450, 479-486, 494-517, 582-583, 595-596, 612-625
-src\services\supabase_config.py                      65     33    49%   22-27, 33, 36-45, 49, 66-70, 73-81, 85, 87, 89
-src\services\timing.py                               47      2    96%   36-37
--------------------------------------------------------------------------------
-TOTAL                                              5938   3407    43%
-Coverage HTML written to dir eval\results\chatbot_evidence\htmlcov
-Coverage JSON written to file eval\results\chatbot_evidence\coverage-chatbot.json
-79 passed, 2 warnings in 15.64s
+uv : WARN Ignoring `SSL_CERT_DIR`. No valid certificates found in: C:\Users\ADMIN\anaconda3\Library\ssl\certs.
+
+At line:2 char:79
+
++ ... | Out-Null; uv run --with pytest-cov python -m pytest tests\test_chat ...
+
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    + CategoryInfo          : NotSpecified: (WARN Ignoring `...rary\ssl\certs.:String) [], RemoteException
+
+    + FullyQualifiedErrorId : NativeCommandError
+
+ 
+
+WARN Ignoring `SSL_CERT_DIR`. No valid certificates found in: C:\Users\ADMIN\anaconda3\Library\ssl\certs.
+
+WARN Ignoring `SSL_CERT_DIR`. No valid certificates found in: C:\Users\ADMIN\anaconda3\Library\ssl\certs.
+
+WARN Ignoring `SSL_CERT_DIR`. No valid certificates found in: C:\Users\ADMIN\anaconda3\Library\ssl\certs.
+
+Installed 8 packages in 610ms
+
+........................................................................ [ 91%]
+
+.......                                                                  [100%]
+
+============================== warnings summary ===============================
+
+tests/test_api/test_routes.py::test_ready
+
+  D:\AI Invidual Tutor\Source code\ai20kekeke\.venv\Lib\site-packages\supabase\_sync\client.py:309: DeprecationWarning: The 'timeout' parameter is deprecated. Please configure it in the http client instead.
+
+    return SyncPostgrestClient(
+
+
+
+tests/test_api/test_routes.py::test_ready
+
+  D:\AI Invidual Tutor\Source code\ai20kekeke\.venv\Lib\site-packages\supabase\_sync\client.py:309: DeprecationWarning: The 'verify' parameter is deprecated. Please configure it in the http client instead.
+
+    return SyncPostgrestClient(
+
+
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+
+=============================== tests coverage ================================
+
+_______________ coverage: platform win32, python 3.13.5-final-0 _______________
+
+
+
+Name                                              Stmts   Miss  Cover   Missing
+
+-------------------------------------------------------------------------------
+
+src\__init__.py                                       0      0   100%
+
+src\agents\__init__.py                                0      0   100%
+
+src\agents\graph.py                                  43     16    63%   15, 20, 25-50, 55-57
+
+src\agents\nodes\__init__.py                          0      0   100%
+
+src\agents\nodes\analyze_node.py                    109     19    83%   116-121, 139-142, 152, 171-172, 261-267
+
+src\agents\nodes\example_node.py                     17     17     0%   7-36
+
+src\agents\nodes\pedagogical_reflection_node.py      61     49    20%   44-50, 55-119
+
+src\agents\nodes\respond_general_node.py             73     28    62%   31-33, 46-51, 57-66, 70-75, 101-103
+
+src\agents\nodes\respond_node.py                    102     89    13%   30-36, 41-187
+
+src\agents\nodes\tutor_node.py                       39     39     0%   1-103
+
+src\agents\state.py                                  19      0   100%
+
+src\agents\tools\__init__.py                          2      0   100%
+
+src\agents\tools\tutor_tools.py                      51     11    78%   34, 36-39, 43, 101, 107, 109-111
+
+src\api\__init__.py                                   0      0   100%
+
+src\api\adaptive_routes.py                          474    362    24%   45, 55, 72-76, 93, 105, 122, 127, 139-153, 157-158, 177-215, 223-228, 236, 240-251, 255-259, 267-269, 273-278, 290-462, 466-489, 501-504, 517-711, 735-742, 754-780, 794-799, 811-835, 848-869, 881-894
+
+src\api\admin_braintrust_routes.py                   28      8    71%   24, 33, 42, 51, 60, 69, 78, 87
+
+src\api\auth_routes.py                              187     41    78%   26-27, 31-32, 60-61, 72-78, 82-119, 129-132, 144, 236, 244-247, 256-257, 282, 304, 311, 318-319, 339, 375-376, 402-404, 418-420
+
+src\api\onboarding_routes.py                        410    298    27%   164, 168, 172-179, 183, 190-198, 202-238, 261-265, 269-271, 282-352, 356-369, 373-376, 380-383, 387-404, 408-457, 475-482, 486-491, 495-540, 544-550, 561-590, 594-602, 609-610, 622-653, 662-687, 696-728, 744-797
+
+src\api\quiz_error_routes.py                         16      4    75%   27, 44, 54, 64
+
+src\api\routes.py                                   902    438    51%   73-95, 207, 228, 242-289, 321-322, 394-402, 409, 413-414, 418-419, 424, 460, 467-469, 481-483, 496, 507, 511-515, 519, 523-527, 549-551, 562, 574, 588-616, 619, 622, 627-630, 653, 684, 714-722, 732-733, 737-738, 757-820, 827, 848, 851, 863-894, 907, 910, 922-978, 1007-1207, 1227-1292, 1325-1361, 1373-1376, 1385-1396, 1422-1427, 1446, 1454-1456, 1468, 1472-1474, 1500-1501, 1510-1512, 1532, 1537-1552, 1572-1575, 1586-1594, 1605-1613, 1650-1727, 1734-1735, 1738-1739, 1742-1744, 1757, 1794, 1798-1835, 1854-1857, 1874-1882, 1915
+
+src\config.py                                       115      4    97%   71-73, 173
+
+src\main.py                                          85     20    76%   35-43, 80, 89-99, 140, 152, 155-157
+
+src\models\__init__.py                                0      0   100%
+
+src\models\adaptive_schemas.py                       64      0   100%
+
+src\models\chat_contracts.py                        127      3    98%   167, 185-186
+
+src\models\schemas.py                                16      0   100%
+
+src\pipeline\__init__.py                              0      0   100%
+
+src\pipeline\config.py                               17     17     0%   1-24
+
+src\pipeline\ingest\__init__.py                       0      0   100%
+
+src\pipeline\ingest\init_db.py                       34     34     0%   1-51
+
+src\pipeline\ingest\lms_fetcher.py                   27     27     0%   1-44
+
+src\pipeline\ingest\rag_ingestion.py                127     93    27%   14-15, 19-20, 26, 51, 67-201, 205-210
+
+src\pipeline\lms_slide_pipeline.py                   75     75     0%   2-121
+
+src\pipeline\transform\__init__.py                    0      0   100%
+
+src\pipeline\transform\doc_converter.py             109    109     0%   1-199
+
+src\services\__init__.py                              0      0   100%
+
+src\services\academic_fast_path.py                   42     32    24%   9-10, 19-21, 25, 29-57, 61-68, 77-90
+
+src\services\adaptive\bandit.py                      80     69    14%   32-33, 41-43, 54-86, 98-122, 136-158, 167-170, 178-180
+
+src\services\adaptive\bkt.py                         26     21    19%   30-33, 45-54, 66-73, 83-88
+
+src\services\adaptive\database_interface.py         135     44    67%   10, 25, 30, 35, 40, 45, 50, 55, 59, 64, 69, 74, 79, 92, 106, 123, 128, 146, 153, 170, 177, 182, 187, 192, 205, 212, 217, 223, 228, 233, 238, 243, 248, 253, 258, 263, 268, 273, 278, 283, 290, 297, 304, 323
+
+src\services\adaptive\elo.py                         15     13    13%   40-43, 58-73
+
+src\services\adaptive\forgetting.py                  28     24    14%   21-49, 64-71
+
+src\services\adaptive\graph_propagation.py           87     78    10%   29-188, 192-201
+
+src\services\adaptive\supabase_database.py          532    457    14%   21-25, 40-42, 48-55, 58-59, 62-96, 100-112, 115-200, 222-233, 249-307, 310-335, 338-340, 345-377, 380-382, 385-406, 409-433, 436-450, 455-471, 486-502, 505-530, 546-563, 572-582, 597-614, 623-632, 635-640, 644-649, 652-672, 684-691, 716-723, 739-770, 773-778, 781-787, 798-811, 816-826, 829-835, 838, 841, 844, 847-859, 862-904, 907-921, 924-945, 950-976, 979-990, 993-1004, 1007-1022, 1025-1031, 1034-1060, 1065-1077, 1082-1132, 1149-1198
+
+src\services\ai_response_feedback.py                117    100    15%   18-21, 25-29, 33-47, 60-105, 115-278, 290-332
+
+src\services\auth\__init__.py                         0      0   100%
+
+src\services\auth\supabase_jwt.py                    74     54    27%   20, 24, 28, 32-35, 39-50, 54-60, 64, 68-105
+
+src\services\braintrust_dashboard.py                340    211    38%   149-158, 162-167, 171-179, 183-188, 192-205, 209, 220, 231, 240-242, 246-248, 252-261, 265-274, 278, 282-290, 294, 298-305, 309-310, 321-351, 362-365, 377-560, 610-628
+
+src\services\braintrust_observability.py             69     31    55%   26, 39-45, 56, 59-81, 105-106
+
+src\services\cache\__init__.py                       15      3    80%   9-10, 17
+
+src\services\cache\base.py                           14      4    71%   10, 15, 20, 25
+
+src\services\cache\in_memory.py                      24      7    71%   20-21, 33-36, 40
+
+src\services\cache\redis_store.py                    73     58    21%   7-8, 17-23, 26-44, 48-50, 53-63, 66-75, 78-85, 88-95
+
+src\services\cache_keys.py                            7      0   100%
+
+src\services\chat_fast_path.py                       54      8    85%   25-26, 35-36, 58, 63, 67, 75
+
+src\services\chat_optimization.py                    86     39    55%   27-32, 39, 44, 50, 54, 79, 89-92, 108-153, 158-176
+
+src\services\citation_validator.py                   57     10    82%   43-59, 65, 82, 111
+
+src\services\llm.py                                  31     13    58%   24, 32-55
+
+src\services\quiz_error_cases.py                    285    203    29%   28-31, 36-39, 52-55, 60-68, 73-76, 81-84, 89-92, 98, 110-165, 182-202, 211-228, 236-263, 267-291, 299, 304-307, 312, 315, 327, 331-332, 336-345, 349-353, 357-361, 365-379, 393-417, 428, 436-441, 445-454, 458-461, 465-470, 474-480
+
+src\services\rag.py                                 306     92    70%   42, 64, 91, 99-100, 221, 227, 230-231, 244-246, 259, 282, 285-286, 300-302, 319-320, 338-341, 345-393, 419, 449-450, 479-486, 494-517, 582-583, 595-596, 612-625
+
+src\services\supabase_config.py                      65     33    49%   22-27, 33, 36-45, 49, 66-70, 73-81, 85, 87, 89
+
+src\services\timing.py                               47      2    96%   36-37
+
+-------------------------------------------------------------------------------
+
+TOTAL                                              5938   3407    43%
+
+Coverage HTML written to dir eval\results\chatbot_evidence\htmlcov
+
+Coverage JSON written to file eval\results\chatbot_evidence\coverage-chatbot.json
+
+79 passed, 2 warnings in 15.64s
+

@@ -41,7 +41,7 @@
 | #2 README | [`README.md`](README.md) | Product, setup, architecture index, deliverables checklist, and team |
 | #3 Architecture | [`docs/architecture.md`](docs/architecture.md) | Architecture overview; rendered diagrams in [`docs/diagram/images/`](docs/diagram/images/) and editable Excalidraw files in [`docs/diagram/excalidraw/`](docs/diagram/excalidraw/) |
 | #4 AI Logs | [`outputs/`](outputs/) / Braintrust | AI feedback logs and observability traces when available |
-| #5 Live URL / Deploy | [Production Frontend](https://mentora-c2-app-125.vercel.app) / [Backend Health](https://c2-app-backend-g5cu.onrender.com/health) | Vercel frontend, Render backend, Supabase, Redis |
+| #5 Live URL / Deploy | [Production Frontend](https://ai20kekeke.vercel.app) / [Backend Health](https://vaic-backend.onrender.com/health) | Vercel frontend, Render backend, Supabase, Redis |
 | #6 Video Demo | [`docs/video-demo.md`](docs/video-demo.md) | Demo script/checklist; add YouTube link after upload |
 | #7 Pitch Deck | [`docs/pitch-deck.pdf`](docs/pitch-deck.pdf) | Submitted pitch deck PDF |
 | #8 Weekly Journal | [`docs/journal.md`](docs/journal.md) | Deliverable entrypoint; canonical content in [`JOURNAL.md`](JOURNAL.md) |
@@ -106,8 +106,8 @@
 
 ### 1. Clone repository
 ```bash
-git clone https://github.com/AI20K-Build-Cohort-2/C2-App-125.git
-cd C2-App-125
+git clone https://github.com/AnhNQ-2A202600608/AI20kekeke.git
+cd ai20kekeke
 ```
 
 ### 2. Chuẩn bị biến môi trường
@@ -257,7 +257,7 @@ Hệ thống sử dụng file `.env` ở thư mục gốc để quản lý cấu
 
 Base URL local: `http://127.0.0.1:8000/api/v1`
 
-Base URL qua production frontend BFF: `https://mentora-c2-app-125.vercel.app/api/v1`
+Base URL qua production frontend BFF: `https://ai20kekeke.vercel.app/api/v1`
 
 Hầu hết endpoint bảo vệ cần header:
 

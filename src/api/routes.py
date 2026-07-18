@@ -252,10 +252,9 @@ async def load_student_profile(request: ChatRequest) -> tuple[dict, str | None]:
 
 async def update_long_term_memories_job(
     student_id_str: str,
-    query: str,
-    response: str,
+    turns: list[dict[str, str]],
 ):
-    """Trích xuất bất đồng bộ thông tin học sinh và lưu trữ vào trí nhớ dài hạn (student_memories)."""
+    """Trích xuất bất đồng bộ thông tin học sinh và lưu trữ vào trí nhớ dài hạn (student_memories) từ danh sách các lượt chat."""
     try:
         from src.api.adaptive_routes import get_adaptive_db
 
@@ -265,9 +264,14 @@ async def update_long_term_memories_job(
         # 1. Đọc facts hiện tại
         existing_facts = db.get_student_memory(student_id) or {}
 
-        # 2. Định nghĩa Prompt để trích xuất facts mới
+        # Format các lượt chat gần đây
+        turns_text = ""
+        for i, turn in enumerate(turns, 1):
+            turns_text += f"Lượt {i}:\nHọc sinh: {turn.get('q', '')}\nTrợ lý AI: {turn.get('r', '')}\n\n"
+
+        # 2. Định nghĩa Prompt để trích xuất facts mới từ danh sách lượt chat
         prompt = f"""Bạn là một trợ lý AI trích xuất thông tin cá nhân của học sinh để giúp cá nhân hóa giáo dục.
-Hãy phân tích lượt chat mới nhất của học sinh và trợ lý, sau đó cập nhật và trả về cấu trúc thông tin học sinh dưới dạng JSON.
+Hãy phân tích các lượt chat gần đây của học sinh và trợ lý, sau đó cập nhật và trả về cấu trúc thông tin học sinh dưới dạng JSON.
 Hãy giữ lại các thông tin hiện có nếu không bị thay đổi hoặc đè lên.
 
 CẤU TRÚC JSON TRẢ VỀ BẮT BUỘC:
@@ -282,9 +286,8 @@ CẤU TRÚC JSON TRẢ VỀ BẮT BUỘC:
 Thông tin học sinh hiện tại:
 {json.dumps(existing_facts, ensure_ascii=False, indent=2)}
 
-Lượt chat mới nhất:
-Học sinh: {query}
-Trợ lý AI: {response}
+Các lượt chat gần đây:
+{turns_text}
 
 Chỉ trả về chuỗi JSON hợp lệ, không kèm theo ``` hay bất kỳ đoạn text nào khác. Nếu không có thông tin mới, hãy trả về nguyên trạng thông tin hiện tại."""
 
@@ -292,18 +295,102 @@ Chỉ trả về chuỗi JSON hợp lệ, không kèm theo ``` hay bất kỳ đ
         llm_response = await llm.ainvoke(prompt)
         content = llm_response.content.strip()
 
-        if content.startswith("```"):
-            lines = content.split("\n")
-            if lines[0].startswith("```json") or lines[0].startswith("```"):
-                content = "\n".join(lines[1:-1]).strip()
-
-        new_facts = json.loads(content)
+        import re
+        json_match = re.search(r"\{[\s\S]*\}", content)
+        if json_match:
+            try:
+                new_facts = json.loads(json_match.group(0))
+            except Exception as parse_err:
+                logger.warning(f"Failed to parse matched JSON block: {parse_err}. Content: {content}")
+                new_facts = json.loads(content)
+        else:
+            new_facts = json.loads(content)
 
         # 3. Lưu lại vào DB
         db.save_student_memory(student_id, new_facts)
         logger.info(f"Đã cập nhật trí nhớ dài hạn thành công cho student {student_id_str}")
     except Exception as e:
         logger.error(f"Lỗi khi trích xuất và lưu trí nhớ dài hạn: {e}", exc_info=True)
+
+
+async def delayed_flush_memory_buffer(student_id_str: str, version_token: str, delay_seconds: int = 60):
+    """Trì hoãn flush bộ đệm tin nhắn để thực hiện debounce."""
+    import asyncio
+    await asyncio.sleep(delay_seconds)
+    try:
+        cache = get_cache_store()
+        version_key = f"student_chat_buffer_version:{student_id_str}"
+        cached_version = cache.get(version_key)
+
+        # Chỉ flush nếu phiên bản hiện tại khớp với phiên bản khi lập lịch (debounce thành công)
+        if cached_version == version_token:
+            buffer_key = f"student_chat_buffer:{student_id_str}"
+            buffer_data = cache.get(buffer_key)
+            if buffer_data:
+                buffer = json.loads(buffer_data)
+                if buffer:
+                    await update_long_term_memories_job(student_id_str, buffer)
+            # Dọn dẹp cache
+            cache.delete(buffer_key)
+            cache.delete(version_key)
+    except Exception as e:
+        logger.error(f"Lỗi khi flush trễ bộ đệm trí nhớ dài hạn: {e}", exc_info=True)
+
+
+async def buffer_and_update_student_memory(
+    student_id_str: str,
+    query: str,
+    response: str,
+    concept_id_str: str | None,
+    background_tasks: BackgroundTasks,
+):
+    """Lưu lượt chat mới vào bộ đệm và lập lịch trích xuất trí nhớ dài hạn một cách tối ưu."""
+    try:
+        import uuid
+        cache = get_cache_store()
+        buffer_key = f"student_chat_buffer:{student_id_str}"
+        concept_key = f"student_last_concept:{student_id_str}"
+        version_key = f"student_chat_buffer_version:{student_id_str}"
+
+        # Đọc dữ liệu hiện tại
+        buffer_data = cache.get(buffer_key)
+        buffer = json.loads(buffer_data) if buffer_data else []
+
+        last_concept = cache.get(concept_key)
+        concept_changed = bool(concept_id_str and last_concept and concept_id_str != last_concept)
+
+        # Thêm lượt chat mới
+        buffer.append({"q": query, "r": response})
+
+        # Cập nhật concept gần nhất
+        if concept_id_str:
+            cache.set(concept_key, concept_id_str, ttl=3600)
+
+        BATCH_SIZE = 5
+        if len(buffer) >= BATCH_SIZE or concept_changed:
+            # Trigger cập nhật ngay lập tức nếu đạt BATCH_SIZE hoặc đổi concept
+            background_tasks.add_task(update_long_term_memories_job, student_id_str, buffer)
+            cache.delete(buffer_key)
+            cache.delete(version_key)
+        else:
+            # Lưu lại vào bộ đệm và sinh version mới để làm mới bộ đếm thời gian debounce
+            current_version = str(uuid.uuid4())
+            cache.set(buffer_key, json.dumps(buffer), ttl=1800)
+            cache.set(version_key, current_version, ttl=1800)
+            background_tasks.add_task(
+                delayed_flush_memory_buffer,
+                student_id_str,
+                current_version,
+                delay_seconds=60, # Trì hoãn 60 giây chờ thêm tin nhắn mới
+            )
+    except Exception as e:
+        logger.error(f"Lỗi khi xử lý bộ đệm trí nhớ: {e}", exc_info=True)
+        # Fallback: nếu lỗi cache thì chạy luôn turn hiện tại
+        background_tasks.add_task(
+            update_long_term_memories_job,
+            student_id_str,
+            [{"q": query, "r": response}],
+        )
 
 
 async def stream_chat_response(
@@ -414,7 +501,10 @@ async def stream_chat_response(
                     except ValueError:
                         logger.warning(f"Invalid session_id: {request.session_id}")
                     else:
-                        res = db.app_client.table("chat_sessions").select("id").eq("id", str(temp_uuid)).execute()
+                        query = db.app_client.table("chat_sessions").select("id").eq("id", str(temp_uuid))
+                        if request.student_id:
+                            query = query.eq("student_id", str(request.student_id))
+                        res = query.execute()
                         if res.data:
                             session_uuid = temp_uuid
 
@@ -636,7 +726,14 @@ async def stream_chat_response(
             metadata["assistant_message_id"] = str(assistant_message_id)
 
         if request.student_id:
-            background_tasks.add_task(update_long_term_memories_job, request.student_id, request.message, response_text)
+            background_tasks.add_task(
+                buffer_and_update_student_memory,
+                request.student_id,
+                request.message,
+                response_text,
+                request.concept_id,
+                background_tasks,
+            )
 
         updated_profile = cumulative_state.get("student_profile")
         has_context = bool(request.student_id and request.course_id and request.concept_id)
@@ -734,7 +831,10 @@ async def chat(
                     except ValueError:
                         logger.warning(f"Invalid session_id: {request.session_id}")
                     else:
-                        res = db.app_client.table("chat_sessions").select("id").eq("id", str(temp_uuid)).execute()
+                        query = db.app_client.table("chat_sessions").select("id").eq("id", str(temp_uuid))
+                        if request.student_id:
+                            query = query.eq("student_id", str(request.student_id))
+                        res = query.execute()
                         if res.data:
                             session_uuid = temp_uuid
 
@@ -796,10 +896,12 @@ async def chat(
             # Đăng ký background task trích xuất thông tin dài hạn
             if request.student_id:
                 background_tasks.add_task(
-                    update_long_term_memories_job,
+                    buffer_and_update_student_memory,
                     request.student_id,
                     request.message,
                     response_text,
+                    request.concept_id,
+                    background_tasks,
                 )
 
             updated_profile = result.get("student_profile")

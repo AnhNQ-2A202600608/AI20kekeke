@@ -1,0 +1,108 @@
+---
+title: Elo Rating System
+description: Đánh giá năng lực học viên và hiệu chuẩn độ khó câu hỏi tự động dựa trên mô hình Educational Elo.
+---
+
+Hệ thống **EduGap** áp dụng thuật toán **Educational Elo** (dựa trên nghiên cứu **[Pelánek (2016)](/docs/academic-citations#2-elo-rating-system-in-education)**) để đo lường đồng thời hai chỉ số động:
+1.  **Năng lực học viên ($\theta$):** Thể hiện trình độ hiện tại của học viên trên một khái niệm kiến thức (Concept).
+2.  **Độ khó câu hỏi ($b$):** Thể hiện mức độ thử thách thực tế của câu hỏi đó.
+
+Theo Pelánek (2016), việc áp dụng Elo trong giáo dục có các khác biệt lớn so với cờ vua:
+*   **Item vs Student (Sự bất đối xứng):** Trận đấu xảy ra giữa học viên và câu hỏi thay vì giữa 2 người chơi. Năng lực của học viên thay đổi liên tục nhờ quá trình học, trong khi độ khó của câu hỏi có xu hướng ổn định hơn khi số lượng mẫu dữ liệu đủ lớn.
+*   **Dynamic K-factor:** Hệ số điều chỉnh độ nhạy $K$ không cần phải là hằng số tĩnh. Để tối ưu hóa tốc độ hội tụ và giảm nhiễu, hệ số $K$ có thể được cấu hình giảm dần theo số lượt tương tác hoặc tích hợp thêm hàm bất định (uncertainty function) để điều khiển tốc độ học (learning rate).
+
+---
+
+## 1. Công thức Xác suất Thành công Kỳ vọng
+
+Khi học viên có năng lực $\theta$ đối mặt với câu hỏi có độ khó $b$, xác suất học viên trả lời đúng kỳ vọng $P(\text{correct})$ được tính bằng hàm Sigmoid:
+
+$$P(\text{correct}) = \frac{1}{1 + 10^{\frac{b - \theta}{400}}}$$
+
+Để tránh hiện tượng tràn số số thực (overflow) trong lập trình khi hiệu số $|b - \theta|$ quá lớn, số mũ exponent được giới hạn (clamp) trong khoảng $[-20.0, 20.0]$:
+
+```python
+exponent = (question_elo - student_elo) / 400.0
+exponent = min(20.0, max(-20.0, exponent))
+expected = 1.0 / (1.0 + 10.0**exponent)
+```
+
+---
+
+## 2. Quy trình Cập nhật Song song (Dual Elo Update)
+
+Ngay sau khi học viên nộp bài và nhận điểm số thực tế $S \in [0, 1]$ (trong đó $1$ là Đúng hoàn toàn, $0$ là Sai hoàn toàn), hệ thống sẽ tiến hành cập nhật đồng thời chỉ số của cả người học lẫn câu hỏi:
+
+$$\theta_{\text{new}} = \theta_{\text{old}} + K_{\text{student}} \cdot (S - P(\text{correct})) \cdot \text{discount}$$
+
+$$b_{\text{new}} = b_{\text{old}} + K_{\text{question}} \cdot (P(\text{correct}) - S) \cdot \text{discount}$$
+
+Trong đó:
+*   $K_{\text{student}}$ và $K_{\text{question}}$ là hệ số biến động (mặc định = $32.0$). Nhằm đảm bảo tính ổn định của câu hỏi khi đã qua nhiều lượt hiệu chuẩn, hệ số $K_{\text{question}}$ của các câu hỏi cũ có thể giảm dần về $K_{\text{min}} = 8.0$ theo hàm số đếm của Pelánek.
+*   $\text{discount}$ là hệ số chiết khấu dựa trên hành vi sử dụng trợ giúp.
+
+---
+
+## 3. Cơ chế Khấu trừ Gợi ý (Hint Discounting)
+
+Nếu học viên trả lời đúng ($S - P(\text{correct}) > 0$) nhưng có sử dụng gợi ý (Socratic Hints), lượng Elo nhận được và độ khó giảm đi của câu hỏi sẽ bị khấu trừ tương ứng để phản ánh đúng thực tế năng lực:
+
+$$\text{discount} = \max(0.1, 1.0 - 0.3 \cdot H)$$
+
+*Với $H$ là số lượng hint đã tiêu thụ (`hint_count`).*
+
+*   **1 Hint:** Học viên nhận được $70\%$ điểm Elo tăng thêm.
+*   **2 Hints:** Học viên nhận được $40\%$ điểm Elo tăng thêm.
+*   **3 Hints trở lên:** Học viên chỉ nhận được mức tối thiểu là $10\%$ điểm Elo.
+
+---
+
+## 4. Cơ chế Bảo vệ AI (AI Help Protection)
+
+Khi học viên sử dụng trợ lý AI hỏi đáp trực tiếp trong phiên làm bài (`used_ai_help = true`), hệ thống kích hoạt cơ chế bảo vệ:
+
+*   **Freeze Student Elo:** Hệ số cập nhật của sinh viên bị đưa về $K_{\text{student}} = 0$ để chống gian lận (điểm Elo của học sinh giữ nguyên).
+*   **Active Question Calibration:** Chỉ số độ khó câu hỏi $b$ vẫn được cập nhật bình thường với hệ số $K_{\text{question}} = 32.0$ để đảm bảo quá trình hiệu chuẩn câu hỏi không bị gián đoạn.
+
+---
+
+## 5. Tham chiếu mã nguồn backend
+
+Cài đặt chi tiết của thuật toán nằm tại [elo.py](file:///d:/code/AI20kekeke/src/services/adaptive/elo.py):
+
+```python
+# Cài đặt cập nhật Elo kép
+def calculate_elo_updates(
+    student_elo: float,
+    question_elo: float,
+    actual_score: float,
+    hint_count: int = 0,
+    k_student: float = 32.0,
+    k_question: float = 32.0,
+) -> tuple[float, float]:
+    expected = calculate_expected_success(student_elo, question_elo)
+    student_delta = actual_score - expected
+    question_delta = expected - actual_score
+
+    # Khấu trừ nếu dùng gợi ý
+    if student_delta > 0 and hint_count > 0:
+        discount = max(0.1, 1.0 - 0.3 * hint_count)
+        student_delta *= discount
+        question_delta *= discount
+
+    new_student_elo = student_elo + k_student * student_delta
+    new_question_elo = question_elo + k_question * question_delta
+
+    return round(new_student_elo, 2), round(new_question_elo, 2)
+```
+
+---
+
+## 6. Định hướng nâng cấp theo Pelánek (2016)
+
+Hệ thống đang được lên kế hoạch tích hợp 3 cải tiến lớn dựa trên nghiên cứu gốc của Pelánek (xem chi tiết tại [Kế hoạch nâng cấp Elo](file:///d:/code/AI20kekeke/plans/20260621-1217-elo-system-calibration-plan/plan.md)):
+
+1.  **Dynamic K-question Calibration:** Cập nhật $K_{\text{question}}$ giảm dần từ $32.0$ về tối thiểu $8.0$ theo lũy kế số lượt làm bài của câu hỏi đó nhằm tối ưu hóa tính ổn định của độ khó $b$.
+2.  **Time-Gap Uncertainty Adjustment:** Bù đắp lượng suy giảm trí nhớ bằng cách tăng tạm thời $K_{\text{student}}$ khi học viên quay lại sau hơn 7 ngày không hoạt động.
+3.  **Response-Time Weighted Elo:** Điều chỉnh điểm số thực tế $S$ đầu vào dựa trên thời gian làm bài của học viên so với thời gian trung bình của câu hỏi để ghi nhận độ trôi chảy (fluency) và mức độ thành thục tự động của người học.
+

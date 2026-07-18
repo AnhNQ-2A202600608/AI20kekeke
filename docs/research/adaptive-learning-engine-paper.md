@@ -203,7 +203,7 @@ Rather than checking if BKT estimates match simulated latent variables, we valid
 
 Our BKT model achieves a Next-step Predictive AUC of **0.8386**, showing reasonable predictive accuracy. The estimated mastery of students classified as "mastered" approaches $0.9991$ after 50 steps, while the unmastered group stays near the baseline, showing effective skill categorization. The BKT profile verification and response to mistakes are plotted in Figure 3.
 
-![BKT state validation under student simulations, showing mastery profile separation and responsiveness to mistakes (mistake test).](file:///d:/CODE/AITHUCCHIEN/PROJECT/C2-App-125/eval/results/exp2_bkt_validation.png)
+![BKT state validation under student simulations, showing mastery profile separation and responsiveness to mistakes (mistake test).](file:///d:/code/AI20kekeke/eval/results/exp2_bkt_validation.png)
 
 ### 5.2 Contextual Bandit Convergence
 We simulated a class of 30 virtual students answering 100 questions. We compared the **LinUCB Adaptive** algorithm against two baselines:
@@ -230,7 +230,7 @@ To evaluate the statistical significance of these results, we performed paired t
 
 The LinUCB regret curve scales logarithmically, showing rapid learning. In contrast, the Greedy and Random baselines display linear regret growth, indicating that they repeatedly present questions outside of the students' optimal ZPD. The comparative cumulative regret curves across 30 seeds are shown in Figure 4.
 
-![Cumulative regret curves of LinUCB vs. Greedy and Random baselines (averaged over 30 independent seeds with 95% confidence intervals).](file:///d:/CODE/AITHUCCHIEN/PROJECT/C2-App-125/eval/results/exp3_bandit_comparison.png)
+![Cumulative regret curves of LinUCB vs. Greedy and Random baselines (averaged over 30 independent seeds with 95% confidence intervals).](file:///d:/code/AI20kekeke/eval/results/exp3_bandit_comparison.png)
 
 #### 5.2.1 Computational Complexity and Vectorized Optimization
 During multi-seed simulation evaluation, executing standard LinUCB recommendations for $30 \text{ students}$ across $100 \text{ trials}$ and $30 \text{ random seeds}$ requires:
@@ -263,9 +263,9 @@ To validate the generalizability of our adaptive engine, we evaluated our studen
 
 The corresponding evaluation curves are plotted in Figures 5 and 6. Figure 5 shows the ROC curves comparing BKT and Elo performance on ASSISTments. Figure 2 displays the cumulative expected ZPD reward curves for the LinUCB and Random policies on the EdNet dataset.
 
-![Next-Step correctness prediction ROC curves for BKT and Elo on ASSISTments.](file:///d:/CODE/AITHUCCHIEN/PROJECT/C2-App-125/eval/results/exp7_assistments_evaluation.png)
+![Next-Step correctness prediction ROC curves for BKT and Elo on ASSISTments.](file:///d:/code/AI20kekeke/eval/results/exp7_assistments_evaluation.png)
 
-![Off-Policy Evaluation (OPE) cumulative expected ZPD rewards for LinUCB vs. Random policies on EdNet.](file:///d:/CODE/AITHUCCHIEN/PROJECT/C2-App-125/eval/results/exp8_ednet_bandit_ope.png)
+![Off-Policy Evaluation (OPE) cumulative expected ZPD rewards for LinUCB vs. Random policies on EdNet.](file:///d:/code/AI20kekeke/eval/results/exp8_ednet_bandit_ope.png)
 
 ---
 

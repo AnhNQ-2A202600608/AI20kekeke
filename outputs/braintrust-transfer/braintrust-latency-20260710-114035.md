@@ -68,5 +68,5 @@
 | `d547e619cc45cf1908415033128870c1` | `chat.stream` | "Unable to create chat session." |
 | `d547e619cc45cf1908415033128870c1` | `chat.session_create` | "Traceback (most recent call last):\n  File \"/app/src/services/adaptive/supabase_database.py\", line 928, in create_chat_session\n    response = self.app_clie... |
 | `15aa6450-cd84-4524-85df-8ddededaaf4a` | `ChatOpenAI` | "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read... |
-| `15aa6450-cd84-4524-85df-8ddededaaf4a` | `llm.respond_stream` | "Traceback (most recent call last):\n  File \"D:\\Project\\Vin_AI\\000 Group Project\\C2-App-125\\src\\services\\braintrust_observability.py\", line 45, in spa... |
+| `15aa6450-cd84-4524-85df-8ddededaaf4a` | `llm.respond_stream` | "Traceback (most recent call last):\n  File \"D:\\Project\\Vin_AI\\000 Group Project\\ai20kekeke\\src\\services\\braintrust_observability.py\", line 45, in spa... |
 | `15aa6450-cd84-4524-85df-8ddededaaf4a` | `ChatOpenAI` | "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read... |
