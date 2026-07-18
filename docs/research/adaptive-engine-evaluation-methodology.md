@@ -1,6 +1,6 @@
 # Phương pháp luận và Quy trình Đánh giá Động cơ Thích ứng (Adaptive Engine Evaluation Methodology)
 
-Tài liệu này đặc tả chi tiết quy trình, thuật toán và các tiêu chuẩn kiểm thử khoa học đối với **Động cơ Thích ứng EduGap (EduGap Adaptive Engine)**. Bộ đánh giá (`eval/` suite) được thiết kế nhằm chứng minh tính chính xác thống kê, tốc độ hội tụ và độ ổn định của các thuật toán trước khi triển khai lên môi trường chạy thực tế (Production).
+Tài liệu này đặc tả chi tiết quy trình, thuật toán và các tiêu chuẩn kiểm thử khoa học đối với **Động cơ Thích ứng Mentora (Mentora Adaptive Engine)**. Bộ đánh giá (`eval/` suite) được thiết kế nhằm chứng minh tính chính xác thống kê, tốc độ hội tụ và độ ổn định của các thuật toán trước khi triển khai lên môi trường chạy thực tế (Production).
 
 ---
 

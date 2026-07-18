@@ -51,12 +51,12 @@ def test_live_auth_accepts_supabase_jwt(monkeypatch):
     monkeypatch.delenv("AUTH_ALLOW_DEV_TOKENS", raising=False)
     db = live_db()
     db.app_client.auth.get_user.return_value.user.id = "d3b07384-d113-4ec5-a58e-0f2d87e07661"
-    db.app_client.auth.get_user.return_value.user.email = "student@edugap.vn"
+    db.app_client.auth.get_user.return_value.user.email = "student@mentora.vn"
 
     user = get_current_user("Bearer header.payload.signature", db)
 
     assert user.id == UUID("d3b07384-d113-4ec5-a58e-0f2d87e07661")
-    assert user.email == "student@edugap.vn"
+    assert user.email == "student@mentora.vn"
     assert user.role == "student"
 
 
@@ -64,11 +64,11 @@ def test_live_auth_role_store_failure_returns_503(monkeypatch):
     monkeypatch.delenv("AUTH_ALLOW_DEV_TOKENS", raising=False)
     db = live_db()
     db.app_client.auth.get_user.return_value.user.id = "d3b07384-d113-4ec5-a58e-0f2d87e07661"
-    db.app_client.auth.get_user.return_value.user.email = "student@edugap.vn"
+    db.app_client.auth.get_user.return_value.user.email = "student@mentora.vn"
     db.app_client.table.side_effect = RuntimeError("role store unavailable")
 
     with pytest.raises(HTTPException) as exc:
-        get_current_user("Bearer header.payload.signature", db)
+        get_current_user("Bearer header.payload.signature_fail", db)
 
     assert exc.value.status_code == 503
     assert exc.value.detail == {

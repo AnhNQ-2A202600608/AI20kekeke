@@ -2,6 +2,7 @@ import json
 import re
 from pathlib import Path
 
+
 def main():
     project_root = Path(__file__).parent.parent
     sql_path = project_root / "db" / "supabase" / "migrations" / "seed_concepts_dag.sql"
@@ -12,7 +13,7 @@ def main():
         print(f"SQL file not found at {sql_path}")
         return
 
-    with open(sql_path, "r", encoding="utf-8") as f:
+    with open(sql_path, encoding="utf-8") as f:
         content = f.read()
 
     concepts = []

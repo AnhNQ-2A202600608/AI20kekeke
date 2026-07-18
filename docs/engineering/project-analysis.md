@@ -1,10 +1,10 @@
-# EduGap — Phân tích và tài liệu tổng quan dự án
+# Mentora — Phân tích và tài liệu tổng quan dự án
 
 > Cập nhật từ codebase ngày 2026-07-12. Tài liệu này mô tả trạng thái thực thi trên nhánh hiện tại, đồng thời phân biệt phần vận hành bằng dữ liệu thật với phần demo/fallback.
 
 ## 1. Dự án này là gì?
 
-EduGap là nền tảng gia sư AI cá nhân hóa cho lớp học đại học hoặc cohort học AI quy mô lớn. Sản phẩm kết hợp ba ý tưởng chính:
+Mentora là nền tảng gia sư AI cá nhân hóa cho lớp học đại học hoặc cohort học AI quy mô lớn. Sản phẩm kết hợp ba ý tưởng chính:
 
 1. **Gia sư Socratic có căn cứ:** trả lời từ học liệu chính thức, đưa gợi ý thay vì làm hộ và gắn nguồn slide.
 2. **Luyện tập thích ứng:** chọn câu hỏi gần “vùng phát triển gần nhất” (ZPD) của từng học viên, với mục tiêu xác suất trả lời đúng khoảng 70–75%.
@@ -278,6 +278,6 @@ RLS được bật trên phần lớn bảng; backend dùng secret key server-on
 
 ## 12. Kết luận
 
-EduGap là một adaptive learning platform có chiều sâu kỹ thuật và nghiên cứu, lấy **vòng lặp học → quan sát → cập nhật mastery → chọn hoạt động tiếp theo** làm trung tâm. Điểm khác biệt mạnh nhất so với chatbot giáo dục thông thường là quyết định học tập có trạng thái, có transaction, có audit và có sự tham gia của mentor.
+Mentora là một adaptive learning platform có chiều sâu kỹ thuật và nghiên cứu, lấy **vòng lặp học → quan sát → cập nhật mastery → chọn hoạt động tiếp theo** làm trung tâm. Điểm khác biệt mạnh nhất so với chatbot giáo dục thông thường là quyết định học tập có trạng thái, có transaction, có audit và có sự tham gia của mentor.
 
 Mức độ hoàn thiện hiện phù hợp với một MVP/Demo Day đã tiến gần production: lõi auth, chat, adaptive và dữ liệu đã có đường chạy thật; phần cần tập trung tiếp là loại bỏ silent mock fallback, thống nhất cấu hình/tài liệu, tăng coverage toàn hệ thống, giảm latency chat và hoàn tất dữ liệu thật end-to-end cho dashboard mentor/BTC.

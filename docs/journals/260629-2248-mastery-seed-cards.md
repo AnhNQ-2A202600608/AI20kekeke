@@ -8,7 +8,7 @@ area: frontend
 
 ## Context
 
-The learning path still used generic circular status badges after the growth-themed mobile workspace work. This slice replaced those generic indicators with EduGap seed-growth assets and thin soil progress strips.
+The learning path still used generic circular status badges after the growth-themed mobile workspace work. This slice replaced those generic indicators with Mentora seed-growth assets and thin soil progress strips.
 
 ## What Happened
 

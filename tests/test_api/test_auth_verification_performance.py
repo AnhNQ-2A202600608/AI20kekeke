@@ -21,13 +21,13 @@ def test_local_jwt_claims_skip_supabase_get_user(monkeypatch):
     monkeypatch.setattr(
         adaptive_routes,
         "verify_supabase_jwt_locally",
-        lambda token, url: {"sub": "d3b07384-d113-4ec5-a58e-0f2d87e07661", "email": "student@edugap.vn"},
+        lambda token, url: {"sub": "d3b07384-d113-4ec5-a58e-0f2d87e07661", "email": "student@mentora.vn"},
     )
 
     user = get_current_user("Bearer header.payload.signature", db)
 
     assert user.id == UUID("d3b07384-d113-4ec5-a58e-0f2d87e07661")
-    assert user.email == "student@edugap.vn"
+    assert user.email == "student@mentora.vn"
     db.app_client.auth.get_user.assert_not_called()
 
 
@@ -36,7 +36,7 @@ def test_live_auth_fallback_still_accepts_supabase_get_user(monkeypatch):
     db = live_db()
     monkeypatch.setattr(adaptive_routes, "verify_supabase_jwt_locally", lambda token, url: None)
     db.app_client.auth.get_user.return_value.user.id = "d3b07384-d113-4ec5-a58e-0f2d87e07661"
-    db.app_client.auth.get_user.return_value.user.email = "student@edugap.vn"
+    db.app_client.auth.get_user.return_value.user.email = "student@mentora.vn"
 
     user = get_current_user("Bearer header.payload.signature", db)
 

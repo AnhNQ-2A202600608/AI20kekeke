@@ -1,7 +1,7 @@
 import os
 import sys
-import json
 from pathlib import Path
+
 from dotenv import load_dotenv
 from supabase import create_client
 from supabase.client import ClientOptions

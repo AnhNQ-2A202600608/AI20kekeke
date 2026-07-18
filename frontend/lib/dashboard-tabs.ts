@@ -42,7 +42,7 @@ const STUDENT_ITEMS: NavigationItem[] = [
   { id: 'skills', name: 'Luyện tập', shortName: 'Luyện', icon: Dumbbell },
   { id: 'skill-graph', name: 'Skill Graph', shortName: 'Graph', icon: GitBranch },
   { id: 'chat', name: 'Trợ lý AI', shortName: 'AI', icon: MessageSquare },
-  { id: 'profile', name: 'Tiến độ', shortName: 'Tiến độ', icon: User },
+  { id: 'profile', name: 'Hồ sơ', shortName: 'Hồ sơ', icon: User },
 ];
 
 const MENTOR_ITEMS: NavigationItem[] = [

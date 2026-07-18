@@ -82,35 +82,35 @@ def get_mock_user_profile(user_id: str) -> dict | None:
     mock_users = {
         "d3b07384-d113-4ec5-a58e-0f2d87e07661": {
             "id": "d3b07384-d113-4ec5-a58e-0f2d87e07661",
-            "email": "student@edugap.vn",
+            "email": "student@mentora.vn",
             "full_name": "Nguyễn Văn Thực Chiến",
             "mssv": "2A202611111",
             "role": "student",
         },
         "55555555-5555-5555-5555-555555555555": {
             "id": "55555555-5555-5555-5555-555555555555",
-            "email": "mentor@edugap.vn",
+            "email": "mentor@mentora.vn",
             "full_name": "Giảng Viên Sapia",
             "mssv": None,
             "role": "mentor",
         },
         "77777777-7777-7777-7777-777777777777": {
             "id": "77777777-7777-7777-7777-777777777777",
-            "email": "admin@edugap.vn",
+            "email": "admin@mentora.vn",
             "full_name": "Admin Sapia",
             "mssv": None,
             "role": "admin",
         },
         "36bc990a-5bb6-48a6-a488-b97118497d3f": {
             "id": "36bc990a-5bb6-48a6-a488-b97118497d3f",
-            "email": "hoang.htb@edugap.vn",
+            "email": "hoang.htb@mentora.vn",
             "full_name": "Hồ Tất Bảo Hoàng",
             "mssv": "2A202600699",
             "role": "admin",
         },
         "88888888-8888-8888-8888-888888888888": {
             "id": "88888888-8888-8888-8888-888888888888",
-            "email": "btc@edugap.vn",
+            "email": "btc@mentora.vn",
             "full_name": "Ban Tổ Chức Sapia",
             "mssv": None,
             "role": "btc",
@@ -132,7 +132,7 @@ def me(
         return {
             "id": user_id,
             "email": auth_user.email or f"{user_id}@stub.local",
-            "full_name": auth_user.email or "Học viên EduGap",
+            "full_name": auth_user.email or "Học viên Mentora",
             "mssv": None,
             "role": auth_user.role,
             "is_demo_account": False,
@@ -177,44 +177,44 @@ def login(request: LoginRequest, db: AdaptiveDatabaseInterface = Depends(get_ada
         if db._stub_mode or db.app_client is None:
             # Khớp các tài khoản test mẫu trong stub mode
             mock_users = {
-                "student@edugap.vn": {
+                "student@mentora.vn": {
                     "id": "d3b07384-d113-4ec5-a58e-0f2d87e07661",
-                    "email": "student@edugap.vn",
+                    "email": "student@mentora.vn",
                     "full_name": "Nguyễn Văn Thực Chiến",
                     "mssv": "2A202611111",
                     "role": "student",
                 },
-                "mentor@edugap.vn": {
+                "mentor@mentora.vn": {
                     "id": "55555555-5555-5555-5555-555555555555",
-                    "email": "mentor@edugap.vn",
+                    "email": "mentor@mentora.vn",
                     "full_name": "Giảng Viên Sapia",
                     "mssv": None,
                     "role": "mentor",
                 },
-                "admin@edugap.vn": {
+                "admin@mentora.vn": {
                     "id": "77777777-7777-7777-7777-777777777777",
-                    "email": "admin@edugap.vn",
+                    "email": "admin@mentora.vn",
                     "full_name": "Admin Sapia",
                     "mssv": None,
                     "role": "admin",
                 },
-                "hoang.htb@edugap.vn": {
+                "hoang.htb@mentora.vn": {
                     "id": "36bc990a-5bb6-48a6-a488-b97118497d3f",
-                    "email": "hoang.htb@edugap.vn",
+                    "email": "hoang.htb@mentora.vn",
                     "full_name": "Hồ Tất Bảo Hoàng",
                     "mssv": "2A202600699",
                     "role": "admin",
                 },
-                "btc@edugap.vn": {
+                "btc@mentora.vn": {
                     "id": "88888888-8888-8888-8888-888888888888",
-                    "email": "btc@edugap.vn",
+                    "email": "btc@mentora.vn",
                     "full_name": "Ban Tổ Chức Sapia",
                     "mssv": None,
                     "role": "btc",
                 },
-                "dev1@edugap.vn": {
+                "dev1@mentora.vn": {
                     "id": "11111111-1111-1111-1111-111111111111",
-                    "email": "dev1@edugap.vn",
+                    "email": "dev1@mentora.vn",
                     "full_name": "Developer One",
                     "mssv": "2A202600001",
                     "role": "dev",

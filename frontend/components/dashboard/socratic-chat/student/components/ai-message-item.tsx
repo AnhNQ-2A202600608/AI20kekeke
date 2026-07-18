@@ -750,6 +750,7 @@ export const AIMessageItem: React.FC<AIMessageItemProps> = ({
               </div>
             )}
 
+
             {/* Visual Suggested Path (ZPD Roadmap) */}
             {isAI && msg.diagnostic && msg.diagnostic.status === 'DIAGNOSIS_COMPLETE' && (
               <div className="mt-3 pt-2.5 border-t border-stone-200/60 space-y-2">

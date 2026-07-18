@@ -1,4 +1,4 @@
-# Experiment Log: EduGap Adaptive Learning Engine
+# Experiment Log: Mentora Adaptive Learning Engine
 
 ## Contribution (one sentence)
 We present a decoupled, concurrency-safe adaptive learning engine that eliminates database lock contention under high student concurrency while achieving mathematically aligned student modeling and content pathing.

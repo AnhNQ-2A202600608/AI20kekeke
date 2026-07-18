@@ -1,4 +1,4 @@
-# EduGap Excalidraw Diagrams
+# Mentora Excalidraw Diagrams
 
 Each chart is split into a separate Excalidraw file so it can be edited and exported independently.
 

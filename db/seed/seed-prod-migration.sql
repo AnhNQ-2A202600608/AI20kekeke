@@ -1,7 +1,7 @@
 -- ============================================================================
 -- PROD MIGRATION: Questions + Hints Seed
--- Target: edugap (prod) — elwyhewuqqlpquzbvtnz
--- Run in: Supabase Dashboard → SQL Editor (edugap project)
+-- Target: mentora (prod) — elwyhewuqqlpquzbvtnz
+-- Run in: Supabase Dashboard → SQL Editor (mentora project)
 -- Note: Schema đã apply xong. File này chỉ seed Questions + Hints.
 -- Idempotent: YES — all ON CONFLICT DO UPDATE / DO NOTHING
 -- ============================================================================
