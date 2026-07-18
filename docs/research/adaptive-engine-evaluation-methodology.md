@@ -85,7 +85,7 @@ flowchart TD
 Nhằm ngăn chặn trôi lệch thuật toán (algorithm drift) giữa cài đặt Python (dùng để nghiên cứu/đánh giá) và SQL RPC (chạy đồng bộ trên Production):
 
 ### A. Equivalence Test Case
-Trước khi mã nguồn được phép đẩy lên nhánh chính (main/production), một kịch bản kiểm thử tự động [test_adaptive_equivalence.py](file:///d:/CODE/AITHUCCHIEN/PROJECT/C2-App-125/tests/test_api/test_adaptive_equivalence.py) sẽ được kích hoạt:
+Trước khi mã nguồn được phép đẩy lên nhánh chính (main/production), một kịch bản kiểm thử tự động [test_adaptive_equivalence.py](file:///d:/code/AI20kekeke/tests/test_api/test_adaptive_equivalence.py) sẽ được kích hoạt:
 1. Sinh ngẫu nhiên 100 vector ngữ cảnh học sinh (Elo, BKT, Hint, AI help).
 2. Chạy tính toán song song qua module Python (`elo.py`, `bkt.py`) và gọi RPC DB SQL (`submit_attempt_v3`).
 3. Xác minh tính đồng nhất tuyệt đối:

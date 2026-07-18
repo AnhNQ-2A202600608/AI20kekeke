@@ -84,4 +84,4 @@ jobs:
 
       - name: Build Docker image for verification
         if: ${{ inputs.run_docker_build }}
-        run: docker build -t c2-app-backend:${{ github.sha }} .
+        run: docker build -t vaic-backend:${{ github.sha }} .

@@ -1,5 +1,5 @@
 -- ============================================================================
--- C2-App-125 | Enable RLS and Configure Row-Level Security Policies
+-- ai20kekeke | Enable RLS and Configure Row-Level Security Policies
 -- Target: Supabase PostgreSQL 17 (mentora-dev / mentora)
 -- Re-run safe: YES
 -- ============================================================================

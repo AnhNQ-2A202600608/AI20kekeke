@@ -1,5 +1,5 @@
 -- ============================================================================
--- C2-App-125 | Dev Accounts & MSSV Login Support
+-- ai20kekeke | Dev Accounts & MSSV Login Support
 -- Target: Supabase PostgreSQL 17 (mentora-dev)
 -- Date: 2026-06-16
 -- Re-run safe: YES — all statements use IF NOT EXISTS / ON CONFLICT

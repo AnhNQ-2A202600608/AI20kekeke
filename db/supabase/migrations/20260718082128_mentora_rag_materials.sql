@@ -1,4 +1,4 @@
--- EduGap normalized, scope-filtered RAG corpus.
+-- Mentora normalized, scope-filtered RAG corpus.
 -- Existing public.slide_embeddings remains untouched for legacy compatibility.
 
 CREATE EXTENSION IF NOT EXISTS vector WITH SCHEMA public;

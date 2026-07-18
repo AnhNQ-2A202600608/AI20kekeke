@@ -1,5 +1,5 @@
 -- ============================================================================
--- C2-App-125 | Mentor Quiz Error Cases
+-- ai20kekeke | Mentor Quiz Error Cases
 -- Target: Supabase PostgreSQL
 -- Re-run safe: YES
 -- ============================================================================

@@ -68,7 +68,7 @@ Khi học viên sử dụng trợ lý AI hỏi đáp trực tiếp trong phiên 
 
 ## 5. Tham chiếu mã nguồn backend
 
-Cài đặt chi tiết của thuật toán nằm tại [elo.py](file:///d:/CODE/AITHUCCHIEN/PROJECT/C2-App-125/src/services/adaptive/elo.py):
+Cài đặt chi tiết của thuật toán nằm tại [elo.py](file:///d:/code/AI20kekeke/src/services/adaptive/elo.py):
 
 ```python
 # Cài đặt cập nhật Elo kép
@@ -100,7 +100,7 @@ def calculate_elo_updates(
 
 ## 6. Định hướng nâng cấp theo Pelánek (2016)
 
-Hệ thống đang được lên kế hoạch tích hợp 3 cải tiến lớn dựa trên nghiên cứu gốc của Pelánek (xem chi tiết tại [Kế hoạch nâng cấp Elo](file:///d:/CODE/AITHUCCHIEN/PROJECT/C2-App-125/plans/20260621-1217-elo-system-calibration-plan/plan.md)):
+Hệ thống đang được lên kế hoạch tích hợp 3 cải tiến lớn dựa trên nghiên cứu gốc của Pelánek (xem chi tiết tại [Kế hoạch nâng cấp Elo](file:///d:/code/AI20kekeke/plans/20260621-1217-elo-system-calibration-plan/plan.md)):
 
 1.  **Dynamic K-question Calibration:** Cập nhật $K_{\text{question}}$ giảm dần từ $32.0$ về tối thiểu $8.0$ theo lũy kế số lượt làm bài của câu hỏi đó nhằm tối ưu hóa tính ổn định của độ khó $b$.
 2.  **Time-Gap Uncertainty Adjustment:** Bù đắp lượng suy giảm trí nhớ bằng cách tăng tạm thời $K_{\text{student}}$ khi học viên quay lại sau hơn 7 ngày không hoạt động.

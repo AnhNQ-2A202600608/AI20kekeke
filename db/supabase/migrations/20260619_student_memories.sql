@@ -1,5 +1,5 @@
 -- ============================================================================
--- C2-App-125 | Student Memories Table for Long-Term Facts
+-- ai20kekeke | Student Memories Table for Long-Term Facts
 -- Target: Supabase PostgreSQL 17
 -- Re-run safe: YES
 -- ============================================================================

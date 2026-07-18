@@ -1,5 +1,5 @@
 -- ============================================================================
--- C2-App-125 | Bitemporal Graph Memory Schema Migration
+-- ai20kekeke | Bitemporal Graph Memory Schema Migration
 -- Target: Supabase PostgreSQL 17
 -- Re-run safe: YES
 -- ============================================================================
