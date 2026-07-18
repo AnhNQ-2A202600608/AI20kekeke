@@ -1,6 +1,7 @@
 from __future__ import annotations
-from typing import List, Optional
+
 from pydantic import BaseModel, Field
+
 
 class DocumentInfo(BaseModel):
     document_id: str = Field(description="Mã định danh duy nhất của tài liệu/sách, vd: 'math-k6-sgk'")
@@ -22,10 +23,10 @@ class ConceptCandidate(BaseModel):
     name: str = Field(description="Tên concept/kỹ năng cụ thể bằng tiếng Việt, đúng thuật ngữ sách")
     description: str = Field(description="Mô tả chi tiết định nghĩa của concept/kỹ năng")
     concept_type: str = Field(description="Bắt buộc là 1 trong: 'knowledge', 'skill', 'subskill', 'misconception'")
-    aliases: List[str] = Field(default_factory=list, description="Các tên gọi khác hoặc biến thể cùng nghĩa")
+    aliases: list[str] = Field(default_factory=list, description="Các tên gọi khác hoặc biến thể cùng nghĩa")
     grade: int = Field(default=6, description="Lớp học giới thiệu concept này")
-    source_chunk_ids: List[str] = Field(default_factory=list, description="Danh sách các chunk ID chứa concept này")
-    evidence: List[str] = Field(default_factory=list, description="Trích dẫn văn bản làm bằng chứng cho sự tồn tại của concept")
+    source_chunk_ids: list[str] = Field(default_factory=list, description="Danh sách các chunk ID chứa concept này")
+    evidence: list[str] = Field(default_factory=list, description="Trích dẫn văn bản làm bằng chứng cho sự tồn tại của concept")
 
 class RelationCandidate(BaseModel):
     source: str = Field(description="temporary_id của concept nguồn")
@@ -45,7 +46,7 @@ class MisconceptionCandidate(BaseModel):
 
 class LessonExtraction(BaseModel):
     document: DocumentInfo
-    learning_objectives: List[LearningObjective] = Field(default_factory=list)
-    concepts: List[ConceptCandidate] = Field(default_factory=list)
-    relations: List[RelationCandidate] = Field(default_factory=list)
-    misconceptions: List[MisconceptionCandidate] = Field(default_factory=list)
+    learning_objectives: list[LearningObjective] = Field(default_factory=list)
+    concepts: list[ConceptCandidate] = Field(default_factory=list)
+    relations: list[RelationCandidate] = Field(default_factory=list)
+    misconceptions: list[MisconceptionCandidate] = Field(default_factory=list)

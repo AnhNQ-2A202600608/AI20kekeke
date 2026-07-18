@@ -1,8 +1,8 @@
 from __future__ import annotations
+
 import re
 import unicodedata
 from collections import defaultdict
-from typing import List, Dict, Tuple, Set, Optional
 
 SUPPORTED_RELATIONS = {
     'prerequisite_of', 'causes', 'part_of', 'is_a', 'used_for', 'compared_with', 'related_to',
@@ -23,7 +23,7 @@ def clean_vietnamese_text(text: str) -> str:
 def check_evidence_in_chunk(evidence: str, chunk_content: str) -> bool:
     if not evidence or not chunk_content:
         return False
-        
+
     def clean_text_with_latex(t: str) -> str:
         # Normalize Unicode to NFC
         t = unicodedata.normalize("NFC", t)
@@ -39,26 +39,26 @@ def check_evidence_in_chunk(evidence: str, chunk_content: str) -> bool:
 
     clean_ev = clean_text_with_latex(evidence)
     clean_chunk = clean_text_with_latex(chunk_content)
-    
+
     if clean_ev in clean_chunk:
         return True
-        
+
     # Split evidence into clauses of at least 15 characters to handle injections/formulas in-between
     clauses = [c.strip() for c in re.split(r'[.,;!?\n]', evidence) if len(c.strip()) >= 15]
     if not clauses:
         return False
-        
+
     # Check if the longest clause matches
     longest_clause = max(clauses, key=len)
     clean_longest = clean_text_with_latex(longest_clause)
     if clean_longest in clean_chunk:
         return True
-        
+
     # Alternate check: if at least 50% of long clauses match
     matched_clauses = sum(1 for c in clauses if clean_text_with_latex(c) in clean_chunk)
     return matched_clauses / len(clauses) >= 0.5
 
-def resolve_relation_evidence_chunks(relations: List[dict], chunks_by_id: Dict[str, dict]) -> int:
+def resolve_relation_evidence_chunks(relations: list[dict], chunks_by_id: dict[str, dict]) -> int:
     """
     LLM đôi khi trích đúng câu evidence nhưng gán nhầm source_chunk_id (đặc biệt với
     quan hệ nối 2 khái niệm cách xa nhau trong 1 bài dài, nhiều chunk). Trước khi coi
@@ -85,7 +85,7 @@ def resolve_relation_evidence_chunks(relations: List[dict], chunks_by_id: Dict[s
     return corrected
 
 
-def detect_cycle_dfs(node: str, adj: Dict[str, List[str]], visited: Dict[str, bool], stack: Dict[str, bool], cycle_path: List[str]) -> bool:
+def detect_cycle_dfs(node: str, adj: dict[str, list[str]], visited: dict[str, bool], stack: dict[str, bool], cycle_path: list[str]) -> bool:
     visited[node] = True
     stack[node] = True
     cycle_path.append(node)
@@ -102,7 +102,7 @@ def detect_cycle_dfs(node: str, adj: Dict[str, List[str]], visited: Dict[str, bo
     cycle_path.pop()
     return False
 
-def get_any_cycle(nodes: List[str], edges: List[Tuple[str, str]]) -> Optional[List[str]]:
+def get_any_cycle(nodes: list[str], edges: list[tuple[str, str]]) -> list[str] | None:
     adj = defaultdict(list)
     for u, v in edges:
         adj[u].append(v)
@@ -124,9 +124,9 @@ def get_any_cycle(nodes: List[str], edges: List[Tuple[str, str]]) -> Optional[Li
 
 def validate_relation_provenance(
     r: dict,
-    concept_codes: List[str],
-    chunks_by_id: Dict[str, dict]
-) -> List[str]:
+    concept_codes: list[str],
+    chunks_by_id: dict[str, dict]
+) -> list[str]:
     """
     Validates a single relation against ontology and chunk content.
     """
@@ -166,9 +166,9 @@ def validate_relation_provenance(
     return errors
 
 def validate_full_graph(
-    concept_codes: List[str],
-    relations: List[dict],
-    chunks_by_id: Optional[Dict[str, dict]] = None
+    concept_codes: list[str],
+    relations: list[dict],
+    chunks_by_id: dict[str, dict] | None = None
 ) -> dict:
     """
     Validates structural properties of the full knowledge graph.
@@ -181,15 +181,15 @@ def validate_full_graph(
         "prerequisite_cycles": [],
         "removed_relations": []
     }
-    
-    concept_set = set(concept_codes)
+
+    set(concept_codes)
     seen_keys = set()
-    
+
     for r in relations:
         src = r.get("source")
         tgt = r.get("target")
         rel_type = r.get("relation_type") or r.get("relation")
-        
+
         # Provenance and structural checks
         errors = validate_relation_provenance(r, concept_codes, chunks_by_id)
         if errors:
@@ -203,61 +203,61 @@ def validate_full_graph(
         else:
             r["validation_status"] = "validated"
             r["validation_errors"] = []
-            
+
         # Self relation check
         if src == tgt:
             report["self_relations"].append(r)
             report["valid"] = False
-            
+
         # Duplicate relation check
         rel_key = (src, rel_type, tgt)
         if rel_key in seen_keys:
             report["duplicate_relations"].append(r)
             report["valid"] = False
         seen_keys.add(rel_key)
-        
+
     return report
 
 def validate_prerequisite_dag(
-    concept_codes: List[str],
-    relations: List[dict],
-    chunks_by_id: Optional[Dict[str, dict]] = None,
-    concept_order_map: Optional[Dict[str, int]] = None
-) -> Tuple[List[dict], dict]:
+    concept_codes: list[str],
+    relations: list[dict],
+    chunks_by_id: dict[str, dict] | None = None,
+    concept_order_map: dict[str, int] | None = None
+) -> tuple[list[dict], dict]:
     """
     Extracts the prerequisite subgraph, validates it for cycles and chronological order,
     and automatically breaks any cycles if found (removing the causing edge).
     """
     report = validate_full_graph(concept_codes, relations, chunks_by_id)
-    
+
     clean_relations = []
     prereq_edges = []
-    
+
     for r in relations:
         src = r.get("source")
         tgt = r.get("target")
         rel_type = r.get("relation_type") or r.get("relation")
-        
+
         # Skip only if nodes are completely missing or self-relation
         if src not in concept_codes or tgt not in concept_codes or src == tgt:
             clean_relations.append(r)
             continue
-            
+
         if rel_type in ("prerequisite_of", "Prerequisite_of"):
             if concept_order_map:
                 order_s = concept_order_map.get(src, 99)
                 order_t = concept_order_map.get(tgt, 99)
-                
+
                 if order_s > order_t:
                     # Chronological constraint warning, swap direction to resolve or remove
                     r["source"], r["target"] = tgt, src
                     src, tgt = tgt, src
-                    
+
             prereq_edges.append((src, tgt))
             clean_relations.append(r)
         else:
             clean_relations.append(r)
-            
+
     # DFS cycle breaker for prerequisite_of
     max_iters = 100
     iter_count = 0
@@ -265,15 +265,15 @@ def validate_prerequisite_dag(
         cycle = get_any_cycle(concept_codes, prereq_edges)
         if not cycle:
             break
-            
+
         iter_count += 1
         report["valid"] = False
         report["prerequisite_cycles"].append(list(cycle))
-        
+
         # Break the cycle: remove the last edge
         u, v = cycle[-2], cycle[-1]
         prereq_edges = [edge for edge in prereq_edges if edge != (u, v)]
-        
+
         removed_rel = None
         for r in list(clean_relations):
             r_type = r.get("relation_type") or r.get("relation")
@@ -281,12 +281,12 @@ def validate_prerequisite_dag(
                 removed_rel = r
                 clean_relations.remove(r)
                 break
-                
+
         if removed_rel:
             report["removed_relations"].append({
                 "relation": removed_rel,
                 "reason": "prerequisite_cycle_breaker",
                 "cycle": list(cycle)
             })
-            
+
     return clean_relations, report

@@ -2,11 +2,13 @@
 (outputs/kg_fused/fused_math.json và outputs/kg_fused/fused_history_geo.json)
 vào Supabase để hoàn tác việc xóa nhầm dữ liệu.
 """
+# ruff: noqa: E402
 from __future__ import annotations
+
 import json
-import os
 import sys
 from pathlib import Path
+
 from dotenv import load_dotenv
 
 if hasattr(sys.stdout, "reconfigure"):
@@ -17,9 +19,10 @@ sys.path.append(str(_PROJECT_ROOT))
 
 load_dotenv(_PROJECT_ROOT / ".env")
 
-from src.pipeline.graphusion.run_context import RunContext
-from src.pipeline.graphusion.ingest_graph_to_db import IngestionService
 from src.pipeline.graphusion.document_chunker import DocumentChunk
+from src.pipeline.graphusion.ingest_graph_to_db import IngestionService
+from src.pipeline.graphusion.run_context import RunContext
+
 
 def restore_subject(subject: str, course_code: str, fused_json_path: Path):
     if not fused_json_path.exists():
@@ -36,7 +39,7 @@ def restore_subject(subject: str, course_code: str, fused_json_path: Path):
 
     run_ctx = RunContext.create(subject, 6, course_code)
     service = IngestionService()
-    
+
     # 1. Đăng ký extraction run
     service.create_extraction_run(run_ctx)
 
@@ -64,7 +67,7 @@ def restore_subject(subject: str, course_code: str, fused_json_path: Path):
         c["page_start"] = page
         c["page_end"] = page
         c["concept_type"] = c.get("concept_type") or "knowledge"
-        
+
         if chunk_id not in chunk_seen:
             chunk_seen.add(chunk_id)
             chunks.append(DocumentChunk(
@@ -85,7 +88,7 @@ def restore_subject(subject: str, course_code: str, fused_json_path: Path):
         r["source_chunk_id"] = chunk_id
         r["relation_type"] = r.get("relation") or r.get("relation_type") or "Prerequisite_of"
         r["confidence"] = r.get("confidence") or 1.0
-        
+
         if chunk_id not in chunk_seen:
             chunk_seen.add(chunk_id)
             chunks.append(DocumentChunk(

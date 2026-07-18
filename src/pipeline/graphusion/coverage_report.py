@@ -1,9 +1,10 @@
 from __future__ import annotations
+
 import json
-import os
 from collections import defaultdict
 from pathlib import Path
-from typing import List, Dict, Any, Optional, Tuple
+from typing import Any
+
 
 def load_thresholds(project_root: Path) -> dict:
     default_thresholds = {
@@ -27,7 +28,7 @@ def load_thresholds(project_root: Path) -> dict:
     config_path = project_root / "config" / "kg_coverage_thresholds.yaml"
     if not config_path.exists():
         return default_thresholds
-        
+
     try:
         import yaml
         with open(config_path, encoding="utf-8") as f:
@@ -37,15 +38,15 @@ def load_thresholds(project_root: Path) -> dict:
 
 def generate_and_save_reports(
     run_context: Any,
-    documents: List[dict],
-    chunks: List[dict],
-    raw_concepts: List[dict],
-    canonical_concepts: List[dict],
-    relations: List[dict],
+    documents: list[dict],
+    chunks: list[dict],
+    raw_concepts: list[dict],
+    canonical_concepts: list[dict],
+    relations: list[dict],
     validation_report: dict,
     normalization_report: dict,
-    learning_objectives: List[dict] = None
-) -> Tuple[dict, str, bool]:
+    learning_objectives: list[dict] = None
+) -> tuple[dict, str, bool]:
     """
     Computes all coverage metrics, checks thresholds, and outputs:
       - coverage_report.json
@@ -59,17 +60,17 @@ def generate_and_save_reports(
     # từng bị lệch 1 cấp khiến load_thresholds() không bao giờ tìm thấy config thật.
     project_root = Path(__file__).resolve().parents[3]
     thresholds = load_thresholds(project_root)
-    
+
     # 1. Calculate Document Coverage
     total_docs = len(documents)
     processed_docs = sum(1 for d in documents if d.get("status") == "success")
     failed_docs = total_docs - processed_docs
-    
+
     total_pages = sum(d.get("total_pages", 0) for d in documents)
     extracted_pages = sum(d.get("extracted_pages", 0) for d in documents)
     failed_pages = total_pages - extracted_pages
     page_extraction_rate = extracted_pages / total_pages if total_pages > 0 else 1.0
-    
+
     # 2. Calculate Lesson Coverage
     # Try to load expected lessons from manifest
     manifest_path = project_root / "config" / "kg_manifests" / f"{run_context.course_code}.yaml"
@@ -83,27 +84,27 @@ def generate_and_save_reports(
                     expected_lessons.extend(d.get("expected_lessons", []))
         except Exception:
             pass
-            
+
     detected_lessons = list(set(c.get("lesson_title") for c in chunks if c.get("lesson_title")))
     processed_lessons = len(detected_lessons)
-    
+
     if not expected_lessons:
         # Fallback to unique lessons in chunks
         expected_lessons = detected_lessons
-        
+
     expected_lessons_count = len(expected_lessons)
     lesson_coverage_rate = processed_lessons / expected_lessons_count if expected_lessons_count > 0 else 1.0
-    
+
     # 3. Calculate Concept Coverage
     total_raw_concepts = len(raw_concepts)
     canonical_concepts_count = len(canonical_concepts)
     concepts_with_source = sum(1 for c in canonical_concepts if c.get("source_chunk_ids"))
     concepts_without_source = canonical_concepts_count - concepts_with_source
     concepts_with_source_rate = concepts_with_source / canonical_concepts_count if canonical_concepts_count > 0 else 1.0
-    
+
     concepts_with_desc = sum(1 for c in canonical_concepts if c.get("description"))
     concepts_without_desc = canonical_concepts_count - concepts_with_desc
-    
+
     def _norm_get(report, key, default=None):
         """Access normalization_report as Pydantic model or dict."""
         if hasattr(report, key):
@@ -114,7 +115,7 @@ def generate_and_save_reports(
 
     merged_count = len(_norm_get(normalization_report, "merged", []))
     review_duplicates = len(_norm_get(normalization_report, "needs_review", []))
-    
+
     # Orphan concepts: concepts not referenced as source or target in any relation
     rel_concepts = set()
     for r in relations:
@@ -128,7 +129,7 @@ def generate_and_save_reports(
     rels_with_evidence = sum(1 for r in relations if r.get("evidence"))
     rels_with_source_chunk = sum(1 for r in relations if r.get("source_chunk_id"))
     rels_with_source_chunk_rate = rels_with_source_chunk / total_rels if total_rels > 0 else 1.0
-    
+
     # invalid/duplicate/self đếm lại trực tiếp trên `relations` (list cuối cùng, sau khi
     # cycle-breaker đã loại bớt cạnh) thay vì đọc từ validation_report — validation_report
     # được tính trên list TRƯỚC cycle-breaking nên có thể chứa quan hệ đã bị loại ra khỏi
@@ -147,31 +148,31 @@ def generate_and_save_reports(
     validated_rels = sum(1 for r in relations if r.get("validation_status", "pending") == "validated")
     approved_rels = sum(1 for r in relations if r.get("status", "draft") == "approved")
     rejected_rels = sum(1 for r in relations if r.get("status", "draft") == "rejected")
-    
+
     # 5. Calculate Prerequisite Graph Metrics
     prereq_edges = [(r["source"], r["target"]) for r in relations if r.get("relation_type") == "prerequisite_of"]
     prereq_nodes = set()
     prereq_in_degree = defaultdict(int)
     prereq_out_degree = defaultdict(int)
-    
+
     for u, v in prereq_edges:
         prereq_nodes.add(u)
         prereq_nodes.add(v)
         prereq_out_degree[u] += 1
         prereq_in_degree[v] += 1
-        
+
     root_nodes = [n for n in prereq_nodes if prereq_in_degree[n] == 0]
     leaf_nodes = [n for n in prereq_nodes if prereq_out_degree[n] == 0]
     isolated_nodes = [c["code"] for c in canonical_concepts if c["code"] not in prereq_nodes]
-    
+
     cycle_count = len(validation_report.get("prerequisite_cycles", []))
     dag_valid = (cycle_count == 0)
-    
+
     # 6. Learning Objective Coverage
     learning_objectives = learning_objectives or []
     total_lo = len(learning_objectives)
     mapped_lo = 0
-    lo_codes = {lo["code"] for lo in learning_objectives}
+    {lo["code"] for lo in learning_objectives}
     # Concepts mapping checks
     lo_coverage_rate = 1.0 if total_lo == 0 else (mapped_lo / total_lo)
 
@@ -239,17 +240,17 @@ def generate_and_save_reports(
             "lo_coverage_rate": lo_coverage_rate
         }
     }
-    
+
     # 8. Check thresholds for warning or failure status
     warnings = []
     failures = []
-    
+
     # Fail checks
     if cycle_count > thresholds["fail"].get("prerequisite_cycle_count", 0):
         failures.append(f"Prerequisite cycle count ({cycle_count}) exceeds threshold.")
     if invalid_rels_count > thresholds["fail"].get("invalid_structured_output_count", 0):
         failures.append(f"Invalid relations count ({invalid_rels_count}) exceeds threshold.")
-    
+
     # Warn checks
     if page_extraction_rate < thresholds["warn"].get("page_extraction_rate_min", 0.95):
         warnings.append(f"Page extraction rate ({page_extraction_rate:.2%}) below warning threshold.")
@@ -261,13 +262,13 @@ def generate_and_save_reports(
         warnings.append(f"Relations with source chunk rate ({rels_with_source_chunk_rate:.2%}) below warning threshold.")
     if orphan_concept_rate > thresholds["warn"].get("orphan_concept_rate_max", 0.10):
         warnings.append(f"Orphan concept rate ({orphan_concept_rate:.2%}) exceeds warning threshold.")
-        
+
     metrics["status"] = "FAILED" if failures else ("WARNING" if warnings else "PASSED")
     metrics["warnings"] = warnings
     metrics["failures"] = failures
-    
+
     is_failed = len(failures) > 0
-    
+
     # 9. Format Markdown Report
     markdown_report = f"""# Knowledge Graph Coverage Report
 Run ID: `{run_context.run_id}`
@@ -314,23 +315,23 @@ Status: **{metrics["status"]}**
         markdown_report += "\n## Failures\n" + "\n".join(f"- 🔴 {f}" for f in failures)
     if warnings:
         markdown_report += "\n## Warnings\n" + "\n".join(f"- ⚠️ {w}" for w in warnings)
-        
+
     # Write files to output run directory
     out_dir = Path(run_context.output_directory)
     out_dir.mkdir(parents=True, exist_ok=True)
-    
+
     with open(out_dir / "coverage_report.json", "w", encoding="utf-8") as f:
         json.dump(metrics, f, ensure_ascii=False, indent=2)
-        
+
     with open(out_dir / "coverage_report.md", "w", encoding="utf-8") as f:
         f.write(markdown_report)
-        
+
     with open(out_dir / "validation_report.json", "w", encoding="utf-8") as f:
         json.dump(validation_report, f, ensure_ascii=False, indent=2)
-        
+
     with open(out_dir / "normalization_report.json", "w", encoding="utf-8") as f:
         f.write(_serialize_norm_report(normalization_report))
-        
+
     return metrics, markdown_report, is_failed
 
 def _serialize_norm_report(report) -> str:

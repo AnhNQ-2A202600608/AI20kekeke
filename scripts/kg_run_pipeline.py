@@ -6,15 +6,17 @@ Usage:
     python scripts/kg_run_pipeline.py --subject math --course-code math-k6 --dry-run
     python scripts/kg_run_pipeline.py --subject history_geo --course-code hist-geo-k6
 """
+# ruff: noqa: E402
 from __future__ import annotations
+
 import argparse
+import hashlib
 import json
 import os
 import re
 import sys
 import time
 import unicodedata
-import hashlib
 from pathlib import Path
 
 if hasattr(sys.stdout, "reconfigure"):
@@ -24,18 +26,19 @@ _PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.append(str(_PROJECT_ROOT))
 
 from dotenv import load_dotenv
+
 load_dotenv(_PROJECT_ROOT / ".env")
 
+from src.pipeline.graphusion.coverage_report import generate_and_save_reports
+from src.pipeline.graphusion.document_chunker import generate_chunks
+from src.pipeline.graphusion.ingest_graph_to_db import IngestionService
+from src.pipeline.graphusion.normalize_concepts import normalize_and_deduplicate
+from src.pipeline.graphusion.run_context import RunContext
+from src.pipeline.graphusion.validate_graph import resolve_relation_evidence_chunks, validate_prerequisite_dag
 from src.pipeline.transform.doc_converter import (
     convert_pdf_to_markdown_openai_vision,
     convert_pdf_to_markdown_pypdf,
 )
-from src.pipeline.graphusion.run_context import RunContext
-from src.pipeline.graphusion.document_chunker import generate_chunks, DocumentChunk
-from src.pipeline.graphusion.normalize_concepts import normalize_and_deduplicate
-from src.pipeline.graphusion.validate_graph import validate_prerequisite_dag, resolve_relation_evidence_chunks
-from src.pipeline.graphusion.coverage_report import generate_and_save_reports
-from src.pipeline.graphusion.ingest_graph_to_db import IngestionService
 
 LESSON_HEADING_RE = re.compile(r"^#{1,3}\s*Bài\s*(\d+)\b.*$", re.IGNORECASE | re.MULTILINE)
 
@@ -169,7 +172,7 @@ def main() -> None:
     # Setup Run Context
     run_ctx = RunContext.create(args.subject, 6, args.course_code)
     print(f"[*] Khởi động Pipeline Run: {run_ctx.run_id}")
-    
+
     ingest_service = IngestionService()
     if not args.dry_run:
         ingest_service.create_extraction_run(run_ctx)
@@ -178,14 +181,14 @@ def main() -> None:
     pdfs = sorted(cfg["data_dir"].glob("*.pdf"))
     if args.only:
         pdfs = [p for p in pdfs if args.only.lower() in slugify(p.name).lower()]
-        
+
     direct_text_books = load_direct_text_books()
-    
+
     documents = []
     all_chunks = []
     all_raw_concepts = []
     all_raw_relations = []
-    
+
     for pdf_path in pdfs:
         book_slug = slugify(pdf_path.name)
         md_path = cfg["md_dir"] / f"{book_slug}.md"
@@ -206,13 +209,13 @@ def main() -> None:
             continue
 
         markdown_content = md_path.read_text(encoding="utf-8")
-        
+
         # Calculate Checksum
         md5_hash = hashlib.md5(markdown_content.encode("utf-8")).hexdigest()
-        
+
         # Determine source_type
         source_type = "SGV" if "sgv" in pdf_path.name.lower() else "SGK"
-        
+
         documents.append({
             "document_code": book_slug,
             "title": pdf_path.name.replace(".pdf", ""),
@@ -226,11 +229,14 @@ def main() -> None:
         # Split Document into Lessons
         lessons = split_into_lessons(markdown_content)
         print(f"[*] Tìm thấy {len(lessons)} bài học trong markdown.")
-        
+
         if args.subject == "math":
             from src.pipeline.graphusion.extract_math_knowledge import extract_lesson_knowledge, validate_and_clean
         else:
-            from src.pipeline.graphusion.extract_history_geo_knowledge import extract_lesson_knowledge, validate_and_clean
+            from src.pipeline.graphusion.extract_history_geo_knowledge import (
+                extract_lesson_knowledge,
+                validate_and_clean,
+            )
 
         chunk_offset = 0
         for slug, content in lessons:
@@ -238,20 +244,20 @@ def main() -> None:
             lesson_chunks = generate_chunks(content, book_slug, source_type, start_chunk_index=chunk_offset)
             chunk_offset += len(lesson_chunks)
             all_chunks.extend(lesson_chunks)
-            
+
             # Extract Concepts & Relations
             out_path = cfg["json_dir"] / f"{book_slug}__{slug}.json"
             if out_path.exists():
                 print(f"  [=] Đã có JSON kết quả, đọc file: {out_path.name}")
                 with open(out_path, encoding="utf-8") as f:
                     knowledge_dict = json.load(f)
-                
+
                 # Handle legacy format: raw dicts with "code"/"relation" fields
                 raw_concepts = knowledge_dict.get("concepts", [])
                 raw_relations = knowledge_dict.get("relations", [])
-                
+
                 from src.pipeline.graphusion.validate_graph import clean_vietnamese_text
-                
+
                 # Normalize legacy concept format to canonical dict format
                 for c in raw_concepts:
                     if "concept_type" not in c:
@@ -277,7 +283,7 @@ def main() -> None:
                         c["evidence"] = []
                     if c.get("grade") is None:
                         c["grade"] = 6
-                
+
                 # Normalize legacy relation format
                 for r in raw_relations:
                     if "relation_type" not in r:
@@ -304,7 +310,7 @@ def main() -> None:
                         r["confidence"] = 1.0
                     if "evidence" not in r:
                         r["evidence"] = ""
-                
+
                 print(f"  [+] Loaded: {len(raw_concepts)} concepts, {len(raw_relations)} relations.")
                 all_raw_concepts.extend(raw_concepts)
                 all_raw_relations.extend(raw_relations)
@@ -324,10 +330,10 @@ def main() -> None:
                 if not ok or not knowledge:
                     print(f"  [!] Trích xuất thất bại bài: {slug}")
                     continue
-                    
+
                 with open(out_path, "w", encoding="utf-8") as f:
                     json.dump(knowledge.model_dump(), f, ensure_ascii=False, indent=2)
-                    
+
                 print(f"  [+] Trích xuất: {len(knowledge.concepts)} concepts, {len(knowledge.relations)} relations.")
                 for c in knowledge.concepts:
                     all_raw_concepts.append(c.model_dump())
@@ -338,7 +344,7 @@ def main() -> None:
     out_dir = Path(run_ctx.output_directory)
     with open(out_dir / "documents.json", "w", encoding="utf-8") as f:
         json.dump(documents, f, ensure_ascii=False, indent=2)
-        
+
     with open(out_dir / "chunks.jsonl", "w", encoding="utf-8") as f:
         for chunk in all_chunks:
             f.write(json.dumps(chunk.model_dump(), ensure_ascii=False) + "\n")
@@ -346,7 +352,7 @@ def main() -> None:
     # Stage: Concept Normalization & Deduplication
     print("\n[*] Đang chạy bước Concept Normalization...")
     canonical_concepts, remapped_relations, norm_report = normalize_and_deduplicate(all_raw_concepts, all_raw_relations)
-    
+
     # Stage: Graph Fusion & DAG validation
     print("[*] Đang chạy bước Graph Validation & Prerequisite DAG Enforcement...")
     chunks_by_id = {c.chunk_id: c.model_dump() for c in all_chunks}

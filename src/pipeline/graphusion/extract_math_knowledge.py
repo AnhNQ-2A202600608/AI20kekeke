@@ -1,8 +1,8 @@
+# ruff: noqa: E402
 from __future__ import annotations
+
 import os
 import sys
-from pathlib import Path
-from typing import List, Optional
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.dirname(os.path.dirname(os.path.dirname(current_dir)))
@@ -10,15 +10,16 @@ if project_root not in sys.path:
     sys.path.insert(0, project_root)
 
 from src.pipeline.graphusion.document_chunker import DocumentChunk
+from src.pipeline.graphusion.extractor import GroqKnowledgeExtractor, OpenAIKnowledgeExtractor
 from src.pipeline.graphusion.schemas import LessonExtraction
-from src.pipeline.graphusion.extractor import OpenAIKnowledgeExtractor, GroqKnowledgeExtractor
+
 
 def extract_lesson_knowledge(
-    chunks: List[DocumentChunk],
+    chunks: list[DocumentChunk],
     source_type: str,
     model: str,
     api_key: str,
-    base_url: Optional[str] = None
+    base_url: str | None = None
 ) -> LessonExtraction:
     """
     Trích xuất concept/relation cho một bài học (gồm danh sách chunks) bằng OpenAI hoặc Groq extractor.
@@ -27,7 +28,7 @@ def extract_lesson_knowledge(
         extractor = GroqKnowledgeExtractor()
     else:
         extractor = OpenAIKnowledgeExtractor()
-        
+
     return extractor.extract(
         chunks=chunks,
         subject="math",

@@ -1,19 +1,22 @@
 from __future__ import annotations
+
 import re
 import unicodedata
-from typing import List, Dict, Tuple, Set, Any
+from typing import Any
+
 from pydantic import BaseModel, Field
 
+
 class ConceptMergeAudit(BaseModel):
-    merged_from: List[str]
+    merged_from: list[str]
     merged_into: str
     reason: str
     confidence: float
 
 class NormalizationReport(BaseModel):
-    merged: List[ConceptMergeAudit] = Field(default_factory=list)
-    not_merged: List[str] = Field(default_factory=list)
-    needs_review: List[Dict[str, Any]] = Field(default_factory=list)
+    merged: list[ConceptMergeAudit] = Field(default_factory=list)
+    not_merged: list[str] = Field(default_factory=list)
+    needs_review: list[dict[str, Any]] = Field(default_factory=list)
 
 def clean_vietnamese_text(text: str) -> str:
     """
@@ -38,11 +41,11 @@ def jaccard_similarity(s1: str, s2: str) -> float:
     return len(w1 & w2) / len(w1 | w2)
 
 def normalize_and_deduplicate(
-    concepts: List[dict],
-    relations: List[dict],
+    concepts: list[dict],
+    relations: list[dict],
     similarity_threshold: float = 0.85,
     review_threshold: float = 0.65
-) -> Tuple[List[dict], List[dict], NormalizationReport]:
+) -> tuple[list[dict], list[dict], NormalizationReport]:
     """
     Normalizes concepts, merges duplicates based on:
     1. Same code
@@ -51,11 +54,10 @@ def normalize_and_deduplicate(
     4. Jaccard similarity (above threshold -> merge; intermediate -> needs_review)
     Remaps relations to canonical concepts, and removes duplicates.
     """
-    normalized_concepts: List[dict] = []
-    merge_map: Dict[str, str] = {} # old_code -> canonical_code
-    audit_merges: List[ConceptMergeAudit] = []
-    needs_review_list: List[Dict[str, Any]] = []
-    
+    merge_map: dict[str, str] = {} # old_code -> canonical_code
+    audit_merges: list[ConceptMergeAudit] = []
+    needs_review_list: list[dict[str, Any]] = []
+
     # 1. First Pass: Normalize fields
     for c in concepts:
         c["normalized_name"] = clean_vietnamese_text(c.get("name", ""))
@@ -65,19 +67,19 @@ def normalize_and_deduplicate(
             merge_map[c["temporary_id"]] = c["canonical_code"]
         else:
             merge_map[c["code"]] = c["canonical_code"]
-            
+
     # 2. Second Pass: Group and Merge concepts
-    canonical_groups: Dict[str, List[dict]] = {} # canonical_code -> list of merged concepts
-    
+    canonical_groups: dict[str, list[dict]] = {} # canonical_code -> list of merged concepts
+
     for c in concepts:
         code = c["canonical_code"]
         norm_name = c["normalized_name"]
         ctype = c.get("concept_type", "knowledge")
-        
+
         merged_into_code = None
         merge_reason = None
         merge_confidence = 1.0
-        
+
         # Check exact code match first in existing canonicals
         if code in canonical_groups:
             merged_into_code = code
@@ -88,19 +90,19 @@ def normalize_and_deduplicate(
                 rep = group[0] # representative concept
                 if rep.get("concept_type") != ctype:
                     continue # only merge same types
-                    
+
                 # Exact normalized name match
                 if rep["normalized_name"] == norm_name:
                     merged_into_code = existing_code
                     merge_reason = "exact_normalized_name_match"
                     break
-                    
+
                 # Alias matches
                 if norm_name in rep["aliases"] or rep["normalized_name"] in c["aliases"]:
                     merged_into_code = existing_code
                     merge_reason = "alias_match"
                     break
-                    
+
                 # Check Jaccard similarity
                 sim = jaccard_similarity(norm_name, rep["normalized_name"])
                 if sim >= similarity_threshold:
@@ -117,7 +119,7 @@ def normalize_and_deduplicate(
                         "similarity": sim,
                         "reason": "token_similarity_review"
                     })
-                    
+
         if merged_into_code:
             canonical_groups[merged_into_code].append(c)
             # Update mapping for this concept
@@ -138,7 +140,7 @@ def normalize_and_deduplicate(
             canonical_groups[code] = [c]
             merge_map[c.get("temporary_id") or c["code"]] = code
             merge_map[code] = code
-            
+
     # 3. Third Pass: Build final merged concepts list
     final_concepts = []
     for code, group in canonical_groups.items():
@@ -155,7 +157,7 @@ def normalize_and_deduplicate(
             "source_chunk_ids": [],
             "evidence": []
         }
-        
+
         # Merge other attributes
         descriptions = []
         for c in group:
@@ -175,22 +177,22 @@ def normalize_and_deduplicate(
             desc = c.get("description")
             if desc and desc not in descriptions:
                 descriptions.append(desc)
-                
+
         # Merge descriptions cleanly (e.g. choose the longest one)
         if descriptions:
             merged_concept["description"] = max(descriptions, key=len)
-            
+
         final_concepts.append(merged_concept)
-        
+
     # 4. Fourth Pass: Remap relations
     final_relations = []
     seen_relations = set()
-    
+
     for r in relations:
         src = r.get("source")
         tgt = r.get("target")
         rel = r.get("relation_type") or r.get("relation")
-        
+
         # Map back from mixed casing to lowercase snake_case
         # Compatibility mapping
         RELATION_ALIASES = {
@@ -204,15 +206,15 @@ def normalize_and_deduplicate(
         }
         if rel in RELATION_ALIASES:
             rel = RELATION_ALIASES[rel]
-            
+
         # Remap to canonical code
         canonical_src = merge_map.get(src, src)
         canonical_tgt = merge_map.get(tgt, tgt)
-        
+
         # Skip self-relations
         if canonical_src == canonical_tgt:
             continue
-            
+
         # Deduplicate
         rel_key = (canonical_src, rel, canonical_tgt)
         if rel_key not in seen_relations:
@@ -225,11 +227,11 @@ def normalize_and_deduplicate(
             if "relation" in remapped_rel:
                 del remapped_rel["relation"]
             final_relations.append(remapped_rel)
-            
+
     report = NormalizationReport(
         merged=audit_merges,
         not_merged=[c["code"] for c in final_concepts],
         needs_review=needs_review_list
     )
-    
+
     return final_concepts, final_relations, report

@@ -1,6 +1,8 @@
 """Ghi concept/relation đã trích xuất vào Supabase.
 """
+# ruff: noqa: E402
 from __future__ import annotations
+
 import argparse
 import json
 import os
@@ -12,11 +14,11 @@ project_root = os.path.dirname(os.path.dirname(os.path.dirname(current_dir)))
 if project_root not in sys.path:
     sys.path.insert(0, project_root)
 
-from src.pipeline.graphusion.run_context import RunContext
 from src.pipeline.graphusion.document_chunker import DocumentChunk
-from src.pipeline.graphusion.normalize_concepts import normalize_and_deduplicate
-from src.pipeline.graphusion.validate_graph import validate_prerequisite_dag
 from src.pipeline.graphusion.ingest_graph_to_db import IngestionService
+from src.pipeline.graphusion.normalize_concepts import normalize_and_deduplicate
+from src.pipeline.graphusion.run_context import RunContext
+from src.pipeline.graphusion.validate_graph import validate_prerequisite_dag
 
 DEFAULT_MATH_COURSE_CODE = "math-k6"
 DEFAULT_MATH_COURSE_TITLE = "Toán phổ thông lớp 6"
@@ -47,14 +49,14 @@ def main():
             sys.exit(1)
 
     merged = merge_lesson_files(paths)
-    
+
     # Setup Run Context
     os.environ["SUPABASE_URL_STUB"] = "true" if args.dry_run else "false"
     run_ctx = RunContext.create("math", 6, args.course_code)
-    
+
     # Normalize & Validate
     concepts, relations, norm_report = normalize_and_deduplicate(merged["concepts"], merged["relations"])
-    
+
     # Build dummy chunks representing the evidence for provenance integrity
     chunks = []
     chunk_seen = set()
@@ -91,7 +93,7 @@ def main():
     service = IngestionService()
     if not args.dry_run:
         service.create_extraction_run(run_ctx)
-        
+
     doc_manifest = [{"document_code": "math-k6-sgk", "source_type": "SGK", "checksum": "legacy"}]
     res = service.ingest_graph(
         run_ctx=run_ctx,

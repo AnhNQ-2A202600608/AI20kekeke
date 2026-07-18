@@ -1,9 +1,10 @@
 from __future__ import annotations
+
 import hashlib
 import re
-from pathlib import Path
-from typing import List, Dict, Optional
+
 from pydantic import BaseModel, Field
+
 
 class DocumentChunk(BaseModel):
     chunk_id: str
@@ -11,11 +12,11 @@ class DocumentChunk(BaseModel):
     chunk_index: int
     content: str
     content_hash: str
-    page_start: Optional[int] = None
-    page_end: Optional[int] = None
-    chapter_title: Optional[str] = None
-    lesson_title: Optional[str] = None
-    section_title: Optional[str] = None
+    page_start: int | None = None
+    page_end: int | None = None
+    chapter_title: str | None = None
+    lesson_title: str | None = None
+    section_title: str | None = None
     source_type: str = "SGK"
     metadata: dict = Field(default_factory=dict)
 
@@ -32,31 +33,31 @@ def generate_chunks(
     chunk_chars: int = 1500,
     overlap_paragraphs: int = 1,
     start_chunk_index: int = 0
-) -> List[DocumentChunk]:
+) -> list[DocumentChunk]:
     """
     Statefully chunk Markdown text by paragraphs to avoid cutting formulas or tables.
     Tracks page markers and headers dynamically.
     """
     paragraphs = markdown_text.split("\n\n")
     chunks = []
-    
+
     current_page = 1
     current_chapter = None
     current_lesson = None
     current_section = None
-    
+
     # Pre-parse paragraphs to assign metadata to each paragraph
     parsed_paragraphs = []
     for p in paragraphs:
         p_strip = p.strip()
         if not p_strip:
             continue
-            
+
         # Parse page marker
         page_matches = PAGE_MARKER_RE.findall(p_strip)
         if page_matches:
             current_page = int(page_matches[-1])
-            
+
         # Parse headings
         h1_match = HEADER1_RE.match(p_strip)
         if h1_match:
@@ -67,7 +68,7 @@ def generate_chunks(
         h3_match = HEADER3_RE.match(p_strip)
         if h3_match:
             current_section = h3_match.group(1).strip()
-            
+
         parsed_paragraphs.append({
             "text": p_strip,
             "page": current_page,
@@ -75,33 +76,33 @@ def generate_chunks(
             "lesson": current_lesson,
             "section": current_section
         })
-        
+
     # Group paragraphs into chunks
     chunk_index = start_chunk_index
     i = 0
     n = len(parsed_paragraphs)
-    
+
     while i < n:
         chunk_paragraphs = []
         char_count = 0
         pages_in_chunk = []
-        
+
         chapter_titles = set()
         lesson_titles = set()
         section_titles = set()
-        
+
         j = i
         # Accumulate paragraphs until limit
         while j < n:
             para = parsed_paragraphs[j]
             para_len = len(para["text"])
-            
+
             # If this is the first paragraph of the chunk, or it fits within the limit
             if not chunk_paragraphs or (char_count + para_len + 2 <= chunk_chars):
                 chunk_paragraphs.append(para["text"])
                 char_count += para_len + 2
                 pages_in_chunk.append(para["page"])
-                
+
                 if para["chapter"]:
                     chapter_titles.add(para["chapter"])
                 if para["lesson"]:
@@ -111,20 +112,20 @@ def generate_chunks(
                 j += 1
             else:
                 break
-                
+
         # Emit chunk
         chunk_text = "\n\n".join(chunk_paragraphs)
         content_hash = hashlib.sha256(chunk_text.encode("utf-8")).hexdigest()
-        
+
         page_start = min(pages_in_chunk) if pages_in_chunk else None
         page_end = max(pages_in_chunk) if pages_in_chunk else None
-        
+
         chapter_title = list(chapter_titles)[0] if chapter_titles else None
         lesson_title = list(lesson_titles)[0] if lesson_titles else None
         section_title = list(section_titles)[0] if section_titles else None
-        
+
         external_chunk_id = f"{document_id}-c{chunk_index:03d}"
-        
+
         chunks.append(DocumentChunk(
             chunk_id=external_chunk_id,
             document_id=document_id,
@@ -138,9 +139,9 @@ def generate_chunks(
             section_title=section_title,
             source_type=source_type
         ))
-        
+
         chunk_index += 1
-        
+
         # Advance index with overlap
         # Move forward by the number of processed paragraphs minus the overlap
         advance = j - i
@@ -148,8 +149,8 @@ def generate_chunks(
             i = j
         else:
             i = j - overlap_paragraphs
-            
+
         if i >= j:  # safety check to prevent infinite loop
             break
-            
+
     return chunks

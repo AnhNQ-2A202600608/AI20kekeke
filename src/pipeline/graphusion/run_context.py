@@ -1,10 +1,12 @@
 from __future__ import annotations
+
 import datetime
-import os
-import uuid
 import subprocess
+import uuid
 from pathlib import Path
+
 from pydantic import BaseModel, Field
+
 
 def get_git_commit_sha() -> str:
     try:
@@ -22,21 +24,21 @@ class RunContext(BaseModel):
     graph_version: str = Field(description="Version đồ thị")
     prompt_version: str = Field(description="Version prompt")
     pipeline_version: str = Field(default_factory=get_git_commit_sha, description="Version pipeline")
-    started_at: str = Field(default_factory=lambda: datetime.datetime.now(datetime.timezone.utc).isoformat(), description="Thời điểm bắt đầu chạy")
+    started_at: str = Field(default_factory=lambda: datetime.datetime.now(datetime.UTC).isoformat(), description="Thời điểm bắt đầu chạy")
     output_directory: str = Field(description="Thư mục ghi kết quả chạy cục bộ của run này")
 
     @classmethod
     def create(cls, subject: str, grade: int, course_code: str) -> RunContext:
         now_str = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
         run_id = f"{subject}-k{grade}-{now_str}"
-        
+
         project_root = Path(__file__).resolve().parents[3]
         out_dir = project_root / "outputs" / "kg_runs" / run_id
         out_dir.mkdir(parents=True, exist_ok=True)
-        
+
         graph_version = f"{course_code}-{now_str}-v1"
         prompt_version = f"{subject}-k{grade}-v1"
-        
+
         return cls(
             run_id=run_id,
             course_code=course_code,

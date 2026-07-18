@@ -1,8 +1,10 @@
 from __future__ import annotations
+
 import json
-from typing import Protocol, List, Dict, Any, Optional
-from src.pipeline.graphusion.schemas import LessonExtraction, DocumentInfo
+from typing import Protocol
+
 from src.pipeline.graphusion.document_chunker import DocumentChunk
+from src.pipeline.graphusion.schemas import LessonExtraction
 
 # 1. System Prompts for SGK and SGV
 
@@ -78,45 +80,45 @@ Quy tắc trích xuất:
 class KnowledgeExtractor(Protocol):
     def extract(
         self,
-        chunks: List[DocumentChunk],
+        chunks: list[DocumentChunk],
         subject: str,
         source_type: str,
         model: str,
         api_key: str,
-        base_url: Optional[str] = None
+        base_url: str | None = None
     ) -> LessonExtraction:
         ...
 
 class OpenAIKnowledgeExtractor:
     def extract(
         self,
-        chunks: List[DocumentChunk],
+        chunks: list[DocumentChunk],
         subject: str,
         source_type: str,
         model: str,
         api_key: str,
-        base_url: Optional[str] = None
+        base_url: str | None = None
     ) -> LessonExtraction:
         from openai import OpenAI
-        
+
         # 1. Determine Prompt based on subject and source_type
         if subject == "math":
             prompt = MATH_SGK_PROMPT if source_type == "SGK" else MATH_SGV_PROMPT
         else:
             prompt = HIST_GEO_SGK_PROMPT if source_type == "SGK" else HIST_GEO_SGV_PROMPT
-            
+
         # 2. Format input text with clear chunk markers
         input_text_parts = []
         valid_chunk_ids = []
         for chunk in chunks:
             valid_chunk_ids.append(chunk.chunk_id)
             input_text_parts.append(f"=== START CHUNK: {chunk.chunk_id} ===\n{chunk.content}\n=== END CHUNK: {chunk.chunk_id} ===")
-            
+
         formatted_input = f"Các chunk_id hợp lệ có sẵn là: {', '.join(valid_chunk_ids)}\n\nNội dung văn bản cần trích xuất:\n\n" + "\n\n".join(input_text_parts)
-        
+
         # 3. Call API
         client = OpenAI(api_key=api_key, base_url=base_url)
-        
+
         if base_url:
             # JSON Mode fallback for non-OpenAI or older models
             schema_hint = f"\n\nBắt buộc trả về đúng định dạng JSON khớp với JSON Schema của LessonExtraction. Các chunk_id được dùng: {valid_chunk_ids}"
@@ -131,7 +133,7 @@ class OpenAIKnowledgeExtractor:
             )
             data = json.loads(response.choices[0].message.content)
             return LessonExtraction.model_validate(data)
-            
+
         # OpenAI strict parse mode
         response = client.chat.completions.parse(
             model=model,
@@ -147,12 +149,12 @@ class OpenAIKnowledgeExtractor:
 class GroqKnowledgeExtractor:
     def extract(
         self,
-        chunks: List[DocumentChunk],
+        chunks: list[DocumentChunk],
         subject: str,
         source_type: str,
         model: str,
         api_key: str,
-        base_url: Optional[str] = None
+        base_url: str | None = None
     ) -> LessonExtraction:
         # Groq uses json_object mode via OpenAI SDK client pointing to Groq endpoint
         # Reuses OpenAIKnowledgeExtractor logic with base_url set
