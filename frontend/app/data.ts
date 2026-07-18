@@ -1,5 +1,5 @@
 export const subjects = [
-  { name: "Toán học", code: "TO", progress: 68, courseId: "00000000-0000-0000-0000-000000000001" },
+  { name: "Toán học", code: "TO", progress: 68 },
 ];
 
 export const levelThemes = {
@@ -40,6 +40,27 @@ export const subjectPrograms = {
   },
 } as const;
 
+export type ChapterLessonPreview = {
+  id: string;
+  order: number;
+  title: string;
+  state: "completed" | "current" | "locked";
+  stateLabel: string;
+  href?: string;
+};
+
+export const chapterLessonPreviews: Record<string, ChapterLessonPreview[]> = {
+  "01": [
+    { id: "fraction-concept", order: 1, title: "Khái niệm phân số", state: "current", stateLabel: "Đang học", href: "/bai-hoc/phan-so?subject=TO&chapter=01&lesson=fraction-concept" },
+    { id: "fraction-common-denominator", order: 2, title: "Quy đồng mẫu số", state: "locked", stateLabel: "Chưa mở" },
+    { id: "fraction-add-subtract", order: 3, title: "Cộng trừ phân số", state: "locked", stateLabel: "Chưa mở" },
+    { id: "fraction-multiply-apply", order: 4, title: "Nhân chia và vận dụng", state: "locked", stateLabel: "Chưa mở" },
+  ],
+  "02": [
+    { id: "ratio-concept", order: 1, title: "Khái niệm tỉ lệ thức", state: "current", stateLabel: "Đang học", href: "/bai-hoc/phan-so?subject=TO&chapter=02&lesson=ratio-concept" },
+    { id: "ratio-property", order: 2, title: "Tính chất tỉ lệ thức", state: "locked", stateLabel: "Chưa mở" },
+  ],
+};
 export const tracks = subjectPrograms.TO.chapters.map((chapter) => ({
   title: `Chương ${chapter.number}: ${chapter.title}`,
   description: chapter.summary,
