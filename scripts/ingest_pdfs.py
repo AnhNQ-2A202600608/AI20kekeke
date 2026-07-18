@@ -16,14 +16,10 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import os
 import sys
 import time
 from pathlib import Path
-
-# Windows console codepages (cp1252/cp932/...) frequently can't print Vietnamese book
-# titles; force UTF-8 stdout so this script never crashes on a print() call.
-if hasattr(sys.stdout, "reconfigure"):
-    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 _PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.append(str(_PROJECT_ROOT))
@@ -31,6 +27,14 @@ sys.path.append(str(_PROJECT_ROOT))
 from src.config import get_settings  # noqa: E402
 from src.modules.rag.ocr import OCRUnavailableError  # noqa: E402
 from src.modules.rag.pdf_ingest import ingest_pdf  # noqa: E402
+from src.services.rag_ingestion_adapters import (  # noqa: E402
+    OpenAIEmbeddingProvider,
+    extract_page_with_ocr,
+    render_page_preview,
+)
+from src.services.rag_ingestion_service import RagIngestionRunner, load_corpus_manifest  # noqa: E402
+from src.services.rag_supabase_repository import SupabaseRagRepository  # noqa: E402
+from src.services.supabase_config import get_backend_supabase_config  # noqa: E402
 
 
 def _discover_pdfs(raw_dir: Path, book_filter: str | None) -> list[Path]:
@@ -59,6 +63,52 @@ def _check_ocr_backend_available() -> None:
         )
 
 
+def _check_vietnamese_tesseract(*, tesseract_cmd: str | None) -> None:
+    import pytesseract
+
+    if tesseract_cmd:
+        pytesseract.pytesseract.tesseract_cmd = tesseract_cmd
+    try:
+        languages = pytesseract.get_languages(config="")
+    except Exception as exc:
+        raise SystemExit(f"Tesseract is unavailable: {exc}") from exc
+    if "vie" not in languages:
+        raise SystemExit("Tesseract Vietnamese language data ('vie') is not installed.")
+
+
+def _run_supabase_manifest(manifest_path: Path) -> None:
+    _check_ocr_backend_available()
+    settings = get_settings()
+    tesseract_cmd = settings.tesseract_cmd or None
+    _check_vietnamese_tesseract(tesseract_cmd=tesseract_cmd)
+    manifest = load_corpus_manifest(manifest_path)
+    config = get_backend_supabase_config(allow_stub=False)
+    openai_key = (os.environ.get("OPENAI_API_KEY") or settings.openai_api_key).strip()
+    repository = SupabaseRagRepository(url=config.url, secret_key=config.secret_key)
+    runner = RagIngestionRunner(
+        repository=repository,
+        embedder=OpenAIEmbeddingProvider(openai_key),
+        page_extractor=lambda pdf, page: extract_page_with_ocr(
+            pdf,
+            page,
+            dpi=settings.ocr_dpi,
+            lang=settings.ocr_lang,
+            tesseract_cmd=tesseract_cmd,
+        ),
+        preview_renderer=render_page_preview,
+        chunk_chars=settings.rag_chunk_chars,
+        overlap_chars=settings.rag_chunk_overlap_chars,
+        ocr_workers=4,
+    )
+    for document in manifest.documents:
+        print(f"\n=== {document.title} ===")
+        result = runner.ingest_document(document, course_id=str(manifest.course_id))
+        print(
+            f"  {result.status}: material={result.material_id}, pages={result.page_count}, "
+            f"chunks={result.chunk_count}, job={result.job_id or '-'}"
+        )
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
@@ -77,7 +127,24 @@ def main() -> None:
     parser.add_argument(
         "--lang", default=None, help="Override Tesseract language code (default: vie)"
     )
+    parser.add_argument(
+        "--manifest",
+        type=Path,
+        help="Pydantic-validated corpus manifest used by the Supabase target",
+    )
+    parser.add_argument(
+        "--target",
+        choices=("local", "supabase"),
+        default="local",
+        help="Persist to the legacy local index or normalized Supabase corpus",
+    )
     args = parser.parse_args()
+
+    if args.target == "supabase":
+        if args.manifest is None:
+            parser.error("--manifest is required when --target=supabase")
+        _run_supabase_manifest(args.manifest)
+        return
 
     _check_ocr_backend_available()
 
