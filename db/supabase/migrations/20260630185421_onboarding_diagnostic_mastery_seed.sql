@@ -1,5 +1,5 @@
 -- ============================================================================
--- C2-App-125 | Onboarding diagnostic mastery seed
+-- ai20kekeke | Onboarding diagnostic mastery seed
 -- Target: Supabase PostgreSQL
 -- Re-run safe: YES
 -- ============================================================================

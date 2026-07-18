@@ -1,5 +1,5 @@
 -- ============================================================================
--- C2-App-125 | Fix RPC submit_attempt_v3 Security, Idempotency, stability_days and Sync Algorithms
+-- ai20kekeke | Fix RPC submit_attempt_v3 Security, Idempotency, stability_days and Sync Algorithms
 -- Target: Supabase PostgreSQL 17
 -- Re-run safe: YES
 -- ============================================================================

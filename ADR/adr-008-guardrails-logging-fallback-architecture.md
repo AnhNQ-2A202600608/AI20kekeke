@@ -45,6 +45,6 @@ Chọn **Lựa chọn 2: Hybrid Filter & Local Cache/DB**.
 
 ## Hệ quả (Consequences)
 
-- Cần cập nhật cấu trúc LangGraph [graph.py](file:///d:/CODE/AITHUCCHIEN/PROJECT/C2-App-125/src/agents/graph.py) để chèn thêm các node `guardrail` (đứng đầu luồng) và `retrieve_context`.
-- Cần mở rộng interfaces và database adapter trong [supabase_database.py](file:///d:/CODE/AITHUCCHIEN/PROJECT/C2-App-125/src/services/adaptive/supabase_database.py) để thực thi ghi dữ liệu feedback & learning signals chạy ngầm.
+- Cần cập nhật cấu trúc LangGraph [graph.py](file:///d:/code/AI20kekeke/src/agents/graph.py) để chèn thêm các node `guardrail` (đứng đầu luồng) và `retrieve_context`.
+- Cần mở rộng interfaces và database adapter trong [supabase_database.py](file:///d:/code/AI20kekeke/src/services/adaptive/supabase_database.py) để thực thi ghi dữ liệu feedback & learning signals chạy ngầm.
 - Cần duy trì và cập nhật danh sách các từ khóa tiếng Việt phục vụ cho bộ lọc tĩnh dựa trên dữ liệu sử dụng thực tế.

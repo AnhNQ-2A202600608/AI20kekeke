@@ -97,7 +97,7 @@ wheels = [
 ]
 
 [[package]]
-name = "c2-app-125"
+name = "ai20kekeke"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [

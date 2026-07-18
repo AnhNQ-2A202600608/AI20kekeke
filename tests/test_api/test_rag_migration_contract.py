@@ -1,10 +1,10 @@
 from pathlib import Path
 
-MIGRATION = Path("db/supabase/migrations/20260718082128_edugap_rag_materials.sql")
+MIGRATION = Path("db/supabase/migrations/20260718082128_mentora_rag_materials.sql")
 
 
 def _sql() -> str:
-    rag_migrations = sorted(MIGRATION.parent.glob("*edugap_rag*.sql"))
+    rag_migrations = sorted(MIGRATION.parent.glob("*mentora_rag*.sql"))
     return "\n".join(path.read_text(encoding="utf-8") for path in rag_migrations).lower()
 
 

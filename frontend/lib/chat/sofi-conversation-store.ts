@@ -24,7 +24,10 @@ export interface SofiConversationRecord<TMessage = unknown, TSlide = unknown> {
   updatedAt: number;
 }
 
-const STORE_KEY = 'edugap_sofi_conversations_v1';
+const STORE_KEY_PREFIX = 'edugap_sofi_conversations_v1';
+
+const getStoreKey = (studentId?: string | null): string | null =>
+  studentId ? `${STORE_KEY_PREFIX}_${studentId}` : null;
 
 const isBrowser = () => typeof window !== 'undefined';
 
@@ -37,14 +40,18 @@ const safeParse = <T>(raw: string | null, fallback: T): T => {
   }
 };
 
-const readRecords = (): SofiConversationRecord[] => {
+const readRecords = (studentId?: string | null): SofiConversationRecord[] => {
   if (!isBrowser()) return [];
-  return safeParse<SofiConversationRecord[]>(window.localStorage.getItem(STORE_KEY), []);
+  const key = getStoreKey(studentId);
+  if (!key) return [];
+  return safeParse<SofiConversationRecord[]>(window.localStorage.getItem(key), []);
 };
 
-const writeRecords = (records: SofiConversationRecord[]) => {
+const writeRecords = (records: SofiConversationRecord[], studentId?: string | null) => {
   if (!isBrowser()) return;
-  window.localStorage.setItem(STORE_KEY, JSON.stringify(records));
+  const key = getStoreKey(studentId);
+  if (!key) return;
+  window.localStorage.setItem(key, JSON.stringify(records));
 };
 
 const getMessageText = (message: unknown) => {
@@ -55,8 +62,9 @@ const getMessageText = (message: unknown) => {
 
 export const getSofiConversation = <TMessage = unknown, TSlide = unknown>(
   id: string,
+  studentId?: string | null,
 ): SofiConversationRecord<TMessage, TSlide> | null => {
-  const record = readRecords().find((item) => item.id === id);
+  const record = readRecords(studentId).find((item) => item.id === id);
   return (record as SofiConversationRecord<TMessage, TSlide> | undefined) || null;
 };
 
@@ -64,9 +72,8 @@ export const listSofiConversations = <TMessage = unknown, TSlide = unknown>(opti
   surface?: SofiConversationSurface;
   studentId?: string | null;
 }) => {
-  const records = readRecords()
+  const records = readRecords(options?.studentId)
     .filter((record) => (options?.surface ? record.surface === options.surface : true))
-    .filter((record) => (options?.studentId ? record.studentId === options.studentId : true))
     .sort((a, b) => b.updatedAt - a.updatedAt);
 
   return records as SofiConversationRecord<TMessage, TSlide>[];
@@ -80,7 +87,7 @@ export const upsertSofiConversation = <TMessage = unknown, TSlide = unknown>(
   },
 ) => {
   const now = Date.now();
-  const records = readRecords();
+  const records = readRecords(input.studentId);
   const existingIndex = records.findIndex((record) => record.id === input.id);
   const lastMessagePreview =
     input.lastMessagePreview ||
@@ -101,10 +108,10 @@ export const upsertSofiConversation = <TMessage = unknown, TSlide = unknown>(
     records.unshift(nextRecord);
   }
 
-  writeRecords(records.sort((a, b) => b.updatedAt - a.updatedAt));
+  writeRecords(records.sort((a, b) => b.updatedAt - a.updatedAt), input.studentId);
   return nextRecord as SofiConversationRecord<TMessage, TSlide>;
 };
 
-export const deleteSofiConversation = (id: string) => {
-  writeRecords(readRecords().filter((record) => record.id !== id));
+export const deleteSofiConversation = (id: string, studentId?: string | null) => {
+  writeRecords(readRecords(studentId).filter((record) => record.id !== id), studentId);
 };

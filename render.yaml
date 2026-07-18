@@ -9,7 +9,7 @@ services:
   # Backend Service — FastAPI (Python / Docker)
   # ──────────────────────────────────────
   - type: web
-    name: c2-app-backend
+    name: vaic-backend
     runtime: docker
     region: singapore
     plan: free                # free | starter | standard | pro
@@ -39,7 +39,7 @@ services:
       - key: REDIS_URL
         fromService:
           type: redis
-          name: c2-app-redis
+          name: vaic-redis
           property: connectionString
       - key: CORS_ORIGINS
         value: "http://localhost:3000" # Sẽ ghi đè bằng domain Vercel thật trên Render Dashboard
@@ -48,7 +48,7 @@ services:
   # Redis Service (Dùng cho Rate Limiting & Caching)
   # ──────────────────────────────────────
   - type: redis
-    name: c2-app-redis
+    name: vaic-redis
     plan: free
     ipAllowList: []           # Chỉ cho phép các service nội bộ kết nối
 

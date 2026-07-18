@@ -135,6 +135,18 @@ const createObservationStep = (
   durationMs,
 });
 
+const getHistoryKey = (studentId?: string | null) => 
+  studentId ? `student_socratic_chat_history_meta_${studentId}` : 'student_socratic_chat_history_meta';
+
+const getSessionKey = (sessionId: string, studentId?: string | null) => 
+  studentId ? `student_socratic_chat_session_${studentId}_${sessionId}` : `student_socratic_chat_session_${sessionId}`;
+
+const getSlidesKey = (sessionId: string, studentId?: string | null) => 
+  studentId ? `student_socratic_chat_slides_${studentId}_${sessionId}` : `student_socratic_chat_slides_${sessionId}`;
+
+const getSavedMsgIdsKey = (studentId?: string | null) =>
+  studentId ? `student_socratic_saved_msg_ids_${studentId}` : 'student_socratic_saved_msg_ids';
+
 const saveSessionData = (
   sessionId: string,
   currentMessages: Message[],
@@ -142,6 +154,7 @@ const saveSessionData = (
   setRecentHistory: React.Dispatch<React.SetStateAction<ChatSessionMeta[]>>,
   options: {
     studentId?: string | null;
+    courseId?: string;
     surface?: 'global_chat' | 'quiz' | 'skill_graph' | 'learning_path';
     conceptId?: string;
     sourceRef?: { type: 'node' | 'quiz_question' | 'day' | 'general'; id: string; label: string };
@@ -152,13 +165,14 @@ const saveSessionData = (
   const hasUserMessages = currentMessages.some(m => m.sender === 'user');
   if (!hasUserMessages) return;
 
-  localStorage.setItem(`student_socratic_chat_session_${sessionId}`, JSON.stringify(currentMessages));
-  localStorage.setItem(`student_socratic_chat_slides_${sessionId}`, JSON.stringify(currentSlides));
+  const { studentId } = options;
+  localStorage.setItem(getSessionKey(sessionId, studentId), JSON.stringify(currentMessages));
+  localStorage.setItem(getSlidesKey(sessionId, studentId), JSON.stringify(currentSlides));
 
   const firstUserMsg = currentMessages.find(m => m.sender === 'user')?.text || '';
   const title = firstUserMsg.length > 35 ? firstUserMsg.substring(0, 35) + '...' : firstUserMsg;
 
-  const storedHistory = localStorage.getItem('student_socratic_chat_history_meta');
+  const storedHistory = localStorage.getItem(getHistoryKey(studentId));
   let historyList: ChatSessionMeta[] = [];
   if (storedHistory) {
     try {
@@ -183,13 +197,13 @@ const saveSessionData = (
     }, ...historyList];
   }
 
-  localStorage.setItem('student_socratic_chat_history_meta', JSON.stringify(historyList));
+  localStorage.setItem(getHistoryKey(studentId), JSON.stringify(historyList));
   upsertSofiConversation<Message, Slide>({
     id: sessionId,
     title,
     surface: options.surface || 'global_chat',
     studentId: options.studentId,
-    courseId: COURSE_UUID,
+    courseId: options.courseId || COURSE_UUID,
     conceptId: options.conceptId,
     sourceRef: options.sourceRef || { type: 'general', id: 'global-chat', label: 'Sofi Chat' },
     messages: currentMessages,
@@ -203,15 +217,18 @@ export interface UseSocraticChatProps {
   loggedIn: boolean;
   onOpenAuth: (mode: 'login' | 'signup') => void;
   activeTab?: string;
+  courseId?: string;
 }
 
 export const useSocraticChat = ({
   setActiveTab,
   loggedIn,
   onOpenAuth,
-  activeTab
+  activeTab,
+  courseId
 }: UseSocraticChatProps) => {
   const studentId = useBoundStore(state => state.userId);
+  const resolvedCourseId = courseId || COURSE_UUID;
   const [activeConcept, setActiveConcept] = useState<string>('general');
   const [activeMode, setActiveMode] = useState<string>('explain');
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -243,11 +260,10 @@ export const useSocraticChat = ({
 
   const getInitialMessage = useCallback((conceptId: string, mode: string = 'explain') => {
     const welcomeMessages: { [key: string]: string } = {
-      'general': "Mình là Sofi. Để nhận câu trả lời hữu ích hơn, hãy gửi theo 3 ý: **bối cảnh đang học**, **điểm đang kẹt**, **đầu ra bạn muốn**.\n\nVí dụ: “Mình đang học ReAct, chưa rõ Observation khác log thường thế nào. Hãy hỏi gợi mở rồi cho ví dụ từ học liệu nếu có.”",
-      'docker-basics': "Mình sẽ giúp bạn tự kiểm tra **Docker Basics** thay vì đưa đáp án sẵn. Hãy nói rõ lệnh hoặc lỗi bạn đang gặp, rồi mình sẽ hỏi gợi mở và đối chiếu học liệu khi có nguồn.",
-      'docker-compose': "Với **Docker Compose**, hãy đưa bối cảnh hệ thống, service đang kẹt và điều bạn muốn hiểu. Mình sẽ tách vấn đề từng bước để bạn tự dựng được mô hình đúng.",
-      'rest-api': "Với **REST API Call**, hãy gửi endpoint hoặc tình huống bạn đang phân vân. Mình sẽ giúp bạn phân biệt method, status code và dữ liệu vào/ra bằng câu hỏi ngắn.",
-      'nextjs-rsc': "Với **Next.js RSC**, hãy nêu component hoặc luồng data bạn đang so sánh. Mình sẽ giúp bạn tự xác định phần nào chạy server, phần nào cần client."
+      'general': "Chào em! Mình là Lucy, trợ lý giải đáp AI của em. Hãy đặt câu hỏi bất kỳ về bài học (như Toán học, Địa lý, Lịch sử, v.v.). Mình sẽ gợi ý và hướng dẫn em từng bước để tự tìm ra lời giải nhé!",
+      'phan-so': "Mình là Lucy. Hãy nêu vấn đề em đang kẹt ở phần Phân số (ví dụ: quy đồng, so sánh, hoặc các phép tính). Mình sẽ giúp em gỡ rối từng bước nhé!",
+      'so-huu-ti': "Với Số hữu tỉ, em đang băn khoăn về định nghĩa, biểu diễn trên trục số hay các phép tính cộng, trừ, nhân, chia? Hãy nói cho mình biết nhé!",
+      'ti-le-thuc': "Với Tỉ lệ thức và dãy tỉ số bằng nhau, em hãy gửi đề bài hoặc tính chất em chưa rõ. Mình sẽ gợi mở hướng giải quyết cùng em."
     };
     return {
       id: `msg-init-${conceptId}-${Date.now()}`,
@@ -258,7 +274,7 @@ export const useSocraticChat = ({
   }, []);
 
   useEffect(() => {
-    const storedHistory = localStorage.getItem('student_socratic_chat_history_meta');
+    const storedHistory = localStorage.getItem(getHistoryKey(studentId));
     let parsedHistory: ChatSessionMeta[] = [];
     if (storedHistory) {
       try {
@@ -282,7 +298,7 @@ export const useSocraticChat = ({
     const mergedHistory = [...historyById.values()].sort((a, b) => b.timestamp - a.timestamp);
     setTimeout(() => setRecentHistory(mergedHistory), 0);
 
-    const storedSaved = localStorage.getItem('student_socratic_saved_msg_ids');
+    const storedSaved = localStorage.getItem(getSavedMsgIdsKey(studentId));
     if (storedSaved) {
       try {
         const parsed = JSON.parse(storedSaved);
@@ -294,24 +310,29 @@ export const useSocraticChat = ({
 
     const sessionActiveId = sessionStorage.getItem('student_socratic_active_session_id');
     if (sessionActiveId && !sessionActiveId.startsWith('session-')) {
-      const savedSession = localStorage.getItem(`student_socratic_chat_session_${sessionActiveId}`);
-      if (savedSession) {
-        try {
-          const parsedMessages = JSON.parse(savedSession);
-          setTimeout(() => {
-            setMessages(parsedMessages);
-            setActiveSessionId(sessionActiveId);
-          }, 0);
+      const unifiedSession = getSofiConversation<Message, Slide>(sessionActiveId, studentId);
+      const isOwner = !unifiedSession || !unifiedSession.studentId || unifiedSession.studentId === studentId;
 
-          const savedSlides = localStorage.getItem(`student_socratic_chat_slides_${sessionActiveId}`);
-          if (savedSlides) {
-            setTimeout(() => setRetrievedSlides(JSON.parse(savedSlides)), 0);
-          } else {
-            setTimeout(() => setRetrievedSlides([]), 0);
+      if (isOwner) {
+        const savedSession = localStorage.getItem(getSessionKey(sessionActiveId, studentId));
+        if (savedSession) {
+          try {
+            const parsedMessages = JSON.parse(savedSession);
+            setTimeout(() => {
+              setMessages(parsedMessages);
+              setActiveSessionId(sessionActiveId);
+            }, 0);
+
+            const savedSlides = localStorage.getItem(getSlidesKey(sessionActiveId, studentId));
+            if (savedSlides) {
+              setTimeout(() => setRetrievedSlides(JSON.parse(savedSlides)), 0);
+            } else {
+              setTimeout(() => setRetrievedSlides([]), 0);
+            }
+            return;
+          } catch (e) {
+            console.error('Error loading active session:', e);
           }
-          return;
-        } catch (e) {
-          console.error('Error loading active session:', e);
         }
       }
     }
@@ -323,7 +344,7 @@ export const useSocraticChat = ({
       setRetrievedSlides([]);
     }, 0);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [studentId, activeConcept, activeMode, getInitialMessage]);
 
   const scrollToBottom = useCallback((instant = false) => {
     const el = chatScrollRef.current;
@@ -359,8 +380,8 @@ export const useSocraticChat = ({
   }, [activeSessionId, scrollToBottom]);
 
   const persistCurrentSession = useCallback((sessionId: string, currentMessages: Message[], currentSlides: Slide[]) => {
-    saveSessionData(sessionId, currentMessages, currentSlides, setRecentHistory, { studentId });
-  }, [studentId]);
+    saveSessionData(sessionId, currentMessages, currentSlides, setRecentHistory, { studentId, courseId: resolvedCourseId });
+  }, [studentId, resolvedCourseId]);
 
   const handleNewChat = () => {
     sessionStorage.removeItem('student_socratic_active_session_id');
@@ -375,8 +396,8 @@ export const useSocraticChat = ({
   };
 
   const handleLoadHistory = (sessionId: string) => {
-    const savedSession = localStorage.getItem(`student_socratic_chat_session_${sessionId}`);
-    const unifiedSession = getSofiConversation<Message, Slide>(sessionId);
+    const savedSession = localStorage.getItem(getSessionKey(sessionId, studentId));
+    const unifiedSession = getSofiConversation<Message, Slide>(sessionId, studentId);
     if (savedSession || unifiedSession) {
       try {
         const parsedMessages = savedSession ? JSON.parse(savedSession) : unifiedSession?.messages || [];
@@ -386,7 +407,7 @@ export const useSocraticChat = ({
         setMessages(parsedMessages);
         
         let hasSlides = false;
-        const savedSlides = localStorage.getItem(`student_socratic_chat_slides_${sessionId}`);
+        const savedSlides = localStorage.getItem(getSlidesKey(sessionId, studentId));
         if (savedSlides) {
           const parsedSlides = JSON.parse(savedSlides);
           setRetrievedSlides(parsedSlides);
@@ -417,10 +438,10 @@ export const useSocraticChat = ({
   const handleDeleteHistory = (sessionId: string) => {
     const updatedHistory = recentHistory.filter(h => h.id !== sessionId);
     setRecentHistory(updatedHistory);
-    localStorage.setItem('student_socratic_chat_history_meta', JSON.stringify(updatedHistory));
-    localStorage.removeItem(`student_socratic_chat_session_${sessionId}`);
-    localStorage.removeItem(`student_socratic_chat_slides_${sessionId}`);
-    deleteSofiConversation(sessionId);
+    localStorage.setItem(getHistoryKey(studentId), JSON.stringify(updatedHistory));
+    localStorage.removeItem(getSessionKey(sessionId, studentId));
+    localStorage.removeItem(getSlidesKey(sessionId, studentId));
+    deleteSofiConversation(sessionId, studentId);
     
     if (activeSessionId === sessionId) {
       handleNewChat();
@@ -449,6 +470,7 @@ export const useSocraticChat = ({
       setTimeout(() => persistCurrentSession(activeSessionId || '', next, retrievedSlides), 0);
       return next;
     });
+    setTimeout(() => scrollToBottom(true), 50);
 
     const aiMsgId = generateMsgId('ai');
     setIsTyping(true);
@@ -633,7 +655,7 @@ export const useSocraticChat = ({
           {
             message: userText,
             student_id: studentId || undefined,
-            course_id: COURSE_UUID,
+            course_id: resolvedCourseId,
             concept_id: mappedConceptId,
             mode: formattedMode,
             session_id: activeSessionId || undefined,
@@ -822,6 +844,7 @@ export const useSocraticChat = ({
           });
           setTimeout(() => saveSessionData(sessionUuid || '', next, finalSlides, setRecentHistory, {
             studentId,
+            courseId: resolvedCourseId,
             conceptId: mappedConceptId,
             sourceRef: { type: mappedConceptId ? 'node' : 'general', id: mappedConceptId || activeConcept, label: activeConcept },
           }), 0);
@@ -841,7 +864,7 @@ export const useSocraticChat = ({
       };
       setMessages(prev => {
         const next = [...prev.filter(msg => msg.id !== aiMsgId), errorMsg];
-        setTimeout(() => saveSessionData(activeSessionId || '', next, retrievedSlides, setRecentHistory, { studentId }), 0);
+        setTimeout(() => saveSessionData(activeSessionId || '', next, retrievedSlides, setRecentHistory, { studentId, courseId: resolvedCourseId }), 0);
         return next;
       });
     } finally {
@@ -857,7 +880,7 @@ export const useSocraticChat = ({
           ? { ...msg, isFeedbackGiven: msg.isFeedbackGiven === type ? null : type } 
           : msg
       );
-      setTimeout(() => saveSessionData(activeSessionId || '', next, retrievedSlides, setRecentHistory, { studentId }), 0);
+      setTimeout(() => saveSessionData(activeSessionId || '', next, retrievedSlides, setRecentHistory, { studentId, courseId: resolvedCourseId }), 0);
       return next;
     });
   };

@@ -1,6 +1,6 @@
 # Nghiên cứu và Ứng dụng MOOClet Framework trong Học tập Thích ứng
 
-Tài liệu này trình bày chi tiết về mô hình MOOClet (Modular Experimentation and Personalization), cách tích hợp nó cùng với Bayesian Knowledge Tracing (BKT) và thiết kế hệ thống tối ưu cho C2-App-125.
+Tài liệu này trình bày chi tiết về mô hình MOOClet (Modular Experimentation and Personalization), cách tích hợp nó cùng với Bayesian Knowledge Tracing (BKT) và thiết kế hệ thống tối ưu cho ai20kekeke.
 
 ---
 
@@ -35,7 +35,7 @@ graph TD
 
 ---
 
-## 3. Thiết kế Thực tế cho C2-App-125
+## 3. Thiết kế Thực tế cho ai20kekeke
 
 ### Database Schema (Prisma)
 

@@ -1,258 +1,314 @@
 "use client";
 
-import Link from "next/link";
-import { FormEvent, useEffect, useMemo, useState } from "react";
+import { useState, useMemo, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import {
-  ArrowRight,
-  BookOpenText,
   Brain,
   ChatsCircle,
-  FileText,
   PaperPlaneTilt,
-  Sparkle,
-  Target,
+  Plus,
+  ChatCircle,
+  Trash,
 } from "@phosphor-icons/react";
+import { Check, GraduationCap } from "lucide-react";
 import { AppShell } from "../components/AppShell";
-import { subjectPrograms, subjects } from "../data";
+import { useSocraticChat } from "@/components/dashboard/socratic-chat/student/hooks/useSocraticChat";
+import { useBoundStore } from "@/hooks/useBoundStore";
+import { subjects } from "../data";
+import { parseQuizData, parseThinkingProcess } from "@/components/dashboard/socratic-chat/student/utils/parser";
 
-type SpeakerMode = "ai" | "user";
-type RegionId = "concept" | "method" | "example";
-
-const regionLayout: Record<RegionId, { left: string; top: string; width: string; height: string }> = {
-  concept: { left: "8%", top: "47%", width: "38%", height: "23%" },
-  method: { left: "53%", top: "31%", width: "38%", height: "31%" },
-  example: { left: "8%", top: "75%", width: "83%", height: "16%" },
-};
-
-const aiSubjectContent = {
-  TO: {
-    signals: ["phân số", "hữu tỉ", "quy đồng", "mẫu số", "tỉ lệ", "biểu thức", "đại số"],
-    quickQuestions: ["Vì sao phải quy đồng mẫu số?", "Giải giúp em ví dụ 2/3 + 1/4", "Bài này thuộc phần kiến thức nào?"],
-    regions: [
-      { id: "concept", label: "Khái niệm", title: "Điểm cần nhớ", detail: "Xác định mẫu số, tử số và điều kiện để hai phân số có thể so sánh hoặc tính toán." },
-      { id: "method", label: "Cách làm", title: "Quy đồng mẫu", detail: "Tìm mẫu chung, đổi tử số theo cùng hệ số, rồi mới thực hiện phép tính." },
-      { id: "example", label: "Ví dụ", title: "2/3 + 1/4", detail: "Mẫu chung là 12, nên 2/3 = 8/12 và 1/4 = 3/12." },
-    ],
-  },
-} as const;
-
-function normalizeText(value: string) {
-  return value
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/\p{Diacritic}/gu, "");
+interface ChatGPTMessageContentProps {
+  message: any;
+  onSelectOption: (option: { key: string; text: string }) => void;
 }
 
-export default function AiQuestionPage() {
+function ChatGPTMessageContent({ message, onSelectOption }: ChatGPTMessageContentProps) {
+  const [selectedKey, setSelectedKey] = useState<string | null>(null);
+
+  const { response } = useMemo(
+    () => parseThinkingProcess(message.text),
+    [message.text]
+  );
+  
+  const quiz = useMemo(() => parseQuizData(response || message.text), [response, message.text]);
+
+  const handleChoiceClick = (key: string, text: string) => {
+    if (selectedKey) return;
+    setSelectedKey(key);
+    onSelectOption({ key, text });
+  };
+
+  if (quiz) {
+    const textToSearch = response || message.text;
+    const matchOption = textToSearch.match(/(?:^|\n)\s*[-*]?\s*(?:\*\*)?([A-E])[.)\:]/i);
+    const firstOptionIndex = matchOption ? textToSearch.indexOf(matchOption[0]) : -1;
+    const textBeforeOptions = firstOptionIndex !== -1 ? textToSearch.substring(0, firstOptionIndex).trim() : textToSearch.trim();
+    const lines = textBeforeOptions.split('\n');
+    const introText = lines.slice(0, -1).join('\n').trim();
+
+    return (
+      <div style={{ display: "flex", flexDirection: "column", gap: "12px", width: "100%" }}>
+        {introText && (
+          <span className="chatgpt-message-text" style={{ whiteSpace: "pre-line" }}>
+            {introText}
+          </span>
+        )}
+        <div 
+          style={{ 
+            width: "100%", 
+            display: "flex", 
+            flexDirection: "column", 
+            gap: "16px", 
+            borderRadius: "16px", 
+            border: "1px solid var(--line-strong)", 
+            backgroundColor: "var(--surface-soft)", 
+            padding: "18px",
+            marginTop: "4px"
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center", gap: "8px", color: "var(--accent-dark)", fontWeight: 800, fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+            <GraduationCap size={16} />
+            <span>Câu hỏi củng cố kiến thức</span>
+          </div>
+          <h4 style={{ fontWeight: 700, fontSize: "0.9rem", color: "var(--ink)", lineHeight: 1.5, margin: 0 }}>
+            {quiz.question}
+          </h4>
+          <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+            {quiz.options.map((opt) => {
+              const isSelected = selectedKey === opt.key;
+              return (
+                <button
+                  key={opt.key}
+                  type="button"
+                  disabled={selectedKey !== null}
+                  onClick={() => handleChoiceClick(opt.key, opt.text)}
+                  style={{
+                    width: "100%",
+                    textAlign: "left",
+                    padding: "12px 16px",
+                    borderRadius: "12px",
+                    border: isSelected ? "2px solid var(--accent)" : "1px solid var(--line-strong)",
+                    backgroundColor: isSelected ? "var(--accent-soft)" : "#ffffff",
+                    color: isSelected ? "var(--accent-dark)" : "var(--ink)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    gap: "12px",
+                    fontWeight: 600,
+                    fontSize: "0.85rem",
+                    cursor: selectedKey !== null ? "default" : "pointer",
+                    opacity: selectedKey !== null && !isSelected ? 0.6 : 1,
+                    transition: "all 0.2s ease",
+                  }}
+                >
+                  <span style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                    <span 
+                      style={{ 
+                        width: "24px", 
+                        height: "24px", 
+                        borderRadius: "8px", 
+                        display: "flex", 
+                        alignItems: "center", 
+                        justifyContent: "center", 
+                        fontSize: "0.75rem", 
+                        fontWeight: 800,
+                        backgroundColor: isSelected ? "var(--accent)" : "var(--surface-soft)",
+                        color: isSelected ? "#ffffff" : "var(--muted)",
+                      }}
+                    >
+                      {opt.key}
+                    </span>
+                    <span style={{ lineHeight: 1.4 }}>{opt.text}</span>
+                  </span>
+                  {isSelected && <Check size={14} style={{ color: "var(--accent-dark)", strokeWidth: 3 }} />}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return <span className="chatgpt-message-text">{response || message.text}</span>;
+}
+
+
+function AiQuestionPageContent() {
   const searchParams = useSearchParams();
   const selectedSubjectCode = searchParams.get("subject") || "TO";
   const selectedSubject = subjects.find((subject) => subject.code === selectedSubjectCode) || subjects[0];
-  const program = subjectPrograms[selectedSubject.code as keyof typeof subjectPrograms] || subjectPrograms.TO;
-  const aiContent = aiSubjectContent[selectedSubject.code as keyof typeof aiSubjectContent] || aiSubjectContent.TO;
-  const slideRegions = aiContent.regions.map((region) => ({ ...region, style: regionLayout[region.id] }));
-  const initialChapter = program.chapters.find((chapter) => chapter.active) || program.chapters[0];
-  const [speakerMode, setSpeakerMode] = useState<SpeakerMode>("ai");
-  const [question, setQuestion] = useState("");
-  const [activeRegion, setActiveRegion] = useState<RegionId>("method");
-  const [matchedChapterNumber, setMatchedChapterNumber] = useState<string>(initialChapter.number);
-  const [messages, setMessages] = useState([
-    {
-      role: "ai",
-      text: `Mình đang mở dữ liệu ${program.title} - ${initialChapter.title}. Hỏi bài ở đây, mình sẽ tìm đúng phần kiến thức và đánh dấu vùng liên quan trên slide.`,
-    },
-  ]);
+  
+  const loggedIn = useBoundStore((state) => state.loggedIn);
 
-  useEffect(() => {
-    setMatchedChapterNumber(initialChapter.number);
-    setActiveRegion("method");
-    setQuestion("");
-    setSpeakerMode("ai");
-    setMessages([
-      {
-        role: "ai",
-        text: `Mình đang mở dữ liệu ${program.title} - ${initialChapter.title}. Hỏi bài ở đây, mình sẽ tìm đúng phần kiến thức và đánh dấu vùng liên quan trên slide.`,
-      },
-    ]);
-  }, [initialChapter.number, initialChapter.title, program.title, selectedSubject.code]);
-
-  const matchedChapter = useMemo(
-    () => program.chapters.find((chapter) => chapter.number === matchedChapterNumber) || initialChapter,
-    [initialChapter, matchedChapterNumber, program.chapters],
-  );
-
-  const detectedSignal = useMemo(() => {
-    const haystack = normalizeText(`${question} ${matchedChapter.title} ${matchedChapter.summary}`);
-    return aiContent.signals.find((signal) => haystack.includes(normalizeText(signal))) || matchedChapter.title;
-  }, [aiContent.signals, matchedChapter.summary, matchedChapter.title, question]);
-
-  const handleAsk = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const trimmedQuestion = question.trim();
-    if (!trimmedQuestion) return;
-
-    const normalizedQuestion = normalizeText(trimmedQuestion);
-    const nextChapter =
-      program.chapters.find((chapter) =>
-        normalizeText(`${chapter.title} ${chapter.summary}`).split(" ").some((word) => word.length > 3 && normalizedQuestion.includes(word)),
-      ) || matchedChapter;
-    const nextRegion = normalizedQuestion.includes("vi du") || normalizedQuestion.includes("giai")
-      ? "example"
-      : normalizedQuestion.includes("vi sao") || normalizedQuestion.includes("khai niem")
-        ? "concept"
-        : "method";
-
-    setMatchedChapterNumber(nextChapter.number);
-    setActiveRegion(nextRegion);
-    setSpeakerMode("ai");
-    setMessages((currentMessages) => [
-      ...currentMessages,
-      { role: "user", text: trimmedQuestion },
-      {
-        role: "ai",
-        text: `Câu này khớp với dữ liệu Chương ${Number(nextChapter.number)} - ${nextChapter.title}. Mình đang highlight vùng ${
-          slideRegions.find((region) => region.id === nextRegion)?.label.toLowerCase()
-        } để em đối chiếu khi đọc lời giải.`,
-      },
-    ]);
-    setQuestion("");
-  };
+  const {
+    messages,
+    recentHistory,
+    activeSessionId,
+    inputValue,
+    setInputValue,
+    isTyping,
+    handleNewChat,
+    handleLoadHistory,
+    handleDeleteHistory,
+    handleSendMessage,
+    chatScrollRef,
+  } = useSocraticChat({
+    setActiveTab: () => {},
+    loggedIn,
+    onOpenAuth: () => {},
+    activeTab: "chat",
+    courseId: selectedSubject.courseId,
+  });
 
   return (
-    <AppShell>
-      <section className={`ai-study-room ${speakerMode === "user" ? "user-speaking" : "ai-speaking"}`}>
-        <aside className="ai-outline" aria-label="Outline bài học">
-          <div className="outline-mark active"><BookOpenText size={17} weight="fill" /><span>{program.title}</span></div>
-          {program.chapters.map((chapter) => (
-            <button
-              className={chapter.number === matchedChapter.number ? "active" : ""}
-              key={chapter.number}
-              type="button"
-              onClick={() => {
-                setMatchedChapterNumber(chapter.number);
-                setSpeakerMode("ai");
-              }}
-              title={chapter.title}
-            >
-              <span>{Number(chapter.number)}</span>
-              <small>{chapter.title}</small>
-            </button>
-          ))}
+    <div className="chatgpt-layout">
+        {/* Left History Sidebar */}
+        <aside className="chatgpt-sidebar">
+          <button className="chatgpt-new-chat" onClick={handleNewChat}>
+            <Plus size={16} weight="bold" />
+            <span>Đoạn chat mới</span>
+          </button>
+          
+          <div className="chatgpt-history-title">Lịch sử trò chuyện</div>
+          
+          <div className="chatgpt-history-list">
+            {recentHistory.map((session) => (
+              <div
+                key={session.id}
+                className={`chatgpt-history-item-container ${session.id === activeSessionId ? "active" : ""}`}
+              >
+                <button
+                  className="chatgpt-history-item"
+                  onClick={() => handleLoadHistory(session.id)}
+                  style={{ flex: 1, border: "none", background: "transparent", padding: 0 }}
+                >
+                  <div style={{ display: "flex", alignItems: "center", gap: "8px", overflow: "hidden" }}>
+                    <ChatCircle size={14} weight={session.id === activeSessionId ? "fill" : "regular"} />
+                    <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                      {session.title}
+                    </span>
+                  </div>
+                </button>
+                <button
+                  className="chatgpt-history-delete-btn"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleDeleteHistory(session.id);
+                  }}
+                  title="Xóa cuộc trò chuyện"
+                >
+                  <Trash size={12} />
+                </button>
+              </div>
+            ))}
+          </div>
         </aside>
 
-        <main className="ai-slide-zone">
-          <div className="ai-room-head">
-            <div>
-              <span className="overline">{program.grade} · Hỏi đáp với AI</span>
-              <h1>{matchedChapter.title}</h1>
-            </div>
-            <div className="ai-subject-switcher" aria-label="Đổi môn hỏi đáp">
-              {subjects.map((subject) => (
-                <Link
-                  className={subject.code === selectedSubject.code ? "active" : ""}
-                  href={`/hoi-dap-ai?subject=${subject.code}`}
-                  key={subject.code}
-                >
-                  {subject.name}
-                </Link>
-              ))}
-            </div>
-            <div className="ai-source-pill">
-              <FileText size={17} weight="bold" />
-              <span>Dữ liệu: Chương {Number(matchedChapter.number)} · {detectedSignal}</span>
+        {/* Right Main Chat Area */}
+        <main className="chatgpt-main">
+          {/* Header */}
+          <div className="chatgpt-header">
+            <span className="chatgpt-header-title">Lucy · Trợ lý giải đáp</span>
+            <span className="mode-pill" style={{ margin: 0 }}>
+              {isTyping ? "Lucy đang suy nghĩ..." : "AI sẵn sàng"}
+            </span>
+          </div>
+
+          {/* Messages Thread */}
+          <div className="chatgpt-thread-container" ref={chatScrollRef}>
+            <div className="chatgpt-thread">
+              {messages.map((message, index) => {
+                const { thought, response } = parseThinkingProcess(message.text);
+                const displayThinking = message.thinkingText || thought;
+                return (
+                  <div className="chatgpt-message" key={message.id || index}>
+                    <div className={`chatgpt-avatar ${message.sender === "user" ? "user" : ""}`}>
+                      {message.sender === "user" ? "U" : "AI"}
+                    </div>
+                    <div className="chatgpt-message-content">
+                      <span className="chatgpt-message-sender">
+                        {message.sender === "user" ? "Bạn" : "Lucy"}
+                      </span>
+                      {message.sender === "ai" && displayThinking && (
+                        <details className="chatgpt-message-thinking-details">
+                          <summary className="chatgpt-message-thinking-summary">
+                            💡 Xem tiến trình suy nghĩ của Lucy
+                          </summary>
+                          <div className="chatgpt-message-thinking">
+                            {displayThinking}
+                          </div>
+                        </details>
+                      )}
+                      {message.sender === "ai" ? (
+                        <ChatGPTMessageContent 
+                          message={message} 
+                          onSelectOption={(option) => {
+                            handleSendMessage(
+                              undefined,
+                              `Mình chọn đáp án ${option.key}: ${option.text}`,
+                              { type: 'quiz_option_select', optionKey: option.key, optionText: option.text }
+                            );
+                          }}
+                        />
+                      ) : (
+                        <span className="chatgpt-message-text">{message.text}</span>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
-          <div className="slide-frame" aria-label="Slide bài học đang được AI đối chiếu">
-            <div className="slide-canvas">
-              <div className="slide-kicker">{program.title} · {program.grade}</div>
-              <h2>{matchedChapter.title}</h2>
-              <p>{matchedChapter.summary}</p>
-              {slideRegions.map((region) => (
-                <div
-                  className={`slide-region ${activeRegion === region.id ? "active" : ""}`}
-                  key={region.id}
-                  style={region.style}
+          {/* Footer & Input */}
+          <div className="chatgpt-footer">
+            {/* Quick Suggestions */}
+            <div className="chatgpt-quick-prompts">
+              {(
+                selectedSubjectCode === "history-geography"
+                  ? ["Đặc điểm địa hình Việt Nam là gì?", "Hãy giải thích sự hình thành mưa đá", "Khí hậu nhiệt đới có đặc điểm gì?"]
+                  : ["Vì sao phải quy đồng mẫu số?", "Đặc điểm địa hình Việt Nam là gì?", "Số hữu tỉ là gì?"]
+              ).map((item) => (
+                <button
+                  key={item}
+                  type="button"
+                  className="chatgpt-quick-prompt-btn"
+                  onClick={() => handleSendMessage(undefined, item)}
+                  disabled={isTyping}
                 >
-                  <span>{region.label}</span>
-                  <strong>{region.title}</strong>
-                  <small>{region.detail}</small>
-                </div>
+                  <ChatsCircle size={14} style={{ display: "inline", marginRight: "4px", verticalAlign: "middle" }} />
+                  {item}
+                </button>
               ))}
-              <div className={`ai-pointer point-${activeRegion}`}>
-                <Sparkle size={15} weight="fill" />
-              </div>
             </div>
+
+            {/* Input form */}
+            <form className="chatgpt-input-container" onSubmit={(e) => handleSendMessage(e)}>
+              <input
+                className="chatgpt-input"
+                aria-label="Nhập câu hỏi học tập"
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+                placeholder="Hỏi về bài học..."
+                disabled={isTyping}
+              />
+              <button className="chatgpt-submit-btn" type="submit" aria-label="Gửi câu hỏi" disabled={isTyping}>
+                <PaperPlaneTilt size={16} weight="fill" />
+              </button>
+            </form>
           </div>
         </main>
+      </div>
+  );
+}
 
-        <aside className="ai-chat-workbench" aria-label="Chat hỏi đáp với AI">
-          <div className="ai-chat-header">
-            <div>
-              <span><Brain size={18} weight="fill" /></span>
-              <div><strong>{program.assistantName}</strong><small>Đồng bộ với slide đang mở</small></div>
-            </div>
-            <span className="mode-pill">{speakerMode === "ai" ? "AI đang giải thích" : "Bạn đang hỏi"}</span>
-          </div>
-
-          <div className="ai-chat-thread">
-            {messages.map((message, index) => (
-              <div className={`ai-room-message ${message.role}`} key={`${message.role}-${index}`}>
-                {message.text}
-              </div>
-            ))}
-          </div>
-
-          <div className="ai-evidence-card">
-            <Target size={18} weight="fill" />
-            <div>
-              <strong>Auto-highlight</strong>
-              <span>Vùng “{slideRegions.find((region) => region.id === activeRegion)?.label}” trên slide đang nối với câu trả lời mới nhất.</span>
-            </div>
-          </div>
-
-          <div className="quick-question-row">
-            {aiContent.quickQuestions.map((item) => (
-              <button
-                key={item}
-                type="button"
-                onClick={() => {
-                  setQuestion(item);
-                  setSpeakerMode("user");
-                }}
-              >
-                <ChatsCircle size={15} />
-                {item}
-              </button>
-            ))}
-          </div>
-
-          <form className="ai-room-input" onSubmit={handleAsk}>
-            <input
-              aria-label="Nhập câu hỏi bài học"
-              onBlur={() => {
-                if (!question.trim()) setSpeakerMode("ai");
-              }}
-              onChange={(event) => {
-                setQuestion(event.target.value);
-                setSpeakerMode("user");
-              }}
-              onFocus={() => setSpeakerMode("user")}
-              placeholder={`Hỏi về ${matchedChapter.title.toLowerCase()}...`}
-              value={question}
-            />
-            <button type="submit" aria-label="Gửi câu hỏi">
-              <PaperPlaneTilt size={18} weight="fill" />
-              <span>Gửi</span>
-            </button>
-          </form>
-
-          <div className="ai-layout-hint">
-            <ArrowRight size={15} />
-            <span>{speakerMode === "ai" ? "Slide đang chiếm ưu tiên để trình bày bằng chứng." : "Chat đang mở rộng để bạn nhập và đọc phản hồi."}</span>
-          </div>
-        </aside>
-      </section>
-    </AppShell>
+export default function AiQuestionPage() {
+  return (
+    <Suspense fallback={<div className="p-6 text-center text-muted">Đang tải Lucy AI...</div>}>
+      <AppShell>
+        <AiQuestionPageContent />
+      </AppShell>
+    </Suspense>
   );
 }

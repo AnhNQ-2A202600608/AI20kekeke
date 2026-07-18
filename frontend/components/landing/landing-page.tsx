@@ -195,9 +195,9 @@ const earlyUsageMetrics = [
 ];
 
 const evidenceLinks = [
-  { label: 'Usage analytics', href: 'https://github.com/AI20K-Build-Cohort-2/C2-App-125/blob/dev/report/posthog-early-product-usage-report.md' },
-  { label: 'Technical report', href: 'https://github.com/AI20K-Build-Cohort-2/C2-App-125/blob/dev/report/Technical-report.pdf' },
-  { label: 'Cost report', href: 'https://github.com/AI20K-Build-Cohort-2/C2-App-125/blob/dev/report/sapia-quiz-first-cost-report-mentor.pdf' },
+  { label: 'Usage analytics', href: 'https://github.com/AnhNQ-2A202600608/AI20kekeke/blob/dev/report/posthog-early-product-usage-report.md' },
+  { label: 'Technical report', href: 'https://github.com/AnhNQ-2A202600608/AI20kekeke/blob/dev/report/Technical-report.pdf' },
+  { label: 'Cost report', href: 'https://github.com/AnhNQ-2A202600608/AI20kekeke/blob/dev/report/sapia-quiz-first-cost-report-mentor.pdf' },
 ];
 
 function EarlyUsageSection() {

@@ -3,7 +3,7 @@ import "@fontsource-variable/plus-jakarta-sans";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "OrbitLearn | Học tập cá nhân hóa",
+  title: "Mentora | Học tập cá nhân hóa",
   description:
     "Nền tảng học tập cá nhân hóa với lộ trình, bài học, luyện tập, kiểm tra và phân tích tiến độ.",
 };

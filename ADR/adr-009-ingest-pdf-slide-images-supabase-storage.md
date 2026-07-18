@@ -67,4 +67,4 @@ Chọn **Lựa chọn 2: Trích xuất text làm RAG + Convert PDF thành ảnh 
     *   Cần tạo một bucket lưu trữ mới tên là `slide-images` với quyền truy cập Public (cho phép Frontend tải ảnh slide trực tiếp).
 -   **Frontend**:
     *   Cập nhật các kiểu dữ liệu (TypeScript Interfaces) để hỗ trợ `image_url`.
-    *   Sửa đổi UI bên phải của [socratic-chat-tab.tsx](file:///d:/AI%20Invidual%2520Tutor/Source%2520code/C2-App-125/frontend/components/dashboard/socratic-chat-tab.tsx) từ việc render Markdown thành hiển thị ảnh `<img src={currentSlide.image_url} />` đi kèm hiệu ứng làm mịn (smooth load/skeleton).
+    *   Sửa đổi UI bên phải của [socratic-chat-tab.tsx](file:///d:/AI%20Invidual%2520Tutor/Source%2520code/ai20kekeke/frontend/components/dashboard/socratic-chat-tab.tsx) từ việc render Markdown thành hiển thị ảnh `<img src={currentSlide.image_url} />` đi kèm hiệu ứng làm mịn (smooth load/skeleton).

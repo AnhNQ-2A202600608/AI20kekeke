@@ -1,5 +1,5 @@
 -- ============================================================================
--- C2-App-125 | Onboarding diagnostic session authenticated access
+-- ai20kekeke | Onboarding diagnostic session authenticated access
 -- Target: Supabase PostgreSQL
 -- Re-run safe: YES
 -- ============================================================================

@@ -1,5 +1,5 @@
 -- ============================================================================
--- C2-App-125 | Add stability_days to student_concept_mastery & Update submit_attempt_v3
+-- ai20kekeke | Add stability_days to student_concept_mastery & Update submit_attempt_v3
 -- Target: Supabase PostgreSQL 17
 -- Re-run safe: YES
 -- ============================================================================
