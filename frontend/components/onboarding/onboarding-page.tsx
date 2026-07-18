@@ -527,12 +527,12 @@ export function OnboardingPage() {
     }
     diagnosticsLog('info', 'navigation.app', {
       from: '/onboarding',
-      to: '/app',
+      to: '/hoc-tap',
       reason: 'onboarding_finish_local',
       answers: sourceDraft.diagnosticAnswers.length,
       syncPending: submitState === 'offline' && loggedIn,
     });
-    router.push('/app');
+    router.push('/hoc-tap');
   };
 
   const submit = async (sourceDraft = draft) => {
@@ -566,11 +566,11 @@ export function OnboardingPage() {
       setSubmitState('done');
       diagnosticsLog('info', 'navigation.app', {
         from: '/onboarding',
-        to: '/app',
+        to: '/hoc-tap',
         reason: 'onboarding_submit_success',
         answers: sourceDraft.diagnosticAnswers.length,
       });
-      router.push('/app');
+      router.push('/hoc-tap');
     } catch (error) {
       const apiError = error instanceof OnboardingApiError ? error : null;
       const nextDraft = { ...sourceDraft, syncPending: true };

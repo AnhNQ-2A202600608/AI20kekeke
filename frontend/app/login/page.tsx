@@ -173,7 +173,7 @@ function LoginPageContent() {
       demoProfileKey: null,
     });
 
-    router.push('/app');
+    router.push('/hoc-tap');
   };
 
   const switchMode = (nextMode: AuthMode) => {
