@@ -21,7 +21,7 @@
 | **Health check** | [https://vaic-backend-staging.onrender.com/health](https://vaic-backend-staging.onrender.com/health) |
 
 **Test account:**
-- **Student**: `student@mentora.vn` / `Password123!`
+- **Student**: `student@edugap.vn` / `Password123!`
 - **Mentor**: `mentor@mentora.vn` / `Password123!`
 - **Admin**: `admin@mentora.vn` / `Password123!`
 
