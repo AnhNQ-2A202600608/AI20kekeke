@@ -138,11 +138,27 @@ export function DashboardLayout({ quiz, onOpenAuth }: DashboardLayoutProps) {
     ? '/app-backgrounds/code-bay-profile-bg.webp'
     : '/app-backgrounds/code-bay-app-shell-bg.webp';
   const averageElo = useMemo(() => getAggregateLearningElo(conceptMasteries), [conceptMasteries]);
-  const displayName = quiz.name || quiz.username || 'Học viên EduGap';
+  const displayName = quiz.name || quiz.username || 'Học viên Mentora';
   const sharedTopNavCopy = WORKSPACE_HEADER_COPY[quiz.activeTab] || {
-    title: 'EduGap Workspace',
+    title: 'Mentora Workspace',
     subtitle: 'Điều phối học tập và vận hành AI',
   };
+  const contentShellClass = 'mx-auto w-full max-w-[1360px] px-3 lg:px-5 xl:px-6';
+  const mainLayoutClass = useMemo(() => {
+    if (quiz.activeTab === 'chat') {
+      return `h-[100dvh] min-h-0 overflow-hidden p-0 md:ml-0 ${useAppFloatingNav ? 'lg:pr-20' : ''}`;
+    }
+
+    if (quiz.activeTab === 'learn' || quiz.activeTab === 'skill-graph') {
+      return `min-h-[100dvh] pt-2 pb-20 md:h-[100dvh] md:min-h-0 md:overflow-hidden md:pb-2 ${useAppFloatingNav ? 'md:pt-2 lg:pr-20' : 'md:ml-64 md:pt-4 lg:pr-20'}`;
+    }
+
+    if (quiz.activeTab === 'skills' || quiz.activeTab === 'profile') {
+      return `min-h-[100dvh] pt-2 pb-20 md:h-[100dvh] md:min-h-0 md:overflow-hidden md:pb-2 md:pt-2 ${useAppFloatingNav ? 'lg:pr-20' : 'md:ml-64 lg:pr-20'}`;
+    }
+
+    return `min-h-screen pt-4 pb-20 md:pt-6 ${useAppFloatingNav ? 'lg:pr-20' : 'md:ml-64'} ${showRightBar ? 'lg:mr-80' : ''}`;
+  }, [quiz.activeTab, showRightBar, useAppFloatingNav]);
   const setActiveRouteTab = (tab: TabType) => {
     quiz.setActiveTab(tab);
     router.push(getRouteForTab(tab));
@@ -192,20 +208,10 @@ export function DashboardLayout({ quiz, onOpenAuth }: DashboardLayoutProps) {
 
         {/* Center Main Tab View */}
         <main
-          className={`flex-1 ${
-            quiz.activeTab === 'chat'
-              ? `h-[100dvh] min-h-0 overflow-hidden pt-0 pb-0 md:ml-0 ${useAppFloatingNav ? 'lg:pr-20' : ''}`
-              : quiz.activeTab === 'learn' || quiz.activeTab === 'skill-graph'
-                ? `min-h-[100dvh] pt-2 pb-20 md:h-[100dvh] md:min-h-0 md:overflow-hidden md:pb-2 ${useAppFloatingNav ? 'md:pt-2 lg:pr-20' : 'md:ml-64 md:pt-4 lg:pr-20'}`
-                : quiz.activeTab === 'skills'
-                  ? `min-h-[100dvh] pt-1 pb-2 md:h-[100dvh] md:min-h-0 md:overflow-hidden md:pb-2 ${useAppFloatingNav ? 'md:pt-2 lg:pr-20' : 'md:ml-64 md:pt-2 lg:pr-20'}`
-                : quiz.activeTab === 'profile'
-                  ? `min-h-[100dvh] pt-2 pb-20 md:h-[100dvh] md:min-h-0 md:overflow-hidden md:pb-2 md:pt-2 ${useAppFloatingNav ? 'lg:pr-20' : 'md:ml-64 lg:pr-20'}`
-                : `min-h-screen pt-4 pb-20 ${useAppFloatingNav ? 'md:pt-6 lg:pr-20' : 'md:ml-64 md:pt-6'} ${showRightBar ? 'lg:mr-80' : ''}`
-          }`}
+          className={`flex-1 ${mainLayoutClass}`}
         >
           {showSharedAppTopNav && (
-            <div className="mx-auto w-full max-w-[1360px] px-3 pt-0 lg:px-5 xl:px-6">
+            <div className={contentShellClass}>
               <AppTopNav
                 activeDays={quiz.activeDays}
                 title={sharedTopNavCopy.title}
@@ -376,7 +382,7 @@ export function DashboardLayout({ quiz, onOpenAuth }: DashboardLayoutProps) {
       {/* Footer copyright */}
       {quiz.activeTab !== 'chat' && quiz.activeTab !== 'learn' && quiz.activeTab !== 'skills' && quiz.activeTab !== 'skill-graph' && (
         <footer className="w-full bg-warm-cream/50 border-t border-tertiary-yellow/15 py-4 text-center text-caption-tight font-mono text-stone-400 mt-auto">
-          EduGap AI Thực Chiến &copy; 2026 {"->"} Nền tảng học tập cá nhân hóa
+          Mentora &copy; 2026 {"->"} Nền tảng học tập cá nhân hóa
         </footer>
       )}
 

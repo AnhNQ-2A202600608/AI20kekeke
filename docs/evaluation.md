@@ -1,4 +1,4 @@
-# EduGap Evaluation Evidence
+# Mentora Evaluation Evidence
 
 This document is the Demo Day evaluation entry point. It summarizes test results, RAGAS-equivalent quality checks, performance metrics, user feedback evidence, and traceability from test cases to product features.
 

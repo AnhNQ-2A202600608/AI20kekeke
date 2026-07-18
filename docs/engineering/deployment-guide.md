@@ -2,7 +2,7 @@
 
 ## Overview
 
-EduGap deploys as a split web application:
+Mentora deploys as a split web application:
 
 - Next.js frontend: serves the public landing, login, onboarding, app workspace, docs, and BFF proxy.
 - FastAPI backend: serves `/api/v1/*`, adaptive learning, chat/RAG streaming, onboarding sync, ingestion, audit, and admin observability.

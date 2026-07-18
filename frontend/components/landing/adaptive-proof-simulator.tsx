@@ -13,7 +13,7 @@ export function AdaptiveProofSimulator() {
         <div>
           <p className="text-xs font-black uppercase text-secondary-green">Một vòng học có thể kiểm chứng</p>
           <h2 className="mt-2 text-xl font-black leading-tight text-on-background md:text-2xl">
-            Từ một câu quiz, Edugap tạo tín hiệu cho cả học viên lẫn giảng viên.
+            Từ một câu quiz, Mentora tạo tín hiệu cho cả học viên lẫn giảng viên.
           </h2>
           <p className="mt-3 max-w-2xl text-sm font-semibold leading-6 text-stone-600 md:text-base md:leading-7">
             Hệ thống không chỉ chấm đúng sai. Mỗi câu trả lời, lượt gợi ý Socratic và nguồn RAG được nối thành bằng chứng học tập để đề xuất bước luyện tiếp theo.

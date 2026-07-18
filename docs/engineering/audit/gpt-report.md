@@ -12,7 +12,7 @@ PDF không đọc được trực tiếp vì thiếu pdftoppm, nhưng main.tex v
 ---
 Summary
 
-Paper đề xuất một adaptive learning engine cho EduGap gồm: Elo difficulty matching, BKT mastery tracking, LinUCB recommendation, spaced repetition, concept graph propagation, và kiến trúc async outbox để tránh lock contention trong production. Contribution chính được claim là concurrency-safe architecture, Sherman-Morrison update cho LinUCB, Python/SQL algorithmic equivalence, và evaluation suite “academic-grade”.
+Paper đề xuất một adaptive learning engine cho Mentora gồm: Elo difficulty matching, BKT mastery tracking, LinUCB recommendation, spaced repetition, concept graph propagation, và kiến trúc async outbox để tránh lock contention trong production. Contribution chính được claim là concurrency-safe architecture, Sherman-Morrison update cho LinUCB, Python/SQL algorithmic equivalence, và evaluation suite “academic-grade”.
 
 Về nội dung, paper đang cố kết hợp systems engineering và learning science / recommender evaluation. Hướng này hợp với project Adaptive-first AI Tutor. Tuy nhiên paper chưa rõ mình là paper loại nào: nếu là systems paper thì thiếu benchmark concurrency thật; nếu là educational data mining paper thì thiếu real learner data, learning gain, ablation, baseline mạnh; nếu là technical report thì claim nên hạ xuống.
 

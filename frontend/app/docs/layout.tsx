@@ -8,7 +8,7 @@ import 'katex/dist/katex.css';
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <RootProvider theme={{ enabled: false }}>
-      <DocsLayout tree={source.pageTree} nav={{ title: 'EduGap Docs' }}>
+      <DocsLayout tree={source.pageTree} nav={{ title: 'Mentora Docs' }}>
         {children}
       </DocsLayout>
     </RootProvider>

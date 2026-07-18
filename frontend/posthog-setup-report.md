@@ -1,7 +1,7 @@
 <wizard-report>
 # PostHog post-wizard report
 
-The wizard has completed a deep integration of PostHog analytics into the EduGap quiz application. PostHog is now initialized via `instrumentation-client.ts` (Next.js 15.3+ pattern) and proxied through a `/ingest` reverse proxy configured in `next.config.ts`. All existing Vercel Analytics events are now dual-tracked in PostHog through an updated `lib/analytics.ts` helper. Four new events exclusive to PostHog were added directly in `app/page.tsx` to capture granular per-question interactions that were not previously tracked anywhere.
+The wizard has completed a deep integration of PostHog analytics into the Mentora quiz application. PostHog is now initialized via `instrumentation-client.ts` (Next.js 15.3+ pattern) and proxied through a `/ingest` reverse proxy configured in `next.config.ts`. All existing Vercel Analytics events are now dual-tracked in PostHog through an updated `lib/analytics.ts` helper. Four new events exclusive to PostHog were added directly in `app/page.tsx` to capture granular per-question interactions that were not previously tracked anywhere.
 
 LLM observability has also been added for Google Gemini via OpenTelemetry auto-instrumentation. `instrumentation.ts` initialises a `NodeSDK` with `PostHogSpanProcessor` and `GenAIInstrumentation` — any call to `getGeminiClient()` (from the new `lib/gemini.ts` helper) will automatically emit `$ai_generation` events to PostHog with model name, latency, input/output tokens, and estimated cost, with no per-call instrumentation code required.
 

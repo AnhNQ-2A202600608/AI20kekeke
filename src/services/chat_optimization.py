@@ -218,13 +218,18 @@ def split_formatted_prompt(formatted_prompt: str) -> tuple[str, str]:
     idx_context = formatted_prompt.find(context_header)
 
     if idx_diagnostic != -1 and idx_rules != -1 and idx_context != -1:
-        intro = formatted_prompt[:idx_diagnostic].strip()
-        dynamic_diagnostic = formatted_prompt[idx_diagnostic:idx_rules].strip()
-        static_rules = formatted_prompt[idx_rules:idx_context].strip()
-        dynamic_context = formatted_prompt[idx_context:].strip()
+        if idx_rules < idx_diagnostic:
+            static_prompt = formatted_prompt[:idx_diagnostic].strip()
+            dynamic_prompt = formatted_prompt[idx_diagnostic:].strip()
+            return static_prompt, dynamic_prompt
+        else:
+            intro = formatted_prompt[:idx_diagnostic].strip()
+            dynamic_diagnostic = formatted_prompt[idx_diagnostic:idx_rules].strip()
+            static_rules = formatted_prompt[idx_rules:idx_context].strip()
+            dynamic_context = formatted_prompt[idx_context:].strip()
 
-        static_prompt = intro + "\n\n" + static_rules
-        dynamic_prompt = dynamic_diagnostic + "\n\n" + dynamic_context
-        return static_prompt, dynamic_prompt
+            static_prompt = intro + "\n\n" + static_rules
+            dynamic_prompt = dynamic_diagnostic + "\n\n" + dynamic_context
+            return static_prompt, dynamic_prompt
 
     return formatted_prompt, ""

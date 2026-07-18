@@ -18,7 +18,7 @@ from src.services.adaptive.elo import calculate_elo_updates, calculate_expected_
 
 # Page configurations
 st.set_page_config(
-    page_title="EduGap Adaptive Simulator", page_icon="🎓", layout="wide", initial_sidebar_state="expanded"
+    page_title="Mentora Adaptive Simulator", page_icon="🎓", layout="wide", initial_sidebar_state="expanded"
 )
 
 # Custom Styling for Premium Dark Mode Look
@@ -59,7 +59,7 @@ st.markdown(
 )
 
 # App Title & Description
-st.title("🎓 EduGap: Adaptive Learning Simulator")
+st.title("🎓 Mentora: Adaptive Learning Simulator")
 st.markdown(
     "Trực quan hóa hoạt động thực tế và sự tương tác giữa 3 thuật toán thích ứng cốt lõi trong hệ thống: "
     "**Elo Rating** (Đánh giá năng lực), **Bayesian Knowledge Tracing (BKT)** (Theo dõi mức độ làm chủ kiến thức), "

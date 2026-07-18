@@ -342,7 +342,7 @@ export function useQuizSession(resetSurveys: (setId: string) => void, initialTab
   // Load state from localStorage on mount
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const savedHistory = localStorage.getItem('edugap_answers_history');
+      const savedHistory = localStorage.getItem('mentora_answers_history');
       if (savedHistory) {
         try {
           // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -1011,7 +1011,7 @@ export function useQuizSession(resetSurveys: (setId: string) => void, initialTab
             }
           };
           setAnswersHistory(nextHistory);
-          localStorage.setItem('edugap_answers_history', JSON.stringify(nextHistory));
+          localStorage.setItem('mentora_answers_history', JSON.stringify(nextHistory));
           recordAdaptiveSubmitResult(currentQuestion.id, optionKey, undefined, result, hintCount, {
             conceptId: currentQuestion.adaptive.conceptId,
             question: currentQuestion,
@@ -1045,7 +1045,7 @@ export function useQuizSession(resetSurveys: (setId: string) => void, initialTab
         }
       };
       setAnswersHistory(optimisticHistory);
-      localStorage.setItem('edugap_answers_history', JSON.stringify(optimisticHistory));
+      localStorage.setItem('mentora_answers_history', JSON.stringify(optimisticHistory));
       if (activePracticeSession && activePracticeSession.targetSetId === activeSetId) {
         submitPracticeAnswer(currentQuestion.id, optionKey, undefined, localIsCorrect, hintCount);
       }
@@ -1090,7 +1090,7 @@ export function useQuizSession(resetSurveys: (setId: string) => void, initialTab
               }
             }
           };
-          localStorage.setItem('edugap_answers_history', JSON.stringify(nextHistory));
+          localStorage.setItem('mentora_answers_history', JSON.stringify(nextHistory));
           return nextHistory;
         });
         recordAdaptiveSubmitResult(currentQuestion.id, optionKey, undefined, result, hintCount, {
@@ -1133,7 +1133,7 @@ export function useQuizSession(resetSurveys: (setId: string) => void, initialTab
       }
     };
     setAnswersHistory(nextHistory);
-    localStorage.setItem('edugap_answers_history', JSON.stringify(nextHistory));
+    localStorage.setItem('mentora_answers_history', JSON.stringify(nextHistory));
 
     // Update Zustand activePracticeSession if we are in quiz mode
     if (activePracticeSession && activePracticeSession.targetSetId === activeSetId) {
@@ -1181,7 +1181,7 @@ export function useQuizSession(resetSurveys: (setId: string) => void, initialTab
       }
     };
     setAnswersHistory(nextHistory);
-    localStorage.setItem('edugap_answers_history', JSON.stringify(nextHistory));
+    localStorage.setItem('mentora_answers_history', JSON.stringify(nextHistory));
   }, [activeSetId, currentQuestion, currentQuestionIdx, essayInput, isSubmitted, answersHistory]);
 
   // Grade the essay (user clicks Correct or Incorrect)
@@ -1209,7 +1209,7 @@ export function useQuizSession(resetSurveys: (setId: string) => void, initialTab
       }
     };
     setAnswersHistory(nextHistory);
-    localStorage.setItem('edugap_answers_history', JSON.stringify(nextHistory));
+    localStorage.setItem('mentora_answers_history', JSON.stringify(nextHistory));
 
     // Update Zustand activePracticeSession
     if (activePracticeSession && activePracticeSession.targetSetId === activeSetId) {
@@ -1237,7 +1237,7 @@ export function useQuizSession(resetSurveys: (setId: string) => void, initialTab
       }
     };
     setAnswersHistory(nextHistory);
-    localStorage.setItem('edugap_answers_history', JSON.stringify(nextHistory));
+    localStorage.setItem('mentora_answers_history', JSON.stringify(nextHistory));
   }, [activeSetId, currentQuestion, currentHistory, answersHistory]);
 
   // Move to next question or show finish details
@@ -1330,7 +1330,7 @@ export function useQuizSession(resetSurveys: (setId: string) => void, initialTab
     const nextHistory = { ...answersHistory };
     delete nextHistory[setId];
     setAnswersHistory(nextHistory);
-    localStorage.setItem('edugap_answers_history', JSON.stringify(nextHistory));
+    localStorage.setItem('mentora_answers_history', JSON.stringify(nextHistory));
 
     // Delegate survey reset
     resetSurveys(setId);
@@ -1497,7 +1497,7 @@ export function useQuizSession(resetSurveys: (setId: string) => void, initialTab
       });
       setAnswersHistory(prev => {
         const next = { ...prev, [setId]: {} };
-        localStorage.setItem('edugap_answers_history', JSON.stringify(next));
+        localStorage.setItem('mentora_answers_history', JSON.stringify(next));
         return next;
       });
     } catch (error) {

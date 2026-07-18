@@ -2,6 +2,7 @@ import json
 import re
 from pathlib import Path
 
+
 def main():
     project_root = Path(__file__).parent.parent
     sql_path = project_root / "db" / "supabase" / "migrations" / "seed_concepts_dag.sql"
@@ -12,13 +13,13 @@ def main():
         print(f"SQL file not found at {sql_path}")
         return
 
-    with open(sql_path, "r", encoding="utf-8") as f:
+    with open(sql_path, encoding="utf-8") as f:
         content = f.read()
 
     concepts = []
     lines = content.splitlines()
     in_concepts = False
-    
+
     # regex pattern
     concept_pattern = re.compile(
         r"^\s*\(\s*'[^']*'\s*,\s*'[^']*'\s*,\s*'([^']*)'\s*,\s*'([^']*)'\s*,\s*'(.*)'\s*,\s*'active'::app\.concept_status\)"
@@ -38,19 +39,19 @@ def main():
             if not day_match:
                 continue
             day = int(day_match.group(1))
-            
+
             # Clean comments before matching regex
             code_part = line_strip.split("--")[0].strip()
             # remove trailing comma if any
             if code_part.endswith(","):
                 code_part = code_part[:-1].strip()
-                
+
             match = concept_pattern.match(code_part)
             if match:
                 code = match.group(1)
                 name = match.group(2)
                 desc = match.group(3).replace("''", "'")
-                
+
                 # Transform d17-t1-prd-pmf -> t1-d17-prd-pmf
                 if re.match(r"^d\d+-t\d+-", code):
                     parts = code.split("-")
@@ -58,7 +59,7 @@ def main():
                     track_pref = parts[1]
                     rest = "-".join(parts[2:])
                     code = f"{track_pref}-{day_pref}-{rest}"
-                
+
                 concepts.append({
                     "code": code,
                     "name": name,
@@ -84,7 +85,7 @@ def main():
                 source = match.group(1)
                 relation_type = match.group(2)
                 target = match.group(3)
-                
+
                 # Transform both source and target codes if needed
                 if re.match(r"^d\d+-t\d+-", source):
                     parts = source.split("-")
@@ -92,7 +93,7 @@ def main():
                 if re.match(r"^d\d+-t\d+-", target):
                     parts = target.split("-")
                     target = f"{parts[1]}-{parts[0]}-" + "-".join(parts[2:])
-                    
+
                 relations.append({
                     "source": source,
                     "relation": relation_type,

@@ -314,7 +314,7 @@ export function QuizQuestionView({ quiz, aiSidebar }: QuizQuestionViewProps) {
     const incorrectOptions = [
       "Không sao cả, sai sót là bước đệm để học tập!",
       "Chưa chính xác, hãy đọc kỹ phần giải thích bên dưới nhé.",
-      "Tiếc quá! Xem giải thích để lấp đầy EduGap này nhé.",
+      "Tiếc quá! Xem giải thích để lấp đầy Mentora này nhé.",
       "Đừng nản lòng, câu tiếp theo bạn sẽ làm tốt hơn!",
       "Thử thách này hơi khó, hãy ôn lại kiến thức này nhé.",
       "Chưa đúng rồi, hãy cùng AI Tutor phân tích lại nhé."
@@ -415,8 +415,8 @@ export function QuizQuestionView({ quiz, aiSidebar }: QuizQuestionViewProps) {
           eyebrow: increased ? 'Độ khó đã tăng' : 'Độ khó đã giảm',
           title: `${before.label} -> ${after.label}`,
           body: increased
-            ? 'Bạn vừa trả lời đủ tốt để EduGap nâng mức thử thách tiếp theo.'
-            : 'EduGap đang giảm độ khó để củng cố nền tảng trước khi tăng tốc lại.',
+            ? 'Bạn vừa trả lời đủ tốt để Mentora nâng mức thử thách tiếp theo.'
+            : 'Mentora đang giảm độ khó để củng cố nền tảng trước khi tăng tốc lại.',
         };
       }
     }
@@ -429,7 +429,7 @@ export function QuizQuestionView({ quiz, aiSidebar }: QuizQuestionViewProps) {
         type: 'concept' as const,
         eyebrow: 'Đổi chủ đề luyện tập',
         title: 'Sang vùng kiến thức mới',
-        body: 'EduGap đang chuyển câu hỏi sang concept khác để kiểm tra độ phủ, không chỉ lặp lại một mảng kiến thức.',
+        body: 'Mentora đang chuyển câu hỏi sang concept khác để kiểm tra độ phủ, không chỉ lặp lại một mảng kiến thức.',
       };
     }
 

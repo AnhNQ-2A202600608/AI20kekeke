@@ -1,6 +1,6 @@
 # Package Managers & Setup Guide (uv & pnpm)
 
-This guide documents the setup and usage of package managers in the EduGap codebase.
+This guide documents the setup and usage of package managers in the Mentora codebase.
 
 ## Backend (Python): `uv`
 

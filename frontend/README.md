@@ -1,8 +1,8 @@
-# 🧠 EduGap AI Thực Chiến — Quiz Web Application
+# 🧠 Mentora AI Thực Chiến — Quiz Web Application
 
-Chào mừng bạn đến với **EduGap Quiz Web Application**, nền tảng ôn luyện kiến thức trực quan và thực chiến dành riêng cho các học viên tham gia chương trình đào tạo **AI Thực Chiến**. Nền tảng được tối ưu hóa toàn diện về trải nghiệm người dùng (UX/UX), tốc độ phản hồi và giá trị thực tế của từng bộ đề ôn luyện.
+Chào mừng bạn đến với **Mentora Quiz Web Application**, nền tảng ôn luyện kiến thức trực quan và thực chiến dành riêng cho các học viên tham gia chương trình đào tạo **AI Thực Chiến**. Nền tảng được tối ưu hóa toàn diện về trải nghiệm người dùng (UX/UX), tốc độ phản hồi và giá trị thực tế của từng bộ đề ôn luyện.
 
-👉 **Trải nghiệm trực tuyến tại:** [ai20kekeke.vercel.app](https://ai20kekeke.vercel.app)
+👉 **Trải nghiệm trực tuyến tại:** [edu-gap.hoangblue.dev](https://edu-gap.hoangblue.dev/)
 👉 **Form đóng góp ý kiến:** [Feedback Form](https://forms.gle/Np7swC5Xwzmbsxno9)
 
 ---
@@ -67,7 +67,7 @@ Các bộ đề được biên soạn kỹ lưỡng dựa trên slide bài giả
 
 1. **Clone mã nguồn về máy cá nhân:**
    ```bash
-   git clone https://github.com/blu1606/EduGap.git
+   git clone https://github.com/blu1606/Mentora.git
    cd quiz-web-application
    ```
 

@@ -1,6 +1,6 @@
 -- ============================================================================
 -- C2-App-125 | Fix and Enable Row-Level Security Policies
--- Target: Supabase PostgreSQL 17 (edugap-dev / edugap)
+-- Target: Supabase PostgreSQL 17 (mentora-dev / mentora)
 -- Re-run safe: YES
 -- ============================================================================
 

@@ -109,7 +109,7 @@ Landing and public entry pages should follow the App scale:
 
 ## Asset, Icon, and Mask Code Guidelines
 
-- Brand assets live under `frontend/public/brand/edugap/`. Keep `logo.png`, `logo-cropped.png`, `icon-192x192.png`, `icon-512x512.png`, `maskable-icon-512x512.png`, favicons, and `apple-touch-icon.png` aligned as one brand package.
+- Brand assets live under `frontend/public/brand/mentora/`. Keep `logo.png`, `logo-cropped.png`, `icon-192x192.png`, `icon-512x512.png`, `maskable-icon-512x512.png`, favicons, and `apple-touch-icon.png` aligned as one brand package.
 - Public app visuals should reuse project-owned assets before generating new artwork:
   - `frontend/public/app-backgrounds/` for app/profile shell atmosphere.
   - `frontend/public/learning-scenery/` for landing, onboarding, RAG, mentor, product-loop, safety, and evaluation scenes.

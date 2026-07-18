@@ -1,6 +1,6 @@
 # Algorithm Changelog (Adaptive Learning Core)
 
-Tài liệu này ghi lại toàn bộ các thay đổi, sửa lỗi và nâng cấp liên quan đến **Lõi Thuật toán Thích ứng (Adaptive Learning Core)** và **Bộ công cụ đánh giá thuật toán (Evaluation Suite)** của hệ thống **EduGap**.
+Tài liệu này ghi lại toàn bộ các thay đổi, sửa lỗi và nâng cấp liên quan đến **Lõi Thuật toán Thích ứng (Adaptive Learning Core)** và **Bộ công cụ đánh giá thuật toán (Evaluation Suite)** của hệ thống **Mentora**.
 
 ---
 

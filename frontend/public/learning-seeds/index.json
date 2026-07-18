@@ -1,6 +1,6 @@
 {
   "assetSet": "learning-seeds",
-  "description": "EduGap mastery seed stages for learning progress UI.",
+  "description": "Mentora mastery seed stages for learning progress UI.",
   "stages": [
     {
       "stage": "locked",

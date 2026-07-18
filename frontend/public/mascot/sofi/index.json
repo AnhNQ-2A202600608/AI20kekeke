@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "description": "Sofi full-body mascot state assets for EduGap learning UI.",
+  "description": "Sofi full-body mascot state assets for Mentora learning UI.",
   "basePath": "/mascot/sofi",
   "sizes": {
     "512": "Default runtime size for side panels, cards, coach states, and compact mascot blocks.",
@@ -19,10 +19,10 @@
       "description": "Sofi welcoming the learner.",
       "bestFor": ["default assistant panel", "empty state", "welcome state"],
       "files": {
-        "512": "/mascot/sofi/512/edugap-fox-idle-welcome.webp",
-        "1024": "/mascot/sofi/1024/edugap-fox-idle-welcome.webp"
+        "512": "/mascot/sofi/512/mentora-fox-idle-welcome.webp",
+        "1024": "/mascot/sofi/1024/mentora-fox-idle-welcome.webp"
       },
-      "alt": "Sofi the EduGap fox mascot welcoming the learner"
+      "alt": "Sofi the Mentora fox mascot welcoming the learner"
     },
     {
       "state": "thinking",
@@ -30,10 +30,10 @@
       "description": "Sofi thinking through a question.",
       "bestFor": ["AI typing", "hint generation", "loading reasoning"],
       "files": {
-        "512": "/mascot/sofi/512/edugap-fox-thinking.webp",
-        "1024": "/mascot/sofi/1024/edugap-fox-thinking.webp"
+        "512": "/mascot/sofi/512/mentora-fox-thinking.webp",
+        "1024": "/mascot/sofi/1024/mentora-fox-thinking.webp"
       },
-      "alt": "Sofi the EduGap fox mascot thinking"
+      "alt": "Sofi the Mentora fox mascot thinking"
     },
     {
       "state": "correct",
@@ -41,10 +41,10 @@
       "description": "Sofi celebrating a correct answer.",
       "bestFor": ["quiz correct state", "positive feedback", "success card"],
       "files": {
-        "512": "/mascot/sofi/512/edugap-fox-correct-answer.webp",
-        "1024": "/mascot/sofi/1024/edugap-fox-correct-answer.webp"
+        "512": "/mascot/sofi/512/mentora-fox-correct-answer.webp",
+        "1024": "/mascot/sofi/1024/mentora-fox-correct-answer.webp"
       },
-      "alt": "Sofi the EduGap fox mascot celebrating a correct answer"
+      "alt": "Sofi the Mentora fox mascot celebrating a correct answer"
     },
     {
       "state": "wrong",
@@ -52,10 +52,10 @@
       "description": "Sofi encouraging another attempt after a wrong answer.",
       "bestFor": ["quiz wrong state", "retry prompt", "Socratic recovery"],
       "files": {
-        "512": "/mascot/sofi/512/edugap-fox-wrong-answer-encouragement.webp",
-        "1024": "/mascot/sofi/1024/edugap-fox-wrong-answer-encouragement.webp"
+        "512": "/mascot/sofi/512/mentora-fox-wrong-answer-encouragement.webp",
+        "1024": "/mascot/sofi/1024/mentora-fox-wrong-answer-encouragement.webp"
       },
-      "alt": "Sofi the EduGap fox mascot encouraging another attempt"
+      "alt": "Sofi the Mentora fox mascot encouraging another attempt"
     },
     {
       "state": "coach",
@@ -63,10 +63,10 @@
       "description": "Sofi coaching the learner during practice.",
       "bestFor": ["quiz assistant idle", "coach panel", "hint CTA"],
       "files": {
-        "512": "/mascot/sofi/512/edugap-fox-quiz-coach.webp",
-        "1024": "/mascot/sofi/1024/edugap-fox-quiz-coach.webp"
+        "512": "/mascot/sofi/512/mentora-fox-quiz-coach.webp",
+        "1024": "/mascot/sofi/1024/mentora-fox-quiz-coach.webp"
       },
-      "alt": "Sofi the EduGap fox mascot coaching the learner"
+      "alt": "Sofi the Mentora fox mascot coaching the learner"
     },
     {
       "state": "mastery",
@@ -74,10 +74,10 @@
       "description": "Sofi celebrating mastery or a level-up.",
       "bestFor": ["mastery reached", "level-up modal", "achievement card"],
       "files": {
-        "512": "/mascot/sofi/512/edugap-fox-level-up-mastery.webp",
-        "1024": "/mascot/sofi/1024/edugap-fox-level-up-mastery.webp"
+        "512": "/mascot/sofi/512/mentora-fox-level-up-mastery.webp",
+        "1024": "/mascot/sofi/1024/mentora-fox-level-up-mastery.webp"
       },
-      "alt": "Sofi the EduGap fox mascot celebrating mastery"
+      "alt": "Sofi the Mentora fox mascot celebrating mastery"
     },
     {
       "state": "loading",
@@ -85,10 +85,10 @@
       "description": "Sofi reading while learning data loads.",
       "bestFor": ["loading state", "content preparation", "RAG retrieval wait"],
       "files": {
-        "512": "/mascot/sofi/512/edugap-fox-loading-reading.webp",
-        "1024": "/mascot/sofi/1024/edugap-fox-loading-reading.webp"
+        "512": "/mascot/sofi/512/mentora-fox-loading-reading.webp",
+        "1024": "/mascot/sofi/1024/mentora-fox-loading-reading.webp"
       },
-      "alt": "Sofi the EduGap fox mascot reading while loading"
+      "alt": "Sofi the Mentora fox mascot reading while loading"
     },
     {
       "state": "soft_error",
@@ -96,10 +96,10 @@
       "description": "Sofi apologizing for a recoverable error.",
       "bestFor": ["soft error", "retry prompt", "temporary unavailable state"],
       "files": {
-        "512": "/mascot/sofi/512/edugap-fox-error-apology.webp",
-        "1024": "/mascot/sofi/1024/edugap-fox-error-apology.webp"
+        "512": "/mascot/sofi/512/mentora-fox-error-apology.webp",
+        "1024": "/mascot/sofi/1024/mentora-fox-error-apology.webp"
       },
-      "alt": "Sofi the EduGap fox mascot apologizing for a recoverable issue"
+      "alt": "Sofi the Mentora fox mascot apologizing for a recoverable issue"
     }
   ],
   "related": {

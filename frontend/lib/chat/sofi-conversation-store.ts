@@ -24,7 +24,7 @@ export interface SofiConversationRecord<TMessage = unknown, TSlide = unknown> {
   updatedAt: number;
 }
 
-const STORE_KEY = 'edugap_sofi_conversations_v1';
+const STORE_KEY = 'mentora_sofi_conversations_v1';
 
 const isBrowser = () => typeof window !== 'undefined';
 

@@ -1,9 +1,9 @@
 import type { OnboardingSummary } from './onboarding-contract';
 
-export const FIRST_RUN_TOUR_EVENT = 'edugap:first-run-tour:start';
+export const FIRST_RUN_TOUR_EVENT = 'mentora:first-run-tour:start';
 
 const FIRST_RUN_VERSION = 1;
-const keyFor = (userId?: string | null) => `edugap_first_run_v${FIRST_RUN_VERSION}:${userId || 'demo'}`;
+const keyFor = (userId?: string | null) => `mentora_first_run_v${FIRST_RUN_VERSION}:${userId || 'demo'}`;
 
 export type FirstRunStatus = 'idle' | 'pending' | 'active' | 'dismissed' | 'completed';
 

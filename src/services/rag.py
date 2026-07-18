@@ -373,7 +373,13 @@ class RAGService:
 
                 if not concept_code:
                     try:
-                        concept_url = f"{self.supabase_url}/rest/v1/concepts?id=eq.{concept_id}&select=code"
+                        from uuid import UUID
+                        try:
+                            UUID(str(concept_id))
+                            concept_url = f"{self.supabase_url}/rest/v1/concepts?id=eq.{concept_id}&select=code"
+                        except ValueError:
+                            concept_url = f"{self.supabase_url}/rest/v1/concepts?code=eq.{concept_id}&select=code"
+
                         concept_headers = {
                             "apikey": self.supabase_api_key,
                             "Authorization": f"Bearer {self.supabase_api_key}",
@@ -583,8 +589,20 @@ class RAGService:
                         "image_url": None,
                     }
 
-            # Sắp xếp theo similarity giảm dần và giữ lại số lượng match_count tốt nhất
+            # Sắp xếp theo similarity giảm dần
             sorted_results = sorted(merged.values(), key=lambda x: x["similarity"], reverse=True)
+
+            # Lọc theo môn học Toán học (chỉ giữ lại các tài liệu Toán)
+            is_math_concept = concept_id in [
+                "ti-le-thuc", "ti-so", "tinh-chat-co-ban-cua-phan-so", "phan-so",
+                "rut-gon-phan-so", "phan-so-bang-nhau", "ti-so-phan-tram", "quy-dong-mau-nhieu-phan-so"
+            ]
+            if is_math_concept:
+                sorted_results = [
+                    item for item in sorted_results
+                    if "math" in str(item.get("document_name")).lower() or "fused" in str(item.get("document_name")).lower()
+                ]
+
             sorted_results = self._dedupe_logical_versions(sorted_results)
             results = sorted_results[:match_count]
 

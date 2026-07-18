@@ -59,7 +59,7 @@ def convert_md_to_latex(md_content):
 
     # 2. Extract title & Abstract
     title_match = re.search(r"^#\s+(.+)$", md_content, re.MULTILINE)
-    title = title_match.group(1) if title_match else "EduGap Research Paper"
+    title = title_match.group(1) if title_match else "Mentora Research Paper"
 
     abstract_match = re.search(r"### Abstract\n(.*?)\n---", md_content, re.DOTALL)
     abstract = abstract_match.group(1).strip() if abstract_match else ""
@@ -247,7 +247,7 @@ def build_latex_file():
 \\makeatletter
 \\renewcommand{{\\@noticestring}}{{
   \\centering
-  EduGap Technical Report --- AI20K Build Cohort 2
+  Mentora Technical Report --- AI20K Build Cohort 2
 }}
 \\makeatother
 
@@ -270,7 +270,7 @@ def build_latex_file():
 \\author{{
   Ho Tat Bao Hoang \\\\
   Department of Educational Technology \\\\
-  EduGap Project \\\\
+  Mentora Project \\\\
   \\texttt{{hoangblue.work@gmail.com}}
 }}
 

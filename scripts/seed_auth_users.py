@@ -85,7 +85,7 @@ def seed_users():
     static_users = [
         {
             "id": "55555555-5555-5555-5555-555555555555",
-            "email": "mentor@edugap.vn",
+            "email": "mentor@mentora.vn",
             "password": "Password123!",
             "full_name": "Giảng Viên Sapia",
             "mssv": None,
@@ -93,7 +93,7 @@ def seed_users():
         },
         {
             "id": "77777777-7777-7777-7777-777777777777",
-            "email": "admin@edugap.vn",
+            "email": "admin@mentora.vn",
             "password": "Password123!",
             "full_name": "Admin Sapia",
             "mssv": None,
@@ -101,7 +101,7 @@ def seed_users():
         },
         {
             "id": "36bc990a-5bb6-48a6-a488-b97118497d3f",
-            "email": "hoang.htb@edugap.vn",
+            "email": "hoang.htb@mentora.vn",
             "password": "Password123!",
             "full_name": "Hồ Tất Bảo Hoàng",
             "mssv": "2A202600699",

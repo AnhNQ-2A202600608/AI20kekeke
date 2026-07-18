@@ -18,7 +18,7 @@ const scenery = (id: string, alt: string): LearningSceneryAsset => ({
 });
 
 const SCENERY_ASSETS = {
-  landing: scenery('landing-learning-hills', 'EduGap learning path hills'),
+  landing: scenery('landing-learning-hills', 'Mentora learning path hills'),
   onboarding: scenery('onboarding-first-trail', 'Beginner learning trail'),
   tokenization: scenery('tokenization-blocks', 'Tokenization learning blocks'),
   rag: scenery('rag-knowledge-forest', 'RAG knowledge forest'),
