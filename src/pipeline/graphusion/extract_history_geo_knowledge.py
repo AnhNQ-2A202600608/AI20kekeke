@@ -30,7 +30,7 @@ def extract_lesson_knowledge(
         
     return extractor.extract(
         chunks=chunks,
-        subject="math",
+        subject="history_geo",
         source_type=source_type,
         model=model,
         api_key=api_key,

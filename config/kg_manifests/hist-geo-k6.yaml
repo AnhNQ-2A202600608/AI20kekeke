@@ -1,0 +1,57 @@
+course_code: hist-geo-k6
+subject: history_geo
+grade: 6
+documents:
+  - document_code: sgk-lich-su-va-ia-li-6-kntt
+    source_type: SGK
+    expected_lessons:
+      - 01-bai-1
+      - 02-bai-2
+      - 03-bai-3
+      - 04-bai-4
+      - 05-bai-5
+      - 06-bai-6
+      - 07-bai-7
+      - 08-bai-8
+      - 09-bai-9
+      - 10-bai-10
+      - 11-bai-11
+      - 12-bai-12
+      - 13-bai-13
+      - 14-bai-14
+      - 15-bai-15
+      - 16-bai-16
+      - 17-bai-17
+      - 18-bai-18
+      - 19-bai-19
+      - 20-bai-20
+      - 21-bai-1
+      - 22-bai-2
+      - 23-bai-3
+      - 24-bai-4
+      - 25-bai-5
+      - 26-bai-6
+      - 27-bai-7
+      - 28-bai-8
+      - 29-bai-9
+      - 30-bai-10
+      - 31-bai-11
+      - 32-bai-12
+      - 33-bai-13
+      - 34-bai-14
+      - 35-bai-15
+      - 36-bai-16
+      - 37-bai-17
+      - 38-bai-18
+      - 39-bai-19
+      - 40-bai-20
+      - 41-bai-21
+      - 42-bai-22
+      - 43-bai-23
+      - 44-bai-24
+      - 45-bai-25
+      - 46-bai-26
+      - 47-bai-27
+      - 48-bai-28
+      - 49-bai-29
+      - 50-bai-30

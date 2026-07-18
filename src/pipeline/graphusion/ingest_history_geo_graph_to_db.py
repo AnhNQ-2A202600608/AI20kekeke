@@ -1,4 +1,4 @@
-"""Ghi concept/relation đã trích xuất vào Supabase.
+"""Ghi concept/relation Sử-Địa đã trích xuất vào Supabase.
 """
 from __future__ import annotations
 import argparse
@@ -18,8 +18,8 @@ from src.pipeline.graphusion.normalize_concepts import normalize_and_deduplicate
 from src.pipeline.graphusion.validate_graph import validate_prerequisite_dag
 from src.pipeline.graphusion.ingest_graph_to_db import IngestionService
 
-DEFAULT_MATH_COURSE_CODE = "math-k6"
-DEFAULT_MATH_COURSE_TITLE = "Toán phổ thông lớp 6"
+DEFAULT_COURSE_CODE = "hist-geo-k6"
+DEFAULT_COURSE_TITLE = "Lịch sử và Địa lí lớp 6"
 
 def merge_lesson_files(paths: list[Path]) -> dict:
     concepts_by_code: dict[str, dict] = {}
@@ -34,9 +34,9 @@ def merge_lesson_files(paths: list[Path]) -> dict:
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("lesson_files", nargs="+", help="1 hoặc nhiều file math_lesson_knowledge.json")
-    parser.add_argument("--course-code", default=DEFAULT_MATH_COURSE_CODE)
-    parser.add_argument("--course-title", default=DEFAULT_MATH_COURSE_TITLE)
+    parser.add_argument("lesson_files", nargs="+", help="1 hoặc nhiều file history_geo_lesson_knowledge.json")
+    parser.add_argument("--course-code", default=DEFAULT_COURSE_CODE)
+    parser.add_argument("--course-title", default=DEFAULT_COURSE_TITLE)
     parser.add_argument("--dry-run", action="store_true", help="Validate nhưng không ghi Supabase")
     args = parser.parse_args()
 
@@ -50,7 +50,7 @@ def main():
     
     # Setup Run Context
     os.environ["SUPABASE_URL_STUB"] = "true" if args.dry_run else "false"
-    run_ctx = RunContext.create("math", 6, args.course_code)
+    run_ctx = RunContext.create("history_geo", 6, args.course_code)
     
     # Normalize & Validate
     concepts, relations, norm_report = normalize_and_deduplicate(merged["concepts"], merged["relations"])
@@ -64,7 +64,7 @@ def main():
                 chunk_seen.add(chunk_id)
                 chunks.append(DocumentChunk(
                     chunk_id=chunk_id,
-                    document_id="math-k6-sgk",
+                    document_id="hist-geo-k6-sgk",
                     chunk_index=0,
                     content=c.get("evidence", [""])[0] if c.get("evidence") else c.get("description", ""),
                     content_hash=c["code"],
@@ -76,7 +76,7 @@ def main():
             chunk_seen.add(chunk_id)
             chunks.append(DocumentChunk(
                 chunk_id=chunk_id,
-                document_id="math-k6-sgk",
+                document_id="hist-geo-k6-sgk",
                 chunk_index=0,
                 content=r.get("evidence", ""),
                 content_hash=r["source"] + r["target"],
@@ -92,7 +92,7 @@ def main():
     if not args.dry_run:
         service.create_extraction_run(run_ctx)
         
-    doc_manifest = [{"document_code": "math-k6-sgk", "source_type": "SGK", "checksum": "legacy"}]
+    doc_manifest = [{"document_code": "hist-geo-k6-sgk", "source_type": "SGK", "checksum": "legacy"}]
     res = service.ingest_graph(
         run_ctx=run_ctx,
         documents=doc_manifest,

@@ -51,22 +51,29 @@ def convert_pdf_to_markdown_openai_vision(
     model="gpt-4o",
     batch_size=3,
     page_range=None,
+    base_url=None,
 ):
     """
-    Chuyển PDF (đặc biệt là scan, không có text layer) sang Markdown bằng OpenAI
-    vision (GPT-4o), xử lý theo batch trang vì OpenAI/Groq vision API chỉ nhận
-    ảnh, không nhận file PDF trực tiếp như Gemini.
+    Chuyển PDF (đặc biệt là scan, không có text layer) sang Markdown bằng vision-LLM
+    tương thích OpenAI API (GPT-4o mặc định; truyền base_url trỏ sang Groq +
+    model vision của Groq, vd "meta-llama/llama-4-scout-17b-16e-instruct", để
+    dùng Groq thay OpenAI khi hết quota - cùng client OpenAI SDK, chỉ đổi
+    base_url/api_key, giống pattern GroqKnowledgeExtractor trong extractor.py).
+    Xử lý theo batch trang vì API vision chỉ nhận ảnh, không nhận file PDF
+    trực tiếp như Gemini.
 
     page_range: tuple (start, end) 0-indexed, inclusive-exclusive, để test/chạy
     một phần tài liệu thay vì toàn bộ. None = toàn bộ tài liệu.
 
     Đã kiểm chứng: model có thể transcribe sai công thức toán dù đã yêu cầu
     "transcribe faithfully" (xem docs/domain-knowledge/PDF_to_Knowledge_Graph.md
-    mục 2.2). Output của hàm này KHÔNG được coi là publish-ready - phải qua
-    bước verify (src/pipeline/graphusion/formula_verifier.py) và review trước
-    khi đưa vào Knowledge Graph/Content KB.
+    mục 2.2). Riêng model vision của Groq (llama-4-scout) đã được test và xác
+    nhận LÀM HỎNG bảng có ô gộp nhiều dòng (rowspan) - xem mục 2.1 cùng tài
+    liệu. Output của hàm này KHÔNG được coi là publish-ready - phải qua bước
+    verify (src/pipeline/graphusion/formula_verifier.py) và review trước khi
+    đưa vào Knowledge Graph/Content KB.
     """
-    print(f"[*] Đang sử dụng OpenAI API (model {model}) để chuyển đổi PDF (vision, theo batch trang)...")
+    print(f"[*] Đang sử dụng {'Groq' if base_url else 'OpenAI'} API (model {model}) để chuyển đổi PDF (vision, theo batch trang)...")
     try:
         from openai import OpenAI
     except ImportError:
@@ -86,7 +93,7 @@ def convert_pdf_to_markdown_openai_vision(
         end = min(end, n_pages)
         page_indices = list(range(start, end))
 
-        client = OpenAI(api_key=api_key)
+        client = OpenAI(api_key=api_key, base_url=base_url)
         all_markdown = []
 
         for batch_start in range(0, len(page_indices), batch_size):
@@ -115,7 +122,7 @@ def convert_pdf_to_markdown_openai_vision(
         print(f"[+] Chuyển đổi bằng OpenAI vision thành công! File lưu tại: {md_path}")
         return True
     except Exception as e:
-        print(f"[!] Lỗi khi gọi OpenAI vision API: {str(e)}")
+        print(f"[!] Lỗi khi gọi {'Groq' if base_url else 'OpenAI'} vision API: {str(e)}")
         return False
 
 
