@@ -8,7 +8,7 @@ Measurement window: 2026-06-02 16:02 UTC to 2026-07-06 03:21 UTC.
 
 ## 1. Executive Summary
 
-EduGap recorded meaningful early reach and product interaction during the measurement window.
+Mentora recorded meaningful early reach and product interaction during the measurement window.
 
 The data shows three important signals:
 
@@ -25,7 +25,7 @@ This should be interpreted as **early reach and usage evidence**, not product-ma
 | Item | Value |
 | --- | --- |
 | Source | PostHog |
-| Project | EduGap frontend analytics |
+| Project | Mentora frontend analytics |
 | Window start | 2026-06-02 16:02 UTC |
 | Window end | 2026-07-06 03:21 UTC |
 | Query method | PostHog HogQL API |
@@ -149,7 +149,7 @@ This is a useful early signal for cohort-based GTM, but it should not be present
 
 ### Insight 1: Reach converted into learning actions
 
-EduGap did not only receive passive traffic. 292 out of 828 unique visitors became active learners.
+Mentora did not only receive passive traffic. 292 out of 828 unique visitors became active learners.
 
 This suggests the core product promise is concrete enough for a meaningful share of visitors to try learning actions.
 
@@ -175,7 +175,7 @@ The next analytics step should identify:
 
 Peak weekly active learning reached 118 users, while day-to-day activity varies.
 
-This supports the hypothesis that EduGap may work best in cohort contexts, where activity is driven by course schedule, assignments, or group learning moments.
+This supports the hypothesis that Mentora may work best in cohort contexts, where activity is driven by course schedule, assignments, or group learning moments.
 
 ### Insight 5: Waitlist is currently weak
 

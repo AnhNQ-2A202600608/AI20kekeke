@@ -46,8 +46,8 @@ import type {
 } from './socratic-chat/components/knowledge-graph/types';
 
 const COURSE_UUID = '00000000-0000-0000-0000-000000000001';
-const GRAPH_VIEWPORT_STORAGE_KEY = 'edugap.skillGraph.viewport.v1';
-const DETAIL_PANEL_STORAGE_KEY = 'edugap.skillGraph.detailPanelCollapsed.v1';
+const GRAPH_VIEWPORT_STORAGE_KEY = 'mentora.skillGraph.viewport.v1';
+const DETAIL_PANEL_STORAGE_KEY = 'mentora.skillGraph.detailPanelCollapsed.v1';
 const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
 type GraphSofiMessage = {
@@ -498,7 +498,7 @@ export function KnowledgeGraphPage({
         title="Skill Graph"
         subtitle={`${knowledgeGraph.summary.total} nodes • ${knowledgeGraph.edges.length} liên kết • nguồn ${graphSourceLabel}`}
         averageElo={averageElo}
-        displayName={name || username || 'Học viên EduGap'}
+        displayName={name || username || 'Học viên Mentora'}
         eloHistoryEvents={eloHistoryEvents}
         initial={(name || username || 'N').trim().charAt(0).toUpperCase() || 'N'}
         loggedIn={loggedIn}

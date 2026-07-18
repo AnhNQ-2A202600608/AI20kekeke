@@ -1,13 +1,13 @@
 ---
 title: Phương pháp Đánh giá & Kiểm chứng Thuật toán
-description: Cách EduGap chứng minh tính chính xác học thuật, tốc độ hội tụ và độ ổn định của các thuật toán thích ứng bằng phương pháp khoa học thực nghiệm nghiêm ngặt.
+description: Cách Mentora chứng minh tính chính xác học thuật, tốc độ hội tụ và độ ổn định của các thuật toán thích ứng bằng phương pháp khoa học thực nghiệm nghiêm ngặt.
 ---
 
 # Phương pháp Đánh giá & Kiểm chứng Thuật toán (Evaluation Methodology)
 
-Chào mừng các Mentor, Nhà đánh giá học thuật và Đối tác nghiên cứu đến với trang đặc tả phương pháp kiểm chứng của **EduGap**. 
+Chào mừng các Mentor, Nhà đánh giá học thuật và Đối tác nghiên cứu đến với trang đặc tả phương pháp kiểm chứng của **Mentora**. 
 
-Tại EduGap, chúng tôi tin rằng một thuật toán thích ứng (Adaptive Learning Algorithm) chỉ có giá trị khi nó được **kiểm chứng một cách khoa học, khách quan và không thiên vị**. Trang tài liệu này mô tả chi tiết cách chúng tôi thiết kế phòng thí nghiệm mô phỏng và các chỉ số đo lường nghiêm ngặt để chứng minh độ tin cậy của hệ thống trước khi đưa vào phục vụ học sinh thực tế.
+Tại Mentora, chúng tôi tin rằng một thuật toán thích ứng (Adaptive Learning Algorithm) chỉ có giá trị khi nó được **kiểm chứng một cách khoa học, khách quan và không thiên vị**. Trang tài liệu này mô tả chi tiết cách chúng tôi thiết kế phòng thí nghiệm mô phỏng và các chỉ số đo lường nghiêm ngặt để chứng minh độ tin cậy của hệ thống trước khi đưa vào phục vụ học sinh thực tế.
 
 ---
 
@@ -32,7 +32,7 @@ Trong suốt quá trình giả lập, hệ thống **không hề biết** các t
 
 ## 2. Quy trình 4 Thí nghiệm Kiểm chứng Nghiêm ngặt
 
-Hệ thống EduGap được đánh giá liên tục qua 4 thí nghiệm cốt lõi trong bộ Suite kiểm thử (`eval/` suite):
+Hệ thống Mentora được đánh giá liên tục qua 4 thí nghiệm cốt lõi trong bộ Suite kiểm thử (`eval/` suite):
 
 ![Mermaid Diagram](/docs/images/mermaid-32e80513be80ab5a349e6840212404d0.svg)
 
@@ -50,7 +50,7 @@ Hệ thống EduGap được đánh giá liên tục qua 4 thí nghiệm cốt l
     **Lưu ý học thuật**: Nhiều hệ thống tự tính AUC bằng cách so sánh BKT ước lượng với trạng thái master ẩn giả lập (circular evaluation). Đây là sai lầm học thuật vì trạng thái ẩn này không tồn tại trên thực tế.
 </Callout>
 
-*   EduGap đo lường **Next-step Predictive AUC**: Chúng tôi lấy xác suất thông thạo BKT tại bước $t$ để dự đoán học sinh sẽ làm **Đúng hay Sai ở câu hỏi tiếp theo tại bước $t+1$**.
+*   Mentora đo lường **Next-step Predictive AUC**: Chúng tôi lấy xác suất thông thạo BKT tại bước $t$ để dự đoán học sinh sẽ làm **Đúng hay Sai ở câu hỏi tiếp theo tại bước $t+1$**.
     *   Sau đó, đối chiếu dự đoán này với kết quả làm bài thực tế (0 hoặc 1). Chỉ số **AUC (Area Under the Curve)** phải đạt mức vượt trội so với đoán bừa để chứng minh mô hình có năng lực dự báo thực sự trên dữ liệu thực nghiệm độc lập.
 
 ### 🎯 Thí nghiệm 3: Tối ưu hóa lộ trình học ZPD (Bandit Cumulative Regret)
@@ -83,7 +83,7 @@ Hệ thống EduGap được đánh giá liên tục qua 4 thí nghiệm cốt l
 *   **BKT Next-step AUC thực tế**: **0.8386** 
 *   **Độ hội tụ trạng thái master ẩn**: Đạt **0.9941** sau 50 bước tương tác cho nhóm đã làm chủ kiến thức.
 *   **BKT Responsiveness (Mistake Test)**: Chỉ số phản hồi sai sót cuối đạt **0.0686**.
-*   **Ý nghĩa thực tiễn**: Giá trị AUC $0.8386$ nằm trong ngưỡng phân loại **Rất Tốt (Very Good)** của thống kê học thuật. Nó chứng minh mô hình BKT của EduGap có khả năng dự báo cực kỳ chính xác việc học sinh *sẽ làm đúng hay sai ở câu hỏi tiếp theo*. Điều này giúp hệ thống tự tin đưa ra quyết định chuyển tiếp kỹ năng (mastery transition) mà không lo ngại lỗ hổng kiến thức tiềm ẩn của học sinh.
+*   **Ý nghĩa thực tiễn**: Giá trị AUC $0.8386$ nằm trong ngưỡng phân loại **Rất Tốt (Very Good)** của thống kê học thuật. Nó chứng minh mô hình BKT của Mentora có khả năng dự báo cực kỳ chính xác việc học sinh *sẽ làm đúng hay sai ở câu hỏi tiếp theo*. Điều này giúp hệ thống tự tin đưa ra quyết định chuyển tiếp kỹ năng (mastery transition) mà không lo ngại lỗ hổng kiến thức tiềm ẩn của học sinh.
 
 ![Kiểm chứng BKT Next-step AUC](/docs/images/exp2_bkt_validation.png)
 
@@ -117,5 +117,5 @@ Hệ thống EduGap được đánh giá liên tục qua 4 thí nghiệm cốt l
 
 1.  **Hợp nhất thuật toán**: Các logic phức tạp như lan truyền đồ thị và cập nhật ma trận Bandit được đưa hoàn toàn về các module Python chuẩn để xử lý bất đồng bộ (Async Outbox). Loại bỏ việc viết lại thuật toán bằng SQL để tránh sai lệch logic giữa hai ngôn ngữ.
 2.  **Equivalence Test Gate**: Mỗi khi có bất kỳ thay đổi nào về mã nguồn, quy trình CI/CD sẽ tự động kích hoạt bài test so sánh kết quả. Bài test sẽ sinh ra các ngữ cảnh ngẫu nhiên, chạy song song qua cả code Python và hàm SQL RPC của DB, đảm bảo kết quả Elo và BKT đầu ra phải **trùng khớp nhau đến từng chữ số thập phân ($10^{-5}$)**. 
-3.  **An toàn tuyệt đối**: Nếu phát hiện bất kỳ sự sai lệch nào, hệ thống CI/CD sẽ lập tức chặn deploy, đảm bảo tính toàn vẹn học thuật của EduGap luôn được duy trì.
+3.  **An toàn tuyệt đối**: Nếu phát hiện bất kỳ sự sai lệch nào, hệ thống CI/CD sẽ lập tức chặn deploy, đảm bảo tính toàn vẹn học thuật của Mentora luôn được duy trì.
 

@@ -70,7 +70,7 @@ export function AppTopNav({
       <div className="flex min-w-0 items-center gap-4">
         <Link
           href="/app"
-          aria-label="Về trang app EduGap"
+          aria-label="Về trang app Mentora"
           title="Về trang app"
           onClick={onLogoClick}
           className="shrink-0 rounded-xl transition hover:opacity-85 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-green/25"

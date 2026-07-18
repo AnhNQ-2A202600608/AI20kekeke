@@ -13,9 +13,6 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 VN_TZ = timezone(timedelta(hours=7))
-
-
-
 def git(cmd):
     try:
         if isinstance(cmd, str):

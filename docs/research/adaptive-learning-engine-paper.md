@@ -1,8 +1,8 @@
 # Optimizing Personalized Knowledge Pathing: A Concurrency-Safe and Algorithmically Aligned Adaptive Learning Engine
 
-**EduGap Research & Development Group**  
-*Department of Educational Technology, EduGap Project*  
-*Contact: research@edugap.edu.vn*  
+**Mentora Research & Development Group**  
+*Department of Educational Technology, Mentora Project*  
+*Contact: research@mentora.edu.vn*  
 
 ---
 

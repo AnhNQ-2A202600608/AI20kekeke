@@ -35,7 +35,7 @@ const steps: TourStep[] = [
     id: 'question',
     targetId: 'question-card',
     eyebrow: 'Câu hỏi thích ứng',
-    title: 'EduGap chọn câu theo vùng bạn cần luyện',
+    title: 'Mentora chọn câu theo vùng bạn cần luyện',
     body: 'Câu hỏi được lấy từ kỹ năng hiện tại và mức mastery/Elo của bạn, nên mục tiêu là luyện đúng vùng gần vừa sức thay vì làm một đề cố định.',
   },
   {

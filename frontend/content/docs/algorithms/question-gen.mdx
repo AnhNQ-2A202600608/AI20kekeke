@@ -3,7 +3,7 @@ title: Socratic Scaffolding & Telemetry Interventions
 description: Đặc tả chi tiết về thang gợi ý Socratic, thuật toán phát hiện trạng thái vội vã từ telemetry và cơ chế can thiệp Adaptive Fallback.
 ---
 
-Để duy trì tính toàn vẹn học thuật và kích thích tư duy độc lập, hệ thống **EduGap** áp dụng phương thức giảng dạy **Socratic**. Tutor AI không đưa ra đáp án trực tiếp mà đóng vai trò là người gợi mở, dẫn dắt học sinh tự tìm câu trả lời thông qua Scaffolding động và giám sát hành vi thông tin thực tế.
+Để duy trì tính toàn vẹn học thuật và kích thích tư duy độc lập, hệ thống **Mentora** áp dụng phương thức giảng dạy **Socratic**. Tutor AI không đưa ra đáp án trực tiếp mà đóng vai trò là người gợi mở, dẫn dắt học sinh tự tìm câu trả lời thông qua Scaffolding động và giám sát hành vi thông tin thực tế.
 
 ---
 
@@ -21,7 +21,7 @@ Hệ thống AI Tutor sử dụng **Hint Ladder** để điều chỉnh mức đ
 
 ## 2. Nhận diện Trạng thái "Vội vã & Ức chế" (Hurried Student State)
 
-Trong môi trường học thực tế, Socratic cứng nhắc có thể gây ra hiện tượng **Socratic Deadlock** (học sinh bế tắc dẫn đến cáu gắt và bỏ cuộc). Để giải quyết, EduGap liên tục quét **Interaction Logs (Telemetry)** để nhận diện trạng thái vội vã dựa trên 4 chỉ số chính:
+Trong môi trường học thực tế, Socratic cứng nhắc có thể gây ra hiện tượng **Socratic Deadlock** (học sinh bế tắc dẫn đến cáu gắt và bỏ cuộc). Để giải quyết, Mentora liên tục quét **Interaction Logs (Telemetry)** để nhận diện trạng thái vội vã dựa trên 4 chỉ số chính:
 
 1.  **Response Time (RT) dưới ngưỡng đọc hiểu ($T_{\text{read}}$)**:
     *   Thời gian đọc tối thiểu: $T_{\text{read}} = W_{\text{words}} \times 0.2$ (giây), trong đó $W_{\text{words}}$ là tổng số từ của nội dung.

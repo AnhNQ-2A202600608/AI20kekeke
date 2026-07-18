@@ -1,10 +1,10 @@
-# EduGap Video Demo
+# Mentora Video Demo
 
 Status: script, recording plan, and final video link are ready.
 
 ## Source Script
 
-The Demo Day video script is maintained at `presentation/edugap-demo-video-script-vi.md`.
+The Demo Day video script is maintained at `presentation/mentora-demo-video-script-vi.md`.
 
 ## Recommended Format
 
@@ -16,13 +16,13 @@ The Demo Day video script is maintained at `presentation/edugap-demo-video-scrip
 ## Core Message
 
 ```text
-EduGap helps AI learners study with AI without shortcutting the learning process.
+Mentora helps AI learners study with AI without shortcutting the learning process.
 ```
 
 ## Required Product Moments
 
 - Main learning screen or dashboard.
-- EduGap chat UI.
+- Mentora chat UI.
 - Citation card.
 - Hint-style answer instead of full shortcut answer.
 - Quiz screen.
@@ -36,7 +36,7 @@ EduGap helps AI learners study with AI without shortcutting the learning process
 0:00-0:10  Hook: AI learners are not short on content; they are short on clarity.
 0:10-0:28  Problem: intensive slides, lab deadline, uncertainty, asking feels risky.
 0:28-0:42  Old way: generic AI gives a long answer but no course-grounded mastery.
-0:42-0:50  EduGap appears as the course-grounded tutor.
+0:42-0:50  Mentora appears as the course-grounded tutor.
 0:50-1:12  Socratic chat with cited hints.
 1:12-1:35  Adaptive quiz and answer feedback.
 1:35-1:50  Progress, mastery, next review step.

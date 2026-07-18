@@ -1,19 +1,72 @@
+import hashlib
 import logging
 import os
-import urllib.parse
+import tempfile
+from pathlib import Path
 from typing import Any
 
 import requests
-from fastapi import APIRouter, BackgroundTasks, Depends, File, HTTPException, Query, UploadFile
+from fastapi import APIRouter, BackgroundTasks, Depends, File, Form, HTTPException, Query, UploadFile
 from pydantic import BaseModel
 
 from src.api.adaptive_routes import AuthenticatedUser, require_role
+from src.config import get_settings
 from src.services.quiz_generator import generate_quizzes_from_slides_task
+from src.services.rag_ingestion_adapters import (
+    OpenAIEmbeddingProvider,
+    extract_page_with_ocr,
+    render_page_preview,
+)
+from src.services.rag_ingestion_service import CorpusDocument, RagIngestionRunner
+from src.services.rag_supabase_repository import SupabaseRagError, SupabaseRagRepository
 from src.services.supabase_config import get_backend_supabase_config
 
 logger = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/materials", tags=["Material Management"])
+
+
+def _rag_repository() -> SupabaseRagRepository:
+    config = get_backend_supabase_config(allow_stub=False)
+    return SupabaseRagRepository(url=config.url, secret_key=config.secret_key)
+
+
+def _rag_runner(repository: SupabaseRagRepository) -> RagIngestionRunner:
+    settings = get_settings()
+    return RagIngestionRunner(
+        repository=repository,
+        embedder=OpenAIEmbeddingProvider(os.environ.get("OPENAI_API_KEY") or settings.openai_api_key),
+        page_extractor=lambda pdf, page: extract_page_with_ocr(
+            pdf,
+            page,
+            dpi=settings.ocr_dpi,
+            lang=settings.ocr_lang,
+            tesseract_cmd=settings.tesseract_cmd or None,
+        ),
+        preview_renderer=render_page_preview,
+        chunk_chars=settings.rag_chunk_chars,
+        overlap_chars=settings.rag_chunk_overlap_chars,
+        ocr_workers=4,
+    )
+
+
+def _run_uploaded_rag_ingestion(
+    document: CorpusDocument,
+    course_id: str,
+    material_id: str,
+    job_id: str,
+) -> None:
+    try:
+        repository = _rag_repository()
+        _rag_runner(repository).ingest_document(
+            document,
+            course_id=course_id,
+            existing_ingestion=(material_id, job_id),
+        )
+    except Exception:
+        logger.exception("RAG ingestion job %s failed", job_id)
+    finally:
+        document.pdf_path.unlink(missing_ok=True)
 
 
 class QuizGenRequest(BaseModel):
@@ -293,58 +346,100 @@ def download_and_ingest(storage_path: str, filename: str) -> None:
             logger.info(f"Cleaned up temp file at {temp_path}")
 
 
-@router.post("/upload", status_code=202)
-async def upload_material(
-    file: UploadFile = File(...),
-    background_tasks: BackgroundTasks = BackgroundTasks(),
+@router.get("/jobs/{job_id}")
+def get_rag_ingestion_job(
+    job_id: str,
     user: AuthenticatedUser = Depends(require_role(["mentor", "admin", "dev"])),
 ):
-    """
-    Upload a new slide PDF file, save to Supabase Storage, and trigger ingestion.
-    """
-    if not file.filename.endswith(".pdf"):
-        raise HTTPException(status_code=400, detail="Only PDF files are supported.")
+    try:
+        job = _rag_repository().get_job(job_id)
+    except (RuntimeError, SupabaseRagError) as exc:
+        raise HTTPException(status_code=503, detail="Không thể tải trạng thái ingest.") from exc
+    if not job:
+        raise HTTPException(status_code=404, detail="Không tìm thấy ingestion job.")
+    return job
 
-    config = get_backend_supabase_config(allow_stub=True)
-    if config.is_stub:
-        raise HTTPException(status_code=503, detail="Supabase connection is not configured.")
 
-    supabase_url = config.url
-    supabase_api_key = config.secret_key
-
-    # Upload to Supabase Storage in slide-images bucket at path pdfs/{filename}
-    filename = file.filename
-    dest_path = f"pdfs/{filename}"
-    upload_url = f"{supabase_url}/storage/v1/object/slide-images/{urllib.parse.quote(dest_path)}"
-
+@router.post("/upload", status_code=202)
+async def upload_material(
+    background_tasks: BackgroundTasks,
+    file: UploadFile = File(...),
+    grade_level: int = Form(..., alias="gradeLevel"),
+    subject_code: str = Form(..., alias="subjectCode"),
+    title: str = Form(...),
+    user: AuthenticatedUser = Depends(require_role(["mentor", "admin", "dev"])),
+):
+    """Queue a normalized PDF ingestion and return its durable Supabase job id."""
+    filename = Path(file.filename or "upload.pdf").name
+    if not filename.lower().endswith(".pdf") or file.content_type not in {None, "application/pdf"}:
+        raise HTTPException(status_code=400, detail="Chỉ hỗ trợ tệp PDF.")
+    if grade_level < 1 or grade_level > 6:
+        raise HTTPException(status_code=400, detail="Khối lớp phải nằm trong khoảng 1–6.")
     file_bytes = await file.read()
-    if len(file_bytes) > 25 * 1024 * 1024:
-        raise HTTPException(status_code=400, detail="File size exceeds the 25MB limit.")
+    if not file_bytes or len(file_bytes) > 100 * 1024 * 1024:
+        raise HTTPException(status_code=400, detail="PDF rỗng hoặc vượt quá 100 MB.")
 
-    headers = {
-        "apikey": supabase_api_key,
-        "Authorization": f"Bearer {supabase_api_key}",
-        "Content-Type": "application/pdf",
-        "x-upsert": "true",
-    }
+    temp_file = tempfile.NamedTemporaryFile(prefix="edugap-rag-", suffix=".pdf", delete=False)
+    temp_path = Path(temp_file.name)
+    try:
+        temp_file.write(file_bytes)
+        temp_file.close()
+        import fitz
 
-    logger.info(f"Uploading PDF {filename} to Supabase Storage: {upload_url}")
-    up_resp = requests.post(upload_url, headers=headers, data=file_bytes)
-    if up_resp.status_code not in [200, 201]:
-        logger.error(f"Failed to upload PDF to Storage: {up_resp.status_code} - {up_resp.text}")
-        raise HTTPException(status_code=503, detail="Failed to upload PDF to Supabase Storage.")
-
-    storage_path = f"slide-images/{dest_path}"
-
-    # Queue background task to download and ingest
-    background_tasks.add_task(download_and_ingest, storage_path, filename)
-
-    return {
-        "status": "accepted",
-        "document_name": filename,
-        "storage_path": storage_path,
-        "message": "File uploaded successfully. Indexing RAG pipeline is running in the background.",
-    }
+        with fitz.open(temp_path) as pdf:
+            page_count = pdf.page_count
+        repository = _rag_repository()
+        course_id = "00000000-0000-0000-0000-000000000001"
+        scope_id = repository.resolve_scope(
+            course_id=course_id,
+            grade_level=grade_level,
+            subject_code=subject_code,
+        )
+        checksum = hashlib.sha256(file_bytes).hexdigest()
+        existing = repository.find_published_material(scope_id=scope_id, checksum=checksum)
+        if existing:
+            temp_path.unlink(missing_ok=True)
+            return {
+                "status": "skipped",
+                "materialId": existing["id"],
+                "jobId": None,
+                "message": "Tài liệu có cùng checksum đã được xuất bản.",
+            }
+        material_id, job_id = repository.start_ingestion(
+            course_id=course_id,
+            scope_id=scope_id,
+            title=title.strip(),
+            source_filename=filename,
+            source_checksum=checksum,
+            edition="Dashboard upload",
+            page_count=page_count,
+        )
+        repository.upload_source(material_id, temp_path)
+        document = CorpusDocument(
+            title=title.strip(),
+            pdf_path=temp_path,
+            grade_level=grade_level,
+            subject_code=subject_code,
+            expected_pages=page_count,
+            edition="Dashboard upload",
+        )
+        background_tasks.add_task(
+            _run_uploaded_rag_ingestion,
+            document,
+            course_id,
+            material_id,
+            job_id,
+        )
+        return {"status": "accepted", "materialId": material_id, "jobId": job_id}
+    except HTTPException:
+        temp_file.close()
+        temp_path.unlink(missing_ok=True)
+        raise
+    except Exception as exc:
+        temp_file.close()
+        temp_path.unlink(missing_ok=True)
+        logger.exception("Unable to queue RAG upload")
+        raise HTTPException(status_code=503, detail="Không thể tạo ingestion job.") from exc
 
 
 @router.post("/{document_name}/generate-quizzes", status_code=202)

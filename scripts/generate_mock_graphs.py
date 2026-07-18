@@ -60,7 +60,12 @@ def main():
                     rest = "-".join(parts[2:])
                     code = f"{track_pref}-{day_pref}-{rest}"
 
-                concepts.append({"code": code, "name": name, "description": desc, "day": day})
+                concepts.append({
+                    "code": code,
+                    "name": name,
+                    "description": desc,
+                    "day": day
+                })
 
     # Parse relations
     relations = []
@@ -89,7 +94,11 @@ def main():
                     parts = target.split("-")
                     target = f"{parts[1]}-{parts[0]}-" + "-".join(parts[2:])
 
-                relations.append({"source": source, "relation": relation_type, "target": target})
+                relations.append({
+                    "source": source,
+                    "relation": relation_type,
+                    "target": target
+                })
 
     # Save seed_concepts.json
     seed_concepts_path = outputs_dir / "seed_concepts.json"

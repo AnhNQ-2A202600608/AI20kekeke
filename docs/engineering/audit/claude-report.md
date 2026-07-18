@@ -11,7 +11,7 @@ The roadmap in the doc is tiered: Tier 0 security/correctness hotfixes, Tier 1 c
 
 Want me to draft the concrete SQL/Python for any specific fix — e.g., the async outbox-based question calibrator, the RPC lock-down, or a CI test that proves SQL/Python equivalence?
 
-# EduGap Adaptive Core — Principal Engineering & EDM Review
+# Mentora Adaptive Core — Principal Engineering & EDM Review
 
 **Reviewer perspective:** Principal AI Engineer / Educational Data Mining
 **Scope reviewed:** `submit_attempt_v3` PL/pgSQL RPC, Python service layer (`adaptive_routes`, `supabase_database`, `graph_propagation`, `forgetting`), the `eval/` suite (exp1–exp5 + synthetic students), `academic-citations.mdx`, changelog, and the Elo calibration plan.

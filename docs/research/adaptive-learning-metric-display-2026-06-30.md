@@ -18,7 +18,7 @@ ASSISTments and related ITS research discuss mastery detection and skill builder
 
 Duolingo Score is a counterexample: it is a user-facing numeric proficiency score. But it is not branded as an internal model value. It is a defined product metric with a bounded scale, progress meaning, and external communication strategy.
 
-This means EduGap should not expose "Elo" globally unless it intentionally creates a stable product metric, e.g. "EduGap Skill Score", with clear semantics and validation.
+This means Mentora should not expose "Elo" globally unless it intentionally creates a stable product metric, e.g. "Mentora Skill Score", with clear semantics and validation.
 
 ### 3. Learning analytics dashboards should be actionable
 
@@ -30,9 +30,9 @@ Research on learning analytics dashboards repeatedly emphasizes actionability. A
 - "Đề xuất làm tiếp"
 - "Mức thử thách: vừa sức / hơi khó / ôn nền"
 
-### 4. EduGap implication
+### 4. Mentora implication
 
-EduGap does not currently have a true global Elo. Existing Elo is per concept and used for adaptive difficulty matching. Showing it in the user profile as if it were a global ability rating is misleading.
+Mentora does not currently have a true global Elo. Existing Elo is per concept and used for adaptive difficulty matching. Showing it in the user profile as if it were a global ability rating is misleading.
 
 ## Recommendation
 

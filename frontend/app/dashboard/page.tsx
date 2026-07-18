@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useState, type CSSProperties } from "react";
+import { useState, type CSSProperties, Suspense } from "react";
 import { ArrowRight, BookOpenText, ChartLineUp, Lightning, Target, TrendUp } from "@phosphor-icons/react";
 import { AppShell, ProgressBar } from "../components/AppShell";
 import { leaderboard, skills, subjectPrograms, subjects, weeklyScores } from "../data";
@@ -14,7 +14,7 @@ function scoreTone(value: number) {
   return "review";
 }
 
-export default function DashboardPage() {
+function DashboardContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [timeRange, setTimeRange] = useState<"7" | "30">("7");
@@ -135,5 +135,13 @@ export default function DashboardPage() {
         </article>
       </section>
     </AppShell>
+  );
+}
+
+export default function DashboardPage() {
+  return (
+    <Suspense fallback={<div>Đang tải...</div>}>
+      <DashboardContent />
+    </Suspense>
   );
 }

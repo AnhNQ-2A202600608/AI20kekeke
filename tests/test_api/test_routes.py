@@ -478,7 +478,7 @@ def mock_auth_db():
 
     mock_user = MagicMock()
     mock_user.id = "user-uuid-123"
-    mock_user.email = "student@edugap.vn"
+    mock_user.email = "student@mentora.vn"
 
     mock_session = MagicMock()
     mock_session.access_token = "mock-jwt-access-token"
@@ -499,7 +499,7 @@ async def test_login_success(client, mock_auth_db):
     # Setup database table mocks
     mock_users_response = MagicMock()
     mock_users_response.data = [
-        {"id": "user-uuid-123", "email": "student@edugap.vn", "full_name": "Test Student", "mssv": "2A202612345"}
+        {"id": "user-uuid-123", "email": "student@mentora.vn", "full_name": "Test Student", "mssv": "2A202612345"}
     ]
 
     mock_roles_response = MagicMock()
@@ -522,7 +522,7 @@ async def test_login_success(client, mock_auth_db):
     app.dependency_overrides[get_adaptive_db] = lambda: mock_auth_db
     try:
         response = await client.post(
-            "/api/v1/auth/login", json={"email": "student@edugap.vn", "password": "Password123!"}
+            "/api/v1/auth/login", json={"email": "student@mentora.vn", "password": "Password123!"}
         )
         assert response.status_code == 200
         data = response.json()
@@ -539,7 +539,7 @@ async def test_auth_me_success(client, mock_auth_db):
     user_id = "d3b07384-d113-4ec5-a58e-0f2d87e07661"
     mock_users_response = MagicMock()
     mock_users_response.data = [
-        {"id": user_id, "email": "student@edugap.vn", "full_name": "Test Student", "mssv": "2A202612345"}
+        {"id": user_id, "email": "student@mentora.vn", "full_name": "Test Student", "mssv": "2A202612345"}
     ]
     mock_roles_response = MagicMock()
     mock_roles_response.data = [{"role_id": 1, "roles": {"code": "student"}}]
@@ -565,7 +565,7 @@ async def test_auth_me_success(client, mock_auth_db):
         data = response.json()
         assert data == {
             "id": user_id,
-            "email": "student@edugap.vn",
+            "email": "student@mentora.vn",
             "full_name": "Test Student",
             "mssv": "2A202612345",
             "role": "student",
@@ -586,7 +586,7 @@ async def test_login_hoang_admin_stub(client):
     try:
         response = await client.post(
             "/api/v1/auth/login",
-            json={"email": "hoang.htb@edugap.vn", "password": "Password123!"},
+            json={"email": "hoang.htb@mentora.vn", "password": "Password123!"},
         )
         assert response.status_code == 200
         data = response.json()
@@ -614,7 +614,7 @@ async def test_login_profile_store_failure_returns_503(client, mock_auth_db):
     try:
         response = await client.post(
             "/api/v1/auth/login",
-            json={"email": "student@edugap.vn", "password": "Password123!"},
+            json={"email": "student@mentora.vn", "password": "Password123!"},
         )
         assert response.status_code == 503
         assert response.json()["detail"] == "Có lỗi xảy ra trong quá trình xử lý đăng nhập."
@@ -628,7 +628,7 @@ async def test_signup_success(client, mock_auth_db):
     mock_check_response.data = []
     mock_insert_response = MagicMock()
     mock_insert_response.data = [
-        {"id": "user-uuid-123", "email": "newstudent@edugap.vn", "full_name": "New Student", "mssv": "2A202611111"}
+        {"id": "user-uuid-123", "email": "newstudent@mentora.vn", "full_name": "New Student", "mssv": "2A202611111"}
     ]
     mock_roles_response = MagicMock()
     mock_roles_response.data = [{"id": 1}]
@@ -657,7 +657,7 @@ async def test_signup_success(client, mock_auth_db):
         response = await client.post(
             "/api/v1/auth/signup",
             json={
-                "email": "newstudent@edugap.vn",
+                "email": "newstudent@mentora.vn",
                 "password": "Password123!",
                 "full_name": "New Student",
                 "mssv": "2A202611111",
@@ -702,7 +702,7 @@ async def test_signup_missing_student_role_rolls_back(client, mock_auth_db):
         response = await client.post(
             "/api/v1/auth/signup",
             json={
-                "email": "newstudent@edugap.vn",
+                "email": "newstudent@mentora.vn",
                 "password": "Password123!",
                 "full_name": "New Student",
                 "mssv": "2A202611111",
@@ -750,7 +750,7 @@ async def test_signup_role_assignment_failure_rolls_back(client, mock_auth_db):
         response = await client.post(
             "/api/v1/auth/signup",
             json={
-                "email": "newstudent@edugap.vn",
+                "email": "newstudent@mentora.vn",
                 "password": "Password123!",
                 "full_name": "New Student",
                 "mssv": "2A202611111",
@@ -778,7 +778,7 @@ async def test_signup_duplicate_email(client, mock_auth_db):
     try:
         response = await client.post(
             "/api/v1/auth/signup",
-            json={"email": "student@edugap.vn", "password": "Password123!", "full_name": "New Student"},
+            json={"email": "student@mentora.vn", "password": "Password123!", "full_name": "New Student"},
         )
         assert response.status_code == 409
         assert "Email này đã được đăng ký" in response.json()["detail"]
@@ -800,7 +800,7 @@ async def test_signup_auth_provider_failure_is_sanitized(client, mock_auth_db):
         response = await client.post(
             "/api/v1/auth/signup",
             json={
-                "email": "newstudent@edugap.vn",
+                "email": "newstudent@mentora.vn",
                 "password": "Password123!",
                 "full_name": "New Student",
                 "mssv": "2A202611111",
@@ -827,7 +827,7 @@ async def test_signup_business_user_store_failure_returns_503(client, mock_auth_
         response = await client.post(
             "/api/v1/auth/signup",
             json={
-                "email": "newstudent@edugap.vn",
+                "email": "newstudent@mentora.vn",
                 "password": "Password123!",
                 "full_name": "New Student",
                 "mssv": "2A202611111",
