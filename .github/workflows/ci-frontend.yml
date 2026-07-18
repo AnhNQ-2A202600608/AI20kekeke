@@ -1,0 +1,102 @@
+name: Frontend CI/CD (Vercel)
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+      - 'blue/*fe*'
+      - 'blue/**/*fe*'
+      - 'blue/*frontend*'
+      - 'blue/**/*frontend*'
+      - trong/test-deploy-and-connect-db
+    paths:
+      - 'frontend/**'
+      - '.github/workflows/ci-frontend.yml'
+  pull_request:
+    branches:
+      - main
+      - dev
+      - 'blue/*fe*'
+      - 'blue/**/*fe*'
+      - 'blue/*frontend*'
+      - 'blue/**/*frontend*'
+      - trong/test-deploy-and-connect-db
+    paths:
+      - 'frontend/**'
+      - '.github/workflows/ci-frontend.yml'
+
+concurrency:
+  group: frontend-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test-and-lint:
+    name: Frontend Test & Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Enable Corepack & pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@10.0.0 --activate
+
+      - name: Install dependencies
+        working-directory: ./frontend
+        run: pnpm install --frozen-lockfile
+
+      - name: Lint with ESLint
+        working-directory: ./frontend
+        run: pnpm lint
+
+      - name: Build Next.js (Local verification)
+        working-directory: ./frontend
+        run: pnpm build
+        env:
+          NEXT_PUBLIC_DEMO_MODE: ${{ github.event_name == 'pull_request' && 'true' || '' }}
+          BACKEND_API_URL: ${{ secrets.BACKEND_API_URL }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY }}
+
+
+
+  deploy:
+    name: Deploy to Vercel
+    needs: test-and-lint
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && (github.ref_name == 'main' || github.ref_name == 'dev' || startsWith(github.ref_name, 'blue/') || github.ref_name == 'trong/test-deploy-and-connect-db')
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Enable Corepack & pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@10.0.0 --activate
+
+      # Set deployment environment variables
+      - name: Set Deployment Environment
+        run: |
+          if [ "${{ github.ref_name }}" = "main" ] || [ "${{ github.ref_name }}" = "blue/main-frontend" ]; then
+            echo "VERCEL_ARGS=--prod" >> $GITHUB_ENV
+          else
+            echo "VERCEL_ARGS=" >> $GITHUB_ENV
+          fi
+
+      - name: Deploy to Vercel (Remote Cloud Build)
+        working-directory: ./frontend
+        run: pnpm dlx vercel deploy ${{ env.VERCEL_ARGS }} --yes --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_ORG_ID: "team_LafIGeSssVHZiDCw6GHQcda6"
+          VERCEL_PROJECT_ID: "prj_SPgxDRRuOhioP6Apsy0hDEoyPaR6"

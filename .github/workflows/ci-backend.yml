@@ -1,0 +1,87 @@
+name: Backend CI
+
+on:
+  push:
+    branches: [main, dev, trong/test-deploy-and-connect-db]
+    paths:
+      - 'src/**'
+      - 'tests/**'
+      - 'requirements.txt'
+      - 'pyproject.toml'
+      - 'uv.lock'
+      - '.github/workflows/ci-backend.yml'
+      - '.github/workflows/manual-backend-verification.yml'
+  pull_request:
+    branches: [main, dev, trong/test-deploy-and-connect-db]
+    paths:
+      - 'src/**'
+      - 'tests/**'
+      - 'requirements.txt'
+      - 'pyproject.toml'
+      - 'uv.lock'
+      - '.github/workflows/ci-backend.yml'
+      - '.github/workflows/manual-backend-verification.yml'
+
+concurrency:
+  group: backend-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  test-and-lint:
+    name: Backend Test & Lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: uv pip install -r requirements.txt
+
+      - name: Lint with ruff
+        run: uv run ruff check src/ tests/
+
+      - name: Generate Mock Graphs for Tests
+        run: uv run python scripts/generate_mock_graphs.py
+
+      - name: Run tests
+        run: uv run pytest tests/ -v --tb=short
+        env:
+          APP_ENV: test
+          OPENAI_API_KEY: test-key
+
+      - name: Run Production Readiness Checker
+        run: uv run python scripts/check_production_ready.py
+
+      # TODO: Re-enable Trivy scanner before production deployment
+      # - name: Run Trivy vulnerability scanner
+      #   uses: aquasecurity/trivy-action@master
+      #   with:
+      #     image-ref: 'c2-app-backend:latest'
+      #     format: 'table'
+      #     exit-code: '1'
+      #     ignore-unfixed: true
+      #     vuln-type: 'os,library'
+      #     severity: 'CRITICAL,HIGH'
+
+      - name: Trigger Render Production CD
+        if: github.event_name == 'push' && github.ref_name == 'main'
+        run: |
+          curl -f -X POST "${{ secrets.RENDER_DEPLOY_HOOK_URL }}"
+
+      - name: Trigger Render Staging CD
+        if: github.event_name == 'push' && (github.ref_name == 'dev' || github.ref_name == 'trong/test-deploy-and-connect-db')
+        run: |
+          curl -f -X POST "${{ secrets.RENDER_DEPLOY_HOOK_URL_STAGING }}"
+          
+
+
+

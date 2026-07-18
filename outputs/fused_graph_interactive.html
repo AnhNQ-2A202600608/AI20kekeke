@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentora Adaptive Curriculum Graph Visualizer</title>
+    
+    <!-- Tailwind CSS CDN for quick UI layouts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Vis Network JS & CSS -->
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    
+    <style>
+        body {
+            background-color: #0b0f19;
+            color: #f8fafc;
+            font-family: system-ui, -apple-system, sans-serif;
+            overflow: hidden;
+        }
+        #mynetwork {
+            width: 100%;
+            height: 100%;
+            background-color: #0b0f19;
+        }
+        /* Glowing borders for the legend and dashboard panels */
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(56, 189, 248, 0.15);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        .glow-cyan {
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+        }
+        /* Customize scrollbars */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.1);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(56, 189, 248, 0.3);
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(56, 189, 248, 0.5);
+        }
+    </style>
+</head>
+<body class="h-screen w-screen flex flex-col">
+
+    <!-- Top Header -->
+    <header class="h-16 border-b border-slate-800 bg-slate-900/50 px-6 flex items-center justify-between z-10 glass-panel">
+        <div class="flex items-center gap-3">
+            <span class="text-2xl">🎓</span>
+            <div>
+                <h1 class="text-lg font-bold text-sky-400">Mentora Curriculum Graph</h1>
+                <p class="text-xs text-slate-400">Interactive DAG Visualization (45 Concepts, 45 Relations)</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-4">
+            <input 
+                type="text" 
+                id="search-input" 
+                placeholder="Search concepts (e.g. RAG, Elo)..." 
+                class="bg-slate-950 border border-slate-700 text-slate-100 rounded-md px-3 py-1 text-sm focus:outline-none focus:border-sky-400 w-64"
+                oninput="handleSearch()"
+            >
+            <button 
+                onclick="resetHighlight()"
+                class="bg-slate-800 hover:bg-slate-700 text-xs px-3 py-1.5 rounded-md font-semibold text-slate-300 border border-slate-700 transition"
+            >
+                Reset Visuals
+            </button>
+        </div>
+    </header>
+
+    <div class="flex-1 flex overflow-hidden relative">
+        <!-- Main Network Area -->
+        <div class="flex-1 h-full relative">
+            <div id="mynetwork"></div>
+            
+            <!-- Float-in Legend Card -->
+            <div class="absolute bottom-4 left-4 p-4 rounded-xl glass-panel max-w-sm z-10 text-xs pointer-events-auto">
+                <h3 class="font-bold text-slate-300 mb-2 border-b border-slate-800 pb-1 flex items-center justify-between">
+                    <span>LEGEND & CONTROLS</span>
+                    <span class="text-slate-500 font-normal">Scroll to Zoom</span>
+                </h3>
+                <div class="space-y-1.5">
+                    <div class="flex items-center gap-2">
+                        <span class="w-3.5 h-3.5 rounded-md border-2 border-sky-400 bg-slate-900"></span>
+                        <span class="text-slate-300 font-semibold">General AI Core</span>
+                        <span class="text-slate-500 ml-auto">Days 1–16</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="w-3.5 h-3.5 rounded-md border-2 border-amber-400 bg-slate-900"></span>
+                        <span class="text-slate-300 font-semibold">Track 1: Product & Business</span>
+                        <span class="text-slate-500 ml-auto">Days 17–24</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="w-3.5 h-3.5 rounded-md border-2 border-emerald-400 bg-slate-900"></span>
+                        <span class="text-slate-300 font-semibold">Track 2: AI Data & System Architecture</span>
+                        <span class="text-slate-500 ml-auto">Days 17–24</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="w-3.5 h-3.5 rounded-md border-2 border-rose-400 bg-slate-900"></span>
+                        <span class="text-slate-300 font-semibold">Track 3: Advanced AI / Agent Eng.</span>
+                        <span class="text-slate-500 ml-auto">Days 17–24</span>
+                    </div>
+                    <div class="border-t border-slate-800 my-2 pt-2 text-[10px] text-slate-400 space-y-1">
+                        <div class="flex items-center gap-2">
+                            <span class="w-6 border-t-2 border-sky-400 inline-block"></span>
+                            <span>Prerequisite Relation (Solid Arrow)</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-6 border-t-2 border-dashed border-slate-400 inline-block"></span>
+                            <span>Conjunction Relation (Dashed Arrow)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar Details Panel -->
+        <aside id="details-panel" class="w-96 border-l border-slate-800 bg-slate-900/40 p-6 flex flex-col z-10 glass-panel overflow-y-auto">
+            <div id="no-selection" class="flex-1 flex flex-col items-center justify-center text-center text-slate-500 py-20">
+                <span class="text-4xl mb-4">🔍</span>
+                <p class="font-medium text-slate-400">No Concept Selected</p>
+                <p class="text-xs max-w-xs mt-1">Click a node in the graph or search above to inspect curriculum metadata and prerequisites.</p>
+            </div>
+            
+            <div id="selection-details" class="hidden space-y-5">
+                <div>
+                    <div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-sky-400 mb-1" id="node-tag">
+                        DAY 1 &bull; GENERAL CORE
+                    </div>
+                    <h2 class="text-2xl font-bold text-white leading-tight" id="node-name">Self-Attention Mechanism</h2>
+                    <code class="text-xs bg-slate-950 text-sky-300 px-2 py-0.5 rounded border border-slate-800 mt-2 inline-block" id="node-code">self-attention</code>
+                </div>
+
+                <div class="border-t border-slate-800 pt-4">
+                    <h4 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Description</h4>
+                    <p class="text-sm text-slate-300 leading-relaxed" id="node-desc">
+                        Core mechanism of Transformer computing similarity between tokens using Q, K, V matrices.
+                    </p>
+                </div>
+
+                <div class="border-t border-slate-800 pt-4 space-y-3">
+                    <div>
+                        <h4 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Prerequisites (Parents)</h4>
+                        <div class="flex flex-wrap gap-1.5" id="node-parents">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Unlocks (Children)</h4>
+                        <div class="flex flex-wrap gap-1.5" id="node-children">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="border-t border-slate-800 pt-4">
+                    <button 
+                        onclick="highlightNeighbors()"
+                        class="w-full bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-sm py-2 rounded-lg transition shadow-lg shadow-sky-500/10 hover:shadow-sky-500/25"
+                    >
+                        Highlight Study Path
+                    </button>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Data Injection & Vis.js Controller -->
+    <script>
+        const rawNodes = [{"id": "ai-taxonomy", "label": "AI Taxonomy\n(Day 1)", "title": "<b>AI Taxonomy</b><br>Day 1 - General AI Core<br><br>Classification of AI levels, from classic rule-based systems to agentic systems.", "day": 1, "track": "General", "track_desc": "General AI Core", "description": "Classification of AI levels, from classic rule-based systems to agentic systems.", "color": {"background": "#0f172a", "border": "#38bdf8", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#38bdf8"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 0, "y": 200, "fixed": {"x": true, "y": false}}, {"id": "self-attention", "label": "Self-Attention Mechanism\n(Day 1)", "title": "<b>Self-Attention Mechanism</b><br>Day 1 - General AI Core<br><br>Core mechanism of Transformer computing similarity between tokens using Q, K, V matrices.", "day": 1, "track": "General", "track_desc": "General AI Core", "description": "Core mechanism of Transformer computing similarity between tokens using Q, K, V matrices.", "color": {"background": "#0f172a", "border": "#38bdf8", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#38bdf8"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 0, "y": 200, "fixed": {"x": true, "y": false}}, {"id": "transformer-architecture", "label": "Transformer Architecture\n(Day 1)", "title": "<b>Transformer Architecture</b><br>Day 1 - General AI Core<br><br>Revolutionary deep learning architecture based on self-attention, covering encoder and decoder models.", "day": 1, "track": "General", "track_desc": "General AI Core", "description": "Revolutionary deep learning architecture based on self-attention, covering encoder and decoder models.", "color": {"background": "#0f172a", "border": "#38bdf8", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#38bdf8"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 0, "y": 200, "fixed": {"x": true, "y": false}}, {"id": "token-economy", "label": "Token Economy\n(Day 1)", "title": "<b>Token Economy</b><br>Day 1 - General AI Core<br><br>Understanding tokenization, context window limits, and cost/latency trade-offs in LLM API usage.", "day": 1, "track": "General", "track_desc": "General AI Core", "description": "Understanding tokenization, context window limits, and cost/latency trade-offs in LLM API usage.", "color": {"background": "#0f172a", "border": "#38bdf8", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#38bdf8"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 0, "y": 200, "fixed": {"x": true, "y": false}}, {"id": "ai-product-lifecycle", "label": "AI Product Lifecycle\n(Day 2)", "title": "<b>AI Product Lifecycle</b><br>Day 2 - General AI Core<br><br>The end-to-end process of discovering, statements, building, and deploying human-centered AI products.", "day": 2, "track": "General", "track_desc": "General AI Core", "description": "The end-to-end process of discovering, statements, building, and deploying human-centered AI products.", "color": {"background": "#0f172a", "border": "#38bdf8", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#38bdf8"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 200, "y": 200, "fixed": {"x": true, "y": false}}, {"id": "solution-levels", "label": "Rule/Workflow/Agent Selection\n(Day 2)", "title": "<b>Rule/Workflow/Agent Selection</b><br>Day 2 - General AI Core<br><br>Decision matrix to choose between Rule-based, Workflow, or Agentic architectures based on task complexity.", "day": 2, "track": "General", "track_desc": "General AI Core", "description": "Decision matrix to choose between Rule-based, Workflow, or Agentic architectures based on task complexity.", "color": {"background": "#0f172a", "border": "#38bdf8", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#38bdf8"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 200, "y": 200, "fixed": {"x": true, "y": false}}, {"id": "agentic-agent-react", "label": "ReAct Reasoning Pattern\n(Day 3)", "title": "<b>ReAct Reasoning Pattern</b><br>Day 3 - General AI Core<br><br>Reasoning and acting loop (Thought-Action-Observation) for autonomous agents.", "day": 3, "track": "General", "track_desc": "General AI Core", "description": "Reasoning and acting loop (Thought-Action-Observation) for autonomous agents.", "color": {"background": "#0f172a", "border": "#38bdf8", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#38bdf8"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 400, "y": 200, "fixed": {"x": true, "y": false}}, {"id": "tool-calling", "label": "Tool Calling API\n(Day 3)", "title": "<b>Tool Calling API</b><br>Day 3 - General AI Core<br><br>How LLMs declare, parse, and execute external tools using structured JSON schemas.", "day": 3, "track": "General", "track_desc": "General AI Core", "description": "How LLMs declare, parse, and execute external tools using structured JSON schemas.", "color": {"background": "#0f172a", "border": "#38bdf8", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#38bdf8"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 400, "y": 200, "fixed": {"x": true, "y": false}}, {"id": "prompt-engineering", "label": "Prompt Engineering\n(Day 4)", "title": "<b>Prompt Engineering</b><br>Day 4 - General AI Core<br><br>Techniques for guiding LLMs, including system prompts, XML structuring, few-shot learning, and Chain-of-Thought.", "day": 4, "track": "General", "track_desc": "General AI Core", "description": "Techniques for guiding LLMs, including system prompts, XML structuring, few-shot learning, and Chain-of-Thought.", "color": {"background": "#0f172a", "border": "#38bdf8", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#38bdf8"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 600, "y": 200, "fixed": {"x": true, "y": false}}, {"id": "context-engineering", "label": "Context Engineering\n(Day 4)", "title": "<b>Context Engineering</b><br>Day 4 - General AI Core<br><br>Strategies to manage context window, mitigate Lost-in-the-Middle phenomenon, and compress history.", "day": 4, "track": "General", "track_desc": "General AI Core", "description": "Strategies to manage context window, mitigate Lost-in-the-Middle phenomenon, and compress history.", "color": {"background": "#0f172a", "border": "#38bdf8", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#38bdf8"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 600, "y": 200, "fixed": {"x": true, "y": false}}, {"id": "ai-product-uncertainty", "label": "AI Product Uncertainty & UX\n(Day 5)", "title": "<b>AI Product Uncertainty & UX</b><br>Day 5 - General AI Core<br><br>Designing user experiences that handle LLM uncertainty, precision/recall trade-offs, and graceful failures.", "day": 5, "track": "General", "track_desc": "General AI Core", "description": "Designing user experiences that handle LLM uncertainty, precision/recall trade-offs, and graceful failures.", "color": {"background": "#0f172a", "border": "#38bdf8", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#38bdf8"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 800, "y": 200, "fixed": {"x": true, "y": false}}, {"id": "vector-embeddings", "label": "Vector Embeddings\n(Day 7)", "title": "<b>Vector Embeddings</b><br>Day 7 - General AI Core<br><br>Mathematical representation of text in high-dimensional vector spaces, measured by cosine similarity.", "day": 7, "track": "General", "track_desc": "General AI Core", "description": "Mathematical representation of text in high-dimensional vector spaces, measured by cosine similarity.", "color": {"background": "#0f172a", "border": "#38bdf8", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#38bdf8"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 1200, "y": 200, "fixed": {"x": true, "y": false}}, {"id": "vector-databases", "label": "Vector Databases\n(Day 7)", "title": "<b>Vector Databases</b><br>Day 7 - General AI Core<br><br>Specialized databases for indexing, storing, and performing fast similarity search on vector embeddings.", "day": 7, "track": "General", "track_desc": "General AI Core", "description": "Specialized databases for indexing, storing, and performing fast similarity search on vector embeddings.", "color": {"background": "#0f172a", "border": "#38bdf8", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#38bdf8"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 1200, "y": 200, "fixed": {"x": true, "y": false}}, {"id": "basic-rag", "label": "Basic RAG Pipeline\n(Day 8)", "title": "<b>Basic RAG Pipeline</b><br>Day 8 - General AI Core<br><br>Retrieval-Augmented Generation basics, including document ingestion, chunking, and context-based prompting.", "day": 8, "track": "General", "track_desc": "General AI Core", "description": "Retrieval-Augmented Generation basics, including document ingestion, chunking, and context-based prompting.", "color": {"background": "#0f172a", "border": "#38bdf8", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#38bdf8"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 1400, "y": 200, "fixed": {"x": true, "y": false}}, {"id": "advanced-rag", "label": "Advanced RAG Pipelines\n(Day 8)", "title": "<b>Advanced RAG Pipelines</b><br>Day 8 - General AI Core<br><br>Advanced techniques such as query transformation, reranking, hybrid search, and semantic caching.", "day": 8, "track": "General", "track_desc": "General AI Core", "description": "Advanced techniques such as query transformation, reranking, hybrid search, and semantic caching.", "color": {"background": "#0f172a", "border": "#38bdf8", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#38bdf8"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 1400, "y": 200, "fixed": {"x": true, "y": false}}, {"id": "multi-agent-architectures", "label": "Multi-Agent Architectures\n(Day 9)", "title": "<b>Multi-Agent Architectures</b><br>Day 9 - General AI Core<br><br>Designing systems with multiple cooperating agents, routers, and specialized coordinators.", "day": 9, "track": "General", "track_desc": "General AI Core", "description": "Designing systems with multiple cooperating agents, routers, and specialized coordinators.", "color": {"background": "#0f172a", "border": "#38bdf8", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#38bdf8"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 1600, "y": 200, "fixed": {"x": true, "y": false}}, {"id": "data-pipelines-observability", "label": "Data Pipelines & Observability\n(Day 10)", "title": "<b>Data Pipelines & Observability</b><br>Day 10 - General AI Core<br><br>Data pipelines for ETL operations, logging, and observability of LLM interactions.", "day": 10, "track": "General", "track_desc": "General AI Core", "description": "Data pipelines for ETL operations, logging, and observability of LLM interactions.", "color": {"background": "#0f172a", "border": "#38bdf8", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#38bdf8"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 1800, "y": 200, "fixed": {"x": true, "y": false}}, {"id": "guardrails-safety", "label": "AI Guardrails & Safety\n(Day 11)", "title": "<b>AI Guardrails & Safety</b><br>Day 11 - General AI Core<br><br>Input/output validation, prompt injection detection, and content filtering for safe AI deployment.", "day": 11, "track": "General", "track_desc": "General AI Core", "description": "Input/output validation, prompt injection detection, and content filtering for safe AI deployment.", "color": {"background": "#0f172a", "border": "#38bdf8", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#38bdf8"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 2000, "y": 200, "fixed": {"x": true, "y": false}}, {"id": "cloud-infrastructure-agents", "label": "Cloud Infrastructure for Agents\n(Day 12)", "title": "<b>Cloud Infrastructure for Agents</b><br>Day 12 - General AI Core<br><br>Deploying agents onto cloud platforms using serverless functions, Docker containers, and scalable backends.", "day": 12, "track": "General", "track_desc": "General AI Core", "description": "Deploying agents onto cloud platforms using serverless functions, Docker containers, and scalable backends.", "color": {"background": "#0f172a", "border": "#38bdf8", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#38bdf8"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 2200, "y": 200, "fixed": {"x": true, "y": false}}, {"id": "observability-stack", "label": "LLM Observability Stack\n(Day 13)", "title": "<b>LLM Observability Stack</b><br>Day 13 - General AI Core<br><br>Monitoring latency, token usage, cost tracking, and system performance at production scale.", "day": 13, "track": "General", "track_desc": "General AI Core", "description": "Monitoring latency, token usage, cost tracking, and system performance at production scale.", "color": {"background": "#0f172a", "border": "#38bdf8", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#38bdf8"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 2400, "y": 200, "fixed": {"x": true, "y": false}}, {"id": "ai-evaluation", "label": "AI Evaluation & Benchmarking\n(Day 14)", "title": "<b>AI Evaluation & Benchmarking</b><br>Day 14 - General AI Core<br><br>Constructing golden datasets, LLM-as-a-judge patterns, and quantitative evaluation of AI systems.", "day": 14, "track": "General", "track_desc": "General AI Core", "description": "Constructing golden datasets, LLM-as-a-judge patterns, and quantitative evaluation of AI systems.", "color": {"background": "#0f172a", "border": "#38bdf8", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#38bdf8"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 2600, "y": 200, "fixed": {"x": true, "y": false}}, {"id": "t1-d17-prd-pmf", "label": "[T1] PRD & Product-Market Fit\n(Day 17)", "title": "<b>[T1] PRD & Product-Market Fit</b><br>Day 17 - Product & Business<br><br>Analyzing product requirements and identifying PMF for AI applications.", "day": 17, "track": "Track 1", "track_desc": "Product & Business", "description": "Analyzing product requirements and identifying PMF for AI applications.", "color": {"background": "#0f172a", "border": "#fbbf24", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#fbbf24"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 3200, "y": 0, "fixed": {"x": true, "y": false}}, {"id": "t2-d17-data-ingestion-strategy", "label": "[T2] AI Data Ingestion Strategy\n(Day 17)", "title": "<b>[T2] AI Data Ingestion Strategy</b><br>Day 17 - AI Data & Architecture<br><br>Designing robust ingestion pipelines and data models for unstructured and structured AI datasets.", "day": 17, "track": "Track 2", "track_desc": "AI Data & Architecture", "description": "Designing robust ingestion pipelines and data models for unstructured and structured AI datasets.", "color": {"background": "#0f172a", "border": "#34d399", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#34d399"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 3200, "y": 200, "fixed": {"x": true, "y": false}}, {"id": "t3-d17-agent-memory-systems", "label": "[T3] Agent Memory Systems\n(Day 17)", "title": "<b>[T3] Agent Memory Systems</b><br>Day 17 - Advanced AI / Agents<br><br>Managing short-term state, conversational history, and long-term vector/relational memories for agents.", "day": 17, "track": "Track 3", "track_desc": "Advanced AI / Agents", "description": "Managing short-term state, conversational history, and long-term vector/relational memories for agents.", "color": {"background": "#0f172a", "border": "#f87171", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#f87171"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 3200, "y": 400, "fixed": {"x": true, "y": false}}, {"id": "t1-d18-financial-modeling-roi", "label": "[T1] AI Financial Modeling & ROI\n(Day 18)", "title": "<b>[T1] AI Financial Modeling & ROI</b><br>Day 18 - Product & Business<br><br>Calculating return on investment, compute cost projection, and token cost economics for AI features.", "day": 18, "track": "Track 1", "track_desc": "Product & Business", "description": "Calculating return on investment, compute cost projection, and token cost economics for AI features.", "color": {"background": "#0f172a", "border": "#fbbf24", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#fbbf24"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 3400, "y": 0, "fixed": {"x": true, "y": false}}, {"id": "t2-d18-data-lakehouses", "label": "[T2] Data Lakehouses & Production Data\n(Day 18)", "title": "<b>[T2] Data Lakehouses & Production Data</b><br>Day 18 - AI Data & Architecture<br><br>Implementing data lakehouses (e.g. Delta Lake, Iceberg) and production pipeline design for massive scale AI apps.", "day": 18, "track": "Track 2", "track_desc": "AI Data & Architecture", "description": "Implementing data lakehouses (e.g. Delta Lake, Iceberg) and production pipeline design for massive scale AI apps.", "color": {"background": "#0f172a", "border": "#34d399", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#34d399"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 3400, "y": 200, "fixed": {"x": true, "y": false}}, {"id": "t3-d18-production-rag", "label": "[T3] Production RAG Pipelines\n(Day 18)", "title": "<b>[T3] Production RAG Pipelines</b><br>Day 18 - Advanced AI / Agents<br><br>Building reliable retrieval architectures with advanced document parsing and chunking for production environments.", "day": 18, "track": "Track 3", "track_desc": "Advanced AI / Agents", "description": "Building reliable retrieval architectures with advanced document parsing and chunking for production environments.", "color": {"background": "#0f172a", "border": "#f87171", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#f87171"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 3400, "y": 400, "fixed": {"x": true, "y": false}}, {"id": "t1-d19-stakeholder-management", "label": "[T1] Stakeholder Management & Communication\n(Day 19)", "title": "<b>[T1] Stakeholder Management & Communication</b><br>Day 19 - Product & Business<br><br>Aligning internal teams, managing user expectations, and presenting AI model trade-offs to stakeholders.", "day": 19, "track": "Track 1", "track_desc": "Product & Business", "description": "Aligning internal teams, managing user expectations, and presenting AI model trade-offs to stakeholders.", "color": {"background": "#0f172a", "border": "#fbbf24", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#fbbf24"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 3600, "y": 0, "fixed": {"x": true, "y": false}}, {"id": "t2-d19-vector-feature-stores", "label": "[T2] Vector & Feature Stores\n(Day 19)", "title": "<b>[T2] Vector & Feature Stores</b><br>Day 19 - AI Data & Architecture<br><br>Using feature stores and vector databases to manage low-latency data access and embeddings for AI models.", "day": 19, "track": "Track 2", "track_desc": "AI Data & Architecture", "description": "Using feature stores and vector databases to manage low-latency data access and embeddings for AI models.", "color": {"background": "#0f172a", "border": "#34d399", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#34d399"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 3600, "y": 200, "fixed": {"x": true, "y": false}}, {"id": "t3-d19-graph-rag", "label": "[T3] GraphRAG & Knowledge Graphs\n(Day 19)", "title": "<b>[T3] GraphRAG & Knowledge Graphs</b><br>Day 19 - Advanced AI / Agents<br><br>Combining Knowledge Graphs with RAG, using entity/relation extraction and graph traversals for deeper queries.", "day": 19, "track": "Track 3", "track_desc": "Advanced AI / Agents", "description": "Combining Knowledge Graphs with RAG, using entity/relation extraction and graph traversals for deeper queries.", "color": {"background": "#0f172a", "border": "#f87171", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#f87171"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 3600, "y": 400, "fixed": {"x": true, "y": false}}, {"id": "t1-d20-roadmap-execution", "label": "[T1] Roadmap Execution\n(Day 20)", "title": "<b>[T1] Roadmap Execution</b><br>Day 20 - Product & Business<br><br>Structuring milestones, handling uncertainties, and executing agile iterations for AI systems.", "day": 20, "track": "Track 1", "track_desc": "Product & Business", "description": "Structuring milestones, handling uncertainties, and executing agile iterations for AI systems.", "color": {"background": "#0f172a", "border": "#fbbf24", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#fbbf24"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 3800, "y": 0, "fixed": {"x": true, "y": false}}, {"id": "t2-d20-model-serving-optimization", "label": "[T2] Model Serving & Optimization\n(Day 20)", "title": "<b>[T2] Model Serving & Optimization</b><br>Day 20 - AI Data & Architecture<br><br>Inference optimization techniques including quantization, batching, and high-throughput engines like vLLM.", "day": 20, "track": "Track 2", "track_desc": "AI Data & Architecture", "description": "Inference optimization techniques including quantization, batching, and high-throughput engines like vLLM.", "color": {"background": "#0f172a", "border": "#34d399", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#34d399"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 3800, "y": 200, "fixed": {"x": true, "y": false}}, {"id": "t3-d20-multi-agent-architectures", "label": "[T3] Multi-Agent Architectures\n(Day 20)", "title": "<b>[T3] Multi-Agent Architectures</b><br>Day 20 - Advanced AI / Agents<br><br>Designing systems with multiple cooperating agents, routers, and specialized coordinators.", "day": 20, "track": "Track 3", "track_desc": "Advanced AI / Agents", "description": "Designing systems with multiple cooperating agents, routers, and specialized coordinators.", "color": {"background": "#0f172a", "border": "#f87171", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#f87171"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 3800, "y": 400, "fixed": {"x": true, "y": false}}, {"id": "t1-d21-governance-risk", "label": "[T1] AI Governance & Risk\n(Day 21)", "title": "<b>[T1] AI Governance & Risk</b><br>Day 21 - Product & Business<br><br>Assessing algorithmic bias, intellectual property, data lineage, and risk mitigation strategies in AI products.", "day": 21, "track": "Track 1", "track_desc": "Product & Business", "description": "Assessing algorithmic bias, intellectual property, data lineage, and risk mitigation strategies in AI products.", "color": {"background": "#0f172a", "border": "#fbbf24", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#fbbf24"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 4000, "y": 0, "fixed": {"x": true, "y": false}}, {"id": "t2-d21-cicd-ai-systems", "label": "[T2] CI/CD for AI Systems\n(Day 21)", "title": "<b>[T2] CI/CD for AI Systems</b><br>Day 21 - AI Data & Architecture<br><br>Continuous integration and deployment pipelines for ML models, data schemas, and backend applications.", "day": 21, "track": "Track 2", "track_desc": "AI Data & Architecture", "description": "Continuous integration and deployment pipelines for ML models, data schemas, and backend applications.", "color": {"background": "#0f172a", "border": "#34d399", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#34d399"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 4000, "y": 200, "fixed": {"x": true, "y": false}}, {"id": "t3-d21-lora-qlora-tuning", "label": "[T3] LoRA & QLoRA Fine-tuning\n(Day 21)", "title": "<b>[T3] LoRA & QLoRA Fine-tuning</b><br>Day 21 - Advanced AI / Agents<br><br>Parameter-efficient fine-tuning (PEFT) methods for customizing LLMs with low computational cost.", "day": 21, "track": "Track 3", "track_desc": "Advanced AI / Agents", "description": "Parameter-efficient fine-tuning (PEFT) methods for customizing LLMs with low computational cost.", "color": {"background": "#0f172a", "border": "#f87171", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#f87171"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 4000, "y": 400, "fixed": {"x": true, "y": false}}, {"id": "t1-d22-compliance", "label": "[T1] AI Compliance\n(Day 22)", "title": "<b>[T1] AI Compliance</b><br>Day 22 - Product & Business<br><br>Ensuring products adhere to global standards (e.g. EU AI Act, GDPR, local regulations) and compliance audits.", "day": 22, "track": "Track 1", "track_desc": "Product & Business", "description": "Ensuring products adhere to global standards (e.g. EU AI Act, GDPR, local regulations) and compliance audits.", "color": {"background": "#0f172a", "border": "#fbbf24", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#fbbf24"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 4200, "y": 0, "fixed": {"x": true, "y": false}}, {"id": "t2-d22-llmops-versioning", "label": "[T2] LLMOps & Prompt Versioning\n(Day 22)", "title": "<b>[T2] LLMOps & Prompt Versioning</b><br>Day 22 - AI Data & Architecture<br><br>Continuous integration, deployment, and versioning of prompts, schemas, and models in production.", "day": 22, "track": "Track 2", "track_desc": "AI Data & Architecture", "description": "Continuous integration, deployment, and versioning of prompts, schemas, and models in production.", "color": {"background": "#0f172a", "border": "#34d399", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#34d399"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 4200, "y": 200, "fixed": {"x": true, "y": false}}, {"id": "t3-d22-alignment-dpo", "label": "[T3] LLM Alignment & DPO\n(Day 22)", "title": "<b>[T3] LLM Alignment & DPO</b><br>Day 22 - Advanced AI / Agents<br><br>Direct Preference Optimization and human alignment strategies to steer model behavior.", "day": 22, "track": "Track 3", "track_desc": "Advanced AI / Agents", "description": "Direct Preference Optimization and human alignment strategies to steer model behavior.", "color": {"background": "#0f172a", "border": "#f87171", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#f87171"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 4200, "y": 400, "fixed": {"x": true, "y": false}}, {"id": "t1-d23-ai-adoption", "label": "[T1] AI Adoption Tactics\n(Day 23)", "title": "<b>[T1] AI Adoption Tactics</b><br>Day 23 - Product & Business<br><br>Designing change management strategies and educational materials to increase user adoption of AI systems.", "day": 23, "track": "Track 1", "track_desc": "Product & Business", "description": "Designing change management strategies and educational materials to increase user adoption of AI systems.", "color": {"background": "#0f172a", "border": "#fbbf24", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#fbbf24"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 4400, "y": 0, "fixed": {"x": true, "y": false}}, {"id": "t2-d23-observability-monitoring", "label": "[T2] LLM Monitoring & Observability Stack\n(Day 23)", "title": "<b>[T2] LLM Monitoring & Observability Stack</b><br>Day 23 - AI Data & Architecture<br><br>Monitoring latency, token usage, cost tracking, and system performance at production scale.", "day": 23, "track": "Track 2", "track_desc": "AI Data & Architecture", "description": "Monitoring latency, token usage, cost tracking, and system performance at production scale.", "color": {"background": "#0f172a", "border": "#34d399", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#34d399"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 4400, "y": 200, "fixed": {"x": true, "y": false}}, {"id": "t3-d23-langgraph-agents", "label": "[T3] LangGraph Agents & Workflows\n(Day 23)", "title": "<b>[T3] LangGraph Agents & Workflows</b><br>Day 23 - Advanced AI / Agents<br><br>Implementing complex stateful multi-agent systems and cyclic workflows using LangGraph.", "day": 23, "track": "Track 3", "track_desc": "Advanced AI / Agents", "description": "Implementing complex stateful multi-agent systems and cyclic workflows using LangGraph.", "color": {"background": "#0f172a", "border": "#f87171", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#f87171"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 4400, "y": 400, "fixed": {"x": true, "y": false}}, {"id": "t1-d24-responsible-ai", "label": "[T1] Responsible AI & Ethics\n(Day 24)", "title": "<b>[T1] Responsible AI & Ethics</b><br>Day 24 - Product & Business<br><br>Applying ethical guidelines, mitigating biases, and ensuring transparency in user-facing AI applications.", "day": 24, "track": "Track 1", "track_desc": "Product & Business", "description": "Applying ethical guidelines, mitigating biases, and ensuring transparency in user-facing AI applications.", "color": {"background": "#0f172a", "border": "#fbbf24", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#fbbf24"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 4600, "y": 0, "fixed": {"x": true, "y": false}}, {"id": "t2-d24-data-governance-security", "label": "[T2] Data Governance & Security\n(Day 24)", "title": "<b>[T2] Data Governance & Security</b><br>Day 24 - AI Data & Architecture<br><br>Applying data security controls, access policies, encryption, and classification of sensitive AI data.", "day": 24, "track": "Track 2", "track_desc": "AI Data & Architecture", "description": "Applying data security controls, access policies, encryption, and classification of sensitive AI data.", "color": {"background": "#0f172a", "border": "#34d399", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#34d399"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 4600, "y": 200, "fixed": {"x": true, "y": false}}, {"id": "t3-d24-ragas-guardrails", "label": "[T3] Ragas & Guardrails Evaluation\n(Day 24)", "title": "<b>[T3] Ragas & Guardrails Evaluation</b><br>Day 24 - Advanced AI / Agents<br><br>Quantitative framework to evaluate RAG pipelines (faithfulness, relevancy) and runtime safety guardrails.", "day": 24, "track": "Track 3", "track_desc": "Advanced AI / Agents", "description": "Quantitative framework to evaluate RAG pipelines (faithfulness, relevancy) and runtime safety guardrails.", "color": {"background": "#0f172a", "border": "#f87171", "highlight": {"background": "#1e293b", "border": "#ffffff"}, "hover": {"background": "#1e293b", "border": "#f87171"}}, "borderWidth": 2, "font": {"color": "#f8fafc", "face": "system-ui, -apple-system, sans-serif"}, "x": 4600, "y": 400, "fixed": {"x": true, "y": false}}];
+        const rawEdges = [{"from": "ai-taxonomy", "to": "solution-levels", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>Knowing the AI Taxonomy (Bot, Chatbot, Agent) is prerequisite to selecting the appropriate solution level for a task."}, {"from": "self-attention", "to": "transformer-architecture", "arrows": "to", "dashes": true, "color": {"color": "#94a3b8", "highlight": "#ffffff", "hover": "#94a3b8"}, "width": 1.5, "title": "<b>Part_of</b><br>Self-attention is the core component of the Transformer architecture."}, {"from": "self-attention", "to": "transformer-architecture", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>One must understand Self-attention mechanism before studying the entire Transformer block."}, {"from": "self-attention", "to": "transformer-architecture", "arrows": "to", "dashes": true, "color": {"color": "#94a3b8", "highlight": "#ffffff", "hover": "#94a3b8"}, "width": 1.5, "title": "<b>Used_for</b><br>Self-attention is used for processing sequences inside Transformer encoder/decoder layers."}, {"from": "transformer-architecture", "to": "token-economy", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>Transformer architectures define the sequence and output tokens, which dictates token economy constraints."}, {"from": "token-economy", "to": "context-engineering", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>Token economy limitations and pricing models necessitate proper context engineering to minimize token usage."}, {"from": "ai-product-lifecycle", "to": "solution-levels", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>Understanding the AI product lifecycle guides the choice of solution level (Rule vs Workflow vs Agent) during the design phase."}, {"from": "ai-product-lifecycle", "to": "t1-d17-prd-pmf", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>The AI Product Lifecycle framework is prerequisite to defining product requirements (PRD) and finding Product-Market Fit (PMF)."}, {"from": "solution-levels", "to": "agentic-agent-react", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>Identifying that a task requires an agentic level of autonomy is prerequisite to implementing the ReAct pattern."}, {"from": "agentic-agent-react", "to": "t3-d17-agent-memory-systems", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>ReAct agents require memory systems (short-term and long-term) to function over long horizons."}, {"from": "tool-calling", "to": "agentic-agent-react", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>Tool calling is a prerequisite for the Action phase of the ReAct (Reasoning and Acting) loop."}, {"from": "prompt-engineering", "to": "context-engineering", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>Prompt engineering foundations lead into advanced context engineering techniques (e.g. Lost-in-the-Middle mitigation)."}, {"from": "prompt-engineering", "to": "guardrails-safety", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>Prompt engineering is a prerequisite to design system instructions and prompt protection guardrails."}, {"from": "context-engineering", "to": "ai-product-uncertainty", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>Proper context engineering helps mitigate model hallucination and uncertainty, which influences UX design."}, {"from": "vector-embeddings", "to": "vector-databases", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>Understanding vector embeddings is prerequisite to indexing and querying them in a vector database."}, {"from": "vector-embeddings", "to": "basic-rag", "arrows": "to", "dashes": true, "color": {"color": "#94a3b8", "highlight": "#ffffff", "hover": "#94a3b8"}, "width": 1.5, "title": "<b>Used_for</b><br>Vector embeddings are used for semantic search and retrieval in a basic RAG pipeline."}, {"from": "vector-databases", "to": "basic-rag", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>A vector database (like Chroma) is prerequisite to storing and retrieving chunks in a basic RAG architecture."}, {"from": "basic-rag", "to": "advanced-rag", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>Basic RAG (chunking and vector search) is the foundation and prerequisite to advanced RAG (query transformation, reranking)."}, {"from": "basic-rag", "to": "advanced-rag", "arrows": "to", "dashes": true, "color": {"color": "#94a3b8", "highlight": "#ffffff", "hover": "#94a3b8"}, "width": 1.5, "title": "<b>Compare</b><br>Basic RAG is compared with advanced RAG approaches in terms of retrieval quality and latency."}, {"from": "basic-rag", "to": "t3-d18-production-rag", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>Basic RAG concepts are prerequisite to production-grade RAG pipeline optimizations."}, {"from": "data-pipelines-observability", "to": "t2-d17-data-ingestion-strategy", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>Observability and ETL pipelines are prerequisite to constructing an advanced AI data ingestion strategy."}, {"from": "t1-d17-prd-pmf", "to": "t1-d18-financial-modeling-roi", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>Establishing PRD and PMF is prerequisite to conducting financial modeling and ROI analysis for AI features."}, {"from": "t2-d17-data-ingestion-strategy", "to": "t2-d18-data-lakehouses", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>Data ingestion strategies are prerequisite to building production-grade data lakehouses (e.g., Delta Lake, Iceberg)."}, {"from": "t3-d17-agent-memory-systems", "to": "t3-d18-production-rag", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>Understanding agent memory systems is prerequisite to implementing production-ready RAG with persistent session memory."}, {"from": "t1-d18-financial-modeling-roi", "to": "t1-d19-stakeholder-management", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>Financial models and ROI projections are prerequisite to stakeholder alignment and expectation management."}, {"from": "t2-d18-data-lakehouses", "to": "t2-d19-vector-feature-stores", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>Lakehouses store unstructured data that is processed into vector feature stores for real-time model queries."}, {"from": "t2-d18-data-lakehouses", "to": "t3-d19-graph-rag", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>Lakehouse data repositories store the raw data and extracted entities that are fused to construct GraphRAG knowledge graphs."}, {"from": "t3-d18-production-rag", "to": "t3-d19-graph-rag", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>Standard production RAG pipelines are a prerequisite to building advanced GraphRAG using entity/relation knowledge graphs."}, {"from": "t1-d19-stakeholder-management", "to": "t1-d20-roadmap-execution", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>Aligning stakeholders is prerequisite to executing the AI roadmap and milestone tracking."}, {"from": "t2-d19-vector-feature-stores", "to": "t2-d20-model-serving-optimization", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>Feature stores provide optimized input features required for low-latency served models."}, {"from": "t3-d18-production-rag", "to": "t2-d19-vector-feature-stores", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>Vector stores manage low-latency embeddings needed by production RAG pipelines."}, {"from": "t3-d19-graph-rag", "to": "t3-d20-multi-agent-architectures", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>Knowledge graphs and GraphRAG serve as structured, queryable memory pools needed for complex multi-agent architectures."}, {"from": "t1-d20-roadmap-execution", "to": "t1-d21-governance-risk", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>Executing the roadmap must be governed by risk assessment and algorithmic bias reviews."}, {"from": "t2-d20-model-serving-optimization", "to": "t2-d21-cicd-ai-systems", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>Model serving configurations and optimizations are versioned and deployed through automated CI/CD pipelines."}, {"from": "t3-d20-multi-agent-architectures", "to": "t3-d21-lora-qlora-tuning", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>Customizing individual agent models using LoRA/QLoRA is prerequisite to optimizing the collective behavior of a multi-agent system."}, {"from": "t1-d21-governance-risk", "to": "t1-d22-compliance", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>Risk management is a prerequisite to meeting strict regulatory standards and compliance audits (e.g. EU AI Act)."}, {"from": "t2-d21-cicd-ai-systems", "to": "t2-d22-llmops-versioning", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>CI/CD automation is prerequisite to standardizing LLMOps workflows, prompt versioning, and deployment registries."}, {"from": "t3-d21-lora-qlora-tuning", "to": "t3-d22-alignment-dpo", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>Fine-tuning base models using parameter-efficient methods (LoRA/QLoRA) is prerequisite to preference alignment via DPO/ORPO."}, {"from": "t1-d22-compliance", "to": "t1-d23-ai-adoption", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>Compliant AI systems are prerequisite to creating user trust and driving AI adoption within organizations."}, {"from": "t2-d22-llmops-versioning", "to": "t2-d23-observability-monitoring", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>LLMOps pipelines feed and register metrics monitored in LLM production monitoring environments."}, {"from": "t3-d22-alignment-dpo", "to": "t3-d23-langgraph-agents", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>Preference-aligned models are a prerequisite for robust performance in cyclic stateful multi-agent orchestrations like LangGraph."}, {"from": "t1-d23-ai-adoption", "to": "t1-d24-responsible-ai", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>Promoting AI adoption requires adhering to responsible and ethical AI development guidelines."}, {"from": "t2-d23-observability-monitoring", "to": "t2-d24-data-governance-security", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>System logs and observability metrics are analyzed for compliance with data governance policies and security controls."}, {"from": "t3-d23-langgraph-agents", "to": "t3-d24-ragas-guardrails", "arrows": "to", "dashes": false, "color": {"color": "#38bdf8", "highlight": "#ffffff", "hover": "#38bdf8"}, "width": 2, "title": "<b>Prerequisite_of</b><br>Stateful agentic workflows are evaluated quantitatively using the Ragas evaluation suite and protected by safety guardrails."}, {"from": "t3-d24-ragas-guardrails", "to": "t1-d24-responsible-ai", "arrows": "to", "dashes": true, "color": {"color": "#94a3b8", "highlight": "#ffffff", "hover": "#94a3b8"}, "width": 1.5, "title": "<b>Conjunction</b><br>Ragas and guardrails evaluation tools enforce and verify Responsible AI metrics in real-time."}];
+        
+        let nodes = new vis.DataSet(rawNodes);
+        let edges = new vis.DataSet(rawEdges);
+        let network = null;
+        let selectedNodeId = null;
+
+        function initNetwork() {
+            const container = document.getElementById('mynetwork');
+            const data = { nodes: nodes, edges: edges };
+            
+            const options = {
+                nodes: {
+                    shape: 'box',
+                    margin: 12,
+                    font: {
+                        size: 13,
+                        bold: true
+                    },
+                    shadow: {
+                        enabled: true,
+                        color: 'rgba(0,0,0,0.5)',
+                        size: 4,
+                        x: 2,
+                        y: 2
+                    }
+                },
+                edges: {
+                    smooth: {
+                        type: 'cubicBezier',
+                        forceDirection: 'horizontal',
+                        roundness: 0.4
+                    },
+                    hoverWidth: 1.5,
+                    selectionWidth: 2
+                },
+                interaction: {
+                    hover: true,
+                    selectConnectedEdges: false
+                },
+                physics: {
+                    enabled: true,
+                    hierarchicalRepulsion: {
+                        nodeDistance: 160,
+                        avoidOverlap: 1.0
+                    },
+                    solver: 'hierarchicalRepulsion',
+                    stabilization: {
+                        iterations: 150,
+                        fit: true
+                    }
+                }
+            };
+
+            network = new vis.Network(container, data, options);
+            
+            network.on("selectNode", function (params) {
+                const nodeId = params.nodes[0];
+                selectNode(nodeId);
+            });
+
+            network.on("deselectNode", function () {
+                clearSelection();
+            });
+        }
+
+        function selectNode(nodeId) {
+            selectedNodeId = nodeId;
+            const nodeData = rawNodes.find(n => n.id === nodeId);
+            if (!nodeData) return;
+
+            // Show details panel
+            document.getElementById('no-selection').classList.add('hidden');
+            document.getElementById('selection-details').classList.remove('hidden');
+
+            document.getElementById('node-tag').innerHTML = `DAY ${nodeData.day} &bull; ${nodeData.track_desc.toUpperCase()}`;
+            document.getElementById('node-name').innerText = nodeData.label.split('\n')[0];
+            document.getElementById('node-code').innerText = nodeData.id;
+            document.getElementById('node-desc').innerText = nodeData.description;
+
+            // Find parents & children
+            const parents = rawEdges.filter(e => e.to === nodeId).map(e => {
+                const parentNode = rawNodes.find(n => n.id === e.from);
+                return parentNode ? { id: parentNode.id, name: parentNode.label.split('\n')[0] } : null;
+            }).filter(Boolean);
+
+            const children = rawEdges.filter(e => e.from === nodeId).map(e => {
+                const childNode = rawNodes.find(n => n.id === e.to);
+                return childNode ? { id: childNode.id, name: childNode.label.split('\n')[0] } : null;
+            }).filter(Boolean);
+
+            // Populate HTML
+            const parentsContainer = document.getElementById('node-parents');
+            parentsContainer.innerHTML = parents.length 
+                ? parents.map(p => `<span onclick="selectNodeAndZoom('${p.id}')" class="text-xs bg-slate-800 hover:bg-slate-700 hover:text-sky-300 border border-slate-700 text-slate-300 px-2 py-1 rounded cursor-pointer transition">${p.name}</span>`).join('')
+                : '<span class="text-xs text-slate-500 italic">None (Foundation topic)</span>';
+
+            const childrenContainer = document.getElementById('node-children');
+            childrenContainer.innerHTML = children.length 
+                ? children.map(c => `<span onclick="selectNodeAndZoom('${c.id}')" class="text-xs bg-slate-800 hover:bg-slate-700 hover:text-sky-300 border border-slate-700 text-slate-300 px-2 py-1 rounded cursor-pointer transition">${c.name}</span>`).join('')
+                : '<span class="text-xs text-slate-500 italic">None (Terminal topic)</span>';
+        }
+
+        function selectNodeAndZoom(nodeId) {
+            network.selectNodes([nodeId]);
+            selectNode(nodeId);
+            network.focus(nodeId, {
+                scale: 1.1,
+                animation: {
+                    duration: 500,
+                    easingFunction: "easeInOutQuad"
+                }
+            });
+        }
+
+        function clearSelection() {
+            selectedNodeId = null;
+            document.getElementById('no-selection').classList.remove('hidden');
+            document.getElementById('selection-details').classList.add('hidden');
+        }
+
+        function handleSearch() {
+            const searchVal = document.getElementById('search-input').value.toLowerCase().trim();
+            if (!searchVal) {
+                resetHighlight();
+                return;
+            }
+
+            const matchingNode = rawNodes.find(n => 
+                n.id.toLowerCase().includes(searchVal) || 
+                n.label.toLowerCase().includes(searchVal) || 
+                n.description.toLowerCase().includes(searchVal)
+            );
+
+            if (matchingNode) {
+                selectNodeAndZoom(matchingNode.id);
+                highlightNodeAncestry(matchingNode.id);
+            }
+        }
+
+        function highlightNodeAncestry(nodeId) {
+            // DFS/BFS to collect all ancestors and descendants
+            const ancestors = new Set();
+            const descendants = new Set();
+
+            function collectAncestors(id) {
+                rawEdges.forEach(e => {
+                    if (e.to === id && !ancestors.has(e.from)) {
+                        ancestors.add(e.from);
+                        collectAncestors(e.from);
+                    }
+                });
+            }
+
+            function collectDescendants(id) {
+                rawEdges.forEach(e => {
+                    if (e.from === id && !descendants.has(e.to)) {
+                        descendants.add(e.to);
+                        collectDescendants(e.to);
+                    }
+                });
+            }
+
+            collectAncestors(nodeId);
+            collectDescendants(nodeId);
+
+            const activeNodes = new Set([nodeId, ...ancestors, ...descendants]);
+
+            // Update opacity/colors for highlighting
+            const updatedNodes = rawNodes.map(n => {
+                const isActive = activeNodes.has(n.id);
+                let opacity = isActive ? 1.0 : 0.15;
+                let scale = n.id === nodeId ? 1.2 : (isActive ? 1.0 : 0.85);
+                
+                return {
+                    ...n,
+                    font: {
+                        color: isActive ? '#ffffff' : 'rgba(248, 250, 252, 0.25)',
+                        size: 13
+                    },
+                    opacity: opacity
+                };
+            });
+
+            const updatedEdges = rawEdges.map(e => {
+                const isPart = activeNodes.has(e.from) && activeNodes.has(e.to);
+                return {
+                    ...e,
+                    color: {
+                        color: isPart ? (ancestors.has(e.from) ? '#38bdf8' : '#34d399') : 'rgba(148, 163, 184, 0.05)',
+                        highlight: '#ffffff'
+                    }
+                };
+            });
+
+            nodes.update(updatedNodes);
+            edges.update(updatedEdges);
+        }
+
+        function highlightNeighbors() {
+            if (selectedNodeId) {
+                highlightNodeAncestry(selectedNodeId);
+            }
+        }
+
+        function resetHighlight() {
+            document.getElementById('search-input').value = "";
+            nodes.update(rawNodes);
+            edges.update(rawEdges);
+            clearSelection();
+            if (network) {
+                network.fit({
+                    animation: {
+                        duration: 800,
+                        easingFunction: "easeInOutQuad"
+                    }
+                });
+            }
+        }
+
+        window.onload = initNetwork;
+    </script>
+</body>
+</html>

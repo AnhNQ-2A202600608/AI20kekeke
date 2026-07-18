@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sơ đồ luồng hoạt động Trợ lý AI - Mentora</title>
+    <!-- Tailwind CSS v4 CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #0b0f19;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Blueprint Grid Effect */
+        .grid-bg {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(148, 163, 184, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
+            position: relative;
+        }
+
+        .grid-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, transparent 60%, rgba(11, 15, 25, 0.8) 100%);
+            pointer-events: none;
+        }
+
+        /* Glow effects for Tech Blueprint */
+        .neon-border-mint {
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.05);
+        }
+
+        .neon-border-mint:hover, .neon-border-mint.active {
+            border-color: rgba(16, 185, 129, 0.8);
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+        }
+
+        .neon-border-orange {
+            border: 1px solid rgba(249, 115, 22, 0.3);
+            box-shadow: 0 0 15px rgba(249, 115, 22, 0.05);
+        }
+
+        .neon-border-orange:hover, .neon-border-orange.active {
+            border-color: rgba(249, 115, 22, 0.8);
+            box-shadow: 0 0 20px rgba(249, 115, 22, 0.2);
+        }
+
+        /* SVG Line Animations */
+        .flow-line {
+            stroke: #334155;
+            stroke-width: 2;
+            fill: none;
+            transition: all 0.3s ease;
+        }
+
+        .flow-line.active {
+            stroke: #10b981;
+            stroke-width: 3;
+            filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.6));
+        }
+
+        .flow-line.orange-flow.active {
+            stroke: #f97316;
+            filter: drop-shadow(0 0 8px rgba(249, 115, 22, 0.6));
+        }
+
+        /* SVG Dasharray Animation for Flowing Particles */
+        .flow-particles {
+            stroke-dasharray: 8, 12;
+            animation: flow 20s linear infinite;
+            display: none;
+            pointer-events: none;
+        }
+
+        .flow-particles.active {
+            display: block;
+        }
+
+        @keyframes flow {
+            to {
+                stroke-dashoffset: -1000;
+            }
+        }
+
+        /* Expert View transitions */
+        .expert-only {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .expert-hidden {
+            opacity: 0;
+            pointer-events: none;
+            transform: scale(0.95);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0f19;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #334155;
+        }
+
+        /* Glitch or blinking lights */
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.9; }
+        }
+        .pulse-light {
+            animation: pulse-slow 3s infinite;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen bg-[#0b0f19] select-none">
+
+    <!-- HEADER -->
+    <header class="border-b border-slate-800 bg-[#0e1422] px-6 py-4 flex flex-wrap justify-between items-center z-10">
+        <div class="flex items-center space-x-3">
+            <div class="h-2 w-2 bg-emerald-500 rounded-full pulse-light"></div>
+            <div>
+                <h1 class="text-xl font-bold tracking-wider text-slate-100 uppercase">Mentora AI Assistant Blueprint</h1>
+                <p class="text-xs text-slate-400 mono">STATUS: SECURE_CORE_ONLINE // VER: 1.1.0 // DICTIONARY: CONNECTED</p>
+            </div>
+        </div>
+
+        <div class="flex items-center space-x-6">
+            <!-- Mode Toggle Switch -->
+            <div class="flex items-center bg-[#070a12] border border-slate-700 p-1 rounded-none">
+                <button id="btn-simple" class="px-4 py-1.5 text-xs font-semibold uppercase tracking-wider transition-all duration-200 bg-emerald-500 text-slate-950 font-bold">
+                    Cơ bản (Simple)
+                </button>
+                <button id="btn-expert" class="px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-slate-400 transition-all duration-200 hover:text-slate-200">
+                    Chuyên gia (Expert)
+                </button>
+            </div>
+
+            <!-- Legend -->
+            <div class="hidden md:flex items-center space-x-4 text-xs font-medium uppercase tracking-wide text-slate-400">
+                <div class="flex items-center space-x-1.5">
+                    <span class="h-2 w-2 bg-emerald-500"></span>
+                    <span>General Flow</span>
+                </div>
+                <div class="flex items-center space-x-1.5">
+                    <span class="h-2 w-2 bg-orange-500"></span>
+                    <span>AI Reasoning Flow</span>
+                </div>
+                <div class="flex items-center space-x-1.5">
+                    <span class="h-3 w-3 inline-block" style="clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); background-color: #f97316;"></span>
+                    <span>Decision Router</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN BODY -->
+    <main class="flex-1 flex flex-col lg:flex-row relative">
+
+        <!-- LEFT SIDEBAR PANEL -->
+        <section class="w-full lg:w-[30%] border-r border-slate-800 bg-[#0e1422]/90 flex flex-col p-6 z-10 shrink-0">
+            <div class="flex items-center justify-between pb-4 border-b border-slate-800 mb-6">
+                <h2 class="text-sm font-semibold uppercase tracking-wider text-slate-400 mono flex items-center">
+                    <span class="mr-2 text-emerald-500">//</span> Bảng điều khiển giám sát
+                </h2>
+                <span class="px-2 py-0.5 text-[10px] bg-slate-800 text-slate-400 mono uppercase">Interactive</span>
+            </div>
+
+            <div id="detail-panel" class="flex-1 flex flex-col justify-between">
+                <!-- Info Area -->
+                <div class="space-y-6">
+                    <div>
+                        <span class="text-[10px] text-slate-500 uppercase tracking-widest block mono" id="node-tag">SELECT A NODE</span>
+                        <h3 class="text-2xl font-bold text-slate-100 mt-1" id="node-title">Chọn một tiến trình</h3>
+                        <p class="text-sm text-slate-400 mt-3 leading-relaxed" id="node-desc">
+                            Di chuột qua hoặc click vào bất kỳ nút (Node) hoặc điểm quyết định (Diamond Router) trên sơ đồ thiết kế kỹ thuật bên phải để xem phân tích dữ liệu, các điều kiện rẽ nhánh và các file mã nguồn liên quan.
+                        </p>
+                    </div>
+
+                    <!-- Tech Specs Table -->
+                    <div class="border border-slate-800 p-4 bg-[#070a12]/50 space-y-3" id="node-specs-container">
+                        <h4 class="text-xs font-semibold text-slate-500 uppercase tracking-wider mono">// Thông số kỹ thuật & Logic điều kiện</h4>
+                        <div class="grid grid-cols-3 gap-y-2.5 text-xs">
+                            <div class="text-slate-500 uppercase font-medium" id="label-input">Đầu vào:</div>
+                            <div class="col-span-2 text-slate-300 mono" id="node-input">-</div>
+                            
+                            <div class="text-slate-500 uppercase font-medium" id="label-output">Đầu ra:</div>
+                            <div class="col-span-2 text-slate-300 mono" id="node-output">-</div>
+
+                            <div class="text-slate-500 uppercase font-medium" id="label-db">Cơ sở dữ liệu:</div>
+                            <div class="col-span-2 text-slate-300 font-semibold" id="node-db">-</div>
+                        </div>
+                    </div>
+
+                    <!-- File link/related files -->
+                    <div id="node-files-container" class="space-y-2">
+                        <h4 class="text-xs font-semibold text-slate-500 uppercase tracking-wider mono">// File mã nguồn liên quan</h4>
+                        <div id="node-files" class="flex flex-col gap-1.5 text-xs">
+                            <span class="text-slate-600 italic">Chưa chọn nút nào</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Alert Info -->
+                <div class="border-t border-slate-800 pt-4 mt-6">
+                    <div class="p-3 bg-emerald-500/5 border border-emerald-500/10 flex items-start space-x-2.5">
+                        <div class="h-2 w-2 bg-emerald-500 mt-1.5 shrink-0 rounded-full animate-ping"></div>
+                        <div class="text-xs text-slate-400 leading-relaxed">
+                            <span class="font-bold text-emerald-400">Ghi chú Sư phạm:</span> Hệ thống được thiết kế theo mô hình **Socratic Tutor**. AI không trả lời trực tiếp code hay lời giải trắc nghiệm mà gợi mở tư duy cho học viên.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RIGHT CANVAS -->
+        <section class="flex-1 grid-bg flex items-center justify-center p-6 relative overflow-auto">
+            <!-- Floating Hints -->
+            <div class="absolute bottom-4 right-4 bg-slate-950/80 border border-slate-800 px-3 py-1.5 text-[10px] text-slate-400 tracking-wider uppercase flex space-x-4 pointer-events-none z-10">
+                <span>[Hover: Xem chi tiết]</span>
+                <span>[Click: Cố định thông tin]</span>
+            </div>
+
+            <!-- SVG Container -->
+            <div class="w-full max-w-[960px] aspect-[960/760] relative">
+                <svg viewBox="0 0 960 760" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" class="select-none">
+                    <defs>
+                        <!-- Glow filters -->
+                        <filter id="glow-mint" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="6" result="blur" />
+                            <feMerge>
+                                <feMergeNode in="blur" />
+                                <feMergeNode in="SourceGraphic" />
+                            </feMerge>
+                        </filter>
+                        <filter id="glow-orange" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="6" result="blur" />
+                            <feMerge>
+                                <feMergeNode in="blur" />
+                                <feMergeNode in="SourceGraphic" />
+                            </feMerge>
+                        </filter>
+                        <!-- Grid pattern -->
+                        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.015)" stroke-width="1"/>
+                        </pattern>
+                    </defs>
+
+                    <rect width="100%" height="100%" fill="url(#grid)" />
+
+                    <!-- ========================================== -->
+                    <!-- CONNECTIONS (FLOW LINES & PARTICLES) -->
+                    <!-- ========================================== -->
+                    
+                    <!-- 1. Client -> BFF -->
+                    <path d="M 480 75 L 480 120" id="path-client-bff" class="flow-line" />
+                    <path d="M 480 75 L 480 120" id="part-client-bff" class="flow-line flow-particles" stroke="#10b981" />
+
+                    <!-- 2. BFF -> Cache Check -->
+                    <path d="M 480 170 L 480 215" id="path-bff-cache" class="flow-line" />
+                    <path d="M 480 170 L 480 215" id="part-bff-cache" class="flow-line flow-particles" stroke="#10b981" />
+
+                    <!-- 3. Cache -> RAG Vector Search (DB query) -->
+                    <path d="M 480 265 L 480 320" id="path-cache-rag" class="flow-line orange-flow" />
+                    <path d="M 480 265 L 480 320" id="part-cache-rag" class="flow-line flow-particles orange-flow" stroke="#f97316" />
+
+                    <!-- 4. RAG Vector Search -> AI LangGraph Engine -->
+                    <path d="M 480 370 L 480 430" id="path-rag-lg" class="flow-line orange-flow expert-only" />
+                    <path d="M 480 370 L 480 430" id="part-rag-lg" class="flow-line flow-particles orange-flow expert-only" stroke="#f97316" />
+
+                    <!-- 5. Cache -> Fast-Path Responders (Direct Bypass) -->
+                    <path d="M 370 240 L 140 240 L 140 615 L 370 615" id="path-fast-path" class="flow-line" />
+                    <path d="M 370 240 L 140 240 L 140 615 L 370 615" id="part-fast-path" class="flow-line flow-particles" stroke="#10b981" />
+
+                    <!-- 6. AI Engine -> Citation Validator -->
+                    <path d="M 480 500 L 480 540" id="path-lg-citation" class="flow-line orange-flow" />
+                    <path d="M 480 500 L 480 540" id="part-lg-citation" class="flow-line flow-particles orange-flow" stroke="#f97316" />
+
+                    <!-- 7. Citation Validator -> SSE Streaming -->
+                    <path d="M 480 590 L 480 640" id="path-citation-sse" class="flow-line" />
+                    <path d="M 480 590 L 480 640" id="part-citation-sse" class="flow-line flow-particles" stroke="#10b981" />
+
+                    <!-- 8. SSE Streaming -> Client (Return Loop) -->
+                    <path d="M 590 665 L 830 665 L 830 50 L 590 50" id="path-return-loop" class="flow-line" />
+                    <path d="M 590 665 L 830 665 L 830 50 L 590 50" id="part-return-loop" class="flow-line flow-particles" stroke="#10b981" />
+
+                    <!-- 9. Asynchronous Logs -> Braintrust & PostgreSQL -->
+                    <path d="M 590 145 L 870 145 L 870 320" id="path-bff-audit" class="flow-line expert-only" style="stroke-dasharray: 4, 4;" />
+                    <path d="M 590 465 L 870 465 L 870 370" id="path-lg-audit" class="flow-line orange-flow expert-only" style="stroke-dasharray: 4, 4;" />
+
+                    <!-- ========================================== -->
+                    <!-- DETAILED LANGGRAPH INTERNAL FLOW (EXPERT ONLY) -->
+                    <!-- ========================================== -->
+                    <rect x="180" y="410" width="600" height="270" fill="none" stroke="rgba(249, 115, 22, 0.15)" stroke-width="1.5" stroke-dasharray="6, 6" id="lg-boundary" class="expert-only" />
+                    <text x="190" y="428" fill="rgba(249, 115, 22, 0.4)" font-size="10" font-weight="bold" class="mono uppercase tracking-widest expert-only" id="lg-boundary-label">LangGraph Boundary</text>
+
+                    <!-- Sub-node connections inside LangGraph -->
+                    <!-- analyze -> should_continue -->
+                    <path d="M 310 462.5 L 335 462.5" id="path-lg-an-sc" class="flow-line orange-flow expert-only" />
+                    <path d="M 310 462.5 L 335 462.5" id="part-lg-an-sc" class="flow-line flow-particles orange-flow expert-only" stroke="#f97316" />
+
+                    <!-- should_continue -> respond_academic -->
+                    <path d="M 375 462.5 L 430 462.5" id="path-lg-sc-ac" class="flow-line orange-flow expert-only" />
+                    <path d="M 375 462.5 L 430 462.5" id="part-lg-sc-ac" class="flow-line flow-particles orange-flow expert-only" stroke="#f97316" />
+
+                    <!-- should_continue -> respond_general -->
+                    <path d="M 355 482.5 L 355 505 L 255 505 L 255 530" id="path-lg-sc-gen" class="flow-line orange-flow expert-only" />
+                    <path d="M 355 482.5 L 355 505 L 255 505 L 255 530" id="part-lg-sc-gen" class="flow-line flow-particles orange-flow expert-only" stroke="#f97316" />
+
+                    <!-- respond_academic -> check_reflection -->
+                    <path d="M 540 462.5 L 565 462.5" id="path-lg-ac-cr" class="flow-line orange-flow expert-only" />
+                    <path d="M 540 462.5 L 565 462.5" id="part-lg-ac-cr" class="flow-line flow-particles orange-flow expert-only" stroke="#f97316" />
+
+                    <!-- check_reflection -> pedagogical_reflection -->
+                    <path d="M 605 462.5 L 650 462.5" id="path-lg-cr-ref" class="flow-line orange-flow expert-only" />
+                    <path d="M 605 462.5 L 650 462.5" id="part-lg-cr-ref" class="flow-line flow-particles orange-flow expert-only" stroke="#f97316" />
+
+                    <!-- pedagogical_reflection -> check_feedback -->
+                    <path d="M 705 485 L 705 532.5" id="path-lg-ref-cf" class="flow-line orange-flow expert-only" />
+                    <path d="M 705 485 L 705 532.5" id="part-lg-ref-cf" class="flow-line flow-particles orange-flow expert-only" stroke="#f97316" />
+
+                    <!-- check_feedback -> respond_academic (Loop back) -->
+                    <path d="M 685 552.5 L 485 552.5 L 485 485" id="path-lg-cf-ac" class="flow-line orange-flow expert-only" />
+                    <path d="M 685 552.5 L 485 552.5 L 485 485" id="part-lg-cf-ac" class="flow-line flow-particles orange-flow expert-only" stroke="#f97316" />
+
+                    <!-- check_reflection -> END of LangGraph (Bypass) -->
+                    <path d="M 585 482.5 L 585 620 L 480 620 L 480 640" id="path-lg-cr-end" class="flow-line orange-flow expert-only" />
+                    <path d="M 585 482.5 L 585 620 L 480 620 L 480 640" id="part-lg-cr-end" class="flow-line flow-particles orange-flow expert-only" stroke="#f97316" />
+
+                    <!-- check_feedback -> END of LangGraph -->
+                    <path d="M 705 572.5 L 705 610 L 480 610 L 480 640" id="path-lg-cf-end" class="flow-line orange-flow expert-only" />
+                    <path d="M 705 572.5 L 705 610 L 480 610 L 480 640" id="part-lg-cf-end" class="flow-line flow-particles orange-flow expert-only" stroke="#f97316" />
+
+                    <!-- respond_general -> END of LangGraph -->
+                    <path d="M 255 575 L 255 615 L 480 615 L 480 640" id="path-lg-gen-end" class="flow-line orange-flow expert-only" />
+                    <path d="M 255 575 L 255 615 L 480 615 L 480 640" id="part-lg-gen-end" class="flow-line flow-particles orange-flow expert-only" stroke="#f97316" />
+
+
+                    <!-- ========================================== -->
+                    <!-- NODES (SHARP TECH GEOMETRY) -->
+                    <!-- ========================================== -->
+                    
+                    <!-- 1. Client / UI -->
+                    <g id="node-client" class="cursor-pointer">
+                        <rect x="370" y="25" width="220" height="50" rx="0" fill="#0e1422" stroke="#10b981" stroke-width="1.5" class="transition-all duration-300" />
+                        <polygon points="370,25 385,25 385,32 370,32" fill="#10b981" />
+                        <text x="480" y="55" fill="#f8fafc" font-size="13" font-weight="bold" text-anchor="middle" class="mono tracking-wider">CLIENT / WEB UI</text>
+                        <text x="580" y="42" fill="#10b981" font-size="8" font-weight="bold" text-anchor="end" class="mono pulse-light">SYS.ON</text>
+                    </g>
+
+                    <!-- 2. BFF Gateway -->
+                    <g id="node-bff" class="cursor-pointer">
+                        <rect x="370" y="120" width="220" height="50" rx="0" fill="#0e1422" stroke="#10b981" stroke-width="1.5" class="transition-all duration-300" />
+                        <polygon points="370,120 385,120 385,127 370,127" fill="#10b981" />
+                        <text x="480" y="145" fill="#f8fafc" font-size="12" font-weight="bold" text-anchor="middle" class="mono tracking-wider">FASTAPI BFF GATEWAY</text>
+                        <text x="480" y="160" fill="#64748b" font-size="9" text-anchor="middle" class="mono">JWT / Role / Auth Guard</text>
+                    </g>
+
+                    <!-- 3. Cache & Fast Path Router -->
+                    <g id="node-cache" class="cursor-pointer">
+                        <rect x="370" y="215" width="220" height="50" rx="0" fill="#0e1422" stroke="#10b981" stroke-width="1.5" class="transition-all duration-300" />
+                        <polygon points="370,215 385,215 385,222 370,222" fill="#10b981" />
+                        <text x="480" y="240" fill="#f8fafc" font-size="12" font-weight="bold" text-anchor="middle" class="mono tracking-wider">MASTERY CACHE &amp; ROUTER</text>
+                        <text x="480" y="255" fill="#64748b" font-size="9" text-anchor="middle" class="mono">Redis / Fast-Path Bypass</text>
+                    </g>
+
+                    <!-- 4. pgvector DB (Supabase HNSW Search) -->
+                    <g id="node-rag" class="cursor-pointer">
+                        <rect x="370" y="320" width="220" height="50" rx="0" fill="#0e1422" stroke="#f97316" stroke-width="1.5" class="transition-all duration-300" />
+                        <polygon points="370,320 385,320 385,327 370,327" fill="#f97316" />
+                        <text x="480" y="345" fill="#f8fafc" font-size="12" font-weight="bold" text-anchor="middle" class="mono tracking-wider">RAG RETRIEVAL (PGVECTOR)</text>
+                        <text x="480" y="360" fill="#94a3b8" font-size="9" text-anchor="middle" class="mono">Supabase HNSW Chunk Search</text>
+                    </g>
+
+                    <!-- 5. AI LangGraph Engine (SIMPLE MODE ONLY - shown as a single big block) -->
+                    <g id="node-langgraph-simple" class="cursor-pointer">
+                        <rect x="370" y="430" width="220" height="70" rx="0" fill="#0e1422" stroke="#f97316" stroke-width="1.5" class="transition-all duration-300" />
+                        <polygon points="370,430 385,430 385,437 370,437" fill="#f97316" />
+                        <text x="480" y="460" fill="#f8fafc" font-size="12" font-weight="bold" text-anchor="middle" class="mono tracking-wider">LANGGRAPH AGENT ENGINE</text>
+                        <text x="480" y="475" fill="#94a3b8" font-size="9" text-anchor="middle" class="mono">Socratic Agent Orchestrator</text>
+                        <text x="480" y="488" fill="#64748b" font-size="8" text-anchor="middle" class="mono">Intent / Socratic Response / Reflection</text>
+                    </g>
+
+                    <!-- ========================================== -->
+                    <!-- LANGGRAPH SUB-NODES (EXPERT MODE ONLY) -->
+                    <!-- ========================================== -->
+                    
+                    <!-- 5a. Analyze Node -->
+                    <g id="node-lg-analyze" class="cursor-pointer expert-only expert-hidden">
+                        <rect x="200" y="440" width="110" height="45" rx="0" fill="#0e1422" stroke="#f97316" stroke-width="1.5" class="transition-all duration-300" />
+                        <text x="255" y="466" fill="#f8fafc" font-size="11" font-weight="bold" text-anchor="middle" class="mono">1. ANALYZE</text>
+                    </g>
+
+                    <!-- 5d. should_continue (Diamond Decision Point) -->
+                    <g id="node-lg-should_continue" class="cursor-pointer expert-only expert-hidden">
+                        <polygon points="355,442.5 375,462.5 355,482.5 335,462.5" fill="#0e1422" stroke="#f97316" stroke-width="1.5" class="transition-all duration-300" />
+                        <text x="355" y="495" fill="#f97316" font-size="8" font-weight="bold" text-anchor="middle" class="mono">should_continue</text>
+                    </g>
+
+                    <!-- 5b. Respond Academic Node -->
+                    <g id="node-lg-academic" class="cursor-pointer expert-only expert-hidden">
+                        <rect x="430" y="440" width="110" height="45" rx="0" fill="#0e1422" stroke="#f97316" stroke-width="1.5" class="transition-all duration-300" />
+                        <text x="485" y="466" fill="#f8fafc" font-size="10" font-weight="bold" text-anchor="middle" class="mono">2a. RESPOND ACAD</text>
+                    </g>
+
+                    <!-- 5c. Respond General Node -->
+                    <g id="node-lg-general" class="cursor-pointer expert-only expert-hidden">
+                        <rect x="200" y="530" width="110" height="45" rx="0" fill="#0e1422" stroke="#f97316" stroke-width="1.5" class="transition-all duration-300" />
+                        <text x="255" y="556" fill="#f8fafc" font-size="10" font-weight="bold" text-anchor="middle" class="mono">2b. RESPOND GEN</text>
+                    </g>
+
+                    <!-- 5e. check_reflection (Diamond Decision Point) -->
+                    <g id="node-lg-check_reflection" class="cursor-pointer expert-only expert-hidden">
+                        <polygon points="585,442.5 605,462.5 585,482.5 565,462.5" fill="#0e1422" stroke="#f97316" stroke-width="1.5" class="transition-all duration-300" />
+                        <text x="585" y="495" fill="#f97316" font-size="8" font-weight="bold" text-anchor="middle" class="mono">check_reflection</text>
+                    </g>
+
+                    <!-- 5f. Pedagogical Reflection Node -->
+                    <g id="node-lg-reflection" class="cursor-pointer expert-only expert-hidden">
+                        <rect x="650" y="440" width="110" height="45" rx="0" fill="#0e1422" stroke="#f97316" stroke-width="1.5" class="transition-all duration-300" />
+                        <text x="705" y="466" fill="#f8fafc" font-size="11" font-weight="bold" text-anchor="middle" class="mono">3. REFLECTION</text>
+                    </g>
+
+                    <!-- 5g. check_feedback (Diamond Decision Point) -->
+                    <g id="node-lg-check_feedback" class="cursor-pointer expert-only expert-hidden">
+                        <polygon points="705,532.5 725,552.5 705,572.5 685,552.5" fill="#0e1422" stroke="#f97316" stroke-width="1.5" class="transition-all duration-300" />
+                        <text x="705" y="585" fill="#f97316" font-size="8" font-weight="bold" text-anchor="middle" class="mono">check_feedback</text>
+                    </g>
+
+
+                    <!-- 6. Citation Validator -->
+                    <g id="node-citation" class="cursor-pointer">
+                        <rect x="370" y="540" width="220" height="50" rx="0" fill="#0e1422" stroke="#10b981" stroke-width="1.5" class="transition-all duration-300" />
+                        <polygon points="370,540 385,540 385,547 370,547" fill="#10b981" />
+                        <text x="480" y="565" fill="#f8fafc" font-size="12" font-weight="bold" text-anchor="middle" class="mono tracking-wider">CITATION VALIDATOR</text>
+                        <text x="480" y="580" fill="#64748b" font-size="9" text-anchor="middle" class="mono">Clean/Verify citations in response</text>
+                    </g>
+
+                    <!-- 7. SSE Streaming Generator -->
+                    <g id="node-sse" class="cursor-pointer">
+                        <rect x="370" y="640" width="220" height="50" rx="0" fill="#0e1422" stroke="#10b981" stroke-width="1.5" class="transition-all duration-300" />
+                        <polygon points="370,640 385,640 385,647 370,647" fill="#10b981" />
+                        <text x="480" y="665" fill="#f8fafc" font-size="12" font-weight="bold" text-anchor="middle" class="mono tracking-wider">SSE STREAMING ROUTE</text>
+                        <text x="480" y="680" fill="#64748b" font-size="9" text-anchor="middle" class="mono">Server-Sent Events / Async Tokens</text>
+                    </g>
+
+
+                    <!-- ========================================== -->
+                    <!-- EXTERNAL SERVICES (EXPERT MODE ONLY) -->
+                    <!-- ========================================== -->
+                    <g id="node-audit" class="cursor-pointer expert-only expert-hidden">
+                        <rect x="715" y="320" width="190" height="50" rx="0" fill="#070a12" stroke="#64748b" stroke-width="1.5" class="transition-all duration-300" />
+                        <polygon points="715,320 725,320 725,325 715,325" fill="#64748b" />
+                        <text x="810" y="345" fill="#f1f5f9" font-size="11" font-weight="bold" text-anchor="middle" class="mono tracking-wider">BRAINTRUST / AUDIT</text>
+                        <text x="810" y="360" fill="#64748b" font-size="8" text-anchor="middle" class="mono">Tracing / Latency / Cost Logs</text>
+                    </g>
+
+                </svg>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-800 bg-[#070a12] px-6 py-3 text-center text-xs text-slate-500 mono flex justify-between items-center z-10">
+        <div>MENTORA ENGINEERING DOCUMENTATION // PROMPT-RAG INTEGRATION SYSTEM</div>
+        <div class="hidden sm:block">CONFIDENTIAL - INTERNAL DEV USE ONLY</div>
+    </footer>
+
+    <!-- INTERACTIVE SCRIPTS -->
+    <script>
+        // Database of Node Details for Interactive Sidebar updates
+        const nodeDatabase = {
+            'client': {
+                tag: 'CLIENT / FRONTEND UI',
+                title: 'Client Web Application',
+                desc: 'Nơi người dùng (Học viên hoặc Mentor) nhập tin nhắn chat. Sau khi gửi, Client sẽ lắng nghe luồng Server-Sent Events (SSE) để kết xuất (render) câu trả lời của Trợ lý AI theo dạng streaming từng token chữ và hiển thị các gợi ý, trích dẫn bài giảng học liệu tương ứng.',
+                input: 'User Prompt, Course Context, Active Concept ID',
+                output: 'HTTP POST Request, SSE Listener initialization',
+                db: 'Next.js Session Cookie (Supabase SSR Auth)',
+                files: [
+                    { name: 'frontend/app/api/v1/[...path]/route.ts', path: 'file:///d:/AI Invidual Tutor/Source code/C2-App-125/frontend/app/api/v1/[...path]/route.ts' }
+                ],
+                lines: ['path-client-bff']
+            },
+            'bff': {
+                tag: 'BACKEND API / BFF GATEKEEPER',
+                title: 'FastAPI BFF Gateway',
+                desc: 'Đóng vai trò là chốt chặn bảo mật bảo vệ tài nguyên hệ thống. Gateway thực hiện xác thực mã JWT của Supabase được gửi kèm từ Client, kiểm tra phân quyền người dùng (RBAC: Student, Mentor, Admin), áp dụng Rate Limiting và định tuyến request đến công cụ xử lý tương ứng.',
+                input: 'Authorization: Bearer <Supabase JWT>, Prompt Payload',
+                output: 'Authenticated Session context, Routed Request',
+                db: 'Supabase Auth Schema (JWT Verification)',
+                files: [
+                    { name: 'src/api/routes.py', path: 'file:///d:/AI Invidual Tutor/Source code/C2-App-125/src/api/routes.py' },
+                    { name: 'src/config.py', path: 'file:///d:/AI Invidual Tutor/Source code/C2-App-125/src/config.py' }
+                ],
+                lines: ['path-bff-cache', 'path-bff-audit']
+            },
+            'cache': {
+                tag: 'ROUTER / MASTERY CACHE',
+                title: 'Cache & Fast Path Router',
+                desc: 'Tối ưu hóa độ trễ cho các cuộc hội thoại. Hệ thống truy vấn nhanh Redis Cache để lấy dữ liệu về độ thông hiểu khái niệm (Mastery State) và hồ sơ người dùng. Nếu người dùng chỉ chào hỏi xã giao hoặc hỏi câu hỏi ngoài lề (General Intent), Router sẽ kích hoạt luồng Fast Path đi trực tiếp tới Respond General, hoàn toàn bỏ qua bước RAG tìm kiếm học liệu để tiết kiệm chi phí và tăng tốc phản hồi.',
+                input: 'Prompt context, User Profile, Concept ID',
+                output: 'Mastery Context, Route decision (RAG vs Fast-path)',
+                db: 'Redis Cache (Mastery / Profile cache, TTL enabled)',
+                files: [
+                    { name: 'src/config.py (Redis/Memory Cache settings)', path: 'file:///d:/AI Invidual Tutor/Source code/C2-App-125/src/config.py' }
+                ],
+                lines: ['path-cache-rag', 'path-fast-path']
+            },
+            'rag': {
+                tag: 'DATABASE / VECTOR SEARCH',
+                title: 'RAG pgvector HNSW Retrieval',
+                desc: 'Khi cần câu trả lời mang tính học thuật chính xác cao, truy vấn của người dùng được chuyển đổi thành vector embedding. Hệ thống thực hiện tìm kiếm Vector HNSW trực tiếp trong Supabase PostgreSQL bằng pgvector nhằm tìm các slide và chunk bài giảng có liên quan nhất với ngưỡng tương đồng phù hợp.',
+                input: 'Query Embedding (1536d / OpenAI/Gemini)',
+                output: 'Top K Retrieved Slides, Chunks, and Material Metadata',
+                db: 'Supabase PostgreSQL 17 (pgvector, app/audit schema)',
+                files: [
+                    { name: 'src/pipeline/ingest/rag_ingestion.py', path: 'file:///d:/AI Invidual Tutor/Source code/C2-App-125/src/pipeline/ingest/rag_ingestion.py' }
+                ],
+                lines: ['path-rag-lg']
+            },
+            'langgraph-simple': {
+                tag: 'ORCHESTRATOR / AI CORE',
+                title: 'LangGraph Agent Engine',
+                desc: 'Bộ não chính của Trợ lý AI. Được cài đặt dưới dạng một Đồ thị Trạng thái (StateGraph) của LangGraph. Engine quản lý trạng thái cuộc hội thoại, phân loại Intent người dùng, truy vấn LLM bằng Prompt mẫu Socratic đặc thù, và chạy vòng lặp kiểm duyệt sư phạm (Pedagogical Reflection) để ngăn chặn việc cung cấp lời giải trực tiếp.',
+                input: 'Prompt, Context Chunks, Mastery state',
+                output: 'Draft response (with citations), LangGraph State values',
+                db: 'Redis (Low-latency chat context, session state)',
+                files: [
+                    { name: 'src/agents/graph.py', path: 'file:///d:/AI Invidual Tutor/Source code/C2-App-125/src/agents/graph.py' },
+                    { name: 'src/agents/state.py', path: 'file:///d:/AI Invidual Tutor/Source code/C2-App-125/src/agents/state.py' }
+                ],
+                lines: ['path-lg-citation', 'path-lg-audit']
+            },
+            'lg-analyze': {
+                tag: 'LANGGRAPH / NODE 1',
+                title: 'Analyze Node (analyze_node)',
+                desc: 'Node khởi chạy đầu tiên trong đồ thị LangGraph. Nhiệm vụ chính là phân tích intent của tin nhắn đầu vào (General xã giao vs Academic học thuật) và quét rủi ro gian lận học thuật (Academic Integrity Risk - ví dụ học viên đòi đưa thẳng lời giải câu hỏi trắc nghiệm hoặc bài tập lập trình).',
+                input: 'User Prompt, Session Context',
+                output: 'intent (general/academic), academic_integrity_risk (true/false)',
+                db: 'Không truy cập trực tiếp DB',
+                files: [
+                    { name: 'src/agents/nodes/analyze_node.py', path: 'file:///d:/AI Invidual Tutor/Source code/C2-App-125/src/agents/nodes/analyze_node.py' }
+                ],
+                lines: ['path-lg-an-sc']
+            },
+            'lg-should_continue': {
+                tag: 'LANGGRAPH / ROUTER 1',
+                title: 'should_continue (Hàm quyết định rẽ nhánh 1)',
+                desc: 'Quyết định hướng đi sau khi phân tích tin nhắn. Nếu state chứa thông tin lỗi, nó dừng luôn cuộc gọi (END). Nếu intent là xã giao (general) và không có rủi ro gian lận học thuật, nó chuyển sang Respond General. Trường hợp ngược lại (học thuật hoặc có rủi ro gian lận) bắt buộc đi vào Respond Academic.',
+                input: 'state (metadata: intent, academic_integrity_risk, error)',
+                output: 'Tên node tiếp theo ("respond_general", "respond_academic", "END")',
+                db: 'Không truy cập',
+                files: [
+                    { name: 'src/agents/graph.py (dòng 12-20)', path: 'file:///d:/AI Invidual Tutor/Source code/C2-App-125/src/agents/graph.py' }
+                ],
+                lines: ['path-lg-sc-ac', 'path-lg-sc-gen']
+            },
+            'lg-academic': {
+                tag: 'LANGGRAPH / NODE 2A',
+                title: 'Respond Academic (respond_node)',
+                desc: 'Được kích hoạt khi câu hỏi liên quan đến kiến thức học tập hoặc có cảnh báo rủi ro gian lận. Hệ thống kết xuất prompt chứa các chunk bài giảng đã RAG cùng triết lý Socratic (chỉ đưa gợi ý hướng dẫn, hỏi ngược lại để kiểm tra tư duy học viên). Đầu ra chứa các trích dẫn bài giảng dạng `[Tên tài liệu, Slide X]`.',
+                input: 'Concept context, RAG retrieved slides, Mastery state',
+                output: 'Socratic draft response with citations',
+                db: 'Không truy cập trực tiếp DB',
+                files: [
+                    { name: 'src/agents/nodes/respond_node.py', path: 'file:///d:/AI Invidual Tutor/Source code/C2-App-125/src/agents/nodes/respond_node.py' }
+                ],
+                lines: ['path-lg-ac-cr']
+            },
+            'lg-general': {
+                tag: 'LANGGRAPH / NODE 2B',
+                title: 'Respond General (respond_general_node)',
+                desc: 'Xử lý các câu hỏi chào hỏi xã giao hoặc không liên quan trực tiếp đến bài học. Phản hồi ở đây nhanh chóng, thân thiện và lịch sự mà không cần huy động tài nguyên RAG hoặc áp đặt các quy tắc khắt khe của Socratic Tutor.',
+                input: 'User message',
+                output: 'Social response text',
+                db: 'Không truy cập trực tiếp DB',
+                files: [
+                    { name: 'src/agents/nodes/respond_general_node.py', path: 'file:///d:/AI Invidual Tutor/Source code/C2-App-125/src/agents/nodes/respond_general_node.py' }
+                ],
+                lines: ['path-lg-gen-end']
+            },
+            'lg-check_reflection': {
+                tag: 'LANGGRAPH / ROUTER 2',
+                title: 'check_reflection (Hàm quyết định rẽ nhánh 2)',
+                desc: 'Quyết định xem phản hồi học thuật nháp có cần được kiểm duyệt sư phạm hay không. Nếu phát hiện rủi ro gian lận học thuật ban đầu (academic_integrity_risk == True) hoặc phản hồi chứa code block (```), hay chỉ đáp án trắc nghiệm A-D, hệ thống sẽ gửi câu trả lời nháp đi kiểm duyệt sư phạm. Ngược lại, bypass kiểm duyệt để tối ưu độ trễ.',
+                input: 'state (response, metadata: intent, academic_integrity_risk, error)',
+                output: 'Tên node tiếp theo ("pedagogical_reflection", "END")',
+                db: 'Không truy cập',
+                files: [
+                    { name: 'src/agents/graph.py (dòng 23-52)', path: 'file:///d:/AI Invidual Tutor/Source code/C2-App-125/src/agents/graph.py' }
+                ],
+                lines: ['path-lg-cr-ref', 'path-lg-cr-end']
+            },
+            'lg-reflection': {
+                tag: 'LANGGRAPH / NODE 3',
+                title: 'Pedagogical Reflection (pedagogical_reflection_node)',
+                desc: 'Cốt lõi kiểm duyệt chất lượng giảng dạy. Node này tự động phân tích câu trả lời học thuật nháp của Trợ lý AI. Nếu phát hiện AI vô tình đưa ra toàn bộ code giải bài tập hoặc chỉ rõ đáp án trắc nghiệm (A, B, C, D) cho học sinh, nó sẽ phát sinh feedback yêu cầu viết lại (tối đa 2 lần chỉnh sửa).',
+                input: 'Draft response text, user query context',
+                output: 'reflection_feedback, reflection_attempts count',
+                db: 'Không truy cập trực tiếp DB',
+                files: [
+                    { name: 'src/agents/nodes/pedagogical_reflection_node.py', path: 'file:///d:/AI Invidual Tutor/Source code/C2-App-125/src/agents/nodes/pedagogical_reflection_node.py' }
+                ],
+                lines: ['path-lg-ref-cf']
+            },
+            'lg-check_feedback': {
+                tag: 'LANGGRAPH / ROUTER 3',
+                title: 'check_feedback (Hàm quyết định rẽ nhánh 3)',
+                desc: 'Kiểm tra xem kết quả kiểm duyệt sư phạm có phát hiện vi phạm không. Nếu phản hồi nháp bị đánh giá lỗi giảng dạy (có reflection_feedback) và số lần thử lại dưới 2 lần, nó lặp ngược lại Respond Academic để viết lại câu trả lời dựa trên phản hồi góp ý. Ngược lại (không có lỗi hoặc đã thử tối đa 2 lần), kết thúc đồ thị (END).',
+                input: 'state (reflection_feedback, reflection_attempts)',
+                output: 'Tên node tiếp theo ("respond_academic", "END")',
+                db: 'Không truy cập',
+                files: [
+                    { name: 'src/agents/graph.py (dòng 55-59)', path: 'file:///d:/AI Invidual Tutor/Source code/C2-App-125/src/agents/graph.py' }
+                ],
+                lines: ['path-lg-cf-ac', 'path-lg-cf-end']
+            },
+            'citation': {
+                tag: 'SECURITY / DATA INTEGRITY',
+                title: 'Citation Validator',
+                desc: 'Lọc và đối chứng thông tin nghiêm ngặt. Validator quét toàn bộ các trích dẫn bài giảng trong phản hồi dạng `[Tên tài liệu, Slide X]` và đối chiếu trực tiếp với danh sách slide thực sự được trả về từ RAG. Trích dẫn giả mạo (hallucination) sẽ bị lược bỏ ngay lập tức khỏi văn bản và chèn thông báo cảnh báo để bảo đảm học viên nhận được thông tin chuẩn xác 100%.',
+                input: 'Raw response text, list of retrieved slides',
+                output: 'Cleaned text with verified citations, validation flags',
+                db: 'Không trực tiếp truy vấn (chỉ dùng retrieved_slides)',
+                files: [
+                    { name: 'src/services/citation_validator.py', path: 'file:///d:/AI Invidual Tutor/Source code/C2-App-125/src/services/citation_validator.py' }
+                ],
+                lines: ['path-citation-sse']
+            },
+            'sse': {
+                tag: 'COMMUNICATION / IO',
+                title: 'SSE Streaming Route',
+                desc: 'Phần kết thúc luồng hoạt động API. FastAPI đẩy dữ liệu về cho Client dưới dạng dòng chảy Server-Sent Events (SSE). Các gói tin được truyền đi bao gồm: token chữ của câu trả lời, sự kiện chạy các tool của Agent và thông tin trạng thái hoạt động giúp Client hiển thị UI mượt mà.',
+                input: 'Validated text tokens, status / tool event stream',
+                output: 'text/event-stream response',
+                db: 'Supabase Chat Session / Message tables (Writes log)',
+                files: [
+                    { name: 'src/api/routes.py (Chat execution and SSE handler)', path: 'file:///d:/AI Invidual Tutor/Source code/C2-App-125/src/api/routes.py' }
+                ],
+                lines: ['path-return-loop']
+            },
+            'audit': {
+                tag: 'OBSERVABILITY / AUDITING',
+                title: 'Braintrust & Supabase Audit DB',
+                desc: 'Tiến trình giám sát và tối ưu hóa phi đồng bộ (Asynchronous). Sau khi luồng chat hoàn tất, các dữ liệu về trace (langgraph executions), chi phí token, thời gian xử lý (latency), chất lượng trích dẫn sẽ được đẩy lên Braintrust để admin phân tích, kiểm thử tự động, và lưu vào Supabase Audit DB để phục vụ phân tích Master Elo.',
+                input: 'LangGraph trace, Prompt/Completion Tokens, Citations validation metrics',
+                output: 'Observability panels, cost analytics, model quality scores',
+                db: 'Braintrust cloud proxy, Supabase audit schema (attempts / decisions tables)',
+                files: [
+                    { name: 'docs/engineering/system-architecture.md', path: 'file:///d:/AI Invidual Tutor/Source code/C2-App-125/docs/engineering/system-architecture.md' }
+                ],
+                lines: []
+            }
+        };
+
+        // State variables
+        let isExpertMode = false;
+        let selectedNodeId = null;
+
+        // Dom Elements
+        const btnSimple = document.getElementById('btn-simple');
+        const btnExpert = document.getElementById('btn-expert');
+        const detailPanel = document.getElementById('detail-panel');
+        const nodeTag = document.getElementById('node-tag');
+        const nodeTitle = document.getElementById('node-title');
+        const nodeDesc = document.getElementById('node-desc');
+        const nodeInput = document.getElementById('node-input');
+        const nodeOutput = document.getElementById('node-output');
+        const nodeDb = document.getElementById('node-db');
+        const nodeFiles = document.getElementById('node-files');
+
+        const labelInput = document.getElementById('label-input');
+        const labelOutput = document.getElementById('label-output');
+        const labelDb = document.getElementById('label-db');
+
+        // SVG Nodes and Connections
+        const svgNodes = document.querySelectorAll('g[id^="node-"]');
+        const flowLines = document.querySelectorAll('.flow-line');
+
+        // Toggle Modes Function
+        function setViewMode(expert) {
+            isExpertMode = expert;
+            
+            if (expert) {
+                btnExpert.className = "px-4 py-1.5 text-xs font-semibold uppercase tracking-wider bg-emerald-500 text-slate-950 font-bold";
+                btnSimple.className = "px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-slate-400 hover:text-slate-200";
+                
+                // Show expert elements in SVG
+                document.querySelectorAll('.expert-only').forEach(el => {
+                    el.classList.remove('expert-hidden');
+                });
+                // Hide simple langgraph block
+                document.getElementById('node-langgraph-simple').classList.add('hidden');
+                // Adjust connection lines for Expert layout
+                document.getElementById('path-cache-rag').setAttribute('d', 'M 480 265 L 480 320');
+                document.getElementById('part-cache-rag').setAttribute('d', 'M 480 265 L 480 320');
+                document.getElementById('path-lg-citation').setAttribute('d', 'M 480 500 L 480 540');
+                document.getElementById('part-lg-citation').setAttribute('d', 'M 480 500 L 480 540');
+            } else {
+                btnSimple.className = "px-4 py-1.5 text-xs font-semibold uppercase tracking-wider bg-emerald-500 text-slate-950 font-bold";
+                btnExpert.className = "px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-slate-400 hover:text-slate-200";
+                
+                // Hide expert elements in SVG
+                document.querySelectorAll('.expert-only').forEach(el => {
+                    el.classList.add('expert-hidden');
+                });
+                // Show simple langgraph block
+                document.getElementById('node-langgraph-simple').classList.remove('hidden');
+                // Adjust connection lines for Simple layout
+                document.getElementById('path-cache-rag').setAttribute('d', 'M 480 265 L 480 320');
+                document.getElementById('part-cache-rag').setAttribute('d', 'M 480 265 L 480 320');
+                document.getElementById('path-lg-citation').setAttribute('d', 'M 480 500 L 480 540');
+                document.getElementById('part-lg-citation').setAttribute('d', 'M 480 500 L 480 540');
+            }
+            
+            // Clear current details if node is expert-only
+            if (!expert && selectedNodeId && isExpertOnlyNode(selectedNodeId)) {
+                clearDetails();
+            }
+        }
+
+        function isExpertOnlyNode(id) {
+            return ['lg-analyze', 'lg-should_continue', 'lg-academic', 'lg-general', 'lg-check_reflection', 'lg-reflection', 'lg-check_feedback', 'audit'].includes(id);
+        }
+
+        // Click Event Handlers for Toggle Modes
+        btnSimple.addEventListener('click', () => setViewMode(false));
+        btnExpert.addEventListener('click', () => setViewMode(true));
+
+        // Node Interaction (Hover & Click)
+        svgNodes.forEach(node => {
+            const fullId = node.getAttribute('id');
+            const dbId = fullId.replace('node-', '');
+
+            // Hover events
+            node.addEventListener('mouseenter', () => {
+                if (!selectedNodeId) {
+                    highlightNodeFlow(dbId, true);
+                    updateDetailPanel(dbId);
+                }
+            });
+
+            node.addEventListener('mouseleave', () => {
+                if (!selectedNodeId) {
+                    highlightNodeFlow(dbId, false);
+                    clearDetails();
+                }
+            });
+
+            // Click events
+            node.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (selectedNodeId === dbId) {
+                    // Unclick
+                    selectedNodeId = null;
+                    highlightNodeFlow(dbId, false);
+                    clearDetails();
+                } else {
+                    // Click new node
+                    if (selectedNodeId) {
+                        highlightNodeFlow(selectedNodeId, false);
+                    }
+                    selectedNodeId = dbId;
+                    highlightNodeFlow(dbId, true);
+                    updateDetailPanel(dbId);
+                }
+            });
+        });
+
+        // Click canvas to clear selection
+        document.addEventListener('click', () => {
+            if (selectedNodeId) {
+                highlightNodeFlow(selectedNodeId, false);
+                selectedNodeId = null;
+                clearDetails();
+            }
+        });
+
+        // Helper to Highlight flows
+        function highlightNodeFlow(dbId, highlight) {
+            const nodeEl = document.getElementById('node-' + dbId);
+            if (!nodeEl) return;
+
+            // Highlight node box / diamond polygon
+            const rect = nodeEl.querySelector('rect');
+            const poly = nodeEl.querySelector('polygon');
+            const targetShape = rect || poly;
+            
+            if (targetShape) {
+                if (highlight) {
+                    targetShape.setAttribute('stroke-width', '3');
+                    targetShape.style.filter = dbId === 'rag' || dbId.startsWith('lg-') || dbId === 'langgraph-simple' 
+                        ? 'url(#glow-orange)' 
+                        : 'url(#glow-mint)';
+                } else {
+                    targetShape.setAttribute('stroke-width', '1.5');
+                    targetShape.style.filter = 'none';
+                }
+            }
+
+            // Highlight associated path lines and activate flowing particles
+            const nodeData = nodeDatabase[dbId];
+            if (nodeData && nodeData.lines) {
+                nodeData.lines.forEach(lineId => {
+                    const line = document.getElementById(lineId);
+                    const particles = document.getElementById(lineId.replace('path-', 'part-'));
+                    if (line) {
+                        if (highlight) {
+                            line.classList.add('active');
+                        } else {
+                            line.classList.remove('active');
+                        }
+                    }
+                    if (particles) {
+                        if (highlight) {
+                            particles.classList.add('active');
+                        } else {
+                            particles.classList.remove('active');
+                        }
+                    }
+                });
+            }
+        }
+
+        // Helper to Update Sidebar Panel
+        function updateDetailPanel(dbId) {
+            const data = nodeDatabase[dbId];
+            if (!data) return;
+
+            nodeTag.innerText = data.tag;
+            nodeTitle.innerText = data.title;
+            nodeDesc.innerText = data.desc;
+            nodeInput.innerText = data.input;
+            nodeOutput.innerText = data.output;
+            nodeDb.innerText = data.db;
+
+            // Dynamic Labels for Router Diamonds
+            if (dbId.startsWith('lg-should_continue') || dbId.startsWith('lg-check_reflection') || dbId.startsWith('lg-check_feedback')) {
+                labelInput.innerText = 'Giá trị kiểm tra:';
+                labelOutput.innerText = 'Kết quả rẽ nhánh:';
+                labelDb.innerText = 'Trạng thái logic:';
+            } else {
+                labelInput.innerText = 'Đầu vào:';
+                labelOutput.innerText = 'Đầu ra:';
+                labelDb.innerText = 'Cơ sở dữ liệu:';
+            }
+
+            // Render file links
+            nodeFiles.innerHTML = '';
+            if (data.files && data.files.length > 0) {
+                data.files.forEach(f => {
+                    if (f.path) {
+                        const link = document.createElement('a');
+                        link.href = f.path;
+                        link.innerText = `📄 ${f.name}`;
+                        link.className = "text-emerald-400 hover:text-emerald-300 underline font-medium break-all block py-0.5";
+                        nodeFiles.appendChild(link);
+                    } else {
+                        const span = document.createElement('span');
+                        span.innerText = `ℹ️ ${f.name}`;
+                        span.className = "text-slate-400 italic block py-0.5";
+                        nodeFiles.appendChild(span);
+                    }
+                });
+            } else {
+                nodeFiles.innerHTML = '<span class="text-slate-600 italic">Không có file liên quan trực tiếp</span>';
+            }
+        }
+
+        // Helper to Clear Details
+        function clearDetails() {
+            nodeTag.innerText = 'SELECT A NODE';
+            nodeTitle.innerText = 'Chọn một tiến trình';
+            nodeDesc.innerText = 'Di chuột qua hoặc click vào bất kỳ nút (Node) hoặc điểm quyết định (Diamond Router) trên sơ đồ thiết kế kỹ thuật bên phải để xem phân tích dữ liệu, các điều kiện rẽ nhánh và các file mã nguồn liên quan.';
+            nodeInput.innerText = '-';
+            nodeOutput.innerText = '-';
+            nodeDb.innerText = '-';
+            
+            labelInput.innerText = 'Đầu vào:';
+            labelOutput.innerText = 'Đầu ra:';
+            labelDb.innerText = 'Cơ sở dữ liệu:';
+            
+            nodeFiles.innerHTML = '<span class="text-slate-600 italic">Chưa chọn nút nào</span>';
+        }
+
+        // Initialize Simple Mode on load
+        setViewMode(false);
+    </script>
+</body>
+</html>

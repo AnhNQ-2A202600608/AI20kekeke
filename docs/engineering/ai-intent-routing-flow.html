@@ -1,0 +1,800 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sơ đồ tổng thể cách Mentora phân loại intent và tạo phản hồi AI phù hợp.">
+  <title>Mentora AI Intent Routing Flow</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --page: #f5f7f2;
+      --surface: #fbfcf9;
+      --surface-strong: #ffffff;
+      --surface-soft: #edf4e8;
+      --ink: #172014;
+      --muted: #5a6856;
+      --line: #cbd5c5;
+      --line-strong: #99a992;
+      --accent: #4f9f21;
+      --accent-strong: #2e7410;
+      --accent-soft: #dff1d4;
+      --shadow: 0 20px 54px rgba(42, 75, 26, 0.11);
+      --radius: 16px;
+      --mono: "Cascadia Code", "SFMono-Regular", Consolas, monospace;
+      --sans: Aptos, "Segoe UI Variable", "Segoe UI", sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --page: #10150e;
+        --surface: #151d13;
+        --surface-strong: #1b2518;
+        --surface-soft: #202d1c;
+        --ink: #edf4e9;
+        --muted: #a9b8a3;
+        --line: #354331;
+        --line-strong: #53674d;
+        --accent: #79c84b;
+        --accent-strong: #9bdd74;
+        --accent-soft: #263f1d;
+        --shadow: 0 22px 60px rgba(0, 0, 0, 0.28);
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--page);
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      min-height: 100dvh;
+      background:
+        radial-gradient(circle at 8% 2%, color-mix(in srgb, var(--accent) 9%, transparent), transparent 27rem),
+        var(--page);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.55;
+    }
+
+    button, a { font: inherit; }
+
+    button:focus-visible,
+    a:focus-visible {
+      outline: 3px solid color-mix(in srgb, var(--accent) 55%, transparent);
+      outline-offset: 3px;
+    }
+
+    .shell {
+      width: min(1480px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      display: flex;
+      min-height: 72px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 132px;
+      height: auto;
+      display: block;
+    }
+
+    .brand-context {
+      padding-left: 14px;
+      border-left: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .top-note {
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 12px;
+    }
+
+    .hero {
+      display: grid;
+      min-height: 390px;
+      grid-template-columns: minmax(0, 1.3fr) minmax(320px, 0.7fr);
+      align-items: center;
+      gap: clamp(40px, 7vw, 110px);
+      padding: 64px 0 56px;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--accent-strong);
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 900px;
+      margin: 0;
+      font-size: clamp(42px, 5.6vw, 78px);
+      font-weight: 780;
+      letter-spacing: -0.055em;
+      line-height: 0.98;
+    }
+
+    .hero-copy {
+      max-width: 690px;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: clamp(17px, 1.5vw, 21px);
+    }
+
+    .hero-aside {
+      border-left: 2px solid var(--accent);
+      padding: 14px 0 14px 26px;
+    }
+
+    .hero-aside strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 22px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-aside p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .hero-aside code {
+      color: var(--accent-strong);
+      font-family: var(--mono);
+      font-size: 0.88em;
+      font-weight: 800;
+    }
+
+    .diagram-section {
+      padding: 0 0 70px;
+    }
+
+    .diagram-toolbar {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 28px;
+      padding: 28px 0 22px;
+      border-top: 1px solid var(--line);
+    }
+
+    .diagram-toolbar h2 {
+      margin: 0;
+      font-size: clamp(27px, 3vw, 42px);
+      letter-spacing: -0.035em;
+      line-height: 1.05;
+    }
+
+    .diagram-toolbar p {
+      max-width: 620px;
+      margin: 10px 0 0;
+      color: var(--muted);
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .filter {
+      min-height: 42px;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      padding: 8px 15px;
+      background: var(--surface-strong);
+      color: var(--ink);
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 800;
+      white-space: nowrap;
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .filter:hover { border-color: var(--accent); }
+    .filter:active { transform: translateY(1px) scale(0.98); }
+    .filter[aria-pressed="true"] {
+      border-color: var(--accent-strong);
+      background: var(--accent-strong);
+      color: #f7fff3;
+    }
+
+    .flow-canvas {
+      overflow-x: auto;
+      overscroll-behavior-inline: contain;
+      scrollbar-color: var(--accent) var(--surface-soft);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .flow-grid {
+      display: grid;
+      grid-template-columns: minmax(190px, 0.72fr) 42px minmax(280px, 1.12fr) 42px minmax(240px, 0.9fr) 42px minmax(300px, 1.18fr);
+      align-items: stretch;
+      min-width: 1240px;
+      padding: 28px;
+    }
+
+    .lane {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .lane-title {
+      display: flex;
+      min-height: 42px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+      font-size: 13px;
+      font-weight: 850;
+    }
+
+    .lane-title span {
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .connector {
+      position: relative;
+      min-height: 100%;
+    }
+
+    .connector::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 7px;
+      right: 9px;
+      height: 1px;
+      background: var(--line-strong);
+    }
+
+    .connector::after {
+      content: "";
+      position: absolute;
+      top: calc(50% - 4px);
+      right: 7px;
+      width: 7px;
+      height: 7px;
+      border-top: 1px solid var(--line-strong);
+      border-right: 1px solid var(--line-strong);
+      transform: rotate(45deg);
+    }
+
+    .node {
+      position: relative;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+      background: var(--surface-strong);
+      transition: opacity 220ms ease, transform 220ms ease, border-color 220ms ease, background 220ms ease;
+    }
+
+    .node[data-emphasis="true"] {
+      border-color: color-mix(in srgb, var(--accent) 58%, var(--line));
+      background: var(--accent-soft);
+    }
+
+    .node h3 {
+      margin: 0;
+      font-size: 15px;
+      letter-spacing: -0.015em;
+    }
+
+    .node p {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.48;
+    }
+
+    .node code {
+      font-family: var(--mono);
+      font-size: 0.9em;
+      font-weight: 800;
+    }
+
+    .node-label {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: var(--accent-strong);
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .node.risk {
+      background-image: repeating-linear-gradient(
+        135deg,
+        transparent 0,
+        transparent 10px,
+        color-mix(in srgb, var(--ink) 3%, transparent) 10px,
+        color-mix(in srgb, var(--ink) 3%, transparent) 20px
+      );
+    }
+
+    .decision-stack {
+      display: grid;
+      gap: 9px;
+    }
+
+    .decision {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 11px;
+      align-items: start;
+      padding: 12px;
+      border-left: 2px solid var(--line-strong);
+      background: color-mix(in srgb, var(--surface-soft) 56%, transparent);
+    }
+
+    .decision-index {
+      display: grid;
+      width: 28px;
+      height: 28px;
+      place-items: center;
+      border: 1px solid var(--line-strong);
+      border-radius: 50%;
+      color: var(--accent-strong);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .decision strong {
+      display: block;
+      font-size: 13px;
+    }
+
+    .decision small {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.4;
+    }
+
+    .branch {
+      display: grid;
+      gap: 10px;
+    }
+
+    .branch-tag {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .branch-tag strong { color: var(--ink); }
+
+    .branch-arrow {
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background: var(--accent);
+      vertical-align: middle;
+    }
+
+    .output {
+      margin-top: auto;
+      border-color: var(--accent);
+      background: var(--accent-soft);
+    }
+
+    .output strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 16px;
+    }
+
+    .dimmed {
+      opacity: 0.18;
+      transform: scale(0.985);
+      pointer-events: none;
+    }
+
+    .active-path {
+      border-color: var(--accent) !important;
+      transform: translateY(-2px);
+    }
+
+    .notes-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 44px;
+      padding: 66px 0 82px;
+      border-top: 1px solid var(--line);
+    }
+
+    .notes-grid h2 {
+      max-width: 620px;
+      margin: 0;
+      font-size: clamp(30px, 3.5vw, 50px);
+      letter-spacing: -0.045em;
+      line-height: 1.04;
+    }
+
+    .notes-grid > div > p {
+      max-width: 700px;
+      margin: 20px 0 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .principles {
+      display: grid;
+      gap: 0;
+      border-top: 1px solid var(--line-strong);
+    }
+
+    .principle {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 14px;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .principle b {
+      color: var(--accent-strong);
+      font-family: var(--mono);
+      font-size: 12px;
+    }
+
+    .principle strong {
+      display: block;
+      font-size: 14px;
+    }
+
+    .principle span {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      min-height: 82px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    footer code {
+      color: var(--accent-strong);
+      font-family: var(--mono);
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .hero > *,
+      .diagram-toolbar > *,
+      .flow-canvas {
+        animation: rise 620ms cubic-bezier(0.16, 1, 0.3, 1) both;
+      }
+
+      .hero > :nth-child(2) { animation-delay: 80ms; }
+      .diagram-toolbar > :nth-child(2) { animation-delay: 120ms; }
+      .flow-canvas { animation-delay: 180ms; }
+
+      .node {
+        animation: node-in 500ms cubic-bezier(0.16, 1, 0.3, 1) both;
+        animation-delay: calc(var(--i, 0) * 45ms + 240ms);
+      }
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes node-in {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    @media (max-width: 1040px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: 0;
+        gap: 34px;
+        padding: 50px 0;
+      }
+
+      .hero-aside { max-width: 680px; }
+
+      .diagram-toolbar {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .filters { justify-content: flex-start; }
+
+      .flow-canvas {
+        overflow-x: auto;
+        overscroll-behavior-inline: contain;
+        scrollbar-color: var(--accent) var(--surface-soft);
+      }
+
+      .notes-grid {
+        grid-template-columns: 1fr;
+        gap: 34px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .shell { width: min(100% - 28px, 1480px); }
+      .topbar { min-height: 64px; }
+      .brand img { width: 110px; }
+      .brand-context, .top-note { display: none; }
+      .hero { padding: 42px 0; }
+      h1 { font-size: clamp(39px, 12vw, 58px); }
+      .hero-copy { font-size: 17px; }
+      .diagram-toolbar { padding-top: 22px; }
+      .filters { width: 100%; }
+      .filter { flex: 1 1 calc(50% - 8px); }
+      .flow-grid { padding: 18px; }
+      .notes-grid { padding: 52px 0 64px; }
+      footer { align-items: flex-start; flex-direction: column; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <header class="shell topbar">
+    <a class="brand" href="#flow" aria-label="Mentora AI routing flow">
+      <img src="../../frontend/public/brand/mentora/logo-cropped.png" alt="Mentora">
+      <span class="brand-context">AI Tutor Architecture</span>
+    </a>
+    <span class="top-note">Hybrid intent routing / RAG / Socratic guardrails</span>
+  </header>
+
+  <main>
+    <section class="shell hero" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">AI decision flow</p>
+        <h1 id="page-title">Từ câu hỏi đến phản hồi phù hợp.</h1>
+        <p class="hero-copy">Mentora kết hợp luật nhanh, ngữ cảnh học, LLM classifier và chất lượng RAG để chọn đúng cách trả lời.</p>
+      </div>
+      <aside class="hero-aside" aria-label="Nguyên tắc định tuyến">
+        <strong>Không giao mọi câu hỏi cho một LLM duy nhất.</strong>
+        <p>Router ưu tiên đường rẻ và nhanh. Chỉ câu mơ hồ mới dùng classifier, còn câu học thuật phải qua <code>RAG</code> và kiểm định nguồn.</p>
+      </aside>
+    </section>
+
+    <section class="shell diagram-section" id="flow" aria-labelledby="flow-title">
+      <div class="diagram-toolbar">
+        <div>
+          <h2 id="flow-title">Luồng quyết định tổng thể</h2>
+          <p>Chọn một nhánh để làm nổi bật đường đi tương ứng. Chế độ integrity cho thấy cách hệ thống chặn yêu cầu làm hộ.</p>
+        </div>
+        <div class="filters" role="group" aria-label="Lọc nhánh xử lý">
+          <button class="filter" type="button" data-filter="all" aria-pressed="true">Toàn bộ flow</button>
+          <button class="filter" type="button" data-filter="general" aria-pressed="false">General</button>
+          <button class="filter" type="button" data-filter="academic" aria-pressed="false">Academic</button>
+          <button class="filter" type="button" data-filter="integrity" aria-pressed="false">Integrity risk</button>
+        </div>
+      </div>
+
+      <div class="flow-canvas" tabindex="0" aria-label="Sơ đồ có thể cuộn ngang trên màn hình nhỏ">
+        <div class="flow-grid">
+          <div class="lane">
+            <div class="lane-title">Input <span>AgentState</span></div>
+            <article class="node path-all" style="--i: 1" data-path="all">
+              <span class="node-label">Request</span>
+              <h3>Câu hỏi người dùng</h3>
+              <p>Nội dung, concept đang chọn, mode học và tối đa 5 lượt hội thoại gần nhất.</p>
+            </article>
+            <article class="node path-all" style="--i: 2" data-path="all">
+              <span class="node-label">Profile</span>
+              <h3>Ngữ cảnh cá nhân</h3>
+              <p>Elo, BKT, weakness, active quiz và long-term memory.</p>
+            </article>
+          </div>
+
+          <div class="connector" aria-hidden="true"></div>
+
+          <div class="lane">
+            <div class="lane-title">Intent router <span>analyze_node</span></div>
+            <article class="node path-all" style="--i: 3" data-path="all">
+              <span class="node-label">Priority rules</span>
+              <div class="decision-stack">
+                <div class="decision">
+                  <span class="decision-index">1</span>
+                  <div><strong>Integrity risk?</strong><small>Assignment, lab, quiz hoặc code hoàn chỉnh.</small></div>
+                </div>
+                <div class="decision">
+                  <span class="decision-index">2</span>
+                  <div><strong>General heuristic?</strong><small>Chào hỏi, cảm ơn, danh tính hoặc thông tin cá nhân.</small></div>
+                </div>
+                <div class="decision">
+                  <span class="decision-index">3</span>
+                  <div><strong>Có concept cụ thể?</strong><small>Context giao diện ưu tiên academic.</small></div>
+                </div>
+                <div class="decision">
+                  <span class="decision-index">4</span>
+                  <div><strong>Từ khóa học thuật?</strong><small>RAG, embedding, Docker, Elo, BKT và các chủ đề trong khóa.</small></div>
+                </div>
+                <div class="decision">
+                  <span class="decision-index">5</span>
+                  <div><strong>LLM classifier</strong><small>Chỉ chạy khi các luật trước chưa kết luận.</small></div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="connector" aria-hidden="true"></div>
+
+          <div class="lane">
+            <div class="lane-title">Classification <span>hybrid</span></div>
+            <div class="branch" data-path="general">
+              <div class="branch-tag"><strong>General</strong><span class="branch-arrow"></span></div>
+              <article class="node" style="--i: 4" data-path="general">
+                <h3>Xã giao hoặc ngoài học liệu</h3>
+                <p>Bỏ qua RAG. Có thể dùng static fast path hoặc LLM prompt ngắn.</p>
+              </article>
+            </div>
+
+            <div class="branch" data-path="academic">
+              <div class="branch-tag"><strong>Academic</strong><span class="branch-arrow"></span></div>
+              <article class="node" style="--i: 5" data-path="academic" data-emphasis="true">
+                <h3>Truy vấn RAG</h3>
+                <p>Embedding, pgvector, keyword fallback tùy cấu hình và metadata filter.</p>
+              </article>
+              <article class="node" style="--i: 6" data-path="academic">
+                <h3>Quality gate 0.42</h3>
+                <p>Có slide phù hợp thì giữ academic. Kết quả yếu được hạ xuống general.</p>
+              </article>
+            </div>
+
+            <div class="branch" data-path="integrity">
+              <div class="branch-tag"><strong>Integrity risk</strong><span class="branch-arrow"></span></div>
+              <article class="node risk" style="--i: 7" data-path="integrity">
+                <h3>Luôn giữ academic</h3>
+                <p>Không cho yêu cầu làm hộ né guardrail khi RAG không tìm thấy slide.</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="connector" aria-hidden="true"></div>
+
+          <div class="lane">
+            <div class="lane-title">Response engine <span>LangGraph</span></div>
+            <article class="node" style="--i: 8" data-path="general">
+              <span class="node-label">respond_general</span>
+              <h3>Phản hồi nhanh và ngắn</h3>
+              <p>Không citation, không pedagogical reflection. Dùng tối đa 10 tin nhắn lịch sử nếu cần LLM.</p>
+            </article>
+            <article class="node" style="--i: 9" data-path="academic" data-emphasis="true">
+              <span class="node-label">respond_academic</span>
+              <h3>Phản hồi Socratic cá nhân hóa</h3>
+              <p>Prompt kết hợp slide, Elo, BKT, mode học, lịch sử và long-term memory.</p>
+            </article>
+            <article class="node" style="--i: 10" data-path="academic">
+              <span class="node-label">Citation validator</span>
+              <h3>Chỉ giữ nguồn hợp lệ</h3>
+              <p>Loại citation không xuất hiện trong tập slide đã retrieve.</p>
+            </article>
+            <article class="node risk" style="--i: 11" data-path="integrity">
+              <span class="node-label">Reflection loop</span>
+              <h3>Kiểm định sư phạm</h3>
+              <p>Phát hiện code hoàn chỉnh hoặc đáp án MCQ. Vi phạm sẽ được viết lại tối đa 2 lần.</p>
+            </article>
+            <article class="node output path-all" style="--i: 12" data-path="all">
+              <strong>SSE response</strong>
+              <p>Status, tool call, token, citation metadata và kết quả cuối.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell notes-grid" aria-labelledby="why-title">
+      <div>
+        <h2 id="why-title">Một router nhiều tầng, không phải một prompt lớn.</h2>
+        <p>Thiết kế này giảm chi phí cho câu đơn giản, giữ câu học thuật bám nguồn và ngăn yêu cầu làm hộ đi vào đường trả lời thông thường.</p>
+      </div>
+      <div class="principles" aria-label="Các nguyên tắc chính">
+        <div class="principle">
+          <b>01</b>
+          <div><strong>Fast first</strong><span>Heuristic xử lý trường hợp rõ ràng trước khi gọi classifier.</span></div>
+        </div>
+        <div class="principle">
+          <b>02</b>
+          <div><strong>Grounded when academic</strong><span>RAG quyết định câu hỏi có đủ căn cứ học liệu hay không.</span></div>
+        </div>
+        <div class="principle">
+          <b>03</b>
+          <div><strong>Safe by construction</strong><span>Integrity risk luôn đi qua guardrail và reflection.</span></div>
+        </div>
+        <div class="principle">
+          <b>04</b>
+          <div><strong>Adaptive response</strong><span>Cùng một câu hỏi có thể được giải thích khác theo Elo và BKT.</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell">
+    <span>Mentora AI Tutor Architecture</span>
+    <span>Nguồn triển khai: <code>analyze_node.py</code>, <code>graph.py</code>, <code>respond_node.py</code></span>
+  </footer>
+
+  <script>
+    (() => {
+      const buttons = Array.from(document.querySelectorAll('[data-filter]'));
+      const pathItems = Array.from(document.querySelectorAll('[data-path]'));
+
+      function setFilter(filter) {
+        buttons.forEach((button) => {
+          button.setAttribute('aria-pressed', String(button.dataset.filter === filter));
+        });
+
+        pathItems.forEach((item) => {
+          const itemPath = item.dataset.path;
+          const visible = filter === 'all' || itemPath === 'all' || itemPath === filter;
+          item.classList.toggle('dimmed', !visible);
+          item.classList.toggle('active-path', visible && filter !== 'all' && itemPath === filter && item.classList.contains('node'));
+        });
+      }
+
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => setFilter(button.dataset.filter));
+      });
+    })();
+  </script>
+</body>
+</html>

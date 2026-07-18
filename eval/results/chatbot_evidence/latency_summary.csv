@@ -1,0 +1,5 @@
+category,runs,client_p50_ms,client_p95_ms,first_token_p50_ms,server_p50_ms
+general,2,3056.7,3090.83,2826.7,2433.17
+academic_cached,2,6094.26,6127.8,3213.8,5497.61
+academic_cold,2,7723.26,7984.95,3173.17,7112.09
+long_history,2,10110.53,10332.21,3167.89,9478.89

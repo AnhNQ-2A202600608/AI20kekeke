@@ -1,0 +1,56 @@
+============================================================
+              MENTORA ADAPTIVE ALGORITHM EVALUATION REPORT
+============================================================
+Generated at: 2026-06-22
+
+1. ELO CONVERGENCE PERFORMANCE:
+   - Random Selection final Student Elo RMSE: 298.34
+   - Adaptive Selection final Student Elo RMSE: 244.33
+   - Status: PASS
+
+2. BKT MASTERING PROFILE:
+   - Total students reaching latent mastery: 95/100
+   - Estimated mastery of mastered group: 0.9991
+   - BKT State Prediction AUC: 0.8386
+   - BKT Responsiveness (Mistake Test final value): 0.0686
+   - Status: PASS
+
+3. PERSONALIZATION & ZPD EFFICIENCY (LINUCB VS BASELINES):
+   - LinUCB Bandit: ZPD Hit Rate = 23.6%, Cumulative Reward = 1384.6
+   - Random Selection: ZPD Hit Rate = 23.1%, Cumulative Reward = 518.9
+   - Static Greedy: ZPD Hit Rate = 32.2%, Cumulative Reward = 670.4
+   - Status: PASS
+
+4. CONCEPT GRAPH PROPAGATION & PERFORMANCE:
+   - Cycle Protection Visit Check: PASSED
+   - Forward & Backward Decay Verification: PASSED
+   - Cache Invalidation Check: PASSED
+   - Standard propagation duration: 1.0453 ms
+   - 40-node stress test duration: 17.1072 ms
+   - Status: PASS
+
+5. SPACED REPETITION (FORGETTING DECAY):
+   - FSRS Decay Math Verification: PASSED
+   - Memory Stability Updates Check: PASSED
+   - Status: PASS
+
+6. DATABASE CONCURRENCY PERFORMANCE (AT CONCURRENCY = 50):
+   - Sync locking (v2): Throughput = 37.82 att/sec, P50 Latency = 930.0 ms
+   - Async outbox (v3): Throughput = 60.00 att/sec, P50 Latency = 651.9 ms
+   - Latency Reduction Factor: 1.4x
+   - Throughput Speedup Factor: 1.6x
+   - Status: PASS
+
+7. REAL-WORLD DATASET EVALUATION (ASSISTMENTS):
+   - BKT Next-Step AUC: 0.6697 (RMSE: 0.4677)
+   - Elo Next-Step AUC: 0.6836 (RMSE: 0.4343)
+   - Status: PASS
+
+8. REAL-WORLD BANDIT OFF-POLICY EVALUATION (EDNET):
+   - Matched Trials: 25549
+   - LinUCB Cumulative Reward: 15230.29
+   - Random Cumulative Reward: 12992.75
+   - Status: PASS
+
+============================================================
+SUMMARY EVALUATION RESULT: PASSED

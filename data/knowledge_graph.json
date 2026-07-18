@@ -1,0 +1,83 @@
+{
+  "version": "2.0.0-demo-minh",
+  "nodes": [
+    {
+      "id": "ti-le-thuc",
+      "lop": 7,
+      "mon": "Toán",
+      "mach_noi_dung": "Số và Đại số",
+      "mo_ta": "Vận dụng tính chất tỉ lệ thức và đại lượng tỉ lệ thuận",
+      "tien_quyet": [
+        "ti-so"
+      ]
+    },
+    {
+      "id": "ti-so",
+      "lop": 6,
+      "mon": "Toán",
+      "mach_noi_dung": "Số và Đại số",
+      "mo_ta": "Hiểu và tính tỉ số của hai đại lượng",
+      "tien_quyet": [
+        "tinh-chat-co-ban-cua-phan-so"
+      ]
+    },
+    {
+      "id": "tinh-chat-co-ban-cua-phan-so",
+      "lop": 5,
+      "mon": "Toán",
+      "mach_noi_dung": "Số và Đại số",
+      "mo_ta": "Tính chất cơ bản của phân số (nhân/chia cả tử và mẫu cho cùng một số khác 0)",
+      "tien_quyet": [
+        "phan-so"
+      ]
+    },
+    {
+      "id": "phan-so",
+      "lop": 5,
+      "mon": "Toán",
+      "mach_noi_dung": "Số và Đại số",
+      "mo_ta": "Khái niệm phân số: tử số, mẫu số, mẫu khác 0",
+      "tien_quyet": []
+    },
+    {
+      "id": "rut-gon-phan-so",
+      "lop": 5,
+      "mon": "Toán",
+      "mach_noi_dung": "Số và Đại số",
+      "mo_ta": "Rút gọn phân số về phân số tối giản",
+      "tien_quyet": [
+        "tinh-chat-co-ban-cua-phan-so"
+      ]
+    },
+    {
+      "id": "phan-so-bang-nhau",
+      "lop": 6,
+      "mon": "Toán",
+      "mach_noi_dung": "Số và Đại số",
+      "mo_ta": "Nhận biết hai phân số bằng nhau bằng quy tắc tích chéo",
+      "tien_quyet": [
+        "tinh-chat-co-ban-cua-phan-so"
+      ]
+    },
+    {
+      "id": "ti-so-phan-tram",
+      "lop": 6,
+      "mon": "Toán",
+      "mach_noi_dung": "Số và Đại số",
+      "mo_ta": "Tính tỉ số phần trăm của hai đại lượng",
+      "tien_quyet": [
+        "ti-so"
+      ]
+    },
+    {
+      "id": "quy-dong-mau-nhieu-phan-so",
+      "lop": 6,
+      "mon": "Toán",
+      "mach_noi_dung": "Số và Đại số",
+      "mo_ta": "Quy đồng mẫu nhiều phân số",
+      "tien_quyet": [
+        "phan-so"
+      ]
+    }
+  ]
+}

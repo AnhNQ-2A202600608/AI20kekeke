@@ -71,7 +71,7 @@ This guide prepares the team to defend the solution against jury questions.
 - **Jury Rationale**: Check architectural foresight.
 - **Weakness Checked**: Monolithic code clutter.
 - **Response Framework**: Explain that competition tracks change; the pluggable system keeps the core code clean and allows enabling only relevant libraries.
-- **Evidence**: [module-system.md](file:///d:/code/AI20kekeke/docs/architecture/module-system.md) loading flow.
+- **Evidence**: [module-system.md](file:///d:/code/AI20kekeke/docs/engineering/module-system.md) loading flow.
 - **What NOT to say**: *"We wanted to write more files."*
 
 ---
@@ -107,7 +107,7 @@ This guide prepares the team to defend the solution against jury questions.
 - **Jury Rationale**: Check fairness awareness.
 - **Weakness Checked**: Discriminatory output predictions.
 - **Response Framework**: Explain bias checks in the data profile loaders and evaluation tests.
-- **Evidence**: [evaluation-guide.md](file:///d:/code/AI20kekeke/docs/evaluation-guide.md).
+- **Evidence**: [evaluation-guide.md](file:///d:/code/AI20kekeke/docs/domain-knowledge/evaluation-guide.md).
 - **What NOT to say**: *"Our dataset is unbiased so our model has no bias."*
 
 ---
