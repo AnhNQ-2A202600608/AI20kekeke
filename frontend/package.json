@@ -1,5 +1,5 @@
 {
-  "name": "orbitlearn",
+  "name": "mentora",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -26,5 +26,6 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.10",
     "typescript": "^5"
-  }
+  },
+  "packageManager": "pnpm@10.0.0"
 }

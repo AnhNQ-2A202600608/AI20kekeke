@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useState, useSyncExternalStore } from "react";
 import {
   BookOpenText,
   CaretDown,
@@ -20,6 +20,7 @@ import {
 } from "@phosphor-icons/react";
 import { activeLearningLevel, levelThemes, subjectPrograms, subjects } from "../data";
 import { useSubjectProfiles } from "../hooks/useOnboardingProfile";
+import { useAuthSession } from "../lib/session";
 import shellStyles from "./app-shell.module.css";
 
 const navItems = [
@@ -39,10 +40,27 @@ const subjectIcons = {
   TO: Calculator,
 };
 
+const SIDEBAR_COLLAPSE_KEY = "mentora-sidebar-collapsed";
+const LEGACY_SIDEBAR_COLLAPSE_KEY = "orbitlearn-sidebar-collapsed";
+const SIDEBAR_CHANGE_EVENT = "orbitlearn-sidebar-change";
+
+function subscribeToSidebarPreference(listener: () => void) {
+  window.addEventListener("storage", listener);
+  window.addEventListener(SIDEBAR_CHANGE_EVENT, listener);
+  return () => {
+    window.removeEventListener("storage", listener);
+    window.removeEventListener(SIDEBAR_CHANGE_EVENT, listener);
+  };
+}
+
+function getSidebarPreference() {
+  return (window.localStorage.getItem(SIDEBAR_COLLAPSE_KEY) || window.localStorage.getItem(LEGACY_SIDEBAR_COLLAPSE_KEY)) === "true";
+}
+
 export function AppShell({ children, compact = false }: { children: ReactNode; compact?: boolean }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const sidebarCollapsed = useSyncExternalStore(subscribeToSidebarPreference, getSidebarPreference, () => false);
   const [profileMenuOpen, setProfileMenuOpen] = useState(false);
   const isProfilePage = pathname.startsWith("/ho-so");
   const isAiQuestionPage = pathname.startsWith("/hoi-dap-ai");
@@ -54,17 +72,14 @@ export function AppShell({ children, compact = false }: { children: ReactNode; c
   const currentProgram = subjectPrograms[selectedSubject.code as keyof typeof subjectPrograms] || subjectPrograms.TO;
   const shouldCollapseSidebar = !hideSidebar && sidebarCollapsed;
   const subjectProfiles = useSubjectProfiles();
+  const authSession = useAuthSession();
+  const profileName = authSession?.user.fullName || "Hoàng Nam";
+  const profileInitials = profileName.split(/\s+/).filter(Boolean).slice(-2).map((part) => part[0]).join("").toUpperCase() || "HN";
 
-  useEffect(() => {
-    setSidebarCollapsed(window.localStorage.getItem("orbitlearn-sidebar-collapsed") === "true");
-  }, []);
 
   const handleToggleSidebar = () => {
-    setSidebarCollapsed((value) => {
-      const nextValue = !value;
-      window.localStorage.setItem("orbitlearn-sidebar-collapsed", String(nextValue));
-      return nextValue;
-    });
+    window.localStorage.setItem(SIDEBAR_COLLAPSE_KEY, String(!sidebarCollapsed));
+    window.dispatchEvent(new Event(SIDEBAR_CHANGE_EVENT));
   };
 
   return (
@@ -73,8 +88,8 @@ export function AppShell({ children, compact = false }: { children: ReactNode; c
       <header className="app-header">
         <div className="header-leading">
           <Link className="brand" href="/hoc-tap" aria-label="Về trang học tập">
-            <span className="brand-symbol">OL</span>
-            <span>OrbitLearn</span>
+            <span className="brand-symbol">M</span>
+            <span>Mentora</span>
           </Link>
         </div>
         <nav className="main-nav" aria-label="Điều hướng chính">
@@ -91,11 +106,15 @@ export function AppShell({ children, compact = false }: { children: ReactNode; c
           })}
         </nav>
         <div className="header-account-actions">
+          <Link className={`header-ai-link ${isAiQuestionPage ? "active" : ""}`} href={`/hoi-dap-ai?subject=${selectedSubject.code}`} aria-label="Mở Trợ lý AI" title="Trợ lý AI">
+            <ChatCircleDots size={18} weight={isAiQuestionPage ? "fill" : "regular"} />
+            <span>Trợ lý AI</span>
+          </Link>
           <div className={shellStyles.profileMenu}>
             <button
               className="profile-summary"
               type="button"
-              aria-label="Mở menu tài khoản Hoàng Nam"
+              aria-label={`Mở menu tài khoản ${profileName}`}
               aria-expanded={profileMenuOpen}
               onClick={() => setProfileMenuOpen((open) => !open)}
             >
@@ -103,14 +122,14 @@ export function AppShell({ children, compact = false }: { children: ReactNode; c
                 <Fire size={15} weight="fill" />
                 <strong>{activeLearningLevel.streak}</strong>
               </span>
-              <span className="avatar">HN</span>
+              <span className="avatar">{profileInitials}</span>
               <CaretDown className={profileMenuOpen ? shellStyles.menuCaretOpen : shellStyles.menuCaret} size={15} weight="bold" />
             </button>
             {profileMenuOpen && (
               <div className={shellStyles.profileDropdown} role="menu" aria-label="Tiện ích tài khoản">
                 <div className={shellStyles.profileDropdownHeader}>
-                  <span className="avatar">HN</span>
-                  <div><strong>Hoàng Nam</strong><small>{activeLearningLevel.title}</small></div>
+                  <span className="avatar">{profileInitials}</span>
+                  <div><strong>{profileName}</strong><small>{authSession?.user.email || activeLearningLevel.title}</small></div>
                 </div>
                 <div className={shellStyles.profileMenuLinks}>
                   {profileMenuItems.map((item) => {

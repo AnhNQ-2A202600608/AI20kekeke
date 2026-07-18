@@ -2347,3 +2347,27 @@
     padding: 13px;
   }
 }
+/* Compact assigned exam heading */
+.assignedHero {
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 18px;
+  min-height: 0;
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: linear-gradient(100deg, color-mix(in srgb, var(--accent) 11%, white), rgba(255,255,255,.94) 70%);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 16%, transparent), 0 10px 26px color-mix(in srgb, var(--accent) 6%, transparent);
+}
+
+.assignedHero::before { display: none; }
+.assignedHero .assignedKicker { min-height: 23px; padding: 0 8px; border-radius: 7px; font-size: .68rem; box-shadow: none; }
+.assignedHero h1 { margin-top: 6px; font-size: clamp(1.35rem, 2vw, 1.72rem); line-height: 1.12; }
+.assignedHero p { max-width: 690px; margin-top: 4px; font-size: .78rem; line-height: 1.45; }
+.assignedAvailability { gap: 5px; padding: 4px 0 4px 16px; border-left-color: color-mix(in srgb, var(--accent) 18%, var(--line)); }
+.assignedAvailability strong { font-size: 1.16rem; }
+.assignedAvailability span { font-size: .7rem; }
+
+@media (max-width: 680px) {
+  .assignedHero { grid-template-columns: 1fr; gap: 10px; padding: 15px; }
+  .assignedAvailability { padding-left: 0; border-left: 0; }
+}
