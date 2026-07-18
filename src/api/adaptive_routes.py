@@ -1119,9 +1119,9 @@ def get_class_stats_endpoint(
         if db._stub_mode or db.app_client is None:
             return ClassStatsResponse(
                 total_students=5,
-                class_average_elo=1140.0,
-                weakest_skill=WeakestSkillResponse(id="rag-pipelines", name="RAG Pipelines", avg_elo=830.0),
-                completion_rate=55.0,
+                class_average_elo=1127.0,
+                weakest_skill=WeakestSkillResponse(id="M7.SDS.05", name="Tỉ lệ thức & Đại lượng tỉ lệ", avg_elo=1028.0),
+                completion_rate=40.0,
             )
 
         # 2. Đọc dữ liệu từ cache để phản hồi tức thì

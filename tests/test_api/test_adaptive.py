@@ -1478,9 +1478,9 @@ async def test_class_stats_endpoint(mock_db, client):
         assert response.status_code == 200
         data = response.json()
         assert data["total_students"] == 5
-        assert data["class_average_elo"] == 1140.0
-        assert data["weakest_skill"]["name"] == "RAG Pipelines"
-        assert data["completion_rate"] == 55.0
+        assert data["class_average_elo"] == 1127.0
+        assert data["weakest_skill"]["name"] == "Tỉ lệ thức & Đại lượng tỉ lệ"
+        assert data["completion_rate"] == 40.0
     finally:
         app.dependency_overrides.clear()
 
