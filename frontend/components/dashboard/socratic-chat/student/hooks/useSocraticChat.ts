@@ -44,6 +44,7 @@ export interface Message {
   isGuardrail?: boolean;
   isFallback?: boolean;
   slides?: Slide[];
+  diagnostic?: any;
   startedAt?: number;
   latencyMs?: number;
   traceSteps?: ReasoningStep[];
@@ -816,6 +817,7 @@ export const useSocraticChat = ({
                   citations: citations.length > 0 ? citations : undefined,
                   confidence_score: confidenceScore,
                   slides: slides.length > 0 ? slides : undefined,
+                  diagnostic: data.metadata?.diagnostic || undefined,
                   startedAt: msg.startedAt || aiStartedAt,
                   latencyMs: Date.now() - (msg.startedAt || aiStartedAt),
                 };

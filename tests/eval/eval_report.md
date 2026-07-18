@@ -9,8 +9,8 @@
 
 ## 2. Kết quả RAG & Citation Hallucination theo Model Provider
 ### Đầu ra qua Provider: **CLOUD**
-* **Tổng số câu hỏi đánh giá:** 10
-* **Tỉ lệ sót trích dẫn (Citation Miss Rate):** 50.00% (Ngưỡng yêu cầu: < 1.0% ở Production)
+* **Tổng số câu hỏi đánh giá:** 1
+* **Tỉ lệ sót trích dẫn (Citation Miss Rate):** 0.00% (Ngưỡng yêu cầu: < 1.0% ở Production)
 * **Tỉ lệ ảo tưởng (Hallucination Rate):** 0.00%
 * **Tỉ lệ rò rỉ đáp án (Pedagogical Leak Rate):** 0.00%
 

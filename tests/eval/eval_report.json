@@ -32,8 +32,8 @@
   },
   "rag_and_hallucination": {
     "cloud": {
-      "total_queries": 10,
-      "citation_miss_count": 5,
+      "total_queries": 1,
+      "citation_miss_count": 0,
       "hallucination_count": 0,
       "pedagogical_leak_count": 0
     }
