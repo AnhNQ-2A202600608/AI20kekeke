@@ -25,6 +25,7 @@ import shellStyles from "./app-shell.module.css";
 const navItems = [
   { href: "/hoc-tap", label: "Ôn tập", icon: BookOpenText },
   { href: "/on-thi", label: "Ôn thi", icon: ClipboardText },
+  { href: "/hoi-dap-ai", label: "Hỏi đáp AI", icon: ChatCircleDots },
 ];
 
 const profileMenuItems = [
@@ -56,7 +57,10 @@ export function AppShell({ children, compact = false }: { children: ReactNode; c
   const subjectProfiles = useSubjectProfiles();
 
   useEffect(() => {
-    setSidebarCollapsed(window.localStorage.getItem("orbitlearn-sidebar-collapsed") === "true");
+    const isCollapsed = window.localStorage.getItem("orbitlearn-sidebar-collapsed") === "true";
+    setTimeout(() => {
+      setSidebarCollapsed(isCollapsed);
+    }, 0);
   }, []);
 
   const handleToggleSidebar = () => {
@@ -73,8 +77,8 @@ export function AppShell({ children, compact = false }: { children: ReactNode; c
       <header className="app-header">
         <div className="header-leading">
           <Link className="brand" href="/hoc-tap" aria-label="Về trang học tập">
-            <span className="brand-symbol">OL</span>
-            <span>OrbitLearn</span>
+            <span className="brand-symbol">M</span>
+            <span>Mentora</span>
           </Link>
         </div>
         <nav className="main-nav" aria-label="Điều hướng chính">

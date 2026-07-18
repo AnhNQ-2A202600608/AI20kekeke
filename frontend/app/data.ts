@@ -1,5 +1,5 @@
 export const subjects = [
-  { name: "Toán học", code: "TO", progress: 68 },
+  { name: "Toán học", code: "TO", progress: 68, courseId: "00000000-0000-0000-0000-000000000001" },
 ];
 
 export const levelThemes = {

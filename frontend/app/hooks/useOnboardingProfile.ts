@@ -108,7 +108,10 @@ export function useSubjectProfiles() {
   const [profiles, setProfiles] = useState<Record<string, StoredSubjectProfile>>({});
 
   useEffect(() => {
-    setProfiles(readProfiles());
+    const data = readProfiles();
+    setTimeout(() => {
+      setProfiles(data);
+    }, 0);
   }, []);
 
   return profiles;
@@ -118,7 +121,10 @@ export function useOnboardingProfile(subjectCode?: string) {
   const [profile, setProfile] = useState<StoredSubjectProfile | null>(null);
 
   useEffect(() => {
-    setProfile(readStoredProfile(subjectCode));
+    const data = readStoredProfile(subjectCode);
+    setTimeout(() => {
+      setProfile(data);
+    }, 0);
   }, [subjectCode]);
 
   const levelKey = isLearningLevel(profile?.level) ? profile.level : "beginner";

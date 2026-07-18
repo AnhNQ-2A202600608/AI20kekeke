@@ -501,7 +501,10 @@ async def stream_chat_response(
                     except ValueError:
                         logger.warning(f"Invalid session_id: {request.session_id}")
                     else:
-                        res = db.app_client.table("chat_sessions").select("id").eq("id", str(temp_uuid)).execute()
+                        query = db.app_client.table("chat_sessions").select("id").eq("id", str(temp_uuid))
+                        if request.student_id:
+                            query = query.eq("student_id", str(request.student_id))
+                        res = query.execute()
                         if res.data:
                             session_uuid = temp_uuid
 
@@ -828,7 +831,10 @@ async def chat(
                     except ValueError:
                         logger.warning(f"Invalid session_id: {request.session_id}")
                     else:
-                        res = db.app_client.table("chat_sessions").select("id").eq("id", str(temp_uuid)).execute()
+                        query = db.app_client.table("chat_sessions").select("id").eq("id", str(temp_uuid))
+                        if request.student_id:
+                            query = query.eq("student_id", str(request.student_id))
+                        res = query.execute()
                         if res.data:
                             session_uuid = temp_uuid
 
