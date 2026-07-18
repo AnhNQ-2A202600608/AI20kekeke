@@ -1,6 +1,5 @@
 from pathlib import Path
 
-
 MIGRATION = Path("db/supabase/migrations/20260718082128_edugap_rag_materials.sql")
 
 

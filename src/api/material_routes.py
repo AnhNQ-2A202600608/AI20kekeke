@@ -1,8 +1,7 @@
+import hashlib
 import logging
 import os
-import hashlib
 import tempfile
-import urllib.parse
 from pathlib import Path
 from typing import Any
 
@@ -11,8 +10,8 @@ from fastapi import APIRouter, BackgroundTasks, Depends, File, Form, HTTPExcepti
 from pydantic import BaseModel
 
 from src.api.adaptive_routes import AuthenticatedUser, require_role
+from src.config import get_settings
 from src.services.quiz_generator import generate_quizzes_from_slides_task
-from src.services.supabase_config import get_backend_supabase_config
 from src.services.rag_ingestion_adapters import (
     OpenAIEmbeddingProvider,
     extract_page_with_ocr,
@@ -20,7 +19,7 @@ from src.services.rag_ingestion_adapters import (
 )
 from src.services.rag_ingestion_service import CorpusDocument, RagIngestionRunner
 from src.services.rag_supabase_repository import SupabaseRagError, SupabaseRagRepository
-from src.config import get_settings
+from src.services.supabase_config import get_backend_supabase_config
 
 logger = logging.getLogger(__name__)
 

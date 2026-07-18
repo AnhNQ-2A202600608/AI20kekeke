@@ -3,15 +3,14 @@ from __future__ import annotations
 import hashlib
 import re
 import unicodedata
+from collections.abc import Callable
 from dataclasses import dataclass
 from pathlib import Path
-from collections.abc import Callable
 from typing import Any, Literal, Protocol
 from uuid import UUID
 
-from pydantic import BaseModel, Field, model_validator
 import yaml
-
+from pydantic import BaseModel, Field, model_validator
 
 PAGE_MARKER = re.compile(r"<!--\s*page:\s*(\d+)\s*-->", re.IGNORECASE)
 
@@ -32,7 +31,7 @@ class CorpusManifest(BaseModel):
     documents: list[CorpusDocument] = Field(min_length=1)
 
     @model_validator(mode="after")
-    def validate_unique_documents(self) -> "CorpusManifest":
+    def validate_unique_documents(self) -> CorpusManifest:
         seen: set[tuple[int, str, str]] = set()
         for document in self.documents:
             key = (document.grade_level, document.subject_code, document.title.casefold())
