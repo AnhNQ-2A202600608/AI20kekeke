@@ -1,0 +1,217 @@
+[
+  {
+    "question_id": "q_tlt_1",
+    "yccd": [
+      "ti-le-thuc"
+    ],
+    "do_kho": 2,
+    "text": "Tìm x trong tỉ lệ thức x/4 = 9/12.",
+    "options": {
+      "A": "2",
+      "B": "3",
+      "C": "4",
+      "D": "5"
+    },
+    "dap_an": "B",
+    "la_cau_tham_do": false,
+    "socratic_hints": [
+      "Gợi ý bậc 1: Tỉ lệ thức a/b = c/d có tính chất tích chéo a·d = b·c.",
+      "Gợi ý bậc 2: Ta có x·12 = 4·9 = 36. Vậy x bằng bao nhiêu?",
+      "Gợi ý bậc 3: Chia hai vế cho 12: x = 36/12 = 3, chọn B."
+    ]
+  },
+  {
+    "question_id": "q_tlt_2",
+    "yccd": [
+      "ti-le-thuc"
+    ],
+    "do_kho": 3,
+    "text": "Biết x và y tỉ lệ thuận, khi x = 2 thì y = 6. Tìm hệ số tỉ lệ k của y theo x.",
+    "options": {
+      "A": "1/3",
+      "B": "2",
+      "C": "3",
+      "D": "4"
+    },
+    "dap_an": "C",
+    "la_cau_tham_do": false,
+    "socratic_hints": [
+      "Gợi ý bậc 1: Hai đại lượng tỉ lệ thuận liên hệ theo y = k·x.",
+      "Gợi ý bậc 2: Thay x = 2, y = 6 vào y = k·x ta được 6 = k·2.",
+      "Gợi ý bậc 3: k = 6/2 = 3, chọn C."
+    ]
+  },
+  {
+    "question_id": "q_tiso_p1",
+    "yccd": [
+      "ti-so"
+    ],
+    "do_kho": 1,
+    "text": "Tỉ số của 6 và 8 (viết dạng phân số tối giản) là bao nhiêu?",
+    "options": {
+      "A": "6/8",
+      "B": "3/4",
+      "C": "4/3",
+      "D": "8/6"
+    },
+    "dap_an": "B",
+    "la_cau_tham_do": true,
+    "socratic_hints": [
+      "Gợi ý bậc 1: Tỉ số của a và b là a/b, sau đó rút gọn.",
+      "Gợi ý bậc 2: 6/8, chia cả tử và mẫu cho 2."
+    ]
+  },
+  {
+    "question_id": "q_tiso_p2",
+    "yccd": [
+      "ti-so"
+    ],
+    "do_kho": 1,
+    "text": "Tỉ số của hai đại lượng cùng đơn vị 15 cm và 20 cm bằng?",
+    "options": {
+      "A": "3/4",
+      "B": "4/3",
+      "C": "15/20",
+      "D": "5/4"
+    },
+    "dap_an": "A",
+    "la_cau_tham_do": true,
+    "socratic_hints": [
+      "Gợi ý bậc 1: Lập tỉ số 15/20 rồi rút gọn.",
+      "Gợi ý bậc 2: Chia cả tử và mẫu cho 5 được 3/4."
+    ]
+  },
+  {
+    "question_id": "q_tccb_p1",
+    "yccd": [
+      "tinh-chat-co-ban-cua-phan-so"
+    ],
+    "do_kho": 1,
+    "text": "Nhân cả tử và mẫu của 2/3 với 4 ta được phân số nào bằng 2/3?",
+    "options": {
+      "A": "6/7",
+      "B": "8/12",
+      "C": "2/12",
+      "D": "8/3"
+    },
+    "dap_an": "B",
+    "la_cau_tham_do": true,
+    "socratic_hints": [
+      "Gợi ý bậc 1: Nhân CẢ tử và mẫu với cùng một số khác 0 thì được phân số bằng nó.",
+      "Gợi ý bậc 2: 2·4 = 8 và 3·4 = 12, vậy được 8/12."
+    ]
+  },
+  {
+    "question_id": "q_tccb_p2",
+    "yccd": [
+      "tinh-chat-co-ban-cua-phan-so"
+    ],
+    "do_kho": 2,
+    "text": "Phân số nào sau đây KHÔNG bằng 3/5?",
+    "options": {
+      "A": "6/10",
+      "B": "9/15",
+      "C": "12/20",
+      "D": "3/10"
+    },
+    "dap_an": "D",
+    "la_cau_tham_do": true,
+    "socratic_hints": [
+      "Gợi ý bậc 1: Nhân tử và mẫu của 3/5 với cùng một số để so sánh.",
+      "Gợi ý bậc 2: 3/10 có mẫu gấp đôi nhưng tử không đổi nên khác 3/5."
+    ]
+  },
+  {
+    "question_id": "q_ps_p1",
+    "yccd": [
+      "phan-so"
+    ],
+    "do_kho": 1,
+    "text": "Trong phân số 7/9, số 9 được gọi là gì?",
+    "options": {
+      "A": "Tử số",
+      "B": "Mẫu số",
+      "C": "Thương",
+      "D": "Hiệu"
+    },
+    "dap_an": "B",
+    "la_cau_tham_do": true,
+    "socratic_hints": [
+      "Gợi ý bậc 1: Số nằm dưới dấu gạch ngang của phân số gọi là gì?"
+    ]
+  },
+  {
+    "question_id": "q_ps_p2",
+    "yccd": [
+      "phan-so"
+    ],
+    "do_kho": 1,
+    "text": "Phân số nào sau đây KHÔNG hợp lệ?",
+    "options": {
+      "A": "3/4",
+      "B": "0/5",
+      "C": "5/0",
+      "D": "9/2"
+    },
+    "dap_an": "C",
+    "la_cau_tham_do": true,
+    "socratic_hints": [
+      "Gợi ý bậc 1: Mẫu số của phân số phải khác 0."
+    ]
+  },
+  {
+    "question_id": "q_rgps_1",
+    "yccd": [
+      "rut-gon-phan-so"
+    ],
+    "do_kho": 1,
+    "text": "Rút gọn phân số 12/18 về tối giản.",
+    "options": {
+      "A": "6/9",
+      "B": "2/3",
+      "C": "3/4",
+      "D": "4/6"
+    },
+    "dap_an": "B",
+    "la_cau_tham_do": false,
+    "socratic_hints": [
+      "Gợi ý bậc 1: Chia cả tử và mẫu cho ước chung lớn nhất là 6."
+    ]
+  },
+  {
+    "question_id": "q_psbn_1",
+    "yccd": [
+      "phan-so-bang-nhau"
+    ],
+    "do_kho": 2,
+    "text": "Hai phân số 4/6 và 6/9 có bằng nhau không?",
+    "options": {
+      "A": "Bằng nhau",
+      "B": "Không bằng nhau"
+    },
+    "dap_an": "A",
+    "la_cau_tham_do": false,
+    "socratic_hints": [
+      "Gợi ý bậc 1: Dùng tích chéo: 4·9 và 6·6 có bằng nhau không?"
+    ]
+  },
+  {
+    "question_id": "q_tspt_1",
+    "yccd": [
+      "ti-so-phan-tram"
+    ],
+    "do_kho": 2,
+    "text": "Tỉ số phần trăm của 3 và 4 là bao nhiêu?",
+    "options": {
+      "A": "43%",
+      "B": "75%",
+      "C": "34%",
+      "D": "133%"
+    },
+    "dap_an": "B",
+    "la_cau_tham_do": false,
+    "socratic_hints": [
+      "Gợi ý bậc 1: Tính 3/4 · 100%."
+    ]
+  }
+]

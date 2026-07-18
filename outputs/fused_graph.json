@@ -1,0 +1,666 @@
+{
+  "concepts": [
+    {
+      "code": "d1-ai-llm-foundations",
+      "name": "AI & LLM Foundations",
+      "description": "Foundational landscape of AI in 2026: AI taxonomy (ML/DL/GenAI), how LLMs work, and the core vocabulary every AI builder needs.",
+      "day": 1
+    },
+    {
+      "code": "d2-ai-problem-framing",
+      "name": "Framing AI Problems & AI Product Thinking",
+      "description": "Turning a vague 'AI chatbot' idea into a well-scoped problem; the three pillars of an AI product and the four core framing questions.",
+      "day": 2
+    },
+    {
+      "code": "d3-agentic-react",
+      "name": "From Chatbot to Agentic Agents",
+      "description": "The Bot -> Chatbot -> Agent spectrum and the ReAct (Reasoning + Acting) loop that turns a model into an autonomous agent.",
+      "day": 3
+    },
+    {
+      "code": "d4-prompt-engineering",
+      "name": "Prompt Engineering Fundamentals",
+      "description": "Prompt as the interface between intent and model capability: the four components of a good prompt and core prompting techniques.",
+      "day": 4
+    },
+    {
+      "code": "d4-tool-calling",
+      "name": "Tool Calling & Context Engineering",
+      "description": "Giving agents reliable access to external tools/functions and engineering the context window so agents act dependably.",
+      "day": 4
+    },
+    {
+      "code": "d5-ai-product-kickoff",
+      "name": "AI Product Kickoff & Handling Uncertainty",
+      "description": "Project kickoff sprint: why a working agent still fails to get adopted; designing for AI's inherent uncertainty vs traditional software.",
+      "day": 5
+    },
+    {
+      "code": "d6-ai-product-hackathon",
+      "name": "AI Product Prototyping & Demo",
+      "description": "Mini-hackathon: rapidly building, integrating and demoing an end-to-end AI product prototype (MVP).",
+      "day": 6
+    },
+    {
+      "code": "d7-data-foundations",
+      "name": "Data Foundations & Data Strategy",
+      "description": "Data strategy for AI products: garbage-in/garbage-out, data quality, and how data decisions drive model output quality.",
+      "day": 7
+    },
+    {
+      "code": "d7-embedding-vector",
+      "name": "Embeddings & Vector Stores",
+      "description": "Representing text as dense vectors, the embedding space, and storing/searching embeddings in a vector store for semantic retrieval.",
+      "day": 7
+    },
+    {
+      "code": "d8-rag-pipeline",
+      "name": "RAG Pipeline (Indexing & Retrieval)",
+      "description": "Retrieval-Augmented Generation: the offline indexing/ingestion pipeline and the runtime retrieval pipeline to ground LLM answers.",
+      "day": 8
+    },
+    {
+      "code": "d9-multi-agent-mcp",
+      "name": "Multi-Agent Systems & System Connectivity",
+      "description": "Moving from single-agent to multi-agent patterns and connecting agents to systems via MCP and Agent-to-Agent (A2A) protocols.",
+      "day": 9
+    },
+    {
+      "code": "d10-data-pipeline-observability",
+      "name": "Data Pipeline & Data Observability",
+      "description": "Building robust data pipelines and observing data freshness/quality so agents are not poisoned by stale or dirty input data.",
+      "day": 10
+    },
+    {
+      "code": "d11-guardrails-safety",
+      "name": "Guardrails & AI Safety",
+      "description": "Common threat classes against agents and how to add input/output guardrails to make agentic systems safe and controllable.",
+      "day": 11
+    },
+    {
+      "code": "d12-cloud-deployment",
+      "name": "Cloud Infrastructure & Deployment",
+      "description": "Cloud infrastructure components and deploying an agent to the cloud: providers, compute, and a basic deployment decision framework.",
+      "day": 12
+    },
+    {
+      "code": "d13-monitoring-observability",
+      "name": "Monitoring, Logging & Observability",
+      "description": "Monitoring vs observability, logging/tracing for AI systems, and applying control-theory thinking to keep production systems healthy.",
+      "day": 13
+    },
+    {
+      "code": "d14-ai-evaluation",
+      "name": "AI Evaluation & Benchmarking",
+      "description": "Why traditional ML metrics fall short for generative AI; the evaluation paradigm shift and benchmarking methods for LLM systems.",
+      "day": 14
+    },
+    {
+      "code": "d15-production-deployment-cost",
+      "name": "Real-World Deployment, Operating Cost & Specialization Orientation",
+      "description": "Enterprise deployment realities, anatomy of operating cost, a 15-day capstone review, and orientation toward the three specialization tracks.",
+      "day": 15
+    },
+    {
+      "code": "d16-track-foundations",
+      "name": "Specialization Track Selection & Advanced Foundations",
+      "description": "Branch point: overview of the three tracks (AI Product Strategy, Cloud Infrastructure for AI, Advanced Agent Architectures) and selecting a track.",
+      "day": 16
+    },
+    {
+      "code": "t1-d17-prd-pmf",
+      "name": "[T1] PRD & Product-Market Fit",
+      "description": "Writing a PRD and reaching product-market fit using the Lean Product Pyramid: MVP boundaries, hypotheses, and a PMF scorecard.",
+      "day": 17
+    },
+    {
+      "code": "t1-d18-financial-roi",
+      "name": "[T1] AI Financial Modeling & ROI",
+      "description": "Burn rate, runway, and modeling the ROI of AI initiatives; why ~90% of AI products fail commercially and how to quantify value.",
+      "day": 18
+    },
+    {
+      "code": "t1-d19-stakeholder-pitch",
+      "name": "[T1] Stakeholder Management & Investor Pitch",
+      "description": "Mapping the stakeholder ecosystem, securing investor buy-in, and pitching to cross the commercialization 'valley of death'.",
+      "day": 19
+    },
+    {
+      "code": "t1-d20-roadmap-execution",
+      "name": "[T1] Product Roadmap & Execution",
+      "description": "Output vs outcome thinking and the frameworks to prioritize, sequence, and execute an AI product roadmap after funding.",
+      "day": 20
+    },
+    {
+      "code": "t1-d21-governance-risk",
+      "name": "[T1] AI Governance & Risk",
+      "description": "Startup AI governance: the 3 R's of risk, shifting mindset from 'winning' to 'not dying', and building lightweight policy.",
+      "day": 21
+    },
+    {
+      "code": "t1-d22-compliance",
+      "name": "[T1] AI Compliance",
+      "description": "Regulatory and legal compliance for AI products, learning from real enforcement cases and operationalizing compliance controls.",
+      "day": 22
+    },
+    {
+      "code": "t1-d23-change-adoption",
+      "name": "[T1] Change Management & AI Adoption",
+      "description": "Driving organizational AI adoption: change management, proven adoption tactics, and distinguishing 'wow' from durable adoption.",
+      "day": 23
+    },
+    {
+      "code": "t1-d24-responsible-ai",
+      "name": "[T1] Responsible AI",
+      "description": "Responsible AI in practice: mapping failure modes, asking who is affected, and moving from values to concrete testing.",
+      "day": 24
+    },
+    {
+      "code": "t2-d17-data-eng-foundations",
+      "name": "[T2] AI Data Engineering Foundations",
+      "description": "Track-2 bridge from cloud infrastructure into data engineering: data storage paradigms, ingestion, and platform foundations for AI workloads. (Inferred: Day 17 Track 2 material not present in source repository.)",
+      "day": 17
+    },
+    {
+      "code": "t2-d18-data-lakehouse",
+      "name": "[T2] Data Lakehouse Architecture",
+      "description": "Evolution of data platforms and the lakehouse architecture (storage + table format + compute) for AI/analytics workloads.",
+      "day": 18
+    },
+    {
+      "code": "t2-d19-vector-feature-store",
+      "name": "[T2] Vector Store & Feature Store",
+      "description": "Production embedding/vector stores and feature stores: embedding model selection, indexing, and serving features to AI systems.",
+      "day": 19
+    },
+    {
+      "code": "t2-d20-model-serving",
+      "name": "[T2] Model Serving & Inference Optimization",
+      "description": "Latency taxonomy (TTFT/TPOT/Goodput), serving infrastructure, and inference optimization techniques such as quantization.",
+      "day": 20
+    },
+    {
+      "code": "t2-d21-cicd",
+      "name": "[T2] CI/CD for AI Systems",
+      "description": "Continuous integration/delivery for ML/AI with experiment tracking and a model registry (e.g. MLflow) across the pipeline.",
+      "day": 21
+    },
+    {
+      "code": "t2-d22-llmops",
+      "name": "[T2] LLMOps & Prompt Versioning",
+      "description": "LLMOps vs traditional MLOps, prompt versioning, and operating LLM applications reliably in production.",
+      "day": 22
+    },
+    {
+      "code": "t2-d23-observability-stack",
+      "name": "[T2] Monitoring & Observability Stack",
+      "description": "Building a full observability stack for AI systems: traces, metrics, and logs tailored to LLM-specific failure modes.",
+      "day": 23
+    },
+    {
+      "code": "t2-d24-data-governance",
+      "name": "[T2] Data Governance & Security",
+      "description": "Data governance for AI: classification, lineage, least-privilege access (RBAC/ABAC, IAM), and securing sensitive data.",
+      "day": 24
+    },
+    {
+      "code": "t3-d17-agent-memory",
+      "name": "[T3] Agent Memory Systems",
+      "description": "Why agents are stateless by default and how to engineer memory: the context-engineering framework and the 7 context layers.",
+      "day": 17
+    },
+    {
+      "code": "t3-d18-production-rag",
+      "name": "[T3] Production RAG",
+      "description": "Why basic RAG fails in production: online/offline pipeline failure points and error-tree analysis to debug each stage.",
+      "day": 18
+    },
+    {
+      "code": "t3-d19-graphrag",
+      "name": "[T3] GraphRAG & Knowledge Graphs",
+      "description": "When flat/vector RAG fails on relational questions: building knowledge graphs and GraphRAG for multi-hop retrieval.",
+      "day": 19
+    },
+    {
+      "code": "t3-d20-multi-agent",
+      "name": "[T3] Multi-Agent Systems (Advanced)",
+      "description": "Advanced multi-agent taxonomy and orchestration: when to use multiple agents and the coordination patterns that work in production.",
+      "day": 20
+    },
+    {
+      "code": "t3-d21-finetuning-lora",
+      "name": "[T3] Fine-tuning LLMs (LoRA/QLoRA)",
+      "description": "When to fine-tune vs prompt vs RAG; parameter-efficient fine-tuning with LoRA/QLoRA and API vs self-hosted trade-offs.",
+      "day": 21
+    },
+    {
+      "code": "t3-d22-dpo-alignment",
+      "name": "[T3] DPO, ORPO & Alignment",
+      "description": "Beyond SFT: preference learning and alignment (RLHF, DPO, ORPO) to shape model behavior, not just output format.",
+      "day": 22
+    },
+    {
+      "code": "t3-d23-langgraph",
+      "name": "[T3] LangGraph & Agentic Orchestration",
+      "description": "When linear chains are not enough: orchestrating stateful, branching, cyclic agent workflows with LangGraph.",
+      "day": 23
+    },
+    {
+      "code": "t3-d24-ragas-guardrails",
+      "name": "[T3] RAGAS, LLM-as-Judge & Guardrails",
+      "description": "Advanced evaluation for generative systems: RAGAS metrics, LLM-as-Judge, and production guardrails for RAG/agents.",
+      "day": 24
+    },
+    {
+      "code": "t1-d16-product-strategy",
+      "name": "[T1] AI Product Strategy & Market Analysis",
+      "description": "Từ insight khởi nguồn đến định nghĩa sản phẩm: customer segment, need map, strategy, moat và tính toán market size.",
+      "day": 16
+    },
+    {
+      "code": "t2-d16-cloud-infra",
+      "name": "[T2] Cloud Infrastructure for AI",
+      "description": "Lựa chọn cloud provider, GPU compute environment, tối ưu chi phí, Terraform IaC, K8s và serving stack vLLM/SGLang.",
+      "day": 16
+    },
+    {
+      "code": "t3-d16-advanced-agents",
+      "name": "[T3] Advanced Agent Architectures",
+      "description": "Điểm yếu của ReAct, mô hình Reflexion tự phản tỉnh, thuật toán LATS và Voyager.",
+      "day": 16
+    }
+  ],
+  "relations": [
+    {
+      "source": "d1-ai-llm-foundations",
+      "relation": "Prerequisite_of",
+      "target": "d2-ai-problem-framing"
+    },
+    {
+      "source": "d1-ai-llm-foundations",
+      "relation": "Prerequisite_of",
+      "target": "d3-agentic-react"
+    },
+    {
+      "source": "d1-ai-llm-foundations",
+      "relation": "Prerequisite_of",
+      "target": "d7-data-foundations"
+    },
+    {
+      "source": "d2-ai-problem-framing",
+      "relation": "Prerequisite_of",
+      "target": "d5-ai-product-kickoff"
+    },
+    {
+      "source": "d3-agentic-react",
+      "relation": "Prerequisite_of",
+      "target": "d4-prompt-engineering"
+    },
+    {
+      "source": "d4-prompt-engineering",
+      "relation": "Prerequisite_of",
+      "target": "d4-tool-calling"
+    },
+    {
+      "source": "d4-prompt-engineering",
+      "relation": "Conjunction",
+      "target": "d4-tool-calling"
+    },
+    {
+      "source": "d5-ai-product-kickoff",
+      "relation": "Prerequisite_of",
+      "target": "d6-ai-product-hackathon"
+    },
+    {
+      "source": "d4-tool-calling",
+      "relation": "Prerequisite_of",
+      "target": "d6-ai-product-hackathon"
+    },
+    {
+      "source": "d7-data-foundations",
+      "relation": "Prerequisite_of",
+      "target": "d7-embedding-vector"
+    },
+    {
+      "source": "d7-embedding-vector",
+      "relation": "Prerequisite_of",
+      "target": "d8-rag-pipeline"
+    },
+    {
+      "source": "d3-agentic-react",
+      "relation": "Prerequisite_of",
+      "target": "d9-multi-agent-mcp"
+    },
+    {
+      "source": "d4-tool-calling",
+      "relation": "Prerequisite_of",
+      "target": "d9-multi-agent-mcp"
+    },
+    {
+      "source": "d8-rag-pipeline",
+      "relation": "Used_for",
+      "target": "d9-multi-agent-mcp"
+    },
+    {
+      "source": "d7-data-foundations",
+      "relation": "Prerequisite_of",
+      "target": "d10-data-pipeline-observability"
+    },
+    {
+      "source": "d3-agentic-react",
+      "relation": "Prerequisite_of",
+      "target": "d11-guardrails-safety"
+    },
+    {
+      "source": "d9-multi-agent-mcp",
+      "relation": "Prerequisite_of",
+      "target": "d11-guardrails-safety"
+    },
+    {
+      "source": "d6-ai-product-hackathon",
+      "relation": "Prerequisite_of",
+      "target": "d12-cloud-deployment"
+    },
+    {
+      "source": "d9-multi-agent-mcp",
+      "relation": "Prerequisite_of",
+      "target": "d12-cloud-deployment"
+    },
+    {
+      "source": "d12-cloud-deployment",
+      "relation": "Prerequisite_of",
+      "target": "d13-monitoring-observability"
+    },
+    {
+      "source": "d10-data-pipeline-observability",
+      "relation": "Conjunction",
+      "target": "d13-monitoring-observability"
+    },
+    {
+      "source": "d8-rag-pipeline",
+      "relation": "Prerequisite_of",
+      "target": "d14-ai-evaluation"
+    },
+    {
+      "source": "d11-guardrails-safety",
+      "relation": "Conjunction",
+      "target": "d14-ai-evaluation"
+    },
+    {
+      "source": "d12-cloud-deployment",
+      "relation": "Prerequisite_of",
+      "target": "d15-production-deployment-cost"
+    },
+    {
+      "source": "d13-monitoring-observability",
+      "relation": "Prerequisite_of",
+      "target": "d15-production-deployment-cost"
+    },
+    {
+      "source": "d14-ai-evaluation",
+      "relation": "Prerequisite_of",
+      "target": "d15-production-deployment-cost"
+    },
+    {
+      "source": "d15-production-deployment-cost",
+      "relation": "Prerequisite_of",
+      "target": "d16-track-foundations"
+    },
+    {
+      "source": "d9-multi-agent-mcp",
+      "relation": "Prerequisite_of",
+      "target": "d16-track-foundations"
+    },
+    {
+      "source": "d16-track-foundations",
+      "relation": "Prerequisite_of",
+      "target": "t1-d17-prd-pmf"
+    },
+    {
+      "source": "d16-track-foundations",
+      "relation": "Prerequisite_of",
+      "target": "t2-d17-data-eng-foundations"
+    },
+    {
+      "source": "d16-track-foundations",
+      "relation": "Prerequisite_of",
+      "target": "t3-d17-agent-memory"
+    },
+    {
+      "source": "t1-d17-prd-pmf",
+      "relation": "Prerequisite_of",
+      "target": "t1-d18-financial-roi"
+    },
+    {
+      "source": "t1-d18-financial-roi",
+      "relation": "Prerequisite_of",
+      "target": "t1-d19-stakeholder-pitch"
+    },
+    {
+      "source": "t1-d19-stakeholder-pitch",
+      "relation": "Prerequisite_of",
+      "target": "t1-d20-roadmap-execution"
+    },
+    {
+      "source": "t1-d20-roadmap-execution",
+      "relation": "Prerequisite_of",
+      "target": "t1-d21-governance-risk"
+    },
+    {
+      "source": "t1-d21-governance-risk",
+      "relation": "Prerequisite_of",
+      "target": "t1-d22-compliance"
+    },
+    {
+      "source": "t1-d22-compliance",
+      "relation": "Prerequisite_of",
+      "target": "t1-d23-change-adoption"
+    },
+    {
+      "source": "t1-d23-change-adoption",
+      "relation": "Prerequisite_of",
+      "target": "t1-d24-responsible-ai"
+    },
+    {
+      "source": "t1-d21-governance-risk",
+      "relation": "Conjunction",
+      "target": "t1-d24-responsible-ai"
+    },
+    {
+      "source": "d2-ai-problem-framing",
+      "relation": "Prerequisite_of",
+      "target": "t1-d17-prd-pmf"
+    },
+    {
+      "source": "d5-ai-product-kickoff",
+      "relation": "Used_for",
+      "target": "t1-d17-prd-pmf"
+    },
+    {
+      "source": "d11-guardrails-safety",
+      "relation": "Prerequisite_of",
+      "target": "t1-d24-responsible-ai"
+    },
+    {
+      "source": "t2-d17-data-eng-foundations",
+      "relation": "Prerequisite_of",
+      "target": "t2-d18-data-lakehouse"
+    },
+    {
+      "source": "t2-d18-data-lakehouse",
+      "relation": "Prerequisite_of",
+      "target": "t2-d19-vector-feature-store"
+    },
+    {
+      "source": "t2-d19-vector-feature-store",
+      "relation": "Prerequisite_of",
+      "target": "t2-d20-model-serving"
+    },
+    {
+      "source": "t2-d20-model-serving",
+      "relation": "Prerequisite_of",
+      "target": "t2-d21-cicd"
+    },
+    {
+      "source": "t2-d21-cicd",
+      "relation": "Prerequisite_of",
+      "target": "t2-d22-llmops"
+    },
+    {
+      "source": "t2-d22-llmops",
+      "relation": "Prerequisite_of",
+      "target": "t2-d23-observability-stack"
+    },
+    {
+      "source": "t2-d23-observability-stack",
+      "relation": "Prerequisite_of",
+      "target": "t2-d24-data-governance"
+    },
+    {
+      "source": "d7-data-foundations",
+      "relation": "Prerequisite_of",
+      "target": "t2-d17-data-eng-foundations"
+    },
+    {
+      "source": "d10-data-pipeline-observability",
+      "relation": "Prerequisite_of",
+      "target": "t2-d18-data-lakehouse"
+    },
+    {
+      "source": "d7-embedding-vector",
+      "relation": "Prerequisite_of",
+      "target": "t2-d19-vector-feature-store"
+    },
+    {
+      "source": "d12-cloud-deployment",
+      "relation": "Prerequisite_of",
+      "target": "t2-d20-model-serving"
+    },
+    {
+      "source": "d13-monitoring-observability",
+      "relation": "Prerequisite_of",
+      "target": "t2-d23-observability-stack"
+    },
+    {
+      "source": "d10-data-pipeline-observability",
+      "relation": "Conjunction",
+      "target": "t2-d24-data-governance"
+    },
+    {
+      "source": "t3-d17-agent-memory",
+      "relation": "Prerequisite_of",
+      "target": "t3-d18-production-rag"
+    },
+    {
+      "source": "t3-d18-production-rag",
+      "relation": "Prerequisite_of",
+      "target": "t3-d19-graphrag"
+    },
+    {
+      "source": "t3-d19-graphrag",
+      "relation": "Prerequisite_of",
+      "target": "t3-d20-multi-agent"
+    },
+    {
+      "source": "t3-d20-multi-agent",
+      "relation": "Prerequisite_of",
+      "target": "t3-d21-finetuning-lora"
+    },
+    {
+      "source": "t3-d21-finetuning-lora",
+      "relation": "Prerequisite_of",
+      "target": "t3-d22-dpo-alignment"
+    },
+    {
+      "source": "t3-d22-dpo-alignment",
+      "relation": "Prerequisite_of",
+      "target": "t3-d23-langgraph"
+    },
+    {
+      "source": "t3-d23-langgraph",
+      "relation": "Prerequisite_of",
+      "target": "t3-d24-ragas-guardrails"
+    },
+    {
+      "source": "t3-d18-production-rag",
+      "relation": "Compare",
+      "target": "t3-d19-graphrag"
+    },
+    {
+      "source": "d3-agentic-react",
+      "relation": "Prerequisite_of",
+      "target": "t3-d17-agent-memory"
+    },
+    {
+      "source": "d8-rag-pipeline",
+      "relation": "Prerequisite_of",
+      "target": "t3-d18-production-rag"
+    },
+    {
+      "source": "d9-multi-agent-mcp",
+      "relation": "Prerequisite_of",
+      "target": "t3-d20-multi-agent"
+    },
+    {
+      "source": "d9-multi-agent-mcp",
+      "relation": "Used_for",
+      "target": "t3-d23-langgraph"
+    },
+    {
+      "source": "d8-rag-pipeline",
+      "relation": "Compare",
+      "target": "t3-d21-finetuning-lora"
+    },
+    {
+      "source": "d11-guardrails-safety",
+      "relation": "Prerequisite_of",
+      "target": "t3-d24-ragas-guardrails"
+    },
+    {
+      "source": "d14-ai-evaluation",
+      "relation": "Prerequisite_of",
+      "target": "t3-d24-ragas-guardrails"
+    },
+    {
+      "source": "t3-d18-production-rag",
+      "relation": "Used_for",
+      "target": "t3-d24-ragas-guardrails"
+    },
+    {
+      "source": "t1-d24-responsible-ai",
+      "relation": "Conjunction",
+      "target": "t3-d24-ragas-guardrails"
+    },
+    {
+      "source": "d15-production-deployment-cost",
+      "relation": "Prerequisite_of",
+      "target": "t1-d16-product-strategy"
+    },
+    {
+      "source": "d15-production-deployment-cost",
+      "relation": "Prerequisite_of",
+      "target": "t2-d16-cloud-infra"
+    },
+    {
+      "source": "d15-production-deployment-cost",
+      "relation": "Prerequisite_of",
+      "target": "t3-d16-advanced-agents"
+    },
+    {
+      "source": "t1-d16-product-strategy",
+      "relation": "Prerequisite_of",
+      "target": "t1-d17-prd-pmf"
+    },
+    {
+      "source": "t2-d16-cloud-infra",
+      "relation": "Prerequisite_of",
+      "target": "t2-d17-data-eng-foundations"
+    },
+    {
+      "source": "t3-d16-advanced-agents",
+      "relation": "Prerequisite_of",
+      "target": "t3-d17-agent-memory"
+    }
+  ]
+}

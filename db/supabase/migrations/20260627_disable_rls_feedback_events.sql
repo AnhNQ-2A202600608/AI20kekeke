@@ -1,5 +1,5 @@
 -- ============================================================================
--- C2-App-125 | Enable anonymous access to feedback_events
+-- ai20kekeke | Enable anonymous access to feedback_events
 -- Target: Supabase PostgreSQL 17
 -- Re-run safe: YES
 -- ============================================================================

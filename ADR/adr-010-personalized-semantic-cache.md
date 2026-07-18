@@ -7,7 +7,7 @@
 
 ## Bối cảnh (Context)
 
-Hệ thống Socratic AI Tutor (EduGap) cần tối ưu hóa độ trễ (latency) và chi phí sử dụng API LLM bằng cách lưu đệm câu trả lời. Tuy nhiên, do tính chất phản hồi cá nhân hóa (Personalized Socratic response), câu trả lời của AI Tutor phụ thuộc chặt chẽ vào trình độ năng lực hiện tại của sinh viên (Elo rating và trạng thái BKT). 
+Hệ thống Socratic AI Tutor (Mentora) cần tối ưu hóa độ trễ (latency) và chi phí sử dụng API LLM bằng cách lưu đệm câu trả lời. Tuy nhiên, do tính chất phản hồi cá nhân hóa (Personalized Socratic response), câu trả lời của AI Tutor phụ thuộc chặt chẽ vào trình độ năng lực hiện tại của sinh viên (Elo rating và trạng thái BKT). 
 
 Chúng ta cần triển khai một **Personalized Semantic Cache** (Bộ nhớ đệm ngữ nghĩa cá nhân hóa) nhằm:
 1. So khớp câu hỏi dựa trên độ tương đồng ý nghĩa (Vector Similarity Search) thay vì từ khóa chính xác.

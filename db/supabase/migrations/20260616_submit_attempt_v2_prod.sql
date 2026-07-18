@@ -1,6 +1,6 @@
 -- ============================================================================
--- C2-App-125 | Adaptive Engine — Atomic submit_attempt_v2 (Production Deployment)
--- Target: Supabase Production PostgreSQL 17 (edugap)
+-- ai20kekeke | Adaptive Engine — Atomic submit_attempt_v2 (Production Deployment)
+-- Target: Supabase Production PostgreSQL 17 (mentora)
 -- DB Instance: https://elwyhewuqqlpquzbvtnz.supabase.co
 -- Re-run safe: YES — CREATE OR REPLACE
 -- ============================================================================

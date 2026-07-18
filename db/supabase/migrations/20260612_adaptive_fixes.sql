@@ -1,6 +1,6 @@
 -- ============================================================================
--- C2-App-125 | Adaptive Engine — Blocker Fixes Migration
--- Target: Supabase PostgreSQL 17 (edugap-dev)
+-- ai20kekeke | Adaptive Engine — Blocker Fixes Migration
+-- Target: Supabase PostgreSQL 17 (mentora-dev)
 -- Fixes: B1 B2 B3 B5 B6 B7 H1
 -- Date: 2026-06-12
 -- Re-run safe: YES — all statements use IF NOT EXISTS / OR REPLACE

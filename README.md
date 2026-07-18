@@ -1,8 +1,8 @@
-# EduGap (AI20K-C2-App-125) | Adaptive Socratic Tutor
+# Mentora (AI20Kekeke) | Adaptive Socratic Tutor
 
-![EduGap application banner](banner2.png)
+![Mentora application banner](banner2.png)
 
-> **EduGap** là hệ thống gia sư học thuật cá nhân hóa 24/7 dành cho môi trường Đại học quy mô lớn, tích hợp phản hồi Socratic RAG, kiểm thử thích ứng theo vùng phát triển gần nhất (ZPD), và các rào chắn học tập bảo vệ tính toàn vẹn học thuật.
+> **Mentora** là hệ thống gia sư học thuật cá nhân hóa 24/7 dành cho môi trường Đại học quy mô lớn, tích hợp phản hồi Socratic RAG, kiểm thử thích ứng theo vùng phát triển gần nhất (ZPD), và các rào chắn học tập bảo vệ tính toàn vẹn học thuật.
 
 ### 🌐 Production
 
@@ -21,9 +21,9 @@
 | **Health check** | [https://vaic-backend-staging.onrender.com/health](https://vaic-backend-staging.onrender.com/health) |
 
 **Test account:**
-- **Student**: `student@edugap.vn` / `Password123!`
-- **Mentor**: `mentor@edugap.vn` / `Password123!`
-- **Admin**: `admin@edugap.vn` / `Password123!`
+- **Student**: `student@mentora.vn` / `Password123!`
+- **Mentor**: `mentor@mentora.vn` / `Password123!`
+- **Admin**: `admin@mentora.vn` / `Password123!`
 
 ## Spec Kit
 
@@ -41,7 +41,7 @@
 | #2 README | [`README.md`](README.md) | Product, setup, architecture index, deliverables checklist, and team |
 | #3 Architecture | [`docs/architecture.md`](docs/architecture.md) | Architecture overview; rendered diagrams in [`docs/diagram/images/`](docs/diagram/images/) and editable Excalidraw files in [`docs/diagram/excalidraw/`](docs/diagram/excalidraw/) |
 | #4 AI Logs | [`outputs/`](outputs/) / Braintrust | AI feedback logs and observability traces when available |
-| #5 Live URL / Deploy | [Production Frontend](https://edugap-c2-app-125.vercel.app) / [Backend Health](https://c2-app-backend-g5cu.onrender.com/health) | Vercel frontend, Render backend, Supabase, Redis |
+| #5 Live URL / Deploy | [Production Frontend](https://ai20kekeke.vercel.app) / [Backend Health](https://vaic-backend.onrender.com/health) | Vercel frontend, Render backend, Supabase, Redis |
 | #6 Video Demo | [`docs/video-demo.md`](docs/video-demo.md) | Demo script/checklist; add YouTube link after upload |
 | #7 Pitch Deck | [`docs/pitch-deck.pdf`](docs/pitch-deck.pdf) | Submitted pitch deck PDF |
 | #8 Weekly Journal | [`docs/journal.md`](docs/journal.md) | Deliverable entrypoint; canonical content in [`JOURNAL.md`](JOURNAL.md) |
@@ -55,7 +55,7 @@
 ## 🧭 Architecture Reading Index
 
 1. [`docs/architecture.md`](docs/architecture.md) - system overview, learning loop, and CI/CD Mermaid diagrams.
-2. [`docs/diagram/edugap-system-diagrams-plan.md`](docs/diagram/edugap-system-diagrams-plan.md) - content plan for each architecture chart.
+2. [`docs/diagram/mentora-system-diagrams-plan.md`](docs/diagram/mentora-system-diagrams-plan.md) - content plan for each architecture chart.
 3. [`docs/diagram/images/`](docs/diagram/images/) - rendered PNG/SVG diagrams for slides and docs.
 4. [`docs/diagram/excalidraw/`](docs/diagram/excalidraw/) - editable Excalidraw diagram source files.
 5. [`docs/engineering/system-architecture.md`](docs/engineering/system-architecture.md) - deeper engineering architecture notes.
@@ -70,7 +70,7 @@
 * **Lạm dụng AI làm bài hộ**: Việc sinh viên sử dụng các mô hình AI ngôn ngữ lớn (LLM) đại trà để chép trực tiếp code hoặc lời giải bài tập lớn làm mất đi phản xạ tự học và tư duy độc lập (Socratic reasoning).
 
 ### Giải pháp (Solution)
-**EduGap** giải quyết triệt để các vấn đề trên thông qua hệ thống AI & Database tối ưu:
+**Mentora** giải quyết triệt để các vấn đề trên thông qua hệ thống AI & Database tối ưu:
 * **Socratic RAG Chat**: Hội thoại học thuật hoàn toàn dựa trên tài liệu chính thống của khóa học (PDF, Slides) kèm thẻ trích dẫn nguồn (Citations). Cung cấp 5 chế độ học tập (Explain, Step-by-step hint, Debug code, Practice, Review submission) đồng bộ động với mức Elo của sinh viên.
 * **Adaptive Quiz & ZPD Selector**: Đề xuất câu hỏi trắc nghiệm/tự luận có độ khó tối ưu sao cho xác suất làm đúng đạt **70%-75%** dựa trên điểm Elo thực tế của học viên và câu hỏi.
 * **Giao dịch Nguyên tử RPC v3**: Gộp chấm điểm tự động (MCQ, Short Answer, Numeric), cập nhật Elo/BKT, lan truyền độ thông thạo cục bộ 1-bước (Local 1-Step Propagation) trên đồ thị quan hệ khái niệm và xóa cache write-through vào duy nhất một RPC PostgreSQL (`submit_attempt_v3`).
@@ -106,8 +106,8 @@
 
 ### 1. Clone repository
 ```bash
-git clone https://github.com/AI20K-Build-Cohort-2/C2-App-125.git
-cd C2-App-125
+git clone https://github.com/AnhNQ-2A202600608/AI20kekeke.git
+cd ai20kekeke
 ```
 
 ### 2. Chuẩn bị biến môi trường
@@ -149,31 +149,63 @@ uv run python scripts/seed-questions.py
 
 # 3. Đồng bộ hóa dữ liệu ngân hàng câu hỏi Quiz từ manifest frontend lên database:
 uv run python scripts/migrate_quizzes.py
+
+# 4. (Tùy chọn) Chạy OCR cho SGK dạng scan ảnh (tiếng Việt) trong data/ và dựng chỉ mục:
+# - Cài đặt Tesseract binary & gói ngôn ngữ vie trên hệ điều hành trước (xem docs/engineering/ocr-pipeline.md)
+# - Run OCR offline (tách khỏi synchronous chat loop):
+uv run python scripts/ingest_pdfs.py
+# - Tạo chỉ mục TF-IDF cục bộ để tìm kiếm/truy vấn ngoại tuyến:
+uv run python -c "from src.config import get_settings; from src.modules.rag.index import build_index_from_processed, save_index; settings = get_settings(); index = build_index_from_processed(settings.processed_dir, chunk_chars=settings.rag_chunk_chars, overlap_chars=settings.rag_chunk_overlap_chars); save_index(index, settings.rag_index_dir / 'index.json'); print(f'Indexed {len(index.documents)} chunks')"
 ```
 
 ---
 
 ## ▶️ Hướng dẫn chạy
 
-### Chạy backend local
-```bash
-uv run uvicorn src.main:app --reload --port 8000
+### Bảng điều khiển tương tác (Khuyên dùng trên Windows)
+Nếu chạy trên Windows, bạn có thể sử dụng tập lệnh tương tác duy nhất để chạy Backend, Frontend, kiểm thử tự động (pytest), hoặc mô phỏng chẩn đoán thích ứng chỉ bằng một phím bấm:
+```powershell
+.\run_demo.ps1
 ```
 
+### Chạy backend local thủ công
+```powershell
+# Chạy backend uvicorn thông qua venv:
+.\.venv\Scripts\uvicorn src.main:app --port 8000
+```
 Swagger UI sẽ được hiển thị tại: `http://localhost:8000/docs`.
 
 ### Chạy frontend local
+
+#### Cách 1: Sử dụng pnpm toàn cục (Nếu đã cài sẵn Node.js/pnpm hệ thống)
 ```bash
 cd frontend
 pnpm dev
 ```
 
+#### Cách 2: Sử dụng Nodeenv trong môi trường ảo `.venv` (Không cần cài Node.js hệ thống)
+Nếu máy Windows của bạn chưa có sẵn Node.js hoặc `pnpm`, bạn có thể cài đặt và chạy trực tiếp từ venv:
+1. **Khởi tạo Node.js trong venv** (chạy tại thư mục gốc):
+   ```powershell
+   .\.venv\Scripts\nodeenv.exe -p --node=lts
+   ```
+2. **Kích hoạt lại venv & cài đặt `pnpm`**:
+   ```powershell
+   .\.venv\Scripts\activate.ps1
+   npm install -g pnpm
+   ```
+3. **Di chuyển vào frontend và khởi chạy**:
+   ```powershell
+   cd frontend
+   pnpm dev
+   ```
+
 Mở trình duyệt truy cập: `http://localhost:3000`.
 
 ### Chạy backend bằng Docker
 ```bash
-docker build -t edugap-backend .
-docker run --env-file .env -p 8000:8000 edugap-backend
+docker build -t mentora-backend .
+docker run --env-file .env -p 8000:8000 mentora-backend
 ```
 
 ### Chạy backend bằng Docker Compose
@@ -225,7 +257,7 @@ Hệ thống sử dụng file `.env` ở thư mục gốc để quản lý cấu
 
 Base URL local: `http://127.0.0.1:8000/api/v1`
 
-Base URL qua production frontend BFF: `https://edugap-c2-app-125.vercel.app/api/v1`
+Base URL qua production frontend BFF: `https://ai20kekeke.vercel.app/api/v1`
 
 Hầu hết endpoint bảo vệ cần header:
 

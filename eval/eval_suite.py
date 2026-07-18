@@ -16,7 +16,7 @@ from eval.exp8_ednet_bandit_ope import run_bandit_ope
 
 def run_all_evals():
     print("=" * 60)
-    print("      EDUGAP ADAPTIVE ENGINE EVALUATION SUITE")
+    print("      MENTORA ADAPTIVE ENGINE EVALUATION SUITE")
     print("=" * 60)
 
     # 1. Elo Convergence
@@ -146,7 +146,7 @@ def run_all_evals():
 
     # 9. Generate Report Text
     report_text = f"""============================================================
-              EDUGAP ADAPTIVE ALGORITHM EVALUATION REPORT
+              MENTORA ADAPTIVE ALGORITHM EVALUATION REPORT
 ============================================================
 Generated at: 2026-06-22
 

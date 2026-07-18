@@ -7,7 +7,7 @@
 
 | Name | Type | ID | Purpose |
 | --- | --- | --- | --- |
-| Edugap | page | `37afecf3-5a15-8062-90a6-fe0245b6d453` | Root workspace portal |
+| Mentora | page | `37afecf3-5a15-8062-90a6-fe0245b6d453` | Root workspace portal |
 
 ## Hubs
 

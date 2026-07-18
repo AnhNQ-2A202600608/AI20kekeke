@@ -1,4 +1,4 @@
-# EduGap — AI Project Context & Implementation Specification
+# Mentora — AI Project Context & Implementation Specification
 
 > **Loại tài liệu:** AI bootstrap context / living specification / codebase analysis
 > **Ngày đối chiếu:** 2026-07-17
@@ -12,9 +12,9 @@ Phần này là contract dành cho AI agent. Nếu chỉ có thời gian đọc 
 
 ### 0.1 Project identity trong một câu
 
-**EduGap là adaptive-first Socratic AI Tutor: dùng học liệu chính thức để hướng dẫn có citation, dùng quiz để đo mastery, rồi dùng Elo + BKT + LinUCB + knowledge graph để chọn bước học tiếp theo mà không làm bài hộ học viên.**
+**Mentora là adaptive-first Socratic AI Tutor: dùng học liệu chính thức để hướng dẫn có citation, dùng quiz để đo mastery, rồi dùng Elo + BKT + LinUCB + knowledge graph để chọn bước học tiếp theo mà không làm bài hộ học viên.**
 
-Không được thu gọn EduGap thành một trong các mô tả sai sau:
+Không được thu gọn Mentora thành một trong các mô tả sai sau:
 
 - “Chatbot hỏi đáp tài liệu”: thiếu adaptive loop, mastery, quiz và mentor workflow.
 - “Ứng dụng quiz”: thiếu RAG tutor, Socratic guardrail và content lifecycle.
@@ -25,8 +25,8 @@ Không được thu gọn EduGap thành một trong các mô tả sai sau:
 
 ```yaml
 project:
-  name: EduGap
-  repository: AI20K-C2-App-125
+  name: Mentora
+  repository: AI20K-ai20kekeke
   stage: production-oriented MVP / Demo Day
   primary_language:
     product_copy: Vietnamese
@@ -77,7 +77,7 @@ Official course content
   → learner/mentor sees an explainable result
 ```
 
-Một implementation được xem là “giống EduGap” khi có đủ năm thuộc tính:
+Một implementation được xem là “giống Mentora” khi có đủ năm thuộc tính:
 
 1. **Grounded:** câu trả lời học thuật có nguồn course/slide hoặc báo rõ không đủ nguồn.
 2. **Adaptive:** nội dung tiếp theo phụ thuộc learner state, không chỉ random hoặc static sequence.
@@ -267,7 +267,7 @@ Public response phải sanitized; log server có thể giữ diagnostic context 
 
 ### 0.10 Blueprint để xây một hệ thống tương tự
 
-Nếu nhiệm vụ là tái tạo EduGap ở codebase khác, triển khai theo thứ tự phụ thuộc này:
+Nếu nhiệm vụ là tái tạo Mentora ở codebase khác, triển khai theo thứ tự phụ thuộc này:
 
 1. **Domain foundation:** user/role/course/concept/question/mastery/attempt schema, Auth và RLS.
 2. **Deterministic learning core:** server-side grading, Elo/BKT update và atomic submit transaction.
@@ -314,7 +314,7 @@ Không suy đoán feature là implemented chỉ vì xuất hiện trong plan/doc
 
 Comprehension gate: sau khi nạp file, AI phải trả lời được các câu sau trước khi thực hiện thay đổi có rủi ro:
 
-1. Vì sao EduGap không chỉ là chatbot hoặc ứng dụng quiz?
+1. Vì sao Mentora không chỉ là chatbot hoặc ứng dụng quiz?
 2. Request đi qua những lớp nào từ Next.js đến Supabase?
 3. Vì sao `decision_id` và `consumed_at` bắt buộc trong adaptive submit?
 4. State nào dùng Elo, state nào dùng BKT và LinUCB quyết định gì?
@@ -327,7 +327,7 @@ Nếu chưa trả lời được, AI phải đọc lại mục 0 và các phần
 
 ## 1. Tóm tắt điều hành
 
-EduGap là nền tảng gia sư AI cá nhân hóa dành cho giáo dục đại học hoặc cohort học tập quy mô lớn. Sản phẩm không chỉ trả lời câu hỏi như một chatbot, mà vận hành một vòng lặp học tập có trạng thái:
+Mentora là nền tảng gia sư AI cá nhân hóa dành cho giáo dục đại học hoặc cohort học tập quy mô lớn. Sản phẩm không chỉ trả lời câu hỏi như một chatbot, mà vận hành một vòng lặp học tập có trạng thái:
 
 ```text
 Học viên tương tác
@@ -1167,7 +1167,7 @@ pnpm dev
 
 ## 27. Kết luận
 
-EduGap đã vượt qua mức “chatbot demo”: hệ thống có identity, dữ liệu học tập, transaction, adaptive decision, audit, content lifecycle và mentor-in-the-loop. Kiến trúc hiện tại đủ hợp lý cho MVP/SaaS giai đoạn đầu vì giữ phần lớn nghiệp vụ trong một FastAPI modular monolith, dùng Next.js làm UI/BFF và gom dữ liệu vào Supabase.
+Mentora đã vượt qua mức “chatbot demo”: hệ thống có identity, dữ liệu học tập, transaction, adaptive decision, audit, content lifecycle và mentor-in-the-loop. Kiến trúc hiện tại đủ hợp lý cho MVP/SaaS giai đoạn đầu vì giữ phần lớn nghiệp vụ trong một FastAPI modular monolith, dùng Next.js làm UI/BFF và gom dữ liệu vào Supabase.
 
 Lợi thế lớn nhất là vòng lặp học tập có thể giải thích và kiểm soát. Rủi ro lớn nhất không nằm ở thiếu tính năng, mà ở việc nhiều lớp phát triển nhanh tạo ra config/docs/fallback drift, latency AI và khoảng trống test end-to-end. Giai đoạn tiếp theo nên ưu tiên độ tin cậy, dữ liệu thật và đo lường learning outcome trước khi mở rộng thêm bề mặt sản phẩm.
 

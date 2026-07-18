@@ -48,7 +48,7 @@ Create `db/supabase/migrations/20260701_mentor_quiz_error_cases.sql`:
 
 ```sql
 -- ============================================================================
--- C2-App-125 | Mentor Quiz Error Cases
+-- ai20kekeke | Mentor Quiz Error Cases
 -- Target: Supabase PostgreSQL
 -- Re-run safe: YES
 -- ============================================================================

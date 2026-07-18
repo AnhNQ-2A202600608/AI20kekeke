@@ -26,3 +26,5 @@ class AgentState(TypedDict, total=False):
     reflection_feedback: str
     interactive_widget: dict  # Chứa cấu trúc JSON của widget tương tác (MCQ, Blank, Code)
     student_submission: dict  # Câu trả lời của học viên nộp lên cho widget
+    concept_id: str
+    course_id: str

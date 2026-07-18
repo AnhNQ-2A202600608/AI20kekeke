@@ -59,11 +59,63 @@ def build_compact_context(slides: list[dict[str, Any]], max_chars: int = DEFAULT
     return "\n".join(context_parts)
 
 
+def _build_diagnostic_summary(diagnostic: dict[str, Any] | None) -> str:
+    """Build human-readable diagnostic summary for insertion into prompt.
+
+    The LLM MUST NOT self-diagnose.  It only narrates what the engine computed.
+    If diagnostic is None or empty, return an empty string so the prompt
+    tells the LLM to teach normally without attributing weaknesses.
+    """
+    if not diagnostic:
+        return ""
+
+    status = diagnostic.get("status", "")
+
+    if status == "PROBE":
+        probe_node = diagnostic.get("probe_node", "")
+        message = diagnostic.get("message", "")
+        return (
+            "[CHẨN ĐOÁN TỪ ENGINE — ĐANG THU THẬP THÊM BẰNG CHỨNG]\n"
+            f"Hệ thống đang kiểm tra thêm nút kiến thức: {probe_node}\n"
+            f"{message}\n"
+            "Hãy dạy bình thường, KHÔNG tự kết luận lỗ hổng."
+        )
+
+    if status == "DIAGNOSIS_COMPLETE":
+        root = diagnostic.get("root_cause", {})
+        confidence = diagnostic.get("confidence", 0.0)
+        suggested_path = diagnostic.get("suggested_path", [])
+
+        lines = ["[CHẨN ĐOÁN TỪ ENGINE — KẾT QUẢ ĐÃ TÍNH SẴN]"]
+        lines.append(f"- Gốc rễ: {root.get('id', '?')} — {root.get('mo_ta', '?')} (lớp {root.get('lop', '?')})")
+        lines.append(f"- Độ tin cậy: {confidence:.0%}")
+        if suggested_path:
+            path_str = " → ".join(suggested_path)
+            lines.append(f"- Đường ôn tập gợi ý: {path_str}")
+
+        if confidence < 0.5:
+            lines.append(
+                "- Độ tin cậy THẤP: diễn đạt dè dặt, gợi mở, chưa khẳng định lỗ hổng. "
+                "Dùng cách nói: 'có thể mình thử ôn lại phần này xem sao nhé.'"
+            )
+        else:
+            lines.append(
+                "- Diễn đạt kết quả này thành lời khuyên sư phạm tích cực. "
+                "Nói: 'mình ôn lại phần nền cho chắc rồi quay lại nhé.'"
+            )
+
+        lines.append("- KHÔNG tự thêm bớt lỗ hổng ngoài danh sách trên. Chỉ diễn đạt, không override.")
+        return "\n".join(lines)
+
+    return ""
+
+
 def build_prompt_profile(profile: dict[str, Any], mode: str) -> dict[str, Any]:
     elo = profile.get("elo_score") or profile.get("elo") or 1200.0
     bkt = profile.get("bkt_mastery_probability") or profile.get("bkt") or 0.25
     weakness = profile.get("weakness_flag") or profile.get("weakness") or False
     active_quiz = profile.get("active_quiz_session") or profile.get("active_quiz") or False
+    diagnostic = profile.get("diagnostic")
 
     settings = get_settings()
     algorithm = settings.algorithm
@@ -94,6 +146,8 @@ def build_prompt_profile(profile: dict[str, Any], mode: str) -> dict[str, Any]:
                 "- Nhiệm vụ: Giải thích khái niệm học thuật một cách dễ hiểu, bám sát tài liệu giáo trình."
             )
 
+    diagnostic_summary = _build_diagnostic_summary(diagnostic)
+
     return {
         "elo": elo,
         "bkt": bkt,
@@ -101,6 +155,7 @@ def build_prompt_profile(profile: dict[str, Any], mode: str) -> dict[str, Any]:
         "active_quiz": active_quiz,
         "scaffolding_rules": scaffolding_rules,
         "mode_instructions": mode_instructions,
+        "diagnostic_summary": diagnostic_summary,
     }
 
 
@@ -109,20 +164,21 @@ def build_system_prompt(context: str, profile: dict[str, Any], mode: str) -> str
     if settings.prompts and settings.prompts.system_prompt:
         prompt_template = settings.prompts.system_prompt
     else:
+        # Fallback tĩnh khớp bản prompt đích — dùng khi YAML chưa load
         prompt_template = (
-            "Bạn là một Gia sư AI cá nhân hóa (AI Tutor) xuất sắc tại Đại học VinUniversity.\n"
-            "Nhiệm vụ của bạn là hỗ trợ sinh viên học tập theo phương pháp Socratic (Socratic ladder).\n\n"
-            "[THÔNG TIN HỌC VIÊN HIỆN TẠI]\n"
-            "- Trình độ năng lực (Elo): {student_elo:.1f}\n"
-            "- Khả năng làm chủ kiến thức (BKT Mastery): {student_bkt:.2f}\n"
-            "- Trạng thái yếu thế (Weakness Flag): {student_weakness}\n"
-            "- Trạng thái kiểm tra (Active Quiz): {active_quiz_session}\n\n"
+            "[VAI TRÒ]\n"
+            "Bạn là gia sư AI cho học sinh phổ thông Việt Nam, dạy bám theo GDPT 2018.\n\n"
             "[QUY TẮC CÁ NHÂN HÓA THEO NĂNG LỰC (SCAFFOLDING RULES)]\n"
             "{scaffolding_rules}\n\n"
             "[CHẾ ĐỘ TƯƠNG TÁC HIỆN TẠI]\n"
             "{mode_instructions}\n\n"
+            "[CÁ NHÂN HÓA — KẾT QUẢ ĐÃ TÍNH TỪ ENGINE, KHÔNG TỰ CHẨN ĐOÁN]\n"
+            "- Trạng thái kiểm tra (Active Quiz): {active_quiz_session}\n\n"
+            "{diagnostic_summary}\n\n"
+            "TUYỆT ĐỐI không tự suy ra em yếu chỗ nào từ câu hỏi bề mặt hay lịch sử chat.\n"
+            "Nếu không có thông tin chẩn đoán: dạy bình thường, KHÔNG tự gán lỗ hổng.\n\n"
             "[LUẬT AN TOÀN HỌC THUẬT (ACADEMIC INTEGRITY GUARDRAILS)]\n"
-            "1. KHÔNG BAO GIỜ cung cấp lời giải trực tiếp...\n\n"
+            "SƯ PHẠM SOCRATIC — KHÔNG ĐƯA ĐÁP ÁN NGAY.\n\n"
             "HỌC LIỆU THAM KHẢO CHÍNH THỨC:\n"
             "{context}"
         )
@@ -130,14 +186,12 @@ def build_system_prompt(context: str, profile: dict[str, Any], mode: str) -> str
     prompt_profile = build_prompt_profile(profile, mode)
     system_prompt = prompt_template.format(
         context=context,
-        student_elo=prompt_profile["elo"],
-        student_bkt=prompt_profile["bkt"],
-        student_weakness="Bị đánh giá yếu (true)" if prompt_profile["weakness"] else "Bình thường (false)",
         active_quiz_session="Đang trong bài kiểm tra (true)"
         if prompt_profile["active_quiz"]
         else "Không trong bài kiểm tra (false)",
         scaffolding_rules=prompt_profile["scaffolding_rules"],
         mode_instructions=prompt_profile["mode_instructions"],
+        diagnostic_summary=prompt_profile["diagnostic_summary"],
     )
 
     # Nếu câu hỏi xã giao hoặc ngoài lề, bổ sung hướng dẫn ghi đè quy tắc trích dẫn
@@ -145,7 +199,7 @@ def build_system_prompt(context: str, profile: dict[str, Any], mode: str) -> str
     if intent == "general":
         system_prompt += (
             "\n\n[CHẾ ĐỘ TRÒ CHUYỆN XÃ GIAO / NGOÀI LỀ (GENERAL CHAT MODE)]\n"
-            "1. Sinh viên đang hỏi các câu hỏi xã giao, chào hỏi, hỏi thăm, hỏi về bản thân học sinh hoặc hỏi chức năng của bạn.\n"
+            "1. Học sinh đang hỏi các câu hỏi xã giao, chào hỏi, hỏi thăm, hỏi về bản thân hoặc hỏi chức năng của bạn.\n"
             "2. Bạn KHÔNG cần tuân theo Quy tắc Trích dẫn & RAG Grounding. Bạn KHÔNG được trích dẫn slide nào và KHÔNG được tự bịa ra slide trích dẫn.\n"
             "3. Hãy trả lời thân thiện dựa trên kiến thức chung của bạn và dựa trên thông tin cá nhân của học sinh có sẵn trong prompt (như tên, sở thích, thế mạnh/thế yếu nếu có)."
         )
@@ -155,22 +209,27 @@ def build_system_prompt(context: str, profile: dict[str, Any], mode: str) -> str
 
 def split_formatted_prompt(formatted_prompt: str) -> tuple[str, str]:
     """Phân tách prompt hệ thống đã định dạng thành phần tĩnh (static) và động (dynamic) để tối ưu Prompt Caching."""
-    profile_header = "[THÔNG TIN HỌC VIÊN HIỆN TẠI]"
+    diagnostic_header = "[CÁ NHÂN HÓA — KẾT QUẢ ĐÃ TÍNH TỪ ENGINE, KHÔNG TỰ CHẨN ĐOÁN]"
     rules_header = "[LUẬT AN TOÀN HỌC THUẬT (ACADEMIC INTEGRITY GUARDRAILS)]"
     context_header = "HỌC LIỆU THAM KHẢO CHÍNH THỨC:"
 
-    idx_profile = formatted_prompt.find(profile_header)
+    idx_diagnostic = formatted_prompt.find(diagnostic_header)
     idx_rules = formatted_prompt.find(rules_header)
     idx_context = formatted_prompt.find(context_header)
 
-    if idx_profile != -1 and idx_rules != -1 and idx_context != -1:
-        intro = formatted_prompt[:idx_profile].strip()
-        dynamic_profile = formatted_prompt[idx_profile:idx_rules].strip()
-        static_rules = formatted_prompt[idx_rules:idx_context].strip()
-        dynamic_context = formatted_prompt[idx_context:].strip()
+    if idx_diagnostic != -1 and idx_rules != -1 and idx_context != -1:
+        if idx_rules < idx_diagnostic:
+            static_prompt = formatted_prompt[:idx_diagnostic].strip()
+            dynamic_prompt = formatted_prompt[idx_diagnostic:].strip()
+            return static_prompt, dynamic_prompt
+        else:
+            intro = formatted_prompt[:idx_diagnostic].strip()
+            dynamic_diagnostic = formatted_prompt[idx_diagnostic:idx_rules].strip()
+            static_rules = formatted_prompt[idx_rules:idx_context].strip()
+            dynamic_context = formatted_prompt[idx_context:].strip()
 
-        static_prompt = intro + "\n\n" + static_rules
-        dynamic_prompt = dynamic_profile + "\n\n" + dynamic_context
-        return static_prompt, dynamic_prompt
+            static_prompt = intro + "\n\n" + static_rules
+            dynamic_prompt = dynamic_diagnostic + "\n\n" + dynamic_context
+            return static_prompt, dynamic_prompt
 
     return formatted_prompt, ""

@@ -478,7 +478,7 @@ def mock_auth_db():
 
     mock_user = MagicMock()
     mock_user.id = "user-uuid-123"
-    mock_user.email = "student@edugap.vn"
+    mock_user.email = "student@mentora.vn"
 
     mock_session = MagicMock()
     mock_session.access_token = "mock-jwt-access-token"
@@ -499,7 +499,7 @@ async def test_login_success(client, mock_auth_db):
     # Setup database table mocks
     mock_users_response = MagicMock()
     mock_users_response.data = [
-        {"id": "user-uuid-123", "email": "student@edugap.vn", "full_name": "Test Student", "mssv": "2A202612345"}
+        {"id": "user-uuid-123", "email": "student@mentora.vn", "full_name": "Test Student", "mssv": "2A202612345"}
     ]
 
     mock_roles_response = MagicMock()
@@ -522,7 +522,7 @@ async def test_login_success(client, mock_auth_db):
     app.dependency_overrides[get_adaptive_db] = lambda: mock_auth_db
     try:
         response = await client.post(
-            "/api/v1/auth/login", json={"email": "student@edugap.vn", "password": "Password123!"}
+            "/api/v1/auth/login", json={"email": "student@mentora.vn", "password": "Password123!"}
         )
         assert response.status_code == 200
         data = response.json()
@@ -539,7 +539,7 @@ async def test_auth_me_success(client, mock_auth_db):
     user_id = "d3b07384-d113-4ec5-a58e-0f2d87e07661"
     mock_users_response = MagicMock()
     mock_users_response.data = [
-        {"id": user_id, "email": "student@edugap.vn", "full_name": "Test Student", "mssv": "2A202612345"}
+        {"id": user_id, "email": "student@mentora.vn", "full_name": "Test Student", "mssv": "2A202612345"}
     ]
     mock_roles_response = MagicMock()
     mock_roles_response.data = [{"role_id": 1, "roles": {"code": "student"}}]
@@ -565,7 +565,7 @@ async def test_auth_me_success(client, mock_auth_db):
         data = response.json()
         assert data == {
             "id": user_id,
-            "email": "student@edugap.vn",
+            "email": "student@mentora.vn",
             "full_name": "Test Student",
             "mssv": "2A202612345",
             "role": "student",
@@ -586,7 +586,7 @@ async def test_login_hoang_admin_stub(client):
     try:
         response = await client.post(
             "/api/v1/auth/login",
-            json={"email": "hoang.htb@edugap.vn", "password": "Password123!"},
+            json={"email": "hoang.htb@mentora.vn", "password": "Password123!"},
         )
         assert response.status_code == 200
         data = response.json()
@@ -614,7 +614,7 @@ async def test_login_profile_store_failure_returns_503(client, mock_auth_db):
     try:
         response = await client.post(
             "/api/v1/auth/login",
-            json={"email": "student@edugap.vn", "password": "Password123!"},
+            json={"email": "student@mentora.vn", "password": "Password123!"},
         )
         assert response.status_code == 503
         assert response.json()["detail"] == "Có lỗi xảy ra trong quá trình xử lý đăng nhập."
@@ -628,7 +628,7 @@ async def test_signup_success(client, mock_auth_db):
     mock_check_response.data = []
     mock_insert_response = MagicMock()
     mock_insert_response.data = [
-        {"id": "user-uuid-123", "email": "newstudent@edugap.vn", "full_name": "New Student", "mssv": "2A202611111"}
+        {"id": "user-uuid-123", "email": "newstudent@mentora.vn", "full_name": "New Student", "mssv": "2A202611111"}
     ]
     mock_roles_response = MagicMock()
     mock_roles_response.data = [{"id": 1}]
@@ -657,7 +657,7 @@ async def test_signup_success(client, mock_auth_db):
         response = await client.post(
             "/api/v1/auth/signup",
             json={
-                "email": "newstudent@edugap.vn",
+                "email": "newstudent@mentora.vn",
                 "password": "Password123!",
                 "full_name": "New Student",
                 "mssv": "2A202611111",
@@ -702,7 +702,7 @@ async def test_signup_missing_student_role_rolls_back(client, mock_auth_db):
         response = await client.post(
             "/api/v1/auth/signup",
             json={
-                "email": "newstudent@edugap.vn",
+                "email": "newstudent@mentora.vn",
                 "password": "Password123!",
                 "full_name": "New Student",
                 "mssv": "2A202611111",
@@ -750,7 +750,7 @@ async def test_signup_role_assignment_failure_rolls_back(client, mock_auth_db):
         response = await client.post(
             "/api/v1/auth/signup",
             json={
-                "email": "newstudent@edugap.vn",
+                "email": "newstudent@mentora.vn",
                 "password": "Password123!",
                 "full_name": "New Student",
                 "mssv": "2A202611111",
@@ -778,7 +778,7 @@ async def test_signup_duplicate_email(client, mock_auth_db):
     try:
         response = await client.post(
             "/api/v1/auth/signup",
-            json={"email": "student@edugap.vn", "password": "Password123!", "full_name": "New Student"},
+            json={"email": "student@mentora.vn", "password": "Password123!", "full_name": "New Student"},
         )
         assert response.status_code == 409
         assert "Email này đã được đăng ký" in response.json()["detail"]
@@ -800,7 +800,7 @@ async def test_signup_auth_provider_failure_is_sanitized(client, mock_auth_db):
         response = await client.post(
             "/api/v1/auth/signup",
             json={
-                "email": "newstudent@edugap.vn",
+                "email": "newstudent@mentora.vn",
                 "password": "Password123!",
                 "full_name": "New Student",
                 "mssv": "2A202611111",
@@ -827,7 +827,7 @@ async def test_signup_business_user_store_failure_returns_503(client, mock_auth_
         response = await client.post(
             "/api/v1/auth/signup",
             json={
-                "email": "newstudent@edugap.vn",
+                "email": "newstudent@mentora.vn",
                 "password": "Password123!",
                 "full_name": "New Student",
                 "mssv": "2A202611111",
@@ -838,3 +838,109 @@ async def test_signup_business_user_store_failure_returns_503(client, mock_auth_
         mock_auth_db.app_client.auth.admin.delete_user.assert_called_once()
     finally:
         app.dependency_overrides.clear()
+
+
+@pytest.mark.asyncio
+async def test_memory_buffering_and_debounce(monkeypatch):
+    import src.api.routes as routes_module
+    from src.api.routes import buffer_and_update_student_memory
+
+    # Mock Cache Store
+    class DictCache:
+        def __init__(self):
+            self.store = {}
+        def get(self, key):
+            return self.store.get(key)
+        def set(self, key, value, ttl=None):
+            self.store[key] = value
+            return True
+        def delete(self, key):
+            self.store.pop(key, None)
+            return True
+        def exists(self, key):
+            return key in self.store
+
+    fake_cache = DictCache()
+    monkeypatch.setattr(routes_module, "get_cache_store", lambda: fake_cache)
+
+    # Track calls to update_long_term_memories_job
+    calls = []
+    async def mock_update_job(student_id_str, turns):
+        calls.append((student_id_str, turns))
+
+    monkeypatch.setattr(routes_module, "update_long_term_memories_job", mock_update_job)
+
+    # Background tasks mock
+    class FakeBackgroundTasks:
+        def __init__(self):
+            self.tasks = []
+        def add_task(self, func, *args, **kwargs):
+            self.tasks.append((func, args, kwargs))
+
+    # Test case 1: Buffering under BATCH_SIZE (no instant trigger, schedules debounce)
+    student_id = "test-student-uuid"
+    bg_tasks = FakeBackgroundTasks()
+
+    await buffer_and_update_student_memory(
+        student_id,
+        "Hello",
+        "Hi there",
+        "concept-1",
+        bg_tasks
+    )
+
+    # Should be in cache
+    assert fake_cache.exists(f"student_chat_buffer:{student_id}")
+    assert fake_cache.exists(f"student_chat_buffer_version:{student_id}")
+
+    # Should schedule delayed flush
+    assert len(bg_tasks.tasks) == 1
+    assert bg_tasks.tasks[0][0].__name__ == "delayed_flush_memory_buffer"
+
+    # Test case 2: Adding up to BATCH_SIZE (5 turns) triggers update immediately
+    for i in range(4):
+        await buffer_and_update_student_memory(
+            student_id,
+            f"Query {i}",
+            f"Response {i}",
+            "concept-1",
+            bg_tasks
+        )
+
+    # Now len(buffer) == 5. Should have triggered update_long_term_memories_job immediately
+    # And cleared the cache keys
+    assert not fake_cache.exists(f"student_chat_buffer:{student_id}")
+
+    # Find the job call in background tasks
+    instant_job_calls = [t for t in bg_tasks.tasks if t[0] == mock_update_job]
+    assert len(instant_job_calls) == 1
+    # Check turns passed
+    turns_arg = instant_job_calls[0][1][1]
+    assert len(turns_arg) == 5
+    assert turns_arg[0]["q"] == "Hello"
+    assert turns_arg[4]["q"] == "Query 3"
+
+    # Test case 3: Concept change triggers immediate flush
+    bg_tasks_concept = FakeBackgroundTasks()
+    # Add first turn under concept-1
+    await buffer_and_update_student_memory(
+        student_id,
+        "Math query",
+        "Math response",
+        "concept-1",
+        bg_tasks_concept
+    )
+    # Add second turn under concept-2 (changed!)
+    await buffer_and_update_student_memory(
+        student_id,
+        "Science query",
+        "Science response",
+        "concept-2",
+        bg_tasks_concept
+    )
+    # Should trigger update immediately due to concept change
+    concept_job_calls = [t for t in bg_tasks_concept.tasks if t[0] == mock_update_job]
+    assert len(concept_job_calls) == 1
+    turns_concept = concept_job_calls[0][1][1]
+    assert len(turns_concept) == 2
+

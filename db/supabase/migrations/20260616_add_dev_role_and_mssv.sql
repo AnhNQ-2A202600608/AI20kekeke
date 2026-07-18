@@ -1,6 +1,6 @@
 -- ============================================================================
--- C2-App-125 | Dev Accounts & MSSV Login Support
--- Target: Supabase PostgreSQL 17 (edugap-dev)
+-- ai20kekeke | Dev Accounts & MSSV Login Support
+-- Target: Supabase PostgreSQL 17 (mentora-dev)
 -- Date: 2026-06-16
 -- Re-run safe: YES — all statements use IF NOT EXISTS / ON CONFLICT
 -- ============================================================================
@@ -55,7 +55,7 @@ GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA app TO anon, authenticated;
 
 -- Seed default student user d3b07384-d113-4ec5-a58e-0f2d87e07661
 INSERT INTO app.users (id, email, full_name, status, mssv) 
-VALUES ('d3b07384-d113-4ec5-a58e-0f2d87e07661', 'student@edugap.vn', 'Nguyễn Văn Thực Chiến', 'active', '2A202611111') 
+VALUES ('d3b07384-d113-4ec5-a58e-0f2d87e07661', 'student@mentora.vn', 'Nguyễn Văn Thực Chiến', 'active', '2A202611111') 
 ON CONFLICT (id) DO UPDATE SET mssv = EXCLUDED.mssv;
 
 INSERT INTO app.course_members (course_id, user_id, role_code, status) 
@@ -64,9 +64,9 @@ ON CONFLICT (course_id, user_id, role_code) DO NOTHING;
 
 -- Seed developer accounts
 INSERT INTO app.users (id, email, full_name, status, mssv) VALUES
-('11111111-1111-1111-1111-111111111111', 'dev1@edugap.vn', 'Developer One', 'active', '2A202600001'),
-('22222222-2222-2222-2222-222222222222', 'dev2@edugap.vn', 'Developer Two', 'active', '2A202600002'),
-('33333333-3333-3333-3333-333333333333', 'dev3@edugap.vn', 'Developer Three', 'active', '2A202600003')
+('11111111-1111-1111-1111-111111111111', 'dev1@mentora.vn', 'Developer One', 'active', '2A202600001'),
+('22222222-2222-2222-2222-222222222222', 'dev2@mentora.vn', 'Developer Two', 'active', '2A202600002'),
+('33333333-3333-3333-3333-333333333333', 'dev3@mentora.vn', 'Developer Three', 'active', '2A202600003')
 ON CONFLICT (id) DO UPDATE SET mssv = EXCLUDED.mssv, full_name = EXCLUDED.full_name;
 
 -- Map dev users to dev role using dynamic query for role ID

@@ -631,23 +631,6 @@ class SupabaseAdaptiveDatabase(AdaptiveDatabaseInterface):
         }
         self.audit_client.table("question_elo_events").insert(data).execute()
 
-    def submit_attempt_txn(self, payload: dict) -> dict:
-        if self._stub_mode:
-            return {}
-        response = self.app_client.rpc("submit_attempt_txn", payload).execute()
-        if response.data:
-            return response.data
-        return {}
-
-    def submit_attempt_v2(self, payload: dict) -> dict:
-        """Gọi RPC submit_attempt_v2 để xử lý giao dịch nộp bài nguyên tử ở DB."""
-        if self._stub_mode:
-            return {}
-        response = self.app_client.rpc("submit_attempt_v2", payload).execute()
-        if response.data:
-            return response.data
-        return {}
-
     def submit_attempt_v3(self, payload: dict) -> dict:
         if self._stub_mode:
             return {}
@@ -898,11 +881,12 @@ class SupabaseAdaptiveDatabase(AdaptiveDatabaseInterface):
                 self.app_client.table("chat_messages")
                 .select("role, content")
                 .eq("session_id", str(session_id))
-                .order("created_at", desc=False)
+                .order("created_at", desc=True)
                 .limit(limit)
                 .execute()
             )
-            return response.data or []
+            messages = response.data or []
+            return list(reversed(messages))
         except Exception as e:
             logger.error(f"Error fetching chat history: {e}")
             raise RuntimeError("Unable to fetch chat history.") from e

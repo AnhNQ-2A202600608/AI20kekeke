@@ -13,7 +13,7 @@
 | Trưởng nhóm | Thành viên 1 - Product/BA + AI/RAG Lead |  |  |  |  |  |  |
 | Mentor phụ trách | [Điền tên mentor phụ trách] |  |  |  |  |  |  |
 | Đối tác sử dụng (Stakeholder) | Sinh viên khóa AI thực chiến; Mentor; BTC/Admin |  |  |  |  |  |  |
-| Kho lưu mã nguồn (GitHub) | https://github.com/blu1606/EduGap |  |  |  |  |  |  |
+| Kho lưu mã nguồn (GitHub) | https://github.com/blu1606/Mentora |  |  |  |  |  |  |
 | Địa chỉ sản phẩm (Live URL) | [Dán link staging/demo khi có] |  |  |  |  |  |  |
 | Mục tiêu dự án | Trong 4-6 tuần, xây MVP AI tutor trả lời thắc mắc kiến thức dựa trên tài liệu chính thức, kèm citation, có guardrail chống làm hộ lab/gate và demo được happy + error paths. |  |  |  |  |  |  |
 | TỔNG HỢP TIẾN ĐỘ THEO SPRINT |  |  |  |  |  |  |  |

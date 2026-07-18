@@ -1,14 +1,14 @@
-# Báo Cáo Đánh Giá Toàn Diện Dự Án EduGap (AI20K-C2-HE-01)
+# Báo Cáo Đánh Giá Toàn Diện Dự Án Mentora (AI20K-C2-HE-01)
 
 > **Tài liệu đánh giá hệ thống (Project Evaluation Report)**
 > **Ngày lập:** 2026-06-29
-> **Đối tượng đánh giá:** Hệ thống Gia sư AI Thích ứng EduGap (Next.js Frontend & FastAPI Backend)
+> **Đối tượng đánh giá:** Hệ thống Gia sư AI Thích ứng Mentora (Next.js Frontend & FastAPI Backend)
 
 ---
 
 ## 1. Tổng Quan Ý Tưởng & Giá Trị Sư Phạm (Educational Value)
 
-EduGap giải quyết triệt để ba bài toán cốt lõi của EdTech hiện đại: **Giảng viên quá tải**, **Bài tập không cá nhân hóa**, và **Học sinh lạm dụng AI để chép giải**.
+Mentora giải quyết triệt để ba bài toán cốt lõi của EdTech hiện đại: **Giảng viên quá tải**, **Bài tập không cá nhân hóa**, và **Học sinh lạm dụng AI để chép giải**.
 
 ### Điểm sáng Sư phạm:
 *   **Vùng Phát triển Gần nhất (ZPD - Zone of Proximal Development):** Việc đặt mục tiêu tỷ lệ làm đúng ở ngưỡng **70% - 75%** là một lựa chọn tối ưu dựa trên lý thuyết tâm lý học giáo dục của Vygotsky. Ngưỡng này đủ thử thách để giữ học viên tập trung (Flow state) nhưng không quá khó để gây nản lòng.
@@ -19,7 +19,7 @@ EduGap giải quyết triệt để ba bài toán cốt lõi của EdTech hiện
 
 ## 2. Đánh Giá Kiến Trúc Kỹ Thuật (Technical Architecture)
 
-Kiến trúc hệ thống của EduGap được xây dựng theo mô hình phân lớp rõ ràng và có tính dự phòng cao:
+Kiến trúc hệ thống của Mentora được xây dựng theo mô hình phân lớp rõ ràng và có tính dự phòng cao:
 
 ```mermaid
 graph TD
@@ -63,7 +63,7 @@ graph TD
 
 ## 3. Phân Tích Sâu Bộ Máy Thích Ứng & Toán Học (Adaptive Engine)
 
-Hệ thống toán học của EduGap là sự kết hợp nhuần nhuyễn giữa đo lường tĩnh (IRT), ước lượng thời gian thực (Elo, BKT) và học máy tăng cường (Contextual Bandit):
+Hệ thống toán học của Mentora là sự kết hợp nhuần nhuyễn giữa đo lường tĩnh (IRT), ước lượng thời gian thực (Elo, BKT) và học máy tăng cường (Contextual Bandit):
 
 ### 3.1. Phép cập nhật Elo Kép (Dual Elo Update)
 $$P(\text{correct}) = \frac{1}{1 + 10^{\frac{d - \theta}{400}}}$$
@@ -105,10 +105,10 @@ Hệ thống thiết kế Sapia đem lại một phong cách thẩm mỹ nổi b
 
 ## 5. Hiện Trạng Hệ Thống & Kiểm Thử (System Verification)
 
-Hệ thống kiểm thử của EduGap cực kỳ đồ sộ và nghiêm ngặt với tổng cộng **68 test cases** tự động bao phủ toàn diện:
+Hệ thống kiểm thử của Mentora cực kỳ đồ sộ và nghiêm ngặt với tổng cộng **331 test cases** tự động (trong đó 327 test cases hoạt động ngoại tuyến được đảm bảo đạt trạng thái 100% xanh lá trên CI runner) bao phủ toàn diện:
 1.  **Unit Tests thuật toán:** Xác thực tính hội tụ của LinUCB, tính nhất quán của EloRating, BKT HMM equations và cơ chế Decay quên lãng.
 2.  **API Integration Tests:** Xác thực hoạt động của endpoint `/chat`, `/submit`, `/recommend`, `/sync-mastery`, bitemporal time-travel và phân quyền bảo mật RBAC.
-3.  **CI/CD Gated Pipeline:** Tích hợp tự động chạy Ruff linter, Pytest suite, quét lỗ hổng bảo mật Trivy Container, và kiểm định chất lượng RAG qua tập dữ liệu Golden Test Cases (`run_golden_eval.py`).
+3.  **CI/CD Gated Pipeline:** Tích hợp tự động chạy Ruff linter, Pytest suite, quét lỗ hổng bảo mật Trivy Container, và kiểm định chất lượng RAG qua tập dữ liệu Golden Test Cases (`run_golden_eval.py`). Để đảm bảo kiểm định CI tự động từ xa luôn pass, ngân hàng câu hỏi `questions.json` và cấu trúc tri thức `knowledge_graph.json` đã được đưa vào hệ thống quản lý phiên bản (Git tracking).
 
 ---
 

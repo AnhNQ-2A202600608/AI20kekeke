@@ -6,7 +6,7 @@ Last updated: 2026-07-06
 
 ### Tài liệu đã đọc
 
-- `docs/product/project-overview-pdr.md`: định nghĩa EduGap/Sapia là Adaptive-first AI Tutor cho đại học, với người dùng Student, Mentor, BTC/Admin.
+- `docs/product/project-overview-pdr.md`: định nghĩa Mentora/Sapia là Adaptive-first AI Tutor cho đại học, với người dùng Student, Mentor, BTC/Admin.
 - `docs/product/project-roadmap.md`: trạng thái sản phẩm đã có core app, auth, onboarding, adaptive engine, RAG chat; phần Mentor/BTC và production/evidence còn đang hoàn thiện.
 - `docs/engineering/system-architecture.md`: kiến trúc Next.js, FastAPI, Supabase, pgvector, Redis, LangGraph, Braintrust; có RBAC, citation, guardrail, audit.
 - `docs/guide/cost-management.md`: có hướng dẫn cost LLM cho development nhưng chưa phải mô hình pricing thương mại.
@@ -23,7 +23,7 @@ Repo đã mạnh về kỹ thuật, kiến trúc, adaptive learning và evidence
 
 Không bán như "chatbot AI cho học sinh". Định vị nên là:
 
-> Sapia/EduGap là hệ thống Learning Ops cho cohort AI/lập trình: chẩn đoán lỗ hổng khái niệm, luyện tập thích ứng theo ZPD, và giúp mentor biết chính xác ai đang kẹt ở đâu trước buổi học tiếp theo.
+> Sapia/Mentora là hệ thống Learning Ops cho cohort AI/lập trình: chẩn đoán lỗ hổng khái niệm, luyện tập thích ứng theo ZPD, và giúp mentor biết chính xác ai đang kẹt ở đâu trước buổi học tiếp theo.
 
 Lý do: repo đã có RAG chat, adaptive quiz, Elo/BKT, mentor dashboard, citation, guardrail. Nếu định vị như chatbot, sản phẩm bị so trực tiếp với ChatGPT/NotebookLM. Nếu định vị theo "cohort weak-concept intelligence + adaptive practice", lợi thế nằm ở dữ liệu lớp học, workflow mentor và nội dung khóa học riêng.
 
@@ -101,7 +101,7 @@ Khách hàng trả tiền ban đầu là tổ chức vận hành cohort, không 
 
 ### Value Proposition
 
-Sapia/EduGap giúp tổ chức đào tạo:
+Sapia/Mentora giúp tổ chức đào tạo:
 
 - Giảm tải câu hỏi lặp lại cho mentor.
 - Phát hiện weak concepts theo lớp và theo học viên.

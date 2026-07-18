@@ -1,0 +1,24 @@
+version: 1
+course_id: "00000000-0000-0000-0000-000000000001"
+documents:
+  - title: "Sách giáo khoa Toán 6 - Tập 1"
+    pdf_path: "D:/VAIC/pdf/sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song.pdf"
+    markdown_path: null
+    grade_level: 6
+    subject_code: mathematics
+    expected_pages: 126
+    edition: "Kết nối tri thức với cuộc sống"
+  - title: "Sách giáo khoa Toán 6 - Tập 2"
+    pdf_path: "D:/VAIC/pdf/sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song.pdf"
+    markdown_path: "D:/VAIC/md/sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song.md"
+    grade_level: 6
+    subject_code: mathematics
+    expected_pages: 114
+    edition: "Kết nối tri thức với cuộc sống"
+  - title: "Sách giáo khoa Lịch sử và Địa lí 6"
+    pdf_path: "D:/VAIC/pdf/SGK Lịch sử và địa lí 6 KNTT.pdf"
+    markdown_path: "D:/VAIC/md/sgk-lich-su-va-ia-li-6-kntt.md"
+    grade_level: 6
+    subject_code: history-geography
+    expected_pages: 201
+    edition: "Kết nối tri thức với cuộc sống"

@@ -25,6 +25,9 @@ def check_reflection(state: AgentState) -> str:
     if state.get("error"):
         return END
 
+    if state.get("reflection_feedback"):
+        return "pedagogical_reflection"
+
     # Tối ưu hóa Option A: Bypass kiểm định nếu là câu hỏi xã giao/ngoài giáo trình (intent: general)
     metadata = state.get("metadata") or {}
     if metadata.get("academic_integrity_risk"):

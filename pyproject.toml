@@ -1,5 +1,5 @@
 [project]
-name = "c2-app-125"
+name = "ai20kekeke"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
@@ -30,6 +30,8 @@ dependencies = [
     "pymupdf>=1.24.0",
     "pre-commit>=4.6.0",
     "scikit-learn>=1.9.0",
+    "pytesseract>=0.3.10",
+    "pillow>=10.0.0",
 ]
 
 [tool.mypy]

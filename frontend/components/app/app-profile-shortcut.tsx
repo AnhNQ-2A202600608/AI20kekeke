@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState, type ButtonHTMLAttributes } from 'react';
+import { useEffect, useRef, useState, type ButtonHTMLAttributes, type MouseEvent } from 'react';
 import Image from 'next/image';
 import { Check, ChevronDown, HelpCircle, LogIn, LogOut, UserRound } from 'lucide-react';
 import { getAllowedPersonas, type PersonaType } from '@/lib/dashboard-tabs';
@@ -93,6 +93,17 @@ export function AppProfileShortcut({
     onOpenProfile?.();
   };
 
+  const handleProfileClick = (event: MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation();
+    onClick?.(event);
+    handleOpenProfile();
+  };
+
+  const handleMenuToggle = (event: MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation();
+    setOpen((value) => !value);
+  };
+
   const handleLogOut = () => {
     setOpen(false);
     onLogOut?.();
@@ -111,26 +122,20 @@ export function AppProfileShortcut({
   };
 
   return (
-    <div ref={rootRef} className="relative shrink-0">
+    <div ref={rootRef} className="relative inline-flex shrink-0 items-center">
       <button
         type={type}
         className={[
           'group inline-flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center gap-2 rounded-full border px-1 shadow-sm transition',
-          'sm:w-auto sm:min-w-[11.25rem] sm:max-w-[14rem] sm:justify-start sm:px-2.5',
+          'sm:w-auto sm:min-w-[10.75rem] sm:max-w-[13.5rem] sm:justify-start sm:rounded-r-none sm:border-r-0 sm:px-2.5',
           'focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-green/25 active:scale-95',
           isActive
             ? 'border-primary-green-dark bg-primary-green text-white'
             : 'border-gray-border bg-white text-on-background hover:border-primary-green/35 hover:bg-white',
           className,
         ].join(' ')}
-        aria-expanded={open}
-        aria-haspopup="menu"
         aria-label={label}
-        onClick={(event) => {
-          event.stopPropagation();
-          onClick?.(event);
-          setOpen((value) => !value);
-        }}
+        onClick={handleProfileClick}
         title={label}
         {...buttonProps}
       >
@@ -171,11 +176,27 @@ export function AppProfileShortcut({
           </span>
         </span>
 
+      </button>
+
+      <button
+        type="button"
+        className={[
+          'hidden h-9 w-8 shrink-0 cursor-pointer items-center justify-center rounded-r-full border shadow-sm transition sm:inline-flex',
+          'focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-green/25 active:scale-95',
+          isActive
+            ? 'border-primary-green-dark bg-primary-green text-white'
+            : 'border-gray-border bg-white text-stone-400 hover:border-primary-green/35 hover:bg-surface-container-low hover:text-on-background',
+        ].join(' ')}
+        aria-expanded={open}
+        aria-haspopup="menu"
+        aria-label="Mở menu tài khoản"
+        onClick={handleMenuToggle}
+        title="Menu tài khoản"
+      >
         <ChevronDown
           className={[
-            'hidden h-3.5 w-3.5 shrink-0 stroke-[2.5] transition sm:block',
+            'h-3.5 w-3.5 shrink-0 stroke-[2.5] transition',
             open ? 'rotate-180' : '',
-            isActive ? 'text-white/80' : 'text-stone-400',
           ].join(' ')}
           aria-hidden="true"
         />

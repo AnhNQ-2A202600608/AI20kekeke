@@ -33,6 +33,10 @@ export function getTabForRoute(pathname: string): TabType | null {
     return 'learn';
   }
 
+  if (normalizedPath === '/app/chat') {
+    return 'chat';
+  }
+
   return null;
 }
 

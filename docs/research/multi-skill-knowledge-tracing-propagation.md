@@ -3,7 +3,7 @@
 > [!IMPORTANT]
 > **Trạng thái tài liệu:** 🔖 **ĐỌC LẠI** (Tài liệu nghiên cứu lưu trữ để đọc tiếp lúc rảnh)
 
-Tài liệu này nghiên cứu các mô hình giải quyết bài toán định vị lỗi sai (Credit/Blame Assignment) khi một câu hỏi chứa nhiều kỹ năng (Multi-Skill) và thuật toán lan truyền trên đồ thị không gây trễ (Non-laggy Graph Propagation) cho dự án **C2-App-125**.
+Tài liệu này nghiên cứu các mô hình giải quyết bài toán định vị lỗi sai (Credit/Blame Assignment) khi một câu hỏi chứa nhiều kỹ năng (Multi-Skill) và thuật toán lan truyền trên đồ thị không gây trễ (Non-laggy Graph Propagation) cho dự án **ai20kekeke**.
 
 ---
 

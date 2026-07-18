@@ -2,7 +2,7 @@
 
 ## Overview
 
-EduGap deploys as a split web application:
+Mentora deploys as a split web application:
 
 - Next.js frontend: serves the public landing, login, onboarding, app workspace, docs, and BFF proxy.
 - FastAPI backend: serves `/api/v1/*`, adaptive learning, chat/RAG streaming, onboarding sync, ingestion, audit, and admin observability.
@@ -98,8 +98,8 @@ The smoke check verifies backend `/health` and `/ready`, backend CORS preflight,
 
 `render.yaml` defines:
 
-- `c2-app-backend`: Docker web service in Singapore with `/health` health check.
-- `c2-app-redis`: Redis service for cache/rate-limiting paths.
+- `vaic-backend`: Docker web service in Singapore with `/health` health check.
+- `vaic-redis`: Redis service for cache/rate-limiting paths.
 - Manual secret injection for Supabase, model provider keys, and CORS.
 
 Current `render.yaml` still declares the backend and Redis plans as `free`. If the project moves to a stronger paid/server plan, update `render.yaml` and this guide together so the documented target matches infrastructure as code.
@@ -111,7 +111,7 @@ Backend readiness endpoints:
 
 ## Keep-Awake Workflow
 
-Repository includes [keep-awake.yml](</D:/Project/Vin_AI/000 Group Project/C2-App-125/.github/workflows/keep-awake.yml:1>) to reduce Render cold starts by pinging deployed URLs on a schedule.
+Repository includes [keep-awake.yml](</D:/Project/Vin_AI/000 Group Project/ai20kekeke/.github/workflows/keep-awake.yml:1>) to reduce Render cold starts by pinging deployed URLs on a schedule.
 
 Workflow behavior:
 
@@ -123,7 +123,7 @@ Required GitHub repository secrets:
 
 | Secret | Required | Example | Notes |
 | --- | --- | --- | --- |
-| `RENDER_APP_URL` | Yes | `https://c2-app-backend.onrender.com` | Base backend URL. Workflow appends `/health` automatically. |
+| `RENDER_APP_URL` | Yes | `https://vaic-backend.onrender.com` | Base backend URL. Workflow appends `/health` automatically. |
 
 Setup steps:
 

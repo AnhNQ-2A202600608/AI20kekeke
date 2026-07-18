@@ -1,5 +1,5 @@
 -- ============================================================================
--- C2-App-125 | Dynamic Elo Calibration & Response Time weighted Elo
+-- ai20kekeke | Dynamic Elo Calibration & Response Time weighted Elo
 -- Target: Supabase PostgreSQL 17
 -- Re-run safe: YES
 -- ============================================================================
@@ -630,7 +630,13 @@ BEGIN
 END;
 $$;
 
-GRANT EXECUTE ON FUNCTION app.submit_attempt_v3 TO authenticated;
-GRANT EXECUTE ON FUNCTION app.submit_attempt_v3 TO service_role;
+GRANT EXECUTE ON FUNCTION app.submit_attempt_v3(
+    uuid, uuid, uuid, uuid, uuid, jsonb, numeric, integer,
+    boolean, numeric[], numeric, numeric, integer
+) TO authenticated;
+GRANT EXECUTE ON FUNCTION app.submit_attempt_v3(
+    uuid, uuid, uuid, uuid, uuid, jsonb, numeric, integer,
+    boolean, numeric[], numeric, numeric, integer
+) TO service_role;
 
 COMMIT;
