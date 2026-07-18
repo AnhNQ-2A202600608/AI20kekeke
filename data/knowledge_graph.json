@@ -1,0 +1,37 @@
+{
+  "version": "1.0.0",
+  "nodes": [
+    {
+      "id": "M7.SDS.05",
+      "lop": 7,
+      "mon": "Toán",
+      "mach_noi_dung": "Số và Đại số",
+      "mo_ta": "Vận dụng tính chất tỉ lệ thức, đại lượng tỉ lệ",
+      "tien_quyet": ["M6.SDS.03"]
+    },
+    {
+      "id": "M6.SDS.03",
+      "lop": 6,
+      "mon": "Toán",
+      "mach_noi_dung": "Số và Đại số",
+      "mo_ta": "Hiểu tỉ số của hai đại lượng",
+      "tien_quyet": ["M5.SDS.02"]
+    },
+    {
+      "id": "M5.SDS.02",
+      "lop": 5,
+      "mon": "Toán",
+      "mach_noi_dung": "Số và Đại số",
+      "mo_ta": "Nhận biết hai phân số bằng nhau",
+      "tien_quyet": ["M4.SDS.07"]
+    },
+    {
+      "id": "M4.SDS.07",
+      "lop": 4,
+      "mon": "Toán",
+      "mach_noi_dung": "Số và Đại số",
+      "mo_ta": "Biết tính chất cơ bản của phân số",
+      "tien_quyet": []
+    }
+  ]
+}
