@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import {
   Brain,
@@ -134,7 +134,7 @@ function ChatGPTMessageContent({ message, onSelectOption }: ChatGPTMessageConten
 }
 
 
-export default function AiQuestionPage() {
+function AiQuestionPageContent() {
   const searchParams = useSearchParams();
   const selectedSubjectCode = searchParams.get("subject") || "TO";
   const selectedSubject = subjects.find((subject) => subject.code === selectedSubjectCode) || subjects[0];
@@ -162,8 +162,7 @@ export default function AiQuestionPage() {
   });
 
   return (
-    <AppShell>
-      <div className="chatgpt-layout">
+    <div className="chatgpt-layout">
         {/* Left History Sidebar */}
         <aside className="chatgpt-sidebar">
           <button className="chatgpt-new-chat" onClick={handleNewChat}>
@@ -301,6 +300,15 @@ export default function AiQuestionPage() {
           </div>
         </main>
       </div>
-    </AppShell>
+  );
+}
+
+export default function AiQuestionPage() {
+  return (
+    <Suspense fallback={<div className="p-6 text-center text-muted">Đang tải Lucy AI...</div>}>
+      <AppShell>
+        <AiQuestionPageContent />
+      </AppShell>
+    </Suspense>
   );
 }

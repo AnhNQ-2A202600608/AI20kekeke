@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ArrowRight, BookOpenText, CheckCircle, Clock, Sparkle } from "@phosphor-icons/react";
 import { AppShell } from "../components/AppShell";
+import { Suspense } from "react";
 import { examWorkflowRepository, examWorkflowSession, type ExamKind, type StudentExamAssignment } from "./exam-workflow";
 import styles from "./exam.module.css";
 
@@ -93,7 +94,7 @@ function AssignedExamCard({ item, number, studentId }: { item: StudentExamAssign
   );
 }
 
-export default function ExamPreparationPage() {
+function ExamPreparationPageContent() {
   const studentId = examWorkflowSession.getCurrentStudentId();
   const rootAssignments = examWorkflowRepository.getRootAssignments(studentId);
   const chapterAssignments = rootAssignments.filter((item) => item.assignment.kind === "chapter_practice");
@@ -102,8 +103,7 @@ export default function ExamPreparationPage() {
   const availableChildCount = rootAssignments.flatMap((item) => examWorkflowRepository.getChildAssignments(item.assignment.id, studentId)).filter((item) => item.access.canStart).length;
 
   return (
-    <AppShell compact>
-      <main className={styles.page}>
+    <main className={styles.page}>
         <section className={styles.intro + " " + styles.assignedHero}>
           <div>
             <span className={styles.eyebrow}>ÔN THI THEO ĐỀ ĐƯỢC GIAO</span>
@@ -148,6 +148,15 @@ export default function ExamPreparationPage() {
 
         <p className={styles.assignmentHint}><CheckCircle size={16} weight="fill" /> Sau khi nộp đề gốc, AI tạo đề con từ lỗi sai và câu cùng dạng. Hoàn thành để quay lại đây xem các đề mới.</p>
       </main>
-    </AppShell>
+  );
+}
+
+export default function ExamPreparationPage() {
+  return (
+    <Suspense fallback={<div className="p-6 text-center text-muted">Đang tải danh sách đề ôn...</div>}>
+      <AppShell compact>
+        <ExamPreparationPageContent />
+      </AppShell>
+    </Suspense>
   );
 }

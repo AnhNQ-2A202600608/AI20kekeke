@@ -41,7 +41,10 @@ export function getTabForRoute(pathname: string): TabType | null {
 }
 
 export function getRedirectPathForRole(role?: AppRole | null): string {
-  const defaultTab = getDefaultTabForRole(role);
-  return defaultTab === 'learn' ? '/app' : getRouteForTab(defaultTab);
+  const normalized = (role || '').trim().toLowerCase();
+  if (normalized === 'mentor' || normalized === 'teacher' || normalized === 'admin' || normalized === 'dev') {
+    return '/giao-vien';
+  }
+  return '/hoc-tap';
 }
 

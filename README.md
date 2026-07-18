@@ -8,7 +8,7 @@
 
 | Component | URL |
 |---|---|
-| **Frontend** | [https://ai20kekeke.vercel.app](https://ai20kekeke.vercel.app) |
+| **Frontend** | [https://ai20kekeke.vercel.app/login](https://ai20kekeke.vercel.app/login) |
 | **Backend** | [https://vaic-backend.onrender.com](https://vaic-backend.onrender.com) |
 | **Health check** | [https://vaic-backend.onrender.com/health](https://vaic-backend.onrender.com/health) |
 
@@ -16,7 +16,7 @@
 
 | Component | URL |
 |---|---|
-| **Frontend** | [ai20kekeke-trongmarvel-4106-ai-20kekeke.vercel.app](ai20kekeke-trongmarvel-4106-ai-20kekeke.vercel.app) |
+| **Frontend** | [https://ai20kekeke-trongmarvel-4106-ai-20kekeke.vercel.app/login](https://ai20kekeke-trongmarvel-4106-ai-20kekeke.vercel.app/login) |
 | **Backend** | [https://vaic-backend-staging.onrender.com](https://vaic-backend-staging.onrender.com) |
 | **Health check** | [https://vaic-backend-staging.onrender.com/health](https://vaic-backend-staging.onrender.com/health) |
 
@@ -41,7 +41,7 @@
 | #2 README | [`README.md`](README.md) | Product, setup, architecture index, deliverables checklist, and team |
 | #3 Architecture | [`docs/architecture.md`](docs/architecture.md) | Architecture overview; rendered diagrams in [`docs/diagram/images/`](docs/diagram/images/) and editable Excalidraw files in [`docs/diagram/excalidraw/`](docs/diagram/excalidraw/) |
 | #4 AI Logs | [`outputs/`](outputs/) / Braintrust | AI feedback logs and observability traces when available |
-| #5 Live URL / Deploy | [Production Frontend](https://ai20kekeke.vercel.app) / [Backend Health](https://vaic-backend.onrender.com/health) | Vercel frontend, Render backend, Supabase, Redis |
+| #5 Live URL / Deploy | [Production Frontend](https://ai20kekeke.vercel.app/login) / [Backend Health](https://vaic-backend.onrender.com/health) | Vercel frontend, Render backend, Supabase, Redis |
 | #6 Video Demo | [`docs/video-demo.md`](docs/video-demo.md) | Demo script/checklist; add YouTube link after upload |
 | #7 Pitch Deck | [`docs/pitch-deck.pdf`](docs/pitch-deck.pdf) | Submitted pitch deck PDF |
 | #8 Weekly Journal | [`docs/journal.md`](docs/journal.md) | Deliverable entrypoint; canonical content in [`JOURNAL.md`](JOURNAL.md) |
@@ -477,8 +477,11 @@ Bonus DevOps evidence:
 
 ## 👥 Đội ngũ phát triển (Team)
 
-| Thành viên | MSSV | Vai trò |
+| Thành viên | Email | Vai trò |
 |---|---|---|
-| Hồ Tất Bảo Hoàng | 2A202600699 | Product, UX, adaptive learning validation |
-| Nguyễn Phương Nam | 2A202600962 | Full-stack engineering, AI/RAG integration, documentation |
-| Nguyễn Vũ Trọng | 2A202600960 | Backend, data pipeline, evaluation evidence |
+| **Nguyễn Phương Nam** | nguyennam210601@gmail.com | Quản lý Dự án / Chương trình (Đội trưởng) |
+| **Nguyễn Quang Anh** | quanganhptit030@gmail.com | AI/ML · Nghiên cứu · Web Development |
+| **Lương Thị Hồng Nhung** | luongnhung0805@gmail.com | AI/ML · Backend · DevOps · Vibe Coding · Python |
+| **Lê Quang Minh (22bi13286)** | minhlq.281004@gmail.com | Trí tuệ nhân tạo / Dữ liệu / Học máy · Kỹ thuật / Developer |
+| **Nguyễn Vũ Trọng** | 20trongvu02@gmail.com | Kỹ thuật / Developer |
+| **Lê Đức Việt** | ducleviet111973@gmail.com | API / Tích hợp hệ thống · Vibe Coding · Quản lý Sản phẩm · UI/UX · Web Development |

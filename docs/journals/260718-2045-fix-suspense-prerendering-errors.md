@@ -1,0 +1,26 @@
+# 2026-07-18 — Wrap searchParams page components in Suspense & ruff autofixes
+
+- **Why:** During production build (`npm run build`), Next.js Turbopack failed page data collection and static prerendering on pages that call `useSearchParams()` (both directly and via `AppShell`) outside of a `<Suspense>` boundary. Also, backend python files had minor ruff formatting/import sorting warnings.
+- **What changed:**
+  - Wrapped `AppShell` or page contents inside `<Suspense>` boundaries across all pages using search parameters:
+    - `/ky-nang`
+    - `/kiem-tra`
+    - `/luyen-tap`
+    - `/on-thi/de-thi`
+    - `/on-thi/ket-qua`
+    - `/on-thi`
+    - `/onboarding`
+    - `/ket-qua`
+    - `/hoc-tap`
+    - `/bai-hoc/phan-so`
+    - `/chuong/phan-so`
+    - `/skill-graph`
+    - `/dashboard`
+    - `/ho-so`
+    - `/thanh-tich`
+    - `/hoi-dap-ai`
+  - Ran `uv run ruff check src/ tests/ --fix` to clean up whitespace and organize import blocks.
+- **Validation:**
+  - Ran `npm run build` inside `frontend/` -> **Successfully generated all 71 static/dynamic pages with Turbopack**.
+  - All unit tests (`pytest tests/`) still pass.
+- **Follow-up:** None.

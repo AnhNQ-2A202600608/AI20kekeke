@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { ArrowRight, PlayCircle } from 'lucide-react';
 
 export const LOGIN_PATH = '/login';
-export const APP_PATH = '/app';
+export const APP_PATH = '/hoc-tap';
 
 interface LandingCtaProps {
   compact?: boolean;

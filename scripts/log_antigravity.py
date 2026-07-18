@@ -223,37 +223,55 @@ def iter_user_inputs(brain_dirs: list[Path], cutoff: datetime | None, only_conv:
             if repo_root_n and not _conv_matches_repo(cwds, repo_root_n):
                 continue
 
-            with open(transcript, encoding="utf-8") as f:
-                for line in f:
-                    line = line.strip()
-                    if not line:
-                        continue
+            # Load all lines first so we can perform lookahead for the assistant's response.
+            lines_data = []
+            try:
+                with open(transcript, encoding="utf-8") as f:
+                    for line in f:
+                        line = line.strip()
+                        if line:
+                            try:
+                                lines_data.append(json.loads(line))
+                            except json.JSONDecodeError:
+                                pass
+            except OSError:
+                continue
+
+            for idx, entry in enumerate(lines_data):
+                if entry.get("type") != "USER_INPUT" or entry.get("source") != "USER_EXPLICIT":
+                    continue
+
+                ts = entry.get("created_at") or ""
+                if cutoff and ts:
                     try:
-                        entry = json.loads(line)
-                    except json.JSONDecodeError:
-                        continue
-                    if entry.get("type") != "USER_INPUT" or entry.get("source") != "USER_EXPLICIT":
-                        continue
+                        ts_dt = datetime.fromisoformat(ts.replace("Z", "+00:00"))
+                        if ts_dt < cutoff:
+                            continue
+                    except ValueError:
+                        pass
 
-                    ts = entry.get("created_at") or ""
-                    if cutoff and ts:
-                        try:
-                            ts_dt = datetime.fromisoformat(ts.replace("Z", "+00:00"))
-                            if ts_dt < cutoff:
-                                continue
-                        except ValueError:
-                            pass
+                text = extract_user_prompt(entry.get("content", ""))
+                if len(text) < 2:
+                    continue
 
-                    text = extract_user_prompt(entry.get("content", ""))
-                    if len(text) < 2:
-                        continue
+                # Find the next non-empty PLANNER_RESPONSE
+                response_summary = ""
+                for next_entry in lines_data[idx + 1:]:
+                    if next_entry.get("type") == "PLANNER_RESPONSE" and next_entry.get("content"):
+                        raw_content = next_entry.get("content", "").strip()
+                        # Clean XML-like markup if present, replace newlines with space, and limit size.
+                        clean_content = re.sub(r"<[^>]+>", "", raw_content)
+                        response_summary = clean_content[:400].replace("\n", " ").strip()
+                        if response_summary:
+                            break
 
-                    yield {
-                        "conv_id": conv_dir.name,
-                        "step_index": int(entry.get("step_index", 0)),
-                        "timestamp": ts,
-                        "text": text,
-                    }
+                yield {
+                    "conv_id": conv_dir.name,
+                    "step_index": int(entry.get("step_index", 0)),
+                    "timestamp": ts,
+                    "text": text,
+                    "response_summary": response_summary,
+                }
 
 
 # ---------------------------------------------------------------------------
@@ -281,7 +299,7 @@ def build_entry(msg: dict, repo: str, branch: str, commit: str, student: str) ->
         "commit": commit,
         "student": student,
         "prompt": msg["text"],
-        "response_summary": "",
+        "response_summary": msg.get("response_summary", ""),
     }
 
 

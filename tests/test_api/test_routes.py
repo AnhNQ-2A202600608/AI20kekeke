@@ -842,8 +842,8 @@ async def test_signup_business_user_store_failure_returns_503(client, mock_auth_
 
 @pytest.mark.asyncio
 async def test_memory_buffering_and_debounce(monkeypatch):
-    from src.api.routes import buffer_and_update_student_memory
     import src.api.routes as routes_module
+    from src.api.routes import buffer_and_update_student_memory
 
     # Mock Cache Store
     class DictCache:
@@ -880,7 +880,7 @@ async def test_memory_buffering_and_debounce(monkeypatch):
     # Test case 1: Buffering under BATCH_SIZE (no instant trigger, schedules debounce)
     student_id = "test-student-uuid"
     bg_tasks = FakeBackgroundTasks()
-    
+
     await buffer_and_update_student_memory(
         student_id,
         "Hello",
@@ -892,7 +892,7 @@ async def test_memory_buffering_and_debounce(monkeypatch):
     # Should be in cache
     assert fake_cache.exists(f"student_chat_buffer:{student_id}")
     assert fake_cache.exists(f"student_chat_buffer_version:{student_id}")
-    
+
     # Should schedule delayed flush
     assert len(bg_tasks.tasks) == 1
     assert bg_tasks.tasks[0][0].__name__ == "delayed_flush_memory_buffer"
@@ -910,7 +910,7 @@ async def test_memory_buffering_and_debounce(monkeypatch):
     # Now len(buffer) == 5. Should have triggered update_long_term_memories_job immediately
     # And cleared the cache keys
     assert not fake_cache.exists(f"student_chat_buffer:{student_id}")
-    
+
     # Find the job call in background tasks
     instant_job_calls = [t for t in bg_tasks.tasks if t[0] == mock_update_job]
     assert len(instant_job_calls) == 1

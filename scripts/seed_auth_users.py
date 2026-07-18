@@ -131,7 +131,8 @@ def seed_users():
         try:
             # Check if user already exists in Auth
             auth_client.auth.admin.get_user_by_id(uid)
-            print("  [+] Tài khoản đã tồn tại trong Supabase Auth.")
+            print("  [+] Tài khoản đã tồn tại trong Supabase Auth. Đang đồng bộ mật khẩu...")
+            auth_client.auth.admin.update_user_by_id(uid, {"password": pwd})
         except AuthApiError as e:
             # If not found, create user with explicit ID
             if "not found" in str(e).lower() or "user_not_found" in str(e).lower() or e.status == 404:

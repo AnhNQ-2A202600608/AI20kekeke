@@ -321,7 +321,7 @@ async def delayed_flush_memory_buffer(student_id_str: str, version_token: str, d
         cache = get_cache_store()
         version_key = f"student_chat_buffer_version:{student_id_str}"
         cached_version = cache.get(version_key)
-        
+
         # Chỉ flush nếu phiên bản hiện tại khớp với phiên bản khi lập lịch (debounce thành công)
         if cached_version == version_token:
             buffer_key = f"student_chat_buffer:{student_id_str}"
@@ -351,21 +351,21 @@ async def buffer_and_update_student_memory(
         buffer_key = f"student_chat_buffer:{student_id_str}"
         concept_key = f"student_last_concept:{student_id_str}"
         version_key = f"student_chat_buffer_version:{student_id_str}"
-        
+
         # Đọc dữ liệu hiện tại
         buffer_data = cache.get(buffer_key)
         buffer = json.loads(buffer_data) if buffer_data else []
-        
+
         last_concept = cache.get(concept_key)
         concept_changed = bool(concept_id_str and last_concept and concept_id_str != last_concept)
-        
+
         # Thêm lượt chat mới
         buffer.append({"q": query, "r": response})
-        
+
         # Cập nhật concept gần nhất
         if concept_id_str:
             cache.set(concept_key, concept_id_str, ttl=3600)
-            
+
         BATCH_SIZE = 5
         if len(buffer) >= BATCH_SIZE or concept_changed:
             # Trigger cập nhật ngay lập tức nếu đạt BATCH_SIZE hoặc đổi concept
