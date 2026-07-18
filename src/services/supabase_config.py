@@ -82,9 +82,7 @@ def get_backend_supabase_config(*, allow_stub: bool = True) -> SupabaseBackendCo
 
     key_kind = classify_supabase_key(secret_key)
     if key_kind in {"publishable", "legacy_anon"}:
-        logger.warning(
-            f"{key_source} is a public Supabase {key_kind} key, but using it as fallback for local testing."
-        )
+        logger.warning(f"{key_source} is a public Supabase {key_kind} key, but using it as fallback for local testing.")
     elif key_kind == "unknown":
         logger.warning("%s has an unrecognized Supabase key shape; treating it as server-only.", key_source)
     if key_kind == "legacy_service_role":

@@ -1,13 +1,15 @@
 import json
+from unittest.mock import AsyncMock, MagicMock, patch
+
 import pytest
-from unittest.mock import AsyncMock, patch, MagicMock
 
 from src.services.quiz_generator import (
-    validate_option_balance,
-    rebalance_and_shuffle_options,
-    verify_batch_difficulty,
     generate_quizzes_from_slides_task,
+    rebalance_and_shuffle_options,
+    validate_option_balance,
+    verify_batch_difficulty,
 )
+
 
 # 1. Test validate_option_balance
 def test_validate_option_balance_math_and_short():
@@ -133,16 +135,12 @@ async def test_generate_quizzes_task_flow(mock_get, mock_post, mock_get_llm, mon
     # Mock slides fetch response
     slides_resp = MagicMock()
     slides_resp.status_code = 200
-    slides_resp.json.return_value = [
-        {"slide_number": 1, "content": "Nội dung slide 1 về phân số."}
-    ]
+    slides_resp.json.return_value = [{"slide_number": 1, "content": "Nội dung slide 1 về phân số."}]
 
     # Mock concepts fetch response
     concept_resp = MagicMock()
     concept_resp.status_code = 200
-    concept_resp.json.return_value = [
-        {"id": "concept-123", "course_id": "course-456", "name": "Phân Số Học"}
-    ]
+    concept_resp.json.return_value = [{"id": "concept-123", "course_id": "course-456", "name": "Phân Số Học"}]
 
     # Setup get requests mock side_effect
     def get_side_effect(url, *args, **kwargs):
@@ -161,52 +159,60 @@ async def test_generate_quizzes_task_flow(mock_get, mock_post, mock_get_llm, mon
     # 1. Question generation attempt 1: yields 2 questions, one fails validate_option_balance, one fails Critic check.
     # 2. Question generation attempt 2 (retry): yields 2 questions, both pass all checks.
     # 3. Socratic Hints generation (1 call for each of the 2 final selected questions = 2 calls)
-    q_gen_resp_1 = MagicMock(content=json.dumps([
-        {
-            "prompt": "Q1 (Will fail option balance)",
-            "options": {
-                "A": "Ngắn",
-                "B": "Rất rất rất rất rất rất rất rất rất rất rất rất rất rất rất rất rất rất rất rất rất rất rất rất rất rất dài",
-                "C": "Ngắn nữa",
-                "D": "Ngắn tiếp",
-            },
-            "correct_option": "A",
-            "explanation": "Exp"
-        },
-        {
-            "prompt": "Q2 (Will fail Critic check)",
-            "options": {"A": "1", "B": "2", "C": "3", "D": "4"},
-            "correct_option": "B",
-            "explanation": "Exp"
-        }
-    ]))
+    q_gen_resp_1 = MagicMock(
+        content=json.dumps(
+            [
+                {
+                    "prompt": "Q1 (Will fail option balance)",
+                    "options": {
+                        "A": "Ngắn",
+                        "B": "Rất rất rất rất rất rất rất rất rất rất rất rất rất rất rất rất rất rất rất rất rất rất rất rất rất rất dài",
+                        "C": "Ngắn nữa",
+                        "D": "Ngắn tiếp",
+                    },
+                    "correct_option": "A",
+                    "explanation": "Exp",
+                },
+                {
+                    "prompt": "Q2 (Will fail Critic check)",
+                    "options": {"A": "1", "B": "2", "C": "3", "D": "4"},
+                    "correct_option": "B",
+                    "explanation": "Exp",
+                },
+            ]
+        )
+    )
 
-    q_gen_resp_2 = MagicMock(content=json.dumps([
-        {
-            "prompt": "Q3 (Will pass)",
-            "options": {"A": "1", "B": "2", "C": "3", "D": "4"},
-            "correct_option": "C",
-            "explanation": "Exp"
-        },
-        {
-            "prompt": "Q4 (Will pass)",
-            "options": {"A": "1", "B": "2", "C": "3", "D": "4"},
-            "correct_option": "D",
-            "explanation": "Exp"
-        }
-    ]))
+    q_gen_resp_2 = MagicMock(
+        content=json.dumps(
+            [
+                {
+                    "prompt": "Q3 (Will pass)",
+                    "options": {"A": "1", "B": "2", "C": "3", "D": "4"},
+                    "correct_option": "C",
+                    "explanation": "Exp",
+                },
+                {
+                    "prompt": "Q4 (Will pass)",
+                    "options": {"A": "1", "B": "2", "C": "3", "D": "4"},
+                    "correct_option": "D",
+                    "explanation": "Exp",
+                },
+            ]
+        )
+    )
 
     critic_resp_1 = MagicMock(content='["khó"]')  # For Q2 (target: dễ -> diff 2 -> fails)
-    critic_resp_2 = MagicMock(content='["dễ", "dễ"]') # For Q3, Q4 (target: dễ -> passes)
+    critic_resp_2 = MagicMock(content='["dễ", "dễ"]')  # For Q3, Q4 (target: dễ -> passes)
     hint_resp = MagicMock(content=json.dumps({"level1": "H1", "level2": "H2", "level3": "H3"}))
 
     mock_llm_instance.ainvoke.side_effect = [
         q_gen_resp_1,  # Gen attempt 1
-        critic_resp_1, # Critic verify attempt 1 (only runs on Q2 since Q1 failed option balance)
+        critic_resp_1,  # Critic verify attempt 1 (only runs on Q2 since Q1 failed option balance)
         q_gen_resp_2,  # Gen attempt 2 (retry)
-        critic_resp_2, # Critic verify attempt 2 (runs on Q3, Q4)
-        hint_resp,     # Hint for question 1
-        hint_resp,     # Hint for question 2
+        critic_resp_2,  # Critic verify attempt 2 (runs on Q3, Q4)
+        hint_resp,  # Hint for question 1
+        hint_resp,  # Hint for question 2
     ]
     mock_get_llm.return_value = mock_llm_instance
 
@@ -223,7 +229,7 @@ async def test_generate_quizzes_task_flow(mock_get, mock_post, mock_get_llm, mon
         difficulty="dễ",
         socratic_hints=True,
         concept_code="phan-so",
-        user_id="user-999"
+        user_id="user-999",
     )
 
     # Let's verify DB posts

@@ -60,23 +60,13 @@ def _check_ocr_backend_available() -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(
-        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
-    )
+    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--book", help="Only process this filename (or stem) under data/")
-    parser.add_argument(
-        "--start-page", type=int, default=None, help="1-indexed first page (inclusive)"
-    )
-    parser.add_argument(
-        "--end-page", type=int, default=None, help="1-indexed last page (inclusive)"
-    )
-    parser.add_argument(
-        "--force", action="store_true", help="Re-OCR pages even if already processed"
-    )
+    parser.add_argument("--start-page", type=int, default=None, help="1-indexed first page (inclusive)")
+    parser.add_argument("--end-page", type=int, default=None, help="1-indexed last page (inclusive)")
+    parser.add_argument("--force", action="store_true", help="Re-OCR pages even if already processed")
     parser.add_argument("--dpi", type=int, default=None, help="Override OCR render DPI")
-    parser.add_argument(
-        "--lang", default=None, help="Override Tesseract language code (default: vie)"
-    )
+    parser.add_argument("--lang", default=None, help="Override Tesseract language code (default: vie)")
     args = parser.parse_args()
 
     _check_ocr_backend_available()

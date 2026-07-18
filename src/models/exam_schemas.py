@@ -1,6 +1,7 @@
 from datetime import datetime
-from typing import Any, Optional
+from typing import Any
 from uuid import UUID
+
 from pydantic import BaseModel, Field
 
 
@@ -8,7 +9,7 @@ class ExamSetSummary(BaseModel):
     id: UUID = Field(..., description="ID bộ đề thi")
     code: str = Field(..., description="Mã bộ đề thi (e.g. midterm-common)")
     title: str = Field(..., description="Tiêu đề bộ đề thi")
-    description: Optional[str] = Field(default=None, description="Mô tả bộ đề thi")
+    description: str | None = Field(default=None, description="Mô tả bộ đề thi")
     exam_type: str = Field(..., description="Loại đề (midterm, final, diagnostic, mock)")
     difficulty: str = Field(..., description="Độ khó (dễ, bình thường, khó)")
     duration_minutes: int = Field(..., description="Thời gian làm bài (phút)")
@@ -33,7 +34,7 @@ class ExamStartResponse(BaseModel):
     attempt_id: UUID = Field(..., description="ID lượt thi")
     exam_set_id: UUID = Field(..., description="ID bộ đề")
     started_at: datetime = Field(..., description="Thời điểm bắt đầu làm bài")
-    expires_at: Optional[datetime] = Field(default=None, description="Thời điểm hết hạn làm bài")
+    expires_at: datetime | None = Field(default=None, description="Thời điểm hết hạn làm bài")
 
 
 class QuestionAnswer(BaseModel):

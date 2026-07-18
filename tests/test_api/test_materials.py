@@ -211,7 +211,9 @@ async def test_generate_quizzes_by_weakness_trigger(client, monkeypatch):
 
     mock_resp_materials = MagicMock()
     mock_resp_materials.status_code = 200
-    mock_resp_materials.json.return_value = [{"source_filename": "Day 08 - Production RAG.pdf", "title": "RAG Pipeline"}]
+    mock_resp_materials.json.return_value = [
+        {"source_filename": "Day 08 - Production RAG.pdf", "title": "RAG Pipeline"}
+    ]
 
     def mock_get(url, *args, **kwargs):
         if "concepts" in url:
@@ -223,8 +225,10 @@ async def test_generate_quizzes_by_weakness_trigger(client, monkeypatch):
         return MagicMock(status_code=404)
 
     # Mock generate task
-    with patch("src.api.material_routes.generate_quizzes_from_slides_task") as mock_task, \
-         patch("requests.get", side_effect=mock_get):
+    with (
+        patch("src.api.material_routes.generate_quizzes_from_slides_task") as mock_task,
+        patch("requests.get", side_effect=mock_get),
+    ):
         response = await client.post(
             "/api/v1/materials/generate-by-weakness",
             json={
@@ -232,7 +236,7 @@ async def test_generate_quizzes_by_weakness_trigger(client, monkeypatch):
                 "concept_code": "d8-rag-pipeline",
                 "num_questions": 3,
                 "difficulty": "bình thường",
-                "socratic_hints": True
+                "socratic_hints": True,
             },
             headers={"Authorization": "Bearer service_role"},
         )
@@ -244,5 +248,3 @@ async def test_generate_quizzes_by_weakness_trigger(client, monkeypatch):
         assert data["document_name"] == "Day 08 - Production RAG.pdf"
         assert data["num_questions_requested"] == 3
         mock_task.assert_called_once()
-
-

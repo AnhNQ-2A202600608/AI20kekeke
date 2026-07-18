@@ -13,8 +13,8 @@ from src.services.braintrust_observability import configure_braintrust_observabi
 
 configure_braintrust_observability()
 
-from src.api.routes import router  # noqa: E402
 from src.api.exam_routes import router as exam_router  # noqa: E402
+from src.api.routes import router  # noqa: E402
 
 
 def configure_logging() -> None:

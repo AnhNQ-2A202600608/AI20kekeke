@@ -110,13 +110,14 @@ def validate_option_balance(options: dict[str, str]) -> bool:
     Returns False if descriptive text options differ in length by > 50%.
     """
     import re
+
     if not isinstance(options, dict) or len(options) < 4:
         return False
 
     vals = [str(v).strip() for v in options.values()]
 
     # Identify math expressions or short option texts
-    math_pattern = re.compile(r'[0-9+\-*/=<>\\\{\}\^_\$]')
+    math_pattern = re.compile(r"[0-9+\-*/=<>\\\{\}\^_\$]")
 
     is_all_math_or_short = True
     lengths = []
@@ -139,6 +140,7 @@ def validate_option_balance(options: dict[str, str]) -> bool:
 def shuffle_single_question_options(q: dict) -> None:
     """Shuffles the options of a single question and updates correct_option accordingly."""
     import random
+
     options = q.get("options")
     correct = q.get("correct_option")
     if not options or not correct or correct not in options:
@@ -234,7 +236,7 @@ async def verify_batch_difficulty(questions: list[dict], target_difficulty: str)
 
     messages = [
         SystemMessage(content="You are an expert curriculum auditor who outputs raw JSON arrays of strings."),
-        HumanMessage(content=prompt)
+        HumanMessage(content=prompt),
     ]
 
     try:
@@ -445,7 +447,9 @@ async def generate_quizzes_from_slides_task(
                     if len(valid_questions) >= num_questions:
                         break
                 else:
-                    logger.info(f"Question failed Critic difficulty check: {c.get('prompt')} (predicted: {c.get('critic_difficulty')})")
+                    logger.info(
+                        f"Question failed Critic difficulty check: {c.get('prompt')} (predicted: {c.get('critic_difficulty')})"
+                    )
 
             retry_count += 1
 
@@ -585,4 +589,3 @@ async def generate_quizzes_from_slides_task(
         logger.info(f"Finished quiz generation pipeline for document: {document_name}")
     except Exception as e:
         logger.exception(f"Unhandled error in generate_quizzes_from_slides_task: {e}")
-

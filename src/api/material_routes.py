@@ -436,11 +436,15 @@ def get_document_name_for_concept(concept_code: str) -> str | None:
         for m in materials:
             filename = m.get("source_filename") or ""
             title = m.get("title") or ""
-            if (concept_code.lower() in filename.lower() or
-                concept_code.lower() in title.lower() or
-                (concept_name and concept_name.lower() in filename.lower()) or
-                (concept_name and concept_name.lower() in title.lower())):
-                logger.info(f"Resolved document name '{filename}' from course materials match for concept: {concept_code}")
+            if (
+                concept_code.lower() in filename.lower()
+                or concept_code.lower() in title.lower()
+                or (concept_name and concept_name.lower() in filename.lower())
+                or (concept_name and concept_name.lower() in title.lower())
+            ):
+                logger.info(
+                    f"Resolved document name '{filename}' from course materials match for concept: {concept_code}"
+                )
                 return filename
 
     # 4. Check public.slide_embeddings for slide content matching the concept name/code
@@ -476,7 +480,7 @@ async def generate_quizzes_by_weakness(
         if not doc_name:
             raise HTTPException(
                 status_code=400,
-                detail=f"Could not resolve teaching material/document name for concept '{req.concept_code}'. Please supply document_name explicitly."
+                detail=f"Could not resolve teaching material/document name for concept '{req.concept_code}'. Please supply document_name explicitly.",
             )
 
     background_tasks.add_task(
@@ -498,4 +502,3 @@ async def generate_quizzes_by_weakness(
         "num_questions_requested": req.num_questions,
         "message": "AI targeted quiz generation pipeline for student weakness has been triggered in the background.",
     }
-

@@ -121,9 +121,15 @@ def write_raw_backup(events: list[dict[str, Any]], out_dir: Path) -> Path:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Fetch Braintrust project logs and replay them into another project.")
-    parser.add_argument("--source-api-url", default=os.getenv("BRAINTRUST_SOURCE_API_URL") or os.getenv("BRAINTRUST_API_URL"))
-    parser.add_argument("--source-api-key", default=os.getenv("BRAINTRUST_SOURCE_API_KEY") or os.getenv("BRAINTRUST_API_KEY"))
-    parser.add_argument("--source-project-id", default=os.getenv("BRAINTRUST_SOURCE_PROJECT_ID") or os.getenv("BRAINTRUST_PROJECT_ID"))
+    parser.add_argument(
+        "--source-api-url", default=os.getenv("BRAINTRUST_SOURCE_API_URL") or os.getenv("BRAINTRUST_API_URL")
+    )
+    parser.add_argument(
+        "--source-api-key", default=os.getenv("BRAINTRUST_SOURCE_API_KEY") or os.getenv("BRAINTRUST_API_KEY")
+    )
+    parser.add_argument(
+        "--source-project-id", default=os.getenv("BRAINTRUST_SOURCE_PROJECT_ID") or os.getenv("BRAINTRUST_PROJECT_ID")
+    )
     parser.add_argument("--target-app-url", default=os.getenv("BRAINTRUST_TARGET_APP_URL"))
     parser.add_argument("--target-api-key", default=os.getenv("BRAINTRUST_TARGET_API_KEY"))
     parser.add_argument("--target-project-id", default=os.getenv("BRAINTRUST_TARGET_PROJECT_ID"))
@@ -141,7 +147,9 @@ def main() -> None:
 
     source_api_url = args.source_api_url or os.getenv("BRAINTRUST_SOURCE_API_URL") or os.getenv("BRAINTRUST_API_URL")
     source_api_key = args.source_api_key or os.getenv("BRAINTRUST_SOURCE_API_KEY") or os.getenv("BRAINTRUST_API_KEY")
-    source_project_id = args.source_project_id or os.getenv("BRAINTRUST_SOURCE_PROJECT_ID") or os.getenv("BRAINTRUST_PROJECT_ID")
+    source_project_id = (
+        args.source_project_id or os.getenv("BRAINTRUST_SOURCE_PROJECT_ID") or os.getenv("BRAINTRUST_PROJECT_ID")
+    )
     target_app_url = args.target_app_url or os.getenv("BRAINTRUST_TARGET_APP_URL")
     target_api_key = args.target_api_key or os.getenv("BRAINTRUST_TARGET_API_KEY")
     target_project_id = args.target_project_id or os.getenv("BRAINTRUST_TARGET_PROJECT_ID")

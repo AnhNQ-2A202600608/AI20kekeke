@@ -1,31 +1,28 @@
-from datetime import UTC, datetime, timedelta
 import logging
-from typing import Optional
-from uuid import UUID
 import uuid
+from datetime import UTC, datetime, timedelta
+from uuid import UUID
 
 from fastapi import APIRouter, Depends, HTTPException
 
-from src.models.exam_schemas import (
-    ExamSetSummary,
-    ExamQuestionItem,
-    ExamDetailsResponse,
-    ExamStartResponse,
-    QuestionAnswer,
-    ExamSubmitRequest,
-    ConceptGapItem,
-    ExamResultResponse,
-)
-from src.services.adaptive.database_interface import AdaptiveDatabaseInterface
-from src.services.adaptive.elo import calculate_expected_success
-from src.services.adaptive.bandit import calculate_bandit_reward, build_student_context
 from src.api.adaptive_routes import (
+    AuthenticatedUser,
     get_adaptive_db,
     get_current_user,
-    AuthenticatedUser,
-    grade_answer,
     normalize_answer_key,
 )
+from src.models.exam_schemas import (
+    ConceptGapItem,
+    ExamDetailsResponse,
+    ExamQuestionItem,
+    ExamResultResponse,
+    ExamSetSummary,
+    ExamStartResponse,
+    ExamSubmitRequest,
+)
+from src.services.adaptive.bandit import build_student_context, calculate_bandit_reward
+from src.services.adaptive.database_interface import AdaptiveDatabaseInterface
+from src.services.adaptive.elo import calculate_expected_success
 
 logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/exams", tags=["Exam Sets"])
@@ -34,7 +31,7 @@ router = APIRouter(prefix="/exams", tags=["Exam Sets"])
 @router.get("", response_model=list[ExamSetSummary])
 async def list_exam_sets(
     course_id: UUID,
-    exam_type: Optional[str] = None,
+    exam_type: str | None = None,
     current_user: AuthenticatedUser = Depends(get_current_user),
     db: AdaptiveDatabaseInterface = Depends(get_adaptive_db),
 ):
@@ -51,14 +48,14 @@ async def list_exam_sets(
                 difficulty="bình thường",
                 duration_minutes=45,
                 max_score=10.0,
-                question_count=2
+                question_count=2,
             )
         ]
 
     try:
         # Lấy thông tin các bộ đề thi
         query = db.app_client.table("exam_sets").select("*").eq("course_id", str(course_id))
-        
+
         # Chỉ student chỉ được thấy đề published
         if current_user.role == "student":
             query = query.eq("status", "published")
@@ -78,7 +75,7 @@ async def list_exam_sets(
         # Đếm số lượng câu hỏi trong mỗi bộ đề
         questions_resp = db.app_client.table("exam_questions").select("exam_set_id").execute()
         question_counts = {}
-        for row in (questions_resp.data or []):
+        for row in questions_resp.data or []:
             sid = row["exam_set_id"]
             question_counts[sid] = question_counts.get(sid, 0) + 1
 
@@ -95,7 +92,7 @@ async def list_exam_sets(
                     difficulty=row.get("difficulty", "bình thường"),
                     duration_minutes=row.get("duration_minutes", 45),
                     max_score=float(row.get("max_score", 10.0)),
-                    question_count=question_counts.get(sid_str, 0)
+                    question_count=question_counts.get(sid_str, 0),
                 )
             )
         return results
@@ -123,7 +120,7 @@ async def get_exam_details(
             difficulty="bình thường",
             duration_minutes=45,
             max_score=10.0,
-            question_count=2
+            question_count=2,
         )
         questions = [
             ExamQuestionItem(
@@ -131,15 +128,15 @@ async def get_exam_details(
                 sort_order=1,
                 weight=1.0,
                 prompt="Câu hỏi trắc nghiệm số 1: Trái Đất quay quanh mặt trời mất bao nhiêu ngày?",
-                options={"A": "365 ngày", "B": "366 ngày", "C": "365.25 ngày", "D": "30 ngày"}
+                options={"A": "365 ngày", "B": "366 ngày", "C": "365.25 ngày", "D": "30 ngày"},
             ),
             ExamQuestionItem(
                 id=UUID("00000000-0000-0000-0000-999999999992"),
                 sort_order=2,
                 weight=1.0,
                 prompt="Câu hỏi trắc nghiệm số 2: Phép toán nào có kết quả lớn nhất?",
-                options={"A": "1 + 1", "B": "2 * 2", "C": "3 - 1", "D": "4 / 2"}
-            )
+                options={"A": "1 + 1", "B": "2 * 2", "C": "3 - 1", "D": "4 / 2"},
+            ),
         ]
         return ExamDetailsResponse(exam=summary, questions=questions)
 
@@ -169,7 +166,7 @@ async def get_exam_details(
             q = item.get("questions")
             if not q:
                 continue
-            
+
             # Chỉ hỗ trợ câu hỏi MCQ trong bộ đề thi theo nghiệp vụ đã xác nhận
             if q.get("type") != "mcq":
                 continue
@@ -183,7 +180,7 @@ async def get_exam_details(
                     sort_order=item["sort_order"],
                     weight=float(item["weight"] or 1.0),
                     prompt=q["prompt"],
-                    options=options
+                    options=options,
                 )
             )
 
@@ -199,7 +196,7 @@ async def get_exam_details(
             difficulty=exam_data.get("difficulty", "bình thường"),
             duration_minutes=exam_data.get("duration_minutes", 45),
             max_score=float(exam_data.get("max_score", 10.0)),
-            question_count=len(questions_list)
+            question_count=len(questions_list),
         )
 
         return ExamDetailsResponse(exam=summary, questions=questions_list)
@@ -223,10 +220,7 @@ async def start_exam(
         started_at = datetime.now(UTC)
         expires_at = started_at + timedelta(minutes=45)
         return ExamStartResponse(
-            attempt_id=uuid.uuid4(),
-            exam_set_id=exam_set_id,
-            started_at=started_at,
-            expires_at=expires_at
+            attempt_id=uuid.uuid4(), exam_set_id=exam_set_id, started_at=started_at, expires_at=expires_at
         )
 
     try:
@@ -249,7 +243,7 @@ async def start_exam(
             "exam_set_id": str(exam_set_id),
             "started_at": started_at.isoformat(),
             "expires_at": expires_at.isoformat(),
-            "status": "in_progress"
+            "status": "in_progress",
         }
 
         attempt_resp = db.app_client.table("exam_attempts").insert(attempt_data).execute()
@@ -261,7 +255,7 @@ async def start_exam(
             attempt_id=UUID(inserted["id"]),
             exam_set_id=UUID(inserted["exam_set_id"]),
             started_at=datetime.fromisoformat(inserted["started_at"].replace("Z", "+00:00")),
-            expires_at=datetime.fromisoformat(inserted["expires_at"].replace("Z", "+00:00"))
+            expires_at=datetime.fromisoformat(inserted["expires_at"].replace("Z", "+00:00")),
         )
 
     except HTTPException:
@@ -295,19 +289,21 @@ async def submit_exam(
                     concept_name="Phép cộng phân số (Stub)",
                     bkt_before=0.25,
                     bkt_after=0.15,
-                    mastery_state="weak"
+                    mastery_state="weak",
                 )
             ],
-            submitted_at=submitted_at
+            submitted_at=submitted_at,
         )
 
     try:
         # 1. Lấy và kiểm tra thông tin lượt thi
-        attempt_resp = db.app_client.table("exam_attempts").select("*").eq("id", str(attempt_id)).maybe_single().execute()
+        attempt_resp = (
+            db.app_client.table("exam_attempts").select("*").eq("id", str(attempt_id)).maybe_single().execute()
+        )
         attempt = attempt_resp.data
         if not attempt:
             raise HTTPException(status_code=404, detail="Không tìm thấy lượt thi.")
-        
+
         if attempt["status"] != "in_progress":
             raise HTTPException(status_code=400, detail="Lượt thi đã được nộp hoặc không còn trong trạng thái làm bài.")
 
@@ -315,7 +311,7 @@ async def submit_exam(
             raise HTTPException(status_code=403, detail="Sinh viên chỉ có quyền nộp bài làm của chính mình.")
 
         exam_set_id = attempt["exam_set_id"]
-        
+
         # 2. Lấy danh sách câu hỏi trong bộ đề và thông tin concept, độ khó Elo, weight
         eq_resp = (
             db.app_client.table("exam_questions")
@@ -339,12 +335,12 @@ async def submit_exam(
                 "prompt": q["prompt"],
                 "answer_key": normalize_answer_key(q.get("answer_key")),
                 "difficulty_elo": float(q.get("difficulty_elo") or 1200),
-                "weight": float(item["weight"] or 1.0)
+                "weight": float(item["weight"] or 1.0),
             }
 
         # 3. Tính điểm số và lưu lịch sử từng câu thông qua RPC submit_attempt_v3
         student_answers_map = {UUID(str(ans.question_id)): ans.selected_option for ans in request.answers}
-        
+
         total_weight = 0.0
         weighted_score = 0.0
         correct_count = 0
@@ -364,7 +360,7 @@ async def submit_exam(
 
                 student_option = student_answers_map.get(q_id, "")
                 correct_option = q_info["answer_key"].get("correct", "")
-                is_correct = (student_option == correct_option)
+                is_correct = student_option == correct_option
                 score = 1.0 if is_correct else 0.0
                 if is_correct:
                     correct_count += 1
@@ -398,9 +394,9 @@ async def submit_exam(
                     "model_snapshot": {},
                     "expected_reward": 0.0,
                     "expected_success": expected_success,
-                    "exploration_mode": "exploit"
+                    "exploration_mode": "exploit",
                 }
-                
+
                 db.audit_client.table("adaptive_decisions").insert(decision_data).execute()
 
                 # Gọi RPC submit_attempt_v3 để tính toán lại điểm Elo và BKT trên DB
@@ -427,37 +423,47 @@ async def submit_exam(
                 # Cập nhật trường exam_attempt_id cho bản ghi quiz_attempts vừa sinh ra từ RPC
                 attempt_id_raw = txn_result.get("attempt_id") or txn_result.get("quiz_attempt_id")
                 if attempt_id_raw:
-                    db.app_client.table("quiz_attempts").update(
-                        {"exam_attempt_id": str(attempt_id)}
-                    ).eq("id", str(attempt_id_raw)).execute()
+                    db.app_client.table("quiz_attempts").update({"exam_attempt_id": str(attempt_id)}).eq(
+                        "id", str(attempt_id_raw)
+                    ).execute()
 
                 # Nếu concept sau cập nhật ở trạng thái yếu (< 0.30), thêm vào danh sách hổng kiến thức
                 if new_bkt < 0.30:
-                    concept_resp = db.app_client.table("concepts").select("name").eq("id", str(concept_id)).maybe_single().execute()
-                    concept_name = concept_resp.data.get("name", "Khái niệm chưa đặt tên") if concept_resp.data else "Khái niệm chưa đặt tên"
+                    concept_resp = (
+                        db.app_client.table("concepts")
+                        .select("name")
+                        .eq("id", str(concept_id))
+                        .maybe_single()
+                        .execute()
+                    )
+                    concept_name = (
+                        concept_resp.data.get("name", "Khái niệm chưa đặt tên")
+                        if concept_resp.data
+                        else "Khái niệm chưa đặt tên"
+                    )
                     weak_concepts.append(
                         ConceptGapItem(
                             concept_id=concept_id,
                             concept_name=concept_name,
                             bkt_before=old_bkt,
                             bkt_after=new_bkt,
-                            mastery_state=new_state
+                            mastery_state=new_state,
                         )
                     )
 
             # 4. Tính toán điểm quy đổi và kết thúc lượt làm bài thi
-            exam_resp = db.app_client.table("exam_sets").select("max_score").eq("id", str(exam_set_id)).maybe_single().execute()
+            exam_resp = (
+                db.app_client.table("exam_sets").select("max_score").eq("id", str(exam_set_id)).maybe_single().execute()
+            )
             max_score = float(exam_resp.data.get("max_score", 10.0)) if exam_resp.data else 10.0
-            
+
             final_score = round((weighted_score / total_weight) * max_score, 2) if total_weight > 0 else 0.0
             submitted_at = datetime.now(UTC)
 
             # Cập nhật lượt thi tổng thể
-            db.app_client.table("exam_attempts").update({
-                "final_score": final_score,
-                "submitted_at": submitted_at.isoformat(),
-                "status": "submitted"
-            }).eq("id", str(attempt_id)).execute()
+            db.app_client.table("exam_attempts").update(
+                {"final_score": final_score, "submitted_at": submitted_at.isoformat(), "status": "submitted"}
+            ).eq("id", str(attempt_id)).execute()
 
             db.commit()
 
@@ -470,7 +476,7 @@ async def submit_exam(
                 total_count=len(questions_map),
                 accuracy_pct=round((correct_count / len(questions_map)) * 100.0, 2) if questions_map else 0.0,
                 weak_concepts=weak_concepts,
-                submitted_at=submitted_at
+                submitted_at=submitted_at,
             )
 
         except Exception as inner_err:
@@ -501,12 +507,14 @@ async def get_exam_result(
             total_count=2,
             accuracy_pct=100.0,
             weak_concepts=[],
-            submitted_at=datetime.now(UTC)
+            submitted_at=datetime.now(UTC),
         )
 
     try:
         # Lấy lượt thi
-        attempt_resp = db.app_client.table("exam_attempts").select("*").eq("id", str(attempt_id)).maybe_single().execute()
+        attempt_resp = (
+            db.app_client.table("exam_attempts").select("*").eq("id", str(attempt_id)).maybe_single().execute()
+        )
         attempt = attempt_resp.data
         if not attempt:
             raise HTTPException(status_code=404, detail="Không tìm thấy lượt thi.")
@@ -518,11 +526,18 @@ async def get_exam_result(
             raise HTTPException(status_code=403, detail="Bạn không thể xem kết quả thi của học sinh khác.")
 
         exam_set_id = attempt["exam_set_id"]
-        exam_resp = db.app_client.table("exam_sets").select("max_score").eq("id", str(exam_set_id)).maybe_single().execute()
+        exam_resp = (
+            db.app_client.table("exam_sets").select("max_score").eq("id", str(exam_set_id)).maybe_single().execute()
+        )
         max_score = float(exam_resp.data.get("max_score", 10.0)) if exam_resp.data else 10.0
 
         # Lấy các quiz_attempts tương ứng để tính toán
-        attempts_resp = db.app_client.table("quiz_attempts").select("is_correct, concept_id").eq("exam_attempt_id", str(attempt_id)).execute()
+        attempts_resp = (
+            db.app_client.table("quiz_attempts")
+            .select("is_correct, concept_id")
+            .eq("exam_attempt_id", str(attempt_id))
+            .execute()
+        )
         attempts_data = attempts_resp.data or []
 
         total_count = len(attempts_data)
@@ -536,15 +551,21 @@ async def get_exam_result(
             mastery = db.get_student_mastery(current_user.id, attempt["course_id"], UUID(concept_id))
             bkt = float(mastery.get("bkt_mastery_probability", 0.25))
             if bkt < 0.30:
-                concept_resp = db.app_client.table("concepts").select("name").eq("id", concept_id).maybe_single().execute()
-                concept_name = concept_resp.data.get("name", "Khái niệm chưa đặt tên") if concept_resp.data else "Khái niệm chưa đặt tên"
+                concept_resp = (
+                    db.app_client.table("concepts").select("name").eq("id", concept_id).maybe_single().execute()
+                )
+                concept_name = (
+                    concept_resp.data.get("name", "Khái niệm chưa đặt tên")
+                    if concept_resp.data
+                    else "Khái niệm chưa đặt tên"
+                )
                 weak_concepts.append(
                     ConceptGapItem(
                         concept_id=UUID(concept_id),
                         concept_name=concept_name,
                         bkt_before=bkt,  # Dùng bkt hiện tại làm fallback
                         bkt_after=bkt,
-                        mastery_state=mastery.get("mastery_state", "weak")
+                        mastery_state=mastery.get("mastery_state", "weak"),
                     )
                 )
 
@@ -556,7 +577,7 @@ async def get_exam_result(
             total_count=total_count,
             accuracy_pct=round((correct_count / total_count) * 100.0, 2) if total_count > 0 else 0.0,
             weak_concepts=weak_concepts,
-            submitted_at=datetime.fromisoformat(attempt["submitted_at"].replace("Z", "+00:00"))
+            submitted_at=datetime.fromisoformat(attempt["submitted_at"].replace("Z", "+00:00")),
         )
 
     except HTTPException:
