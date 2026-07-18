@@ -8,7 +8,7 @@
 
 | Component | URL |
 |---|---|
-| **Frontend** | [https://ai20kekeke.vercel.app/auth](https://ai20kekeke.vercel.app/auth) |
+| **Frontend** | [https://ai20kekeke.vercel.app/login](https://ai20kekeke.vercel.app/login) |
 | **Backend** | [https://vaic-backend.onrender.com](https://vaic-backend.onrender.com) |
 | **Health check** | [https://vaic-backend.onrender.com/health](https://vaic-backend.onrender.com/health) |
 
@@ -16,7 +16,7 @@
 
 | Component | URL |
 |---|---|
-| **Frontend** | [https://ai20kekeke-trongmarvel-4106-ai-20kekeke.vercel.app/auth](https://ai20kekeke-trongmarvel-4106-ai-20kekeke.vercel.app/auth) |
+| **Frontend** | [https://ai20kekeke-trongmarvel-4106-ai-20kekeke.vercel.app/login](https://ai20kekeke-trongmarvel-4106-ai-20kekeke.vercel.app/login) |
 | **Backend** | [https://vaic-backend-staging.onrender.com](https://vaic-backend-staging.onrender.com) |
 | **Health check** | [https://vaic-backend-staging.onrender.com/health](https://vaic-backend-staging.onrender.com/health) |
 
@@ -41,7 +41,7 @@
 | #2 README | [`README.md`](README.md) | Product, setup, architecture index, deliverables checklist, and team |
 | #3 Architecture | [`docs/architecture.md`](docs/architecture.md) | Architecture overview; rendered diagrams in [`docs/diagram/images/`](docs/diagram/images/) and editable Excalidraw files in [`docs/diagram/excalidraw/`](docs/diagram/excalidraw/) |
 | #4 AI Logs | [`outputs/`](outputs/) / Braintrust | AI feedback logs and observability traces when available |
-| #5 Live URL / Deploy | [Production Frontend](https://ai20kekeke.vercel.app/auth) / [Backend Health](https://vaic-backend.onrender.com/health) | Vercel frontend, Render backend, Supabase, Redis |
+| #5 Live URL / Deploy | [Production Frontend](https://ai20kekeke.vercel.app/login) / [Backend Health](https://vaic-backend.onrender.com/health) | Vercel frontend, Render backend, Supabase, Redis |
 | #6 Video Demo | [`docs/video-demo.md`](docs/video-demo.md) | Demo script/checklist; add YouTube link after upload |
 | #7 Pitch Deck | [`docs/pitch-deck.pdf`](docs/pitch-deck.pdf) | Submitted pitch deck PDF |
 | #8 Weekly Journal | [`docs/journal.md`](docs/journal.md) | Deliverable entrypoint; canonical content in [`JOURNAL.md`](JOURNAL.md) |
