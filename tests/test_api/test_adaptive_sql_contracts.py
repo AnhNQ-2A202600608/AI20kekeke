@@ -17,16 +17,21 @@ def _statements(sql: str) -> list[str]:
 
 
 def test_submit_attempt_v3_rpc_is_backend_only() -> None:
-    sql = _migration_sql()
+    def clean(s: str) -> str:
+        s = " ".join(s.split())
+        s = s.replace("( ", "(").replace(" )", ")").replace(", ", ",").replace(" ,", ",")
+        return s
 
-    signature = (
+    sql = clean(_migration_sql())
+
+    signature = clean(
         "app.submit_attempt_v3(uuid, uuid, uuid, uuid, uuid, jsonb, "
         "numeric, integer, boolean, numeric[], numeric, numeric, integer)"
     )
     assert f"revoke execute on function {signature} from authenticated" in sql
     assert f"revoke execute on function {signature} from public" in sql
-    assert "grant execute on function app.submit_attempt_v3 to service_role" in sql
-    assert "grant execute on function app.submit_attempt_v3 to authenticated" not in sql
+    assert f"grant execute on function {signature} to service_role" in sql
+    assert f"grant execute on function {signature} to authenticated" not in sql
 
 
 def test_submit_attempt_v3_uses_async_calibration_outbox() -> None:

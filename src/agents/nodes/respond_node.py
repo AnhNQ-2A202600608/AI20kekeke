@@ -42,6 +42,144 @@ async def safe_adispatch_custom_event(name: str, data: dict):
             raise
 
 
+def build_offline_response(student_id: str, diagnostic: dict) -> str:
+    """Tạo phản hồi Socratic offline dựa trên dữ liệu chẩn đoán của engine."""
+    import json
+    import sqlite3
+    from pathlib import Path
+
+    from src.config import get_settings
+
+    settings = get_settings()
+    questions_path = Path(settings.sgk_data_dir) / "questions.json"
+    graph_path = Path(settings.sgk_data_dir) / "knowledge_graph.json"
+
+    # Load questions
+    questions_data = []
+    if questions_path.exists():
+        try:
+            with open(questions_path, encoding="utf-8") as f:
+                questions_data = json.load(f)
+        except Exception:
+            pass
+
+    # Load graph
+    graph_data = {}
+    if graph_path.exists():
+        try:
+            with open(graph_path, encoding="utf-8") as f:
+                graph_data = json.load(f)
+        except Exception:
+            pass
+    nodes = {node["id"]: node for node in graph_data.get("nodes", [])}
+
+    status = diagnostic.get("status")
+
+    if status == "PROBE":
+        probe_questions = diagnostic.get("questions", [])
+        if probe_questions:
+            target_q_id = probe_questions[0]
+            target_q = next((q for q in questions_data if q.get("question_id") == target_q_id), None)
+            if target_q:
+                # Query attempts
+                db_path = settings.database_url
+                if db_path.startswith("sqlite:///"):
+                    db_path = db_path[10:]
+
+                attempts = 0
+                try:
+                    conn = sqlite3.connect(str(db_path))
+                    cursor = conn.cursor()
+                    cursor.execute(
+                        """
+                        SELECT is_correct FROM learning_events
+                        WHERE student_id = ? AND question_id = ?
+                    """,
+                        (str(student_id), str(target_q_id)),
+                    )
+                    attempts = len(cursor.fetchall())
+                    conn.close()
+                except Exception:
+                    pass
+
+                hints = target_q.get("socratic_hints", [])
+                hint_index = min(attempts, len(hints) - 1) if hints else -1
+                hint_text = hints[hint_index] if hint_index >= 0 else "Hãy suy nghĩ kỹ nhé."
+
+                options_text = ""
+                options = target_q.get("options", {})
+                for key, val in options.items():
+                    options_text += f"{key}) {val}\n"
+
+                node_desc = nodes.get(diagnostic.get("probe_node"), {}).get("mo_ta", diagnostic.get("probe_node"))
+
+                response_parts = [
+                    "Chào em! Hiện tại hệ thống đang chạy ở chế độ offline.",
+                    f"Thầy/cô cần kiểm tra thêm kiến thức của em về phần: **{node_desc}**.",
+                    "Hãy thử sức với câu hỏi sau nhé:\n",
+                    f"**Câu hỏi:** {target_q.get('text')}",
+                    options_text.strip(),
+                    f"\n*Gợi ý:* {hint_text}",
+                ]
+                return "\n\n".join([p for p in response_parts if p])
+
+    elif status == "DIAGNOSIS_COMPLETE":
+        root_cause = diagnostic.get("root_cause", {})
+        root_cause_id = root_cause.get("id")
+        if root_cause_id:
+            root_cause_desc = root_cause.get("mo_ta", root_cause_id)
+            root_cause_lop = root_cause.get("lop", "?")
+            suggested_path = diagnostic.get("suggested_path", [])
+
+            practice_q = next((q for q in questions_data if root_cause_id in q.get("yccd", [])), None)
+            if practice_q:
+                target_q_id = practice_q.get("question_id")
+                db_path = settings.database_url
+                if db_path.startswith("sqlite:///"):
+                    db_path = db_path[10:]
+
+                attempts = 0
+                try:
+                    conn = sqlite3.connect(str(db_path))
+                    cursor = conn.cursor()
+                    cursor.execute(
+                        """
+                        SELECT is_correct FROM learning_events
+                        WHERE student_id = ? AND question_id = ?
+                    """,
+                        (str(student_id), str(target_q_id)),
+                    )
+                    attempts = len(cursor.fetchall())
+                    conn.close()
+                except Exception:
+                    pass
+
+                hints = practice_q.get("socratic_hints", [])
+                hint_index = min(attempts, len(hints) - 1) if hints else -1
+                hint_text = hints[hint_index] if hint_index >= 0 else "Hãy suy nghĩ kỹ nhé."
+
+                options_text = ""
+                options = practice_q.get("options", {})
+                for key, val in options.items():
+                    options_text += f"{key}) {val}\n"
+
+                path_str = " → ".join(suggested_path) if suggested_path else ""
+
+                response_parts = [
+                    "Chào em! Hiện tại hệ thống đang chạy ở chế độ offline.",
+                    f"Thầy/cô nhận định em có thể chưa nắm chắc phần kiến thức nền: **{root_cause_desc}** (Lớp {root_cause_lop}).",
+                    f"Độ tin cậy của chẩn đoán: {diagnostic.get('confidence', 0.0):.0%}.",
+                    f"Đường ôn tập gợi ý: {path_str}" if path_str else "",
+                    "\nChúng ta cùng luyện tập lại phần này qua câu hỏi sau nhé:\n",
+                    f"**Câu hỏi:** {practice_q.get('text')}",
+                    options_text.strip(),
+                    f"\n*Gợi ý:* {hint_text}",
+                ]
+                return "\n\n".join([p for p in response_parts if p])
+
+    return "Thầy/cô đang ở chế độ offline và chưa có thông tin chẩn đoán lỗi hổng của em. Em hãy xem lại học liệu và đặt câu hỏi cụ thể nhé!"
+
+
 async def respond_node(state: AgentState) -> dict:
     """Tạo response từ analysis, context và thực hiện validate citation."""
     timings = TimingCollector()
@@ -107,6 +245,7 @@ async def respond_node(state: AgentState) -> dict:
         "scaffolding_rules": metadata.get("scaffolding_rules", ""),
         "mode_instructions": metadata.get("mode_instructions", ""),
         "intent": metadata.get("intent", "academic"),
+        "diagnostic": metadata.get("diagnostic"),
     }
 
     mode = metadata.get("mode") or state.get("mode") or "Explain"
@@ -170,7 +309,7 @@ async def respond_node(state: AgentState) -> dict:
         if dynamic_prompt:
             messages.append(SystemMessage(content=dynamic_prompt))
 
-        messages.append(HumanMessage(content=query))
+        messages.append(HumanMessage(content=f"<student_query>\n{query}\n</student_query>"))
 
         chunks = []
         llm_start = time.perf_counter()
@@ -204,17 +343,40 @@ async def respond_node(state: AgentState) -> dict:
             "valid_citations": validation_result["valid_citations"],
         }
 
-        # Nếu có phản hồi kiểm định, tăng số lần thử
-        new_attempts = reflection_attempts + 1 if reflection_feedback else reflection_attempts
+        # Nếu phát hiện trích dẫn ảo, tự động kích hoạt feedback để quay lại vòng lặp reflection
+        feedback = None
+        if validation_result.get("invalid_citations"):
+            feedback = f"Câu trả lời chứa trích dẫn ảo (invalid citations) không tồn tại trong học liệu: {validation_result['invalid_citations']}. Hãy viết lại câu trả lời và chỉ sử dụng trích dẫn thực tế từ học liệu."
+
+        current_feedback = reflection_feedback or feedback
+        new_attempts = reflection_attempts + 1 if current_feedback else reflection_attempts
 
         return {
             "response": cleaned_text,
             "metadata": new_metadata,
             "timings_ms": new_metadata.get("timings_ms", {}),
             "reflection_attempts": new_attempts,
+            "reflection_feedback": current_feedback,
         }
     except Exception as e:
         logger.error(f"Lỗi khi xử lý respond_node: {e}", exc_info=True)
+        diagnostic = metadata.get("diagnostic")
+        if diagnostic:
+            student_profile = state.get("student_profile") or {}
+            student_id = student_profile.get("student_id") or student_profile.get("id") or "guest"
+            try:
+                offline_res = build_offline_response(student_id, diagnostic)
+                new_metadata = metadata.copy()
+                new_metadata["offline_fallback"] = True
+                return {
+                    "response": offline_res,
+                    "metadata": new_metadata,
+                    "timings_ms": new_metadata.get("timings_ms", {}),
+                    "reflection_attempts": reflection_attempts,
+                }
+            except Exception as fallback_err:
+                logger.error(f"Error in offline fallback handler: {fallback_err}", exc_info=True)
+
         return {
             "response": f"Lỗi trong quá trình tạo câu trả lời: {e}",
             "error": str(e),

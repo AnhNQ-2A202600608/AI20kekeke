@@ -11,6 +11,13 @@ from src.main import app
 def allow_dev_tokens_in_tests(monkeypatch):
     monkeypatch.setenv("AUTH_ALLOW_DEV_TOKENS", "true")
     monkeypatch.setenv("AUTH_ALLOW_SERVICE_ROLE_BYPASS", "true")
+    monkeypatch.delenv("SUPABASE_URL", raising=False)
+    monkeypatch.delenv("SUPABASE_SECRET_KEY", raising=False)
+    monkeypatch.delenv("SUPABASE_KEY", raising=False)
+    monkeypatch.setenv("DATABASE_URL", "sqlite:///./data/test_app.db")
+    from src.api.adaptive_routes import reset_adaptive_db_cache
+
+    reset_adaptive_db_cache()
 
 
 @pytest_asyncio.fixture

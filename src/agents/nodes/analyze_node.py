@@ -372,6 +372,25 @@ async def analyze_node(state: AgentState) -> dict:
 
     prompt_profile = build_prompt_profile(profile, mode)
 
+    # --- Wire Diagnostic Engine (P0-2) ---
+    # Engine là thuần Python + SQLite, chạy offline, không gọi LLM.
+    diagnostic_result = None
+    if intent == "academic" and concept_id:
+        try:
+            from src.services.diagnostic_engine import DiagnosticEngine
+
+            student_id = profile.get("student_id") or profile.get("id")
+            if student_id:
+                engine = DiagnosticEngine()
+                diagnostic_result = engine.diagnose(str(student_id), str(concept_id))
+                if diagnostic_result:
+                    logger.info(
+                        f"Diagnostic engine result for student={student_id}, concept={concept_id}: "
+                        f"status={diagnostic_result.get('status')}"
+                    )
+        except Exception as e:
+            logger.warning(f"Diagnostic engine skipped: {e}")
+
     metadata = state.get("metadata") or {}
     timings.add("analyze_total", timings.elapsed_ms())
     metadata = merge_timing_metadata(metadata, {**(state.get("timings_ms") or {}), **timings.snapshot()})
@@ -386,7 +405,8 @@ async def analyze_node(state: AgentState) -> dict:
             "active_quiz": prompt_profile["active_quiz"],
             "mode": mode,
             "academic_integrity_risk": academic_integrity_risk,
-            "intent": intent,  # Lưu intent để sử dụng trong respond_node
+            "intent": intent,
+            "diagnostic": diagnostic_result,
         }
     )
 

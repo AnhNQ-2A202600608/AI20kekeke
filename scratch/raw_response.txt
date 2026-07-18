@@ -1,0 +1,1 @@
+{"is_valid": false, "feedback": "Câu trả lời chứa đoạn code hoàn chỉnh giải quyết yêu cầu bài tập. Hãy yêu cầu AI hướng dẫn học viên thông qua các câu hỏi gợi mở để tự viết docker-compose.yml."}

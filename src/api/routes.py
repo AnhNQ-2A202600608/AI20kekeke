@@ -14,8 +14,10 @@ from src.api import (
     auth_routes,
     material_routes,
     onboarding_routes,
+    placement_routes,
     quiz_error_routes,
     quiz_review_routes,
+    sync_routes,
 )
 from src.models.chat_contracts import (
     AgentChatMessage,
@@ -57,6 +59,8 @@ router.include_router(onboarding_routes.router)
 router.include_router(quiz_error_routes.router)
 router.include_router(material_routes.router)
 router.include_router(quiz_review_routes.router)
+router.include_router(sync_routes.router)
+router.include_router(placement_routes.router)
 
 CHAT_PERSISTENCE_ERROR = "Không thể tải hoặc lưu phiên chat. Vui lòng thử lại."
 CHAT_PERSISTENCE_ERROR_CODE = "chat_persistence_unavailable"

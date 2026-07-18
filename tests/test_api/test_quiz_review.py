@@ -174,9 +174,8 @@ class FakeAppClient:
                 conflict = False
                 if query.table_name == "question_hints":
                     for existing in rows:
-                        if (
-                            existing.get("question_id") == row.get("question_id")
-                            and existing.get("level") == row.get("level")
+                        if existing.get("question_id") == row.get("question_id") and existing.get("level") == row.get(
+                            "level"
                         ):
                             existing.update(row)
                             upserted.append(existing)

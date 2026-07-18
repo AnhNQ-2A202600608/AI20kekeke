@@ -1,0 +1,546 @@
+{
+  "concepts": [
+    {
+      "code": "ai-taxonomy",
+      "name": "AI Taxonomy",
+      "description": "Classification of AI levels, from classic rule-based systems to agentic systems.",
+      "day": 1
+    },
+    {
+      "code": "self-attention",
+      "name": "Self-Attention Mechanism",
+      "description": "Core mechanism of Transformer computing similarity between tokens using Q, K, V matrices.",
+      "day": 1
+    },
+    {
+      "code": "transformer-architecture",
+      "name": "Transformer Architecture",
+      "description": "Revolutionary deep learning architecture based on self-attention, covering encoder and decoder models.",
+      "day": 1
+    },
+    {
+      "code": "token-economy",
+      "name": "Token Economy",
+      "description": "Understanding tokenization, context window limits, and cost/latency trade-offs in LLM API usage.",
+      "day": 1
+    },
+    {
+      "code": "ai-product-lifecycle",
+      "name": "AI Product Lifecycle",
+      "description": "The end-to-end process of discovering, statements, building, and deploying human-centered AI products.",
+      "day": 2
+    },
+    {
+      "code": "solution-levels",
+      "name": "Rule/Workflow/Agent Selection",
+      "description": "Decision matrix to choose between Rule-based, Workflow, or Agentic architectures based on task complexity.",
+      "day": 2
+    },
+    {
+      "code": "agentic-agent-react",
+      "name": "ReAct Reasoning Pattern",
+      "description": "Reasoning and acting loop (Thought-Action-Observation) for autonomous agents.",
+      "day": 3
+    },
+    {
+      "code": "tool-calling",
+      "name": "Tool Calling API",
+      "description": "How LLMs declare, parse, and execute external tools using structured JSON schemas.",
+      "day": 3
+    },
+    {
+      "code": "prompt-engineering",
+      "name": "Prompt Engineering",
+      "description": "Techniques for guiding LLMs, including system prompts, XML structuring, few-shot learning, and Chain-of-Thought.",
+      "day": 4
+    },
+    {
+      "code": "context-engineering",
+      "name": "Context Engineering",
+      "description": "Strategies to manage context window, mitigate Lost-in-the-Middle phenomenon, and compress history.",
+      "day": 4
+    },
+    {
+      "code": "ai-product-uncertainty",
+      "name": "AI Product Uncertainty & UX",
+      "description": "Designing user experiences that handle LLM uncertainty, precision/recall trade-offs, and graceful failures.",
+      "day": 5
+    },
+    {
+      "code": "vector-embeddings",
+      "name": "Vector Embeddings",
+      "description": "Mathematical representation of text in high-dimensional vector spaces, measured by cosine similarity.",
+      "day": 7
+    },
+    {
+      "code": "vector-databases",
+      "name": "Vector Databases",
+      "description": "Specialized databases for indexing, storing, and performing fast similarity search on vector embeddings.",
+      "day": 7
+    },
+    {
+      "code": "basic-rag",
+      "name": "Basic RAG Pipeline",
+      "description": "Retrieval-Augmented Generation basics, including document ingestion, chunking, and context-based prompting.",
+      "day": 8
+    },
+    {
+      "code": "advanced-rag",
+      "name": "Advanced RAG Pipelines",
+      "description": "Advanced techniques such as query transformation, reranking, hybrid search, and semantic caching.",
+      "day": 8
+    },
+    {
+      "code": "multi-agent-architectures",
+      "name": "Multi-Agent Architectures",
+      "description": "Designing systems with multiple cooperating agents, routers, and specialized coordinators.",
+      "day": 9
+    },
+    {
+      "code": "data-pipelines-observability",
+      "name": "Data Pipelines & Observability",
+      "description": "Data pipelines for ETL operations, logging, and observability of LLM interactions.",
+      "day": 10
+    },
+    {
+      "code": "guardrails-safety",
+      "name": "AI Guardrails & Safety",
+      "description": "Input/output validation, prompt injection detection, and content filtering for safe AI deployment.",
+      "day": 11
+    },
+    {
+      "code": "cloud-infrastructure-agents",
+      "name": "Cloud Infrastructure for Agents",
+      "description": "Deploying agents onto cloud platforms using serverless functions, Docker containers, and scalable backends.",
+      "day": 12
+    },
+    {
+      "code": "observability-stack",
+      "name": "LLM Observability Stack",
+      "description": "Monitoring latency, token usage, cost tracking, and system performance at production scale.",
+      "day": 13
+    },
+    {
+      "code": "ai-evaluation",
+      "name": "AI Evaluation & Benchmarking",
+      "description": "Constructing golden datasets, LLM-as-a-judge patterns, and quantitative evaluation of AI systems.",
+      "day": 14
+    },
+    {
+      "code": "t1-d17-prd-pmf",
+      "name": "[T1] PRD & Product-Market Fit",
+      "description": "Analyzing product requirements and identifying PMF for AI applications.",
+      "day": 17
+    },
+    {
+      "code": "t2-d17-data-ingestion-strategy",
+      "name": "[T2] AI Data Ingestion Strategy",
+      "description": "Designing robust ingestion pipelines and data models for unstructured and structured AI datasets.",
+      "day": 17
+    },
+    {
+      "code": "t3-d17-agent-memory-systems",
+      "name": "[T3] Agent Memory Systems",
+      "description": "Managing short-term state, conversational history, and long-term vector/relational memories for agents.",
+      "day": 17
+    },
+    {
+      "code": "t1-d18-financial-modeling-roi",
+      "name": "[T1] AI Financial Modeling & ROI",
+      "description": "Calculating return on investment, compute cost projection, and token cost economics for AI features.",
+      "day": 18
+    },
+    {
+      "code": "t2-d18-data-lakehouses",
+      "name": "[T2] Data Lakehouses & Production Data",
+      "description": "Implementing data lakehouses (e.g. Delta Lake, Iceberg) and production pipeline design for massive scale AI apps.",
+      "day": 18
+    },
+    {
+      "code": "t3-d18-production-rag",
+      "name": "[T3] Production RAG Pipelines",
+      "description": "Building reliable retrieval architectures with advanced document parsing and chunking for production environments.",
+      "day": 18
+    },
+    {
+      "code": "t1-d19-stakeholder-management",
+      "name": "[T1] Stakeholder Management & Communication",
+      "description": "Aligning internal teams, managing user expectations, and presenting AI model trade-offs to stakeholders.",
+      "day": 19
+    },
+    {
+      "code": "t2-d19-vector-feature-stores",
+      "name": "[T2] Vector & Feature Stores",
+      "description": "Using feature stores and vector databases to manage low-latency data access and embeddings for AI models.",
+      "day": 19
+    },
+    {
+      "code": "t3-d19-graph-rag",
+      "name": "[T3] GraphRAG & Knowledge Graphs",
+      "description": "Combining Knowledge Graphs with RAG, using entity/relation extraction and graph traversals for deeper queries.",
+      "day": 19
+    },
+    {
+      "code": "t1-d20-roadmap-execution",
+      "name": "[T1] Roadmap Execution",
+      "description": "Structuring milestones, handling uncertainties, and executing agile iterations for AI systems.",
+      "day": 20
+    },
+    {
+      "code": "t2-d20-model-serving-optimization",
+      "name": "[T2] Model Serving & Optimization",
+      "description": "Inference optimization techniques including quantization, batching, and high-throughput engines like vLLM.",
+      "day": 20
+    },
+    {
+      "code": "t3-d20-multi-agent-architectures",
+      "name": "[T3] Multi-Agent Architectures",
+      "description": "Designing systems with multiple cooperating agents, routers, and specialized coordinators.",
+      "day": 20
+    },
+    {
+      "code": "t1-d21-governance-risk",
+      "name": "[T1] AI Governance & Risk",
+      "description": "Assessing algorithmic bias, intellectual property, data lineage, and risk mitigation strategies in AI products.",
+      "day": 21
+    },
+    {
+      "code": "t2-d21-cicd-ai-systems",
+      "name": "[T2] CI/CD for AI Systems",
+      "description": "Continuous integration and deployment pipelines for ML models, data schemas, and backend applications.",
+      "day": 21
+    },
+    {
+      "code": "t3-d21-lora-qlora-tuning",
+      "name": "[T3] LoRA & QLoRA Fine-tuning",
+      "description": "Parameter-efficient fine-tuning (PEFT) methods for customizing LLMs with low computational cost.",
+      "day": 21
+    },
+    {
+      "code": "t1-d22-compliance",
+      "name": "[T1] AI Compliance",
+      "description": "Ensuring products adhere to global standards (e.g. EU AI Act, GDPR, local regulations) and compliance audits.",
+      "day": 22
+    },
+    {
+      "code": "t2-d22-llmops-versioning",
+      "name": "[T2] LLMOps & Prompt Versioning",
+      "description": "Continuous integration, deployment, and versioning of prompts, schemas, and models in production.",
+      "day": 22
+    },
+    {
+      "code": "t3-d22-alignment-dpo",
+      "name": "[T3] LLM Alignment & DPO",
+      "description": "Direct Preference Optimization and human alignment strategies to steer model behavior.",
+      "day": 22
+    },
+    {
+      "code": "t1-d23-ai-adoption",
+      "name": "[T1] AI Adoption Tactics",
+      "description": "Designing change management strategies and educational materials to increase user adoption of AI systems.",
+      "day": 23
+    },
+    {
+      "code": "t2-d23-observability-monitoring",
+      "name": "[T2] LLM Monitoring & Observability Stack",
+      "description": "Monitoring latency, token usage, cost tracking, and system performance at production scale.",
+      "day": 23
+    },
+    {
+      "code": "t3-d23-langgraph-agents",
+      "name": "[T3] LangGraph Agents & Workflows",
+      "description": "Implementing complex stateful multi-agent systems and cyclic workflows using LangGraph.",
+      "day": 23
+    },
+    {
+      "code": "t1-d24-responsible-ai",
+      "name": "[T1] Responsible AI & Ethics",
+      "description": "Applying ethical guidelines, mitigating biases, and ensuring transparency in user-facing AI applications.",
+      "day": 24
+    },
+    {
+      "code": "t2-d24-data-governance-security",
+      "name": "[T2] Data Governance & Security",
+      "description": "Applying data security controls, access policies, encryption, and classification of sensitive AI data.",
+      "day": 24
+    },
+    {
+      "code": "t3-d24-ragas-guardrails",
+      "name": "[T3] Ragas & Guardrails Evaluation",
+      "description": "Quantitative framework to evaluate RAG pipelines (faithfulness, relevancy) and runtime safety guardrails.",
+      "day": 24
+    }
+  ],
+  "relations": [
+    {
+      "source": "ai-taxonomy",
+      "relation": "Prerequisite_of",
+      "target": "solution-levels",
+      "evidence": "Knowing the AI Taxonomy (Bot, Chatbot, Agent) is prerequisite to selecting the appropriate solution level for a task."
+    },
+    {
+      "source": "self-attention",
+      "relation": "Part_of",
+      "target": "transformer-architecture",
+      "evidence": "Self-attention is the core component of the Transformer architecture."
+    },
+    {
+      "source": "self-attention",
+      "relation": "Prerequisite_of",
+      "target": "transformer-architecture",
+      "evidence": "One must understand Self-attention mechanism before studying the entire Transformer block."
+    },
+    {
+      "source": "self-attention",
+      "relation": "Used_for",
+      "target": "transformer-architecture",
+      "evidence": "Self-attention is used for processing sequences inside Transformer encoder/decoder layers."
+    },
+    {
+      "source": "transformer-architecture",
+      "relation": "Prerequisite_of",
+      "target": "token-economy",
+      "evidence": "Transformer architectures define the sequence and output tokens, which dictates token economy constraints."
+    },
+    {
+      "source": "token-economy",
+      "relation": "Prerequisite_of",
+      "target": "context-engineering",
+      "evidence": "Token economy limitations and pricing models necessitate proper context engineering to minimize token usage."
+    },
+    {
+      "source": "ai-product-lifecycle",
+      "relation": "Prerequisite_of",
+      "target": "solution-levels",
+      "evidence": "Understanding the AI product lifecycle guides the choice of solution level (Rule vs Workflow vs Agent) during the design phase."
+    },
+    {
+      "source": "ai-product-lifecycle",
+      "relation": "Prerequisite_of",
+      "target": "t1-d17-prd-pmf",
+      "evidence": "The AI Product Lifecycle framework is prerequisite to defining product requirements (PRD) and finding Product-Market Fit (PMF)."
+    },
+    {
+      "source": "solution-levels",
+      "relation": "Prerequisite_of",
+      "target": "agentic-agent-react",
+      "evidence": "Identifying that a task requires an agentic level of autonomy is prerequisite to implementing the ReAct pattern."
+    },
+    {
+      "source": "agentic-agent-react",
+      "relation": "Prerequisite_of",
+      "target": "t3-d17-agent-memory-systems",
+      "evidence": "ReAct agents require memory systems (short-term and long-term) to function over long horizons."
+    },
+    {
+      "source": "tool-calling",
+      "relation": "Prerequisite_of",
+      "target": "agentic-agent-react",
+      "evidence": "Tool calling is a prerequisite for the Action phase of the ReAct (Reasoning and Acting) loop."
+    },
+    {
+      "source": "prompt-engineering",
+      "relation": "Prerequisite_of",
+      "target": "context-engineering",
+      "evidence": "Prompt engineering foundations lead into advanced context engineering techniques (e.g. Lost-in-the-Middle mitigation)."
+    },
+    {
+      "source": "prompt-engineering",
+      "relation": "Prerequisite_of",
+      "target": "guardrails-safety",
+      "evidence": "Prompt engineering is a prerequisite to design system instructions and prompt protection guardrails."
+    },
+    {
+      "source": "context-engineering",
+      "relation": "Prerequisite_of",
+      "target": "ai-product-uncertainty",
+      "evidence": "Proper context engineering helps mitigate model hallucination and uncertainty, which influences UX design."
+    },
+    {
+      "source": "vector-embeddings",
+      "relation": "Prerequisite_of",
+      "target": "vector-databases",
+      "evidence": "Understanding vector embeddings is prerequisite to indexing and querying them in a vector database."
+    },
+    {
+      "source": "vector-embeddings",
+      "relation": "Used_for",
+      "target": "basic-rag",
+      "evidence": "Vector embeddings are used for semantic search and retrieval in a basic RAG pipeline."
+    },
+    {
+      "source": "vector-databases",
+      "relation": "Prerequisite_of",
+      "target": "basic-rag",
+      "evidence": "A vector database (like Chroma) is prerequisite to storing and retrieving chunks in a basic RAG architecture."
+    },
+    {
+      "source": "basic-rag",
+      "relation": "Prerequisite_of",
+      "target": "advanced-rag",
+      "evidence": "Basic RAG (chunking and vector search) is the foundation and prerequisite to advanced RAG (query transformation, reranking)."
+    },
+    {
+      "source": "basic-rag",
+      "relation": "Compare",
+      "target": "advanced-rag",
+      "evidence": "Basic RAG is compared with advanced RAG approaches in terms of retrieval quality and latency."
+    },
+    {
+      "source": "basic-rag",
+      "relation": "Prerequisite_of",
+      "target": "t3-d18-production-rag",
+      "evidence": "Basic RAG concepts are prerequisite to production-grade RAG pipeline optimizations."
+    },
+    {
+      "source": "data-pipelines-observability",
+      "relation": "Prerequisite_of",
+      "target": "t2-d17-data-ingestion-strategy",
+      "evidence": "Observability and ETL pipelines are prerequisite to constructing an advanced AI data ingestion strategy."
+    },
+    {
+      "source": "t1-d17-prd-pmf",
+      "relation": "Prerequisite_of",
+      "target": "t1-d18-financial-modeling-roi",
+      "evidence": "Establishing PRD and PMF is prerequisite to conducting financial modeling and ROI analysis for AI features."
+    },
+    {
+      "source": "t2-d17-data-ingestion-strategy",
+      "relation": "Prerequisite_of",
+      "target": "t2-d18-data-lakehouses",
+      "evidence": "Data ingestion strategies are prerequisite to building production-grade data lakehouses (e.g., Delta Lake, Iceberg)."
+    },
+    {
+      "source": "t3-d17-agent-memory-systems",
+      "relation": "Prerequisite_of",
+      "target": "t3-d18-production-rag",
+      "evidence": "Understanding agent memory systems is prerequisite to implementing production-ready RAG with persistent session memory."
+    },
+    {
+      "source": "t1-d18-financial-modeling-roi",
+      "relation": "Prerequisite_of",
+      "target": "t1-d19-stakeholder-management",
+      "evidence": "Financial models and ROI projections are prerequisite to stakeholder alignment and expectation management."
+    },
+    {
+      "source": "t2-d18-data-lakehouses",
+      "relation": "Prerequisite_of",
+      "target": "t2-d19-vector-feature-stores",
+      "evidence": "Lakehouses store unstructured data that is processed into vector feature stores for real-time model queries."
+    },
+    {
+      "source": "t2-d18-data-lakehouses",
+      "relation": "Prerequisite_of",
+      "target": "t3-d19-graph-rag",
+      "evidence": "Lakehouse data repositories store the raw data and extracted entities that are fused to construct GraphRAG knowledge graphs."
+    },
+    {
+      "source": "t3-d18-production-rag",
+      "relation": "Prerequisite_of",
+      "target": "t3-d19-graph-rag",
+      "evidence": "Standard production RAG pipelines are a prerequisite to building advanced GraphRAG using entity/relation knowledge graphs."
+    },
+    {
+      "source": "t1-d19-stakeholder-management",
+      "relation": "Prerequisite_of",
+      "target": "t1-d20-roadmap-execution",
+      "evidence": "Aligning stakeholders is prerequisite to executing the AI roadmap and milestone tracking."
+    },
+    {
+      "source": "t2-d19-vector-feature-stores",
+      "relation": "Prerequisite_of",
+      "target": "t2-d20-model-serving-optimization",
+      "evidence": "Feature stores provide optimized input features required for low-latency served models."
+    },
+    {
+      "source": "t3-d18-production-rag",
+      "relation": "Prerequisite_of",
+      "target": "t2-d19-vector-feature-stores",
+      "evidence": "Vector stores manage low-latency embeddings needed by production RAG pipelines."
+    },
+    {
+      "source": "t3-d19-graph-rag",
+      "relation": "Prerequisite_of",
+      "target": "t3-d20-multi-agent-architectures",
+      "evidence": "Knowledge graphs and GraphRAG serve as structured, queryable memory pools needed for complex multi-agent architectures."
+    },
+    {
+      "source": "t1-d20-roadmap-execution",
+      "relation": "Prerequisite_of",
+      "target": "t1-d21-governance-risk",
+      "evidence": "Executing the roadmap must be governed by risk assessment and algorithmic bias reviews."
+    },
+    {
+      "source": "t2-d20-model-serving-optimization",
+      "relation": "Prerequisite_of",
+      "target": "t2-d21-cicd-ai-systems",
+      "evidence": "Model serving configurations and optimizations are versioned and deployed through automated CI/CD pipelines."
+    },
+    {
+      "source": "t3-d20-multi-agent-architectures",
+      "relation": "Prerequisite_of",
+      "target": "t3-d21-lora-qlora-tuning",
+      "evidence": "Customizing individual agent models using LoRA/QLoRA is prerequisite to optimizing the collective behavior of a multi-agent system."
+    },
+    {
+      "source": "t1-d21-governance-risk",
+      "relation": "Prerequisite_of",
+      "target": "t1-d22-compliance",
+      "evidence": "Risk management is a prerequisite to meeting strict regulatory standards and compliance audits (e.g. EU AI Act)."
+    },
+    {
+      "source": "t2-d21-cicd-ai-systems",
+      "relation": "Prerequisite_of",
+      "target": "t2-d22-llmops-versioning",
+      "evidence": "CI/CD automation is prerequisite to standardizing LLMOps workflows, prompt versioning, and deployment registries."
+    },
+    {
+      "source": "t3-d21-lora-qlora-tuning",
+      "relation": "Prerequisite_of",
+      "target": "t3-d22-alignment-dpo",
+      "evidence": "Fine-tuning base models using parameter-efficient methods (LoRA/QLoRA) is prerequisite to preference alignment via DPO/ORPO."
+    },
+    {
+      "source": "t1-d22-compliance",
+      "relation": "Prerequisite_of",
+      "target": "t1-d23-ai-adoption",
+      "evidence": "Compliant AI systems are prerequisite to creating user trust and driving AI adoption within organizations."
+    },
+    {
+      "source": "t2-d22-llmops-versioning",
+      "relation": "Prerequisite_of",
+      "target": "t2-d23-observability-monitoring",
+      "evidence": "LLMOps pipelines feed and register metrics monitored in LLM production monitoring environments."
+    },
+    {
+      "source": "t3-d22-alignment-dpo",
+      "relation": "Prerequisite_of",
+      "target": "t3-d23-langgraph-agents",
+      "evidence": "Preference-aligned models are a prerequisite for robust performance in cyclic stateful multi-agent orchestrations like LangGraph."
+    },
+    {
+      "source": "t1-d23-ai-adoption",
+      "relation": "Prerequisite_of",
+      "target": "t1-d24-responsible-ai",
+      "evidence": "Promoting AI adoption requires adhering to responsible and ethical AI development guidelines."
+    },
+    {
+      "source": "t2-d23-observability-monitoring",
+      "relation": "Prerequisite_of",
+      "target": "t2-d24-data-governance-security",
+      "evidence": "System logs and observability metrics are analyzed for compliance with data governance policies and security controls."
+    },
+    {
+      "source": "t3-d23-langgraph-agents",
+      "relation": "Prerequisite_of",
+      "target": "t3-d24-ragas-guardrails",
+      "evidence": "Stateful agentic workflows are evaluated quantitatively using the Ragas evaluation suite and protected by safety guardrails."
+    },
+    {
+      "source": "t3-d24-ragas-guardrails",
+      "relation": "Conjunction",
+      "target": "t1-d24-responsible-ai",
+      "evidence": "Ragas and guardrails evaluation tools enforce and verify Responsible AI metrics in real-time."
+    }
+  ]
+}
