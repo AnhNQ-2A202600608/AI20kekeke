@@ -297,37 +297,39 @@ function AiQuestionContent() {
   const program = subjectPrograms[selectedSubject.code as keyof typeof subjectPrograms] || subjectPrograms.TO;
   const aiContent = aiSubjectContent[selectedSubject.code as keyof typeof aiSubjectContent] || aiSubjectContent.TO;
   const slideRegions = aiContent.regions.map((region) => ({ ...region, style: regionLayout[region.id] }));
-  const initialChapter = program.chapters.find((chapter) => chapter.active) || program.chapters[0];
+  const ProgramChapter = program.chapters.find((chapter) => chapter.active) || program.chapters[0];
   const [speakerMode, setSpeakerMode] = useState<SpeakerMode>("ai");
   const [question, setQuestion] = useState("");
   const [activeRegion, setActiveRegion] = useState<RegionId>("method");
-  const [matchedChapterNumber, setMatchedChapterNumber] = useState<string>(initialChapter.number);
+  const [matchedChapterNumber, setMatchedChapterNumber] = useState<string>(ProgramChapter.number);
   const [isLoading, setIsLoading] = useState(false);
+  const [sessionId, setSessionId] = useState<string | null>(null);
   const chatScrollRef = useRef<HTMLDivElement>(null);
   const [messages, setMessages] = useState([
     {
       role: "ai",
-      text: `Mình đang mở dữ liệu ${program.title} - ${initialChapter.title}. Hỏi bài ở đây, mình sẽ dùng AI Socratic để hướng dẫn em từng bước.`,
+      text: `Mình đang mở dữ liệu ${program.title} - ${ProgramChapter.title}. Hỏi bài ở đây, mình sẽ dùng AI Socratic để hướng dẫn em từng bước.`,
     },
   ]);
 
   useEffect(() => {
-    setMatchedChapterNumber(initialChapter.number);
+    setMatchedChapterNumber(ProgramChapter.number);
     setActiveRegion("method");
     setQuestion("");
     setSpeakerMode("ai");
     setIsLoading(false);
+    setSessionId(null);
     setMessages([
       {
         role: "ai",
-        text: `Mình đang mở dữ liệu ${program.title} - ${initialChapter.title}. Hỏi bài ở đây, mình sẽ dùng AI Socratic để hướng dẫn em từng bước.`,
+        text: `Mình đang mở dữ liệu ${program.title} - ${ProgramChapter.title}. Hỏi bài ở đây, mình sẽ dùng AI Socratic để hướng dẫn em từng bước.`,
       },
     ]);
-  }, [initialChapter.number, initialChapter.title, program.title, selectedSubject.code]);
+  }, [ProgramChapter.number, ProgramChapter.title, program.title, selectedSubject.code]);
 
   const matchedChapter = useMemo(
-    () => program.chapters.find((chapter) => chapter.number === matchedChapterNumber) || initialChapter,
-    [initialChapter, matchedChapterNumber, program.chapters],
+    () => program.chapters.find((chapter) => chapter.number === matchedChapterNumber) || ProgramChapter,
+    [ProgramChapter, matchedChapterNumber, program.chapters],
   );
 
   const detectedSignal = useMemo(() => {
@@ -348,19 +350,28 @@ function AiQuestionContent() {
     try {
       // Call backend API directly with dev token (mock student UUID)
       const MOCK_STUDENT_ID = "d3b07384-d113-4ec5-a58e-0f2d87e07661";
+      const MOCK_COURSE_ID = "00000000-0000-0000-0000-000000000001";
+      
+      const payload: any = {
+        message: userMessage,
+        student_id: MOCK_STUDENT_ID,
+        course_id: MOCK_COURSE_ID,
+        mode: "Explain",
+        concept_id: selectedSubject.code === "TO" ? "ti-le-thuc" : "general",
+        stream: false,
+      };
+
+      if (sessionId) {
+        payload.session_id = sessionId;
+      }
+
       const response = await fetch(`${BACKEND_URL}/api/v1/chat`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           "Authorization": `Bearer fake-jwt-token-${MOCK_STUDENT_ID}`,
         },
-        body: JSON.stringify({
-          message: userMessage,
-          student_id: MOCK_STUDENT_ID,
-          mode: "Explain",
-          concept_id: selectedSubject.code === "TO" ? "ti-le-thuc" : "general",
-          stream: false,
-        }),
+        body: JSON.stringify(payload),
       });
 
       if (!response.ok) {
@@ -370,6 +381,10 @@ function AiQuestionContent() {
 
       const data = await response.json();
       const aiText = data.response || "Xin lỗi, mình không nhận được phản hồi từ hệ thống.";
+
+      if (data.session_id) {
+        setSessionId(data.session_id);
+      }
 
       setMessages((prev) => [...prev, { role: "ai", text: aiText }]);
     } catch (error: any) {
@@ -384,7 +399,7 @@ function AiQuestionContent() {
     } finally {
       setIsLoading(false);
     }
-  }, [selectedSubject.code]);
+  }, [selectedSubject.code, sessionId]);
 
   const handleAsk = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
