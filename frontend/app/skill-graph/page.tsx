@@ -35,9 +35,6 @@ type SkillNode = {
 
 const skillBySubject = {
   TO: ["Khái niệm", "Quy đồng", "Tính toán", "So sánh", "Vận dụng", "Kiểm tra"],
-  NV: ["Đọc hiểu", "Chủ đề", "Luận điểm", "Dẫn chứng", "Diễn đạt", "Tổng kết"],
-  TA: ["Vocabulary", "Grammar", "Reading", "Speaking", "Writing", "Review"],
-  KH: ["Quan sát", "Giả thuyết", "Mô hình", "Thí nghiệm", "Kết luận", "Vận dụng"],
 } as const;
 
 const stateLabel: Record<SkillState, string> = {

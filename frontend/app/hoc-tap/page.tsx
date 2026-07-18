@@ -57,7 +57,7 @@ export default function LearningWorkspace() {
           </div>
           <div className="hero-actions">
             <Link className="primary-action" href={`/chuong/phan-so?subject=${selectedSubject.code}`}>Vào chương đang học <span>→</span></Link>
-            <Link className="secondary-action" href="/ho-so">Xem hồ sơ</Link>
+            <Link className="secondary-action" href={`/hoi-dap-ai?subject=${selectedSubject.code}`}>Hỏi đáp AI về chương</Link>
           </div>
         </div>
 

@@ -35,33 +35,6 @@ const aiSubjectContent = {
       { id: "example", label: "Ví dụ", title: "2/3 + 1/4", detail: "Mẫu chung là 12, nên 2/3 = 8/12 và 1/4 = 3/12." },
     ],
   },
-  NV: {
-    signals: ["đọc hiểu", "chủ đề", "luận điểm", "dẫn chứng", "nghị luận", "biện pháp tu từ"],
-    quickQuestions: ["Làm sao tìm chủ đề văn bản?", "Giúp em lập luận điểm cho đoạn văn", "Dẫn chứng này dùng thế nào?"],
-    regions: [
-      { id: "concept", label: "Ý chính", title: "Chủ đề văn bản", detail: "Tìm chi tiết lặp lại, thái độ người viết và thông điệp được nhấn mạnh." },
-      { id: "method", label: "Cách làm", title: "Luận điểm - dẫn chứng", detail: "Nêu ý chính trước, chọn dẫn chứng sát ý, rồi giải thích vì sao dẫn chứng đó thuyết phục." },
-      { id: "example", label: "Ví dụ", title: "Đoạn nghị luận ngắn", detail: "Một câu nêu luận điểm, hai câu triển khai dẫn chứng, một câu kết lại nhận xét." },
-    ],
-  },
-  TA: {
-    signals: ["present perfect", "tense", "reading", "skimming", "scanning", "speaking", "grammar"],
-    quickQuestions: ["When do I use Present Perfect?", "Help me scan this reading question", "Fix this grammar mistake"],
-    regions: [
-      { id: "concept", label: "Grammar", title: "Tense signal", detail: "Look for time markers, finished/unfinished actions, and the speaker's intent." },
-      { id: "method", label: "Strategy", title: "Read the context", detail: "Underline keywords, identify the question type, then choose the matching sentence." },
-      { id: "example", label: "Example", title: "have / has + V3", detail: "I have finished the task. She has visited this place before." },
-    ],
-  },
-  KH: {
-    signals: ["lực", "chuyển động", "vận tốc", "năng lượng", "thí nghiệm", "hệ sinh thái"],
-    quickQuestions: ["Vì sao vật thay đổi chuyển động?", "Giải thích lực trong ví dụ này", "Thí nghiệm này kết luận gì?"],
-    regions: [
-      { id: "concept", label: "Hiện tượng", title: "Quan sát chính", detail: "Xác định vật đang chịu tác dụng gì và đại lượng nào thay đổi." },
-      { id: "method", label: "Mô hình", title: "Lực và chuyển động", detail: "Mô tả hướng lực, độ lớn tương đối và kết quả quan sát được." },
-      { id: "example", label: "Thí nghiệm", title: "Kéo xe nhỏ", detail: "Lực kéo lớn hơn làm xe tăng tốc rõ hơn nếu các điều kiện khác giữ nguyên." },
-    ],
-  },
 } as const;
 
 function normalizeText(value: string) {

@@ -1,0 +1,25 @@
+.mathText {
+  white-space: normal;
+}
+
+.mathFraction {
+  display: inline-grid;
+  grid-template-rows: auto auto;
+  min-width: 1.42em;
+  margin: 0 .08em;
+  vertical-align: -.34em;
+  color: currentColor;
+  font-size: .9em;
+  font-variant-numeric: lining-nums tabular-nums;
+  line-height: 1;
+  text-align: center;
+}
+
+.mathFraction > span:first-child {
+  border-bottom: 1.5px solid currentColor;
+  padding: 0 .16em .08em;
+}
+
+.mathFraction > span:last-child {
+  padding: .08em .16em 0;
+}

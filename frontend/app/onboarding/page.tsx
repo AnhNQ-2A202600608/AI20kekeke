@@ -7,13 +7,10 @@ import { ArrowRight, BookOpenText, CheckCircle, Gauge, Sparkle, Target } from "@
 import { saveSubjectProfile } from "../hooks/useOnboardingProfile";
 
 type Level = "beginner" | "intermediate" | "advanced" | "master";
-type SubjectCode = "TO" | "NV" | "TA" | "KH";
+type SubjectCode = "TO";
 
 const subjectOptions: Array<{ code: SubjectCode; name: string; detail: string }> = [
   { code: "TO", name: "Toán học", detail: "Phân số, đại số, hình học và xác suất." },
-  { code: "NV", name: "Ngữ văn", detail: "Đọc hiểu, viết đoạn, tiếng Việt thực hành." },
-  { code: "TA", name: "Tiếng Anh", detail: "Từ vựng, ngữ pháp, đọc hiểu và giao tiếp." },
-  { code: "KH", name: "Khoa học", detail: "Lực, năng lượng, hệ sinh thái và thí nghiệm." },
 ];
 
 const levelOptions: Array<{ id: Level; label: string; detail: string }> = [

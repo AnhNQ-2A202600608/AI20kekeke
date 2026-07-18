@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import {
+  ArrowRight,
   BookOpenText,
   Books,
   ChartBar,
@@ -18,6 +19,7 @@ import {
   UsersThree,
 } from "@phosphor-icons/react";
 
+// Teacher workspace view state.
 type TeacherSection =
   | "dashboard"
   | "classes"
@@ -32,23 +34,31 @@ type TeacherSection =
   | "settings";
 
 const teacherSections: Array<{ id: TeacherSection; label: string; description: string; icon: typeof ChartBar }> = [
-  { id: "dashboard", label: "Dashboard lớp", description: "Tổng quan tiến độ", icon: ChartBar },
-  { id: "classes", label: "Lớp & học sinh", description: "Hồ sơ, lịch sử làm bài", icon: UsersThree },
+  { id: "dashboard", label: "Dashboard", description: "Tổng quan lớp", icon: ChartBar },
+  { id: "classes", label: "Lớp & học sinh", description: "Hồ sơ và lịch sử làm bài", icon: UsersThree },
   { id: "analytics", label: "Phân tích học tập", description: "Điểm, kỹ năng, lỗi phổ biến", icon: Trophy },
-  { id: "content", label: "Nội dung", description: "Chương, bài học, tài liệu", icon: Books },
-  { id: "quiz", label: "Quiz editor", description: "Ngân hàng câu hỏi", icon: BookOpenText },
+  { id: "content", label: "Nội dung ôn tập", description: "Chương, bài học, tài liệu", icon: Books },
+  { id: "quiz", label: "Ngân hàng câu hỏi", description: "Tạo và quản lý câu hỏi", icon: BookOpenText },
   { id: "assignments", label: "Giao bài", description: "Lịch học và hạn nộp", icon: Target },
-  { id: "grading", label: "Chấm & phản hồi", description: "Nhận xét cá nhân", icon: CheckCircle },
-  { id: "knowledge", label: "Knowledge graph", description: "Tài liệu và nguồn AI", icon: Graph },
-  { id: "rag", label: "RAG/AI review", description: "Duyệt câu trả lời AI", icon: Sparkle },
-  { id: "assistant", label: "Chatbot giảng viên", description: "Hỏi insight lớp", icon: ChatCircleDots },
-  { id: "settings", label: "Hồ sơ & cài đặt", description: "Môn, lớp, bảo mật", icon: UsersThree },
+  { id: "grading", label: "Chấm & phản hồi", description: "4 bài đang chờ chấm", icon: CheckCircle },
+  { id: "knowledge", label: "Nguồn tài liệu AI", description: "Tài liệu AI học từ", icon: Graph },
+  { id: "rag", label: "Duyệt câu trả lời AI", description: "3 nội dung cần duyệt", icon: Sparkle },
+  { id: "assistant", label: "Hỏi insight lớp", description: "Trợ lý theo dữ liệu lớp", icon: ChatCircleDots },
+  { id: "settings", label: "Hồ sơ & cài đặt", description: "Môn, lớp và bảo mật", icon: UsersThree },
+];
+
+const teacherNavGroups: Array<{ label: string; isFooter?: boolean; items: Array<{ id: TeacherSection; badge?: number; tone?: "alert" | "queue" }> }> = [
+  { label: "Tổng quan", items: [{ id: "dashboard", badge: 2, tone: "alert" }] },
+  { label: "Lớp học", items: [{ id: "classes" }, { id: "analytics" }] },
+  { label: "Giảng dạy", items: [{ id: "content" }, { id: "quiz" }, { id: "assignments" }, { id: "grading", badge: 4, tone: "queue" }] },
+  { label: "Trợ lý AI", items: [{ id: "assistant" }, { id: "rag", badge: 3, tone: "queue" }, { id: "knowledge" }] },
+  { label: "Hồ sơ & cài đặt", isFooter: true, items: [{ id: "settings" }] },
 ];
 
 const classes = [
   { id: "7A", name: "Lớp 7A", subject: "Toán học", students: 34, completion: 72, average: 8.1, risk: 5 },
   { id: "7B", name: "Lớp 7B", subject: "Toán học", students: 31, completion: 64, average: 7.4, risk: 8 },
-  { id: "8A", name: "Lớp 8A", subject: "Khoa học", students: 29, completion: 69, average: 7.8, risk: 4 },
+  { id: "8A", name: "Lớp 8A", subject: "Toán học", students: 29, completion: 69, average: 7.8, risk: 4 },
 ];
 
 const students = [
@@ -94,15 +104,21 @@ export default function TeacherWorkspace() {
       <aside className="teacher-sidebar">
         <Link className="brand teacher-brand" href="/giao-vien"><span className="brand-symbol">OL</span><span>Teacher</span></Link>
         <nav aria-label="Chức năng giảng viên">
-          {teacherSections.map((item) => {
-            const Icon = item.icon;
-            return (
-              <button className={item.id === activeSection ? "active" : ""} key={item.id} onClick={() => setActiveSection(item.id)} type="button">
-                <Icon size={18} weight={item.id === activeSection ? "fill" : "regular"} />
-                <span><strong>{item.label}</strong><small>{item.description}</small></span>
-              </button>
-            );
-          })}
+          {teacherNavGroups.map((group) => (
+            <section className={`teacher-nav-group${group.isFooter ? " is-footer" : ""}`} key={group.label}>
+              <p>{group.label}</p>
+              {group.items.map((navItem) => {
+                const item = teacherSections.find((sectionItem) => sectionItem.id === navItem.id);
+                if (!item) return null;
+                const Icon = item.icon;
+                return <button className={item.id === activeSection ? "active" : ""} key={item.id} onClick={() => setActiveSection(item.id)} type="button">
+                  <Icon size={18} weight={item.id === activeSection ? "fill" : "regular"} />
+                  <span><strong>{item.label}</strong><small>{item.description}</small></span>
+                  {navItem.badge && <b className={`teacher-nav-badge ${navItem.tone ?? ""}`}>{navItem.badge}</b>}
+                </button>;
+              })}
+            </section>
+          ))}
         </nav>
       </aside>
 
@@ -111,7 +127,7 @@ export default function TeacherWorkspace() {
           <div>
             <span className="overline">Giảng viên · {currentClass.subject}</span>
             <h1>{section.label}</h1>
-            <p>Luồng chính: chọn lớp → xem insight → xác định nhóm cần hỗ trợ → giao/tạo nội dung hoặc quiz → theo dõi kết quả → phản hồi.</p>
+            <p>Chọn lớp, nhận diện nhóm cần hỗ trợ và giao đúng hoạt động tiếp theo.</p>
           </div>
           <div className="teacher-header-actions">
             <select value={selectedClassId} onChange={(event) => setSelectedClassId(event.target.value)} aria-label="Chọn lớp">
@@ -122,29 +138,7 @@ export default function TeacherWorkspace() {
           </div>
         </header>
 
-        {activeSection === "dashboard" && (
-          <div className="teacher-grid">
-            <section className="teacher-panel teacher-hero-panel">
-              <div>
-                <span className="overline">Dashboard lớp học</span>
-                <h2>{currentClass.name}: {currentClass.completion}% hoàn thành lộ trình</h2>
-                <p>Điểm trung bình {currentClass.average}/10. Có {currentClass.risk} học sinh cần hỗ trợ trong tuần này.</p>
-              </div>
-              <div className="teacher-ring"><strong>{currentClass.completion}%</strong><span>Hoàn thành</span></div>
-            </section>
-            <Metric label="Học sinh" value={currentClass.students.toString()} tone="neutral" />
-            <Metric label="Điểm TB" value={currentClass.average.toString()} tone="good" />
-            <Metric label="Cần hỗ trợ" value={currentClass.risk.toString()} tone="risk" />
-            <section className="teacher-panel wide">
-              <PanelTitle title="Học sinh cần hỗ trợ" action="Tạo nhóm ôn tập" />
-              <StudentTable />
-            </section>
-            <section className="teacher-panel">
-              <PanelTitle title="Bài kiểm tra sắp tới" action="Giao bài" />
-              <StackList items={upcoming.map((item) => ({ title: item.title, meta: `${item.due} · ${item.scope}`, tag: item.status }))} />
-            </section>
-          </div>
-        )}
+        {activeSection === "dashboard" && <TeacherDashboard currentClass={currentClass} />}
 
         {activeSection === "classes" && (
           <TwoColumnPage
@@ -158,7 +152,7 @@ export default function TeacherWorkspace() {
         {activeSection === "analytics" && (
           <TwoColumnPage
             leftTitle="Mức độ thông hiểu theo kỹ năng"
-            left={<SkillBars />}
+            left={<><TeacherScoreSplit /><SkillBars /></>}
             rightTitle="Lỗi phổ biến và nguy cơ tụt tiến độ"
             right={<StackList items={weakSkills.map((item) => ({ title: item.label, meta: `${item.value}% thông hiểu · cần bài luyện bổ sung`, tag: item.value < 60 ? "Rủi ro" : "Theo dõi" }))} />}
           />
@@ -176,27 +170,20 @@ export default function TeacherWorkspace() {
         {activeSection === "quiz" && (
           <TwoColumnPage
             leftTitle="Quiz editor"
-            left={<EditorMock />}
+            left={<><TeacherExamWorkflow /><EditorMock /></>}
             rightTitle="Ngân hàng câu hỏi"
             right={<StackList items={["Nhận biết phân số", "Quy đồng mẫu", "Cộng trừ phân số", "Vận dụng thực tế"].map((title, index) => ({ title, meta: `${18 + index * 6} câu · ${index + 1} mức độ`, tag: index === 1 ? "Đang sửa" : "Sẵn sàng" }))} />}
           />
         )}
 
-        {activeSection === "assignments" && (
-          <TwoColumnPage
-            leftTitle="Giao bài và lịch học"
-            left={<StackList items={upcoming.map((item) => ({ title: item.title, meta: `${item.scope} · hạn ${item.due}`, tag: item.status }))} />}
-            rightTitle="Nhắc nhở"
-            right={<WorkflowCards labels={["Chọn lớp/nhóm", "Đặt hạn nộp", "Tự động nhắc", "Theo dõi nộp bài"]} />}
-          />
-        )}
+        {activeSection === "assignments" && <TeacherAssignmentBoard currentClass={currentClass} />}
 
         {activeSection === "grading" && (
           <TwoColumnPage
             leftTitle="Chấm và phản hồi"
             left={<StackList items={students.map((item) => ({ title: item.name, meta: item.last, tag: item.status }))} />}
             rightTitle="Mẫu nhận xét"
-            right={<FeedbackMock />}
+            right={<><TeacherAiReport /><FeedbackMock /></>}
           />
         )}
 
@@ -212,7 +199,7 @@ export default function TeacherWorkspace() {
         {activeSection === "rag" && (
           <TwoColumnPage
             leftTitle="RAG/AI review"
-            left={<StackList items={reviewItems.map((item) => ({ title: item.question, meta: item.source, tag: item.quality }))} />}
+            left={<><TeacherRiskBoard /><StackList items={reviewItems.map((item) => ({ title: item.question, meta: item.source, tag: item.quality }))} /></>}
             rightTitle="Đánh dấu chất lượng"
             right={<FeedbackMock />}
           />
@@ -246,6 +233,301 @@ export default function TeacherWorkspace() {
       </section>
     </main>
   );
+}
+
+type AssignmentKind = "chapter" | "midterm" | "final";
+
+function TeacherAssignmentBoard({ currentClass }: { currentClass: (typeof classes)[number] }) {
+  const [kind, setKind] = useState<AssignmentKind>("chapter");
+  const [chapter, setChapter] = useState("Phân số và số hữu tỉ");
+  const [published, setPublished] = useState(false);
+
+  const plans: Record<
+    AssignmentKind,
+    {
+      label: string;
+      description: string;
+      title: string;
+      duration: string;
+      coverage: string;
+      followUp: string;
+    }
+  > = {
+    chapter: {
+      label: "Ôn luyện theo chương",
+      description: "Củng cố kiến thức của một chương đang học trước khi chuyển sang nội dung mới.",
+      title: "Luyện chương: " + chapter,
+      duration: "12 câu · 35 phút",
+      coverage: "Khái niệm, dạng bài trọng tâm và bài vận dụng của chương đã chọn.",
+      followUp: "Sau khi nộp, học sinh nhận đề luyện lại với các câu đã sai và câu cùng dạng.",
+    },
+    midterm: {
+      label: "Ôn tập giữa kỳ",
+      description: "Đề tổng hợp các chương đã học trong nửa đầu học kỳ.",
+      title: "Đề ôn tập giữa kỳ I",
+      duration: "16 câu · 45 phút",
+      coverage: "Chương 1 - 2, phân bổ theo ma trận giữa kỳ và mức độ nhận biết đến vận dụng.",
+      followUp: "AI tổng hợp điểm mạnh, điểm yếu và gợi ý lộ trình ôn tập sau khi chấm.",
+    },
+    final: {
+      label: "Ôn tập cuối kỳ",
+      description: "Đề tổng hợp toàn bộ kiến thức học kỳ để học sinh tự đánh giá trước kỳ thi.",
+      title: "Đề ôn tập cuối kỳ I",
+      duration: "20 câu · 60 phút",
+      coverage: "Toàn bộ chương trong học kỳ, có phần câu hỏi vận dụng và phân hóa.",
+      followUp: "Mỗi lỗi sai sẽ được đưa vào đề con để học sinh luyện lại cho đến khi đạt chuẩn.",
+    },
+  };
+  const plan = plans[kind];
+
+  return (
+    <div className="teacher-assignment-board">
+      <section className="teacher-assignment-intro">
+        <div>
+          <p>GIAO ĐỀ ÔN TẬP</p>
+          <h2>Chọn đúng mục tiêu trước khi giao bài</h2>
+          <span>Đề theo chương phục vụ luyện nền tảng; đề giữa kỳ và cuối kỳ giúp học sinh làm quen với phạm vi kiểm tra thực tế.</span>
+        </div>
+        <div className="teacher-assignment-tabs" role="tablist" aria-label="Loại đề cần giao">
+          {(Object.keys(plans) as AssignmentKind[]).map((item) => (
+            <button
+              key={item}
+              type="button"
+              role="tab"
+              aria-selected={kind === item}
+              className={kind === item ? "is-active" : ""}
+              onClick={() => {
+                setKind(item);
+                setPublished(false);
+              }}
+            >
+              {plans[item].label}
+            </button>
+          ))}
+        </div>
+      </section>
+
+      <div className="teacher-assignment-grid">
+        <section className="teacher-assignment-config">
+          <div className="teacher-assignment-heading">
+            <div>
+              <p>THIẾT LẬP</p>
+              <h3>{plan.label}</h3>
+            </div>
+            <span>{plan.duration}</span>
+          </div>
+
+          <label>
+            Lớp nhận đề
+            <select defaultValue={currentClass.name}>
+              <option>{currentClass.name}</option>
+              <option>8B</option>
+              <option>8C</option>
+            </select>
+          </label>
+
+          {kind === "chapter" && (
+            <label>
+              Chương ôn luyện
+              <select value={chapter} onChange={(event) => setChapter(event.target.value)}>
+                <option>Phân số và số hữu tỉ</option>
+                <option>Tỉ lệ thức</option>
+                <option>Biểu thức đại số</option>
+              </select>
+            </label>
+          )}
+
+          <label>
+            Mức độ đề
+            <select defaultValue="Theo ma trận ôn tập">
+              <option>Theo ma trận ôn tập</option>
+              <option>Củng cố kiến thức cơ bản</option>
+              <option>Tăng cường câu vận dụng</option>
+            </select>
+          </label>
+
+          <label>
+            Hạn nộp bài
+            <input type="date" defaultValue="2026-07-25" />
+          </label>
+
+          <button className="teacher-assignment-submit" type="button" onClick={() => setPublished(true)}>
+            Giao đề cho lớp <ArrowRight size={18} weight="bold" />
+          </button>
+          {published && <p className="teacher-assignment-confirmation" aria-live="polite">{"Đề đã được lên lịch giao cho " + currentClass.name + ". Học sinh sẽ nhận được nhắc nhở trong không gian ôn thi."}</p>}
+        </section>
+
+        <aside className="teacher-assignment-preview">
+          <p>BẢN XEM TRƯỚC</p>
+          <h3>{plan.title}</h3>
+          <span>{plan.description}</span>
+          <dl>
+            <div><dt>Cấu trúc</dt><dd>{plan.duration}</dd></div>
+            <div><dt>Phạm vi</dt><dd>{plan.coverage}</dd></div>
+            <div><dt>Sau khi chấm</dt><dd>{plan.followUp}</dd></div>
+          </dl>
+          <div className="teacher-assignment-preview-note">
+            <strong>AI chấm và phản hồi</strong>
+            <span>Học sinh xem đáp án, lời giải từng câu và nhận lộ trình ôn tập cá nhân ngay sau khi có kết quả.</span>
+          </div>
+        </aside>
+      </div>
+
+      <section className="teacher-assignment-history">
+        <div>
+          <p>ĐÃ LÊN LỊCH</p>
+          <h3>Đề đang theo dõi</h3>
+        </div>
+        <div className="teacher-assignment-history-list">
+          {upcoming.map((item) => (
+            <article key={item.title}>
+              <span>{item.scope}</span>
+              <strong>{item.title}</strong>
+              <small>Hạn {item.due}</small>
+              <b>{item.status}</b>
+            </article>
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function TeacherDashboard({ currentClass }: { currentClass: (typeof classes)[number] }) {
+  const [criterion, setCriterion] = useState("progress");
+  const [intervention, setIntervention] = useState<"none" | "group" | "individual">("none");
+  const roster = [
+    { name: "Minh Anh", initials: "MA", progress: 88, practice: 8.9, mock: 8.4, change: 15, weak: "Bài toán có lời văn", trend: "Tăng đều ở ba lượt gần nhất" },
+    { name: "Bảo Trân", initials: "BT", progress: 76, practice: 8.1, mock: 7.5, change: 9, weak: "Rút gọn phân số", trend: "Ổn định sau bài luyện có gợi ý" },
+    { name: "Hoàng Nam", initials: "HN", progress: 61, practice: 6.5, mock: 5.8, change: -18, weak: "Quy đồng mẫu số", trend: "Tụt 18% so với tuần trước" },
+    { name: "Gia Huy", initials: "GH", progress: 48, practice: 5.9, mock: 5.2, change: -12, weak: "Cộng trừ phân số", trend: "Bỏ lỡ bài kiểm tra ngắn" },
+  ];
+  const leaderboard = [...roster].sort((left, right) => {
+    const key = criterion === "practice" ? "practice" : criterion === "mock" ? "mock" : criterion === "change" ? "change" : "progress";
+    return right[key] - left[key];
+  });
+  const retakeProgress = [
+    { student: "Hoàng Nam", first: "5,8", retryOne: "6,0", retryTwo: "6,1", change: "+0,3", status: "Chưa cải thiện" },
+    { student: "Gia Huy", first: "5,2", retryOne: "5,0", retryTwo: "5,4", change: "+0,2", status: "Chưa cải thiện" },
+    { student: "Bảo Trân", first: "6,7", retryOne: "7,5", retryTwo: "8,1", change: "+1,4", status: "Tiến bộ tốt" },
+    { student: "Minh Anh", first: "7,4", retryOne: "8,2", retryTwo: "8,9", change: "+1,5", status: "Tiến bộ tốt" },
+  ];
+
+  return <div className="teacher-command-center">
+    <section className="teacher-class-summary">
+      <div className="teacher-summary-primary"><span className="overline">Lớp đang theo dõi</span><strong>{currentClass.name}</strong><p>{currentClass.completion}% lộ trình đã hoàn thành</p><span className="teacher-summary-progress"><i style={{ width: `${currentClass.completion}%` }} /></span></div>
+      <div className="teacher-summary-metric"><span>Điểm ôn tập</span><strong>7,8</strong><small>+0,6 điểm trong 4 tuần</small></div>
+      <div className="teacher-summary-metric"><span>Điểm thi thử</span><strong>7,1</strong><small>+0,8 điểm trong 4 tuần</small></div>
+      <div className="teacher-summary-metric risk"><span>Nguy cơ cao</span><strong>2</strong><small>cần can thiệp trong tuần</small></div>
+    </section>
+
+    <div className="teacher-command-grid">
+      <section className="teacher-panel teacher-performance-panel">
+        <div className="teacher-panel-title"><div><span className="overline">Ưu tiên xử lý</span><h2>Học sinh cần hỗ trợ</h2><p>Hành động ngay tại dòng dữ liệu, không cần chuyển sang màn khác.</p></div><button type="button" onClick={() => setIntervention("group")}>Tạo nhóm ôn tập</button></div>
+        <div className="teacher-performance-head"><span>Học sinh</span><span>Thay đổi</span><span>Điểm gần nhất</span><span>Trọng tâm</span><span /></div>
+        {roster.filter((student) => student.change < 0).map((student) => <article className="teacher-performance-row" key={student.name}><div className="teacher-student-cell"><span className="teacher-avatar">{student.initials}</span><span><strong>{student.name}</strong><small>{student.trend}</small></span></div><b className="teacher-negative">{student.change}%</b><span>{student.practice.toFixed(1)} ôn tập · {student.mock.toFixed(1)} thi thử</span><span>{student.weak}</span><button type="button" onClick={() => setIntervention("individual")}>Giao bài riêng</button></article>)}
+        <div className="teacher-performance-footer"><span>{intervention === "none" ? "Chưa có can thiệp nào được tạo trong phiên này." : intervention === "group" ? "Nhóm ôn tập đã được tạo cho 2 học sinh nguy cơ cao." : "Bài riêng đã được giao theo lỗi sai gần nhất."}</span><button type="button">Xem toàn bộ học sinh <ArrowRight size={15} weight="bold" /></button></div>
+      </section>
+
+      <aside className="teacher-insight-stack">
+        <section className="teacher-panel teacher-ai-improvement"><div className="teacher-panel-title"><div><span className="overline">Báo cáo AI</span><h2>Mức độ cải thiện</h2></div><Sparkle size={19} weight="fill" /></div><article><span className="teacher-avatar">MA</span><div><strong>Minh Anh <b className="teacher-positive">+15%</b></strong><p>Đã ổn định quy đồng; chuyển sang bài toán vận dụng.</p></div></article><article className="decline"><span className="teacher-avatar">HN</span><div><strong>Hoàng Nam <b className="teacher-negative">-18%</b></strong><p>Lỗi rút gọn lặp lại sau phép cộng phân số.</p></div></article><button type="button">Mở báo cáo AI đầy đủ <ArrowRight size={15} weight="bold" /></button></section>
+
+        <section className="teacher-panel teacher-filtered-ranking"><div className="teacher-panel-title"><div><span className="overline">So sánh trong lớp</span><h2>Bảng xếp hạng</h2></div><select value={criterion} onChange={(event) => setCriterion(event.target.value)} aria-label="Lọc bảng xếp hạng"><option value="progress">Tiến độ</option><option value="practice">Điểm ôn tập</option><option value="mock">Điểm thi thử</option><option value="change">Mức cải thiện</option></select></div><div>{leaderboard.slice(0, 3).map((student, index) => <article key={student.name}><b>{index + 1}</b><span className="teacher-avatar">{student.initials}</span><strong>{student.name}</strong><em>{criterion === "practice" ? student.practice.toFixed(1) : criterion === "mock" ? student.mock.toFixed(1) : criterion === "change" ? `${student.change > 0 ? "+" : ""}${student.change}%` : `${student.progress}%`}</em></article>)}</div></section>
+      </aside>
+    </div>
+
+    <section className="teacher-dashboard-data-grid" aria-label="Bảng theo dõi kết quả học tập">
+      <section className="teacher-panel teacher-score-register">
+        <div className="teacher-panel-title">
+          <div><span className="overline">Bảng điểm theo loại bài</span><h2>Ôn luyện và kiểm tra</h2><p>So sánh điểm gần nhất của từng học sinh trước khi giao bài tiếp theo.</p></div>
+          <span className="teacher-table-label">4 học sinh</span>
+        </div>
+        <div className="teacher-table-scroll">
+          <table>
+            <thead><tr><th>Học sinh</th><th>Ôn luyện</th><th>Kiểm tra</th><th>Thay đổi</th></tr></thead>
+            <tbody>
+              {roster.map((student) => (
+                <tr key={student.name}>
+                  <td><span className="teacher-table-student"><i>{student.initials}</i>{student.name}</span></td>
+                  <td>{student.practice.toFixed(1)}</td>
+                  <td>{student.mock.toFixed(1)}</td>
+                  <td className={student.change >= 0 ? "teacher-positive" : "teacher-negative"}>{(student.change > 0 ? "+" : "") + student.change + "%"}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section className="teacher-panel teacher-retake-register">
+        <div className="teacher-panel-title">
+          <div><span className="overline">Theo dõi sau mỗi lần làm lại</span><h2>Mức độ cải thiện đề kiểm tra</h2><p>Ưu tiên xu hướng qua từng lượt thay vì chỉ nhìn một điểm số.</p></div>
+          <span className="teacher-table-label">3 lượt gần nhất</span>
+        </div>
+        <div className="teacher-table-scroll">
+          <table>
+            <thead><tr><th>Học sinh</th><th>Đề gốc</th><th>Lần 1</th><th>Lần 2</th><th>Tổng</th></tr></thead>
+            <tbody>
+              {retakeProgress.map((student) => (
+                <tr key={student.student}>
+                  <td>{student.student}<small>{student.status}</small></td>
+                  <td>{student.first}</td>
+                  <td>{student.retryOne}</td>
+                  <td>{student.retryTwo}</td>
+                  <td className={student.status === "Tiến bộ tốt" ? "teacher-positive" : "teacher-negative"}>{student.change}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+
+    <section className="teacher-panel teacher-no-progress-panel">
+      <div className="teacher-panel-title">
+        <div><span className="overline">Cảnh báo cần xử lý</span><h2>Học sinh chưa có cải thiện rõ sau khi làm lại</h2><p>Hai học sinh vẫn dưới mức tiến bộ tối thiểu sau hai đề con. Nên giao bài ngắn theo đúng lỗi sai thay vì lặp lại đề tổng hợp.</p></div>
+        <button type="button" onClick={() => setIntervention("group")}>Tạo nhóm ôn tập <ArrowRight size={15} weight="bold" /></button>
+      </div>
+      <div className="teacher-no-progress-list">
+        {retakeProgress.filter((student) => student.status === "Chưa cải thiện").map((student) => (
+          <article key={student.student}>
+            <span className="teacher-avatar">{student.student.split(" ").map((part) => part[0]).join("")}</span>
+            <div><strong>{student.student}</strong><small>{student.first} → {student.retryOne} → {student.retryTwo} · chỉ tăng {student.change} sau 2 lần làm lại</small></div>
+            <button type="button" onClick={() => setIntervention("individual")}>Giao bài riêng</button>
+          </article>
+        ))}
+      </div>
+    </section>
+  </div>;
+}
+
+function TeacherExamSnapshot() {
+  return (
+    <section className="teacher-panel teacher-exam-snapshot">
+      <div><span className="overline">Ôn tập và thi thử</span><h2>Điểm cần được nhìn theo hai đường riêng</h2><p>Ôn tập 7,8/10 · Thi thử 7,1/10 · 6 học sinh đang có tiến bộ rõ rệt.</p></div>
+      <div className="teacher-snapshot-actions"><button type="button">Xem điểm ôn tập</button><button type="button">Xem điểm thi thử</button></div>
+    </section>
+  );
+}
+
+function TeacherScoreSplit() {
+  return <div className="teacher-score-split"><div><span>Điểm ôn tập</span><strong>7,8</strong><small>+0,6 điểm trong 4 tuần</small></div><div><span>Điểm thi thử</span><strong>7,1</strong><small>+0,8 điểm trong 4 tuần</small></div><p>82% học sinh đã có ít nhất một lượt làm đề.</p></div>;
+}
+
+function TeacherExamWorkflow() {
+  return <div className="teacher-exam-workflow"><span className="overline">AI tạo sinh đề</span><strong>Đề chính → chấm AI → đề con theo lỗi sai</strong><p>Đề con tập trung vào câu sai và các dạng bài liên quan, sẵn sàng giao sau khi học sinh nộp bài.</p><button type="button">Tạo đề ôn giữa kỳ <ArrowRight size={15} weight="bold" /></button></div>;
+}
+
+function TeacherAiReport() {
+  return <div className="teacher-ai-report"><span className="overline">Báo cáo cải thiện AI</span><strong>Hoàng Nam: +8 điểm sau 3 lượt ôn tập</strong><p>Đã hiểu quy tắc quy đồng, nhưng vẫn mất điểm ở bước rút gọn cuối.</p><button type="button">Mở lộ trình đề xuất <ArrowRight size={15} weight="bold" /></button></div>;
+}
+
+function TeacherRiskBoard() {
+  return <div className="teacher-risk-board"><span className="overline">Cảnh báo sớm</span><strong>2 học sinh cần can thiệp trong tuần này</strong><p>Độ đều học tập thấp và điểm thi thử chưa cải thiện sau ba lượt làm bài.</p><button type="button">Giao lộ trình củng cố <ArrowRight size={15} weight="bold" /></button></div>;
+}
+
+function TeacherLeaderboard() {
+  return <section className="teacher-panel teacher-leaderboard"><div className="teacher-panel-title"><div><h2>Bảng xếp hạng lớp</h2><p>Lọc theo tiến độ, điểm ôn tập, điểm thi thử hoặc mức cải thiện.</p></div><select defaultValue="Tiến độ" aria-label="Tiêu chí xếp hạng"><option>Tiến độ</option><option>Điểm ôn tập</option><option>Điểm thi thử</option><option>Mức cải thiện</option></select></div><div className="teacher-rank-list"><article><b>1</b><strong>Minh Anh</strong><span>82% tiến độ</span></article><article><b>2</b><strong>Bảo Trân</strong><span>76% tiến độ</span></article><article><b>3</b><strong>Hoàng Nam</strong><span>61% tiến độ</span></article></div></section>;
 }
 
 function Metric({ label, value, tone }: { label: string; value: string; tone: "neutral" | "good" | "risk" }) {
