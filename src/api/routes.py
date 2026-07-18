@@ -14,10 +14,10 @@ from src.api import (
     auth_routes,
     material_routes,
     onboarding_routes,
+    placement_routes,
     quiz_error_routes,
     quiz_review_routes,
     sync_routes,
-    placement_routes,
 )
 from src.models.chat_contracts import (
     AgentChatMessage,

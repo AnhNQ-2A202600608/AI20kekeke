@@ -1,9 +1,8 @@
-import os
+import datetime
 import json
 import sqlite3
-import datetime
 from pathlib import Path
-from typing import Any, Optional, Union
+
 from src.config import get_settings
 
 # Default BKT parameters
@@ -15,8 +14,9 @@ N_SURFACE = 2
 K_PROBE = 2
 MAX_DESCENT = 3
 
+
 class DiagnosticEngine:
-    def __init__(self, db_path: Optional[str] = None):
+    def __init__(self, db_path: str | None = None):
         self.settings = get_settings()
         if not db_path:
             db_url = self.settings.database_url
@@ -80,14 +80,14 @@ class DiagnosticEngine:
         """Đọc và kiểm tra tính hợp lệ của Đồ thị tri thức & Bộ câu hỏi."""
         # 1. Load Knowledge Graph
         if self.graph_path.exists():
-            with open(self.graph_path, "r", encoding="utf-8") as f:
+            with open(self.graph_path, encoding="utf-8") as f:
                 self.graph_data = json.load(f)
         else:
             self.graph_data = {"version": "1.0.0", "nodes": []}
 
         # 2. Load Questions
         if self.questions_path.exists():
-            with open(self.questions_path, "r", encoding="utf-8") as f:
+            with open(self.questions_path, encoding="utf-8") as f:
                 self.questions_data = json.load(f)
         else:
             self.questions_data = []
@@ -105,7 +105,9 @@ class DiagnosticEngine:
         for node_id, node in nodes.items():
             for prereq in node.get("tien_quyet", []):
                 if prereq not in nodes:
-                    raise ValueError(f"Lỗi đồ thị: Nút tiên quyết '{prereq}' của '{node_id}' không tồn tại trong danh sách nodes.")
+                    raise ValueError(
+                        f"Lỗi đồ thị: Nút tiên quyết '{prereq}' của '{node_id}' không tồn tại trong danh sách nodes."
+                    )
 
         # Phát hiện chu trình bằng thuật toán duyệt DFS (Tarjan/Colors)
         visited = {}  # 0: chưa duyệt, 1: đang duyệt, 2: duyệt xong
@@ -125,7 +127,9 @@ class DiagnosticEngine:
         for node_id in nodes:
             if visited.get(node_id, 0) == 0:
                 if has_cycle(node_id):
-                    raise ValueError(f"Lỗi đồ thị: Phát hiện chu trình (cycle) trong quan hệ tiên quyết chứa nút '{node_id}'.")
+                    raise ValueError(
+                        f"Lỗi đồ thị: Phát hiện chu trình (cycle) trong quan hệ tiên quyết chứa nút '{node_id}'."
+                    )
         return True
 
     def get_node_prior(self, student_grade: int, node_id: str) -> float:
@@ -147,11 +151,15 @@ class DiagnosticEngine:
     def queue_offline_attempt(self, payload: dict):
         """Lưu trữ một giao dịch nộp bài offline để đồng bộ sau."""
         import json
+
         conn = sqlite3.connect(str(self.db_path))
         cursor = conn.cursor()
-        cursor.execute("""
+        cursor.execute(
+            """
             INSERT INTO offline_outbox (payload) VALUES (?)
-        """, (json.dumps(payload),))
+        """,
+            (json.dumps(payload),),
+        )
         conn.commit()
         conn.close()
 
@@ -173,10 +181,13 @@ class DiagnosticEngine:
 
         now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         for node_id in q["yccd"]:
-            cursor.execute("""
+            cursor.execute(
+                """
                 INSERT INTO learning_events (student_id, question_id, node_id, is_correct, timestamp)
                 VALUES (?, ?, ?, ?, ?)
-            """, (student_id, question_id, node_id, 1 if is_correct else 0, now))
+            """,
+                (student_id, question_id, node_id, 1 if is_correct else 0, now),
+            )
 
             # Replay toàn bộ sự kiện của (student_id, node_id) để tính BKT chuẩn xác
             self._recalculate_bkt(cursor, student_id, node_id)
@@ -189,11 +200,14 @@ class DiagnosticEngine:
         Duyệt lại toàn bộ lịch sử câu trả lời của nút để tính xác suất thạo p_known.
         Tránh lỗi mất đồng bộ dữ liệu đa thiết bị (Sync conflict).
         """
-        cursor.execute("""
+        cursor.execute(
+            """
             SELECT is_correct FROM learning_events
             WHERE student_id = ? AND node_id = ?
             ORDER BY timestamp ASC
-        """, (student_id, node_id))
+        """,
+            (student_id, node_id),
+        )
         rows = cursor.fetchall()
 
         p_known = self.get_node_prior(student_grade, node_id)
@@ -215,14 +229,17 @@ class DiagnosticEngine:
         n_attempts = len(rows)
         now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-        cursor.execute("""
+        cursor.execute(
+            """
             INSERT INTO mastery (student_id, node_id, p_known, n_attempts, last_updated)
             VALUES (?, ?, ?, ?, ?)
             ON CONFLICT(student_id, node_id) DO UPDATE SET
                 p_known = excluded.p_known,
                 n_attempts = excluded.n_attempts,
                 last_updated = excluded.last_updated
-        """, (student_id, node_id, p_known, n_attempts, now))
+        """,
+            (student_id, node_id, p_known, n_attempts, now),
+        )
 
     def get_p_known(self, student_id: str, node_id: str, default_grade: int = 7) -> float:
         """Lấy xác suất làm chủ hiện tại của học viên đối với nút."""
@@ -261,18 +278,16 @@ class DiagnosticEngine:
     def get_probe_questions(self, node_id: str, exclude_ids: list[str]) -> list[dict]:
         """Lấy danh sách các câu hỏi ngắn dùng để thăm dò của một nút."""
         probes = [
-            q for q in self.questions_data
+            q
+            for q in self.questions_data
             if node_id in q["yccd"] and q.get("la_cau_tham_do", False) and q["question_id"] not in exclude_ids
         ]
         # Nếu thiếu câu hỏi thăm dò, lấy tạm câu hỏi bình thường để tránh nghẽn luồng
         if not probes:
-            probes = [
-                q for q in self.questions_data
-                if node_id in q["yccd"] and q["question_id"] not in exclude_ids
-            ]
+            probes = [q for q in self.questions_data if node_id in q["yccd"] and q["question_id"] not in exclude_ids]
         return probes
 
-    def diagnose(self, student_id: str, surface_node: str) -> Optional[dict]:
+    def diagnose(self, student_id: str, surface_node: str) -> dict | None:
         """
         Thuật toán chẩn đoán lỗi hổng gốc rễ xác định.
         Trả về kết quả có cấu trúc:
@@ -283,11 +298,14 @@ class DiagnosticEngine:
         # BƯỚC 1: Kiểm tra bằng chứng sai có hệ thống ở bề mặt (surface node)
         conn = sqlite3.connect(str(self.db_path))
         cursor = conn.cursor()
-        cursor.execute("""
+        cursor.execute(
+            """
             SELECT is_correct, question_id FROM learning_events
             WHERE student_id = ? AND node_id = ?
             ORDER BY timestamp DESC LIMIT ?
-        """, (student_id, surface_node, N_SURFACE))
+        """,
+            (student_id, surface_node, N_SURFACE),
+        )
         recent_attempts = cursor.fetchall()
         conn.close()
 
@@ -311,10 +329,13 @@ class DiagnosticEngine:
             # Đếm số lần làm bài (attempts) của nút candidate
             conn = sqlite3.connect(str(self.db_path))
             cursor = conn.cursor()
-            cursor.execute("""
+            cursor.execute(
+                """
                 SELECT is_correct, question_id FROM learning_events
                 WHERE student_id = ? AND node_id = ?
-            """, (student_id, candidate))
+            """,
+                (student_id, candidate),
+            )
             candidate_attempts = cursor.fetchall()
             conn.close()
 
@@ -327,8 +348,8 @@ class DiagnosticEngine:
                     "status": "PROBE",
                     "probe_node": candidate,
                     "surface_node": surface_node,
-                    "questions": [q["question_id"] for q in probe_qs[:K_PROBE - len(candidate_attempts)]],
-                    "message": f"Hệ thống cần kiểm tra thêm kiến thức '{self.nodes[candidate].get('mo_ta', candidate)}' của học sinh."
+                    "questions": [q["question_id"] for q in probe_qs[: K_PROBE - len(candidate_attempts)]],
+                    "message": f"Hệ thống cần kiểm tra thêm kiến thức '{self.nodes[candidate].get('mo_ta', candidate)}' của học sinh.",
                 }
 
             # BƯỚC 4: Đánh giá kết quả thăm dò
@@ -349,16 +370,12 @@ class DiagnosticEngine:
         return {
             "status": "DIAGNOSIS_COMPLETE",
             "weakness_flag": True,
-            "root_cause": {
-                "id": root,
-                "mo_ta": self.nodes[root].get("mo_ta", root),
-                "lop": self.nodes[root]["lop"]
-            },
+            "root_cause": {"id": root, "mo_ta": self.nodes[root].get("mo_ta", root), "lop": self.nodes[root]["lop"]},
             "surface_node": {
                 "id": surface_node,
                 "mo_ta": self.nodes[surface_node].get("mo_ta", surface_node),
-                "lop": self.nodes[surface_node]["lop"]
+                "lop": self.nodes[surface_node]["lop"],
             },
             "confidence": confidence,
-            "suggested_path": suggested_path
+            "suggested_path": suggested_path,
         }

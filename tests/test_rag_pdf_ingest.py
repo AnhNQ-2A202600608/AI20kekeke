@@ -58,16 +58,12 @@ class TestPageToMarkdown:
         assert "Nội dung bài học." in md
 
     def test_grade_none_renders_as_null_and_unspecified_label(self):
-        md = pdf_ingest.page_to_markdown(
-            book_title="Book", grade=None, page_number=1, text="text", source="text_layer"
-        )
+        md = pdf_ingest.page_to_markdown(book_title="Book", grade=None, page_number=1, text="text", source="text_layer")
         assert "grade: null" in md
         assert "không xác định" in md
 
     def test_empty_body_still_produces_valid_markdown(self):
-        md = pdf_ingest.page_to_markdown(
-            book_title="Book", grade=6, page_number=1, text="", source="empty"
-        )
+        md = pdf_ingest.page_to_markdown(book_title="Book", grade=6, page_number=1, text="", source="empty")
         assert "# Book (lớp 6) — Trang 1" in md
 
 
@@ -120,9 +116,7 @@ class TestProcessPageFallbackDecision:
 
         monkeypatch.setattr(pdf_ingest, "ocr_pdf_page", _fail_if_called)
 
-        result = pdf_ingest.process_page(
-            pdf_path, 1, min_chars=10, ocr_lang="vie", ocr_dpi=100, tesseract_cmd=None
-        )
+        result = pdf_ingest.process_page(pdf_path, 1, min_chars=10, ocr_lang="vie", ocr_dpi=100, tesseract_cmd=None)
         assert result["source"] == "text_layer"
         assert "noi dung day du" in result["text"]
 
@@ -131,22 +125,16 @@ class TestProcessPageFallbackDecision:
 
         monkeypatch.setattr(pdf_ingest, "ocr_pdf_page", lambda *a, **k: "Văn bản OCR từ ảnh trang.")
 
-        result = pdf_ingest.process_page(
-            pdf_path, 1, min_chars=40, ocr_lang="vie", ocr_dpi=100, tesseract_cmd=None
-        )
+        result = pdf_ingest.process_page(pdf_path, 1, min_chars=40, ocr_lang="vie", ocr_dpi=100, tesseract_cmd=None)
         assert result["source"] == "ocr"
         assert "Văn bản OCR" in result["text"]
 
     def test_falls_back_to_ocr_when_text_layer_is_watermark_only(self, tmp_path, monkeypatch):
         pdf_path = _make_pdf(tmp_path, ["blogtailieu.com"])
 
-        monkeypatch.setattr(
-            pdf_ingest, "ocr_pdf_page", lambda *a, **k: "Nội dung OCR thật sự của trang."
-        )
+        monkeypatch.setattr(pdf_ingest, "ocr_pdf_page", lambda *a, **k: "Nội dung OCR thật sự của trang.")
 
-        result = pdf_ingest.process_page(
-            pdf_path, 1, min_chars=40, ocr_lang="vie", ocr_dpi=100, tesseract_cmd=None
-        )
+        result = pdf_ingest.process_page(pdf_path, 1, min_chars=40, ocr_lang="vie", ocr_dpi=100, tesseract_cmd=None)
         assert result["source"] == "ocr"
 
     def test_records_error_when_ocr_backend_unavailable(self, tmp_path, monkeypatch):
@@ -157,9 +145,7 @@ class TestProcessPageFallbackDecision:
 
         monkeypatch.setattr(pdf_ingest, "ocr_pdf_page", _raise_unavailable)
 
-        result = pdf_ingest.process_page(
-            pdf_path, 1, min_chars=40, ocr_lang="vie", ocr_dpi=100, tesseract_cmd=None
-        )
+        result = pdf_ingest.process_page(pdf_path, 1, min_chars=40, ocr_lang="vie", ocr_dpi=100, tesseract_cmd=None)
         assert result["source"] == "empty"
         assert result["ocr_error"] is not None
         assert "Tesseract" in result["ocr_error"]
@@ -176,9 +162,7 @@ class TestIngestPdfEndToEnd:
                 None,  # forces OCR fallback
             ],
         )
-        monkeypatch.setattr(
-            pdf_ingest, "ocr_pdf_page", lambda *a, **k: "Nội dung OCR của trang hai đủ dài."
-        )
+        monkeypatch.setattr(pdf_ingest, "ocr_pdf_page", lambda *a, **k: "Nội dung OCR của trang hai đủ dài.")
 
         output_root = tmp_path / "processed"
         manifest = pdf_ingest.ingest_pdf(pdf_path, output_root, min_chars=40)
@@ -218,9 +202,7 @@ class TestIngestPdfEndToEnd:
         assert manifest["pages_processed"] == 1
         assert calls["count"] == 0
 
-    def test_resumable_recovers_existing_pages_when_manifest_is_missing(
-        self, tmp_path, monkeypatch
-    ):
+    def test_resumable_recovers_existing_pages_when_manifest_is_missing(self, tmp_path, monkeypatch):
         pdf_path = _make_pdf(tmp_path, [None, None])
         output_root = tmp_path / "processed"
         book_dir = output_root / "sgk-lich-su-va-dia-li-6-kntt"
@@ -269,9 +251,7 @@ class TestIngestPdfEndToEnd:
         with pytest.raises(RuntimeError):
             pdf_ingest.ingest_pdf(pdf_path, output_root, min_chars=40)
 
-        manifest_path = (
-            output_root / "sgk-lich-su-va-dia-li-6-kntt" / "manifest.json"
-        )
+        manifest_path = output_root / "sgk-lich-su-va-dia-li-6-kntt" / "manifest.json"
         manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
         assert manifest["pages_processed"] == 1
         assert manifest["pages"][0]["page_number"] == 1

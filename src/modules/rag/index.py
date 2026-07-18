@@ -78,9 +78,7 @@ def build_index(chunks: list[Chunk]) -> VectorIndex:
     return VectorIndex(documents=documents, idf=idf)
 
 
-def build_index_from_processed(
-    processed_dir: Path, *, chunk_chars: int, overlap_chars: int
-) -> VectorIndex:
+def build_index_from_processed(processed_dir: Path, *, chunk_chars: int, overlap_chars: int) -> VectorIndex:
     chunks = collect_chunks(processed_dir, chunk_chars=chunk_chars, overlap_chars=overlap_chars)
     return build_index(chunks)
 

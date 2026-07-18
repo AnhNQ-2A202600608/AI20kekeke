@@ -375,4 +375,35 @@
 - [ ] Sửa đổi bộ kiểm thử tích hợp bitemporal theo cơ chế real-time và đóng gói helper cho truy vấn bitemporal.
 
 ---
-<!-- Tiếp tục copy block trên cho Week 7, 8 -->
+
+## Week 7: 2026-07-09 - 2026-07-18
+
+### Mục tiêu tuần này
+- [x] Đồng bộ triệt để tên các khái niệm Toán học GDPT 2018 trên toàn hệ thống.
+- [x] Dọn dẹp mock data thừa và các thuật ngữ máy học (ML) bị rò rỉ trên giao diện.
+- [x] Khắc phục triệt để lỗi kiểm thử offline trên môi trường CI/CD (GitHub Actions).
+- [x] Viết công cụ quản lý vận hành uvicorn, npm dev và pytest qua PowerShell.
+
+### Đã hoàn thành
+- Đồng bộ tên khái niệm Toán lớp 5-7 khớp hoàn toàn với `knowledge_graph.json`.
+- Loại bỏ 230 dòng mảng mock cũ trùng lặp tại `class-insights-tab.tsx`, dọn sạch các từ khóa ML trong phần hoạt động học sinh của `mock-insights-data.ts`.
+- Đưa `questions.json` và `knowledge_graph.json` vào Git tracking, giải quyết triệt để lỗi test offline trên môi trường GitHub Actions do thiếu tệp dữ liệu.
+- Cập nhật test suite `test_adaptive_sql_contracts.py` tự động chuẩn hóa khoảng trắng giúp test chạy ổn định không phụ thuộc định dạng SQL.
+- Viết tập lệnh PowerShell tương tác `run_demo.ps1` hỗ trợ khởi động nhanh và kiểm thử bằng 1 phím nhấn.
+- Chạy thông suốt bộ kiểm thử 331 tests (100% Passed).
+
+### Khó khăn & Giải pháp
+| Khó khăn | Giải pháp | Kết quả |
+|----------|-----------|---------|
+| Lỗi test offline trên Github Actions do thiếu câu hỏi | Force add questions.json và knowledge_graph.json vào Git | CI pipeline xanh 100% |
+| Test SQL contract bị vỡ khi thay đổi cách thụt lề câu lệnh SQL | Viết hàm clean() tự động rút gọn khoảng trắng và chuẩn hóa cú pháp trước khi assert | Test chạy ổn định và chính xác |
+
+### Bài học
+- Các tệp dữ liệu cấu hình offline như questions.json cần được theo dõi bởi Git để tránh môi trường CI bị cô lập dữ liệu.
+- Viết kiểm thử so khớp văn bản SQL cần thực hiện chuẩn hóa khoảng trắng để đảm bảo tính mềm dẻo khi refactor.
+
+### Kế hoạch tuần sau
+- [ ] Thuyết trình chính thức và Demo sản phẩm EduGap trước Hội đồng Giám khảo.
+
+---
+<!-- Tiếp tục copy block trên cho Week 8 -->

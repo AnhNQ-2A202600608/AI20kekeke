@@ -105,10 +105,10 @@ Hệ thống thiết kế Sapia đem lại một phong cách thẩm mỹ nổi b
 
 ## 5. Hiện Trạng Hệ Thống & Kiểm Thử (System Verification)
 
-Hệ thống kiểm thử của EduGap cực kỳ đồ sộ và nghiêm ngặt với tổng cộng **68 test cases** tự động bao phủ toàn diện:
+Hệ thống kiểm thử của EduGap cực kỳ đồ sộ và nghiêm ngặt với tổng cộng **331 test cases** tự động (trong đó 327 test cases hoạt động ngoại tuyến được đảm bảo đạt trạng thái 100% xanh lá trên CI runner) bao phủ toàn diện:
 1.  **Unit Tests thuật toán:** Xác thực tính hội tụ của LinUCB, tính nhất quán của EloRating, BKT HMM equations và cơ chế Decay quên lãng.
 2.  **API Integration Tests:** Xác thực hoạt động của endpoint `/chat`, `/submit`, `/recommend`, `/sync-mastery`, bitemporal time-travel và phân quyền bảo mật RBAC.
-3.  **CI/CD Gated Pipeline:** Tích hợp tự động chạy Ruff linter, Pytest suite, quét lỗ hổng bảo mật Trivy Container, và kiểm định chất lượng RAG qua tập dữ liệu Golden Test Cases (`run_golden_eval.py`).
+3.  **CI/CD Gated Pipeline:** Tích hợp tự động chạy Ruff linter, Pytest suite, quét lỗ hổng bảo mật Trivy Container, và kiểm định chất lượng RAG qua tập dữ liệu Golden Test Cases (`run_golden_eval.py`). Để đảm bảo kiểm định CI tự động từ xa luôn pass, ngân hàng câu hỏi `questions.json` và cấu trúc tri thức `knowledge_graph.json` đã được đưa vào hệ thống quản lý phiên bản (Git tracking).
 
 ---
 

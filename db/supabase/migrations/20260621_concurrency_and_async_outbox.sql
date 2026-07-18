@@ -351,6 +351,9 @@ $$;
 -- Phân quyền
 REVOKE EXECUTE ON FUNCTION app.submit_attempt_v3(uuid, uuid, uuid, uuid, uuid, jsonb, numeric, integer, boolean, numeric[], numeric, numeric, integer) FROM authenticated;
 REVOKE EXECUTE ON FUNCTION app.submit_attempt_v3(uuid, uuid, uuid, uuid, uuid, jsonb, numeric, integer, boolean, numeric[], numeric, numeric, integer) FROM public;
-GRANT EXECUTE ON FUNCTION app.submit_attempt_v3 TO service_role;
+GRANT EXECUTE ON FUNCTION app.submit_attempt_v3(
+    uuid, uuid, uuid, uuid, uuid, jsonb, numeric, integer,
+    boolean, numeric[], numeric, numeric, integer
+) TO service_role;
 
 COMMIT;

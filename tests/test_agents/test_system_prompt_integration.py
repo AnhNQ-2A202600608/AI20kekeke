@@ -8,15 +8,16 @@ Validates:
 5. Offline socratic hints fallback works.
 """
 
-import pytest
 from unittest.mock import patch
 
+import pytest
+
+from src.agents.nodes.respond_node import build_offline_response
 from src.services.chat_optimization import (
     _build_diagnostic_summary,
     build_prompt_profile,
     build_system_prompt,
 )
-from src.agents.nodes.respond_node import build_offline_response
 
 
 class TestNoSelfDiagnosis:
@@ -238,12 +239,14 @@ class TestBuildPromptProfileDiagnostic:
         result = build_prompt_profile(profile, "Explain")
         assert "CHẨN ĐOÁN TỪ ENGINE" in result["diagnostic_summary"]
 
+
 class TestOfflineSocraticFallback:
     """Việc 4 — When LLM is offline or error happens, socratic hints should be returned."""
 
     @patch("src.config.get_settings")
     def test_build_offline_response_probe(self, mock_get_settings):
         from src.config import Settings
+
         settings = Settings()
         mock_get_settings.return_value = settings
 
@@ -262,6 +265,7 @@ class TestOfflineSocraticFallback:
     @patch("src.config.get_settings")
     def test_build_offline_response_complete(self, mock_get_settings):
         from src.config import Settings
+
         settings = Settings()
         mock_get_settings.return_value = settings
 
@@ -286,6 +290,7 @@ class TestOfflineSocraticFallback:
     @patch("src.config.get_settings")
     async def test_respond_node_offline_fallback(self, mock_get_settings, mock_get_llm):
         from src.config import Settings
+
         settings = Settings()
         mock_get_settings.return_value = settings
 
@@ -311,10 +316,11 @@ class TestOfflineSocraticFallback:
             },
             "student_profile": {
                 "student_id": "student_123",
-            }
+            },
         }
 
         from src.agents.nodes.respond_node import respond_node
+
         res = await respond_node(state)
         assert "response" in res
         assert "chế độ offline" in res.get("response", "")

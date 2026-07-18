@@ -2,13 +2,16 @@ import json
 import logging
 import sqlite3
 from pathlib import Path
+
 from fastapi import APIRouter, Depends, HTTPException
-from src.api.adaptive_routes import get_adaptive_db, get_current_user, AuthenticatedUser
-from src.services.adaptive.database_interface import AdaptiveDatabaseInterface
+
+from src.api.adaptive_routes import AuthenticatedUser, get_adaptive_db, get_current_user
 from src.config import get_settings
+from src.services.adaptive.database_interface import AdaptiveDatabaseInterface
 
 logger = logging.getLogger(__name__)
 router = APIRouter()
+
 
 @router.get("/sync/status")
 def get_sync_status(
@@ -34,6 +37,7 @@ def get_sync_status(
 
     return {"pending_sync_count": count}
 
+
 @router.post("/sync/trigger")
 def trigger_sync(
     auth_user: AuthenticatedUser = Depends(get_current_user),
@@ -42,8 +46,7 @@ def trigger_sync(
     """Trigger đồng bộ hóa dữ liệu từ SQLite offline outbox lên database Supabase trung tâm."""
     if getattr(db, "_stub_mode", False) or getattr(db, "app_client", None) is None:
         raise HTTPException(
-            status_code=503,
-            detail="Hệ thống hiện tại đang chạy offline (stub mode). Không thể đồng bộ."
+            status_code=503, detail="Hệ thống hiện tại đang chạy offline (stub mode). Không thể đồng bộ."
         )
 
     settings = get_settings()
@@ -77,9 +80,7 @@ def trigger_sync(
         # Xóa các bản ghi đã đồng bộ thành công
         if synced_ids:
             placeholders = ",".join(["?"] * len(synced_ids))
-            cursor.execute(
-                f"DELETE FROM offline_outbox WHERE id IN ({placeholders})", synced_ids
-            )
+            cursor.execute(f"DELETE FROM offline_outbox WHERE id IN ({placeholders})", synced_ids)
             conn.commit()
 
         conn.close()

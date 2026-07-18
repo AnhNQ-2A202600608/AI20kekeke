@@ -227,11 +227,13 @@ def update_review_question_content(db, question_id: str, payload: QuizReviewCont
     for h in payload.hints:
         lvl_num = hint_level_map.get(h.level)
         if lvl_num:
-            hints_payload.append({
-                "question_id": question_id,
-                "level": lvl_num,
-                "hint_text": h.content,
-            })
+            hints_payload.append(
+                {
+                    "question_id": question_id,
+                    "level": lvl_num,
+                    "hint_text": h.content,
+                }
+            )
 
     if hints_payload:
         client.table("question_hints").upsert(hints_payload).execute()
@@ -357,10 +359,12 @@ def _normalize_question(q: dict, hints: list[dict], concept_codes: list[str]) ->
         level_num = h.get("level")
         level_str = hint_level_map.get(level_num)
         if level_str:
-            formatted_hints.append({
-                "level": level_str,
-                "content": h.get("hint_text") or "",
-            })
+            formatted_hints.append(
+                {
+                    "level": level_str,
+                    "content": h.get("hint_text") or "",
+                }
+            )
 
     # Fill default hints structure if not present
     existing_levels = {h["level"] for h in formatted_hints}

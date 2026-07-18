@@ -1,15 +1,16 @@
-import os
 import json
+
 import pytest
-import sqlite3
-from pathlib import Path
+
 from src.services.diagnostic_engine import DiagnosticEngine
+
 
 @pytest.fixture
 def temp_db(tmp_path):
     """Fixture tạo SQLite DB tạm thời phục vụ test."""
     db_file = tmp_path / "test_app.db"
     return str(db_file)
+
 
 @pytest.fixture
 def sample_data_dir(tmp_path):
@@ -23,8 +24,8 @@ def sample_data_dir(tmp_path):
         "nodes": [
             {"id": "A", "lop": 7, "tien_quyet": ["B"]},
             {"id": "B", "lop": 6, "tien_quyet": ["C"]},
-            {"id": "C", "lop": 5, "tien_quyet": []}
-        ]
+            {"id": "C", "lop": 5, "tien_quyet": []},
+        ],
     }
     with open(data_dir / "knowledge_graph.json", "w", encoding="utf-8") as f:
         json.dump(graph, f)
@@ -42,12 +43,13 @@ def sample_data_dir(tmp_path):
         # prerequisite node C
         {"question_id": "q_c1", "yccd": ["C"], "la_cau_tham_do": False},
         {"question_id": "q_c_p1", "yccd": ["C"], "la_cau_tham_do": True},
-        {"question_id": "q_c_p2", "yccd": ["C"], "la_cau_tham_do": True}
+        {"question_id": "q_c_p2", "yccd": ["C"], "la_cau_tham_do": True},
     ]
     with open(data_dir / "questions.json", "w", encoding="utf-8") as f:
         json.dump(questions, f)
 
     return data_dir
+
 
 def test_graph_validation_detects_cycles(temp_db, tmp_path):
     """Kiểm tra xem validator có phát hiện được chu trình lặp trong đồ thị."""
@@ -57,10 +59,7 @@ def test_graph_validation_detects_cycles(temp_db, tmp_path):
     # Đồ thị chu trình: A -> B -> A
     graph = {
         "version": "1.0.0",
-        "nodes": [
-            {"id": "A", "lop": 7, "tien_quyet": ["B"]},
-            {"id": "B", "lop": 6, "tien_quyet": ["A"]}
-        ]
+        "nodes": [{"id": "A", "lop": 7, "tien_quyet": ["B"]}, {"id": "B", "lop": 6, "tien_quyet": ["A"]}],
     }
     with open(invalid_dir / "knowledge_graph.json", "w", encoding="utf-8") as f:
         json.dump(graph, f)
@@ -72,18 +71,14 @@ def test_graph_validation_detects_cycles(temp_db, tmp_path):
     with pytest.raises(ValueError, match="Phát hiện chu trình"):
         engine.load_data()
 
+
 def test_graph_validation_detects_missing_nodes(temp_db, tmp_path):
     """Kiểm tra xem validator có phát hiện được nút tiên quyết ảo không tồn tại."""
     invalid_dir = tmp_path / "invalid_data"
     invalid_dir.mkdir()
 
     # A tiên quyết là D, nhưng D không nằm trong đồ thị
-    graph = {
-        "version": "1.0.0",
-        "nodes": [
-            {"id": "A", "lop": 7, "tien_quyet": ["D"]}
-        ]
-    }
+    graph = {"version": "1.0.0", "nodes": [{"id": "A", "lop": 7, "tien_quyet": ["D"]}]}
     with open(invalid_dir / "knowledge_graph.json", "w", encoding="utf-8") as f:
         json.dump(graph, f)
 
@@ -93,6 +88,7 @@ def test_graph_validation_detects_missing_nodes(temp_db, tmp_path):
 
     with pytest.raises(ValueError, match="không tồn tại trong danh sách nodes"):
         engine.load_data()
+
 
 def test_prior_probabilities(temp_db, sample_data_dir):
     """Kiểm tra giá trị tiên nghiệm khởi tạo theo khối lớp."""
@@ -107,6 +103,7 @@ def test_prior_probabilities(temp_db, sample_data_dir):
     assert engine.get_node_prior(7, "B") == 0.8
     # Node C (Lớp 5), Học sinh lớp 4 -> 0.2 (khối trên)
     assert engine.get_node_prior(4, "C") == 0.2
+
 
 def test_bkt_recalculations(temp_db, sample_data_dir):
     """Kiểm tra tính toán xác suất BKT tăng/giảm dựa trên câu trả lời."""
@@ -124,6 +121,7 @@ def test_bkt_recalculations(temp_db, sample_data_dir):
     engine.record_answer("student_01", "q_a2", is_correct=True)
     p2 = engine.get_p_known("student_01", "A", default_grade=7)
     assert p2 > p1
+
 
 def test_diagnose_requires_n_surface_errors(temp_db, sample_data_dir):
     """Kiểm tra điều kiện kích hoạt: 1 câu sai đơn lẻ không sinh cờ chẩn đoán."""
@@ -143,6 +141,7 @@ def test_diagnose_requires_n_surface_errors(temp_db, sample_data_dir):
     assert diag is not None
     assert diag["status"] == "PROBE"
     assert diag["probe_node"] == "B"
+
 
 def test_diagnose_complete_with_root_cause(temp_db, sample_data_dir):
     """Kiểm tra luồng chẩn đoán đi xuống và kết luận thành công nút hổng gốc rễ."""

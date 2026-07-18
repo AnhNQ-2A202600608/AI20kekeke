@@ -162,7 +162,13 @@ uv run python -c "from src.config import get_settings; from src.modules.rag.inde
 
 ## ▶️ Hướng dẫn chạy
 
-### Chạy backend local
+### Bảng điều khiển tương tác (Khuyên dùng trên Windows)
+Nếu chạy trên Windows, bạn có thể sử dụng tập lệnh tương tác duy nhất để chạy Backend, Frontend, kiểm thử tự động (pytest), hoặc mô phỏng chẩn đoán thích ứng chỉ bằng một phím bấm:
+```powershell
+.\run_demo.ps1
+```
+
+### Chạy backend local thủ công
 ```bash
 uv run uvicorn src.main:app --reload --port 8000
 ```

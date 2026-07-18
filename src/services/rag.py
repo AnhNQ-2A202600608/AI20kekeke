@@ -348,18 +348,21 @@ class RAGService:
                     pass
 
             import sys
+
             if not self.embeddings and not os.getenv("PYTEST_CURRENT_TEST") and "pytest" not in sys.modules:
                 print("[*] RAG Service: OpenAI keys missing. Falling back to local SGK TF-IDF search.")
                 results = []
                 local_results = self._query_local_index(query, match_count)
                 for res in local_results:
-                    results.append({
-                        "document_name": res["book_title"],
-                        "slide_number": res["page"],
-                        "content": res["text"],
-                        "similarity": res["score"],
-                        "image_url": None,
-                    })
+                    results.append(
+                        {
+                            "document_name": res["book_title"],
+                            "slide_number": res["page"],
+                            "content": res["text"],
+                            "similarity": res["score"],
+                            "image_url": None,
+                        }
+                    )
                 self.cache.set(cache_key, json.dumps(results), ttl=180)
                 return results
 
@@ -635,6 +638,7 @@ class RAGService:
 
         if not self.embeddings:
             import sys
+
             if "pytest" in sys.modules:
                 return [0.1] * 1536
             raise RuntimeError("LLM provider is not configured. Missing API keys.")
@@ -703,10 +707,12 @@ class RAGService:
     def _query_local_index(self, query: str, match_count: int) -> list[dict[str, Any]]:
         # Bypass local search in test env to avoid polluting mock RAG slide test cases
         import sys
+
         if self.settings.app_env == "test" or os.getenv("PYTEST_CURRENT_TEST") or "pytest" in sys.modules:
             return []
         try:
             from src.modules.rag.index import load_index, query_index
+
             index_path = self.settings.rag_index_dir / "index.json"
             if not index_path.exists():
                 return []

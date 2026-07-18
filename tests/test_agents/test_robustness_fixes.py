@@ -1,11 +1,12 @@
-import pytest
-from unittest.mock import patch, MagicMock
+from unittest.mock import MagicMock, patch
 from uuid import UUID
 
-from src.api.adaptive_routes import allow_dev_tokens, allow_service_role_bypass, submit_attempt
+import pytest
+
 from src.agents.nodes.respond_node import respond_node
+from src.api.adaptive_routes import allow_dev_tokens, allow_service_role_bypass
 from src.api.placement_routes import PlacementSubmitRequest, submit_placement_result
-from src.api.sync_routes import trigger_sync, get_sync_status
+from src.api.sync_routes import get_sync_status, trigger_sync
 
 
 class TestSecurityProdBypass:
@@ -122,7 +123,7 @@ class TestPlacementTestCalibration:
             student_id=UUID("d3b07384-d113-4ec5-a58e-0f2d87e07661"),
             course_id=UUID("00000000-0000-0000-0000-000000000001"),
             concept_id=UUID("11111111-1111-1111-1111-111111111111"),
-            correct_count=3
+            correct_count=3,
         )
 
         res = submit_placement_result(req, auth_user, db)
@@ -138,29 +139,27 @@ class TestOfflineOutboxSync:
 
     def test_offline_outbox_flow(self, monkeypatch, tmp_path):
         from src.config import Settings
+
         settings = Settings()
         settings.sgk_data_dir = str(tmp_path)
         settings.database_url = f"sqlite:///{tmp_path.as_posix()}/mastery.db"
 
-        import src.services.diagnostic_engine
-        import src.api.sync_routes
         import src.api.placement_routes
+        import src.api.sync_routes
+        import src.services.diagnostic_engine
 
         monkeypatch.setattr(src.services.diagnostic_engine, "get_settings", lambda: settings)
         monkeypatch.setattr(src.api.sync_routes, "get_settings", lambda: settings)
         import src.config
+
         monkeypatch.setattr(src.config, "get_settings", lambda: settings)
 
         # 1. Initialize DB and Outbox
         from src.services.diagnostic_engine import DiagnosticEngine
+
         engine = DiagnosticEngine()
         # Mock questions dict to avoid loading questions.json from empty temp dir
-        engine.questions = {
-            "q_m7_1": {
-                "yccd": ["M7.SDS.05"],
-                "text": "Câu hỏi test"
-            }
-        }
+        engine.questions = {"q_m7_1": {"yccd": ["M7.SDS.05"], "text": "Câu hỏi test"}}
 
         # Verify db file is created
         db_path = tmp_path / "mastery.db"

@@ -44,10 +44,11 @@ async def safe_adispatch_custom_event(name: str, data: dict):
 
 def build_offline_response(student_id: str, diagnostic: dict) -> str:
     """Tạo phản hồi Socratic offline dựa trên dữ liệu chẩn đoán của engine."""
-    from src.config import get_settings
     import json
     import sqlite3
     from pathlib import Path
+
+    from src.config import get_settings
 
     settings = get_settings()
     questions_path = Path(settings.sgk_data_dir) / "questions.json"
@@ -57,7 +58,7 @@ def build_offline_response(student_id: str, diagnostic: dict) -> str:
     questions_data = []
     if questions_path.exists():
         try:
-            with open(questions_path, "r", encoding="utf-8") as f:
+            with open(questions_path, encoding="utf-8") as f:
                 questions_data = json.load(f)
         except Exception:
             pass
@@ -66,7 +67,7 @@ def build_offline_response(student_id: str, diagnostic: dict) -> str:
     graph_data = {}
     if graph_path.exists():
         try:
-            with open(graph_path, "r", encoding="utf-8") as f:
+            with open(graph_path, encoding="utf-8") as f:
                 graph_data = json.load(f)
         except Exception:
             pass
@@ -89,10 +90,13 @@ def build_offline_response(student_id: str, diagnostic: dict) -> str:
                 try:
                     conn = sqlite3.connect(str(db_path))
                     cursor = conn.cursor()
-                    cursor.execute("""
+                    cursor.execute(
+                        """
                         SELECT is_correct FROM learning_events
                         WHERE student_id = ? AND question_id = ?
-                    """, (str(student_id), str(target_q_id)))
+                    """,
+                        (str(student_id), str(target_q_id)),
+                    )
                     attempts = len(cursor.fetchall())
                     conn.close()
                 except Exception:
@@ -115,7 +119,7 @@ def build_offline_response(student_id: str, diagnostic: dict) -> str:
                     "Hãy thử sức với câu hỏi sau nhé:\n",
                     f"**Câu hỏi:** {target_q.get('text')}",
                     options_text.strip(),
-                    f"\n*Gợi ý:* {hint_text}"
+                    f"\n*Gợi ý:* {hint_text}",
                 ]
                 return "\n\n".join([p for p in response_parts if p])
 
@@ -138,10 +142,13 @@ def build_offline_response(student_id: str, diagnostic: dict) -> str:
                 try:
                     conn = sqlite3.connect(str(db_path))
                     cursor = conn.cursor()
-                    cursor.execute("""
+                    cursor.execute(
+                        """
                         SELECT is_correct FROM learning_events
                         WHERE student_id = ? AND question_id = ?
-                    """, (str(student_id), str(target_q_id)))
+                    """,
+                        (str(student_id), str(target_q_id)),
+                    )
                     attempts = len(cursor.fetchall())
                     conn.close()
                 except Exception:
@@ -166,14 +173,12 @@ def build_offline_response(student_id: str, diagnostic: dict) -> str:
                     "\nChúng ta cùng luyện tập lại phần này qua câu hỏi sau nhé:\n",
                     f"**Câu hỏi:** {practice_q.get('text')}",
                     options_text.strip(),
-                    f"\n*Gợi ý:* {hint_text}"
+                    f"\n*Gợi ý:* {hint_text}",
                 ]
                 return "\n\n".join([p for p in response_parts if p])
 
     return "Thầy/cô đang ở chế độ offline và chưa có thông tin chẩn đoán lỗi hổng của em. Em hãy xem lại học liệu và đặt câu hỏi cụ thể nhé!"
 
-
-from typing import Any
 
 async def respond_node(state: AgentState) -> dict:
     """Tạo response từ analysis, context và thực hiện validate citation."""

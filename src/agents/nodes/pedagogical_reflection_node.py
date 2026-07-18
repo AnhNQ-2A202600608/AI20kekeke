@@ -130,7 +130,9 @@ async def pedagogical_reflection_node(state: AgentState) -> dict:
         return {"reflection_feedback": None, "metadata": metadata, "timings_ms": metadata.get("timings_ms", {})}
     except Exception as e:
         logger.error(f"Lỗi khi thực thi pedagogical_reflection_node: {e}", exc_info=True)
-        await safe_adispatch_custom_event("thinking", {"text": f"Lỗi kỹ thuật kiểm định: {str(e)}. Áp dụng fallback an toàn."})
+        await safe_adispatch_custom_event(
+            "thinking", {"text": f"Lỗi kỹ thuật kiểm định: {str(e)}. Áp dụng fallback an toàn."}
+        )
         if metadata.get("academic_integrity_risk"):
             timings.add("reflection_total", timings.elapsed_ms())
             metadata = merge_timing_metadata(metadata, timings.snapshot())

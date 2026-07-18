@@ -53,7 +53,7 @@ export const generateEloHistory = (studentId: string, baseElo: number) => {
 export const generateActivityHistory = (studentId: string) => {
   const history = [];
   const seed = studentId === 'std1' ? 1 : studentId === 'std2' ? 2 : studentId === 'std3' ? 3 : studentId === 'std4' ? 4 : 5;
-  const masteriesPool = ['Prompt Engineering', 'AI & LLM Foundation', 'RAG Pipeline', 'Design Pattern ReAct'];
+  const masteriesPool = ['Nhận biết phân số bằng nhau', 'Hiểu tỉ số đại lượng', 'Vận dụng tính chất tỉ lệ thức', 'Tính chất cơ bản phân số'];
   for (let i = 29; i >= 0; i--) {
     const date = dayjs('2026-06-23').subtract(i, 'day').format('YYYY-MM-DD');
     const isActive = (i + seed) % 5 !== 0; // 80% active
