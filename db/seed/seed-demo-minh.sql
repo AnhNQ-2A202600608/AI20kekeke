@@ -9,7 +9,7 @@ BEGIN;
 
 -- 1. Học sinh demo -------------------------------------------------------------
 INSERT INTO app.users (id, email, full_name, status, mssv) VALUES
-  ('d3b07384-d113-4ec5-a58e-0f2d87e07777', 'minh.demo@edugap.vn', 'Trần Minh', 'active', '2A202600777')
+  ('d3b07384-d113-4ec5-a58e-0f2d87e07777', 'minh.demo@mentora.vn', 'Trần Minh', 'active', '2A202600777')
 ON CONFLICT (id) DO UPDATE SET full_name = EXCLUDED.full_name, mssv = EXCLUDED.mssv;
 
 UPDATE app.users SET is_demo_account = true, demo_profile_key = 'full_flow_v1'

@@ -18,8 +18,8 @@ export default function NotFound() {
       <section className="grid w-full max-w-5xl items-center gap-6 rounded-[1.75rem] border border-primary-green/20 bg-white/90 p-5 shadow-[0_24px_80px_rgba(44,91,18,0.18)] backdrop-blur-sm md:grid-cols-[minmax(0,1fr)_22rem] md:p-8">
         <div className="min-w-0">
           <Image
-            src="/brand/edugap/logo-cropped.png"
-            alt="EduGap"
+            src="/brand/mentora/logo-cropped.png"
+            alt="Mentora"
             width={190}
             height={64}
             priority
@@ -35,7 +35,7 @@ export default function NotFound() {
             Sofi chưa tìm thấy trang này.
           </h1>
           <p className="mt-3 max-w-xl text-sm font-semibold leading-6 text-stone-600 md:text-base">
-            Đường dẫn có thể đã thay đổi hoặc bài học không còn ở vị trí này. Quay lại EduGap để tiếp tục lộ trình đang học.
+            Đường dẫn có thể đã thay đổi hoặc bài học không còn ở vị trí này. Quay lại Mentora để tiếp tục lộ trình đang học.
           </p>
 
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">

@@ -1,0 +1,104 @@
+{
+  "version": 1,
+  "description": "Mentora brand logo, favicon, and app icon assets.",
+  "basePath": "/brand/mentora",
+  "usageRules": [
+    "Use logo-cropped.png for visible header/sidebar brand marks.",
+    "Use logo.png only when a wide transparent canvas is acceptable.",
+    "Use icon-192x192.png for compact square logo slots.",
+    "Use icon-512x512.png or maskable-icon-512x512.png for app install/PWA contexts.",
+    "Use favicon.ico and favicon PNG sizes only through metadata or browser icon declarations."
+  ],
+  "assets": [
+    {
+      "id": "mentora-logo-cropped",
+      "path": "/brand/mentora/logo-cropped.png",
+      "type": "wordmark",
+      "dimensions": "1892x425",
+      "bestFor": ["top navigation", "quiz header", "sidebar brand", "landing header"],
+      "avoidFor": ["favicon", "tiny square icon", "avatar"],
+      "alt": "Mentora"
+    },
+    {
+      "id": "mentora-logo-wide",
+      "path": "/brand/mentora/logo.png",
+      "type": "wordmark-source",
+      "dimensions": "1920x1080",
+      "bestFor": ["large brand preview", "source reference"],
+      "avoidFor": ["runtime header if logo-cropped.png fits", "favicon"],
+      "alt": "Mentora"
+    },
+    {
+      "id": "mentora-icon-192",
+      "path": "/brand/mentora/icon-192x192.png",
+      "type": "square-icon",
+      "dimensions": "192x192",
+      "bestFor": ["compact header icon", "button icon", "small square brand mark"],
+      "avoidFor": ["wordmark placement"],
+      "alt": "Mentora"
+    },
+    {
+      "id": "mentora-icon-512",
+      "path": "/brand/mentora/icon-512x512.png",
+      "type": "square-icon",
+      "dimensions": "512x512",
+      "bestFor": ["large square brand mark", "app icon preview"],
+      "avoidFor": ["tiny favicon"],
+      "alt": "Mentora"
+    },
+    {
+      "id": "mentora-favicon",
+      "path": "/brand/mentora/favicon.ico",
+      "type": "favicon",
+      "dimensions": "multi-size",
+      "bestFor": ["browser favicon metadata"],
+      "avoidFor": ["visible app UI"],
+      "alt": ""
+    },
+    {
+      "id": "mentora-favicon-16",
+      "path": "/brand/mentora/favicon-16x16.png",
+      "type": "favicon",
+      "dimensions": "16x16",
+      "bestFor": ["browser favicon metadata"],
+      "avoidFor": ["visible app UI"],
+      "alt": ""
+    },
+    {
+      "id": "mentora-favicon-32",
+      "path": "/brand/mentora/favicon-32x32.png",
+      "type": "favicon",
+      "dimensions": "32x32",
+      "bestFor": ["browser favicon metadata"],
+      "avoidFor": ["visible app UI"],
+      "alt": ""
+    },
+    {
+      "id": "mentora-favicon-48",
+      "path": "/brand/mentora/favicon-48x48.png",
+      "type": "favicon",
+      "dimensions": "48x48",
+      "bestFor": ["browser favicon metadata"],
+      "avoidFor": ["visible app UI"],
+      "alt": ""
+    },
+    {
+      "id": "mentora-maskable-icon-512",
+      "path": "/brand/mentora/maskable-icon-512x512.png",
+      "type": "maskable-icon",
+      "dimensions": "512x512",
+      "bestFor": ["PWA maskable icon metadata", "Android install icon"],
+      "avoidFor": ["visible app UI"],
+      "alt": "Mentora"
+    },
+    {
+      "id": "mentora-apple-touch-icon",
+      "path": "/brand/mentora/apple-touch-icon.png",
+      "type": "touch-icon",
+      "dimensions": "180x180",
+      "bestFor": ["iOS home screen icon metadata"],
+      "avoidFor": ["visible app UI"],
+      "alt": "Mentora"
+    }
+  ]
+}

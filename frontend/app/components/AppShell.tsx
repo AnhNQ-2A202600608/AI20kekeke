@@ -50,13 +50,13 @@ export function AppShell({ children, compact = false }: { children: ReactNode; c
   const subjectProfiles = useSubjectProfiles();
 
   useEffect(() => {
-    setSidebarCollapsed(window.localStorage.getItem("orbitlearn-sidebar-collapsed") === "true");
+    setSidebarCollapsed(window.localStorage.getItem("mentora-sidebar-collapsed") === "true");
   }, []);
 
   const handleToggleSidebar = () => {
     setSidebarCollapsed((value) => {
       const nextValue = !value;
-      window.localStorage.setItem("orbitlearn-sidebar-collapsed", String(nextValue));
+      window.localStorage.setItem("mentora-sidebar-collapsed", String(nextValue));
       return nextValue;
     });
   };
@@ -68,7 +68,7 @@ export function AppShell({ children, compact = false }: { children: ReactNode; c
         <div className="header-leading">
           <Link className="brand" href="/hoc-tap" aria-label="Về trang học tập">
             <span className="brand-symbol">OL</span>
-            <span>OrbitLearn</span>
+            <span>Mentora</span>
           </Link>
         </div>
         <nav className="main-nav" aria-label="Điều hướng chính">

@@ -1,7 +1,7 @@
 # run_demo.ps1
 Clear-Host
 Write-Host '===================================================' -ForegroundColor Green
-Write-Host '   EDUGAP DEMO & TESTING CONTROLLER PANEL          ' -ForegroundColor Green
+Write-Host '   MENTORA DEMO & TESTING CONTROLLER PANEL          ' -ForegroundColor Green
 Write-Host '===================================================' -ForegroundColor Green
 Write-Host '1. Chạy toàn bộ kiểm thử tự động (pytest)'
 Write-Host '2. Chạy Backend (FastAPI trên port 8000)'

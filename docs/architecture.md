@@ -1,4 +1,4 @@
-# EduGap Architecture
+# Mentora Architecture
 
 This document is the Demo Day architecture deliverable. The Mermaid diagrams below are the current text-first version; the polished visual diagram will be drawn from the plan in `plans/20260708-demo-day-architecture-diagram/plan.md`.
 

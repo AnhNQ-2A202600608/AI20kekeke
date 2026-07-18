@@ -48,7 +48,15 @@ class CitationValidator:
                     any(g in q_clean for g in ["chào", "hi", "hello", "xin chào", "chào bạn"]) and len(q_clean) < 15
                 )
 
-            if not is_greeting:
+            is_diagnostic_query = False
+            if query:
+                q_clean = query.lower().strip()
+                is_diagnostic_query = any(
+                    word in q_clean
+                    for word in ["hổng", "yếu", "lộ trình", "chẩn đoán", "tiến độ", "kết quả", "học tập", "sức học"]
+                )
+
+            if not is_greeting and not is_diagnostic_query:
                 return {
                     "is_valid": False,
                     "invalid_citations": [],

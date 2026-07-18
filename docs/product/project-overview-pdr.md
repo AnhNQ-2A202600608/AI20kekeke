@@ -63,9 +63,9 @@ Provide a 24/7 personal academic tutor that teaches from official course materia
 
 ### Interface System
 
-- Visual system follows Sapia/EduGap tactile learning UI: cozy avocado background, green/yellow/orange/blue/red state colors, 3D depth borders, dense app sizing, and project-owned learning assets.
+- Visual system follows Sapia/Mentora tactile learning UI: cozy avocado background, green/yellow/orange/blue/red state colors, 3D depth borders, dense app sizing, and project-owned learning assets.
 - App workspace scale is the source of truth for landing, auth, onboarding, and dashboard sizing. Public pages should not default to oversized marketing hero typography.
-- Brand and maskable icon assets live under `frontend/public/brand/edugap/`; learning scenery, app backgrounds, seeds, soils, and mascot assets should be reused before adding new visuals.
+- Brand and maskable icon assets live under `frontend/public/brand/mentora/`; learning scenery, app backgrounds, seeds, soils, and mascot assets should be reused before adding new visuals.
 
 ## Non-MVP / Future Scope
 

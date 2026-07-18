@@ -104,7 +104,7 @@ export function DesktopLearningSidebar({
         {isDrawerOpen ? (
         <div className="pointer-events-none absolute right-1 top-[-0.25rem] z-20 h-[clamp(2.75rem,4vw,3.35rem)] w-[clamp(2.75rem,4vw,3.35rem)] overflow-visible" aria-hidden="true">
           <Image
-            src="/mascot/sofi/512/edugap-fox-idle-welcome.webp"
+            src="/mascot/sofi/512/mentora-fox-idle-welcome.webp"
             alt=""
             width={512}
             height={512}
@@ -141,7 +141,7 @@ export function DesktopLearningSidebar({
           ) : (
           <span className="relative grid h-10 w-10 place-items-center">
             <Image
-              src="/mascot/sofi/512/edugap-fox-idle-welcome.webp"
+              src="/mascot/sofi/512/mentora-fox-idle-welcome.webp"
               alt=""
               width={512}
               height={512}

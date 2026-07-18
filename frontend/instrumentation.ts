@@ -22,7 +22,7 @@ export async function register() {
 
     const sdk = new NodeSDK({
       resource: resourceFromAttributes({
-        'service.name': 'edugap-quiz',
+        'service.name': 'mentora-quiz',
       }),
       spanProcessors: [
         new PostHogSpanProcessor({

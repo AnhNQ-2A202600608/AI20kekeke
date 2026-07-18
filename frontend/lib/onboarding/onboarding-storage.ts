@@ -5,8 +5,8 @@ import {
   OnboardingSummary,
 } from './onboarding-contract';
 
-const keyFor = (userId?: string | null) => `edugap_onboarding_v1:${userId || 'demo'}`;
-const statusKeyFor = (userId: string) => `edugap_onboarding_status_v1:${userId}`;
+const keyFor = (userId?: string | null) => `mentora_onboarding_v1:${userId || 'demo'}`;
+const statusKeyFor = (userId: string) => `mentora_onboarding_status_v1:${userId}`;
 
 export function loadOnboardingDraft(userId?: string | null): OnboardingDraft {
   if (typeof window === 'undefined') return { ...EMPTY_ONBOARDING_DRAFT };

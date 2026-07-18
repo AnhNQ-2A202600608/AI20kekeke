@@ -30,7 +30,7 @@ const placementQuestions = [
     answer: 1,
   },
   {
-    title: "Nếu một bài có nhiều lỗi sai giống nhau, EduGap nên ưu tiên gì?",
+    title: "Nếu một bài có nhiều lỗi sai giống nhau, Mentora nên ưu tiên gì?",
     options: ["Bỏ qua lỗi đó", "Tăng độ khó ngay", "Gợi ý ôn kỹ năng liên quan", "Chỉ hiển thị điểm số"],
     answer: 2,
   },
@@ -50,7 +50,7 @@ function getStepTitle(step: number, subjectName: string) {
 }
 
 function getStepCopy(step: number, subjectName: string) {
-  if (step === 0) return "Mỗi môn có level, skill graph và lộ trình riêng. Chọn môn trước để EduGap tạo đúng profile học tập.";
+  if (step === 0) return "Mỗi môn có level, skill graph và lộ trình riêng. Chọn môn trước để Mentora tạo đúng profile học tập.";
   if (step === 1) return "Lớp giúp hệ thống chọn chương trình học phù hợp trước khi xếp level chi tiết.";
   if (step === 2) return "Đây là level tự đánh giá. Bài test ngắn ở bước sau sẽ dùng để xếp lại chính xác hơn.";
   if (step === 3) return `Bài test sẽ tạo profile ${subjectName} riêng. Khi hoàn thành, level của môn này sẽ được dùng khi vào workspace học tập.`;
@@ -128,8 +128,8 @@ export default function OnboardingPage() {
         {step !== 4 && (
           <header className="onboarding-header">
             <Link className="brand" href="/auth">
-              <span className="brand-symbol">EG</span>
-              <span>EduGap</span>
+              <span className="brand-symbol">OL</span>
+              <span>Mentora</span>
             </Link>
             <div className="onboarding-progress">
               <span>{progress}% thiết lập</span>
@@ -192,7 +192,7 @@ export default function OnboardingPage() {
               <div className="placement-start-card">
                 <span className="overline">Bài test xếp level · {selectedSubject.name}</span>
                 <h2>Sẵn sàng kiểm tra nhanh trình độ của bạn?</h2>
-                <p>Bài test gồm {placementQuestions.length} câu. Màn làm bài chỉ hiển thị số câu, câu hỏi và đáp án để bạn tập trung. Sau khi bấm hoàn thành, EduGap sẽ chấm điểm và tạo profile riêng cho {selectedSubject.name}.</p>
+                <p>Bài test gồm {placementQuestions.length} câu. Màn làm bài chỉ hiển thị số câu, câu hỏi và đáp án để bạn tập trung. Sau khi bấm hoàn thành, Mentora sẽ chấm điểm và tạo profile riêng cho {selectedSubject.name}.</p>
                 <div className="placement-start-meta">
                   <span>{selectedSubject.name}</span>
                   <span>Lớp {grade}</span>

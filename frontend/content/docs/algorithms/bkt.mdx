@@ -80,7 +80,7 @@ Xác suất làm chủ BKT $P(L)$ sẽ được chuyển đổi thành trạng t
 
 ## 6. Tích hợp Đường cong Lãng quên (FSRS Lazy Decay)
 
-Để giải quyết vấn đề xác suất làm chủ kiến thức luôn tăng hoặc bị kẹt ở mức tối đa do mô hình BKT truyền thống không tự suy giảm theo thời gian, EduGap tích hợp thuật toán **Đường cong Lãng quên (Forgetting Curve)** dựa trên cơ chế **FSRS (Free Spaced Repetition Scheduler) Lazy Decay** (xem trích dẫn chi tiết tại **[Ye (2022)](/docs/academic-citations#5-spaced-repetition-forgetting--fsrs)**).
+Để giải quyết vấn đề xác suất làm chủ kiến thức luôn tăng hoặc bị kẹt ở mức tối đa do mô hình BKT truyền thống không tự suy giảm theo thời gian, Mentora tích hợp thuật toán **Đường cong Lãng quên (Forgetting Curve)** dựa trên cơ chế **FSRS (Free Spaced Repetition Scheduler) Lazy Decay** (xem trích dẫn chi tiết tại **[Ye (2022)](/docs/academic-citations#5-spaced-repetition-forgetting--fsrs)**).
 
 ### A. Công thức Suy giảm Độ thông thạo (Decay Formula)
 Khi học viên không tương tác với một khái niệm trong khoảng thời gian $\Delta t$ (tính bằng ngày), xác suất làm chủ hiệu dụng sẽ suy giảm theo hàm mũ cơ số 2:
@@ -135,7 +135,7 @@ Trong đó $X^u = (x_1^u, x_2^u, \dots, x_T^u) \in \{0, 1\}^T$ là chuỗi trả
 ### C. Trạng thái phát triển hiện tại: [CHƯA TRIỂN KHAI]
 > [!WARNING]
 > Cấu phần Offline ML Pipeline này **chưa được lập trình trong codebase** (Uncompleted). 
-> Hiện tại, hệ thống EduGap đang sử dụng bộ tham số thực nghiệm mặc định đồng nhất cho tất cả các Concept ($P(L_0)=0.25$, $P(T)=0.10$, $P(G)=0.20$, $P(S)=0.10$). Cần triển khai script Python trong thư mục `src/pipeline/train_bkt.py` để kết nối Supabase, truy vấn lịch sử làm bài, chạy thuật toán EM và ghi đè tham số tối ưu trở lại bảng `app.concepts`.
+> Hiện tại, hệ thống Mentora đang sử dụng bộ tham số thực nghiệm mặc định đồng nhất cho tất cả các Concept ($P(L_0)=0.25$, $P(T)=0.10$, $P(G)=0.20$, $P(S)=0.10$). Cần triển khai script Python trong thư mục `src/pipeline/train_bkt.py` để kết nối Supabase, truy vấn lịch sử làm bài, chạy thuật toán EM và ghi đè tham số tối ưu trở lại bảng `app.concepts`.
 
 ---
 

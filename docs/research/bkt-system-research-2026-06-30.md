@@ -2,7 +2,7 @@
 
 ## Scope
 
-Compare EduGap's current Bayesian Knowledge Tracing design with common adaptive tutoring practice.
+Compare Mentora's current Bayesian Knowledge Tracing design with common adaptive tutoring practice.
 
 ## External Findings
 
@@ -12,7 +12,7 @@ Compare EduGap's current Bayesian Knowledge Tracing design with common adaptive 
 - Modern BKT practice often fits parameters from data and may individualize or contextualize parameters, especially prior, learn rate, guess, and slip.
 - BKT remains useful mainly because it is interpretable. Deep KT and IRT/logistic models can improve prediction, but are harder to explain and need more data.
 
-## EduGap Alignment
+## Mentora Alignment
 
 - The backend concept is correct: `student_concept_mastery` stores per-student, per-course, per-concept `bkt_mastery_probability`.
 - The Python BKT formula is the standard binary posterior update followed by the learning transition.

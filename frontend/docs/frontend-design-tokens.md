@@ -2,7 +2,7 @@
 
 ## Overview
 
-The current frontend uses a warm amber/stone palette and rounded, gamified EdTech components. The root product design guideline suggests a more academic blue/purple system. For consistency, the frontend should keep the current warm language for EduGap unless product leadership chooses a visual reset. If reset happens, map current semantic tokens to the root academic palette instead of changing components ad hoc.
+The current frontend uses a warm amber/stone palette and rounded, gamified EdTech components. The root product design guideline suggests a more academic blue/purple system. For consistency, the frontend should keep the current warm language for Mentora unless product leadership chooses a visual reset. If reset happens, map current semantic tokens to the root academic palette instead of changing components ad hoc.
 
 ## Semantic Token Model
 

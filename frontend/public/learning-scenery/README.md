@@ -1,6 +1,6 @@
-# EduGap Learning Scenery Assets
+# Mentora Learning Scenery Assets
 
-Decorative learning-scene illustrations for EduGap UI cards, side panels, empty states, onboarding, and progress surfaces.
+Decorative learning-scene illustrations for Mentora UI cards, side panels, empty states, onboarding, and progress surfaces.
 
 Use runtime WebP files in UI. Do not commit source PNG regeneration files.
 

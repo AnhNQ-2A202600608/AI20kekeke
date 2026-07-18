@@ -18,9 +18,9 @@ export type StoredSubjectProfile = {
   total?: number;
 };
 
-const PROFILE_KEY = "orbitlearn-subject-profiles";
-const LEGACY_PROFILE_KEY = "orbitlearn-onboarding-profile";
-const ACTIVE_SUBJECT_KEY = "orbitlearn-active-subject";
+const PROFILE_KEY = "mentora-subject-profiles";
+const LEGACY_PROFILE_KEY = "mentora-onboarding-profile";
+const ACTIVE_SUBJECT_KEY = "mentora-active-subject";
 
 const levelDetails: Record<CoreLevelKey, {
   description: string;

@@ -375,21 +375,18 @@ async def analyze_node(state: AgentState) -> dict:
     # --- Wire Diagnostic Engine (P0-2) ---
     # Engine là thuần Python + SQLite, chạy offline, không gọi LLM.
     diagnostic_result = None
-    if intent == "academic" and concept_id:
+    if concept_id:
         try:
             from src.services.diagnostic_engine import DiagnosticEngine
 
             student_id = profile.get("student_id") or profile.get("id")
+            logger.info(f"[DIAGNOSTIC TRACE] student_id={student_id}, concept_id={concept_id}, profile={profile}")
             if student_id:
                 engine = DiagnosticEngine()
                 diagnostic_result = engine.diagnose(str(student_id), str(concept_id))
-                if diagnostic_result:
-                    logger.info(
-                        f"Diagnostic engine result for student={student_id}, concept={concept_id}: "
-                        f"status={diagnostic_result.get('status')}"
-                    )
+                logger.info(f"[DIAGNOSTIC TRACE] result={diagnostic_result}")
         except Exception as e:
-            logger.warning(f"Diagnostic engine skipped: {e}")
+            logger.warning(f"Diagnostic engine skipped: {e}", exc_info=True)
 
     metadata = state.get("metadata") or {}
     timings.add("analyze_total", timings.elapsed_ms())
@@ -401,7 +398,7 @@ async def analyze_node(state: AgentState) -> dict:
             "mode_instructions": prompt_profile["mode_instructions"],
             "elo": prompt_profile["elo"],
             "bkt": prompt_profile["bkt"],
-            "weakness": prompt_profile["weakness"],
+            "weakness": True if (diagnostic_result and diagnostic_result.get("weakness_flag")) else prompt_profile["weakness"],
             "active_quiz": prompt_profile["active_quiz"],
             "mode": mode,
             "academic_integrity_risk": academic_integrity_risk,

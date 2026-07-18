@@ -1,7 +1,7 @@
 -- ============================================================================
 -- C2-App-125 | Adaptive AI Tutor — Initial Schema (IDEMPOTENT)
--- Target: Supabase PostgreSQL 17 (edugap-dev)
--- Status: DEPLOYED on edugap-dev (nxpbxlmmrsliohkoeoac) — 2026-06-11
+-- Target: Supabase PostgreSQL 17 (mentora-dev)
+-- Status: DEPLOYED on mentora-dev (nxpbxlmmrsliohkoeoac) — 2026-06-11
 -- Re-run safe: YES — all statements use IF NOT EXISTS / OR REPLACE
 -- ============================================================================
 -- Đối chiếu:

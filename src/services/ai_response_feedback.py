@@ -209,7 +209,7 @@ def list_ai_response_review_items(db: Any, *, course_id: str) -> dict[str, Any]:
                     "student_id": user_key or None,
                     "student_name": user_lookup.get(user_key, {}).get("full_name")
                     or user_lookup.get(user_key, {}).get("email")
-                    or "Học viên EduGap",
+                    or "Học viên Mentora",
                     "created_at": row.get("created_at"),
                     "session_id": row_metadata.get("session_id"),
                 }
@@ -240,7 +240,7 @@ def list_ai_response_review_items(db: Any, *, course_id: str) -> dict[str, Any]:
                 "latest_issue_label": metadata.get("issue_label"),
                 "last_reported_at": latest_row.get("created_at"),
                 "student_id": latest_user_id or None,
-                "student_name": student_info.get("full_name") or student_info.get("email") or "Học viên EduGap",
+                "student_name": student_info.get("full_name") or student_info.get("email") or "Học viên Mentora",
                 "prompt_text": metadata.get("prompt_text"),
                 "response_text": metadata.get("response_text"),
                 "citations": metadata.get("citations") if isinstance(metadata.get("citations"), list) else [],

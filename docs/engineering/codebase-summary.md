@@ -2,7 +2,7 @@
 
 ## Overview
 
-EduGap is an Adaptive-first Socratic Tutor for higher education. The repository now contains a production-shaped web application: a Next.js frontend, a FastAPI backend, Supabase PostgreSQL with pgvector/RLS, adaptive learning algorithms, RAG chat, onboarding, auth, and mentor/admin observability surfaces.
+Mentora is an Adaptive-first Socratic Tutor for higher education. The repository now contains a production-shaped web application: a Next.js frontend, a FastAPI backend, Supabase PostgreSQL with pgvector/RLS, adaptive learning algorithms, RAG chat, onboarding, auth, and mentor/admin observability surfaces.
 
 ## Current Stack
 

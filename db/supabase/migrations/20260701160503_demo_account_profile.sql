@@ -23,6 +23,6 @@ CREATE INDEX IF NOT EXISTS idx_users_demo_profile_key
 UPDATE app.users
    SET is_demo_account = true,
        demo_profile_key = 'full_flow_v1'
- WHERE lower(email) IN ('specify@edugap.vn', 'demo.flow@edugap.vn');
+ WHERE lower(email) IN ('specify@mentora.vn', 'demo.flow@mentora.vn');
 
 COMMIT;
