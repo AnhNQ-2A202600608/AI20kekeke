@@ -407,8 +407,9 @@
 | Member | Task | Status | Output | Time |
 |--------|------|--------|--------|------|
 | Nguyễn Phương Nam | Align math concepts, purge ML leak terms, and fix CI/CD & SQL tests | ✅ Done | Đồng bộ 100% tên các concept Toán học GDPT 2018; xóa 230 dòng mock code trùng lặp ở frontend dashboard; thanh lọc các thuật ngữ ML ra khỏi activity pool; đưa questions.json và knowledge_graph.json vào git tracking để xanh CI; tối ưu hóa test_adaptive_sql_contracts.py; và tạo công cụ run_demo.ps1. | 6h |
+| Nguyễn Vũ Trọng | Implement adaptive exam system & update project context SSoT | ✅ Done | Thiết kế di trú CSDL `20260718_exam_sets_schema.sql`, cập nhật RPC `submit_attempt_v3` tự động cập nhật Elo/BKT & Gap Detection. Viết FastAPI models/endpoints trong `exam_schemas.py` và `exam_routes.py` hỗ trợ ẩn đáp án chống gian lận. Viết script `seed_exams.py` nạp đề thi, cập nhật frontend database client `database.ts`, viết bộ test suite `test_exams.py` và cập nhật `PROJECT-CONTEXT.md` đồng bộ SSoT Toán 6. | 7h |
 
-**Tổng kết ngày:** Hoàn thiện chất lượng và đồng bộ 100% các concept Toán học trên toàn bộ hệ thống; loại bỏ triệt để các tệp mock thừa và các thuật ngữ máy học để đảm bảo uy tín demo sư phạm; cấu hình git tracking dữ liệu câu hỏi giải quyết lỗi CI/CD từ xa; hoàn thành bộ kiểm thử tự động đạt 331 tests (100% pass trên local và CI).
+**Tổng kết ngày:** Nguyễn Phương Nam hoàn thiện chất lượng và đồng bộ 100% các concept Toán học trên toàn bộ hệ thống; loại bỏ triệt để các tệp mock thừa và các thuật ngữ máy học để đảm bảo uy tín demo sư phạm; cấu hình git tracking dữ liệu câu hỏi giải quyết lỗi CI/CD từ xa; hoàn thành bộ kiểm thử tự động đạt 331 tests (100% pass trên local và CI). Nguyễn Vũ Trọng thiết lập hệ thống Quản lý Đề thi thích ứng trên Supabase và FastAPI với RLS và kiểm thử đầy đủ, đồng thời cập nhật tài liệu SSoT `PROJECT-CONTEXT.md`.
 
 ---
 

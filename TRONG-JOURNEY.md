@@ -181,3 +181,44 @@
 - **Follow-up:**
   - Thêm tên miền staging mong muốn vào mục cài đặt của Vercel (nếu được cấp quyền hoặc liên hệ Admin) và cấu hình liên kết với nhánh `dev` để đảm bảo tên miền hiển thị ngắn gọn, dễ nhớ.
   - Cập nhật biến môi trường `CORS_ORIGINS` trên Render Staging trùng khớp với Preview URL của Frontend nhánh `dev` để đảm bảo kết nối API thông suốt.
+
+---
+
+## 2026-07-18 — Triển khai Hệ thống Quản lý Đề thi thích ứng (Adaptive Exam Management) và Cập nhật Bối cảnh Dự án SSoT
+
+- **Why:**
+  - **Hệ thống kỳ thi chính thức (Exam Sets) chưa được thiết lập:** Hệ thống cần hỗ trợ thi giữa kỳ và cuối kỳ chính thức cho học sinh (Toán lớp 6), thay vì chỉ có các câu hỏi luyện tập nhỏ lẻ (quiz). Bộ đề thi cần có thời gian làm bài, cấu trúc câu hỏi, tính điểm tập trung và không rò rỉ đáp án/giải thích trước khi học sinh hoàn thành nộp bài.
+  - **Tích hợp kiểm tra khoảng trống kiến thức (Gap Detection) & Cập nhật thích ứng (Elo/BKT):** Kết quả bài thi cần tự động tính toán lại năng lực học sinh qua Elo/BKT cho tất cả các concept liên quan đến câu hỏi trong đề, đồng thời phát hiện ra các "khoảng trống kiến thức" (weak concepts) để gợi ý lộ trình tự học và luyện tập cải thiện.
+  - **Đồng bộ tài liệu bối cảnh dự án (SSoT):** File `PROJECT-CONTEXT.md` cần được cập nhật cấu trúc mới phù hợp với định hướng EduGap (Toán lớp 6), làm rõ vai trò Student/Mentor, Sapia Design System và sơ đồ luồng hoạt động (Mermaid) cập nhật.
+
+- **What changed:**
+  - **Cơ sở dữ liệu (Database Migration):**
+    - Thiết lập tệp migration SQL [20260718_exam_sets_schema.sql](file:///d:/Project/Hackathon/AI%20Innovation/AI20kekeke/db/supabase/migrations/20260718_exam_sets_schema.sql) tạo các bảng:
+      - `app.exam_sets`: Quản lý tiêu đề, mã đề, thời gian làm bài (`duration_minutes`), loại đề (`midterm`/`final`), trạng thái (`draft`/`published`), điểm tối đa.
+      - `app.exam_questions`: Liên kết câu hỏi (`app.questions`) vào bộ đề thi với thứ tự sắp xếp (`sort_order`) và trọng số điểm (`weight`).
+      - `app.exam_attempts`: Lưu lịch sử làm bài thi của học sinh, điểm số cuối cùng (`final_score`), thời gian bắt đầu, nộp bài.
+    - Cập nhật hàm RPC PostgreSQL `app.submit_attempt_v3` để hỗ trợ tính điểm và cập nhật năng lực thích ứng tự động (Elo, BKT) sau khi nộp bài thi, đồng thời ghi nhận kết quả và phát hiện khoảng trống kiến thức.
+  - **Backend API (FastAPI routes & schemas):**
+    - Tạo [exam_schemas.py](file:///d:/Project/Hackathon/AI%20Innovation/AI20kekeke/src/models/exam_schemas.py) định nghĩa các Pydantic schema cho bộ đề thi, câu hỏi thi (ẩn đáp án đúng đối với học sinh), yêu cầu nộp bài, và cấu trúc kết quả thi.
+    - Phát triển router API [exam_routes.py](file:///d:/Project/Hackathon/AI%20Innovation/AI20kekeke/src/api/exam_routes.py) (gắn vào `/api/v1/exams`) cung cấp các endpoints:
+      - `GET /api/v1/exams`: Lấy danh sách đề thi đã công bố (published) cho học sinh hoặc toàn bộ cho mentor/admin.
+      - `GET /api/v1/exams/{exam_set_id}`: Chi tiết đề thi và danh sách câu hỏi (ẩn đáp án/giải thích để chống gian lận).
+      - `POST /api/v1/exams/{exam_set_id}/start`: Bắt đầu một lượt làm bài thi (tạo bản ghi `exam_attempts` mới).
+      - `POST /api/v1/exams/attempts/{attempt_id}/submit`: Nộp bài thi, chấm điểm tự động các câu trắc nghiệm MCQ, cập nhật Elo/BKT qua thuật toán thích ứng, phát hiện các weak concepts và trả về kết quả bài thi.
+      - `GET /api/v1/exams/attempts/{attempt_id}/result`: Lấy lại kết quả bài thi chi tiết (bao gồm cả đáp án đúng và giải thích sau khi đã nộp).
+    - Đấu nối router thi cử vào FastAPI chính tại `src/main.py`.
+  - **Dữ liệu mẫu & Seed Script (`seed_exams.py`):**
+    - Viết [seed_exams.py](file:///d:/Project/Hackathon/AI%20Innovation/AI20kekeke/scripts/seed_exams.py) để tự động nạp dữ liệu đề thi tĩnh (midterm/final) mẫu vào Supabase DB với đầy đủ câu hỏi trắc nghiệm Toán lớp 6 và gán concept tương ứng.
+  - **Frontend Next.js Database API Client:**
+    - Cập nhật [database.ts](file:///d:/Project/Hackathon/AI%20Innovation/AI20kekeke/frontend/lib/adaptive/database.ts) thêm các phương thức client gọi API backend phục vụ việc truy vấn đề thi, bắt đầu thi, nộp bài thi và lấy kết quả thi thích ứng.
+  - **Tài liệu dự án SSoT:**
+    - Cập nhật [PROJECT-CONTEXT.md](file:///d:/Project/Hackathon/AI%20Innovation/AI20kekeke/PROJECT-CONTEXT.md) đồng bộ cấu trúc mới với trọng tâm Toán lớp 6, các vai trò Student/Mentor, Sapia Design System và sơ đồ luồng hoạt động (Mermaid) cập nhật.
+
+- **Validation:**
+  - **Automated Tests:** Viết và chạy bộ kiểm thử tự động [test_exams.py](file:///d:/Project/Hackathon/AI%20Innovation/AI20kekeke/tests/test_api/test_exams.py) chạy mượt mà 5/5 cases kiểm định toàn bộ luồng từ lấy danh sách đề, lấy chi tiết, bắt đầu thi, nộp bài thi đến xem kết quả.
+  - **Local Validation:** Chạy toàn bộ test suite cục bộ thông qua `pytest` đều vượt qua thành công (100% Passed).
+
+- **Follow-up:**
+  - Thiết kế và triển khai giao diện làm bài thi (Exam Screen) và trang kết quả thi (Exam Result Dashboard) ở Frontend Next.js theo đúng Sapia Design System (3D click, Cozy Avocado `#f4fce8`).
+  - Đấu nối Integration tests và chạy thử nghiệm luồng đề xuất lộ trình tự học từ LLM và Evaluation Agent sau khi có kết quả weak concepts từ bài thi.
+

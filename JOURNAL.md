@@ -383,6 +383,7 @@
 - [x] Dọn dẹp mock data thừa và các thuật ngữ máy học (ML) bị rò rỉ trên giao diện.
 - [x] Khắc phục triệt để lỗi kiểm thử offline trên môi trường CI/CD (GitHub Actions).
 - [x] Viết công cụ quản lý vận hành uvicorn, npm dev và pytest qua PowerShell.
+- [x] Thiết lập và triển khai hệ thống quản lý kỳ thi thích ứng (Exam sets) trên Supabase & FastAPI.
 
 ### Đã hoàn thành
 - Đồng bộ tên khái niệm Toán lớp 5-7 khớp hoàn toàn với `knowledge_graph.json`.
@@ -391,19 +392,31 @@
 - Cập nhật test suite `test_adaptive_sql_contracts.py` tự động chuẩn hóa khoảng trắng giúp test chạy ổn định không phụ thuộc định dạng SQL.
 - Viết tập lệnh PowerShell tương tác `run_demo.ps1` hỗ trợ khởi động nhanh và kiểm thử bằng 1 phím nhấn.
 - Chạy thông suốt bộ kiểm thử 331 tests (100% Passed).
+- Triển khai **Hệ thống Quản lý Đề thi thích ứng (Adaptive Exam Sets)** trên Supabase và FastAPI:
+  - Tạo tệp di trú CSDL `20260718_exam_sets_schema.sql` cho các bảng `exam_sets`, `exam_questions`, `exam_attempts` và cập nhật khóa ngoại trong `quiz_attempts`.
+  - Cập nhật RPC `app.submit_attempt_v3` để tự động tính điểm và cập nhật năng lực thích ứng (Elo, BKT) sau khi học sinh nộp bài thi, đồng thời phát hiện các "khoảng trống kiến thức" (weak concepts/Gap Detection).
+  - Thêm các endpoint FastAPI trong `exam_routes.py` (dưới `/api/v1/exams`) hỗ trợ lấy danh sách đề thi, chi tiết đề thi (ẩn đáp án đúng để chống gian lận), bắt đầu thi, nộp bài thi và lấy kết quả thi chi tiết.
+  - Viết script Python `seed_exams.py` tự động nạp các bộ đề thi mẫu vào database.
+  - Cập nhật database API client frontend Next.js trong `database.ts` hỗ trợ gọi các endpoint mới.
+  - Viết và chạy thành công bộ kiểm thử tự động `test_exams.py` kiểm định toàn bộ luồng nghiệp vụ.
+- Cập nhật tài liệu bối cảnh dự án `PROJECT-CONTEXT.md` đồng bộ hóa cấu trúc mới với trọng tâm Toán lớp 6, các vai trò Student/Mentor, Sapia Design System và sơ đồ luồng hoạt động (Mermaid) cập nhật.
 
 ### Khó khăn & Giải pháp
 | Khó khăn | Giải pháp | Kết quả |
 |----------|-----------|---------|
 | Lỗi test offline trên Github Actions do thiếu câu hỏi | Force add questions.json và knowledge_graph.json vào Git | CI pipeline xanh 100% |
 | Test SQL contract bị vỡ khi thay đổi cách thụt lề câu lệnh SQL | Viết hàm clean() tự động rút gọn khoảng trắng và chuẩn hóa cú pháp trước khi assert | Test chạy ổn định và chính xác |
+| Phải ẩn đáp án đúng của câu hỏi thi khi học sinh đang làm bài để chống gian lận | Thiết kế tách biệt endpoint lấy đề thi `/exams/{exam_set_id}` (ẩn đáp án) và endpoint xem kết quả sau nộp `/exams/attempts/{attempt_id}/result` | Bảo đảm tính bảo mật của đề thi mà vẫn cung cấp giải thích chi tiết sau thi |
 
 ### Bài học
 - Các tệp dữ liệu cấu hình offline như questions.json cần được theo dõi bởi Git để tránh môi trường CI bị cô lập dữ liệu.
 - Viết kiểm thử so khớp văn bản SQL cần thực hiện chuẩn hóa khoảng trắng để đảm bảo tính mềm dẻo khi refactor.
+- Thiết kế bảo mật cho các kỳ thi chính thức đòi hỏi việc ẩn dữ liệu đáp án từ mức API chứ không chỉ ẩn ở client-side.
 
 ### Kế hoạch tuần sau
 - [ ] Thuyết trình chính thức và Demo sản phẩm EduGap trước Hội đồng Giám khảo.
+- [ ] Thiết kế và triển khai giao diện làm bài thi (Exam Screen) và trang kết quả thi (Exam Result Dashboard) ở Frontend Next.js.
+- [ ] Đấu nối Integration tests và chạy thử nghiệm luồng đề xuất lộ trình tự học từ LLM và Evaluation Agent sau khi có kết quả weak concepts từ bài thi.
 
 ---
 <!-- Tiếp tục copy block trên cho Week 8 -->
