@@ -241,7 +241,8 @@ async def load_student_profile(request: ChatRequest) -> tuple[dict, str | None]:
             }
             cache.set(cache_key, json.dumps(student_profile), ttl=300)
         except ValueError as ve:
-            raise HTTPException(status_code=422, detail="Chat profile context contains an invalid UUID.") from ve
+            logger.info(f"Invalid UUID in student_id, course_id, or concept_id. Falling back to default profile. Error: {ve}")
+            return student_profile, None
         except Exception as de:
             logger.error(f"Lỗi đọc DB chính cho chat profile: {de}", exc_info=True)
             raise HTTPException(status_code=503, detail="Không thể tải hồ sơ học tập cho phiên chat.")
