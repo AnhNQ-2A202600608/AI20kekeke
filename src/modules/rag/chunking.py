@@ -66,9 +66,7 @@ def chunk_markdown_text(text: str, *, chunk_chars: int, overlap_chars: int) -> l
     return chunks
 
 
-def chunk_page_file(
-    page_path: Path, *, book_slug: str, chunk_chars: int, overlap_chars: int
-) -> list[Chunk]:
+def chunk_page_file(page_path: Path, *, book_slug: str, chunk_chars: int, overlap_chars: int) -> list[Chunk]:
     markdown = page_path.read_text(encoding="utf-8")
     meta = parse_front_matter(markdown)
     # Front-matter substitution leaves a leading "\n" before the heading, so strip it

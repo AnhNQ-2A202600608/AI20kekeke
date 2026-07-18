@@ -16,6 +16,7 @@ def allow_dev_tokens_in_tests(monkeypatch):
     monkeypatch.delenv("SUPABASE_KEY", raising=False)
     monkeypatch.setenv("DATABASE_URL", "sqlite:///./data/test_app.db")
     from src.api.adaptive_routes import reset_adaptive_db_cache
+
     reset_adaptive_db_cache()
 
 

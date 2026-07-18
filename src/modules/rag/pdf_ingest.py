@@ -18,12 +18,13 @@ from __future__ import annotations
 
 import hashlib
 import json
-import re
-from datetime import datetime, timezone
-from pathlib import Path
-from typing import Any, Callable
-
 import logging
+import re
+from collections.abc import Callable
+from datetime import UTC, datetime
+from pathlib import Path
+from typing import Any
+
 from src.modules.rag.ocr import OCRUnavailableError, ocr_pdf_page
 from src.modules.rag.text_clean import clean_page_text, is_text_sufficient, slugify
 
@@ -67,9 +68,7 @@ def get_page_count(pdf_path: Path) -> int:
         return doc.page_count
 
 
-def page_to_markdown(
-    *, book_title: str, grade: int | None, page_number: int, text: str, source: str
-) -> str:
+def page_to_markdown(*, book_title: str, grade: int | None, page_number: int, text: str, source: str) -> str:
     """Render a single extracted/OCR'd page as Markdown with YAML front-matter metadata."""
     grade_label = f"lớp {grade}" if grade is not None else "không xác định"
     front_matter = (
@@ -114,9 +113,7 @@ def process_page(
         }
 
     try:
-        ocr_text = ocr_pdf_page(
-            pdf_path, page_number, dpi=ocr_dpi, lang=ocr_lang, tesseract_cmd=tesseract_cmd
-        )
+        ocr_text = ocr_pdf_page(pdf_path, page_number, dpi=ocr_dpi, lang=ocr_lang, tesseract_cmd=tesseract_cmd)
     except OCRUnavailableError as exc:
         # Không có backend OCR khả dụng: giữ tạm text layer (có thể rỗng) và ghi rõ lỗi
         # vào manifest để người vận hành biết trang này cần chạy lại khi có Tesseract.
@@ -157,7 +154,7 @@ def build_manifest(
         "ocr_pages": sum(1 for p in pages if p.get("source") == "ocr"),
         "text_layer_pages": sum(1 for p in pages if p.get("source") == "text_layer"),
         "empty_pages": sum(1 for p in pages if p.get("status") != "ok"),
-        "processed_at": datetime.now(timezone.utc).isoformat(),
+        "processed_at": datetime.now(UTC).isoformat(),
         "pages": pages,
     }
 

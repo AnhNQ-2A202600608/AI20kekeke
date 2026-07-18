@@ -1552,12 +1552,8 @@ async def test_recommend_endpoint_offline_fallback(mock_db, client):
         assert "decision_id" in data
         assert "question_id" in data
         assert "prompt" in data
-        assert any(
-            x in data["prompt"]
-            for x in ["tỉ lệ thức", "tỉ lệ thuận", "Tỉ lệ thức"]
-        )
+        assert any(x in data["prompt"] for x in ["tỉ lệ thức", "tỉ lệ thuận", "Tỉ lệ thức"])
         assert data["options"] != {}
         assert data["explanation"] == "Chọn ở chế độ offline."
     finally:
         app.dependency_overrides.clear()
-

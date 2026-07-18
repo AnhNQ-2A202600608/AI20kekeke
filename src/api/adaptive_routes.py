@@ -85,6 +85,7 @@ def _cache_auth_user(token: str, user: AuthenticatedUser) -> AuthenticatedUser:
 def allow_dev_tokens() -> bool:
     try:
         from src.config import get_settings
+
         if get_settings().app_env.lower() == "production":
             return False
     except Exception:
@@ -95,6 +96,7 @@ def allow_dev_tokens() -> bool:
 def allow_service_role_bypass() -> bool:
     try:
         from src.config import get_settings
+
         if get_settings().app_env.lower() == "production":
             return False
     except Exception:
@@ -490,17 +492,20 @@ def recommend_question(
         logger.error(f"Lỗi gợi ý câu hỏi: {str(e)}", exc_info=True)
         if is_adaptive_dependency_error(e):
             raise HTTPException(status_code=503, detail="Kho dữ liệu adaptive hiện không sẵn sàng.")
-            
+
         # Attempt local offline JSON fallback using local questions
         try:
-            from src.services.diagnostic_engine import DiagnosticEngine
             from uuid import uuid4
+
+            from src.services.diagnostic_engine import DiagnosticEngine
+
             engine = DiagnosticEngine()
             concept_id_str = str(request.concept_id)
-            
+
             # Find candidate questions matching this concept YCCD
             candidates = [
-                q for q in engine.questions_data
+                q
+                for q in engine.questions_data
                 if concept_id_str in q.get("yccd", []) and q.get("question_id") not in request.excluded_question_ids
             ]
             if not candidates:
@@ -511,7 +516,7 @@ def recommend_question(
             if candidates:
                 selected_q = candidates[0]
                 options_dict = selected_q.get("options", {})
-                
+
                 # Format hints
                 levels = ["light", "medium", "deep"]
                 formatted_hints = [
@@ -519,7 +524,7 @@ def recommend_question(
                     for i, text in enumerate(selected_q.get("socratic_hints", []))
                     if i < 3
                 ]
-                
+
                 return RecommendResponse(
                     decision_id=uuid4(),
                     question_id=uuid4(),
@@ -709,7 +714,7 @@ def submit_attempt(
 
         txn_start = time.perf_counter()
         txn_result = None
-        
+
         # Nếu database ở stub mode hoặc ngoại tuyến, ghi offline
         is_mock = "mock" in type(db).__name__.lower()
         is_stub = False if is_mock else bool(getattr(db, "_stub_mode", False))
@@ -718,9 +723,11 @@ def submit_attempt(
         if is_stub or is_offline:
             try:
                 from src.services.diagnostic_engine import DiagnosticEngine
+
                 engine = DiagnosticEngine()
                 engine.queue_offline_attempt(payload)
                 import uuid
+
                 txn_result = {
                     "attempt_id": str(uuid.uuid4()),
                     "new_student_elo": old_elo,
@@ -740,9 +747,11 @@ def submit_attempt(
                 logger.warning(f"Supabase submit_attempt_v3 failed: {api_err}. Fallback to offline SQLite queue.")
                 try:
                     from src.services.diagnostic_engine import DiagnosticEngine
+
                     engine = DiagnosticEngine()
                     engine.queue_offline_attempt(payload)
                     import uuid
+
                     txn_result = {
                         "attempt_id": str(uuid.uuid4()),
                         "new_student_elo": old_elo,
@@ -1120,7 +1129,9 @@ def get_class_stats_endpoint(
             return ClassStatsResponse(
                 total_students=5,
                 class_average_elo=1127.0,
-                weakest_skill=WeakestSkillResponse(id="M7.SDS.05", name="Vận dụng tính chất tỉ lệ thức, đại lượng tỉ lệ", avg_elo=1028.0),
+                weakest_skill=WeakestSkillResponse(
+                    id="M7.SDS.05", name="Vận dụng tính chất tỉ lệ thức, đại lượng tỉ lệ", avg_elo=1028.0
+                ),
                 completion_rate=40.0,
             )
 
@@ -1410,7 +1421,7 @@ def get_mock_backend_students() -> list[dict]:
                     "correct_count": 4,
                     "last_practiced_at": "2026-06-23T09:10:00Z",
                     "stability_days": 15.0,
-                }
+                },
             ],
             "recent_attempts": [
                 {
@@ -1479,7 +1490,7 @@ def get_mock_backend_students() -> list[dict]:
                     "correct_count": 2,
                     "last_practiced_at": "2026-06-23T08:25:00Z",
                     "stability_days": 15.0,
-                }
+                },
             ],
             "recent_attempts": [
                 {
@@ -1548,7 +1559,7 @@ def get_mock_backend_students() -> list[dict]:
                     "correct_count": 5,
                     "last_practiced_at": "2026-06-23T07:54:00Z",
                     "stability_days": 3.0,
-                }
+                },
             ],
             "recent_attempts": [
                 {
@@ -1617,7 +1628,7 @@ def get_mock_backend_students() -> list[dict]:
                     "correct_count": 3,
                     "last_practiced_at": "2026-06-22T15:42:00Z",
                     "stability_days": 3.0,
-                }
+                },
             ],
             "recent_attempts": [
                 {
@@ -1686,7 +1697,7 @@ def get_mock_backend_students() -> list[dict]:
                     "correct_count": 2,
                     "last_practiced_at": "2026-06-22T11:31:00Z",
                     "stability_days": 3.0,
-                }
+                },
             ],
             "recent_attempts": [
                 {

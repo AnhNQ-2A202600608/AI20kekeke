@@ -8,10 +8,9 @@ CI must never run real OCR over the 800+ page SGK PDFs.
 from __future__ import annotations
 
 import io
+import logging
 from pathlib import Path
 from typing import TYPE_CHECKING
-
-import logging
 
 if TYPE_CHECKING:
     from PIL.Image import Image
@@ -23,7 +22,7 @@ class OCRUnavailableError(RuntimeError):
     """Raised when PyMuPDF/pytesseract/the Tesseract binary can't be used."""
 
 
-def render_page_to_image(pdf_path: Path, page_number: int, dpi: int = 300) -> "Image":
+def render_page_to_image(pdf_path: Path, page_number: int, dpi: int = 300) -> Image:
     """Render a single 1-indexed PDF page to a PIL Image using PyMuPDF (no external binary)."""
     try:
         import fitz  # PyMuPDF
@@ -41,7 +40,7 @@ def render_page_to_image(pdf_path: Path, page_number: int, dpi: int = 300) -> "I
         return Image.open(io.BytesIO(pix.tobytes("png"))).copy()
 
 
-def ocr_image(image: "Image", lang: str = "vie", tesseract_cmd: str | None = None) -> str:
+def ocr_image(image: Image, lang: str = "vie", tesseract_cmd: str | None = None) -> str:
     """Run Tesseract OCR over a rendered page image."""
     try:
         import pytesseract
