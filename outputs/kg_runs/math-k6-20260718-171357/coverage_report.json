@@ -1,0 +1,89 @@
+{
+  "run_id": "math-k6-20260718-171357",
+  "course_code": "math-k6",
+  "subject": "math",
+  "grade": 6,
+  "timestamp": "2026-07-18T10:13:57.980517+00:00",
+  "document_coverage": {
+    "total_documents": 1,
+    "processed_documents": 1,
+    "failed_documents": 0,
+    "total_pages": 114,
+    "successfully_extracted_pages": 114,
+    "failed_pages": 0,
+    "page_extraction_rate": 1.0
+  },
+  "lesson_coverage": {
+    "expected_lessons": [
+      "KẾ HOẠCH CHI TIÊU CÁ NHÂN VÀ GIA ĐÌNH",
+      "MỘT SỐ TÍNH NĂNG HỖ TRỢ",
+      "BÀI TẬP",
+      "CÁC BƯỚC THỰC HIỆN",
+      "CHÚ GIẢI – HƯỚNG DẪN THỰC HÀNH VỚI MÁY TÍNH",
+      "HÌNH HỌC VÀ ĐO LƯỜNG",
+      "SỐ VÀ ĐẠI SỐ",
+      "THỐNG KÊ VÀ XÁC SUẤT"
+    ],
+    "detected_lessons": [
+      "KẾ HOẠCH CHI TIÊU CÁ NHÂN VÀ GIA ĐÌNH",
+      "MỘT SỐ TÍNH NĂNG HỖ TRỢ",
+      "BÀI TẬP",
+      "CÁC BƯỚC THỰC HIỆN",
+      "CHÚ GIẢI – HƯỚNG DẪN THỰC HÀNH VỚI MÁY TÍNH",
+      "HÌNH HỌC VÀ ĐO LƯỜNG",
+      "SỐ VÀ ĐẠI SỐ",
+      "THỐNG KÊ VÀ XÁC SUẤT"
+    ],
+    "expected_lessons_count": 8,
+    "processed_lessons": 8,
+    "lesson_coverage_rate": 1.0
+  },
+  "concept_coverage": {
+    "total_raw_concepts": 117,
+    "canonical_concepts": 111,
+    "concepts_with_source": 0,
+    "concepts_without_source": 111,
+    "concepts_with_source_rate": 0.0,
+    "concepts_with_description": 111,
+    "concepts_without_description": 0,
+    "merged_duplicates": 5,
+    "needs_review_duplicates": 47,
+    "orphan_concepts": 5,
+    "orphan_concept_rate": 0.04504504504504504
+  },
+  "relation_coverage": {
+    "total_relations": 80,
+    "relations_with_evidence": 80,
+    "relations_with_source_chunk": 0,
+    "relations_with_source_chunk_rate": 0.0,
+    "invalid_relations": 80,
+    "duplicate_relations": 0,
+    "self_relations": 0,
+    "draft_relations": 80,
+    "validated_relations": 0,
+    "approved_relations": 0,
+    "rejected_relations": 0
+  },
+  "prerequisite_graph": {
+    "prerequisite_nodes": 11,
+    "prerequisite_edges": 7,
+    "root_nodes_count": 4,
+    "leaf_nodes_count": 5,
+    "isolated_nodes_count": 100,
+    "cycle_count": 0,
+    "dag_valid": true
+  },
+  "learning_objective_coverage": {
+    "total_learning_objectives": 0,
+    "mapped_learning_objectives": 0,
+    "lo_coverage_rate": 1.0
+  },
+  "status": "FAILED",
+  "warnings": [
+    "Concepts with source rate (0.00%) below warning threshold.",
+    "Relations with source chunk rate (0.00%) below warning threshold."
+  ],
+  "failures": [
+    "Invalid relations count (80) exceeds threshold."
+  ]
+}

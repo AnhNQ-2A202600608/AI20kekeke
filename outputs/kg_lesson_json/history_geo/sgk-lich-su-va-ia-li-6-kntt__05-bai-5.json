@@ -1,0 +1,206 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Chương 1",
+    "lesson": "Bài 5"
+  },
+  "learning_objectives": [
+    {
+      "code": "mo-ta-giai-doan-xa-hoi-nguyen-thuy",
+      "description": "Mô tả được sơ lược các giai đoạn tiến triển của xã hội nguyên thuỷ.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c015",
+      "evidence": ""
+    },
+    {
+      "code": "tinh-bay-net-chinh-doi-song-nguyen-thuy",
+      "description": "Tính bày được những nét chính về đời sống vật chất, tinh thần và tổ chức xã hội của người nguyên thuỷ.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c015",
+      "evidence": ""
+    },
+    {
+      "code": "nhan-biet-vai-tro-lao-dong",
+      "description": "Nhận biết được vai trò của lao động đối với quá trình phát triển của người nguyên thuỷ cũng như xã hội loài người.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c015",
+      "evidence": ""
+    },
+    {
+      "code": "doi-song-nguoi-nguyen-thuy-viet-nam",
+      "description": "Nêu được đôi nét về đời sống của người nguyên thuỷ trên đất nước Việt Nam.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c015",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "xa-hoi-nguyen-thuy",
+      "name": "Xã hội nguyên thuỷ",
+      "description": "Giai đoạn đầu của xã hội loài người, kéo dài hàng triệu năm, trải qua hai giai đoạn: bầy người nguyên thuỷ và công xã thị tộc.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c015",
+        "sgk-lich-su-va-ia-li-6-kntt-c016",
+        "sgk-lich-su-va-ia-li-6-kntt-c017",
+        "sgk-lich-su-va-ia-li-6-kntt-c018"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "nguoi-toi-co",
+      "name": "Người tối cổ",
+      "description": "Loại người thuộc giai đoạn đầu của xã hội nguyên thuỷ, sống trong bầy và có đời sống vật chất đơn giản.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c016"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "nguoi-tinh-khon",
+      "name": "Người tinh khôn",
+      "description": "Loại người thuộc giai đoạn sau của xã hội nguyên thuỷ, có đời sống vật chất và tinh thần phát triển hơn.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c016"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "cong-xa-thi-toc",
+      "name": "Công xã thị tộc",
+      "description": "Hình thức tổ chức xã hội của người nguyên thuỷ, gồm nhiều thế hệ có cùng dòng máu, làm chung và hưởng chung.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c016"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "doi-song-vat-chat-nguyen-thuy",
+      "name": "Đời sống vật chất của người nguyên thuỷ",
+      "description": "Đời sống của người nguyên thuỷ chủ yếu dựa vào săn bắt, hái lượm và dần biết trồng trọt, chăn nuôi.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c016",
+        "sgk-lich-su-va-ia-li-6-kntt-c017"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c6",
+      "suggested_code": "doi-song-tinh-than-nguyen-thuy",
+      "name": "Đời sống tinh thần của người nguyên thuỷ",
+      "description": "Người nguyên thuỷ có đời sống tinh thần phong phú, biết làm đồ trang sức, vẽ tranh và có tục chôn người chết.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c016",
+        "sgk-lich-su-va-ia-li-6-kntt-c017"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c7",
+      "suggested_code": "lao-dong-nguyen-thuy",
+      "name": "Lao động của người nguyên thuỷ",
+      "description": "Lao động là yếu tố quan trọng giúp người nguyên thuỷ cải biến và hoàn thiện bản thân, nâng cao đời sống.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c017"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c8",
+      "suggested_code": "van-hoa-hoa-binh",
+      "name": "Văn hoá Hoà Bình",
+      "description": "Văn hoá của người nguyên thuỷ ở Việt Nam, nổi bật với các công cụ đá và dấu vết của nông nghiệp.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c017"
+      ],
+      "evidence": []
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "prerequisite_of",
+      "target": "c2",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c016",
+      "evidence": "",
+      "confidence": 0.9
+    },
+    {
+      "source": "c1",
+      "relation_type": "prerequisite_of",
+      "target": "c3",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c016",
+      "evidence": "",
+      "confidence": 0.9
+    },
+    {
+      "source": "c1",
+      "relation_type": "prerequisite_of",
+      "target": "c4",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c016",
+      "evidence": "",
+      "confidence": 0.9
+    },
+    {
+      "source": "c1",
+      "relation_type": "prerequisite_of",
+      "target": "c5",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c016",
+      "evidence": "",
+      "confidence": 0.9
+    },
+    {
+      "source": "c1",
+      "relation_type": "prerequisite_of",
+      "target": "c6",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c016",
+      "evidence": "",
+      "confidence": 0.9
+    },
+    {
+      "source": "c1",
+      "relation_type": "prerequisite_of",
+      "target": "c7",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c017",
+      "evidence": "",
+      "confidence": 0.9
+    },
+    {
+      "source": "c1",
+      "relation_type": "prerequisite_of",
+      "target": "c8",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c017",
+      "evidence": "",
+      "confidence": 0.9
+    }
+  ],
+  "misconceptions": []
+}

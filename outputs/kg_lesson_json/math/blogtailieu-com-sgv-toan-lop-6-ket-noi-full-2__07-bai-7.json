@@ -1,0 +1,76 @@
+{
+  "concepts": [
+    {
+      "code": "thu-tu-thuc-hien-cac-phep-tinh",
+      "name": "Thứ tự thực hiện các phép tính",
+      "description": "Quy tắc về thứ tự thực hiện các phép tính trong biểu thức",
+      "grade": null,
+      "source_page": 47
+    },
+    {
+      "code": "khai-niem-bieu-thuc",
+      "name": "Khái niệm biểu thức",
+      "description": "Khái niệm biểu thức và giá trị của biểu thức",
+      "grade": null,
+      "source_page": 47
+    },
+    {
+      "code": "tinh-chat-cua-phep-tinh",
+      "name": "Tính chất của phép tính",
+      "description": "Tính chất giao hoán, kết hợp, phân phối của phép tính",
+      "grade": null,
+      "source_page": 48
+    },
+    {
+      "code": "dau-hieu-chia-het",
+      "name": "Dấu hiệu chia hết",
+      "description": "Dấu hiệu chia hết cho 2, 3, 5, 9",
+      "grade": null,
+      "source_page": 49
+    },
+    {
+      "code": "so-nguyen-to",
+      "name": "Số nguyên tố",
+      "description": "Khái niệm số nguyên tố và hợp số",
+      "grade": null,
+      "source_page": 51
+    },
+    {
+      "code": "uo-chung-va-bcnn",
+      "name": "Ước chung và bội chung nhỏ nhất",
+      "description": "Khái niệm ước chung, ước chung lớn nhất và bội chung nhỏ nhất",
+      "grade": null,
+      "source_page": 51
+    }
+  ],
+  "relations": [
+    {
+      "source": "thu-tu-thuc-hien-cac-phep-tinh",
+      "relation": "Used_for",
+      "target": "khai-niem-bieu-thuc",
+      "evidence": "Thứ tự thực hiện các phép tính được sử dụng để tính giá trị của biểu thức",
+      "source_page": 47
+    },
+    {
+      "source": "tinh-chat-cua-phep-tinh",
+      "relation": "Part_of",
+      "target": "thu-tu-thuc-hien-cac-phep-tinh",
+      "evidence": "Tính chất của phép tính là một phần của thứ tự thực hiện các phép tính",
+      "source_page": 48
+    },
+    {
+      "source": "dau-hieu-chia-het",
+      "relation": "Used_for",
+      "target": "so-nguyen-to",
+      "evidence": "Dấu hiệu chia hết được sử dụng để xác định số nguyên tố",
+      "source_page": 49
+    },
+    {
+      "source": "so-nguyen-to",
+      "relation": "Part_of",
+      "target": "uo-chung-va-bcnn",
+      "evidence": "Số nguyên tố là một phần của ước chung và bội chung nhỏ nhất",
+      "source_page": 51
+    }
+  ]
+}

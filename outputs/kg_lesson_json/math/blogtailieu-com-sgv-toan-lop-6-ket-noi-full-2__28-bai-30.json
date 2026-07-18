@@ -1,0 +1,45 @@
+{
+  "document": {
+    "document_id": "math-k6-sgv",
+    "source_type": "SGV",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Bài 30",
+    "lesson": "Làm tròn và ước lượng"
+  },
+  "learning_objectives": [
+    {
+      "code": "nhan-biet-lam-tron-so",
+      "description": "Nhận biết được thế nào là làm tròn số; làm tròn số thập phân đến một hàng nào đấy.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận biết được thế nào là làm tròn số; làm tròn số thập phân đến một hàng nào đấy."
+    },
+    {
+      "code": "nhan-biet-uoc-luong",
+      "description": "Nhận biết được thế nào là ước lượng kết quả một phép đo, phép tính; ước lượng dùng làm gì.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận biết được thế nào là ước lượng kết quả một phép đo, phép tính; ước lượng dùng làm gì."
+    },
+    {
+      "code": "lam-tron-so-thap-phan",
+      "description": "Làm tròn được một số thập phân đến một hàng đã chọn.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Làm tròn được một số thập phân đến một hàng đã chọn."
+    },
+    {
+      "code": "uoc-luong-ket-qua",
+      "description": "Ước lượng được kết quả một phép tính để đoán nhận tính hợp lí của kết quả đó.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Ước lượng được kết quả một phép tính để đoán nhận tính hợp lí của kết quả đó."
+    },
+    {
+      "code": "giai-bai-toan-thuc-tien",
+      "description": "Giải được một số bài toán có nội dung thực tiễn.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Giải được một số bài toán có nội dung thực tiễn."
+    }
+  ],
+  "concepts": [],
+  "relations": [],
+  "misconceptions": []
+}

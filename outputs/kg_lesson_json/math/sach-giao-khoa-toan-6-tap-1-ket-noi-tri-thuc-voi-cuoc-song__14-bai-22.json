@@ -1,0 +1,124 @@
+{
+  "document": {
+    "document_id": "math-k6-sgk",
+    "source_type": "SGK",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 1",
+    "lesson": "Bài 22"
+  },
+  "learning_objectives": [],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "hinh-co-tam-doi-xung",
+      "name": "Hình có tâm đối xứng",
+      "description": "Hình có một điểm O, mà khi quay hình đó xung quanh điểm O đúng một nửa vòng thì hình thu được chồng khít với chính nó ở vị trí ban đầu.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c114",
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c115"
+      ],
+      "evidence": [
+        "Nhưng hình như thế được gọi là hình có tâm đối xứng và điểm O được gọi là tâm đối xứng của hình."
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "tam-doi-xung",
+      "name": "Tâm đối xứng",
+      "description": "Điểm O mà khi quay hình đó xung quanh điểm O đúng một nửa vòng thì hình thu được chồng khít với chính nó.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c115"
+      ],
+      "evidence": [
+        "Mỗi hình có một điểm O, mà khi quay hình đó xung quanh điểm O đúng một nửa vòng thì hình thu được chồng khít với chính nó ở vị trí ban đầu."
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "nhan-biet-hinh-co-tam-doi-xung",
+      "name": "Nhận biết hình có tâm đối xứng",
+      "description": "Kỹ năng nhận biết các hình có tâm đối xứng trong thực tế.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c114"
+      ],
+      "evidence": [
+        "Nhận biết hình có tâm đối xứng."
+      ]
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "nhan-biet-tam-doi-xung",
+      "name": "Nhận biết tâm đối xứng",
+      "description": "Kỹ năng xác định tâm đối xứng của một số hình đơn giản.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c114"
+      ],
+      "evidence": [
+        "Nhận biết tâm đối xứng của một số hình đơn giản."
+      ]
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "gap-giay-cat-hinh-co-tam-doi-xung",
+      "name": "Gấp giấy để cắt hình có tâm đối xứng",
+      "description": "Kỹ năng gấp giấy để tạo ra hình có tâm đối xứng.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c114"
+      ],
+      "evidence": [
+        "Gấp giấy để cắt được một số hoa văn trang trí hoặc một số hình có tâm đối xứng đơn giản."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "is_a",
+      "target": "c2",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c115",
+      "evidence": "Nhưng hình như thế được gọi là hình có tâm đối xứng và điểm O được gọi là tâm đối xứng của hình.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c3",
+      "relation_type": "prerequisite_of",
+      "target": "c1",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c114",
+      "evidence": "Nhận biết hình có tâm đối xứng.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c4",
+      "relation_type": "prerequisite_of",
+      "target": "c2",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c115",
+      "evidence": "Nhận biết tâm đối xứng của một số hình đơn giản.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c5",
+      "relation_type": "used_for",
+      "target": "c1",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c114",
+      "evidence": "Gấp giấy để cắt được một số hoa văn trang trí hoặc một số hình có tâm đối xứng đơn giản.",
+      "confidence": 1.0
+    }
+  ],
+  "misconceptions": []
+}

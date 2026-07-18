@@ -1,0 +1,104 @@
+{
+  "concepts": [
+    {
+      "code": "dinh-nghia-don-thuc",
+      "name": "Định nghĩa đơn thức",
+      "description": "Khái niệm đơn thức, nhận biết qua đặc điểm không chứa phép cộng và phép trừ.",
+      "grade": 8,
+      "source_page": 30
+    },
+    {
+      "code": "don-thuc-thu-gon",
+      "name": "Đơn thức thu gọn",
+      "description": "Khái niệm đơn thức thu gọn, là đơn thức đã được rút gọn.",
+      "grade": 8,
+      "source_page": 30
+    },
+    {
+      "code": "he-so-cua-don-thuc",
+      "name": "Hệ số của đơn thức",
+      "description": "Phần số đứng trước phần biến trong đơn thức.",
+      "grade": 8,
+      "source_page": 30
+    },
+    {
+      "code": "phan-bien-cua-don-thuc",
+      "name": "Phần biến của đơn thức",
+      "description": "Phần chứa các biến trong đơn thức.",
+      "grade": 8,
+      "source_page": 30
+    },
+    {
+      "code": "bac-cua-don-thuc",
+      "name": "Bậc của đơn thức",
+      "description": "Tổng số mũ của các biến trong đơn thức.",
+      "grade": 8,
+      "source_page": 30
+    },
+    {
+      "code": "don-thuc-dong-dang",
+      "name": "Đơn thức đồng dạng",
+      "description": "Các đơn thức có cùng phần biến.",
+      "grade": 8,
+      "source_page": 30
+    },
+    {
+      "code": "thu-gon-don-thuc",
+      "name": "Thu gọn đơn thức",
+      "description": "Kỹ năng rút gọn một đơn thức cho trước.",
+      "grade": 8,
+      "source_page": 30
+    },
+    {
+      "code": "cong-tru-don-thuc-dong-dang",
+      "name": "Cộng và trừ đơn thức đồng dạng",
+      "description": "Kỹ năng cộng và trừ hai đơn thức đồng dạng cho trước.",
+      "grade": 8,
+      "source_page": 30
+    }
+  ],
+  "relations": [
+    {
+      "source": "dinh-nghia-don-thuc",
+      "relation": "Part_of",
+      "target": "don-thuc-thu-gon",
+      "evidence": "Nhận biết được đơn thức, đơn thức thu gọn, hệ số, phần biến và bậc của đơn thức.",
+      "source_page": 30
+    },
+    {
+      "source": "dinh-nghia-don-thuc",
+      "relation": "Part_of",
+      "target": "he-so-cua-don-thuc",
+      "evidence": "Nhận biết được đơn thức, đơn thức thu gọn, hệ số, phần biến và bậc của đơn thức.",
+      "source_page": 30
+    },
+    {
+      "source": "dinh-nghia-don-thuc",
+      "relation": "Part_of",
+      "target": "phan-bien-cua-don-thuc",
+      "evidence": "Nhận biết được đơn thức, đơn thức thu gọn, hệ số, phần biến và bậc của đơn thức.",
+      "source_page": 30
+    },
+    {
+      "source": "dinh-nghia-don-thuc",
+      "relation": "Part_of",
+      "target": "bac-cua-don-thuc",
+      "evidence": "Nhận biết được đơn thức, đơn thức thu gọn, hệ số, phần biến và bậc của đơn thức.",
+      "source_page": 30
+    },
+    {
+      "source": "don-thuc-thu-gon",
+      "relation": "Prerequisite_of",
+      "target": "thu-gon-don-thuc",
+      "evidence": "Thu gọn một đơn thức cho trước.",
+      "source_page": 30
+    },
+    {
+      "source": "don-thuc-dong-dang",
+      "relation": "Prerequisite_of",
+      "target": "cong-tru-don-thuc-dong-dang",
+      "evidence": "Cộng và trừ hai đơn thức đồng dạng cho trước.",
+      "source_page": 30
+    }
+  ]
+}

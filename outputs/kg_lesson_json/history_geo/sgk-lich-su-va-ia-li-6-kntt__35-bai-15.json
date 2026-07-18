@@ -1,0 +1,157 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Chương 15",
+    "lesson": "Bài 15"
+  },
+  "learning_objectives": [
+    {
+      "code": "hieu-vai-tro-cua-khi-quyen",
+      "description": "Hiểu được vai trò của oxy, hơi nước và khí carbonic trong khí quyển.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c163",
+      "evidence": ""
+    },
+    {
+      "code": "mo-ta-cac-tang-khi-quyen",
+      "description": "Mô tả được các tầng khí quyển, đặc điểm chính của tầng đối lưu và tầng bình lưu.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c163",
+      "evidence": ""
+    },
+    {
+      "code": "ke-ten-cac-khoi-khi",
+      "description": "Kể được tên và nêu được đặc điểm về nhiệt độ, độ ẩm của một số khối khí.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c163",
+      "evidence": ""
+    },
+    {
+      "code": "trinh-bay-su-phan-bo-cac-dai-khi-ap",
+      "description": "Trình bày được sự phân bố các đai khí áp và các loại gió thổi thường xuyên trên Trái Đất.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c163",
+      "evidence": ""
+    },
+    {
+      "code": "su-dung-khi-ap-ke",
+      "description": "Biết cách sử dụng khí áp kế.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c163",
+      "evidence": ""
+    },
+    {
+      "code": "bao-ve-bau-khi-quyen",
+      "description": "Có ý thức bảo vệ bầu khí quyển và lớp ô-dôn.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c163",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "thanh-phan-khong-khi",
+      "name": "Thành phần không khí",
+      "description": "Thành phần của không khí gần bề mặt đất chủ yếu là các khí: nitơ, oxy, hơi nước và các khí khác.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c163",
+        "sgk-lich-su-va-ia-li-6-kntt-c164"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "cac-tang-khi-quyen",
+      "name": "Các tầng khí quyển",
+      "description": "Khí quyển được chia thành: tầng đối lưu, tầng bình lưu và các tầng cao của khí quyển.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c163",
+        "sgk-lich-su-va-ia-li-6-kntt-c164"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "khong-khi",
+      "name": "Khối khí",
+      "description": "Khối khí có đặc tính khác nhau về nhiệt độ và độ ẩm, hình thành từ các vùng khác nhau của bề mặt Trái Đất.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c164"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "khi-ap",
+      "name": "Khí áp",
+      "description": "Sức ép của khí quyển lên một đơn vị diện tích trên mặt đất, được gọi là khí áp bề mặt Trái Đất.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c165"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "gio",
+      "name": "Gió",
+      "description": "Sự chuyển động của không khí từ nơi khí áp cao về nơi khí áp thấp.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c166"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c6",
+      "suggested_code": "khai-thac-khi-ap",
+      "name": "Khí áp kế",
+      "description": "Thiết bị dùng để đo khí áp, đơn vị đo khí áp là mb.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c165"
+      ],
+      "evidence": []
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "related_to",
+      "target": "c2",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c163",
+      "evidence": "",
+      "confidence": 0.9
+    },
+    {
+      "source": "c2",
+      "relation_type": "related_to",
+      "target": "c3",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c164",
+      "evidence": "",
+      "confidence": 0.9
+    },
+    {
+      "source": "c4",
+      "relation_type": "related_to",
+      "target": "c5",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c166",
+      "evidence": "",
+      "confidence": 0.9
+    }
+  ],
+  "misconceptions": []
+}

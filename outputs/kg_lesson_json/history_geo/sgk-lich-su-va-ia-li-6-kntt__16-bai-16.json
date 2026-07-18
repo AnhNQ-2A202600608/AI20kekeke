@@ -1,0 +1,138 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Chương 2",
+    "lesson": "Bài 16"
+  },
+  "learning_objectives": [
+    {
+      "code": "lap-so-do-cac-cuoc-khoi-nghia",
+      "description": "Lập được sơ đồ về các cuộc khởi nghĩa tiêu biểu giành độc lập thời kì Bắc thuộc trước thế kỉ X.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c077",
+      "evidence": ""
+    },
+    {
+      "code": "trinh-bay-net-chinh-nguyen-nhan-khoi-nghia",
+      "description": "Trình bày được những nét chính, giải thích được nguyên nhân của các cuộc khởi nghĩa tiêu biểu.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c077",
+      "evidence": ""
+    },
+    {
+      "code": "neu-ket-qua-y-nghia-khoi-nghia",
+      "description": "Nêu được kết quả và ý nghĩa lịch sử của các cuộc khởi nghĩa tiêu biểu trong thời kì Bắc thuộc trước thế kỉ X.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c077",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "khoi-nghia-hai-ba-trung",
+      "name": "Khởi nghĩa Hai Bà Trưng",
+      "description": "Cuộc khởi nghĩa do Hai Bà Trưng lãnh đạo nhằm giành lại quyền tự chủ cho dân tộc Việt Nam.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c077",
+        "sgk-lich-su-va-ia-li-6-kntt-c078",
+        "sgk-lich-su-va-ia-li-6-kntt-c079"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "khoi-nghia-ba-trieu",
+      "name": "Khởi nghĩa Bà Triệu",
+      "description": "Cuộc khởi nghĩa do Bà Triệu lãnh đạo chống lại chính quyền đô hộ nhà Ngô.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c079",
+        "sgk-lich-su-va-ia-li-6-kntt-c080"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "khoi-nghia-ly-bi",
+      "name": "Khởi nghĩa Lý Bí",
+      "description": "Cuộc khởi nghĩa do Lý Bí lãnh đạo, thành lập nước Vạn Xuân.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c080",
+        "sgk-lich-su-va-ia-li-6-kntt-c081"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "khoi-nghia-mai-thuc-loan",
+      "name": "Khởi nghĩa Mai Thúc Loan",
+      "description": "Cuộc khởi nghĩa do Mai Thúc Loan lãnh đạo, giành và giữ chính quyền độc lập trong khoảng gần 10 năm.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c081",
+        "sgk-lich-su-va-ia-li-6-kntt-c082"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "khoi-nghia-phung-hung",
+      "name": "Khởi nghĩa Phùng Hưng",
+      "description": "Cuộc khởi nghĩa do Phùng Hưng lãnh đạo, khẳng định quyết tâm giành lại độc lập của người Việt.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c082",
+        "sgk-lich-su-va-ia-li-6-kntt-c083"
+      ],
+      "evidence": []
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "causes",
+      "target": "c2",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c079",
+      "evidence": "Cuộc khởi nghĩa Hai Bà Trưng đã chứng tỏ tinh thần đấu tranh bất khuất của người Việt, tạo tiền đề cho việc khôi phục nền độc lập, tự chủ của dân tộc sau này.",
+      "confidence": 0.9
+    },
+    {
+      "source": "c2",
+      "relation_type": "causes",
+      "target": "c3",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c080",
+      "evidence": "Cuộc khởi nghĩa Bà Triệu không chỉ làm rung chuyển chính quyền đô hộ mà còn góp phần thức tỉnh ý thức dân tộc, tạo đà cho cuộc khởi nghĩa của Lý Bí sau này.",
+      "confidence": 0.9
+    },
+    {
+      "source": "c3",
+      "relation_type": "causes",
+      "target": "c4",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c081",
+      "evidence": "Cuộc khởi nghĩa Lý Bí đã lãnh đạo cuộc khởi nghĩa nhằm chống lại chế độ cai trị khắc nghiệt của nhà Lương.",
+      "confidence": 0.9
+    },
+    {
+      "source": "c4",
+      "relation_type": "causes",
+      "target": "c5",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c083",
+      "evidence": "Cuộc khởi nghĩa Mai Thúc Loan đã giành và giữ chính quyền độc lập trong khoảng gần 10 năm, mở đường cho những thắng lợi to lớn về sau.",
+      "confidence": 0.9
+    }
+  ],
+  "misconceptions": []
+}

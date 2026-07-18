@@ -1,0 +1,161 @@
+{
+  "document": {
+    "document_id": "math-k6-sgk",
+    "source_type": "SGK",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 2",
+    "lesson": "Bài 23"
+  },
+  "learning_objectives": [],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "phan-so",
+      "name": "Phân số",
+      "description": "Khái niệm về phân số trong toán học.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c000"
+      ],
+      "evidence": [
+        "Người ta cũng gọi $-\\frac{2}{5}$ là phân số (đọc là \"âm hai phần năm\") và coi $-\\frac{2}{5}$ là kết quả của phép chia $-2$ cho $5$."
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "tu-so-mau-so",
+      "name": "Tử số và mẫu số",
+      "description": "Tử số là phần trên của phân số, mẫu số là phần dưới của phân số.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c000"
+      ],
+      "evidence": [
+        "Với $a, b \\in \\mathbb{Z}, b \\neq 0$, ta gọi $\\frac{a}{b}$ là một phân số, trong đó $a$ là tử số (tử) và $b$ là mẫu số (mẫu) của phân số."
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "phan-so-bang-nhau",
+      "name": "Phân số bằng nhau",
+      "description": "Hai phân số được coi là bằng nhau nếu chúng có cùng giá trị.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c001"
+      ],
+      "evidence": [
+        "Hai phân số bằng nhau có cùng giá trị."
+      ]
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "rut-gon-phan-so",
+      "name": "Rút gọn phân số",
+      "description": "Quá trình làm cho phân số trở nên đơn giản hơn bằng cách chia cả tử và mẫu cho ước chung.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c002"
+      ],
+      "evidence": [
+        "Người ta thường dùng tính chất 2 để rút gọn phân số."
+      ]
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "tinh-chat-phan-so",
+      "name": "Tính chất cơ bản của phân số",
+      "description": "Các quy tắc cơ bản liên quan đến phân số, như nhân và chia tử và mẫu.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c002"
+      ],
+      "evidence": [
+        "Nếu nhân cả tử và mẫu của một phân số với cùng một số nguyên khác 0 thì ta được một phân số bằng phân số đã cho."
+      ]
+    },
+    {
+      "temporary_id": "c6",
+      "suggested_code": "phan-so-toi-gian",
+      "name": "Phân số tối giản",
+      "description": "Phân số không thể rút gọn thêm nữa vì tử và mẫu không có ước chung nào khác 1 và -1.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c003"
+      ],
+      "evidence": [
+        "Chúng được gọi là các phân số tối giản."
+      ]
+    },
+    {
+      "temporary_id": "c7",
+      "suggested_code": "quy-tac-bang-nhau",
+      "name": "Quy tắc bằng nhau của hai phân số",
+      "description": "Quy tắc xác định hai phân số bằng nhau dựa trên tích của tử và mẫu.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c001"
+      ],
+      "evidence": [
+        "$\\frac{a}{b} = \\frac{c}{d} \\text{ nếu } a \\cdot d = b \\cdot c.$"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "is_a",
+      "target": "c2",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c000",
+      "evidence": "Với $a, b \\in \\mathbb{Z}, b \\neq 0$, ta gọi $\\frac{a}{b}$ là một phân số, trong đó $a$ là tử số (tử) và $b$ là mẫu số (mẫu) của phân số.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c3",
+      "relation_type": "prerequisite_of",
+      "target": "c4",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c001",
+      "evidence": "Hai phân số bằng nhau có cùng giá trị.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c4",
+      "relation_type": "used_for",
+      "target": "c5",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c002",
+      "evidence": "Người ta thường dùng tính chất 2 để rút gọn phân số.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c5",
+      "relation_type": "related_to",
+      "target": "c6",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c003",
+      "evidence": "Chúng được gọi là các phân số tối giản.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c7",
+      "relation_type": "prerequisite_of",
+      "target": "c3",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c001",
+      "evidence": "Quy tắc bằng nhau của hai phân số.",
+      "confidence": 1.0
+    }
+  ],
+  "misconceptions": []
+}

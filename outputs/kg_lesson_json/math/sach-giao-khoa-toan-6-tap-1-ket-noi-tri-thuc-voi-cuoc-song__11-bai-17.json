@@ -1,0 +1,123 @@
+{
+  "document": {
+    "document_id": "math-k6-sgk",
+    "source_type": "SGK",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 3",
+    "lesson": "Bài 17"
+  },
+  "learning_objectives": [],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "phep-chia-het",
+      "name": "Phép chia hết",
+      "description": "Khái niệm về phép chia hết giữa hai số nguyên.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c091"
+      ],
+      "evidence": [
+        "Nếu có số nguyên q sao cho a = bq thì có phép chia hết a : b = q."
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "uoc",
+      "name": "Ước",
+      "description": "Khái niệm về ước của một số nguyên.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c091"
+      ],
+      "evidence": [
+        "Khi a : b (a, b ∈ ℤ, b ≠ 0), ta còn gọi b là một ước của a."
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "boi",
+      "name": "Bội",
+      "description": "Khái niệm về bội của một số nguyên.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c091"
+      ],
+      "evidence": [
+        "Khi a : b (a, b ∈ ℤ, b ≠ 0), ta còn gọi a là một bội của b."
+      ]
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "nhan-biet-uoc-boi",
+      "name": "Nhận biết ước và bội",
+      "description": "Kỹ năng nhận biết và tìm ước, bội của một số nguyên.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c091"
+      ],
+      "evidence": [
+        "Nhận biết, tìm ước và bội của một số nguyên."
+      ]
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "thuc-hien-phep-chia-het",
+      "name": "Thực hiện phép chia hết",
+      "description": "Kỹ năng thực hiện phép chia hết đối với số nguyên.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c091"
+      ],
+      "evidence": [
+        "Thực hiện phép chia hết đối với số nguyên."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "is_a",
+      "target": "c4",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c091",
+      "evidence": "Nhận biết, tìm ước và bội của một số nguyên.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c2",
+      "relation_type": "part_of",
+      "target": "c3",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c092",
+      "evidence": "Tìm các ước của 4 và các ước của 6.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c3",
+      "relation_type": "part_of",
+      "target": "c2",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c092",
+      "evidence": "Tìm các bội của 7.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c4",
+      "relation_type": "prerequisite_of",
+      "target": "c5",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c091",
+      "evidence": "Thực hiện phép chia hết đối với số nguyên.",
+      "confidence": 1.0
+    }
+  ],
+  "misconceptions": []
+}

@@ -1,0 +1,535 @@
+{
+  "merged": [
+    {
+      "merged_from": [
+        "so-sanh-phan-so-khong-cung-mau"
+      ],
+      "merged_into": "so-sanh-phan-so-cung-mau",
+      "reason": "high_similarity_match_0.86",
+      "confidence": 0.8571428571428571
+    },
+    {
+      "merged_from": [
+        "viet-hon-so-thanh-phan-so"
+      ],
+      "merged_into": "viet-phan-so-thanh-hon-so",
+      "reason": "high_similarity_match_1.00",
+      "confidence": 1.0
+    },
+    {
+      "merged_from": [
+        "cong-hai-phan-so-khong-cung-mau"
+      ],
+      "merged_into": "cong-hai-phan-so-cung-mau",
+      "reason": "high_similarity_match_0.86",
+      "confidence": 0.8571428571428571
+    },
+    {
+      "merged_from": [
+        "tru-hai-phan-so-khong-cung-mau"
+      ],
+      "merged_into": "tru-hai-phan-so-cung-mau",
+      "reason": "high_similarity_match_0.86",
+      "confidence": 0.8571428571428571
+    },
+    {
+      "merged_from": [
+        "so-thap-phan"
+      ],
+      "merged_into": "phan-so-thap-phan",
+      "reason": "high_similarity_match_1.00",
+      "confidence": 1.0
+    }
+  ],
+  "not_merged": [
+    "phan-so",
+    "tu-so",
+    "mau-so",
+    "phan-so-bang-nhau",
+    "quy-tac-bang-nhau-cua-phan-so",
+    "tinh-chat-co-ban-cua-phan-so",
+    "rut-gon-phan-so",
+    "phan-so-toi-gian",
+    "quy-dong-mau-nhieu-phan-so",
+    "so-sanh-phan-so-cung-mau",
+    "nhan-biet-hon-so-duong",
+    "viet-phan-so-thanh-hon-so",
+    "cong-hai-phan-so-cung-mau",
+    "so-doi-cua-phan-so",
+    "tinh-chat-giao-hoan-cua-phep-cong-phan-so",
+    "tinh-chat-ket-hop-cua-phep-cong-phan-so",
+    "tru-hai-phan-so-cung-mau",
+    "cong-phan-so-voi-so-doi",
+    "phep-nhan-phan-so",
+    "phep-chia-phan-so",
+    "phan-so-nghich-dao",
+    "tinh-chat-giao-hoan-phep-nhan-phan-so",
+    "tinh-chat-ket-hop-phep-nhan-phan-so",
+    "tinh-chat-phan-phoi-phep-nhan-phan-so",
+    "tim-gia-tri-phan-so-cua-mot-so",
+    "tim-mot-so-biet-gia-tri-phan-so-cua-no",
+    "phan-so-thap-phan",
+    "so-thap-phan-am",
+    "so-doi",
+    "so-sanh-hai-so-thap-phan",
+    "phep-cong-so-thap-phan",
+    "phep-tru-so-thap-phan",
+    "phep-nhan-so-thap-phan",
+    "phep-chia-so-thap-phan",
+    "cong-hai-so-thap-phan-am",
+    "cong-hai-so-thap-phan-khac-dau",
+    "tru-hai-so-thap-phan",
+    "nhan-hai-so-thap-phan-cung-dau",
+    "nhan-hai-so-thap-phan-khac-dau",
+    "chia-hai-so-thap-phan-cung-dau",
+    "chia-hai-so-thap-phan-khac-dau",
+    "tinh-gia-tri-bieu-thuc-voi-so-thap-phan",
+    "lam-tron-so-thap-phan",
+    "uoc-luong-ket-qua",
+    "lam-tron-so-thap-phan-am",
+    "ti-so",
+    "ti-so-phan-tram",
+    "tinh-ti-so",
+    "tinh-ti-so-phan-tram",
+    "tim-gia-tri-phan-tram",
+    "tim-so-khi-biet-gia-tri-phan-tram",
+    "diem-thuoc-duong-thang",
+    "duong-thang-qua-hai-diem-phan-biet",
+    "ba-diem-thang-hang",
+    "hai-duong-thang-song-song",
+    "hai-duong-thang-cat-nhau",
+    "hai-duong-thang-trung-nhau",
+    "diem-nam-giua-hai-diem",
+    "hai-diem-nam-cung-phia",
+    "hai-diem-nam-khac-phia",
+    "khai-niem-tia",
+    "hai-tia-doi-nhau",
+    "doan-thang",
+    "dau-mut-doan-thang",
+    "do-dai-doan-thang",
+    "don-vi-do-dai",
+    "so-sanh-do-dai-doan-thang",
+    "trung-diem-doan-thang",
+    "nhan-biet-trung-diem",
+    "giai-bai-toan-trung-diem",
+    "goc",
+    "dinh-cua-goc",
+    "canh-cua-goc",
+    "goc-bet",
+    "diem-trong-cua-goc",
+    "so-do-goc",
+    "goc-vuong",
+    "goc-nhon",
+    "goc-tu",
+    "do-goc-bang-thuoc",
+    "so-sanh-goc",
+    "du-lieu-thong-ke",
+    "phan-loai-du-lieu",
+    "du-lieu-la-so-lieu",
+    "du-lieu-khong-phai-so-lieu",
+    "du-lieu-hop-li",
+    "thu-thap-du-lieu-thong-ke",
+    "bang-thong-ke",
+    "bieu-do-tranh",
+    "doc-du-lieu-tu-bang-thong-ke",
+    "phan-tich-du-lieu-tu-bang-thong-ke",
+    "doc-du-lieu-tu-bieu-do-tranh",
+    "phan-tich-du-lieu-tu-bieu-do-tranh",
+    "bieu-dien-du-lieu-vao-bang-thong-ke",
+    "bieu-dien-du-lieu-vao-bieu-do-tranh",
+    "bieu-do-cot",
+    "ve-bieu-do-cot",
+    "doc-bieu-do-cot",
+    "phan-tich-bieu-do-cot",
+    "bieu-do-cot-kep",
+    "ve-bieu-do-cot-kep",
+    "doc-du-lieu-bieu-do-cot-kep",
+    "phan-tich-so-lieu-bieu-do-cot-kep",
+    "ket-qua-co-the",
+    "su-kien",
+    "liet-ke-ket-qua-co-the",
+    "nhan-biet-su-kien-xay-ra",
+    "xac-suat-thuc-nghiem",
+    "bieu-dien-kha-nang-xay-ra-su-kien",
+    "tinh-xac-suat-thuc-nghiem",
+    "phu-thuoc-vao-so-lan-thuc-hien"
+  ],
+  "needs_review": [
+    {
+      "concept_a": "tru-hai-phan-so-cung-mau",
+      "name_a": "Trừ hai phân số cùng mẫu",
+      "concept_b": "cong-hai-phan-so-cung-mau",
+      "name_b": "Cộng hai phân số cùng mẫu",
+      "similarity": 0.7142857142857143,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "tinh-chat-giao-hoan-phep-nhan-phan-so",
+      "name_a": "Tính chất giao hoán của phép nhân phân số",
+      "concept_b": "tinh-chat-giao-hoan-cua-phep-cong-phan-so",
+      "name_b": "Tính chất giao hoán của phép cộng phân số",
+      "similarity": 0.8,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "tinh-chat-ket-hop-phep-nhan-phan-so",
+      "name_a": "Tính chất kết hợp của phép nhân phân số",
+      "concept_b": "tinh-chat-ket-hop-cua-phep-cong-phan-so",
+      "name_b": "Tính chất kết hợp của phép cộng phân số",
+      "similarity": 0.8,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "tinh-chat-phan-phoi-phep-nhan-phan-so",
+      "name_a": "Tính chất phân phối của phép nhân phân số",
+      "concept_b": "tinh-chat-giao-hoan-phep-nhan-phan-so",
+      "name_b": "Tính chất giao hoán của phép nhân phân số",
+      "similarity": 0.7,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "tinh-chat-phan-phoi-phep-nhan-phan-so",
+      "name_a": "Tính chất phân phối của phép nhân phân số",
+      "concept_b": "tinh-chat-ket-hop-phep-nhan-phan-so",
+      "name_b": "Tính chất kết hợp của phép nhân phân số",
+      "similarity": 0.7,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "tim-mot-so-biet-gia-tri-phan-so-cua-no",
+      "name_a": "Tìm một số biết giá trị phân số của nó",
+      "concept_b": "tim-gia-tri-phan-so-cua-mot-so",
+      "name_b": "Tìm giá trị phân số của một số",
+      "similarity": 0.7777777777777778,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "phan-so-thap-phan",
+      "name_a": "Phân số thập phân",
+      "concept_b": "phan-so",
+      "name_b": "Phân số",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "so-thap-phan",
+      "name_a": "Số thập phân",
+      "concept_b": "phan-so",
+      "name_b": "Phân số",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "so-thap-phan-am",
+      "name_a": "Số thập phân âm",
+      "concept_b": "phan-so-thap-phan",
+      "name_b": "Phân số thập phân",
+      "similarity": 0.75,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "phep-tru-so-thap-phan",
+      "name_a": "Phép trừ số thập phân",
+      "concept_b": "phep-cong-so-thap-phan",
+      "name_b": "Phép cộng số thập phân",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "phep-nhan-so-thap-phan",
+      "name_a": "Phép nhân số thập phân",
+      "concept_b": "phep-nhan-phan-so",
+      "name_b": "Phép nhân phân số",
+      "similarity": 0.8,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "phep-nhan-so-thap-phan",
+      "name_a": "Phép nhân số thập phân",
+      "concept_b": "phep-cong-so-thap-phan",
+      "name_b": "Phép cộng số thập phân",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "phep-nhan-so-thap-phan",
+      "name_a": "Phép nhân số thập phân",
+      "concept_b": "phep-tru-so-thap-phan",
+      "name_b": "Phép trừ số thập phân",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "phep-chia-so-thap-phan",
+      "name_a": "Phép chia số thập phân",
+      "concept_b": "phep-chia-phan-so",
+      "name_b": "Phép chia phân số",
+      "similarity": 0.8,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "phep-chia-so-thap-phan",
+      "name_a": "Phép chia số thập phân",
+      "concept_b": "phep-cong-so-thap-phan",
+      "name_b": "Phép cộng số thập phân",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "phep-chia-so-thap-phan",
+      "name_a": "Phép chia số thập phân",
+      "concept_b": "phep-tru-so-thap-phan",
+      "name_b": "Phép trừ số thập phân",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "phep-chia-so-thap-phan",
+      "name_a": "Phép chia số thập phân",
+      "concept_b": "phep-nhan-so-thap-phan",
+      "name_b": "Phép nhân số thập phân",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "cong-hai-so-thap-phan-am",
+      "name_a": "Cộng hai số thập phân âm",
+      "concept_b": "so-thap-phan-am",
+      "name_b": "Số thập phân âm",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "tru-hai-so-thap-phan",
+      "name_a": "Trừ hai số thập phân",
+      "concept_b": "phep-tru-so-thap-phan",
+      "name_b": "Phép trừ số thập phân",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "nhan-hai-so-thap-phan-khac-dau",
+      "name_a": "Nhân hai số thập phân khác dấu",
+      "concept_b": "cong-hai-so-thap-phan-khac-dau",
+      "name_b": "Cộng hai số thập phân khác dấu",
+      "similarity": 0.75,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "nhan-hai-so-thap-phan-khac-dau",
+      "name_a": "Nhân hai số thập phân khác dấu",
+      "concept_b": "nhan-hai-so-thap-phan-cung-dau",
+      "name_b": "Nhân hai số thập phân cùng dấu",
+      "similarity": 0.75,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "chia-hai-so-thap-phan-cung-dau",
+      "name_a": "Chia hai số thập phân cùng dấu",
+      "concept_b": "nhan-hai-so-thap-phan-cung-dau",
+      "name_b": "Nhân hai số thập phân cùng dấu",
+      "similarity": 0.75,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "chia-hai-so-thap-phan-khac-dau",
+      "name_a": "Chia hai số thập phân khác dấu",
+      "concept_b": "cong-hai-so-thap-phan-khac-dau",
+      "name_b": "Cộng hai số thập phân khác dấu",
+      "similarity": 0.75,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "chia-hai-so-thap-phan-khac-dau",
+      "name_a": "Chia hai số thập phân khác dấu",
+      "concept_b": "nhan-hai-so-thap-phan-khac-dau",
+      "name_b": "Nhân hai số thập phân khác dấu",
+      "similarity": 0.75,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "chia-hai-so-thap-phan-khac-dau",
+      "name_a": "Chia hai số thập phân khác dấu",
+      "concept_b": "chia-hai-so-thap-phan-cung-dau",
+      "name_b": "Chia hai số thập phân cùng dấu",
+      "similarity": 0.75,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "lam-tron-so-thap-phan-am",
+      "name_a": "Làm tròn số thập phân âm",
+      "concept_b": "so-thap-phan-am",
+      "name_b": "Số thập phân âm",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "lam-tron-so-thap-phan-am",
+      "name_a": "Làm tròn số thập phân âm",
+      "concept_b": "lam-tron-so-thap-phan",
+      "name_b": "Làm tròn số thập phân",
+      "similarity": 0.8333333333333334,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "tinh-ti-so",
+      "name_a": "Tính tỉ số",
+      "concept_b": "ti-so",
+      "name_b": "Tỉ số",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "tinh-ti-so-phan-tram",
+      "name_a": "Tính tỉ số phần trăm",
+      "concept_b": "ti-so-phan-tram",
+      "name_b": "Tỉ số phần trăm",
+      "similarity": 0.8,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "tim-gia-tri-phan-tram",
+      "name_a": "Tìm giá trị phần trăm của một số",
+      "concept_b": "tim-gia-tri-phan-so-cua-mot-so",
+      "name_b": "Tìm giá trị phân số của một số",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "tim-so-khi-biet-gia-tri-phan-tram",
+      "name_a": "Tìm một số khi biết giá trị phần trăm của số đó",
+      "concept_b": "tim-gia-tri-phan-tram",
+      "name_b": "Tìm giá trị phần trăm của một số",
+      "similarity": 0.7272727272727273,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "hai-duong-thang-trung-nhau",
+      "name_a": "Hai đường thẳng trùng nhau",
+      "concept_b": "hai-duong-thang-cat-nhau",
+      "name_b": "Hai đường thẳng cắt nhau",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "hai-diem-nam-khac-phia",
+      "name_a": "Hai điểm nằm khác phía",
+      "concept_b": "hai-diem-nam-cung-phia",
+      "name_b": "Hai điểm nằm cùng phía",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "so-sanh-do-dai-doan-thang",
+      "name_a": "So sánh độ dài đoạn thẳng",
+      "concept_b": "do-dai-doan-thang",
+      "name_b": "Độ dài đoạn thẳng",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "nhan-biet-trung-diem",
+      "name_a": "Nhận biết trung điểm của đoạn thẳng",
+      "concept_b": "trung-diem-doan-thang",
+      "name_b": "Trung điểm của đoạn thẳng",
+      "similarity": 0.7142857142857143,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "du-lieu-khong-phai-so-lieu",
+      "name_a": "Dữ liệu không phải là số liệu",
+      "concept_b": "du-lieu-la-so-lieu",
+      "name_b": "Dữ liệu là số liệu",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "thu-thap-du-lieu-thong-ke",
+      "name_a": "Thu thập dữ liệu thống kê",
+      "concept_b": "du-lieu-thong-ke",
+      "name_b": "Dữ liệu thống kê",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "phan-tich-du-lieu-tu-bang-thong-ke",
+      "name_a": "Phân tích dữ liệu từ bảng thống kê",
+      "concept_b": "doc-du-lieu-tu-bang-thong-ke",
+      "name_b": "Đọc dữ liệu từ bảng thống kê",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "phan-tich-du-lieu-tu-bieu-do-tranh",
+      "name_a": "Phân tích dữ liệu từ biểu đồ tranh",
+      "concept_b": "doc-du-lieu-tu-bieu-do-tranh",
+      "name_b": "Đọc dữ liệu từ biểu đồ tranh",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "ve-bieu-do-cot",
+      "name_a": "Vẽ biểu đồ cột",
+      "concept_b": "bieu-do-cot",
+      "name_b": "Biểu đồ cột",
+      "similarity": 0.75,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "doc-bieu-do-cot",
+      "name_a": "Đọc biểu đồ cột",
+      "concept_b": "bieu-do-cot",
+      "name_b": "Biểu đồ cột",
+      "similarity": 0.75,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "bieu-do-cot-kep",
+      "name_a": "Biểu đồ cột kép",
+      "concept_b": "bieu-do-cot",
+      "name_b": "Biểu đồ cột",
+      "similarity": 0.75,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "ve-bieu-do-cot-kep",
+      "name_a": "Vẽ biểu đồ cột kép",
+      "concept_b": "ve-bieu-do-cot",
+      "name_b": "Vẽ biểu đồ cột",
+      "similarity": 0.8,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "ve-bieu-do-cot-kep",
+      "name_a": "Vẽ biểu đồ cột kép",
+      "concept_b": "bieu-do-cot-kep",
+      "name_b": "Biểu đồ cột kép",
+      "similarity": 0.8,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "doc-du-lieu-bieu-do-cot-kep",
+      "name_a": "Đọc dữ liệu từ biểu đồ cột kép",
+      "concept_b": "doc-du-lieu-tu-bieu-do-tranh",
+      "name_b": "Đọc dữ liệu từ biểu đồ tranh",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "liet-ke-ket-qua-co-the",
+      "name_a": "Liệt kê kết quả có thể",
+      "concept_b": "ket-qua-co-the",
+      "name_b": "Kết quả có thể",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "tinh-xac-suat-thuc-nghiem",
+      "name_a": "Tính xác suất thực nghiệm",
+      "concept_b": "xac-suat-thuc-nghiem",
+      "name_b": "Xác suất thực nghiệm",
+      "similarity": 0.8,
+      "reason": "token_similarity_review"
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "document": {
+    "document_id": "math-k6-sgk",
+    "source_type": "SGK",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 1",
+    "lesson": "Bài 1"
+  },
+  "learning_objectives": [],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "tap-hop",
+      "name": "Tập hợp",
+      "description": "Tập hợp là một khái niệm cơ bản trong Toán học, bao gồm những đối tượng nhất định được gọi là phần tử.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c000"
+      ],
+      "evidence": [
+        "Một tập hợp (gọi tắt là tập) bao gồm những đối tượng nhất định. Các đối tượng ấy được gọi là những phần tử của tập hợp."
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "phan-tu-cua-tap-hop",
+      "name": "Phần tử của tập hợp",
+      "description": "Phần tử là các đối tượng thuộc về một tập hợp.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c000"
+      ],
+      "evidence": [
+        "$x$ là một phần tử của tập $A$, ký hiệu là $x \\in A$ (đọc là thuộc $A$)."
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "mo-ta-tap-hop",
+      "name": "Mô tả một tập hợp",
+      "description": "Mô tả một tập hợp là cho biết cách xác định các phần tử của tập hợp đó.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001"
+      ],
+      "evidence": [
+        "Mô tả một tập hợp là cho biết cách xác định các phần tử của tập hợp đó."
+      ]
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "cach-mo-ta-tap-hop",
+      "name": "Cách mô tả tập hợp",
+      "description": "Có hai cách mô tả một tập hợp: liệt kê các phần tử và mô tả bằng dấu hiệu đặc trưng.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001"
+      ],
+      "evidence": [
+        "Ta thường dùng hai cách mô tả tập hợp sau: Liệt kê các phần tử của tập hợp, tức là viết các phần tử của tập hợp trong dấu ngoặc."
+      ]
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "giao-cua-hai-tap-hop",
+      "name": "Giao của hai tập hợp",
+      "description": "Giao của hai tập hợp là tập hợp gồm các phần tử chung của hai tập hợp.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c003"
+      ],
+      "evidence": [
+        "Ta gọi tập $C$ là giao hai tập $A$ và $B$, ký hiệu $C = A \\cap B$."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "part_of",
+      "target": "c2",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c000",
+      "evidence": "Các đối tượng ấy được gọi là những phần tử của tập hợp.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c3",
+      "relation_type": "prerequisite_of",
+      "target": "c4",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001",
+      "evidence": "Mô tả một tập hợp là cho biết cách xác định các phần tử của tập hợp đó.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c1",
+      "relation_type": "related_to",
+      "target": "c5",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c003",
+      "evidence": "Ta gọi tập $C$ là giao hai tập $A$ và $B$, ký hiệu $C = A \\cap B$.",
+      "confidence": 1.0
+    }
+  ],
+  "misconceptions": []
+}

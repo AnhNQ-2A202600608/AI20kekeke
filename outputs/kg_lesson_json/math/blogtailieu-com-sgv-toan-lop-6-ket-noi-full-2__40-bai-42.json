@@ -1,0 +1,54 @@
+{
+  "document": {
+    "document_id": "math-k6-sgv",
+    "source_type": "SGV",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 2",
+    "lesson": "Bài 42"
+  },
+  "learning_objectives": [
+    {
+      "code": "nhan-biet-tinh-khong-doan-truoc",
+      "description": "Nhận biết được tính không đoán trước được trong kết quả của một số trò chơi, thí nghiệm.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận biết được tính không đoán trước được trong kết quả của một số trò chơi, thí nghiệm."
+    },
+    {
+      "code": "nhan-biet-su-kien",
+      "description": "Nhận biết được một sự kiện trong trò chơi, thí nghiệm có xảy ra hay không.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận biết được một sự kiện trong trò chơi, thí nghiệm có xảy ra hay không."
+    },
+    {
+      "code": "liet-ke-ket-qua",
+      "description": "Liệt kê được các kết quả có thể xảy ra trong các trò chơi, thí nghiệm đơn giản.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Liệt kê được các kết quả có thể xảy ra trong các trò chơi, thí nghiệm đơn giản."
+    },
+    {
+      "code": "kiem-tra-su-kien",
+      "description": "Kiểm tra được một sự kiện xảy ra hay không xảy ra.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Kiểm tra được một sự kiện xảy ra hay không xảy ra."
+    },
+    {
+      "code": "bồi-duong-hung-thu",
+      "description": "Bồi dưỡng hứng thú học tập, ý thức tìm tòi và khám phá khoa học cho HS.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Bồi dưỡng hứng thú học tập, ý thức tìm tòi và khám phá khoa học cho HS."
+    }
+  ],
+  "concepts": [],
+  "relations": [],
+  "misconceptions": [
+    {
+      "temporary_id": "m1",
+      "name": "Hiểu sai về kết quả có thể",
+      "description": "Học sinh chỉ liệt kê 3 kết quả có thể là: 2 sấp, 2 ngửa và 1 sấp 1 ngửa, mà không nhận ra rằng '1 sấp 1 ngửa' là một sự kiện, không phải là một kết quả có thể.",
+      "related_skill": "c1",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhiều người chỉ liệt kê 3 kết quả có thể là: 2 sấp, 2 ngửa và 1 sấp 1 ngửa."
+    }
+  ]
+}

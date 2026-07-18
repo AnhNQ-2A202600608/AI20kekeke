@@ -1,0 +1,76 @@
+{
+  "concepts": [
+    {
+      "code": "nhan-biet-quan-he-giua-cac-hang-va-gia-tri-moi-chu-so",
+      "name": "Nhận biết quan hệ giữa các hàng và giá trị mỗi chữ số",
+      "description": "Nhận biết được quan hệ giữa các hàng và giá trị mỗi chữ số (theo vị trí) trong một số tự nhiên đã cho viết trong hệ thập phân",
+      "grade": 6,
+      "source_page": 31
+    },
+    {
+      "code": "doc-va-viet-so-tu-nhien",
+      "name": "Đọc và viết số tự nhiên",
+      "description": "Đọc và viết được các số tự nhiên",
+      "grade": 6,
+      "source_page": 31
+    },
+    {
+      "code": "bieu-dien-so-tu-nhien-thanh-tong-gia-tri-cac-chu-so",
+      "name": "Biểu diễn số tự nhiên thành tổng giá trị các chữ số",
+      "description": "Biểu diễn được số tự nhiên cho trước thành tổng giá trị các chữ số của nó",
+      "grade": 6,
+      "source_page": 31
+    },
+    {
+      "code": "nhan-biet-so-la-ma-khong-qua-30",
+      "name": "Nhận biết số La Mã không quá 30",
+      "description": "Nhận biết được số La Mã không quá 30",
+      "grade": 6,
+      "source_page": 31
+    },
+    {
+      "code": "doc-va-viet-so-la-ma",
+      "name": "Đọc và viết số La Mã",
+      "description": "Đọc và viết được các số La Mã không quá 30",
+      "grade": 6,
+      "source_page": 31
+    },
+    {
+      "code": "hieu-gia-tri-moi-chu-so-cua-so-tu-nhien",
+      "name": "Hiểu giá trị mỗi chữ số của số tự nhiên",
+      "description": "Hiểu giá trị mỗi chữ số của một số tự nhiên viết trong hệ thập phân",
+      "grade": 6,
+      "source_page": 32
+    }
+  ],
+  "relations": [
+    {
+      "source": "nhan-biet-quan-he-giua-cac-hang-va-gia-tri-moi-chu-so",
+      "relation": "Prerequisite_of",
+      "target": "bieu-dien-so-tu-nhien-thanh-tong-gia-tri-cac-chu-so",
+      "evidence": "Để biểu diễn số tự nhiên thành tổng giá trị các chữ số, cần nhận biết quan hệ giữa các hàng và giá trị mỗi chữ số",
+      "source_page": 31
+    },
+    {
+      "source": "doc-va-viet-so-tu-nhien",
+      "relation": "Prerequisite_of",
+      "target": "bieu-dien-so-tu-nhien-thanh-tong-gia-tri-cac-chu-so",
+      "evidence": "Để biểu diễn số tự nhiên thành tổng giá trị các chữ số, cần đọc và viết được các số tự nhiên",
+      "source_page": 31
+    },
+    {
+      "source": "nhan-biet-so-la-ma-khong-qua-30",
+      "relation": "Part_of",
+      "target": "doc-va-viet-so-la-ma",
+      "evidence": "Nhận biết số La Mã không quá 30 là một phần của đọc và viết số La Mã",
+      "source_page": 31
+    },
+    {
+      "source": "hieu-gia-tri-moi-chu-so-cua-so-tu-nhien",
+      "relation": "Prerequisite_of",
+      "target": "bieu-dien-so-tu-nhien-thanh-tong-gia-tri-cac-chu-so",
+      "evidence": "Để biểu diễn số tự nhiên thành tổng giá trị các chữ số, cần hiểu giá trị mỗi chữ số của số tự nhiên",
+      "source_page": 32
+    }
+  ]
+}

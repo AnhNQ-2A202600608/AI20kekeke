@@ -1,0 +1,115 @@
+{
+  "document": {
+    "document_id": "math-k6-sgk",
+    "source_type": "SGK",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 2",
+    "lesson": "Bài 29"
+  },
+  "learning_objectives": [],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "phep-cong-so-thap-phan",
+      "name": "Phép cộng số thập phân",
+      "description": "Thực hiện phép cộng hai số thập phân.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c037"
+      ],
+      "evidence": [
+        "Tính: a) $2,259 + 0,31$; b) $11,325 - 0,15$."
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "phep-tru-so-thap-phan",
+      "name": "Phép trừ số thập phân",
+      "description": "Thực hiện phép trừ hai số thập phân.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c037"
+      ],
+      "evidence": [
+        "Phép trừ hai số thập phân được đưa về phép cộng với số đối: $a - b = a + (-b)$."
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "phep-nhan-so-thap-phan",
+      "name": "Phép nhân số thập phân",
+      "description": "Thực hiện phép nhân hai số thập phân.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c038"
+      ],
+      "evidence": [
+        "Tính: $12,5 \\cdot 1,2$."
+      ]
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "phep-chia-so-thap-phan",
+      "name": "Phép chia số thập phân",
+      "description": "Thực hiện phép chia hai số thập phân.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c038"
+      ],
+      "evidence": [
+        "Tính: $31,5 : 1,5$."
+      ]
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "tinh-gia-tri-bieu-thuc-so-thap-phan",
+      "name": "Tính giá trị biểu thức với số thập phân",
+      "description": "Tính giá trị của các biểu thức có chứa số thập phân.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c039"
+      ],
+      "evidence": [
+        "Tính một cách hợp lí."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "prerequisite_of",
+      "target": "c2",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c037",
+      "evidence": "Phép trừ hai số thập phân được đưa về phép cộng với số đối: $a - b = a + (-b)$.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c3",
+      "relation_type": "prerequisite_of",
+      "target": "c4",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c038",
+      "evidence": "Thực hiện phép nhân hai số thập phân.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c4",
+      "relation_type": "prerequisite_of",
+      "target": "c5",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c038",
+      "evidence": "Tính giá trị của các biểu thức có chứa số thập phân.",
+      "confidence": 1.0
+    }
+  ],
+  "misconceptions": []
+}

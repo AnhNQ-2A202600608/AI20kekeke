@@ -1,0 +1,153 @@
+{
+  "document": {
+    "document_id": "math-k6-sgk",
+    "source_type": "SGK",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 8",
+    "lesson": "Bài 31"
+  },
+  "learning_objectives": [],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "ti-so",
+      "name": "Tỉ số",
+      "description": "Tỉ số của hai số a và b tuỳ ý (b ≠ 0) là thương của phép chia số a cho số b, kí hiệu là a : b hoặc \\frac{a}{b}.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c047"
+      ],
+      "evidence": [
+        "Tỉ số của hai số a và b tuỳ ý (b ≠ 0) là thương của phép chia số a cho số b, kí hiệu là a : b hoặc \\frac{a}{b}."
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "ti-so-phan-tram",
+      "name": "Tỉ số phần trăm",
+      "description": "Tỉ số phần trăm của hai số a và b là \\frac{a}{b} \\cdot 100\\%.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c047"
+      ],
+      "evidence": [
+        "Tỉ số phần trăm của hai số a và b là \\frac{a}{b} \\cdot 100\\%."
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "tinh-ti-so-phan-tram",
+      "name": "Tính tỉ số phần trăm",
+      "description": "Tính tỉ số hay tỉ số phần trăm của hai số, hai đại lượng.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c047"
+      ],
+      "evidence": [
+        "Tính tỉ số hay tỉ số phần trăm của hai số, hai đại lượng."
+      ]
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "tinh-gia-tri-phan-tram",
+      "name": "Tính giá trị phần trăm",
+      "description": "Tính giá trị phần trăm của một số cho trước; Tìm một số khi biết giá trị phần trăm của số đó.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c047"
+      ],
+      "evidence": [
+        "Tính giá trị phần trăm của một số cho trước; Tìm một số khi biết giá trị phần trăm của số đó."
+      ]
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "giai-quyet-van-de-thuc-tien",
+      "name": "Giải quyết vấn đề thực tiễn",
+      "description": "Giải quyết được một số vấn đề thực tiễn liên quan đến tỉ số, tỉ số phần trăm.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c047"
+      ],
+      "evidence": [
+        "Giải quyết được một số vấn đề thực tiễn liên quan đến tỉ số, tỉ số phần trăm."
+      ]
+    },
+    {
+      "temporary_id": "c6",
+      "suggested_code": "tim-gia-tri-phan-tram",
+      "name": "Tìm giá trị phần trăm của một số",
+      "description": "Muốn tìm m% của số a, ta tính a \\cdot \\frac{m}{100}.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c049"
+      ],
+      "evidence": [
+        "Muốn tìm m% của số a, ta tính a \\cdot \\frac{m}{100}."
+      ]
+    },
+    {
+      "temporary_id": "c7",
+      "suggested_code": "tim-mot-so-khi-biet-phan-tram",
+      "name": "Tìm một số khi biết giá trị phần trăm",
+      "description": "Muốn tìm một số khi biết m% của số đó là b, ta tính b \\cdot \\frac{100}{m}.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c049"
+      ],
+      "evidence": [
+        "Muốn tìm một số khi biết m% của số đó là b, ta tính b \\cdot \\frac{100}{m}."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "is_a",
+      "target": "c2",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c047",
+      "evidence": "Tỉ số phần trăm là một loại tỉ số.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c3",
+      "relation_type": "prerequisite_of",
+      "target": "c4",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c047",
+      "evidence": "Tính tỉ số hay tỉ số phần trăm của hai số, hai đại lượng là cần thiết để tính giá trị phần trăm.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c4",
+      "relation_type": "prerequisite_of",
+      "target": "c5",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c047",
+      "evidence": "Tính giá trị phần trăm của một số cho trước là cần thiết để giải quyết vấn đề thực tiễn liên quan đến tỉ số.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c6",
+      "relation_type": "prerequisite_of",
+      "target": "c7",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c049",
+      "evidence": "Tìm giá trị phần trăm của một số cho trước là cần thiết để tìm một số khi biết giá trị phần trăm của số đó.",
+      "confidence": 1.0
+    }
+  ],
+  "misconceptions": []
+}

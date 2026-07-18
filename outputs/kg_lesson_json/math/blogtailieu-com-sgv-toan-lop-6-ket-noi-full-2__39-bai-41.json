@@ -1,0 +1,48 @@
+{
+  "document": {
+    "document_id": "math-k6-sgv",
+    "source_type": "SGV",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 2",
+    "lesson": "Bài 41"
+  },
+  "learning_objectives": [
+    {
+      "code": "nhan-ra-quy-luat-bieu-do",
+      "description": "Nhận ra được quy luật đơn giản từ biểu đồ cột kép.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận ra được quy luật đơn giản từ biểu đồ cột kép."
+    },
+    {
+      "code": "ve-bieu-do-cot-kep",
+      "description": "Vẽ được biểu đồ cột kép.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Vẽ được biểu đồ cột kép."
+    },
+    {
+      "code": "doc-mo-ta-du-lieu-bieu-do",
+      "description": "Đọc và mô tả được dữ liệu từ biểu đồ cột kép.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Đọc và mô tả được dữ liệu từ biểu đồ cột kép."
+    },
+    {
+      "code": "nhan-biet-tac-dong-bien-doi-khi-hau",
+      "description": "Nhận biết được một số tác động của biến đổi khí hậu và bồi dưỡng ý thức bảo vệ môi trường.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận biết được một số tác động của biến đổi khí hậu và bồi dưỡng ý thức bảo vệ môi trường."
+    }
+  ],
+  "concepts": [],
+  "relations": [],
+  "misconceptions": [
+    {
+      "temporary_id": "m1",
+      "name": "Hiểu sai về tỷ lệ trong biểu đồ cột kép",
+      "description": "Khi vẽ biểu đồ cột kép, một cột gấp đôi cột kia không có nghĩa số liệu nó biểu diễn gấp đôi số liệu cột kia biểu diễn.",
+      "related_skill": "ve-bieu-do-cot-kep",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Cần lưu ý trong những biểu đồ này, một cột gấp đôi cột kia không có nghĩa số liệu nó biểu diễn gấp đôi số liệu cột kia biểu diễn."
+    }
+  ]
+}

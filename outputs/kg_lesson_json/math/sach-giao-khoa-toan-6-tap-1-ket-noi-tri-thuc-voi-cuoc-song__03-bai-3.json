@@ -1,0 +1,153 @@
+{
+  "document": {
+    "document_id": "math-k6-sgk",
+    "source_type": "SGK",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 1",
+    "lesson": "Bài 3"
+  },
+  "learning_objectives": [],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "khai-niem-so-tu-nhien",
+      "name": "Khái niệm số tự nhiên",
+      "description": "Tập hợp các số tự nhiên được ký hiệu là ℕ, nghĩa là ℕ = {0; 1; 2; 3; ...}.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c011"
+      ],
+      "evidence": [
+        "Ta đã biết tập hợp các số tự nhiên được ký hiệu là ℕ, nghĩa là ℕ = {0; 1; 2; 3; ...}."
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "diem-bieu-dien-so-tu-nhien",
+      "name": "Điểm biểu diễn số tự nhiên",
+      "description": "Điểm biểu diễn số tự nhiên n trên tia số gọi là điểm a.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c011"
+      ],
+      "evidence": [
+        "Trên tia số, điểm biểu diễn số tự nhiên n gọi là điểm a."
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "so-lien-truoc-so-lien-sau",
+      "name": "Số liền trước và số liền sau",
+      "description": "Mỗi số tự nhiên có đúng một số liền sau và một số liền trước.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c011"
+      ],
+      "evidence": [
+        "Mỗi số tự nhiên có đúng một số liền sau, chẳng như 9 là số liền sau của 8."
+      ]
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "ky-hieu-so-tu-nhien",
+      "name": "Ký hiệu số tự nhiên",
+      "description": "Ký hiệu a ≤ b để nói a nhỏ hơn hoặc bằng b.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c012"
+      ],
+      "evidence": [
+        "Ta còn dùng ký hiệu a ≤ b (đọc là \"a nhỏ hơn hoặc bằng b\") để nói \"a < b\" hoặc \"a = b\"."
+      ]
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "tinh-chat-bang-cau",
+      "name": "Tính chất bảng cầu",
+      "description": "Nếu a ≤ b và b ≤ c thì a ≤ c.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c012"
+      ],
+      "evidence": [
+        "Tính chất bảng cầu còn có thể viết: nếu a ≤ b và b ≤ c thì a ≤ c."
+      ]
+    },
+    {
+      "temporary_id": "c6",
+      "suggested_code": "so-lien-truoc-so-lien-sau-bai-tap",
+      "name": "Viết số liền trước và số liền sau",
+      "description": "Viết thêm các số liền trước và số liền sau của hai số tự nhiên.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c013"
+      ],
+      "evidence": [
+        "Viết thêm các số liền trước và số liền sau của hai số 3 532 và 3 529."
+      ]
+    },
+    {
+      "temporary_id": "c7",
+      "suggested_code": "so-sanh-hai-so-tu-nhien",
+      "name": "So sánh hai số tự nhiên",
+      "description": "So sánh hai số tự nhiên bằng ký hiệu '<' hay '>'.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c012"
+      ],
+      "evidence": [
+        "Hãy so sánh hai số tự nhiên sau đây, dùng ký hiệu \"<\" hay \">\" để viết kết quả."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "part_of",
+      "target": "c2",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c011",
+      "evidence": "Tập hợp các số tự nhiên được ký hiệu là ℕ, nghĩa là ℕ = {0; 1; 2; 3; ...}.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c2",
+      "relation_type": "prerequisite_of",
+      "target": "c3",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c011",
+      "evidence": "Mỗi số tự nhiên có đúng một số liền sau, chẳng như 9 là số liền sau của 8.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c4",
+      "relation_type": "related_to",
+      "target": "c5",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c012",
+      "evidence": "Tính chất bảng cầu còn có thể viết: nếu a ≤ b và b ≤ c thì a ≤ c.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c6",
+      "relation_type": "prerequisite_of",
+      "target": "c7",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c013",
+      "evidence": "Viết thêm các số liền trước và số liền sau của hai số 3 532 và 3 529.",
+      "confidence": 1.0
+    }
+  ],
+  "misconceptions": []
+}

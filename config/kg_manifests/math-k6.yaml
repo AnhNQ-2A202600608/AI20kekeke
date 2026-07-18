@@ -1,0 +1,89 @@
+course_code: math-k6
+subject: math
+grade: 6
+documents:
+  - document_code: blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2
+    source_type: SGV
+    expected_lessons:
+      - 01-bai-1
+      - 02-bai-2
+      - 03-bai-3
+      - 04-bai-4
+      - 05-bai-5
+      - 06-bai-6
+      - 07-bai-7
+      - 08-bai-8
+      - 09-bai-11
+      - 10-bai-12
+      - 11-bai-13
+      - 12-bai-14
+      - 13-bai-15
+      - 14-bai-16
+      - 15-bai-17
+      - 16-bai-18
+      - 17-bai-19
+      - 18-bai-20
+      - 19-bai-21
+      - 20-bai-22
+      - 21-bai-23
+      - 22-bai-24
+      - 23-bai-25
+      - 24-bai-26
+      - 25-bai-27
+      - 26-bai-28
+      - 27-bai-29
+      - 28-bai-30
+      - 29-bai-31
+      - 30-bai-32
+      - 31-bai-33
+      - 32-bai-34
+      - 33-bai-35
+      - 34-bai-36
+      - 35-bai-37
+      - 36-bai-38
+      - 37-bai-39
+      - 38-bai-40
+      - 39-bai-41
+      - 40-bai-42
+      - 41-bai-43
+  - document_code: sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song
+    source_type: SGK
+    expected_lessons:
+      - 01-bai-1
+      - 02-bai-2
+      - 03-bai-3
+      - 04-bai-4
+      - 05-bai-5
+      - 06-bai-8
+      - 07-bai-12
+      - 08-bai-13
+      - 09-bai-14
+      - 10-bai-15
+      - 11-bai-17
+      - 12-bai-18
+      - 13-bai-20
+      - 14-bai-22
+  - document_code: sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song
+    source_type: SGK
+    expected_lessons:
+      - 01-bai-23
+      - 02-bai-24
+      - 03-bai-25
+      - 04-bai-26
+      - 05-bai-27
+      - 06-bai-28
+      - 07-bai-29
+      - 08-bai-30
+      - 09-bai-31
+      - 10-bai-32
+      - 11-bai-33
+      - 12-bai-34
+      - 13-bai-35
+      - 14-bai-36
+      - 15-bai-37
+      - 16-bai-38
+      - 17-bai-39
+      - 18-bai-40
+      - 19-bai-41
+      - 20-bai-42
+      - 21-bai-43

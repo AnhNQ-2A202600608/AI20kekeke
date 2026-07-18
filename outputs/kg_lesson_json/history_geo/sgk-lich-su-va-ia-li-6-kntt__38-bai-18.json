@@ -1,0 +1,45 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Chương 5",
+    "lesson": "Bài 18"
+  },
+  "learning_objectives": [],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "bieu-do-nhiet-do-luong-mua",
+      "name": "Biểu đồ nhiệt độ, lượng mưa",
+      "description": "Biểu đồ thể hiện sự thay đổi nhiệt độ và lượng mưa theo thời gian.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c178"
+      ],
+      "evidence": [
+        "Quan sát hình 1, em hãy cho biết: Trục bên tay trái thể hiện yếu tố nào. Đơn vị đo của yếu tố đó."
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "thuy-quyen",
+      "name": "Thủy quyển",
+      "description": "Thủy quyển là lớp nước bao quanh Trái Đất, bao gồm nước biển, đại dương, sông, hồ, nước ngầm.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c179"
+      ],
+      "evidence": [
+        "Hành tinh của chúng ta nhìn từ ngoài không gian nổi bật lên bởi màu xanh của nước biển và đại dương."
+      ]
+    }
+  ],
+  "relations": [],
+  "misconceptions": []
+}

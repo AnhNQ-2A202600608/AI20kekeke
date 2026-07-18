@@ -1,0 +1,115 @@
+{
+  "document": {
+    "document_id": "math-k6-sgk",
+    "source_type": "SGK",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 1",
+    "lesson": "Bài 38"
+  },
+  "learning_objectives": [],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "du-lieu",
+      "name": "Dữ liệu",
+      "description": "Thông tin thu thập được từ quan sát, thí nghiệm hoặc nguồn khác.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c087"
+      ],
+      "evidence": [
+        "Dữ liệu"
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "so-lieu",
+      "name": "Số liệu",
+      "description": "Dữ liệu có thể được biểu diễn bằng số.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c088"
+      ],
+      "evidence": [
+        "Trong các dữ liệu ấy, có dữ liệu là số (số liệu), có dữ liệu không phải là số."
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "du-lieu-khong-phai-la-so",
+      "name": "Dữ liệu không phải là số",
+      "description": "Dữ liệu không thể được biểu diễn bằng số.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c088"
+      ],
+      "evidence": [
+        "Dữ liệu không hợp lí là: vi khuẩn."
+      ]
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "thu-thap-du-lieu",
+      "name": "Thu thập dữ liệu",
+      "description": "Quá trình thu thập thông tin từ các nguồn khác nhau.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c089"
+      ],
+      "evidence": [
+        "Có nhiều cách để thu thập dữ liệu như quan sát, làm thí nghiệm, lập phiếu hỏi,..."
+      ]
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "du-lieu-khong-hop-li",
+      "name": "Dữ liệu không hợp lí",
+      "description": "Dữ liệu không chính xác hoặc không phù hợp.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c091"
+      ],
+      "evidence": [
+        "Hãy tìm điểm không hợp lí trong bảng thống kê trên."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "related_to",
+      "target": "c2",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c088",
+      "evidence": "Trong các dữ liệu ấy, có dữ liệu là số (số liệu), có dữ liệu không phải là số.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c1",
+      "relation_type": "related_to",
+      "target": "c3",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c088",
+      "evidence": "Dữ liệu không hợp lí là: vi khuẩn.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c4",
+      "relation_type": "prerequisite_of",
+      "target": "c5",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c091",
+      "evidence": "Hãy tìm điểm không hợp lí trong bảng thống kê trên.",
+      "confidence": 1.0
+    }
+  ],
+  "misconceptions": []
+}

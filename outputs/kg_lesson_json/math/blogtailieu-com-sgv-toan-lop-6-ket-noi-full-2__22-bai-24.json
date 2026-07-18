@@ -1,0 +1,51 @@
+{
+  "document": {
+    "document_id": "math-k6-sgv",
+    "source_type": "SGV",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 2",
+    "lesson": "Bài 24"
+  },
+  "learning_objectives": [
+    {
+      "code": "nhan-biet-cach-quy-dong",
+      "description": "Nhận biết được cách quy đồng được mẫu nhiều phân số.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận biết được cách quy đồng được mẫu nhiều phân số."
+    },
+    {
+      "code": "nhan-biet-hon-so-duong",
+      "description": "Nhận biết được hỗn số dương.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận biết được hỗn số dương."
+    },
+    {
+      "code": "quy-dong-mau",
+      "description": "Biết cách quy đồng mẫu hai hay nhiều phân số.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Biết cách quy đồng mẫu hai hay nhiều phân số."
+    },
+    {
+      "code": "so-sanh-phan-so",
+      "description": "So sánh được hai phân số cùng mẫu hoặc không cùng mẫu.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "So sánh được hai phân số cùng mẫu hoặc không cùng mẫu."
+    },
+    {
+      "code": "van-dung-giải-bai-toan",
+      "description": "Vận dụng được các kiến thức để giải quyết các bài toán thực tiễn có liên quan.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Vận dụng được các kiến thức để giải quyết các bài toán thực tiễn có liên quan."
+    },
+    {
+      "code": "ren-luyen-thoi-quen",
+      "description": "Rèn luyện thói quen tự nghiên cứu bài học, khả năng tìm tòi khám phá kiến thức mới.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Rèn luyện thói quen tự nghiên cứu bài học, khả năng tìm tòi khám phá kiến thức mới."
+    }
+  ],
+  "concepts": [],
+  "relations": [],
+  "misconceptions": []
+}

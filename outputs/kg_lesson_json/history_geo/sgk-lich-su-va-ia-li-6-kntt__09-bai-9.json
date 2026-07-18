@@ -1,0 +1,169 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Bài 9",
+    "lesson": "TRUNG QUỐC TỪ THỜI CỔ ĐẠI ĐẾN THẾ KỈ VII"
+  },
+  "learning_objectives": [
+    {
+      "code": "gioi-thieu-dieu-kien-tu-nhien-trung-quoc",
+      "description": "Giới thiệu được những đặc điểm về điều kiện tự nhiên của Trung Quốc thời cổ đại.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c038",
+      "evidence": ""
+    },
+    {
+      "code": "mo-ta-qua-trinh-thong-nhat-chinh-tri-trung-quoc",
+      "description": "Mô tả được sơ lược quá trình thống nhất và sự xác lập chế độ phong kiến ở Trung Quốc dưới thời Tần Thủy Hoàng.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c038",
+      "evidence": ""
+    },
+    {
+      "code": "xay-dung-duong-thoi-gian-nha-han-nam-bac-trieu-nha-tuy",
+      "description": "Xây dựng được đường thời gian từ nhà Hán, Nam Bắc triều đến nhà Tuỳ.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c038",
+      "evidence": ""
+    },
+    {
+      "code": "neu-thanh-tuu-van-minh-trung-quoc-thoi-co-dai",
+      "description": "Nêu được những thành tựu cơ bản của nền văn minh Trung Quốc thời cổ đại.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c038",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "dieu-kien-tu-nhien-trung-quoc",
+      "name": "Điều kiện tự nhiên của Trung Quốc cổ đại",
+      "description": "Đặc điểm về điều kiện tự nhiên của Trung Quốc thời cổ đại, bao gồm lưu vực Hoàng Hà và Trường Giang.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c039"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "nha-tan-thong-nhat-trung-quoc",
+      "name": "Nhà Tần thống nhất Trung Quốc",
+      "description": "Sự kiện năm 221 TCN khi Tần Thủy Hoàng thống nhất lãnh thổ Trung Quốc và xác lập chế độ phong kiến.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c039"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "nha-han-den-nha-tuy",
+      "name": "Trung Quốc từ thời nhà Hán đến thời nhà Tuỳ",
+      "description": "Thời kỳ lịch sử Trung Quốc từ nhà Hán (206 TCN) đến nhà Tuỳ (581) và các triều đại giữa hai thời kỳ này.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c040"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "thanh-tuu-van-minh-trung-quoc",
+      "name": "Thành tựu văn minh Trung Quốc cổ đại",
+      "description": "Các thành tựu nổi bật của văn minh Trung Quốc từ thời cổ đại đến thế kỉ VII, bao gồm phát minh và tư tưởng.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c040"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "phat-minh-la-ban",
+      "name": "La bàn",
+      "description": "Phát minh của người Trung Quốc dùng để xác định phương hướng, một trong những thành tựu nổi bật của nền văn minh cổ đại.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c038"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c6",
+      "suggested_code": "dia-dong-nghi",
+      "name": "Địa động nghi",
+      "description": "Thiết bị đo động đất sớm nhất thế giới được phát minh bởi người Trung Quốc vào thế kỉ II TCN.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c041"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c7",
+      "suggested_code": "van-ly-truong-thanh",
+      "name": "Vạn Lý Trường Thành",
+      "description": "Công trình kiến trúc nổi tiếng của Trung Quốc, được xây dựng từ thời nhà Tần để bảo vệ đất nước.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c042"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c8",
+      "suggested_code": "su-ki-cua-tu-ma-thien",
+      "name": "Sử kí của Tư Mã Thiên",
+      "description": "Công trình sử học lớn nhất Trung Quốc thời cổ đại, nổi tiếng toàn thế giới.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c041"
+      ],
+      "evidence": []
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "causes",
+      "target": "c4",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c039",
+      "evidence": "Điều kiện tự nhiên thuận lợi đã giúp người Trung Quốc xây dựng nền văn minh.",
+      "confidence": 0.9
+    },
+    {
+      "source": "c2",
+      "relation_type": "prerequisite_of",
+      "target": "c3",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c039",
+      "evidence": "Sự thống nhất của nhà Tần là tiền đề cho các triều đại tiếp theo.",
+      "confidence": 0.8
+    },
+    {
+      "source": "c3",
+      "relation_type": "prerequisite_of",
+      "target": "c4",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c040",
+      "evidence": "Thời kỳ từ nhà Hán đến nhà Tuỳ là giai đoạn phát triển văn minh.",
+      "confidence": 0.8
+    }
+  ],
+  "misconceptions": []
+}

@@ -1,0 +1,113 @@
+{
+  "document": {
+    "document_id": "math-k6-sgk",
+    "source_type": "SGK",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "BÀI 30: LÀM TRÒN VÀ ƯỚC LƯỢNG",
+    "lesson": "BÀI 30"
+  },
+  "learning_objectives": [
+    {
+      "code": "lam-tron-so-thap-phan",
+      "description": "Học sinh biết cách làm tròn số thập phân đến hàng đơn vị, hàng chục, hàng phần mười.",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c043",
+      "evidence": ""
+    },
+    {
+      "code": "uoc-luong-ket-qua",
+      "description": "Học sinh biết cách ước lượng kết quả của phép đo, phép tính.",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c043",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "lam-tron-so-thap-phan",
+      "name": "Làm tròn số thập phân",
+      "description": "Quá trình làm tròn một số thập phân đến một hàng nào đó.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c043"
+      ],
+      "evidence": [
+        "Làm tròn số thập phân."
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "uoc-luong-ket-qua",
+      "name": "Ước lượng kết quả",
+      "description": "Quá trình tìm một số gần sát với kết quả chính xác.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c043"
+      ],
+      "evidence": [
+        "Ước lượng kết quả phép đo, phép tính."
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "lam-tron-den-hang-phan-mười",
+      "name": "Làm tròn đến hàng phần mười",
+      "description": "Quá trình làm tròn một số thập phân đến chữ số thập phân thứ nhất.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c044"
+      ],
+      "evidence": [
+        "Làm tròn 24,037 đến hàng phần mười ta được kết quả là 24,0."
+      ]
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "lam-tron-den-hang-chuc",
+      "name": "Làm tròn đến hàng chục",
+      "description": "Quá trình làm tròn một số thập phân đến hàng chục.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c044"
+      ],
+      "evidence": [
+        "Làm tròn số 2 156,8 đến hàng chục ta được kết quả là 2 160."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "part_of",
+      "target": "c3",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c043",
+      "evidence": "Để làm tròn một số thập phân dương đến một hàng nào đấy (gọi là hàng làm tròn), ta làm như sau:",
+      "confidence": 1.0
+    },
+    {
+      "source": "c1",
+      "relation_type": "part_of",
+      "target": "c4",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c043",
+      "evidence": "Để làm tròn một số thập phân dương đến một hàng nào đấy (gọi là hàng làm tròn), ta làm như sau:",
+      "confidence": 1.0
+    },
+    {
+      "source": "c2",
+      "relation_type": "related_to",
+      "target": "c1",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c043",
+      "evidence": "Trong nhiều trường hợp, để thuận tiện, ta thường làm tròn các con số hay ước lượng kết quả của phép tính.",
+      "confidence": 1.0
+    }
+  ],
+  "misconceptions": []
+}

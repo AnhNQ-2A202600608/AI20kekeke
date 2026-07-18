@@ -1,0 +1,276 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Bài 7",
+    "lesson": "AI CẬP VÀ LƯỠNG HÀ CỔ ĐẠI"
+  },
+  "learning_objectives": [
+    {
+      "code": "trinh-bay-quy-trinh-thanh-lap-nha-nuoc-ai-cap-luong-ha",
+      "description": "Trình bày được quá trình thành lập nhà nước của người Ai Cập và Lưỡng Hà.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c027",
+      "evidence": ""
+    },
+    {
+      "code": "ke-ten-thanh-tuu-van-hoa-ai-cap-luong-ha",
+      "description": "Kể được tên và nêu được những thành tựu văn hoá chủ yếu của Ai Cập, Lưỡng Hà.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c027",
+      "evidence": ""
+    },
+    {
+      "code": "nêu-tac-dong-dieu-kien-tu-nhien-voi-van-minh-ai-cap-luong-ha",
+      "description": "Nêu được tác động của điều kiện tự nhiên (sông ngòi, đất đai) đối với sự hình thành nền văn minh Ai Cập và Lưỡng Hà.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c027",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "ai-cap",
+      "name": "Ai Cập",
+      "description": "Nền văn minh cổ đại nằm ở vùng Đông Bắc châu Phi, nơi có dòng sông Nin chảy qua.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c027",
+        "sgk-lich-su-va-ia-li-6-kntt-c028",
+        "sgk-lich-su-va-ia-li-6-kntt-c029",
+        "sgk-lich-su-va-ia-li-6-kntt-c030",
+        "sgk-lich-su-va-ia-li-6-kntt-c031"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "luong-ha",
+      "name": "Lưỡng Hà",
+      "description": "Vùng đất giữa hai con sông Ơ-phơ-rát và Ti-gơ-rơ ở khu vực Tây Nam Á.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c027",
+        "sgk-lich-su-va-ia-li-6-kntt-c028",
+        "sgk-lich-su-va-ia-li-6-kntt-c029",
+        "sgk-lich-su-va-ia-li-6-kntt-c030",
+        "sgk-lich-su-va-ia-li-6-kntt-c031"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "chu-viet-ai-cap-luong-ha",
+      "name": "Chữ viết của người Ai Cập và Lưỡng Hà",
+      "description": "Loại chữ viết được sáng tạo bởi người Ai Cập và Lưỡng Hà cổ đại, bao gồm chữ tượng hình và chữ hình nêm.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c027",
+        "sgk-lich-su-va-ia-li-6-kntt-c030"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "thanh-tuu-van-hoa-ai-cap-luong-ha",
+      "name": "Thành tựu văn hoá của Ai Cập và Lưỡng Hà",
+      "description": "Những phát minh và công trình kiến trúc nổi bật của nền văn minh Ai Cập và Lưỡng Hà cổ đại.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c030",
+        "sgk-lich-su-va-ia-li-6-kntt-c031"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "ky-thuat-thuy-loi",
+      "name": "Kỹ thuật thủy lợi",
+      "description": "Kỹ thuật được người Ai Cập và Lưỡng Hà cổ đại phát minh ra để phục vụ nông nghiệp.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c030"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c6",
+      "suggested_code": "ky-thuat-uop-xac",
+      "name": "Kỹ thuật ướp xác",
+      "description": "Kỹ thuật độc đáo của người Ai Cập cổ đại để bảo quản xác chết.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c030"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c7",
+      "suggested_code": "phat-minh-cai-cay",
+      "name": "Phát minh ra cái cày",
+      "description": "Phát minh quan trọng của người Ai Cập và Lưỡng Hà cổ đại trong nông nghiệp.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c030"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c8",
+      "suggested_code": "phat-minh-banh-xe",
+      "name": "Phát minh ra bánh xe",
+      "description": "Phát minh quan trọng của người Ai Cập và Lưỡng Hà cổ đại.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c030"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c9",
+      "suggested_code": "kim-tu-thap",
+      "name": "Kim tự tháp",
+      "description": "Công trình kiến trúc nổi tiếng của người Ai Cập cổ đại.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c031"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c10",
+      "suggested_code": "tuong-nhan-su",
+      "name": "Tượng Nhân sư",
+      "description": "Công trình kiến trúc nổi tiếng của người Ai Cập cổ đại.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c031"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c11",
+      "suggested_code": "vuon-treo-ba-bilon",
+      "name": "Vườn treo Ba-bi-lon",
+      "description": "Công trình kiến trúc nổi tiếng của Lưỡng Hà cổ đại.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c031"
+      ],
+      "evidence": []
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "related_to",
+      "target": "c2",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c027",
+      "evidence": "",
+      "confidence": 0.9
+    },
+    {
+      "source": "c1",
+      "relation_type": "part_of",
+      "target": "c4",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c030",
+      "evidence": "",
+      "confidence": 0.8
+    },
+    {
+      "source": "c2",
+      "relation_type": "part_of",
+      "target": "c4",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c030",
+      "evidence": "",
+      "confidence": 0.8
+    },
+    {
+      "source": "c3",
+      "relation_type": "part_of",
+      "target": "c4",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c030",
+      "evidence": "",
+      "confidence": 0.8
+    },
+    {
+      "source": "c4",
+      "relation_type": "has_misconception",
+      "target": "c5",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c030",
+      "evidence": "",
+      "confidence": 0.7
+    },
+    {
+      "source": "c4",
+      "relation_type": "has_misconception",
+      "target": "c6",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c030",
+      "evidence": "",
+      "confidence": 0.7
+    },
+    {
+      "source": "c4",
+      "relation_type": "has_misconception",
+      "target": "c7",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c030",
+      "evidence": "",
+      "confidence": 0.7
+    },
+    {
+      "source": "c4",
+      "relation_type": "has_misconception",
+      "target": "c8",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c030",
+      "evidence": "",
+      "confidence": 0.7
+    },
+    {
+      "source": "c4",
+      "relation_type": "has_misconception",
+      "target": "c9",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c031",
+      "evidence": "",
+      "confidence": 0.7
+    },
+    {
+      "source": "c4",
+      "relation_type": "has_misconception",
+      "target": "c10",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c031",
+      "evidence": "",
+      "confidence": 0.7
+    },
+    {
+      "source": "c4",
+      "relation_type": "has_misconception",
+      "target": "c11",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c031",
+      "evidence": "",
+      "confidence": 0.7
+    }
+  ],
+  "misconceptions": []
+}

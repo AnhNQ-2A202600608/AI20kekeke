@@ -1,0 +1,153 @@
+{
+  "document": {
+    "document_id": "math-k6-sgk",
+    "source_type": "SGK",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 1",
+    "lesson": "Bài 14"
+  },
+  "learning_objectives": [],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "tinh-chat-giao-hoan-cua-phep-cong",
+      "name": "Tính chất giao hoán của phép cộng",
+      "description": "Tính chất cho biết rằng tổng của hai số nguyên không thay đổi khi đổi chỗ hai số hạng.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c076"
+      ],
+      "evidence": [
+        "Phép cộng số nguyên có các tính chất: Giao hoán: a + b = b + a."
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "tinh-chat-ket-hop-cua-phep-cong",
+      "name": "Tính chất kết hợp của phép cộng",
+      "description": "Tính chất cho biết rằng tổng của ba số nguyên không thay đổi khi nhóm các số hạng lại.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c078"
+      ],
+      "evidence": [
+        "Phép cộng số nguyên có các tính chất: Kết hợp: (a + b) + c = a + (b + c)."
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "so-doi",
+      "name": "Số đối",
+      "description": "Số đối của một số nguyên a là số mà khi cộng với a sẽ cho kết quả bằng 0.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c077"
+      ],
+      "evidence": [
+        "Kí hiệu số đối của số nguyên a là -a."
+      ]
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "cong-hai-so-nguyen-cung-dau",
+      "name": "Cộng hai số nguyên cùng dấu",
+      "description": "Khi cộng hai số nguyên cùng dấu, ta cộng phần số tự nhiên của chúng và giữ nguyên dấu.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c076"
+      ],
+      "evidence": [
+        "Muốn cộng hai số nguyên âm, ta cộng phần số tự nhiên của chúng với nhau rồi đặt dấu “–” trước kết quả."
+      ]
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "cong-hai-so-nguyen-khac-dau",
+      "name": "Cộng hai số nguyên khác dấu",
+      "description": "Khi cộng hai số nguyên khác dấu, ta lấy hiệu của phần số tự nhiên lớn hơn và giữ dấu của số có phần số tự nhiên lớn hơn.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c078"
+      ],
+      "evidence": [
+        "Muốn cộng hai số nguyên khác dấu (không đối nhau), ta tìm hiểu hai phần số tự nhiên của chúng (số lớn trừ số nhỏ) rồi đặt trước hiệu của số có phần số tự nhiên lớn hơn."
+      ]
+    },
+    {
+      "temporary_id": "c6",
+      "suggested_code": "quy-tac-tru-hai-so-nguyen",
+      "name": "Quy tắc trừ hai số nguyên",
+      "description": "Để trừ số nguyên b cho số nguyên a, ta cộng a với số đối của b.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c079"
+      ],
+      "evidence": [
+        "Muốn trừ số nguyên b cho số nguyên a, ta cộng a với số đối của b: a - b = a + (-b)."
+      ]
+    },
+    {
+      "temporary_id": "c7",
+      "suggested_code": "thuc-hien-phep-cong-tru-hai-so-nguyen",
+      "name": "Thực hiện phép cộng, trừ hai số nguyên",
+      "description": "Kỹ năng thực hiện các phép cộng và trừ giữa hai số nguyên.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c076"
+      ],
+      "evidence": [
+        "Thực hiện phép cộng, trừ hai số nguyên."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "related_to",
+      "target": "c2",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c079",
+      "evidence": "Phép cộng số nguyên có các tính chất: Giao hoán: a + b = b + a; Kết hợp: (a + b) + c = a + (b + c).",
+      "confidence": 1.0
+    },
+    {
+      "source": "c3",
+      "relation_type": "related_to",
+      "target": "c4",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c077",
+      "evidence": "Số đối của một số nguyên a là số mà khi cộng với a sẽ cho kết quả bằng 0.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c4",
+      "relation_type": "prerequisite_of",
+      "target": "c5",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c078",
+      "evidence": "Khi cộng hai số nguyên khác dấu, ta lấy hiệu của phần số tự nhiên lớn hơn và giữ dấu của số có phần số tự nhiên lớn hơn.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c6",
+      "relation_type": "prerequisite_of",
+      "target": "c7",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c079",
+      "evidence": "Để trừ số nguyên b cho số nguyên a, ta cộng a với số đối của b.",
+      "confidence": 1.0
+    }
+  ],
+  "misconceptions": []
+}

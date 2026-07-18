@@ -1,0 +1,1276 @@
+{
+  "valid": false,
+  "self_relations": [],
+  "duplicate_relations": [],
+  "invalid_relations": [
+    {
+      "relation": {
+        "source": "nguon-loi-tu-nhien-o-dia-phuong",
+        "relation_type": "prerequisite_of",
+        "target": "o-nhiem-moi-truong",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c000",
+        "evidence": "",
+        "confidence": 0.9,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "o-nhiem-moi-truong",
+        "relation_type": "prerequisite_of",
+        "target": "thien-tai-va-phong-chong-thien-tai",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c000",
+        "evidence": "",
+        "confidence": 0.9,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "nguon-loi-tu-nhien-o-dia-phuong",
+        "relation_type": "related_to",
+        "target": "o-nhiem-moi-truong",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c003",
+        "evidence": "",
+        "confidence": 0.9,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "nguon-loi-tu-nhien-o-dia-phuong",
+        "relation_type": "related_to",
+        "target": "thien-tai-va-phong-chong-thien-tai",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c004",
+        "evidence": "",
+        "confidence": 0.9,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "o-nhiem-moi-truong",
+        "relation_type": "related_to",
+        "target": "bao-ve-thien-nhien",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c004",
+        "evidence": "",
+        "confidence": 0.9,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "thien-tai-va-phong-chong-thien-tai",
+        "relation_type": "related_to",
+        "target": "bao-ve-thien-nhien",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c004",
+        "evidence": "",
+        "confidence": 0.9,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "nguon-loi-tu-nhien-o-dia-phuong",
+        "relation_type": "related_to",
+        "target": "bao-ve-thien-nhien",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c007",
+        "evidence": "",
+        "confidence": 0.9,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "ky-nang-doc-ban-do",
+        "relation_type": "prerequisite_of",
+        "target": "nguon-loi-tu-nhien-o-dia-phuong",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c007",
+        "evidence": "",
+        "confidence": 0.8,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "ky-nang-doc-ban-do",
+        "relation_type": "prerequisite_of",
+        "target": "o-nhiem-moi-truong",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c007",
+        "evidence": "",
+        "confidence": 0.8,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "nguon-loi-tu-nhien-o-dia-phuong",
+        "relation_type": "prerequisite_of",
+        "target": "thien-tai-va-phong-chong-thien-tai",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c016",
+        "evidence": "",
+        "confidence": 0.9,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "nguon-loi-tu-nhien-o-dia-phuong",
+        "relation_type": "prerequisite_of",
+        "target": "bao-ve-thien-nhien",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c016",
+        "evidence": "",
+        "confidence": 0.9,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "nguon-loi-tu-nhien-o-dia-phuong",
+        "relation_type": "prerequisite_of",
+        "target": "bao-cao",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c016",
+        "evidence": "",
+        "confidence": 0.9,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "nguon-loi-tu-nhien-o-dia-phuong",
+        "relation_type": "prerequisite_of",
+        "target": "thuc-hanh-tim-hieu-moi-truong",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c016",
+        "evidence": "",
+        "confidence": 0.9,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "nguon-loi-tu-nhien-o-dia-phuong",
+        "relation_type": "prerequisite_of",
+        "target": "dan-so-the-gioi",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c017",
+        "evidence": "",
+        "confidence": 0.9,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "nguon-loi-tu-nhien-o-dia-phuong",
+        "relation_type": "prerequisite_of",
+        "target": "bao-ve-tu-nhien",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c017",
+        "evidence": "",
+        "confidence": 0.9,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "nguon-loi-tu-nhien-o-dia-phuong",
+        "relation_type": "part_of",
+        "target": "bao-ve-thien-nhien",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c030",
+        "evidence": "",
+        "confidence": 0.8,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "o-nhiem-moi-truong",
+        "relation_type": "part_of",
+        "target": "bao-ve-thien-nhien",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c030",
+        "evidence": "",
+        "confidence": 0.8,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "thien-tai-va-phong-chong-thien-tai",
+        "relation_type": "part_of",
+        "target": "bao-ve-thien-nhien",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c030",
+        "evidence": "",
+        "confidence": 0.8,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "bao-ve-thien-nhien",
+        "relation_type": "has_misconception",
+        "target": "bao-cao",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c030",
+        "evidence": "",
+        "confidence": 0.7,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "bao-ve-thien-nhien",
+        "relation_type": "has_misconception",
+        "target": "thuc-hanh-tim-hieu-moi-truong",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c030",
+        "evidence": "",
+        "confidence": 0.7,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "bao-ve-thien-nhien",
+        "relation_type": "has_misconception",
+        "target": "dan-so-the-gioi",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c030",
+        "evidence": "",
+        "confidence": 0.7,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "bao-ve-thien-nhien",
+        "relation_type": "has_misconception",
+        "target": "bao-ve-tu-nhien",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c030",
+        "evidence": "",
+        "confidence": 0.7,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "bao-ve-thien-nhien",
+        "relation_type": "has_misconception",
+        "target": "tac-dong-cua-dong-bien",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c031",
+        "evidence": "",
+        "confidence": 0.7,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "bao-ve-thien-nhien",
+        "relation_type": "has_misconception",
+        "target": "tuong-nhan-su",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c031",
+        "evidence": "",
+        "confidence": 0.7,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "bao-ve-thien-nhien",
+        "relation_type": "has_misconception",
+        "target": "vuon-treo-ba-bilon",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c031",
+        "evidence": "",
+        "confidence": 0.7,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "bao-cao",
+        "relation_type": "related_to",
+        "target": "thuc-hanh-tim-hieu-moi-truong",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c035",
+        "evidence": "",
+        "confidence": 0.85,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "dan-so-the-gioi",
+        "relation_type": "related_to",
+        "target": "bao-ve-tu-nhien",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c035",
+        "evidence": "",
+        "confidence": 0.9,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "nguon-loi-tu-nhien-o-dia-phuong",
+        "relation_type": "causes",
+        "target": "bao-ve-thien-nhien",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c039",
+        "evidence": "Điều kiện tự nhiên thuận lợi đã giúp người Trung Quốc xây dựng nền văn minh.",
+        "confidence": 0.9,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c039'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c039'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "thien-tai-va-phong-chong-thien-tai",
+        "relation_type": "prerequisite_of",
+        "target": "bao-ve-thien-nhien",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c040",
+        "evidence": "Thời kỳ từ nhà Hán đến nhà Tuỳ là giai đoạn phát triển văn minh.",
+        "confidence": 0.8,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c040'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c040'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "nguon-loi-tu-nhien-o-dia-phuong",
+        "relation_type": "related_to",
+        "target": "bao-cao",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c048",
+        "evidence": "",
+        "confidence": 0.9,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "o-nhiem-moi-truong",
+        "relation_type": "related_to",
+        "target": "bao-cao",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c048",
+        "evidence": "",
+        "confidence": 0.9,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "thien-tai-va-phong-chong-thien-tai",
+        "relation_type": "part_of",
+        "target": "nguon-loi-tu-nhien-o-dia-phuong",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c046",
+        "evidence": "",
+        "confidence": 0.8,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "bao-ve-thien-nhien",
+        "relation_type": "part_of",
+        "target": "o-nhiem-moi-truong",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c046",
+        "evidence": "",
+        "confidence": 0.8,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "o-nhiem-moi-truong",
+        "relation_type": "prerequisite_of",
+        "target": "bao-cao",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c057",
+        "evidence": "",
+        "confidence": 0.9,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "bao-ve-thien-nhien",
+        "relation_type": "part_of",
+        "target": "nguon-loi-tu-nhien-o-dia-phuong",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c057",
+        "evidence": "",
+        "confidence": 0.8,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "bao-cao",
+        "relation_type": "causes",
+        "target": "o-nhiem-moi-truong",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c057",
+        "evidence": "",
+        "confidence": 0.9,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "thien-tai-va-phong-chong-thien-tai",
+        "relation_type": "causes",
+        "target": "bao-ve-thien-nhien",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c081",
+        "evidence": "Cuộc khởi nghĩa Lý Bí đã lãnh đạo cuộc khởi nghĩa nhằm chống lại chế độ cai trị khắc nghiệt của nhà Lương.",
+        "confidence": 0.9,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c081'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c081'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "nguon-loi-tu-nhien-o-dia-phuong",
+        "relation_type": "causes",
+        "target": "thien-tai-va-phong-chong-thien-tai",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c101",
+        "evidence": "Hoạt động kinh tế của cư dân Phù Nam phát triển mạnh mẽ trong thời kỳ đỉnh cao của vương quốc.",
+        "confidence": 0.8,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c101'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c101'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "nguon-loi-tu-nhien-o-dia-phuong",
+        "relation_type": "causes",
+        "target": "bao-cao",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c102",
+        "evidence": "Thành tựu văn hoá của Phù Nam phản ánh sự phát triển của xã hội và kinh tế.",
+        "confidence": 0.8,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c102'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c102'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "thien-tai-va-phong-chong-thien-tai",
+        "relation_type": "is_a",
+        "target": "nguon-loi-tu-nhien-o-dia-phuong",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c109",
+        "evidence": "",
+        "confidence": 0.9,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "bao-ve-thien-nhien",
+        "relation_type": "is_a",
+        "target": "o-nhiem-moi-truong",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c109",
+        "evidence": "",
+        "confidence": 0.9,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "bao-cao",
+        "relation_type": "related_to",
+        "target": "dan-so-the-gioi",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c110",
+        "evidence": "",
+        "confidence": 0.8,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "ky-nang-doc-ban-do",
+        "relation_type": "related_to",
+        "target": "thien-tai-va-phong-chong-thien-tai",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c114",
+        "evidence": "Kỹ năng xác định phương hướng liên quan đến việc hiểu các phương hướng trên bản đồ.",
+        "confidence": 0.8,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c114'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c114'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "o-nhiem-moi-truong",
+        "relation_type": "related_to",
+        "target": "nguon-loi-tu-nhien-o-dia-phuong",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c116",
+        "evidence": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "thien-tai-va-phong-chong-thien-tai",
+        "relation_type": "related_to",
+        "target": "nguon-loi-tu-nhien-o-dia-phuong",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c116",
+        "evidence": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "o-nhiem-moi-truong",
+        "relation_type": "related_to",
+        "target": "thien-tai-va-phong-chong-thien-tai",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c120",
+        "evidence": "",
+        "confidence": 0.9,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "o-nhiem-moi-truong",
+        "relation_type": "prerequisite_of",
+        "target": "bao-ve-thien-nhien",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c132",
+        "evidence": "Hệ quả của chuyển động tự quay liên quan đến giờ khu vực.",
+        "confidence": 0.9,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c132'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c132'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "nguon-loi-tu-nhien-o-dia-phuong",
+        "relation_type": "part_of",
+        "target": "o-nhiem-moi-truong",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c145",
+        "evidence": "Cấu tạo của Trái Đất bao gồm các địa mảng.",
+        "confidence": 0.9,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c145'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c145'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "o-nhiem-moi-truong",
+        "relation_type": "prerequisite_of",
+        "target": "ky-nang-doc-ban-do",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c153",
+        "evidence": "Cần biết về động đất để thực hiện các hành động bảo vệ bản thân.",
+        "confidence": 0.8,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c153'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c153'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "nguon-loi-tu-nhien-o-dia-phuong",
+        "relation_type": "prerequisite_of",
+        "target": "ky-nang-doc-ban-do",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c155",
+        "evidence": "Để đọc bản đồ tự nhiên thế giới, học sinh cần hiểu các dạng địa hình chính.",
+        "confidence": 0.8,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c155'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c155'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "bao-ve-thien-nhien",
+        "relation_type": "related_to",
+        "target": "bao-cao",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c166",
+        "evidence": "",
+        "confidence": 0.9,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "thien-tai-va-phong-chong-thien-tai",
+        "relation_type": "related_to",
+        "target": "thuc-hanh-tim-hieu-moi-truong",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c171",
+        "evidence": "",
+        "confidence": 0.9,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "thuc-hanh-tim-hieu-moi-truong",
+        "relation_type": "prerequisite_of",
+        "target": "dan-so-the-gioi",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c171",
+        "evidence": "",
+        "confidence": 0.8,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "thuc-hanh-tim-hieu-moi-truong",
+        "relation_type": "prerequisite_of",
+        "target": "bao-ve-tu-nhien",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c171",
+        "evidence": "",
+        "confidence": 0.8,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "nguon-loi-tu-nhien-o-dia-phuong",
+        "relation_type": "part_of",
+        "target": "bao-cao",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c184",
+        "evidence": "",
+        "confidence": 0.9,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "bao-ve-thien-nhien",
+        "relation_type": "related_to",
+        "target": "nguon-loi-tu-nhien-o-dia-phuong",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c188",
+        "evidence": "",
+        "confidence": 0.8,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "bao-ve-thien-nhien",
+        "relation_type": "related_to",
+        "target": "thien-tai-va-phong-chong-thien-tai",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c188",
+        "evidence": "",
+        "confidence": 0.8,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "o-nhiem-moi-truong",
+        "relation_type": "part_of",
+        "target": "nguon-loi-tu-nhien-o-dia-phuong",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c190",
+        "evidence": "",
+        "confidence": 0.9,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "thuc-hanh-tim-hieu-moi-truong",
+        "relation_type": "related_to",
+        "target": "dan-so-the-gioi",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c191",
+        "evidence": "",
+        "confidence": 0.8,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "dan-so-the-gioi",
+        "relation_type": "related_to",
+        "target": "tac-dong-cua-dong-bien",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c192",
+        "evidence": "",
+        "confidence": 0.8,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "thien-tai-va-phong-chong-thien-tai",
+        "relation_type": "prerequisite_of",
+        "target": "o-nhiem-moi-truong",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c196",
+        "evidence": "Các nhân tố hình thành đất ảnh hưởng đến thành phần của đất.",
+        "confidence": 0.9,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c196'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c196'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "bao-ve-thien-nhien",
+        "relation_type": "prerequisite_of",
+        "target": "nguon-loi-tu-nhien-o-dia-phuong",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c203",
+        "evidence": "Để hiểu rõ về đặc điểm của rừng nhiệt đới, cần có ý thức bảo vệ rừng.",
+        "confidence": 0.8,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c203'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c203'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "bao-ve-thien-nhien",
+        "relation_type": "related_to",
+        "target": "thuc-hanh-tim-hieu-moi-truong",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c213",
+        "evidence": "Các thành phố đông dân nhất là đối tượng để xác định trên bản đồ.",
+        "confidence": 0.85,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c213'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c213'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "bao-cao",
+        "relation_type": "related_to",
+        "target": "o-nhiem-moi-truong",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c218",
+        "evidence": "",
+        "confidence": 0.8,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    },
+    {
+      "relation": {
+        "source": "bao-cao",
+        "relation_type": "prerequisite_of",
+        "target": "thuc-hanh-tim-hieu-moi-truong",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c225",
+        "evidence": "",
+        "confidence": 0.8,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing evidence for relation."
+        ]
+      },
+      "errors": [
+        "Missing evidence for relation."
+      ]
+    }
+  ],
+  "prerequisite_cycles": [
+    [
+      "ky-nang-doc-ban-do",
+      "nguon-loi-tu-nhien-o-dia-phuong",
+      "o-nhiem-moi-truong",
+      "thien-tai-va-phong-chong-thien-tai",
+      "bao-ve-thien-nhien",
+      "ky-nang-doc-ban-do"
+    ],
+    [
+      "nguon-loi-tu-nhien-o-dia-phuong",
+      "o-nhiem-moi-truong",
+      "thien-tai-va-phong-chong-thien-tai",
+      "bao-ve-thien-nhien",
+      "nguon-loi-tu-nhien-o-dia-phuong"
+    ],
+    [
+      "nguon-loi-tu-nhien-o-dia-phuong",
+      "o-nhiem-moi-truong",
+      "thien-tai-va-phong-chong-thien-tai",
+      "nguon-loi-tu-nhien-o-dia-phuong"
+    ],
+    [
+      "o-nhiem-moi-truong",
+      "thien-tai-va-phong-chong-thien-tai",
+      "o-nhiem-moi-truong"
+    ],
+    [
+      "ky-nang-doc-ban-do",
+      "nguon-loi-tu-nhien-o-dia-phuong",
+      "o-nhiem-moi-truong",
+      "ky-nang-doc-ban-do"
+    ],
+    [
+      "ky-nang-doc-ban-do",
+      "nguon-loi-tu-nhien-o-dia-phuong",
+      "ky-nang-doc-ban-do"
+    ]
+  ],
+  "removed_relations": [
+    {
+      "relation": {
+        "source": "bao-ve-thien-nhien",
+        "relation_type": "prerequisite_of",
+        "target": "ky-nang-doc-ban-do",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c024",
+        "evidence": "Lập bảng theo mẫu sau và điền những nội dung phù hợp.",
+        "confidence": 0.8,
+        "validation_status": "validated",
+        "validation_errors": []
+      },
+      "reason": "prerequisite_cycle_breaker",
+      "cycle": [
+        "ky-nang-doc-ban-do",
+        "nguon-loi-tu-nhien-o-dia-phuong",
+        "o-nhiem-moi-truong",
+        "thien-tai-va-phong-chong-thien-tai",
+        "bao-ve-thien-nhien",
+        "ky-nang-doc-ban-do"
+      ]
+    },
+    {
+      "relation": {
+        "source": "bao-ve-thien-nhien",
+        "relation_type": "prerequisite_of",
+        "target": "nguon-loi-tu-nhien-o-dia-phuong",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c203",
+        "evidence": "Để hiểu rõ về đặc điểm của rừng nhiệt đới, cần có ý thức bảo vệ rừng.",
+        "confidence": 0.8,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c203'."
+        ]
+      },
+      "reason": "prerequisite_cycle_breaker",
+      "cycle": [
+        "nguon-loi-tu-nhien-o-dia-phuong",
+        "o-nhiem-moi-truong",
+        "thien-tai-va-phong-chong-thien-tai",
+        "bao-ve-thien-nhien",
+        "nguon-loi-tu-nhien-o-dia-phuong"
+      ]
+    },
+    {
+      "relation": {
+        "source": "thien-tai-va-phong-chong-thien-tai",
+        "relation_type": "prerequisite_of",
+        "target": "nguon-loi-tu-nhien-o-dia-phuong",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c161",
+        "evidence": "Khí hậu có tác động rất lớn tới đời sống con người. Các yếu tố khí áp, gió, nhiệt độ, mưa,... có quan hệ mật thiết với nhau và ở mỗi nơi một khác.",
+        "confidence": 0.8,
+        "validation_status": "validated",
+        "validation_errors": []
+      },
+      "reason": "prerequisite_cycle_breaker",
+      "cycle": [
+        "nguon-loi-tu-nhien-o-dia-phuong",
+        "o-nhiem-moi-truong",
+        "thien-tai-va-phong-chong-thien-tai",
+        "nguon-loi-tu-nhien-o-dia-phuong"
+      ]
+    },
+    {
+      "relation": {
+        "source": "thien-tai-va-phong-chong-thien-tai",
+        "relation_type": "prerequisite_of",
+        "target": "o-nhiem-moi-truong",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c196",
+        "evidence": "Các nhân tố hình thành đất ảnh hưởng đến thành phần của đất.",
+        "confidence": 0.9,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c196'."
+        ]
+      },
+      "reason": "prerequisite_cycle_breaker",
+      "cycle": [
+        "o-nhiem-moi-truong",
+        "thien-tai-va-phong-chong-thien-tai",
+        "o-nhiem-moi-truong"
+      ]
+    },
+    {
+      "relation": {
+        "source": "o-nhiem-moi-truong",
+        "relation_type": "prerequisite_of",
+        "target": "ky-nang-doc-ban-do",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c153",
+        "evidence": "Cần biết về động đất để thực hiện các hành động bảo vệ bản thân.",
+        "confidence": 0.8,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c153'."
+        ]
+      },
+      "reason": "prerequisite_cycle_breaker",
+      "cycle": [
+        "ky-nang-doc-ban-do",
+        "nguon-loi-tu-nhien-o-dia-phuong",
+        "o-nhiem-moi-truong",
+        "ky-nang-doc-ban-do"
+      ]
+    },
+    {
+      "relation": {
+        "source": "nguon-loi-tu-nhien-o-dia-phuong",
+        "relation_type": "prerequisite_of",
+        "target": "ky-nang-doc-ban-do",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c155",
+        "evidence": "Để đọc bản đồ tự nhiên thế giới, học sinh cần hiểu các dạng địa hình chính.",
+        "confidence": 0.8,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c155'."
+        ]
+      },
+      "reason": "prerequisite_cycle_breaker",
+      "cycle": [
+        "ky-nang-doc-ban-do",
+        "nguon-loi-tu-nhien-o-dia-phuong",
+        "ky-nang-doc-ban-do"
+      ]
+    }
+  ]
+}

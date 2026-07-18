@@ -1,0 +1,112 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Chương 1",
+    "lesson": "Bài 2"
+  },
+  "learning_objectives": [
+    {
+      "code": "khai-niem-ban-do",
+      "description": "Nêu được khái niệm bản đồ.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c113",
+      "evidence": ""
+    },
+    {
+      "code": "nhan-biet-luoi-kinh-vi-tuyen",
+      "description": "Nhận biết được một số lưới kinh, vĩ tuyến của bản đồ thế giới.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c113",
+      "evidence": ""
+    },
+    {
+      "code": "xac-dinh-phuong-huong",
+      "description": "Xác định được phương hướng trên bản đồ.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c114",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "khai-niem-ban-do",
+      "name": "Khái niệm bản đồ",
+      "description": "Bản đồ là hình vẽ thu nhỏ một phần hay toàn bộ bề mặt Trái Đất lên mặt phẳng trên cơ sở toán học, trên đó các đối tượng địa lí được thể hiện bằng các kí hiệu bản đồ.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c113"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "luoi-kinh-vi-tuyen",
+      "name": "Lưới kinh, vĩ tuyến",
+      "description": "Các đường kinh tuyến và vĩ tuyến được sử dụng để xác định vị trí và phương hướng trên bản đồ.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c113",
+        "sgk-lich-su-va-ia-li-6-kntt-c114"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "phuong-huong-tren-ban-do",
+      "name": "Phương hướng trên bản đồ",
+      "description": "Các hướng được xác định dựa vào các đường kinh tuyến và vĩ tuyến, giúp người sử dụng xác định vị trí và hướng đi.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c114"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "s1",
+      "suggested_code": "xac-dinh-phuong-huong",
+      "name": "Kỹ năng xác định phương hướng",
+      "description": "Kỹ năng xác định phương hướng trên bản đồ dựa vào các đường kinh tuyến và vĩ tuyến.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c114"
+      ],
+      "evidence": []
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "prerequisite_of",
+      "target": "c2",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c113",
+      "evidence": "Khái niệm bản đồ là cơ sở để hiểu về lưới kinh, vĩ tuyến.",
+      "confidence": 0.9
+    },
+    {
+      "source": "c2",
+      "relation_type": "prerequisite_of",
+      "target": "c3",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c114",
+      "evidence": "Hiểu về lưới kinh, vĩ tuyến là cần thiết để xác định phương hướng trên bản đồ.",
+      "confidence": 0.9
+    },
+    {
+      "source": "s1",
+      "relation_type": "related_to",
+      "target": "c3",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c114",
+      "evidence": "Kỹ năng xác định phương hướng liên quan đến việc hiểu các phương hướng trên bản đồ.",
+      "confidence": 0.8
+    }
+  ],
+  "misconceptions": []
+}

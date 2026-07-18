@@ -1,0 +1,107 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Bài 18",
+    "lesson": "BƯỚC NGOẶT LỊCH SỬ ĐẦU THẾ KỈ X"
+  },
+  "learning_objectives": [
+    {
+      "code": "trinh-bay-net-chinh-cac-cuoc-van-dong",
+      "description": "Trình bày được những nét chính (nội dung, kết quả) về các cuộc vận động giành quyền tự chủ của nhân dân Việt Nam dưới sự lãnh đạo của họ Khúc và họ Dương.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c088",
+      "evidence": ""
+    },
+    {
+      "code": "mo-ta-tran-chien-bach-dang",
+      "description": "Mô tả được những nét chính trận chiến Bạch Đằng lịch sử năm 938 và những điểm độc đáo trong tổ chức đánh giặc của Ngô Quyền.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c088",
+      "evidence": ""
+    },
+    {
+      "code": "yeu-nghia-chien-thang-bach-dang",
+      "description": "Nêu được ý nghĩa lịch sử của chiến thắng Bạch Đằng năm 938.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c088",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "cuoc-noi-day-khuc-thua-du",
+      "name": "Cuộc nổi dậy của Khúc Thừa Dụ",
+      "description": "Cuộc nổi dậy của Khúc Thừa Dụ vào năm 905 đánh chiếm thành Đại La, lật đổ chính quyền đô hộ và tự xưng là tiết độ sứ.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c088",
+        "sgk-lich-su-va-ia-li-6-kntt-c089"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "cuoc-khang-chien-chong-nam-han",
+      "name": "Cuộc kháng chiến chống quân Nam Hán",
+      "description": "Cuộc kháng chiến do Dương Đình Nghệ lãnh đạo vào năm 930-931 để đánh đuổi quân Nam Hán, củng cố nền tự chủ.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c089",
+        "sgk-lich-su-va-ia-li-6-kntt-c090"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "chien-thang-bach-dang-938",
+      "name": "Chiến thắng Bạch Đằng năm 938",
+      "description": "Chiến thắng Bạch Đằng năm 938 do Ngô Quyền lãnh đạo, chấm dứt thời kỳ Bắc thuộc và mở ra kỷ nguyên độc lập cho dân tộc.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c090",
+        "sgk-lich-su-va-ia-li-6-kntt-c091",
+        "sgk-lich-su-va-ia-li-6-kntt-c092"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "s1",
+      "suggested_code": "ky-nang-doc-bang-do",
+      "name": "Kỹ năng đọc bản đồ",
+      "description": "Kỹ năng phân tích và khai thác thông tin từ bản đồ để hiểu rõ hơn về các sự kiện lịch sử.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c090"
+      ],
+      "evidence": []
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "causes",
+      "target": "c2",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c089",
+      "evidence": "Cuộc nổi dậy của Khúc Thừa Dụ đã tạo điều kiện cho Dương Đình Nghệ tiếp tục cuộc kháng chiến chống quân Nam Hán.",
+      "confidence": 0.9
+    },
+    {
+      "source": "c2",
+      "relation_type": "causes",
+      "target": "c3",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c091",
+      "evidence": "Cuộc kháng chiến chống quân Nam Hán của Dương Đình Nghệ đã dẫn đến chiến thắng Bạch Đằng của Ngô Quyền.",
+      "confidence": 0.9
+    }
+  ],
+  "misconceptions": []
+}

@@ -1,0 +1,77 @@
+{
+  "document": {
+    "document_id": "math-k6-sgk",
+    "source_type": "SGK",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 2",
+    "lesson": "Bài 33"
+  },
+  "learning_objectives": [],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "diem-nam-giua-hai-diem",
+      "name": "Điểm nằm giữa hai điểm",
+      "description": "Khái niệm về điểm nằm giữa hai điểm A và C trên đường thẳng.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c060"
+      ],
+      "evidence": [
+        "Điểm B nằm giữa hai điểm A và C."
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "tia",
+      "name": "Tia",
+      "description": "Khái niệm về tia gốc và các tia đối nhau.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c061"
+      ],
+      "evidence": [
+        "Hình gồm điểm O và một phần đường thẳng bị chia ra bởi điểm O được gọi là một tia gốc O."
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "hai-tia-doi-nhau",
+      "name": "Hai tia đối nhau",
+      "description": "Hai tia có gốc chung và nằm trên cùng một đường thẳng nhưng hướng ngược nhau.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c061"
+      ],
+      "evidence": [
+        "Hai tia Ox và Oy gọi là hai tia đối nhau."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "prerequisite_of",
+      "target": "c2",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c060",
+      "evidence": "Điểm nằm giữa hai điểm là khái niệm cơ bản để hiểu về tia.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c2",
+      "relation_type": "part_of",
+      "target": "c3",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c061",
+      "evidence": "Hai tia đối nhau là một phần của khái niệm tia.",
+      "confidence": 1.0
+    }
+  ],
+  "misconceptions": []
+}

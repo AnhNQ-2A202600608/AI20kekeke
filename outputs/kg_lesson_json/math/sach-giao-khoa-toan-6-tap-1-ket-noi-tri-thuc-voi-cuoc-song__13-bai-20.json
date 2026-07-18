@@ -1,0 +1,206 @@
+{
+  "document": {
+    "document_id": "math-k6-sgk",
+    "source_type": "SGK",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 1",
+    "lesson": "Bài 20"
+  },
+  "learning_objectives": [],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "chu-vi-hinh-vuong",
+      "name": "Chu vi hình vuông",
+      "description": "Công thức tính chu vi hình vuông là $C = 4a$, với $a$ là độ dài cạnh.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c108"
+      ],
+      "evidence": [
+        "C = 4a"
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "chu-vi-hinh-chu-nhat",
+      "name": "Chu vi hình chữ nhật",
+      "description": "Công thức tính chu vi hình chữ nhật là $C = 2(a + b)$, với $a$ và $b$ là chiều dài và chiều rộng.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c108"
+      ],
+      "evidence": [
+        "C = 2(a + b)"
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "chu-vi-hinh-thang",
+      "name": "Chu vi hình thang",
+      "description": "Công thức tính chu vi hình thang là $C = a + b + c + d$, với $a$, $b$, $c$, $d$ là độ dài các cạnh.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c108"
+      ],
+      "evidence": [
+        "C = a + b + c + d"
+      ]
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "dien-tich-hinh-vuong",
+      "name": "Diện tích hình vuông",
+      "description": "Công thức tính diện tích hình vuông là $S = a^{2}$, với $a$ là độ dài cạnh.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c108"
+      ],
+      "evidence": [
+        "S = a^{2}"
+      ]
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "dien-tich-hinh-chu-nhat",
+      "name": "Diện tích hình chữ nhật",
+      "description": "Công thức tính diện tích hình chữ nhật là $S = ab$, với $a$ là chiều dài và $b$ là chiều rộng.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c108"
+      ],
+      "evidence": [
+        "S = ab"
+      ]
+    },
+    {
+      "temporary_id": "c6",
+      "suggested_code": "dien-tich-hinh-thang",
+      "name": "Diện tích hình thang",
+      "description": "Công thức tính diện tích hình thang là $S = \\frac{1}{2}(a + b)h$, với $a$ và $b$ là độ dài hai đáy, $h$ là chiều cao.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c108"
+      ],
+      "evidence": [
+        "S = \\frac{1}{2}(a + b)h"
+      ]
+    },
+    {
+      "temporary_id": "c7",
+      "suggested_code": "chu-vi-hinh-binh-hanh",
+      "name": "Chu vi hình bình hành",
+      "description": "Công thức tính chu vi hình bình hành là $C = 2(a + b)$, với $a$ và $b$ là độ dài hai cạnh.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c110"
+      ],
+      "evidence": [
+        "C = 2(a + b)"
+      ]
+    },
+    {
+      "temporary_id": "c8",
+      "suggested_code": "chu-vi-hinh-thoi",
+      "name": "Chu vi hình thoi",
+      "description": "Công thức tính chu vi hình thoi là $C = 4m$, với $m$ là độ dài cạnh.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c110"
+      ],
+      "evidence": [
+        "C = 4m"
+      ]
+    },
+    {
+      "temporary_id": "c9",
+      "suggested_code": "dien-tich-hinh-binh-hanh",
+      "name": "Diện tích hình bình hành",
+      "description": "Công thức tính diện tích hình bình hành là $S = ah$, với $a$ là độ dài cạnh và $h$ là chiều cao.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c111"
+      ],
+      "evidence": [
+        "S = ah"
+      ]
+    },
+    {
+      "temporary_id": "c10",
+      "suggested_code": "dien-tich-hinh-thoi",
+      "name": "Diện tích hình thoi",
+      "description": "Công thức tính diện tích hình thoi là $S = \\frac{1}{2}ab$, với $a$ và $b$ là độ dài hai đường chéo.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c111"
+      ],
+      "evidence": [
+        "S = \\frac{1}{2}ab"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "used_for",
+      "target": "c2",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c108",
+      "evidence": "Công thức tính chu vi hình chữ nhật là $C = 2(a + b)$, với $a$ và $b$ là chiều dài và chiều rộng.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c2",
+      "relation_type": "used_for",
+      "target": "c3",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c108",
+      "evidence": "Công thức tính chu vi hình thang là $C = a + b + c + d$, với $a$, $b$, $c$, $d$ là độ dài các cạnh.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c4",
+      "relation_type": "used_for",
+      "target": "c5",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c108",
+      "evidence": "Công thức tính diện tích hình chữ nhật là $S = ab$, với $a$ là chiều dài và $b$ là chiều rộng.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c7",
+      "relation_type": "used_for",
+      "target": "c9",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c110",
+      "evidence": "Công thức tính diện tích hình bình hành là $S = ah$, với $a$ là độ dài cạnh và $h$ là chiều cao.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c8",
+      "relation_type": "used_for",
+      "target": "c10",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c110",
+      "evidence": "Công thức tính diện tích hình thoi là $S = \\frac{1}{2}ab$, với $a$ và $b$ là độ dài hai đường chéo.",
+      "confidence": 1.0
+    }
+  ],
+  "misconceptions": []
+}

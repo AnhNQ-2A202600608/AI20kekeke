@@ -1,0 +1,168 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Bài 14",
+    "lesson": "NHÀ NƯỚC VĂN LANG – ÂU LẠC"
+  },
+  "learning_objectives": [
+    {
+      "code": "xac-dinh-pham-vi-nuoc-van-lang",
+      "description": "Xác định phạm vi không gian của nước Văn Lang – Âu Lạc trên lược đồ.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c064",
+      "evidence": ""
+    },
+    {
+      "code": "trinh-bay-to-chuc-nha-nuoc",
+      "description": "Trình bày tổ chức nhà nước của Văn Lang – Âu Lạc.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c064",
+      "evidence": ""
+    },
+    {
+      "code": "mo-ta-doi-song-vat-chat",
+      "description": "Mô tả đời sống vật chất và tinh thần của cư dân Văn Lang – Âu Lạc.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c064",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "nha-nuoc-van-lang",
+      "name": "Nhà nước Văn Lang",
+      "description": "Nhà nước đầu tiên của người Việt cổ, thành lập vào khoảng thế kỉ VII TCN.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c064",
+        "sgk-lich-su-va-ia-li-6-kntt-c065"
+      ],
+      "evidence": [
+        "Nhà nước Văn Lang ra đời vào khoảng thế kỉ VII TCN."
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "nha-nuoc-au-lac",
+      "name": "Nhà nước Âu Lạc",
+      "description": "Nhà nước được thành lập vào khoảng năm 208 TCN, do Thục Phán lãnh đạo.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c065",
+        "sgk-lich-su-va-ia-li-6-kntt-c066"
+      ],
+      "evidence": [
+        "Nhà nước Âu Lạc được thành lập vào khoảng năm 208 TCN."
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "thoi-gian-thanh-lap-nha-nuoc",
+      "name": "Thời gian thành lập nhà nước",
+      "description": "Thời gian thành lập của Nhà nước Văn Lang và Âu Lạc.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c064",
+        "sgk-lich-su-va-ia-li-6-kntt-c065"
+      ],
+      "evidence": [
+        "Nhà nước Văn Lang ra đời vào khoảng thế kỉ VII TCN và Nhà nước Âu Lạc vào khoảng năm 208 TCN."
+      ]
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "doi-song-vat-chat-van-lang-au-lac",
+      "name": "Đời sống vật chất của cư dân Văn Lang – Âu Lạc",
+      "description": "Mô tả đời sống vật chất của cư dân Văn Lang và Âu Lạc.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c066",
+        "sgk-lich-su-va-ia-li-6-kntt-c067"
+      ],
+      "evidence": [
+        "Cư dân Việt cổ đã biết đến nền nông nghiệp dùng cày và sớm lấy nghề nông trồng lúa nước làm nghề chính."
+      ]
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "doi-song-tinh-than-van-lang-au-lac",
+      "name": "Đời sống tinh thần của cư dân Văn Lang – Âu Lạc",
+      "description": "Mô tả đời sống tinh thần của cư dân Văn Lang và Âu Lạc.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c067"
+      ],
+      "evidence": [
+        "Cư dân Văn Lang – Âu Lạc có tục thờ cúng tổ tiên và thờ các vị thần trong tự nhiên."
+      ]
+    },
+    {
+      "temporary_id": "c6",
+      "suggested_code": "pham-vi-nuoc-van-lang",
+      "name": "Phạm vi nước Văn Lang",
+      "description": "Phạm vi không gian chủ yếu của nước Văn Lang.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c065"
+      ],
+      "evidence": [
+        "Dựa vào thông tin trong mục 1 và sử dụng bản đồ hành chính Việt Nam, hãy xác định phạm vi không gian chủ yếu của nước Văn Lang trên bản đồ."
+      ]
+    },
+    {
+      "temporary_id": "c7",
+      "suggested_code": "pham-vi-nuoc-au-lac",
+      "name": "Phạm vi nước Âu Lạc",
+      "description": "Phạm vi không gian chủ yếu của nước Âu Lạc.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c066"
+      ],
+      "evidence": [
+        "Dựa vào thông tin trong mục 2 và sử dụng bản đồ hành chính Việt Nam, hãy xác định phạm vi không gian chủ yếu của nước Âu Lạc trên bản đồ."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "prerequisite_of",
+      "target": "c6",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c065",
+      "evidence": "Dựa vào thông tin trong mục 1 và sử dụng bản đồ hành chính Việt Nam, hãy xác định phạm vi không gian chủ yếu của nước Văn Lang trên bản đồ.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c2",
+      "relation_type": "prerequisite_of",
+      "target": "c7",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c066",
+      "evidence": "Dựa vào thông tin trong mục 2 và sử dụng bản đồ hành chính Việt Nam, hãy xác định phạm vi không gian chủ yếu của nước Âu Lạc trên bản đồ.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c1",
+      "relation_type": "causes",
+      "target": "c2",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c065",
+      "evidence": "Cuối thế kỉ III TCN, nhà Tần đem quân đánh xuống phía nam. Người Lạc Việt và người Âu Việt đã đoàn kết với nhau cùng chống quân xâm lược.",
+      "confidence": 1.0
+    }
+  ],
+  "misconceptions": []
+}

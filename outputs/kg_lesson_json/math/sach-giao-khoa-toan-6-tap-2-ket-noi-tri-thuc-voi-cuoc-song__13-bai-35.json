@@ -1,0 +1,78 @@
+{
+  "document": {
+    "document_id": "math-k6-sgk",
+    "source_type": "SGK",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 2",
+    "lesson": "Bài 35"
+  },
+  "learning_objectives": [],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "trung-diem-cua-doan-thang",
+      "name": "Trung điểm của đoạn thẳng",
+      "description": "Điểm nằm giữa hai điểm A và B sao cho khoảng cách từ điểm đó đến hai đầu mút là bằng nhau.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c071",
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c072"
+      ],
+      "evidence": [
+        "Nếu điểm I nằm giữa hai điểm A và B sao cho IA = IB thì điểm I gọi là trung điểm của đoạn thẳng AB."
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "tinh-do-dai-doan-thang",
+      "name": "Tính độ dài đoạn thẳng",
+      "description": "Tính độ dài đoạn thẳng từ trung điểm đến một đầu mút.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c072"
+      ],
+      "evidence": [
+        "M là trung điểm của AB nên ta có: AM = MB = AB/2."
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "kiem-tra-trung-diem",
+      "name": "Kiểm tra trung điểm",
+      "description": "Sử dụng thước thẳng để kiểm tra xem một điểm có phải là trung điểm của đoạn thẳng hay không.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c072"
+      ],
+      "evidence": [
+        "Dùng thước thẳng có vạch chia, em hãy kiểm tra xem các điểm I, J, K trong Hình 8.39 có lần lượt là trung điểm của các đoạn thẳng AB, CD, EF hay không."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "is_a",
+      "target": "c2",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c072",
+      "evidence": "M là trung điểm của AB nên ta có: AM = MB = AB/2.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c1",
+      "relation_type": "related_to",
+      "target": "c3",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c072",
+      "evidence": "Dùng thước thẳng có vạch chia, em hãy kiểm tra xem các điểm I, J, K trong Hình 8.39 có lần lượt là trung điểm của các đoạn thẳng AB, CD, EF hay không.",
+      "confidence": 1.0
+    }
+  ],
+  "misconceptions": []
+}

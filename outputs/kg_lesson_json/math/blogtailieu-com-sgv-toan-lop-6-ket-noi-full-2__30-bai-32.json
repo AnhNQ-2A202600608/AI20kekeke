@@ -1,0 +1,50 @@
+{
+  "document": {
+    "document_id": "math-k6-sgv",
+    "source_type": "SGV",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 2",
+    "lesson": "Bài 32"
+  },
+  "learning_objectives": [
+    {
+      "code": "nhan-biet-khai-niem-diem-duong-thang",
+      "description": "Nhận biết được các khái niệm, quan hệ cơ bản giữa điểm và đường thẳng.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Điểm thuộc và không thuộc đường thẳng; tiên đề về đường thẳng đi qua hai điểm phân biệt."
+    },
+    {
+      "code": "su-dung-dung-cu-hoc-tap",
+      "description": "Sử dụng được dụng cụ học tập và các phương tiện thích hợp để vẽ và kiểm tra các khái niệm về điểm và đường thẳng.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Vẽ được: đường thẳng đi qua hai điểm phân biệt; hai đường thẳng cắt nhau và xác định giao điểm của chúng; hai đường thẳng song song."
+    },
+    {
+      "code": "phat-trien-thoi-quen-tim-toi",
+      "description": "Rèn luyện thói quen tìm tòi, quan sát và khám phá kiến thức mới.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Rèn luyện thói quen tìm tòi, quan sát và khám phá kiến thức mới."
+    }
+  ],
+  "concepts": [],
+  "relations": [],
+  "misconceptions": [
+    {
+      "temporary_id": "m1",
+      "name": "Bỏ qua giả thiết 'phân biệt'",
+      "description": "Học sinh có thể không nhận ra rằng hai điểm phải phân biệt để có một đường thẳng đi qua.",
+      "related_skill": "c1",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c001",
+      "evidence": "Lúc đầu, HS dễ bỏ qua giả thiết 'phân biệt'."
+    },
+    {
+      "temporary_id": "m2",
+      "name": "Lúng túng khi sử dụng dụng cụ",
+      "description": "Học sinh có thể gặp khó khăn khi sử dụng compa và thước.",
+      "related_skill": "c1",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c001",
+      "evidence": "Có thể một số HS lúng túng khi sử dụng compa và các loại thước."
+    }
+  ]
+}

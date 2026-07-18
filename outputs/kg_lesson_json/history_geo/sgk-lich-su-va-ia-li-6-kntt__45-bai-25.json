@@ -1,0 +1,128 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Bài 25",
+    "lesson": "SỰ PHÂN BỐ CÁC ĐỚI THIÊN NHIÊN TRÊN TRÁI ĐẤT"
+  },
+  "learning_objectives": [
+    {
+      "code": "xac-dinh-phan-bo-doi-thien-nhien",
+      "description": "Xác định được trên bản đồ sự phân bố các đới thiên nhiên trên Trái Đất.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c205",
+      "evidence": ""
+    },
+    {
+      "code": "mo-ta-dac-diem-doi-thien-nhien",
+      "description": "Nêu được đặc điểm của các đới thiên nhiên trên Trái Đất.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c205",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "doi-nong",
+      "name": "Đới nóng",
+      "description": "Là nơi có nhiệt độ cao, cảnh quan thiên nhiên thay đổi chủ yếu phụ thuộc vào chế độ mưa, giới thực, động vật đa dạng.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c205"
+      ],
+      "evidence": [
+        "Là nơi có nhiệt độ cao. Cảnh quan thiên nhiên thay đổi chủ yếu phụ thuộc vào chế độ mưa. Giới thực, động vật hết sức đa dạng, phong phú."
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "doi-on-hoa",
+      "name": "Đới ôn hoà",
+      "description": "Có khí hậu mang tính trung gian giữa đới nóng và đới lạnh, thiên nhiên thay đổi rõ rệt theo mùa.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c205"
+      ],
+      "evidence": [
+        "Có khí hậu mang tính trung gian giữa đới nóng và đới lạnh. Thiên nhiên đới ôn hoà thay đổi rõ rệt theo mùa."
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "doi-lanh",
+      "name": "Đới lạnh",
+      "description": "Là xứ sở của băng tuyết, khí hậu khắc nghiệt, thực vật thưa lùn, động vật thích nghi với khí hậu lạnh.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c205"
+      ],
+      "evidence": [
+        "Là xứ sở của băng tuyết, khí hậu vô cùng khắc nghiệt, tầng đất dày nguyên mỏng. Thực vật thưa lùn, chủ yếu là rêu, địa y và các loại cây thân thảo."
+      ]
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "rung-tai-ga",
+      "name": "Rừng Tai-ga",
+      "description": "Rừng có diện tích rộng nhất trên Trái Đất, chủ yếu là cây lá kim, động vật như sóc, nhím, gấu nâu.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c206"
+      ],
+      "evidence": [
+        "Rừng Tai-ga phân bố ở vùng ôn đới lạnh. Đây là rừng có diện tích rộng nhất trên Trái Đất (chiếm 9% diện tích Trái Đất)."
+      ]
+    },
+    {
+      "temporary_id": "s1",
+      "suggested_code": "ky-nang-doc-ban-do",
+      "name": "Kỹ năng đọc bản đồ",
+      "description": "Kỹ năng xác định và phân tích thông tin trên bản đồ.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c206"
+      ],
+      "evidence": [
+        "Xác định trên bản đồ hình 2 phạm vi của các đới thiên nhiên trên Trái Đất."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "related_to",
+      "target": "c2",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c205",
+      "evidence": "Tương ứng với ba đới khí hậu là ba đới thiên nhiên trên Trái Đất: đới nóng, đới ôn hoà và đới lạnh.",
+      "confidence": 0.9
+    },
+    {
+      "source": "c2",
+      "relation_type": "related_to",
+      "target": "c3",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c205",
+      "evidence": "Có khí hậu mang tính trung gian giữa đới nóng và đới lạnh.",
+      "confidence": 0.9
+    },
+    {
+      "source": "c3",
+      "relation_type": "related_to",
+      "target": "c4",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c206",
+      "evidence": "Rừng Tai-ga phân bố ở vùng ôn đới lạnh.",
+      "confidence": 0.9
+    }
+  ],
+  "misconceptions": []
+}

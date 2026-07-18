@@ -1,0 +1,39 @@
+{
+  "document": {
+    "document_id": "math-k6-sgv",
+    "source_type": "SGV",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 2",
+    "lesson": "Bài 34"
+  },
+  "learning_objectives": [
+    {
+      "code": "nhan-biet-khai-niem-doan-thang",
+      "description": "Nhận biết được khái niệm đoạn thẳng, độ dài đoạn thẳng.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận biết được khái niệm đoạn thẳng, độ dài đoạn thẳng."
+    },
+    {
+      "code": "do-do-dai-doan-thang",
+      "description": "Biết đo độ dài đoạn thẳng bằng thước thẳng có chia vạch.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Biết đo độ dài đoạn thẳng bằng thước thẳng có chia vạch."
+    },
+    {
+      "code": "giai-bai-toan-thuc-te",
+      "description": "Giải được các bài toán thực tế liên quan đến độ dài đoạn thẳng.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Giải được các bài toán thực tế liên quan đến độ dài đoạn thẳng."
+    },
+    {
+      "code": "thich-thu-hoc-tap",
+      "description": "Đổi mới hướng thú học tập, mong muốn tìm hiểu, khám phá kiến thức.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Đổi mới hướng thú học tập, mong muốn tìm hiểu, khám phá kiến thức."
+    }
+  ],
+  "concepts": [],
+  "relations": [],
+  "misconceptions": []
+}

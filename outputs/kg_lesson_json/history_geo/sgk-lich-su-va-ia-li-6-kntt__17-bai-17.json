@@ -1,0 +1,85 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Bài 17",
+    "lesson": "CUỘC ĐẤU TRANH BẢO TỒN VÀ PHÁT TRIỂN VĂN HOÁ DÂN TỘC CỦA NGƯỜI VIỆT"
+  },
+  "learning_objectives": [
+    {
+      "code": "trinh-bay-bieu-hien-giu-gin-van-hoa",
+      "description": "Trình bày được những biểu hiện trong việc giữ gìn văn hoá của người Việt trong thời kì Bắc thuộc.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c085",
+      "evidence": ""
+    },
+    {
+      "code": "nhan-biet-phat-trien-van-hoa",
+      "description": "Nhận biết được sự phát triển của văn hoá dân tộc trên cơ sở tiếp thu có chọn lọc văn hoá Trung Hoa trong thời kì Bắc thuộc.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c085",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "van-hoa-dan-toc-viet-nam",
+      "name": "Văn hoá dân tộc Việt Nam",
+      "description": "Nền văn hoá của người Việt, bao gồm các phong tục, tập quán, tín ngưỡng và ngôn ngữ.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c085",
+        "sgk-lich-su-va-ia-li-6-kntt-c086"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "tiep-thu-van-hoa-trung-hoa",
+      "name": "Tiếp thu văn hoá Trung Hoa",
+      "description": "Quá trình tiếp nhận và chọn lọc các yếu tố văn hoá từ Trung Hoa trong thời kì Bắc thuộc.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c086"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "phong-tuc-xam-minh",
+      "name": "Phong tục xăm mình",
+      "description": "Tục lệ xăm mình của người Việt, có nguồn gốc từ thời dựng nước, liên quan đến tín ngưỡng và văn hoá.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c086"
+      ],
+      "evidence": []
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "related_to",
+      "target": "c2",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c086",
+      "evidence": "",
+      "confidence": 0.9
+    },
+    {
+      "source": "c1",
+      "relation_type": "related_to",
+      "target": "c3",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c086",
+      "evidence": "",
+      "confidence": 0.9
+    }
+  ],
+  "misconceptions": []
+}

@@ -1,0 +1,154 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Chương 1",
+    "lesson": "Bài 1"
+  },
+  "learning_objectives": [
+    {
+      "code": "nhan-biet-kinh-tuyen-vi-tuyen",
+      "description": "Nhận biết các khái niệm kinh tuyến, vĩ tuyến, kinh tuyến gốc, vĩ tuyến gốc, các bán cầu, tọa độ địa lí.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c109",
+      "evidence": ""
+    },
+    {
+      "code": "xac-dinh-toa-do-dia-li",
+      "description": "Xác định tọa độ địa lí của một địa điểm trên bản đồ và trên quả Địa Cầu.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c110",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "kinh-tuyen",
+      "name": "Kinh tuyến",
+      "description": "Đường nối hai cực trên bề mặt quả Địa Cầu.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c109",
+        "sgk-lich-su-va-ia-li-6-kntt-c110"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "vi-tuyen",
+      "name": "Vĩ tuyến",
+      "description": "Vòng tròn bao quanh quả Địa Cầu và vuông góc với các kinh tuyến.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c109",
+        "sgk-lich-su-va-ia-li-6-kntt-c110"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "kinh-tuyen-goc",
+      "name": "Kinh tuyến gốc",
+      "description": "Kinh tuyến được quy ước là đi qua Đài thiên văn Grin-uých.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c109"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "vi-tuyen-goc",
+      "name": "Vĩ tuyến gốc",
+      "description": "Vĩ tuyến gốc là Xích đạo, chia quả Địa Cầu thành hai bán cầu: Bắc và Nam.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c109"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "toa-do-dia-li",
+      "name": "Tọa độ địa lí",
+      "description": "Kinh độ và vĩ độ của một địa điểm, xác định vị trí trên quả Địa Cầu và bản đồ.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c110"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c6",
+      "suggested_code": "kinh-do",
+      "name": "Kinh độ",
+      "description": "Khoảng cách tính bằng độ từ kinh tuyến gốc đến kinh tuyến đi qua điểm đó.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c110"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c7",
+      "suggested_code": "vi-do",
+      "name": "Vĩ độ",
+      "description": "Khoảng cách tính bằng độ từ Xích đạo đến vĩ tuyến đi qua điểm đó.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c110"
+      ],
+      "evidence": []
+    }
+  ],
+  "relations": [
+    {
+      "source": "c3",
+      "relation_type": "is_a",
+      "target": "c1",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c109",
+      "evidence": "",
+      "confidence": 0.9
+    },
+    {
+      "source": "c4",
+      "relation_type": "is_a",
+      "target": "c2",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c109",
+      "evidence": "",
+      "confidence": 0.9
+    },
+    {
+      "source": "c5",
+      "relation_type": "related_to",
+      "target": "c6",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c110",
+      "evidence": "",
+      "confidence": 0.8
+    },
+    {
+      "source": "c5",
+      "relation_type": "related_to",
+      "target": "c7",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c110",
+      "evidence": "",
+      "confidence": 0.8
+    }
+  ],
+  "misconceptions": []
+}

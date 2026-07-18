@@ -1,0 +1,467 @@
+{
+  "merged": [
+    {
+      "merged_from": [
+        "c2"
+      ],
+      "merged_into": "nguoi-toi-co",
+      "reason": "exact_code_match",
+      "confidence": 1.0
+    },
+    {
+      "merged_from": [
+        "c3"
+      ],
+      "merged_into": "nguoi-tinh-khon",
+      "reason": "exact_code_match",
+      "confidence": 1.0
+    },
+    {
+      "merged_from": [
+        "c2"
+      ],
+      "merged_into": "xa-hoi-nguyen-thuy",
+      "reason": "exact_code_match",
+      "confidence": 1.0
+    },
+    {
+      "merged_from": [
+        "s1"
+      ],
+      "merged_into": "ky-nang-doc-ban-do",
+      "reason": "exact_normalized_name_match",
+      "confidence": 1.0
+    },
+    {
+      "merged_from": [
+        "c6"
+      ],
+      "merged_into": "ky-nang-doc-ban-do",
+      "reason": "exact_code_match",
+      "confidence": 1.0
+    },
+    {
+      "merged_from": [
+        "c3"
+      ],
+      "merged_into": "ky-nang-doc-ban-do",
+      "reason": "exact_code_match",
+      "confidence": 1.0
+    },
+    {
+      "merged_from": [
+        "c3"
+      ],
+      "merged_into": "xac-dinh-phuong-huong",
+      "reason": "exact_code_match",
+      "confidence": 1.0
+    },
+    {
+      "merged_from": [
+        "s1"
+      ],
+      "merged_into": "doc-bang-luoc-do",
+      "reason": "exact_normalized_name_match",
+      "confidence": 1.0
+    },
+    {
+      "merged_from": [
+        "c8"
+      ],
+      "merged_into": "ky-nang-doc-ban-do",
+      "reason": "exact_code_match",
+      "confidence": 1.0
+    },
+    {
+      "merged_from": [
+        "c2"
+      ],
+      "merged_into": "khí-hau",
+      "reason": "exact_normalized_name_match",
+      "confidence": 1.0
+    },
+    {
+      "merged_from": [
+        "c1"
+      ],
+      "merged_into": "thuy-quyen",
+      "reason": "exact_code_match",
+      "confidence": 1.0
+    },
+    {
+      "merged_from": [
+        "s1"
+      ],
+      "merged_into": "doc-bang-luoc-do",
+      "reason": "exact_normalized_name_match",
+      "confidence": 1.0
+    },
+    {
+      "merged_from": [
+        "s1"
+      ],
+      "merged_into": "ky-nang-doc-ban-do",
+      "reason": "exact_code_match",
+      "confidence": 1.0
+    },
+    {
+      "merged_from": [
+        "c2"
+      ],
+      "merged_into": "khí-hau",
+      "reason": "exact_code_match",
+      "confidence": 1.0
+    },
+    {
+      "merged_from": [
+        "c1"
+      ],
+      "merged_into": "dan-so-the-gioi",
+      "reason": "exact_code_match",
+      "confidence": 1.0
+    },
+    {
+      "merged_from": [
+        "c2"
+      ],
+      "merged_into": "bao-ve-tu-nhien",
+      "reason": "exact_code_match",
+      "confidence": 1.0
+    }
+  ],
+  "not_merged": [
+    "khai-niem-lich-su",
+    "mon-lich-su",
+    "y-nghia-hoc-lich-su",
+    "tu-lieu-hien-vat",
+    "tu-lieu-chu-viet",
+    "tu-lieu-truyen-mieng",
+    "tu-lieu-goc",
+    "khai-niem-thap-ki-the-ki-thien-nien-ki",
+    "am-lich-duong-lich",
+    "cong-lich",
+    "cach-tinh-thoi-gian",
+    "doc-ghi-moc-thoi-gian",
+    "qua-trinh-tien-hoa-tu-vuon-nguoi-thanh-nguoi",
+    "nguoi-toi-co",
+    "nguoi-tinh-khon",
+    "dau-tich-nguoi-toi-co-o-viet-nam",
+    "xa-hoi-nguyen-thuy",
+    "cong-xa-thi-toc",
+    "doi-song-vat-chat-nguyen-thuy",
+    "doi-song-tinh-than-nguyen-thuy",
+    "lao-dong-nguyen-thuy",
+    "van-hoa-hoa-binh",
+    "phat-hien-kim-loai",
+    "xa-hoi-co-giai-cap",
+    "van-hoa-khao-co",
+    "doc-bang",
+    "ai-cap",
+    "luong-ha",
+    "chu-viet-ai-cap-luong-ha",
+    "thanh-tuu-van-hoa-ai-cap-luong-ha",
+    "ky-thuat-thuy-loi",
+    "ky-thuat-uop-xac",
+    "phat-minh-cai-cay",
+    "phat-minh-banh-xe",
+    "kim-tu-thap",
+    "tuong-nhan-su",
+    "vuon-treo-ba-bilon",
+    "luu-vuc-song-an",
+    "luu-vuc-song-hang",
+    "che-do-dang-cap-vac-na",
+    "chu-viet-co-dai-an-do",
+    "thanh-tuu-van-hoa-an-do",
+    "he-thong-chu-so",
+    "phat-giao",
+    "dao-ba-la-mon",
+    "dieu-kien-tu-nhien-trung-quoc",
+    "nha-tan-thong-nhat-trung-quoc",
+    "nha-han-den-nha-tuy",
+    "thanh-tuu-van-minh-trung-quoc",
+    "phat-minh-la-ban",
+    "dia-dong-nghi",
+    "van-ly-truong-thanh",
+    "su-ki-cua-tu-ma-thien",
+    "hy-lap",
+    "la-ma",
+    "nha-nuoc-thanh-bang",
+    "nha-nuoc-de-che",
+    "van-hoa-hy-lap-la-ma",
+    "vi-tri-dia-li-dong-nam-a",
+    "quoc-gia-so-ki-dong-nam-a",
+    "giao-luu-thuong-mai-dong-nam-a",
+    "ky-nang-doc-ban-do",
+    "vuong-quoc-phong-kien",
+    "hoat-dong-kinh-te",
+    "con-duong-gia-vi",
+    "thuong-cang-sam-uat",
+    "giao-luu-thuong-mai",
+    "doc-bang-luoc-do",
+    "tin-nguong-ton-giao",
+    "chu-viet-van-hoc",
+    "kien-truc-dieu-khac",
+    "van-hoa-dong-nam-a",
+    "nha-nuoc-van-lang",
+    "nha-nuoc-au-lac",
+    "thoi-gian-thanh-lap-nha-nuoc",
+    "doi-song-vat-chat-van-lang-au-lac",
+    "doi-song-tinh-than-van-lang-au-lac",
+    "pham-vi-nuoc-van-lang",
+    "pham-vi-nuoc-au-lac",
+    "chinh-sach-cai-tri-cac-trieu-dai-phong-kien-phuong-bac",
+    "chuyen-bien-kinh-te-xa-hoi-thoi-bac-thuoc",
+    "khoi-nghia-hai-ba-trung",
+    "khoi-nghia-ba-trieu",
+    "khoi-nghia-ly-bi",
+    "khoi-nghia-mai-thuc-loan",
+    "khoi-nghia-phung-hung",
+    "van-hoa-dan-toc-viet-nam",
+    "tiep-thu-van-hoa-trung-hoa",
+    "phong-tuc-xam-minh",
+    "cuoc-noi-day-khuc-thua-du",
+    "cuoc-khang-chien-chong-nam-han",
+    "chien-thang-bach-dang-938",
+    "vuong-quoc-cham-pa",
+    "hoat-dong-kinh-te-cham-pa",
+    "to-chuc-xa-hoi-cham-pa",
+    "thanh-tuu-van-hoa-cham-pa",
+    "le-hoi-ka-te",
+    "vuong-quoc-phu-nam",
+    "van-hoa-oc-eo",
+    "hoat-dong-kinh-te-phu-nam",
+    "to-chuc-xa-hoi-phu-nam",
+    "thanh-tuu-van-hoa-phu-nam",
+    "kinh-tuyen",
+    "vi-tuyen",
+    "kinh-tuyen-goc",
+    "vi-tuyen-goc",
+    "toa-do-dia-li",
+    "kinh-do",
+    "vi-do",
+    "khai-niem-ban-do",
+    "luoi-kinh-vi-tuyen",
+    "phuong-huong-tren-ban-do",
+    "xac-dinh-phuong-huong",
+    "ti-le-ban-do",
+    "ti-le-so",
+    "ti-le-thuoc",
+    "tinh-khoang-cach",
+    "ki-hieu-ban-do",
+    "bang-chu-giai",
+    "tim-duong-di",
+    "luoc-do-tri-nho",
+    "ve-luoc-do-tri-nho",
+    "vi-tri-trai-dat",
+    "hinh-dang-trai-dat",
+    "kich-thuoc-trai-dat",
+    "hanh-tinh-trong-he-mat-troi",
+    "chuyen-dong-tu-quay",
+    "he-qua-chuyen-dong-tu-quay",
+    "luc-co-ri-o-lit",
+    "gio-khu-vuc",
+    "ngay-dem-luan-phien",
+    "chuyen-dong-cua-trai-dat-quanh-mat-troi",
+    "hien-tuong-mua",
+    "hien-tuong-ngay-dem",
+    "doc-hinh-anh",
+    "cau-tao-la-ban",
+    "phuong-huong-tu-nhien",
+    "ky-nang-su-dung-la-ban",
+    "ky-nang-quan-sat-tu-nhien",
+    "cau-tao-cua-trai-dat",
+    "dia-mang-kien-tao",
+    "ky-nang-doc-luoc-do",
+    "qua-trinh-noi-sinh",
+    "qua-trinh-ngoai-sinh",
+    "hien-tuong-tao-nui",
+    "nui-lua",
+    "dong-dat",
+    "ky-nang-bao-ve-khi-dong-dat",
+    "dang-dia-hinh",
+    "khoang-san",
+    "doc-luoc-do-dia-hinh-ti-le-lon",
+    "doc-lat-cat-dia-hinh-don-gian",
+    "khí-hau",
+    "thanh-phan-khong-khi",
+    "cac-tang-khi-quyen",
+    "khong-khi",
+    "khi-ap",
+    "gio",
+    "khai-thac-khi-ap",
+    "nhiet-do-khong-khi",
+    "am-ke",
+    "hinh-thanh-may-va-mua",
+    "nhiet-ke",
+    "su-thay-doi-nhiet-do-theo-vi-do",
+    "phan-bo-luong-mua-trung-binh-nam",
+    "ky-nang-doc-bang",
+    "thoi-tiet",
+    "bien-doi-khi-hau",
+    "doi-khi-hau",
+    "bieu-do-nhiet-do-luong-mua",
+    "thuy-quyen",
+    "vong-tuan-hoan-lon-cua-nuoc",
+    "song",
+    "ho",
+    "nuoc-ngam",
+    "bang-ha",
+    "luu-vuc-song",
+    "bien-va-dai-duong",
+    "dai-duong-the-gioi",
+    "do-muoi-nuoc-bien",
+    "nhiet-do-nuoc-bien",
+    "song-bien",
+    "thuy-trieu",
+    "dong-bien",
+    "loai-dong-bien",
+    "tac-dong-cua-dong-bien",
+    "cac-tang-dat",
+    "thanh-phan-cua-dat",
+    "nhan-to-hinh-thanh-dat",
+    "nhom-dat-dien-hinh",
+    "da-dang-sinh-vat",
+    "thuc-vat",
+    "dong-vat",
+    "dac-diem-rung-nhiet-doi",
+    "rung-mua-nhiet-doi",
+    "rung-nhiet-doi-gio-mua",
+    "bao-ve-rung-nhiet-doi",
+    "doi-nong",
+    "doi-on-hoa",
+    "doi-lanh",
+    "rung-tai-ga",
+    "dia-hinh",
+    "song-ngoi",
+    "dat",
+    "sinh-vat",
+    "moi-quan-he-con-nguoi-thien-nhien",
+    "dan-so-the-gioi",
+    "bao-ve-tu-nhien",
+    "phan-bo-dan-cu",
+    "mat-do-dan-so",
+    "thanh-pho-dong-dan-nhat",
+    "ky-nang-doc-bieu-do",
+    "ky-nang-xac-dinh-thanh-pho",
+    "tac-dong-cua-thien-nhien",
+    "tac-dong-cua-con-nguoi",
+    "tai-nguyen-thien-nhien",
+    "khai-thac-tai-nguyen",
+    "bao-ve-moi-truong",
+    "phat-trien-ben-vung",
+    "khai-thac-thong-minh-tai-nguyen",
+    "su-dung-tai-nguyen-hieu-qua",
+    "nguon-loi-tu-nhien-o-dia-phuong",
+    "o-nhiem-moi-truong",
+    "thien-tai-va-phong-chong-thien-tai",
+    "bao-ve-thien-nhien",
+    "bao-cao",
+    "thuc-hanh-tim-hieu-moi-truong"
+  ],
+  "needs_review": [
+    {
+      "concept_a": "doi-song-tinh-than-van-lang-au-lac",
+      "name_a": "Đời sống tinh thần của cư dân Văn Lang – Âu Lạc",
+      "concept_b": "doi-song-vat-chat-van-lang-au-lac",
+      "name_b": "Đời sống vật chất của cư dân Văn Lang – Âu Lạc",
+      "similarity": 0.7142857142857143,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "kinh-tuyen-goc",
+      "name_a": "Kinh tuyến gốc",
+      "concept_b": "kinh-tuyen",
+      "name_b": "Kinh tuyến",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "vi-tuyen-goc",
+      "name_a": "Vĩ tuyến gốc",
+      "concept_b": "vi-tuyen",
+      "name_b": "Vĩ tuyến",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "he-qua-chuyen-dong-tu-quay",
+      "name_a": "Hệ quả chuyển động tự quay",
+      "concept_b": "chuyen-dong-tu-quay",
+      "name_b": "Chuyển động tự quay",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "ky-nang-doc-luoc-do",
+      "name_a": "Kỹ năng đọc lược đồ",
+      "concept_b": "ky-nang-doc-ban-do",
+      "name_b": "Kỹ năng đọc bản đồ",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "khai-thac-khi-ap",
+      "name_a": "Khí áp kế",
+      "concept_b": "khi-ap",
+      "name_b": "Khí áp",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "doi-khi-hau",
+      "name_a": "Đới khí hậu",
+      "concept_b": "khí-hau",
+      "name_b": "Khí hậu",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "luu-vuc-song",
+      "name_a": "Lưu vực sông",
+      "concept_b": "luu-vuc-song-an",
+      "name_b": "Lưu vực sông Ấn",
+      "similarity": 0.75,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "luu-vuc-song",
+      "name_a": "Lưu vực sông",
+      "concept_b": "luu-vuc-song-hang",
+      "name_b": "Lưu vực sông Hằng",
+      "similarity": 0.75,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "loai-dong-bien",
+      "name_a": "Loại dòng biển",
+      "concept_b": "dong-bien",
+      "name_b": "Dòng biển",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "dia-hinh",
+      "name_a": "Địa hình",
+      "concept_b": "dang-dia-hinh",
+      "name_b": "Dạng địa hình",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "ky-nang-doc-bieu-do",
+      "name_a": "Kỹ năng đọc biểu đồ",
+      "concept_b": "ky-nang-doc-ban-do",
+      "name_b": "Kỹ năng đọc bản đồ",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "ky-nang-doc-bieu-do",
+      "name_a": "Kỹ năng đọc biểu đồ",
+      "concept_b": "ky-nang-doc-luoc-do",
+      "name_b": "Kỹ năng đọc lược đồ",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    }
+  ]
+}

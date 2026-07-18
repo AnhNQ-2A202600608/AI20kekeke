@@ -1,0 +1,171 @@
+{
+  "document": {
+    "document_id": "math-k6-sgk",
+    "source_type": "SGK",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 2",
+    "lesson": "Bài 26"
+  },
+  "learning_objectives": [
+    {
+      "code": "nhan-biet-phan-so-nghich-dao",
+      "description": "Nhận biết phân số nghịch đảo của một phân số khác 0.",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c020",
+      "evidence": ""
+    },
+    {
+      "code": "thuc-hien-phep-nhan-chi-phan-so",
+      "description": "Thực hiện phép nhân, chia phân số.",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c020",
+      "evidence": ""
+    },
+    {
+      "code": "van-dung-tinh-chat-phan-phoi",
+      "description": "Vận dụng tính chất phân phối của phép nhân đối với phép cộng trong tính toán.",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c020",
+      "evidence": ""
+    },
+    {
+      "code": "nhan-hai-phan-so",
+      "description": "Nhớ lại quy tắc nhân hai phân số (có tử và mẫu đều dương).",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c020",
+      "evidence": ""
+    },
+    {
+      "code": "chia-hai-phan-so",
+      "description": "Nhắc lại quy tắc chia hai phân số (có tử và mẫu đều dương).",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c022",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "phep-nhan",
+      "name": "Phép nhân",
+      "description": "Phép toán nhân giữa các số hoặc phân số.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c020"
+      ],
+      "evidence": [
+        "Phép nhân",
+        "Phép nhân phân số cũng có tính chất giao hoán, kết hợp và phân phối của phép nhân đối với phép cộng."
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "phep-chia",
+      "name": "Phép chia",
+      "description": "Phép toán chia giữa các số hoặc phân số.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c022"
+      ],
+      "evidence": [
+        "Phép chia phân số",
+        "Muốn chia một phân số cho một phân số khác 0, ta nhân số bị chia với phân số nghịch đảo của số chia."
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "phan-so-nghich-dao",
+      "name": "Phân số nghịch đảo",
+      "description": "Phân số mà khi nhân với phân số ban đầu sẽ cho kết quả là 1.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c021"
+      ],
+      "evidence": [
+        "Hai phân số \\(\\frac{5}{4}\\) và \\(\\frac{4}{5}\\) có tích bằng 1. Ta gọi \\(\\frac{4}{5}\\) là phân số nghịch đảo của phân số \\(\\frac{5}{4}\\)."
+      ]
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "tinh-chat-phep-nhan",
+      "name": "Tính chất của phép nhân",
+      "description": "Các tính chất giao hoán, kết hợp và phân phối của phép nhân đối với phép cộng.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c021"
+      ],
+      "evidence": [
+        "Phép nhân phân số cũng có tính chất giao hoán, kết hợp và phân phối của phép nhân đối với phép cộng."
+      ]
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "quy-tac-nhan-hai-phan-so",
+      "name": "Quy tắc nhân hai phân số",
+      "description": "Quy tắc thực hiện phép nhân giữa hai phân số.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c020"
+      ],
+      "evidence": [
+        "Muốn nhân hai phân số, ta nhân các tử với nhau và nhân các mẫu với nhau."
+      ]
+    },
+    {
+      "temporary_id": "c6",
+      "suggested_code": "quy-tac-chia-hai-phan-so",
+      "name": "Quy tắc chia hai phân số",
+      "description": "Quy tắc thực hiện phép chia giữa hai phân số.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c022"
+      ],
+      "evidence": [
+        "Muốn chia một phân số cho một phân số khác 0, ta nhân số bị chia với phân số nghịch đảo của số chia."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "related_to",
+      "target": "c4",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c021",
+      "evidence": "Phép nhân phân số cũng có tính chất giao hoán, kết hợp và phân phối của phép nhân đối với phép cộng.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c2",
+      "relation_type": "related_to",
+      "target": "c6",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c022",
+      "evidence": "Muốn chia một phân số cho một phân số khác 0, ta nhân số bị chia với phân số nghịch đảo của số chia.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c3",
+      "relation_type": "part_of",
+      "target": "c1",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c021",
+      "evidence": "Hai phân số \\(\\frac{5}{4}\\) và \\(\\frac{4}{5}\\) có tích bằng 1.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c3",
+      "relation_type": "part_of",
+      "target": "c2",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c022",
+      "evidence": "Phân số nghịch đảo của \\(\\frac{c}{d}\\) là \\(\\frac{d}{c}\\) $(c, d \\neq 0)$.",
+      "confidence": 1.0
+    }
+  ],
+  "misconceptions": []
+}

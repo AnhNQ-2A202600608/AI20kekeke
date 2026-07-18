@@ -1,0 +1,39 @@
+{
+  "document": {
+    "document_id": "math-k6-sgv",
+    "source_type": "SGV",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 2",
+    "lesson": "Bài 8"
+  },
+  "learning_objectives": [
+    {
+      "code": "nhan-biet-quan-he-chia-het",
+      "description": "Nhận biết được quan hệ chia hết, khái niệm ước số và bội số.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "HS đã được học về phép chia có dư và phép chia hết trong Chương I, điểm mới ở bài này là cung cấp các khái niệm ước, bội, kí hiệu $:$, $|$ và các tính chất chia hết của một tổng."
+    },
+    {
+      "code": "su-dung-ki-hieu",
+      "description": "Sử dụng các kí hiệu $:$, $|$.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Lưu ý HS sử dụng kí hiệu $:$ và $|$."
+    },
+    {
+      "code": "tim-uoc-so-boi-so",
+      "description": "Tìm được các ước số và bội số của một số tự nhiên nhỏ và dễ nhận biết như số chẵn, số chia hết cho 3, cho 5 hoặc cho 9.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Tìm được các ước số và bội số của một số tự nhiên nhỏ và dễ nhận biết như số chẵn, số chia hết cho 3, cho 5 hoặc cho 9."
+    },
+    {
+      "code": "nhan-biet-tinh-chia-het",
+      "description": "Nhận biết tính chia hết của một tổng cho một số.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Hai số không chia hết cho một số thì tổng của chúng có thể chia hết hay không chia hết cho số đó."
+    }
+  ],
+  "concepts": [],
+  "relations": [],
+  "misconceptions": []
+}

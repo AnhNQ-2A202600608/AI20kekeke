@@ -1,0 +1,42 @@
+{
+  "document": {
+    "document_id": "math-k6-sgv",
+    "source_type": "SGV",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương IX",
+    "lesson": "Bài 43"
+  },
+  "learning_objectives": [
+    {
+      "code": "nhan-biet-kha-nang-xay-ra-su-kien",
+      "description": "Nhận biết được khả năng xảy ra một sự kiện.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận biết được khả năng xảy ra một sự kiện."
+    },
+    {
+      "code": "bieu-dien-kha-nang-xay-ra-su-kien",
+      "description": "Biểu diễn được khả năng xảy ra một sự kiện theo xác suất thực nghiệm.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Biểu diễn được khả năng xảy ra một sự kiện theo xác suất thực nghiệm."
+    },
+    {
+      "code": "boi-duong-kha-nang-tu-hoc",
+      "description": "Bồi dưỡng khả năng tự học, ý thức khám phá khoa học thông qua thực nghiệm.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Bồi dưỡng khả năng tự học, ý thức khám phá khoa học thông qua thực nghiệm."
+    }
+  ],
+  "concepts": [],
+  "relations": [],
+  "misconceptions": [
+    {
+      "temporary_id": "m1",
+      "name": "Xác suất thực nghiệm có thể giống nhau trong các lần thực hiện khác nhau.",
+      "description": "Học sinh có thể nghĩ rằng xác suất thực nghiệm sẽ giống nhau trong mọi lần thực hiện thí nghiệm, nhưng thực tế nó phụ thuộc vào số lần thực hiện và người thực hiện.",
+      "related_skill": "nhan-biet-kha-nang-xay-ra-su-kien",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Xác suất thực nghiệm của một sự kiện phụ thuộc vào người thực hiện thí nghiệm và số lần người đó thực hiện thí nghiệm nên nó có thể khác nhau trong những lần thực nghiệm khác nhau."
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Chương 1",
+    "lesson": "Bài 20"
+  },
+  "learning_objectives": [
+    {
+      "code": "mo-ta-su-thanh-lap-vuong-quoc-phu-nam",
+      "description": "Mô tả được sự thành lập, quá trình phát triển và suy vong của Vương quốc Phù Nam xưa.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c100",
+      "evidence": ""
+    },
+    {
+      "code": "trinh-bay-net-chinh-ve-to-chuc-xa-hoi-phu-nam",
+      "description": "Trình bày được nét chính về tổ chức xã hội và kinh tế của Phù Nam.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c100",
+      "evidence": ""
+    },
+    {
+      "code": "nhan-biet-thanh-tuu-van-hoa-phu-nam",
+      "description": "Nhận biết được một số thành tựu văn hoá của Vương quốc Phù Nam.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c100",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "vuong-quoc-phu-nam",
+      "name": "Vương quốc Phù Nam",
+      "description": "Một vương quốc cổ xưa ở khu vực Nam Bộ, Việt Nam, nổi bật với nền văn hoá Óc Eo và các hoạt động kinh tế, xã hội phát triển.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c100",
+        "sgk-lich-su-va-ia-li-6-kntt-c101",
+        "sgk-lich-su-va-ia-li-6-kntt-c102"
+      ],
+      "evidence": [
+        "Vương quốc Phù Nam ra đời vào khoảng thế kỉ I và phát triển thành đế chế hùng mạnh ở khu vực Đông Nam Á."
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "van-hoa-oc-eo",
+      "name": "Văn hoá Óc Eo",
+      "description": "Nền văn hoá đặc sắc của Vương quốc Phù Nam, thể hiện qua các hiện vật khảo cổ và các hoạt động kinh tế, xã hội.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c100",
+        "sgk-lich-su-va-ia-li-6-kntt-c101",
+        "sgk-lich-su-va-ia-li-6-kntt-c102"
+      ],
+      "evidence": [
+        "Văn hoá Óc Eo được hình thành cách đây hơn 2000 năm, với nhiều hiện vật như bình gốm, chuỗi hạt."
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "hoat-dong-kinh-te-phu-nam",
+      "name": "Hoạt động kinh tế của Phù Nam",
+      "description": "Các hoạt động kinh tế chủ yếu của cư dân Phù Nam, bao gồm nông nghiệp, thủ công nghiệp và thương mại.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c101",
+        "sgk-lich-su-va-ia-li-6-kntt-c102"
+      ],
+      "evidence": [
+        "Người Phù Nam làm nhiều nghề khác nhau như trồng lúa nước, chăn nuôi, đánh bắt thuỷ hải sản và buôn bán với các thương nhân nước ngoài."
+      ]
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "to-chuc-xa-hoi-phu-nam",
+      "name": "Tổ chức xã hội của Phù Nam",
+      "description": "Cấu trúc xã hội của Vương quốc Phù Nam, bao gồm các tầng lớp như quý tộc, tăng lữ, thương nhân, thợ thủ công và nông dân.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c102"
+      ],
+      "evidence": [
+        "Xã hội Phù Nam được phân chia thành năm thành phần chính: quý tộc, tăng lữ, thương nhân, thợ thủ công và nông dân."
+      ]
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "thanh-tuu-van-hoa-phu-nam",
+      "name": "Thành tựu văn hoá của Phù Nam",
+      "description": "Các thành tựu văn hoá nổi bật của cư dân Phù Nam, bao gồm tín ngưỡng, tôn giáo và nghệ thuật điêu khắc.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c102"
+      ],
+      "evidence": [
+        "Người Phù Nam có tín ngưỡng thờ đa thần và đã tiếp nhận các tôn giáo từ Ấn Độ như Phật giáo và Ấn Độ giáo."
+      ]
+    },
+    {
+      "temporary_id": "c6",
+      "suggested_code": "ky-nang-doc-ban-do",
+      "name": "Kỹ năng đọc bản đồ",
+      "description": "Kỹ năng cần thiết để hiểu và sử dụng bản đồ trong việc học tập và nghiên cứu địa lý.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c107"
+      ],
+      "evidence": [
+        "Học sinh cần nắm vững các khái niệm cơ bản và kỹ năng chủ yếu của môn Địa lí, bao gồm việc sử dụng bản đồ."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "causes",
+      "target": "c2",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c100",
+      "evidence": "Vương quốc Phù Nam ra đời trên cơ sở văn hoá Óc Eo.",
+      "confidence": 0.9
+    },
+    {
+      "source": "c1",
+      "relation_type": "causes",
+      "target": "c3",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c101",
+      "evidence": "Hoạt động kinh tế của cư dân Phù Nam phát triển mạnh mẽ trong thời kỳ đỉnh cao của vương quốc.",
+      "confidence": 0.8
+    },
+    {
+      "source": "c1",
+      "relation_type": "causes",
+      "target": "c4",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c102",
+      "evidence": "Tổ chức xã hội của Phù Nam được hình thành và phát triển theo sự phát triển của vương quốc.",
+      "confidence": 0.8
+    },
+    {
+      "source": "c1",
+      "relation_type": "causes",
+      "target": "c5",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c102",
+      "evidence": "Thành tựu văn hoá của Phù Nam phản ánh sự phát triển của xã hội và kinh tế.",
+      "confidence": 0.8
+    }
+  ],
+  "misconceptions": []
+}

@@ -1,0 +1,116 @@
+{
+  "document": {
+    "document_id": "math-k6-sgk",
+    "source_type": "SGK",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 1",
+    "lesson": "Bài 34"
+  },
+  "learning_objectives": [],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "doan-thang",
+      "name": "Đoạn thẳng",
+      "description": "Hình gồm hai điểm A, B cùng với tất cả các điểm nằm giữa A và B.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c065"
+      ],
+      "evidence": [
+        "Đoạn thẳng AB, hay đoạn thẳng BA, là hình gồm hai điểm A, B cùng với tất cả các điểm nằm giữa A và B."
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "do-dai-doan-thang",
+      "name": "Độ dài đoạn thẳng",
+      "description": "Độ dài của đoạn thẳng được biểu diễn bởi một số dương kèm đơn vị.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c066",
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c067"
+      ],
+      "evidence": [
+        "Mỗi đoạn thẳng có một độ dài. Khi chọn một đơn vị độ dài thì độ dài mỗi đoạn thẳng được biểu diễn bởi một số dương (thường viết kèm đơn vị)."
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "khoang-cach",
+      "name": "Khoảng cách",
+      "description": "Khoảng cách giữa hai điểm A và B, được gọi là độ dài đoạn thẳng AB.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c067"
+      ],
+      "evidence": [
+        "Độ dài đoạn thẳng AB còn gọi là khoảng cách giữa hai điểm A và B."
+      ]
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "so-sanh-do-dai",
+      "name": "So sánh độ dài",
+      "description": "So sánh độ dài của các đoạn thẳng với nhau.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c067"
+      ],
+      "evidence": [
+        "Dùng thước có vạch chia để đo độ dài các đoạn thẳng AB, CD, EG trong Hình 8.31 rồi trả lời các câu hỏi sau."
+      ]
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "do-do-dai",
+      "name": "Đo độ dài",
+      "description": "Sử dụng thước có vạch chia để đo độ dài của đoạn thẳng.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c068"
+      ],
+      "evidence": [
+        "Dùng thước thẳng có chia vạch, em hãy đo chiều dài của cây bút em đang dùng."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "part_of",
+      "target": "c2",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c065",
+      "evidence": "Đoạn thẳng AB, hay đoạn thẳng BA, là hình gồm hai điểm A, B cùng với tất cả các điểm nằm giữa A và B.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c2",
+      "relation_type": "related_to",
+      "target": "c3",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c067",
+      "evidence": "Độ dài đoạn thẳng AB còn gọi là khoảng cách giữa hai điểm A và B.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c4",
+      "relation_type": "prerequisite_of",
+      "target": "c5",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c067",
+      "evidence": "Dùng thước có vạch chia để đo độ dài các đoạn thẳng AB, CD, EG trong Hình 8.31 rồi trả lời các câu hỏi sau.",
+      "confidence": 1.0
+    }
+  ],
+  "misconceptions": []
+}

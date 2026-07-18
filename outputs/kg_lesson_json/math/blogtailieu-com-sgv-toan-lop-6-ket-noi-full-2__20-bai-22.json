@@ -1,0 +1,39 @@
+{
+  "document": {
+    "document_id": "math-k6-sgv",
+    "source_type": "SGV",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 2",
+    "lesson": "Bài 22"
+  },
+  "learning_objectives": [
+    {
+      "code": "nhan-biet-hinh-co-tam-doi-xung",
+      "description": "Nhận biết được hình có tâm đối xứng.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận biết được hình có tâm đối xứng."
+    },
+    {
+      "code": "nhan-biet-tam-doi-xung",
+      "description": "Nhận biết được tâm đối xứng của các hình hình học đơn giản.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận biết được tâm đối xứng của các hình hình học đơn giản."
+    },
+    {
+      "code": "nhan-biet-tam-doi-xung-tren-giay",
+      "description": "Nhận biết được tâm đối xứng của một hình trên giấy bằng cách quay tờ giấy một nửa vòng.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận biết được tâm đối xứng của một hình trên giấy bằng cách quay tờ giấy một nửa vòng."
+    },
+    {
+      "code": "cat-hinh-don-gian",
+      "description": "Biết được cách gấp giấy để cắt chữ hoặc một số hình đơn giản vừa có trục đối xứng vừa có tâm đối xứng.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Biết được cách gấp giấy để cắt chữ hoặc một số hình đơn giản vừa có trục đối xứng vừa có tâm đối xứng."
+    }
+  ],
+  "concepts": [],
+  "relations": [],
+  "misconceptions": []
+}

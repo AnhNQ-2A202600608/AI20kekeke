@@ -1,0 +1,135 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Bài 28",
+    "lesson": "Mối quan hệ giữa con người và thiên nhiên"
+  },
+  "learning_objectives": [
+    {
+      "code": "tac-dong-cua-thien-nhien-den-con-nguoi",
+      "description": "Nêu được các tác động của thiên nhiên lên hoạt động sản xuất và sinh hoạt của con người.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c216",
+      "evidence": ""
+    },
+    {
+      "code": "tac-dong-cua-con-nguoi-den-thien-nhien",
+      "description": "Trình bày được những tác động chủ yếu của con người tới thiên nhiên Trái Đất.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c218",
+      "evidence": ""
+    },
+    {
+      "code": "yeu-thien-nhien",
+      "description": "Yêu thiên nhiên, thấy được trách nhiệm với thiên nhiên.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c218",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "tac-dong-cua-thien-nhien",
+      "name": "Tác động của thiên nhiên",
+      "description": "Thiên nhiên tác động đến đời sống và sản xuất của con người.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c216",
+        "sgk-lich-su-va-ia-li-6-kntt-c217"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "tac-dong-cua-con-nguoi",
+      "name": "Tác động của con người",
+      "description": "Con người tác động đến thiên nhiên thông qua khai thác tài nguyên và phát thải chất thải.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c218",
+        "sgk-lich-su-va-ia-li-6-kntt-c219"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "tai-nguyen-thien-nhien",
+      "name": "Tài nguyên thiên nhiên",
+      "description": "Tài nguyên thiên nhiên là nguồn lực mà con người khai thác để phục vụ nhu cầu sống.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c218"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "khai-thac-tai-nguyen",
+      "name": "Khai thác tài nguyên",
+      "description": "Quá trình con người sử dụng tài nguyên thiên nhiên để phục vụ cho nhu cầu của mình.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c218"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "bao-ve-moi-truong",
+      "name": "Bảo vệ môi trường",
+      "description": "Hành động của con người nhằm bảo vệ và cải thiện chất lượng môi trường sống.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c218",
+        "sgk-lich-su-va-ia-li-6-kntt-c219"
+      ],
+      "evidence": []
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "related_to",
+      "target": "c2",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c216",
+      "evidence": "",
+      "confidence": 0.9
+    },
+    {
+      "source": "c2",
+      "relation_type": "related_to",
+      "target": "c1",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c218",
+      "evidence": "",
+      "confidence": 0.9
+    },
+    {
+      "source": "c3",
+      "relation_type": "related_to",
+      "target": "c4",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c218",
+      "evidence": "",
+      "confidence": 0.8
+    },
+    {
+      "source": "c5",
+      "relation_type": "related_to",
+      "target": "c2",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c218",
+      "evidence": "",
+      "confidence": 0.8
+    }
+  ],
+  "misconceptions": []
+}

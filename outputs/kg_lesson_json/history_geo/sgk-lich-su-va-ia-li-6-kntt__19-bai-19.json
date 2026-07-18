@@ -1,0 +1,129 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Bài 19",
+    "lesson": "Vương quốc Chăm-pa từ thế kỉ II đến thế kỉ X"
+  },
+  "learning_objectives": [
+    {
+      "code": "mo-ta-su-thanh-lap-vuong-quoc-cham-pa",
+      "description": "Mô tả được sự thành lập, quá trình phát triển của Vương quốc Chăm-pa.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c094",
+      "evidence": ""
+    },
+    {
+      "code": "trinh-bay-net-chinh-to-chuc-xa-hoi-kinh-te-cham-pa",
+      "description": "Trình bày được những nét chính về tổ chức xã hội và kinh tế của Chăm-pa.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c094",
+      "evidence": ""
+    },
+    {
+      "code": "nhan-biet-thanh-tuu-van-hoa-cham-pa",
+      "description": "Nhận biết được một số thành tựu văn hoá của Vương quốc Chăm-pa.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c094",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "vuong-quoc-cham-pa",
+      "name": "Vương quốc Chăm-pa",
+      "description": "Một vương quốc cổ đại ở miền Trung Việt Nam, tồn tại từ thế kỉ II đến thế kỉ X.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c094",
+        "sgk-lich-su-va-ia-li-6-kntt-c095",
+        "sgk-lich-su-va-ia-li-6-kntt-c096",
+        "sgk-lich-su-va-ia-li-6-kntt-c097",
+        "sgk-lich-su-va-ia-li-6-kntt-c098"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "hoat-dong-kinh-te-cham-pa",
+      "name": "Hoạt động kinh tế của Chăm-pa",
+      "description": "Các hoạt động kinh tế đa dạng của cư dân Chăm-pa như trồng lúa, chăn nuôi, sản xuất thủ công và buôn bán quốc tế.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c096"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "to-chuc-xa-hoi-cham-pa",
+      "name": "Tổ chức xã hội của Chăm-pa",
+      "description": "Cấu trúc xã hội của Chăm-pa với vua, tể tướng, quan đại thần và các tầng lớp xã hội.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c096"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "thanh-tuu-van-hoa-cham-pa",
+      "name": "Thành tựu văn hoá của Chăm-pa",
+      "description": "Các thành tựu văn hoá nổi bật của người Chăm như chữ viết, tín ngưỡng, tôn giáo và kiến trúc.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c097",
+        "sgk-lich-su-va-ia-li-6-kntt-c098"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "le-hoi-ka-te",
+      "name": "Lễ hội Ka-tê",
+      "description": "Lễ hội dân gian đặc sắc của dân tộc Chăm, tổ chức vào tháng 9 – đầu tháng 10 dương lịch.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c098"
+      ],
+      "evidence": []
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "prerequisite_of",
+      "target": "c2",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c094",
+      "evidence": "Mô tả được sự thành lập, quá trình phát triển của Vương quốc Chăm-pa.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c1",
+      "relation_type": "prerequisite_of",
+      "target": "c3",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c094",
+      "evidence": "Mô tả được sự thành lập, quá trình phát triển của Vương quốc Chăm-pa.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c1",
+      "relation_type": "prerequisite_of",
+      "target": "c4",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c094",
+      "evidence": "Mô tả được sự thành lập, quá trình phát triển của Vương quốc Chăm-pa.",
+      "confidence": 1.0
+    }
+  ],
+  "misconceptions": []
+}

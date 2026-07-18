@@ -1,0 +1,1406 @@
+{
+  "concepts": [
+    {
+      "code": "phan-so",
+      "name": "Phân số",
+      "description": "Khái niệm phân số với tử và mẫu là các số nguyên, trong đó mẫu khác 0.",
+      "grade": 6,
+      "source_page": 6
+    },
+    {
+      "code": "tu-so",
+      "name": "Tử số",
+      "description": "Phần tử của phân số, là số nguyên nằm trên dấu gạch ngang.",
+      "grade": 6,
+      "source_page": 6
+    },
+    {
+      "code": "mau-so",
+      "name": "Mẫu số",
+      "description": "Phần mẫu của phân số, là số nguyên nằm dưới dấu gạch ngang và khác 0.",
+      "grade": 6,
+      "source_page": 6
+    },
+    {
+      "code": "phan-so-bang-nhau",
+      "name": "Phân số bằng nhau",
+      "description": "Hai phân số bằng nhau khi chúng có cùng giá trị.",
+      "grade": 6,
+      "source_page": 7
+    },
+    {
+      "code": "quy-tac-bang-nhau-cua-phan-so",
+      "name": "Quy tắc bằng nhau của hai phân số",
+      "description": "Hai phân số bằng nhau nếu tích chéo của chúng bằng nhau.",
+      "grade": 6,
+      "source_page": 7
+    },
+    {
+      "code": "tinh-chat-co-ban-cua-phan-so",
+      "name": "Tính chất cơ bản của phân số",
+      "description": "Nhân hoặc chia cả tử và mẫu của phân số với cùng một số nguyên khác 0 thì được phân số bằng phân số đã cho.",
+      "grade": 6,
+      "source_page": 8
+    },
+    {
+      "code": "rut-gon-phan-so",
+      "name": "Rút gọn phân số",
+      "description": "Chia cả tử và mẫu của phân số cho ước chung của chúng để được phân số tối giản.",
+      "grade": 6,
+      "source_page": 8
+    },
+    {
+      "code": "phan-so-toi-gian",
+      "name": "Phân số tối giản",
+      "description": "Phân số không thể rút gọn thêm vì tử và mẫu không có ước chung nào khác 1 và -1.",
+      "grade": 6,
+      "source_page": 8
+    },
+    {
+      "code": "quy-dong-mau-nhieu-phan-so",
+      "name": "Quy đồng mẫu nhiều phân số",
+      "description": "Kỹ năng tìm bội chung nhỏ nhất của các mẫu số và viết các phân số mới có cùng mẫu số đó.",
+      "grade": 6,
+      "source_page": 11
+    },
+    {
+      "code": "so-sanh-phan-so-cung-mau",
+      "name": "So sánh phân số cùng mẫu",
+      "description": "Kỹ năng so sánh hai phân số có cùng mẫu số dương dựa vào tử số.",
+      "grade": 6,
+      "source_page": 12
+    },
+    {
+      "code": "so-sanh-phan-so-khong-cung-mau",
+      "name": "So sánh phân số không cùng mẫu",
+      "description": "Kỹ năng quy đồng mẫu số hai phân số rồi so sánh các tử số.",
+      "grade": 6,
+      "source_page": 12
+    },
+    {
+      "code": "nhan-biet-hon-so-duong",
+      "name": "Nhận biết hỗn số dương",
+      "description": "Khái niệm hỗn số dương, cách viết phân số lớn hơn 1 dưới dạng hỗn số.",
+      "grade": 6,
+      "source_page": 13
+    },
+    {
+      "code": "viet-phan-so-thanh-hon-so",
+      "name": "Viết phân số thành hỗn số",
+      "description": "Kỹ năng chuyển đổi phân số lớn hơn 1 thành hỗn số.",
+      "grade": 6,
+      "source_page": 13
+    },
+    {
+      "code": "viet-hon-so-thanh-phan-so",
+      "name": "Viết hỗn số thành phân số",
+      "description": "Kỹ năng chuyển đổi hỗn số thành phân số.",
+      "grade": 6,
+      "source_page": 13
+    },
+    {
+      "code": "cong-hai-phan-so-cung-mau",
+      "name": "Cộng hai phân số cùng mẫu",
+      "description": "Muốn cộng hai phân số cùng mẫu, ta cộng các tử và giữ nguyên mẫu.",
+      "grade": 6,
+      "source_page": 17
+    },
+    {
+      "code": "cong-hai-phan-so-khong-cung-mau",
+      "name": "Cộng hai phân số không cùng mẫu",
+      "description": "Muốn cộng hai phân số không cùng mẫu, ta viết chúng dưới dạng hai phân số cùng mẫu rồi cộng các tử và giữ nguyên mẫu chung.",
+      "grade": 6,
+      "source_page": 17
+    },
+    {
+      "code": "so-doi-cua-phan-so",
+      "name": "Số đối của phân số",
+      "description": "Hai số gọi là đối nhau nếu tổng của chúng bằng 0. Kí hiệu số đối của phân số \\(\\frac{a}{b}\\) là \\(\\frac{-a}{b}\\).",
+      "grade": 6,
+      "source_page": 18
+    },
+    {
+      "code": "tinh-chat-giao-hoan-cua-phep-cong-phan-so",
+      "name": "Tính chất giao hoán của phép cộng phân số",
+      "description": "Phép cộng phân số có tính chất giao hoán: \\(\\frac{a}{b} + \\frac{c}{d} = \\frac{c}{d} + \\frac{a}{b}\\).",
+      "grade": 6,
+      "source_page": 18
+    },
+    {
+      "code": "tinh-chat-ket-hop-cua-phep-cong-phan-so",
+      "name": "Tính chất kết hợp của phép cộng phân số",
+      "description": "Phép cộng phân số có tính chất kết hợp: \\((\\frac{a}{b} + \\frac{c}{d}) + \\frac{e}{f} = \\frac{a}{b} + (\\frac{c}{d} + \\frac{e}{f})\\).",
+      "grade": 6,
+      "source_page": 18
+    },
+    {
+      "code": "tru-hai-phan-so-cung-mau",
+      "name": "Trừ hai phân số cùng mẫu",
+      "description": "Muốn trừ hai phân số cùng mẫu, ta lấy tử số của phân số thứ nhất trừ đi tử số của phân số thứ hai và giữ nguyên mẫu.",
+      "grade": 6,
+      "source_page": 19
+    },
+    {
+      "code": "tru-hai-phan-so-khong-cung-mau",
+      "name": "Trừ hai phân số không cùng mẫu",
+      "description": "Muốn trừ hai phân số không cùng mẫu, ta quy đồng mẫu hai phân số, rồi trừ hai phân số đó.",
+      "grade": 6,
+      "source_page": 19
+    },
+    {
+      "code": "cong-phan-so-voi-so-doi",
+      "name": "Cộng phân số với số đối",
+      "description": "Muốn trừ một phân số cho một phân số, ta có thể cộng số bị trừ với số đối của số trừ.",
+      "grade": 6,
+      "source_page": 19
+    },
+    {
+      "code": "phep-nhan-phan-so",
+      "name": "Phép nhân phân số",
+      "description": "Muốn nhân hai phân số, ta nhân các tử với nhau và nhân các mẫu với nhau.",
+      "grade": 6,
+      "source_page": 21
+    },
+    {
+      "code": "phep-chia-phan-so",
+      "name": "Phép chia phân số",
+      "description": "Muốn chia một phân số cho một phân số khác 0, ta nhân số bị chia với phân số nghịch đảo của số chia.",
+      "grade": 6,
+      "source_page": 22
+    },
+    {
+      "code": "phan-so-nghich-dao",
+      "name": "Phân số nghịch đảo",
+      "description": "Phân số nghịch đảo của một phân số là phân số mà khi nhân với phân số ban đầu cho kết quả bằng 1.",
+      "grade": 6,
+      "source_page": 22
+    },
+    {
+      "code": "tinh-chat-giao-hoan-phep-nhan-phan-so",
+      "name": "Tính chất giao hoán của phép nhân phân số",
+      "description": "Phép nhân phân số có tính chất giao hoán, tức là a/b * c/d = c/d * a/b.",
+      "grade": 6,
+      "source_page": 21
+    },
+    {
+      "code": "tinh-chat-ket-hop-phep-nhan-phan-so",
+      "name": "Tính chất kết hợp của phép nhân phân số",
+      "description": "Phép nhân phân số có tính chất kết hợp, tức là (a/b * c/d) * e/f = a/b * (c/d * e/f).",
+      "grade": 6,
+      "source_page": 21
+    },
+    {
+      "code": "tinh-chat-phan-phoi-phep-nhan-phan-so",
+      "name": "Tính chất phân phối của phép nhân phân số",
+      "description": "Phép nhân phân số có tính chất phân phối đối với phép cộng.",
+      "grade": 6,
+      "source_page": 21
+    },
+    {
+      "code": "tim-gia-tri-phan-so-cua-mot-so",
+      "name": "Tìm giá trị phân số của một số",
+      "description": "Kỹ năng tính toán giá trị của một phân số trên một số cho trước bằng cách nhân số đó với phân số.",
+      "grade": 6,
+      "source_page": 24
+    },
+    {
+      "code": "tim-mot-so-biet-gia-tri-phan-so-cua-no",
+      "name": "Tìm một số biết giá trị phân số của nó",
+      "description": "Kỹ năng tìm một số khi biết giá trị của một phân số của số đó bằng cách chia giá trị đó cho phân số.",
+      "grade": 6,
+      "source_page": 25
+    },
+    {
+      "code": "phan-so-thap-phan",
+      "name": "Phân số thập phân",
+      "description": "Phân số có mẫu số là lũy thừa của 10, ví dụ: \\( \\frac{17}{10}, \\frac{34}{100}, \\frac{25}{1\\,000} \\).",
+      "grade": 5,
+      "source_page": 30
+    },
+    {
+      "code": "so-thap-phan",
+      "name": "Số thập phân",
+      "description": "Số có phần nguyên và phần thập phân, ví dụ: 1,7; 0,34; 0,025.",
+      "grade": 5,
+      "source_page": 30
+    },
+    {
+      "code": "so-thap-phan-am",
+      "name": "Số thập phân âm",
+      "description": "Số thập phân có dấu trừ phía trước, ví dụ: -1,7.",
+      "grade": 5,
+      "source_page": 30
+    },
+    {
+      "code": "so-doi",
+      "name": "Số đối",
+      "description": "Hai số có tổng bằng 0, ví dụ: 1,7 và -1,7.",
+      "grade": 5,
+      "source_page": 30
+    },
+    {
+      "code": "so-sanh-hai-so-thap-phan",
+      "name": "So sánh hai số thập phân",
+      "description": "Kỹ năng so sánh giá trị của hai số thập phân, ví dụ: 2,93 < 6,15.",
+      "grade": 5,
+      "source_page": 31
+    },
+    {
+      "code": "phep-cong-so-thap-phan",
+      "name": "Phép cộng số thập phân",
+      "description": "Kỹ năng thực hiện phép cộng hai số thập phân.",
+      "grade": 5,
+      "source_page": 33
+    },
+    {
+      "code": "phep-tru-so-thap-phan",
+      "name": "Phép trừ số thập phân",
+      "description": "Kỹ năng thực hiện phép trừ hai số thập phân.",
+      "grade": 5,
+      "source_page": 33
+    },
+    {
+      "code": "phep-nhan-so-thap-phan",
+      "name": "Phép nhân số thập phân",
+      "description": "Kỹ năng thực hiện phép nhân hai số thập phân.",
+      "grade": 5,
+      "source_page": 34
+    },
+    {
+      "code": "phep-chia-so-thap-phan",
+      "name": "Phép chia số thập phân",
+      "description": "Kỹ năng thực hiện phép chia hai số thập phân.",
+      "grade": 5,
+      "source_page": 34
+    },
+    {
+      "code": "cong-hai-so-thap-phan-am",
+      "name": "Cộng hai số thập phân âm",
+      "description": "Cộng hai số thập phân âm: (-a) + (-b) = -(a + b) với a, b > 0.",
+      "grade": 5,
+      "source_page": 33
+    },
+    {
+      "code": "cong-hai-so-thap-phan-khac-dau",
+      "name": "Cộng hai số thập phân khác dấu",
+      "description": "Cộng hai số thập phân khác dấu: (-a) + b = b - a nếu 0 < a ≤ b; (-a) + b = -(a - b) nếu a > b > 0.",
+      "grade": 5,
+      "source_page": 33
+    },
+    {
+      "code": "tru-hai-so-thap-phan",
+      "name": "Trừ hai số thập phân",
+      "description": "Phép trừ hai số thập phân được đưa về phép cộng với số đối: a - b = a + (-b).",
+      "grade": 5,
+      "source_page": 33
+    },
+    {
+      "code": "nhan-hai-so-thap-phan-cung-dau",
+      "name": "Nhân hai số thập phân cùng dấu",
+      "description": "Nhân hai số thập phân cùng dấu: (-a) * (-b) = a * b với a, b > 0.",
+      "grade": 5,
+      "source_page": 34
+    },
+    {
+      "code": "nhan-hai-so-thap-phan-khac-dau",
+      "name": "Nhân hai số thập phân khác dấu",
+      "description": "Nhân hai số thập phân khác dấu: (-a) * b = a * (-b) = -(a * b) với a, b > 0.",
+      "grade": 5,
+      "source_page": 34
+    },
+    {
+      "code": "chia-hai-so-thap-phan-cung-dau",
+      "name": "Chia hai số thập phân cùng dấu",
+      "description": "Chia hai số thập phân cùng dấu: (-a) : (-b) = a : b với a, b > 0.",
+      "grade": 5,
+      "source_page": 34
+    },
+    {
+      "code": "chia-hai-so-thap-phan-khac-dau",
+      "name": "Chia hai số thập phân khác dấu",
+      "description": "Chia hai số thập phân khác dấu: (-a) : b = a : (-b) = -(a : b) với a, b > 0.",
+      "grade": 5,
+      "source_page": 34
+    },
+    {
+      "code": "tinh-gia-tri-bieu-thuc-voi-so-thap-phan",
+      "name": "Tính giá trị biểu thức với số thập phân",
+      "description": "Kỹ năng tính giá trị của biểu thức chứa số thập phân bằng cách vận dụng các tính chất giao hoán, kết hợp, phân phối và quy tắc dấu ngoặc.",
+      "grade": 5,
+      "source_page": 35
+    },
+    {
+      "code": "lam-tron-so-thap-phan",
+      "name": "Làm tròn số thập phân",
+      "description": "Kỹ năng làm tròn số thập phân đến một hàng nhất định theo quy tắc giữ nguyên hoặc tăng 1 đơn vị dựa trên chữ số ngay bên phải hàng làm tròn.",
+      "grade": null,
+      "source_page": 37
+    },
+    {
+      "code": "uoc-luong-ket-qua",
+      "name": "Ước lượng kết quả",
+      "description": "Kỹ năng ước lượng kết quả của phép đo hoặc phép tính để tìm một số gần sát với kết quả chính xác.",
+      "grade": null,
+      "source_page": 38
+    },
+    {
+      "code": "lam-tron-so-thap-phan-am",
+      "name": "Làm tròn số thập phân âm",
+      "description": "Kỹ năng làm tròn số thập phân âm bằng cách làm tròn số đối của nó rồi đặt dấu “–” trước kết quả.",
+      "grade": null,
+      "source_page": 37
+    },
+    {
+      "code": "ti-so",
+      "name": "Tỉ số",
+      "description": "Khái niệm về tỉ số của hai số a và b (b ≠ 0) là thương của phép chia số a cho số b, kí hiệu là a : b hoặc a/b.",
+      "grade": 6,
+      "source_page": 40
+    },
+    {
+      "code": "ti-so-phan-tram",
+      "name": "Tỉ số phần trăm",
+      "description": "Tỉ số phần trăm của hai số a và b là a/b * 100%, thường dùng để biểu diễn tỉ số dưới dạng phần trăm.",
+      "grade": 6,
+      "source_page": 40
+    },
+    {
+      "code": "tinh-ti-so",
+      "name": "Tính tỉ số",
+      "description": "Kỹ năng tính tỉ số của hai số hoặc hai đại lượng.",
+      "grade": 6,
+      "source_page": 40
+    },
+    {
+      "code": "tinh-ti-so-phan-tram",
+      "name": "Tính tỉ số phần trăm",
+      "description": "Kỹ năng tính tỉ số phần trăm của hai số hoặc hai đại lượng.",
+      "grade": 6,
+      "source_page": 40
+    },
+    {
+      "code": "tim-gia-tri-phan-tram",
+      "name": "Tìm giá trị phần trăm của một số",
+      "description": "Kỹ năng tính giá trị phần trăm của một số cho trước bằng cách nhân số đó với m/100.",
+      "grade": 6,
+      "source_page": 41
+    },
+    {
+      "code": "tim-so-khi-biet-gia-tri-phan-tram",
+      "name": "Tìm một số khi biết giá trị phần trăm của số đó",
+      "description": "Kỹ năng tìm một số khi biết m% của số đó là b, bằng cách tính b * 100/m.",
+      "grade": 6,
+      "source_page": 41
+    },
+    {
+      "code": "diem-thuoc-duong-thang",
+      "name": "Điểm thuộc đường thẳng",
+      "description": "Khái niệm về điểm thuộc hoặc không thuộc một đường thẳng, kí hiệu là M thuộc d nếu M nằm trên đường thẳng d.",
+      "grade": null,
+      "source_page": 45
+    },
+    {
+      "code": "duong-thang-qua-hai-diem-phan-biet",
+      "name": "Đường thẳng qua hai điểm phân biệt",
+      "description": "Có một và chỉ một đường thẳng đi qua hai điểm phân biệt.",
+      "grade": null,
+      "source_page": 46
+    },
+    {
+      "code": "ba-diem-thang-hang",
+      "name": "Ba điểm thẳng hàng",
+      "description": "Ba điểm cùng thuộc một đường thẳng được gọi là thẳng hàng.",
+      "grade": null,
+      "source_page": 47
+    },
+    {
+      "code": "hai-duong-thang-song-song",
+      "name": "Hai đường thẳng song song",
+      "description": "Hai đường thẳng không có điểm chung nào được gọi là song song, kí hiệu là a song song với b.",
+      "grade": null,
+      "source_page": 48
+    },
+    {
+      "code": "hai-duong-thang-cat-nhau",
+      "name": "Hai đường thẳng cắt nhau",
+      "description": "Hai đường thẳng có đúng một điểm chung được gọi là cắt nhau.",
+      "grade": null,
+      "source_page": 48
+    },
+    {
+      "code": "hai-duong-thang-trung-nhau",
+      "name": "Hai đường thẳng trùng nhau",
+      "description": "Hai đường thẳng có vô số điểm chung được gọi là trùng nhau.",
+      "grade": null,
+      "source_page": 48
+    },
+    {
+      "code": "diem-nam-giua-hai-diem",
+      "name": "Điểm nằm giữa hai điểm",
+      "description": "Khái niệm về điểm nằm giữa hai điểm trên một đường thẳng.",
+      "grade": 6,
+      "source_page": 50
+    },
+    {
+      "code": "hai-diem-nam-cung-phia",
+      "name": "Hai điểm nằm cùng phía",
+      "description": "Khái niệm về hai điểm nằm cùng phía đối với một điểm khác trên đường thẳng.",
+      "grade": 6,
+      "source_page": 50
+    },
+    {
+      "code": "hai-diem-nam-khac-phia",
+      "name": "Hai điểm nằm khác phía",
+      "description": "Khái niệm về hai điểm nằm khác phía đối với một điểm khác trên đường thẳng.",
+      "grade": 6,
+      "source_page": 50
+    },
+    {
+      "code": "khai-niem-tia",
+      "name": "Khái niệm tia",
+      "description": "Khái niệm về tia, bao gồm điểm gốc và phần đường thẳng bị chia ra bởi điểm gốc.",
+      "grade": 6,
+      "source_page": 51
+    },
+    {
+      "code": "hai-tia-doi-nhau",
+      "name": "Hai tia đối nhau",
+      "description": "Khái niệm về hai tia đối nhau, tức là hai tia có chung gốc và nằm trên cùng một đường thẳng nhưng ngược chiều nhau.",
+      "grade": 6,
+      "source_page": 51
+    },
+    {
+      "code": "doan-thang",
+      "name": "Đoạn thẳng",
+      "description": "Đoạn thẳng là hình gồm hai điểm A, B cùng với tất cả các điểm nằm giữa A và B.",
+      "grade": 6,
+      "source_page": 53
+    },
+    {
+      "code": "dau-mut-doan-thang",
+      "name": "Đầu mút đoạn thẳng",
+      "description": "A, B là hai đầu mút của đoạn thẳng AB.",
+      "grade": 6,
+      "source_page": 53
+    },
+    {
+      "code": "do-dai-doan-thang",
+      "name": "Độ dài đoạn thẳng",
+      "description": "Độ dài đoạn thẳng là khoảng cách giữa hai điểm đầu mút của đoạn thẳng, được biểu diễn bởi một số dương kèm đơn vị.",
+      "grade": 6,
+      "source_page": 54
+    },
+    {
+      "code": "don-vi-do-dai",
+      "name": "Đơn vị đo độ dài",
+      "description": "Đơn vị đo độ dài là đơn vị được chọn để đo độ dài của đoạn thẳng, ví dụ: cm, mm.",
+      "grade": 6,
+      "source_page": 54
+    },
+    {
+      "code": "so-sanh-do-dai-doan-thang",
+      "name": "So sánh độ dài đoạn thẳng",
+      "description": "So sánh độ dài hai đoạn thẳng bằng cách đo và so sánh số đo độ dài của chúng.",
+      "grade": 6,
+      "source_page": 55
+    },
+    {
+      "code": "trung-diem-doan-thang",
+      "name": "Trung điểm của đoạn thẳng",
+      "description": "Khái niệm về trung điểm của đoạn thẳng, là điểm nằm giữa hai điểm A và B sao cho IA = IB.",
+      "grade": 6,
+      "source_page": 57
+    },
+    {
+      "code": "nhan-biet-trung-diem",
+      "name": "Nhận biết trung điểm của đoạn thẳng",
+      "description": "Kỹ năng xác định trung điểm của đoạn thẳng bằng cách kiểm tra khoảng cách từ điểm đó đến hai đầu mút của đoạn thẳng.",
+      "grade": 6,
+      "source_page": 57
+    },
+    {
+      "code": "giai-bai-toan-trung-diem",
+      "name": "Giải bài toán thực tế liên quan đến trung điểm",
+      "description": "Kỹ năng áp dụng khái niệm trung điểm để giải các bài toán thực tế.",
+      "grade": 6,
+      "source_page": 57
+    },
+    {
+      "code": "goc",
+      "name": "Góc",
+      "description": "Góc là hình gồm hai tia chung gốc. Góc chung của hai tia là đỉnh của góc. Hai tia là hai cạnh của góc.",
+      "grade": 6,
+      "source_page": 60
+    },
+    {
+      "code": "dinh-cua-goc",
+      "name": "Đỉnh của góc",
+      "description": "Đỉnh của góc là điểm chung của hai tia tạo thành góc.",
+      "grade": 6,
+      "source_page": 60
+    },
+    {
+      "code": "canh-cua-goc",
+      "name": "Cạnh của góc",
+      "description": "Cạnh của góc là hai tia tạo thành góc.",
+      "grade": 6,
+      "source_page": 60
+    },
+    {
+      "code": "goc-bet",
+      "name": "Góc bẹt",
+      "description": "Góc có số đo bằng 180 độ.",
+      "grade": null,
+      "source_page": 64
+    },
+    {
+      "code": "diem-trong-cua-goc",
+      "name": "Điểm trong của góc",
+      "description": "Điểm trong của góc là điểm nằm giữa hai cạnh của góc, không nằm trên cạnh.",
+      "grade": 6,
+      "source_page": 61
+    },
+    {
+      "code": "so-do-goc",
+      "name": "Số đo góc",
+      "description": "Khái niệm về số đo của một góc, thường được đo bằng độ.",
+      "grade": null,
+      "source_page": 63
+    },
+    {
+      "code": "goc-vuong",
+      "name": "Góc vuông",
+      "description": "Góc có số đo bằng 90 độ.",
+      "grade": null,
+      "source_page": 64
+    },
+    {
+      "code": "goc-nhon",
+      "name": "Góc nhọn",
+      "description": "Góc có số đo nhỏ hơn 90 độ.",
+      "grade": null,
+      "source_page": 64
+    },
+    {
+      "code": "goc-tu",
+      "name": "Góc tù",
+      "description": "Góc có số đo lớn hơn 90 độ và nhỏ hơn 180 độ.",
+      "grade": null,
+      "source_page": 64
+    },
+    {
+      "code": "do-goc-bang-thuoc",
+      "name": "Đo góc bằng thước",
+      "description": "Kỹ năng sử dụng thước đo góc để xác định số đo của góc.",
+      "grade": null,
+      "source_page": 63
+    },
+    {
+      "code": "so-sanh-goc",
+      "name": "So sánh góc",
+      "description": "Kỹ năng so sánh số đo của hai góc để xác định góc nào lớn hơn hoặc nhỏ hơn.",
+      "grade": null,
+      "source_page": 63
+    },
+    {
+      "code": "du-lieu-thong-ke",
+      "name": "Dữ liệu thống kê",
+      "description": "Khái niệm về dữ liệu thống kê, bao gồm các thông tin như nhiệt độ, ngày không mưa,...",
+      "grade": null,
+      "source_page": 70
+    },
+    {
+      "code": "phan-loai-du-lieu",
+      "name": "Phân loại dữ liệu",
+      "description": "Nhận biết dữ liệu là số liệu và dữ liệu không phải là số liệu.",
+      "grade": null,
+      "source_page": 70
+    },
+    {
+      "code": "du-lieu-la-so-lieu",
+      "name": "Dữ liệu là số liệu",
+      "description": "Dữ liệu có thể biểu diễn bằng số, ví dụ như nhiệt độ, số học sinh.",
+      "grade": null,
+      "source_page": 70
+    },
+    {
+      "code": "du-lieu-khong-phai-so-lieu",
+      "name": "Dữ liệu không phải là số liệu",
+      "description": "Dữ liệu không thể biểu diễn bằng số, ví dụ như tên loài thực vật, tên món ăn.",
+      "grade": null,
+      "source_page": 70
+    },
+    {
+      "code": "du-lieu-hop-li",
+      "name": "Dữ liệu hợp lí",
+      "description": "Nhận biết dữ liệu có hợp lí hay không trong một ngữ cảnh cụ thể.",
+      "grade": null,
+      "source_page": 71
+    },
+    {
+      "code": "thu-thap-du-lieu-thong-ke",
+      "name": "Thu thập dữ liệu thống kê",
+      "description": "Kỹ năng thu thập dữ liệu từ các nguồn khác nhau như quan sát, thí nghiệm, lập phiếu hỏi.",
+      "grade": null,
+      "source_page": 72
+    },
+    {
+      "code": "bang-thong-ke",
+      "name": "Bảng thống kê",
+      "description": "Khái niệm bảng thống kê dùng để tổ chức và trình bày dữ liệu một cách có hệ thống.",
+      "grade": 6,
+      "source_page": 76
+    },
+    {
+      "code": "bieu-do-tranh",
+      "name": "Biểu đồ tranh",
+      "description": "Khái niệm biểu đồ tranh dùng để biểu diễn dữ liệu bằng các hình ảnh hoặc biểu tượng.",
+      "grade": 6,
+      "source_page": 76
+    },
+    {
+      "code": "doc-du-lieu-tu-bang-thong-ke",
+      "name": "Đọc dữ liệu từ bảng thống kê",
+      "description": "Kỹ năng đọc và hiểu dữ liệu được trình bày trong bảng thống kê.",
+      "grade": 6,
+      "source_page": 76
+    },
+    {
+      "code": "phan-tich-du-lieu-tu-bang-thong-ke",
+      "name": "Phân tích dữ liệu từ bảng thống kê",
+      "description": "Kỹ năng phân tích và rút ra thông tin từ dữ liệu trong bảng thống kê.",
+      "grade": 6,
+      "source_page": 76
+    },
+    {
+      "code": "doc-du-lieu-tu-bieu-do-tranh",
+      "name": "Đọc dữ liệu từ biểu đồ tranh",
+      "description": "Kỹ năng đọc và hiểu dữ liệu được trình bày trong biểu đồ tranh.",
+      "grade": 6,
+      "source_page": 76
+    },
+    {
+      "code": "phan-tich-du-lieu-tu-bieu-do-tranh",
+      "name": "Phân tích dữ liệu từ biểu đồ tranh",
+      "description": "Kỹ năng phân tích và rút ra thông tin từ dữ liệu trong biểu đồ tranh.",
+      "grade": 6,
+      "source_page": 76
+    },
+    {
+      "code": "bieu-dien-du-lieu-vao-bang-thong-ke",
+      "name": "Biểu diễn dữ liệu vào bảng thống kê",
+      "description": "Kỹ năng tổ chức và trình bày dữ liệu vào bảng thống kê.",
+      "grade": 6,
+      "source_page": 76
+    },
+    {
+      "code": "bieu-dien-du-lieu-vao-bieu-do-tranh",
+      "name": "Biểu diễn dữ liệu vào biểu đồ tranh",
+      "description": "Kỹ năng tổ chức và trình bày dữ liệu vào biểu đồ tranh.",
+      "grade": 6,
+      "source_page": 76
+    },
+    {
+      "code": "bieu-do-cot",
+      "name": "Biểu đồ cột",
+      "description": "Khái niệm biểu đồ cột dùng để biểu diễn dữ liệu thống kê.",
+      "grade": 6,
+      "source_page": 79
+    },
+    {
+      "code": "ve-bieu-do-cot",
+      "name": "Vẽ biểu đồ cột",
+      "description": "Kỹ năng vẽ biểu đồ cột từ bảng thống kê cho trước.",
+      "grade": 6,
+      "source_page": 79
+    },
+    {
+      "code": "doc-bieu-do-cot",
+      "name": "Đọc biểu đồ cột",
+      "description": "Kỹ năng đọc và mô tả dữ liệu từ biểu đồ cột.",
+      "grade": 6,
+      "source_page": 79
+    },
+    {
+      "code": "phan-tich-bieu-do-cot",
+      "name": "Phân tích biểu đồ cột",
+      "description": "Kỹ năng nhận ra vấn đề hoặc quy luật đơn giản từ việc phân tích biểu đồ cột.",
+      "grade": 6,
+      "source_page": 79
+    },
+    {
+      "code": "bieu-do-cot-kep",
+      "name": "Biểu đồ cột kép",
+      "description": "Khái niệm biểu đồ cột kép là biểu đồ ghép hai biểu đồ cột lại để dễ dàng so sánh dữ liệu giữa hai nhóm.",
+      "grade": 6,
+      "source_page": 84
+    },
+    {
+      "code": "ve-bieu-do-cot-kep",
+      "name": "Vẽ biểu đồ cột kép",
+      "description": "Kỹ năng vẽ biểu đồ cột kép từ dữ liệu cho trước, bao gồm các bước vẽ trục, vẽ cột và tô màu phân biệt.",
+      "grade": 6,
+      "source_page": 84
+    },
+    {
+      "code": "doc-du-lieu-bieu-do-cot-kep",
+      "name": "Đọc dữ liệu từ biểu đồ cột kép",
+      "description": "Kỹ năng đọc và mô tả dữ liệu từ biểu đồ cột kép, nhận ra quy luật đơn giản từ biểu đồ.",
+      "grade": 6,
+      "source_page": 84
+    },
+    {
+      "code": "phan-tich-so-lieu-bieu-do-cot-kep",
+      "name": "Phân tích số liệu với biểu đồ cột kép",
+      "description": "Kỹ năng phân tích và so sánh số liệu từ biểu đồ cột kép để rút ra kết luận.",
+      "grade": 6,
+      "source_page": 86
+    },
+    {
+      "code": "ket-qua-co-the",
+      "name": "Kết quả có thể",
+      "description": "Khái niệm về các kết quả có thể xảy ra trong một trò chơi hoặc thí nghiệm.",
+      "grade": null,
+      "source_page": 91
+    },
+    {
+      "code": "su-kien",
+      "name": "Sự kiện",
+      "description": "Khái niệm về sự kiện có thể xảy ra hoặc không xảy ra trong một trò chơi hoặc thí nghiệm.",
+      "grade": null,
+      "source_page": 93
+    },
+    {
+      "code": "liet-ke-ket-qua-co-the",
+      "name": "Liệt kê kết quả có thể",
+      "description": "Kỹ năng liệt kê các kết quả có thể xảy ra trong các trò chơi, thí nghiệm đơn giản.",
+      "grade": null,
+      "source_page": 91
+    },
+    {
+      "code": "nhan-biet-su-kien-xay-ra",
+      "name": "Nhận biết sự kiện xảy ra",
+      "description": "Kỹ năng nhận biết một sự kiện trong trò chơi, thí nghiệm có xảy ra hay không.",
+      "grade": null,
+      "source_page": 93
+    },
+    {
+      "code": "xac-suat-thuc-nghiem",
+      "name": "Xác suất thực nghiệm",
+      "description": "Khái niệm xác suất thực nghiệm là tỉ số giữa số lần sự kiện xảy ra và tổng số lần thực hiện thí nghiệm.",
+      "grade": 6,
+      "source_page": 96
+    },
+    {
+      "code": "bieu-dien-kha-nang-xay-ra-su-kien",
+      "name": "Biểu diễn khả năng xảy ra sự kiện",
+      "description": "Khả năng xảy ra một sự kiện được thể hiện bằng một con số từ 0 đến 1, với 0 là không bao giờ xảy ra và 1 là chắc chắn xảy ra.",
+      "grade": 6,
+      "source_page": 96
+    },
+    {
+      "code": "tinh-xac-suat-thuc-nghiem",
+      "name": "Tính xác suất thực nghiệm",
+      "description": "Kỹ năng tính xác suất thực nghiệm bằng cách chia số lần sự kiện xảy ra cho tổng số lần thực hiện thí nghiệm.",
+      "grade": 6,
+      "source_page": 96
+    },
+    {
+      "code": "phu-thuoc-vao-so-lan-thuc-hien",
+      "name": "Xác suất thực nghiệm phụ thuộc vào số lần thực hiện",
+      "description": "Xác suất thực nghiệm phụ thuộc vào người thực hiện thí nghiệm, trò chơi và số lần người đó thực hiện thí nghiệm, trò chơi.",
+      "grade": 6,
+      "source_page": 96
+    }
+  ],
+  "relations": [
+    {
+      "source": "phan-so",
+      "relation": "Part_of",
+      "target": "tu-so",
+      "evidence": "Với $a, b \\in \\mathbb{Z}, b \\neq 0$, ta gọi $\\frac{a}{b}$ là một phân số, trong đó $a$ là tử số (tử) và $b$ là mẫu số (mẫu) của phân số.",
+      "source_page": 6
+    },
+    {
+      "source": "phan-so",
+      "relation": "Part_of",
+      "target": "mau-so",
+      "evidence": "Với $a, b \\in \\mathbb{Z}, b \\neq 0$, ta gọi $\\frac{a}{b}$ là một phân số, trong đó $a$ là tử số (tử) và $b$ là mẫu số (mẫu) của phân số.",
+      "source_page": 6
+    },
+    {
+      "source": "phan-so-bang-nhau",
+      "relation": "Evaluate_for",
+      "target": "quy-tac-bang-nhau-cua-phan-so",
+      "evidence": "Quy tắc bằng nhau của hai phân số: $\\frac{a}{b} = \\frac{c}{d}$ nếu $a \\cdot d = b \\cdot c$.",
+      "source_page": 7
+    },
+    {
+      "source": "phan-so",
+      "relation": "Used_for",
+      "target": "phan-so-bang-nhau",
+      "evidence": "Hai phân số bằng nhau có cùng giá trị.",
+      "source_page": 7
+    },
+    {
+      "source": "phan-so",
+      "relation": "Used_for",
+      "target": "tinh-chat-co-ban-cua-phan-so",
+      "evidence": "Nếu nhân cả tử và mẫu của một phân số với cùng một số nguyên khác 0 thì ta được một phân số bằng phân số đã cho.",
+      "source_page": 8
+    },
+    {
+      "source": "phan-so",
+      "relation": "Used_for",
+      "target": "rut-gon-phan-so",
+      "evidence": "Người ta thường dùng tính chất 2 để rút gọn phân số.",
+      "source_page": 8
+    },
+    {
+      "source": "rut-gon-phan-so",
+      "relation": "Evaluate_for",
+      "target": "phan-so-toi-gian",
+      "evidence": "Phân số không rút gọn được nữa vì tử và mẫu đều không có ước chung nào khác 1 và -1. Chúng được gọi là các phân số tối giản.",
+      "source_page": 8
+    },
+    {
+      "source": "quy-dong-mau-nhieu-phan-so",
+      "relation": "Prerequisite_of",
+      "target": "so-sanh-phan-so-khong-cung-mau",
+      "evidence": "Muốn so sánh hai phân số không cùng mẫu, ta viết chúng dưới dạng hai phân số có cùng một mẫu dương rồi so sánh các tử với nhau.",
+      "source_page": 12
+    },
+    {
+      "source": "viet-phan-so-thanh-hon-so",
+      "relation": "Hyponym_of",
+      "target": "nhan-biet-hon-so-duong",
+      "evidence": "Muốn viết một phân số (lớn hơn 1), chẳng hạn $\\frac{23}{5}$ dưới dạng hỗn số, ta làm như sau:",
+      "source_page": 13
+    },
+    {
+      "source": "viet-hon-so-thanh-phan-so",
+      "relation": "Hyponym_of",
+      "target": "nhan-biet-hon-so-duong",
+      "evidence": "Ngược lại, ta cũng có thể viết một hỗn số dương dưới dạng phân số, chẳng hạn:",
+      "source_page": 13
+    },
+    {
+      "source": "cong-hai-phan-so-cung-mau",
+      "relation": "Part_of",
+      "target": "cong-hai-phan-so-khong-cung-mau",
+      "evidence": "Muốn cộng hai phân số không cùng mẫu, ta viết chúng dưới dạng hai phân số cùng mẫu rồi cộng các tử và giữ nguyên mẫu chung.",
+      "source_page": 17
+    },
+    {
+      "source": "tinh-chat-giao-hoan-cua-phep-cong-phan-so",
+      "relation": "Part_of",
+      "target": "tinh-chat-ket-hop-cua-phep-cong-phan-so",
+      "evidence": "Tương tự phép cộng số nguyên, phép cộng phân số cũng có các tính chất sau: Giao hoán, Kết hợp.",
+      "source_page": 18
+    },
+    {
+      "source": "tru-hai-phan-so-cung-mau",
+      "relation": "Part_of",
+      "target": "tru-hai-phan-so-khong-cung-mau",
+      "evidence": "Muốn trừ hai phân số không cùng mẫu, ta quy đồng mẫu hai phân số, rồi trừ hai phân số đó.",
+      "source_page": 19
+    },
+    {
+      "source": "cong-phan-so-voi-so-doi",
+      "relation": "Evaluate_for",
+      "target": "tru-hai-phan-so-cung-mau",
+      "evidence": "Muốn trừ một phân số cho một phân số, ta có thể cộng số bị trừ với số đối của số trừ.",
+      "source_page": 19
+    },
+    {
+      "source": "phep-nhan-phan-so",
+      "relation": "Part_of",
+      "target": "tinh-chat-giao-hoan-phep-nhan-phan-so",
+      "evidence": "Tương tự phép nhân số nguyên, phép nhân phân số cũng có tính chất giao hoán.",
+      "source_page": 21
+    },
+    {
+      "source": "phep-nhan-phan-so",
+      "relation": "Part_of",
+      "target": "tinh-chat-ket-hop-phep-nhan-phan-so",
+      "evidence": "Tương tự phép nhân số nguyên, phép nhân phân số cũng có tính chất kết hợp.",
+      "source_page": 21
+    },
+    {
+      "source": "phep-nhan-phan-so",
+      "relation": "Part_of",
+      "target": "tinh-chat-phan-phoi-phep-nhan-phan-so",
+      "evidence": "Tương tự phép nhân số nguyên, phép nhân phân số cũng có tính chất phân phối của phép nhân đối với phép cộng.",
+      "source_page": 21
+    },
+    {
+      "source": "phan-so-nghich-dao",
+      "relation": "Used_for",
+      "target": "phep-chia-phan-so",
+      "evidence": "Muốn chia một phân số cho một phân số khác 0, ta nhân số bị chia với phân số nghịch đảo của số chia.",
+      "source_page": 22
+    },
+    {
+      "source": "tim-gia-tri-phan-so-cua-mot-so",
+      "relation": "Used_for",
+      "target": "tim-mot-so-biet-gia-tri-phan-so-cua-no",
+      "evidence": "Muốn tìm một số biết \\(\\frac{m}{n}\\) của số đó bằng b, ta tính b : \\(\\frac{m}{n}\\)",
+      "source_page": 25
+    },
+    {
+      "source": "phan-so-thap-phan",
+      "relation": "Part_of",
+      "target": "so-thap-phan",
+      "evidence": "Mọi phân số thập phân đều viết được dưới dạng số thập phân và ngược lại.",
+      "source_page": 30
+    },
+    {
+      "source": "so-thap-phan-am",
+      "relation": "Hyponym_of",
+      "target": "so-thap-phan",
+      "evidence": "Các số thập phân dương và các số thập phân âm gọi chung là số thập phân.",
+      "source_page": 30
+    },
+    {
+      "source": "so-doi",
+      "relation": "Used_for",
+      "target": "so-thap-phan",
+      "evidence": "Các số 1,7 và -1,7 cũng là hai số đối nhau.",
+      "source_page": 30
+    },
+    {
+      "source": "so-sanh-hai-so-thap-phan",
+      "relation": "Used_for",
+      "target": "so-thap-phan",
+      "evidence": "Ta đã biết cách so sánh hai số thập phân dương và so sánh hai phân số. Tương tự, ta cũng có: Số thập phân âm nhỏ hơn 0 và nhỏ hơn số thập phân dương.",
+      "source_page": 31
+    },
+    {
+      "source": "cong-hai-so-thap-phan-am",
+      "relation": "Part_of",
+      "target": "phep-cong-so-thap-phan",
+      "evidence": "Cộng hai số thập phân âm: (-a) + (-b) = -(a + b) với a, b > 0.",
+      "source_page": 33
+    },
+    {
+      "source": "cong-hai-so-thap-phan-khac-dau",
+      "relation": "Part_of",
+      "target": "phep-cong-so-thap-phan",
+      "evidence": "Cộng hai số thập phân khác dấu: (-a) + b = b - a nếu 0 < a ≤ b; (-a) + b = -(a - b) nếu a > b > 0.",
+      "source_page": 33
+    },
+    {
+      "source": "tru-hai-so-thap-phan",
+      "relation": "Part_of",
+      "target": "phep-tru-so-thap-phan",
+      "evidence": "Phép trừ hai số thập phân được đưa về phép cộng với số đối: a - b = a + (-b).",
+      "source_page": 33
+    },
+    {
+      "source": "nhan-hai-so-thap-phan-cung-dau",
+      "relation": "Part_of",
+      "target": "phep-nhan-so-thap-phan",
+      "evidence": "Nhân hai số cùng dấu: (-a) * (-b) = a * b với a, b > 0.",
+      "source_page": 34
+    },
+    {
+      "source": "nhan-hai-so-thap-phan-khac-dau",
+      "relation": "Part_of",
+      "target": "phep-nhan-so-thap-phan",
+      "evidence": "Nhân hai số khác dấu: (-a) * b = a * (-b) = -(a * b) với a, b > 0.",
+      "source_page": 34
+    },
+    {
+      "source": "chia-hai-so-thap-phan-cung-dau",
+      "relation": "Part_of",
+      "target": "phep-chia-so-thap-phan",
+      "evidence": "Chia hai số cùng dấu: (-a) : (-b) = a : b với a, b > 0.",
+      "source_page": 34
+    },
+    {
+      "source": "chia-hai-so-thap-phan-khac-dau",
+      "relation": "Part_of",
+      "target": "phep-chia-so-thap-phan",
+      "evidence": "Chia hai số khác dấu: (-a) : b = a : (-b) = -(a : b) với a, b > 0.",
+      "source_page": 34
+    },
+    {
+      "source": "lam-tron-so-thap-phan",
+      "relation": "Part_of",
+      "target": "lam-tron-so-thap-phan-am",
+      "evidence": "Để làm tròn một số thập phân âm ta chỉ cần làm tròn số đối của nó rồi đặt dấu “–” trước kết quả.",
+      "source_page": 37
+    },
+    {
+      "source": "ti-so-phan-tram",
+      "relation": "Hyponym_of",
+      "target": "ti-so",
+      "evidence": "Ta thường dùng tỉ số dưới dạng tỉ số phần trăm, tức là tỉ số có dạng a/100, kí hiệu a%.",
+      "source_page": 40
+    },
+    {
+      "source": "tinh-ti-so-phan-tram",
+      "relation": "Prerequisite_of",
+      "target": "tim-gia-tri-phan-tram",
+      "evidence": "Muốn tìm m% của số a, ta tính a * m/100.",
+      "source_page": 41
+    },
+    {
+      "source": "tinh-ti-so-phan-tram",
+      "relation": "Prerequisite_of",
+      "target": "tim-so-khi-biet-gia-tri-phan-tram",
+      "evidence": "Muốn tìm một số khi biết m% của số đó là b, ta tính b * 100/m.",
+      "source_page": 41
+    },
+    {
+      "source": "diem-thuoc-duong-thang",
+      "relation": "Part_of",
+      "target": "duong-thang-qua-hai-diem-phan-biet",
+      "evidence": "Khi M thuộc d, ta còn nói: Điểm M nằm trên đường thẳng d, hay đường thẳng d đi qua điểm M.",
+      "source_page": 45
+    },
+    {
+      "source": "ba-diem-thang-hang",
+      "relation": "Part_of",
+      "target": "duong-thang-qua-hai-diem-phan-biet",
+      "evidence": "Ba điểm thẳng hàng là ba điểm cùng thuộc một đường thẳng.",
+      "source_page": 47
+    },
+    {
+      "source": "hai-duong-thang-song-song",
+      "relation": "Compare",
+      "target": "hai-duong-thang-cat-nhau",
+      "evidence": "a và b không có điểm chung: a và b song song với nhau. a và b có đúng một điểm chung P: a và b cắt nhau tại điểm P.",
+      "source_page": 48
+    },
+    {
+      "source": "hai-duong-thang-trung-nhau",
+      "relation": "Compare",
+      "target": "hai-duong-thang-cat-nhau",
+      "evidence": "a và b có đúng một điểm chung P: a và b cắt nhau tại điểm P. Đường thẳng AB và đường thẳng BC trùng nhau.",
+      "source_page": 48
+    },
+    {
+      "source": "diem-nam-giua-hai-diem",
+      "relation": "Part_of",
+      "target": "khai-niem-tia",
+      "evidence": "Điểm O trên đường thẳng xy chia đường thẳng thành hai phần (H.8.18a).",
+      "source_page": 51
+    },
+    {
+      "source": "hai-tia-doi-nhau",
+      "relation": "Part_of",
+      "target": "khai-niem-tia",
+      "evidence": "Hai tia Ox và Oy gọi là hai tia đối nhau (H.8.18a).",
+      "source_page": 51
+    },
+    {
+      "source": "diem-nam-giua-hai-diem",
+      "relation": "Conjunction",
+      "target": "hai-diem-nam-cung-phia",
+      "evidence": "Điểm B nằm giữa hai điểm A và C. Hai điểm A và B nằm cùng phía đối với điểm C.",
+      "source_page": 50
+    },
+    {
+      "source": "diem-nam-giua-hai-diem",
+      "relation": "Conjunction",
+      "target": "hai-diem-nam-khac-phia",
+      "evidence": "Điểm B nằm giữa hai điểm A và C. Hai điểm A và C nằm khác phía đối với điểm B.",
+      "source_page": 50
+    },
+    {
+      "source": "doan-thang",
+      "relation": "Part_of",
+      "target": "dau-mut-doan-thang",
+      "evidence": "A, B là hai đầu mút của đoạn thẳng AB.",
+      "source_page": 53
+    },
+    {
+      "source": "do-dai-doan-thang",
+      "relation": "Evaluate_for",
+      "target": "doan-thang",
+      "evidence": "Độ dài đoạn thẳng là khoảng cách giữa hai điểm đầu mút của đoạn thẳng.",
+      "source_page": 54
+    },
+    {
+      "source": "do-dai-doan-thang",
+      "relation": "Hyponym_of",
+      "target": "don-vi-do-dai",
+      "evidence": "Khi chọn một đơn vị độ dài thì độ dài mỗi đoạn thẳng được biểu diễn bởi một số dương (thường viết kèm đơn vị).",
+      "source_page": 54
+    },
+    {
+      "source": "so-sanh-do-dai-doan-thang",
+      "relation": "Used_for",
+      "target": "do-dai-doan-thang",
+      "evidence": "So sánh độ dài hai đoạn thẳng bằng cách đo và so sánh số đo độ dài của chúng.",
+      "source_page": 55
+    },
+    {
+      "source": "trung-diem-doan-thang",
+      "relation": "Used_for",
+      "target": "nhan-biet-trung-diem",
+      "evidence": "Nếu điểm I nằm giữa hai điểm A và B sao cho IA = IB thì điểm I gọi là trung điểm của đoạn thẳng AB.",
+      "source_page": 57
+    },
+    {
+      "source": "trung-diem-doan-thang",
+      "relation": "Used_for",
+      "target": "giai-bai-toan-trung-diem",
+      "evidence": "Giải các bài toán thực tế có liên quan đến trung điểm của đoạn thẳng.",
+      "source_page": 57
+    },
+    {
+      "source": "goc",
+      "relation": "Part_of",
+      "target": "dinh-cua-goc",
+      "evidence": "Góc chung của hai tia là đỉnh của góc.",
+      "source_page": 60
+    },
+    {
+      "source": "goc",
+      "relation": "Part_of",
+      "target": "canh-cua-goc",
+      "evidence": "Hai tia là hai cạnh của góc.",
+      "source_page": 60
+    },
+    {
+      "source": "goc-bet",
+      "relation": "Hyponym_of",
+      "target": "goc",
+      "evidence": "Đặc biệt, khi Ox và Oy là hai tia đối nhau, ta có góc bẹt xOy.",
+      "source_page": 60
+    },
+    {
+      "source": "diem-trong-cua-goc",
+      "relation": "Part_of",
+      "target": "goc",
+      "evidence": "Ta gọi M là một điểm trong của góc xOy (điểm M nằm trong góc xOy).",
+      "source_page": 61
+    },
+    {
+      "source": "so-do-goc",
+      "relation": "Part_of",
+      "target": "do-goc-bang-thuoc",
+      "evidence": "Muốn đo góc xOy, ta đặt thước đo góc sao cho tâm của thước trùng với O, tia Ox đi qua vạch 0.",
+      "source_page": 63
+    },
+    {
+      "source": "goc-vuong",
+      "relation": "Hyponym_of",
+      "target": "so-do-goc",
+      "evidence": "Góc có số đo bằng 90° là góc vuông.",
+      "source_page": 64
+    },
+    {
+      "source": "goc-nhon",
+      "relation": "Hyponym_of",
+      "target": "so-do-goc",
+      "evidence": "Góc nhỏ hơn góc vuông là góc nhọn.",
+      "source_page": 64
+    },
+    {
+      "source": "goc-tu",
+      "relation": "Hyponym_of",
+      "target": "so-do-goc",
+      "evidence": "Góc lớn hơn góc vuông, nhỏ hơn góc bẹt là góc tù.",
+      "source_page": 64
+    },
+    {
+      "source": "goc-bet",
+      "relation": "Hyponym_of",
+      "target": "so-do-goc",
+      "evidence": "Góc bẹt có số đo bằng 180°.",
+      "source_page": 64
+    },
+    {
+      "source": "so-sanh-goc",
+      "relation": "Part_of",
+      "target": "so-do-goc",
+      "evidence": "Người ta so sánh hai góc bằng cách so sánh số đo của chúng.",
+      "source_page": 63
+    },
+    {
+      "source": "phan-loai-du-lieu",
+      "relation": "Hyponym_of",
+      "target": "du-lieu-thong-ke",
+      "evidence": "Các thông tin thu được ở trên như nhiệt độ thấp nhất, nhiệt độ cao nhất, ngày không mưa,... được gọi là dữ liệu.",
+      "source_page": 70
+    },
+    {
+      "source": "du-lieu-la-so-lieu",
+      "relation": "Hyponym_of",
+      "target": "phan-loai-du-lieu",
+      "evidence": "Trong các dữ liệu ấy, có dữ liệu là số (số liệu), có dữ liệu không phải là số.",
+      "source_page": 70
+    },
+    {
+      "source": "du-lieu-khong-phai-so-lieu",
+      "relation": "Hyponym_of",
+      "target": "phan-loai-du-lieu",
+      "evidence": "Trong các dữ liệu ấy, có dữ liệu là số (số liệu), có dữ liệu không phải là số.",
+      "source_page": 70
+    },
+    {
+      "source": "du-lieu-hop-li",
+      "relation": "Part_of",
+      "target": "du-lieu-thong-ke",
+      "evidence": "Em hãy chỉ ra dữ liệu không hợp lí (nếu có) trong dãy dữ liệu trên.",
+      "source_page": 71
+    },
+    {
+      "source": "thu-thap-du-lieu-thong-ke",
+      "relation": "Part_of",
+      "target": "du-lieu-thong-ke",
+      "evidence": "Trong mục này, chúng ta sẽ tiếp tục làm quen với việc thu thập dữ liệu thống kê.",
+      "source_page": 72
+    },
+    {
+      "source": "bang-thong-ke",
+      "relation": "Part_of",
+      "target": "doc-du-lieu-tu-bang-thong-ke",
+      "evidence": "Đọc và phân tích dữ liệu từ bảng thống kê, biểu đồ tranh.",
+      "source_page": 76
+    },
+    {
+      "source": "bang-thong-ke",
+      "relation": "Part_of",
+      "target": "phan-tich-du-lieu-tu-bang-thong-ke",
+      "evidence": "Đọc và phân tích dữ liệu từ bảng thống kê, biểu đồ tranh.",
+      "source_page": 76
+    },
+    {
+      "source": "bieu-do-tranh",
+      "relation": "Part_of",
+      "target": "doc-du-lieu-tu-bieu-do-tranh",
+      "evidence": "Đọc và phân tích dữ liệu từ bảng thống kê, biểu đồ tranh.",
+      "source_page": 76
+    },
+    {
+      "source": "bieu-do-tranh",
+      "relation": "Part_of",
+      "target": "phan-tich-du-lieu-tu-bieu-do-tranh",
+      "evidence": "Đọc và phân tích dữ liệu từ bảng thống kê, biểu đồ tranh.",
+      "source_page": 76
+    },
+    {
+      "source": "bang-thong-ke",
+      "relation": "Part_of",
+      "target": "bieu-dien-du-lieu-vao-bang-thong-ke",
+      "evidence": "Biểu diễn dữ liệu vào bảng thống kê, biểu đồ tranh.",
+      "source_page": 76
+    },
+    {
+      "source": "bieu-do-tranh",
+      "relation": "Part_of",
+      "target": "bieu-dien-du-lieu-vao-bieu-do-tranh",
+      "evidence": "Biểu diễn dữ liệu vào bảng thống kê, biểu đồ tranh.",
+      "source_page": 76
+    },
+    {
+      "source": "ve-bieu-do-cot",
+      "relation": "Part_of",
+      "target": "bieu-do-cot",
+      "evidence": "Để biểu diễn bảng thống kê trên, người ta thường dùng biểu đồ cột.",
+      "source_page": 79
+    },
+    {
+      "source": "doc-bieu-do-cot",
+      "relation": "Part_of",
+      "target": "bieu-do-cot",
+      "evidence": "Đọc và mô tả dữ liệu từ biểu đồ cột.",
+      "source_page": 79
+    },
+    {
+      "source": "phan-tich-bieu-do-cot",
+      "relation": "Part_of",
+      "target": "bieu-do-cot",
+      "evidence": "Nhận ra vấn đề hoặc quy luật đơn giản từ việc phân tích biểu đồ cột.",
+      "source_page": 79
+    },
+    {
+      "source": "ve-bieu-do-cot",
+      "relation": "Prerequisite_of",
+      "target": "doc-bieu-do-cot",
+      "evidence": "Việc vẽ biểu đồ cột và phân tích dữ liệu dựa vào biểu đồ cột như thế nào, chúng ta cùng tìm hiểu.",
+      "source_page": 79
+    },
+    {
+      "source": "doc-bieu-do-cot",
+      "relation": "Prerequisite_of",
+      "target": "phan-tich-bieu-do-cot",
+      "evidence": "Việc vẽ biểu đồ cột và phân tích dữ liệu dựa vào biểu đồ cột như thế nào, chúng ta cùng tìm hiểu.",
+      "source_page": 79
+    },
+    {
+      "source": "bieu-do-cot-kep",
+      "relation": "Part_of",
+      "target": "ve-bieu-do-cot-kep",
+      "evidence": "Vẽ biểu đồ cột kép biểu diễn bảng thống kê ở trên, em thực hiện theo các bước sau:",
+      "source_page": 84
+    },
+    {
+      "source": "bieu-do-cot-kep",
+      "relation": "Part_of",
+      "target": "doc-du-lieu-bieu-do-cot-kep",
+      "evidence": "Vẽ biểu đồ cột kép; Đọc và mô tả dữ liệu từ biểu đồ cột kép.",
+      "source_page": 84
+    },
+    {
+      "source": "bieu-do-cot-kep",
+      "relation": "Part_of",
+      "target": "phan-tich-so-lieu-bieu-do-cot-kep",
+      "evidence": "Phân tích số liệu với biểu đồ cột kép",
+      "source_page": 86
+    },
+    {
+      "source": "ve-bieu-do-cot-kep",
+      "relation": "Prerequisite_of",
+      "target": "doc-du-lieu-bieu-do-cot-kep",
+      "evidence": "Vẽ biểu đồ cột kép; Đọc và mô tả dữ liệu từ biểu đồ cột kép.",
+      "source_page": 84
+    },
+    {
+      "source": "doc-du-lieu-bieu-do-cot-kep",
+      "relation": "Prerequisite_of",
+      "target": "phan-tich-so-lieu-bieu-do-cot-kep",
+      "evidence": "Phân tích số liệu với biểu đồ cột kép",
+      "source_page": 86
+    },
+    {
+      "source": "ket-qua-co-the",
+      "relation": "Part_of",
+      "target": "liet-ke-ket-qua-co-the",
+      "evidence": "Các kết quả của trò chơi, thí nghiệm có thể xảy ra gọi là kết quả có thể.",
+      "source_page": 91
+    },
+    {
+      "source": "su-kien",
+      "relation": "Part_of",
+      "target": "nhan-biet-su-kien-xay-ra",
+      "evidence": "Khi thực hiện trò chơi hoặc thí nghiệm, một sự kiện có thể xảy ra hoặc không xảy ra tùy thuộc vào kết quả của trò chơi, thí nghiệm đó.",
+      "source_page": 93
+    },
+    {
+      "source": "xac-suat-thuc-nghiem",
+      "relation": "Part_of",
+      "target": "bieu-dien-kha-nang-xay-ra-su-kien",
+      "evidence": "Khả năng xảy ra một sự kiện được thể hiện bằng một con số từ 0 đến 1.",
+      "source_page": 96
+    },
+    {
+      "source": "tinh-xac-suat-thuc-nghiem",
+      "relation": "Used_for",
+      "target": "xac-suat-thuc-nghiem",
+      "evidence": "Tỉ số \\(\\frac{\\text{Số lần mũi tên chỉ vào ô màu vàng}}{\\text{Số lần quay}}\\) được gọi là xác suất thực nghiệm của sự kiện Mũi tên chỉ vào ô màu vàng.",
+      "source_page": 96
+    },
+    {
+      "source": "phu-thuoc-vao-so-lan-thuc-hien",
+      "relation": "Part_of",
+      "target": "xac-suat-thuc-nghiem",
+      "evidence": "Xác suất thực nghiệm phụ thuộc vào người thực hiện thí nghiệm, trò chơi và số lần người đó thực hiện thí nghiệm, trò chơi.",
+      "source_page": 96
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "concepts": [
+    {
+      "code": "tia-so",
+      "name": "Tia số",
+      "description": "Tia số là một đoạn thẳng có điểm đầu và điểm cuối vô cùng, dùng để biểu diễn các số tự nhiên",
+      "grade": 1,
+      "source_page": 34
+    },
+    {
+      "code": "thu-tu-so-tu-nhien",
+      "name": "Thứ tự của các số tự nhiên",
+      "description": "Thứ tự của các số tự nhiên là mối quan hệ giữa các số tự nhiên dựa trên vị trí của chúng trên tia số",
+      "grade": 1,
+      "source_page": 34
+    },
+    {
+      "code": "so-lien-truoc-lien-sau",
+      "name": "Số liền trước và số liền sau",
+      "description": "Số liền trước của một số tự nhiên là số tự nhiên nhỏ hơn nó nhất, số liền sau là số tự nhiên lớn hơn nó nhất",
+      "grade": 1,
+      "source_page": 34
+    },
+    {
+      "code": "tinh-chat-bac-cau",
+      "name": "Tính chất bắc cầu",
+      "description": "Nếu a < b và b < c thì a < c",
+      "grade": 1,
+      "source_page": 34
+    },
+    {
+      "code": "ky-hieu-leq-geq",
+      "name": "Kí hiệu ≤ và ≥",
+      "description": "Kí hiệu ≤ dùng để chỉ số này nhỏ hơn hoặc bằng số kia, kí hiệu ≥ dùng để chỉ số này lớn hơn hoặc bằng số kia",
+      "grade": 1,
+      "source_page": 35
+    }
+  ],
+  "relations": [
+    {
+      "source": "tia-so",
+      "relation": "Used_for",
+      "target": "thu-tu-so-tu-nhien",
+      "evidence": "Tia số dùng để biểu diễn các số tự nhiên và xác định thứ tự của chúng",
+      "source_page": 34
+    },
+    {
+      "source": "thu-tu-so-tu-nhien",
+      "relation": "Part_of",
+      "target": "so-lien-truoc-lien-sau",
+      "evidence": "Thứ tự của các số tự nhiên bao gồm số liền trước và số liền sau",
+      "source_page": 34
+    },
+    {
+      "source": "so-lien-truoc-lien-sau",
+      "relation": "Prerequisite_of",
+      "target": "tinh-chat-bac-cau",
+      "evidence": "Để hiểu tính chất bắc cầu, cần hiểu số liền trước và số liền sau",
+      "source_page": 34
+    },
+    {
+      "source": "tinh-chat-bac-cau",
+      "relation": "Used_for",
+      "target": "ky-hieu-leq-geq",
+      "evidence": "Tính chất bắc cầu được sử dụng để giải thích kí hiệu ≤ và ≥",
+      "source_page": 35
+    }
+  ]
+}

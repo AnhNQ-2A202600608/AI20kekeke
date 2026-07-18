@@ -1,0 +1,54 @@
+{
+  "document": {
+    "document_id": "math-k6-sgv",
+    "source_type": "SGV",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 2",
+    "lesson": "Bài 16"
+  },
+  "learning_objectives": [
+    {
+      "code": "nhan-biet-quy-tac-nhan-hai-so-nguyen",
+      "description": "Nhận biết được quy tắc nhân hai số nguyên.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận biết được quy tắc nhân hai số nguyên."
+    },
+    {
+      "code": "nhan-biet-tinh-chat-cua-phep-nhan",
+      "description": "Nhận biết được các tính chất của phép nhân số nguyên.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận biết được các tính chất của phép nhân số nguyên."
+    },
+    {
+      "code": "thuc-hien-phep-nhan-so-nguyen",
+      "description": "Thực hiện được phép nhân số nguyên.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Thực hiện được phép nhân số nguyên."
+    },
+    {
+      "code": "van-dung-tinh-chat-phep-nhan",
+      "description": "Vận dụng được các tính chất của phép nhân để tính nhẩm, tính hợp lí.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Vận dụng được các tính chất của phép nhân để tính nhẩm, tính hợp lí."
+    },
+    {
+      "code": "giai-bai-toan-thuc-te",
+      "description": "Giải được một số bài toán thực tế có sử dụng các phép tính cộng, trừ và nhân số nguyên.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Giải được một số bài toán thực tế có sử dụng các phép tính cộng, trừ và nhân số nguyên."
+    }
+  ],
+  "concepts": [],
+  "relations": [],
+  "misconceptions": [
+    {
+      "temporary_id": "m1",
+      "name": "Tích của hai số âm là một số âm.",
+      "description": "Học sinh nghĩ rằng tích của hai số âm sẽ là một số âm, không hiểu rằng nó thực chất là một số dương.",
+      "related_skill": "c1",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "HS thường thắc mắc tại sao tích của hai số âm lại là một số dương."
+    }
+  ]
+}

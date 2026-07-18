@@ -1,0 +1,120 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Bài 22",
+    "lesson": "LỚP ĐẤT TRÊN TRÁI ĐẤT"
+  },
+  "learning_objectives": [
+    {
+      "code": "trinh-bay-nhan-to-hinh-thanh-dat",
+      "description": "Trình bày được một số nhân tố hình thành đất.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c195",
+      "evidence": ""
+    },
+    {
+      "code": "ke-ten-nhom-dat-dien-hinh",
+      "description": "Kể được tên và xác định được trên bản đồ một số nhóm đất điển hình ở vùng nhiệt đới hoặc ở vùng ôn đới.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c195",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "cac-tang-dat",
+      "name": "Các tầng đất",
+      "description": "Các lớp đất khác nhau trên bề mặt Trái Đất, phản ánh quá trình hình thành và tính chất của đất.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c195",
+        "sgk-lich-su-va-ia-li-6-kntt-c196"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "thanh-phan-cua-dat",
+      "name": "Thành phần của đất",
+      "description": "Các thành phần cấu tạo nên đất, bao gồm khoáng, chất hữu cơ, không khí và nước.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c195",
+        "sgk-lich-su-va-ia-li-6-kntt-c196"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "nhan-to-hinh-thanh-dat",
+      "name": "Nhân tố hình thành đất",
+      "description": "Các yếu tố ảnh hưởng đến sự hình thành và tính chất của đất, bao gồm đá mẹ, khí hậu, sinh vật, địa hình và thời gian.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c196"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "nhom-dat-dien-hinh",
+      "name": "Nhóm đất điển hình",
+      "description": "Các loại đất được phân loại dựa trên quá trình hình thành và tính chất, như đất đen thảo nguyên ôn đới, đất pốt dôn, đất đỏ vàng nhiệt đới.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c196"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "s1",
+      "suggested_code": "doc-ban-do",
+      "name": "Đọc bản đồ",
+      "description": "Kỹ năng xác định và phân tích thông tin trên bản đồ, như vị trí và phân bố của các nhóm đất.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c197"
+      ],
+      "evidence": []
+    }
+  ],
+  "relations": [
+    {
+      "source": "c3",
+      "relation_type": "prerequisite_of",
+      "target": "c1",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c196",
+      "evidence": "Để hiểu về các tầng đất, cần nắm rõ các nhân tố hình thành đất.",
+      "confidence": 0.9
+    },
+    {
+      "source": "c3",
+      "relation_type": "prerequisite_of",
+      "target": "c2",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c196",
+      "evidence": "Các nhân tố hình thành đất ảnh hưởng đến thành phần của đất.",
+      "confidence": 0.9
+    },
+    {
+      "source": "c4",
+      "relation_type": "related_to",
+      "target": "c3",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c196",
+      "evidence": "Các nhóm đất điển hình được phân loại dựa trên các nhân tố hình thành đất.",
+      "confidence": 0.8
+    }
+  ],
+  "misconceptions": []
+}

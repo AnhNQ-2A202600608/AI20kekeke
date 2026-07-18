@@ -1,0 +1,101 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Bài 3",
+    "lesson": "Tỉ lệ bản đồ. Tính khoảng cách thực tế dựa vào tỉ lệ bản đồ"
+  },
+  "learning_objectives": [
+    {
+      "code": "hien-bang-tinh-khoang-cach",
+      "description": "Học sinh biết cách tính khoảng cách thực tế giữa hai địa điểm trên bản đồ theo tỉ lệ bản đồ.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c116",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "ti-le-ban-do",
+      "name": "Tỉ lệ bản đồ",
+      "description": "Tỉ lệ bản đồ cho biết mức độ thu nhỏ độ dài giữa các đối tượng trên bản đồ so với thực tế.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c116",
+        "sgk-lich-su-va-ia-li-6-kntt-c117"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "ti-le-so",
+      "name": "Tỉ lệ số",
+      "description": "Tỉ lệ số là một phân số luôn có tử số là 1, mẫu số càng lớn thì tỉ lệ càng nhỏ và ngược lại.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c116"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "ti-le-thuoc",
+      "name": "Tỉ lệ thước",
+      "description": "Tỉ lệ thước được vẽ dưới dạng một thước đo đã tính sẵn, mỗi đoạn đều ghi số đo độ dài tương ứng trên thực tế.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c116"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "tinh-khoang-cach",
+      "name": "Tính khoảng cách thực tế",
+      "description": "Cách tính khoảng cách thực tế giữa hai điểm A và B dựa vào tỉ lệ bản đồ.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c116",
+        "sgk-lich-su-va-ia-li-6-kntt-c117"
+      ],
+      "evidence": []
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "prerequisite_of",
+      "target": "c4",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c116",
+      "evidence": "",
+      "confidence": 1.0
+    },
+    {
+      "source": "c2",
+      "relation_type": "related_to",
+      "target": "c1",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c116",
+      "evidence": "",
+      "confidence": 1.0
+    },
+    {
+      "source": "c3",
+      "relation_type": "related_to",
+      "target": "c1",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c116",
+      "evidence": "",
+      "confidence": 1.0
+    }
+  ],
+  "misconceptions": []
+}

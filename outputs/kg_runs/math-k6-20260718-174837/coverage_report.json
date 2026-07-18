@@ -1,0 +1,80 @@
+{
+  "run_id": "math-k6-20260718-174837",
+  "course_code": "math-k6",
+  "subject": "math",
+  "grade": 6,
+  "timestamp": "2026-07-18T10:48:37.837261+00:00",
+  "document_coverage": {
+    "total_documents": 1,
+    "processed_documents": 1,
+    "failed_documents": 0,
+    "total_pages": 119,
+    "successfully_extracted_pages": 119,
+    "failed_pages": 0,
+    "page_extraction_rate": 1.0
+  },
+  "lesson_coverage": {
+    "expected_lessons": [
+      "2. MÔ TẢ MỘT TẬP HỢP",
+      "Luyện tập 3",
+      "BÀI 1: TẬP HỢP",
+      "BÀI TẬP",
+      "2. CỘNG HAI SỐ NGUYÊN KHÁC DẤU"
+    ],
+    "detected_lessons": [
+      "2. MÔ TẢ MỘT TẬP HỢP",
+      "Luyện tập 3",
+      "BÀI 1: TẬP HỢP",
+      "BÀI TẬP",
+      "2. CỘNG HAI SỐ NGUYÊN KHÁC DẤU"
+    ],
+    "expected_lessons_count": 5,
+    "processed_lessons": 5,
+    "lesson_coverage_rate": 1.0
+  },
+  "concept_coverage": {
+    "total_raw_concepts": 95,
+    "canonical_concepts": 90,
+    "concepts_with_source": 90,
+    "concepts_without_source": 0,
+    "concepts_with_source_rate": 1.0,
+    "concepts_with_description": 90,
+    "concepts_without_description": 0,
+    "merged_duplicates": 5,
+    "needs_review_duplicates": 11,
+    "orphan_concepts": 79,
+    "orphan_concept_rate": 0.8777777777777778
+  },
+  "relation_coverage": {
+    "total_relations": 43,
+    "relations_with_evidence": 43,
+    "relations_with_source_chunk": 43,
+    "relations_with_source_chunk_rate": 1.0,
+    "invalid_relations": 40,
+    "duplicate_relations": 0,
+    "self_relations": 0,
+    "draft_relations": 43,
+    "validated_relations": 3,
+    "approved_relations": 0,
+    "rejected_relations": 0
+  },
+  "prerequisite_graph": {
+    "prerequisite_nodes": 9,
+    "prerequisite_edges": 12,
+    "root_nodes_count": 1,
+    "leaf_nodes_count": 3,
+    "isolated_nodes_count": 81,
+    "cycle_count": 0,
+    "dag_valid": true
+  },
+  "learning_objective_coverage": {
+    "total_learning_objectives": 0,
+    "mapped_learning_objectives": 0,
+    "lo_coverage_rate": 1.0
+  },
+  "status": "WARNING",
+  "warnings": [
+    "Orphan concept rate (87.78%) exceeds warning threshold."
+  ],
+  "failures": []
+}

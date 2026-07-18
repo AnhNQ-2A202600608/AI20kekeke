@@ -1,0 +1,2421 @@
+{
+  "valid": false,
+  "self_relations": [],
+  "duplicate_relations": [],
+  "invalid_relations": [
+    {
+      "relation": {
+        "source": "tu-lieu-hien-vat",
+        "target": "tu-lieu-goc",
+        "evidence": "Tư liệu hiện vật là một dạng của tư liệu gốc, cung cấp thông tin trực tiếp về đời sống vật chất và tinh thần của người xưa.",
+        "source_page": 13,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c003",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c003'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c003'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "tu-lieu-chu-viet",
+        "target": "tu-lieu-goc",
+        "evidence": "Tư liệu chữ viết là một dạng của tư liệu gốc, ghi chép về đời sống con người.",
+        "source_page": 13,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c003",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c003'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c003'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "tu-lieu-truyen-mieng",
+        "target": "tu-lieu-goc",
+        "evidence": "Tư liệu truyền miệng là một dạng của tư liệu gốc, phản ánh hiện thực lịch sử qua các câu chuyện dân gian.",
+        "source_page": 14,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c004",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c004'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c004'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "xa-hoi-nguyen-thuy-phuong-dong",
+        "target": "su-tan-ra-xa-hoi-nguyen-thuy-viet-nam",
+        "evidence": "Ở phương Đông, xã hội nguyên thuỷ phân hoá sớm nhưng không triệt để do tính liên kết cộng đồng và các tập tục xã hội nguyên thuỷ được bảo lưu.",
+        "source_page": 27,
+        "relation_type": "compared_with",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c022",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c022'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c022'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "nguoi-dra-vi-da",
+        "target": "che-do-dang-cap-vac-na",
+        "evidence": "Người Đra-vi-đa bị biến thành đẳng cấp thứ tư (Su-dra) trong hệ thống bốn đẳng cấp.",
+        "source_page": 37,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c034",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c034'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c034'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "chu-viet-co-an-do",
+        "target": "chu-phan",
+        "evidence": "Chữ Phạn được tạo trên việc cải biến những chữ viết cổ đã có từ trước.",
+        "source_page": 38,
+        "relation_type": "prerequisite_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c034",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c034'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c034'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "dao-ba-la-mon-va-hin-du",
+        "target": "phat-giao-an-do",
+        "evidence": "Đạo Bà La Môn là tôn giáo ra đời sớm nhất ở Ấn Độ, phát triển thành đạo Hin-đu trong những thế kỉ đầu Công nguyên. Phật giáo được hình thành khoảng thế kỉ VI TCN.",
+        "source_page": 39,
+        "relation_type": "prerequisite_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c035",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c035'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c035'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "thanh-tuu-van-hoa-hy-lap-la-ma",
+        "target": "nha-nuoc-thanh-bang-hy-lap",
+        "evidence": "Người Hy Lạp và La Mã đã sáng tạo ra hệ chữ cái La-tinh và chữ số La Mã, văn học phong phú, các nhà khoa học nổi tiếng, sáng tạo ra dương lịch, và các tác phẩm điêu khắc nổi tiếng.",
+        "source_page": 50,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c048",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c048'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c048'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "thanh-tuu-van-hoa-hy-lap-la-ma",
+        "target": "nha-nuoc-de-che-la-ma",
+        "evidence": "Người Hy Lạp và La Mã đã sáng tạo ra hệ chữ cái La-tinh và chữ số La Mã, văn học phong phú, các nhà khoa học nổi tiếng, sáng tạo ra dương lịch, và các tác phẩm điêu khắc nổi tiếng.",
+        "source_page": 50,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c048",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c048'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c048'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "dong-nam-a",
+        "target": "nen-van-minh-lua-nuoc",
+        "evidence": "Đông Nam Á là \"cái nôi\" của nền văn minh lúa nước",
+        "source_page": 53,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c052",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c052'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c052'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "quoc-gia-so-ki",
+        "target": "van-lang-au-lac",
+        "evidence": "Văn Lang - Âu Lạc là một quốc gia sơ kì",
+        "source_page": 54,
+        "relation_type": "is_a",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c052",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c052'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c052'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "quoc-gia-so-ki",
+        "target": "cham-pa",
+        "evidence": "Chăm-pa là một quốc gia sơ kì",
+        "source_page": 54,
+        "relation_type": "is_a",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c052",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c052'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c052'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "quoc-gia-so-ki",
+        "target": "phu-nam",
+        "evidence": "Phù Nam là một quốc gia sơ kì",
+        "source_page": 54,
+        "relation_type": "is_a",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c052",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c052'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c052'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "giao-lu-thuong-mai",
+        "target": "quoc-gia-so-ki",
+        "evidence": "Giao lưu thương mại là một hoạt động quan trọng trong sự hình thành của các quốc gia sơ kì",
+        "source_page": 54,
+        "relation_type": "used_for",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c052",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c052'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c052'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "o-eco",
+        "target": "giao-lu-thuong-mai",
+        "evidence": "Óc Eo là một thành thị và hải cảng sầm uất, chứng tỏ giao lưu thương mại phát đạt",
+        "source_page": 54,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c052",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c052'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c052'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "ta-co-la",
+        "target": "giao-lu-thuong-mai",
+        "evidence": "Ta-cô-la là một thành thị và hải cảng sầm uất, chứng tỏ giao lưu thương mại phát đạt",
+        "source_page": 54,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c052",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c052'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c052'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "sự-hình-thành-các-vương-quốc-phong-kiến",
+        "target": "vương-quốc-sri-kse-tra",
+        "evidence": "Vương quốc Sri Kse-tra là một trong các vương quốc phong kiến hình thành ở Đông Nam Á",
+        "source_page": 56,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c056",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c056'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c056'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "sự-hình-thành-các-vương-quốc-phong-kiến",
+        "target": "vương-quốc-pa-gan",
+        "evidence": "Vương quốc Pa-gan là một trong các vương quốc phong kiến hình thành ở Đông Nam Á",
+        "source_page": 56,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c056",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c056'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c056'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "sự-hình-thành-các-vương-quốc-phong-kiến",
+        "target": "vương-quốc-đva-ra-va-ti",
+        "evidence": "Vương quốc Đva-ra-va-ti là một trong các vương quốc phong kiến hình thành ở Đông Nam Á",
+        "source_page": 56,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c056",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c056'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c056'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "sự-hình-thành-các-vương-quốc-phong-kiến",
+        "target": "vương-quốc-chân-lạp",
+        "evidence": "Vương quốc Chân Lạp là một trong các vương quốc phong kiến hình thành ở Đông Nam Á",
+        "source_page": 56,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c056",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c056'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c056'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "sự-hình-thành-các-vương-quốc-phong-kiến",
+        "target": "vương-quốc-sri-vi-giay-a",
+        "evidence": "Vương quốc Sri Vi-giay-a là một trong các vương quốc phong kiến hình thành ở Đông Nam Á",
+        "source_page": 56,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c056",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c056'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c056'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "sự-hình-thành-các-vương-quốc-phong-kiến",
+        "target": "vương-quốc-ka-lin-ga",
+        "evidence": "Vương quốc Ka-lin-ga là một trong các vương quốc phong kiến hình thành ở Đông Nam Á",
+        "source_page": 56,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c056",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c056'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c056'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "hoạt-động-kinh-tế-các-vương-quốc-phong-kiến",
+        "target": "giao-lu-thuong-mai",
+        "evidence": "Hoạt động kinh tế của các vương quốc phong kiến là cơ sở cho giao lưu thương mại",
+        "source_page": 56,
+        "relation_type": "prerequisite_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c056",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c056'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c056'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "giao-lu-thuong-mai",
+        "target": "thương-cảng-đại-chiêm",
+        "evidence": "Giao lưu thương mại đã thúc đẩy sự phát triển của thương cảng Đại Chiêm",
+        "source_page": 56,
+        "relation_type": "used_for",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c056",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c056'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c056'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "giao-lu-thuong-mai",
+        "target": "thương-cảng-pa-lem-bang",
+        "evidence": "Giao lưu thương mại đã thúc đẩy sự phát triển của thương cảng Pa-lem-bang",
+        "source_page": 56,
+        "relation_type": "used_for",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c056",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c056'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c056'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "sự-ra-đời-nước-âu-lạc",
+        "target": "tổ-chức-nhà-nước-âu-lạc",
+        "evidence": "Nước Âu Lạc ra đời vào khoảng năm 208 TCN, sau khi người Lạc Việt và người Âu Việt đoàn kết chống quân xâm lược nhà Tần",
+        "source_page": 63,
+        "relation_type": "prerequisite_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c065",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c065'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c065'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "kỹ-năng-đọc-bản-đồ",
+        "target": "sự-ra-đời-nhà-nước-văn-lang",
+        "evidence": "Kỹ năng sử dụng bản đồ hành chính Việt Nam để xác định phạm vi không gian của nước Văn Lang và nước Âu Lạc",
+        "source_page": 62,
+        "relation_type": "used_for",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c064",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c064'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c064'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "chinh-sach-cai-tri-cac-trieu-dai-phong-kien-phuong-bac",
+        "target": "to-chuc-bo-may-cai-tri",
+        "evidence": "Chính quyền đô hộ chia nước ta thành các đơn vị hành chính như châu – quận, dưới châu – quận là huyện.",
+        "source_page": 67,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c071",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c071'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c071'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "chinh-sach-cai-tri-cac-trieu-dai-phong-kien-phuong-bac",
+        "target": "chinh-sach-kinh-te",
+        "evidence": "Các triều đại phong kiến phương Bắc chiếm ruộng đất, áp đặt chính sách tô thuế nặng nề, và nắm độc quyền về sắt và muối.",
+        "source_page": 68,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c072",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c072'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c072'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "khoi-nghia-ba-trieu",
+        "target": "khoi-nghia-hai-ba-trung",
+        "evidence": "Cả hai cuộc khởi nghĩa đều là những cuộc khởi nghĩa tiêu biểu trong thời kỳ Bắc thuộc trước thế kỷ X",
+        "source_page": 74,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c079",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c079'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c079'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "doc-luoc-do",
+        "target": "khoi-nghia-hai-ba-trung",
+        "evidence": "Học sinh có thể sử dụng kỹ năng đọc lược đồ để hiểu về cuộc khởi nghĩa Hai Bà Trưng",
+        "source_page": 72,
+        "relation_type": "used_for",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c077",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c077'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c077'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "khoi-nghia-mai-thuc-loan",
+        "target": "khoi-nghia-phung-hung",
+        "evidence": "Cả hai cuộc khởi nghĩa đều là những cuộc khởi nghĩa lớn trong thời kỳ Bắc thuộc",
+        "source_page": 76,
+        "relation_type": "related_to",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c081",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c081'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c081'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "ly-bi-va-su-thanh-lap-nuoc-van-xuan",
+        "target": "khoi-nghia-hai-ba-trung",
+        "evidence": "Lý Bí và sự thành lập nước Vạn Xuân là một phần của các cuộc khởi nghĩa tiêu biểu trong thời kỳ Bắc thuộc",
+        "source_page": 75,
+        "relation_type": "is_a",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c080",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c080'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c080'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "thoi-ky-bac-thuoc",
+        "target": "tieu-thu-co-chon-loc-van-hoa-trung-hoa",
+        "evidence": "Thời kì Bắc thuộc là thời kì mà các triều đại phong kiến phương Bắc đã thực hiện nhiều biện pháp nhằm thủ tiêu văn hoá của người Việt.",
+        "source_page": 80,
+        "relation_type": "prerequisite_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c086",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c086'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c086'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "nhan-dan-ta",
+        "target": "van-hoa-dan-toc",
+        "evidence": "Nhân dân ta đã tiếp thu có chọn lọc văn hoá Trung Hoa để phát triển văn hoá dân tộc.",
+        "source_page": 80,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c086",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c086'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c086'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "van-hoa-trung-hoa",
+        "target": "tieu-thu-co-chon-loc-van-hoa-trung-hoa",
+        "evidence": "Văn hoá Trung Hoa đã được tiếp thu có chọn lọc bởi nhân dân ta trong thời kì Bắc thuộc.",
+        "source_page": 80,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c086",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c086'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c086'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "tieu-thu-van-hoa",
+        "target": "phat-trien-van-hoa",
+        "evidence": "Tiếp thu văn hoá là quá trình tiếp nhận và vận dụng những yếu tố văn hoá từ bên ngoài.",
+        "source_page": 80,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c086",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c086'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c086'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "phat-trien-van-hoa",
+        "target": "van-hoa-dan-toc",
+        "evidence": "Phát triển văn hoá là quá trình vận dụng và phát huy những yếu tố văn hoá để tạo ra những giá trị mới.",
+        "source_page": 80,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c086",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c086'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c086'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "khuc-thua-du",
+        "target": "khuc-hao",
+        "evidence": "Khúc Hạo là con của Khúc Thừa Dụ",
+        "source_page": 82,
+        "relation_type": "prerequisite_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c088",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c088'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c088'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "khuc-hao",
+        "target": "cuoc-noi-day-khuc-thua-du",
+        "evidence": "Khúc Hạo tiếp tục lãnh đạo và cải cách sau cuộc nổi dậy của Khúc Thừa Dụ",
+        "source_page": 82,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c088",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c088'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c088'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "duong-dinh-nghiep",
+        "target": "cuoc-khang-chien-chong-quan-nam-han",
+        "evidence": "Dương Đình Nghệ lãnh đạo cuộc kháng chiến chống quân Nam Hán",
+        "source_page": 83,
+        "relation_type": "prerequisite_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c089",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c089'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c089'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "ngo-quyen",
+        "target": "tran-bach-dang-nam-938",
+        "evidence": "Ngô Quyền lãnh đạo trận chiến Bạch Đằng năm 938",
+        "source_page": 84,
+        "relation_type": "prerequisite_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c090",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c090'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c090'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "ke-hoach-danh-giac",
+        "target": "tran-bach-dang-nam-938",
+        "evidence": "Kế hoạch đánh giặc được sử dụng trong trận chiến Bạch Đằng năm 938",
+        "source_page": 84,
+        "relation_type": "used_for",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c090",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c090'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c090'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "tran-dia-coc-bach-dang",
+        "target": "tran-bach-dang-nam-938",
+        "evidence": "Trận địa cọc Bạch Đằng là một phần của trận chiến Bạch Đằng năm 938",
+        "source_page": 85,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c090",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c090'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c090'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "y-nghia-chien-thang-bach-dang",
+        "target": "tran-bach-dang-nam-938",
+        "evidence": "Ý nghĩa chiến thắng Bạch Đằng được đánh giá dựa trên trận chiến Bạch Đằng năm 938",
+        "source_page": 86,
+        "relation_type": "related_to",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c091",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c091'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c091'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "su-ra-doi-nha-nuoc-cham-pa",
+        "target": "qua-trinh-phat-trien-cua-vuong-quoc-cham-pa",
+        "evidence": "Vương quốc Chăm-pa được thành lập vào năm 192 dưới sự lãnh đạo của Khu Liên, sau đó phát triển qua nhiều giai đoạn",
+        "source_page": 88,
+        "relation_type": "prerequisite_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c094",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c094'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c094'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "hoat-dong-kinh-te-cua-nguoi-cham",
+        "target": "to-chuc-xa-hoi-cua-cham-pa",
+        "evidence": "Hoạt động kinh tế của người Chăm là một phần của tổ chức xã hội của Chăm-pa",
+        "source_page": 90,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c096",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c096'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c096'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "than-tuu-van-hoa-cua-nguoi-cham",
+        "target": "chu-viet-cham",
+        "evidence": "Chữ viết Chăm là một thành tựu văn hóa của người Chăm",
+        "source_page": 91,
+        "relation_type": "is_a",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c097",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c097'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c097'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "tin-nguong-va-ton-giao-cua-nguoi-cham",
+        "target": "le-hoi-ka-te",
+        "evidence": "Tín ngưỡng và tôn giáo của người Chăm liên quan đến lễ hội Ka-tê",
+        "source_page": 91,
+        "relation_type": "related_to",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c097",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c097'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c097'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "sự-thành-lập-vương-quốc-phù-nam",
+        "target": "quá-trình-phát-triển-vương-quốc-phù-nam",
+        "evidence": "Vương quốc Phù Nam được thành lập vào khoảng thế kỉ I và sau đó phát triển thành đế chế hùng mạnh",
+        "source_page": 93,
+        "relation_type": "prerequisite_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c100",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c100'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c100'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "quá-trình-phát-triển-vương-quốc-phù-nam",
+        "target": "sự-suy-vong-vương-quốc-phù-nam",
+        "evidence": "Vương quốc Phù Nam phát triển thành đế chế hùng mạnh nhưng sau đó dần suy yếu và bị xâm chiếm",
+        "source_page": 93,
+        "relation_type": "prerequisite_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c100",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c100'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c100'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "hoạt-động-kinh-tế-phù-nam",
+        "target": "tổ-chức-xã-hội-phù-nam",
+        "evidence": "Hoạt động kinh tế là một phần của tổ chức xã hội Phù Nam",
+        "source_page": 94,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c101",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c101'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c101'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "bản-đồ-tự-nhiên-thế-giới",
+        "target": "kĩ-năng-địa-lí",
+        "evidence": "Bản đồ tự nhiên thế giới được sử dụng để rèn luyện kĩ năng địa lí",
+        "source_page": 97,
+        "relation_type": "used_for",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c103",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c103'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c103'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "tầm-quan-trọng-của-địa-lí",
+        "target": "kĩ-năng-địa-lí",
+        "evidence": "Tầm quan trọng của địa lí và kĩ năng địa lí luôn được học cùng nhau",
+        "source_page": 101,
+        "relation_type": "related_to",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c105",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c105'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c105'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "kinh-tuyen-goc",
+        "target": "kinh-tuyen",
+        "evidence": "Kinh tuyến gốc là một kinh tuyến",
+        "source_page": 104,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c110",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c110'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c110'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "vi-tuyen-goc",
+        "target": "vi-tuyen",
+        "evidence": "Vĩ tuyến gốc là một vĩ tuyến",
+        "source_page": 104,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c110",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c110'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c110'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "kinh-tuyen",
+        "target": "kinh-tuyen-goc",
+        "evidence": "Kinh tuyến gốc là một loại kinh tuyến",
+        "source_page": 104,
+        "relation_type": "is_a",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c110",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c110'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c110'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "vi-tuyen",
+        "target": "vi-tuyen-goc",
+        "evidence": "Vĩ tuyến gốc là một loại vĩ tuyến",
+        "source_page": 104,
+        "relation_type": "is_a",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c110",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c110'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c110'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "toado-dia-li",
+        "target": "kinh-do",
+        "evidence": "Kinh độ là một phần của tọa độ địa lí",
+        "source_page": 105,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c111",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c111'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c111'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "toado-dia-li",
+        "target": "vi-do",
+        "evidence": "Vĩ độ là một phần của tọa độ địa lí",
+        "source_page": 105,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c111",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c111'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c111'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "doc-ban-do",
+        "target": "toado-dia-li",
+        "evidence": "Đọc bản đồ được dùng để xác định tọa độ địa lí",
+        "source_page": 105,
+        "relation_type": "used_for",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c111",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c111'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c111'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "lưới-kinh-vĩ-tuyến",
+        "target": "bản-đồ",
+        "evidence": "Lưới kinh, vĩ tuyến là hệ thống các đường kinh tuyến và vĩ tuyến trên bản đồ",
+        "source_page": 106,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c113",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c113'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c113'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "tỉ-lệ-bản-đồ",
+        "target": "tỉ-lệ-số",
+        "evidence": "Tỉ lệ bản đồ được biểu hiện ở hai dạng: Tỉ lệ số và Tỉ lệ thước",
+        "source_page": 108,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c117",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c117'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c117'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "tỉ-lệ-bản-đồ",
+        "target": "tỉ-lệ-thước",
+        "evidence": "Tỉ lệ bản đồ được biểu hiện ở hai dạng: Tỉ lệ số và Tỉ lệ thước",
+        "source_page": 108,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c117",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c117'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c117'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "luyện-tập-và-vận-dụng",
+        "target": "tính-khoảng-cách-thực-tế",
+        "evidence": "Căn cứ vào tỉ lệ thước hoặc tỉ lệ số của bản đồ để đo và tính khoảng cách",
+        "source_page": 109,
+        "relation_type": "related_to",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c117",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c117'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c117'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "doc-ban-do",
+        "target": "tim-duong-di",
+        "evidence": "Để tìm đường đi trên bản đồ, cần thực hiện theo các bước sau: Xác định nơi đi và nơi đến, hướng đi trên bản đồ.",
+        "source_page": 112,
+        "relation_type": "prerequisite_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c121",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c121'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c121'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "luoc-do-tri-nho",
+        "target": "ve-luoc-do-tri-nho",
+        "evidence": "Vẽ lược đồ trí nhớ là quá trình thể hiện những hồi tưởng về không gian cần vẽ thành lược đồ",
+        "source_page": 115,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c124",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c124'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c124'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "luoc-do-tri-nho-duong-di",
+        "target": "luoc-do-tri-nho",
+        "evidence": "Lược đồ trí nhớ đường đi là loại lược đồ trí nhớ thể hiện điểm xuất phát, điểm kết thúc và các điểm mốc trên quãng đường",
+        "source_page": 115,
+        "relation_type": "is_a",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c124",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c124'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c124'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "luoc-do-tri-nho-khu-vuc",
+        "target": "luoc-do-tri-nho",
+        "evidence": "Lược đồ trí nhớ khu vực là loại lược đồ trí nhớ thể hiện tổng thể khu vực và các đối tượng trong khu vực",
+        "source_page": 115,
+        "relation_type": "is_a",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c124",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c124'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c124'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "ve-luoc-do-tri-nho",
+        "target": "luoc-do-tri-nho",
+        "evidence": "Vẽ lược đồ trí nhớ là quá trình thể hiện những hồi tưởng về không gian cần vẽ thành lược đồ",
+        "source_page": 115,
+        "relation_type": "used_for",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c124",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c124'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c124'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "chuyen-dong-tu-quan",
+        "target": "trai-dat",
+        "evidence": "Chuyển động tự quay quanh trục của Trái Đất là chuyển động của Trái Đất quanh trục của nó",
+        "source_page": 117,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c126",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c126'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c126'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "chuyen-dong-quanh-mat-troi",
+        "target": "trai-dat",
+        "evidence": "Chuyển động quanh Mặt Trời của Trái Đất là chuyển động của Trái Đất quanh Mặt Trời",
+        "source_page": 117,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c126",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c126'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c126'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "xac-dinh-phuong-huong",
+        "target": "trai-dat",
+        "evidence": "Xác định phương hướng là quá trình xác định hướng của một địa điểm hoặc một vật thể",
+        "source_page": 117,
+        "relation_type": "used_for",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c126",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c126'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c126'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "trai-dat-trong-he-mat-troi",
+        "target": "he-mat-troi",
+        "evidence": "Trái Đất là một hành tinh trong hệ Mặt Trời",
+        "source_page": 118,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c128",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c128'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c128'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "vi-tri-cua-trai-dat",
+        "target": "he-mat-troi",
+        "evidence": "Trái Đất nằm ở vị trí thứ 3 trong hệ Mặt Trời",
+        "source_page": 118,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c128",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c128'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c128'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "hinh-dang-kich-thuoc-cua-trai-dat",
+        "target": "trai-dat-trong-he-mat-troi",
+        "evidence": "Hình dạng và kích thước của Trái Đất là một phần của Trái Đất trong hệ Mặt Trời",
+        "source_page": 118,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c128",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c128'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c128'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "doc-ban-do",
+        "target": "vi-tri-cua-trai-dat",
+        "evidence": "Kỹ năng đọc bản đồ để xác định vị trí của Trái Đất",
+        "source_page": 118,
+        "relation_type": "used_for",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c128",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c128'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c128'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "mat-troi",
+        "target": "he-mat-troi",
+        "evidence": "Mặt Trời là ngôi sao ở trung tâm hệ Mặt Trời",
+        "source_page": 118,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c128",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c128'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c128'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "gio-khu-vuc",
+        "target": "gio-quoc-te",
+        "evidence": "Giờ của khu vực số 0 được lấy làm giờ Quốc tế",
+        "source_page": 121,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c132",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c132'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c132'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "luoc-do-qua-dai-cau",
+        "target": "chuyen-dong-tu-quay-trai-dat",
+        "evidence": "Sử dụng quả Địa Cầu để mô tả chuyển động tự quay của Trái Đất",
+        "source_page": 120,
+        "relation_type": "used_for",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c131",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c131'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c131'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "doc-ban-do",
+        "target": "gio-khu-vuc",
+        "evidence": "Kỹ năng đọc bản đồ để hiểu giờ của các địa điểm trên Trái Đất",
+        "source_page": 121,
+        "relation_type": "used_for",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c132",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c132'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c132'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "chuyen-dong-quanh-mat-troi",
+        "target": "he-qua-chuyen-dong-cua-trai-dat",
+        "evidence": "Chuyển động của Trái Đất quanh Mặt Trời dẫn đến hệ quả chuyển động của Trái Đất quanh Mặt Trời",
+        "source_page": 124,
+        "relation_type": "prerequisite_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c136",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c136'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c136'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "he-qua-chuyen-dong-cua-trai-dat",
+        "target": "mua-trong-nam",
+        "evidence": "Hệ quả chuyển động của Trái Đất quanh Mặt Trời dẫn đến hiện tượng mùa",
+        "source_page": 125,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c137",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c137'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c137'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "he-qua-chuyen-dong-cua-trai-dat",
+        "target": "ngay-dem-dai-ngan-theo-mua",
+        "evidence": "Hệ quả chuyển động của Trái Đất quanh Mặt Trời dẫn đến hiện tượng ngày – đêm dài ngắn theo mùa",
+        "source_page": 125,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c137",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c137'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c137'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "su-dung-so-do-de-mo-ta-chuyen-dong-cua-trai-dat",
+        "target": "trinh-bay-hien-tuong-mua-va-ngay-dem-dai-ngan-theo-mua",
+        "evidence": "Sử dụng sơ đồ để mô tả chuyển động của Trái Đất giúp trình bày hiện tượng mùa và ngày – đêm dài ngắn theo mùa",
+        "source_page": 124,
+        "relation_type": "used_for",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c136",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c136'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c136'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "xac-dinh-phuong-huong-ngoai-thuc-te",
+        "target": "la-ban",
+        "evidence": "Sử dụng la bàn để xác định phương hướng",
+        "source_page": 127,
+        "relation_type": "used_for",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c141",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c141'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c141'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "la-ban",
+        "target": "xac-dinh-phuong-huong-ngoai-thuc-te",
+        "evidence": "La bàn là một công cụ dùng để xác định phương hướng",
+        "source_page": 127,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c141",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c141'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c141'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "xac-dinh-phuong-huong-bang-mat-troi",
+        "target": "la-ban",
+        "evidence": "So sánh cách xác định phương hướng bằng Mặt Trời và la bàn",
+        "source_page": 128,
+        "relation_type": "compared_with",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c141",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c141'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c141'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "sao-bac-cuc",
+        "target": "xac-dinh-phuong-huong-ngoai-thuc-te",
+        "evidence": "Sử dụng sao Bắc Cực để xác định hướng bắc",
+        "source_page": 128,
+        "relation_type": "used_for",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c141",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c141'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c141'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "cau-tao-cua-trai-dat",
+        "target": "vo-trai-dat",
+        "evidence": "Cấu tạo của Trái Đất bao gồm vỏ Trái Đất",
+        "source_page": 130,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c143",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c143'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c143'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "dia-mang",
+        "target": "xu-ly-do-dong-dat-va-nui-lua",
+        "evidence": "Do tác động của vật chất nóng chảy trong lớp man-ti, các địa mảng di chuyển và xô vào nhau",
+        "source_page": 131,
+        "relation_type": "prerequisite_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c145",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c145'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c145'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "qua-trinh-noi-sinh",
+        "target": "hien-tuong-tao-nui",
+        "evidence": "Quá trình nội sinh làm di chuyển các mảng kiến tạo, nén ép các lớp đất đá, tạo núi lửa, động đất,...",
+        "source_page": 133,
+        "relation_type": "prerequisite_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c149",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c149'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c149'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "nang-cao-do-noi-sinh",
+        "target": "hien-tuong-tao-nui",
+        "evidence": "Nâng cao do nội sinh là một phần của hiện tượng tạo núi",
+        "source_page": 133,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c149",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c149'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c149'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "bao-mon-do-ngoai-sinh",
+        "target": "hien-tuong-tao-nui",
+        "evidence": "Bào mòn do ngoại sinh là một phần của hiện tượng tạo núi",
+        "source_page": 133,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c149",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c149'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c149'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "dong-dat",
+        "target": "hau-qua-cua-dong-dat",
+        "evidence": "Động đất gây thiệt hại cho các công trình xây dựng, nhà cửa đổ nát",
+        "source_page": 135,
+        "relation_type": "prerequisite_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c152",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c152'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c152'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "tham-hoa-tam-bo-ra",
+        "target": "hau-qua-cua-nui-lua",
+        "evidence": "Núi lửa Tam-bô-ra ở In-đô-nê-xi-a phun trào năm 1815, gây hơn 70 nghìn người chết",
+        "source_page": 135,
+        "relation_type": "is_a",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c152",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c152'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c152'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "doi",
+        "target": "cac-dang-dia-hinh-chinh",
+        "evidence": "Đồi là dạng địa hình nhô cao, độ cao không quá 200m",
+        "source_page": 137,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c155",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c155'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c155'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "khoang-san",
+        "target": "mo-khoang-san",
+        "evidence": "Khoáng sản là khoáng vật và khoáng chất có ích trong tự nhiên",
+        "source_page": 138,
+        "relation_type": "is_a",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c156",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c156'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c156'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "doc-ban-do",
+        "target": "cac-dang-dia-hinh-chinh",
+        "evidence": "Đọc bản đồ để xác định vị trí của các dạng địa hình",
+        "source_page": 137,
+        "relation_type": "used_for",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c155",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c155'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c155'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "nhom-khoang-san",
+        "target": "khoang-san",
+        "evidence": "Nhóm khoáng sản bao gồm năng lượng, kim loại, phi kim loại",
+        "source_page": 138,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c156",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c156'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c156'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "hinh-thanh-may",
+        "target": "hinh-thanh-mua",
+        "evidence": "Khi không khí đã bão hoà hơi nước mà vẫn tiếp tục được bổ sung hơi nước hoặc bị lạnh đi thì sẽ xảy ra hiện tượng hơi nước ngưng tụ thành các hạt nước nhỏ, nhẹ.",
+        "source_page": 149,
+        "relation_type": "prerequisite_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c170",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c170'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c170'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "doc-bieu-do-nhiet-do-luong-mua",
+        "target": "bieu-do-nhiet-do-luong-mua-tich-xi",
+        "evidence": "Hướng dẫn cách đọc và phân tích biểu đồ nhiệt độ và lượng mưa, bao gồm các yếu tố như trục bên trái, bên phải, biểu đồ cột và đường biểu diễn.",
+        "source_page": 155,
+        "relation_type": "used_for",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c179",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c179'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c179'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "doc-bieu-do-nhiet-do-luong-mua",
+        "target": "bieu-do-nhiet-do-luong-mua-xo-un",
+        "evidence": "Hướng dẫn cách đọc và phân tích biểu đồ nhiệt độ và lượng mưa, bao gồm các yếu tố như trục bên trái, bên phải, biểu đồ cột và đường biểu diễn.",
+        "source_page": 155,
+        "relation_type": "used_for",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c179",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c179'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c179'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "doc-bieu-do-nhiet-do-luong-mua",
+        "target": "bieu-do-nhiet-do-luong-mua-ma-ni-la",
+        "evidence": "Hướng dẫn cách đọc và phân tích biểu đồ nhiệt độ và lượng mưa, bao gồm các yếu tố như trục bên trái, bên phải, biểu đồ cột và đường biểu diễn.",
+        "source_page": 155,
+        "relation_type": "used_for",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c179",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c179'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c179'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "thuy-quyen",
+        "target": "nuoc-ngam",
+        "evidence": "Thủy quyển là thành phần chủ yếu của Trái Đất, bao gồm nước biển, đại dương, sông, hồ, nước ngầm và băng hà.",
+        "source_page": 157,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c179",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c179'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c179'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "thuy-quyen",
+        "target": "bang-ha",
+        "evidence": "Thủy quyển là thành phần chủ yếu của Trái Đất, bao gồm nước biển, đại dương, sông, hồ, nước ngầm và băng hà.",
+        "source_page": 157,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c179",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c179'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c179'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "thuy-quyen",
+        "target": "bien-dai-duong",
+        "evidence": "Thủy quyển là thành phần chủ yếu của Trái Đất, bao gồm nước biển, đại dương, sông, hồ, nước ngầm và băng hà.",
+        "source_page": 157,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c179",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c179'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c179'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "vong-tuan-hoan-nuoc",
+        "target": "thuy-quyen",
+        "evidence": "Vòng tuần hoàn nước là một phần của thủy quyển.",
+        "source_page": 157,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c179",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c179'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c179'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "su-dung-nuoc-song-ho",
+        "target": "thuy-quyen",
+        "evidence": "Việc khai thác và sử dụng nước từ sông, hồ cho các mục đích khác nhau.",
+        "source_page": 157,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c179",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c179'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c179'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "nuoc-ngot",
+        "target": "thuy-quyen",
+        "evidence": "Là loại nước chiếm 2,5% tổng lượng nước trên Trái Đất.",
+        "source_page": 158,
+        "relation_type": "is_a",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c181",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c181'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c181'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "da-dang-sinh-vat-tren-luc-dia",
+        "target": "da-dang-sinh-vat-duoi-dai-duong",
+        "evidence": "Sự đa dạng của sinh vật dưới đại dương và sự đa dạng của sinh vật trên lục địa.",
+        "source_page": 173,
+        "relation_type": "related_to",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c199",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c199'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c199'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "thuc-vat-doi-nong",
+        "target": "thuc-vat-tren-luc-dia",
+        "evidence": "Tùy theo điều kiện khí hậu mà ở từng đới xuất hiện các kiểu thảm thực vật khác nhau.",
+        "source_page": 173,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c199",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c199'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c199'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "thuc-vat-doi-on-hoa",
+        "target": "thuc-vat-tren-luc-dia",
+        "evidence": "Tùy theo điều kiện khí hậu mà ở từng đới xuất hiện các kiểu thảm thực vật khác nhau.",
+        "source_page": 173,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c199",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c199'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c199'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "thuc-vat-doi-lanh",
+        "target": "thuc-vat-tren-luc-dia",
+        "evidence": "Tùy theo điều kiện khí hậu mà ở từng đới xuất hiện các kiểu thảm thực vật khác nhau.",
+        "source_page": 173,
+        "relation_type": "part_of",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c199",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c199'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c199'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "dac-diem-rung-nhiet-doi",
+        "target": "rong-mua-nhiet-doi",
+        "evidence": "Rừng nhiệt đới được chia thành hai kiểu chính: Rừng mưa nhiệt đới và Rừng nhiệt đới gió mùa.",
+        "source_page": 175,
+        "relation_type": "related_to",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c202",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c202'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c202'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "dac-diem-rung-nhiet-doi",
+        "target": "rong-nhiet-doi-gio-mua",
+        "evidence": "Rừng nhiệt đới được chia thành hai kiểu chính: Rừng mưa nhiệt đới và Rừng nhiệt đới gió mùa.",
+        "source_page": 175,
+        "relation_type": "related_to",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c202",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c202'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c202'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "tim-hieu-moi-truong-tu-nhien",
+        "target": "khí-hau",
+        "evidence": "Học sinh có thể chọn một trong các nội dung sau: b) Nội dung 2: Khí hậu",
+        "source_page": 179,
+        "relation_type": "related_to",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c208",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c208'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c208'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "tim-hieu-moi-truong-tu-nhien",
+        "target": "song-ngoi",
+        "evidence": "Học sinh có thể chọn một trong các nội dung sau: c) Nội dung 3: Sông ngòi",
+        "source_page": 179,
+        "relation_type": "related_to",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c208",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c208'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c208'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "tim-hieu-moi-truong-tu-nhien",
+        "target": "dat",
+        "evidence": "Học sinh có thể chọn một trong các nội dung sau: d) Nội dung 4: Đất",
+        "source_page": 179,
+        "relation_type": "related_to",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c208",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c208'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c208'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "tim-hieu-moi-truong-tu-nhien",
+        "target": "sinh-vat",
+        "evidence": "Học sinh có thể chọn một trong các nội dung sau: đ) Nội dung 5: Sinh vật",
+        "source_page": 179,
+        "relation_type": "related_to",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c208",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c208'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c208'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "khai-thac-tai-nguyen-thien-nhien",
+        "target": "rac-thai-do-con-nguoi-gay-ra",
+        "evidence": "Điều đó dẫn tới hậu quả là nhiều loại tài nguyên bị suy thoái hoặc có khả năng cạn kiệt.",
+        "source_page": 187,
+        "relation_type": "related_to",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c218",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c218'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c218'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "bao-ve-tu-nhien",
+        "target": "khai-thac-thong-minh-tai-nguyen",
+        "evidence": "Bảo vệ tự nhiên và khai thác thông minh các tài nguyên thiên nhiên có ý nghĩa trong việc giữ gìn sự đa dạng sinh học, ngăn chặn ô nhiễm và suy thoái môi trường tự nhiên.",
+        "source_page": 189,
+        "relation_type": "related_to",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c222",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c222'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c222'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "moi-quan-he-con-nguoi-va-thien-nhien",
+        "target": "tai-nguyen-dat",
+        "evidence": "Nguồn lợi tự nhiên ở địa phương bao gồm tài nguyên đất, tài nguyên sinh vật, tài nguyên khoáng sản, tài nguyên nước,...",
+        "source_page": 191,
+        "relation_type": "related_to",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c225",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c225'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c225'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "moi-quan-he-con-nguoi-va-thien-nhien",
+        "target": "tai-nguyen-sinh-vat",
+        "evidence": "Nguồn lợi tự nhiên ở địa phương bao gồm tài nguyên đất, tài nguyên sinh vật, tài nguyên khoáng sản, tài nguyên nước,...",
+        "source_page": 191,
+        "relation_type": "related_to",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c225",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c225'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c225'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "moi-quan-he-con-nguoi-va-thien-nhien",
+        "target": "tai-nguyen-khoang-san",
+        "evidence": "Nguồn lợi tự nhiên ở địa phương bao gồm tài nguyên đất, tài nguyên sinh vật, tài nguyên khoáng sản, tài nguyên nước,...",
+        "source_page": 191,
+        "relation_type": "related_to",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c225",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c225'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c225'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "moi-quan-he-con-nguoi-va-thien-nhien",
+        "target": "tai-nguyen-nuoc",
+        "evidence": "Nguồn lợi tự nhiên ở địa phương bao gồm tài nguyên đất, tài nguyên sinh vật, tài nguyên khoáng sản, tài nguyên nước,...",
+        "source_page": 191,
+        "relation_type": "related_to",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c225",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c225'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c225'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "moi-quan-he-con-nguoi-va-thien-nhien",
+        "target": "o-nhiem-khong-khi",
+        "evidence": "Ô nhiễm môi trường bao gồm ô nhiễm không khí, ô nhiễm nước, ô nhiễm đất,...",
+        "source_page": 191,
+        "relation_type": "related_to",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c225",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c225'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c225'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "moi-quan-he-con-nguoi-va-thien-nhien",
+        "target": "o-nhiem-nuoc",
+        "evidence": "Ô nhiễm môi trường bao gồm ô nhiễm không khí, ô nhiễm nước, ô nhiễm đất,...",
+        "source_page": 191,
+        "relation_type": "related_to",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c225",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c225'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c225'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "moi-quan-he-con-nguoi-va-thien-nhien",
+        "target": "o-nhiem-dat",
+        "evidence": "Ô nhiễm môi trường bao gồm ô nhiễm không khí, ô nhiễm nước, ô nhiễm đất,...",
+        "source_page": 191,
+        "relation_type": "related_to",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c225",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c225'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c225'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "moi-quan-he-con-nguoi-va-thien-nhien",
+        "target": "thien-tai",
+        "evidence": "Thiên tai và phòng chống thiên tai bao gồm các thiên tai: bão, lũ, hạn hán,...",
+        "source_page": 191,
+        "relation_type": "related_to",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c225",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c225'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c225'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "moi-quan-he-con-nguoi-va-thien-nhien",
+        "target": "phong-chong-thien-tai",
+        "evidence": "Thiên tai và phòng chống thiên tai bao gồm các thiên tai: bão, lũ, hạn hán,...",
+        "source_page": 191,
+        "relation_type": "related_to",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c225",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c225'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c225'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "moi-quan-he-con-nguoi-va-thien-nhien",
+        "target": "bao-ve-thien-nhien",
+        "evidence": "Bảo vệ thiên nhiên bao gồm sử dụng tài nguyên hợp lý, cải tạo thiên nhiên,...",
+        "source_page": 191,
+        "relation_type": "related_to",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c225",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c225'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c225'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "bao-ve-thien-nhien",
+        "target": "su-dung-tai-nguyen-hop-li",
+        "evidence": "Bảo vệ thiên nhiên bao gồm sử dụng tài nguyên hợp lý.",
+        "source_page": 191,
+        "relation_type": "used_for",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c225",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c225'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c225'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "bao-ve-thien-nhien",
+        "target": "cai-tao-thien-nhien",
+        "evidence": "Bảo vệ thiên nhiên bao gồm cải tạo thiên nhiên.",
+        "source_page": 191,
+        "relation_type": "used_for",
+        "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c225",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c225'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sgk-lich-su-va-ia-li-6-kntt-c225'."
+      ]
+    }
+  ],
+  "prerequisite_cycles": [],
+  "removed_relations": []
+}

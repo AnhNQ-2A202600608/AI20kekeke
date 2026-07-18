@@ -1,0 +1,54 @@
+{
+  "document": {
+    "document_id": "math-k6-sgv",
+    "source_type": "SGV",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương III",
+    "lesson": "Bài 17"
+  },
+  "learning_objectives": [
+    {
+      "code": "nhan-biet-quan-he-chia-het",
+      "description": "Nhận biết được quan hệ chia hết trong tập hợp các số nguyên.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận biết được quan hệ chia hết trong tập hợp các số nguyên."
+    },
+    {
+      "code": "nhan-biet-khai-niem-uoc-boi",
+      "description": "Nhận biết được khái niệm ước và bội trong tập hợp các số nguyên.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận biết được khái niệm ước và bội trong tập hợp các số nguyên."
+    },
+    {
+      "code": "thuc-hien-phep-chia-het",
+      "description": "Thực hiện được phép chia hết của hai số nguyên.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Thực hiện được phép chia hết của hai số nguyên."
+    },
+    {
+      "code": "tim-uoc-boi",
+      "description": "Tìm được các ước và các bội của một số nguyên cho trước.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Tìm được các ước và các bội của một số nguyên cho trước."
+    },
+    {
+      "code": "tim-uoc-chung",
+      "description": "Tìm được ước chung của hai số nguyên cho trước.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Tìm được ước chung của hai số nguyên cho trước."
+    }
+  ],
+  "concepts": [],
+  "relations": [],
+  "misconceptions": [
+    {
+      "temporary_id": "m1",
+      "name": "Sai lầm về dấu trong phép chia hết",
+      "description": "Khi thực hiện phép chia hết, HS có thể vẫn mắc sai lầm về dấu, tương tự đối với phép nhân.",
+      "related_skill": "c1",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Khi thực hiện phép chia hết, HS có thể vẫn mắc sai lầm về dấu, tương tự đối với phép nhân."
+    }
+  ]
+}

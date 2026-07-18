@@ -1,0 +1,33 @@
+{
+  "document": {
+    "document_id": "math-k6-sgv",
+    "source_type": "SGV",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 2",
+    "lesson": "Bài 19"
+  },
+  "learning_objectives": [
+    {
+      "code": "mo-ta-cac-yeu-to-hinh",
+      "description": "Mô tả được một số yếu tố cơ bản (cạnh, góc, đường chéo) của hình chữ nhật, hình thoi, hình bình hành, hình thang cân.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Mô tả được một số yếu tố cơ bản (cạnh, góc, đường chéo) của hình chữ nhật, hình thoi, hình bình hành, hình thang cân."
+    },
+    {
+      "code": "ve-hinh-chu-nhat-hinh-thoi",
+      "description": "Vẽ được hình chữ nhật, hình thoi, hình bình hành bằng dụng cụ học tập.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Vẽ được hình chữ nhật, hình thoi, hình bình hành bằng dụng cụ học tập."
+    },
+    {
+      "code": "boi-duong-tri-tuong-tuong",
+      "description": "Bồi dưỡng trí tưởng tượng, hứng thú học tập, ý thức làm việc nhóm, ý thức tìm tòi, khám phá và sáng tạo cho HS.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Bồi dưỡng trí tưởng tượng, hứng thú học tập, ý thức làm việc nhóm, ý thức tìm tòi, khám phá và sáng tạo cho HS."
+    }
+  ],
+  "concepts": [],
+  "relations": [],
+  "misconceptions": []
+}

@@ -1,0 +1,48 @@
+{
+  "document": {
+    "document_id": "math-k6-sgv",
+    "source_type": "SGV",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 2",
+    "lesson": "Bài 36"
+  },
+  "learning_objectives": [
+    {
+      "code": "nhan-biet-khai-niem-goc",
+      "description": "Nhận biết được khái niệm góc; đỉnh và cạnh của góc; góc bẹt; điểm trong của góc.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận biết được khái niệm góc; đỉnh và cạnh của góc; góc bẹt; điểm trong của góc."
+    },
+    {
+      "code": "quan-sat-hinh",
+      "description": "Quan sát hình và đọc được tên góc, nhận biết được điểm trong của góc.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Quan sát hình và đọc được tên góc, nhận biết được điểm trong của góc."
+    },
+    {
+      "code": "van-dung-khai-niem-goc",
+      "description": "Vận dụng được khái niệm góc vào một số tình huống trong thực tế.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Vận dụng được khái niệm góc vào một số tình huống trong thực tế."
+    },
+    {
+      "code": "ren-luyen-thoi-quen-quan-sat",
+      "description": "Rèn luyện thói quen quan sát, ý thức tự đọc, tự học.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Rèn luyện thói quen quan sát, ý thức tự đọc, tự học."
+    }
+  ],
+  "concepts": [],
+  "relations": [],
+  "misconceptions": [
+    {
+      "temporary_id": "m1",
+      "name": "Khó khăn khi đọc tên góc",
+      "description": "Học sinh có thể khó khăn khi đọc tên hoặc góc sai thứ tự.",
+      "related_skill": "nhan-biet-khai-niem-goc",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "HS mới tiếp cận về những khái niệm của hình học phẳng, có thể khó khăn khi đọc tên hoặc góc sai thứ tự."
+    }
+  ]
+}

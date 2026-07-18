@@ -1,0 +1,42 @@
+{
+  "document": {
+    "document_id": "math-k6-sgv",
+    "source_type": "SGV",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 2",
+    "lesson": "Bài 40"
+  },
+  "learning_objectives": [
+    {
+      "code": "nhan-ra-quy-luat-tu-bieu-do",
+      "description": "Nhận ra được vấn đề hoặc quy luật đơn giản từ việc phân tích biểu đồ cột.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận ra được vấn đề hoặc quy luật đơn giản từ việc phân tích biểu đồ cột."
+    },
+    {
+      "code": "ve-bieu-do-cot",
+      "description": "Vẽ được biểu đồ cột từ bảng số liệu cho trước.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Vẽ được biểu đồ cột từ bảng số liệu cho trước."
+    },
+    {
+      "code": "doc-va-mo-ta-du-lieu",
+      "description": "Đọc và mô tả được dữ liệu từ biểu đồ cột.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Đọc và mô tả được dữ liệu từ biểu đồ cột."
+    }
+  ],
+  "concepts": [],
+  "relations": [],
+  "misconceptions": [
+    {
+      "temporary_id": "m1",
+      "name": "Hiểu sai về tỷ lệ trong biểu đồ",
+      "description": "Khi vẽ một số biểu đồ, để cho đẹp hoặc dễ phân biệt, người ta có thể vẽ biểu đồ với gốc không bắt đầu từ 0 hoặc tỷ lệ ở các đoạn trên trục đứng không như nhau.",
+      "related_skill": "ve-bieu-do-cot",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Cần lưu ý trong những biểu đồ này, một cột gấp đôi cột kia không có nghĩa là số liệu được biểu diễn ở cột này gấp đôi số liệu được biểu diễn ở cột kia."
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "document": {
+    "document_id": "math-k6-sgk",
+    "source_type": "SGK",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 1",
+    "lesson": "Bài 42"
+  },
+  "learning_objectives": [],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "ket-qua-co-the",
+      "name": "Kết quả có thể",
+      "description": "Các kết quả có thể xảy ra trong các trò chơi, thí nghiệm.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c110",
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c111"
+      ],
+      "evidence": [
+        "Các kết quả của trò chơi, thí nghiệm có thể xảy ra gọi là kết quả có thể."
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "su-kien",
+      "name": "Sự kiện",
+      "description": "Một sự kiện có thể xảy ra hoặc không xảy ra tùy thuộc vào kết quả của trò chơi, thí nghiệm.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c112"
+      ],
+      "evidence": [
+        "Khi thực hiện trò chơi hoặc thí nghiệm, một sự kiện có thể xảy ra hoặc không xảy ra tùy thuộc vào kết quả của trò chơi, thí nghiệm đó."
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "nhan-biet-tinh-khong-doan-truoc",
+      "name": "Nhận biết tính không đoán trước",
+      "description": "Nhận biết tính không đoán trước về kết quả của một số trò chơi, thí nghiệm.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c110"
+      ],
+      "evidence": [
+        "Nhận biết tính không đoán trước về kết quả của một số trò chơi, thí nghiệm."
+      ]
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "liet-ke-ket-qua-co-the",
+      "name": "Liệt kê các kết quả có thể",
+      "description": "Liệt kê các kết quả có thể xảy ra trong các trò chơi, thí nghiệm đơn giản.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c110",
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c111"
+      ],
+      "evidence": [
+        "Liệt kê các kết quả có thể xảy ra trong các trò chơi, thí nghiệm đơn giản."
+      ]
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "nhan-biet-su-kien",
+      "name": "Nhận biết sự kiện",
+      "description": "Nhận biết một sự kiện trong trò chơi, thí nghiệm có xảy ra hay không.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c110"
+      ],
+      "evidence": [
+        "Nhận biết một sự kiện trong trò chơi, thí nghiệm có xảy ra hay không."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "related_to",
+      "target": "c2",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c112",
+      "evidence": "Khi thực hiện trò chơi hoặc thí nghiệm, một sự kiện có thể xảy ra hoặc không xảy ra tùy thuộc vào kết quả của trò chơi, thí nghiệm đó.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c3",
+      "relation_type": "prerequisite_of",
+      "target": "c4",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c110",
+      "evidence": "Nhận biết tính không đoán trước về kết quả của một số trò chơi, thí nghiệm.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c4",
+      "relation_type": "prerequisite_of",
+      "target": "c5",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c110",
+      "evidence": "Liệt kê các kết quả có thể xảy ra trong các trò chơi, thí nghiệm đơn giản.",
+      "confidence": 1.0
+    }
+  ],
+  "misconceptions": []
+}

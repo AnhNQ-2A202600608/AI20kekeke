@@ -1,0 +1,70 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Bài 19",
+    "lesson": "THUỶ QUYỂN VÀ VÒNG TUẦN HOÀN LỚN CỦA NƯỚC"
+  },
+  "learning_objectives": [
+    {
+      "code": "ke-ten-thanh-phan-thuy-quyen",
+      "description": "Kể tên được các thành phần chủ yếu của thuỷ quyển.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c181",
+      "evidence": ""
+    },
+    {
+      "code": "mo-ta-vong-tuan-hoan-lon-cua-nuoc",
+      "description": "Mô tả được vòng tuần hoàn lớn của nước.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c181",
+      "evidence": ""
+    },
+    {
+      "code": "co-y-thuc-su-dung-nuoc",
+      "description": "Có ý thức sử dụng hợp lí và bảo vệ tài nguyên nước.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c181",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "thuy-quyen",
+      "name": "Thủy quyển",
+      "description": "Toàn bộ lớp nước bao quanh Trái Đất, bao gồm nước ở các đại dương, biển, sông, hồ, đầm lầy, nước dưới đất, tuyết, băng và hơi nước trong khí quyển.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c181"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "vong-tuan-hoan-lon-cua-nuoc",
+      "name": "Vòng tuần hoàn lớn của nước",
+      "description": "Quá trình nước trong thiên nhiên không ngừng vận động và chuyển từ trạng thái này sang trạng thái khác, tạo nên vòng tuần hoàn.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c181",
+        "sgk-lich-su-va-ia-li-6-kntt-c182"
+      ],
+      "evidence": []
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "related_to",
+      "target": "c2",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c181",
+      "evidence": "Thủy quyển là thành phần chính trong vòng tuần hoàn lớn của nước.",
+      "confidence": 0.9
+    }
+  ],
+  "misconceptions": []
+}

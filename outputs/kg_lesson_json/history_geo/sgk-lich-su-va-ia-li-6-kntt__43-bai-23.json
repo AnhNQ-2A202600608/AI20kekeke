@@ -1,0 +1,94 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Bài 23",
+    "lesson": "SỰ SỐNG TRÊN TRÁI ĐẤT"
+  },
+  "learning_objectives": [
+    {
+      "code": "yeu-thien-nhien",
+      "description": "Yêu thiên nhiên, có ý thức bảo vệ sự đa dạng của sinh vật trên Trái Đất.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c199",
+      "evidence": ""
+    },
+    {
+      "code": "noi-ve-da-dang-sinh-vat",
+      "description": "Nêu được ví dụ về sự đa dạng của thế giới sinh vật ở lục địa và đại dương.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c199",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "da-dang-sinh-vat",
+      "name": "Đa dạng sinh vật",
+      "description": "Sự phong phú và đa dạng của các loài sinh vật tồn tại trong các môi trường khác nhau trên Trái Đất.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c199",
+        "sgk-lich-su-va-ia-li-6-kntt-c200"
+      ],
+      "evidence": [
+        "Sinh vật ở đại dương vô cùng phong phú, đa dạng.",
+        "Giới thực vật trên lục địa hết sức phong phú, đa dạng."
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "thuc-vat",
+      "name": "Thực vật",
+      "description": "Các loài cây cối và thực vật sống trong các môi trường khác nhau.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c199",
+        "sgk-lich-su-va-ia-li-6-kntt-c200"
+      ],
+      "evidence": [
+        "Ở đới nóng có rừng mưa nhiệt đới, rừng nhiệt đới gió mùa, xa van,...",
+        "Ở đới ôn hòa có rừng lá kim, thảo nguyên, rừng cận nhiệt đới,..."
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "dong-vat",
+      "name": "Động vật",
+      "description": "Các loài động vật sống trong các môi trường khác nhau.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c200"
+      ],
+      "evidence": [
+        "Giới động vật trên các lục địa cũng hết sức phong phú, đa dạng."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "related_to",
+      "target": "c2",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c199",
+      "evidence": "Sự đa dạng của sinh vật bao gồm cả thực vật và động vật.",
+      "confidence": 0.9
+    },
+    {
+      "source": "c1",
+      "relation_type": "related_to",
+      "target": "c3",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c200",
+      "evidence": "Sự đa dạng của sinh vật bao gồm cả thực vật và động vật.",
+      "confidence": 0.9
+    }
+  ],
+  "misconceptions": []
+}

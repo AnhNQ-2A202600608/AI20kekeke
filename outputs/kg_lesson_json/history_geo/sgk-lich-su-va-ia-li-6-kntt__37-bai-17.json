@@ -1,0 +1,117 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Chương 1",
+    "lesson": "Bài 17"
+  },
+  "learning_objectives": [
+    {
+      "code": "phan-biet-thoi-tiet-khi-hau",
+      "description": "Phân biệt được thời tiết và khí hậu.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c173",
+      "evidence": ""
+    },
+    {
+      "code": "trinh-bay-dac-diem-doi-khi-hau",
+      "description": "Trình bày được khái quát đặc điểm của một trong các đới khí hậu trên Trái Đất.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c174",
+      "evidence": ""
+    },
+    {
+      "code": "bieu-hien-bien-doi-khi-hau",
+      "description": "Nêu được một số biểu hiện của biến đổi khí hậu.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c175",
+      "evidence": ""
+    },
+    {
+      "code": "bien-phap-phong-tranh-thien-tai",
+      "description": "Trình bày được một số biện pháp phòng tránh thiên tai và ứng phó với biến đổi khí hậu.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c175",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "thoi-tiet",
+      "name": "Thời tiết",
+      "description": "Trạng thái của khí quyển tại một thời điểm và khu vực cụ thể được xác định bằng nhiệt độ, độ ẩm, mưa, mây, gió,...",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c173"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "khi-hau",
+      "name": "Khí hậu",
+      "description": "Tổng hợp các yếu tố thời tiết của một nơi trong một thời gian dài và đã trở thành quy luật.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c174"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "bien-doi-khi-hau",
+      "name": "Biến đổi khí hậu",
+      "description": "Sự thay đổi của khí hậu trong một khoảng thời gian dài do tác động của các điều kiện tự nhiên và hoạt động của con người.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c175"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "doi-khi-hau",
+      "name": "Đới khí hậu",
+      "description": "Các khu vực trên Trái Đất được phân chia theo đặc điểm khí hậu, bao gồm đới nóng, đới ôn hòa và đới lạnh.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c174"
+      ],
+      "evidence": []
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "prerequisite_of",
+      "target": "c2",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c173",
+      "evidence": "Thời tiết là yếu tố cơ bản để hiểu về khí hậu.",
+      "confidence": 0.9
+    },
+    {
+      "source": "c2",
+      "relation_type": "prerequisite_of",
+      "target": "c3",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c174",
+      "evidence": "Khí hậu ổn định là cơ sở để nhận biết biến đổi khí hậu.",
+      "confidence": 0.8
+    },
+    {
+      "source": "c3",
+      "relation_type": "prerequisite_of",
+      "target": "c4",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c175",
+      "evidence": "Biến đổi khí hậu ảnh hưởng đến các đới khí hậu.",
+      "confidence": 0.85
+    }
+  ],
+  "misconceptions": []
+}

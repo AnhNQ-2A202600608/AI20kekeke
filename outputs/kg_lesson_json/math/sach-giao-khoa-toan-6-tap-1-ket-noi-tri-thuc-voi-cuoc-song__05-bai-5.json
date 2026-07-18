@@ -1,0 +1,229 @@
+{
+  "document": {
+    "document_id": "math-k6-sgk",
+    "source_type": "SGK",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương I",
+    "lesson": "Bài 5"
+  },
+  "learning_objectives": [],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "phep-nhan",
+      "name": "Phép nhân",
+      "description": "Phép nhân là một phép toán cơ bản trong toán học, dùng để tính tổng của một số thừa số bằng nhau.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c018"
+      ],
+      "evidence": [
+        "Phép nhân, thừa số, tích"
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "tinh-chat-giao-hoan",
+      "name": "Tính chất giao hoán của phép nhân",
+      "description": "Tính chất giao hoán của phép nhân cho biết rằng thứ tự của các thừa số không ảnh hưởng đến kết quả của phép nhân.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c019"
+      ],
+      "evidence": [
+        "Giao hoán: ab = ba."
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "tinh-chat-ket-hop",
+      "name": "Tính chất kết hợp của phép nhân",
+      "description": "Tính chất kết hợp của phép nhân cho biết rằng khi nhân nhiều số, ta có thể nhóm các số lại theo cách nào cũng được mà không làm thay đổi kết quả.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c019"
+      ],
+      "evidence": [
+        "Kết hợp: (ab)c = a(bc)."
+      ]
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "tinh-chat-phan-phoi",
+      "name": "Tính chất phân phối của phép nhân đối với phép cộng",
+      "description": "Tính chất phân phối cho biết rằng phép nhân phân phối qua phép cộng.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c019"
+      ],
+      "evidence": [
+        "Phân phối của phép nhân đối với phép cộng: a(b + c) = ab + ac."
+      ]
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "phep-chia",
+      "name": "Phép chia",
+      "description": "Phép chia là phép toán dùng để tìm thương và số dư giữa hai số tự nhiên.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c019"
+      ],
+      "evidence": [
+        "Phép chia hết, phép chia có dư."
+      ]
+    },
+    {
+      "temporary_id": "c6",
+      "suggested_code": "phep-chia-het",
+      "name": "Phép chia hết",
+      "description": "Phép chia hết là phép chia mà số dư bằng 0.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c019"
+      ],
+      "evidence": [
+        "Nếu r = 0 thì có phép chia hết: a = bq."
+      ]
+    },
+    {
+      "temporary_id": "c7",
+      "suggested_code": "phep-chia-co-du",
+      "name": "Phép chia có dư",
+      "description": "Phép chia có dư là phép chia mà số dư khác 0.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c019"
+      ],
+      "evidence": [
+        "Nếu r ≠ 0 thì có phép chia có dư: a = bq + r."
+      ]
+    },
+    {
+      "temporary_id": "c8",
+      "suggested_code": "luu-y-phep-nhan",
+      "name": "Lưu ý về phép nhân",
+      "description": "Khi các thừa số là chữ hoặc có một thừa số là số, có thể không viết dấu nhân giữa các thừa số.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c018"
+      ],
+      "evidence": [
+        "Nếu các thừa số đều bằng chữ, hoặc chỉ có một thừa số bằng số thì ta có thể không viết dấu nhân giữa các thừa số."
+      ]
+    },
+    {
+      "temporary_id": "c9",
+      "suggested_code": "luu-y-phep-chia",
+      "name": "Lưu ý về phép chia",
+      "description": "Khi thực hiện phép chia, cần chỉ ra số bị chia, số chia, thương và số dư.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c020"
+      ],
+      "evidence": [
+        "Trong mỗi trường hợp, hãy cho biết số bị chia, số chia, thương và số dư (nếu có)."
+      ]
+    },
+    {
+      "temporary_id": "c10",
+      "suggested_code": "thuc-hien-phep-nhan",
+      "name": "Thực hiện phép nhân",
+      "description": "Thực hiện phép nhân hai số tự nhiên để tìm tích.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c018"
+      ],
+      "evidence": [
+        "Tính: a) $834 \times 57$; b) $603 - 295$."
+      ]
+    },
+    {
+      "temporary_id": "c11",
+      "suggested_code": "thuc-hien-phep-chia",
+      "name": "Thực hiện phép chia",
+      "description": "Thực hiện phép chia hai số tự nhiên để tìm thương và số dư.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c020"
+      ],
+      "evidence": [
+        "Thực hiện các phép chia $196 : 7$ và $215 : 18$."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "part_of",
+      "target": "c2",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c019",
+      "evidence": "Phép nhân, thừa số, tích.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c1",
+      "relation_type": "part_of",
+      "target": "c3",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c019",
+      "evidence": "Phép nhân, thừa số, tích.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c1",
+      "relation_type": "part_of",
+      "target": "c4",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c019",
+      "evidence": "Phép nhân, thừa số, tích.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c5",
+      "relation_type": "part_of",
+      "target": "c6",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c019",
+      "evidence": "Phép chia hết, phép chia có dư.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c5",
+      "relation_type": "part_of",
+      "target": "c7",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c019",
+      "evidence": "Phép chia hết, phép chia có dư.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c10",
+      "relation_type": "prerequisite_of",
+      "target": "c11",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c020",
+      "evidence": "Thực hiện các phép chia $196 : 7$ và $215 : 18$.",
+      "confidence": 1.0
+    }
+  ],
+  "misconceptions": []
+}

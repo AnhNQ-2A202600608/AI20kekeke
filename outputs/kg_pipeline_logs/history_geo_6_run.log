@@ -1,0 +1,81 @@
+[*] Tìm thấy 1 file PDF trong C:\Users\81908\OneDrive\Máy tính\AI20kekeke\data\his&geo (lọc theo --only '-6-kntt')
+[*] 5 file có text layer thật, sẽ dùng pypdf thay vision-LLM.
+[*] Bước trích xuất concept/relation sẽ ưu tiên Groq (llama-3.3-70b-versatile), fallback OpenAI nếu lỗi.
+
+=== SGK Lịch sử và địa lí 6 KNTT.pdf (sgk-lich-su-va-ia-li-6-kntt) ===
+[=] Markdown đã có, bỏ qua convert: sgk-lich-su-va-ia-li-6-kntt.md
+  [+] sgk-lich-su-va-ia-li-6-kntt__11-bai-11.json (groq): 9 concepts, 7 relations
+  [+] sgk-lich-su-va-ia-li-6-kntt__12-bai-12.json (groq): 11 concepts, 9 relations
+  [+] sgk-lich-su-va-ia-li-6-kntt__13-bai-13.json (groq): 19 concepts, 5 relations
+  [+] sgk-lich-su-va-ia-li-6-kntt__14-bai-14.json (groq): 7 concepts, 7 relations
+  [+] sgk-lich-su-va-ia-li-6-kntt__15-bai-15.json (groq): 11 concepts, 9 relations
+  [+] sgk-lich-su-va-ia-li-6-kntt__16-bai-16.json (groq): 6 concepts, 5 relations
+  [+] sgk-lich-su-va-ia-li-6-kntt__17-bai-17.json (groq): 9 concepts, 8 relations
+  [+] sgk-lich-su-va-ia-li-6-kntt__18-bai-18.json (groq): 11 concepts, 7 relations
+  [+] sgk-lich-su-va-ia-li-6-kntt__19-bai-19.json (groq): 8 concepts, 4 relations
+  [!] Bỏ qua relation tham chiếu concept không tồn tại: thành-tựu-văn-hóa-phù-nam -> văn-hóa-đông-nam-á
+  [+] sgk-lich-su-va-ia-li-6-kntt__20-bai-20.json (groq): 9 concepts, 5 relations
+  [+] sgk-lich-su-va-ia-li-6-kntt__21-bai-1.json (groq): 9 concepts, 7 relations
+  [+] sgk-lich-su-va-ia-li-6-kntt__22-bai-2.json (groq): 5 concepts, 4 relations
+  [+] sgk-lich-su-va-ia-li-6-kntt__23-bai-3.json (groq): 6 concepts, 6 relations
+  [!] Bỏ qua relation tham chiếu concept không tồn tại: ban-do-hanh-chinh -> ban-do
+  [!] Bỏ qua relation tham chiếu concept không tồn tại: ban-do-tu-nhiên -> ban-do
+  [+] sgk-lich-su-va-ia-li-6-kntt__24-bai-4.json (groq): 6 concepts, 3 relations
+  [!] Bỏ qua relation tham chiếu concept không tồn tại: trai-dat -> he-mat-troi
+  [+] sgk-lich-su-va-ia-li-6-kntt__25-bai-5.json (groq): 8 concepts, 7 relations
+  [+] sgk-lich-su-va-ia-li-6-kntt__26-bai-6.json (groq): 8 concepts, 5 relations
+  [+] sgk-lich-su-va-ia-li-6-kntt__27-bai-7.json (groq): 7 concepts, 6 relations
+  [+] sgk-lich-su-va-ia-li-6-kntt__28-bai-8.json (groq): 6 concepts, 4 relations
+  [+] sgk-lich-su-va-ia-li-6-kntt__29-bai-9.json (groq): 7 concepts, 5 relations
+  [+] sgk-lich-su-va-ia-li-6-kntt__30-bai-10.json (groq): 7 concepts, 5 relations
+  [+] sgk-lich-su-va-ia-li-6-kntt__31-bai-11.json (groq): 5 concepts, 4 relations
+  [+] sgk-lich-su-va-ia-li-6-kntt__32-bai-12.json (groq): 7 concepts, 4 relations
+  [+] sgk-lich-su-va-ia-li-6-kntt__33-bai-13.json (groq): 9 concepts, 7 relations
+  [!] Groq lỗi (RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97766, Requested 3391. Please try again in 16m39.648s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] sgk-lich-su-va-ia-li-6-kntt__34-bai-14.json (openai): 9 concepts, 6 relations
+  [!] Groq lỗi (RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97735, Requested 3532. Please try again in 18m14.688s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] sgk-lich-su-va-ia-li-6-kntt__35-bai-15.json (openai): 12 concepts, 6 relations
+  [!] Groq lỗi (RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97702, Requested 3910. Please try again in 23m12.767999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] sgk-lich-su-va-ia-li-6-kntt__36-bai-16.json (openai): 11 concepts, 7 relations
+  [!] Groq lỗi (RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97670, Requested 3538. Please try again in 17m23.712s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [!] Bỏ qua relation tham chiếu concept không tồn tại: doi-khi-hau-nong -> doi-khi-hau
+  [!] Bỏ qua relation tham chiếu concept không tồn tại: doi-khi-hau-on -> doi-khi-hau
+  [!] Bỏ qua relation tham chiếu concept không tồn tại: doi-khi-hau-lanh -> doi-khi-hau
+  [+] sgk-lich-su-va-ia-li-6-kntt__37-bai-17.json (openai): 9 concepts, 4 relations
+  [!] Groq lỗi (RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97639, Requested 3037. Please try again in 9m44.064s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] sgk-lich-su-va-ia-li-6-kntt__38-bai-18.json (openai): 10 concepts, 8 relations
+  [!] Groq lỗi (RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97609, Requested 3142. Please try again in 10m48.864s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] sgk-lich-su-va-ia-li-6-kntt__39-bai-19.json (openai): 5 concepts, 3 relations
+  [!] Groq lỗi (RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97585, Requested 4218. Please try again in 25m57.792s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] sgk-lich-su-va-ia-li-6-kntt__40-bai-20.json (openai): 8 concepts, 5 relations
+  [!] Groq lỗi (RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97555, Requested 3321. Please try again in 12m36.864s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] sgk-lich-su-va-ia-li-6-kntt__41-bai-21.json (openai): 7 concepts, 4 relations
+  [!] Groq lỗi (RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97526, Requested 3448. Please try again in 14m1.536s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] sgk-lich-su-va-ia-li-6-kntt__42-bai-22.json (openai): 7 concepts, 6 relations
+  [!] Groq lỗi (RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97497, Requested 3282. Please try again in 11m13.056s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] sgk-lich-su-va-ia-li-6-kntt__43-bai-23.json (openai): 11 concepts, 10 relations
+  [!] Groq lỗi (RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97455, Requested 3199. Please try again in 9m25.056s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] sgk-lich-su-va-ia-li-6-kntt__44-bai-24.json (openai): 6 concepts, 6 relations
+  [!] Bỏ qua relation tham chiếu concept không tồn tại: doi-nong -> doi-thien-nhien
+  [!] Bỏ qua relation tham chiếu concept không tồn tại: doi-on-hoa -> doi-thien-nhien
+  [!] Bỏ qua relation tham chiếu concept không tồn tại: doi-lanh -> doi-thien-nhien
+  [+] sgk-lich-su-va-ia-li-6-kntt__45-bai-25.json (groq): 5 concepts, 1 relations
+  [!] Groq lỗi (RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99711, Requested 2832. Please try again in 36m37.152s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] sgk-lich-su-va-ia-li-6-kntt__46-bai-26.json (openai): 8 concepts, 6 relations
+  [!] Groq lỗi (RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99681, Requested 2123. Please try again in 25m58.656s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] sgk-lich-su-va-ia-li-6-kntt__47-bai-27.json (openai): 8 concepts, 4 relations
+  [!] Groq lỗi (RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99654, Requested 2163. Please try again in 26m9.888s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] sgk-lich-su-va-ia-li-6-kntt__48-bai-28.json (openai): 9 concepts, 7 relations
+  [!] Groq lỗi (RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99621, Requested 1466. Please try again in 15m39.168s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] sgk-lich-su-va-ia-li-6-kntt__49-bai-29.json (openai): 7 concepts, 7 relations
+  [!] Groq lỗi (RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99590, Requested 11792. Please try again in 2h43m54.048s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] sgk-lich-su-va-ia-li-6-kntt__50-bai-30.json (openai): 15 concepts, 12 relations
+  [*] Trích xuất bằng Groq: 24 bài, fallback OpenAI: 16 bài.
+
+============================================================
+TỔNG KẾT
+  {'book': 'SGK Lịch sử và địa lí 6 KNTT.pdf', 'status': 'ok', 'total': 50, 'done': 50, 'failed': []}
+
+[+] 1/1 sách convert thành công.
+[+] 0 bài trích xuất thất bại sau 5 lần retry (xem log ở trên).
+HG6_DONE_EXIT=0

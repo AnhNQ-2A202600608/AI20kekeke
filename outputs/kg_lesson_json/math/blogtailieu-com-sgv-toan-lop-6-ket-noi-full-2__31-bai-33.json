@@ -1,0 +1,39 @@
+{
+  "document": {
+    "document_id": "math-k6-sgv",
+    "source_type": "SGV",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 2",
+    "lesson": "Bài 33"
+  },
+  "learning_objectives": [
+    {
+      "code": "nhan-biet-khai-niem-diem-nam-giua-hai-diem",
+      "description": "Nhận biết được các khái niệm: điểm nằm giữa hai điểm, tia, gốc của tia, tia đối.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận biết được các khái niệm: điểm nằm giữa hai điểm, tia, gốc của tia, tia đối."
+    },
+    {
+      "code": "dien-dat-khai-niem",
+      "description": "Diễn đạt đúng được các khái niệm đã nêu.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Diễn đạt đúng được các khái niệm đã nêu."
+    },
+    {
+      "code": "ve-tia",
+      "description": "Vẽ được tia khi biết gốc và một điểm mà tia đi qua.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Vẽ được tia khi biết gốc và một điểm mà tia đi qua."
+    },
+    {
+      "code": "bồi-dưỡng-niềm-dam-me-khoa-hoc",
+      "description": "Bồi dưỡng niềm đam mê khoa học, ý thức tự học.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Bồi dưỡng niềm đam mê khoa học, ý thức tự học."
+    }
+  ],
+  "concepts": [],
+  "relations": [],
+  "misconceptions": []
+}

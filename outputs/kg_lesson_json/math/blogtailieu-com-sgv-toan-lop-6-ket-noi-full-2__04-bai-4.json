@@ -1,0 +1,83 @@
+{
+  "concepts": [
+    {
+      "code": "nhan-biet-so-hang-va-tong",
+      "name": "Nhận biết số hạng và tổng",
+      "description": "Nhận biết được số hạng, tổng trong phép cộng",
+      "grade": 6,
+      "source_page": 36
+    },
+    {
+      "code": "nhan-biet-so-bi-tru-so-tru-va-hieu",
+      "name": "Nhận biết số bị trừ, số trừ và hiệu",
+      "description": "Nhận biết được số bị trừ, số trừ, hiệu trong phép trừ",
+      "grade": 6,
+      "source_page": 37
+    },
+    {
+      "code": "tinh-chat-giao-hoan-cua-phep-cong",
+      "name": "Tính chất giao hoán của phép cộng",
+      "description": "Tính chất giao hoán của phép cộng",
+      "grade": 6,
+      "source_page": 36
+    },
+    {
+      "code": "tinh-chat-ket-hop-cua-phep-cong",
+      "name": "Tính chất kết hợp của phép cộng",
+      "description": "Tính chất kết hợp của phép cộng",
+      "grade": 6,
+      "source_page": 36
+    },
+    {
+      "code": "tinh-tong-va-hieu-cua-hai-so-tu-nhien",
+      "name": "Tính tổng và hiệu của hai số tự nhiên",
+      "description": "Tính tổng và hiệu của hai số tự nhiên bằng cách đặt tính",
+      "grade": 6,
+      "source_page": 36
+    },
+    {
+      "code": "giai-bai-toan-co-noi-dung-thuc-tien",
+      "name": "Giải bài toán có nội dung thực tiễn",
+      "description": "Giải được một số bài toán có nội dung thực tiễn",
+      "grade": 6,
+      "source_page": 36
+    }
+  ],
+  "relations": [
+    {
+      "source": "nhan-biet-so-hang-va-tong",
+      "relation": "Prerequisite_of",
+      "target": "tinh-chat-giao-hoan-cua-phep-cong",
+      "evidence": "Nhận biết số hạng và tổng trước khi tìm hiểu tính chất giao hoán của phép cộng",
+      "source_page": 36
+    },
+    {
+      "source": "nhan-biet-so-hang-va-tong",
+      "relation": "Prerequisite_of",
+      "target": "tinh-chat-ket-hop-cua-phep-cong",
+      "evidence": "Nhận biết số hạng và tổng trước khi tìm hiểu tính chất kết hợp của phép cộng",
+      "source_page": 36
+    },
+    {
+      "source": "tinh-chat-giao-hoan-cua-phep-cong",
+      "relation": "Used_for",
+      "target": "tinh-tong-va-hieu-cua-hai-so-tu-nhien",
+      "evidence": "Tính chất giao hoán của phép cộng được sử dụng để tính tổng của hai số tự nhiên",
+      "source_page": 36
+    },
+    {
+      "source": "tinh-chat-ket-hop-cua-phep-cong",
+      "relation": "Used_for",
+      "target": "tinh-tong-va-hieu-cua-hai-so-tu-nhien",
+      "evidence": "Tính chất kết hợp của phép cộng được sử dụng để tính tổng của hai số tự nhiên",
+      "source_page": 36
+    },
+    {
+      "source": "tinh-tong-va-hieu-cua-hai-so-tu-nhien",
+      "relation": "Prerequisite_of",
+      "target": "giai-bai-toan-co-noi-dung-thuc-tien",
+      "evidence": "Tính tổng và hiệu của hai số tự nhiên trước khi giải bài toán có nội dung thực tiễn",
+      "source_page": 36
+    }
+  ]
+}

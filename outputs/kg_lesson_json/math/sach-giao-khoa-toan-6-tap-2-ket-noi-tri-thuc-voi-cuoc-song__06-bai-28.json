@@ -1,0 +1,153 @@
+{
+  "document": {
+    "document_id": "math-k6-sgk",
+    "source_type": "SGK",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 2",
+    "lesson": "Bài 28"
+  },
+  "learning_objectives": [],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "phan-so-thap-phan",
+      "name": "Phân số thập phân",
+      "description": "Phân số có mẫu số là 10, 100, 1000,...",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c033"
+      ],
+      "evidence": [
+        "Phân số thập phân"
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "so-thap-phan-am",
+      "name": "Số thập phân âm",
+      "description": "Số thập phân có giá trị nhỏ hơn 0.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c034"
+      ],
+      "evidence": [
+        "Số thập phân âm"
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "so-doi",
+      "name": "Số đối",
+      "description": "Số có giá trị bằng số thập phân nhưng có dấu trái ngược.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c034"
+      ],
+      "evidence": [
+        "Các số 1,7 và -1,7 cũng là hai số đối nhau."
+      ]
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "so-thap-phan-duong",
+      "name": "Số thập phân dương",
+      "description": "Số thập phân có giá trị lớn hơn 0.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c034"
+      ],
+      "evidence": [
+        "Các số thập phân dương"
+      ]
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "phan-so-thap-phan-sang-so-thap-phan",
+      "name": "Viết phân số thập phân dưới dạng số thập phân",
+      "description": "Chuyển đổi phân số thập phân thành số thập phân.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c034"
+      ],
+      "evidence": [
+        "Viết các phân số thập phân dưới dạng số thập phân."
+      ]
+    },
+    {
+      "temporary_id": "c6",
+      "suggested_code": "tim-so-doi",
+      "name": "Tìm số đối",
+      "description": "Xác định số đối của một số thập phân.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c034"
+      ],
+      "evidence": [
+        "Tìm số đối của các số thập phân đó."
+      ]
+    },
+    {
+      "temporary_id": "c7",
+      "suggested_code": "so-sanh-hai-so-thap-phan",
+      "name": "So sánh hai số thập phân",
+      "description": "Xác định mối quan hệ giữa hai số thập phân.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c035"
+      ],
+      "evidence": [
+        "Ta đã biết cách so sánh hai số thập phân dương và so sánh hai phân số."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "is_a",
+      "target": "c4",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c034",
+      "evidence": "Các số thập phân dương và các số thập phân âm gọi chung là số thập phân.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c2",
+      "relation_type": "prerequisite_of",
+      "target": "c6",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c034",
+      "evidence": "Tìm số đối của các số thập phân đó.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c5",
+      "relation_type": "used_for",
+      "target": "c6",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c034",
+      "evidence": "Viết các phân số thập phân dưới dạng số thập phân rồi tìm số đối của các số thập phân đó.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c7",
+      "relation_type": "prerequisite_of",
+      "target": "c2",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c035",
+      "evidence": "Nếu a, b là hai số thập phân dương và a > b thì -a < -b.",
+      "confidence": 1.0
+    }
+  ],
+  "misconceptions": []
+}

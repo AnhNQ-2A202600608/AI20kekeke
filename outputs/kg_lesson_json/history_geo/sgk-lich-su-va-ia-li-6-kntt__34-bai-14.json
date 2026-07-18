@@ -1,0 +1,77 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Chương 4",
+    "lesson": "Bài 14"
+  },
+  "learning_objectives": [],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "doc-luoc-do-dia-hinh-ti-le-lon",
+      "name": "Đọc lược đồ địa hình tỉ lệ lớn",
+      "description": "Kỹ năng đọc và phân tích lược đồ địa hình tỉ lệ lớn để xác định độ cao, độ dốc và khoảng cách thực tế.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c160"
+      ],
+      "evidence": [
+        "Lược đồ địa hình tỉ lệ lớn là lược đồ thể hiện đặc điểm địa hình (độ cao, độ dốc,...) của một khu vực có diện tích nhỏ bằng các đường đồng mức và màu sắc."
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "doc-lat-cat-dia-hinh-don-gian",
+      "name": "Đọc lát cắt địa hình đơn giản",
+      "description": "Kỹ năng đọc và phân tích lát cắt địa hình để mô tả sự thay đổi của địa hình.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c161"
+      ],
+      "evidence": [
+        "Lát cắt địa hình là hình vẽ biểu hiện được đầy đủ hình dáng và độ cao của các loại địa hình dọc theo một đường (tuyến) cắt nhất định."
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "khí-hau",
+      "name": "Khí hậu",
+      "description": "Khí hậu có tác động rất lớn tới đời sống con người và có mối quan hệ mật thiết với các yếu tố khí áp, gió, nhiệt độ, mưa.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c161"
+      ],
+      "evidence": [
+        "Khí hậu có tác động rất lớn tới đời sống con người. Các yếu tố khí áp, gió, nhiệt độ, mưa,... có quan hệ mật thiết với nhau và ở mỗi nơi một khác."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "prerequisite_of",
+      "target": "c2",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c160",
+      "evidence": "Hướng dẫn đọc lược đồ địa hình tỉ lệ lớn: Căn cứ vào độ gần hay xa nhau của đường đồng mức, ta biết được độ dốc của địa hình.",
+      "confidence": 0.9
+    },
+    {
+      "source": "c3",
+      "relation_type": "prerequisite_of",
+      "target": "c1",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c161",
+      "evidence": "Khí hậu có tác động rất lớn tới đời sống con người. Các yếu tố khí áp, gió, nhiệt độ, mưa,... có quan hệ mật thiết với nhau và ở mỗi nơi một khác.",
+      "confidence": 0.8
+    }
+  ],
+  "misconceptions": []
+}

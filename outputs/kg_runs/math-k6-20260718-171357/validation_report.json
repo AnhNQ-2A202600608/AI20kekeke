@@ -1,0 +1,1449 @@
+{
+  "valid": false,
+  "self_relations": [],
+  "duplicate_relations": [],
+  "invalid_relations": [
+    {
+      "relation": {
+        "source": "phan-so",
+        "target": "tu-so",
+        "evidence": "Với $a, b \\in \\mathbb{Z}, b \\neq 0$, ta gọi $\\frac{a}{b}$ là một phân số, trong đó $a$ là tử số (tử) và $b$ là mẫu số (mẫu) của phân số.",
+        "source_page": 6,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "phan-so",
+        "target": "mau-so",
+        "evidence": "Với $a, b \\in \\mathbb{Z}, b \\neq 0$, ta gọi $\\frac{a}{b}$ là một phân số, trong đó $a$ là tử số (tử) và $b$ là mẫu số (mẫu) của phân số.",
+        "source_page": 6,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "phan-so-bang-nhau",
+        "target": "quy-tac-bang-nhau-cua-phan-so",
+        "evidence": "Quy tắc bằng nhau của hai phân số: $\\frac{a}{b} = \\frac{c}{d}$ nếu $a \\cdot d = b \\cdot c$.",
+        "source_page": 7,
+        "relation_type": "related_to",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "phan-so",
+        "target": "phan-so-bang-nhau",
+        "evidence": "Hai phân số bằng nhau có cùng giá trị.",
+        "source_page": 7,
+        "relation_type": "used_for",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "phan-so",
+        "target": "tinh-chat-co-ban-cua-phan-so",
+        "evidence": "Nếu nhân cả tử và mẫu của một phân số với cùng một số nguyên khác 0 thì ta được một phân số bằng phân số đã cho.",
+        "source_page": 8,
+        "relation_type": "used_for",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "phan-so",
+        "target": "rut-gon-phan-so",
+        "evidence": "Người ta thường dùng tính chất 2 để rút gọn phân số.",
+        "source_page": 8,
+        "relation_type": "used_for",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "rut-gon-phan-so",
+        "target": "phan-so-toi-gian",
+        "evidence": "Phân số không rút gọn được nữa vì tử và mẫu đều không có ước chung nào khác 1 và -1. Chúng được gọi là các phân số tối giản.",
+        "source_page": 8,
+        "relation_type": "related_to",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "quy-dong-mau-nhieu-phan-so",
+        "target": "so-sanh-phan-so-cung-mau",
+        "evidence": "Muốn so sánh hai phân số không cùng mẫu, ta viết chúng dưới dạng hai phân số có cùng một mẫu dương rồi so sánh các tử với nhau.",
+        "source_page": 12,
+        "relation_type": "prerequisite_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "viet-phan-so-thanh-hon-so",
+        "target": "nhan-biet-hon-so-duong",
+        "evidence": "Muốn viết một phân số (lớn hơn 1), chẳng hạn $\\frac{23}{5}$ dưới dạng hỗn số, ta làm như sau:",
+        "source_page": 13,
+        "relation_type": "is_a",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "tinh-chat-giao-hoan-cua-phep-cong-phan-so",
+        "target": "tinh-chat-ket-hop-cua-phep-cong-phan-so",
+        "evidence": "Tương tự phép cộng số nguyên, phép cộng phân số cũng có các tính chất sau: Giao hoán, Kết hợp.",
+        "source_page": 18,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "cong-phan-so-voi-so-doi",
+        "target": "tru-hai-phan-so-cung-mau",
+        "evidence": "Muốn trừ một phân số cho một phân số, ta có thể cộng số bị trừ với số đối của số trừ.",
+        "source_page": 19,
+        "relation_type": "related_to",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "phep-nhan-phan-so",
+        "target": "tinh-chat-giao-hoan-phep-nhan-phan-so",
+        "evidence": "Tương tự phép nhân số nguyên, phép nhân phân số cũng có tính chất giao hoán.",
+        "source_page": 21,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "phep-nhan-phan-so",
+        "target": "tinh-chat-ket-hop-phep-nhan-phan-so",
+        "evidence": "Tương tự phép nhân số nguyên, phép nhân phân số cũng có tính chất kết hợp.",
+        "source_page": 21,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "phep-nhan-phan-so",
+        "target": "tinh-chat-phan-phoi-phep-nhan-phan-so",
+        "evidence": "Tương tự phép nhân số nguyên, phép nhân phân số cũng có tính chất phân phối của phép nhân đối với phép cộng.",
+        "source_page": 21,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "phan-so-nghich-dao",
+        "target": "phep-chia-phan-so",
+        "evidence": "Muốn chia một phân số cho một phân số khác 0, ta nhân số bị chia với phân số nghịch đảo của số chia.",
+        "source_page": 22,
+        "relation_type": "used_for",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "tim-gia-tri-phan-so-cua-mot-so",
+        "target": "tim-mot-so-biet-gia-tri-phan-so-cua-no",
+        "evidence": "Muốn tìm một số biết \\(\\frac{m}{n}\\) của số đó bằng b, ta tính b : \\(\\frac{m}{n}\\)",
+        "source_page": 25,
+        "relation_type": "used_for",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "so-thap-phan-am",
+        "target": "phan-so-thap-phan",
+        "evidence": "Các số thập phân dương và các số thập phân âm gọi chung là số thập phân.",
+        "source_page": 30,
+        "relation_type": "is_a",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "so-doi",
+        "target": "phan-so-thap-phan",
+        "evidence": "Các số 1,7 và -1,7 cũng là hai số đối nhau.",
+        "source_page": 30,
+        "relation_type": "used_for",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "so-sanh-hai-so-thap-phan",
+        "target": "phan-so-thap-phan",
+        "evidence": "Ta đã biết cách so sánh hai số thập phân dương và so sánh hai phân số. Tương tự, ta cũng có: Số thập phân âm nhỏ hơn 0 và nhỏ hơn số thập phân dương.",
+        "source_page": 31,
+        "relation_type": "used_for",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "cong-hai-so-thap-phan-am",
+        "target": "phep-cong-so-thap-phan",
+        "evidence": "Cộng hai số thập phân âm: (-a) + (-b) = -(a + b) với a, b > 0.",
+        "source_page": 33,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "cong-hai-so-thap-phan-khac-dau",
+        "target": "phep-cong-so-thap-phan",
+        "evidence": "Cộng hai số thập phân khác dấu: (-a) + b = b - a nếu 0 < a ≤ b; (-a) + b = -(a - b) nếu a > b > 0.",
+        "source_page": 33,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "tru-hai-so-thap-phan",
+        "target": "phep-tru-so-thap-phan",
+        "evidence": "Phép trừ hai số thập phân được đưa về phép cộng với số đối: a - b = a + (-b).",
+        "source_page": 33,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "nhan-hai-so-thap-phan-cung-dau",
+        "target": "phep-nhan-so-thap-phan",
+        "evidence": "Nhân hai số cùng dấu: (-a) * (-b) = a * b với a, b > 0.",
+        "source_page": 34,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "nhan-hai-so-thap-phan-khac-dau",
+        "target": "phep-nhan-so-thap-phan",
+        "evidence": "Nhân hai số khác dấu: (-a) * b = a * (-b) = -(a * b) với a, b > 0.",
+        "source_page": 34,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "chia-hai-so-thap-phan-cung-dau",
+        "target": "phep-chia-so-thap-phan",
+        "evidence": "Chia hai số cùng dấu: (-a) : (-b) = a : b với a, b > 0.",
+        "source_page": 34,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "chia-hai-so-thap-phan-khac-dau",
+        "target": "phep-chia-so-thap-phan",
+        "evidence": "Chia hai số khác dấu: (-a) : b = a : (-b) = -(a : b) với a, b > 0.",
+        "source_page": 34,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "lam-tron-so-thap-phan",
+        "target": "lam-tron-so-thap-phan-am",
+        "evidence": "Để làm tròn một số thập phân âm ta chỉ cần làm tròn số đối của nó rồi đặt dấu “–” trước kết quả.",
+        "source_page": 37,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "ti-so-phan-tram",
+        "target": "ti-so",
+        "evidence": "Ta thường dùng tỉ số dưới dạng tỉ số phần trăm, tức là tỉ số có dạng a/100, kí hiệu a%.",
+        "source_page": 40,
+        "relation_type": "is_a",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "tinh-ti-so-phan-tram",
+        "target": "tim-gia-tri-phan-tram",
+        "evidence": "Muốn tìm m% của số a, ta tính a * m/100.",
+        "source_page": 41,
+        "relation_type": "prerequisite_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "tinh-ti-so-phan-tram",
+        "target": "tim-so-khi-biet-gia-tri-phan-tram",
+        "evidence": "Muốn tìm một số khi biết m% của số đó là b, ta tính b * 100/m.",
+        "source_page": 41,
+        "relation_type": "prerequisite_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "diem-thuoc-duong-thang",
+        "target": "duong-thang-qua-hai-diem-phan-biet",
+        "evidence": "Khi M thuộc d, ta còn nói: Điểm M nằm trên đường thẳng d, hay đường thẳng d đi qua điểm M.",
+        "source_page": 45,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "ba-diem-thang-hang",
+        "target": "duong-thang-qua-hai-diem-phan-biet",
+        "evidence": "Ba điểm thẳng hàng là ba điểm cùng thuộc một đường thẳng.",
+        "source_page": 47,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "hai-duong-thang-song-song",
+        "target": "hai-duong-thang-cat-nhau",
+        "evidence": "a và b không có điểm chung: a và b song song với nhau. a và b có đúng một điểm chung P: a và b cắt nhau tại điểm P.",
+        "source_page": 48,
+        "relation_type": "compared_with",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "hai-duong-thang-trung-nhau",
+        "target": "hai-duong-thang-cat-nhau",
+        "evidence": "a và b có đúng một điểm chung P: a và b cắt nhau tại điểm P. Đường thẳng AB và đường thẳng BC trùng nhau.",
+        "source_page": 48,
+        "relation_type": "compared_with",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "diem-nam-giua-hai-diem",
+        "target": "khai-niem-tia",
+        "evidence": "Điểm O trên đường thẳng xy chia đường thẳng thành hai phần (H.8.18a).",
+        "source_page": 51,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "hai-tia-doi-nhau",
+        "target": "khai-niem-tia",
+        "evidence": "Hai tia Ox và Oy gọi là hai tia đối nhau (H.8.18a).",
+        "source_page": 51,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "diem-nam-giua-hai-diem",
+        "target": "hai-diem-nam-cung-phia",
+        "evidence": "Điểm B nằm giữa hai điểm A và C. Hai điểm A và B nằm cùng phía đối với điểm C.",
+        "source_page": 50,
+        "relation_type": "related_to",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "diem-nam-giua-hai-diem",
+        "target": "hai-diem-nam-khac-phia",
+        "evidence": "Điểm B nằm giữa hai điểm A và C. Hai điểm A và C nằm khác phía đối với điểm B.",
+        "source_page": 50,
+        "relation_type": "related_to",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "doan-thang",
+        "target": "dau-mut-doan-thang",
+        "evidence": "A, B là hai đầu mút của đoạn thẳng AB.",
+        "source_page": 53,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "do-dai-doan-thang",
+        "target": "doan-thang",
+        "evidence": "Độ dài đoạn thẳng là khoảng cách giữa hai điểm đầu mút của đoạn thẳng.",
+        "source_page": 54,
+        "relation_type": "related_to",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "do-dai-doan-thang",
+        "target": "don-vi-do-dai",
+        "evidence": "Khi chọn một đơn vị độ dài thì độ dài mỗi đoạn thẳng được biểu diễn bởi một số dương (thường viết kèm đơn vị).",
+        "source_page": 54,
+        "relation_type": "is_a",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "so-sanh-do-dai-doan-thang",
+        "target": "do-dai-doan-thang",
+        "evidence": "So sánh độ dài hai đoạn thẳng bằng cách đo và so sánh số đo độ dài của chúng.",
+        "source_page": 55,
+        "relation_type": "used_for",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "trung-diem-doan-thang",
+        "target": "nhan-biet-trung-diem",
+        "evidence": "Nếu điểm I nằm giữa hai điểm A và B sao cho IA = IB thì điểm I gọi là trung điểm của đoạn thẳng AB.",
+        "source_page": 57,
+        "relation_type": "used_for",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "trung-diem-doan-thang",
+        "target": "giai-bai-toan-trung-diem",
+        "evidence": "Giải các bài toán thực tế có liên quan đến trung điểm của đoạn thẳng.",
+        "source_page": 57,
+        "relation_type": "used_for",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "goc",
+        "target": "dinh-cua-goc",
+        "evidence": "Góc chung của hai tia là đỉnh của góc.",
+        "source_page": 60,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "goc",
+        "target": "canh-cua-goc",
+        "evidence": "Hai tia là hai cạnh của góc.",
+        "source_page": 60,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "goc-bet",
+        "target": "goc",
+        "evidence": "Đặc biệt, khi Ox và Oy là hai tia đối nhau, ta có góc bẹt xOy.",
+        "source_page": 60,
+        "relation_type": "is_a",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "diem-trong-cua-goc",
+        "target": "goc",
+        "evidence": "Ta gọi M là một điểm trong của góc xOy (điểm M nằm trong góc xOy).",
+        "source_page": 61,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "so-do-goc",
+        "target": "do-goc-bang-thuoc",
+        "evidence": "Muốn đo góc xOy, ta đặt thước đo góc sao cho tâm của thước trùng với O, tia Ox đi qua vạch 0.",
+        "source_page": 63,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "goc-vuong",
+        "target": "so-do-goc",
+        "evidence": "Góc có số đo bằng 90° là góc vuông.",
+        "source_page": 64,
+        "relation_type": "is_a",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "goc-nhon",
+        "target": "so-do-goc",
+        "evidence": "Góc nhỏ hơn góc vuông là góc nhọn.",
+        "source_page": 64,
+        "relation_type": "is_a",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "goc-tu",
+        "target": "so-do-goc",
+        "evidence": "Góc lớn hơn góc vuông, nhỏ hơn góc bẹt là góc tù.",
+        "source_page": 64,
+        "relation_type": "is_a",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "goc-bet",
+        "target": "so-do-goc",
+        "evidence": "Góc bẹt có số đo bằng 180°.",
+        "source_page": 64,
+        "relation_type": "is_a",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "so-sanh-goc",
+        "target": "so-do-goc",
+        "evidence": "Người ta so sánh hai góc bằng cách so sánh số đo của chúng.",
+        "source_page": 63,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "phan-loai-du-lieu",
+        "target": "du-lieu-thong-ke",
+        "evidence": "Các thông tin thu được ở trên như nhiệt độ thấp nhất, nhiệt độ cao nhất, ngày không mưa,... được gọi là dữ liệu.",
+        "source_page": 70,
+        "relation_type": "is_a",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "du-lieu-la-so-lieu",
+        "target": "phan-loai-du-lieu",
+        "evidence": "Trong các dữ liệu ấy, có dữ liệu là số (số liệu), có dữ liệu không phải là số.",
+        "source_page": 70,
+        "relation_type": "is_a",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "du-lieu-khong-phai-so-lieu",
+        "target": "phan-loai-du-lieu",
+        "evidence": "Trong các dữ liệu ấy, có dữ liệu là số (số liệu), có dữ liệu không phải là số.",
+        "source_page": 70,
+        "relation_type": "is_a",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "du-lieu-hop-li",
+        "target": "du-lieu-thong-ke",
+        "evidence": "Em hãy chỉ ra dữ liệu không hợp lí (nếu có) trong dãy dữ liệu trên.",
+        "source_page": 71,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "thu-thap-du-lieu-thong-ke",
+        "target": "du-lieu-thong-ke",
+        "evidence": "Trong mục này, chúng ta sẽ tiếp tục làm quen với việc thu thập dữ liệu thống kê.",
+        "source_page": 72,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "bang-thong-ke",
+        "target": "doc-du-lieu-tu-bang-thong-ke",
+        "evidence": "Đọc và phân tích dữ liệu từ bảng thống kê, biểu đồ tranh.",
+        "source_page": 76,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "bang-thong-ke",
+        "target": "phan-tich-du-lieu-tu-bang-thong-ke",
+        "evidence": "Đọc và phân tích dữ liệu từ bảng thống kê, biểu đồ tranh.",
+        "source_page": 76,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "bieu-do-tranh",
+        "target": "doc-du-lieu-tu-bieu-do-tranh",
+        "evidence": "Đọc và phân tích dữ liệu từ bảng thống kê, biểu đồ tranh.",
+        "source_page": 76,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "bieu-do-tranh",
+        "target": "phan-tich-du-lieu-tu-bieu-do-tranh",
+        "evidence": "Đọc và phân tích dữ liệu từ bảng thống kê, biểu đồ tranh.",
+        "source_page": 76,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "bang-thong-ke",
+        "target": "bieu-dien-du-lieu-vao-bang-thong-ke",
+        "evidence": "Biểu diễn dữ liệu vào bảng thống kê, biểu đồ tranh.",
+        "source_page": 76,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "bieu-do-tranh",
+        "target": "bieu-dien-du-lieu-vao-bieu-do-tranh",
+        "evidence": "Biểu diễn dữ liệu vào bảng thống kê, biểu đồ tranh.",
+        "source_page": 76,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "ve-bieu-do-cot",
+        "target": "bieu-do-cot",
+        "evidence": "Để biểu diễn bảng thống kê trên, người ta thường dùng biểu đồ cột.",
+        "source_page": 79,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "doc-bieu-do-cot",
+        "target": "bieu-do-cot",
+        "evidence": "Đọc và mô tả dữ liệu từ biểu đồ cột.",
+        "source_page": 79,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "phan-tich-bieu-do-cot",
+        "target": "bieu-do-cot",
+        "evidence": "Nhận ra vấn đề hoặc quy luật đơn giản từ việc phân tích biểu đồ cột.",
+        "source_page": 79,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "ve-bieu-do-cot",
+        "target": "doc-bieu-do-cot",
+        "evidence": "Việc vẽ biểu đồ cột và phân tích dữ liệu dựa vào biểu đồ cột như thế nào, chúng ta cùng tìm hiểu.",
+        "source_page": 79,
+        "relation_type": "prerequisite_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "doc-bieu-do-cot",
+        "target": "phan-tich-bieu-do-cot",
+        "evidence": "Việc vẽ biểu đồ cột và phân tích dữ liệu dựa vào biểu đồ cột như thế nào, chúng ta cùng tìm hiểu.",
+        "source_page": 79,
+        "relation_type": "prerequisite_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "bieu-do-cot-kep",
+        "target": "ve-bieu-do-cot-kep",
+        "evidence": "Vẽ biểu đồ cột kép biểu diễn bảng thống kê ở trên, em thực hiện theo các bước sau:",
+        "source_page": 84,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "bieu-do-cot-kep",
+        "target": "doc-du-lieu-bieu-do-cot-kep",
+        "evidence": "Vẽ biểu đồ cột kép; Đọc và mô tả dữ liệu từ biểu đồ cột kép.",
+        "source_page": 84,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "bieu-do-cot-kep",
+        "target": "phan-tich-so-lieu-bieu-do-cot-kep",
+        "evidence": "Phân tích số liệu với biểu đồ cột kép",
+        "source_page": 86,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "ve-bieu-do-cot-kep",
+        "target": "doc-du-lieu-bieu-do-cot-kep",
+        "evidence": "Vẽ biểu đồ cột kép; Đọc và mô tả dữ liệu từ biểu đồ cột kép.",
+        "source_page": 84,
+        "relation_type": "prerequisite_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "doc-du-lieu-bieu-do-cot-kep",
+        "target": "phan-tich-so-lieu-bieu-do-cot-kep",
+        "evidence": "Phân tích số liệu với biểu đồ cột kép",
+        "source_page": 86,
+        "relation_type": "prerequisite_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "ket-qua-co-the",
+        "target": "liet-ke-ket-qua-co-the",
+        "evidence": "Các kết quả của trò chơi, thí nghiệm có thể xảy ra gọi là kết quả có thể.",
+        "source_page": 91,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "su-kien",
+        "target": "nhan-biet-su-kien-xay-ra",
+        "evidence": "Khi thực hiện trò chơi hoặc thí nghiệm, một sự kiện có thể xảy ra hoặc không xảy ra tùy thuộc vào kết quả của trò chơi, thí nghiệm đó.",
+        "source_page": 93,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "xac-suat-thuc-nghiem",
+        "target": "bieu-dien-kha-nang-xay-ra-su-kien",
+        "evidence": "Khả năng xảy ra một sự kiện được thể hiện bằng một con số từ 0 đến 1.",
+        "source_page": 96,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "tinh-xac-suat-thuc-nghiem",
+        "target": "xac-suat-thuc-nghiem",
+        "evidence": "Tỉ số \\(\\frac{\\text{Số lần mũi tên chỉ vào ô màu vàng}}{\\text{Số lần quay}}\\) được gọi là xác suất thực nghiệm của sự kiện Mũi tên chỉ vào ô màu vàng.",
+        "source_page": 96,
+        "relation_type": "used_for",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    },
+    {
+      "relation": {
+        "source": "phu-thuoc-vao-so-lan-thuc-hien",
+        "target": "xac-suat-thuc-nghiem",
+        "evidence": "Xác suất thực nghiệm phụ thuộc vào người thực hiện thí nghiệm, trò chơi và số lần người đó thực hiện thí nghiệm, trò chơi.",
+        "source_page": 96,
+        "relation_type": "part_of",
+        "source_chunk_id": "",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Missing source_chunk_id."
+        ]
+      },
+      "errors": [
+        "Missing source_chunk_id."
+      ]
+    }
+  ],
+  "prerequisite_cycles": [],
+  "removed_relations": []
+}

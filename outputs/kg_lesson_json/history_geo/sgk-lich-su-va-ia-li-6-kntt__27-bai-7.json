@@ -1,0 +1,135 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Bài 7",
+    "lesson": "CHUYỂN ĐỘNG TỰ QUAY QUANH TRỤC CỦA TRÁI ĐẤT VÀ HỆ QUẢ"
+  },
+  "learning_objectives": [
+    {
+      "code": "mo-ta-chuyen-dong-tu-quay",
+      "description": "Mô tả được chuyển động tự quay quanh trục của Trái Đất.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c131",
+      "evidence": ""
+    },
+    {
+      "code": "trinh-bay-he-qua-chuyen-dong",
+      "description": "Trình bày được các hệ quả của chuyển động tự quay quanh trục của Trái Đất: ngày đêm luân phiên nhau, giờ trên Trái Đất (giờ địa phương/giờ khu vực), sự lệch hướng chuyển động của vật thể theo chiều kinh tuyến.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c131",
+      "evidence": ""
+    },
+    {
+      "code": "so-sanh-gio-hai-dia-diem",
+      "description": "So sánh được giờ của hai địa điểm trên Trái Đất.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c131",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "chuyen-dong-tu-quay",
+      "name": "Chuyển động tự quay",
+      "description": "Chuyển động của Trái Đất quanh trục của nó.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c131",
+        "sgk-lich-su-va-ia-li-6-kntt-c132",
+        "sgk-lich-su-va-ia-li-6-kntt-c133"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "he-qua-chuyen-dong-tu-quay",
+      "name": "Hệ quả chuyển động tự quay",
+      "description": "Các hệ quả của chuyển động tự quay quanh trục của Trái Đất như ngày đêm luân phiên, giờ trên Trái Đất, sự lệch hướng chuyển động của vật thể.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c132",
+        "sgk-lich-su-va-ia-li-6-kntt-c133"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "luc-co-ri-o-lit",
+      "name": "Lực Cô-ri-ô-lít",
+      "description": "Lực làm lệch hướng chuyển động của vật thể trên bề mặt Trái Đất do sự tự quay quanh trục.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c133"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "gio-khu-vuc",
+      "name": "Giờ khu vực",
+      "description": "Giờ của các địa điểm nằm trong cùng một khu vực giờ trên Trái Đất.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c132"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "ngay-dem-luan-phien",
+      "name": "Ngày đêm luân phiên",
+      "description": "Hiện tượng ngày và đêm luân phiên nhau trên Trái Đất do chuyển động tự quay.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c132"
+      ],
+      "evidence": []
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "prerequisite_of",
+      "target": "c2",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c131",
+      "evidence": "Chuyển động tự quay là điều kiện để hiểu các hệ quả của nó.",
+      "confidence": 0.9
+    },
+    {
+      "source": "c2",
+      "relation_type": "prerequisite_of",
+      "target": "c3",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c132",
+      "evidence": "Hiểu hệ quả của chuyển động tự quay giúp hiểu về lực Cô-ri-ô-lít.",
+      "confidence": 0.9
+    },
+    {
+      "source": "c2",
+      "relation_type": "prerequisite_of",
+      "target": "c4",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c132",
+      "evidence": "Hệ quả của chuyển động tự quay liên quan đến giờ khu vực.",
+      "confidence": 0.9
+    },
+    {
+      "source": "c2",
+      "relation_type": "prerequisite_of",
+      "target": "c5",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c132",
+      "evidence": "Hệ quả của chuyển động tự quay liên quan đến hiện tượng ngày đêm.",
+      "confidence": 0.9
+    }
+  ],
+  "misconceptions": []
+}

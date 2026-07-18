@@ -1,0 +1,129 @@
+{
+  "document": {
+    "document_id": "math-k6-sgk",
+    "source_type": "SGK",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 2",
+    "lesson": "Bài 41"
+  },
+  "learning_objectives": [
+    {
+      "code": "ve-bieu-do-cot-kep",
+      "description": "Học sinh biết cách vẽ biểu đồ cột kép và đọc, mô tả dữ liệu từ biểu đồ cột kép.",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c102",
+      "evidence": ""
+    },
+    {
+      "code": "nhan-biet-quy-luat-tu-bieu-do",
+      "description": "Học sinh nhận ra quy luật đơn giản từ biểu đồ cột kép.",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c102",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "bieu-do-cot-kep",
+      "name": "Biểu đồ cột kép",
+      "description": "Biểu đồ thể hiện dữ liệu của hai nhóm khác nhau trên cùng một biểu đồ để so sánh.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c102"
+      ],
+      "evidence": [
+        "Để dễ dàng so sánh học lực của học sinh hai lớp này người ta thường ghép hai biểu đồ cột này lại vào một biểu đồ mới như Hình 9.14, được gọi là biểu đồ cột kép."
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "ve-bieu-do-cot-kep",
+      "name": "Vẽ biểu đồ cột kép",
+      "description": "Quá trình thực hiện vẽ biểu đồ cột kép từ dữ liệu đã cho.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c102"
+      ],
+      "evidence": [
+        "Vẽ biểu đồ cột kép biểu diễn bảng thống kê ở trên, em thực hiện theo các bước sau:"
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "doc-du-lieu-tu-bieu-do",
+      "name": "Đọc và mô tả dữ liệu từ biểu đồ cột kép",
+      "description": "Kỹ năng đọc và phân tích thông tin từ biểu đồ cột kép.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c102"
+      ],
+      "evidence": [
+        "Đọc và mô tả dữ liệu từ biểu đồ cột kép."
+      ]
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "nhan-ra-quy-luat-tu-bieu-do",
+      "name": "Nhận ra quy luật từ biểu đồ cột kép",
+      "description": "Kỹ năng nhận diện quy luật từ dữ liệu biểu diễn trong biểu đồ cột kép.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c102"
+      ],
+      "evidence": [
+        "Nhận ra quy luật đơn giản từ biểu đồ cột kép."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "part_of",
+      "target": "c2",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c102",
+      "evidence": "Để dễ dàng so sánh học lực của học sinh hai lớp này người ta thường ghép hai biểu đồ cột này lại vào một biểu đồ mới như Hình 9.14, được gọi là biểu đồ cột kép.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c1",
+      "relation_type": "used_for",
+      "target": "c3",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c102",
+      "evidence": "Đọc và mô tả dữ liệu từ biểu đồ cột kép.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c1",
+      "relation_type": "used_for",
+      "target": "c4",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c102",
+      "evidence": "Nhận ra quy luật đơn giản từ biểu đồ cột kép.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c2",
+      "relation_type": "prerequisite_of",
+      "target": "c3",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c102",
+      "evidence": "Vẽ biểu đồ cột kép; Đọc và mô tả dữ liệu từ biểu đồ cột kép.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c2",
+      "relation_type": "prerequisite_of",
+      "target": "c4",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c102",
+      "evidence": "Vẽ biểu đồ cột kép; Nhận ra quy luật đơn giản từ biểu đồ cột kép.",
+      "confidence": 1.0
+    }
+  ],
+  "misconceptions": []
+}

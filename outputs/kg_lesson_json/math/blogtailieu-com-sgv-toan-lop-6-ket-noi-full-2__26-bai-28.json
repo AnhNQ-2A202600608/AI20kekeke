@@ -1,0 +1,51 @@
+{
+  "document": {
+    "document_id": "math-k6-sgv",
+    "source_type": "SGV",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 2",
+    "lesson": "Bài 28"
+  },
+  "learning_objectives": [
+    {
+      "code": "nhan-biet-phan-so-thap-phan",
+      "description": "Nhận biết được phân số thập phân (dương, âm), cách viết phân số thập phân dưới dạng số thập phân.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận biết được phân số thập phân (dương, âm), cách viết phân số thập phân dưới dạng số thập phân."
+    },
+    {
+      "code": "nhan-biet-so-doi",
+      "description": "Nhận biết được số đối của một số thập phân.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận biết được số đối của một số thập phân."
+    },
+    {
+      "code": "viet-phan-so-thap-phan",
+      "description": "Viết được phân số thập phân dưới dạng số thập phân và ngược lại.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Viết được phân số thập phân dưới dạng số thập phân và ngược lại."
+    },
+    {
+      "code": "doc-so-thap-phan",
+      "description": "Đọc được số thập phân.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Đọc được số thập phân."
+    },
+    {
+      "code": "tim-so-doi",
+      "description": "Tìm được số đối của một số thập phân đã cho.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Tìm được số đối của một số thập phân đã cho."
+    },
+    {
+      "code": "so-sanh-hai-so-thap-phan",
+      "description": "So sánh được hai số thập phân đã cho.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "So sánh được hai số thập phân đã cho."
+    }
+  ],
+  "concepts": [],
+  "relations": [],
+  "misconceptions": []
+}

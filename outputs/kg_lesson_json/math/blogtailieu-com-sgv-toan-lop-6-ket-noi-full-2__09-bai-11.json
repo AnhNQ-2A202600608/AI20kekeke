@@ -1,0 +1,39 @@
+{
+  "document": {
+    "document_id": "math-k6-sgv",
+    "source_type": "SGV",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 2",
+    "lesson": "Bài 11"
+  },
+  "learning_objectives": [
+    {
+      "code": "nhan-biet-khai-niem-uoc-chung",
+      "description": "Nhận biết được các khái niệm mới về ước chung, ước chung lớn nhất, phân số tối giản và cách tìm chúng.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận biết được các khái niệm mới về ước chung, ước chung lớn nhất, phân số tối giản và cách tìm chúng."
+    },
+    {
+      "code": "xac-dinh-uoc-chung",
+      "description": "Xác định được ước chung, ước chung lớn nhất của hai hoặc ba số tự nhiên đã cho.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Xác định được ước chung, ước chung lớn nhất của hai hoặc ba số tự nhiên đã cho."
+    },
+    {
+      "code": "rut-gon-phan-so",
+      "description": "Rút gọn được phân số về phân số tối giản.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Rút gọn được phân số về phân số tối giản."
+    },
+    {
+      "code": "boi-duong-hung-thu-hoc-tap",
+      "description": "Bồi dưỡng hứng thú học tập, ý thức làm việc nhóm, ý thức tìm tòi, khám phá và sáng tạo cho HS.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Bồi dưỡng hứng thú học tập, ý thức làm việc nhóm, ý thức tìm tòi, khám phá và sáng tạo cho HS."
+    }
+  ],
+  "concepts": [],
+  "relations": [],
+  "misconceptions": []
+}

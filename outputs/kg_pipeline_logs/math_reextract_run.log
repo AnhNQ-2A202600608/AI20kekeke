@@ -1,0 +1,160 @@
+[*] Khởi động Pipeline Run: math-k6-20260718-175832
+
+=== sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song.pdf (sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song) ===
+[=] Markdown đã có, bỏ qua convert: sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song.md
+[*] Tìm thấy 14 bài học trong markdown.
+  [!] Groq lỗi (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98428, Requested 3047. Please try again in 21m14.399999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] Trích xuất: 5 concepts, 3 relations.
+  [!] Groq lỗi (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98406, Requested 3858. Please try again in 32m36.096s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] Trích xuất: 5 concepts, 3 relations.
+  [!] Groq lỗi (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98383, Requested 2648. Please try again in 14m50.784s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] Trích xuất: 7 concepts, 4 relations.
+  [!] Groq lỗi (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98356, Requested 2119. Please try again in 6m50.4s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] Trích xuất: 6 concepts, 4 relations.
+  [!] Groq lỗi (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98331, Requested 10682. Please try again in 2h9m47.232s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] Trích xuất: 11 concepts, 6 relations.
+  [!] Groq lỗi (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98301, Requested 16382. Please try again in 3h31m26.112s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] Trích xuất: 9 concepts, 5 relations.
+  [!] Groq lỗi (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98266, Requested 8493. Please try again in 1h37m19.776s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] Trích xuất: 4 concepts, 3 relations.
+  [!] Groq lỗi (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98241, Requested 3898. Please try again in 30m48.096s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] Trích xuất: 6 concepts, 5 relations.
+  [!] Groq lỗi (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98212, Requested 4705. Please try again in 42m0.288s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] Trích xuất: 7 concepts, 4 relations.
+  [!] Groq lỗi (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98182, Requested 5540. Please try again in 53m35.808s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] Trích xuất: 5 concepts, 4 relations.
+  [!] Groq lỗi (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98159, Requested 4307. Please try again in 35m30.624s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] Trích xuất: 5 concepts, 4 relations.
+  [!] Groq lỗi (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98134, Requested 6353. Please try again in 1h4m36.768s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] Trích xuất: 7 concepts, 5 relations.
+  [!] Groq lỗi (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98102, Requested 4227. Please try again in 33m32.256s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] Trích xuất: 10 concepts, 5 relations.
+  [!] Groq lỗi (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98061, Requested 12326. Please try again in 2h29m34.368s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] Trích xuất: 5 concepts, 4 relations.
+
+=== sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song.pdf (sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song) ===
+[=] Markdown đã có, bỏ qua convert: sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song.md
+[*] Tìm thấy 21 bài học trong markdown.
+  [!] Groq lỗi (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98027, Requested 3926. Please try again in 28m7.391999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] Trích xuất: 7 concepts, 5 relations.
+  [!] Groq lỗi (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97998, Requested 5319. Please try again in 47m45.888s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] Trích xuất: 9 concepts, 3 relations.
+  [!] Groq lỗi (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97973, Requested 4018. Please try again in 28m40.224s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] Trích xuất: 5 concepts, 3 relations.
+  [!] Groq lỗi (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97953, Requested 3348. Please try again in 18m44.064s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] Trích xuất: 6 concepts, 4 relations.
+  [!] Groq lỗi (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97929, Requested 5151. Please try again in 44m21.12s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] Trích xuất: 4 concepts, 3 relations.
+  [!] Groq lỗi (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97909, Requested 2764. Please try again in 9m41.472s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] Trích xuất: 7 concepts, 4 relations.
+  [!] Groq lỗi (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97889, Requested 4279. Please try again in 31m13.152s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] Trích xuất: 5 concepts, 3 relations.
+  [!] Groq lỗi (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97870, Requested 2609. Please try again in 6m53.856s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] Trích xuất: 4 concepts, 3 relations.
+  [!] Groq lỗi (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97853, Requested 5237. Please try again in 44m29.76s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] Trích xuất: 7 concepts, 4 relations.
+  [!] Groq lỗi (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97828, Requested 3092. Please try again in 13m14.88s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] Trích xuất: 7 concepts, 4 relations.
+  [!] Groq lỗi (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97805, Requested 2935. Please try again in 10m39.36s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] Trích xuất: 3 concepts, 2 relations.
+  [!] Groq lỗi (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97792, Requested 3601. Please try again in 20m3.552s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] Trích xuất: 5 concepts, 3 relations.
+  [!] Groq lỗi (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97773, Requested 3258. Please try again in 14m50.784s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] Trích xuất: 3 concepts, 2 relations.
+  [!] Groq lỗi (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97759, Requested 2478. Please try again in 3m24.768s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] Trích xuất: 5 concepts, 4 relations.
+  [!] Groq lỗi (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97743, Requested 4404. Please try again in 30m55.008s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] Trích xuất: 6 concepts, 4 relations.
+  [!] Groq lỗi (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97720, Requested 4418. Please try again in 30m47.232s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] Trích xuất: 5 concepts, 3 relations.
+  [!] Groq lỗi (21 validation errors for LessonExtraction
+document
+  Field required [type=missing, input_value={'concepts': [{'temporary..., biểu đồ tranh'}]}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+concepts.0.suggested_code
+  Field required [type=missing, input_value={'temporary_id': 'c1', 'c...': 'Bảng thống kê'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+concepts.0.description
+  Field required [type=missing, input_value={'temporary_id': 'c1', 'c...': 'Bảng thống kê'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+concepts.0.evidence
+  Input should be a valid list [type=list_type, input_value='Bảng thống kê', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/list_type
+concepts.1.suggested_code
+  Field required [type=missing, input_value={'temporary_id': 'c2', 'c...': 'Biểu đồ tranh'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+concepts.1.description
+  Field required [type=missing, input_value={'temporary_id': 'c2', 'c...': 'Biểu đồ tranh'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+concepts.1.evidence
+  Input should be a valid list [type=list_type, input_value='Biểu đồ tranh', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/list_type
+concepts.2.suggested_code
+  Field required [type=missing, input_value={'temporary_id': 'c3', 'c...ê, biểu đồ tranh'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+concepts.2.description
+  Field required [type=missing, input_value={'temporary_id': 'c3', 'c...ê, biểu đồ tranh'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+concepts.2.evidence
+  Input should be a valid list [type=list_type, input_value='Đọc và phân tích d...kê, biểu đồ tranh', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/list_type
+concepts.3.suggested_code
+  Field required [type=missing, input_value={'temporary_id': 'c4', 'c...ê, biểu đồ tranh'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+concepts.3.description
+  Field required [type=missing, input_value={'temporary_id': 'c4', 'c...ê, biểu đồ tranh'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+concepts.3.evidence
+  Input should be a valid list [type=list_type, input_value='Biểu diễn dữ liệ...kê, biểu đồ tranh', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/list_type
+relations.0.source
+  Field required [type=missing, input_value={'temporary_id': 'r1', 'r...ê, biểu đồ tranh'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+relations.0.target
+  Field required [type=missing, input_value={'temporary_id': 'r1', 'r...ê, biểu đồ tranh'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+relations.1.source
+  Field required [type=missing, input_value={'temporary_id': 'r2', 'r...ê, biểu đồ tranh'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+relations.1.target
+  Field required [type=missing, input_value={'temporary_id': 'r2', 'r...ê, biểu đồ tranh'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+relations.2.source
+  Field required [type=missing, input_value={'temporary_id': 'r3', 'r...ê, biểu đồ tranh'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+relations.2.target
+  Field required [type=missing, input_value={'temporary_id': 'r3', 'r...ê, biểu đồ tranh'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+relations.3.source
+  Field required [type=missing, input_value={'temporary_id': 'r4', 'r...ê, biểu đồ tranh'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+relations.3.target
+  Field required [type=missing, input_value={'temporary_id': 'r4', 'r...ê, biểu đồ tranh'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing), fallback sang OpenAI...
+  [+] Trích xuất: 4 concepts, 0 relations.
+  [!] Groq lỗi (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99645, Requested 3491. Please try again in 45m9.504s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] Trích xuất: 6 concepts, 5 relations.
+  [!] Groq lỗi (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99629, Requested 4700. Please try again in 1h2m20.256s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] Trích xuất: 4 concepts, 5 relations.
+  [!] Groq lỗi (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99608, Requested 4321. Please try again in 56m34.656s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] Trích xuất: 5 concepts, 3 relations.
+  [!] Groq lỗi (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kvzmk226fz4a7evw0e00tdtt` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99589, Requested 12917. Please try again in 3h0m5.184s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}), fallback sang OpenAI...
+  [+] Trích xuất: 4 concepts, 3 relations.
+
+[*] Đang chạy bước Concept Normalization...
+[*] Đang chạy bước Graph Validation & Prerequisite DAG Enforcement...
+[*] Đang tạo báo cáo thống kê và kiểm định (Coverage & Validation Reports)...
+[*] Dry-run hoàn tất. Bỏ qua ghi database.
+
+============================================================
+KẾT QUẢ RUN PIPELINE KNOWLEDGE GRAPH
+Run ID: math-k6-20260718-175832
+Subject: math | Grade: 6
+Documents: 2/2 processed
+Canonical concepts: 189
+Validated relations: 51
+Prerequisite DAG: INVALID
+Coverage status: FAILED
+============================================================
+[!] Thất bại: các chỉ số kiểm định vượt mức threshold cấu hình. Lỗi: ['Prerequisite cycle count (7) exceeds threshold.']
+MATH_REEXTRACT_DONE_EXIT=1

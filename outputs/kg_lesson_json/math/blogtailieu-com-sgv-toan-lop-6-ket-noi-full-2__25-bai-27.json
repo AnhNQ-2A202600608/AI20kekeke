@@ -1,0 +1,50 @@
+{
+  "document": {
+    "document_id": "math-k6-sgv",
+    "source_type": "SGV",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương VI",
+    "lesson": "Bài 27"
+  },
+  "learning_objectives": [
+    {
+      "code": "tim-gia-tri-phan-so",
+      "description": "Tìm được giá trị phân số của một số cho trước.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhớ được quy tắc tìm giá trị phân số của một số cho trước và quy tắc tìm một số biết giá trị phân số của số đó."
+    },
+    {
+      "code": "tim-mot-so-biet-gia-tri-phan-so",
+      "description": "Tìm được một số biết giá trị phân số của nó.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Tìm được một số biết giá trị phân số của nó."
+    },
+    {
+      "code": "van-dung-giai-bai-toan-thuc-te",
+      "description": "Vận dụng giải được một số bài toán có nội dung thực tế.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Vận dụng giải được một số bài toán có nội dung thực tế."
+    }
+  ],
+  "concepts": [],
+  "relations": [],
+  "misconceptions": [
+    {
+      "temporary_id": "m1",
+      "name": "Hiểu sai quy tắc tìm giá trị phân số",
+      "description": "Học sinh có thể nhầm lẫn giữa quy tắc tìm giá trị phân số và quy tắc tìm một số biết giá trị phân số.",
+      "related_skill": "tim-gia-tri-phan-so",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Học sinh có thể nhầm lẫn giữa quy tắc tìm giá trị phân số và quy tắc tìm một số biết giá trị phân số."
+    },
+    {
+      "temporary_id": "m2",
+      "name": "Nhầm lẫn trong phép tính với phân số",
+      "description": "Học sinh có thể thực hiện sai phép tính khi tìm giá trị phân số của một số.",
+      "related_skill": "tim-gia-tri-phan-so",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c001",
+      "evidence": "Học sinh có thể thực hiện sai phép tính khi tìm giá trị phân số của một số."
+    }
+  ]
+}

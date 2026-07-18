@@ -1,0 +1,191 @@
+{
+  "document": {
+    "document_id": "math-k6-sgk",
+    "source_type": "SGK",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 1",
+    "lesson": "Bài 1"
+  },
+  "learning_objectives": [],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "chia-het",
+      "name": "Chia hết",
+      "description": "Một số a chia hết cho một số b nếu tồn tại số tự nhiên k sao cho a = k * b.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c034"
+      ],
+      "evidence": [
+        "Nếu có số tự nhiên k sao cho a = k * b thì ta nói a chia hết cho b và ký hiệu là a : b."
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "uoc",
+      "name": "Ước",
+      "description": "Số b là ước của số a nếu a chia hết cho b.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c035"
+      ],
+      "evidence": [
+        "Nếu a chia hết cho b, ta nói b là ước của a và a là bội của b."
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "boi",
+      "name": "Bội",
+      "description": "Số a là bội của số b nếu a chia hết cho b.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c035"
+      ],
+      "evidence": [
+        "Nếu a chia hết cho b, ta nói b là ước của a và a là bội của b."
+      ]
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "tinh-chat-chia-het",
+      "name": "Tính chất chia hết của một tổng",
+      "description": "Nếu tất cả các số hạng của một tổng đều chia hết cho cùng một số thì tổng chia hết cho số đó.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c036"
+      ],
+      "evidence": [
+        "Nếu tất cả các số hạng của một tổng đều chia hết cho cùng một số thì tổng chia hết cho số đó."
+      ]
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "dau-hieu-chia-het",
+      "name": "Dấu hiệu chia hết",
+      "description": "Dấu hiệu để xác định một số có chia hết cho 2, 3, 5, 9.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c039"
+      ],
+      "evidence": [
+        "Vận dụng được dấu hiệu chia hết cho 2; 5; 9; 3 để xác định một số có chia hết cho 2; 5; 9; 3 hay không."
+      ]
+    },
+    {
+      "temporary_id": "c6",
+      "suggested_code": "so-nguyen-to",
+      "name": "Số nguyên tố",
+      "description": "Số nguyên tố là số tự nhiên lớn hơn 1 chỉ có hai ước là 1 và chính nó.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c044"
+      ],
+      "evidence": [
+        "Số nguyên tố là số tự nhiên lớn hơn 1 chỉ có hai ước là 1 và chính nó."
+      ]
+    },
+    {
+      "temporary_id": "c7",
+      "suggested_code": "hop-so",
+      "name": "Hợp số",
+      "description": "Hợp số là số tự nhiên lớn hơn 1 có nhiều hơn hai ước.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c044"
+      ],
+      "evidence": [
+        "Hợp số là số tự nhiên lớn hơn 1 có nhiều hơn hai ước."
+      ]
+    },
+    {
+      "temporary_id": "c8",
+      "suggested_code": "ucln",
+      "name": "Ước chung lớn nhất",
+      "description": "Ước chung lớn nhất của hai hay nhiều số là số lớn nhất chia hết cho tất cả các số đó.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c051"
+      ],
+      "evidence": [
+        "Ước chung lớn nhất của hai hay nhiều số là số lớn nhất chia hết cho tất cả các số đó."
+      ]
+    },
+    {
+      "temporary_id": "c9",
+      "suggested_code": "phan-so",
+      "name": "Phân số",
+      "description": "Phân số là biểu thức có dạng a/b với a là tử số và b là mẫu số.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c054"
+      ],
+      "evidence": [
+        "Phân số a/b được gọi là phân số tối giản nếu a và b không có ước chung nào khác 1."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "related_to",
+      "target": "c2",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c035",
+      "evidence": "Nếu a chia hết cho b, ta nói b là ước của a và a là bội của b.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c2",
+      "relation_type": "related_to",
+      "target": "c3",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c035",
+      "evidence": "Nếu a chia hết cho b, ta nói b là ước của a và a là bội của b.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c4",
+      "relation_type": "prerequisite_of",
+      "target": "c5",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c036",
+      "evidence": "Nếu tất cả các số hạng của một tổng đều chia hết cho cùng một số thì tổng chia hết cho số đó.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c6",
+      "relation_type": "related_to",
+      "target": "c7",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c044",
+      "evidence": "Số nguyên tố là số tự nhiên lớn hơn 1 chỉ có hai ước là 1 và chính nó.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c8",
+      "relation_type": "related_to",
+      "target": "c9",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c054",
+      "evidence": "Phân số a/b được gọi là phân số tối giản nếu a và b không có ước chung nào khác 1.",
+      "confidence": 1.0
+    }
+  ],
+  "misconceptions": []
+}

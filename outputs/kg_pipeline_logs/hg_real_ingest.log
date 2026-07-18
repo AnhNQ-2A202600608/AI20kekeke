@@ -1,0 +1,124 @@
+[*] Khởi động Pipeline Run: history_geo-k6-20260718-183535
+[+] Khởi tạo extraction run ID: 3c3fda93-4295-459a-9534-35922265c441
+
+=== SGK Lịch sử và địa lí 6 KNTT.pdf (sgk-lich-su-va-ia-li-6-kntt) ===
+[=] Markdown đã có, bỏ qua convert: sgk-lich-su-va-ia-li-6-kntt.md
+[*] Tìm thấy 50 bài học trong markdown.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__01-bai-1.json
+  [+] Loaded: 3 concepts, 2 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__02-bai-2.json
+  [+] Loaded: 4 concepts, 4 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__03-bai-3.json
+  [+] Loaded: 5 concepts, 5 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__04-bai-4.json
+  [+] Loaded: 4 concepts, 3 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__05-bai-5.json
+  [+] Loaded: 8 concepts, 7 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__06-bai-6.json
+  [+] Loaded: 5 concepts, 3 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__07-bai-7.json
+  [+] Loaded: 11 concepts, 11 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__08-bai-8.json
+  [+] Loaded: 8 concepts, 4 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__09-bai-9.json
+  [+] Loaded: 8 concepts, 3 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__10-bai-10.json
+  [+] Loaded: 5 concepts, 4 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__11-bai-11.json
+  [+] Loaded: 4 concepts, 2 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__12-bai-12.json
+  [+] Loaded: 6 concepts, 5 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__13-bai-13.json
+  [+] Loaded: 4 concepts, 3 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__14-bai-14.json
+  [+] Loaded: 7 concepts, 3 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__15-bai-15.json
+  [+] Loaded: 2 concepts, 1 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__16-bai-16.json
+  [+] Loaded: 5 concepts, 4 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__17-bai-17.json
+  [+] Loaded: 3 concepts, 2 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__18-bai-18.json
+  [+] Loaded: 4 concepts, 2 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__19-bai-19.json
+  [+] Loaded: 5 concepts, 3 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__20-bai-20.json
+  [+] Loaded: 6 concepts, 4 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__21-bai-1.json
+  [+] Loaded: 7 concepts, 4 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__22-bai-2.json
+  [+] Loaded: 4 concepts, 3 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__23-bai-3.json
+  [+] Loaded: 4 concepts, 3 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__24-bai-4.json
+  [+] Loaded: 4 concepts, 3 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__25-bai-5.json
+  [+] Loaded: 3 concepts, 2 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__26-bai-6.json
+  [+] Loaded: 4 concepts, 2 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__27-bai-7.json
+  [+] Loaded: 5 concepts, 4 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__28-bai-8.json
+  [+] Loaded: 4 concepts, 2 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__29-bai-9.json
+  [+] Loaded: 4 concepts, 2 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__30-bai-10.json
+  [+] Loaded: 3 concepts, 2 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__31-bai-11.json
+  [+] Loaded: 3 concepts, 2 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__32-bai-12.json
+  [+] Loaded: 3 concepts, 2 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__33-bai-13.json
+  [+] Loaded: 3 concepts, 2 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__34-bai-14.json
+  [+] Loaded: 3 concepts, 2 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__35-bai-15.json
+  [+] Loaded: 6 concepts, 3 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__36-bai-16.json
+  [+] Loaded: 8 concepts, 5 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__37-bai-17.json
+  [+] Loaded: 4 concepts, 3 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__38-bai-18.json
+  [+] Loaded: 2 concepts, 0 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__39-bai-19.json
+  [+] Loaded: 2 concepts, 1 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__40-bai-20.json
+  [+] Loaded: 5 concepts, 5 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__41-bai-21.json
+  [+] Loaded: 9 concepts, 7 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__42-bai-22.json
+  [+] Loaded: 5 concepts, 3 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__43-bai-23.json
+  [+] Loaded: 3 concepts, 2 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__44-bai-24.json
+  [+] Loaded: 4 concepts, 3 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__45-bai-25.json
+  [+] Loaded: 5 concepts, 3 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__46-bai-26.json
+  [+] Loaded: 8 concepts, 0 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__47-bai-27.json
+  [+] Loaded: 6 concepts, 3 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__48-bai-28.json
+  [+] Loaded: 5 concepts, 4 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__49-bai-29.json
+  [+] Loaded: 4 concepts, 4 relations.
+  [=] Đã có JSON kết quả, đọc file: sgk-lich-su-va-ia-li-6-kntt__50-bai-30.json
+  [+] Loaded: 6 concepts, 3 relations.
+
+[*] Đang chạy bước Concept Normalization...
+[*] Đang chạy bước Graph Validation & Prerequisite DAG Enforcement...
+  [*] Đã tự sửa source_chunk_id cho 1 relation (evidence khớp chunk khác).
+[*] Đang tạo báo cáo thống kê và kiểm định (Coverage & Validation Reports)...
+[*] Đang nạp đồ thị tri thức và mappings vào database...
+[+] Cập nhật extraction run 3c3fda93-4295-459a-9534-35922265c441 status=completed
+
+============================================================
+KẾT QUẢ RUN PIPELINE KNOWLEDGE GRAPH
+Run ID: history_geo-k6-20260718-183535
+Subject: history_geo | Grade: 6
+Documents: 1/1 processed
+Canonical concepts: 227
+Validated relations: 65
+Prerequisite DAG: INVALID
+Coverage status: PASSED
+============================================================

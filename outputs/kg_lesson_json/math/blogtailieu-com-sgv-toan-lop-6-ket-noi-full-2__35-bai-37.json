@@ -1,0 +1,33 @@
+{
+  "document": {
+    "document_id": "math-k6-sgv",
+    "source_type": "SGV",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 2",
+    "lesson": "Bài 37"
+  },
+  "learning_objectives": [
+    {
+      "code": "nhan-biet-khai-niem-so-do-goc",
+      "description": "Nhận biết được khái niệm số đo góc, các góc đặc biệt (góc vuông, góc nhọn, góc tù).",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận biết được khái niệm số đo góc, các góc đặc biệt (góc vuông, góc nhọn, góc tù)."
+    },
+    {
+      "code": "do-goc-bang-thuoc-do-goc",
+      "description": "Biết đo một góc bằng thước đo góc.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Biết đo một góc bằng thước đo góc."
+    },
+    {
+      "code": "kiem-tra-goc",
+      "description": "Kiểm tra được góc vuông, góc nhọn, góc tù bằng thước đo góc hoặc ê ke.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Kiểm tra được góc vuông, góc nhọn, góc tù bằng thước đo góc hoặc ê ke."
+    }
+  ],
+  "concepts": [],
+  "relations": [],
+  "misconceptions": []
+}

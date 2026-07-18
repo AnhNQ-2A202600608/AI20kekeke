@@ -1,0 +1,157 @@
+{
+  "document": {
+    "document_id": "math-k6-sgk",
+    "source_type": "SGK",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 1",
+    "lesson": "Bài 4"
+  },
+  "learning_objectives": [
+    {
+      "code": "thuc-hien-phep-cong-va-phep-tru",
+      "description": "Thực hiện phép cộng và phép trừ số tự nhiên.",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c015",
+      "evidence": ""
+    },
+    {
+      "code": "ap-dung-tinh-chat-giao-hoan-ket-hop",
+      "description": "Áp dụng tính chất giao hoán, kết hợp phép cộng để tính nhẩm, tính hợp lý.",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c015",
+      "evidence": ""
+    },
+    {
+      "code": "giai-quyet-van-de-thuc-tien",
+      "description": "Giải quyết một số vấn đề thực tiễn gắn với việc thực hiện phép cộng và phép trừ.",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c015",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "phep-cong",
+      "name": "Phép cộng",
+      "description": "Phép cộng là một phép toán cơ bản trong số học, dùng để tính tổng của hai hay nhiều số.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c015"
+      ],
+      "evidence": [
+        "Phép cộng, số hạng, tổng"
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "phep-tru",
+      "name": "Phép trừ",
+      "description": "Phép trừ là một phép toán cơ bản trong số học, dùng để tính hiệu giữa hai số.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c016"
+      ],
+      "evidence": [
+        "Phép trừ, số bị trừ, số trừ, hiệu"
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "tinh-chat-giao-hoan",
+      "name": "Tính chất giao hoán",
+      "description": "Tính chất giao hoán của phép cộng cho biết rằng thứ tự của các số hạng không ảnh hưởng đến tổng.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c016"
+      ],
+      "evidence": [
+        "Giao hoán: $a + b = b + a$."
+      ]
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "tinh-chat-ket-hop",
+      "name": "Tính chất kết hợp",
+      "description": "Tính chất kết hợp của phép cộng cho biết rằng cách nhóm các số hạng không ảnh hưởng đến tổng.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c016"
+      ],
+      "evidence": [
+        "Kết hợp: $(a + b) + c = a + (b + c)$."
+      ]
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "cong-hai-so-tu-nhien",
+      "name": "Cộng hai số tự nhiên",
+      "description": "Cộng hai số tự nhiên a và b cho ta một số tự nhiên gợi là tổng của chúng, kí hiệu là $a + b$.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c015"
+      ],
+      "evidence": [
+        "Cộng hai số tự nhiên a và b cho ta một số tự nhiên gợi là tổng của chúng, kí hiệu là $a + b$."
+      ]
+    },
+    {
+      "temporary_id": "c6",
+      "suggested_code": "tru-hai-so-tu-nhien",
+      "name": "Trừ hai số tự nhiên",
+      "description": "Với hai số tự nhiên a, b đã cho, nếu có số tự nhiên c sao cho a = b + c thì ta có phép trừ a - b = c.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c016"
+      ],
+      "evidence": [
+        "Nếu có số tự nhiên c sao cho a = b + c thì ta có phép trừ a - b = c."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "part_of",
+      "target": "c5",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c015",
+      "evidence": "Phép cộng, số hạng, tổng.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c2",
+      "relation_type": "part_of",
+      "target": "c6",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c016",
+      "evidence": "Phép trừ, số bị trừ, số trừ, hiệu.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c3",
+      "relation_type": "related_to",
+      "target": "c5",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c016",
+      "evidence": "Giao hoán: $a + b = b + a$.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c4",
+      "relation_type": "related_to",
+      "target": "c5",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c016",
+      "evidence": "Kết hợp: $(a + b) + c = a + (b + c)$.",
+      "confidence": 1.0
+    }
+  ],
+  "misconceptions": []
+}

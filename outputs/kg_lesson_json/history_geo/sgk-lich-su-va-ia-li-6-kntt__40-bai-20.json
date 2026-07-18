@@ -1,0 +1,148 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Bài 20",
+    "lesson": "Sông và Hồ. Nước ngầm và Băng hà"
+  },
+  "learning_objectives": [
+    {
+      "code": "mo-ta-cac-bo-phan-cua-mot-dong-song-lon",
+      "description": "Mô tả được các bộ phận của một dòng sông lớn, mối quan hệ giữa mùa lũ của sông với các nguồn cấp nước sông.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c184",
+      "evidence": ""
+    },
+    {
+      "code": "neu-tam-quan-trong-cua-nuoc-ngam-va-bang-ha",
+      "description": "Nêu được tầm quan trọng của nước ngầm và băng hà.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c184",
+      "evidence": ""
+    },
+    {
+      "code": "co-y-thuc-su-dung-hop-li-nuoc-song-ho-nuoc-ngam-bang-ha",
+      "description": "Có ý thức sử dụng hợp lí và bảo vệ nước sông, hồ, nước ngầm và băng hà.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c184",
+      "evidence": ""
+    },
+    {
+      "code": "neutam-quan-trong-cua-nuoc-song-ho",
+      "description": "Nêu được tầm quan trọng của việc sử dụng tổng hợp nước sông, hồ.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c184",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "song",
+      "name": "Sông",
+      "description": "Dòng chảy thường xuyên tương đối lớn trên bề mặt lục địa và đảo, được các nguồn nước mưa, nước ngầm, nước băng tuyết tan nuôi dưỡng.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c184",
+        "sgk-lich-su-va-ia-li-6-kntt-c185"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "ho",
+      "name": "Hồ",
+      "description": "Vùng trũng chứa nước trên bề mặt Trái Đất, không thông với biển.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c185"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "nuoc-ngam",
+      "name": "Nước ngầm",
+      "description": "Nước nằm trong tầng chứa nước thường xuyên dưới bề mặt đất, chủ yếu được tạo nên bởi nước mưa, nước sông, hồ thấm xuống đất.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c187"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "bang-ha",
+      "name": "Băng hà",
+      "description": "Nước đóng băng trên bề mặt Trái Đất, góp phần điều hoà nhiệt độ và cung cấp nước cho các dòng sông.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c187",
+        "sgk-lich-su-va-ia-li-6-kntt-c188"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "luu-vuc-song",
+      "name": "Lưu vực sông",
+      "description": "Vùng đất cung cấp nước thường xuyên cho một dòng sông.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c184"
+      ],
+      "evidence": []
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "part_of",
+      "target": "c5",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c184",
+      "evidence": "",
+      "confidence": 0.9
+    },
+    {
+      "source": "c2",
+      "relation_type": "related_to",
+      "target": "c1",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c185",
+      "evidence": "",
+      "confidence": 0.8
+    },
+    {
+      "source": "c3",
+      "relation_type": "related_to",
+      "target": "c1",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c187",
+      "evidence": "",
+      "confidence": 0.8
+    },
+    {
+      "source": "c4",
+      "relation_type": "related_to",
+      "target": "c1",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c188",
+      "evidence": "",
+      "confidence": 0.8
+    },
+    {
+      "source": "c4",
+      "relation_type": "related_to",
+      "target": "c3",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c188",
+      "evidence": "",
+      "confidence": 0.8
+    }
+  ],
+  "misconceptions": []
+}

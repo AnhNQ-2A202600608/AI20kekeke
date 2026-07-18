@@ -1,0 +1,90 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Chương 1",
+    "lesson": "Bài 13"
+  },
+  "learning_objectives": [
+    {
+      "code": "nhan-biet-cac-dang-dia-hinh",
+      "description": "Nhận biết các dạng địa hình chính trên Trái Đất: núi, đồi, cao nguyên, đồng bằng.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c155",
+      "evidence": ""
+    },
+    {
+      "code": "phan-biet-khoang-san",
+      "description": "Phân biệt các loại khoáng sản và công dụng của chúng.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c156",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "dang-dia-hinh",
+      "name": "Dạng địa hình",
+      "description": "Các dạng địa hình chính trên Trái Đất như núi, đồi, cao nguyên, đồng bằng.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c155",
+        "sgk-lich-su-va-ia-li-6-kntt-c156",
+        "sgk-lich-su-va-ia-li-6-kntt-c157",
+        "sgk-lich-su-va-ia-li-6-kntt-c158"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "khoang-san",
+      "name": "Khoáng sản",
+      "description": "Những khoáng vật và khoáng chất có ích trong tự nhiên nằm trong vỏ Trái Đất mà con người có thể khai thác để sử dụng.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c156",
+        "sgk-lich-su-va-ia-li-6-kntt-c157",
+        "sgk-lich-su-va-ia-li-6-kntt-c158"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "s1",
+      "suggested_code": "doc-ban-do",
+      "name": "Đọc bản đồ",
+      "description": "Kỹ năng đọc và phân tích thông tin từ bản đồ tự nhiên thế giới.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c155",
+        "sgk-lich-su-va-ia-li-6-kntt-c156"
+      ],
+      "evidence": []
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "related_to",
+      "target": "c2",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c157",
+      "evidence": "Khoáng sản có thể được tìm thấy trong các dạng địa hình như núi, đồi, cao nguyên, đồng bằng.",
+      "confidence": 0.9
+    },
+    {
+      "source": "c1",
+      "relation_type": "prerequisite_of",
+      "target": "s1",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c155",
+      "evidence": "Để đọc bản đồ tự nhiên thế giới, học sinh cần hiểu các dạng địa hình chính.",
+      "confidence": 0.8
+    }
+  ],
+  "misconceptions": []
+}

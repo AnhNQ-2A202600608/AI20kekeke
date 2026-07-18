@@ -1,0 +1,48 @@
+{
+  "document": {
+    "document_id": "math-k6-sgv",
+    "source_type": "SGV",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 2",
+    "lesson": "Bài 29"
+  },
+  "learning_objectives": [
+    {
+      "code": "nhan-biet-cach-quy-cac-phep-toan",
+      "description": "Nhận biết được cách quy các phép toán với số thập phân bất kì về các phép toán với số thập phân dương.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận biết được cách quy các phép toán với số thập phân bất kì về các phép toán với số thập phân dương."
+    },
+    {
+      "code": "thuc-hien-phep-tinh",
+      "description": "Thực hiện được các phép tính cộng, trừ, nhân, chia số thập phân.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Thực hiện được các phép tính cộng, trừ, nhân, chia số thập phân."
+    },
+    {
+      "code": "van-dung-tinh-chat-phep-nhan",
+      "description": "Vận dụng được các tính chất giao hoán, kết hợp, phân phối của phép nhân đối với phép cộng, quy tắc dấu ngoặc đối với số thập phân trong các bài toán tính viết, tính nhanh, tính nhẩm một cách hợp lí.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Vận dụng được các tính chất giao hoán, kết hợp, phân phối của phép nhân đối với phép cộng, quy tắc dấu ngoặc đối với số thập phân trong các bài toán tính viết, tính nhanh, tính nhẩm một cách hợp lí."
+    },
+    {
+      "code": "ren-luyen-y-thuc-tu-hoc",
+      "description": "Rèn luyện ý thức tự học, hứng thú học tập, thói quen tìm hiểu, khám phá.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Rèn luyện ý thức tự học, hứng thú học tập, thói quen tìm hiểu, khám phá."
+    }
+  ],
+  "concepts": [],
+  "relations": [],
+  "misconceptions": [
+    {
+      "temporary_id": "m1",
+      "name": "Khó khăn trong việc đặt tính cộng, trừ, nhân, chia số thập phân",
+      "description": "HS có thể gặp khó khăn trong việc đặt tính cộng, trừ, nhân, chia số thập phân dương, đặc biệt là với số có nhiều chữ số ở phần thập phân.",
+      "related_skill": "nhan-biet-cach-quy-cac-phep-toan",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c001",
+      "evidence": "Đặt tính cộng, trừ và đặc biệt là đặt tính nhân, chia số thập phân dương (có nhiều chữ số ở phần thập phân) có thể vẫn còn là vấn đề khó đối với HS."
+    }
+  ]
+}

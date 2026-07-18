@@ -1,0 +1,70 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Bài 15",
+    "lesson": "CHÍNH SÁCH CAI TRỊ CỦA CÁC TRIỀU ĐẠI PHONG KIẾN PHƯƠNG BẮC VÀ SỰ CHUYỂN BIẾN CỦA XÃ HỘI ÂU LẠC"
+  },
+  "learning_objectives": [
+    {
+      "code": "nhan-biet-chinh-sach-cai-tri",
+      "description": "Nêu được một số chính sách cai trị của các triều đại phong kiến phương Bắc trong thời kì Bắc thuộc.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c070",
+      "evidence": ""
+    },
+    {
+      "code": "nhan-biet-chuyen-bien-kinh-te-xa-hoi",
+      "description": "Nhận biết được một số chuyển biến cơ bản về kinh tế và xã hội của người Việt cổ dưới ách cai trị, đô hộ của các triều đại phong kiến phương Bắc.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c070",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "chinh-sach-cai-tri-cac-trieu-dai-phong-kien-phuong-bac",
+      "name": "Chính sách cai trị của các triều đại phong kiến phương Bắc",
+      "description": "Các chính sách mà các triều đại phong kiến phương Bắc áp dụng để cai trị nước ta trong thời kỳ Bắc thuộc.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c070",
+        "sgk-lich-su-va-ia-li-6-kntt-c071",
+        "sgk-lich-su-va-ia-li-6-kntt-c072",
+        "sgk-lich-su-va-ia-li-6-kntt-c073",
+        "sgk-lich-su-va-ia-li-6-kntt-c074",
+        "sgk-lich-su-va-ia-li-6-kntt-c075"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "chuyen-bien-kinh-te-xa-hoi-thoi-bac-thuoc",
+      "name": "Chuyển biến về kinh tế - xã hội trong thời kì Bắc thuộc",
+      "description": "Sự thay đổi trong kinh tế và xã hội của người Việt trong thời kỳ Bắc thuộc.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c073",
+        "sgk-lich-su-va-ia-li-6-kntt-c074",
+        "sgk-lich-su-va-ia-li-6-kntt-c075"
+      ],
+      "evidence": []
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "causes",
+      "target": "c2",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c070",
+      "evidence": "Chính sách cai trị của các triều đại phong kiến phương Bắc đã dẫn đến những chuyển biến về kinh tế và xã hội của người Việt.",
+      "confidence": 0.9
+    }
+  ],
+  "misconceptions": []
+}

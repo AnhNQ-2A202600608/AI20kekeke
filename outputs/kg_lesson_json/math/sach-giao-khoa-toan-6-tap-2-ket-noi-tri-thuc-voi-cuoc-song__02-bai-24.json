@@ -1,0 +1,175 @@
+{
+  "document": {
+    "document_id": "math-k6-sgk",
+    "source_type": "SGK",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 2",
+    "lesson": "Bài 24"
+  },
+  "learning_objectives": [],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "mau-so-chung",
+      "name": "Mẫu (số) chung",
+      "description": "Mẫu số chung được sử dụng để quy đồng mẫu cho các phân số.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c006"
+      ],
+      "evidence": [
+        "Mẫu (số) chung"
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "so-sanh-phan-so",
+      "name": "So sánh phân số",
+      "description": "Quy trình so sánh hai phân số để xác định phân số nào lớn hơn.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c006"
+      ],
+      "evidence": [
+        "So sánh phân số"
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "hon-so-duong",
+      "name": "Hỗn số dương",
+      "description": "Hỗn số dương là số có phần nguyên và phần phân số.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c008"
+      ],
+      "evidence": [
+        "Hỗn số dương"
+      ]
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "quy-dong-mau-nhieu-phan-so",
+      "name": "Quy đồng mẫu nhiều phân số",
+      "description": "Quy trình quy đồng mẫu cho nhiều phân số để so sánh.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c006"
+      ],
+      "evidence": [
+        "Quy đồng mẫu nhiều phân số."
+      ]
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "nhan-bang-thua-so-phu",
+      "name": "Nhân tử và mẫu với thừa số phụ",
+      "description": "Nhân tử và mẫu của mỗi phân số với thừa số phụ tương ứng để quy đồng mẫu.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c006"
+      ],
+      "evidence": [
+        "Nhân tử và mẫu của mỗi phân số với thừa số phụ tương ứng."
+      ]
+    },
+    {
+      "temporary_id": "c6",
+      "suggested_code": "so-sanh-phan-so-cung-mau",
+      "name": "So sánh hai phân số cùng mẫu",
+      "description": "Quy tắc so sánh hai phân số có cùng mẫu.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c007"
+      ],
+      "evidence": [
+        "Quy tắc so sánh hai phân số có cùng mẫu."
+      ]
+    },
+    {
+      "temporary_id": "c7",
+      "suggested_code": "so-sanh-phan-so-khong-cung-mau",
+      "name": "So sánh hai phân số không cùng mẫu",
+      "description": "Quy trình so sánh hai phân số không cùng mẫu bằng cách quy đồng mẫu.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c008"
+      ],
+      "evidence": [
+        "Muốn so sánh hai phân số không cùng mẫu, ta viết chúng dưới dạng hai phân số có cùng một mẫu dương."
+      ]
+    },
+    {
+      "temporary_id": "c8",
+      "suggested_code": "viet-phan-so-duoi-dang-hon-so",
+      "name": "Viết phân số dưới dạng hỗn số",
+      "description": "Quy trình viết một phân số lớn hơn 1 dưới dạng hỗn số.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c009"
+      ],
+      "evidence": [
+        "Viết phân số dưới dạng hỗn số."
+      ]
+    },
+    {
+      "temporary_id": "c9",
+      "suggested_code": "viet-hon-so-duoi-dang-phan-so",
+      "name": "Viết hỗn số dưới dạng phân số",
+      "description": "Quy trình viết một hỗn số dương dưới dạng phân số.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c009"
+      ],
+      "evidence": [
+        "Viết hỗn số dương dưới dạng phân số."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c4",
+      "relation_type": "prerequisite_of",
+      "target": "c6",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c007",
+      "evidence": "Để so sánh hai phân số, ta cần quy đồng mẫu.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c4",
+      "relation_type": "prerequisite_of",
+      "target": "c7",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c008",
+      "evidence": "Để so sánh hai phân số không cùng mẫu, ta cần quy đồng mẫu.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c3",
+      "relation_type": "part_of",
+      "target": "c9",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c009",
+      "evidence": "Hỗn số dương là một phần của phân số.",
+      "confidence": 1.0
+    }
+  ],
+  "misconceptions": []
+}

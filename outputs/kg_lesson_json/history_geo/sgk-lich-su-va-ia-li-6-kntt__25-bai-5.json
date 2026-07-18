@@ -1,0 +1,79 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Chương 2",
+    "lesson": "Bài 5"
+  },
+  "learning_objectives": [],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "luoc-do-tri-nho",
+      "name": "Lược đồ trí nhớ",
+      "description": "Thông tin không gian về thế giới được giữ lại trong trí óc con người, phản ánh sự cảm nhận về không gian sống.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c124",
+        "sgk-lich-su-va-ia-li-6-kntt-c125"
+      ],
+      "evidence": [
+        "Lược đồ trí nhớ là những thông tin không gian về thế giới được giữ lại trong trí óc con người."
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "ve-luoc-do-tri-nho",
+      "name": "Vẽ lược đồ trí nhớ",
+      "description": "Quá trình hồi tưởng và thể hiện không gian thành lược đồ.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c124",
+        "sgk-lich-su-va-ia-li-6-kntt-c125"
+      ],
+      "evidence": [
+        "Để vẽ được lược đồ trí nhớ, trước hết phải hồi tưởng lại không gian cần vẽ với các sự vật, hiện tượng cụ thể."
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "xac-dinh-phuong-huong",
+      "name": "Xác định phương hướng",
+      "description": "Kỹ năng xác định hướng đi và khoảng cách giữa các địa điểm.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c126"
+      ],
+      "evidence": [
+        "Xác định phương hướng ngoài thực tế."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "prerequisite_of",
+      "target": "c2",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c124",
+      "evidence": "Để vẽ được lược đồ trí nhớ, trước hết phải hồi tưởng lại không gian cần vẽ với các sự vật, hiện tượng cụ thể.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c2",
+      "relation_type": "prerequisite_of",
+      "target": "c3",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c126",
+      "evidence": "Kỹ năng xác định phương hướng ngoài thực tế.",
+      "confidence": 1.0
+    }
+  ],
+  "misconceptions": []
+}

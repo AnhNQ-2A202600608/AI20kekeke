@@ -1,0 +1,102 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Chương 5",
+    "lesson": "Bài 13"
+  },
+  "learning_objectives": [
+    {
+      "code": "phan-tich-tac-dong-giao-luu-van-hoa",
+      "description": "Phân tích được những tác động chính của quá trình giao lưu văn hoá ở Đông Nam Á từ đầu Công nguyên đến thế kỉ X.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c059",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "tin-nguong-ton-giao",
+      "name": "Tín ngưỡng, tôn giáo",
+      "description": "Các tín ngưỡng và tôn giáo của cư dân Đông Nam Á, bao gồm tín ngưỡng phồn thực, tục thờ cúng tổ tiên, và ảnh hưởng của Ấn Độ giáo, Phật giáo.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c059",
+        "sgk-lich-su-va-ia-li-6-kntt-c060"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "chu-viet-van-hoc",
+      "name": "Chữ viết – văn học",
+      "description": "Sự phát triển chữ viết và văn học của các cư dân Đông Nam Á, ảnh hưởng từ văn hóa Ấn Độ và Trung Quốc.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c060"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "kien-truc-dieu-khac",
+      "name": "Kiến trúc – điêu khắc",
+      "description": "Nghệ thuật kiến trúc và điêu khắc ở Đông Nam Á, chịu ảnh hưởng của Ấn Độ giáo và Phật giáo.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c061"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "van-hoa-dong-nam-a",
+      "name": "Văn hóa Đông Nam Á",
+      "description": "Quá trình giao lưu văn hóa ở Đông Nam Á từ đầu Công nguyên đến thế kỉ X, bao gồm các tín ngưỡng, chữ viết, văn học, kiến trúc và điêu khắc.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c059",
+        "sgk-lich-su-va-ia-li-6-kntt-c060",
+        "sgk-lich-su-va-ia-li-6-kntt-c061"
+      ],
+      "evidence": []
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "related_to",
+      "target": "c4",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c059",
+      "evidence": "",
+      "confidence": 0.9
+    },
+    {
+      "source": "c2",
+      "relation_type": "related_to",
+      "target": "c4",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c060",
+      "evidence": "",
+      "confidence": 0.9
+    },
+    {
+      "source": "c3",
+      "relation_type": "related_to",
+      "target": "c4",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c061",
+      "evidence": "",
+      "confidence": 0.9
+    }
+  ],
+  "misconceptions": []
+}

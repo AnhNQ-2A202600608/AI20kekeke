@@ -1,0 +1,90 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Bài 12",
+    "lesson": "Núi lửa và động đất"
+  },
+  "learning_objectives": [
+    {
+      "code": "nhan-biet-hau-qua-nui-lua",
+      "description": "Nhận biết hậu quả do núi lửa gây ra.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c152",
+      "evidence": ""
+    },
+    {
+      "code": "nhan-biet-hau-qua-dong-dat",
+      "description": "Nhận biết hậu quả do động đất gây ra.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c153",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "nui-lua",
+      "name": "Núi lửa",
+      "description": "Hiện tượng địa chất xảy ra khi magma từ bên trong Trái Đất phun trào lên bề mặt.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c152"
+      ],
+      "evidence": [
+        "Núi lửa phun trào gây thiệt hại cho các vùng lân cận. Tro bụi và dung nham vùi lấp các thành thị, làng mạc, ruộng nương, gây thiệt hại về người và tài sản."
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "dong-dat",
+      "name": "Động đất",
+      "description": "Hiện tượng rung chuyển đột ngột của vỏ Trái Đất do hoạt động của núi lửa hoặc sự dịch chuyển các mảng kiến tạo.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c153"
+      ],
+      "evidence": [
+        "Động đất thường được lan truyền trên một diện tích rộng lớn."
+      ]
+    },
+    {
+      "temporary_id": "s1",
+      "suggested_code": "ky-nang-bao-ve-khi-dong-dat",
+      "name": "Kỹ năng bảo vệ khi động đất",
+      "description": "Các hành động cần thực hiện để bảo vệ bản thân khi có động đất xảy ra.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c153"
+      ],
+      "evidence": [
+        "Chui xuống gầm bàn, không đi thang máy, không đi ô tô, bảo vệ đầu."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "causes",
+      "target": "c2",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c153",
+      "evidence": "Động đất chủ yếu do hoạt động của núi lửa.",
+      "confidence": 0.9
+    },
+    {
+      "source": "c2",
+      "relation_type": "prerequisite_of",
+      "target": "s1",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c153",
+      "evidence": "Cần biết về động đất để thực hiện các hành động bảo vệ bản thân.",
+      "confidence": 0.8
+    }
+  ],
+  "misconceptions": []
+}

@@ -1,0 +1,150 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Bài 12",
+    "lesson": "SỰ HÌNH THÀNH VÀ BƯỚC ĐẦU PHÁT TRIỂN CỦA CÁC VƯƠNG QUỐC PHONG KIẾN Ở ĐÔNG NAM Á (TỪ THẾ KỈ VII ĐẾN THẾ KỈ X)"
+  },
+  "learning_objectives": [
+    {
+      "code": "hinh-thanh-cac-vuong-quoc-phong-kien",
+      "description": "Nêu được sự hình thành và phát triển ban đầu của các vương quốc phong kiến ở Đông Nam Á (từ thế kỉ VII đến thế kỉ X).",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c055",
+      "evidence": ""
+    },
+    {
+      "code": "phan-tich-tac-dong-giao-luu-thuong-mai",
+      "description": "Phân tích được tác động chính của quá trình giao lưu thương mại ở các vương quốc phong kiến Đông Nam Á đến thế kỉ X.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c055",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "vuong-quoc-phong-kien",
+      "name": "Vương quốc phong kiến",
+      "description": "Các quốc gia phong kiến hình thành ở Đông Nam Á từ thế kỉ VII đến thế kỉ X.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c055",
+        "sgk-lich-su-va-ia-li-6-kntt-c056",
+        "sgk-lich-su-va-ia-li-6-kntt-c057"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "hoat-dong-kinh-te",
+      "name": "Hoạt động kinh tế",
+      "description": "Các hoạt động kinh tế chủ yếu của các vương quốc phong kiến Đông Nam Á từ thế kỉ VII đến thế kỉ X.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c056",
+        "sgk-lich-su-va-ia-li-6-kntt-c057"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "con-duong-gia-vi",
+      "name": "Con đường Gia vị",
+      "description": "Tuyến buôn bán đường biển kết nối Á – Âu, nổi bật với các sản phẩm gia vị từ Đông Nam Á.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c056"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "thuong-cang-sam-uat",
+      "name": "Thương cảng sầm uất",
+      "description": "Các thương cảng nổi bật như Đại Chiêm, Pa-lem-bang trong thời kì phát triển của các vương quốc phong kiến.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c057"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "giao-luu-thuong-mai",
+      "name": "Giao lưu thương mại",
+      "description": "Quá trình trao đổi hàng hóa và văn hóa giữa các vương quốc phong kiến Đông Nam Á và nước ngoài.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c057"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c6",
+      "suggested_code": "doc-bang-luoc-do",
+      "name": "Đọc bản đồ",
+      "description": "Kỹ năng xác định vị trí và tên các quốc gia phong kiến Đông Nam Á trên bản đồ.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c055"
+      ],
+      "evidence": []
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "prerequisite_of",
+      "target": "c2",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c055",
+      "evidence": "",
+      "confidence": 0.9
+    },
+    {
+      "source": "c2",
+      "relation_type": "prerequisite_of",
+      "target": "c5",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c057",
+      "evidence": "",
+      "confidence": 0.9
+    },
+    {
+      "source": "c1",
+      "relation_type": "related_to",
+      "target": "c3",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c056",
+      "evidence": "",
+      "confidence": 0.8
+    },
+    {
+      "source": "c4",
+      "relation_type": "part_of",
+      "target": "c1",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c057",
+      "evidence": "",
+      "confidence": 0.8
+    },
+    {
+      "source": "c5",
+      "relation_type": "causes",
+      "target": "c2",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c057",
+      "evidence": "",
+      "confidence": 0.9
+    }
+  ],
+  "misconceptions": []
+}

@@ -1,0 +1,119 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Chương 1",
+    "lesson": "Bài 4"
+  },
+  "learning_objectives": [
+    {
+      "code": "mo-ta-qua-trinh-tien-hoa",
+      "description": "Mô tả được quá trình tiến hoá từ Vượn người thành người trên Trái Đất.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c011",
+      "evidence": ""
+    },
+    {
+      "code": "xac-dinh-dau-tich-nguoi-toi-co",
+      "description": "Xác định được dấu tích của Người tối cổ ở Đông Nam Á và Việt Nam.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c011",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "qua-trinh-tien-hoa-tu-vuon-nguoi-thanh-nguoi",
+      "name": "Quá trình tiến hoá từ Vượn người thành người",
+      "description": "Quá trình tiến hoá từ Vượn người thành Người tối cổ và sau đó là Người tinh khôn.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c011",
+        "sgk-lich-su-va-ia-li-6-kntt-c012"
+      ],
+      "evidence": [
+        "Quá trình tiến hoá từ Vượn người thành người đã diễn ra cách đây hàng triệu năm.",
+        "Dấu tích của Người tối cổ đã được tìm thấy ở khắp Đông Nam Á và cả Việt Nam."
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "nguoi-toi-co",
+      "name": "Người tối cổ",
+      "description": "Loài người xuất hiện khoảng 4 triệu năm trước, là một nhánh phát triển từ Vượn người.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c011",
+        "sgk-lich-su-va-ia-li-6-kntt-c012"
+      ],
+      "evidence": [
+        "Di cốt của loài Vượn người sống cách ngày nay khoảng 5 triệu năm đã được tìm thấy ở Mi-an-ma và In-đô-nê-xi-a.",
+        "Hóa thạch phát hiện trên đảo Gia-va (In-đô-nê-xi-a) có niên đại khoảng 2 triệu năm trước là dấu vết xưa nhất của Người tối cổ ở Đông Nam Á."
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "nguoi-tinh-khon",
+      "name": "Người tinh khôn",
+      "description": "Loài người hiện đại, xuất hiện khoảng 15 vạn năm trước.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c011",
+        "sgk-lich-su-va-ia-li-6-kntt-c012"
+      ],
+      "evidence": [
+        "Chiếc sọ Người tinh khôn tìm thấy ở hang Ni-a (Ma-lai-xi-a) có niên đại cách ngày nay khoảng 4 vạn năm."
+      ]
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "dau-tich-nguoi-toi-co-o-viet-nam",
+      "name": "Dấu tích của Người tối cổ ở Việt Nam",
+      "description": "Các di cốt và công cụ của Người tối cổ được phát hiện ở Việt Nam.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c012"
+      ],
+      "evidence": [
+        "Răng của Người tối cổ ở Thẩm Khuyên, Thẩm Hai (Lạng Sơn).",
+        "Những công cụ đá được ghè đẽo thô sơ của Người tối cổ cũng đã có mặt ở An Khê (Gia Lai), Núi Đọ (Thanh Hoá), Xuân Lộc (Đồng Nai), An Lộc (Bình Phước)."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "prerequisite_of",
+      "target": "c2",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c011",
+      "evidence": "Quá trình tiến hoá từ Vượn người thành người đã diễn ra cách đây hàng triệu năm.",
+      "confidence": 0.9
+    },
+    {
+      "source": "c2",
+      "relation_type": "prerequisite_of",
+      "target": "c3",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c011",
+      "evidence": "Người tối cổ là một nhánh phát triển từ Vượn người.",
+      "confidence": 0.9
+    },
+    {
+      "source": "c2",
+      "relation_type": "related_to",
+      "target": "c4",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c012",
+      "evidence": "Dấu tích của Người tối cổ đã được tìm thấy ở khắp Đông Nam Á và cả Việt Nam.",
+      "confidence": 0.8
+    }
+  ],
+  "misconceptions": []
+}

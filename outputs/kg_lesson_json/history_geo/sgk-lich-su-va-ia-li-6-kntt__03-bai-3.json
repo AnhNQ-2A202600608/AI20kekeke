@@ -1,0 +1,137 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Chương 2",
+    "lesson": "Bài 3"
+  },
+  "learning_objectives": [
+    {
+      "code": "khai-niem-thoi-gian",
+      "description": "Nêu được một số khái niệm về thời gian trong lịch sử và cách tính thời gian.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c007",
+      "evidence": ""
+    },
+    {
+      "code": "doc-ghi-moc-thoi-gian",
+      "description": "Biết cách đọc, ghi các mốc thời gian trong lịch sử.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c007",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "khai-niem-thap-ki-the-ki-thien-nien-ki",
+      "name": "Khái niệm thập kỉ, thế kỉ, thiên niên kỉ",
+      "description": "Các khái niệm dùng để chỉ các khoảng thời gian trong lịch sử.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c007",
+        "sgk-lich-su-va-ia-li-6-kntt-c008"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "am-lich-duong-lich",
+      "name": "Âm lịch và Dương lịch",
+      "description": "Hai hệ lịch được sử dụng để tính thời gian trong lịch sử.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c007",
+        "sgk-lich-su-va-ia-li-6-kntt-c008"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "cong-lich",
+      "name": "Công lịch",
+      "description": "Hệ lịch được hoàn chỉnh và thống nhất để các dân tộc đều có thể sử dụng, bắt đầu từ năm đầu tiên của Công nguyên.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c008"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "cach-tinh-thoi-gian",
+      "name": "Cách tính thời gian",
+      "description": "Các phương pháp và hệ thống được sử dụng để đo lường thời gian trong lịch sử.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c007",
+        "sgk-lich-su-va-ia-li-6-kntt-c008"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "s1",
+      "suggested_code": "doc-ghi-moc-thoi-gian",
+      "name": "Kỹ năng đọc, ghi mốc thời gian",
+      "description": "Kỹ năng cần thiết để hiểu và ghi lại các sự kiện lịch sử theo thời gian.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c007"
+      ],
+      "evidence": []
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "related_to",
+      "target": "c4",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c007",
+      "evidence": "",
+      "confidence": 0.9
+    },
+    {
+      "source": "c2",
+      "relation_type": "related_to",
+      "target": "c4",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c008",
+      "evidence": "",
+      "confidence": 0.9
+    },
+    {
+      "source": "c3",
+      "relation_type": "related_to",
+      "target": "c4",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c008",
+      "evidence": "",
+      "confidence": 0.9
+    },
+    {
+      "source": "s1",
+      "relation_type": "prerequisite_of",
+      "target": "c1",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c007",
+      "evidence": "",
+      "confidence": 0.8
+    },
+    {
+      "source": "s1",
+      "relation_type": "prerequisite_of",
+      "target": "c2",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c007",
+      "evidence": "",
+      "confidence": 0.8
+    }
+  ],
+  "misconceptions": []
+}

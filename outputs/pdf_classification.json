@@ -1,0 +1,218 @@
+[
+  {
+    "file": "Blogtailieu.com sgv TOAN lop 6 ket noi Full 2.pdf",
+    "path": "C:\\Users\\81908\\OneDrive\\Máy tính\\AI20kekeke\\data\\Math\\Blogtailieu.com sgv TOAN lop 6 ket noi Full 2.pdf",
+    "page_count": 221,
+    "sampled_pages": 45,
+    "text_page_pct": 0.0,
+    "lane": "vision"
+  },
+  {
+    "file": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song.pdf",
+    "path": "C:\\Users\\81908\\OneDrive\\Máy tính\\AI20kekeke\\data\\Math\\sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song.pdf",
+    "page_count": 126,
+    "sampled_pages": 42,
+    "text_page_pct": 0.0,
+    "lane": "vision"
+  },
+  {
+    "file": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song.pdf",
+    "path": "C:\\Users\\81908\\OneDrive\\Máy tính\\AI20kekeke\\data\\Math\\sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song.pdf",
+    "page_count": 114,
+    "sampled_pages": 57,
+    "text_page_pct": 0.0,
+    "lane": "vision"
+  },
+  {
+    "file": "sach-giao-khoa-toan-7-tap-1-ket-noi-tri-thuc-voi-cuoc-song.pdf",
+    "path": "C:\\Users\\81908\\OneDrive\\Máy tính\\AI20kekeke\\data\\Math\\sach-giao-khoa-toan-7-tap-1-ket-noi-tri-thuc-voi-cuoc-song.pdf",
+    "page_count": 122,
+    "sampled_pages": 41,
+    "text_page_pct": 0.0,
+    "lane": "vision"
+  },
+  {
+    "file": "sach-giao-khoa-toan-7-tap-2-ket-noi-tri-thuc-voi-cuoc-song.pdf",
+    "path": "C:\\Users\\81908\\OneDrive\\Máy tính\\AI20kekeke\\data\\Math\\sach-giao-khoa-toan-7-tap-2-ket-noi-tri-thuc-voi-cuoc-song.pdf",
+    "page_count": 118,
+    "sampled_pages": 59,
+    "text_page_pct": 0.0,
+    "lane": "vision"
+  },
+  {
+    "file": "sach-giao-khoa-toan-9-tap-1-ket-noi-tri-thuc-voi-cuoc-song.pdf",
+    "path": "C:\\Users\\81908\\OneDrive\\Máy tính\\AI20kekeke\\data\\Math\\sach-giao-khoa-toan-9-tap-1-ket-noi-tri-thuc-voi-cuoc-song.pdf",
+    "page_count": 122,
+    "sampled_pages": 41,
+    "text_page_pct": 0.0,
+    "lane": "vision"
+  },
+  {
+    "file": "sach-giao-khoa-toan-9-tap-2-ket-noi-tri-thuc-voi-cuoc-song.pdf",
+    "path": "C:\\Users\\81908\\OneDrive\\Máy tính\\AI20kekeke\\data\\Math\\sach-giao-khoa-toan-9-tap-2-ket-noi-tri-thuc-voi-cuoc-song.pdf",
+    "page_count": 134,
+    "sampled_pages": 45,
+    "text_page_pct": 0.0,
+    "lane": "vision"
+  },
+  {
+    "file": "SGK Toán 2 Kết nối tri thức tập 1.pdf",
+    "path": "C:\\Users\\81908\\OneDrive\\Máy tính\\AI20kekeke\\data\\Math\\SGK Toán 2 Kết nối tri thức tập 1.pdf",
+    "page_count": 142,
+    "sampled_pages": 48,
+    "text_page_pct": 0.0,
+    "lane": "vision"
+  },
+  {
+    "file": "SGK Toán 2 Kết nối tri thức tập 2.pdf",
+    "path": "C:\\Users\\81908\\OneDrive\\Máy tính\\AI20kekeke\\data\\Math\\SGK Toán 2 Kết nối tri thức tập 2.pdf",
+    "page_count": 142,
+    "sampled_pages": 48,
+    "text_page_pct": 0.0,
+    "lane": "vision"
+  },
+  {
+    "file": "SGK Toán 4 KNTT tập 1.pdf",
+    "path": "C:\\Users\\81908\\OneDrive\\Máy tính\\AI20kekeke\\data\\Math\\SGK Toán 4 KNTT tập 1.pdf",
+    "page_count": 135,
+    "sampled_pages": 45,
+    "text_page_pct": 0.978,
+    "lane": "direct_text"
+  },
+  {
+    "file": "SGK Toán 4 KNTT tập 2.pdf",
+    "path": "C:\\Users\\81908\\OneDrive\\Máy tính\\AI20kekeke\\data\\Math\\SGK Toán 4 KNTT tập 2.pdf",
+    "page_count": 123,
+    "sampled_pages": 41,
+    "text_page_pct": 0.976,
+    "lane": "direct_text"
+  },
+  {
+    "file": "SGV TOAN 3.pdf",
+    "path": "C:\\Users\\81908\\OneDrive\\Máy tính\\AI20kekeke\\data\\Math\\SGV TOAN 3.pdf",
+    "page_count": 298,
+    "sampled_pages": 43,
+    "text_page_pct": 0.0,
+    "lane": "vision"
+  },
+  {
+    "file": "SGV Toan 5 - KNTT.pdf",
+    "path": "C:\\Users\\81908\\OneDrive\\Máy tính\\AI20kekeke\\data\\Math\\SGV Toan 5 - KNTT.pdf",
+    "page_count": 306,
+    "sampled_pages": 44,
+    "text_page_pct": 0.0,
+    "lane": "vision"
+  },
+  {
+    "file": "SGV Toan 8 KNTT.pdf",
+    "path": "C:\\Users\\81908\\OneDrive\\Máy tính\\AI20kekeke\\data\\Math\\SGV Toan 8 KNTT.pdf",
+    "page_count": 274,
+    "sampled_pages": 46,
+    "text_page_pct": 0.0,
+    "lane": "vision"
+  },
+  {
+    "file": "SGV Toán 2 - Kết nối tri thức.pdf",
+    "path": "C:\\Users\\81908\\OneDrive\\Máy tính\\AI20kekeke\\data\\Math\\SGV Toán 2 - Kết nối tri thức.pdf",
+    "page_count": 265,
+    "sampled_pages": 45,
+    "text_page_pct": 0.0,
+    "lane": "vision"
+  },
+  {
+    "file": "SÁCH GIÁO VIÊN TOÁN 9 KẾT NỐI TRI THỨC.pdf",
+    "path": "C:\\Users\\81908\\OneDrive\\Máy tính\\AI20kekeke\\data\\Math\\SÁCH GIÁO VIÊN TOÁN 9 KẾT NỐI TRI THỨC.pdf",
+    "page_count": 282,
+    "sampled_pages": 41,
+    "text_page_pct": 0.0,
+    "lane": "vision"
+  },
+  {
+    "file": "SÁCH GV TOÁN 4 KNTTCS.pdf",
+    "path": "C:\\Users\\81908\\OneDrive\\Máy tính\\AI20kekeke\\data\\Math\\SÁCH GV TOÁN 4 KNTTCS.pdf",
+    "page_count": 290,
+    "sampled_pages": 42,
+    "text_page_pct": 0.0,
+    "lane": "vision"
+  },
+  {
+    "file": "Toan 1 - Sach giao vien ket noi tri thuc voi cuoc song.pdf",
+    "path": "C:\\Users\\81908\\OneDrive\\Máy tính\\AI20kekeke\\data\\Math\\Toan 1 - Sach giao vien ket noi tri thuc voi cuoc song.pdf",
+    "page_count": 121,
+    "sampled_pages": 41,
+    "text_page_pct": 0.0,
+    "lane": "vision"
+  },
+  {
+    "file": "TOAN 8 TAP 1 - KNTT.pdf",
+    "path": "C:\\Users\\81908\\OneDrive\\Máy tính\\AI20kekeke\\data\\Math\\TOAN 8 TAP 1 - KNTT.pdf",
+    "page_count": 126,
+    "sampled_pages": 42,
+    "text_page_pct": 0.0,
+    "lane": "vision"
+  },
+  {
+    "file": "TOAN 8 TAP 2 - KNTT.pdf",
+    "path": "C:\\Users\\81908\\OneDrive\\Máy tính\\AI20kekeke\\data\\Math\\TOAN 8 TAP 2 - KNTT.pdf",
+    "page_count": 142,
+    "sampled_pages": 48,
+    "text_page_pct": 0.0,
+    "lane": "vision"
+  },
+  {
+    "file": "Toan lop 7 SGV.pdf",
+    "path": "C:\\Users\\81908\\OneDrive\\Máy tính\\AI20kekeke\\data\\Math\\Toan lop 7 SGV.pdf",
+    "page_count": 266,
+    "sampled_pages": 45,
+    "text_page_pct": 0.978,
+    "lane": "direct_text"
+  },
+  {
+    "file": "Toán 3 tập 1 Kết nối tri thức.pdf",
+    "path": "C:\\Users\\81908\\OneDrive\\Máy tính\\AI20kekeke\\data\\Math\\Toán 3 tập 1 Kết nối tri thức.pdf",
+    "page_count": 127,
+    "sampled_pages": 43,
+    "text_page_pct": 0.977,
+    "lane": "direct_text"
+  },
+  {
+    "file": "Toán 3 tập 2 Kết nối tri thức.pdf",
+    "path": "C:\\Users\\81908\\OneDrive\\Máy tính\\AI20kekeke\\data\\Math\\Toán 3 tập 2 Kết nối tri thức.pdf",
+    "page_count": 131,
+    "sampled_pages": 44,
+    "text_page_pct": 0.977,
+    "lane": "direct_text"
+  },
+  {
+    "file": "Toán lớp 1 tập 1 kết nối tri thức với cuộc sống.pdf",
+    "path": "C:\\Users\\81908\\OneDrive\\Máy tính\\AI20kekeke\\data\\Math\\Toán lớp 1 tập 1 kết nối tri thức với cuộc sống.pdf",
+    "page_count": 116,
+    "sampled_pages": 58,
+    "text_page_pct": 0.0,
+    "lane": "vision"
+  },
+  {
+    "file": "Toán lớp 1 tập 2 kết nối tri thức cuộc sống.pdf",
+    "path": "C:\\Users\\81908\\OneDrive\\Máy tính\\AI20kekeke\\data\\Math\\Toán lớp 1 tập 2 kết nối tri thức cuộc sống.pdf",
+    "page_count": 108,
+    "sampled_pages": 54,
+    "text_page_pct": 0.0,
+    "lane": "vision"
+  },
+  {
+    "file": "Toán lớp 5 tập 1 KNTT.pdf",
+    "path": "C:\\Users\\81908\\OneDrive\\Máy tính\\AI20kekeke\\data\\Math\\Toán lớp 5 tập 1 KNTT.pdf",
+    "page_count": 143,
+    "sampled_pages": 48,
+    "text_page_pct": 0.0,
+    "lane": "vision"
+  },
+  {
+    "file": "Toán lớp 5 tập 2 KNTT.pdf",
+    "path": "C:\\Users\\81908\\OneDrive\\Máy tính\\AI20kekeke\\data\\Math\\Toán lớp 5 tập 2 KNTT.pdf",
+    "page_count": 139,
+    "sampled_pages": 47,
+    "text_page_pct": 0.0,
+    "lane": "vision"
+  }
+]

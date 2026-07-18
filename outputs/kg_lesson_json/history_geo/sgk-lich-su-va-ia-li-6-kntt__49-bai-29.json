@@ -1,0 +1,114 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Bài 29",
+    "lesson": "Bảo vệ tự nhiên và khai thác thông minh các tài nguyên thiên nhiên vì sự phát triển bền vững"
+  },
+  "learning_objectives": [
+    {
+      "code": "nhan-biet-y-nghia-bao-ve-tu-nhien",
+      "description": "Nêu được ý nghĩa của việc bảo vệ tự nhiên và khai thác thông minh các tài nguyên thiên nhiên vì sự phát triển bền vững.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c221",
+      "evidence": ""
+    },
+    {
+      "code": "hanh-dong-bao-ve-tu-nhien",
+      "description": "Thấy được trách nhiệm và có hành động cụ thể để bảo vệ tự nhiên và khai thác thông minh tài nguyên ở địa phương.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c221",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "phat-trien-ben-vung",
+      "name": "Phát triển bền vững",
+      "description": "Sự phát triển nhằm đáp ứng các nhu cầu của thế hệ hiện tại mà không làm tổn hại đến nhu cầu của các thế hệ tương lai.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c221"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "bao-ve-tu-nhien",
+      "name": "Bảo vệ tự nhiên",
+      "description": "Giữ gìn sự đa dạng sinh học, ngăn chặn ô nhiễm và suy thoái môi trường tự nhiên.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c221"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "khai-thac-thong-minh-tai-nguyen",
+      "name": "Khai thác thông minh tài nguyên thiên nhiên",
+      "description": "Sử dụng tài nguyên hợp lí, tiết kiệm nhằm hạn chế sự suy giảm tài nguyên cả về số lượng và chất lượng.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c221",
+        "sgk-lich-su-va-ia-li-6-kntt-c222"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "su-dung-tai-nguyen-hieu-qua",
+      "name": "Sử dụng tài nguyên hiệu quả",
+      "description": "Sử dụng tài nguyên một cách tiết kiệm và hợp lý để bảo vệ môi trường.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c222"
+      ],
+      "evidence": []
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "related_to",
+      "target": "c2",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c221",
+      "evidence": "",
+      "confidence": 0.9
+    },
+    {
+      "source": "c1",
+      "relation_type": "related_to",
+      "target": "c3",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c221",
+      "evidence": "",
+      "confidence": 0.9
+    },
+    {
+      "source": "c2",
+      "relation_type": "related_to",
+      "target": "c4",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c222",
+      "evidence": "",
+      "confidence": 0.8
+    },
+    {
+      "source": "c3",
+      "relation_type": "related_to",
+      "target": "c4",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c222",
+      "evidence": "",
+      "confidence": 0.8
+    }
+  ],
+  "misconceptions": []
+}

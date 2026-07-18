@@ -1,0 +1,97 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Chương 1",
+    "lesson": "Bài 6"
+  },
+  "learning_objectives": [
+    {
+      "code": "xac-dinh-vi-tri-trai-dat",
+      "description": "Xác định được vị trí của Trái Đất trong hệ Mặt Trời.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c128",
+      "evidence": ""
+    },
+    {
+      "code": "mo-ta-hinh-dang-kich-thuoc-trai-dat",
+      "description": "Mô tả được hình dạng, kích thước của Trái Đất.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c128",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "vi-tri-trai-dat",
+      "name": "Vị trí Trái Đất",
+      "description": "Vị trí của Trái Đất trong hệ Mặt Trời, nằm ở khoảng cách lý tưởng từ Mặt Trời.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c128"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "hinh-dang-trai-dat",
+      "name": "Hình dạng Trái Đất",
+      "description": "Trái Đất có dạng hình cầu, được chứng minh bởi triết gia A-ri-xtốt.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c129"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "kich-thuoc-trai-dat",
+      "name": "Kích thước Trái Đất",
+      "description": "Bán kính Xích đạo của Trái Đất là 6 378 km, diện tích bề mặt là 510 triệu km².",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c129"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "hanh-tinh-trong-he-mat-troi",
+      "name": "Hành tinh trong hệ Mặt Trời",
+      "description": "Các hành tinh trong hệ Mặt Trời không tự phát sáng mà phản chiếu ánh sáng từ Mặt Trời.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c128"
+      ],
+      "evidence": []
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "prerequisite_of",
+      "target": "c2",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c128",
+      "evidence": "Vị trí của Trái Đất là cơ sở để hiểu về hình dạng và kích thước của nó.",
+      "confidence": 0.9
+    },
+    {
+      "source": "c2",
+      "relation_type": "prerequisite_of",
+      "target": "c3",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c129",
+      "evidence": "Hiểu về hình dạng Trái Đất giúp nhận biết kích thước của nó.",
+      "confidence": 0.9
+    }
+  ],
+  "misconceptions": []
+}

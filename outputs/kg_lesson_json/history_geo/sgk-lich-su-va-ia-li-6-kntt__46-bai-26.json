@@ -1,0 +1,132 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Chương 7",
+    "lesson": "Bài 26"
+  },
+  "learning_objectives": [
+    {
+      "code": "tim-hieu-moi-truong-tu-nhien",
+      "description": "Học sinh biết cách tìm hiểu môi trường tự nhiên qua tài liệu và tham quan địa phương.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c208",
+      "evidence": ""
+    },
+    {
+      "code": "yeu-thien-nhien",
+      "description": "Học sinh yêu thiên nhiên, có ý thức bảo vệ thiên nhiên.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c208",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "dia-hinh",
+      "name": "Địa hình",
+      "description": "Đặc điểm chung và các dạng địa hình chính, mối quan hệ giữa địa hình với các thành phần tự nhiên khác.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c208"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "khí-hau",
+      "name": "Khí hậu",
+      "description": "Đặc điểm chung và các nét đặc trưng của khí hậu, mối quan hệ giữa khí hậu và các thành phần tự nhiên khác.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c208"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "song-ngoi",
+      "name": "Sông ngòi",
+      "description": "Mạng lưới sông ngòi và đặc điểm chính của sông ngòi, mối quan hệ giữa sông ngòi với các thành phần tự nhiên khác.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c208"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "dat",
+      "name": "Đất",
+      "description": "Các loại đất, đặc điểm chung của đất, phân bố đất ở địa phương và mối quan hệ giữa đất với các thành phần tự nhiên khác.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c208"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "sinh-vat",
+      "name": "Sinh vật",
+      "description": "Hiện trạng thảm thực vật tự nhiên và các loại động vật hoang dã, mối quan hệ giữa thực vật với động vật và giữa sinh vật với các thành phần tự nhiên khác.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c208"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c6",
+      "suggested_code": "moi-quan-he-con-nguoi-thien-nhien",
+      "name": "Mối quan hệ giữa con người và thiên nhiên",
+      "description": "Mối quan hệ khăng khít giữa con người và thiên nhiên, bảo vệ thiên nhiên cho sự tồn tại và phát triển của xã hội loài người.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c209"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c7",
+      "suggested_code": "dan-so-the-gioi",
+      "name": "Dân số thế giới",
+      "description": "Thông tin về dân số thế giới và sự phân bố dân cư.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c209"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c8",
+      "suggested_code": "bao-ve-tu-nhien",
+      "name": "Bảo vệ tự nhiên",
+      "description": "Các biện pháp bảo vệ tự nhiên và khai thác thông minh các tài nguyên thiên nhiên vì sự phát triển bền vững.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c209"
+      ],
+      "evidence": []
+    }
+  ],
+  "relations": [],
+  "misconceptions": []
+}

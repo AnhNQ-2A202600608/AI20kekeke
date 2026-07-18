@@ -1,0 +1,84 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Chương 1",
+    "lesson": "Bài 10"
+  },
+  "learning_objectives": [
+    {
+      "code": "trinh-bay-cau-tao-cua-trai-dat",
+      "description": "Trình bày được cấu tạo của Trái Đất gồm ba lớp.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c145",
+      "evidence": ""
+    },
+    {
+      "code": "xac-dinh-mang-kien-tao-lon",
+      "description": "Xác định được trên lược đồ các mảng kiến tạo lớn, đối tiếp giáp của hai mảng xô vào nhau.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c145",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "cau-tao-cua-trai-dat",
+      "name": "Cấu tạo của Trái Đất",
+      "description": "Trái Đất được cấu tạo bởi ba lớp: vỏ Trái Đất, man-ti và nhân Trái Đất.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c145"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "dia-mang-kien-tao",
+      "name": "Địa mảng (mảng kiến tạo)",
+      "description": "Các địa mảng là những phần của vỏ Trái Đất nằm kề nhau và di chuyển do tác động của vật chất nóng chảy trong lớp man-ti.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c145"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "ky-nang-doc-luoc-do",
+      "name": "Kỹ năng đọc lược đồ",
+      "description": "Kỹ năng xác định các mảng kiến tạo lớn và vị trí của chúng trên lược đồ.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c146"
+      ],
+      "evidence": []
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "part_of",
+      "target": "c2",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c145",
+      "evidence": "Cấu tạo của Trái Đất bao gồm các địa mảng.",
+      "confidence": 0.9
+    },
+    {
+      "source": "c2",
+      "relation_type": "related_to",
+      "target": "c3",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c146",
+      "evidence": "Việc xác định các địa mảng trên lược đồ liên quan đến kỹ năng đọc lược đồ.",
+      "confidence": 0.8
+    }
+  ],
+  "misconceptions": []
+}

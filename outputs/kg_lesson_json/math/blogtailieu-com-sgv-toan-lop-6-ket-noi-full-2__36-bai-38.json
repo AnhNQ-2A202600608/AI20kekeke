@@ -1,0 +1,42 @@
+{
+  "document": {
+    "document_id": "math-k6-sgv",
+    "source_type": "SGV",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 1",
+    "lesson": "Bài 38"
+  },
+  "learning_objectives": [
+    {
+      "code": "nhan-biet-loai-du-lieu",
+      "description": "Nhận biết được các loại dữ liệu, chủ yếu là phân biệt được dữ liệu là số (dữ liệu định lượng) và dữ liệu không phải là số (dữ liệu định tính).",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": ""
+    },
+    {
+      "code": "phat-hien-gia-tri-khong-hop-li",
+      "description": "Phát hiện được giá trị không hợp lí trong dữ liệu.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": ""
+    },
+    {
+      "code": "thuc-hien-thu-thap-du-lieu",
+      "description": "Thực hiện được thu thập dữ liệu trong một số tình huống đơn giản như: Ghi lại được kết quả của việc bầu lớp trưởng, tổ trưởng; thực hiện thí nghiệm đơn giản như gieo xúc xắc và ghi lại số chấm xuất hiện; quan sát và ghi lại xem lớp bạn nào đeo kính,...",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": ""
+    }
+  ],
+  "concepts": [],
+  "relations": [],
+  "misconceptions": [
+    {
+      "temporary_id": "m1",
+      "name": "Khó khăn trong việc phân biệt dữ liệu là số hay không là số",
+      "description": "Việc phân biệt dữ liệu là số hay không là số đôi khi cũng có thể gây tranh cãi. Ví dụ như câu hỏi: dữ liệu về số điện thoại có phải là số liệu không?",
+      "related_skill": "c1",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c001",
+      "evidence": ""
+    }
+  ]
+}

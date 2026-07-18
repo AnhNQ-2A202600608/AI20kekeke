@@ -1,0 +1,140 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Chương 1",
+    "lesson": "Bài 27"
+  },
+  "learning_objectives": [
+    {
+      "code": "trinh-bay-dac-diem-phan-bo-dan-cu",
+      "description": "Trình bày và giải thích được đặc điểm phân bố dân cư trên thế giới.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c211",
+      "evidence": ""
+    },
+    {
+      "code": "doc-bieu-do-quy-mo-dan-so",
+      "description": "Đọc được biểu đồ quy mô dân số thế giới.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c211",
+      "evidence": ""
+    },
+    {
+      "code": "xac-dinh-thanh-pho-dong-dan-nhat",
+      "description": "Xác định được trên bản đồ một số thành phố đông dân nhất thế giới.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c211",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "dan-so-the-gioi",
+      "name": "Dân số thế giới",
+      "description": "Số lượng người sống trên Trái Đất, tính đến năm 2018 là 7,6 tỉ người.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c211",
+        "sgk-lich-su-va-ia-li-6-kntt-c212"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "phan-bo-dan-cu",
+      "name": "Phân bố dân cư",
+      "description": "Sự phân bố của dân cư trên các khu vực và châu lục khác nhau trên thế giới.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c211",
+        "sgk-lich-su-va-ia-li-6-kntt-c212"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "mat-do-dan-so",
+      "name": "Mật độ dân số",
+      "description": "Tiêu chí thể hiện tình hình phân bố dân cư, tính theo số người/km².",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c212"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "thanh-pho-dong-dan-nhat",
+      "name": "Thành phố đông dân nhất",
+      "description": "Các đô thị có số dân từ 10 triệu người trở lên, được gọi là siêu đô thị.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c212",
+        "sgk-lich-su-va-ia-li-6-kntt-c213"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "ky-nang-doc-bieu-do",
+      "name": "Kỹ năng đọc biểu đồ",
+      "description": "Kỹ năng phân tích và hiểu thông tin từ biểu đồ quy mô dân số thế giới.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c211"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c6",
+      "suggested_code": "ky-nang-xac-dinh-thanh-pho",
+      "name": "Kỹ năng xác định thành phố",
+      "description": "Kỹ năng xác định và nhận biết các thành phố đông dân nhất trên bản đồ.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c211"
+      ],
+      "evidence": []
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "causes",
+      "target": "c2",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c211",
+      "evidence": "Số dân thế giới tăng dẫn đến sự phân bố dân cư thay đổi.",
+      "confidence": 0.9
+    },
+    {
+      "source": "c2",
+      "relation_type": "prerequisite_of",
+      "target": "c5",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c212",
+      "evidence": "Hiểu về phân bố dân cư là cần thiết để đọc biểu đồ dân số.",
+      "confidence": 0.8
+    },
+    {
+      "source": "c4",
+      "relation_type": "related_to",
+      "target": "c6",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c213",
+      "evidence": "Các thành phố đông dân nhất là đối tượng để xác định trên bản đồ.",
+      "confidence": 0.85
+    }
+  ],
+  "misconceptions": []
+}

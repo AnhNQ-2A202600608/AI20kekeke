@@ -1,0 +1,33 @@
+{
+  "document": {
+    "document_id": "math-k6-sgv",
+    "source_type": "SGV",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 2",
+    "lesson": "Bài 35"
+  },
+  "learning_objectives": [
+    {
+      "code": "nhan-biet-khai-niem-trung-diem",
+      "description": "Nhận biết được khái niệm trung điểm của đoạn thẳng.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận biết được khái niệm trung điểm của đoạn thẳng."
+    },
+    {
+      "code": "do-do-dai-doan-thang",
+      "description": "Biết đo độ dài đoạn thẳng để xác định trung điểm của đoạn thẳng.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Biết đo độ dài đoạn thẳng để xác định trung điểm của đoạn thẳng."
+    },
+    {
+      "code": "giai-bai-toan-thuc-te",
+      "description": "Giải được các bài toán thực tế liên quan đến trung điểm của đoạn thẳng.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Giải được các bài toán thực tế liên quan đến trung điểm của đoạn thẳng."
+    }
+  ],
+  "concepts": [],
+  "relations": [],
+  "misconceptions": []
+}

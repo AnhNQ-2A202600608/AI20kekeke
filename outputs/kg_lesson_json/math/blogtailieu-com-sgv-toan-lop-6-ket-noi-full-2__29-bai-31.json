@@ -1,0 +1,68 @@
+{
+  "document": {
+    "document_id": "math-k6-sgv",
+    "source_type": "SGV",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 2",
+    "lesson": "Bài 31"
+  },
+  "learning_objectives": [
+    {
+      "code": "nhan-biet-ti-so",
+      "description": "Nhận biết được tỉ số, tỉ số phần trăm của hai số và của hai đại lượng (cùng loại, cùng đơn vị đo).",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận biết được tỉ số, tỉ số phần trăm của hai số và của hai đại lượng (cùng loại, cùng đơn vị đo)."
+    },
+    {
+      "code": "su-dung-ki-hieu-ti-so",
+      "description": "Sử dụng được kí hiệu tỉ số, tỉ số phần trăm của hai số.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Sử dụng được kí hiệu tỉ số, tỉ số phần trăm của hai số."
+    },
+    {
+      "code": "tinh-ti-so-phan-tram",
+      "description": "Tính được tỉ số phần trăm của hai số. Tính được tỉ số phần trăm của hai đại lượng.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Tính được tỉ số phần trăm của hai số. Tính được tỉ số phần trăm của hai đại lượng."
+    },
+    {
+      "code": "tinh-gia-tri-phan-tram",
+      "description": "Tính được giá trị phần trăm của một số cho trước.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Tính được giá trị phần trăm của một số cho trước."
+    },
+    {
+      "code": "tim-mot-so",
+      "description": "Tìm được một số khi biết giá trị phần trăm của số đó.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Tìm được một số khi biết giá trị phần trăm của số đó."
+    },
+    {
+      "code": "giai-quyet-bai-toan-thuc-te",
+      "description": "Giải quyết được một số bài toán thực tế về tỉ số, tỉ số phần trăm.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Giải quyết được một số bài toán thực tế về tỉ số, tỉ số phần trăm."
+    }
+  ],
+  "concepts": [],
+  "relations": [],
+  "misconceptions": [
+    {
+      "temporary_id": "m1",
+      "name": "Hiểu sai về tỉ số phần trăm",
+      "description": "Học sinh có thể nghĩ rằng tỉ số phần trăm chỉ là một cách viết mà không cần tính toán.",
+      "related_skill": "su-dung-ki-hieu-ti-so",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c003",
+      "evidence": "GV cần nhấn mạnh để HS nắm rõ tỉ số phần trăm chỉ là một cách viết đặc biệt của tỉ số và được sử dụng thường xuyên."
+    },
+    {
+      "temporary_id": "m2",
+      "name": "Viết tỉ số không chính xác",
+      "description": "Học sinh có thể viết tỉ số của các số thập phân mà không hiểu rõ về khái niệm tỉ số.",
+      "related_skill": "nhan-biet-ti-so",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c002",
+      "evidence": "Đa số HS không để ý 2,6 không phải là số tự nhiên và vẫn viết được tỉ số 2,6 : 200 theo thói quen."
+    }
+  ]
+}

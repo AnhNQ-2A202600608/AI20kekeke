@@ -1,0 +1,140 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Chương 4",
+    "lesson": "Bài 10"
+  },
+  "learning_objectives": [
+    {
+      "code": "gioi-thieu-tac-dong-dieu-kien-tu-nhien",
+      "description": "Giới thiệu và nhận xét được tác động của điều kiện tự nhiên (hải cảng, biển đảo) đối với sự hình thành, phát triển của nền văn minh Hy Lạp và La Mã.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c044",
+      "evidence": ""
+    },
+    {
+      "code": "trinh-bay-to-chuc-nha-nuoc",
+      "description": "Trình bày được tổ chức nhà nước thành bang, nhà nước đế chế ở Hy Lạp và La Mã.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c046",
+      "evidence": ""
+    },
+    {
+      "code": "neu-thanh-tuu-van-hoa",
+      "description": "Nêu được một số thành tựu văn hoá tiêu biểu của Hy Lạp và La Mã.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c048",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "hy-lap",
+      "name": "Hy Lạp",
+      "description": "Nền văn minh cổ đại nổi bật với nhiều thành tựu văn hóa, chính trị và khoa học.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c044",
+        "sgk-lich-su-va-ia-li-6-kntt-c045",
+        "sgk-lich-su-va-ia-li-6-kntt-c046",
+        "sgk-lich-su-va-ia-li-6-kntt-c047",
+        "sgk-lich-su-va-ia-li-6-kntt-c048"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "la-ma",
+      "name": "La Mã",
+      "description": "Nền văn minh cổ đại với nhiều thành tựu trong tổ chức nhà nước và văn hóa.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c046",
+        "sgk-lich-su-va-ia-li-6-kntt-c047",
+        "sgk-lich-su-va-ia-li-6-kntt-c048"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "nha-nuoc-thanh-bang",
+      "name": "Nhà nước thành bang",
+      "description": "Hình thức tổ chức nhà nước ở Hy Lạp cổ đại, mỗi thành bang có một thành phố làm trung tâm.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c046",
+        "sgk-lich-su-va-ia-li-6-kntt-c047"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "nha-nuoc-de-che",
+      "name": "Nhà nước đế chế",
+      "description": "Hình thức tổ chức nhà nước ở La Mã cổ đại, với quyền lực tập trung vào một người đứng đầu.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c046",
+        "sgk-lich-su-va-ia-li-6-kntt-c047"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "van-hoa-hy-lap-la-ma",
+      "name": "Văn hóa Hy Lạp và La Mã",
+      "description": "Các thành tựu văn hóa tiêu biểu của hai nền văn minh cổ đại này.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c048"
+      ],
+      "evidence": []
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "related_to",
+      "target": "c5",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c048",
+      "evidence": "",
+      "confidence": 0.9
+    },
+    {
+      "source": "c2",
+      "relation_type": "related_to",
+      "target": "c5",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c048",
+      "evidence": "",
+      "confidence": 0.9
+    },
+    {
+      "source": "c3",
+      "relation_type": "part_of",
+      "target": "c1",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c046",
+      "evidence": "",
+      "confidence": 0.8
+    },
+    {
+      "source": "c4",
+      "relation_type": "part_of",
+      "target": "c2",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c046",
+      "evidence": "",
+      "confidence": 0.8
+    }
+  ],
+  "misconceptions": []
+}

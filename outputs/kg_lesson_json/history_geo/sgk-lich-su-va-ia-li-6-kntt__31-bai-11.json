@@ -1,0 +1,86 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Bài 11",
+    "lesson": "Quá trình nội sinh và ngoại sinh, hiện tượng tạo núi"
+  },
+  "learning_objectives": [
+    {
+      "code": "phan-biet-qua-trinh-noi-sinh-ngoai-sinh",
+      "description": "Phân biệt được quá trình nội sinh và quá trình ngoại sinh.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c148",
+      "evidence": ""
+    },
+    {
+      "code": "trinh-bay-tac-dong-cua-noi-sinh-ngoai-sinh",
+      "description": "Trình bày được tác động đồng thời của quá trình nội sinh và quá trình ngoại sinh trong hiện tượng tạo núi.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c148",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "qua-trinh-noi-sinh",
+      "name": "Quá trình nội sinh",
+      "description": "Các quá trình xảy ra trong lòng Trái Đất, làm di chuyển các mảng kiến tạo, tạo thành núi lửa, động đất.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c148",
+        "sgk-lich-su-va-ia-li-6-kntt-c149"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "qua-trinh-ngoai-sinh",
+      "name": "Quá trình ngoại sinh",
+      "description": "Các quá trình xảy ra ở bên ngoài, trên bề mặt Trái Đất, có xu hướng phá vỡ, san bằng các địa hình do nội sinh tạo nên.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c148",
+        "sgk-lich-su-va-ia-li-6-kntt-c149"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "hien-tuong-tao-nui",
+      "name": "Hiện tượng tạo núi",
+      "description": "Quá trình hình thành núi do sự xô vào hoặc tách xa nhau của các địa mảng, dẫn đến uốn nếp hoặc đứt gãy lớp đất đá.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c149"
+      ],
+      "evidence": []
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "related_to",
+      "target": "c3",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c149",
+      "evidence": "Quá trình nội sinh tạo ra các dạng địa hình như núi lửa, động đất, có liên quan đến hiện tượng tạo núi.",
+      "confidence": 0.9
+    },
+    {
+      "source": "c2",
+      "relation_type": "related_to",
+      "target": "c3",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c149",
+      "evidence": "Quá trình ngoại sinh phá vỡ và san bằng các địa hình, có tác động đến hiện tượng tạo núi.",
+      "confidence": 0.9
+    }
+  ],
+  "misconceptions": []
+}

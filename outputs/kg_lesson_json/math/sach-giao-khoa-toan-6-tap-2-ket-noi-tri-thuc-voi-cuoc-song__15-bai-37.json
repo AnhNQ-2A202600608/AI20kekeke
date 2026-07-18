@@ -1,0 +1,138 @@
+{
+  "document": {
+    "document_id": "math-k6-sgk",
+    "source_type": "SGK",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 8",
+    "lesson": "Bài 37"
+  },
+  "learning_objectives": [],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "so-do-goc",
+      "name": "Số đo góc",
+      "description": "Khái niệm về số đo của một góc, được đo bằng độ.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c080"
+      ],
+      "evidence": [
+        "Muốn đo góc xOy, ta đặt thước đo góc sao cho tâm của thước trùng với O, tia Ox đi qua vạch 0."
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "goc-vuong",
+      "name": "Góc vuông",
+      "description": "Góc có số đo bằng 90°.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c081"
+      ],
+      "evidence": [
+        "Góc có số đo bằng 90° là góc vuông."
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "goc-nhon",
+      "name": "Góc nhọn",
+      "description": "Góc nhỏ hơn góc vuông.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c081"
+      ],
+      "evidence": [
+        "Góc nhỏ hơn góc vuông là góc nhọn."
+      ]
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "goc-tu",
+      "name": "Góc tù",
+      "description": "Góc lớn hơn góc vuông, nhỏ hơn góc bẹt.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c081"
+      ],
+      "evidence": [
+        "Góc lớn hơn góc vuông, nhỏ hơn góc bẹt là góc tù."
+      ]
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "goc-bet",
+      "name": "Góc bẹt",
+      "description": "Góc bẹt có số đo bằng 180°.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c081"
+      ],
+      "evidence": [
+        "Góc bẹt có số đo bằng 180°."
+      ]
+    },
+    {
+      "temporary_id": "c6",
+      "suggested_code": "do-goc",
+      "name": "Đo góc",
+      "description": "Thao tác đo số đo của một góc bằng thước đo góc.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c080"
+      ],
+      "evidence": [
+        "Dùng thước đo góc, em hãy đo và viết số đo của các góc trong mỗi hình sau."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "related_to",
+      "target": "c6",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c080",
+      "evidence": "Muốn đo góc xOy, ta đặt thước đo góc sao cho tâm của thước trùng với O.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c2",
+      "relation_type": "prerequisite_of",
+      "target": "c3",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c081",
+      "evidence": "Góc nhỏ hơn góc vuông là góc nhọn.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c2",
+      "relation_type": "prerequisite_of",
+      "target": "c4",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c081",
+      "evidence": "Góc lớn hơn góc vuông, nhỏ hơn góc bẹt là góc tù.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c2",
+      "relation_type": "prerequisite_of",
+      "target": "c5",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c081",
+      "evidence": "Góc bẹt có số đo bằng 180°.",
+      "confidence": 1.0
+    }
+  ],
+  "misconceptions": []
+}

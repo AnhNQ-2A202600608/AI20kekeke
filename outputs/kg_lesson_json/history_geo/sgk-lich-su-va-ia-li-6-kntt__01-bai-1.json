@@ -1,0 +1,85 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Chương 1",
+    "lesson": "Bài 1"
+  },
+  "learning_objectives": [
+    {
+      "code": "khai-niem-lich-su",
+      "description": "Nêu được khái niệm lịch sử và môn Lịch sử.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c000",
+      "evidence": ""
+    },
+    {
+      "code": "y-nghia-hoc-lich-su",
+      "description": "Giải thích được vì sao cần học lịch sử.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c000",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "khai-niem-lich-su",
+      "name": "Khái niệm lịch sử",
+      "description": "Lịch sử là tất cả những gì đã xảy ra và là một khoa học nghiên cứu và phục dựng lại quá khứ.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c000"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "mon-lich-su",
+      "name": "Môn Lịch sử",
+      "description": "Môn học tìm hiểu quá trình hình thành và phát triển của xã hội loài người từ khi con người xuất hiện trên Trái Đất cho đến ngày nay.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c000"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "y-nghia-hoc-lich-su",
+      "name": "Ý nghĩa học lịch sử",
+      "description": "Học lịch sử giúp chúng ta tìm hiểu quá khứ, tìm về cội nguồn của chính bản thân, gia đình, dòng họ và của cả dân tộc, nhân loại.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c000",
+        "sgk-lich-su-va-ia-li-6-kntt-c001"
+      ],
+      "evidence": []
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "prerequisite_of",
+      "target": "c2",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c000",
+      "evidence": "",
+      "confidence": 0.9
+    },
+    {
+      "source": "c2",
+      "relation_type": "prerequisite_of",
+      "target": "c3",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c000",
+      "evidence": "",
+      "confidence": 0.9
+    }
+  ],
+  "misconceptions": []
+}

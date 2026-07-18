@@ -1,0 +1,98 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Bài 11",
+    "lesson": "CÁC QUỐC GIA SƠ KÌ Ở ĐÔNG NAM Á"
+  },
+  "learning_objectives": [
+    {
+      "code": "trinh-bay-vi-tri-dia-li-dong-nam-a",
+      "description": "Trình bày được sơ lược vị trí địa lí của khu vực Đông Nam Á.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c051",
+      "evidence": ""
+    },
+    {
+      "code": "trinh-bay-qua-trinh-xuat-hien-quoc-gia-so-ki",
+      "description": "Trình bày được quá trình xuất hiện và sự giao lưu thương mại của các quốc gia sơ kì ở Đông Nam Á từ đầu Công nguyên đến thế kỉ VII.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c051",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "vi-tri-dia-li-dong-nam-a",
+      "name": "Vị trí địa lí Đông Nam Á",
+      "description": "Vị trí địa lí của khu vực Đông Nam Á nằm giữa Ấn Độ Dương và Thái Bình Dương, là cầu nối giữa các nền văn minh lớn.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c051"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "quoc-gia-so-ki-dong-nam-a",
+      "name": "Quốc gia sơ kì Đông Nam Á",
+      "description": "Các quốc gia sơ kì ở Đông Nam Á như Văn Lang, Âu Lạc, Chăm-pa, Phù Nam, xuất hiện từ thế kỉ VII TCN đến thế kỉ VII.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c052"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "giao-luu-thuong-mai-dong-nam-a",
+      "name": "Giao lưu thương mại Đông Nam Á",
+      "description": "Quá trình giao lưu thương mại của các quốc gia sơ kì Đông Nam Á với Trung Quốc, Ấn Độ và các nền văn minh khác.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c052",
+        "sgk-lich-su-va-ia-li-6-kntt-c053"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "ky-nang-doc-ban-do",
+      "name": "Kỹ năng đọc bản đồ",
+      "description": "Kỹ năng mô tả vị trí địa lí của khu vực Đông Nam Á dựa trên lược đồ.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c051"
+      ],
+      "evidence": []
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "prerequisite_of",
+      "target": "c4",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c051",
+      "evidence": "",
+      "confidence": 0.9
+    },
+    {
+      "source": "c2",
+      "relation_type": "causes",
+      "target": "c3",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c052",
+      "evidence": "",
+      "confidence": 0.8
+    }
+  ],
+  "misconceptions": []
+}

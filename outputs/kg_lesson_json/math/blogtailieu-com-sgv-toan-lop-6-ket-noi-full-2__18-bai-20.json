@@ -1,0 +1,39 @@
+{
+  "document": {
+    "document_id": "math-k6-sgv",
+    "source_type": "SGV",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 2",
+    "lesson": "Bài 20"
+  },
+  "learning_objectives": [
+    {
+      "code": "hieu-cach-tinh-chu-vi-dien-tich",
+      "description": "Hiểu cách tính chu vi, diện tích của một số tứ giác.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Hiểu cách tính chu vi, diện tích của một số tứ giác."
+    },
+    {
+      "code": "nho-cong-thuc-tinh-chu-vi-dien-tich",
+      "description": "Nhớ được công thức tính chu vi, diện tích của một số tứ giác đã học.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhớ được công thức tính chu vi, diện tích của một số tứ giác đã học."
+    },
+    {
+      "code": "giai-quyet-van-de-thuc-tien",
+      "description": "Giải quyết được một số vấn đề thực tiễn gắn với việc tính chu vi, diện tích của một số tứ giác đã học.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Giải quyết được một số vấn đề thực tiễn gắn với việc tính chu vi, diện tích của một số tứ giác đã học."
+    },
+    {
+      "code": "boi-duong-tri-tuong-tuong",
+      "description": "Bồi dưỡng trí tưởng tượng, hứng thú học tập, ý thức làm việc nhóm, ý thức tìm tòi, khám phá và sáng tạo cho HS.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Bồi dưỡng trí tưởng tượng, hứng thú học tập, ý thức làm việc nhóm, ý thức tìm tòi, khám phá và sáng tạo cho HS."
+    }
+  ],
+  "concepts": [],
+  "relations": [],
+  "misconceptions": []
+}

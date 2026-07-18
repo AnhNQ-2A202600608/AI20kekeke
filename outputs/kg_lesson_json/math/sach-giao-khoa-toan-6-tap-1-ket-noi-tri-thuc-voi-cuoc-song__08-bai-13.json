@@ -1,0 +1,146 @@
+{
+  "document": {
+    "document_id": "math-k6-sgk",
+    "source_type": "SGK",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 1",
+    "lesson": "Bài 13"
+  },
+  "learning_objectives": [],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "so-nguyen",
+      "name": "Số nguyên",
+      "description": "Số nguyên là các số không có phần thập phân, bao gồm số dương, số âm và số 0.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c070"
+      ],
+      "evidence": [
+        "Số nguyên"
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "so-nguyen-duong",
+      "name": "Số nguyên dương",
+      "description": "Số nguyên dương là các số tự nhiên khác 0.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c070"
+      ],
+      "evidence": [
+        "Các số tự nhiên (khác 0) 1; 2; 3; 4; ... còn được gọi là các số nguyên dương."
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "so-nguyen-am",
+      "name": "Số nguyên âm",
+      "description": "Số nguyên âm là các số nhỏ hơn 0.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c070"
+      ],
+      "evidence": [
+        "Các số -1; -2; -3; ... gọi là các số nguyên âm."
+      ]
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "tap-hop-so-nguyen",
+      "name": "Tập hợp số nguyên",
+      "description": "Tập hợp số nguyên là tập hợp gồm các số nguyên âm, số 0 và các số nguyên dương.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c070"
+      ],
+      "evidence": [
+        "Tập hợp Z gồm các số nguyên âm, số 0 và các số nguyên dương gọi là tập hợp số nguyên."
+      ]
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "truc-so",
+      "name": "Trục số",
+      "description": "Trục số là một đường thẳng dùng để biểu diễn các số nguyên.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c072"
+      ],
+      "evidence": [
+        "Ta biểu diễn các số 0; 1; 2; 3; ... và các số nguyên âm -1; -2; -3; ... như Hình 3.6."
+      ]
+    },
+    {
+      "temporary_id": "c6",
+      "suggested_code": "so-sanh-hai-so-nguyen",
+      "name": "So sánh hai số nguyên",
+      "description": "So sánh hai số nguyên dựa trên vị trí của chúng trên trục số.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c072"
+      ],
+      "evidence": [
+        "Trên trục số, điểm biểu diễn các số nguyên âm nằm trước hay sau góc O?"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "is_a",
+      "target": "c2",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c070",
+      "evidence": "Các số tự nhiên (khác 0) 1; 2; 3; 4; ... còn được gọi là các số nguyên dương.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c1",
+      "relation_type": "is_a",
+      "target": "c3",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c070",
+      "evidence": "Các số -1; -2; -3; ... gọi là các số nguyên âm.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c1",
+      "relation_type": "part_of",
+      "target": "c4",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c070",
+      "evidence": "Tập hợp Z gồm các số nguyên âm, số 0 và các số nguyên dương gọi là tập hợp số nguyên.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c1",
+      "relation_type": "related_to",
+      "target": "c5",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c072",
+      "evidence": "Ta biểu diễn các số 0; 1; 2; 3; ... và các số nguyên âm -1; -2; -3; ... như Hình 3.6.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c6",
+      "relation_type": "prerequisite_of",
+      "target": "c5",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c072",
+      "evidence": "Trên trục số, điểm biểu diễn các số nguyên âm nằm trước hay sau góc O?",
+      "confidence": 1.0
+    }
+  ],
+  "misconceptions": []
+}

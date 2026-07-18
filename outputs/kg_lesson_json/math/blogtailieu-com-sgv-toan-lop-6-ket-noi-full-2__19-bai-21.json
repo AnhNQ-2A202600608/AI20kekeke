@@ -1,0 +1,45 @@
+{
+  "document": {
+    "document_id": "math-k6-sgv",
+    "source_type": "SGV",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 2",
+    "lesson": "Bài 21"
+  },
+  "learning_objectives": [
+    {
+      "code": "nhan-biet-hinh-co-truc-doi-xung",
+      "description": "Nhận biết được hình có trục đối xứng.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận biết được hình có trục đối xứng."
+    },
+    {
+      "code": "nhan-biet-truc-doi-xung",
+      "description": "Nhận biết được trục đối xứng của các hình hình học đơn giản.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận biết được trục đối xứng của các hình hình học đơn giản."
+    },
+    {
+      "code": "ky-nang-gap-giay",
+      "description": "Nhận biết được trục đối xứng của một hình trên giấy bằng cách gấp đôi tờ giấy.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận biết được trục đối xứng của một hình trên giấy bằng cách gấp đôi tờ giấy."
+    },
+    {
+      "code": "cach-gap-giay",
+      "description": "Biết được cách gấp giấy để cắt chữ hoặc một số hình đơn giản có trục đối xứng.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Biết được cách gấp giấy để cắt chữ hoặc một số hình đơn giản có trục đối xứng."
+    },
+    {
+      "code": "boi-duong-pham-chat",
+      "description": "Bồi dưỡng trí tưởng tượng, hứng thú học tập, ý thức làm việc nhóm, ý thức tìm tòi, khám phá và sáng tạo cho HS.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Bồi dưỡng trí tưởng tượng, hứng thú học tập, ý thức làm việc nhóm, ý thức tìm tòi, khám phá và sáng tạo cho HS."
+    }
+  ],
+  "concepts": [],
+  "relations": [],
+  "misconceptions": []
+}

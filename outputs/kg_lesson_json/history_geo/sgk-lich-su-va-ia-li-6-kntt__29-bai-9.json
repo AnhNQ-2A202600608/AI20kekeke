@@ -1,0 +1,93 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Chương 3",
+    "lesson": "Bài 9"
+  },
+  "learning_objectives": [
+    {
+      "code": "xac-dinh-phuong-huong",
+      "description": "Xác định được phương hướng ngoài thực tế dựa vào la bàn hoặc quan sát các hiện tượng tự nhiên.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c140",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "cau-tao-la-ban",
+      "name": "Cấu tạo la bàn",
+      "description": "Các bộ phận cơ bản của la bàn như kim nam châm, vòng chia độ và cách sử dụng la bàn để xác định phương hướng.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c140",
+        "sgk-lich-su-va-ia-li-6-kntt-c141"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "phuong-huong-tu-nhien",
+      "name": "Phương hướng tự nhiên",
+      "description": "Cách xác định phương hướng dựa vào hiện tượng tự nhiên như Mặt Trời, sao Bắc Cực và hành vi của động vật.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c141",
+        "sgk-lich-su-va-ia-li-6-kntt-c142"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "ky-nang-su-dung-la-ban",
+      "name": "Kỹ năng sử dụng la bàn",
+      "description": "Kỹ năng thực hành xác định phương hướng bằng la bàn, bao gồm cách đặt la bàn và đọc độ.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c141"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "ky-nang-quan-sat-tu-nhien",
+      "name": "Kỹ năng quan sát tự nhiên",
+      "description": "Kỹ năng thực hành xác định phương hướng dựa vào quan sát hiện tượng tự nhiên như Mặt Trời và chim bay.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c142"
+      ],
+      "evidence": []
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "prerequisite_of",
+      "target": "c3",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c140",
+      "evidence": "Cấu tạo la bàn là kiến thức cần thiết để sử dụng la bàn.",
+      "confidence": 0.9
+    },
+    {
+      "source": "c2",
+      "relation_type": "prerequisite_of",
+      "target": "c4",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c141",
+      "evidence": "Phương hướng tự nhiên là kiến thức cần thiết để thực hiện kỹ năng quan sát tự nhiên.",
+      "confidence": 0.9
+    }
+  ],
+  "misconceptions": []
+}

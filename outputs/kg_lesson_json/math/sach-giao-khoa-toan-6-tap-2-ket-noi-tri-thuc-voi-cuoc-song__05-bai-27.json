@@ -1,0 +1,100 @@
+{
+  "document": {
+    "document_id": "math-k6-sgk",
+    "source_type": "SGK",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương VI",
+    "lesson": "Bài 27"
+  },
+  "learning_objectives": [],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "tim-gia-tri-phan-so-cua-mot-so-cho-truoc",
+      "name": "Tìm giá trị phân số của một số cho trước",
+      "description": "Muốn tìm giá trị phân số của một số a cho trước, ta tính a nhân với phân số đó.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c025"
+      ],
+      "evidence": [
+        "Muốn tìm \\frac{m}{n} của một số a cho trước ta tính a \\cdot \\frac{m}{n}."
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "tim-mot-so-biet-gia-tri-phan-so-cua-no",
+      "name": "Tìm một số biết giá trị phân số của nó",
+      "description": "Muốn tìm một số biết giá trị phân số của số đó bằng b, ta tính b chia cho phân số đó.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c026"
+      ],
+      "evidence": [
+        "Muốn tìm một số biết \\frac{m}{n} của số đó bằng b, ta tính b : \\frac{m}{n}."
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "luu-y-khi-tinh-phan-so",
+      "name": "Lưu ý khi tính phân số",
+      "description": "Khi tính phân số, cần quy đồng mẫu số nếu các phân số có mẫu số khác nhau.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c027"
+      ],
+      "evidence": [
+        "Khi tính \\frac{1}{6} + \\frac{1}{7} + \\frac{1}{9}, cần quy đồng mẫu số."
+      ]
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "tinh-gia-tri-bieu-thuc-voi-phan-so",
+      "name": "Tính giá trị biểu thức với phân số",
+      "description": "Tính giá trị của biểu thức có chứa phân số bằng cách thay số vào và thực hiện các phép tính.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c028"
+      ],
+      "evidence": [
+        "Tính giá trị của biểu thức B = b - \\frac{1}{2} b - \\frac{1}{3} b - \\frac{1}{4} b."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "prerequisite_of",
+      "target": "c2",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c025",
+      "evidence": "Muốn tìm một số biết giá trị phân số của số đó bằng b, ta tính b : \\frac{m}{n}.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c2",
+      "relation_type": "prerequisite_of",
+      "target": "c3",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c026",
+      "evidence": "Khi tính \\frac{1}{6} + \\frac{1}{7} + \\frac{1}{9}, cần quy đồng mẫu số.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c3",
+      "relation_type": "prerequisite_of",
+      "target": "c4",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c027",
+      "evidence": "Tính giá trị của biểu thức B = b - \\frac{1}{2} b - \\frac{1}{3} b - \\frac{1}{4} b.",
+      "confidence": 1.0
+    }
+  ],
+  "misconceptions": []
+}

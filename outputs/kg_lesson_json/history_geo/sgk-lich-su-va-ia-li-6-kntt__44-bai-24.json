@@ -1,0 +1,106 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Chương 24",
+    "lesson": "Bài 24"
+  },
+  "learning_objectives": [
+    {
+      "code": "trinh-bay-dac-diem-rung-nhiet-doi",
+      "description": "Trình bày được đặc điểm của rừng nhiệt đới.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c202",
+      "evidence": ""
+    },
+    {
+      "code": "co-y-thuc-bao-ve-rung",
+      "description": "Có ý thức bảo vệ rừng.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c202",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "dac-diem-rung-nhiet-doi",
+      "name": "Đặc điểm rừng nhiệt đới",
+      "description": "Rừng nhiệt đới trải từ vùng Xích đạo đến hết vành đai nhiệt đới, có khí hậu ấm áp và ẩm ướt, với nhiều loài thực vật và động vật phong phú.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c202",
+        "sgk-lich-su-va-ia-li-6-kntt-c203"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "rung-mua-nhiet-doi",
+      "name": "Rừng mưa nhiệt đới",
+      "description": "Rừng mưa nhiệt đới được hình thành ở nơi mưa nhiều quanh năm, có 4-5 tầng cây và phân bố ở lưu vực sông A-ma-dôn, sông Công-gô và một phần Đông Nam Á.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c202"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "rung-nhiet-doi-gio-mua",
+      "name": "Rừng nhiệt đới gió mùa",
+      "description": "Rừng nhiệt đới gió mùa phát triển ở những nơi có một mùa mưa và một mùa khô rõ rệt, phần lớn cây trong rừng rụng lá vào mùa khô.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c202"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "bao-ve-rung-nhiet-doi",
+      "name": "Bảo vệ rừng nhiệt đới",
+      "description": "Cần có hành động cụ thể để bảo vệ rừng nhiệt đới, như sử dụng sản phẩm từ rừng một cách tiết kiệm và hợp lý.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c203"
+      ],
+      "evidence": []
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "related_to",
+      "target": "c2",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c203",
+      "evidence": "Rừng mưa nhiệt đới là một trong hai kiểu rừng nhiệt đới, có đặc điểm riêng biệt.",
+      "confidence": 0.9
+    },
+    {
+      "source": "c1",
+      "relation_type": "related_to",
+      "target": "c3",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c203",
+      "evidence": "Rừng nhiệt đới gió mùa là kiểu rừng nhiệt đới khác với rừng mưa nhiệt đới.",
+      "confidence": 0.9
+    },
+    {
+      "source": "c4",
+      "relation_type": "prerequisite_of",
+      "target": "c1",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c203",
+      "evidence": "Để hiểu rõ về đặc điểm của rừng nhiệt đới, cần có ý thức bảo vệ rừng.",
+      "confidence": 0.8
+    }
+  ],
+  "misconceptions": []
+}

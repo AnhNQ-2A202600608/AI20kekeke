@@ -1,0 +1,45 @@
+{
+  "document": {
+    "document_id": "math-k6-sgv",
+    "source_type": "SGV",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Bài 13",
+    "lesson": "Tập hợp các số nguyên"
+  },
+  "learning_objectives": [
+    {
+      "code": "nhan-biet-so-nguyen-duong-am",
+      "description": "Nhận biết được số nguyên dương (số dương), số nguyên âm (số âm) và ý nghĩa của chúng trong đời sống thực tế.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận biết được số nguyên dương (số dương), số nguyên âm (số âm) và ý nghĩa của chúng trong đời sống thực tế."
+    },
+    {
+      "code": "nhan-biet-tap-hop-so-nguyen",
+      "description": "Nhận biết được tập hợp các số nguyên \\(\\mathbb{Z}\\) và thứ tự trong \\(\\mathbb{Z}\\).",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận biết được tập hợp các số nguyên \\(\\mathbb{Z}\\) và thứ tự trong \\(\\mathbb{Z}\\)."
+    },
+    {
+      "code": "doc-viet-so-nguyen",
+      "description": "Đọc và viết được số nguyên dương và số nguyên âm.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Đọc và viết được số nguyên dương và số nguyên âm."
+    },
+    {
+      "code": "bieu-dien-so-truc-so",
+      "description": "Biểu diễn được các số nguyên không quá lớn trên trục số.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Biểu diễn được các số nguyên không quá lớn trên trục số."
+    },
+    {
+      "code": "so-sanh-hai-so-nguyen",
+      "description": "So sánh được hai số nguyên cho trước.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "So sánh được hai số nguyên cho trước."
+    }
+  ],
+  "concepts": [],
+  "relations": [],
+  "misconceptions": []
+}

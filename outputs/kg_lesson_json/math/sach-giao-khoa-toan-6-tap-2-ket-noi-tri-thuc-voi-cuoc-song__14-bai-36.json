@@ -1,0 +1,123 @@
+{
+  "document": {
+    "document_id": "math-k6-sgk",
+    "source_type": "SGK",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 2",
+    "lesson": "Bài 36"
+  },
+  "learning_objectives": [],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "goc",
+      "name": "Góc",
+      "description": "Góc là hình gồm hai tia chung gốc.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c076"
+      ],
+      "evidence": [
+        "Góc là hình gồm hai tia chung gốc."
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "dinh-cua-goc",
+      "name": "Đỉnh của góc",
+      "description": "Điểm chung của hai tia là đỉnh của góc.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c076"
+      ],
+      "evidence": [
+        "Góc chung của hai tia là đỉnh của góc."
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "canh-cua-goc",
+      "name": "Cạnh của góc",
+      "description": "Hai tia là hai cạnh của góc.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c076"
+      ],
+      "evidence": [
+        "Hai tia là hai cạnh của góc."
+      ]
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "goc-bet",
+      "name": "Góc bẹt",
+      "description": "Góc bẹt là góc có hai tia đối nhau.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c076"
+      ],
+      "evidence": [
+        "Đặc biệt, khi Ox và Oy là hai tia đối nhau, ta có góc bẹt xOy."
+      ]
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "diem-trong-cua-goc",
+      "name": "Điểm trong của góc",
+      "description": "Điểm nằm trong góc không nằm trên hai cạnh của góc.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c077"
+      ],
+      "evidence": [
+        "Ta gọi M là một điểm trong của góc xOy (điểm M nằm trong góc xOy)."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "part_of",
+      "target": "c2",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c076",
+      "evidence": "Điểm chung của hai tia là đỉnh của góc.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c1",
+      "relation_type": "part_of",
+      "target": "c3",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c076",
+      "evidence": "Hai tia là hai cạnh của góc.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c1",
+      "relation_type": "related_to",
+      "target": "c4",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c076",
+      "evidence": "Đặc biệt, khi Ox và Oy là hai tia đối nhau, ta có góc bẹt xOy.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c1",
+      "relation_type": "related_to",
+      "target": "c5",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c077",
+      "evidence": "Ta gọi M là một điểm trong của góc xOy (điểm M nằm trong góc xOy).",
+      "confidence": 1.0
+    }
+  ],
+  "misconceptions": []
+}

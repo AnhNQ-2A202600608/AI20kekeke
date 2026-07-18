@@ -1,0 +1,203 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Chương 6",
+    "lesson": "Bài 21"
+  },
+  "learning_objectives": [
+    {
+      "code": "nhan-biet-dai-duong",
+      "description": "Nhận biết các đại dương trên thế giới và vị trí của chúng.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c190",
+      "evidence": ""
+    },
+    {
+      "code": "phan-biet-dang-van-dong-nuoc",
+      "description": "Phân biệt ba dạng vận động của nước biển và đại dương: sóng, thủy triều và dòng biển.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c192",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "bien-va-dai-duong",
+      "name": "Biển và đại dương",
+      "description": "Nước mặn chiếm 97,5% khối nước trên Trái Đất, gần như toàn bộ nằm trong các biển và đại dương.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c190"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "dai-duong-the-gioi",
+      "name": "Đại dương thế giới",
+      "description": "Lớp nước liên tục, bao phủ hơn 70% diện tích bề mặt Trái Đất, bao gồm: Thái Bình Dương, Đại Tây Dương, Ấn Độ Dương và Bắc Băng Dương.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c190"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "do-muoi-nuoc-bien",
+      "name": "Độ muối nước biển",
+      "description": "Độ muối trung bình của nước đại dương là 35‰, tức là trung bình trong 1 ki-lô-gam nước đại dương có 35 gam muối.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c190"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "nhiet-do-nuoc-bien",
+      "name": "Nhiệt độ nước biển",
+      "description": "Nhiệt độ trung bình bề mặt toàn bộ đại dương thế giới là khoảng 17°C.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c190"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "song-bien",
+      "name": "Sóng biển",
+      "description": "Sóng biển chủ yếu được hình thành do tác động của gió, có thể tạo ra sóng thần khi có động đất hay núi lửa ngầm.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c191"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c6",
+      "suggested_code": "thuy-trieu",
+      "name": "Thủy triều",
+      "description": "Hiện tượng nước biển dâng cao và hạ thấp theo quy luật hàng ngày, hình thành do lực hút của Mặt Trăng và Mặt Trời.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c191"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c7",
+      "suggested_code": "dong-bien",
+      "name": "Dòng biển",
+      "description": "Các dòng nước chảy trong biển và đại dương, có hai loại: dòng biển nóng và dòng biển lạnh.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c191",
+        "sgk-lich-su-va-ia-li-6-kntt-c192"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c8",
+      "suggested_code": "loai-dong-bien",
+      "name": "Loại dòng biển",
+      "description": "Dòng biển nóng chảy từ vĩ độ thấp hơn đến vĩ độ cao hơn, dòng biển lạnh chảy từ vĩ độ cao hơn về vĩ độ thấp hơn.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c192"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c9",
+      "suggested_code": "tac-dong-cua-dong-bien",
+      "name": "Tác động của dòng biển",
+      "description": "Dòng biển nóng có khí hậu ấm áp, mưa nhiều hơn và ngược lại với dòng biển lạnh.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c192"
+      ],
+      "evidence": []
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "related_to",
+      "target": "c2",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c190",
+      "evidence": "",
+      "confidence": 0.9
+    },
+    {
+      "source": "c2",
+      "relation_type": "part_of",
+      "target": "c1",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c190",
+      "evidence": "",
+      "confidence": 0.9
+    },
+    {
+      "source": "c3",
+      "relation_type": "related_to",
+      "target": "c4",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c190",
+      "evidence": "",
+      "confidence": 0.8
+    },
+    {
+      "source": "c5",
+      "relation_type": "related_to",
+      "target": "c6",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c191",
+      "evidence": "",
+      "confidence": 0.8
+    },
+    {
+      "source": "c6",
+      "relation_type": "related_to",
+      "target": "c7",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c191",
+      "evidence": "",
+      "confidence": 0.8
+    },
+    {
+      "source": "c7",
+      "relation_type": "related_to",
+      "target": "c8",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c192",
+      "evidence": "",
+      "confidence": 0.8
+    },
+    {
+      "source": "c7",
+      "relation_type": "related_to",
+      "target": "c9",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c192",
+      "evidence": "",
+      "confidence": 0.8
+    }
+  ],
+  "misconceptions": []
+}

@@ -1,0 +1,123 @@
+{
+  "document": {
+    "document_id": "math-k6-sgk",
+    "source_type": "SGK",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 1",
+    "lesson": "Bài 15"
+  },
+  "learning_objectives": [],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "quy-tac-dau-ngoc",
+      "name": "Quy tắc dấu ngoặc",
+      "description": "Quy tắc thực hiện các phép tính trong dấu ngoặc trước, và cách bỏ dấu ngoặc trong các biểu thức.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c083"
+      ],
+      "evidence": [
+        "Đối với một biểu thức có dấu ngoặc, ta thường thực hiện các phép tính trong dấu ngoặc trước."
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "bo-dau-ngoc",
+      "name": "Bỏ dấu ngoặc",
+      "description": "Cách bỏ dấu ngoặc trong các biểu thức và quy tắc thay đổi dấu khi bỏ dấu ngoặc.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c083"
+      ],
+      "evidence": [
+        "Khi bỏ dấu ngoặc có dấu “+” đứng trước, ta giữ nguyên dấu của các số hạng trong ngoặc; Khi bỏ dấu ngoặc có dấu “-” đứng trước, ta phải đổi dấu tất cả các số hạng trong dấu ngoặc."
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "tinh-bieu-thuc",
+      "name": "Tính giá trị biểu thức",
+      "description": "Cách tính giá trị của các biểu thức có dấu ngoặc và số nguyên.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c085"
+      ],
+      "evidence": [
+        "Tính giá trị của biểu thức: A = 25 - (-115) - [315 + (-105)]."
+      ]
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "nhan-hai-so-nguyen-khac-dau",
+      "name": "Nhân hai số nguyên khác dấu",
+      "description": "Quy tắc nhân hai số nguyên khác dấu và cách tính tích của chúng.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c087"
+      ],
+      "evidence": [
+        "Muốn nhân hai số nguyên khác dấu, ta nhân phần số tự nhiên của hai số đó với nhau."
+      ]
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "nhan-hai-so-nguyen-cung-dau",
+      "name": "Nhân hai số nguyên cùng dấu",
+      "description": "Quy tắc nhân hai số nguyên cùng dấu và cách tính tích của chúng.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c088"
+      ],
+      "evidence": [
+        "Muốn nhân hai số nguyên âm, ta nhân phần số tự nhiên của hai số đó với nhau."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "part_of",
+      "target": "c2",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c083",
+      "evidence": "Quy tắc thực hiện các phép tính trong dấu ngoặc trước, và cách bỏ dấu ngoặc trong các biểu thức.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c2",
+      "relation_type": "prerequisite_of",
+      "target": "c3",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c085",
+      "evidence": "Cách bỏ dấu ngoặc trong các biểu thức và quy tắc thay đổi dấu khi bỏ dấu ngoặc.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c4",
+      "relation_type": "prerequisite_of",
+      "target": "c3",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c085",
+      "evidence": "Quy tắc nhân hai số nguyên khác dấu và cách tính tích của chúng.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c5",
+      "relation_type": "prerequisite_of",
+      "target": "c3",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c088",
+      "evidence": "Quy tắc nhân hai số nguyên cùng dấu và cách tính tích của chúng.",
+      "confidence": 1.0
+    }
+  ],
+  "misconceptions": []
+}

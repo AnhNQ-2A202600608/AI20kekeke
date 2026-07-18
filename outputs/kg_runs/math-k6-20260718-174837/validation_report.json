@@ -1,0 +1,689 @@
+{
+  "valid": false,
+  "self_relations": [],
+  "duplicate_relations": [],
+  "invalid_relations": [
+    {
+      "relation": {
+        "source": "tam-doi-xung",
+        "relation_type": "prerequisite_of",
+        "target": "nhan-biet-hinh-co-tam-doi-xung",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001",
+        "evidence": "Mỗi số tự nhiên viết trong hệ thập phân đều biểu diễn được thành tổng giá trị các chữ số của nó.",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "ghep-giay-de-cat-hinh-co-tam-doi-xung",
+        "relation_type": "related_to",
+        "target": "kiem-tra-tam-doi-xung",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c002",
+        "evidence": "Cách ghi số La Mã xuất hiện trong nhiều công trình kiến trúc ở châu Âu.",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c002'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c002'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "hinh-co-tam-doi-xung",
+        "relation_type": "is_a",
+        "target": "tam-doi-xung",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c000",
+        "evidence": "Mỗi phần tử n ∈ ℕ được biểu diễn bởi một điểm trên tia số.",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c000'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c000'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "tam-doi-xung",
+        "relation_type": "part_of",
+        "target": "nhan-biet-hinh-co-tam-doi-xung",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c000",
+        "evidence": "Mỗi số tự nhiên có đúng một số liền sau, chẳng như 9 là số liền sau của 8 (còn 8 là số liền trước của 9).",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c000'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c000'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "ghep-giay-de-cat-hinh-co-tam-doi-xung",
+        "relation_type": "prerequisite_of",
+        "target": "dien-tich-hinh-thoi",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001",
+        "evidence": "Nếu số b nhỏ hơn số a thì trên tia số này điểm a nằm bên trái điểm b. Khi đó, ta viết a < b.",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "kiem-tra-tam-doi-xung",
+        "relation_type": "prerequisite_of",
+        "target": "dien-tich-hinh-thoi",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001",
+        "evidence": "Ta còn dùng ký hiệu a ≤ b (đọc là 'a nhỏ hơn hoặc bằng b') để nói 'a < b' hoặc 'a = b'.",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "dien-tich-hinh-thang",
+        "relation_type": "prerequisite_of",
+        "target": "dien-tich-hinh-thoi",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001",
+        "evidence": "Tương tự, ký hiệu a ≥ b (đọc là 'a lớn hơn hoặc bằng b'), có nghĩa là 'a > b' hoặc 'a = b'.",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "chu-vi-hinh-binh-hanh",
+        "relation_type": "prerequisite_of",
+        "target": "mo-ta-thu-tu-ba-so",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c002",
+        "evidence": "Nếu a ≤ b và b ≤ c thì a ≤ c.",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c002'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c002'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "hinh-co-tam-doi-xung",
+        "relation_type": "related_to",
+        "target": "nhan-biet-hinh-co-tam-doi-xung",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001",
+        "evidence": "Phép cộng số tự nhiên có các tính chất: Giao hoán: $a + b = b + a$.",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "hinh-co-tam-doi-xung",
+        "relation_type": "related_to",
+        "target": "ghep-giay-de-cat-hinh-co-tam-doi-xung",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001",
+        "evidence": "Phép cộng số tự nhiên có các tính chất: Kết hợp: $(a + b) + c = a + (b + c)$.",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "hinh-co-tam-doi-xung",
+        "relation_type": "related_to",
+        "target": "kiem-tra-tam-doi-xung",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001",
+        "evidence": "$0 + a = a$.",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "tam-doi-xung",
+        "relation_type": "related_to",
+        "target": "hinh-co-tam-doi-xung",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001",
+        "evidence": "Với hai số tự nhiên $a, b$ đã cho, nếu có số tự nhiên $c$ sao cho $a = b + c$ thì ta có phép trừ $a - b = c$.",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "hinh-co-tam-doi-xung",
+        "relation_type": "part_of",
+        "target": "nhan-biet-hinh-co-tam-doi-xung",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001",
+        "evidence": "Tính chất của phép nhân",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "hinh-co-tam-doi-xung",
+        "relation_type": "part_of",
+        "target": "ghep-giay-de-cat-hinh-co-tam-doi-xung",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001",
+        "evidence": "Tính chất của phép nhân",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "kiem-tra-tam-doi-xung",
+        "relation_type": "part_of",
+        "target": "dien-tich-hinh-thang",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001",
+        "evidence": "Nếu r = 0 thì có phép chia hết",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "kiem-tra-tam-doi-xung",
+        "relation_type": "part_of",
+        "target": "chu-vi-hinh-binh-hanh",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001",
+        "evidence": "Nếu r ≠ 0 thì có phép chia có dư",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "hinh-co-tam-doi-xung",
+        "relation_type": "related_to",
+        "target": "dien-tich-hinh-binh-hanh",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c000",
+        "evidence": "Chẳng hạn, a · b = ab; 2 · m = 2m.",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c000'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c000'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "kiem-tra-tam-doi-xung",
+        "relation_type": "related_to",
+        "target": "chu-vi-hinh-thoi",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001",
+        "evidence": "Trong mỗi trường hợp, hãy cho biết số bị chia, số chia, thương và số dư (nếu có).",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "dien-tich-hinh-thoi",
+        "relation_type": "related_to",
+        "target": "hinh-co-tam-doi-xung",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c009",
+        "evidence": "Luỹ thừa → Nhân và chia → Cộng và trừ.",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c009'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c009'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "kiem-tra-tam-doi-xung",
+        "relation_type": "related_to",
+        "target": "dien-tich-hinh-thang",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c017",
+        "evidence": "UCLN(18, 30) = 6.",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c017'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c017'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "tam-doi-xung",
+        "relation_type": "used_for",
+        "target": "ghep-giay-de-cat-hinh-co-tam-doi-xung",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c004",
+        "evidence": "Thông thường ta nên chọn mẫu chung là bội chung nhỏ nhất của hai mẫu.",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c004'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c004'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "ghep-giay-de-cat-hinh-co-tam-doi-xung",
+        "relation_type": "used_for",
+        "target": "kiem-tra-tam-doi-xung",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c005",
+        "evidence": "Thực hiện phép tính với phân số bằng cách quy đồng mẫu và thực hiện phép tính.",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c005'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c005'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "hinh-co-tam-doi-xung",
+        "relation_type": "is_a",
+        "target": "ghep-giay-de-cat-hinh-co-tam-doi-xung",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c000",
+        "evidence": "Tập hợp Z gồm các số nguyên âm, số 0 và các số nguyên dương gọi là tập hợp số nguyên.",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c000'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c000'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "tam-doi-xung",
+        "relation_type": "part_of",
+        "target": "ghep-giay-de-cat-hinh-co-tam-doi-xung",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c000",
+        "evidence": "Các số tự nhiên (khác 0) 1; 2; 3; 4; ... còn được gọi là các số nguyên dương.",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c000'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c000'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "nhan-biet-hinh-co-tam-doi-xung",
+        "relation_type": "part_of",
+        "target": "ghep-giay-de-cat-hinh-co-tam-doi-xung",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c000",
+        "evidence": "Các số -1; -2; -3; ... gọi là các số nguyên âm.",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c000'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c000'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "hinh-co-tam-doi-xung",
+        "relation_type": "related_to",
+        "target": "tam-doi-xung",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c003",
+        "evidence": "Phép cộng số nguyên có các tính chất: Giao hoán và Kết hợp.",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c003'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c003'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "dien-tich-hinh-thang",
+        "relation_type": "related_to",
+        "target": "kiem-tra-tam-doi-xung",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c003",
+        "evidence": "Quy tắc trừ hai số nguyên liên quan đến phép cộng hai số nguyên.",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c003'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c003'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "nhan-biet-hinh-co-tam-doi-xung",
+        "relation_type": "prerequisite_of",
+        "target": "ghep-giay-de-cat-hinh-co-tam-doi-xung",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c002",
+        "evidence": "Tính giá trị của biểu thức: A = 25 - (-115) - [315 + (-105)].",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c002'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c002'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "kiem-tra-tam-doi-xung",
+        "relation_type": "prerequisite_of",
+        "target": "dien-tich-hinh-thang",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c004",
+        "evidence": "Muốn nhân hai số nguyên khác dấu, ta nhân phần số tự nhiên của hai số đó với nhau.",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c004'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c004'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "dien-tich-hinh-thang",
+        "relation_type": "prerequisite_of",
+        "target": "chu-vi-hinh-binh-hanh",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c005",
+        "evidence": "Muốn nhân hai số nguyên âm, ta nhân phần số tự nhiên của hai số đó với nhau.",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c005'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c005'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "chu-vi-hinh-binh-hanh",
+        "relation_type": "prerequisite_of",
+        "target": "dien-tich-hinh-binh-hanh",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c005",
+        "evidence": "Phép nhân các số nguyên có các tính chất: Giao hoán, Kết hợp, Phân phối.",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c005'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c005'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "hinh-co-tam-doi-xung",
+        "relation_type": "is_a",
+        "target": "nhan-biet-hinh-co-tam-doi-xung",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c000",
+        "evidence": "Khi a : b (a, b ∈ ℤ, b ≠ 0), ta còn gọi a là một bội của b.",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c000'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c000'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "ghep-giay-de-cat-hinh-co-tam-doi-xung",
+        "relation_type": "prerequisite_of",
+        "target": "dien-tich-hinh-thang",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001",
+        "evidence": "Tìm các bội của 7.",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "tam-doi-xung",
+        "relation_type": "related_to",
+        "target": "kiem-tra-tam-doi-xung",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001",
+        "evidence": "Mô tả một số yếu tố cơ bản của hình tam giác đều, hình vuông, hình lục giác đều.",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "nhan-biet-hinh-co-tam-doi-xung",
+        "relation_type": "related_to",
+        "target": "dien-tich-hinh-thang",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c002",
+        "evidence": "Tạo lập được hình lục giác đều thông qua việc lắp ghép các hình tam giác đều.",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c002'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c002'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "hinh-co-tam-doi-xung",
+        "relation_type": "used_for",
+        "target": "nhan-biet-hinh-co-tam-doi-xung",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c000",
+        "evidence": "Công thức tính chu vi hình chữ nhật là C = 2(a + b), với a và b là chiều dài và chiều rộng.",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c000'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c000'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "kiem-tra-tam-doi-xung",
+        "relation_type": "used_for",
+        "target": "dien-tich-hinh-thang",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c000",
+        "evidence": "Công thức tính diện tích hình thang là S = 1/2 * (a + b) * h, với a và b là độ dài hai đáy và h là chiều cao.",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c000'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c000'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "chu-vi-hinh-binh-hanh",
+        "relation_type": "used_for",
+        "target": "dien-tich-hinh-binh-hanh",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c002",
+        "evidence": "Công thức tính diện tích hình bình hành là S = ah, với a là cạnh và h là chiều cao.",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c002'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c002'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "chu-vi-hinh-thoi",
+        "relation_type": "used_for",
+        "target": "dien-tich-hinh-thoi",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c002",
+        "evidence": "Công thức tính diện tích hình thoi là S = 1/2 * ab, với a và b là độ dài hai đường chéo.",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c002'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c002'."
+      ]
+    },
+    {
+      "relation": {
+        "source": "nhan-biet-hinh-co-tam-doi-xung",
+        "relation_type": "prerequisite_of",
+        "target": "kiem-tra-tam-doi-xung",
+        "source_chunk_id": "sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001",
+        "evidence": "Nhận biết hình có tâm đối xứng.",
+        "confidence": 1.0,
+        "validation_status": "invalid",
+        "validation_errors": [
+          "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001'."
+        ]
+      },
+      "errors": [
+        "Evidence text is not found in chunk 'sach-giao-khoa-toan-6-tap-1-ket-noi-tri-thuc-voi-cuoc-song-c001'."
+      ]
+    }
+  ],
+  "prerequisite_cycles": [],
+  "removed_relations": []
+}

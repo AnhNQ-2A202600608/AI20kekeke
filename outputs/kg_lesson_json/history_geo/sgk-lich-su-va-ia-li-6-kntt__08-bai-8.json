@@ -1,0 +1,171 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Bài 8",
+    "lesson": "ẤN ĐỘ CỔ ĐẠI"
+  },
+  "learning_objectives": [
+    {
+      "code": "trinh-bay-dieu-kien-tu-nhien",
+      "description": "Trình bày được những điểm chính về điều kiện tự nhiên của lưu vực sông Ấn, sông Hằng ảnh hưởng đến sự hình thành của nền văn minh.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c033",
+      "evidence": ""
+    },
+    {
+      "code": "trinh-bay-che-do-xa-hoi",
+      "description": "Trình bày được những điểm chính về chế độ xã hội của Ấn Độ thời cổ đại.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c034",
+      "evidence": ""
+    },
+    {
+      "code": "nhan-biet-thanh-tuu-van-hoa",
+      "description": "Nhận biết được những thành tựu văn hoá tiêu biểu của Ấn Độ thời cổ đại.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c035",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "luu-vuc-song-an",
+      "name": "Lưu vực sông Ấn",
+      "description": "Khu vực địa lý nơi có sông Ấn chảy qua, ảnh hưởng đến sự phát triển văn minh Ấn Độ cổ đại.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c033"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "luu-vuc-song-hang",
+      "name": "Lưu vực sông Hằng",
+      "description": "Khu vực địa lý nơi có sông Hằng chảy qua, ảnh hưởng đến sự phát triển văn minh Ấn Độ cổ đại.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c033"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "che-do-dang-cap-vac-na",
+      "name": "Chế độ đẳng cấp Vác-na",
+      "description": "Hệ thống phân chia xã hội ở Ấn Độ cổ đại dựa trên chủng tộc và màu da.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c034"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "chu-viet-co-dai-an-do",
+      "name": "Chữ viết cổ đại Ấn Độ",
+      "description": "Hệ thống chữ viết được phát triển ở Ấn Độ cổ đại, có ảnh hưởng đến nhiều loại chữ viết sau này.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c034"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "thanh-tuu-van-hoa-an-do",
+      "name": "Thành tựu văn hoá Ấn Độ cổ đại",
+      "description": "Các thành tựu văn hoá tiêu biểu của Ấn Độ cổ đại như văn học, tôn giáo, kiến trúc.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c035"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c6",
+      "suggested_code": "he-thong-chu-so",
+      "name": "Hệ thống chữ số",
+      "description": "Hệ thống chữ số do người Ấn Độ cổ đại phát minh ra, bao gồm chữ số 0 và 10 chữ số cơ bản.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c035"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c7",
+      "suggested_code": "phat-giao",
+      "name": "Phật giáo",
+      "description": "Tôn giáo được hình thành ở Ấn Độ cổ đại, do Xít-đác-ta Gô-ta-ma sáng lập.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c035"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c8",
+      "suggested_code": "dao-ba-la-mon",
+      "name": "Đạo Bà La Môn",
+      "description": "Tôn giáo cổ xưa nhất ở Ấn Độ, phát triển thành đạo Hin-đu.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c035"
+      ],
+      "evidence": []
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "related_to",
+      "target": "c2",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c033",
+      "evidence": "",
+      "confidence": 0.9
+    },
+    {
+      "source": "c3",
+      "relation_type": "related_to",
+      "target": "c4",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c034",
+      "evidence": "",
+      "confidence": 0.8
+    },
+    {
+      "source": "c5",
+      "relation_type": "related_to",
+      "target": "c6",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c035",
+      "evidence": "",
+      "confidence": 0.85
+    },
+    {
+      "source": "c7",
+      "relation_type": "related_to",
+      "target": "c8",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c035",
+      "evidence": "",
+      "confidence": 0.9
+    }
+  ],
+  "misconceptions": []
+}

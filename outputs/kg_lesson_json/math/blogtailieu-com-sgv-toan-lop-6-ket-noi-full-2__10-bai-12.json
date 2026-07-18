@@ -1,0 +1,39 @@
+{
+  "document": {
+    "document_id": "math-k6-sgv",
+    "source_type": "SGV",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương II",
+    "lesson": "Bài 12"
+  },
+  "learning_objectives": [
+    {
+      "code": "nhan-biet-khai-niem-boi-chung",
+      "description": "Nhận biết được các khái niệm mới về bội chung, bội chung nhỏ nhất, ứng dụng của bội chung nhỏ nhất để quy đồng mẫu các phân số.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận biết được các khái niệm mới về bội chung, bội chung nhỏ nhất, ứng dụng của bội chung nhỏ nhất để quy đồng mẫu các phân số."
+    },
+    {
+      "code": "xac-dinh-boi-chung",
+      "description": "Xác định được bội chung, bội chung nhỏ nhất của hai hoặc ba số tự nhiên đã cho.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Xác định được bội chung, bội chung nhỏ nhất của hai hoặc ba số tự nhiên đã cho."
+    },
+    {
+      "code": "su-dung-boi-chung",
+      "description": "Sử dụng được bội chung nhỏ nhất để quy đồng mẫu số, cộng trừ các phân số.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Sử dụng được bội chung nhỏ nhất để quy đồng mẫu số, cộng trừ các phân số."
+    },
+    {
+      "code": "boi-duong-hung-thu",
+      "description": "Bồi dưỡng hứng thú học tập, ý thức làm việc nhóm, ý thức tìm tòi, khám phá và sáng tạo cho HS.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Bồi dưỡng hứng thú học tập, ý thức làm việc nhóm, ý thức tìm tòi, khám phá và sáng tạo cho HS."
+    }
+  ],
+  "concepts": [],
+  "relations": [],
+  "misconceptions": []
+}

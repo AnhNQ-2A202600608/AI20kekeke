@@ -1,0 +1,113 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Chương 1",
+    "lesson": "Bài 4"
+  },
+  "learning_objectives": [
+    {
+      "code": "doc-ky-hieu-ban-do",
+      "description": "Đọc được các kí hiệu và chú giải bản đồ hành chính, bản đồ địa hình.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c119",
+      "evidence": ""
+    },
+    {
+      "code": "tim-duong-di-tren-ban-do",
+      "description": "Biết tìm đường đi trên bản đồ.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c122",
+      "evidence": ""
+    },
+    {
+      "code": "doc-ban-do",
+      "description": "Biết đọc bản đồ, xác định được vị trí của đối tượng địa lí trên bản đồ.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c119",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "ki-hieu-ban-do",
+      "name": "Kí hiệu bản đồ",
+      "description": "Các dấu hiệu quy ước dùng để thể hiện các đối tượng địa lí trên bản đồ.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c119",
+        "sgk-lich-su-va-ia-li-6-kntt-c120"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "bang-chu-giai",
+      "name": "Bảng chú giải",
+      "description": "Phần giải thích các kí hiệu trên bản đồ, thường được bố trí ở phía dưới hoặc khu vực trống trên bản đồ.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c120"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "ky-nang-doc-ban-do",
+      "name": "Kỹ năng đọc bản đồ",
+      "description": "Kỹ năng cần thiết để hiểu và sử dụng bản đồ trong học tập và đời sống.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c119",
+        "sgk-lich-su-va-ia-li-6-kntt-c121"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "tim-duong-di",
+      "name": "Tìm đường đi trên bản đồ",
+      "description": "Quá trình xác định đường đi từ nơi này đến nơi khác trên bản đồ.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c122"
+      ],
+      "evidence": []
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "related_to",
+      "target": "c3",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c119",
+      "evidence": "",
+      "confidence": 0.9
+    },
+    {
+      "source": "c2",
+      "relation_type": "related_to",
+      "target": "c3",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c120",
+      "evidence": "",
+      "confidence": 0.9
+    },
+    {
+      "source": "c3",
+      "relation_type": "prerequisite_of",
+      "target": "c4",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c121",
+      "evidence": "",
+      "confidence": 0.8
+    }
+  ],
+  "misconceptions": []
+}

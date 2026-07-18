@@ -1,0 +1,51 @@
+{
+  "document": {
+    "document_id": "math-k6-sgv",
+    "source_type": "SGV",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Bài 26",
+    "lesson": "PHÉP NHÂN VÀ PHÉP CHIA PHÂN SỐ"
+  },
+  "learning_objectives": [
+    {
+      "code": "nhan-biet-quy-tac-nhan-chia-phan-so",
+      "description": "Nhận biết được quy tắc nhân và chia phân số.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận biết được quy tắc nhân và chia phân số."
+    },
+    {
+      "code": "nhan-biet-tinh-chat-cua-phep-nhan",
+      "description": "Nhận biết được các tính chất của phép nhân.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận biết được các tính chất của phép nhân."
+    },
+    {
+      "code": "nhan-biet-phan-so-nghich-dao",
+      "description": "Nhận biết được phân số nghịch đảo.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận biết được phân số nghịch đảo."
+    },
+    {
+      "code": "thuc-hien-phep-nhan-chia-phan-so",
+      "description": "Thực hiện được phép nhân và chia phân số.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Thực hiện được phép nhân và chia phân số."
+    },
+    {
+      "code": "van-dung-giai-quyet-bai-toan",
+      "description": "Vận dụng giải quyết các bài toán liên quan.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Vận dụng giải quyết các bài toán liên quan."
+    },
+    {
+      "code": "van-dung-tinh-chat-phan-phoi",
+      "description": "Vận dụng được các tính chất phân phối của phép nhân đối với phép cộng trong tính toán.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Vận dụng được các tính chất phân phối của phép nhân đối với phép cộng trong tính toán."
+    }
+  ],
+  "concepts": [],
+  "relations": [],
+  "misconceptions": []
+}

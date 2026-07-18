@@ -1,0 +1,151 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Chương 3",
+    "lesson": "Bài 6"
+  },
+  "learning_objectives": [
+    {
+      "code": "trinh-bay-qua-trinh-phat-hien-kim-loai",
+      "description": "Trình bày được quá trình phát hiện ra kim loại và vai trò của nó đối với sự chuyển biến và phân hoá từ xã hội nguyên thuỷ sang xã hội có giai cấp.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c020",
+      "evidence": ""
+    },
+    {
+      "code": "giai-thich-soc-xa-hoi-nguyen-thuy-tan-ra",
+      "description": "Giải thích được vì sao xã hội nguyên thuỷ tan rã.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c020",
+      "evidence": ""
+    },
+    {
+      "code": "mo-ta-hinh-thanh-xa-hoi-co-giai-cap",
+      "description": "Mô tả được sự hình thành xã hội có giai cấp.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c020",
+      "evidence": ""
+    },
+    {
+      "code": "mo-ta-giai-thich-phan-hoa-xa-hoi-nguyen-thuy",
+      "description": "Mô tả và giải thích được sự phân hoá không triệt để của xã hội nguyên thuỷ ở phương Đông.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c020",
+      "evidence": ""
+    },
+    {
+      "code": "neu-net-co-ban-xa-hoi-nguyen-thuy-viet-nam",
+      "description": "Nêu được một số nét cơ bản của xã hội nguyên thuỷ ở Việt Nam (qua các nền văn hoá khảo cổ Phùng Nguyên – Đồng Đậu – Gò Mun).",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c020",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "phat-hien-kim-loai",
+      "name": "Phát hiện kim loại",
+      "description": "Quá trình con người phát hiện ra kim loại để chế tạo công cụ và vũ khí.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c020",
+        "sgk-lich-su-va-ia-li-6-kntt-c021",
+        "sgk-lich-su-va-ia-li-6-kntt-c022"
+      ],
+      "evidence": [
+        "Vào khoảng thiên niên kỉ IV TCN, người nguyên thuỷ đã phát hiện ra một loại nguyên liệu mới để chế tạo công cụ và vũ khí thay thế cho đồ đá. Đó là kim loại."
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "xa-hoi-nguyen-thuy",
+      "name": "Xã hội nguyên thuỷ",
+      "description": "Thời kỳ xã hội trước khi có sự phân hoá giai cấp, chủ yếu dựa vào săn bắn, hái lượm và trồng trọt.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c020",
+        "sgk-lich-su-va-ia-li-6-kntt-c022",
+        "sgk-lich-su-va-ia-li-6-kntt-c023"
+      ],
+      "evidence": [
+        "Xã hội nguyên thuỷ dần tan rã.",
+        "Cùng với sự xuất hiện ngày càng nhiều của của cải dư thừa, xã hội dần có sự phân hoá kẻ giàu, người nghèo."
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "xa-hoi-co-giai-cap",
+      "name": "Xã hội có giai cấp",
+      "description": "Thời kỳ xã hội có sự phân chia giai cấp, với sự xuất hiện của nhà nước và các tổ chức xã hội phức tạp.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c025"
+      ],
+      "evidence": [
+        "Khoảng cuối thiên niên kỉ IV TCN, con người bắt đầu bước vào thời đại xã hội có giai cấp, nhà nước."
+      ]
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "van-hoa-khao-co",
+      "name": "Văn hoá khảo cổ",
+      "description": "Các nền văn hoá được phát hiện qua khảo cổ học, phản ánh đời sống của cư dân trong quá khứ.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c023"
+      ],
+      "evidence": [
+        "Văn hoá Phùng Nguyên, Văn hoá Đồng Đậu, Văn hoá Gò Mun."
+      ]
+    },
+    {
+      "temporary_id": "s1",
+      "suggested_code": "doc-bang",
+      "name": "Đọc bảng",
+      "description": "Kỹ năng đọc và phân tích thông tin từ bảng biểu.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c024"
+      ],
+      "evidence": [
+        "Lập bảng theo mẫu sau và điền những nội dung phù hợp."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "causes",
+      "target": "c2",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c021",
+      "evidence": "Nhờ có công cụ mới bằng kim loại như lưỡi cày, cuốc, rìu,... con người có thể khai hoang, mở rộng diện tích trồng trọt.",
+      "confidence": 0.9
+    },
+    {
+      "source": "c2",
+      "relation_type": "causes",
+      "target": "c3",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c022",
+      "evidence": "Sự phát triển kinh tế đã dẫn đến phân hoá trong đời sống xã hội.",
+      "confidence": 0.9
+    },
+    {
+      "source": "c4",
+      "relation_type": "prerequisite_of",
+      "target": "s1",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c024",
+      "evidence": "Lập bảng theo mẫu sau và điền những nội dung phù hợp.",
+      "confidence": 0.8
+    }
+  ],
+  "misconceptions": []
+}

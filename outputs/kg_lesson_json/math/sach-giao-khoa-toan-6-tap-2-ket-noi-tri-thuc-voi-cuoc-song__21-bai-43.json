@@ -1,0 +1,100 @@
+{
+  "document": {
+    "document_id": "math-k6-sgk",
+    "source_type": "SGK",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 9",
+    "lesson": "Bài 43"
+  },
+  "learning_objectives": [],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "xac-suat-thuc-nghiem",
+      "name": "Xác suất thực nghiệm",
+      "description": "Khả năng xảy ra một sự kiện được thể hiện bằng một con số từ 0 đến 1.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c117"
+      ],
+      "evidence": [
+        "Khả năng xảy ra một sự kiện được thể hiện bằng một con số từ 0 đến 1."
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "ti-so-xac-suat-thuc-nghiem",
+      "name": "Tỉ số xác suất thực nghiệm",
+      "description": "Tỉ số giữa số lần mũi tên chỉ vào ô màu vàng và số lần quay được gọi là xác suất thực nghiệm của sự kiện Mũi tên chỉ vào ô màu vàng.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c117"
+      ],
+      "evidence": [
+        "Tỉ số $\frac{\text{Số lần mũi tên chỉ vào ô màu vàng}}{\text{Số lần quay}}$ được gọi là xác suất thực nghiệm của sự kiện Mũi tên chỉ vào ô màu vàng."
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "tinh-xac-suat-thuc-nghiem",
+      "name": "Tính xác suất thực nghiệm",
+      "description": "Tính xác suất thực nghiệm của sự kiện dựa trên số lần thực hiện và số lần thành công.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c118"
+      ],
+      "evidence": [
+        "Xác suất thực nghiệm của sự kiện Phép đo được thực hiện thành công là: $$\\frac{k}{n} = \\frac{35}{40} = 87,5\\%.$$"
+      ]
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "thong-ke-ket-qua-thi-nghiem",
+      "name": "Thống kê kết quả thí nghiệm",
+      "description": "Thống kê kết quả của các lần thực hiện thí nghiệm để tính xác suất thực nghiệm.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c119"
+      ],
+      "evidence": [
+        "Tính xác suất thực nghiệm của các sự kiện sau: a) Số chấm xuất hiện là số chẵn; b) Số chấm xuất hiện lớn hơn 2."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "related_to",
+      "target": "c3",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c117",
+      "evidence": "",
+      "confidence": 1.0
+    },
+    {
+      "source": "c1",
+      "relation_type": "related_to",
+      "target": "c4",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c117",
+      "evidence": "",
+      "confidence": 1.0
+    },
+    {
+      "source": "c3",
+      "relation_type": "prerequisite_of",
+      "target": "c4",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c118",
+      "evidence": "",
+      "confidence": 1.0
+    }
+  ],
+  "misconceptions": []
+}

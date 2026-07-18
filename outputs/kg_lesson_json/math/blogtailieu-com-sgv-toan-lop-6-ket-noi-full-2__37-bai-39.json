@@ -1,0 +1,42 @@
+{
+  "document": {
+    "document_id": "math-k6-sgv",
+    "source_type": "SGV",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 2",
+    "lesson": "Bài 39"
+  },
+  "learning_objectives": [
+    {
+      "code": "doc-phan-tich-du-lieu",
+      "description": "Đọc và phân tích được dữ liệu từ bảng thống kê và biểu đồ tranh.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Đọc và phân tích được dữ liệu từ bảng thống kê và biểu đồ tranh."
+    },
+    {
+      "code": "bieu-dien-du-lieu",
+      "description": "Biểu diễn được dữ liệu vào bảng thống kê, biểu đồ tranh.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Biểu diễn được dữ liệu vào bảng thống kê, biểu đồ tranh."
+    },
+    {
+      "code": "lap-bang-thong-ke",
+      "description": "Lập được bảng thống kê, vẽ được một số biểu đồ tranh đơn giản.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Lập được bảng thống kê, vẽ được một số biểu đồ tranh đơn giản."
+    }
+  ],
+  "concepts": [],
+  "relations": [],
+  "misconceptions": [
+    {
+      "temporary_id": "m1",
+      "name": "Khó khăn trong việc vẽ biểu đồ tranh",
+      "description": "Học sinh gặp khó khăn trong việc vẽ các biểu tượng cho biểu đồ tranh.",
+      "related_skill": "bieu-dien-du-lieu",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Với đa số các HS việc vẽ các biểu tượng là khó khăn."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "document": {
+    "document_id": "math-k6-sgv",
+    "source_type": "SGV",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 1",
+    "lesson": "Bài 18"
+  },
+  "learning_objectives": [
+    {
+      "code": "mo-ta-hinh-tam-giac-deu-hinh-vuong-hinh-luc-giac",
+      "description": "Mô tả được một số yếu tố cơ bản của hình tam giác đều, hình vuông, hình lục giác đều (cạnh, góc, đường chéo).",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Mô tả được một số yếu tố cơ bản của hình tam giác đều, hình vuông, hình lục giác đều (cạnh, góc, đường chéo)."
+    },
+    {
+      "code": "ve-hinh-tam-giac-deu-hinh-vuong",
+      "description": "Vẽ được hình tam giác đều, hình vuông bằng dụng cụ học tập.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Vẽ được hình tam giác đều, hình vuông bằng dụng cụ học tập."
+    },
+    {
+      "code": "tao-lap-hinh-luc-giac-deu",
+      "description": "Tạo lập được hình lục giác đều thông qua việc lắp ghép các hình tam giác đều.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Tạo lập được hình lục giác đều thông qua việc lắp ghép các hình tam giác đều."
+    },
+    {
+      "code": "boi-duong-pham-chat",
+      "description": "Bồi dưỡng trí tưởng tượng, hứng thú học tập, ý thức làm việc nhóm, ý thức tìm tòi, khám phá và sáng tạo cho HS.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Bồi dưỡng trí tưởng tượng, hứng thú học tập, ý thức làm việc nhóm, ý thức tìm tòi, khám phá và sáng tạo cho HS."
+    }
+  ],
+  "concepts": [],
+  "relations": [],
+  "misconceptions": []
+}

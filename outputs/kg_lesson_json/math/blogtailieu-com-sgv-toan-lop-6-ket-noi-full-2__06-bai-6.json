@@ -1,0 +1,90 @@
+{
+  "concepts": [
+    {
+      "code": "nhanh-luy-thua-cung-co-so",
+      "name": "Nhân hai lũy thừa cùng cơ số",
+      "description": "Quy tắc nhân hai lũy thừa cùng cơ số",
+      "grade": 6,
+      "source_page": 44
+    },
+    {
+      "code": "chia-luy-thua-cung-co-so",
+      "name": "Chia hai lũy thừa cùng cơ số",
+      "description": "Quy tắc chia hai lũy thừa cùng cơ số",
+      "grade": 6,
+      "source_page": 45
+    },
+    {
+      "code": "luy-thua-voi-so-mu-tu-nhien",
+      "name": "Lũy thừa với số mũ tự nhiên",
+      "description": "Lũy thừa với số mũ tự nhiên",
+      "grade": 6,
+      "source_page": 43
+    },
+    {
+      "code": "binh-phuong",
+      "name": "Bình phương",
+      "description": "Bình phương của một số",
+      "grade": 6,
+      "source_page": 44
+    },
+    {
+      "code": "lap-phuong",
+      "name": "Lập phương",
+      "description": "Lập phương của một số",
+      "grade": 6,
+      "source_page": 44
+    },
+    {
+      "code": "tinh-luy-thua",
+      "name": "Tính lũy thừa",
+      "description": "Tính lũy thừa của một số",
+      "grade": 6,
+      "source_page": 43
+    }
+  ],
+  "relations": [
+    {
+      "source": "luy-thua-voi-so-mu-tu-nhien",
+      "relation": "Prerequisite_of",
+      "target": "nhanh-luy-thua-cung-co-so",
+      "evidence": "HS cần hiểu lũy thừa với số mũ tự nhiên trước khi học nhân hai lũy thừa cùng cơ số",
+      "source_page": 43
+    },
+    {
+      "source": "luy-thua-voi-so-mu-tu-nhien",
+      "relation": "Prerequisite_of",
+      "target": "chia-luy-thua-cung-co-so",
+      "evidence": "HS cần hiểu lũy thừa với số mũ tự nhiên trước khi học chia hai lũy thừa cùng cơ số",
+      "source_page": 43
+    },
+    {
+      "source": "nhanh-luy-thua-cung-co-so",
+      "relation": "Used_for",
+      "target": "tinh-luy-thua",
+      "evidence": "Quy tắc nhân hai lũy thừa cùng cơ số được sử dụng để tính lũy thừa",
+      "source_page": 44
+    },
+    {
+      "source": "chia-luy-thua-cung-co-so",
+      "relation": "Used_for",
+      "target": "tinh-luy-thua",
+      "evidence": "Quy tắc chia hai lũy thừa cùng cơ số được sử dụng để tính lũy thừa",
+      "source_page": 45
+    },
+    {
+      "source": "binh-phuong",
+      "relation": "Part_of",
+      "target": "luy-thua-voi-so-mu-tu-nhien",
+      "evidence": "Bình phương là một phần của lũy thừa với số mũ tự nhiên",
+      "source_page": 44
+    },
+    {
+      "source": "lap-phuong",
+      "relation": "Part_of",
+      "target": "luy-thua-voi-so-mu-tu-nhien",
+      "evidence": "Lập phương là một phần của lũy thừa với số mũ tự nhiên",
+      "source_page": 44
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "document": {
+    "document_id": "math-k6-sgv",
+    "source_type": "SGV",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 2",
+    "lesson": "Bài 23"
+  },
+  "learning_objectives": [
+    {
+      "code": "nhan-biet-phan-so",
+      "description": "Nhận biết được phân số với tử và mẫu đều là các số nguyên.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận biết được phân số với tử và mẫu đều là các số nguyên."
+    },
+    {
+      "code": "khai-niem-phan-so-bang-nhau",
+      "description": "Nhận biết được khái niệm hai phân số bằng nhau và quy tắc bằng nhau của hai phân số.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận biết được khái niệm hai phân số bằng nhau và quy tắc bằng nhau của hai phân số."
+    },
+    {
+      "code": "tinh-chat-phan-so",
+      "description": "Nêu được hai tính chất cơ bản của phân số.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nêu được hai tính chất cơ bản của phân số."
+    },
+    {
+      "code": "ap-dung-tinh-chat-phan-so",
+      "description": "Áp dụng được hai tính chất cơ bản của phân số.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Áp dụng được hai tính chất cơ bản của phân số."
+    },
+    {
+      "code": "rut-gon-phan-so",
+      "description": "Rút gọn được các phân số.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Rút gọn được các phân số."
+    },
+    {
+      "code": "phat-trien-thoi-quen-tu-hoc",
+      "description": "Rèn luyện thói quen tự học, ý thức hoàn thành nhiệm vụ học tập, bồi dưỡng hứng thú học tập cho HS.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Rèn luyện thói quen tự học, ý thức hoàn thành nhiệm vụ học tập, bồi dưỡng hứng thú học tập cho HS."
+    }
+  ],
+  "concepts": [],
+  "relations": [],
+  "misconceptions": [
+    {
+      "temporary_id": "m1",
+      "name": "Số nguyên không phải là phân số",
+      "description": "Học sinh có thể nghĩ rằng số nguyên không thể được coi là một phân số.",
+      "related_skill": "c1",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c001",
+      "evidence": "Nhấn mạnh số nguyên cũng được coi là một phân số."
+    }
+  ]
+}

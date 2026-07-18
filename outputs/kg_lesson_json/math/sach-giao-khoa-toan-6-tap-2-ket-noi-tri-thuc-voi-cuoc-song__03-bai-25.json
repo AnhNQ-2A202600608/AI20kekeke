@@ -1,0 +1,115 @@
+{
+  "document": {
+    "document_id": "math-k6-sgk",
+    "source_type": "SGK",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 2",
+    "lesson": "Bài 25"
+  },
+  "learning_objectives": [],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "phep-cong-hai-phan-so-cung-mau",
+      "name": "Cộng hai phân số cùng mẫu",
+      "description": "Quy tắc cộng hai phân số cùng mẫu (có tử và mẫu dương) là cộng các tử và giữ nguyên mẫu.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c014"
+      ],
+      "evidence": [
+        "Muốn cộng hai phân số cùng mẫu, ta cộng các tử và giữ nguyên mẫu: $$\\frac{a}{m} + \\frac{b}{m} = \\frac{a+b}{m}$$"
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "phep-cong-hai-phan-so-khong-cung-mau",
+      "name": "Cộng hai phân số không cùng mẫu",
+      "description": "Quy tắc cộng hai phân số không cùng mẫu là quy đồng mẫu hai phân số rồi cộng các tử.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c015"
+      ],
+      "evidence": [
+        "Muốn cộng hai phân số không cùng mẫu, ta viết chúng dưới dạng hai phân số cùng mẫu rồi cộng các tử và giữ nguyên mẫu chung."
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "so-doi-cua-phan-so",
+      "name": "Số đối của phân số",
+      "description": "Số đối của phân số $$\\frac{a}{b}$$ là $$\\frac{-a}{b}$$.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c015"
+      ],
+      "evidence": [
+        "Hai số gọi là đối nhau nếu tổng của chúng bằng 0. Kí hiệu số đối của phân số $$\\frac{a}{b}$$ là $$\\frac{-a}{b}$$."
+      ]
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "tinh-chat-cua-phep-cong-phan-so",
+      "name": "Tính chất của phép cộng phân số",
+      "description": "Phép cộng phân số có các tính chất giao hoán và kết hợp.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c016"
+      ],
+      "evidence": [
+        "Phép cộng phân số cũng có các tính chất sau: Giao hoán và Kết hợp."
+      ]
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "phep-tru-hai-phan-so",
+      "name": "Trừ hai phân số",
+      "description": "Quy tắc trừ hai phân số cùng mẫu là lấy tử số của phân số thứ nhất trừ đi tử số của phân số thứ hai và giữ nguyên mẫu.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c016"
+      ],
+      "evidence": [
+        "Muốn trừ hai phân số cùng mẫu, ta lấy tử số của phân số thứ nhất trừ đi tử số của phân số thứ hai và giữ nguyên mẫu."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "prerequisite_of",
+      "target": "c2",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c015",
+      "evidence": "Quy đồng mẫu hai phân số $$\\frac{5}{7}$$ và $$\\frac{-3}{4}$$.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c3",
+      "relation_type": "prerequisite_of",
+      "target": "c4",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c015",
+      "evidence": "Kí hiệu số đối của phân số $$\\frac{a}{b}$$ là $$\\frac{-a}{b}$$.",
+      "confidence": 1.0
+    },
+    {
+      "source": "c4",
+      "relation_type": "prerequisite_of",
+      "target": "c5",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c016",
+      "evidence": "Phép cộng phân số cũng có các tính chất sau: Giao hoán và Kết hợp.",
+      "confidence": 1.0
+    }
+  ],
+  "misconceptions": []
+}

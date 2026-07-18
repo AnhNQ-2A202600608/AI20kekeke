@@ -1,0 +1,153 @@
+{
+  "document": {
+    "document_id": "math-k6-sgk",
+    "source_type": "SGK",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 2",
+    "lesson": "Bài 32"
+  },
+  "learning_objectives": [],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "diem-thuoc-duong-thang",
+      "name": "Điểm thuộc đường thẳng",
+      "description": "Điểm M thuộc đường thẳng d được ký hiệu là M ∈ d.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c055"
+      ],
+      "evidence": [
+        "Điểm M thuộc đường thẳng d. Kí hiệu: M ∈ d."
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "diem-khong-thuoc-duong-thang",
+      "name": "Điểm không thuộc đường thẳng",
+      "description": "Điểm N không thuộc đường thẳng d được ký hiệu là N ∉ d.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c055"
+      ],
+      "evidence": [
+        "Điểm N không thuộc đường thẳng d. Kí hiệu: N ∉ d."
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "duong-thang-di-qua-hai-diem",
+      "name": "Đường thẳng đi qua hai điểm phân biệt",
+      "description": "Có một và chỉ một đường thẳng đi qua hai điểm phân biệt.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c056"
+      ],
+      "evidence": [
+        "Có một và chỉ một đường thẳng đi qua hai điểm phân biệt."
+      ]
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "ba-diem-thang-hang",
+      "name": "Ba điểm thẳng hàng",
+      "description": "Ba điểm A, B, C thẳng hàng là ba điểm cùng thuộc một đường thẳng.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c056"
+      ],
+      "evidence": [
+        "Ba điểm thẳng hàng là ba điểm cùng thuộc một đường thẳng."
+      ]
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "duong-thang-song-song",
+      "name": "Hai đường thẳng song song",
+      "description": "Hai đường thẳng a và b không có điểm chung được ký hiệu là a || b.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c057"
+      ],
+      "evidence": [
+        "a và b song song với nhau."
+      ]
+    },
+    {
+      "temporary_id": "c6",
+      "suggested_code": "duong-thang-cat-nhau",
+      "name": "Hai đường thẳng cắt nhau",
+      "description": "Hai đường thẳng a và b có đúng một điểm chung P.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c057"
+      ],
+      "evidence": [
+        "a và b cắt nhau tại điểm P."
+      ]
+    },
+    {
+      "temporary_id": "c7",
+      "suggested_code": "duong-thang-trung-nhau",
+      "name": "Hai đường thẳng trùng nhau",
+      "description": "Hai đường thẳng AB và đường thẳng BC trùng nhau.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c057"
+      ],
+      "evidence": [
+        "Đường thẳng AB và đường thẳng BC trùng nhau."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "related_to",
+      "target": "c2",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c055",
+      "evidence": "Điểm thuộc đường thẳng và điểm không thuộc đường thẳng là hai khái niệm liên quan.",
+      "confidence": 0.9
+    },
+    {
+      "source": "c3",
+      "relation_type": "prerequisite_of",
+      "target": "c4",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c056",
+      "evidence": "Đường thẳng đi qua hai điểm phân biệt là điều kiện cần để xác định ba điểm thẳng hàng.",
+      "confidence": 0.9
+    },
+    {
+      "source": "c5",
+      "relation_type": "related_to",
+      "target": "c6",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c057",
+      "evidence": "Hai đường thẳng song song và hai đường thẳng cắt nhau là hai khái niệm liên quan.",
+      "confidence": 0.9
+    },
+    {
+      "source": "c6",
+      "relation_type": "related_to",
+      "target": "c7",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c057",
+      "evidence": "Hai đường thẳng cắt nhau và hai đường thẳng trùng nhau là hai khái niệm liên quan.",
+      "confidence": 0.9
+    }
+  ],
+  "misconceptions": []
+}

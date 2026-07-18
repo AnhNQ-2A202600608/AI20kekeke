@@ -1,0 +1,226 @@
+{
+  "merged": [
+    {
+      "merged_from": [
+        "c2"
+      ],
+      "merged_into": "tinh-chat-giao-hoan",
+      "reason": "exact_code_match",
+      "confidence": 1.0
+    },
+    {
+      "merged_from": [
+        "c3"
+      ],
+      "merged_into": "tinh-chat-ket-hop",
+      "reason": "exact_code_match",
+      "confidence": 1.0
+    },
+    {
+      "merged_from": [
+        "c1"
+      ],
+      "merged_into": "phep-chia-het",
+      "reason": "exact_code_match",
+      "confidence": 1.0
+    },
+    {
+      "merged_from": [
+        "c2"
+      ],
+      "merged_into": "uoc",
+      "reason": "exact_code_match",
+      "confidence": 1.0
+    },
+    {
+      "merged_from": [
+        "c3"
+      ],
+      "merged_into": "boi",
+      "reason": "exact_code_match",
+      "confidence": 1.0
+    }
+  ],
+  "not_merged": [
+    "tap-hop",
+    "phan-tu",
+    "ky-hieu-thuoc",
+    "mo-ta-tap-hop",
+    "cach-mo-ta-tap-hop",
+    "giao-hai-tap-hop",
+    "he-thap-phan",
+    "gia-tri-chu-so",
+    "tong-gia-tri-chu-so",
+    "so-la-ma",
+    "cach-viet-so-la-ma",
+    "khai-niem-so-tu-nhien",
+    "diem-bieu-dien-so-tu-nhien",
+    "so-lien-truoc-lien-sau",
+    "ky-hieu-nho-hon",
+    "ky-hieu-nho-hon-hoac-bang",
+    "ky-hieu-lon-hon-hoac-bang",
+    "tinh-chat-bang-cau",
+    "tap-hop-so-tu-nhien",
+    "so-lien-truoc-sau",
+    "so-sanh-hai-so-tu-nhien",
+    "mo-ta-thu-tu-ba-so",
+    "phep-cong",
+    "phep-tru",
+    "tinh-chat-giao-hoan",
+    "tinh-chat-ket-hop",
+    "tinh-chat-0",
+    "phep-nhan",
+    "tinh-chat-phan-phoi",
+    "phep-chia",
+    "phep-chia-het",
+    "phep-chia-co-du",
+    "luu-y-ve-phep-nhan",
+    "luu-y-ve-phep-chia",
+    "luu-y-ve-thu-tu-thuc-hien",
+    "chia-het",
+    "uoc",
+    "boi",
+    "tinh-chat-chia-het",
+    "ucln",
+    "phan_so_toi_gian",
+    "boi-chung",
+    "boi-chung-nho-nhat",
+    "boi-chung-nho-nhat-cac-so-nguyen-to",
+    "quy-dong-mau-phan-so",
+    "thuc-hien-phep-tinh-phan-so",
+    "so-nguyen",
+    "so-nguyen-duong",
+    "so-nguyen-am",
+    "tap-hop-so-nguyen",
+    "truc-so",
+    "so-sanh-hai-so-nguyen",
+    "tinh-chat-giao-hoan-cua-phep-cong",
+    "tinh-chat-ket-hop-cua-phep-cong",
+    "so-doi",
+    "cong-hai-so-nguyen-cung-dau",
+    "cong-hai-so-nguyen-khac-dau",
+    "quy-tac-tru-hai-so-nguyen",
+    "quy-tac-dau-ngoac",
+    "bo-dau-ngoac",
+    "dau-cua-mot-so-hang",
+    "tinh-gia-tri-bieu-thuc",
+    "tinh-mot-cach-hop-ly",
+    "tinh-tich-hai-so-nguyen-khac-dau",
+    "tich-hai-so-nguyen-cung-dau",
+    "tinh-chat-cua-phep-nhan",
+    "nhan-biet-uoc-boi",
+    "tim-uoc-chung",
+    "tim-boi",
+    "hinh-tam-giac-deu",
+    "hinh-vuong",
+    "hinh-luc-giac-deu",
+    "nhan-dang-hinh",
+    "mo-ta-hinh",
+    "tao-lap-hinh-luc-giac",
+    "chu-vi-hinh-vuong",
+    "dien-tich-hinh-vuong",
+    "chu-vi-hinh-chu-nhat",
+    "dien-tich-hinh-chu-nhat",
+    "chu-vi-hinh-thang",
+    "dien-tich-hinh-thang",
+    "chu-vi-hinh-binh-hanh",
+    "dien-tich-hinh-binh-hanh",
+    "chu-vi-hinh-thoi",
+    "dien-tich-hinh-thoi",
+    "hinh-co-tam-doi-xung",
+    "tam-doi-xung",
+    "nhan-biet-hinh-co-tam-doi-xung",
+    "ghep-giay-de-cat-hinh-co-tam-doi-xung",
+    "kiem-tra-tam-doi-xung"
+  ],
+  "needs_review": [
+    {
+      "concept_a": "cach-mo-ta-tap-hop",
+      "name_a": "Cách mô tả tập hợp",
+      "concept_b": "mo-ta-tap-hop",
+      "name_b": "Mô tả một tập hợp",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "tong-gia-tri-chu-so",
+      "name_a": "Tổng giá trị các chữ số",
+      "concept_b": "gia-tri-chu-so",
+      "name_b": "Giá trị chữ số",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "ky-hieu-nho-hon-hoac-bang",
+      "name_a": "Ký hiệu nhỏ hơn hoặc bằng",
+      "concept_b": "ky-hieu-nho-hon",
+      "name_b": "Ký hiệu nhỏ hơn",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "ky-hieu-lon-hon-hoac-bang",
+      "name_a": "Ký hiệu lớn hơn hoặc bằng",
+      "concept_b": "ky-hieu-nho-hon-hoac-bang",
+      "name_b": "Ký hiệu nhỏ hơn hoặc bằng",
+      "similarity": 0.7142857142857143,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "phep-chia-het",
+      "name_a": "Phép chia hết",
+      "concept_b": "phep-chia",
+      "name_b": "Phép chia",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "luu-y-ve-phep-chia",
+      "name_a": "Lưu ý về phép chia",
+      "concept_b": "luu-y-ve-phep-nhan",
+      "name_b": "Lưu ý về phép nhân",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "chia-het",
+      "name_a": "Chia hết",
+      "concept_b": "phep-chia-het",
+      "name_b": "Phép chia hết",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "so-nguyen-duong",
+      "name_a": "Số nguyên dương",
+      "concept_b": "so-nguyen",
+      "name_b": "Số nguyên",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "so-nguyen-am",
+      "name_a": "Số nguyên âm",
+      "concept_b": "so-nguyen",
+      "name_b": "Số nguyên",
+      "similarity": 0.6666666666666666,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "cong-hai-so-nguyen-khac-dau",
+      "name_a": "Cộng hai số nguyên khác dấu",
+      "concept_b": "cong-hai-so-nguyen-cung-dau",
+      "name_b": "Cộng hai số nguyên cùng dấu",
+      "similarity": 0.7142857142857143,
+      "reason": "token_similarity_review"
+    },
+    {
+      "concept_a": "tich-hai-so-nguyen-cung-dau",
+      "name_a": "Tích của hai số nguyên cùng dấu",
+      "concept_b": "tinh-tich-hai-so-nguyen-khac-dau",
+      "name_b": "Tích của hai số nguyên khác dấu",
+      "similarity": 0.75,
+      "reason": "token_similarity_review"
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Bài 8",
+    "lesson": "CHUYỂN ĐỘNG CỦA TRÁI ĐẤT QUANH MẶT TRỜI VÀ HỆ QUẢ"
+  },
+  "learning_objectives": [
+    {
+      "code": "su-dung-so-do-mota-chuyen-dong-cua-trai-dat",
+      "description": "Biết sử dụng sơ đồ để mô tả chuyển động của Trái Đất quanh Mặt Trời.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c136",
+      "evidence": ""
+    },
+    {
+      "code": "trinh-bay-hien-tuong-mua-va-ngay-dem",
+      "description": "Trình bày được hiện tượng mùa và ngày – đêm dài ngắn theo mùa.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c136",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "chuyen-dong-cua-trai-dat-quanh-mat-troi",
+      "name": "Chuyển động của Trái Đất quanh Mặt Trời",
+      "description": "Thời gian chuyển động một vòng của Trái Đất quanh Mặt Trời là 365 ngày 6 giờ.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c136",
+        "sgk-lich-su-va-ia-li-6-kntt-c137",
+        "sgk-lich-su-va-ia-li-6-kntt-c138"
+      ],
+      "evidence": [
+        "Thời gian chuyển động một vòng của Trái Đất quanh Mặt Trời là 365 ngày 6 giờ."
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "hien-tuong-mua",
+      "name": "Hiện tượng mùa",
+      "description": "Hiện tượng mùa trên Trái Đất do trục Trái Đất nghiêng và không đổi hướng dẫn đến bán cầu Bắc và bán cầu Nam luân phiên ngả về phía Mặt Trời.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c137",
+        "sgk-lich-su-va-ia-li-6-kntt-c138"
+      ],
+      "evidence": [
+        "Bán cầu nào ngả về phía Mặt Trời sẽ có góc chiếu của tia sáng mặt trời lớn, nhận được nhiều ánh sáng và nhiệt; khi ấy là mùa nóng của bán cầu đó."
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "hien-tuong-ngay-dem",
+      "name": "Hiện tượng ngày – đêm dài ngắn theo mùa",
+      "description": "Độ dài thời gian ban ngày và thời gian ban đêm có sự thay đổi theo mùa và theo vĩ độ.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c137",
+        "sgk-lich-su-va-ia-li-6-kntt-c138"
+      ],
+      "evidence": [
+        "Ngày 22 tháng 6, bán cầu Bắc đang là mùa nóng, có ngày dài đêm ngắn. Cùng lúc, ở bán cầu Nam đang là mùa lạnh, có ngày ngắn đêm dài."
+      ]
+    },
+    {
+      "temporary_id": "s1",
+      "suggested_code": "doc-hinh-anh",
+      "name": "Đọc hình ảnh",
+      "description": "Kỹ năng đọc hình ảnh để mô tả chuyển động của Trái Đất quanh Mặt Trời.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c136"
+      ],
+      "evidence": [
+        "Quan sát hình 1, em hãy mô tả chuyển động của Trái Đất quanh Mặt Trời."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "prerequisite_of",
+      "target": "c2",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c136",
+      "evidence": "Bài học này sẽ cho em biết tại sao trên Trái Đất có các mùa.",
+      "confidence": 0.9
+    },
+    {
+      "source": "c1",
+      "relation_type": "prerequisite_of",
+      "target": "c3",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c136",
+      "evidence": "Bài học này sẽ cho em biết tại sao trên Trái Đất có hiện tượng ngày – đêm dài ngắn theo mùa.",
+      "confidence": 0.9
+    }
+  ],
+  "misconceptions": []
+}

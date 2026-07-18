@@ -1,0 +1,69 @@
+{
+  "concepts": [
+    {
+      "code": "tập-hợp-và-phần-tử",
+      "name": "Tập hợp và phần tử của tập hợp",
+      "description": "Nhận biết một tập hợp và các phần tử của nó",
+      "grade": null,
+      "source_page": 29
+    },
+    {
+      "code": "ký-hiệu-về-tập-hợp",
+      "name": "Kí hiệu về tập hợp",
+      "description": "Sử dụng được các kí hiệu về tập hợp",
+      "grade": null,
+      "source_page": 29
+    },
+    {
+      "code": "cách-mô-tả-một-tập-hợp",
+      "name": "Cách mô tả một tập hợp",
+      "description": "Sử dụng được các cách mô tả (cách viết) một tập hợp",
+      "grade": null,
+      "source_page": 29
+    },
+    {
+      "code": "tập-các-số-tự-nhiên",
+      "name": "Tập các số tự nhiên",
+      "description": "Nhận biết tập các số tự nhiên (N)",
+      "grade": null,
+      "source_page": 29
+    },
+    {
+      "code": "tập-các-số-tự-nhiên-khác-0",
+      "name": "Tập các số tự nhiên khác 0",
+      "description": "Nhận biết tập các số tự nhiên khác 0 (N*)",
+      "grade": null,
+      "source_page": 30
+    }
+  ],
+  "relations": [
+    {
+      "source": "tập-hợp-và-phần-tử",
+      "relation": "Prerequisite_of",
+      "target": "ký-hiệu-về-tập-hợp",
+      "evidence": "GV cần chú ý rèn cho HS hiểu rõ các kí hiệu đó, cùng với cách sử dụng đúng (hiểu, đọc và viết) các kí hiệu đó.",
+      "source_page": 29
+    },
+    {
+      "source": "ký-hiệu-về-tập-hợp",
+      "relation": "Prerequisite_of",
+      "target": "cách-mô-tả-một-tập-hợp",
+      "evidence": "HS biết và sử dụng được hai cách mô tả (viết) một tập hợp.",
+      "source_page": 30
+    },
+    {
+      "source": "tập-các-số-tự-nhiên",
+      "relation": "Part_of",
+      "target": "tập-hợp-và-phần-tử",
+      "evidence": "Nhận biết tập các số tự nhiên (N)",
+      "source_page": 29
+    },
+    {
+      "source": "tập-các-số-tự-nhiên-khác-0",
+      "relation": "Part_of",
+      "target": "tập-hợp-và-phần-tử",
+      "evidence": "Nhận biết tập các số tự nhiên khác 0 (N*)",
+      "source_page": 30
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "document": {
+    "document_id": "sgk-lich-su-va-ia-li-6-kntt",
+    "source_type": "SGK",
+    "subject": "history_geo",
+    "grade": 6,
+    "chapter": "Bài 16",
+    "lesson": "NHIỆT ĐỘ KHÔNG KHÍ. MÂY VÀ MƯA"
+  },
+  "learning_objectives": [
+    {
+      "code": "trinh-bay-su-thay-doi-nhiet-do-khong-khi",
+      "description": "Trình bày được sự thay đổi nhiệt độ không khí trên bề mặt Trái Đất theo vĩ độ.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c168",
+      "evidence": ""
+    },
+    {
+      "code": "mo-ta-hien-tuong-hinh-thanh-may-va-mua",
+      "description": "Mô tả được hiện tượng hình thành mây và mưa.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c168",
+      "evidence": ""
+    },
+    {
+      "code": "su-dung-nhiet-ke-va-am-ke",
+      "description": "Biết cách sử dụng nhiệt kế, ẩm kế.",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c168",
+      "evidence": ""
+    }
+  ],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "nhiet-do-khong-khi",
+      "name": "Nhiệt độ không khí",
+      "description": "Độ nóng, lạnh của không khí được gọi là nhiệt độ không khí. Đơn vị đo nhiệt độ không khí được dùng phổ biến là độ C (°C).",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c168",
+        "sgk-lich-su-va-ia-li-6-kntt-c169"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "am-ke",
+      "name": "Ẩm kế",
+      "description": "Dụng cụ để đo độ ẩm không khí, đơn vị thường dùng là %.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c170"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "hinh-thanh-may-va-mua",
+      "name": "Hình thành mây và mưa",
+      "description": "Quá trình hình thành mây và mưa từ hơi nước trong không khí.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c170"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "nhiet-ke",
+      "name": "Nhiệt kế",
+      "description": "Dụng cụ đo nhiệt độ không khí, có hai loại thường dùng là nhiệt kế có bầu thủy ngân và nhiệt kế điện tử.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c168"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "su-thay-doi-nhiet-do-theo-vi-do",
+      "name": "Sự thay đổi nhiệt độ không khí theo vĩ độ",
+      "description": "Không khí ở các vùng vĩ độ thấp nóng hơn không khí ở các vùng vĩ độ cao.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c169"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c6",
+      "suggested_code": "phan-bo-luong-mua-trung-binh-nam",
+      "name": "Phân bố lượng mưa trung bình năm",
+      "description": "Lượng mưa trung bình năm phân bố không đều trên bề mặt Trái Đất.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c171"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c7",
+      "suggested_code": "ky-nang-doc-bang",
+      "name": "Kỹ năng đọc bảng",
+      "description": "Kỹ năng đọc và phân tích bảng số liệu về nhiệt độ và lượng mưa.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c171"
+      ],
+      "evidence": []
+    },
+    {
+      "temporary_id": "c8",
+      "suggested_code": "ky-nang-doc-ban-do",
+      "name": "Kỹ năng đọc bản đồ",
+      "description": "Kỹ năng xác định các vùng có lượng mưa trung bình năm trên bản đồ.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sgk-lich-su-va-ia-li-6-kntt-c171"
+      ],
+      "evidence": []
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "related_to",
+      "target": "c4",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c168",
+      "evidence": "",
+      "confidence": 0.9
+    },
+    {
+      "source": "c1",
+      "relation_type": "related_to",
+      "target": "c5",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c169",
+      "evidence": "",
+      "confidence": 0.9
+    },
+    {
+      "source": "c3",
+      "relation_type": "related_to",
+      "target": "c6",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c171",
+      "evidence": "",
+      "confidence": 0.9
+    },
+    {
+      "source": "c6",
+      "relation_type": "prerequisite_of",
+      "target": "c7",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c171",
+      "evidence": "",
+      "confidence": 0.8
+    },
+    {
+      "source": "c6",
+      "relation_type": "prerequisite_of",
+      "target": "c8",
+      "source_chunk_id": "sgk-lich-su-va-ia-li-6-kntt-c171",
+      "evidence": "",
+      "confidence": 0.8
+    }
+  ],
+  "misconceptions": []
+}

@@ -1,0 +1,3037 @@
+{
+  "concepts": [
+    {
+      "code": "cach-mang-tu-san-anh",
+      "name": "Cách mạng tư sản Anh",
+      "description": "Một cuộc cách mạng diễn ra ở Anh vào thế kỷ XVII nhằm lật đổ chế độ phong kiến và xác lập quan hệ sản xuất tư bản chủ nghĩa.",
+      "grade": 8,
+      "source_page": 10
+    },
+    {
+      "code": "nguyen-nhan-cach-mang-tu-san-anh",
+      "name": "Nguyên nhân Cách mạng tư sản Anh",
+      "description": "Sự phát triển kinh tế và mâu thuẫn giữa tư sản, quý tộc mới với chế độ quân chủ chuyên chế dẫn đến cuộc cách mạng.",
+      "grade": 8,
+      "source_page": 10
+    },
+    {
+      "code": "ket-qua-cach-mang-tu-san-anh",
+      "name": "Kết quả Cách mạng tư sản Anh",
+      "description": "Cách mạng tư sản Anh đã lật đổ chế độ quân chủ chuyên chế, mở đường cho chủ nghĩa tư bản phát triển.",
+      "grade": 8,
+      "source_page": 11
+    },
+    {
+      "code": "dac-diem-cach-mang-tu-san-anh",
+      "name": "Đặc điểm chính của Cách mạng tư sản Anh",
+      "description": "Cuộc cách mạng do tầng lớp quý tộc mới và tư sản lãnh đạo, diễn ra dưới hình thức nội chiến và thiết lập chế độ quân chủ lập hiến.",
+      "grade": 8,
+      "source_page": 11
+    },
+    {
+      "code": "chien-tranh-gianh-doc-lap-13-thuoc-dia-anh",
+      "name": "Chiến tranh giành độc lập của 13 thuộc địa Anh ở Bắc Mỹ",
+      "description": "Cuộc chiến tranh diễn ra vào thế kỷ XVIII nhằm lật đổ ách thống trị của thực dân Anh và thành lập Hợp chúng quốc Mỹ.",
+      "grade": 8,
+      "source_page": 12
+    },
+    {
+      "code": "nguyen-nhan-chien-tranh-13-thuoc-dia",
+      "name": "Nguyên nhân Chiến tranh giành độc lập của 13 thuộc địa Anh",
+      "description": "Mâu thuẫn giữa các thuộc địa với chính quốc do sự phát triển kinh tế theo con đường tư bản chủ nghĩa và chế độ thuế vô lý của thực dân Anh.",
+      "grade": 8,
+      "source_page": 12
+    },
+    {
+      "code": "ket-qua-chien-tranh-13-thuoc-dia",
+      "name": "Kết quả Chiến tranh giành độc lập của 13 thuộc địa Anh",
+      "description": "Cuộc chiến đã lật đổ ách thống trị của thực dân Anh, dẫn đến sự thành lập Hợp chúng quốc Mỹ.",
+      "grade": 8,
+      "source_page": 12
+    },
+    {
+      "code": "dac-diem-chien-tranh-13-thuoc-dia",
+      "name": "Đặc điểm chính của Chiến tranh giành độc lập của 13 thuộc địa Anh",
+      "description": "Cuộc chiến do tầng lớp chủ nô và tư sản lãnh đạo, diễn ra dưới hình thức chiến tranh giải phóng và thiết lập chế độ cộng hoà tổng thống.",
+      "grade": 8,
+      "source_page": 12
+    },
+    {
+      "code": "oliver-cromwell",
+      "name": "Ô-li-vơ Crôm-oen",
+      "description": "Nhân vật lịch sử liên quan đến Cách mạng tư sản Anh.",
+      "grade": 8,
+      "source_page": 10
+    },
+    {
+      "code": "george-washington",
+      "name": "G. Oa-sinh-tơn",
+      "description": "Nhân vật lịch sử liên quan đến Chiến tranh giành độc lập của 13 thuộc địa Anh ở Bắc Mỹ.",
+      "grade": 8,
+      "source_page": 10
+    },
+    {
+      "code": "cach-mang-tu-san-phap-cuoi-the-ki-xviii",
+      "name": "Cách mạng tư sản Pháp cuối thế kỉ XVIII",
+      "description": "Cuộc cách mạng diễn ra vào cuối thế kỉ XVIII tại Pháp, được ví như \"cái chổi khổng lồ quét sạch mọi rác rưởi của chế độ phong kiến châu Âu\".",
+      "grade": null,
+      "source_page": 14
+    },
+    {
+      "code": "tinh-hinh-kinh-te-phap-truoc-cach-mang",
+      "name": "Tình hình kinh tế Pháp trước cách mạng",
+      "description": "Cuối thế kỉ XVIII, Pháp vẫn là nước nông nghiệp lạc hậu với nền công, thương nghiệp phát triển nhưng bị kìm hãm bởi chế độ phong kiến.",
+      "grade": null,
+      "source_page": 14
+    },
+    {
+      "code": "tinh-hinh-chinh-tri-xa-hoi-phap-truoc-cach-mang",
+      "name": "Tình hình chính trị, xã hội Pháp trước cách mạng",
+      "description": "Chế độ quân chủ chuyên chế khủng hoảng, xã hội phân chia thành ba đẳng cấp: Quý tộc, Tăng lữ và Đẳng cấp thứ ba.",
+      "grade": null,
+      "source_page": 14
+    },
+    {
+      "code": "tu-tuong-cua-giai-cap-tu-san-phap-truoc-cach-mang",
+      "name": "Tư tưởng của giai cấp tư sản Pháp trước cách mạng",
+      "description": "Các nhà tư tưởng như S. Mông-te-xki-ơ, Ph. Vôn-te, G. G. Rút-xô đả phá chế độ phong kiến và Giáo hội, mở đường cho cách mạng bùng nổ.",
+      "grade": null,
+      "source_page": 14
+    },
+    {
+      "code": "nguyen-nhan-cach-mang-tu-san-phap",
+      "name": "Nguyên nhân Cách mạng tư sản Pháp",
+      "description": "Do nợ Nhà nước không thể trả, vua tăng thuế, đời sống nhân dân cơ cực, thôi thúc nổi dậy đấu tranh chống chế độ phong kiến.",
+      "grade": null,
+      "source_page": 14
+    },
+    {
+      "code": "ket-qua-cach-mang-tu-san-phap",
+      "name": "Kết quả Cách mạng tư sản Pháp",
+      "description": "Thiết lập chế độ cộng hòa, các quyền tự do, dân chủ, giải quyết vấn đề ruộng đất cho nông dân, xóa bỏ chế độ đẳng cấp và quan hệ sản xuất phong kiến.",
+      "grade": null,
+      "source_page": 15
+    },
+    {
+      "code": "y-nghia-cach-mang-tu-san-phap",
+      "name": "Ý nghĩa Cách mạng tư sản Pháp",
+      "description": "Cuộc cách mạng dân chủ tư sản điển hình, diễn ra dưới hình thức đấu tranh giai cấp quyết liệt, lật đổ chế độ quân chủ chuyên chế và bảo vệ Tổ quốc.",
+      "grade": null,
+      "source_page": 15
+    },
+    {
+      "code": "dac-diem-cach-mang-tu-san-phap",
+      "name": "Đặc điểm Cách mạng tư sản Pháp",
+      "description": "Diễn ra dưới hình thức cuộc đấu tranh giai cấp quyết liệt do giai cấp tư sản lãnh đạo.",
+      "grade": null,
+      "source_page": 15
+    },
+    {
+      "code": "tuyen-ngon-nhan-quyen-va-dan-quyen",
+      "name": "Tuyên ngôn Nhân quyền và Dân quyền",
+      "description": "Văn kiện công bố quyền con người và quyền công dân, được trích dẫn trong Tuyên ngôn Độc lập của Việt Nam.",
+      "grade": null,
+      "source_page": 15
+    },
+    {
+      "code": "cach-mang-cong-nghiep-anh",
+      "name": "Cách mạng công nghiệp Anh",
+      "description": "Cách mạng công nghiệp diễn ra đầu tiên ở Anh vào giữa thế kỉ XVIII, bắt đầu trong ngành dệt và lan ra các ngành khác như giao thông vận tải, luyện kim.",
+      "grade": 8,
+      "source_page": 17
+    },
+    {
+      "code": "may-keo-soi-gien-ni",
+      "name": "Máy kéo sợi Gien-ni",
+      "description": "Máy kéo sợi Gien-ni ra đời năm 1764, đánh dấu sự khởi đầu của cách mạng công nghiệp trong ngành dệt ở Anh.",
+      "grade": 8,
+      "source_page": 17
+    },
+    {
+      "code": "may-hoi-nuoc",
+      "name": "Máy hơi nước",
+      "description": "Phát minh của Giêm Oát năm 1784, cho phép các nhà máy xây dựng ở bất cứ nơi nào thuận lợi, mở đầu cho cuộc cách mạng công nghiệp.",
+      "grade": 8,
+      "source_page": 17
+    },
+    {
+      "code": "may-det-e-cac-rai",
+      "name": "Máy dệt E. Các-rai",
+      "description": "Máy dệt phát minh năm 1785, tăng tốc độ sản xuất lên 39 lần.",
+      "grade": 8,
+      "source_page": 17
+    },
+    {
+      "code": "dau-may-xe-lua",
+      "name": "Đầu máy xe lửa",
+      "description": "Chế tạo thành công bởi Xti-phen-xơn năm 1814, đánh dấu sự phát triển của ngành giao thông vận tải trong cách mạng công nghiệp.",
+      "grade": 8,
+      "source_page": 17
+    },
+    {
+      "code": "cach-mang-cong-nghiep-phap",
+      "name": "Cách mạng công nghiệp Pháp",
+      "description": "Bắt đầu từ năm 1830, phát triển từ công nghiệp nhẹ sang công nghiệp nặng, kinh tế Pháp phát triển nhanh chóng.",
+      "grade": 8,
+      "source_page": 18
+    },
+    {
+      "code": "cach-mang-cong-nghiep-duc",
+      "name": "Cách mạng công nghiệp Đức",
+      "description": "Bắt đầu từ những năm 40 của thế kỉ XIX, phát triển dựa trên công nghiệp nặng, hiện đại và tập trung.",
+      "grade": 8,
+      "source_page": 18
+    },
+    {
+      "code": "cach-mang-cong-nghiep-my",
+      "name": "Cách mạng công nghiệp Mỹ",
+      "description": "Diễn ra khá sớm do liên hệ mật thiết với Anh, bắt đầu từ công nghiệp nhẹ và phát triển mạnh trong các ngành như đường sắt, khai mỏ, luyện kim.",
+      "grade": 8,
+      "source_page": 18
+    },
+    {
+      "code": "may-tach-hat-bong",
+      "name": "Máy tách hạt bông",
+      "description": "Phát minh lớn của Mỹ năm 1793, góp phần tạo ra năng suất lao động cao hơn nhiều lần so với cách làm thủ công.",
+      "grade": 8,
+      "source_page": 18
+    },
+    {
+      "code": "may-thu-hoach-bong",
+      "name": "Máy thu hoạch bông",
+      "description": "Phát minh lớn của Mỹ năm 1831, góp phần tạo ra năng suất lao động cao hơn nhiều lần so với cách làm thủ công.",
+      "grade": 8,
+      "source_page": 18
+    },
+    {
+      "code": "tac-dong-cach-mang-cong-nghiep",
+      "name": "Tác động của cách mạng công nghiệp",
+      "description": "Cách mạng công nghiệp thay đổi căn bản quá trình sản xuất, nâng cao năng suất lao động, thúc đẩy phát triển kinh tế và tạo ra nguồn của cải dồi dào cho xã hội.",
+      "grade": 8,
+      "source_page": 19
+    },
+    {
+      "code": "hinh-thanh-giai-cap-tu-san-va-vo-san",
+      "name": "Hình thành giai cấp tư sản và vô sản",
+      "description": "Cách mạng công nghiệp hình thành hai giai cấp cơ bản của xã hội tư bản: tư sản và vô sản, với mâu thuẫn về quyền lợi dẫn đến đấu tranh.",
+      "grade": 8,
+      "source_page": 19
+    },
+    {
+      "code": "mat-trai-cach-mang-cong-nghiep",
+      "name": "Mặt trái của cách mạng công nghiệp",
+      "description": "Gồm tình trạng ô nhiễm môi trường, bóc lột sức lao động của phụ nữ và trẻ em, và sự xâm chiếm thuộc địa.",
+      "grade": 8,
+      "source_page": 19
+    },
+    {
+      "code": "qua-trinh-xam-nhap-dong-nam-a-cua-thuc-dan-phuong-tay",
+      "name": "Quá trình xâm nhập Đông Nam Á của thực dân phương Tây",
+      "description": "Quá trình các nước tư bản phương Tây xâm lược và chiếm đóng các nước Đông Nam Á từ nửa sau thế kỉ XVI đến giữa thế kỉ XIX.",
+      "grade": 8,
+      "source_page": 21
+    },
+    {
+      "code": "tinh-hinh-dong-nam-a-duoi-ach-do-ho-cua-thuc-dan-phuong-tay",
+      "name": "Tình hình Đông Nam Á dưới ách đô hộ của thực dân phương Tây",
+      "description": "Những thay đổi về chính trị, kinh tế, văn hoá, xã hội ở Đông Nam Á dưới sự thống trị của thực dân phương Tây.",
+      "grade": 8,
+      "source_page": 22
+    },
+    {
+      "code": "cuoc-dau-tranh-chong-thuc-dan-phuong-tay-o-dong-nam-a",
+      "name": "Cuộc đấu tranh chống thực dân phương Tây ở Đông Nam Á",
+      "description": "Các cuộc khởi nghĩa và phong trào đấu tranh của nhân dân Đông Nam Á chống lại ách đô hộ của thực dân phương Tây từ nửa sau thế kỉ XVI đến giữa thế kỉ XIX.",
+      "grade": 8,
+      "source_page": 23
+    },
+    {
+      "code": "khoi-nghia-trong-cuoc-dau-tranh-chong-thuc-dan-o-in-do-ne-xi-a",
+      "name": "Khởi nghĩa trong cuộc đấu tranh chống thực dân ở In-đô-nê-xi-a",
+      "description": "Các cuộc khởi nghĩa tiêu biểu ở In-đô-nê-xi-a chống lại thực dân Hà Lan như khởi nghĩa Tơ-ru-nô Giê-giô, Su-ra-pa-tit, Đi-pô-nê-gô-rô.",
+      "grade": 8,
+      "source_page": 23
+    },
+    {
+      "code": "khoi-nghia-trong-cuoc-dau-tranh-chong-thuc-dan-o-phi-lip-pin",
+      "name": "Khởi nghĩa trong cuộc đấu tranh chống thực dân ở Phi-líp-pin",
+      "description": "Các cuộc khởi nghĩa tiêu biểu ở Phi-líp-pin chống lại thực dân Tây Ban Nha như khởi nghĩa của Nô-va-lét, Kho-rút-xơ.",
+      "grade": 8,
+      "source_page": 23
+    },
+    {
+      "code": "khoi-nghia-trong-cuoc-dau-tranh-chong-thuc-dan-o-mien-dien",
+      "name": "Khởi nghĩa trong cuộc đấu tranh chống thực dân ở Miến Điện",
+      "description": "Cuộc kháng cự của quân đội Miến Điện do tướng Ban-đu-la chỉ huy chống lại quân Anh.",
+      "grade": 8,
+      "source_page": 23
+    },
+    {
+      "code": "su-ra-doi-vuong-trieu-mac",
+      "name": "Sự ra đời Vương triều Mạc",
+      "description": "Sự kiện lịch sử khi Mạc Đăng Dung lập ra triều Mạc vào năm 1527 sau khi ép vua Lê nhường ngôi.",
+      "grade": null,
+      "source_page": 25
+    },
+    {
+      "code": "nguyen-nhan-xung-dot-nam-bac-trieu",
+      "name": "Nguyên nhân xung đột Nam – Bắc triều",
+      "description": "Nguyên nhân bùng nổ xung đột do một bộ phận quan lại trung thành với triều Lê chống lại nhà Mạc để khôi phục vương triều Lê.",
+      "grade": null,
+      "source_page": 26
+    },
+    {
+      "code": "he-qua-xung-dot-nam-bac-trieu",
+      "name": "Hệ quả xung đột Nam – Bắc triều",
+      "description": "Hệ quả của cuộc xung đột là đất nước bị chia cắt, đời sống nhân dân khốn cùng, sản xuất đình trệ và nhiều gia đình phải li tán.",
+      "grade": null,
+      "source_page": 26
+    },
+    {
+      "code": "nguyen-nhan-xung-dot-trinh-nguyen",
+      "name": "Nguyên nhân xung đột Trịnh – Nguyễn",
+      "description": "Nguyên nhân bùng nổ xung đột do mâu thuẫn giữa hai dòng họ Trịnh – Nguyễn khi cả hai đều mượn danh vua Lê để lấn át nhau.",
+      "grade": null,
+      "source_page": 27
+    },
+    {
+      "code": "he-qua-xung-dot-trinh-nguyen",
+      "name": "Hệ quả xung đột Trịnh – Nguyễn",
+      "description": "Hệ quả của cuộc xung đột là đất nước bị chia cắt, sức người sức của bị suy kiệt, và ảnh hưởng đến sự phát triển chung của quốc gia.",
+      "grade": null,
+      "source_page": 27
+    },
+    {
+      "code": "luoc-do-nam-bac-trieu-dang-trong-dang-ngoai",
+      "name": "Lược đồ Nam – Bắc triều và Đàng Trong – Đàng Ngoài",
+      "description": "Lược đồ thể hiện sự phân chia lãnh thổ giữa Nam – Bắc triều và Đàng Trong – Đàng Ngoài trong lịch sử Việt Nam.",
+      "grade": null,
+      "source_page": 26
+    },
+    {
+      "code": "nguyen-hoang-vao-tran-thu-thuan-hoa",
+      "name": "Nguyễn Hoàng vào trấn thủ Thuận Hoá",
+      "description": "Năm 1558, Nguyễn Hoàng vào trấn thủ Thuận Hoá, mở đầu cho quá trình di dân và khai phá vùng đất phía Nam.",
+      "grade": null,
+      "source_page": 29
+    },
+    {
+      "code": "qua-trinh-khai-pha-vung-dat-phia-nam-the-ki-xvi-xviii",
+      "name": "Quá trình khai phá vùng đất phía Nam thế kỉ XVI-XVIII",
+      "description": "Quá trình di dân, khai phá vùng đất phía Nam được đẩy mạnh từ thế kỉ XVI đến XVIII, mở rộng lãnh thổ từ phía nam dải Hoành Sơn đến mũi Cà Mau.",
+      "grade": null,
+      "source_page": 29
+    },
+    {
+      "code": "to-chuc-bo-may-cai-tri-vung-dat-phia-nam",
+      "name": "Tổ chức bộ máy cai trị vùng đất phía Nam",
+      "description": "Các chúa Nguyễn tổ chức đơn vị hành chính, lập sổ sách quản lí dân đinh, ruộng đất và đặt ra các loại thuế ở vùng đất phía Nam.",
+      "grade": null,
+      "source_page": 29
+    },
+    {
+      "code": "thuc-thi-chu-quyen-hoang-sa-truong-sa",
+      "name": "Thực thi chủ quyền Hoàng Sa và Trường Sa",
+      "description": "Nhà Nguyễn lập đội Hoàng Sa và Bắc Hải để thực thi chủ quyền, đo đạc và vẽ bản đồ, dựng miếu thờ và trồng cây xanh trên quần đảo.",
+      "grade": 7,
+      "source_page": 75
+    },
+    {
+      "code": "doi-hoang-sa-va-doi-bac-hai",
+      "name": "Đội Hoàng Sa và đội Bắc Hải",
+      "description": "Hai tổ chức dân binh có chức năng kinh tế và kiểm soát, quản lí biển, đảo, thực thi chủ quyền tại quần đảo Hoàng Sa và Trường Sa.",
+      "grade": null,
+      "source_page": 30
+    },
+    {
+      "code": "boi-canh-lich-su-dang-ngoai-the-ki-xviii",
+      "name": "Bối cảnh lịch sử Đàng Ngoài thế kỉ XVIII",
+      "description": "Vào giữa thế kỉ XVIII, chính quyền phong kiến Đàng Ngoài lâm vào khủng hoảng sâu sắc, vua Lê chỉ còn là \"cái bóng mờ\" trong cung cấm, phủ chúa giữ mọi quyền hành và phung phí tiền của.",
+      "grade": 7,
+      "source_page": 32
+    },
+    {
+      "code": "khoi-nghia-nguyen-huu-cau",
+      "name": "Khởi nghĩa Nguyễn Hữu Cầu",
+      "description": "Cuộc khởi nghĩa diễn ra từ 1741 đến 1751, hoạt động chính ở Đồ Sơn, Vân Đồn, uy hiếp kinh thành Thăng Long, mở rộng xuống Sơn Nam, Thanh Hoá, Nghệ An. Cuộc khởi nghĩa thất bại năm 1751.",
+      "grade": 7,
+      "source_page": 33
+    },
+    {
+      "code": "khoi-nghia-hoang-cong-chat",
+      "name": "Khởi nghĩa Hoàng Công Chất",
+      "description": "Cuộc khởi nghĩa diễn ra từ 1739 đến 1769, tập hợp dân nghèo ở Sơn Nam, xây dựng căn cứ ở Điện Biên, bảo vệ vùng biên giới và giúp dân ổn định cuộc sống. Cuộc khởi nghĩa bị dập tắt năm 1769.",
+      "grade": 7,
+      "source_page": 33
+    },
+    {
+      "code": "khoi-nghia-nguyen-danh-phuong",
+      "name": "Khởi nghĩa Nguyễn Danh Phương",
+      "description": "Cuộc khởi nghĩa diễn ra từ 1740 đến 1751, xây dựng căn cứ ở Tam Đảo, mở rộng ra Sơn Tây, Tuyên Quang. Cuộc khởi nghĩa thất bại năm 1751 khi Nguyễn Danh Phương bị bắt.",
+      "grade": 7,
+      "source_page": 33
+    },
+    {
+      "code": "ket-qua-y-nghia-phong-trao-nong-dan-dang-ngoai-the-ki-xviii",
+      "name": "Kết quả, ý nghĩa phong trào nông dân Đàng Ngoài thế kỉ XVIII",
+      "description": "Phong trào kéo dài hàng chục năm nhưng thất bại, thể hiện ý chí đấu tranh chống áp bức, buộc chúa Trịnh phải thực hiện một số chính sách cải cách, và chuẩn bị \"mảnh đất\" cho phong trào Tây Sơn.",
+      "grade": 7,
+      "source_page": 34
+    },
+    {
+      "code": "nguyen-nhan-khoi-nghia-tay-son",
+      "name": "Nguyên nhân khởi nghĩa Tây Sơn",
+      "description": "Sự suy yếu của chính quyền phong kiến Đàng Trong, tham nhũng, áp bức nặng nề khiến nhân dân bất bình, dẫn đến khởi nghĩa Tây Sơn.",
+      "grade": 7,
+      "source_page": 36
+    },
+    {
+      "code": "khoi-nghia-tay-son-1771",
+      "name": "Khởi nghĩa Tây Sơn 1771",
+      "description": "Ba anh em Nguyễn Nhạc, Nguyễn Huệ, Nguyễn Lữ dựng cờ khởi nghĩa tại Tây Sơn thượng đạo, thu hút nhiều tầng lớp nhân dân tham gia.",
+      "grade": 7,
+      "source_page": 36
+    },
+    {
+      "code": "lat-do-chinh-quyen-chua-nguyen",
+      "name": "Lật đổ chính quyền chúa Nguyễn",
+      "description": "Nghĩa quân Tây Sơn lật đổ chính quyền chúa Nguyễn ở Đàng Trong sau khi đánh bại quân Nguyễn nhiều lần, đặc biệt trong năm 1777.",
+      "grade": 7,
+      "source_page": 37
+    },
+    {
+      "code": "danh-tan-quan-xiem-1785",
+      "name": "Đánh tan quân Xiêm 1785",
+      "description": "Nguyễn Huệ chỉ huy quân Tây Sơn đánh bại quân Xiêm tại trận Rạch Gầm – Xoài Mút, tiêu diệt gần hết quân địch trong một ngày.",
+      "grade": 7,
+      "source_page": 38
+    },
+    {
+      "code": "lat-do-chinh-quyen-chua-trinh",
+      "name": "Lật đổ chính quyền chúa Trịnh",
+      "description": "Quân Tây Sơn dưới sự chỉ huy của Nguyễn Huệ tiến ra Bắc, lật đổ chúa Trịnh và giao lại chính quyền cho vua Lê.",
+      "grade": 7,
+      "source_page": 38
+    },
+    {
+      "code": "dai-pha-quan-thanh-1789",
+      "name": "Đại phá quân Thanh 1789",
+      "description": "Quân Tây Sơn do Quang Trung chỉ huy đánh bại quân Thanh trong vòng 5 ngày, bảo vệ nền độc lập của đất nước.",
+      "grade": 7,
+      "source_page": 39
+    },
+    {
+      "code": "nguyen-nhan-thang-loi-tay-son",
+      "name": "Nguyên nhân thắng lợi phong trào Tây Sơn",
+      "description": "Phong trào Tây Sơn thắng lợi nhờ tinh thần yêu nước, sự đồng lòng của quân dân và sự lãnh đạo tài tình của Quang Trung.",
+      "grade": 7,
+      "source_page": 40
+    },
+    {
+      "code": "y-nghia-lich-su-tay-son",
+      "name": "Ý nghĩa lịch sử phong trào Tây Sơn",
+      "description": "Phong trào Tây Sơn lật đổ các chính quyền phong kiến, thống nhất đất nước và bảo vệ độc lập trước quân Xiêm, quân Thanh.",
+      "grade": 7,
+      "source_page": 40
+    },
+    {
+      "code": "vai-tro-nguyen-hue-quang-trung",
+      "name": "Vai trò của Nguyễn Huệ – Quang Trung",
+      "description": "Nguyễn Huệ – Quang Trung có vai trò lãnh đạo quan trọng trong phong trào Tây Sơn, góp phần vào các chiến thắng lớn.",
+      "grade": 7,
+      "source_page": 40
+    },
+    {
+      "code": "tinh-hinh-nong-nghiep-dang-ngoai-the-ki-xvi-xviii",
+      "name": "Tình hình nông nghiệp Đàng Ngoài thế kỉ XVI – XVIII",
+      "description": "Nông nghiệp Đàng Ngoài bị sa sút nghiêm trọng do xung đột kéo dài, ruộng công biến thành ruộng tư, nông dân mất ruộng đất và phải nộp tô, thuế, thực hiện nhiều nghĩa vụ khác.",
+      "grade": null,
+      "source_page": 42
+    },
+    {
+      "code": "tinh-hinh-nong-nghiep-dang-trong-the-ki-xvi-xviii",
+      "name": "Tình hình nông nghiệp Đàng Trong thế kỉ XVI – XVIII",
+      "description": "Nông nghiệp Đàng Trong phát triển nhờ khai hoang và điều kiện tự nhiên thuận lợi, đặc biệt ở vùng đồng bằng sông Cửu Long, dẫn đến sự hình thành tầng lớp địa chủ lớn.",
+      "grade": null,
+      "source_page": 42
+    },
+    {
+      "code": "phat-trien-thu-cong-nghiep-the-ki-xvi-xviii",
+      "name": "Phát triển thủ công nghiệp thế kỉ XVI – XVIII",
+      "description": "Thủ công nghiệp phát triển mạnh mẽ với nhiều làng nghề nổi tiếng như làng gốm Thổ Hà, Bát Tràng, làng dệt La Khê, và các làng rèn sắt ở Nho Lâm, Hiền Lương, Phú Bài.",
+      "grade": null,
+      "source_page": 42
+    },
+    {
+      "code": "phat-trien-thuong-nghiep-the-ki-xvi-xviii",
+      "name": "Phát triển thương nghiệp thế kỉ XVI – XVIII",
+      "description": "Thương nghiệp phát triển với sự mở rộng buôn bán, hình thành mạng lưới chợ và nhiều đô thị như Thăng Long, Phố Hiến, Hội An, gắn với hoạt động ngoại thương.",
+      "grade": null,
+      "source_page": 43
+    },
+    {
+      "code": "su-chuyen-bien-van-hoa-ton-giao-the-ki-xvi-xviii",
+      "name": "Sự chuyển biến văn hóa, tôn giáo thế kỉ XVI – XVIII",
+      "description": "Nho giáo được đề cao, Phật giáo và Đạo giáo phục hồi, Công giáo truyền bá vào Việt Nam. Chữ Quốc ngữ được sáng tạo, văn học chữ Nôm phát triển mạnh, nghệ thuật dân gian phong phú.",
+      "grade": null,
+      "source_page": 44
+    },
+    {
+      "code": "qua-trinh-hinh-thanh-chu-nghia-de-quoc",
+      "name": "Quá trình hình thành chủ nghĩa đế quốc",
+      "description": "Sự phát triển mạnh mẽ của nền kinh tế tư bản chủ nghĩa và sự cạnh tranh gay gắt dẫn đến quá trình tập trung sản xuất và tư bản, hình thành các công ti độc quyền lớn và sự dung hợp giữa tư bản công nghiệp và tư bản ngân hàng, từ đó hình thành tư bản tài chính và chủ nghĩa đế quốc.",
+      "grade": 8,
+      "source_page": 46
+    },
+    {
+      "code": "chuyen-bien-kinh-te-de-quoc-anh",
+      "name": "Chuyển biến kinh tế đế quốc Anh",
+      "description": "Cuối thế kỉ XIX, Anh từ vị trí dẫn đầu thế giới về công nghiệp tụt xuống vị trí thứ ba, sau Mĩ và Đức, nhưng vẫn dẫn đầu về xuất khẩu tư bản, thương mại và thuộc địa.",
+      "grade": 8,
+      "source_page": 47
+    },
+    {
+      "code": "chinh-sach-doi-noi-doi-ngoai-de-quoc-anh",
+      "name": "Chính sách đối nội, đối ngoại đế quốc Anh",
+      "description": "Anh là nước quân chủ lập hiến với hai đảng Tự do và Bảo thủ thay nhau nắm quyền, tiếp tục đẩy mạnh xâm lược thuộc địa và trở thành đế quốc có nhiều thuộc địa nhất thế giới.",
+      "grade": 8,
+      "source_page": 47
+    },
+    {
+      "code": "chuyen-bien-kinh-te-de-quoc-phap",
+      "name": "Chuyển biến kinh tế đế quốc Pháp",
+      "description": "Do hậu quả của Chiến tranh Pháp – Phổ, kinh tế Pháp phát triển chậm lại, công nghiệp tụt xuống thứ tư thế giới, nhưng vẫn đứng thứ hai về xuất khẩu tư bản.",
+      "grade": 8,
+      "source_page": 47
+    },
+    {
+      "code": "chinh-sach-doi-noi-doi-ngoai-de-quoc-phap",
+      "name": "Chính sách đối nội, đối ngoại đế quốc Pháp",
+      "description": "Nền Cộng hoà thứ ba ở Pháp thường xuyên khủng hoảng nội các, chính phủ đàn áp nhân dân và đẩy mạnh xâm lược thuộc địa, có hệ thống thuộc địa lớn thứ hai thế giới.",
+      "grade": 8,
+      "source_page": 47
+    },
+    {
+      "code": "chuyen-bien-kinh-te-de-quoc-duc",
+      "name": "Chuyển biến kinh tế đế quốc Đức",
+      "description": "Sau khi thống nhất đất nước, Đức phát triển nhanh chóng, đứng đầu châu Âu và thứ hai thế giới về công nghiệp, với quá trình tập trung sản xuất và tư bản mạnh mẽ.",
+      "grade": 8,
+      "source_page": 48
+    },
+    {
+      "code": "chinh-sach-doi-noi-doi-ngoai-de-quoc-duc",
+      "name": "Chính sách đối nội, đối ngoại đế quốc Đức",
+      "description": "Đức là nước liên bang theo chế độ quân chủ lập hiến, chủ trương chạy đua vũ trang và dùng vũ lực để chia lại thuộc địa trên thế giới.",
+      "grade": 8,
+      "source_page": 48
+    },
+    {
+      "code": "chuyen-bien-kinh-te-de-quoc-mi",
+      "name": "Chuyển biến kinh tế đế quốc Mĩ",
+      "description": "Mĩ vươn lên đứng đầu thế giới về sản xuất công nghiệp, với những công ti độc quyền khổng lồ và nông nghiệp phát triển mạnh mẽ, trở thành nguồn cung cấp lương thực, thực phẩm chủ yếu cho châu Âu.",
+      "grade": 8,
+      "source_page": 48
+    },
+    {
+      "code": "chinh-sach-doi-noi-doi-ngoai-de-quoc-mi",
+      "name": "Chính sách đối nội, đối ngoại đế quốc Mĩ",
+      "description": "Mĩ theo chế độ Cộng hoà, tăng cường bành trướng ở châu Á – Thái Bình Dương và biến Trung và Nam Mĩ thành khu vực độc quyền ảnh hưởng của mình.",
+      "grade": 8,
+      "source_page": 48
+    },
+    {
+      "code": "su-ra-doi-cua-giai-cap-cong-nhan",
+      "name": "Sự ra đời của giai cấp công nhân",
+      "description": "Giai cấp công nhân hình thành từ những nông dân mất ruộng đất phải ra thành thị làm thuê trong các nhà máy, hầm mỏ do cách mạng công nghiệp.",
+      "grade": null,
+      "source_page": 50
+    },
+    {
+      "code": "hoat-dong-cua-c-mac-va-ph-ang-ghen",
+      "name": "Hoạt động của C. Mác và Ph. Ăng-ghen",
+      "description": "C. Mác và Ph. Ăng-ghen đã có nhiều hoạt động quan trọng trong phong trào công nhân quốc tế, bao gồm việc thành lập Đồng minh những người cộng sản và công bố Tuyên ngôn của Đảng Cộng sản.",
+      "grade": null,
+      "source_page": 50
+    },
+    {
+      "code": "su-ra-doi-cua-chu-nghia-xa-hoi-khoa-hoc",
+      "name": "Sự ra đời của chủ nghĩa xã hội khoa học",
+      "description": "Chủ nghĩa xã hội khoa học ra đời với việc công bố Tuyên ngôn của Đảng Cộng sản, trình bày những luận điểm cơ bản về sự phát triển của xã hội loài người và sứ mệnh của giai cấp công nhân.",
+      "grade": null,
+      "source_page": 50
+    },
+    {
+      "code": "cong-xa-pa-ri-1871",
+      "name": "Công xã Pa-ri (1871)",
+      "description": "Cuộc cách mạng vô sản đầu tiên trên thế giới, dẫn tới sự ra đời của một chế độ mới, xã hội mới, là hình ảnh của một nhà nước kiểu mới chăm lo đến quyền lợi của giai cấp công nhân và nhân dân lao động.",
+      "grade": null,
+      "source_page": 51
+    },
+    {
+      "code": "quoc-te-thu-nhat",
+      "name": "Quốc tế thứ nhất",
+      "description": "Tổ chức do C. Mác và Ph. Ăng-ghen thành lập vào năm 1864 để tổ chức phong trào công nhân quốc tế, thông qua các nghị quyết quan trọng về chính trị và kinh tế.",
+      "grade": null,
+      "source_page": 52
+    },
+    {
+      "code": "quoc-te-thu-hai",
+      "name": "Quốc tế thứ hai",
+      "description": "Tổ chức ra đời vào năm 1889 ở Pa-ri, có vai trò quan trọng trong sự phát triển của phong trào công nhân thế giới cuối thế kỉ XIX.",
+      "grade": null,
+      "source_page": 52
+    },
+    {
+      "code": "ngay-quoc-te-lao-dong-1-5",
+      "name": "Ngày Quốc tế Lao động 1 – 5",
+      "description": "Ngày kỷ niệm quốc tế của phong trào công nhân, bắt nguồn từ cuộc đình công đòi ngày làm 8 giờ ở Mỹ vào năm 1886.",
+      "grade": null,
+      "source_page": 52
+    },
+    {
+      "code": "nguyen-nhan-chien-tranh-the-gioi-thu-nhat",
+      "name": "Nguyên nhân Chiến tranh thế giới thứ nhất",
+      "description": "Sự phát triển không đều về kinh tế và mâu thuẫn về thuộc địa giữa các nước đế quốc dẫn đến sự hình thành hai khối quân sự đối lập: khối Liên minh và khối Hiệp ước.",
+      "grade": null,
+      "source_page": 54
+    },
+    {
+      "code": "hau-qua-chien-tranh-the-gioi-thu-nhat",
+      "name": "Hậu quả Chiến tranh thế giới thứ nhất",
+      "description": "Chiến tranh gây ra thảm họa nặng nề cho nhân loại, nhiều thành phố bị phá hủy, các nước châu Âu trở thành con nợ của Mỹ, trong khi Mỹ và Nhật Bản hưởng lợi.",
+      "grade": null,
+      "source_page": 55
+    },
+    {
+      "code": "cach-mang-thang-muoi-nga-1917",
+      "name": "Cách mạng tháng Mười Nga năm 1917",
+      "description": "Cuộc cách mạng do V. I. Lê-nin và Đảng Bôn-sê-vích lãnh đạo, lật đổ Chính phủ tư sản lâm thời và thành lập nhà nước Xô viết.",
+      "grade": null,
+      "source_page": 56
+    },
+    {
+      "code": "nguyen-nhan-cach-mang-thang-muoi-nga",
+      "name": "Nguyên nhân Cách mạng tháng Mười Nga",
+      "description": "Sau Cách mạng tháng Hai, tình trạng hai chính quyền song song tồn tại ở Nga dẫn đến mâu thuẫn không thể giải quyết giữa các giai cấp.",
+      "grade": null,
+      "source_page": 56
+    },
+    {
+      "code": "dien-bien-cach-mang-thang-muoi-nga",
+      "name": "Diễn biến Cách mạng tháng Mười Nga",
+      "description": "Quân khởi nghĩa chiếm Pê-tơ-rô-grát và Cung điện Mùa Đông, lật đổ Chính phủ tư sản lâm thời, giành thắng lợi hoàn toàn đầu năm 1918.",
+      "grade": null,
+      "source_page": 56
+    },
+    {
+      "code": "y-nghia-cach-mang-thang-muoi-nga",
+      "name": "Ý nghĩa Cách mạng tháng Mười Nga",
+      "description": "Cách mạng đã đập tan bộ máy nhà nước cũ, cổ vũ phong trào cách mạng quốc tế và mở ra con đường giải phóng cho các dân tộc bị áp bức.",
+      "grade": null,
+      "source_page": 56
+    },
+    {
+      "code": "thuyet-van-vat-hap-dan",
+      "name": "Thuyết vạn vật hấp dẫn",
+      "description": "Một phát minh lớn của I. Niu-tơn trong lĩnh vực Vật lí vào đầu thế kỉ XVIII.",
+      "grade": null,
+      "source_page": 58
+    },
+    {
+      "code": "dinh-luat-bao-toan-va-chuyen-hoa-nang-luong",
+      "name": "Định luật bảo toàn và chuyển hoá năng lượng",
+      "description": "Một phát minh của M. Lô-mô-nô-xốp trong lĩnh vực Vật lí và Hoá học vào giữa thế kỉ XVIII.",
+      "grade": null,
+      "source_page": 58
+    },
+    {
+      "code": "thuyet-tien-hoa",
+      "name": "Thuyết tiến hoá",
+      "description": "Một phát minh của S. Đác-uyn trong lĩnh vực Sinh học vào giữa thế kỉ XIX.",
+      "grade": null,
+      "source_page": 58
+    },
+    {
+      "code": "chu-nghia-duy-vat-va-phep-bien-chung",
+      "name": "Chủ nghĩa duy vật và phép biện chứng",
+      "description": "Một trào lưu tư tưởng tiến bộ ở Đức với đại diện là L. Phoi-ơ-bách và G. Hê-ghen.",
+      "grade": null,
+      "source_page": 58
+    },
+    {
+      "code": "kinh-te-chinh-tri-hoc-tu-san",
+      "name": "Kinh tế chính trị học tư sản",
+      "description": "Một trào lưu tư tưởng tiến bộ ở Anh với tác phẩm của A. Xmít và Đ. Ri-các-đô.",
+      "grade": null,
+      "source_page": 58
+    },
+    {
+      "code": "chu-nghia-xa-hoi-khong-tuong",
+      "name": "Chủ nghĩa xã hội không tưởng",
+      "description": "Một trào lưu tư tưởng tiến bộ gắn liền với C. H. Xanh Xi-mông, S. Phu-ri-ê (Pháp) và R. Ô-oen (Anh).",
+      "grade": null,
+      "source_page": 58
+    },
+    {
+      "code": "chu-nghia-xa-hoi-khoa-hoc",
+      "name": "Chủ nghĩa xã hội khoa học",
+      "description": "Một trào lưu tư tưởng tiến bộ do C. Mác và Ph. Ăng-ghen sáng lập giữa thế kỉ XIX.",
+      "grade": null,
+      "source_page": 58
+    },
+    {
+      "code": "phat-minh-tau-thuy-chay-bang-dong-co-hoi-nuoc",
+      "name": "Phát minh tàu thuỷ chạy bằng động cơ hơi nước",
+      "description": "Phát minh của Phơn-tơn (người Mỹ) vào năm 1807.",
+      "grade": null,
+      "source_page": 59
+    },
+    {
+      "code": "phuong-phap-su-dung-lo-cao-trong-luyen-kim",
+      "name": "Phương pháp sử dụng lò cao trong luyện kim",
+      "description": "Phương pháp dẫn đến sự ra đời của các nguyên liệu mới như thép, nhôm.",
+      "grade": null,
+      "source_page": 59
+    },
+    {
+      "code": "phat-minh-dong-co-dot-trong",
+      "name": "Phát minh động cơ đốt trong",
+      "description": "Phát minh tạo tiền đề cho sự ra đời và phát triển của ô tô, máy bay.",
+      "grade": null,
+      "source_page": 59
+    },
+    {
+      "code": "phat-minh-phan-hoa-hoc-va-may-keo-chay-bang-hoi-nuoc",
+      "name": "Phát minh phân hoá học và máy kéo chạy bằng hơi nước",
+      "description": "Phát minh trong nông nghiệp vào thế kỉ XIX.",
+      "grade": null,
+      "source_page": 59
+    },
+    {
+      "code": "tac-pham-nhung-nguoi-khon-kho",
+      "name": "Tác phẩm Những người khốn khổ",
+      "description": "Tiểu thuyết của Vích-to Huy-gô xuất bản năm 1862, miêu tả thế giới của những con người nghèo khổ.",
+      "grade": null,
+      "source_page": 60
+    },
+    {
+      "code": "tac-pham-tan-tro-doi",
+      "name": "Tác phẩm Tấn trò đời",
+      "description": "Tác phẩm của H. Ban-dắc, phản ánh hiện thực xã hội thế kỉ XIX.",
+      "grade": null,
+      "source_page": 60
+    },
+    {
+      "code": "tac-pham-chien-tranh-va-hoa-binh",
+      "name": "Tác phẩm Chiến tranh và hoà bình",
+      "description": "Tác phẩm của Lép Tôn-xtôi, phản ánh hiện thực xã hội thế kỉ XIX.",
+      "grade": null,
+      "source_page": 60
+    },
+    {
+      "code": "am-nhac-the-ki-xviii",
+      "name": "Âm nhạc thế kỉ XVIII",
+      "description": "Âm nhạc với dấu ấn của các nhạc sĩ W. Mô-da (Áo), S. Bách (Đức).",
+      "grade": null,
+      "source_page": 60
+    },
+    {
+      "code": "am-nhac-the-ki-xix",
+      "name": "Âm nhạc thế kỉ XIX",
+      "description": "Âm nhạc tràn đầy tính lãng mạn với tên tuổi của L. Bét-thô-ven (Đức), Ph. Sô-panh (Ba Lan), P. I. Trái-cốp-xki (Nga).",
+      "grade": null,
+      "source_page": 60
+    },
+    {
+      "code": "cung-dien-vec-xai",
+      "name": "Cung điện Véc-xai",
+      "description": "Công trình kiến trúc đồ sộ và lộng lẫy hoàn thành đầu thế kỉ XVIII ở Pháp.",
+      "grade": null,
+      "source_page": 60
+    },
+    {
+      "code": "chien-tranh-thuoc-phien",
+      "name": "Chiến tranh thuốc phiện",
+      "description": "Cuộc chiến giữa Trung Quốc và Anh từ năm 1840 đến 1842, kết thúc bằng Hiệp ước Nam Kinh có lợi cho Anh.",
+      "grade": 8,
+      "source_page": 62
+    },
+    {
+      "code": "hiep-uoc-nam-kinh",
+      "name": "Hiệp ước Nam Kinh",
+      "description": "Hiệp ước ký kết giữa Trung Quốc và Anh sau Chiến tranh thuốc phiện, mở cửa năm cửa biển cho Anh và nhượng Hồng Công.",
+      "grade": 8,
+      "source_page": 62
+    },
+    {
+      "code": "hiep-uoc-tan-suu",
+      "name": "Hiệp ước Tân Sửu",
+      "description": "Hiệp ước ký kết năm 1901 giữa Trung Quốc và các nước đế quốc, biến Trung Quốc thành nước phong kiến, nửa thuộc địa.",
+      "grade": 8,
+      "source_page": 62
+    },
+    {
+      "code": "cach-mang-tan-hoi",
+      "name": "Cách mạng Tân Hợi",
+      "description": "Cuộc cách mạng diễn ra năm 1911 ở Trung Quốc, lật đổ chính quyền Mãn Thanh và mở đường cho chủ nghĩa tư bản phát triển.",
+      "grade": 8,
+      "source_page": 63
+    },
+    {
+      "code": "ton-trung-son",
+      "name": "Tôn Trung Sơn",
+      "description": "Lãnh đạo của Cách mạng Tân Hợi, với cương lĩnh 'Dân tộc độc lập, dân quyền tự do, dân sinh hạnh phúc'.",
+      "grade": 8,
+      "source_page": 63
+    },
+    {
+      "code": "duy-tan-minh-tri",
+      "name": "Duy tân Minh Trị",
+      "description": "Cuộc cải cách do Thiên hoàng Minh Trị thực hiện ở Nhật Bản từ năm 1868, đưa Nhật Bản phát triển theo con đường tư bản chủ nghĩa.",
+      "grade": 8,
+      "source_page": 64
+    },
+    {
+      "code": "thien-hoang-minh-tri",
+      "name": "Thiên hoàng Minh Trị",
+      "description": "Vị vua Nhật Bản thực hiện cuộc Duy tân Minh Trị, cải cách toàn diện đất nước.",
+      "grade": 8,
+      "source_page": 64
+    },
+    {
+      "code": "chu-nghia-de-quoc-nhat-ban",
+      "name": "Chủ nghĩa đế quốc Nhật Bản",
+      "description": "Giai đoạn Nhật Bản chuyển sang đế quốc chủ nghĩa vào cuối thế kỉ XIX – đầu thế kỉ XX, với sự phát triển mạnh mẽ của công nghiệp và chính sách xâm lược.",
+      "grade": 8,
+      "source_page": 65
+    },
+    {
+      "code": "tranh-gianh-quyen-luc-giua-cac-chua-phong-kien-an-do",
+      "name": "Tranh giành quyền lực giữa các chúa phong kiến Ấn Độ",
+      "description": "Cuộc tranh giành quyền lực giữa các chúa phong kiến trong nước đã làm cho Ấn Độ suy yếu từ đầu thế kỉ XVIII.",
+      "grade": 8,
+      "source_page": 67
+    },
+    {
+      "code": "anh-xam-chiem-an-do",
+      "name": "Anh xâm chiếm Ấn Độ",
+      "description": "Đến giữa thế kỉ XIX, thực dân Anh hoàn thành việc xâm chiếm và áp đặt ách cai trị ở Ấn Độ.",
+      "grade": 8,
+      "source_page": 67
+    },
+    {
+      "code": "chinh-sach-cai-tri-cua-anh-o-an-do",
+      "name": "Chính sách cai trị của Anh ở Ấn Độ",
+      "description": "Thực dân Anh thi hành nhiều biện pháp để áp đặt và củng cố quyền cai trị trực tiếp ở Ấn Độ, bao gồm việc bổ nhiệm Phó vương và hội đồng điều hành.",
+      "grade": 8,
+      "source_page": 67
+    },
+    {
+      "code": "nu-hoang-vich-to-ri-a-tuyen-bo-la-nu-hoang-an-do",
+      "name": "Nữ hoàng Vích-to-ri-a tuyên bố là Nữ hoàng Ấn Độ",
+      "description": "Ngày 1 – 1 – 1877, Nữ hoàng Anh Vích-to-ri-a tuyên bố đồng thời là Nữ hoàng Ấn Độ, đánh dấu bước hoàn thành việc chinh phục Ấn Độ của thực dân Anh.",
+      "grade": 8,
+      "source_page": 67
+    },
+    {
+      "code": "chinh-sach-kinh-te-cua-anh-o-an-do",
+      "name": "Chính sách kinh tế của Anh ở Ấn Độ",
+      "description": "Thực dân Anh tiến hành cuộc khai thác Ấn Độ một cách quy mô, vơ vét nguồn nguyên liệu và bóc lột nhân công để thu lợi nhuận tối đa.",
+      "grade": 8,
+      "source_page": 67
+    },
+    {
+      "code": "chinh-sach-xa-hoi-cua-anh-o-an-do",
+      "name": "Chính sách xã hội của Anh ở Ấn Độ",
+      "description": "Thực dân Anh thi hành chính sách 'ngu dân', khuyến khích những tập quán lạc hậu và phản động.",
+      "grade": 8,
+      "source_page": 67
+    },
+    {
+      "code": "mau-thuan-giua-nhan-dan-an-do-va-thuc-dan-anh",
+      "name": "Mâu thuẫn giữa nhân dân Ấn Độ và thực dân Anh",
+      "description": "Mâu thuẫn cơ bản trong xã hội Ấn Độ, dẫn tới các cuộc đấu tranh giành độc lập dân tộc.",
+      "grade": 8,
+      "source_page": 67
+    },
+    {
+      "code": "cuoc-khoi-nghia-xi-pay",
+      "name": "Cuộc khởi nghĩa Xi-pay",
+      "description": "Cuộc khởi nghĩa của nhân dân Ấn Độ chống lại thực dân Anh diễn ra từ 1857 đến 1859.",
+      "grade": 8,
+      "source_page": 67
+    },
+    {
+      "code": "phong-trao-dau-tranh-duoi-su-lanh-dao-cua-dang-quoc-dai",
+      "name": "Phong trào đấu tranh dưới sự lãnh đạo của Đảng Quốc đại",
+      "description": "Phong trào đấu tranh giành độc lập của nhân dân Ấn Độ dưới sự lãnh đạo của Đảng Quốc đại trong những năm 1905 – 1908.",
+      "grade": 8,
+      "source_page": 67
+    },
+    {
+      "code": "anh-xam-chiem-mien-dien",
+      "name": "Anh xâm chiếm Miến Điện",
+      "description": "Năm 1885, Anh hoàn thành quá trình xâm chiếm Miến Điện, biến nước này thành một tỉnh của Ấn Độ (thuộc Anh).",
+      "grade": 8,
+      "source_page": 68
+    },
+    {
+      "code": "my-xam-luoc-phi-lip-pin",
+      "name": "Mỹ xâm lược Phi-líp-pin",
+      "description": "Năm 1898, đế quốc Mỹ xâm lược và biến Phi-líp-pin thành thuộc địa.",
+      "grade": 8,
+      "source_page": 68
+    },
+    {
+      "code": "phap-xam-luoc-viet-nam",
+      "name": "Pháp xâm lược Việt Nam",
+      "description": "Giữa thế kỉ XIX, thực dân Pháp xâm lược Việt Nam.",
+      "grade": 8,
+      "source_page": 68
+    },
+    {
+      "code": "phong-trao-giai-phong-dan-toc-o-in-do-ne-xi-a",
+      "name": "Phong trào giải phóng dân tộc ở In-đô-nê-xi-a",
+      "description": "Phong trào đấu tranh giành độc lập của nhân dân In-đô-nê-xi-a từ nửa sau thế kỉ XIX đến đầu thế kỉ XX.",
+      "grade": 8,
+      "source_page": 68
+    },
+    {
+      "code": "phong-trao-giai-phong-dan-toc-o-phi-lip-pin",
+      "name": "Phong trào giải phóng dân tộc ở Phi-líp-pin",
+      "description": "Phong trào đấu tranh giành độc lập của nhân dân Phi-líp-pin từ nửa sau thế kỉ XIX đến đầu thế kỉ XX.",
+      "grade": 8,
+      "source_page": 68
+    },
+    {
+      "code": "phong-trao-can-vuong",
+      "name": "Phong trào Cần vương",
+      "description": "Phong trào chống Pháp do Tôn Thất Thuyết phát động dưới danh nghĩa vua Hàm Nghi, kéo dài đến cuối thế kỉ XIX.",
+      "grade": 8,
+      "source_page": 84
+    },
+    {
+      "code": "khoi-nghia-nong-dan-yen-the",
+      "name": "Khởi nghĩa nông dân Yên Thế",
+      "description": "Cuộc khởi nghĩa của nông dân Việt Nam chống Pháp từ 1884 đến 1913.",
+      "grade": 8,
+      "source_page": 69
+    },
+    {
+      "code": "khoi-nghia-a-cha-xoa",
+      "name": "Khởi nghĩa A-cha Xoa",
+      "description": "Cuộc khởi nghĩa của nhân dân Cam-pu-chia do A-cha Xoa lãnh đạo từ 1864 đến 1865.",
+      "grade": 8,
+      "source_page": 69
+    },
+    {
+      "code": "khoi-nghia-pu-com-bo",
+      "name": "Khởi nghĩa Pu-côm-bô",
+      "description": "Cuộc khởi nghĩa của nhân dân Cam-pu-chia dưới sự chỉ huy của nhà sư Pu-côm-bô từ 1866 đến 1867.",
+      "grade": 8,
+      "source_page": 69
+    },
+    {
+      "code": "khoi-nghia-xi-vo-tha",
+      "name": "Khởi nghĩa Xi-vô-tha",
+      "description": "Cuộc khởi nghĩa của nhân dân Cam-pu-chia do Hoàng thân Xi-vô-tha đứng đầu từ 1885 đến 1895.",
+      "grade": 8,
+      "source_page": 69
+    },
+    {
+      "code": "khoi-nghia-pha-ca-duoc",
+      "name": "Khởi nghĩa Pha-ca-đuốc",
+      "description": "Cuộc khởi nghĩa của nhân dân Lào ở Xa-van-na-khét do Pha-ca-đuốc lãnh đạo năm 1901.",
+      "grade": 8,
+      "source_page": 69
+    },
+    {
+      "code": "khoi-nghia-o-cao-nguyen-bo-lo-ven",
+      "name": "Khởi nghĩa ở cao nguyên Bô-lô-ven",
+      "description": "Cuộc khởi nghĩa của nhân dân Lào ở cao nguyên Bô-lô-ven từ 1901 đến 1907.",
+      "grade": 8,
+      "source_page": 69
+    },
+    {
+      "code": "lien-minh-chien-dau-viet-nam-lao-cam-pu-chia",
+      "name": "Liên minh chiến đấu Việt Nam – Lào – Cam-pu-chia",
+      "description": "Sự đoàn kết, phối hợp chiến đấu của nhân dân ba nước Đông Dương chống Pháp từ cuối thế kỉ XIX đến đầu thế kỉ XX.",
+      "grade": 8,
+      "source_page": 69
+    },
+    {
+      "code": "su-ra-doi-cua-nha-nguyen",
+      "name": "Sự ra đời của nhà Nguyễn",
+      "description": "Năm 1802, Nguyễn Ánh đánh bại triều Tây Sơn và lập ra triều Nguyễn, lấy niên hiệu là Gia Long, đặt kinh đô ở Phú Xuân (Huế).",
+      "grade": 7,
+      "source_page": 71
+    },
+    {
+      "code": "nha-nguyen-cung-co-quyen-thong-tri",
+      "name": "Nhà Nguyễn củng cố quyền thống trị",
+      "description": "Nguyễn Ánh thâu tóm quyền lực, củng cố chế độ quân chủ trung ương tập quyền, thống nhất lãnh thổ.",
+      "grade": 7,
+      "source_page": 71
+    },
+    {
+      "code": "bo-hoang-viet-luat-le",
+      "name": "Bộ Hoàng Việt luật lệ",
+      "description": "Năm 1815, nhà Nguyễn ban hành bộ luật này để bảo vệ quyền uy của nhà vua và củng cố trật tự phong kiến.",
+      "grade": 7,
+      "source_page": 71
+    },
+    {
+      "code": "cai-cach-minh-mang",
+      "name": "Cải cách Minh Mạng",
+      "description": "Cuộc cải cách diễn ra trong những năm 1831-1832, hoàn thiện bộ máy quản lí nhà nước từ Trung ương xuống địa phương.",
+      "grade": 7,
+      "source_page": 71
+    },
+    {
+      "code": "chinh-sach-doi-ngoai-thoi-nguyen",
+      "name": "Chính sách đối ngoại thời Nguyễn",
+      "description": "Nhà Nguyễn thực hiện chính sách ngoại giao mềm dẻo với nhà Thanh, nhưng khước từ quan hệ với các nước Âu – Mỹ và thi hành chính sách cấm đạo.",
+      "grade": 7,
+      "source_page": 72
+    },
+    {
+      "code": "tinh-hinh-kinh-te-thoi-nguyen",
+      "name": "Tình hình kinh tế thời Nguyễn",
+      "description": "Nông nghiệp được chú trọng khai hoang, thủ công nghiệp và thương nghiệp phát triển nhưng bị hạn chế bởi chính sách bế quan toả cảng.",
+      "grade": 7,
+      "source_page": 72
+    },
+    {
+      "code": "tinh-hinh-xa-hoi-thoi-nguyen",
+      "name": "Tình hình xã hội thời Nguyễn",
+      "description": "Cuộc sống cơ cực và mâu thuẫn xã hội dẫn đến nhiều cuộc nổi dậy chống nhà Nguyễn, tiêu biểu là khởi nghĩa của Phan Bá Vành, Lê Duy Lương, Nông Văn Vân, Cao Bá Quát.",
+      "grade": 7,
+      "source_page": 73
+    },
+    {
+      "code": "van-hoc-thoi-nguyen",
+      "name": "Văn học thời Nguyễn",
+      "description": "Văn học viết phát triển với nhiều tác phẩm chữ Nôm có giá trị, văn học dân gian phong phú với tục ngữ, ca dao, truyện Nôm dài.",
+      "grade": 7,
+      "source_page": 73
+    },
+    {
+      "code": "nghe-thuat-thoi-nguyen",
+      "name": "Nghệ thuật thời Nguyễn",
+      "description": "Nhà nhạc cung đình phát triển, nhiều làn điệu dân ca xuất hiện, hội hoạ với tranh dân gian, kiến trúc với các công trình nổi tiếng.",
+      "grade": 7,
+      "source_page": 74
+    },
+    {
+      "code": "ton-giao-thoi-nguyen",
+      "name": "Tôn giáo thời Nguyễn",
+      "description": "Phật giáo tiếp tục phát triển, Công giáo được truyền bá mạnh mẽ với nhiều nhà thờ mọc lên.",
+      "grade": 7,
+      "source_page": 74
+    },
+    {
+      "code": "khoa-hoc-thoi-nguyen",
+      "name": "Khoa học thời Nguyễn",
+      "description": "Biên soạn nhiều công trình sử học, địa lí và y dược học có giá trị như Khâm định Việt sử thông giám cương mục, Hải Thượng y tông tâm lĩnh.",
+      "grade": 7,
+      "source_page": 74
+    },
+    {
+      "code": "thuc-dan-phap-xam-luoc-viet-nam-1858-1884",
+      "name": "Thực dân Pháp xâm lược Việt Nam (1858-1884)",
+      "description": "Quá trình thực dân Pháp xâm lược Việt Nam từ năm 1858 đến năm 1884, bao gồm các cuộc chiến và hiệp ước với triều đình Huế.",
+      "grade": 8,
+      "source_page": 77
+    },
+    {
+      "code": "hiep-uoc-nham-tuat-1862",
+      "name": "Hiệp ước Nhâm Tuất (1862)",
+      "description": "Hiệp ước giữa triều đình Huế và Pháp, thừa nhận việc cai quản của Pháp ở ba tỉnh miền Đông Nam Kì và đảo Côn Lôn, bồi thường cho Pháp 20 triệu phơ-răng.",
+      "grade": 8,
+      "source_page": 77
+    },
+    {
+      "code": "cuoc-khang-chien-o-da-nang-va-nam-ki-1858-1862",
+      "name": "Cuộc kháng chiến ở Đà Nẵng và Nam Kì (1858-1862)",
+      "description": "Cuộc kháng chiến của quân dân Việt Nam chống lại sự xâm lược của liên quân Pháp và Tây Ban Nha tại Đà Nẵng và Nam Kì.",
+      "grade": 8,
+      "source_page": 77
+    },
+    {
+      "code": "nhan-dan-nam-ki-khang-chien-1862-1874",
+      "name": "Nhân dân Nam Kì kháng chiến (1862-1874)",
+      "description": "Phong trào kháng chiến của nhân dân Nam Kì chống lại sự xâm lược của thực dân Pháp sau Hiệp ước Nhâm Tuất.",
+      "grade": 8,
+      "source_page": 78
+    },
+    {
+      "code": "cuoc-khang-chien-bac-ki-lan-thu-nhat-1873-1874",
+      "name": "Cuộc kháng chiến chống Pháp xâm lược Bắc Kì lần thứ nhất (1873-1874)",
+      "description": "Cuộc kháng chiến của quân dân Việt Nam chống lại sự xâm lược của thực dân Pháp tại Bắc Kì lần thứ nhất.",
+      "grade": 8,
+      "source_page": 79
+    },
+    {
+      "code": "hiep-uoc-giap-tuat-1874",
+      "name": "Hiệp ước Giáp Tuất (1874)",
+      "description": "Hiệp ước giữa triều đình Huế và Pháp, thừa nhận chủ quyền của Pháp ở cả sáu tỉnh Nam Kì và nhiều điều khoản bất lợi khác.",
+      "grade": 8,
+      "source_page": 80
+    },
+    {
+      "code": "cuoc-khang-chien-bac-ki-lan-thu-hai-1882-1884",
+      "name": "Cuộc kháng chiến chống Pháp xâm lược Bắc Kì lần thứ hai (1882-1884)",
+      "description": "Cuộc kháng chiến của quân dân Việt Nam chống lại sự xâm lược của thực dân Pháp tại Bắc Kì lần thứ hai.",
+      "grade": 8,
+      "source_page": 81
+    },
+    {
+      "code": "hiep-uoc-paternot-1884",
+      "name": "Hiệp ước Pa-tơ-nốt (1884)",
+      "description": "Hiệp ước giữa triều đình Huế và Pháp, chính thức áp đặt quyền bảo hộ của Pháp ở Việt Nam.",
+      "grade": 8,
+      "source_page": 81
+    },
+    {
+      "code": "trao-luu-cai-cach-nua-sau-the-ki-19",
+      "name": "Trào lưu cải cách nửa sau thế kỉ XIX",
+      "description": "Phong trào cải cách của các quan lại, sĩ phu yêu nước Việt Nam nhằm chấn chỉnh bộ máy nhà nước và phát triển kinh tế - xã hội.",
+      "grade": 8,
+      "source_page": 82
+    },
+    {
+      "code": "nguyen-truong-to",
+      "name": "Nguyễn Trường Tộ",
+      "description": "Một trí thức Công giáo yêu nước, người đã đề xuất nhiều bản điều trần cải cách lên triều đình Huế trong nửa sau thế kỉ XIX.",
+      "grade": 8,
+      "source_page": 82
+    },
+    {
+      "code": "ton-that-thuyet",
+      "name": "Tôn Thất Thuyết",
+      "description": "Thượng thư Bộ Binh, thành viên Hội đồng Phụ chính, người phát động phong trào Cần vương.",
+      "grade": 8,
+      "source_page": 84
+    },
+    {
+      "code": "ham-nghi",
+      "name": "Hàm Nghi",
+      "description": "Vua Hàm Nghi, người được Tôn Thất Thuyết đưa lên ngôi và lấy danh nghĩa để phát động phong trào Cần vương.",
+      "grade": 8,
+      "source_page": 84
+    },
+    {
+      "code": "hiep-uoc-pa-to-not",
+      "name": "Hiệp ước Pa-tơ-nốt",
+      "description": "Hiệp ước mà thực dân Pháp ký kết, cơ bản hoàn thành quá trình xâm lược Việt Nam.",
+      "grade": 8,
+      "source_page": 84
+    },
+    {
+      "code": "khoi-nghia-bai-say",
+      "name": "Khởi nghĩa Bãi Sậy",
+      "description": "Cuộc khởi nghĩa diễn ra từ 1883 đến 1892, do Nguyễn Thiện Thuật lãnh đạo, sử dụng chiến thuật du kích.",
+      "grade": 8,
+      "source_page": 85
+    },
+    {
+      "code": "khoi-nghia-huong-khe",
+      "name": "Khởi nghĩa Hương Khê",
+      "description": "Cuộc khởi nghĩa diễn ra từ 1885 đến 1896, do Phan Đình Phùng lãnh đạo, nổi bật với việc chế tạo súng trường.",
+      "grade": 8,
+      "source_page": 85
+    },
+    {
+      "code": "phan-dinh-phung",
+      "name": "Phan Đình Phùng",
+      "description": "Lãnh đạo cao nhất của khởi nghĩa Hương Khê, một trong những cuộc khởi nghĩa tiêu biểu nhất trong phong trào Cần vương.",
+      "grade": 8,
+      "source_page": 85
+    },
+    {
+      "code": "khoi-nghia-ba-dinh",
+      "name": "Khởi nghĩa Ba Đình",
+      "description": "Cuộc khởi nghĩa diễn ra từ 1886 đến 1887, do Phạm Bành và Đinh Công Tráng lãnh đạo, với căn cứ chính tại huyện Nga Sơn, Thanh Hoá.",
+      "grade": 8,
+      "source_page": 85
+    },
+    {
+      "code": "khoi-nghia-yen-the",
+      "name": "Khởi nghĩa Yên Thế",
+      "description": "Cuộc khởi nghĩa nông dân diễn ra từ 1884 đến 1913, do Đề Nắm và Đề Thám lãnh đạo, chống lại thực dân Pháp.",
+      "grade": 8,
+      "source_page": 86
+    },
+    {
+      "code": "de-tham",
+      "name": "Đề Thám",
+      "description": "Lãnh đạo khởi nghĩa Yên Thế, nổi bật với việc bảo vệ cuộc sống tự do của nông dân.",
+      "grade": 8,
+      "source_page": 86
+    },
+    {
+      "code": "khai-thac-thuoc-dia-lan-thu-nhat",
+      "name": "Cuộc khai thác thuộc địa lần thứ nhất của thực dân Pháp",
+      "description": "Sự kiện lịch sử diễn ra từ năm 1897 đến năm 1914, khi thực dân Pháp tiến hành khai thác thuộc địa ở Việt Nam sau khi hoàn thành bình định quân sự.",
+      "grade": 8,
+      "source_page": 88
+    },
+    {
+      "code": "chinh-sach-khai-thac-thuoc-dia-phap",
+      "name": "Chính sách khai thác thuộc địa của thực dân Pháp",
+      "description": "Chính sách của thực dân Pháp trong các lĩnh vực chính trị, kinh tế, văn hóa, giáo dục nhằm khai thác thuộc địa Việt Nam.",
+      "grade": 8,
+      "source_page": 88
+    },
+    {
+      "code": "bien-doi-xa-hoi-viet-nam-dau-the-ky-xx",
+      "name": "Biến đổi xã hội Việt Nam đầu thế kỉ XX",
+      "description": "Sự thay đổi trong cơ cấu xã hội Việt Nam do tác động của chính sách cai trị và khai thác của thực dân Pháp.",
+      "grade": 8,
+      "source_page": 89
+    },
+    {
+      "code": "hoat-dong-yeu-nuoc-phan-boi-chau",
+      "name": "Hoạt động yêu nước của Phan Bội Châu",
+      "description": "Các hoạt động yêu nước của Phan Bội Châu, bao gồm thành lập Hội Duy tân và phong trào Đông du, thành lập Việt Nam Quang phục hội.",
+      "grade": 8,
+      "source_page": 90
+    },
+    {
+      "code": "hoat-dong-yeu-nuoc-phan-chau-trinh",
+      "name": "Hoạt động yêu nước của Phan Châu Trinh",
+      "description": "Các hoạt động yêu nước của Phan Châu Trinh, bao gồm cuộc vận động Duy tân và phong trào chống sưu thuế.",
+      "grade": 8,
+      "source_page": 90
+    },
+    {
+      "code": "buoi-dau-hoat-dong-cuu-nuoc-nguyen-tat-thanh",
+      "name": "Buổi đầu hoạt động cứu nước của Nguyễn Tất Thành",
+      "description": "Những hoạt động yêu nước của Nguyễn Tất Thành từ năm 1911 đến năm 1917, bao gồm việc ra đi tìm đường cứu nước và hoạt động tại Pháp.",
+      "grade": 8,
+      "source_page": 91
+    },
+    {
+      "code": "vi-tri-dia-li-viet-nam",
+      "name": "Vị trí địa lí Việt Nam",
+      "description": "Việt Nam nằm ở vị trí giao thoa của hai vành đai sinh khoáng Thái Bình Dương và Địa Trung Hải.",
+      "grade": null,
+      "source_page": 111
+    },
+    {
+      "code": "pham-vi-lanh-tho-viet-nam",
+      "name": "Phạm vi lãnh thổ Việt Nam",
+      "description": "Lãnh thổ Việt Nam bao gồm vùng đất, vùng biển và vùng trời, với tổng diện tích lãnh thổ là 331 212 km² và vùng biển có diện tích khoảng 1 triệu km².",
+      "grade": 6,
+      "source_page": 96
+    },
+    {
+      "code": "anh-huong-vi-tri-dia-li-pham-vi-lanh-tho-den-dac-diem-tu-nhien",
+      "name": "Ảnh hưởng của vị trí địa lí và phạm vi lãnh thổ đến đặc điểm tự nhiên",
+      "description": "Vị trí địa lí và phạm vi lãnh thổ tạo nên đặc điểm thiên nhiên nhiệt đới ẩm gió mùa, chịu ảnh hưởng sâu sắc của biển và phân hoá đa dạng.",
+      "grade": 6,
+      "source_page": 97
+    },
+    {
+      "code": "thien-nhien-nhiet-doi-am-gio-mua",
+      "name": "Thiên nhiên nhiệt đới ẩm gió mùa",
+      "description": "Thiên nhiên Việt Nam có khí hậu nhiệt đới ẩm gió mùa, chịu ảnh hưởng sâu sắc của biển, với hệ sinh thái rừng nhiệt đới gió mùa phát triển trên đất feralit.",
+      "grade": 6,
+      "source_page": 97
+    },
+    {
+      "code": "thien-nhien-phan-hoa-da-dang",
+      "name": "Thiên nhiên phân hoá đa dạng",
+      "description": "Thiên nhiên Việt Nam có sự phân hoá khí hậu theo chiều bắc – nam, đông – tây, dẫn đến sự phân hoá của sinh vật và đất.",
+      "grade": 6,
+      "source_page": 97
+    },
+    {
+      "code": "dia-hinh-doi-nui-viet-nam",
+      "name": "Địa hình đồi núi Việt Nam",
+      "description": "Địa hình đồi núi chiếm ưu thế với 3/4 diện tích phần đất liền, chủ yếu là đồi núi thấp. Địa hình núi cao trên 2 000 m chỉ chiếm 1% diện tích cả nước.",
+      "grade": null,
+      "source_page": 99
+    },
+    {
+      "code": "dia-hinh-dong-bang-viet-nam",
+      "name": "Địa hình đồng bằng Việt Nam",
+      "description": "Địa hình đồng bằng chỉ chiếm 1/4 diện tích phần đất liền và chia thành nhiều khu vực, điển hình là dải đồng bằng duyên hải miền Trung.",
+      "grade": null,
+      "source_page": 99
+    },
+    {
+      "code": "huong-dia-hinh-viet-nam",
+      "name": "Hướng địa hình Việt Nam",
+      "description": "Địa hình nước ta có hai hướng chính là tây bắc – đông nam và vòng cung.",
+      "grade": null,
+      "source_page": 99
+    },
+    {
+      "code": "phan-bac-dia-hinh-viet-nam",
+      "name": "Phân bậc địa hình Việt Nam",
+      "description": "Địa hình Việt Nam có tính chất phân bậc khá rõ rệt, phân thành nhiều bậc địa hình lớn kế tiếp nhau: núi đồi, đồng bằng, bờ biển, thềm lục địa.",
+      "grade": null,
+      "source_page": 100
+    },
+    {
+      "code": "tac-dong-khi-hau-dia-hinh-viet-nam",
+      "name": "Tác động của khí hậu đến địa hình Việt Nam",
+      "description": "Khí hậu nhiệt đới ẩm gió mùa làm cho địa hình bị xâm thực, xói mòn mạnh, tạo nên các dạng địa hình các-xtơ độc đáo.",
+      "grade": null,
+      "source_page": 100
+    },
+    {
+      "code": "tac-dong-con-nguoi-dia-hinh-viet-nam",
+      "name": "Tác động của con người đến địa hình Việt Nam",
+      "description": "Quá trình khai thác tài nguyên thiên nhiên và phát triển kinh tế của con người làm biến đổi các dạng địa hình tự nhiên, tạo ra các dạng địa hình nhân tạo.",
+      "grade": null,
+      "source_page": 100
+    },
+    {
+      "code": "vung-doi-nui-dong-bac",
+      "name": "Vùng đồi núi Đông Bắc",
+      "description": "Vùng đồi núi thấp nằm ở phía bờ trái của sông Hồng, đặc trưng bởi những cánh cung núi lớn và vùng đồi phát triển mở rộng.",
+      "grade": null,
+      "source_page": 101
+    },
+    {
+      "code": "vung-doi-nui-tay-bac",
+      "name": "Vùng đồi núi Tây Bắc",
+      "description": "Vùng núi cao nhất nước ta với nhiều dãy núi cao và cao nguyên hiểm trở, địa hình bị chia cắt mạnh.",
+      "grade": null,
+      "source_page": 102
+    },
+    {
+      "code": "vung-doi-nui-truong-son-bac",
+      "name": "Vùng đồi núi Trường Sơn Bắc",
+      "description": "Vùng núi kéo dài từ phía nam sông Cả tới dãy Bạch Mã, có nhiều nhánh núi đâm ngang ra biển.",
+      "grade": null,
+      "source_page": 102
+    },
+    {
+      "code": "vung-doi-nui-truong-son-nam",
+      "name": "Vùng đồi núi Trường Sơn Nam",
+      "description": "Địa hình chủ yếu là núi và cao nguyên, có độ cao lớn hơn vùng Trường Sơn Bắc, nổi bật với các cao nguyên rộng lớn, xếp tầng.",
+      "grade": null,
+      "source_page": 102
+    },
+    {
+      "code": "dong-bang-song-hong",
+      "name": "Đồng bằng sông Hồng",
+      "description": "Đồng bằng lớn thứ hai nước ta, được hình thành chủ yếu do phù sa của hệ thống sông Hồng bồi đắp.",
+      "grade": null,
+      "source_page": 104
+    },
+    {
+      "code": "dong-bang-song-cuu-long",
+      "name": "Đồng bằng sông Cửu Long",
+      "description": "Đồng bằng lớn nhất nước ta, được bồi đắp bởi phù sa của hệ thống sông Mê Công, không có đê lớn để ngăn lũ.",
+      "grade": null,
+      "source_page": 104
+    },
+    {
+      "code": "dong-bang-duyen-hai-mien-trung",
+      "name": "Đồng bằng duyên hải miền Trung",
+      "description": "Các đồng bằng duyên hải miền Trung bị các nhánh núi đâm ngang và ăn sát ra biển chia cắt thành nhiều đồng bằng nhỏ hẹp.",
+      "grade": null,
+      "source_page": 105
+    },
+    {
+      "code": "dia-hinh-bo-bien-viet-nam",
+      "name": "Địa hình bờ biển Việt Nam",
+      "description": "Bờ biển nước ta dài 3 260 km, có hai kiểu là bờ biển bồi tụ và bờ biển mài mòn.",
+      "grade": null,
+      "source_page": 106
+    },
+    {
+      "code": "them-luc-dia-viet-nam",
+      "name": "Thềm lục địa Việt Nam",
+      "description": "Thềm lục địa Việt Nam là đáy biển và lòng đất dưới đáy biển, tiếp liền và nằm ngoài lãnh hải Việt Nam, trên toàn bộ phần kéo dài tự nhiên của lãnh thổ đất liền, các đảo và quần đảo của Việt Nam cho đến mép ngoài của rìa lục địa.",
+      "grade": 8,
+      "source_page": 150
+    },
+    {
+      "code": "anh-huong-dia-hinh-phan-hoa-tu-nhien",
+      "name": "Ảnh hưởng của địa hình đến phân hoá tự nhiên",
+      "description": "Địa hình đồi núi thấp bảo toàn tính nhiệt đới của thiên nhiên, các dãy núi tạo nên sự phân hoá thiên nhiên giữa các sườn núi.",
+      "grade": null,
+      "source_page": 106
+    },
+    {
+      "code": "anh-huong-dia-hinh-khai-thac-kinh-te",
+      "name": "Ảnh hưởng của địa hình đến khai thác kinh tế",
+      "description": "Mỗi khu vực địa hình có phương thức khai thác kinh tế phù hợp để tận dụng lợi thế và khắc phục khó khăn.",
+      "grade": null,
+      "source_page": 107
+    },
+    {
+      "code": "dac-diem-chung-khoang-san-viet-nam",
+      "name": "Đặc điểm chung khoáng sản Việt Nam",
+      "description": "Khoáng sản Việt Nam phong phú và đa dạng, phần lớn có trữ lượng trung bình và nhỏ, phân bố chủ yếu ở miền Bắc, miền Trung và Tây Nguyên.",
+      "grade": null,
+      "source_page": 111
+    },
+    {
+      "code": "phan-loai-khoang-san-viet-nam",
+      "name": "Phân loại khoáng sản Việt Nam",
+      "description": "Khoáng sản Việt Nam được phân loại theo tính chất công dụng và quá trình hình thành, gồm khoáng sản năng lượng, kim loại, phi kim loại, nội sinh và ngoại sinh.",
+      "grade": null,
+      "source_page": 111
+    },
+    {
+      "code": "phan-bo-khoang-san-chu-yeu-viet-nam",
+      "name": "Phân bố khoáng sản chủ yếu Việt Nam",
+      "description": "Các loại khoáng sản như than đá, dầu mỏ, khí tự nhiên, bô-xít, sắt, a-pa-tít, ti-tan, đá vôi có phân bố cụ thể ở các vùng khác nhau của Việt Nam.",
+      "grade": null,
+      "source_page": 112
+    },
+    {
+      "code": "van-de-su-dung-hop-li-khoang-san-viet-nam",
+      "name": "Vấn đề sử dụng hợp lí khoáng sản Việt Nam",
+      "description": "Việc khai thác và sử dụng khoáng sản ở Việt Nam còn chưa hợp lí, cần có giải pháp để sử dụng hiệu quả và bảo vệ tài nguyên khoáng sản.",
+      "grade": null,
+      "source_page": 113
+    },
+    {
+      "code": "tinh-chat-nhiet-doi-cua-khi-hau-viet-nam",
+      "name": "Tính chất nhiệt đới của khí hậu Việt Nam",
+      "description": "Khí hậu Việt Nam có nhiệt độ không khí trung bình năm trên 20°C và số giờ nắng từ 1 400 – 3 000 giờ/năm.",
+      "grade": null,
+      "source_page": 115
+    },
+    {
+      "code": "tinh-chat-am-cua-khi-hau-viet-nam",
+      "name": "Tính chất ẩm của khí hậu Việt Nam",
+      "description": "Khí hậu Việt Nam có độ ẩm không khí trung bình trên 80% và lượng mưa trung bình từ 1 500 – 2 000 mm/năm.",
+      "grade": null,
+      "source_page": 115
+    },
+    {
+      "code": "tinh-chat-gio-mua-cua-khi-hau-viet-nam",
+      "name": "Tính chất gió mùa của khí hậu Việt Nam",
+      "description": "Khí hậu Việt Nam chịu ảnh hưởng của gió mùa đông và gió mùa hạ, tạo ra các mùa rõ rệt với đặc điểm thời tiết khác nhau.",
+      "grade": null,
+      "source_page": 116
+    },
+    {
+      "code": "phan-hoa-khi-hau-theo-chieu-bac-nam",
+      "name": "Phân hoá khí hậu theo chiều bắc – nam",
+      "description": "Khí hậu Việt Nam phân hoá thành hai miền khí hậu phía Bắc và phía Nam với đặc điểm nhiệt độ và mùa khác nhau.",
+      "grade": null,
+      "source_page": 117
+    },
+    {
+      "code": "phan-hoa-khi-hau-theo-chieu-dong-tay",
+      "name": "Phân hoá khí hậu theo chiều đông – tây",
+      "description": "Khí hậu Việt Nam phân hoá giữa vùng biển và đất liền, giữa vùng đồng bằng và vùng núi.",
+      "grade": null,
+      "source_page": 118
+    },
+    {
+      "code": "phan-hoa-khi-hau-theo-do-cao",
+      "name": "Phân hoá khí hậu theo độ cao",
+      "description": "Khí hậu Việt Nam phân hoá theo độ cao với ba đai khí hậu: nhiệt đới gió mùa, cận nhiệt đới gió mùa trên núi, ôn đới gió mùa trên núi.",
+      "grade": null,
+      "source_page": 118
+    },
+    {
+      "code": "ve-bieu-do-khi-hau",
+      "name": "Vẽ biểu đồ khí hậu",
+      "description": "Kỹ năng vẽ biểu đồ khí hậu từ số liệu nhiệt độ và lượng mưa trung bình các tháng trong năm của một trạm khí tượng.",
+      "grade": 6,
+      "source_page": 120
+    },
+    {
+      "code": "phan-tich-bieu-do-khi-hau",
+      "name": "Phân tích biểu đồ khí hậu",
+      "description": "Kỹ năng phân tích biểu đồ khí hậu để nhận xét về nhiệt độ trung bình năm, biên độ nhiệt độ trung bình năm, tổng lượng mưa trung bình năm và thời gian mùa mưa.",
+      "grade": 6,
+      "source_page": 120
+    },
+    {
+      "code": "nhiet-do-trung-binh-nam",
+      "name": "Nhiệt độ trung bình năm",
+      "description": "Khái niệm về nhiệt độ trung bình của một năm tại một trạm khí tượng, được tính từ số liệu nhiệt độ trung bình các tháng.",
+      "grade": 6,
+      "source_page": 120
+    },
+    {
+      "code": "bien-do-nhiet-do-trung-binh-nam",
+      "name": "Biên độ nhiệt độ trung bình năm",
+      "description": "Khái niệm về sự chênh lệch giữa nhiệt độ trung bình tháng cao nhất và thấp nhất trong năm tại một trạm khí tượng.",
+      "grade": 6,
+      "source_page": 120
+    },
+    {
+      "code": "tong-luong-mua-trung-binh-nam",
+      "name": "Tổng lượng mưa trung bình năm",
+      "description": "Khái niệm về tổng lượng mưa trong một năm tại một trạm khí tượng, được tính từ số liệu lượng mưa trung bình các tháng.",
+      "grade": 6,
+      "source_page": 120
+    },
+    {
+      "code": "thoi-gian-mua-mua",
+      "name": "Thời gian mùa mưa",
+      "description": "Khái niệm về thời gian có 3 tháng liên tục trở lên có lượng mưa trên 100 mm tại một trạm khí tượng.",
+      "grade": 6,
+      "source_page": 120
+    },
+    {
+      "code": "luu-vuc-he-thong-song-lon",
+      "name": "Lưu vực hệ thống sông lớn",
+      "description": "Khái niệm về phạm vi lưu vực của các hệ thống sông lớn như sông Hồng, Thu Bồn, Mê Công trên lãnh thổ Việt Nam.",
+      "grade": 6,
+      "source_page": 121
+    },
+    {
+      "code": "dac-diem-mang-luoi-song-ngoi-viet-nam",
+      "name": "Đặc điểm mạng lưới sông ngòi Việt Nam",
+      "description": "Mạng lưới sông ngòi dày đặc, phân bố rộng khắp, chủ yếu là sông nhỏ, chảy theo hai hướng chính và có chế độ dòng chảy phân hai mùa rõ rệt.",
+      "grade": 6,
+      "source_page": 121
+    },
+    {
+      "code": "che-do-nuoc-song-viet-nam",
+      "name": "Chế độ nước sông Việt Nam",
+      "description": "Chế độ dòng chảy của sông ngòi Việt Nam phân hai mùa rõ rệt: mùa lũ và mùa cạn, do ảnh hưởng của khí hậu nhiệt đới gió mùa.",
+      "grade": 6,
+      "source_page": 121
+    },
+    {
+      "code": "he-thong-song-hong",
+      "name": "Hệ thống sông Hồng",
+      "description": "Hệ thống sông lớn thứ hai ở Việt Nam với mạng lưới sông hình nan quạt và chế độ nước chia làm hai mùa rõ rệt.",
+      "grade": 6,
+      "source_page": 122
+    },
+    {
+      "code": "he-thong-song-thu-bon",
+      "name": "Hệ thống sông Thu Bồn",
+      "description": "Hệ thống sông có 78 phụ lưu, mạng lưới sông dạng nan quạt và chế độ nước chia làm hai mùa rõ rệt.",
+      "grade": 6,
+      "source_page": 123
+    },
+    {
+      "code": "he-thong-song-me-cong",
+      "name": "Hệ thống sông Mê Công",
+      "description": "Một trong những hệ thống sông lớn trên thế giới, chảy qua 6 quốc gia, với mạng lưới sông hình lòng chim và chế độ nước chia làm hai mùa rõ rệt.",
+      "grade": 6,
+      "source_page": 124
+    },
+    {
+      "code": "vai-tro-ho-dam",
+      "name": "Vai trò của hồ, đầm",
+      "description": "Hồ, đầm có vai trò quan trọng đối với sản xuất và sinh hoạt, cung cấp nước cho nông nghiệp, công nghiệp, dịch vụ và sinh hoạt.",
+      "grade": 6,
+      "source_page": 125
+    },
+    {
+      "code": "vai-tro-nuoc-ngam",
+      "name": "Vai trò của nước ngầm",
+      "description": "Nước ngầm có vai trò quan trọng đối với sản xuất và sinh hoạt, cung cấp nước cho nông nghiệp, công nghiệp, dịch vụ và sinh hoạt.",
+      "grade": 6,
+      "source_page": 126
+    },
+    {
+      "code": "anh-huong-khi-hau-san-xuat-nong-nghiep",
+      "name": "Ảnh hưởng của khí hậu đối với sản xuất nông nghiệp",
+      "description": "Khí hậu nhiệt đới ẩm của Việt Nam tạo điều kiện thuận lợi cho cây trồng, vật nuôi phát triển, nhưng cũng gây ra nhiều khó khăn như thiên tai và sâu bệnh.",
+      "grade": 6,
+      "source_page": 128
+    },
+    {
+      "code": "phan-hoa-khi-hau-va-san-xuat-nong-nghiep",
+      "name": "Sự phân hoá khí hậu và sản xuất nông nghiệp",
+      "description": "Sự phân hoá khí hậu tạo nên sự khác biệt về mùa vụ và đa dạng sản phẩm nông nghiệp giữa các vùng ở Việt Nam.",
+      "grade": 6,
+      "source_page": 128
+    },
+    {
+      "code": "khi-hau-va-du-lich",
+      "name": "Ảnh hưởng của khí hậu đối với hoạt động du lịch",
+      "description": "Khí hậu ảnh hưởng đến sự hình thành các điểm du lịch, loại hình du lịch và mùa vụ du lịch ở Việt Nam.",
+      "grade": 6,
+      "source_page": 129
+    },
+    {
+      "code": "phan-hoa-khi-hau-va-du-lich",
+      "name": "Sự phân hoá khí hậu và du lịch",
+      "description": "Sự phân hoá khí hậu theo độ cao và giữa miền Bắc và miền Nam ảnh hưởng đến các loại hình và mùa vụ du lịch.",
+      "grade": 6,
+      "source_page": 129
+    },
+    {
+      "code": "su-dung-tong-hop-tai-nguyen-nuoc",
+      "name": "Tầm quan trọng của việc sử dụng tổng hợp tài nguyên nước ở một lưu vực sông",
+      "description": "Sử dụng tổng hợp tài nguyên nước sông mang lại hiệu quả kinh tế cao và bảo vệ tài nguyên nước, đồng thời phòng chống thiên tai.",
+      "grade": 6,
+      "source_page": 130
+    },
+    {
+      "code": "bien-doi-khi-hau-viet-nam",
+      "name": "Biến đổi khí hậu Việt Nam",
+      "description": "Biến đổi khí hậu có tác động trực tiếp đến khí hậu, thuỷ văn, từ đó tác động đến đời sống và các hoạt động sản xuất ở Việt Nam.",
+      "grade": null,
+      "source_page": 132
+    },
+    {
+      "code": "bien-doi-nhiet-do-viet-nam",
+      "name": "Biến đổi nhiệt độ Việt Nam",
+      "description": "Nhiệt độ trung bình năm có xu thế tăng trên phạm vi cả nước, với mức tăng trung bình toàn Việt Nam là 0,89°C trong thời kì từ 1958 đến 2018.",
+      "grade": null,
+      "source_page": 132
+    },
+    {
+      "code": "bien-doi-luong-mua-viet-nam",
+      "name": "Biến đổi lượng mưa Việt Nam",
+      "description": "Tổng lượng mưa năm có sự biến động trong thời kì từ 1958 đến 2018, ảnh hưởng đến khí hậu và thuỷ văn.",
+      "grade": null,
+      "source_page": 132
+    },
+    {
+      "code": "hien-tuong-thoi-tiet-cuc-doan-viet-nam",
+      "name": "Hiện tượng thời tiết cực đoan Việt Nam",
+      "description": "Gia tăng các hiện tượng thời tiết cực đoan như mưa lớn, bão, rét đậm, rét hại, gây lũ quét, ngập lụt.",
+      "grade": null,
+      "source_page": 132
+    },
+    {
+      "code": "bien-doi-thuy-van-viet-nam",
+      "name": "Biến đổi thuỷ văn Việt Nam",
+      "description": "Biến đổi khí hậu có tác động lớn đến thuỷ văn nước ta, đặc biệt tới lưu lượng nước và chế độ nước sông.",
+      "grade": null,
+      "source_page": 133
+    },
+    {
+      "code": "bien-dong-luu-luong-nuoc-song-viet-nam",
+      "name": "Biến động lưu lượng nước sông Việt Nam",
+      "description": "Do tổng lượng mưa trung bình năm có sự biến động làm lưu lượng nước sông cũng biến động theo.",
+      "grade": null,
+      "source_page": 133
+    },
+    {
+      "code": "giai-phap-ung-pho-bien-doi-khi-hau",
+      "name": "Giải pháp ứng phó biến đổi khí hậu",
+      "description": "Các hoạt động của con người nhằm thích ứng với biến đổi khí hậu và giảm nhẹ các tác nhân gây ra biến đổi khí hậu.",
+      "grade": null,
+      "source_page": 134
+    },
+    {
+      "code": "giam-nhe-bien-doi-khi-hau",
+      "name": "Giảm nhẹ biến đổi khí hậu",
+      "description": "Các hoạt động nhằm giảm mức độ hoặc cường độ phát thải khí nhà kính.",
+      "grade": null,
+      "source_page": 134
+    },
+    {
+      "code": "thich-ung-bien-doi-khi-hau",
+      "name": "Thích ứng biến đổi khí hậu",
+      "description": "Sự điều chỉnh các hệ thống tự nhiên và con người để phù hợp với môi trường mới hoặc môi trường bị thay đổi.",
+      "grade": null,
+      "source_page": 134
+    },
+    {
+      "code": "tinh-chat-nhiet-doi-gio-mua-cua-lop-phu-tho-nhuong",
+      "name": "Tính chất nhiệt đới gió mùa của lớp phủ thổ nhưỡng",
+      "description": "Khí hậu nhiệt đới gió mùa với lượng mưa lớn và mưa tập trung theo mùa ảnh hưởng đến quá trình hình thành và tính chất của đất, tạo nên sự đa dạng của các loại đất ở Việt Nam.",
+      "grade": null,
+      "source_page": 136
+    },
+    {
+      "code": "qua-trinh-feralit",
+      "name": "Quá trình feralit",
+      "description": "Quá trình hình thành đất đặc trưng ở Việt Nam, do khí hậu nhiệt đới gió mùa với lượng mưa lớn làm rửa trôi các chất bazo, tích luỹ các ôxit sắt và ôxit nhôm, hình thành đất feralit.",
+      "grade": null,
+      "source_page": 136
+    },
+    {
+      "code": "dat-feralit",
+      "name": "Đất feralit",
+      "description": "Loại đất chiếm diện tích lớn nhất ở Việt Nam, phân bố ở trung du và miền núi, có đặc điểm chứa nhiều ôxit sắt và ôxit nhôm, màu đỏ vàng, thoáng khí, dễ thoát nước, chua, nghèo chất badơ và mùn.",
+      "grade": null,
+      "source_page": 137
+    },
+    {
+      "code": "gia-tri-su-dung-dat-feralit",
+      "name": "Giá trị sử dụng đất feralit",
+      "description": "Đất feralit thích hợp cho phát triển rừng sản xuất và trồng cây công nghiệp lâu năm, cây dược liệu và cây ăn quả.",
+      "grade": null,
+      "source_page": 137
+    },
+    {
+      "code": "dat-phu-sa",
+      "name": "Đất phù sa",
+      "description": "Loại đất chiếm khoảng 24% diện tích đất tự nhiên, phân bố chủ yếu ở đồng bằng sông Hồng, đồng bằng sông Cửu Long và các đồng bằng duyên hải miền Trung, có độ phì cao, giàu chất dinh dưỡng.",
+      "grade": null,
+      "source_page": 138
+    },
+    {
+      "code": "gia-tri-su-dung-dat-phu-sa",
+      "name": "Giá trị sử dụng đất phù sa",
+      "description": "Đất phù sa phù hợp cho sản xuất cây lương thực, cây công nghiệp hàng năm và cây ăn quả, cũng như phát triển ngành thuỷ sản.",
+      "grade": null,
+      "source_page": 139
+    },
+    {
+      "code": "dat-mun-tren-nui",
+      "name": "Đất mùn trên núi",
+      "description": "Loại đất phân bố ở các vùng núi cao, hình thành trong điều kiện khí hậu cận nhiệt đới và ôn đới núi cao, giàu mùn nhưng tầng đất mỏng.",
+      "grade": null,
+      "source_page": 139
+    },
+    {
+      "code": "tinh-cap-thiet-chong-thoai-hoa-dat",
+      "name": "Tính cấp thiết của vấn đề chống thoái hoá đất",
+      "description": "Thoái hoá đất làm giảm độ phì, ảnh hưởng đến năng suất cây trồng, cần ngăn chặn để đảm bảo tài nguyên đất cho sản xuất nông, lâm nghiệp.",
+      "grade": null,
+      "source_page": 140
+    },
+    {
+      "code": "nguyen-nhan-thoai-hoa-dat",
+      "name": "Nguyên nhân thoái hoá đất",
+      "description": "Thoái hoá đất ở Việt Nam do cả nguyên nhân tự nhiên như xói mòn, rửa trôi và tác động của con người như phá rừng, lạm dụng hóa chất.",
+      "grade": null,
+      "source_page": 140
+    },
+    {
+      "code": "giai-phap-chong-thoai-hoa-dat",
+      "name": "Giải pháp chống thoái hoá đất",
+      "description": "Các biện pháp như bảo vệ và trồng rừng, củng cố hệ thống đê, bổ sung chất hữu cơ cho đất để giảm thiểu thoái hoá đất.",
+      "grade": null,
+      "source_page": 141
+    },
+    {
+      "code": "da-dang-sinh-vat-viet-nam",
+      "name": "Đa dạng sinh vật Việt Nam",
+      "description": "Việt Nam là một trong 16 quốc gia sở hữu sự đa dạng sinh học cao nhất thế giới với hơn 50.000 loài đã được xác định.",
+      "grade": null,
+      "source_page": 143
+    },
+    {
+      "code": "da-dang-thanh-phan-loai-gen-di-truyen",
+      "name": "Đa dạng thành phần loài, gen di truyền",
+      "description": "Việt Nam có nhiều loài thực vật và động vật quý hiếm, tạo nên sự đa dạng về nguồn gen di truyền.",
+      "grade": null,
+      "source_page": 143
+    },
+    {
+      "code": "da-dang-kieu-he-sinh-thai",
+      "name": "Đa dạng kiểu hệ sinh thái",
+      "description": "Các hệ sinh thái ở Việt Nam rất phong phú và đa dạng, bao gồm các hệ sinh thái tự nhiên trên cạn, dưới nước và nhân tạo.",
+      "grade": null,
+      "source_page": 143
+    },
+    {
+      "code": "he-sinh-thai-tu-nhien-tren-can",
+      "name": "Hệ sinh thái tự nhiên trên cạn",
+      "description": "Bao gồm các kiểu hệ sinh thái rừng khác nhau như rừng mưa nhiệt đới, rừng nhiệt đới gió mùa, rừng cận nhiệt, rừng ôn đới núi cao.",
+      "grade": null,
+      "source_page": 143
+    },
+    {
+      "code": "he-sinh-thai-tu-nhien-duoi-nuoc",
+      "name": "Hệ sinh thái tự nhiên dưới nước",
+      "description": "Bao gồm hệ sinh thái nước mặn và nước ngọt, như rừng ngập mặn, cỏ biển, rạn san hô, đầm phá ven biển.",
+      "grade": null,
+      "source_page": 144
+    },
+    {
+      "code": "he-sinh-thai-nhan-tao",
+      "name": "Hệ sinh thái nhân tạo",
+      "description": "Hình thành do hoạt động sản xuất nông, lâm nghiệp, thủy sản, như hệ sinh thái đồng ruộng, vùng chuyên canh, rừng trồng.",
+      "grade": null,
+      "source_page": 144
+    },
+    {
+      "code": "tinh-cap-thiet-bao-ton-da-dang-sinh-hoc",
+      "name": "Tính cấp thiết bảo tồn đa dạng sinh học",
+      "description": "Tính đa dạng sinh học ở Việt Nam đang bị suy giảm nghiêm trọng, cần bảo tồn để ngăn chặn sự suy giảm này.",
+      "grade": null,
+      "source_page": 145
+    },
+    {
+      "code": "nguyen-nhan-suy-giam-da-dang-sinh-hoc",
+      "name": "Nguyên nhân suy giảm đa dạng sinh học",
+      "description": "Do các yếu tố tự nhiên như biến đổi khí hậu và hoạt động của con người như khai thác lâm sản, ô nhiễm môi trường.",
+      "grade": null,
+      "source_page": 145
+    },
+    {
+      "code": "bien-phap-bao-ton-da-dang-sinh-hoc",
+      "name": "Biện pháp bảo tồn đa dạng sinh học",
+      "description": "Bao gồm xây dựng khu bảo tồn, trồng rừng, ngăn chặn phá rừng, xử lý chất thải và nâng cao ý thức người dân.",
+      "grade": null,
+      "source_page": 145
+    },
+    {
+      "code": "pham-vi-bien-dong",
+      "name": "Phạm vi Biển Đông",
+      "description": "Biển Đông là một biển thuộc Thái Bình Dương, trải rộng từ khoảng vĩ độ 3°N đến vĩ độ 26°B và từ khoảng kinh độ 100°Đ đến kinh độ 121°Đ, với diện tích khoảng 3,44 triệu km².",
+      "grade": 8,
+      "source_page": 147
+    },
+    {
+      "code": "cac-nuoc-co-chung-bien-dong-voi-viet-nam",
+      "name": "Các nước có chung Biển Đông với Việt Nam",
+      "description": "Các nước có chung Biển Đông với Việt Nam là: Trung Quốc, Phi-líp-pin, In-đô-nê-xi-a, Bru-nây, Ma-lai-xi-a, Xin-ga-po, Thái Lan, Cam-pu-chia.",
+      "grade": 8,
+      "source_page": 147
+    },
+    {
+      "code": "cac-vung-bien-cua-viet-nam",
+      "name": "Các vùng biển của Việt Nam",
+      "description": "Việt Nam có các vùng biển là: nội thủy, lãnh hải, tiếp giáp lãnh hải, vùng đặc quyền kinh tế và vùng thềm lục địa theo Công ước Liên hợp quốc về Luật Biển năm 1982 và Luật Biển Việt Nam năm 2012.",
+      "grade": 8,
+      "source_page": 148
+    },
+    {
+      "code": "duong-co-so-viet-nam",
+      "name": "Đường cơ sở Việt Nam",
+      "description": "Đường cơ sở là căn cứ để xác định phạm vi, chiều rộng của lãnh hải và các vùng biển khác của Việt Nam, là đường thẳng gãy khúc nối liền các điểm từ 0 đến A11.",
+      "grade": 8,
+      "source_page": 149
+    },
+    {
+      "code": "noi-thuy",
+      "name": "Nội thủy",
+      "description": "Nội thủy là vùng nước tiếp giáp với bờ biển, ở phía trong đường cơ sở và là bộ phận lãnh thổ của Việt Nam.",
+      "grade": 8,
+      "source_page": 150
+    },
+    {
+      "code": "lanh-hai",
+      "name": "Lãnh hải",
+      "description": "Lãnh hải là vùng biển có chiều rộng 12 hải lí tính từ đường cơ sở ra phía biển, ranh giới ngoài của lãnh hải là biên giới quốc gia trên biển của Việt Nam.",
+      "grade": 8,
+      "source_page": 150
+    },
+    {
+      "code": "vung-tiep-giap-lanh-hai",
+      "name": "Vùng tiếp giáp lãnh hải",
+      "description": "Vùng tiếp giáp lãnh hải là vùng biển tiếp liền và nằm ngoài lãnh hải Việt Nam, có chiều rộng 12 hải lí tính từ ranh giới ngoài của lãnh hải.",
+      "grade": 8,
+      "source_page": 150
+    },
+    {
+      "code": "vung-dac-quyen-kinh-te",
+      "name": "Vùng đặc quyền kinh tế",
+      "description": "Vùng đặc quyền kinh tế là vùng biển tiếp liền và nằm ngoài lãnh hải Việt Nam, hợp với lãnh hải thành một vùng biển có chiều rộng 200 hải lí tính từ đường cơ sở.",
+      "grade": 8,
+      "source_page": 150
+    },
+    {
+      "code": "hiep-dinh-phan-dinh-vinh-bac-bo",
+      "name": "Hiệp định Phân định vịnh Bắc Bộ",
+      "description": "Ngày 25 – 12 – 2000, Việt Nam và Trung Quốc kí Hiệp định Phân định vịnh Bắc Bộ nhằm xác định biên giới lãnh hải, thêm lục địa và vùng đặc quyền kinh tế giữa hai nước trên vịnh Bắc Bộ.",
+      "grade": 8,
+      "source_page": 151
+    },
+    {
+      "code": "dac-diem-tu-nhien-vung-bien-dao-viet-nam",
+      "name": "Đặc điểm tự nhiên vùng biển đảo Việt Nam",
+      "description": "Vùng biển đảo Việt Nam có địa hình đa dạng, khí hậu nhiệt đới gió mùa, và hải văn phong phú với độ muối, dòng biển và chế độ thuỷ triều đa dạng.",
+      "grade": 8,
+      "source_page": 153
+    },
+    {
+      "code": "dac-diem-moi-truong-bien-dao-viet-nam",
+      "name": "Đặc điểm môi trường biển đảo Việt Nam",
+      "description": "Môi trường biển đảo Việt Nam bao gồm các yếu tố tự nhiên và nhân tạo, có đặc điểm khác biệt với môi trường trên đất liền, như không chia cắt được và nhạy cảm trước tác động của con người.",
+      "grade": 8,
+      "source_page": 156
+    },
+    {
+      "code": "van-de-bao-ve-moi-truong-bien-dao-viet-nam",
+      "name": "Vấn đề bảo vệ môi trường biển đảo Việt Nam",
+      "description": "Bảo vệ môi trường biển đảo cần kết hợp nhiều giải pháp như xây dựng chính sách, áp dụng khoa học công nghệ, và nâng cao nhận thức của người dân.",
+      "grade": 8,
+      "source_page": 156
+    },
+    {
+      "code": "tai-nguyen-sinh-vat-vung-bien-viet-nam",
+      "name": "Tài nguyên sinh vật vùng biển Việt Nam",
+      "description": "Vùng biển Việt Nam có hơn 2 000 loài cá, nhiều loài động vật giáp xác, thân mềm có giá trị kinh tế và dinh dưỡng cao.",
+      "grade": 8,
+      "source_page": 157
+    },
+    {
+      "code": "tai-nguyen-du-lich-bien-viet-nam",
+      "name": "Tài nguyên du lịch biển Việt Nam",
+      "description": "Bờ biển dài với nhiều bãi cát, vịnh, hang động đẹp, nước biển trong xanh, tạo điều kiện thuận lợi phát triển du lịch biển.",
+      "grade": 8,
+      "source_page": 157
+    },
+    {
+      "code": "tai-nguyen-dau-mo-khi-tu-nhien-viet-nam",
+      "name": "Tài nguyên dầu mỏ, khí tự nhiên Việt Nam",
+      "description": "Dầu mỏ và khí tự nhiên tập trung ở các bể trong vùng thềm lục địa như Sông Hồng, Phú Khánh, Cửu Long, Nam Côn Sơn.",
+      "grade": 8,
+      "source_page": 157
+    },
+    {
+      "code": "cac-khoang-san-khac-vung-bien-viet-nam",
+      "name": "Các khoáng sản khác vùng biển Việt Nam",
+      "description": "Vùng biển Việt Nam có 35 loại khoáng sản, trong đó có ti-tan, cát thuỷ tinh, muối có giá trị nhất.",
+      "grade": 8,
+      "source_page": 157
+    }
+  ],
+  "relations": [
+    {
+      "source": "nguyen-nhan-cach-mang-tu-san-anh",
+      "relation": "Prerequisite_of",
+      "target": "cach-mang-tu-san-anh",
+      "evidence": "Sự thay đổi về kinh tế, những mâu thuẫn gay gắt giữa tư sản, quý tộc mới với chế độ quân chủ chuyên chế dẫn tới cuộc cách mạng lật đổ chế độ phong kiến.",
+      "source_page": 10
+    },
+    {
+      "source": "ket-qua-cach-mang-tu-san-anh",
+      "relation": "Part_of",
+      "target": "cach-mang-tu-san-anh",
+      "evidence": "Cách mạng tư sản Anh đã lật đổ chế độ quân chủ chuyên chế, mở đường cho chủ nghĩa tư bản ở Anh phát triển nhanh chóng.",
+      "source_page": 11
+    },
+    {
+      "source": "dac-diem-cach-mang-tu-san-anh",
+      "relation": "Part_of",
+      "target": "cach-mang-tu-san-anh",
+      "evidence": "Đặc điểm chính của Cách mạng tư sản Anh là do tầng lớp quý tộc mới và tư sản lãnh đạo, diễn ra dưới hình thức một cuộc nội chiến, thiết lập chế độ quân chủ lập hiến.",
+      "source_page": 11
+    },
+    {
+      "source": "nguyen-nhan-chien-tranh-13-thuoc-dia",
+      "relation": "Prerequisite_of",
+      "target": "chien-tranh-gianh-doc-lap-13-thuoc-dia-anh",
+      "evidence": "Sự phát triển kinh tế theo con đường tư bản chủ nghĩa ở 13 thuộc địa đã làm sâu sắc hơn mâu thuẫn giữa các thuộc địa với chính quốc.",
+      "source_page": 12
+    },
+    {
+      "source": "ket-qua-chien-tranh-13-thuoc-dia",
+      "relation": "Part_of",
+      "target": "chien-tranh-gianh-doc-lap-13-thuoc-dia-anh",
+      "evidence": "Chiến tranh giành độc lập của 13 thuộc địa Anh ở Bắc Mỹ đã lật đổ ách thống trị của thực dân Anh, đưa đến sự thành lập Hợp chúng quốc Mỹ.",
+      "source_page": 12
+    },
+    {
+      "source": "dac-diem-chien-tranh-13-thuoc-dia",
+      "relation": "Part_of",
+      "target": "chien-tranh-gianh-doc-lap-13-thuoc-dia-anh",
+      "evidence": "Đặc điểm chính của Chiến tranh giành độc lập của 13 thuộc địa Anh là do tầng lớp chủ nô và tư sản lãnh đạo, diễn ra dưới hình thức cuộc chiến tranh giải phóng, thiết lập chế độ cộng hoà tổng thống.",
+      "source_page": 12
+    },
+    {
+      "source": "oliver-cromwell",
+      "relation": "Conjunction",
+      "target": "cach-mang-tu-san-anh",
+      "evidence": "Ô-li-vơ Crôm-oen là nhân vật lịch sử liên quan đến Cách mạng tư sản Anh.",
+      "source_page": 10
+    },
+    {
+      "source": "george-washington",
+      "relation": "Conjunction",
+      "target": "chien-tranh-gianh-doc-lap-13-thuoc-dia-anh",
+      "evidence": "G. Oa-sinh-tơn là nhân vật lịch sử liên quan đến Chiến tranh giành độc lập của 13 thuộc địa Anh ở Bắc Mỹ.",
+      "source_page": 10
+    },
+    {
+      "source": "tinh-hinh-kinh-te-phap-truoc-cach-mang",
+      "relation": "Part_of",
+      "target": "cach-mang-tu-san-phap-cuoi-the-ki-xviii",
+      "evidence": "Cuối thế kỉ XVIII, Pháp vẫn là nước nông nghiệp lạc hậu.",
+      "source_page": 14
+    },
+    {
+      "source": "tinh-hinh-chinh-tri-xa-hoi-phap-truoc-cach-mang",
+      "relation": "Part_of",
+      "target": "cach-mang-tu-san-phap-cuoi-the-ki-xviii",
+      "evidence": "Chế độ quân chủ chuyên chế đã lâm vào tình trạng khủng hoảng.",
+      "source_page": 14
+    },
+    {
+      "source": "tu-tuong-cua-giai-cap-tu-san-phap-truoc-cach-mang",
+      "relation": "Part_of",
+      "target": "cach-mang-tu-san-phap-cuoi-the-ki-xviii",
+      "evidence": "Các nhà tư tưởng của giai cấp tư sản đã đả phá chế độ phong kiến.",
+      "source_page": 14
+    },
+    {
+      "source": "nguyen-nhan-cach-mang-tu-san-phap",
+      "relation": "Prerequisite_of",
+      "target": "cach-mang-tu-san-phap-cuoi-the-ki-xviii",
+      "evidence": "Điều đó đã thôi thúc họ nổi dậy đấu tranh chống chế độ phong kiến.",
+      "source_page": 14
+    },
+    {
+      "source": "ket-qua-cach-mang-tu-san-phap",
+      "relation": "Part_of",
+      "target": "cach-mang-tu-san-phap-cuoi-the-ki-xviii",
+      "evidence": "Thiết lập chế độ cộng hòa cùng các quyền tự do, dân chủ.",
+      "source_page": 15
+    },
+    {
+      "source": "y-nghia-cach-mang-tu-san-phap",
+      "relation": "Part_of",
+      "target": "cach-mang-tu-san-phap-cuoi-the-ki-xviii",
+      "evidence": "Đây là cuộc cách mạng dân chủ tư sản điển hình.",
+      "source_page": 15
+    },
+    {
+      "source": "dac-diem-cach-mang-tu-san-phap",
+      "relation": "Part_of",
+      "target": "cach-mang-tu-san-phap-cuoi-the-ki-xviii",
+      "evidence": "Diễn ra dưới hình thức cuộc đấu tranh giai cấp quyết liệt.",
+      "source_page": 15
+    },
+    {
+      "source": "tuyen-ngon-nhan-quyen-va-dan-quyen",
+      "relation": "Part_of",
+      "target": "cach-mang-tu-san-phap-cuoi-the-ki-xviii",
+      "evidence": "Tuyên ngôn Nhân quyền và Dân quyền là văn kiện công bố công khai về quyền con người và quyền công dân.",
+      "source_page": 15
+    },
+    {
+      "source": "may-hoi-nuoc",
+      "relation": "Prerequisite_of",
+      "target": "cach-mang-cong-nghiep-anh",
+      "evidence": "Việc phát minh ra máy hơi nước đã mở đầu cho cuộc cách mạng công nghiệp.",
+      "source_page": 17
+    },
+    {
+      "source": "cach-mang-cong-nghiep-anh",
+      "relation": "Part_of",
+      "target": "cach-mang-cong-nghiep-phap",
+      "evidence": "Ảnh hưởng của cách mạng công nghiệp Anh nhanh chóng lan đến nhiều nước khác ở châu Âu và Mỹ.",
+      "source_page": 18
+    },
+    {
+      "source": "cach-mang-cong-nghiep-anh",
+      "relation": "Part_of",
+      "target": "cach-mang-cong-nghiep-duc",
+      "evidence": "Ảnh hưởng của cách mạng công nghiệp Anh nhanh chóng lan đến nhiều nước khác ở châu Âu và Mỹ.",
+      "source_page": 18
+    },
+    {
+      "source": "cach-mang-cong-nghiep-anh",
+      "relation": "Part_of",
+      "target": "cach-mang-cong-nghiep-my",
+      "evidence": "Ảnh hưởng của cách mạng công nghiệp Anh nhanh chóng lan đến nhiều nước khác ở châu Âu và Mỹ.",
+      "source_page": 18
+    },
+    {
+      "source": "may-tach-hat-bong",
+      "relation": "Part_of",
+      "target": "cach-mang-cong-nghiep-my",
+      "evidence": "Hai phát minh lớn của Mỹ là máy tách hạt bông (1793) và máy thu hoạch bông (1831) đã góp phần tạo ra năng suất lao động cao hơn nhiều lần so với cách làm thủ công.",
+      "source_page": 18
+    },
+    {
+      "source": "may-thu-hoach-bong",
+      "relation": "Part_of",
+      "target": "cach-mang-cong-nghiep-my",
+      "evidence": "Hai phát minh lớn của Mỹ là máy tách hạt bông (1793) và máy thu hoạch bông (1831) đã góp phần tạo ra năng suất lao động cao hơn nhiều lần so với cách làm thủ công.",
+      "source_page": 18
+    },
+    {
+      "source": "tac-dong-cach-mang-cong-nghiep",
+      "relation": "Prerequisite_of",
+      "target": "hinh-thanh-giai-cap-tu-san-va-vo-san",
+      "evidence": "Về mặt xã hội, tác động quan trọng nhất của cách mạng công nghiệp là hình thành hai giai cấp cơ bản của xã hội tư bản, đó là tư sản và vô sản.",
+      "source_page": 19
+    },
+    {
+      "source": "tac-dong-cach-mang-cong-nghiep",
+      "relation": "Prerequisite_of",
+      "target": "mat-trai-cach-mang-cong-nghiep",
+      "evidence": "Cách mạng công nghiệp cũng tạo ra một số tác động tiêu cực như: tình trạng ô nhiễm môi trường, sự bóc lột sức lao động của phụ nữ và trẻ em, sự xâm chiếm và tranh giành thuộc địa,...",
+      "source_page": 19
+    },
+    {
+      "source": "qua-trinh-xam-nhap-dong-nam-a-cua-thuc-dan-phuong-tay",
+      "relation": "Prerequisite_of",
+      "target": "tinh-hinh-dong-nam-a-duoi-ach-do-ho-cua-thuc-dan-phuong-tay",
+      "evidence": "Sự thống trị của thực dân phương Tây đã dẫn tới những chuyển biến lớn lao ở các nước trong khu vực Đông Nam Á.",
+      "source_page": 22
+    },
+    {
+      "source": "tinh-hinh-dong-nam-a-duoi-ach-do-ho-cua-thuc-dan-phuong-tay",
+      "relation": "Prerequisite_of",
+      "target": "cuoc-dau-tranh-chong-thuc-dan-phuong-tay-o-dong-nam-a",
+      "evidence": "Sự thống trị của thực dân phương Tây đã dẫn tới những chuyển biến lớn lao ở các nước trong khu vực Đông Nam Á.",
+      "source_page": 22
+    },
+    {
+      "source": "cuoc-dau-tranh-chong-thuc-dan-phuong-tay-o-dong-nam-a",
+      "relation": "Hyponym_of",
+      "target": "khoi-nghia-trong-cuoc-dau-tranh-chong-thuc-dan-o-in-do-ne-xi-a",
+      "evidence": "Ở In-đô-nê-xi-a, sau khi bị thực dân Hà Lan đô hộ, nhiều cuộc khởi nghĩa tiêu biểu đã nổ ra như: khởi nghĩa Tơ-ru-nô Giê-giô, khởi nghĩa Su-ra-pa-tit, khởi nghĩa Đi-pô-nê-gô-rô.",
+      "source_page": 23
+    },
+    {
+      "source": "cuoc-dau-tranh-chong-thuc-dan-phuong-tay-o-dong-nam-a",
+      "relation": "Hyponym_of",
+      "target": "khoi-nghia-trong-cuoc-dau-tranh-chong-thuc-dan-o-phi-lip-pin",
+      "evidence": "Tại Phi-líp-pin, ngay khi thực dân Tây Ban Nha xâm nhập đã vấp phải sự chống trả quyết liệt của thổ dân đảo Mác-tan với thủ lĩnh là La-pu-la-pu.",
+      "source_page": 23
+    },
+    {
+      "source": "cuoc-dau-tranh-chong-thuc-dan-phuong-tay-o-dong-nam-a",
+      "relation": "Hyponym_of",
+      "target": "khoi-nghia-trong-cuoc-dau-tranh-chong-thuc-dan-o-mien-dien",
+      "evidence": "Ở Miến Điện, ngay từ cuộc xâm lược đầu tiên, quân Anh đã vấp phải sự kháng cự của quân đội Miến Điện do tướng Ban-đu-la chỉ huy.",
+      "source_page": 23
+    },
+    {
+      "source": "su-ra-doi-vuong-trieu-mac",
+      "relation": "Prerequisite_of",
+      "target": "nguyen-nhan-xung-dot-nam-bac-trieu",
+      "evidence": "Nhà Mạc được thành lập nhưng một bộ phận quan lại trung thành với triều Lê ra sức chống lại nhằm khôi phục vương triều này.",
+      "source_page": 26
+    },
+    {
+      "source": "nguyen-nhan-xung-dot-nam-bac-trieu",
+      "relation": "Prerequisite_of",
+      "target": "he-qua-xung-dot-nam-bac-trieu",
+      "evidence": "Mâu thuẫn giữa Nam – Bắc triều dẫn đến cuộc xung đột trong 60 năm... Cuộc xung đột diễn ra trong một thời gian dài, đất nước bị chia cắt.",
+      "source_page": 26
+    },
+    {
+      "source": "nguyen-nhan-xung-dot-trinh-nguyen",
+      "relation": "Prerequisite_of",
+      "target": "he-qua-xung-dot-trinh-nguyen",
+      "evidence": "Cuộc xung đột kéo dài giữa hai tập đoàn phong kiến Trịnh – Nguyễn kéo dài làm suy kiệt sức người, sức của; tàn phá đồng ruộng, xóm làng.",
+      "source_page": 27
+    },
+    {
+      "source": "luoc-do-nam-bac-trieu-dang-trong-dang-ngoai",
+      "relation": "Used_for",
+      "target": "nguyen-nhan-xung-dot-nam-bac-trieu",
+      "evidence": "Lược đồ Nam – Bắc triều và Đàng Trong – Đàng Ngoài thể hiện sự phân chia lãnh thổ giữa các thế lực trong lịch sử Việt Nam.",
+      "source_page": 26
+    },
+    {
+      "source": "luoc-do-nam-bac-trieu-dang-trong-dang-ngoai",
+      "relation": "Used_for",
+      "target": "nguyen-nhan-xung-dot-trinh-nguyen",
+      "evidence": "Lược đồ Nam – Bắc triều và Đàng Trong – Đàng Ngoài thể hiện sự phân chia lãnh thổ giữa các thế lực trong lịch sử Việt Nam.",
+      "source_page": 26
+    },
+    {
+      "source": "nguyen-hoang-vao-tran-thu-thuan-hoa",
+      "relation": "Prerequisite_of",
+      "target": "qua-trinh-khai-pha-vung-dat-phia-nam-the-ki-xvi-xviii",
+      "evidence": "Năm 1558, Nguyễn Hoàng vào trấn thủ Thuận Hoá. Quá trình di dân, khai phá vùng đất phía Nam được đẩy mạnh.",
+      "source_page": 29
+    },
+    {
+      "source": "qua-trinh-khai-pha-vung-dat-phia-nam-the-ki-xvi-xviii",
+      "relation": "Part_of",
+      "target": "to-chuc-bo-may-cai-tri-vung-dat-phia-nam",
+      "evidence": "Các chúa Nguyễn đã tổ chức đơn vị hành chính, tổ chức bộ máy cai trị, lập sổ sách quản lí dân đinh, ruộng đất và đặt ra các loại thuế.",
+      "source_page": 29
+    },
+    {
+      "source": "thuc-thi-chu-quyen-hoang-sa-truong-sa",
+      "relation": "Part_of",
+      "target": "doi-hoang-sa-va-doi-bac-hai",
+      "evidence": "Hoạt động khai thác và xác lập chủ quyền của chúa Nguyễn tại quần đảo Hoàng Sa và quần đảo Trường Sa được thực hiện có tổ chức, hệ thống và liên tục thông qua đội Hoàng Sa và đội Bắc Hải.",
+      "source_page": 30
+    },
+    {
+      "source": "boi-canh-lich-su-dang-ngoai-the-ki-xviii",
+      "relation": "Prerequisite_of",
+      "target": "khoi-nghia-nguyen-huu-cau",
+      "evidence": "Cuộc sống khó khăn về mọi mặt đã thúc đẩy nông dân Đàng Ngoài vùng lên khởi nghĩa chống lại chính quyền phong kiến.",
+      "source_page": 32
+    },
+    {
+      "source": "boi-canh-lich-su-dang-ngoai-the-ki-xviii",
+      "relation": "Prerequisite_of",
+      "target": "khoi-nghia-hoang-cong-chat",
+      "evidence": "Cuộc sống khó khăn về mọi mặt đã thúc đẩy nông dân Đàng Ngoài vùng lên khởi nghĩa chống lại chính quyền phong kiến.",
+      "source_page": 32
+    },
+    {
+      "source": "boi-canh-lich-su-dang-ngoai-the-ki-xviii",
+      "relation": "Prerequisite_of",
+      "target": "khoi-nghia-nguyen-danh-phuong",
+      "evidence": "Cuộc sống khó khăn về mọi mặt đã thúc đẩy nông dân Đàng Ngoài vùng lên khởi nghĩa chống lại chính quyền phong kiến.",
+      "source_page": 32
+    },
+    {
+      "source": "khoi-nghia-nguyen-huu-cau",
+      "relation": "Hyponym_of",
+      "target": "ket-qua-y-nghia-phong-trao-nong-dan-dang-ngoai-the-ki-xviii",
+      "evidence": "Phong trào nông dân ở Đàng Ngoài kéo dài hàng chục năm nhưng cuối cùng đều thất bại.",
+      "source_page": 34
+    },
+    {
+      "source": "khoi-nghia-hoang-cong-chat",
+      "relation": "Hyponym_of",
+      "target": "ket-qua-y-nghia-phong-trao-nong-dan-dang-ngoai-the-ki-xviii",
+      "evidence": "Phong trào nông dân ở Đàng Ngoài kéo dài hàng chục năm nhưng cuối cùng đều thất bại.",
+      "source_page": 34
+    },
+    {
+      "source": "khoi-nghia-nguyen-danh-phuong",
+      "relation": "Hyponym_of",
+      "target": "ket-qua-y-nghia-phong-trao-nong-dan-dang-ngoai-the-ki-xviii",
+      "evidence": "Phong trào nông dân ở Đàng Ngoài kéo dài hàng chục năm nhưng cuối cùng đều thất bại.",
+      "source_page": 34
+    },
+    {
+      "source": "nguyen-nhan-khoi-nghia-tay-son",
+      "relation": "Prerequisite_of",
+      "target": "khoi-nghia-tay-son-1771",
+      "evidence": "Do cuộc sống ngày càng cơ cực nên nổi bất bình, oán hận của các tầng lớp xã hội đối với chính quyền chúa Nguyễn ở Đàng Trong dâng cao đến đỉnh điểm.",
+      "source_page": 36
+    },
+    {
+      "source": "khoi-nghia-tay-son-1771",
+      "relation": "Part_of",
+      "target": "lat-do-chinh-quyen-chua-nguyen",
+      "evidence": "Nghĩa quân Tây Sơn đã bốn lần đánh vào Gia Định. Trong lần tiến quân năm 1777, chúa Nguyễn bị bắt, giết, chỉ còn Nguyễn Ánh chạy thoát. Chính quyền chúa Nguyễn ở Đàng Trong bị lật đổ.",
+      "source_page": 37
+    },
+    {
+      "source": "khoi-nghia-tay-son-1771",
+      "relation": "Part_of",
+      "target": "danh-tan-quan-xiem-1785",
+      "evidence": "Tháng 1 – 1785, Nguyễn Huệ được lệnh tiến quân vào Gia Định. Ông đóng đại bản doanh ở Mỹ Tho, chọn khúc sông Tiền, đoạn từ Rạch Gầm đến Xoài Mút làm trận địa quyết chiến.",
+      "source_page": 38
+    },
+    {
+      "source": "khoi-nghia-tay-son-1771",
+      "relation": "Part_of",
+      "target": "lat-do-chinh-quyen-chua-trinh",
+      "evidence": "Tháng 5 – 1786, Nguyễn Huệ chỉ huy đạo quân tiến đánh Phú Xuân và nhanh chóng hạ thành. Thừa thắng, quân Tây Sơn tiến ra phía nam sông Gianh, giải phóng toàn bộ vùng đất Đàng Trong, rồi tiến thẳng ra Đàng Ngoài.",
+      "source_page": 38
+    },
+    {
+      "source": "khoi-nghia-tay-son-1771",
+      "relation": "Part_of",
+      "target": "dai-pha-quan-thanh-1789",
+      "evidence": "Tháng 12 – 1788, Nguyễn Huệ lên ngôi hoàng đế lấy niên hiệu là Quang Trung, chỉ huy năm đạo quân Tây Sơn tiến ra Thăng Long.",
+      "source_page": 39
+    },
+    {
+      "source": "nguyen-nhan-thang-loi-tay-son",
+      "relation": "Evaluate_for",
+      "target": "y-nghia-lich-su-tay-son",
+      "evidence": "Phong trào Tây Sơn giành được thắng lợi trước hết là nhờ tinh thần yêu nước, sự đồng lòng và ý chí chiến đấu dũng cảm của quân dân ta.",
+      "source_page": 40
+    },
+    {
+      "source": "vai-tro-nguyen-hue-quang-trung",
+      "relation": "Evaluate_for",
+      "target": "nguyen-nhan-thang-loi-tay-son",
+      "evidence": "Sự lãnh đạo tài tình, sáng suốt của Quang Trung – Nguyễn Huệ và bộ chỉ huy nghĩa quân đã góp phần quan trọng vào thắng lợi.",
+      "source_page": 40
+    },
+    {
+      "source": "tinh-hinh-nong-nghiep-dang-ngoai-the-ki-xvi-xviii",
+      "relation": "Compare",
+      "target": "tinh-hinh-nong-nghiep-dang-trong-the-ki-xvi-xviii",
+      "evidence": "Ở Đàng Ngoài, do những cuộc xung đột kéo dài làm cho sản xuất nông nghiệp bị sa sút nghiêm trọng... Ở Đàng Trong, nhờ khai hoang và điều kiện tự nhiên thuận lợi nên nông nghiệp phát triển rõ rệt.",
+      "source_page": 42
+    },
+    {
+      "source": "phat-trien-thu-cong-nghiep-the-ki-xvi-xviii",
+      "relation": "Prerequisite_of",
+      "target": "phat-trien-thuong-nghiep-the-ki-xvi-xviii",
+      "evidence": "Sự phát triển của thủ công nghiệp đã thúc đẩy buôn bán mở rộng.",
+      "source_page": 43
+    },
+    {
+      "source": "qua-trinh-hinh-thanh-chu-nghia-de-quoc",
+      "relation": "Prerequisite_of",
+      "target": "chuyen-bien-kinh-te-de-quoc-anh",
+      "evidence": "Sự cạnh tranh gay gắt dẫn tới quá trình tập trung sản xuất và tư bản, dẫn hình thành các công ti độc quyền lớn... Chủ nghĩa đế quốc ra đời.",
+      "source_page": 46
+    },
+    {
+      "source": "qua-trinh-hinh-thanh-chu-nghia-de-quoc",
+      "relation": "Prerequisite_of",
+      "target": "chuyen-bien-kinh-te-de-quoc-phap",
+      "evidence": "Sự cạnh tranh gay gắt dẫn tới quá trình tập trung sản xuất và tư bản, dẫn hình thành các công ti độc quyền lớn... Chủ nghĩa đế quốc ra đời.",
+      "source_page": 46
+    },
+    {
+      "source": "qua-trinh-hinh-thanh-chu-nghia-de-quoc",
+      "relation": "Prerequisite_of",
+      "target": "chuyen-bien-kinh-te-de-quoc-duc",
+      "evidence": "Sự cạnh tranh gay gắt dẫn tới quá trình tập trung sản xuất và tư bản, dẫn hình thành các công ti độc quyền lớn... Chủ nghĩa đế quốc ra đời.",
+      "source_page": 46
+    },
+    {
+      "source": "qua-trinh-hinh-thanh-chu-nghia-de-quoc",
+      "relation": "Prerequisite_of",
+      "target": "chuyen-bien-kinh-te-de-quoc-mi",
+      "evidence": "Sự cạnh tranh gay gắt dẫn tới quá trình tập trung sản xuất và tư bản, dẫn hình thành các công ti độc quyền lớn... Chủ nghĩa đế quốc ra đời.",
+      "source_page": 46
+    },
+    {
+      "source": "chuyen-bien-kinh-te-de-quoc-anh",
+      "relation": "Part_of",
+      "target": "chinh-sach-doi-noi-doi-ngoai-de-quoc-anh",
+      "evidence": "Tuy nhiên, Anh vẫn là nước dẫn đầu thế giới về xuất khẩu tư bản, thương mại và thuộc địa.",
+      "source_page": 47
+    },
+    {
+      "source": "chuyen-bien-kinh-te-de-quoc-phap",
+      "relation": "Part_of",
+      "target": "chinh-sach-doi-noi-doi-ngoai-de-quoc-phap",
+      "evidence": "Pháp đẩy mạnh xâm lược, bóc lột thuộc địa, là nước có hệ thống thuộc địa lớn thứ hai thế giới, chỉ sau Anh.",
+      "source_page": 47
+    },
+    {
+      "source": "chuyen-bien-kinh-te-de-quoc-duc",
+      "relation": "Part_of",
+      "target": "chinh-sach-doi-noi-doi-ngoai-de-quoc-duc",
+      "evidence": "Đức chuyển sang giai đoạn đế quốc chủ nghĩa khi phân lớn đất đai trên thế giới đã trở thành thuộc địa của Anh, Pháp,...",
+      "source_page": 48
+    },
+    {
+      "source": "chuyen-bien-kinh-te-de-quoc-mi",
+      "relation": "Part_of",
+      "target": "chinh-sach-doi-noi-doi-ngoai-de-quoc-mi",
+      "evidence": "Mĩ tăng cường bành trướng ở khu vực châu Á – Thái Bình Dương, gây chiến với Tây Ban Nha (chiếm Phi-líp-pin và Cu-ba).",
+      "source_page": 48
+    },
+    {
+      "source": "su-ra-doi-cua-giai-cap-cong-nhan",
+      "relation": "Prerequisite_of",
+      "target": "hoat-dong-cua-c-mac-va-ph-ang-ghen",
+      "evidence": "Giai cấp công nhân đã dần hình thành trong bối cảnh đó và cùng với giai cấp tư sản, trở thành hai giai cấp cơ bản trong xã hội tư bản chủ nghĩa.",
+      "source_page": 50
+    },
+    {
+      "source": "hoat-dong-cua-c-mac-va-ph-ang-ghen",
+      "relation": "Prerequisite_of",
+      "target": "su-ra-doi-cua-chu-nghia-xa-hoi-khoa-hoc",
+      "evidence": "Việc công bố văn kiện này đánh dấu sự ra đời của chủ nghĩa xã hội khoa học.",
+      "source_page": 50
+    },
+    {
+      "source": "cong-xa-pa-ri-1871",
+      "relation": "Hyponym_of",
+      "target": "su-ra-doi-cua-chu-nghia-xa-hoi-khoa-hoc",
+      "evidence": "Công xã Pa-ri là hình ảnh của một nhà nước kiểu mới, chăm lo đến quyền lợi của giai cấp công nhân và nhân dân lao động.",
+      "source_page": 51
+    },
+    {
+      "source": "quoc-te-thu-nhat",
+      "relation": "Prerequisite_of",
+      "target": "quoc-te-thu-hai",
+      "evidence": "Quốc tế thứ hai ra đời ở Pa-ri (Pháp) thay thế cho Quốc tế thứ nhất.",
+      "source_page": 52
+    },
+    {
+      "source": "ngay-quoc-te-lao-dong-1-5",
+      "relation": "Hyponym_of",
+      "target": "quoc-te-thu-hai",
+      "evidence": "Từ năm 1889, ngày 1 - 5 trở thành ngày Quốc tế Lao động.",
+      "source_page": 52
+    },
+    {
+      "source": "nguyen-nhan-chien-tranh-the-gioi-thu-nhat",
+      "relation": "Prerequisite_of",
+      "target": "hau-qua-chien-tranh-the-gioi-thu-nhat",
+      "evidence": "Chiến tranh bùng nổ và nhanh chóng lan rộng thành chiến tranh thế giới.",
+      "source_page": 54
+    },
+    {
+      "source": "nguyen-nhan-cach-mang-thang-muoi-nga",
+      "relation": "Prerequisite_of",
+      "target": "dien-bien-cach-mang-thang-muoi-nga",
+      "evidence": "Trước tình hình đó, V. I. Lê-nin và Đảng Bôn-sê-vích Nga đã chuẩn bị kế hoạch tiếp tục làm cách mạng.",
+      "source_page": 56
+    },
+    {
+      "source": "dien-bien-cach-mang-thang-muoi-nga",
+      "relation": "Prerequisite_of",
+      "target": "y-nghia-cach-mang-thang-muoi-nga",
+      "evidence": "Cách mạng xã hội chủ nghĩa tháng Mười đã giành được thắng lợi hoàn toàn.",
+      "source_page": 56
+    },
+    {
+      "source": "chien-tranh-thuoc-phien",
+      "relation": "Prerequisite_of",
+      "target": "hiep-uoc-nam-kinh",
+      "evidence": "Kết cục, chính quyền Mãn Thanh phải kí Hiệp ước Nam Kinh đầu hàng và chấp nhận những điều khoản có lợi cho thực dân Anh.",
+      "source_page": 62
+    },
+    {
+      "source": "cach-mang-tan-hoi",
+      "relation": "Part_of",
+      "target": "chu-nghia-de-quoc-nhat-ban",
+      "evidence": "Cuộc cách mạng xã hội và nhất là tư tưởng của Tôn Trung Sơn có ảnh hưởng nhất định đến nhiều nước Đông Nam Á, trong đó có Việt Nam.",
+      "source_page": 63
+    },
+    {
+      "source": "duy-tan-minh-tri",
+      "relation": "Part_of",
+      "target": "chu-nghia-de-quoc-nhat-ban",
+      "evidence": "Cuộc Duy tân Minh Trị có ý nghĩa như một cuộc cách mạng tư sản, đưa Nhật Bản phát triển vượt bậc về kinh tế, chính trị, giáo dục, khoa học – kĩ thuật.",
+      "source_page": 64
+    },
+    {
+      "source": "thien-hoang-minh-tri",
+      "relation": "Part_of",
+      "target": "duy-tan-minh-tri",
+      "evidence": "Tháng 1 – 1868, sau khi lên ngôi, Thiên hoàng Minh Trị tiến hành một loạt cải cách mà lịch sử gọi là cuộc Duy tân Minh Trị.",
+      "source_page": 64
+    },
+    {
+      "source": "ton-trung-son",
+      "relation": "Part_of",
+      "target": "cach-mang-tan-hoi",
+      "evidence": "Cách mạng Tân Hợi giành được thắng lợi bước đầu là do có sự lãnh đạo của giai cấp tư sản, đứng đầu là Tôn Trung Sơn.",
+      "source_page": 63
+    },
+    {
+      "source": "tranh-gianh-quyen-luc-giua-cac-chua-phong-kien-an-do",
+      "relation": "Prerequisite_of",
+      "target": "anh-xam-chiem-an-do",
+      "evidence": "Cuộc tranh giành quyền lực giữa các chúa phong kiến trong nước đã làm cho Ấn Độ suy yếu. Lợi dụng cơ hội này, Anh và Pháp đua tranh xâm lược Ấn Độ.",
+      "source_page": 67
+    },
+    {
+      "source": "anh-xam-chiem-an-do",
+      "relation": "Part_of",
+      "target": "chinh-sach-cai-tri-cua-anh-o-an-do",
+      "evidence": "Đến giữa thế kỉ XIX, thực dân Anh hoàn thành việc xâm chiếm và áp đặt ách cai trị ở nước này.",
+      "source_page": 67
+    },
+    {
+      "source": "anh-xam-chiem-an-do",
+      "relation": "Part_of",
+      "target": "chinh-sach-kinh-te-cua-anh-o-an-do",
+      "evidence": "Đến giữa thế kỉ XIX, thực dân Anh hoàn thành việc xâm chiếm và áp đặt ách cai trị ở nước này.",
+      "source_page": 67
+    },
+    {
+      "source": "anh-xam-chiem-an-do",
+      "relation": "Part_of",
+      "target": "chinh-sach-xa-hoi-cua-anh-o-an-do",
+      "evidence": "Đến giữa thế kỉ XIX, thực dân Anh hoàn thành việc xâm chiếm và áp đặt ách cai trị ở nước này.",
+      "source_page": 67
+    },
+    {
+      "source": "chinh-sach-cai-tri-cua-anh-o-an-do",
+      "relation": "Prerequisite_of",
+      "target": "nu-hoang-vich-to-ri-a-tuyen-bo-la-nu-hoang-an-do",
+      "evidence": "Ngày 1 – 1 – 1877, Nữ hoàng Anh Vích-to-ri-a tuyên bố đồng thời là Nữ hoàng Ấn Độ, đánh dấu bước hoàn thành việc chinh phục Ấn Độ của thực dân Anh.",
+      "source_page": 67
+    },
+    {
+      "source": "mau-thuan-giua-nhan-dan-an-do-va-thuc-dan-anh",
+      "relation": "Prerequisite_of",
+      "target": "cuoc-khoi-nghia-xi-pay",
+      "evidence": "Mâu thuẫn giữa nhân dân Ấn Độ với thực dân Anh là mâu thuẫn cơ bản trong xã hội. Đó là nguyên nhân dẫn tới các cuộc đấu tranh giành độc lập dân tộc, tiêu biểu là cuộc khởi nghĩa Xi-pay (1857 – 1859).",
+      "source_page": 67
+    },
+    {
+      "source": "mau-thuan-giua-nhan-dan-an-do-va-thuc-dan-anh",
+      "relation": "Prerequisite_of",
+      "target": "phong-trao-dau-tranh-duoi-su-lanh-dao-cua-dang-quoc-dai",
+      "evidence": "Mâu thuẫn giữa nhân dân Ấn Độ với thực dân Anh là mâu thuẫn cơ bản trong xã hội. Đó là nguyên nhân dẫn tới các cuộc đấu tranh giành độc lập dân tộc, tiêu biểu là phong trào đấu tranh dưới sự lãnh đạo của Đảng Quốc đại trong những năm 1905 – 1908.",
+      "source_page": 67
+    },
+    {
+      "source": "phap-xam-luoc-viet-nam",
+      "relation": "Part_of",
+      "target": "phong-trao-can-vuong",
+      "evidence": "Ở Việt Nam, cuộc kháng chiến chống Pháp xâm lược nổ ra ngay từ giữa thế kỉ XIX, nổi bật là phong trào Cần vương (1885 – 1896).",
+      "source_page": 69
+    },
+    {
+      "source": "phap-xam-luoc-viet-nam",
+      "relation": "Part_of",
+      "target": "khoi-nghia-nong-dan-yen-the",
+      "evidence": "Ở Việt Nam, cuộc kháng chiến chống Pháp xâm lược nổ ra ngay từ giữa thế kỉ XIX, nổi bật là khởi nghĩa nông dân Yên Thế (1884 – 1913).",
+      "source_page": 69
+    },
+    {
+      "source": "su-ra-doi-cua-nha-nguyen",
+      "relation": "Prerequisite_of",
+      "target": "nha-nguyen-cung-co-quyen-thong-tri",
+      "evidence": "Nguyễn Ánh đã đánh bại triều Tây Sơn, lập ra triều Nguyễn, lấy niên hiệu là Gia Long.",
+      "source_page": 71
+    },
+    {
+      "source": "nha-nguyen-cung-co-quyen-thong-tri",
+      "relation": "Prerequisite_of",
+      "target": "bo-hoang-viet-luat-le",
+      "evidence": "Để đặt cơ sở pháp lí cho nhà nước quân chủ, năm 1815, nhà Nguyễn ban hành bộ Hoàng Việt luật lệ.",
+      "source_page": 71
+    },
+    {
+      "source": "cai-cach-minh-mang",
+      "relation": "Part_of",
+      "target": "nha-nguyen-cung-co-quyen-thong-tri",
+      "evidence": "Với cuộc Cải cách Minh Mạng, bộ máy quản lí nhà nước từ Trung ương xuống địa phương càng được hoàn thiện.",
+      "source_page": 71
+    },
+    {
+      "source": "chinh-sach-doi-ngoai-thoi-nguyen",
+      "relation": "Part_of",
+      "target": "nha-nguyen-cung-co-quyen-thong-tri",
+      "evidence": "Về đối ngoại, nhà Nguyễn thực hiện chính sách ngoại giao mềm dẻo với nhà Thanh, nhưng lại khước từ quan hệ và giao thương với các nước Âu – Mỹ.",
+      "source_page": 72
+    },
+    {
+      "source": "tinh-hinh-kinh-te-thoi-nguyen",
+      "relation": "Part_of",
+      "target": "tinh-hinh-xa-hoi-thoi-nguyen",
+      "evidence": "Cuộc sống cơ cực của người dân và các mâu thuẫn xã hội khác đã làm bùng nổ nhiều cuộc nổi dậy chống nhà Nguyễn.",
+      "source_page": 73
+    },
+    {
+      "source": "van-hoc-thoi-nguyen",
+      "relation": "Part_of",
+      "target": "nghe-thuat-thoi-nguyen",
+      "evidence": "Dòng văn học viết với nhiều tác phẩm có giá trị nhất phần lớn được sáng tác bằng chữ Nôm.",
+      "source_page": 73
+    },
+    {
+      "source": "thuc-thi-chu-quyen-hoang-sa-truong-sa",
+      "relation": "Part_of",
+      "target": "nha-nguyen-cung-co-quyen-thong-tri",
+      "evidence": "Thời Gia Long, quần đảo Hoàng Sa và quần đảo Trường Sa thuộc tỉnh Quảng Ngãi. Triều đình lập lại hai đội Hoàng Sa và Bắc Hải.",
+      "source_page": 75
+    },
+    {
+      "source": "thuc-dan-phap-xam-luoc-viet-nam-1858-1884",
+      "relation": "Part_of",
+      "target": "cuoc-khang-chien-o-da-nang-va-nam-ki-1858-1862",
+      "evidence": "Thực dân Pháp đưa quân xâm lược Việt Nam. Cuộc kháng chiến ở Đà Nẵng và Nam Kì (1858 – 1862).",
+      "source_page": 77
+    },
+    {
+      "source": "thuc-dan-phap-xam-luoc-viet-nam-1858-1884",
+      "relation": "Part_of",
+      "target": "nhan-dan-nam-ki-khang-chien-1862-1874",
+      "evidence": "Sau Hiệp ước Nhâm Tuất, triều đình Huế tập trung lực lượng đàn áp các cuộc khởi nghĩa của nông dân ở Bắc Kì và Trung Kì, ngăn cản phong trào kháng chiến của nhân dân ở Nam Kì.",
+      "source_page": 78
+    },
+    {
+      "source": "thuc-dan-phap-xam-luoc-viet-nam-1858-1884",
+      "relation": "Part_of",
+      "target": "cuoc-khang-chien-bac-ki-lan-thu-nhat-1873-1874",
+      "evidence": "Sau khi chiếm được Nam Kì, thực dân Pháp tiếp tục chuẩn bị thực hiện kế hoạch đánh chiếm Bắc Kì, Trung Kì.",
+      "source_page": 79
+    },
+    {
+      "source": "thuc-dan-phap-xam-luoc-viet-nam-1858-1884",
+      "relation": "Part_of",
+      "target": "cuoc-khang-chien-bac-ki-lan-thu-hai-1882-1884",
+      "evidence": "Tháng 4 – 1882, lấy cớ triều đình Huế vi phạm Hiệp ước Giáp Tuất, quân Pháp do H. Ri-vi-e cầm đầu đã đổ bộ lên Hà Nội.",
+      "source_page": 81
+    },
+    {
+      "source": "hiep-uoc-nham-tuat-1862",
+      "relation": "Prerequisite_of",
+      "target": "nhan-dan-nam-ki-khang-chien-1862-1874",
+      "evidence": "Sau Hiệp ước Nhâm Tuất, triều đình Huế tập trung lực lượng đàn áp các cuộc khởi nghĩa của nông dân ở Bắc Kì và Trung Kì, ngăn cản phong trào kháng chiến của nhân dân ở Nam Kì.",
+      "source_page": 78
+    },
+    {
+      "source": "cuoc-khang-chien-bac-ki-lan-thu-nhat-1873-1874",
+      "relation": "Prerequisite_of",
+      "target": "hiep-uoc-giap-tuat-1874",
+      "evidence": "Năm 1874, triều đình Huế lại kí với Pháp bản Hiệp ước Giáp Tuất, thừa nhận chủ quyền của Pháp ở cả sáu tỉnh Nam Kì và nhiều điều khoản bất lợi khác.",
+      "source_page": 80
+    },
+    {
+      "source": "cuoc-khang-chien-bac-ki-lan-thu-hai-1882-1884",
+      "relation": "Prerequisite_of",
+      "target": "hiep-uoc-paternot-1884",
+      "evidence": "Ngày 6 – 6, thực dân Pháp kí với triều Nguyễn Hiệp ước Pa-tơ-nốt, chính thức áp đặt quyền bảo hộ của Pháp ở Việt Nam.",
+      "source_page": 81
+    },
+    {
+      "source": "trao-luu-cai-cach-nua-sau-the-ki-19",
+      "relation": "Part_of",
+      "target": "nguyen-truong-to",
+      "evidence": "Nguyễn Trường Tộ là một trí thức Công giáo yêu nước, quê ở huyện Hưng Nguyên, tỉnh Nghệ An. Ông đã đề trình vua Tự Đức 14 bản điều trần.",
+      "source_page": 82
+    },
+    {
+      "source": "ton-that-thuyet",
+      "relation": "Prerequisite_of",
+      "target": "phong-trao-can-vuong",
+      "evidence": "Tôn Thất Thuyết ban bố Dụ Cần vương, kêu gọi các văn thân, sĩ phu và nhân dân cả nước giúp vua cứu nước.",
+      "source_page": 84
+    },
+    {
+      "source": "ham-nghi",
+      "relation": "Prerequisite_of",
+      "target": "phong-trao-can-vuong",
+      "evidence": "Lấy danh nghĩa vua Hàm Nghi, Tôn Thất Thuyết ban bố Dụ Cần vương.",
+      "source_page": 84
+    },
+    {
+      "source": "hiep-uoc-pa-to-not",
+      "relation": "Prerequisite_of",
+      "target": "phong-trao-can-vuong",
+      "evidence": "Với Hiệp ước Pa-tơ-nốt, thực dân Pháp về cơ bản đã hoàn thành quá trình xâm lược nước ta.",
+      "source_page": 84
+    },
+    {
+      "source": "khoi-nghia-bai-say",
+      "relation": "Hyponym_of",
+      "target": "phong-trao-can-vuong",
+      "evidence": "Một số cuộc khởi nghĩa tiêu biểu trong phong trào Cần vương: Khởi nghĩa Bãi Sậy.",
+      "source_page": 85
+    },
+    {
+      "source": "khoi-nghia-huong-khe",
+      "relation": "Hyponym_of",
+      "target": "phong-trao-can-vuong",
+      "evidence": "Một số cuộc khởi nghĩa tiêu biểu trong phong trào Cần vương: Khởi nghĩa Hương Khê.",
+      "source_page": 85
+    },
+    {
+      "source": "khoi-nghia-ba-dinh",
+      "relation": "Hyponym_of",
+      "target": "phong-trao-can-vuong",
+      "evidence": "Một số cuộc khởi nghĩa tiêu biểu trong phong trào Cần vương: Khởi nghĩa Ba Đình.",
+      "source_page": 85
+    },
+    {
+      "source": "phan-dinh-phung",
+      "relation": "Part_of",
+      "target": "khoi-nghia-huong-khe",
+      "evidence": "Lãnh đạo cao nhất của cuộc khởi nghĩa là Phan Đình Phùng.",
+      "source_page": 85
+    },
+    {
+      "source": "de-tham",
+      "relation": "Part_of",
+      "target": "khoi-nghia-yen-the",
+      "evidence": "Cuộc khởi nghĩa nông dân đã bùng nổ dưới sự lãnh đạo của Đề Nắm, sau đó là Đề Thám.",
+      "source_page": 86
+    },
+    {
+      "source": "khai-thac-thuoc-dia-lan-thu-nhat",
+      "relation": "Prerequisite_of",
+      "target": "bien-doi-xa-hoi-viet-nam-dau-the-ky-xx",
+      "evidence": "Chính sách cai trị, khai thác, bóc lột của thực dân Pháp đã làm cho tình hình Việt Nam có nhiều biến đổi.",
+      "source_page": 89
+    },
+    {
+      "source": "chinh-sach-khai-thac-thuoc-dia-phap",
+      "relation": "Part_of",
+      "target": "khai-thac-thuoc-dia-lan-thu-nhat",
+      "evidence": "Bảng chính sách khai thác thuộc địa lần thứ nhất của thực dân Pháp ở Việt Nam",
+      "source_page": 88
+    },
+    {
+      "source": "hoat-dong-yeu-nuoc-phan-boi-chau",
+      "relation": "Compare",
+      "target": "hoat-dong-yeu-nuoc-phan-chau-trinh",
+      "evidence": "Phan Bội Châu và Phan Châu Trinh đã có những hoạt động yêu nước nào trong những năm đầu thế kỉ XX?",
+      "source_page": 90
+    },
+    {
+      "source": "buoi-dau-hoat-dong-cuu-nuoc-nguyen-tat-thanh",
+      "relation": "Compare",
+      "target": "hoat-dong-yeu-nuoc-phan-boi-chau",
+      "evidence": "Nguyễn Tất Thành mặc dù rất khâm phục các nhà yêu nước và cách mạng tiền bối nhưng không tán thành đường lối đấu tranh của họ mà quyết định tìm con đường cứu nước mới cho dân tộc.",
+      "source_page": 91
+    },
+    {
+      "source": "buoi-dau-hoat-dong-cuu-nuoc-nguyen-tat-thanh",
+      "relation": "Compare",
+      "target": "hoat-dong-yeu-nuoc-phan-chau-trinh",
+      "evidence": "Nguyễn Tất Thành mặc dù rất khâm phục các nhà yêu nước và cách mạng tiền bối nhưng không tán thành đường lối đấu tranh của họ mà quyết định tìm con đường cứu nước mới cho dân tộc.",
+      "source_page": 91
+    },
+    {
+      "source": "vi-tri-dia-li-viet-nam",
+      "relation": "Part_of",
+      "target": "pham-vi-lanh-tho-viet-nam",
+      "evidence": "Lãnh thổ Việt Nam là một khối thống nhất và toàn vẹn, bao gồm vùng đất, vùng biển và vùng trời.",
+      "source_page": 96
+    },
+    {
+      "source": "anh-huong-vi-tri-dia-li-pham-vi-lanh-tho-den-dac-diem-tu-nhien",
+      "relation": "Prerequisite_of",
+      "target": "thien-nhien-nhiet-doi-am-gio-mua",
+      "evidence": "Vị trí địa lí và phạm vi lãnh thổ đã tạo nên đặc điểm cơ bản của thiên nhiên nước ta, đó là thiên nhiên nhiệt đới ẩm gió mùa.",
+      "source_page": 97
+    },
+    {
+      "source": "anh-huong-vi-tri-dia-li-pham-vi-lanh-tho-den-dac-diem-tu-nhien",
+      "relation": "Prerequisite_of",
+      "target": "thien-nhien-phan-hoa-da-dang",
+      "evidence": "Vị trí địa lí và phạm vi lãnh thổ đã tạo nên đặc điểm cơ bản của thiên nhiên nước ta, đó là thiên nhiên phân hoá đa dạng.",
+      "source_page": 97
+    },
+    {
+      "source": "vung-doi-nui-dong-bac",
+      "relation": "Part_of",
+      "target": "dia-hinh-doi-nui-viet-nam",
+      "evidence": "Vùng Đông Bắc là một vùng đồi núi thấp nằm ở phía bờ trái của sông Hồng.",
+      "source_page": 101
+    },
+    {
+      "source": "vung-doi-nui-tay-bac",
+      "relation": "Part_of",
+      "target": "dia-hinh-doi-nui-viet-nam",
+      "evidence": "Vùng núi Tây Bắc nằm giữa sông Hồng và sông Cả, có địa hình cao nhất nước ta.",
+      "source_page": 102
+    },
+    {
+      "source": "vung-doi-nui-truong-son-bac",
+      "relation": "Part_of",
+      "target": "dia-hinh-doi-nui-viet-nam",
+      "evidence": "Vùng núi Trường Sơn Bắc kéo dài từ phía nam sông Cả tới dãy Bạch Mã.",
+      "source_page": 102
+    },
+    {
+      "source": "vung-doi-nui-truong-son-nam",
+      "relation": "Part_of",
+      "target": "dia-hinh-doi-nui-viet-nam",
+      "evidence": "Địa hình chủ yếu là núi và cao nguyên, có độ cao lớn hơn vùng Trường Sơn Bắc.",
+      "source_page": 102
+    },
+    {
+      "source": "dong-bang-song-hong",
+      "relation": "Part_of",
+      "target": "dia-hinh-dong-bang-viet-nam",
+      "evidence": "Đồng bằng sông Hồng có diện tích khoảng 15 000 km², lớn thứ hai nước ta.",
+      "source_page": 104
+    },
+    {
+      "source": "dong-bang-song-cuu-long",
+      "relation": "Part_of",
+      "target": "dia-hinh-dong-bang-viet-nam",
+      "evidence": "Đồng bằng sông Cửu Long là đồng bằng lớn nhất nước ta, có diện tích trên 40 000 km².",
+      "source_page": 104
+    },
+    {
+      "source": "dong-bang-duyen-hai-mien-trung",
+      "relation": "Part_of",
+      "target": "dia-hinh-dong-bang-viet-nam",
+      "evidence": "Các đồng bằng duyên hải miền Trung có tổng diện tích khoảng 15 000 km².",
+      "source_page": 105
+    },
+    {
+      "source": "vi-tri-dia-li-viet-nam",
+      "relation": "Prerequisite_of",
+      "target": "dac-diem-chung-khoang-san-viet-nam",
+      "evidence": "Việt Nam nằm ở vị trí giao thoa của hai vành đai sinh khoáng Thái Bình Dương và Địa Trung Hải, đồng thời trải qua lịch sử hình thành lãnh thổ lâu dài, nên nước ta có nguồn khoáng sản phong phú và đa dạng.",
+      "source_page": 111
+    },
+    {
+      "source": "phan-loai-khoang-san-viet-nam",
+      "relation": "Part_of",
+      "target": "dac-diem-chung-khoang-san-viet-nam",
+      "evidence": "Dựa vào tính chất công dụng, có thể sắp xếp khoáng sản thành một số nhóm... Dựa vào quá trình hình thành, chia thành khoáng sản nội sinh và khoáng sản ngoại sinh.",
+      "source_page": 111
+    },
+    {
+      "source": "phan-bo-khoang-san-chu-yeu-viet-nam",
+      "relation": "Part_of",
+      "target": "dac-diem-chung-khoang-san-viet-nam",
+      "evidence": "Khoáng sản nước ta phân bố ở nhiều nơi, nhưng tập trung chủ yếu ở miền Bắc, miền Trung và Tây Nguyên.",
+      "source_page": 111
+    },
+    {
+      "source": "van-de-su-dung-hop-li-khoang-san-viet-nam",
+      "relation": "Prerequisite_of",
+      "target": "phan-bo-khoang-san-chu-yeu-viet-nam",
+      "evidence": "Nhiều mỏ khoáng sản đã được phát hiện và đưa vào khai thác phục vụ cho phát triển kinh tế và đời sống. Tuy nhiên, khai thác và sử dụng khoáng sản còn chưa hợp lí...",
+      "source_page": 113
+    },
+    {
+      "source": "ve-bieu-do-khi-hau",
+      "relation": "Used_for",
+      "target": "phan-tich-bieu-do-khi-hau",
+      "evidence": "Vẽ và phân tích được biểu đồ khí hậu của một số trạm thuộc các vùng khí hậu khác nhau.",
+      "source_page": 120
+    },
+    {
+      "source": "phan-tich-bieu-do-khi-hau",
+      "relation": "Evaluate_for",
+      "target": "nhiet-do-trung-binh-nam",
+      "evidence": "Nhận xét biểu đồ: Nhiệt độ trung bình năm",
+      "source_page": 120
+    },
+    {
+      "source": "phan-tich-bieu-do-khi-hau",
+      "relation": "Evaluate_for",
+      "target": "bien-do-nhiet-do-trung-binh-nam",
+      "evidence": "Nhận xét biểu đồ: Biên độ nhiệt độ trung bình năm",
+      "source_page": 120
+    },
+    {
+      "source": "phan-tich-bieu-do-khi-hau",
+      "relation": "Evaluate_for",
+      "target": "tong-luong-mua-trung-binh-nam",
+      "evidence": "Nhận xét biểu đồ: Tổng lượng mưa trung bình năm",
+      "source_page": 120
+    },
+    {
+      "source": "phan-tich-bieu-do-khi-hau",
+      "relation": "Evaluate_for",
+      "target": "thoi-gian-mua-mua",
+      "evidence": "Nhận xét biểu đồ: Thời gian mùa mưa",
+      "source_page": 120
+    },
+    {
+      "source": "luu-vuc-he-thong-song-lon",
+      "relation": "Used_for",
+      "target": "dac-diem-mang-luoi-song-ngoi-viet-nam",
+      "evidence": "Xác định phạm vi lưu vực của ba hệ thống sông: Hồng, Thu Bồn, Mê Công ở lãnh thổ Việt Nam trên bản đồ.",
+      "source_page": 121
+    },
+    {
+      "source": "dac-diem-mang-luoi-song-ngoi-viet-nam",
+      "relation": "Prerequisite_of",
+      "target": "che-do-nuoc-song-viet-nam",
+      "evidence": "Sông ngòi nước ta có nhiều nước và lượng phù sa khá lớn, chế độ dòng chảy phân hai mùa rất rõ rệt: mùa lũ và mùa cạn.",
+      "source_page": 121
+    },
+    {
+      "source": "he-thong-song-hong",
+      "relation": "Part_of",
+      "target": "luu-vuc-he-thong-song-lon",
+      "evidence": "Tiêu biểu cho sông ngòi Bắc Bộ là hệ thống sông Hồng.",
+      "source_page": 122
+    },
+    {
+      "source": "he-thong-song-thu-bon",
+      "relation": "Part_of",
+      "target": "luu-vuc-he-thong-song-lon",
+      "evidence": "Hệ thống sông Thu Bồn có 78 phụ lưu chiều dài trên 10 km.",
+      "source_page": 123
+    },
+    {
+      "source": "he-thong-song-me-cong",
+      "relation": "Part_of",
+      "target": "luu-vuc-he-thong-song-lon",
+      "evidence": "Mê Công là một trong những hệ thống sông lớn trên thế giới, chảy qua 6 quốc gia.",
+      "source_page": 124
+    },
+    {
+      "source": "vai-tro-ho-dam",
+      "relation": "Conjunction",
+      "target": "vai-tro-nuoc-ngam",
+      "evidence": "Hồ, đầm và nước ngầm có vai trò quan trọng đối với sản xuất và sinh hoạt ở nước ta.",
+      "source_page": 125
+    },
+    {
+      "source": "anh-huong-khi-hau-san-xuat-nong-nghiep",
+      "relation": "Prerequisite_of",
+      "target": "phan-hoa-khi-hau-va-san-xuat-nong-nghiep",
+      "evidence": "Sự phân hoá khí hậu tạo nên sự khác biệt về mùa vụ giữa các vùng và sự đa dạng sản phẩm nông nghiệp trên cả nước.",
+      "source_page": 128
+    },
+    {
+      "source": "khi-hau-va-du-lich",
+      "relation": "Prerequisite_of",
+      "target": "phan-hoa-khi-hau-va-du-lich",
+      "evidence": "Khí hậu nhiệt đới ẩm gió mùa, có sự phân hoá theo mùa và theo đai cao ở nước ta đã tác động trực tiếp đến sự hình thành các điểm du lịch, loại hình du lịch, mùa vụ du lịch.",
+      "source_page": 129
+    },
+    {
+      "source": "bien-doi-khi-hau-viet-nam",
+      "relation": "Prerequisite_of",
+      "target": "bien-doi-nhiet-do-viet-nam",
+      "evidence": "Biến đổi khí hậu đã và đang tác động tới khí hậu, làm thay đổi các yếu tố khí hậu ở nước ta.",
+      "source_page": 132
+    },
+    {
+      "source": "bien-doi-khi-hau-viet-nam",
+      "relation": "Prerequisite_of",
+      "target": "bien-doi-luong-mua-viet-nam",
+      "evidence": "Biến đổi khí hậu đã và đang tác động tới khí hậu, làm thay đổi các yếu tố khí hậu ở nước ta.",
+      "source_page": 132
+    },
+    {
+      "source": "bien-doi-khi-hau-viet-nam",
+      "relation": "Prerequisite_of",
+      "target": "hien-tuong-thoi-tiet-cuc-doan-viet-nam",
+      "evidence": "Biến đổi khí hậu đã khiến thời tiết trở nên khắc nghiệt hơn.",
+      "source_page": 132
+    },
+    {
+      "source": "bien-doi-khi-hau-viet-nam",
+      "relation": "Prerequisite_of",
+      "target": "bien-doi-thuy-van-viet-nam",
+      "evidence": "Biến đổi khí hậu có tác động lớn đến thuỷ văn nước ta, đặc biệt tới lưu lượng nước và chế độ nước sông.",
+      "source_page": 133
+    },
+    {
+      "source": "bien-doi-luong-mua-viet-nam",
+      "relation": "Prerequisite_of",
+      "target": "bien-dong-luu-luong-nuoc-song-viet-nam",
+      "evidence": "Do tổng lượng mưa trung bình năm có sự biến động làm lưu lượng nước sông cũng biến động theo.",
+      "source_page": 133
+    },
+    {
+      "source": "giai-phap-ung-pho-bien-doi-khi-hau",
+      "relation": "Part_of",
+      "target": "giam-nhe-bien-doi-khi-hau",
+      "evidence": "Để ứng phó với biến đổi khí hậu cần thực hiện đồng bộ các giải pháp giảm nhẹ và thích ứng với biến đổi khí hậu.",
+      "source_page": 134
+    },
+    {
+      "source": "giai-phap-ung-pho-bien-doi-khi-hau",
+      "relation": "Part_of",
+      "target": "thich-ung-bien-doi-khi-hau",
+      "evidence": "Để ứng phó với biến đổi khí hậu cần thực hiện đồng bộ các giải pháp giảm nhẹ và thích ứng với biến đổi khí hậu.",
+      "source_page": 134
+    },
+    {
+      "source": "tinh-chat-nhiet-doi-gio-mua-cua-lop-phu-tho-nhuong",
+      "relation": "Prerequisite_of",
+      "target": "qua-trinh-feralit",
+      "evidence": "Khí hậu nhiệt đới gió mùa với lượng mưa lớn và mưa tập trung theo mùa làm cho quá trình rửa trôi các chất bazo để hoà tan xảy ra mạnh, dẫn đến tích luỹ các ôxit sắt và ôxit nhôm, hình thành các loại đất feralit.",
+      "source_page": 136
+    },
+    {
+      "source": "dat-feralit",
+      "relation": "Part_of",
+      "target": "dat-phu-sa",
+      "evidence": "Nhóm đất feralit chiếm diện tích lớn nhất ở nước ta (hơn 65% diện tích đất tự nhiên), phân bố ở các tỉnh trung du và miền núi.",
+      "source_page": 137
+    },
+    {
+      "source": "gia-tri-su-dung-dat-feralit",
+      "relation": "Evaluate_for",
+      "target": "dat-feralit",
+      "evidence": "Đất feralit thích hợp để phát triển rừng sản xuất với các loại cây như thông, bạch đàn, xà cừ, keo,... và nhiều loại cây gỗ lớn khác, cung cấp nguyên liệu cho công nghiệp chế biến gỗ.",
+      "source_page": 137
+    },
+    {
+      "source": "gia-tri-su-dung-dat-phu-sa",
+      "relation": "Evaluate_for",
+      "target": "dat-phu-sa",
+      "evidence": "Đây là nhóm đất phù hợp cho sản xuất cây lương thực (lúa, ngô,...), cây công nghiệp hàng năm (dâu tằm, thuốc lá, bông, đậu tương,...) và cây ăn quả.",
+      "source_page": 139
+    },
+    {
+      "source": "tinh-cap-thiet-chong-thoai-hoa-dat",
+      "relation": "Prerequisite_of",
+      "target": "giai-phap-chong-thoai-hoa-dat",
+      "evidence": "Thoái hoá đất dẫn đến độ phì của đất giảm khiến năng suất cây trồng bị ảnh hưởng, thậm chí nhiều nơi đất bị thoái hoá nặng không thể sử dụng cho trồng trọt.",
+      "source_page": 140
+    },
+    {
+      "source": "nguyen-nhan-thoai-hoa-dat",
+      "relation": "Prerequisite_of",
+      "target": "tinh-cap-thiet-chong-thoai-hoa-dat",
+      "evidence": "Thoái hoá đất ở nước ta do cả nguyên nhân tự nhiên và tác động của con người.",
+      "source_page": 140
+    },
+    {
+      "source": "da-dang-thanh-phan-loai-gen-di-truyen",
+      "relation": "Part_of",
+      "target": "da-dang-sinh-vat-viet-nam",
+      "evidence": "Việt Nam là một trong 16 quốc gia sở hữu sự đa dạng sinh học cao nhất thế giới với hơn 50.000 loài đã được xác định.",
+      "source_page": 143
+    },
+    {
+      "source": "da-dang-kieu-he-sinh-thai",
+      "relation": "Part_of",
+      "target": "da-dang-sinh-vat-viet-nam",
+      "evidence": "Các hệ sinh thái ở nước ta rất phong phú và đa dạng, bao gồm các hệ sinh thái tự nhiên trên cạn, các hệ sinh thái tự nhiên dưới nước và các hệ sinh thái nhân tạo.",
+      "source_page": 143
+    },
+    {
+      "source": "he-sinh-thai-tu-nhien-tren-can",
+      "relation": "Part_of",
+      "target": "da-dang-kieu-he-sinh-thai",
+      "evidence": "Các hệ sinh thái tự nhiên trên cạn bao gồm các kiểu hệ sinh thái rừng khác nhau.",
+      "source_page": 143
+    },
+    {
+      "source": "he-sinh-thai-tu-nhien-duoi-nuoc",
+      "relation": "Part_of",
+      "target": "da-dang-kieu-he-sinh-thai",
+      "evidence": "Các hệ sinh thái tự nhiên dưới nước bao gồm hệ sinh thái nước mặn và hệ sinh thái nước ngọt.",
+      "source_page": 144
+    },
+    {
+      "source": "he-sinh-thai-nhan-tao",
+      "relation": "Part_of",
+      "target": "da-dang-kieu-he-sinh-thai",
+      "evidence": "Các hệ sinh thái nhân tạo hình thành do hoạt động sản xuất nông, lâm nghiệp, thủy sản.",
+      "source_page": 144
+    },
+    {
+      "source": "nguyen-nhan-suy-giam-da-dang-sinh-hoc",
+      "relation": "Prerequisite_of",
+      "target": "tinh-cap-thiet-bao-ton-da-dang-sinh-hoc",
+      "evidence": "Nguyên nhân suy giảm đa dạng sinh học là do các yếu tố tự nhiên và hoạt động của con người.",
+      "source_page": 145
+    },
+    {
+      "source": "bien-phap-bao-ton-da-dang-sinh-hoc",
+      "relation": "Prerequisite_of",
+      "target": "tinh-cap-thiet-bao-ton-da-dang-sinh-hoc",
+      "evidence": "Trước tình trạng suy giảm đa dạng sinh học như vậy, cần có các biện pháp để bảo tồn đa dạng sinh học ở Việt Nam.",
+      "source_page": 145
+    },
+    {
+      "source": "pham-vi-bien-dong",
+      "relation": "Part_of",
+      "target": "cac-nuoc-co-chung-bien-dong-voi-viet-nam",
+      "evidence": "Biển Đông tương đối kín. Các nước có chung Biển Đông với Việt Nam là: Trung Quốc, Phi-líp-pin, In-đô-nê-xi-a, Bru-nây, Ma-lai-xi-a, Xin-ga-po, Thái Lan, Cam-pu-chia.",
+      "source_page": 147
+    },
+    {
+      "source": "cac-vung-bien-cua-viet-nam",
+      "relation": "Part_of",
+      "target": "noi-thuy",
+      "evidence": "Nội thuỷ là vùng nước tiếp giáp với bờ biển, ở phía trong đường cơ sở và là bộ phận lãnh thổ của Việt Nam.",
+      "source_page": 150
+    },
+    {
+      "source": "cac-vung-bien-cua-viet-nam",
+      "relation": "Part_of",
+      "target": "lanh-hai",
+      "evidence": "Lãnh hải là vùng biển có chiều rộng 12 hải lí tính từ đường cơ sở ra phía biển.",
+      "source_page": 150
+    },
+    {
+      "source": "cac-vung-bien-cua-viet-nam",
+      "relation": "Part_of",
+      "target": "vung-tiep-giap-lanh-hai",
+      "evidence": "Vùng tiếp giáp lãnh hải là vùng biển tiếp liền và nằm ngoài lãnh hải Việt Nam.",
+      "source_page": 150
+    },
+    {
+      "source": "cac-vung-bien-cua-viet-nam",
+      "relation": "Part_of",
+      "target": "vung-dac-quyen-kinh-te",
+      "evidence": "Vùng đặc quyền kinh tế là vùng biển tiếp liền và nằm ngoài lãnh hải Việt Nam.",
+      "source_page": 150
+    },
+    {
+      "source": "cac-vung-bien-cua-viet-nam",
+      "relation": "Part_of",
+      "target": "them-luc-dia-viet-nam",
+      "evidence": "Thềm lục địa Việt Nam là đáy biển và lòng đất dưới đáy biển, tiếp liền và nằm ngoài lãnh hải Việt Nam.",
+      "source_page": 150
+    },
+    {
+      "source": "hiep-dinh-phan-dinh-vinh-bac-bo",
+      "relation": "Part_of",
+      "target": "duong-co-so-viet-nam",
+      "evidence": "Đường phân định vịnh Bắc Bộ giữa Việt Nam và Trung Quốc được xác định qua 21 điểm nối tuần tự với nhau bằng các đoạn thẳng.",
+      "source_page": 151
+    },
+    {
+      "source": "dac-diem-moi-truong-bien-dao-viet-nam",
+      "relation": "Prerequisite_of",
+      "target": "van-de-bao-ve-moi-truong-bien-dao-viet-nam",
+      "evidence": "Môi trường biển đảo có những đặc điểm khác biệt với môi trường trên đất liền... dễ bị suy thoái hơn so với đất liền.",
+      "source_page": 156
+    }
+  ]
+}

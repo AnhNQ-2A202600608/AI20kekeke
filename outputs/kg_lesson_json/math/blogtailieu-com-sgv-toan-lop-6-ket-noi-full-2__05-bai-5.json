@@ -1,0 +1,118 @@
+{
+  "concepts": [
+    {
+      "code": "nhan-so-tu-nhien",
+      "name": "Phép nhân số tự nhiên",
+      "description": "Phép nhân số tự nhiên là phép toán cơ bản trong toán học",
+      "grade": 6,
+      "source_page": 39
+    },
+    {
+      "code": "chia-so-tu-nhien",
+      "name": "Phép chia số tự nhiên",
+      "description": "Phép chia số tự nhiên là phép toán cơ bản trong toán học",
+      "grade": 6,
+      "source_page": 39
+    },
+    {
+      "code": "tinh-chat-giao-hoan",
+      "name": "Tính chất giao hoán của phép nhân",
+      "description": "Tính chất giao hoán của phép nhân là một tính chất quan trọng trong toán học",
+      "grade": 6,
+      "source_page": 39
+    },
+    {
+      "code": "tinh-chat-ket-hop",
+      "name": "Tính chất kết hợp của phép nhân",
+      "description": "Tính chất kết hợp của phép nhân là một tính chất quan trọng trong toán học",
+      "grade": 6,
+      "source_page": 39
+    },
+    {
+      "code": "tinh-chat-phan-phoi",
+      "name": "Tính chất phân phối của phép nhân đối với phép cộng",
+      "description": "Tính chất phân phối của phép nhân đối với phép cộng là một tính chất quan trọng trong toán học",
+      "grade": 6,
+      "source_page": 39
+    },
+    {
+      "code": "thua-so",
+      "name": "Thừa số",
+      "description": "Thừa số là một khái niệm quan trọng trong phép nhân",
+      "grade": 6,
+      "source_page": 39
+    },
+    {
+      "code": "tich",
+      "name": "Tích",
+      "description": "Tích là một khái niệm quan trọng trong phép nhân",
+      "grade": 6,
+      "source_page": 39
+    },
+    {
+      "code": "so-bi-chia",
+      "name": "Số bị chia",
+      "description": "Số bị chia là một khái niệm quan trọng trong phép chia",
+      "grade": 6,
+      "source_page": 40
+    },
+    {
+      "code": "so-chia",
+      "name": "Số chia",
+      "description": "Số chia là một khái niệm quan trọng trong phép chia",
+      "grade": 6,
+      "source_page": 40
+    },
+    {
+      "code": "so-du",
+      "name": "Số dư",
+      "description": "Số dư là một khái niệm quan trọng trong phép chia",
+      "grade": 6,
+      "source_page": 40
+    }
+  ],
+  "relations": [
+    {
+      "source": "nhan-so-tu-nhien",
+      "relation": "Used_for",
+      "target": "tinh-chat-giao-hoan",
+      "evidence": "Tính chất giao hoán của phép nhân là một tính chất quan trọng trong phép nhân số tự nhiên",
+      "source_page": 39
+    },
+    {
+      "source": "nhan-so-tu-nhien",
+      "relation": "Used_for",
+      "target": "tinh-chat-ket-hop",
+      "evidence": "Tính chất kết hợp của phép nhân là một tính chất quan trọng trong phép nhân số tự nhiên",
+      "source_page": 39
+    },
+    {
+      "source": "nhan-so-tu-nhien",
+      "relation": "Used_for",
+      "target": "tinh-chat-phan-phoi",
+      "evidence": "Tính chất phân phối của phép nhân đối với phép cộng là một tính chất quan trọng trong phép nhân số tự nhiên",
+      "source_page": 39
+    },
+    {
+      "source": "chia-so-tu-nhien",
+      "relation": "Used_for",
+      "target": "so-bi-chia",
+      "evidence": "Số bị chia là một khái niệm quan trọng trong phép chia số tự nhiên",
+      "source_page": 40
+    },
+    {
+      "source": "chia-so-tu-nhien",
+      "relation": "Used_for",
+      "target": "so-chia",
+      "evidence": "Số chia là một khái niệm quan trọng trong phép chia số tự nhiên",
+      "source_page": 40
+    },
+    {
+      "source": "chia-so-tu-nhien",
+      "relation": "Used_for",
+      "target": "so-du",
+      "evidence": "Số dư là một khái niệm quan trọng trong phép chia số tự nhiên",
+      "source_page": 40
+    }
+  ]
+}

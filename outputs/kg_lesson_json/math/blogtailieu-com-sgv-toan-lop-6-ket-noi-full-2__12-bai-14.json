@@ -1,0 +1,74 @@
+{
+  "document": {
+    "document_id": "math-k6-sgv",
+    "source_type": "SGV",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Chương 2",
+    "lesson": "Bài 14"
+  },
+  "learning_objectives": [
+    {
+      "code": "nhan-biet-quy-tac-cong-tru-so-nguyen",
+      "description": "Nhận biết được các quy tắc cộng và trừ số nguyên.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận biết được các quy tắc cộng và trừ số nguyên."
+    },
+    {
+      "code": "nhan-biet-tinh-chat-phep-cong",
+      "description": "Nhận biết được tính chất của phép cộng số nguyên.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận biết được tính chất của phép cộng số nguyên."
+    },
+    {
+      "code": "nhan-biet-so-doi",
+      "description": "Nhận biết được số đối của một số nguyên.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Nhận biết được số đối của một số nguyên."
+    },
+    {
+      "code": "van-dung-quy-tac-cong-tru",
+      "description": "Vận dụng được các quy tắc cộng, trừ số nguyên trong tính toán.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Vận dụng được các quy tắc cộng, trừ số nguyên trong tính toán."
+    },
+    {
+      "code": "van-dung-tinh-chat-phep-cong",
+      "description": "Vận dụng được các tính chất của phép cộng để tính nhẩm, tính hợp lí.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Vận dụng được các tính chất của phép cộng để tính nhẩm, tính hợp lí."
+    },
+    {
+      "code": "giai-bai-toan-thuc-te",
+      "description": "Giải được những bài toán thực tế liên quan đến cộng và trừ số nguyên.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Giải được những bài toán thực tế liên quan đến cộng và trừ số nguyên."
+    },
+    {
+      "code": "boi-duong-hung-thu-hoc-tap",
+      "description": "Bồi dưỡng hứng thú học tập, ý thức làm việc nhóm, ý thức tìm tòi, khám phá và sáng tạo cho HS.",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c000",
+      "evidence": "Bồi dưỡng hứng thú học tập, ý thức làm việc nhóm, ý thức tìm tòi, khám phá và sáng tạo cho HS."
+    }
+  ],
+  "concepts": [],
+  "relations": [],
+  "misconceptions": [
+    {
+      "temporary_id": "m1",
+      "name": "Khó hiểu về phần số tự nhiên và phần dấu của số nguyên.",
+      "description": "Học sinh có thể nhầm lẫn giữa phần số tự nhiên và phần dấu của số nguyên, không nhận ra rằng phần số tự nhiên là giá trị tuyệt đối.",
+      "related_skill": "c1",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c001",
+      "evidence": "Do chương trình chưa cho phép đề cập đến khái niệm giá trị tuyệt đối nên sách đã sử dụng cách diễn đạt khá trực quan."
+    },
+    {
+      "temporary_id": "m2",
+      "name": "Khó khăn trong việc cộng hai số trái dấu.",
+      "description": "Học sinh có thể gặp khó khăn trong việc xác định dấu của kết quả khi cộng hai số trái dấu.",
+      "related_skill": "c1",
+      "source_chunk_id": "blogtailieu-com-sgv-toan-lop-6-ket-noi-full-2-c002",
+      "evidence": "Phức tạp nhất trong bài này là quy tắc cộng hai số trái dấu."
+    }
+  ]
+}

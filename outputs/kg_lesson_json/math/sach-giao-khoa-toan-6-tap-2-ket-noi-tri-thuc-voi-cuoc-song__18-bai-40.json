@@ -1,0 +1,146 @@
+{
+  "document": {
+    "document_id": "math-k6-sgk",
+    "source_type": "SGK",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Bài 40",
+    "lesson": "Biểu đồ cột"
+  },
+  "learning_objectives": [],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "bieu-do-cot",
+      "name": "Biểu đồ cột",
+      "description": "Biểu đồ cột là một loại biểu đồ dùng để thể hiện dữ liệu bằng các cột thẳng đứng hoặc nằm ngang.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c096"
+      ],
+      "evidence": [
+        "Biểu đồ cột"
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "ve-bieu-do-cot",
+      "name": "Vẽ biểu đồ cột",
+      "description": "Kỹ năng vẽ biểu đồ cột từ bảng thống kê cho trước.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c096"
+      ],
+      "evidence": [
+        "Vẽ biểu đồ cột từ bảng thống kê cho trước."
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "doc-va-mo-ta-du-lieu",
+      "name": "Đọc và mô tả dữ liệu từ biểu đồ cột",
+      "description": "Kỹ năng đọc và mô tả thông tin từ biểu đồ cột.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c096"
+      ],
+      "evidence": [
+        "Đọc và mô tả dữ liệu từ biểu đồ cột."
+      ]
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "nhan-ra-van-de-tu-bieu-do",
+      "name": "Nhận ra vấn đề hoặc quy luật từ biểu đồ cột",
+      "description": "Kỹ năng nhận ra vấn đề hoặc quy luật đơn giản từ việc phân tích biểu đồ cột.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c096"
+      ],
+      "evidence": [
+        "Nhận ra vấn đề hoặc quy luật đơn giản từ việc phân tích biểu đồ cột."
+      ]
+    },
+    {
+      "temporary_id": "c5",
+      "suggested_code": "thuc-hanh-ve-bieu-do-cot",
+      "name": "Thực hành vẽ biểu đồ cột",
+      "description": "Thực hành vẽ biểu đồ cột từ bảng thống kê.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c097"
+      ],
+      "evidence": [
+        "Vẽ biểu đồ Hình 9.7 vào vở rồi hoàn thiện biểu đồ cột biểu diễn bảng thống kê."
+      ]
+    },
+    {
+      "temporary_id": "c6",
+      "suggested_code": "lap-bang-thong-ke",
+      "name": "Lập bảng thống kê",
+      "description": "Kỹ năng lập bảng thống kê từ dữ liệu đã cho.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c097"
+      ],
+      "evidence": [
+        "Lập bảng thống kê số lượng các bạn lớp Nam tham gia các hoạt động trong giờ ra chơi."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "c1",
+      "relation_type": "part_of",
+      "target": "c2",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c096",
+      "evidence": "",
+      "confidence": 1.0
+    },
+    {
+      "source": "c1",
+      "relation_type": "part_of",
+      "target": "c3",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c096",
+      "evidence": "",
+      "confidence": 1.0
+    },
+    {
+      "source": "c1",
+      "relation_type": "part_of",
+      "target": "c4",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c096",
+      "evidence": "",
+      "confidence": 1.0
+    },
+    {
+      "source": "c2",
+      "relation_type": "prerequisite_of",
+      "target": "c5",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c097",
+      "evidence": "",
+      "confidence": 1.0
+    },
+    {
+      "source": "c3",
+      "relation_type": "prerequisite_of",
+      "target": "c6",
+      "source_chunk_id": "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c097",
+      "evidence": "",
+      "confidence": 1.0
+    }
+  ],
+  "misconceptions": []
+}

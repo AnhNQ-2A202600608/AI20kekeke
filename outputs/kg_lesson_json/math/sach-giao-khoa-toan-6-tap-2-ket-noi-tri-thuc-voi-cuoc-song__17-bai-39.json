@@ -1,0 +1,75 @@
+{
+  "document": {
+    "document_id": "math-k6-sgk",
+    "source_type": "SGK",
+    "subject": "math",
+    "grade": 6,
+    "chapter": "Bảng thống kê và biểu đồ tranh",
+    "lesson": "Bài 39"
+  },
+  "learning_objectives": [],
+  "concepts": [
+    {
+      "temporary_id": "c1",
+      "suggested_code": "bang-thong-ke",
+      "name": "Bảng thống kê",
+      "description": "Bảng dùng để tổ chức và trình bày dữ liệu một cách có hệ thống.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c094"
+      ],
+      "evidence": [
+        "Bảng thống kê"
+      ]
+    },
+    {
+      "temporary_id": "c2",
+      "suggested_code": "bieu-do-tranh",
+      "name": "Biểu đồ tranh",
+      "description": "Hình thức biểu diễn dữ liệu bằng hình ảnh để dễ dàng so sánh và phân tích.",
+      "concept_type": "knowledge",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c094"
+      ],
+      "evidence": [
+        "Biểu đồ tranh"
+      ]
+    },
+    {
+      "temporary_id": "c3",
+      "suggested_code": "doc-phan-tich-du-lieu",
+      "name": "Đọc và phân tích dữ liệu",
+      "description": "Kỹ năng đọc và hiểu thông tin từ bảng thống kê và biểu đồ tranh.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c094"
+      ],
+      "evidence": [
+        "Đọc và phân tích dữ liệu từ bảng thống kê, biểu đồ tranh."
+      ]
+    },
+    {
+      "temporary_id": "c4",
+      "suggested_code": "bieu-dien-du-lieu",
+      "name": "Biểu diễn dữ liệu",
+      "description": "Kỹ năng tổ chức và trình bày dữ liệu vào bảng thống kê và biểu đồ tranh.",
+      "concept_type": "skill",
+      "aliases": [],
+      "grade": 6,
+      "source_chunk_ids": [
+        "sach-giao-khoa-toan-6-tap-2-ket-noi-tri-thuc-voi-cuoc-song-c094"
+      ],
+      "evidence": [
+        "Biểu diễn dữ liệu vào bảng thống kê, biểu đồ tranh."
+      ]
+    }
+  ],
+  "relations": [],
+  "misconceptions": []
+}
