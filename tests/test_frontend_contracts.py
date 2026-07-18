@@ -8,46 +8,90 @@ def _read(path: str) -> str:
     return (FRONTEND / path).read_text(encoding="utf-8")
 
 
-def test_practice_logo_exits_quiz_and_returns_to_learn_tab() -> None:
-    top_nav = _read("components/app/app-top-nav.tsx")
-    workspace = _read("app/components/quiz-workspace.tsx")
+def test_mentora_shell_exposes_learning_exam_and_ai_navigation() -> None:
+    shell = _read("app/components/AppShell.tsx")
 
-    assert "onLogoClick?: () => void" in top_nav
-    assert "onClick={onLogoClick}" in top_nav
-    assert "quiz.handleExitQuiz();" in workspace
-    assert "quiz.setActiveTab('learn');" in workspace
-
-
-def test_demo_mode_requires_explicit_public_flag() -> None:
-    demo_mode = _read("lib/demo-mode.ts")
-
-    assert "process.env.NEXT_PUBLIC_DEMO_MODE === 'true'" in demo_mode
-    assert "NODE_ENV" not in demo_mode
+    assert "Mentora" in shell
+    assert 'href: "/hoc-tap"' in shell
+    assert 'href: "/on-thi"' in shell
+    assert 'href={`/hoi-dap-ai?subject=${selectedSubject.code}`}' in shell
 
 
-def test_local_demo_auth_bypasses_onboarding_backend_gate() -> None:
-    gate = _read("components/onboarding/onboarding-gate.tsx")
+def test_legacy_edugap_routes_and_components_are_removed() -> None:
+    legacy_paths = (
+        "app/login/page.tsx",
+        "app/api/v1/[...path]/route.ts",
+        "app/components/dashboard-layout.tsx",
+        "components/app/app-top-nav.tsx",
+        "components/onboarding/onboarding-gate.tsx",
+        "components/dashboard/ZpdWidget.tsx",
+        "lib/adaptive/database.ts",
+    )
 
-    assert "const usesLocalDemoAuth = isDemoMode() && isDemoAuthToken(token);" in gate
-    assert "!usesLocalDemoAuth" in gate
-    assert "|| usesLocalDemoAuth" in gate
-
-
-def test_socratic_chat_uses_single_current_implementation() -> None:
-    legacy_file = FRONTEND / "components/dashboard/socratic-chat-tab.tsx"
-    dashboard_layout = _read("app/components/dashboard-layout.tsx")
-
-    assert not legacy_file.exists()
-    assert "import('@/components/dashboard/socratic-chat')" in dashboard_layout
-    assert "socratic-chat-tab" not in dashboard_layout
+    assert all(not (FRONTEND / path).exists() for path in legacy_paths)
 
 
-def test_nextjs_supabase_adapter_stays_read_only() -> None:
-    adapter = _read("lib/adaptive/database.ts")
+def test_auth_flow_uses_mentora_session_storage_and_logout_cleanup() -> None:
+    auth_page = _read("app/auth/page.tsx")
+    auth_client = _read("app/lib/api-client.ts")
+    session = _read("app/lib/session.ts")
+    logout = _read("app/dang-xuat/page.tsx")
 
-    assert "createClient(" in adapter
-    for write_api in (".insert(", ".update(", ".delete(", ".upsert(", ".rpc("):
-        assert write_api not in adapter
+    assert "loginWithPassword" in auth_page
+    assert "registerAccount" in auth_page
+    assert "saveAuthSession" in auth_page
+    assert '"/auth/login"' in auth_client
+    assert '"/auth/signup"' in auth_client
+    assert '"mentora-auth-session"' in session
+    assert "window.sessionStorage" in session
+    assert "window.localStorage" in session
+    assert "clearAuthSession" in logout
+
+
+def test_subject_profiles_are_namespaced_and_update_learning_progress() -> None:
+    profiles = _read("app/hooks/useOnboardingProfile.ts")
+
+    assert 'const PROFILE_KEY = "mentora-subject-profiles"' in profiles
+    assert 'const ACTIVE_SUBJECT_KEY = "mentora-active-subject"' in profiles
+    assert "export function saveSubjectProfile" in profiles
+    assert "export function updateSubjectLearningProgress" in profiles
+    assert "Math.min(100, Math.max(0, currentProgress" in profiles
+
+
+def test_ai_chat_creates_independent_sessions_without_overwriting_history() -> None:
+    chat_page = _read("app/hoi-dap-ai/page.tsx")
+    sessions = _read("app/lib/chat-sessions.ts")
+
+    assert "activeConversationIdRef" in chat_page
+    assert "const startNewConversation" in chat_page
+    assert "activeConversationIdRef.current = null" in chat_page
+    assert "const { session, isNew } = ensureChatSession(prompt);" in chat_page
+    assert "if (!isNew) appendChatMessage(session.id" in chat_page
+    assert "deleteChatSession(sessionId)" in chat_page
+    assert 'const STORAGE_KEY = "mentora-ai-chat-sessions"' in sessions
+    assert "writeSessions([session, ...readSessions()])" in sessions
+    assert "updateChatSession" in sessions
+
+
+def test_frontend_api_client_uses_the_same_origin_backend_proxy() -> None:
+    client = _read("app/lib/api-client.ts")
+
+    assert "fetch(`/api/backend${path}`" in client
+    assert 'requestApi<AuthApiResponse>("/auth/login"' in client
+    assert 'requestApi<AuthApiResponse>("/auth/signup"' in client
+    assert 'requestApi<TutorReply>("/chat"' in client
+    assert "Authorization: `Bearer ${input.token}`" in client
+
+
+def test_backend_proxy_allows_only_supported_mentora_endpoints() -> None:
+    route = _read("app/api/backend/[...path]/route.ts")
+
+    assert 'const ALLOWED_PATHS = new Set(["auth/login", "auth/signup", "auth/me", "chat"])' in route
+    assert "if (!ALLOWED_PATHS.has(pathName))" in route
+    assert 'headers.set("authorization", authorization)' in route
+    assert 'cache: "no-store"' in route
+    assert 'status: 404' in route
+    assert 'status: 503' in route
 
 
 def test_frontend_does_not_write_directly_to_supabase_tables() -> None:
@@ -57,17 +101,13 @@ def test_frontend_does_not_write_directly_to_supabase_tables() -> None:
         if path.suffix in {".ts", ".tsx"}
         and ".next" not in path.parts
         and "node_modules" not in path.parts
-        and path.relative_to(FRONTEND).as_posix()
-        not in {
-            "app/api/v1/[...path]/route.ts",
-        }
     ]
     offenders: list[str] = []
+
     for path in frontend_sources:
         source = path.read_text(encoding="utf-8")
         uses_supabase_client = (
             "@supabase" in source
-            or "@/utils/supabase" in source
             or "utils/supabase" in source
             or ".from('" in source
             or '.from("' in source
@@ -81,88 +121,20 @@ def test_frontend_does_not_write_directly_to_supabase_tables() -> None:
     assert offenders == []
 
 
-def test_mentor_ingestion_mock_relations_are_demo_only() -> None:
-    ingestion_tab = _read("components/dashboard/mentor/ingestion-tab.tsx")
+def test_teacher_workspace_groups_daily_teaching_workflows() -> None:
+    teacher = _read("app/giao-vien/page.tsx")
 
-    assert "const demoMode = isDemoMode();" in ingestion_tab
-    assert "useState<GraphRelation[]>(demoMode ? INITIAL_RELATIONS : [])" in ingestion_tab
-
-
-def test_supabase_debug_page_requires_explicit_enablement() -> None:
-    page = _read("app/supabase-test/page.tsx")
-
-    assert 'process.env.ENABLE_SUPABASE_TEST_PAGE !== "true"' in page
-    assert "notFound();" in page
+    assert "const teacherNavGroups" in teacher
+    assert 'label: "Giảng dạy"' in teacher
+    assert 'id: "assignments"' in teacher
+    assert 'id: "grading"' in teacher
+    assert 'id: "assistant"' in teacher
+    assert 'id: "rag"' in teacher
 
 
-def test_protected_frontend_api_calls_use_same_origin_credentials() -> None:
-    protected_call_sites = {
-        "stores/createPracticeSlice.ts": ["/api/v1/adaptive/mastery"],
-        "lib/adaptive/api-client.ts": ["/api/v1/adaptive/recommend", "/api/v1/adaptive/submit"],
-        "components/quiz/quiz-question-view.tsx": ["/api/v1/quiz/report"],
-        "lib/chat/stream.ts": ["/api/v1/chat"],
-        "app/hooks/useSurveyHandlers.ts": ["/api/v1/surveys"],
-        "lib/onboarding/onboarding-api.ts": [
-            "/api/v1/onboarding/status",
-            "/api/v1/onboarding/diagnostic/start",
-            "/api/v1/onboarding/diagnostic/answer",
-            "/api/v1/onboarding/complete",
-        ],
-        "lib/mentor/ai-response-feedback.ts": ["/api/v1/feedback"],
-        "components/dashboard/profile/hooks/useProfileData.ts": ["/api/v1/"],
-        "components/dashboard/admin/use-braintrust-summary.ts": ["/api/v1/admin/braintrust/"],
-        "lib/auth/supabase-session.ts": ["/api/v1/auth/me", "/api/v1/auth/signup"],
-    }
+def test_profile_page_requires_an_authenticated_session() -> None:
+    profile = _read("app/ho-so/page.tsx")
 
-    for path, expected_routes in protected_call_sites.items():
-        source = _read(path)
-        for route in expected_routes:
-            assert route in source, f"{route} missing from {path}"
-        assert 'credentials: "same-origin"' in source or "credentials: 'same-origin'" in source, (
-            f"{path} must include same-origin credentials for protected API calls"
-        )
-
-
-def test_zpd_widget_does_not_fallback_to_seeded_student_identity() -> None:
-    widget = _read("components/dashboard/ZpdWidget.tsx")
-
-    assert "d3b07384-d113-4ec5-a58e-0f2d87e07661" not in widget
-    assert "const currentStudentId = userId ||" not in widget
-    assert "studentId: userId," in widget
-    assert "loggedIn" in widget
-    assert "if (!loggedIn || !userId || !token)" in widget
-    assert "Chúc mừng bạn đã hoàn thành xuất sắc" not in widget
-    assert "Chưa tải được thử thách ZPD" in widget
-
-
-def test_bff_proxy_filters_unsafe_headers_and_preserves_trace_contract() -> None:
-    route = _read("app/api/v1/[...path]/route.ts")
-
-    for unsafe_header in (
-        "keyLower !== 'host'",
-        "keyLower !== 'accept-encoding'",
-        "keyLower !== 'connection'",
-        "keyLower !== 'content-length'",
-        "keyLower !== 'cookie'",
-    ):
-        assert unsafe_header in route
-
-    assert "headers.set('x-request-id', traceId)" in route
-    assert "isPublicAuthPath(pathStr)" in route
-    assert "backend_unavailable" in route
-    assert "trace_id: traceId" in route
-    assert "status: 503" in route
-
-
-def test_next_route_handler_errors_include_trace_ids() -> None:
-    route_files = [
-        "app/api/questions/route.ts",
-        "app/api/questions/[slug]/route.ts",
-        "app/api/guidebook/[slug]/route.ts",
-        "app/api/knowledge-graph/route.ts",
-    ]
-
-    for path in route_files:
-        source = _read(path)
-        assert "trace_id" in source, f"{path} must include trace_id in API responses"
-        assert "status: 500" not in source, f"{path} should use explicit unavailable/not-found errors, not 500"
+    assert "useAuthSession" in profile
+    assert "if (!authSession)" in profile
+    assert 'router.replace("/auth?next=/ho-so")' in profile
