@@ -1120,7 +1120,7 @@ def get_class_stats_endpoint(
             return ClassStatsResponse(
                 total_students=5,
                 class_average_elo=1127.0,
-                weakest_skill=WeakestSkillResponse(id="M7.SDS.05", name="Tỉ lệ thức & Đại lượng tỉ lệ", avg_elo=1028.0),
+                weakest_skill=WeakestSkillResponse(id="M7.SDS.05", name="Vận dụng tính chất tỉ lệ thức, đại lượng tỉ lệ", avg_elo=1028.0),
                 completion_rate=40.0,
             )
 
@@ -1372,7 +1372,7 @@ def get_mock_backend_students() -> list[dict]:
                 {
                     "concept_id": "00000000-0000-0000-0000-000000000010",
                     "code": "M7.SDS.05",
-                    "name": "Tỉ lệ thức & Đại lượng tỉ lệ",
+                    "name": "Vận dụng tính chất tỉ lệ thức, đại lượng tỉ lệ",
                     "elo": 1420.0,
                     "bkt_mastery_probability": 0.95,
                     "bkt_mastery_probability_stored": 0.95,
@@ -1386,7 +1386,7 @@ def get_mock_backend_students() -> list[dict]:
                 {
                     "concept_id": "00000000-0000-0000-0000-000000000011",
                     "code": "M6.SDS.03",
-                    "name": "Tỉ số & Tỉ số phần trăm",
+                    "name": "Hiểu tỉ số của hai đại lượng",
                     "elo": 1480.0,
                     "bkt_mastery_probability": 0.98,
                     "bkt_mastery_probability_stored": 0.98,
@@ -1400,7 +1400,7 @@ def get_mock_backend_students() -> list[dict]:
                 {
                     "concept_id": "00000000-0000-0000-0000-000000000012",
                     "code": "M5.SDS.02",
-                    "name": "Hai phân số bằng nhau",
+                    "name": "Nhận biết hai phân số bằng nhau",
                     "elo": 1510.0,
                     "bkt_mastery_probability": 0.99,
                     "bkt_mastery_probability_stored": 0.99,
@@ -1416,7 +1416,7 @@ def get_mock_backend_students() -> list[dict]:
                 {
                     "id": "11111111-1111-1111-1111-111111111110",
                     "question_prompt": "Tìm x trong tỉ lệ thức x/4 = 9/12",
-                    "concept_name": "Tỉ lệ thức & Đại lượng tỉ lệ",
+                    "concept_name": "Vận dụng tính chất tỉ lệ thức, đại lượng tỉ lệ",
                     "is_correct": True,
                     "actual_score": 1.0,
                     "hint_count": 0,
@@ -1441,7 +1441,7 @@ def get_mock_backend_students() -> list[dict]:
                 {
                     "concept_id": "00000000-0000-0000-0000-000000000010",
                     "code": "M7.SDS.05",
-                    "name": "Tỉ lệ thức & Đại lượng tỉ lệ",
+                    "name": "Vận dụng tính chất tỉ lệ thức, đại lượng tỉ lệ",
                     "elo": 1120.0,
                     "bkt_mastery_probability": 0.72,
                     "bkt_mastery_probability_stored": 0.72,
@@ -1455,7 +1455,7 @@ def get_mock_backend_students() -> list[dict]:
                 {
                     "concept_id": "00000000-0000-0000-0000-000000000011",
                     "code": "M6.SDS.03",
-                    "name": "Tỉ số & Tỉ số phần trăm",
+                    "name": "Hiểu tỉ số của hai đại lượng",
                     "elo": 1250.0,
                     "bkt_mastery_probability": 0.89,
                     "bkt_mastery_probability_stored": 0.89,
@@ -1469,7 +1469,7 @@ def get_mock_backend_students() -> list[dict]:
                 {
                     "concept_id": "00000000-0000-0000-0000-000000000012",
                     "code": "M5.SDS.02",
-                    "name": "Hai phân số bằng nhau",
+                    "name": "Nhận biết hai phân số bằng nhau",
                     "elo": 1300.0,
                     "bkt_mastery_probability": 0.92,
                     "bkt_mastery_probability_stored": 0.92,
@@ -1485,7 +1485,7 @@ def get_mock_backend_students() -> list[dict]:
                 {
                     "id": "11111111-1111-1111-1111-111111111111",
                     "question_prompt": "Tìm x trong tỉ lệ thức x/4 = 9/12",
-                    "concept_name": "Tỉ lệ thức & Đại lượng tỉ lệ",
+                    "concept_name": "Vận dụng tính chất tỉ lệ thức, đại lượng tỉ lệ",
                     "is_correct": True,
                     "actual_score": 1.0,
                     "hint_count": 0,
@@ -1510,7 +1510,7 @@ def get_mock_backend_students() -> list[dict]:
                 {
                     "concept_id": "00000000-0000-0000-0000-000000000010",
                     "code": "M7.SDS.05",
-                    "name": "Tỉ lệ thức & Đại lượng tỉ lệ",
+                    "name": "Vận dụng tính chất tỉ lệ thức, đại lượng tỉ lệ",
                     "elo": 720.0,
                     "bkt_mastery_probability": 0.02,
                     "bkt_mastery_probability_stored": 0.02,
@@ -1524,7 +1524,7 @@ def get_mock_backend_students() -> list[dict]:
                 {
                     "concept_id": "00000000-0000-0000-0000-000000000011",
                     "code": "M6.SDS.03",
-                    "name": "Tỉ số & Tỉ số phần trăm",
+                    "name": "Hiểu tỉ số của hai đại lượng",
                     "elo": 780.0,
                     "bkt_mastery_probability": 0.05,
                     "bkt_mastery_probability_stored": 0.05,
@@ -1538,7 +1538,7 @@ def get_mock_backend_students() -> list[dict]:
                 {
                     "concept_id": "00000000-0000-0000-0000-000000000012",
                     "code": "M5.SDS.02",
-                    "name": "Hai phân số bằng nhau",
+                    "name": "Nhận biết hai phân số bằng nhau",
                     "elo": 810.0,
                     "bkt_mastery_probability": 0.12,
                     "bkt_mastery_probability_stored": 0.12,
@@ -1554,7 +1554,7 @@ def get_mock_backend_students() -> list[dict]:
                 {
                     "id": "11111111-1111-1111-1111-111111111112",
                     "question_prompt": "Tỉ lệ thức là đẳng thức của hai tỉ số. Đúng hay sai?",
-                    "concept_name": "Tỉ lệ thức & Đại lượng tỉ lệ",
+                    "concept_name": "Vận dụng tính chất tỉ lệ thức, đại lượng tỉ lệ",
                     "is_correct": False,
                     "actual_score": 0.0,
                     "hint_count": 2,
@@ -1579,7 +1579,7 @@ def get_mock_backend_students() -> list[dict]:
                 {
                     "concept_id": "00000000-0000-0000-0000-000000000010",
                     "code": "M7.SDS.05",
-                    "name": "Tỉ lệ thức & Đại lượng tỉ lệ",
+                    "name": "Vận dụng tính chất tỉ lệ thức, đại lượng tỉ lệ",
                     "elo": 830.0,
                     "bkt_mastery_probability": 0.04,
                     "bkt_mastery_probability_stored": 0.04,
@@ -1593,7 +1593,7 @@ def get_mock_backend_students() -> list[dict]:
                 {
                     "concept_id": "00000000-0000-0000-0000-000000000011",
                     "code": "M6.SDS.03",
-                    "name": "Tỉ số & Tỉ số phần trăm",
+                    "name": "Hiểu tỉ số của hai đại lượng",
                     "elo": 1140.0,
                     "bkt_mastery_probability": 0.82,
                     "bkt_mastery_probability_stored": 0.82,
@@ -1607,7 +1607,7 @@ def get_mock_backend_students() -> list[dict]:
                 {
                     "concept_id": "00000000-0000-0000-0000-000000000012",
                     "code": "M5.SDS.02",
-                    "name": "Hai phân số bằng nhau",
+                    "name": "Nhận biết hai phân số bằng nhau",
                     "elo": 1210.0,
                     "bkt_mastery_probability": 0.90,
                     "bkt_mastery_probability_stored": 0.90,
@@ -1623,7 +1623,7 @@ def get_mock_backend_students() -> list[dict]:
                 {
                     "id": "11111111-1111-1111-1111-111111111113",
                     "question_prompt": "Biết x và y tỉ lệ thuận với nhau và khi x = 2 thì y = 6. Tìm hệ số tỉ lệ k",
-                    "concept_name": "Tỉ lệ thức & Đại lượng tỉ lệ",
+                    "concept_name": "Vận dụng tính chất tỉ lệ thức, đại lượng tỉ lệ",
                     "is_correct": False,
                     "actual_score": 0.0,
                     "hint_count": 0,
@@ -1648,7 +1648,7 @@ def get_mock_backend_students() -> list[dict]:
                 {
                     "concept_id": "00000000-0000-0000-0000-000000000010",
                     "code": "M7.SDS.05",
-                    "name": "Tỉ lệ thức & Đại lượng tỉ lệ",
+                    "name": "Vận dụng tính chất tỉ lệ thức, đại lượng tỉ lệ",
                     "elo": 1050.0,
                     "bkt_mastery_probability": 0.52,
                     "bkt_mastery_probability_stored": 0.52,
@@ -1662,7 +1662,7 @@ def get_mock_backend_students() -> list[dict]:
                 {
                     "concept_id": "00000000-0000-0000-0000-000000000011",
                     "code": "M6.SDS.03",
-                    "name": "Tỉ số & Tỉ số phần trăm",
+                    "name": "Hiểu tỉ số của hai đại lượng",
                     "elo": 1110.0,
                     "bkt_mastery_probability": 0.74,
                     "bkt_mastery_probability_stored": 0.74,
@@ -1676,7 +1676,7 @@ def get_mock_backend_students() -> list[dict]:
                 {
                     "concept_id": "00000000-0000-0000-0000-000000000012",
                     "code": "M5.SDS.02",
-                    "name": "Hai phân số bằng nhau",
+                    "name": "Nhận biết hai phân số bằng nhau",
                     "elo": 1180.0,
                     "bkt_mastery_probability": 0.81,
                     "bkt_mastery_probability_stored": 0.81,
@@ -1692,7 +1692,7 @@ def get_mock_backend_students() -> list[dict]:
                 {
                     "id": "11111111-1111-1111-1111-111111111114",
                     "question_prompt": "Tìm x trong tỉ lệ thức x/4 = 9/12",
-                    "concept_name": "Tỉ lệ thức & Đại lượng tỉ lệ",
+                    "concept_name": "Vận dụng tính chất tỉ lệ thức, đại lượng tỉ lệ",
                     "is_correct": True,
                     "actual_score": 1.0,
                     "hint_count": 1,
