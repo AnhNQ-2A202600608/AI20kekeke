@@ -1,6 +1,6 @@
 # Nghiên cứu: Graphusion — Xây dựng Đồ thị tri thức Khoa học bằng Khung RAG
 
-Tài liệu này tóm tắt kết quả nghiên cứu bài báo *"Graphusion: A RAG Framework for Scientific Knowledge Graph Construction with a Global Perspective"* (WWW '25) và đề xuất phương án ứng dụng thuật toán này vào dự án **C2-App-125** để tự động hóa xây dựng sơ đồ khái niệm bài học, tối ưu hóa công cụ gợi ý thích ứng (BKT/Bandit) và Chatbot Socratic.
+Tài liệu này tóm tắt kết quả nghiên cứu bài báo *"Graphusion: A RAG Framework for Scientific Knowledge Graph Construction with a Global Perspective"* (WWW '25) và đề xuất phương án ứng dụng thuật toán này vào dự án **ai20kekeke** để tự động hóa xây dựng sơ đồ khái niệm bài học, tối ưu hóa công cụ gợi ý thích ứng (BKT/Bandit) và Chatbot Socratic.
 
 ---
 
@@ -42,7 +42,7 @@ graph TD
 
 ---
 
-## 3. Đề xuất Kiến trúc Tích hợp cho Dự án C2-App-125
+## 3. Đề xuất Kiến trúc Tích hợp cho Dự án ai20kekeke
 
 Dưới đây là sơ đồ tích hợp Graphusion vào hệ thống FastAPI + Next.js + Supabase hiện tại của dự án:
 

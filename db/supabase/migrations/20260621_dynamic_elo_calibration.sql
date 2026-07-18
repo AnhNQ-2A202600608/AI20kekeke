@@ -1,5 +1,5 @@
 -- ============================================================================
--- C2-App-125 | Dynamic Elo Calibration & Response Time weighted Elo
+-- ai20kekeke | Dynamic Elo Calibration & Response Time weighted Elo
 -- Target: Supabase PostgreSQL 17
 -- Re-run safe: YES
 -- ============================================================================

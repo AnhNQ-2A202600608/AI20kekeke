@@ -368,7 +368,7 @@ async def upload_material(
     if not file_bytes or len(file_bytes) > 100 * 1024 * 1024:
         raise HTTPException(status_code=400, detail="PDF rỗng hoặc vượt quá 100 MB.")
 
-    temp_file = tempfile.NamedTemporaryFile(prefix="edugap-rag-", suffix=".pdf", delete=False)
+    temp_file = tempfile.NamedTemporaryFile(prefix="mentora-rag-", suffix=".pdf", delete=False)
     temp_path = Path(temp_file.name)
     try:
         temp_file.write(file_bytes)

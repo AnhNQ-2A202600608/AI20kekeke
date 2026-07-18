@@ -65,7 +65,7 @@ The frontend should present EduGap as an Adaptive-first AI Tutor for higher educ
 
 ## References
 
-- Academic Citations & Foundations: [academic-citations.md](file:///d:/CODE/AITHUCCHIEN/PROJECT/C2-App-125/frontend/docs/academic-citations.md)
+- Academic Citations & Foundations: [academic-citations.md](file:///d:/code/AI20kekeke/frontend/docs/academic-citations.md)
 - Root product PDR: `../docs/product/project-overview-pdr.md`
 - Root roadmap: `../docs/product/project-roadmap.md`
 - Root architecture: `../docs/engineering/system-architecture.md`

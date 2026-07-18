@@ -39,6 +39,6 @@ Chọn **Lựa chọn 3: Sử dụng Mock Data kết hợp định nghĩa sẵn 
 
 ## Hệ quả (Consequences)
 
-- Khai báo các TypeScript interfaces liên quan vào [types.ts](file:///d:/Project/Vin_AI/000%20Group%20Project/C2-App-125/frontend/lib/quiz/types.ts).
+- Khai báo các TypeScript interfaces liên quan vào [types.ts](file:///d:/Project/Vin_AI/000%20Group%20Project/ai20kekeke/frontend/lib/quiz/types.ts).
 - Cần tạo các tệp tin mock dữ liệu kỹ năng dạng JSON để frontend nạp và chạy thử.
 - Khi luồng UI đã ổn định và chốt phương án vận hành, sẽ tiến hành ánh xạ các Interface này thành cấu trúc bảng Supabase thực tế ở backend (tạo bảng `skills`, `user_skills_mastery`, `active_practice_sessions`).

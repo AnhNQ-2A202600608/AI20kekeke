@@ -51,18 +51,7 @@ def is_general_query_heuristic(query: str) -> bool:
     if normalized in simple_greetings:
         return True
     normalized_no_nbsp = normalized.replace("\xa0", "")
-    if re.match(r"^ch\S*\s+(ban|b\S*n|sofi)$", normalized_no_nbsp):
-        return True
-    fuzzy = normalized_no_nbsp.replace("\x81", "")
-    if fuzzy.startswith("b") and " bi" in fuzzy and " g" in fuzzy:
-        return True
-    if fuzzy.startswith("b") and (" co" in fuzzy or " c" in fuzzy) and " g" in fuzzy:
-        return True
-    if fuzzy.startswith("t") and fuzzy.endswith("ai"):
-        return True
-    if fuzzy.startswith("m") and (
-        "ten" in _strip_vietnamese_accents(fuzzy) or (" t" in fuzzy and "n " in fuzzy and " g" in fuzzy)
-    ):
+    if re.match(r"^ch\S*\s+(ban|b\S*n|sofi|lucy)$", normalized_no_nbsp):
         return True
 
     normalized_candidates = {normalized, normalized_no_nbsp}
@@ -152,7 +141,10 @@ def is_academic_query_heuristic(query: str) -> bool:
         "phân số", "phan so", "tỉ số", "ti so", "tỉ lệ thức", "ti le thuc", "số hữu tỉ", "so huu ti",
         "quy đồng", "quy dong", "tử số", "tu so", "mẫu số", "mau so", "phép tính", "phep tinh",
         "toán", "toan", "đại số", "dai so", "hình học", "hinh hoc", "số tự nhiên", "so tu nhien",
-        "ước chung", "uoc chung", "bội chung", "boi chung", "số nguyên", "so nguyen"
+        "ước chung", "uoc chung", "bội chung", "boi chung", "số nguyên", "so nguyen",
+        # Geography & History terms
+        "lịch sử", "lich su", "địa lý", "dia ly", "địa lí", "dia li", "đất nước", "quốc gia",
+        "bản đồ", "ban do", "khí hậu", "khi hau", "thời tiết", "thoi tiet", "mưa đá", "mua da"
     }
     return any(term in normalized for term in academic_terms)
 
@@ -215,8 +207,8 @@ async def classify_query_intent(query: str, chat_history: list[dict] = None) -> 
 
     prompt = f"""Bạn là bộ phân tích ý định câu hỏi cho một Trợ lý Học tập Socratic AI.
 Nhiệm vụ của bạn là phân loại câu hỏi hiện tại của sinh viên thành 2 loại:
-- "academic": Nếu sinh viên hỏi về kiến thức chuyên môn, học thuật, lý thuyết, bài tập hoặc các khái niệm thuộc chương trình Toán học (đặc biệt là Toán học lớp 6/7 như Phân số, Số hữu tỉ, Tỉ lệ thức, Tỉ số, các phép tính và bài toán liên quan, hoặc các kiến thức hệ thống như RAG, Elo, BKT). Hãy ưu tiên "academic" nếu câu hỏi liên quan mật thiết hoặc tiếp nối ngữ cảnh chuyên môn từ lịch sử hội thoại phía trên.
-- "general": Nếu sinh viên chào hỏi, tạm biệt, cảm ơn, xã giao, hỏi thông tin cá nhân, hoặc hỏi về các chủ đề kỹ thuật/chuyên môn nằm ngoài giáo trình của khóa học này (ví dụ: các chủ đề không liên quan đến Toán học hay tính năng hệ thống).
+- "academic": Nếu sinh viên hỏi về kiến thức chuyên môn, học thuật, lý thuyết, bài tập hoặc các khái niệm thuộc chương trình học tập của các môn học trong hệ thống (như Toán học, Địa lý, Lịch sử, Ngữ văn, Vật lý, v.v., bao gồm các chuyên đề phân số, số hữu tỉ, tỉ lệ thức, hoặc các kiến thức hệ thống như RAG, Elo, BKT). Hãy ưu tiên "academic" nếu câu hỏi liên quan mật thiết hoặc tiếp nối ngữ cảnh chuyên môn từ lịch sử hội thoại phía trên.
+- "general": Nếu sinh viên chào hỏi, tạm biệt, cảm ơn, xã giao, hỏi thông tin cá nhân, hoặc hỏi các câu chuyện phiếm không liên quan đến việc học tập của các môn học.
 
 {history_context}Câu hỏi hiện tại cần phân loại: "{query}"
 
@@ -264,15 +256,15 @@ async def analyze_node(state: AgentState) -> dict:
     if academic_integrity_risk:
         intent = "academic"
         logger.info(f"Phat hien nguy co academic integrity cho query: '{query}'")
+    elif is_academic_query_heuristic(query):
+        intent = "academic"
+        logger.info(f"Phát hiện ý định 'academic' qua heuristics cho query: '{query}'")
     elif is_general_query_heuristic(query):
         intent = "general"
         logger.info(f"Phát hiện ý định 'general' qua heuristics cho query: '{query}'")
     elif concept_id and str(concept_id).lower() != "general":
         intent = "academic"
         logger.info(f"Phát hiện ý định 'academic' qua concept đang chọn: '{concept_id}'")
-    elif is_academic_query_heuristic(query):
-        intent = "academic"
-        logger.info(f"Phát hiện ý định 'academic' qua heuristics cho query: '{query}'")
     # 2. Nếu ở chế độ Hỏi đáp tự do (không chọn concept cụ thể) và không khớp heuristics, chạy LLM classifier
     elif not concept_id or str(concept_id).lower() == "general":
         await safe_adispatch_custom_event("thinking", {"text": "Đang phân loại câu hỏi..."})

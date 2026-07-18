@@ -1,5 +1,5 @@
 -- ============================================================================
--- C2-App-125 | Adaptive Engine — Atomic submit_attempt_v2 (Task 1)
+-- ai20kekeke | Adaptive Engine — Atomic submit_attempt_v2 (Task 1)
 -- Target: Supabase PostgreSQL 17
 -- Re-run safe: YES — CREATE OR REPLACE
 -- ============================================================================

@@ -1,5 +1,5 @@
 -- ============================================================================
--- C2-App-125 | Demo-only account profile flags
+-- ai20kekeke | Demo-only account profile flags
 -- Target: Supabase PostgreSQL
 -- Re-run safe: YES
 -- ============================================================================
