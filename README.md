@@ -1,4 +1,4 @@
-# Mentora (AI20K-C2-App-125) | Adaptive Socratic Tutor
+# Mentora (AI20Kekeke) | Adaptive Socratic Tutor
 
 ![Mentora application banner](banner2.png)
 
