@@ -305,19 +305,29 @@ function AiQuestionContent() {
   const [isLoading, setIsLoading] = useState(false);
   const [sessionId, setSessionId] = useState<string | null>(null);
   const chatScrollRef = useRef<HTMLDivElement>(null);
-  const [messages, setMessages] = useState([
-    {
-      role: "ai",
-      text: `Mình đang mở dữ liệu ${program.title} - ${ProgramChapter.title}. Hỏi bài ở đây, mình sẽ dùng AI Socratic để hướng dẫn em từng bước.`,
-    },
-  ]);
+  const [messages, setMessages] = useState<Array<{ role: string; text: string }>>([]);
 
+  // Load chat messages and session ID from localStorage on mount/change
   useEffect(() => {
     setMatchedChapterNumber(ProgramChapter.number);
     setActiveRegion("method");
     setQuestion("");
     setSpeakerMode("ai");
     setIsLoading(false);
+
+    const savedMessages = localStorage.getItem(`mentora-chat-messages-${selectedSubject.code}-${ProgramChapter.number}`);
+    const savedSessionId = localStorage.getItem(`mentora-chat-session-${selectedSubject.code}-${ProgramChapter.number}`);
+
+    if (savedMessages) {
+      try {
+        setMessages(JSON.parse(savedMessages));
+        setSessionId(savedSessionId || null);
+        return;
+      } catch (e) {
+        console.error("Failed to parse saved messages", e);
+      }
+    }
+
     setSessionId(null);
     setMessages([
       {
@@ -326,6 +336,22 @@ function AiQuestionContent() {
       },
     ]);
   }, [ProgramChapter.number, ProgramChapter.title, program.title, selectedSubject.code]);
+
+  // Save messages to localStorage
+  useEffect(() => {
+    if (messages.length > 0) {
+      localStorage.setItem(`mentora-chat-messages-${selectedSubject.code}-${matchedChapterNumber}`, JSON.stringify(messages));
+    }
+  }, [messages, selectedSubject.code, matchedChapterNumber]);
+
+  // Save session ID to localStorage
+  useEffect(() => {
+    if (sessionId) {
+      localStorage.setItem(`mentora-chat-session-${selectedSubject.code}-${matchedChapterNumber}`, sessionId);
+    } else {
+      localStorage.removeItem(`mentora-chat-session-${selectedSubject.code}-${matchedChapterNumber}`);
+    }
+  }, [sessionId, selectedSubject.code, matchedChapterNumber]);
 
   const matchedChapter = useMemo(
     () => program.chapters.find((chapter) => chapter.number === matchedChapterNumber) || ProgramChapter,
