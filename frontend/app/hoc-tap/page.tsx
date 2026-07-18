@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { AppShell, ProgressBar } from "../components/AppShell";
 import { subjectPrograms, subjects } from "../data";
@@ -18,7 +18,7 @@ const mathFullRoute = [
   { number: "08", title: "Ôn tập tổng hợp cuối năm", summary: "Tổng hợp các mạch kiến thức, luyện đề và sửa lỗi thường gặp.", progress: 0, types: 5, xp: 1800, active: false, unlock: "Chương cuối" },
 ];
 
-export default function LearningWorkspace() {
+function LearningContent() {
   const [showFullRoute, setShowFullRoute] = useState(false);
   const searchParams = useSearchParams();
   const selectedSubjectCode = searchParams.get("subject") || "TO";
@@ -115,5 +115,13 @@ export default function LearningWorkspace() {
         </div>
       </section>
     </AppShell>
+  );
+}
+
+export default function LearningWorkspace() {
+  return (
+    <Suspense fallback={<div>Đang tải...</div>}>
+      <LearningContent />
+    </Suspense>
   );
 }

@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowRight, CheckCircle, LockKey, Sparkle } from "@phosphor-icons/react";
 import { AppShell, ProgressBar } from "../components/AppShell";

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { ArrowRight, BookOpenText, CheckCircle, Gauge, Sparkle, Target } from "@phosphor-icons/react";
 import { saveSubjectProfile } from "../hooks/useOnboardingProfile";
@@ -57,7 +57,7 @@ function getStepCopy(step: number, subjectName: string) {
   return `Bạn có thể vào lộ trình ${subjectName}, hoặc tạo thêm profile cho môn khác từ nút thêm môn ở sidebar.`;
 }
 
-export default function OnboardingPage() {
+function OnboardingContent() {
   const searchParams = useSearchParams();
   const initialSubject = subjectOptions.some((subject) => subject.code === searchParams.get("subject"))
     ? searchParams.get("subject") as SubjectCode
@@ -260,5 +260,13 @@ export default function OnboardingPage() {
         </section>
       </section>
     </main>
+  );
+}
+
+export default function OnboardingPage() {
+  return (
+    <Suspense fallback={<div>Đang tải...</div>}>
+      <OnboardingContent />
+    </Suspense>
   );
 }

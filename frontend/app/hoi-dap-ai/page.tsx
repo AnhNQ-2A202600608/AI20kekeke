@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import React, { FormEvent, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import React, { FormEvent, useCallback, useEffect, useMemo, useRef, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import {
   ArrowRight,
@@ -290,7 +290,7 @@ function parseMCQOptions(text: string): MCQOption[] {
 
 const BACKEND_URL = "http://127.0.0.1:8000";
 
-export default function AiQuestionPage() {
+function AiQuestionContent() {
   const searchParams = useSearchParams();
   const selectedSubjectCode = searchParams.get("subject") || "TO";
   const selectedSubject = subjects.find((subject) => subject.code === selectedSubjectCode) || subjects[0];
@@ -605,5 +605,13 @@ export default function AiQuestionPage() {
         </aside>
       </section>
     </AppShell>
+  );
+}
+
+export default function AiQuestionPage() {
+  return (
+    <Suspense fallback={<div>Đang tải...</div>}>
+      <AiQuestionContent />
+    </Suspense>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useMemo, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import {
   ArrowCounterClockwise,
@@ -75,7 +75,7 @@ function buildSkillNodes(subjectCode: keyof typeof skillBySubject, program: (typ
   );
 }
 
-export default function SkillGraphPage() {
+function SkillGraphContent() {
   const searchParams = useSearchParams();
   const selectedSubjectCode = searchParams.get("subject") || "TO";
   const selectedSubject = subjects.find((subject) => subject.code === selectedSubjectCode) || subjects[0];
@@ -181,5 +181,13 @@ export default function SkillGraphPage() {
         </main>
       </section>
     </AppShell>
+  );
+}
+
+export default function SkillGraphPage() {
+  return (
+    <Suspense fallback={<div>Đang tải...</div>}>
+      <SkillGraphContent />
+    </Suspense>
   );
 }

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useEffect, useState, Suspense } from "react";
 import {
   BookOpenText,
   Books,
@@ -36,6 +36,14 @@ const subjectIcons = {
 };
 
 export function AppShell({ children, compact = false }: { children: ReactNode; compact?: boolean }) {
+  return (
+    <Suspense fallback={<div className="app-shell-loading">Đang tải...</div>}>
+      <AppShellInner compact={compact}>{children}</AppShellInner>
+    </Suspense>
+  );
+}
+
+function AppShellInner({ children, compact = false }: { children: ReactNode; compact?: boolean }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);

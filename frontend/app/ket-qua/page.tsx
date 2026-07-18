@@ -2,9 +2,10 @@
 
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 import { AppShell, ProgressBar } from "../components/AppShell";
 
-export default function ResultPage() {
+function ResultContent() {
   const searchParams = useSearchParams();
   const subjectCode = searchParams.get("subject") || "TO";
 
@@ -25,5 +26,13 @@ export default function ResultPage() {
         <div className="result-footer"><Link href={`/luyen-tap?subject=${subjectCode}`}>Xem lại câu sai</Link><Link href={`/dashboard?subject=${subjectCode}`}>Mở dashboard</Link></div>
       </div>
     </AppShell>
+  );
+}
+
+export default function ResultPage() {
+  return (
+    <Suspense fallback={<div>Đang tải...</div>}>
+      <ResultContent />
+    </Suspense>
   );
 }
