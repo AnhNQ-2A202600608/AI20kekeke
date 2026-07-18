@@ -201,8 +201,30 @@ async def test_generate_quizzes_by_weakness_trigger(client, monkeypatch):
         lambda allow_stub=True: MagicMock(url="https://fake.supabase.co", secret_key="fake-key", is_stub=False),
     )
 
+    mock_resp_concept = MagicMock()
+    mock_resp_concept.status_code = 200
+    mock_resp_concept.json.return_value = [{"id": "concept-123", "name": "RAG Pipeline"}]
+
+    mock_resp_questions = MagicMock()
+    mock_resp_questions.status_code = 200
+    mock_resp_questions.json.return_value = []
+
+    mock_resp_materials = MagicMock()
+    mock_resp_materials.status_code = 200
+    mock_resp_materials.json.return_value = [{"source_filename": "Day 08 - Production RAG.pdf", "title": "RAG Pipeline"}]
+
+    def mock_get(url, *args, **kwargs):
+        if "concepts" in url:
+            return mock_resp_concept
+        if "questions" in url:
+            return mock_resp_questions
+        if "course_materials" in url:
+            return mock_resp_materials
+        return MagicMock(status_code=404)
+
     # Mock generate task
-    with patch("src.api.material_routes.generate_quizzes_from_slides_task") as mock_task:
+    with patch("src.api.material_routes.generate_quizzes_from_slides_task") as mock_task, \
+         patch("requests.get", side_effect=mock_get):
         response = await client.post(
             "/api/v1/materials/generate-by-weakness",
             json={
@@ -222,4 +244,5 @@ async def test_generate_quizzes_by_weakness_trigger(client, monkeypatch):
         assert data["document_name"] == "Day 08 - Production RAG.pdf"
         assert data["num_questions_requested"] == 3
         mock_task.assert_called_once()
+
 

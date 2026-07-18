@@ -81,6 +81,191 @@ def clean_json_response(content: str) -> str:
     return content.strip()
 
 
+CRITIC_PROMPT = """Bạn là một chuyên gia khảo thí độc lập theo Chương trình Giáo dục Phổ thông 2018 của Việt Nam.
+Nhiệm vụ của bạn là thẩm định độ khó thực tế của danh sách câu hỏi trắc nghiệm dưới đây.
+Với mỗi câu hỏi, hãy phân tích kỹ yêu cầu tư duy của nó để giải và phân loại vào một trong ba mức độ nhận thức:
+- "dễ" (Nhận biết): Học sinh chỉ cần nhớ lại kiến thức, nhận diện công thức, hoặc đọc trực tiếp từ slide.
+- "bình thường" (Thông hiểu): Học sinh cần hiểu ý nghĩa khái niệm, thực hiện các phép biến đổi đơn giản, hoặc giải thích được hiện tượng.
+- "khó" (Vận dụng): Học sinh cần liên kết nhiều khái niệm, giải quyết tình huống mới, hoặc thực hiện tính toán nhiều bước phức tạp.
+
+Danh sách câu hỏi cần thẩm định:
+{questions_formatted}
+
+Định dạng đầu ra là một mảng JSON chứa chính xác mức độ khó dự đoán ("dễ", "bình thường", hoặc "khó") cho từng câu hỏi tương ứng theo đúng thứ tự.
+Ví dụ:
+[
+  "dễ",
+  "bình thường",
+  "dễ",
+  "khó"
+]
+
+Chỉ trả về duy nhất mảng JSON thô, không kèm định dạng markdown hay văn bản giải thích nào khác."""
+
+
+def validate_option_balance(options: dict[str, str]) -> bool:
+    """
+    Validates option lengths with tolerance for math formulas and short values.
+    Returns True if valid or if all options are short/math-based.
+    Returns False if descriptive text options differ in length by > 50%.
+    """
+    import re
+    if not isinstance(options, dict) or len(options) < 4:
+        return False
+
+    vals = [str(v).strip() for v in options.values()]
+
+    # Identify math expressions or short option texts
+    math_pattern = re.compile(r'[0-9+\-*/=<>\\\{\}\^_\$]')
+
+    is_all_math_or_short = True
+    lengths = []
+    for val in vals:
+        val_len = len(val)
+        is_math = bool(math_pattern.search(val))
+        is_short = val_len < 20
+        if not (is_math or is_short):
+            is_all_math_or_short = False
+        lengths.append(val_len)
+
+    if is_all_math_or_short:
+        return True
+
+    min_len = max(1, min(lengths))
+    max_len = max(lengths)
+    return (max_len / min_len) <= 1.5
+
+
+def shuffle_single_question_options(q: dict) -> None:
+    """Shuffles the options of a single question and updates correct_option accordingly."""
+    import random
+    options = q.get("options")
+    correct = q.get("correct_option")
+    if not options or not correct or correct not in options:
+        return
+
+    correct_text = options[correct]
+    texts = list(options.values())
+    random.shuffle(texts)
+
+    keys = ["A", "B", "C", "D"]
+    new_options = {}
+    new_correct = None
+    for k, text in zip(keys, texts):
+        new_options[k] = text
+        if text == correct_text:
+            new_correct = k
+
+    q["options"] = new_options
+    q["correct_option"] = new_correct
+
+
+def rebalance_and_shuffle_options(questions: list[dict]) -> list[dict]:
+    """
+    Shuffles options for each question and balances correct option (A, B, C, D) distribution
+    to ensure no option is overrepresented (>40% of the total quiz set).
+    """
+    if not questions:
+        return []
+
+    # First shuffle options randomly for all questions
+    for q in questions:
+        shuffle_single_question_options(q)
+
+    if len(questions) < 5:
+        return questions
+
+    max_allowed = max(2, int(len(questions) * 0.40))
+
+    # Iteratively swap overrepresented correct answers to underrepresented keys
+    for _ in range(100):
+        counts = {"A": 0, "B": 0, "C": 0, "D": 0}
+        for q in questions:
+            correct = q.get("correct_option")
+            if correct in counts:
+                counts[correct] += 1
+
+        overrepresented = [k for k, v in counts.items() if v > max_allowed]
+        underrepresented = [k for k, v in counts.items() if v < max_allowed]
+
+        if not overrepresented or not underrepresented:
+            break
+
+        source_key = overrepresented[0]
+        target_key = underrepresented[0]
+
+        # Find a question to swap correct_option from source_key to target_key
+        swapped = False
+        for q in questions:
+            if q.get("correct_option") == source_key:
+                options = q.get("options", {})
+                if source_key in options and target_key in options:
+                    options[source_key], options[target_key] = options[target_key], options[source_key]
+                    q["correct_option"] = target_key
+                    swapped = True
+                    break
+        if not swapped:
+            break
+
+    return questions
+
+
+async def verify_batch_difficulty(questions: list[dict], target_difficulty: str) -> list[bool]:
+    """
+    Uses Critic Agent to assess the difficulty of a batch of questions.
+    Returns a list of booleans representing whether each question fits within 1 cognitive level of the target difficulty.
+    """
+    if not questions:
+        return []
+
+    # Format questions for the Critic prompt
+    questions_formatted = ""
+    for idx, q in enumerate(questions):
+        questions_formatted += f"--- Câu hỏi {idx + 1} ---\n"
+        questions_formatted += f"Câu hỏi: {q.get('prompt')}\n"
+        options = q.get("options", {}) or {}
+        questions_formatted += "Các phương án:\n"
+        for k, v in options.items():
+            questions_formatted += f"  {k}. {v}\n"
+        questions_formatted += f"Đáp án đúng: {q.get('correct_option')}\n"
+        questions_formatted += f"Giải thích: {q.get('explanation')}\n\n"
+
+    prompt = CRITIC_PROMPT.format(questions_formatted=questions_formatted)
+
+    messages = [
+        SystemMessage(content="You are an expert curriculum auditor who outputs raw JSON arrays of strings."),
+        HumanMessage(content=prompt)
+    ]
+
+    try:
+        llm = get_llm()
+        resp = await llm.ainvoke(messages)
+        content = clean_json_response(resp.content)
+        classified = json.loads(content)
+
+        if not isinstance(classified, list) or len(classified) != len(questions):
+            logger.warning(
+                f"Critic response size mismatch. Expected {len(questions)}, got {len(classified) if isinstance(classified, list) else type(classified)}"
+            )
+            return [True] * len(questions)
+
+        difficulty_levels = {"dễ": 1, "bình thường": 2, "khó": 3}
+        target_level = difficulty_levels.get(target_difficulty.lower(), 2)
+
+        results = []
+        for idx, item in enumerate(classified):
+            pred = str(item).strip().lower()
+            pred_level = difficulty_levels.get(pred, 2)
+            passed = abs(pred_level - target_level) <= 1
+            questions[idx]["critic_difficulty"] = pred
+            results.append(passed)
+
+        return results
+    except Exception as e:
+        logger.exception(f"Error in verify_batch_difficulty: {e}")
+        return [True] * len(questions)
+
+
 async def generate_quizzes_from_slides_task(
     document_name: str,
     num_questions: int,
@@ -179,7 +364,7 @@ async def generate_quizzes_from_slides_task(
             logger.error("Could not resolve concept_id or course_id. Aborting quiz generation.")
             return
 
-        # 3. Call LLM to generate questions
+        # 3. Call LLM to generate questions with retry and validation logic
         llm = get_llm()
         if prompt_override:
             quiz_template = prompt_override
@@ -194,36 +379,84 @@ async def generate_quizzes_from_slides_task(
             weakness_instruction = "\n\nIMPORTANT: This concept is currently a learning gap / weakness for the student. Focus questions on clarifying common student misconceptions, providing extremely clear educational explanations, and helping the student bridge their knowledge gap through targeted Socratic hints.\n"
             quiz_template = quiz_template + weakness_instruction
 
-        formatted_quiz_prompt = quiz_template.format(
-            num_questions=num_questions,
-            concept_name=concept_name,
-            concept_code=concept_code,
-            difficulty=difficulty,
-            slides_content=slides_content,
-        )
+        valid_questions = []
+        retry_count = 0
+        max_retries = 2
 
-        messages = [
-            SystemMessage(
-                content="You are an expert curriculum designer who outputs raw JSON arrays matching the requested schema."
-            ),
-            HumanMessage(content=formatted_quiz_prompt),
-        ]
+        while len(valid_questions) < num_questions and retry_count <= max_retries:
+            needed = num_questions - len(valid_questions)
+            logger.info(f"Attempting to generate {needed} questions (retry_count={retry_count})...")
 
-        logger.info("Calling LLM to generate questions...")
-        llm_resp = await llm.ainvoke(messages)
-        content_str = clean_json_response(llm_resp.content)
+            formatted_quiz_prompt = quiz_template.format(
+                num_questions=needed,
+                concept_name=concept_name,
+                concept_code=concept_code,
+                difficulty=difficulty,
+                slides_content=slides_content,
+            )
 
-        try:
-            questions_json = json.loads(content_str)
-        except Exception as e:
-            logger.error(f"Failed to parse LLM output as JSON: {e}. Raw content: {content_str}")
+            messages = [
+                SystemMessage(
+                    content="You are an expert curriculum designer who outputs raw JSON arrays matching the requested schema."
+                ),
+                HumanMessage(content=formatted_quiz_prompt),
+            ]
+
+            logger.info("Calling LLM to generate questions...")
+            llm_resp = await llm.ainvoke(messages)
+            content_str = clean_json_response(llm_resp.content)
+
+            try:
+                candidates = json.loads(content_str)
+            except Exception as e:
+                logger.error(f"Failed to parse LLM output as JSON: {e}. Raw content: {content_str}")
+                retry_count += 1
+                continue
+
+            if not isinstance(candidates, list):
+                logger.error(f"LLM output is not a list. Received: {type(candidates)}")
+                retry_count += 1
+                continue
+
+            # First filter candidates by validate_option_balance
+            valid_candidates = []
+            for c in candidates:
+                if not c.get("prompt") or not c.get("options") or not c.get("correct_option"):
+                    continue
+
+                c["option_balance_passed"] = validate_option_balance(c.get("options"))
+                if c["option_balance_passed"]:
+                    valid_candidates.append(c)
+                else:
+                    logger.info(f"Question failed option length balance validation: {c.get('prompt')}")
+
+            if not valid_candidates:
+                logger.info("No candidates passed option balance validation in this batch.")
+                retry_count += 1
+                continue
+
+            # Run batch difficulty verification on candidates that passed option balance
+            passed_difficulty = await verify_batch_difficulty(valid_candidates, difficulty)
+
+            for c, passed in zip(valid_candidates, passed_difficulty):
+                c["retry_count"] = retry_count
+                if passed:
+                    valid_questions.append(c)
+                    if len(valid_questions) >= num_questions:
+                        break
+                else:
+                    logger.info(f"Question failed Critic difficulty check: {c.get('prompt')} (predicted: {c.get('critic_difficulty')})")
+
+            retry_count += 1
+
+        if not valid_questions:
+            logger.error("Failed to generate any valid questions after max retries.")
             return
 
-        if not isinstance(questions_json, list):
-            logger.error(f"LLM output is not a list. Received: {type(questions_json)}")
-            return
+        valid_questions = valid_questions[:num_questions]
 
-        logger.info(f"LLM successfully generated {len(questions_json)} question candidates.")
+        # Apply option rebalancing and shuffling
+        valid_questions = rebalance_and_shuffle_options(valid_questions)
 
         # Mapping of difficulty input to ELO value
         difficulty_elo_map = {"dễ": 1050.0, "bình thường": 1200.0, "khó": 1350.0}
@@ -248,19 +481,20 @@ async def generate_quizzes_from_slides_task(
             else DEFAULT_HINT_PROMPT
         )
 
-        for idx, q_data in enumerate(questions_json):
-            logger.info(f"Processing question {idx + 1}/{len(questions_json)}...")
+        for idx, q_data in enumerate(valid_questions):
+            logger.info(f"Processing question {idx + 1}/{len(valid_questions)}...")
             prompt = q_data.get("prompt")
             options = q_data.get("options")
             correct_option = q_data.get("correct_option")
             explanation = q_data.get("explanation")
 
-            if not prompt or not options or not correct_option:
-                logger.warning(f"Skipping invalid question structure: {q_data}")
-                continue
+            validation_metadata = {
+                "critic_difficulty": q_data.get("critic_difficulty"),
+                "option_balance_passed": q_data.get("option_balance_passed", True),
+                "retry_count": q_data.get("retry_count", 0),
+            }
 
             # Construct answer_key payload matching database schema expectations
-            # answer_key format is: {"options": {"A": ..., "B": ...}, "correct": "A", "explanation": "..."}
             answer_key = {"options": options, "correct": correct_option, "explanation": explanation}
 
             question_payload = {
@@ -272,6 +506,7 @@ async def generate_quizzes_from_slides_task(
                 "difficulty_elo": target_elo,
                 "calibration_status": "draft",
                 "source_document_name": document_name,
+                "validation_metadata": validation_metadata,
             }
             if user_id:
                 question_payload["created_by"] = user_id
@@ -350,3 +585,4 @@ async def generate_quizzes_from_slides_task(
         logger.info(f"Finished quiz generation pipeline for document: {document_name}")
     except Exception as e:
         logger.exception(f"Unhandled error in generate_quizzes_from_slides_task: {e}")
+
