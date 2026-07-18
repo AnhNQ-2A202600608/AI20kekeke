@@ -117,6 +117,7 @@ export async function generateQuizzes(
     difficulty: string;
     socraticHints: boolean;
     conceptCode: string;
+    promptOverride?: string;
   },
   token?: string | null,
 ): Promise<any> {
@@ -132,9 +133,41 @@ export async function generateQuizzes(
       difficulty: params.difficulty,
       socratic_hints: params.socraticHints,
       concept_code: params.conceptCode,
+      prompt_override: params.promptOverride || null,
     }),
   });
 }
+
+export async function generateQuizzesForWeakness(
+  params: {
+    studentId: string;
+    conceptCode: string;
+    documentName?: string;
+    numQuestions: number;
+    difficulty: string;
+    socraticHints: boolean;
+    promptOverride?: string;
+  },
+  token?: string | null,
+): Promise<any> {
+  return fetchJson<any>(`${MATERIALS_PATH}/generate-by-weakness`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      ...authHeader(token),
+    },
+    body: JSON.stringify({
+      student_id: params.studentId,
+      concept_code: params.conceptCode,
+      document_name: params.documentName || null,
+      num_questions: params.numQuestions,
+      difficulty: params.difficulty,
+      socratic_hints: params.socraticHints,
+      prompt_override: params.promptOverride || null,
+    }),
+  });
+}
+
 
 export interface ConceptOption {
   id: string;

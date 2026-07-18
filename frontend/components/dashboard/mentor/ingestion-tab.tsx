@@ -22,6 +22,7 @@ import {
   Link2,
 } from 'lucide-react';
 import { isDemoMode } from '@/lib/demo-mode';
+import { useBoundStore } from '@/hooks/useBoundStore';
 import {
   fetchMaterials,
   fetchMaterialChunks,
@@ -36,7 +37,7 @@ export type DocumentStatus = 'indexed' | 'draft';
 export type RelationStatus = 'pending' | 'approved' | 'rejected';
 export type RelationType = 'Tiên quyết' | 'Đồng yêu cầu' | 'Mở rộng';
 export type RelationSource = 'AI sinh' | 'Thủ công';
-type WorkspaceTab = 'documents' | 'graph';
+type WorkspaceTab = 'documents' | 'graph' | 'weakness-gen';
 
 interface MockDocument {
   id: string;
@@ -219,6 +220,7 @@ export interface IngestionTabProps {
 
 export const IngestionTab: React.FC<IngestionTabProps> = ({ onNavigateToQuizEditor }) => {
   const demoMode = isDemoMode();
+  const token = useBoundStore((s) => s.token);
   const [activeWorkspaceTab, setActiveWorkspaceTab] = useState<WorkspaceTab>('documents');
   const [documents, setDocuments] = useState<MockDocument[]>(demoMode ? INITIAL_DOCUMENTS : []);
   const [relations, setRelations] = useState<GraphRelation[]>(demoMode ? INITIAL_RELATIONS : []);
@@ -251,6 +253,221 @@ export const IngestionTab: React.FC<IngestionTabProps> = ({ onNavigateToQuizEdit
     difficulty: 'bình thường',
     socraticHints: true,
   });
+
+  const [isLiveMode, setIsLiveMode] = useState(false);
+  const [promptOverride, setPromptOverride] = useState('');
+  const [showPromptEditor, setShowPromptEditor] = useState(false);
+  const [selectedConceptCode, setSelectedConceptCode] = useState('');
+
+  // Weakness targeted Quiz Gen state
+  const [students, setStudents] = useState<any[]>([]);
+  const [isLoadingStudents, setIsLoadingStudents] = useState(false);
+  const [selectedStudentId, setSelectedStudentId] = useState<string>('');
+  const [weakConcepts, setWeakConcepts] = useState<any[]>([]);
+  const [isLoadingWeakConcepts, setIsLoadingWeakConcepts] = useState(false);
+  const [selectedConceptForGen, setSelectedConceptForGen] = useState<string>('');
+  const [isGeneratingWeaknessQuiz, setIsGeneratingWeaknessQuiz] = useState(false);
+  const [weaknessProgress, setWeaknessProgress] = useState(0);
+  const [weaknessLogs, setWeaknessLogs] = useState<string[]>([]);
+  const [weaknessCompleted, setWeaknessCompleted] = useState(false);
+  const [weaknessParams, setWeaknessParams] = useState({
+    numQuestions: 5,
+    difficulty: 'bình thường',
+    socraticHints: true,
+    isLiveMode: false,
+    promptOverride: '',
+  });
+  const [showWeaknessPromptEditor, setShowWeaknessPromptEditor] = useState(false);
+
+  const DEFAULT_VIETNAMESE_QUIZ_PROMPT = `Bạn là chuyên gia thiết kế chương trình học và chuyên gia khảo thí theo Chương trình Giáo dục Phổ thông 2018 (CT GDPT 2018) của Việt Nam.
+Hãy tạo ra đúng {num_questions} câu hỏi trắc nghiệm khách quan (MCQ) dựa TRÊN DUY NHẤT nội dung các trang slide bài giảng dưới đây.
+
+Khái niệm mục tiêu: {concept_name} (Mã concept: {concept_code})
+Mức độ nhận thức mục tiêu (Độ khó): {difficulty} (dễ: Nhận biết, bình thường: Thông hiểu, khó: Vận dụng/Vận dụng cao)
+
+Nội dung slide bài giảng:
+{slides_content}
+
+Yêu cầu đối với mỗi câu hỏi MCQ:
+1. Câu hỏi phải kiểm tra đúng chuẩn đầu ra năng lực của khái niệm mục tiêu, bám sát kiến thức thực tế được trình bày trong các trang slide.
+2. Câu hỏi phải sử dụng ngôn ngữ Tiếng Việt chuẩn sư phạm, diễn đạt trong sáng, dễ hiểu, phù hợp với lứa tuổi học sinh phổ thông Việt Nam.
+3. Cung cấp đúng 4 phương án lựa chọn: A, B, C, và D. Các phương án sai (distractors) phải là các lỗi tư duy hoặc hiểu lầm phổ biến mà học sinh Việt Nam thường mắc phải liên quan đến bài học.
+4. Cung cấp lời giải thích chi tiết, thuyết phục tại sao phương án đúng là đúng, và tại sao các phương án khác lại sai, chỉ rõ căn cứ từ nội dung slide.
+5. Ngôn ngữ câu hỏi, các lựa chọn và lời giải thích BẮT BUỘC phải viết hoàn toàn bằng Tiếng Việt.
+
+Định dạng đầu ra là một mảng JSON hợp lệ gồm các đối tượng, trong đó mỗi đối tượng có các khóa sau (tên khóa giữ nguyên tiếng Anh để khớp hệ thống):
+{{
+  "prompt": "Nội dung câu hỏi bằng tiếng Việt...",
+  "options": {{
+    "A": "Nội dung phương án A...",
+    "B": "Nội dung phương án B...",
+    "C": "Nội dung phương án B...",
+    "D": "Nội dung phương án D..."
+  }},
+  "correct_option": "A" | "B" | "C" | "D",
+  "explanation": "Lời giải thích chi tiết bằng tiếng Việt..."
+}}
+
+Tuyệt đối không bao quanh đầu ra bằng các ký tự định dạng markdown (như \`\`\`json), chỉ trả về duy nhất chuỗi JSON thô.`;
+
+  // Fetch students list on activeWorkspaceTab weakness-gen
+  useEffect(() => {
+    if (activeWorkspaceTab !== 'weakness-gen') return;
+    const fetchStudents = async () => {
+      setIsLoadingStudents(true);
+      try {
+        const response = await fetch(
+          '/api/v1/adaptive/class-insights?course_id=00000000-0000-0000-0000-000000000001&limit=100',
+          { headers: token ? { Authorization: `Bearer ${token}` } : undefined }
+        );
+        if (response.ok) {
+          const data = await response.json();
+          setStudents(data.students || []);
+        } else {
+          // fallback mock students
+          setStudents([
+            { id: 'student-1', full_name: 'Nguyễn Văn A', email: '2a202600001@edugap.vn', average_elo: 1150 },
+            { id: 'student-2', full_name: 'Trần Thị B', email: '2a202600002@edugap.vn', average_elo: 980 },
+            { id: 'student-3', full_name: 'Phạm Văn C', email: '2a202600003@edugap.vn', average_elo: 1250 },
+          ]);
+        }
+      } catch (err) {
+        console.error('Failed to fetch students:', err);
+        setStudents([
+          { id: 'student-1', full_name: 'Nguyễn Văn A', email: '2a202600001@edugap.vn', average_elo: 1150 },
+          { id: 'student-2', full_name: 'Trần Thị B', email: '2a202600002@edugap.vn', average_elo: 980 },
+          { id: 'student-3', full_name: 'Phạm Văn C', email: '2a202600003@edugap.vn', average_elo: 1250 },
+        ]);
+      } finally {
+        setIsLoadingStudents(false);
+      }
+    };
+    fetchStudents();
+  }, [activeWorkspaceTab, token]);
+
+  // Load weak concepts when selected student changes
+  useEffect(() => {
+    if (!selectedStudentId) {
+      setWeakConcepts([]);
+      return;
+    }
+    const fetchWeakConcepts = async () => {
+      setIsLoadingWeakConcepts(true);
+      try {
+        const response = await fetch(
+          `/api/v1/adaptive/mastery?student_id=${selectedStudentId}&course_id=00000000-0000-0000-0000-000000000001`,
+          { headers: token ? { Authorization: `Bearer ${token}` } : undefined }
+        );
+        if (response.ok) {
+          const data = await response.json();
+          if (Array.isArray(data)) {
+            const weak = data.filter((item: any) => item.mastery_state === 'weak' || item.weakness_flag === true);
+            setWeakConcepts(weak);
+          }
+        } else {
+          // fallback mock weak concepts
+          setWeakConcepts([
+            { concept_id: 'c1', concept_code: 'd8-rag-pipeline', concept_name: 'RAG Pipeline', elo_score: 950 },
+            { concept_id: 'c2', concept_code: 'd4-prompt-engineering', concept_name: 'Prompt Engineering', elo_score: 980 },
+          ]);
+        }
+      } catch (err) {
+        console.error('Failed to fetch weak concepts:', err);
+        setWeakConcepts([
+          { concept_id: 'c1', concept_code: 'd8-rag-pipeline', concept_name: 'RAG Pipeline', elo_score: 950 },
+          { concept_id: 'c2', concept_code: 'd4-prompt-engineering', concept_name: 'Prompt Engineering', elo_score: 980 },
+        ]);
+      } finally {
+        setIsLoadingWeakConcepts(false);
+      }
+    };
+    fetchWeakConcepts();
+  }, [selectedStudentId, token]);
+
+  // Sync selectedConceptCode with selectedDocForQuizGen concept code
+  useEffect(() => {
+    if (selectedDocForQuizGen) {
+      setSelectedConceptCode(selectedDocForQuizGen.concept);
+    } else {
+      setSelectedConceptCode('');
+    }
+  }, [selectedDocForQuizGen]);
+
+  // Trigger targeted weakness quiz generation
+  const runWeaknessQuizGen = async () => {
+    const selectedConceptObj = weakConcepts.find((c) => c.concept_code === selectedConceptForGen);
+    const conceptName = selectedConceptObj?.concept_name || selectedConceptForGen;
+
+    if (!weaknessParams.isLiveMode) {
+      setIsGeneratingWeaknessQuiz(true);
+      setWeaknessProgress(0);
+      setWeaknessLogs([]);
+      setWeaknessCompleted(false);
+
+      const mockLogs = [
+        '[System] Đang bắt đầu luồng sinh câu hỏi mục tiêu cá nhân hóa cho học viên...',
+        `[Mastery] Đã phân tích thấy concept [${conceptName}] thuộc diện yếu (Cần củng cố).`,
+        `[RAG] Đang truy vấn slide bài giảng tương thích cho concept [${selectedConceptForGen}] từ Database...`,
+        `[LLM Generator] Đang phân tích và tạo câu hỏi kèm 3 mức độ gợi ý Socratic (tiếng Việt)...`,
+        '[Validator] Đang kiểm tra cấu trúc JSON schema câu hỏi...',
+        `🎉 [Thành công] Đã tạo thành công ${weaknessParams.numQuestions} câu hỏi nháp khắc phục điểm yếu!`,
+      ];
+
+      let logIndex = 0;
+      const interval = setInterval(() => {
+        if (logIndex < mockLogs.length) {
+          setWeaknessLogs((prev) => [...prev, mockLogs[logIndex]]);
+          setWeaknessProgress((prev) => Math.min(prev + 18, 90));
+          logIndex++;
+        } else {
+          clearInterval(interval);
+          setWeaknessProgress(100);
+          setWeaknessCompleted(true);
+          setIsGeneratingWeaknessQuiz(false);
+        }
+      }, 600);
+      return;
+    }
+
+    setIsGeneratingWeaknessQuiz(true);
+    setWeaknessProgress(0);
+    setWeaknessLogs(['[Live Mode] Bắt đầu kết nối FastAPI backend và Supabase...', '[Live Mode] Đang kiểm tra thông tin học viên và concept yếu...']);
+    setWeaknessCompleted(false);
+
+    try {
+      setWeaknessProgress(20);
+      setWeaknessLogs((prev) => [...prev, `[Live Mode] Đang gửi yêu cầu sinh ${weaknessParams.numQuestions} câu hỏi cho concept [${selectedConceptForGen}]...`]);
+      
+      const { generateQuizzesForWeakness } = await import('@/lib/mentor/materials');
+      
+      await generateQuizzesForWeakness(
+        {
+          studentId: selectedStudentId,
+          conceptCode: selectedConceptForGen,
+          numQuestions: weaknessParams.numQuestions,
+          difficulty: weaknessParams.difficulty,
+          socraticHints: weaknessParams.socraticHints,
+          promptOverride: weaknessParams.promptOverride || undefined,
+        },
+        token
+      );
+
+      setWeaknessProgress(70);
+      setWeaknessLogs((prev) => [...prev, '[Live Mode] Background pipeline đã bắt đầu chạy trên server.', '[Live Mode] Đang đồng bộ hóa câu hỏi nháp vào CSDL Supabase...']);
+      
+      setTimeout(() => {
+        setWeaknessProgress(100);
+        setWeaknessCompleted(true);
+        setIsGeneratingWeaknessQuiz(false);
+        setWeaknessLogs((prev) => [...prev, '🎉 [Thành công] Đã hoàn thành kích hoạt sinh câu hỏi trên Live DB! Vui lòng chuyển sang tab Quản lý quiz để duyệt.']);
+      }, 1500);
+
+    } catch (err) {
+      console.error('Failed to generate weakness quizzes:', err);
+      setWeaknessLogs((prev) => [...prev, `[Error] Có lỗi xảy ra: ${err instanceof Error ? err.message : String(err)}`]);
+      setIsGeneratingWeaknessQuiz(false);
+    }
+  };
 
   // Concept Options state (fallback to static CONCEPT_OPTIONS in demo mode)
   const [conceptOptions, setConceptOptions] = useState<Array<{ code: string; name: string }>>(CONCEPT_OPTIONS);
@@ -360,7 +577,7 @@ export const IngestionTab: React.FC<IngestionTabProps> = ({ onNavigateToQuizEdit
   };
 
   const runQuizGen = async () => {
-    if (demoMode) {
+    if (!isLiveMode && demoMode) {
       runQuizGenMock();
       return;
     }
@@ -386,15 +603,16 @@ export const IngestionTab: React.FC<IngestionTabProps> = ({ onNavigateToQuizEdit
         numQuestions: quizGenParams.numQuestions,
         difficulty: quizGenParams.difficulty,
         socraticHints: quizGenParams.socraticHints,
-        conceptCode: selectedDocForQuizGen.concept,
-      });
+        conceptCode: selectedConceptCode || selectedDocForQuizGen.concept,
+        promptOverride: promptOverride || undefined,
+      }, token);
 
       clearInterval(interval);
       setQuizGenProgress(100);
       setQuizGenCompleted(true);
 
       // Re-fetch materials list
-      const data = await fetchMaterials();
+      const data = await fetchMaterials(token);
       setDocuments(data);
     } catch (err) {
       console.error('Failed to generate quizzes:', err);
@@ -568,6 +786,16 @@ export const IngestionTab: React.FC<IngestionTabProps> = ({ onNavigateToQuizEdit
             >
               🕸️ Đồ thị tri thức
             </button>
+            <button
+              onClick={() => setActiveWorkspaceTab('weakness-gen')}
+              className={`rounded-xl px-4 py-2 text-[10px] font-black uppercase tracking-wide transition-all ${
+                activeWorkspaceTab === 'weakness-gen'
+                  ? 'border border-stone-200 bg-white text-primary-green-dark shadow-sm'
+                  : 'text-stone-500'
+              }`}
+            >
+              🎯 Sinh theo điểm yếu
+            </button>
           </div>
         </div>
       </section>
@@ -690,7 +918,7 @@ export const IngestionTab: React.FC<IngestionTabProps> = ({ onNavigateToQuizEdit
             </div>
           </section>
         </div>
-      ) : (
+      ) : activeWorkspaceTab === 'graph' ? (
         /* Knowledge Graph Sub-tab */
         <section className="rounded-3xl border-2 border-gray-border bg-white p-5 shadow-sm md:p-6">
           <div className="flex flex-col md:flex-row md:items-start md:justify-between border-b border-stone-100 pb-4 mb-5 gap-3">
@@ -718,85 +946,83 @@ export const IngestionTab: React.FC<IngestionTabProps> = ({ onNavigateToQuizEdit
 
           {/* Add Relation Box */}
           <div className="rounded-2xl border-2 border-gray-border bg-stone-50/50 p-4 space-y-3 mb-6">
-            <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-stone-600">
-              <Plus className="h-4 w-4 text-primary-green" />
-              <span>Thêm mối quan hệ tri thức mới</span>
-            </div>
-
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-              <div className="space-y-1">
-                <label className="text-[9px] font-black uppercase text-stone-400">Kỹ năng nguồn (Source)</label>
+            <div className="flex flex-col md:flex-row md:items-center gap-4">
+              <div className="flex-1 space-y-1">
+                <label className="text-[9px] font-black uppercase tracking-wider text-stone-400">Khái niệm nguồn</label>
                 <select
                   value={newRelation.sourceSkill}
-                  onChange={(e) =>
-                    setNewRelation((current) => ({ ...current, sourceSkill: e.target.value }))
-                  }
-                  className="w-full rounded-xl border-2 border-gray-border bg-white px-3 py-2 text-xs font-semibold text-stone-700 focus:border-primary-green focus:outline-none"
+                  onChange={(e) => setNewRelation((prev) => ({ ...prev, sourceSkill: e.target.value }))}
+                  className="w-full rounded-xl border border-stone-200 p-2 text-xs font-bold text-stone-700 bg-white"
                 >
-                  {SKILL_OPTIONS.map((skill) => (
-                    <option key={`source-${skill}`} value={skill}>
-                      {skill}
+                  {SKILL_OPTIONS.map((opt) => (
+                    <option key={opt} value={opt}>
+                      {opt}
                     </option>
                   ))}
                 </select>
               </div>
 
-              <div className="space-y-1">
-                <label className="text-[9px] font-black uppercase text-stone-400">Kỹ năng đích (Target)</label>
+              <div className="flex items-center justify-center pt-4 md:pt-0">
+                <ArrowRight className="w-5 h-5 text-stone-400 rotate-90 md:rotate-0" />
+              </div>
+
+              <div className="flex-1 space-y-1">
+                <label className="text-[9px] font-black uppercase tracking-wider text-stone-400">Khái niệm đích</label>
                 <select
                   value={newRelation.targetSkill}
-                  onChange={(e) =>
-                    setNewRelation((current) => ({ ...current, targetSkill: e.target.value }))
-                  }
-                  className="w-full rounded-xl border-2 border-gray-border bg-white px-3 py-2 text-xs font-semibold text-stone-700 focus:border-primary-green focus:outline-none"
+                  onChange={(e) => setNewRelation((prev) => ({ ...prev, targetSkill: e.target.value }))}
+                  className="w-full rounded-xl border border-stone-200 p-2 text-xs font-bold text-stone-700 bg-white"
                 >
-                  {SKILL_OPTIONS.map((skill) => (
-                    <option key={`target-${skill}`} value={skill}>
-                      {skill}
+                  {SKILL_OPTIONS.map((opt) => (
+                    <option key={opt} value={opt}>
+                      {opt}
                     </option>
                   ))}
                 </select>
               </div>
 
-              <div className="space-y-1">
-                <label className="text-[9px] font-black uppercase text-stone-400">Loại liên kết</label>
+              <div className="flex-1 space-y-1">
+                <label className="text-[9px] font-black uppercase tracking-wider text-stone-400">Loại quan hệ</label>
                 <select
                   value={newRelation.relationType}
                   onChange={(e) =>
-                    setNewRelation((current) => ({
-                      ...current,
-                      relationType: e.target.value as RelationType,
-                    }))
+                    setNewRelation((prev) => ({ ...prev, relationType: e.target.value as RelationType }))
                   }
-                  className="w-full rounded-xl border-2 border-gray-border bg-white px-3 py-2 text-xs font-semibold text-stone-700 focus:border-primary-green focus:outline-none"
+                  className="w-full rounded-xl border border-stone-200 p-2 text-xs font-bold text-stone-700 bg-white"
                 >
-                  <option value="Tiên quyết">Tiên quyết (Prerequisite)</option>
-                  <option value="Đồng yêu cầu">Đồng yêu cầu (Co-requisite)</option>
-                  <option value="Mở rộng">Mở rộng (Extension)</option>
+                  <option value="Tiên quyết">Tiên quyết</option>
+                  <option value="Đồng yêu cầu">Đồng yêu cầu</option>
+                  <option value="Mở rộng">Mở rộng</option>
                 </select>
               </div>
-            </div>
 
-            <button type="button" onClick={addRelation} className="btn-3d btn-blue text-[10px] py-2">
-              <Plus className="mr-1 h-3.5 w-3.5 inline" />
-              Thêm liên kết
-            </button>
+              <div className="pt-4 md:pt-4 self-end">
+                <button
+                  type="button"
+                  onClick={addRelation}
+                  className="btn-3d btn-green text-[10px] py-2 px-4 whitespace-nowrap flex items-center gap-1"
+                >
+                  <Plus className="w-4 h-4" />
+                  Thêm mối quan hệ
+                </button>
+              </div>
+            </div>
           </div>
 
-          {/* Relation filter tabs */}
-          <div className="flex flex-wrap gap-2 mb-4">
+          {/* Filter Row */}
+          <div className="flex flex-wrap gap-1.5 mb-5 border-b border-stone-100 pb-4">
             {[
               { id: 'all', label: 'Tất cả' },
-              { id: 'pending', label: 'Chờ duyệt' },
-              { id: 'approved', label: 'Đã duyệt' },
-              { id: 'rejected', label: 'Từ chối' },
+              { id: 'pending', label: `Chờ duyệt (${relationCounts.pending})` },
+              { id: 'approved', label: `Đã duyệt (${relationCounts.approved})` },
+              { id: 'rejected', label: `Từ chối (${relationCounts.rejected})` },
             ].map((f) => {
               const isActive = relationFilter === f.id;
               return (
                 <button
                   key={f.id}
                   type="button"
-                  onClick={() => setRelationFilter(f.id as 'all' | RelationStatus)}
+                  onClick={() => setRelationFilter(f.id as any)}
                   className={`rounded-full border px-3 py-1.5 text-[9px] font-black uppercase tracking-wide transition-all ${
                     isActive
                       ? 'border-primary-green bg-primary-green/10 text-primary-green-dark'
@@ -830,31 +1056,30 @@ export const IngestionTab: React.FC<IngestionTabProps> = ({ onNavigateToQuizEdit
                       </span>
                       <span
                         className={`rounded-full border px-2 py-0.5 text-[9px] font-black uppercase tracking-wide ${
-                          relation.reviewStatus === 'approved'
-                            ? 'border-primary-green/20 bg-primary-green-light/40 text-primary-green-dark'
-                            : relation.reviewStatus === 'rejected'
-                              ? 'border-rose-200 bg-rose-50 text-rose-700'
-                              : 'border-amber-300 bg-amber-50 text-amber-700'
+                          relation.reviewStatus === 'pending'
+                            ? 'border-amber-200 bg-amber-50 text-amber-700'
+                            : relation.reviewStatus === 'approved'
+                            ? 'border-emerald-200 bg-emerald-50 text-emerald-700'
+                            : 'border-rose-200 bg-rose-50 text-rose-700'
                         }`}
                       >
-                        {relation.reviewStatus === 'approved'
+                        {relation.reviewStatus === 'pending'
+                          ? 'Đang chờ duyệt'
+                          : relation.reviewStatus === 'approved'
                           ? 'Đã duyệt'
-                          : relation.reviewStatus === 'rejected'
-                            ? 'Từ chối'
-                            : 'Chờ duyệt'}
+                          : 'Bị từ chối'}
                       </span>
                     </div>
 
-                    <div className="flex items-center gap-2 text-xs font-black text-stone-800">
-                      <BookOpen className="h-4 w-4 shrink-0 text-primary-green-dark" />
+                    <div className="flex items-center gap-2 text-xs font-extrabold text-stone-700">
                       <span>{relation.sourceSkill}</span>
-                      <Link2 className="h-4 w-4 text-stone-300" />
+                      <ArrowRight className="w-3.5 h-3.5 text-stone-400" />
                       <span>{relation.targetSkill}</span>
                     </div>
                   </div>
 
                   {relation.reviewStatus === 'pending' && (
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex items-center gap-2 self-start xl:self-auto border-t border-stone-100 xl:border-0 pt-3 xl:pt-0 w-full xl:w-auto">
                       <button
                         type="button"
                         onClick={() => updateRelationStatus(relation.id, 'approved')}
@@ -882,6 +1107,282 @@ export const IngestionTab: React.FC<IngestionTabProps> = ({ onNavigateToQuizEdit
                 Không tìm thấy mối quan hệ tri thức nào phù hợp bộ lọc.
               </div>
             )}
+          </div>
+        </section>
+      ) : (
+        /* Weakness-Gen targeted Quiz Generation Sub-tab */
+        <section className="rounded-3xl border-2 border-gray-border bg-white p-5 shadow-sm md:p-6 space-y-6">
+          <div>
+            <h4 className="text-sm font-black text-on-background uppercase tracking-tight">
+              🎯 Sinh câu hỏi bám sát điểm yếu của Học viên
+            </h4>
+            <p className="text-[11px] text-stone-400 font-semibold mt-0.5">
+              Tạo câu hỏi ôn tập cá nhân hóa dựa trên những lỗ hổng kiến thức thực tế từ lộ trình học tập của từng học viên.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {/* Student List */}
+            <div className="border border-stone-200 rounded-2xl p-4 bg-stone-50/50 space-y-3">
+              <h5 className="text-xs font-black text-stone-600 uppercase tracking-wider">Danh sách Học viên</h5>
+              {isLoadingStudents ? (
+                <div className="flex items-center justify-center py-10">
+                  <Loader2 className="w-6 h-6 text-primary-green animate-spin" />
+                </div>
+              ) : (
+                <div className="space-y-2 max-h-[400px] overflow-y-auto pr-1">
+                  {students.map((student) => (
+                    <button
+                      key={student.id}
+                      type="button"
+                      onClick={() => {
+                        setSelectedStudentId(student.id);
+                        setSelectedConceptForGen('');
+                        setWeaknessCompleted(false);
+                        setWeaknessLogs([]);
+                        setWeaknessProgress(0);
+                      }}
+                      className={`w-full text-left p-3 rounded-xl border transition-all flex flex-col gap-1 ${
+                        selectedStudentId === student.id
+                          ? 'border-primary-green bg-primary-green/5 shadow-sm'
+                          : 'border-stone-200 bg-white hover:border-stone-300'
+                      }`}
+                    >
+                      <span className="text-xs font-bold text-stone-700">{student.full_name || 'Học viên'}</span>
+                      <span className="text-[10px] text-stone-400 font-semibold">{student.email}</span>
+                      <div className="flex items-center justify-between mt-2 pt-1 border-t border-stone-100 w-full text-[9px] font-black uppercase text-stone-500">
+                        <span>Elo TB: {student.average_elo || 1200}</span>
+                        {student.skills?.some((sk: any) => sk.mastery_state === 'weak') && (
+                          <span className="text-rose-600 bg-rose-50 px-1.5 py-0.5 rounded-full">Cần hỗ trợ</span>
+                        )}
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Weak Concepts and Generator Configuration */}
+            <div className="lg:col-span-2 border border-stone-200 rounded-2xl p-4 bg-white space-y-4">
+              {!selectedStudentId ? (
+                <div className="flex flex-col items-center justify-center py-20 text-center space-y-2">
+                  <BookOpen className="w-10 h-10 text-stone-300" />
+                  <p className="text-xs font-bold text-stone-400">Chọn một học viên để xem các khái niệm bị yếu</p>
+                </div>
+              ) : (
+                <>
+                  <div className="border-b border-stone-100 pb-3 flex items-center justify-between">
+                    <div>
+                      <h5 className="text-xs font-black text-stone-700">
+                        Hồ sơ điểm yếu: {students.find((s) => s.id === selectedStudentId)?.full_name}
+                      </h5>
+                      <p className="text-[10px] text-stone-400 font-semibold">
+                        Lấy từ bảng student_concept_mastery trong cơ sở dữ liệu
+                      </p>
+                    </div>
+                  </div>
+
+                  {isLoadingWeakConcepts ? (
+                    <div className="flex items-center justify-center py-10">
+                      <Loader2 className="w-6 h-6 text-primary-green animate-spin" />
+                    </div>
+                  ) : isGeneratingWeaknessQuiz ? (
+                    /* GENERATOR RUNNING console UI */
+                    <div className="space-y-4 bg-stone-900 text-stone-100 p-4 rounded-2xl font-mono text-[10px]">
+                      <div className="flex items-center gap-2 text-emerald-400">
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        <span className="font-black uppercase tracking-wider">AI Pipeline is generating targeted quizzes...</span>
+                      </div>
+                      <div className="bg-stone-950 p-3 border border-stone-800 rounded-xl space-y-1 h-48 overflow-y-auto custom-scrollbar">
+                        {weaknessLogs.map((log, index) => (
+                          <div key={index} className="flex gap-2">
+                            <span className="text-stone-600 select-none">[{index + 1}]</span>
+                            <span className={(log && typeof log === 'string' && log.startsWith('[Error]')) ? 'text-red-400' : (log && typeof log === 'string' && log.includes('Thành công')) ? 'text-emerald-400' : 'text-stone-300'}>{log || ''}</span>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="space-y-1">
+                        <div className="flex justify-between text-[9px] text-stone-400 font-black uppercase">
+                          <span>Tiến độ xử lý</span>
+                          <span>{weaknessProgress}%</span>
+                        </div>
+                        <div className="h-1.5 bg-stone-800 rounded-full overflow-hidden">
+                          <div className="h-full bg-emerald-400 transition-all" style={{ width: `${weaknessProgress}%` }} />
+                        </div>
+                      </div>
+                    </div>
+                  ) : weaknessCompleted ? (
+                    /* COMPLETION VIEW */
+                    <div className="flex flex-col items-center justify-center text-center p-6 space-y-4">
+                      <div className="h-12 w-12 bg-primary-green/10 rounded-full flex items-center justify-center text-primary-green-dark border border-primary-green/20">
+                        <Check className="w-6 h-6 stroke-[3]" />
+                      </div>
+                      <div>
+                        <h6 className="text-xs font-black text-stone-800">Đã sinh bộ câu hỏi nhắm mục tiêu điểm yếu!</h6>
+                        <p className="text-[11px] font-semibold text-stone-500 mt-1 max-w-sm">
+                          Bộ {weaknessParams.numQuestions} câu hỏi trắc nghiệm tiếng Việt kèm gợi ý Socratic đã được sinh thành công và lưu ở trạng thái bản nháp.
+                        </p>
+                      </div>
+                      <div className="flex gap-2 w-full max-w-xs pt-2">
+                        <button
+                          type="button"
+                          onClick={() => setWeaknessCompleted(false)}
+                          className="btn-3d btn-white text-[10px] py-2 flex-1"
+                        >
+                          Sinh tiếp
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            if (onNavigateToQuizEditor) {
+                              const conceptObj = weakConcepts.find((c) => c.concept_code === selectedConceptForGen);
+                              onNavigateToQuizEditor(conceptObj?.concept_name || selectedConceptForGen);
+                            }
+                          }}
+                          className="btn-3d btn-green text-[10px] py-2 flex-1"
+                        >
+                          Duyệt ngay
+                        </button>
+                      </div>
+                    </div>
+                  ) : weakConcepts.length === 0 ? (
+                    <div className="text-center py-10">
+                      <p className="text-xs font-bold text-stone-400">
+                        Học sinh này hiện tại không có khái niệm nào ở trạng thái Yếu.
+                      </p>
+                      <p className="text-[10px] text-stone-400 font-semibold mt-1">
+                        Hệ thống tự đồng bộ từ các câu trả lời sai gần đây.
+                      </p>
+                    </div>
+                  ) : (
+                    <div className="space-y-4">
+                      <div className="space-y-2">
+                        <label className="text-[10px] font-black uppercase text-stone-400">Chọn Concept yếu cần khắc phục</label>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                          {weakConcepts.map((c) => (
+                            <button
+                              key={c.concept_id}
+                              type="button"
+                              onClick={() => setSelectedConceptForGen(c.concept_code)}
+                              className={`p-3 rounded-xl border text-left flex flex-col gap-1 transition-all ${
+                                selectedConceptForGen === c.concept_code
+                                  ? 'border-primary-green bg-primary-green/5 shadow-sm'
+                                  : 'border-stone-200 hover:border-stone-300 bg-white'
+                              }`}
+                            >
+                              <span className="text-xs font-bold text-stone-700">{c.concept_name || c.concept_code}</span>
+                              <div className="flex items-center justify-between text-[9px] font-mono text-stone-400 font-bold mt-1">
+                                <span>Mã: #{c.concept_code}</span>
+                                <span className="text-rose-600 bg-rose-50 px-1 rounded">Elo: {Math.round(c.elo_score)}</span>
+                              </div>
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+
+                      {selectedConceptForGen && (
+                        <div className="space-y-4 pt-3 border-t border-stone-100">
+                          {/* Live Mode Toggle */}
+                          <div className="flex items-center justify-between rounded-xl border border-stone-200 p-3 bg-stone-50">
+                            <div className="space-y-0.5">
+                              <p className="text-xs font-bold text-stone-700">Kết nối cơ sở dữ liệu thật (Supabase Live)</p>
+                              <p className="text-[10px] font-semibold text-stone-400">Gọi API FastAPI thực để cập nhật DB</p>
+                            </div>
+                            <label className="relative inline-flex items-center cursor-pointer">
+                              <input
+                                type="checkbox"
+                                checked={weaknessParams.isLiveMode}
+                                onChange={(e) => setWeaknessParams((prev) => ({ ...prev, isLiveMode: e.target.checked }))}
+                                className="sr-only peer"
+                              />
+                              <div className="w-9 h-5 bg-stone-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-stone-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary-green"></div>
+                            </label>
+                          </div>
+
+                          <div className="grid grid-cols-2 gap-4">
+                            {/* Num questions */}
+                            <div className="space-y-1.5">
+                              <label className="text-[10px] font-black uppercase text-stone-400">Số câu hỏi sinh</label>
+                              <select
+                                value={weaknessParams.numQuestions}
+                                onChange={(e) => setWeaknessParams((prev) => ({ ...prev, numQuestions: parseInt(e.target.value) }))}
+                                className="w-full rounded-xl border border-stone-200 p-2 text-xs font-bold text-stone-600 bg-white"
+                              >
+                                <option value={3}>3 câu</option>
+                                <option value={5}>5 câu</option>
+                                <option value={10}>10 câu</option>
+                              </select>
+                            </div>
+                            {/* Difficulty */}
+                            <div className="space-y-1.5">
+                              <label className="text-[10px] font-black uppercase text-stone-400">Độ khó mục tiêu</label>
+                              <select
+                                value={weaknessParams.difficulty}
+                                onChange={(e) => setWeaknessParams((prev) => ({ ...prev, difficulty: e.target.value }))}
+                                className="w-full rounded-xl border border-stone-200 p-2 text-xs font-bold text-stone-600 bg-white"
+                              >
+                                <option value="dễ">Dễ (Nhận biết)</option>
+                                <option value="bình thường">Bình thường (Thông hiểu)</option>
+                                <option value="khó">Khó (Vận dụng)</option>
+                              </select>
+                            </div>
+                          </div>
+
+                          {/* Accordion Custom Prompt */}
+                          <div className="rounded-xl border border-stone-200 overflow-hidden">
+                            <button
+                              type="button"
+                              onClick={() => setShowWeaknessPromptEditor(!showWeaknessPromptEditor)}
+                              className="w-full bg-stone-50 px-4 py-2.5 flex items-center justify-between text-xs font-bold text-stone-700 hover:bg-stone-100 transition-all"
+                            >
+                              <span>🛠️ Tùy chỉnh Prompt Sư phạm (CT GDPT 2018)</span>
+                              <span>{showWeaknessPromptEditor ? '▲' : '▼'}</span>
+                            </button>
+                            {showWeaknessPromptEditor && (
+                              <div className="p-3 bg-white border-t border-stone-200 space-y-2">
+                                <textarea
+                                  rows={5}
+                                  value={weaknessParams.promptOverride}
+                                  onChange={(e) => setWeaknessParams((prev) => ({ ...prev, promptOverride: e.target.value }))}
+                                  placeholder="Nhập prompt tùy chỉnh cho điểm yếu (để trống để dùng prompt GDPT 2018 mặc định)..."
+                                  className="w-full rounded-xl border border-stone-300 p-3.5 font-mono text-[9px] text-stone-600 focus:outline-none focus:border-primary-green focus:ring-1 focus:ring-primary-green bg-stone-50"
+                                />
+                                <div className="flex gap-2">
+                                  <button
+                                    type="button"
+                                    onClick={() => setWeaknessParams((prev) => ({ ...prev, promptOverride: DEFAULT_VIETNAMESE_QUIZ_PROMPT }))}
+                                    className="text-[9px] font-black uppercase tracking-wider text-primary-green hover:underline"
+                                  >
+                                    Tải template GDPT 2018
+                                  </button>
+                                  <button
+                                    type="button"
+                                    onClick={() => setWeaknessParams((prev) => ({ ...prev, promptOverride: '' }))}
+                                    className="text-[9px] font-black uppercase tracking-wider text-stone-400 hover:underline"
+                                  >
+                                    Xóa trống
+                                  </button>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+
+                          {/* Submit button */}
+                          <button
+                            type="button"
+                            onClick={runWeaknessQuizGen}
+                            className="btn-3d text-[11px] py-3 w-full flex items-center justify-center gap-1.5 btn-green"
+                          >
+                            <Sparkles className="w-4 h-4" />
+                            Bắt đầu sinh Quiz khắc phục điểm yếu
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </>
+              )}
+            </div>
           </div>
         </section>
       )}
@@ -1045,6 +1546,39 @@ export const IngestionTab: React.FC<IngestionTabProps> = ({ onNavigateToQuizEdit
                     </div>
                   </div>
 
+                  {/* Toggle Live Mode */}
+                  <div className="flex items-center justify-between rounded-xl border border-stone-200 p-4 bg-stone-50">
+                    <div className="space-y-0.5">
+                      <p className="text-xs font-bold text-stone-700">Chế độ Cơ sở dữ liệu Live (Supabase)</p>
+                      <p className="text-[10px] font-semibold text-stone-400">Sinh câu hỏi lưu trực tiếp vào CSDL thật</p>
+                    </div>
+                    <label className="relative inline-flex items-center cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={isLiveMode}
+                        onChange={(e) => setIsLiveMode(e.target.checked)}
+                        className="sr-only peer"
+                      />
+                      <div className="w-9 h-5 bg-stone-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-stone-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary-green"></div>
+                    </label>
+                  </div>
+
+                  {/* Concept Selector */}
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-black uppercase text-stone-400">Chọn Concept mục tiêu</label>
+                    <select
+                      value={selectedConceptCode}
+                      onChange={(e) => setSelectedConceptCode(e.target.value)}
+                      className="w-full rounded-xl border-2 border-gray-border p-2.5 text-xs font-bold text-stone-700 bg-white focus:outline-none focus:border-primary-green"
+                    >
+                      {conceptOptions.map((opt) => (
+                        <option key={opt.code} value={opt.code}>
+                          {opt.name} ({opt.code})
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
                   <div className="space-y-2">
                     <label className="text-[10px] font-black uppercase text-stone-400">Số lượng câu hỏi sinh nháp</label>
                     <div className="grid grid-cols-3 gap-2">
@@ -1101,6 +1635,48 @@ export const IngestionTab: React.FC<IngestionTabProps> = ({ onNavigateToQuizEdit
                     </label>
                   </div>
 
+                  {/* Accordion Custom Prompt */}
+                  <div className="rounded-xl border border-stone-200 overflow-hidden">
+                    <button
+                      type="button"
+                      onClick={() => setShowPromptEditor(!showPromptEditor)}
+                      className="w-full bg-stone-50 px-4 py-3 flex items-center justify-between text-xs font-bold text-stone-700 hover:bg-stone-100 transition-all"
+                    >
+                      <span>🛠️ Tùy chỉnh Prompt sinh câu hỏi (Nâng cao)</span>
+                      <span>{showPromptEditor ? '▲' : '▼'}</span>
+                    </button>
+                    {showPromptEditor && (
+                      <div className="p-4 bg-white border-t border-stone-200 space-y-3">
+                        <p className="text-[10px] text-stone-400 font-semibold leading-relaxed">
+                          Bạn có thể sửa đổi prompt dưới đây để định hình phong cách hoặc yêu cầu đặc thù cho các câu hỏi được sinh ra (hỗ trợ các biến như {"{num_questions}"}, {"{concept_name}"}, {"{difficulty}"}, {"{slides_content}"}).
+                        </p>
+                        <textarea
+                          rows={6}
+                          value={promptOverride}
+                          onChange={(e) => setPromptOverride(e.target.value)}
+                          placeholder="Nhập prompt tùy chỉnh tại đây (để trống nếu muốn dùng prompt GDPT 2018 mặc định)..."
+                          className="w-full rounded-xl border border-stone-300 p-3 font-mono text-[10px] text-stone-600 focus:outline-none focus:border-primary-green focus:ring-1 focus:ring-primary-green bg-stone-50"
+                        />
+                        <div className="flex gap-2">
+                          <button
+                            type="button"
+                            onClick={() => setPromptOverride(DEFAULT_VIETNAMESE_QUIZ_PROMPT)}
+                            className="text-[9px] font-black uppercase tracking-wider text-primary-green hover:underline"
+                          >
+                            Tải template GDPT 2018
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => setPromptOverride('')}
+                            className="text-[9px] font-black uppercase tracking-wider text-stone-400 hover:underline"
+                          >
+                            Xóa trống
+                          </button>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
                   <div className="pt-4 border-t border-stone-100 flex gap-2">
                     <button
                       type="button"
@@ -1129,7 +1705,7 @@ export const IngestionTab: React.FC<IngestionTabProps> = ({ onNavigateToQuizEdit
                       {quizGenLogs.map((log, index) => (
                         <div key={index} className="flex gap-2">
                           <span className="text-stone-600 select-none">[{index + 1}]</span>
-                          <span>{log}</span>
+                          <span>{log || ''}</span>
                         </div>
                       ))}
                       <div className="text-amber-400 animate-pulse">[Xử lý] Đang biên dịch tri thức...</div>
@@ -1368,7 +1944,7 @@ export const IngestionTab: React.FC<IngestionTabProps> = ({ onNavigateToQuizEdit
                   {uploadLogs.map((log, index) => (
                     <div key={index} className="flex gap-2">
                       <span className="text-stone-600 select-none">[{index + 1}]</span>
-                      <span>{log}</span>
+                      <span>{log || ''}</span>
                     </div>
                   ))}
                   <div className="text-amber-400 animate-pulse">[Xử lý] Đang phân mảnh và trích xuất vector...</div>
