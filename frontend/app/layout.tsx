@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import "@fontsource-variable/plus-jakarta-sans";
 import "./globals.css";
 
@@ -15,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="vi" suppressHydrationWarning>
-      <body suppressHydrationWarning>{children}</body>
+      <body suppressHydrationWarning><Suspense fallback={null}>{children}</Suspense></body>
     </html>
   );
 }

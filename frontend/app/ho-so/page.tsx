@@ -1,9 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { AppShell, LevelBadge, ProgressBar } from "../components/AppShell";
 import { activeLearningLevel } from "../data";
-import { Suspense } from "react";
+import { useAuthSession } from "../lib/session";
 
 const activity = [
   { title: "Quy đồng hai phân số", kind: "Bài học", when: "Hôm nay · 16:20", progress: 60, href: "/bai-hoc/phan-so" },
@@ -17,16 +19,26 @@ const stats = [
   { label: "Cần ôn", value: "1", note: "kỹ năng vận dụng", tone: "review" },
 ];
 
-function ProfilePageContent() {
+export default function ProfilePage() {
+  const router = useRouter();
+  const authSession = useAuthSession();
+
+  useEffect(() => {
+    if (!authSession) router.replace("/auth?next=/ho-so");
+  }, [authSession, router]);
+
+  if (!authSession) {
+    return <main className="profile-auth-pending" aria-live="polite">Đang chuyển đến trang đăng nhập...</main>;
+  }
   return (
-    <>
+    <AppShell>
       <section className="profile-studio">
         <div className="profile-hero-panel">
           <div className="profile-avatar-block">
             <span className="profile-avatar">HN</span>
             <div>
               <span className="overline">Hồ sơ học tập</span>
-              <h1>Hoàng Nam</h1>
+              <h1>{authSession.user.fullName}</h1>
               <p>Lớp 7A · Toán học · đang học Chương 1</p>
             </div>
           </div>
@@ -56,7 +68,7 @@ function ProfilePageContent() {
               <Link className="secondary-action" href="/onboarding">Điều chỉnh</Link>
             </div>
             <dl className="profile-detail-list">
-              <div><dt>Email</dt><dd>nam@school.edu.vn</dd></div>
+              <div><dt>Email</dt><dd>{authSession.user.email}</dd></div>
               <div><dt>Lớp hiện tại</dt><dd>7A</dd></div>
               <div><dt>Level</dt><dd>Intermediate</dd></div>
               <div><dt>Nhịp học</dt><dd>30 phút mỗi ngày</dd></div>
@@ -88,16 +100,6 @@ function ProfilePageContent() {
           </aside>
         </section>
       </section>
-    </>
-  );
-}
-
-export default function ProfilePage() {
-  return (
-    <Suspense fallback={null}>
-      <AppShell>
-        <ProfilePageContent />
-      </AppShell>
-    </Suspense>
+    </AppShell>
   );
 }
