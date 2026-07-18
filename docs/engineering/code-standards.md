@@ -59,7 +59,7 @@ This project prioritizes simple, maintainable implementation for an Adaptive-fir
 - Default card/panel sizing: `rounded-xl`/`rounded-2xl`, `p-3`/`p-4`, `gap-2` to `gap-4`. Avoid broad use of `rounded-[28px]`, `p-6`, and `py-16 md:py-20`.
 - Use Tailwind 4 theme tokens from `frontend/app/globals.css`: cozy background, green/yellow/orange/blue/red state colors, gray borders, Be Vietnam Pro body font, Fraunces headings.
 - Use project assets from `frontend/public/brand`, `frontend/public/app-backgrounds`, `frontend/public/learning-scenery`, `frontend/public/learning-seeds`, `frontend/public/learning-soils`, and mascot folders instead of generic stock-like visuals.
-- Preserve maskable icon assets under `frontend/public/brand/edugap/` and keep PWA/browser icon references aligned with the brand package.
+- Preserve maskable icon assets under `frontend/public/brand/mentora/` and keep PWA/browser icon references aligned with the brand package.
 - Use accessible contrast, visible focus states, labels beyond color-only state, and `prefers-reduced-motion` fallbacks for animated learning UI.
 - Reflect mastery states consistently: mastered, learning, weak, not started.
 - Show loading, retry, empty, unauthorized, and offline/demo states for AI or protected backend work.

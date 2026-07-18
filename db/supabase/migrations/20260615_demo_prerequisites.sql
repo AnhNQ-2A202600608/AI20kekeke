@@ -48,8 +48,8 @@ CREATE INDEX IF NOT EXISTS idx_surveys_set_created_at
 INSERT INTO app.courses (id, code, title, status)
 VALUES (
     '00000000-0000-0000-0000-000000000001',
-    'AI20-EDUGAP',
-    'EduGap Adaptive AI Tutor',
+    'AI20-MENTORA',
+    'Mentora Adaptive AI Tutor',
     'active'
 )
 ON CONFLICT (id) DO UPDATE

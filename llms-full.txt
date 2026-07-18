@@ -6,7 +6,7 @@
 
 ### Algorithm Changelog (Adaptive Learning Core)
 
-Tài liệu này ghi lại toàn bộ các thay đổi, sửa lỗi và nâng cấp liên quan đến **Lõi Thuật toán Thích ứng (Adaptive Learning Core)** và **Bộ công cụ đánh giá thuật toán (Evaluation Suite)** của hệ thống **EduGap**.
+Tài liệu này ghi lại toàn bộ các thay đổi, sửa lỗi và nâng cấp liên quan đến **Lõi Thuật toán Thích ứng (Adaptive Learning Core)** và **Bộ công cụ đánh giá thuật toán (Evaluation Suite)** của hệ thống **Mentora**.
 
 ---
 
@@ -1420,7 +1420,7 @@ They prove only that, under one stochastic run, the code did not explode and a f
 
 The suite is a decent starting smoke test, but it is not yet an adversarial evaluation. To make it credible, I would add deterministic seeds, multiple-seed confidence intervals, exact property tests, true ZPD assertions, paired latent trajectories across agents, stronger baselines, item-feature-aware bandit tests, and graph tests that assert exact propagated values and cache behavior.
 
-### EduGap Adaptive Core — Principal Engineering & EDM Review
+### Mentora Adaptive Core — Principal Engineering & EDM Review
 
 I'll start by examining the uploaded codebase package to understand what I'm reviewing.This is a serious engineering review. Let me set up tracking and read the codebase thoroughly before forming conclusions.Core RPC captured. Now the Python services, eval suite, and the academic docs.Found a key discrepancy already (changelog cites β=0.425/γ=0.3312 but code uses 0.25; FSRS formula is actually simple exponential). Now the eval suite and the remaining service/API code.Now exp3/exp4/exp5 plus the database/API layer, schemas, widget, and plans.Now exp4 (to check the β/γ discrepancy) and the database/API/schema/widget/plan layer.Now the actual production call path: routes, the Supabase DB service, the interface, schemas, widget, and plans.I have the full production path. Let me grab the remaining interface/schema/plan files and run numerical verification of the core math claims in parallel.Verified the core claims. Marking analysis tasks done and writing up the review.I need to use the Windows-style output path that the file tools expect.Review complete. The full written audit is in the file above. The headline conclusions:
 
@@ -1435,7 +1435,7 @@ The roadmap in the doc is tiered: Tier 0 security/correctness hotfixes, Tier 1 c
 
 Want me to draft the concrete SQL/Python for any specific fix — e.g., the async outbox-based question calibrator, the RPC lock-down, or a CI test that proves SQL/Python equivalence?
 
-# EduGap Adaptive Core — Principal Engineering & EDM Review
+# Mentora Adaptive Core — Principal Engineering & EDM Review
 
 **Reviewer perspective:** Principal AI Engineer / Educational Data Mining
 **Scope reviewed:** `submit_attempt_v3` PL/pgSQL RPC, Python service layer (`adaptive_routes`, `supabase_database`, `graph_propagation`, `forgetting`), the `eval/` suite (exp1–exp5 + synthetic students), `academic-citations.mdx`, changelog, and the Elo calibration plan.
@@ -1647,7 +1647,7 @@ PDF không đọc được trực tiếp vì thiếu pdftoppm, nhưng main.tex v
 ---
 Summary
 
-Paper đề xuất một adaptive learning engine cho EduGap gồm: Elo difficulty matching, BKT mastery tracking, LinUCB recommendation, spaced repetition, concept graph propagation, và kiến trúc async outbox để tránh lock contention trong production. Contribution chính được claim là concurrency-safe architecture, Sherman-Morrison update cho LinUCB, Python/SQL algorithmic equivalence, và evaluation suite “academic-grade”.
+Paper đề xuất một adaptive learning engine cho Mentora gồm: Elo difficulty matching, BKT mastery tracking, LinUCB recommendation, spaced repetition, concept graph propagation, và kiến trúc async outbox để tránh lock contention trong production. Contribution chính được claim là concurrency-safe architecture, Sherman-Morrison update cho LinUCB, Python/SQL algorithmic equivalence, và evaluation suite “academic-grade”.
 
 Về nội dung, paper đang cố kết hợp systems engineering và learning science / recommender evaluation. Hướng này hợp với project Adaptive-first AI Tutor. Tuy nhiên paper chưa rõ mình là paper loại nào: nếu là systems paper thì thiếu benchmark concurrency thật; nếu là educational data mining paper thì thiếu real learner data, learning gain, ablation, baseline mạnh; nếu là technical report thì claim nên hạ xuống.
 
@@ -2350,7 +2350,7 @@ Relational Database        AI Microservice
 
 | Name | Type | ID | Purpose |
 | --- | --- | --- | --- |
-| Edugap | page | `37afecf3-5a15-8062-90a6-fe0245b6d453` | Root workspace portal |
+| Mentora | page | `37afecf3-5a15-8062-90a6-fe0245b6d453` | Root workspace portal |
 
 ## Hubs
 
@@ -2843,7 +2843,7 @@ docs/
 
 ### Phương pháp luận và Quy trình Đánh giá Động cơ Thích ứng (Adaptive Engine Evaluation Methodology)
 
-Tài liệu này đặc tả chi tiết quy trình, thuật toán và các tiêu chuẩn kiểm thử khoa học đối với **Động cơ Thích ứng EduGap (EduGap Adaptive Engine)**. Bộ đánh giá (`eval/` suite) được thiết kế nhằm chứng minh tính chính xác thống kê, tốc độ hội tụ và độ ổn định của các thuật toán trước khi triển khai lên môi trường chạy thực tế (Production).
+Tài liệu này đặc tả chi tiết quy trình, thuật toán và các tiêu chuẩn kiểm thử khoa học đối với **Động cơ Thích ứng Mentora (Mentora Adaptive Engine)**. Bộ đánh giá (`eval/` suite) được thiết kế nhằm chứng minh tính chính xác thống kê, tốc độ hội tụ và độ ổn định của các thuật toán trước khi triển khai lên môi trường chạy thực tế (Production).
 
 ---
 
@@ -3159,9 +3159,9 @@ graph TD
 
 ### Optimizing Personalized Knowledge Pathing: A Concurrency-Safe and Algorithmically Aligned Adaptive Learning Engine
 
-**EduGap Research & Development Group**  
-*Department of Educational Technology, EduGap Project*  
-*Contact: research@edugap.edu.vn*  
+**Mentora Research & Development Group**  
+*Department of Educational Technology, Mentora Project*  
+*Contact: research@mentora.edu.vn*  
 
 ---
 
@@ -5314,7 +5314,7 @@ Bổ sung các task tương ứng với các task `P-029` đến `P-035` vào Sp
 | Trưởng nhóm | Thành viên 1 - Product/BA + AI/RAG Lead |  |  |  |  |  |  |
 | Mentor phụ trách | [Điền tên mentor phụ trách] |  |  |  |  |  |  |
 | Đối tác sử dụng (Stakeholder) | Sinh viên khóa AI thực chiến; Mentor; BTC/Admin |  |  |  |  |  |  |
-| Kho lưu mã nguồn (GitHub) | https://github.com/blu1606/EduGap |  |  |  |  |  |  |
+| Kho lưu mã nguồn (GitHub) | https://github.com/blu1606/Mentora |  |  |  |  |  |  |
 | Địa chỉ sản phẩm (Live URL) | [Dán link staging/demo khi có] |  |  |  |  |  |  |
 | Mục tiêu dự án | Trong 4-6 tuần, xây MVP AI tutor trả lời thắc mắc kiến thức dựa trên tài liệu chính thức, kèm citation, có guardrail chống làm hộ lab/gate và demo được happy + error paths. |  |  |  |  |  |  |
 | TỔNG HỢP TIẾN ĐỘ THEO SPRINT |  |  |  |  |  |  |  |
@@ -5794,7 +5794,7 @@ flowchart TD
 23. **US-023 (Student Dashboard)**: Hiển thị biểu đồ Radar năng lực và Heatmap chuyên cần.
 24. **US-024 (Class Insight Dashboard)**: Mentor xem thống kê Elo trung bình của lớp và danh sách học viên cần can thiệp.
 
-### Experiment Log: EduGap Adaptive Learning Engine
+### Experiment Log: Mentora Adaptive Learning Engine
 
 ## Contribution (one sentence)
 We present a decoupled, concurrency-safe adaptive learning engine that eliminates database lock contention under high student concurrency while achieving mathematically aligned student modeling and content pathing.
@@ -17277,7 +17277,7 @@ Phần này hướng dẫn bạn khởi tạo dự án AI Agent từ template AI
 
 ### Package Managers & Setup Guide (uv & pnpm)
 
-This guide documents the setup and usage of package managers in the EduGap codebase.
+This guide documents the setup and usage of package managers in the Mentora codebase.
 
 ## Backend (Python): `uv`
 

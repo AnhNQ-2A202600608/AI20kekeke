@@ -288,7 +288,8 @@ async def respond_node(state: AgentState) -> dict:
             facts_text += f"- Tên: {long_term_facts.get('name', 'Chưa rõ')}\n"
             facts_text += f"- Ngôn ngữ lập trình yêu thích: {long_term_facts.get('prefer_language', 'Chưa rõ')}\n"
             if long_term_facts.get("struggles_with"):
-                facts_text += f"- Chủ đề đang gặp khó khăn: {', '.join(long_term_facts['struggles_with'])}\n"
+                facts_text += f"- Các chủ đề học sinh từng hỏi/tìm hiểu: {', '.join(long_term_facts['struggles_with'])}\n"
+                facts_text += "  (Lưu ý: Đây chỉ là lịch sử câu hỏi, không phải lỗ hổng kiến thức được xác nhận từ ENGINE. Tuyệt đối không tự gán hoặc phán xét học sinh yếu các phần này.)\n"
             if long_term_facts.get("strengths"):
                 facts_text += f"- Điểm mạnh: {', '.join(long_term_facts['strengths'])}\n"
             if long_term_facts.get("other_facts"):

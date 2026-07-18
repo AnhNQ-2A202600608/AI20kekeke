@@ -20,7 +20,7 @@ function LoginFallback() {
   return (
     <main className="grid min-h-[100dvh] place-items-center bg-background px-4 text-on-background font-be-vietnam-pro">
       <div className="rounded-2xl border-2 border-gray-border border-b-[5px] bg-white px-5 py-4 text-center shadow-sm">
-        <p className="text-sm font-black uppercase text-primary-green-dark">Edugap</p>
+        <p className="text-sm font-black uppercase text-primary-green-dark">Mentora</p>
         <p className="mt-1 text-xs font-bold text-stone-500">Đang mở cổng đăng nhập...</p>
       </div>
     </main>
@@ -191,7 +191,7 @@ function LoginPageContent() {
       <header className="mx-auto flex h-11 w-full max-w-[920px] items-center px-4 sm:px-6">
         <Link
           href="/"
-          aria-label="Về EduGap"
+          aria-label="Về Mentora"
           className="inline-flex items-center rounded-xl focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-green/25 [&_img]:!h-6"
         >
           <LearningBrandMark compact />
@@ -202,11 +202,11 @@ function LoginPageContent() {
         <div className="w-full max-w-[360px] lg:ml-2">
           <div>
             <h1 className="font-fraunces text-question-title-sm font-black leading-tight text-on-background sm:text-question-title-lg">
-              {isSignup ? 'Tạo tài khoản EduGap' : 'Chào mừng trở lại'}
+              {isSignup ? 'Tạo tài khoản Mentora' : 'Chào mừng trở lại'}
             </h1>
             {!isSignup ? (
               <p className="mt-2 max-w-[320px] text-body-dense font-semibold leading-[20px] text-stone-600">
-                Đăng nhập để tiếp tục học với EduGap.
+                Đăng nhập để tiếp tục học với Mentora.
               </p>
             ) : null}
           </div>

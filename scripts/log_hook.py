@@ -8,13 +8,11 @@ import json
 import os
 import subprocess
 import sys
+import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 VN_TZ = timezone(timedelta(hours=7))
-
-
-import time
 
 
 def git(cmd):
@@ -33,7 +31,7 @@ def get_cached_git_info() -> dict | None:
 
     if cache_file.exists():
         try:
-            with open(cache_file, "r", encoding="utf-8") as f:
+            with open(cache_file, encoding="utf-8") as f:
                 cached = json.load(f)
             if now - cached.get("ts", 0) < 15.0:
                 return cached.get("data")

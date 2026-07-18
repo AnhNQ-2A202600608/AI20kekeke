@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { FormEvent, useEffect, useMemo, useState } from "react";
+import React, { FormEvent, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import {
   ArrowRight,
@@ -11,10 +11,14 @@ import {
   FileText,
   PaperPlaneTilt,
   Sparkle,
-  Target,
+  CircleNotch,
 } from "@phosphor-icons/react";
 import { AppShell } from "../components/AppShell";
 import { subjectPrograms, subjects } from "../data";
+
+// Import KaTeX styles for formula rendering
+import katex from "katex";
+import "katex/dist/katex.min.css";
 
 type SpeakerMode = "ai" | "user";
 type RegionId = "concept" | "method" | "example";
@@ -71,6 +75,221 @@ function normalizeText(value: string) {
     .replace(/\p{Diacritic}/gu, "");
 }
 
+// Helper to render Math (LaTeX) and basic inline markdown (bold, code)
+function renderMathAndText(text: string): React.ReactNode[] {
+  if (!text) return [];
+
+  // Split by LaTeX block math \[...\] and inline math \(...\)
+  const regex = /(\\\[[\s\S]*?\\\]|\\\(.*?\\\))/g;
+  const parts = text.split(regex);
+
+  return parts.map((part, idx) => {
+    // Render block math \[ ... \]
+    if (part.startsWith("\\[") && part.endsWith("\\]")) {
+      const math = part.slice(2, -2).trim();
+      try {
+        const html = katex.renderToString(math, { displayMode: true, throwOnError: false });
+        return <div key={idx} dangerouslySetInnerHTML={{ __html: html }} className="my-3 overflow-x-auto text-center" />;
+      } catch {
+        return <pre key={idx} className="text-rose-500 whitespace-pre-wrap">{math}</pre>;
+      }
+    }
+    // Render inline math \( ... \)
+    if (part.startsWith("\\(") && part.endsWith("\\)")) {
+      const math = part.slice(2, -2).trim();
+      try {
+        const html = katex.renderToString(math, { displayMode: false, throwOnError: false });
+        return <span key={idx} dangerouslySetInnerHTML={{ __html: html }} />;
+      } catch {
+        return <code key={idx} className="text-rose-500">{math}</code>;
+      }
+    }
+
+    // Parse standard inline markdown segments: **bold** and `code`
+    const segments = part.split(/(\*\*.*?\*\*|`.*?`)/g);
+    return (
+      <React.Fragment key={idx}>
+        {segments.map((seg, sIdx) => {
+          if (seg.startsWith("**") && seg.endsWith("**")) {
+            return (
+              <strong key={sIdx} className="font-extrabold text-stone-900">
+                {seg.slice(2, -2)}
+              </strong>
+            );
+          }
+          if (seg.startsWith("`") && seg.endsWith("`")) {
+            return (
+              <code key={sIdx} className="bg-stone-100 text-rose-600 px-1.5 py-0.5 rounded font-mono text-[11px] border border-stone-200">
+                {seg.slice(1, -1)}
+              </code>
+            );
+          }
+          return seg;
+        })}
+      </React.Fragment>
+    );
+  });
+}
+
+// Lightweight Markdown block-level renderer that parses lists, paragraphs and headers
+const SocraticMarkdown: React.FC<{ text: string }> = ({ text }) => {
+  if (!text) return null;
+
+  const lines = text.split("\n");
+  const elements: React.ReactNode[] = [];
+  let inList = false;
+  let listItems: React.ReactNode[] = [];
+  let inCodeBlock = false;
+  let codeBlockLines: string[] = [];
+  let codeBlockLang = "";
+
+  lines.forEach((line, lineIdx) => {
+    const trimmed = line.trim();
+
+    // Code block detection
+    if (trimmed.startsWith("```")) {
+      if (inCodeBlock) {
+        inCodeBlock = false;
+        elements.push(
+          <pre 
+            key={`codeblock-${lineIdx}`} 
+            className="bg-stone-900 text-stone-200 p-3.5 rounded-xl border border-stone-800 font-mono text-[11px] overflow-x-auto whitespace-pre my-3 max-w-full shadow-inner leading-relaxed"
+          >
+            <code className={codeBlockLang ? `language-${codeBlockLang}` : ""}>
+              {codeBlockLines.join("\n")}
+            </code>
+          </pre>
+        );
+        codeBlockLines = [];
+      } else {
+        inCodeBlock = true;
+        codeBlockLang = trimmed.slice(3).trim();
+      }
+      return;
+    }
+
+    if (inCodeBlock) {
+      codeBlockLines.push(line);
+      return;
+    }
+
+    // List item detection
+    if (trimmed.startsWith("- ") || trimmed.startsWith("* ")) {
+      if (!inList) {
+        inList = true;
+        listItems = [];
+      }
+      listItems.push(
+        <li key={`li-${lineIdx}`} className="ml-4 list-disc pl-1 leading-relaxed text-stone-850">
+          {renderMathAndText(trimmed.substring(2))}
+        </li>
+      );
+      return;
+    }
+
+    if (inList) {
+      elements.push(
+        <ul key={`ul-${lineIdx}`} className="space-y-1.5 my-2.5">
+          {[...listItems]}
+        </ul>
+      );
+      listItems = [];
+      inList = false;
+    }
+
+    // Headings
+    if (trimmed.startsWith("### ")) {
+      elements.push(
+        <h4 key={`h3-${lineIdx}`} className="text-xs md:text-sm font-bold text-stone-900 mt-4 mb-1.5">
+          {renderMathAndText(trimmed.substring(4))}
+        </h4>
+      );
+      return;
+    }
+    if (trimmed.startsWith("## ")) {
+      elements.push(
+        <h3 key={`h2-${lineIdx}`} className="text-sm md:text-base font-bold text-stone-900 mt-5 mb-2">
+          {renderMathAndText(trimmed.substring(3))}
+        </h3>
+      );
+      return;
+    }
+    if (trimmed.startsWith("# ")) {
+      elements.push(
+        <h2 key={`h1-${lineIdx}`} className="text-base md:text-lg font-bold text-stone-900 mt-6 mb-3">
+          {renderMathAndText(trimmed.substring(2))}
+        </h2>
+      );
+      return;
+    }
+
+    // Standalone block math
+    if (trimmed.startsWith("\\[") && trimmed.endsWith("\\]")) {
+      const math = trimmed.slice(2, -2).trim();
+      try {
+        const html = katex.renderToString(math, { displayMode: true, throwOnError: false });
+        elements.push(<div key={`mathblock-${lineIdx}`} dangerouslySetInnerHTML={{ __html: html }} className="my-4 overflow-x-auto text-center" />);
+      } catch {
+        elements.push(<pre key={`mathblock-${lineIdx}`} className="text-rose-500 whitespace-pre-wrap">{math}</pre>);
+      }
+      return;
+    }
+
+    // Spacer or normal paragraph
+    if (trimmed.length === 0) {
+      elements.push(<div key={`space-${lineIdx}`} className="h-2" />);
+    } else {
+      elements.push(
+        <p key={`p-${lineIdx}`} className="leading-relaxed text-stone-850 mb-2">
+          {renderMathAndText(line)}
+        </p>
+      );
+    }
+  });
+
+  if (inList && listItems.length > 0) {
+    elements.push(
+      <ul key="ul-end" className="space-y-1.5 my-2.5">
+        {listItems}
+      </ul>
+    );
+  }
+
+  return <div className="space-y-1">{elements}</div>;
+};
+
+interface MCQOption {
+  key: string;
+  text: string;
+}
+
+function parseMCQOptions(text: string): MCQOption[] {
+  if (!text) return [];
+  const lines = text.split("\n");
+  const options: MCQOption[] = [];
+  const optionRegex = /^\s*([A-F])\s*[\u0029\u002e\uFF09]\s*(.*)$/i;
+
+  for (const line of lines) {
+    const match = line.match(optionRegex);
+    if (match) {
+      options.push({
+        key: match[1].toUpperCase(),
+        text: match[2].trim()
+      });
+    }
+  }
+
+  if (options.length >= 2) {
+    const keys = options.map(o => o.key);
+    if (keys.includes("A") && keys.includes("B")) {
+      return options;
+    }
+  }
+  return [];
+}
+
+const BACKEND_URL = "http://127.0.0.1:8000";
+
 export default function AiQuestionPage() {
   const searchParams = useSearchParams();
   const selectedSubjectCode = searchParams.get("subject") || "TO";
@@ -83,10 +302,12 @@ export default function AiQuestionPage() {
   const [question, setQuestion] = useState("");
   const [activeRegion, setActiveRegion] = useState<RegionId>("method");
   const [matchedChapterNumber, setMatchedChapterNumber] = useState<string>(initialChapter.number);
+  const [isLoading, setIsLoading] = useState(false);
+  const chatScrollRef = useRef<HTMLDivElement>(null);
   const [messages, setMessages] = useState([
     {
       role: "ai",
-      text: `Mình đang mở dữ liệu ${program.title} - ${initialChapter.title}. Hỏi bài ở đây, mình sẽ tìm đúng phần kiến thức và đánh dấu vùng liên quan trên slide.`,
+      text: `Mình đang mở dữ liệu ${program.title} - ${initialChapter.title}. Hỏi bài ở đây, mình sẽ dùng AI Socratic để hướng dẫn em từng bước.`,
     },
   ]);
 
@@ -95,10 +316,11 @@ export default function AiQuestionPage() {
     setActiveRegion("method");
     setQuestion("");
     setSpeakerMode("ai");
+    setIsLoading(false);
     setMessages([
       {
         role: "ai",
-        text: `Mình đang mở dữ liệu ${program.title} - ${initialChapter.title}. Hỏi bài ở đây, mình sẽ tìm đúng phần kiến thức và đánh dấu vùng liên quan trên slide.`,
+        text: `Mình đang mở dữ liệu ${program.title} - ${initialChapter.title}. Hỏi bài ở đây, mình sẽ dùng AI Socratic để hướng dẫn em từng bước.`,
       },
     ]);
   }, [initialChapter.number, initialChapter.title, program.title, selectedSubject.code]);
@@ -113,11 +335,63 @@ export default function AiQuestionPage() {
     return aiContent.signals.find((signal) => haystack.includes(normalizeText(signal))) || matchedChapter.title;
   }, [aiContent.signals, matchedChapter.summary, matchedChapter.title, question]);
 
+  // Scroll to bottom when messages change
+  useEffect(() => {
+    if (chatScrollRef.current) {
+      chatScrollRef.current.scrollTop = chatScrollRef.current.scrollHeight;
+    }
+  }, [messages]);
+
+  const callBackendChat = useCallback(async (userMessage: string) => {
+    setIsLoading(true);
+
+    try {
+      // Call backend API directly with dev token (mock student UUID)
+      const MOCK_STUDENT_ID = "d3b07384-d113-4ec5-a58e-0f2d87e07661";
+      const response = await fetch(`${BACKEND_URL}/api/v1/chat`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer fake-jwt-token-${MOCK_STUDENT_ID}`,
+        },
+        body: JSON.stringify({
+          message: userMessage,
+          student_id: MOCK_STUDENT_ID,
+          mode: "Explain",
+          concept_id: selectedSubject.code === "TO" ? "ti-le-thuc" : "general",
+          stream: false,
+        }),
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(`API error ${response.status}: ${errorText}`);
+      }
+
+      const data = await response.json();
+      const aiText = data.response || "Xin lỗi, mình không nhận được phản hồi từ hệ thống.";
+
+      setMessages((prev) => [...prev, { role: "ai", text: aiText }]);
+    } catch (error: any) {
+      console.error("Chat API error:", error);
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "ai",
+          text: `⚠️ Lỗi kết nối backend: ${error.message}. Hãy kiểm tra backend đang chạy tại ${BACKEND_URL}.`,
+        },
+      ]);
+    } finally {
+      setIsLoading(false);
+    }
+  }, []);
+
   const handleAsk = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const trimmedQuestion = question.trim();
-    if (!trimmedQuestion) return;
+    if (!trimmedQuestion || isLoading) return;
 
+    // Update slide matching (keep existing UX)
     const normalizedQuestion = normalizeText(trimmedQuestion);
     const nextChapter =
       program.chapters.find((chapter) =>
@@ -132,18 +406,27 @@ export default function AiQuestionPage() {
     setMatchedChapterNumber(nextChapter.number);
     setActiveRegion(nextRegion);
     setSpeakerMode("ai");
-    setMessages((currentMessages) => [
-      ...currentMessages,
-      { role: "user", text: trimmedQuestion },
-      {
-        role: "ai",
-        text: `Câu này khớp với dữ liệu Chương ${Number(nextChapter.number)} - ${nextChapter.title}. Mình đang highlight vùng ${
-          slideRegions.find((region) => region.id === nextRegion)?.label.toLowerCase()
-        } để em đối chiếu khi đọc lời giải.`,
-      },
-    ]);
+
+    // Add user message
+    setMessages((currentMessages) => [...currentMessages, { role: "user", text: trimmedQuestion }]);
     setQuestion("");
+
+    // Call real backend API
+    callBackendChat(trimmedQuestion);
   };
+
+  const handleSelectOption = useCallback((optionKey: string) => {
+    if (isLoading) return;
+    const userMsg = `Em chọn ${optionKey}`;
+    setSpeakerMode("ai");
+    
+    // Add user message
+    setMessages((currentMessages) => [...currentMessages, { role: "user", text: userMsg }]);
+    setQuestion("");
+
+    // Call real backend API
+    callBackendChat(userMsg);
+  }, [isLoading, callBackendChat]);
 
   return (
     <AppShell>
@@ -217,25 +500,64 @@ export default function AiQuestionPage() {
           <div className="ai-chat-header">
             <div>
               <span><Brain size={18} weight="fill" /></span>
-              <div><strong>{program.assistantName}</strong><small>Đồng bộ với slide đang mở</small></div>
+              <div><strong>{program.assistantName}</strong><small>Kết nối API Socratic AI</small></div>
             </div>
-            <span className="mode-pill">{speakerMode === "ai" ? "AI đang giải thích" : "Bạn đang hỏi"}</span>
+            <span className="mode-pill">
+              {isLoading ? (
+                <><CircleNotch size={12} className="animate-spin" style={{ display: "inline", marginRight: 4 }} />Đang trả lời...</>
+              ) : speakerMode === "ai" ? "AI Socratic" : "Bạn đang hỏi"}
+            </span>
           </div>
 
-          <div className="ai-chat-thread">
-            {messages.map((message, index) => (
-              <div className={`ai-room-message ${message.role}`} key={`${message.role}-${index}`}>
-                {message.text}
-              </div>
-            ))}
-          </div>
+          <div className="ai-chat-thread" ref={chatScrollRef}>
+            {messages.map((message, index) => {
+              if (message.role === "ai") {
+                const options = parseMCQOptions(message.text);
+                const hasOptions = options.length > 0;
+                const isLatest = index === messages.length - 1;
+                const shouldShowButtons = hasOptions && isLatest;
+                const cleanText = hasOptions
+                  ? message.text
+                      .split("\n")
+                      .filter((line) => !line.match(/^\s*([A-F])\s*[\u0029\u002e\uFF09]/i))
+                      .join("\n")
+                      .replace(/\n{3,}/g, "\n\n")
+                      .trim()
+                  : message.text;
 
-          <div className="ai-evidence-card">
-            <Target size={18} weight="fill" />
-            <div>
-              <strong>Auto-highlight</strong>
-              <span>Vùng “{slideRegions.find((region) => region.id === activeRegion)?.label}” trên slide đang nối với câu trả lời mới nhất.</span>
-            </div>
+                return (
+                  <div className="ai-room-message ai" key={`${message.role}-${index}`}>
+                    <SocraticMarkdown text={cleanText} />
+                    {shouldShowButtons && (
+                      <div className="ai-option-list">
+                        {options.map((option) => (
+                          <button
+                            key={option.key}
+                            type="button"
+                            className="ai-option-button"
+                            disabled={isLoading}
+                            onClick={() => handleSelectOption(option.key)}
+                          >
+                            <span className="ai-option-badge">{option.key}</span>
+                            <span className="ai-option-content">
+                              {renderMathAndText(option.text)}
+                            </span>
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                );
+              } else {
+                return (
+                  <div className={`ai-room-message ${message.role}`} key={`${message.role}-${index}`}>
+                    <div style={{ whiteSpace: "pre-wrap" }}>
+                      {renderMathAndText(message.text)}
+                    </div>
+                  </div>
+                );
+              }
+            })}
           </div>
 
           <div className="quick-question-row">
@@ -243,6 +565,7 @@ export default function AiQuestionPage() {
               <button
                 key={item}
                 type="button"
+                disabled={isLoading}
                 onClick={() => {
                   setQuestion(item);
                   setSpeakerMode("user");
@@ -267,10 +590,11 @@ export default function AiQuestionPage() {
               onFocus={() => setSpeakerMode("user")}
               placeholder={`Hỏi về ${matchedChapter.title.toLowerCase()}...`}
               value={question}
+              disabled={isLoading}
             />
-            <button type="submit" aria-label="Gửi câu hỏi">
-              <PaperPlaneTilt size={18} weight="fill" />
-              <span>Gửi</span>
+            <button type="submit" aria-label="Gửi câu hỏi" disabled={isLoading}>
+              {isLoading ? <CircleNotch size={18} className="animate-spin" /> : <PaperPlaneTilt size={18} weight="fill" />}
+              <span>{isLoading ? "Đang xử lý..." : "Gửi"}</span>
             </button>
           </form>
 

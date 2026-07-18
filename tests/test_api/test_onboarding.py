@@ -445,7 +445,7 @@ async def test_onboarding_database_failure_is_recoverable_503(client, monkeypatc
     db = MagicMock()
     db._stub_mode = False
     db.app_client.auth.get_user.return_value.user.id = STUDENT_ID
-    db.app_client.auth.get_user.return_value.user.email = "student@edugap.vn"
+    db.app_client.auth.get_user.return_value.user.email = "student@mentora.vn"
 
     role_table = MagicMock()
     role_table.select.return_value.eq.return_value.execute.return_value.data = []

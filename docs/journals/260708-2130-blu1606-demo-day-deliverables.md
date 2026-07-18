@@ -7,7 +7,7 @@ topic: blu1606-demo-day-deliverables
 
 ## Context
 
-Recent work under author `blu1606` focused on preparing EduGap for Demo Day submission while closing learner-facing UX gaps found during testing. The main commit range reviewed was 2026-07-07 to 2026-07-08.
+Recent work under author `blu1606` focused on preparing Mentora for Demo Day submission while closing learner-facing UX gaps found during testing. The main commit range reviewed was 2026-07-07 to 2026-07-08.
 
 ## What Happened
 

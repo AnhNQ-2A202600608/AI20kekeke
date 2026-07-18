@@ -5,7 +5,7 @@
 
 ## Bối cảnh (Context)
 
-Hệ thống AI Tutor thích ứng (EduGap) yêu cầu lưu trữ và truy vấn thông minh tiến trình học tập của sinh viên:
+Hệ thống AI Tutor thích ứng (Mentora) yêu cầu lưu trữ và truy vấn thông minh tiến trình học tập của sinh viên:
 1. **Cá nhân hóa Socratic theo phong cách học (Learning Style):** AI cần theo dõi tốc độ thay đổi năng lực (Elo derivative $\frac{d\text{Elo}}{dt}$) tương ứng với từng cấp độ gợi ý (Level 1 Hint, Level 2 Analogy, Level 3 Code Skeleton) qua thời gian để tự động tối ưu hóa chính sách hướng dẫn.
 2. **Hiệu chỉnh hồi tố (Retroactive Calibration):** Trong mô hình Graph-BKT, khi phát hiện lỗi sai ở chương nâng cao (Ví dụ: Ngày 7), hệ thống cần cập nhật giảm điểm Mastery của chương cơ bản (Ví dụ: Ngày 6) về mặt *thời gian hiệu lực* (Valid Time) trong quá khứ, nhưng thực hiện tại *thời điểm giao dịch* hiện tại (Transaction Time).
 3. **Giải thích quyết định (Explainable AI):** Cung cấp khả năng "Time-travel" (du hành thời gian) để truy vấn xem tại một thời điểm chính xác trong quá khứ, AI đã đưa ra quyết định gợi ý câu hỏi dựa trên trạng thái năng lực nào của học sinh.

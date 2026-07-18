@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "description": "EduGap Code Bay app-level background assets. Use these as the outermost dashboard/page background behind major UI surfaces, not inside individual cards.",
+  "description": "Mentora Code Bay app-level background assets. Use these as the outermost dashboard/page background behind major UI surfaces, not inside individual cards.",
   "basePath": "/app-backgrounds",
   "runtimeFormat": "webp",
   "usageRules": [

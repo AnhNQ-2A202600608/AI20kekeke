@@ -2481,13 +2481,13 @@
       "updated": 1,
       "link": null,
       "locked": false,
-      "text": "Layered deployment and service boundary for the current EduGap system.",
+      "text": "Layered deployment and service boundary for the current Mentora system.",
       "fontSize": 15,
       "fontFamily": 1,
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
-      "originalText": "Layered deployment and service boundary for the current EduGap system.",
+      "originalText": "Layered deployment and service boundary for the current Mentora system.",
       "lineHeight": 1.25
     }
   ],

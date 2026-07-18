@@ -1,7 +1,7 @@
 import os
 import sys
-import json
 from pathlib import Path
+
 from dotenv import load_dotenv
 from supabase import create_client
 from supabase.client import ClientOptions
@@ -25,7 +25,7 @@ def seed_data():
         sys.exit(1)
 
     print(f"[*] Kết nối tới Supabase REST API tại: {url}")
-    
+
     # Khởi tạo client cho schema 'app'
     app_client = create_client(url, key, options=ClientOptions(schema="app"))
 

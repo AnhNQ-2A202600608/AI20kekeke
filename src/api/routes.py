@@ -206,6 +206,7 @@ async def load_student_profile(request: ChatRequest) -> tuple[dict, str | None]:
         "bkt_mastery_probability": 0.25,
         "weakness_flag": False,
         "mastery_state": "not_started",
+        "student_id": str(request.student_id) if request.student_id else None,
     }
     cache_key = ""
     has_context = request.student_id and request.course_id and request.concept_id
@@ -236,6 +237,7 @@ async def load_student_profile(request: ChatRequest) -> tuple[dict, str | None]:
                 "bkt_mastery_probability": mastery.get("bkt_mastery_probability", 0.25),
                 "weakness_flag": mastery.get("weakness_flag", False),
                 "mastery_state": mastery.get("mastery_state", "not_started"),
+                "student_id": str(student_id),
             }
             cache.set(cache_key, json.dumps(student_profile), ttl=300)
         except ValueError as ve:

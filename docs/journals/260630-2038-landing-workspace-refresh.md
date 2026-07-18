@@ -7,7 +7,7 @@ topic: landing-workspace-refresh
 
 ## Context
 
-The landing page needed to move from a broad scenery-led marketing page to a compact EduGap workspace preview. The provided screenshot was treated as directional reference, while the project design guidelines remained the source of truth for scale, colors, typography, tactile cards, and CTA behavior.
+The landing page needed to move from a broad scenery-led marketing page to a compact Mentora workspace preview. The provided screenshot was treated as directional reference, while the project design guidelines remained the source of truth for scale, colors, typography, tactile cards, and CTA behavior.
 
 ## What Happened
 

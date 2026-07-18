@@ -29,11 +29,11 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
 DATA_DIR = ROOT / "data"
-COURSE_UUID = "00000000-0000-0000-0000-000000000001"  # AI & LLM / EduGap course
+COURSE_UUID = "00000000-0000-0000-0000-000000000001"  # AI & LLM / Mentora course
 STUDENT_KEY = "hs-lop7-minh"  # khoá học sinh cho engine local
 STUDENT_UUID = "d3b07384-d113-4ec5-a58e-0f2d87e07777"  # học sinh Minh cho Supabase
 STUDENT_NAME = "Trần Minh"
-STUDENT_EMAIL = "minh.demo@edugap.vn"
+STUDENT_EMAIL = "minh.demo@mentora.vn"
 STUDENT_MSSV = "2A202600777"
 ROOT_CAUSE = "tinh-chat-co-ban-cua-phan-so"
 SURFACE = "ti-le-thuc"

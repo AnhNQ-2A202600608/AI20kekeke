@@ -23,8 +23,13 @@ from src.services.chat_optimization import (
 class TestNoSelfDiagnosis:
     """Việc 3 — When weakness_flag=false or diagnostic is None, prompt must not contain diagnosis."""
 
-    def test_prompt_no_diagnosis_when_none(self):
+    @patch("src.services.chat_optimization.get_settings")
+    def test_prompt_no_diagnosis_when_none(self, mock_get_settings):
         """When diagnostic is None, prompt should not contain root_cause or lỗ hổng."""
+        mock_settings = mock_get_settings.return_value
+        mock_settings.prompts = None
+        mock_settings.algorithm = None
+
         profile = {
             "elo_score": 1200.0,
             "bkt_mastery_probability": 0.5,
@@ -37,8 +42,13 @@ class TestNoSelfDiagnosis:
         assert "CHẨN ĐOÁN TỪ ENGINE" not in prompt
         assert "root_cause" not in prompt.lower()
 
-    def test_prompt_no_diagnosis_when_empty_dict(self):
+    @patch("src.services.chat_optimization.get_settings")
+    def test_prompt_no_diagnosis_when_empty_dict(self, mock_get_settings):
         """When diagnostic is empty dict, prompt should not contain diagnosis."""
+        mock_settings = mock_get_settings.return_value
+        mock_settings.prompts = None
+        mock_settings.algorithm = None
+
         profile = {
             "elo_score": 1200.0,
             "bkt_mastery_probability": 0.5,

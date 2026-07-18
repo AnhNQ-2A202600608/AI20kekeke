@@ -28,7 +28,7 @@ from src.services.llm import get_llm  # noqa: E402
 async def evaluate_response(llm, query: str, response: str, retrieved_slides: list[dict], category: str):
     """
     Evaluates the response using an LLM-as-a-judge matching Ragas metrics (Faithfulness, Relevance)
-    and custom EduGap Socratic compliance.
+    and custom Mentora Socratic compliance.
     """
     # Build context string
     context_str = ""

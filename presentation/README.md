@@ -3,8 +3,8 @@
 ## Files
 
 - `../docs/pitch-deck.pdf` — Slide thuyết trình Demo Day bản PDF nộp chính thức
-- `edugap-demo-day-pitch-deck-guide-en.md` — Deck guide/source notes
-- `edugap-demo-video-script-vi.md` — Kịch bản video demo
+- `mentora-demo-day-pitch-deck-guide-en.md` — Deck guide/source notes
+- `mentora-demo-video-script-vi.md` — Kịch bản video demo
 - `../docs/video-demo.md` — Entry point nộp video demo; thêm link YouTube sau khi quay/upload
 
 ## Pitch Deck Structure (10 slides)

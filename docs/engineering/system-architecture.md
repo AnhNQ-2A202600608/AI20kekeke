@@ -2,7 +2,7 @@
 
 ## Overview
 
-EduGap is a split frontend/backend adaptive learning system. The browser and Next.js SSR layer own presentation, session cookies, app routing, and BFF proxying. The FastAPI backend owns protected business logic, RBAC, adaptive learning transactions, RAG orchestration, ingestion, and audit/observability proxies. Supabase is the primary data platform for auth, relational data, pgvector retrieval, RLS, and server-side RPCs.
+Mentora is a split frontend/backend adaptive learning system. The browser and Next.js SSR layer own presentation, session cookies, app routing, and BFF proxying. The FastAPI backend owns protected business logic, RBAC, adaptive learning transactions, RAG orchestration, ingestion, and audit/observability proxies. Supabase is the primary data platform for auth, relational data, pgvector retrieval, RLS, and server-side RPCs.
 
 ## Runtime Topology
 
