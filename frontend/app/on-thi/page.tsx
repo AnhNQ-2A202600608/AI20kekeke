@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, BookOpenText, CheckCircle, Clock, Sparkle } from "@phosphor-icons/react";
+import { ArrowRight, CheckCircle, Clock, Sparkle } from "@phosphor-icons/react";
 import { AppShell } from "../components/AppShell";
 import { examWorkflowRepository, examWorkflowSession, type ExamKind, type StudentExamAssignment } from "./exam-workflow";
 import styles from "./exam.module.css";
@@ -108,23 +108,17 @@ export default function ExamPreparationPage() {
         <section className={styles.assignedHero}>
           <div className={styles.assignedHeroCopy}>
             <span className={styles.assignedKicker}>Ôn thi</span>
-            <h1>Đề kiểm tra</h1>
-            <p>Đề theo chương và đề tổng hợp do giáo viên giao.</p>
+            <h1>Đề được giao</h1>
+            <p>Chọn đề theo chương hoặc đề ôn tập giữa kỳ, cuối kỳ do giáo viên giao cho lớp.</p>
           </div>
           <p className={styles.assignedAvailability} aria-label={availableExamCount + " đề đang mở"}>
             <strong>{availableExamCount}</strong>
-            <span>đề sẵn sàng</span>
+            <span>đề có thể làm</span>
           </p>
         </section>
 
         <section className={styles.assignmentCollection} aria-labelledby="assigned-exams-title">
-          <header className={styles.sectionHead + " " + styles.assignmentCollectionHead}>
-            <div>
-              <h2 id="assigned-exams-title">Làm bài kiểm tra</h2>
-              <p>Chọn đúng bảng theo mục tiêu ôn tập. Trạng thái mỗi đề được xác định từ lịch mở, hạn nộp, lượt làm và kết quả đề trước.</p>
-            </div>
-            <BookOpenText size={25} weight="regular" />
-          </header>
+
 
           <div className={styles.assignmentTableGrid}>
             <section className={styles.assignmentBoard + " " + styles.assignmentTable + " " + styles.assignmentTableChapter} aria-labelledby="chapter-exams-title">
