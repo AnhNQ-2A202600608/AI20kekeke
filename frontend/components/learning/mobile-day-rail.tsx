@@ -47,7 +47,7 @@ export function MobileDayRail({
     <section className="relative lg:hidden" aria-labelledby="mobile-day-rail-title">
       <div className="pointer-events-none absolute right-2 top-[-0.35rem] z-20 h-[clamp(3rem,14vw,3.75rem)] w-[clamp(3rem,14vw,3.75rem)] overflow-visible" aria-hidden="true">
         <Image
-          src="/mascot/sofi/512/mentora-fox-idle-welcome.webp"
+          src="/mascot/sofi/512/edugap-fox-idle-welcome.webp"
           alt=""
           width={512}
           height={512}

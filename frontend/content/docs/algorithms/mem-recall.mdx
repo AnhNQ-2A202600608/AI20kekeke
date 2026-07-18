@@ -3,7 +3,7 @@ title: Spaced Repetition (SM-2)
 description: Quản lý ôn tập thẻ ghi nhớ tối ưu hóa khả năng ghi nhớ dài hạn dựa trên thuật toán SM-2.
 ---
 
-Để hỗ trợ ghi nhớ kiến thức dài hạn, **Mentora** triển khai hệ thống **Spaced Repetition (Ôn tập ngắt quãng)** lấy cảm hứng từ thuật toán **SuperMemo-2 (SM-2)** (dựa trên nghiên cứu của **[Woźniak & Gorzelańczyk (1994)](/docs/academic-citations#5-spaced-repetition-forgetting--fsrs)**). Hệ thống lên lịch ôn tập cho học viên dựa trên lịch sử phản hồi và độ bền của bộ nhớ (Memory Decay Curve).
+Để hỗ trợ ghi nhớ kiến thức dài hạn, **EduGap** triển khai hệ thống **Spaced Repetition (Ôn tập ngắt quãng)** lấy cảm hứng từ thuật toán **SuperMemo-2 (SM-2)** (dựa trên nghiên cứu của **[Woźniak & Gorzelańczyk (1994)](/docs/academic-citations#5-spaced-repetition-forgetting--fsrs)**). Hệ thống lên lịch ôn tập cho học viên dựa trên lịch sử phản hồi và độ bền của bộ nhớ (Memory Decay Curve).
 
 ---
 
@@ -48,7 +48,7 @@ Nếu học viên trả lời không đạt (điểm $q < 3$):
 
 ## 3. Quy trình Ôn tập Active Recall & AI Bounded Grading
 
-Khác với các ứng dụng flashcard truyền thống (nơi người dùng tự đánh giá xem mình nhớ hay quên), Mentora ép buộc học sinh thực hiện **Active Recall (Gợi nhớ tích cực)** bằng cách:
+Khác với các ứng dụng flashcard truyền thống (nơi người dùng tự đánh giá xem mình nhớ hay quên), EduGap ép buộc học sinh thực hiện **Active Recall (Gợi nhớ tích cực)** bằng cách:
 
 1.  Học sinh phải **nhập trực tiếp câu trả lời** bằng văn bản tự do.
 2.  Hệ thống sử dụng **AI Bounded Grading** (LLM Evaluator với schema JSON ràng buộc) để chấm điểm câu trả lời tự luận ngắn của sinh viên và quy đổi sang thang điểm $0-5$:

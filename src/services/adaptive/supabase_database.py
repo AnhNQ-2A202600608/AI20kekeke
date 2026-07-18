@@ -881,11 +881,12 @@ class SupabaseAdaptiveDatabase(AdaptiveDatabaseInterface):
                 self.app_client.table("chat_messages")
                 .select("role, content")
                 .eq("session_id", str(session_id))
-                .order("created_at", desc=False)
+                .order("created_at", desc=True)
                 .limit(limit)
                 .execute()
             )
-            return response.data or []
+            messages = response.data or []
+            return list(reversed(messages))
         except Exception as e:
             logger.error(f"Error fetching chat history: {e}")
             raise RuntimeError("Unable to fetch chat history.") from e

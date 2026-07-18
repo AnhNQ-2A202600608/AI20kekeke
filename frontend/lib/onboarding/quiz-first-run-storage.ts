@@ -1,8 +1,8 @@
 const QUIZ_FIRST_RUN_VERSION = 1;
 
-export const QUIZ_FIRST_RUN_TOUR_EVENT = 'mentora:quiz-first-run-tour:start';
+export const QUIZ_FIRST_RUN_TOUR_EVENT = 'edugap:quiz-first-run-tour:start';
 
-const keyFor = (userId?: string | null) => `mentora_quiz_first_run_v${QUIZ_FIRST_RUN_VERSION}:${userId || 'demo'}`;
+const keyFor = (userId?: string | null) => `edugap_quiz_first_run_v${QUIZ_FIRST_RUN_VERSION}:${userId || 'demo'}`;
 
 export type QuizFirstRunStatus = 'idle' | 'active' | 'dismissed' | 'completed';
 

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "description": "Mentora brand logo, favicon, and app icon assets.",
-  "basePath": "/brand/mentora",
+  "description": "EduGap brand logo, favicon, and app icon assets.",
+  "basePath": "/brand/edugap",
   "usageRules": [
     "Use logo-cropped.png for visible header/sidebar brand marks.",
     "Use logo.png only when a wide transparent canvas is acceptable.",
@@ -11,44 +11,44 @@
   ],
   "assets": [
     {
-      "id": "mentora-logo-cropped",
-      "path": "/brand/mentora/logo-cropped.png",
+      "id": "edugap-logo-cropped",
+      "path": "/brand/edugap/logo-cropped.png",
       "type": "wordmark",
       "dimensions": "1892x425",
       "bestFor": ["top navigation", "quiz header", "sidebar brand", "landing header"],
       "avoidFor": ["favicon", "tiny square icon", "avatar"],
-      "alt": "Mentora"
+      "alt": "EduGap"
     },
     {
-      "id": "mentora-logo-wide",
-      "path": "/brand/mentora/logo.png",
+      "id": "edugap-logo-wide",
+      "path": "/brand/edugap/logo.png",
       "type": "wordmark-source",
       "dimensions": "1920x1080",
       "bestFor": ["large brand preview", "source reference"],
       "avoidFor": ["runtime header if logo-cropped.png fits", "favicon"],
-      "alt": "Mentora"
+      "alt": "EduGap"
     },
     {
-      "id": "mentora-icon-192",
-      "path": "/brand/mentora/icon-192x192.png",
+      "id": "edugap-icon-192",
+      "path": "/brand/edugap/icon-192x192.png",
       "type": "square-icon",
       "dimensions": "192x192",
       "bestFor": ["compact header icon", "button icon", "small square brand mark"],
       "avoidFor": ["wordmark placement"],
-      "alt": "Mentora"
+      "alt": "EduGap"
     },
     {
-      "id": "mentora-icon-512",
-      "path": "/brand/mentora/icon-512x512.png",
+      "id": "edugap-icon-512",
+      "path": "/brand/edugap/icon-512x512.png",
       "type": "square-icon",
       "dimensions": "512x512",
       "bestFor": ["large square brand mark", "app icon preview"],
       "avoidFor": ["tiny favicon"],
-      "alt": "Mentora"
+      "alt": "EduGap"
     },
     {
-      "id": "mentora-favicon",
-      "path": "/brand/mentora/favicon.ico",
+      "id": "edugap-favicon",
+      "path": "/brand/edugap/favicon.ico",
       "type": "favicon",
       "dimensions": "multi-size",
       "bestFor": ["browser favicon metadata"],
@@ -56,8 +56,8 @@
       "alt": ""
     },
     {
-      "id": "mentora-favicon-16",
-      "path": "/brand/mentora/favicon-16x16.png",
+      "id": "edugap-favicon-16",
+      "path": "/brand/edugap/favicon-16x16.png",
       "type": "favicon",
       "dimensions": "16x16",
       "bestFor": ["browser favicon metadata"],
@@ -65,8 +65,8 @@
       "alt": ""
     },
     {
-      "id": "mentora-favicon-32",
-      "path": "/brand/mentora/favicon-32x32.png",
+      "id": "edugap-favicon-32",
+      "path": "/brand/edugap/favicon-32x32.png",
       "type": "favicon",
       "dimensions": "32x32",
       "bestFor": ["browser favicon metadata"],
@@ -74,8 +74,8 @@
       "alt": ""
     },
     {
-      "id": "mentora-favicon-48",
-      "path": "/brand/mentora/favicon-48x48.png",
+      "id": "edugap-favicon-48",
+      "path": "/brand/edugap/favicon-48x48.png",
       "type": "favicon",
       "dimensions": "48x48",
       "bestFor": ["browser favicon metadata"],
@@ -83,22 +83,22 @@
       "alt": ""
     },
     {
-      "id": "mentora-maskable-icon-512",
-      "path": "/brand/mentora/maskable-icon-512x512.png",
+      "id": "edugap-maskable-icon-512",
+      "path": "/brand/edugap/maskable-icon-512x512.png",
       "type": "maskable-icon",
       "dimensions": "512x512",
       "bestFor": ["PWA maskable icon metadata", "Android install icon"],
       "avoidFor": ["visible app UI"],
-      "alt": "Mentora"
+      "alt": "EduGap"
     },
     {
-      "id": "mentora-apple-touch-icon",
-      "path": "/brand/mentora/apple-touch-icon.png",
+      "id": "edugap-apple-touch-icon",
+      "path": "/brand/edugap/apple-touch-icon.png",
       "type": "touch-icon",
       "dimensions": "180x180",
       "bestFor": ["iOS home screen icon metadata"],
       "avoidFor": ["visible app UI"],
-      "alt": "Mentora"
+      "alt": "EduGap"
     }
   ]
 }

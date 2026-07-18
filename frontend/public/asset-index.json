@@ -1,17 +1,17 @@
 {
   "version": 1,
-  "project": "Mentora",
+  "project": "EduGap",
   "description": "Machine-readable index for curated public visual assets. Use this before inspecting images visually.",
   "basePath": "/",
   "updated": "2026-06-30",
   "groups": [
     {
-      "id": "brand-mentora",
-      "title": "Mentora Brand Assets",
-      "index": "/brand/mentora/index.json",
-      "basePath": "/brand/mentora",
+      "id": "brand-edugap",
+      "title": "EduGap Brand Assets",
+      "index": "/brand/edugap/index.json",
+      "basePath": "/brand/edugap",
       "useFor": ["favicon", "browser icon", "app logo", "header brand mark", "PWA icon"],
-      "notes": "Prefer logo-cropped.png for visible Mentora wordmark. Prefer icon-192x192.png or icon-512x512.png for square logo slots."
+      "notes": "Prefer logo-cropped.png for visible EduGap wordmark. Prefer icon-192x192.png or icon-512x512.png for square logo slots."
     },
     {
       "id": "sofi-mascot",
@@ -66,7 +66,7 @@
       "title": "Legacy Root Brand Aliases",
       "basePath": "/",
       "useFor": ["backward compatibility only"],
-      "notes": "Prefer /brand/mentora assets for new UI. Root /favicon.ico and /logo.jpeg are compatibility copies."
+      "notes": "Prefer /brand/edugap assets for new UI. Root /favicon.ico and /logo.jpeg are compatibility copies."
     }
   ],
   "globalUsageRules": [

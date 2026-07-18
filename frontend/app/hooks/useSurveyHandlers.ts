@@ -83,7 +83,7 @@ export function useSurveyHandlers(
   // Load pre-quiz submission states from localStorage on mount
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const savedPreSubmitted = localStorage.getItem('mentora_pre_submitted');
+      const savedPreSubmitted = localStorage.getItem('edugap_pre_submitted');
       if (savedPreSubmitted) {
         try {
           // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -132,7 +132,7 @@ export function useSurveyHandlers(
     
     const updatedPre = { ...preQuizSubmitted, [activeSetId]: true };
     setPreQuizSubmitted(updatedPre);
-    localStorage.setItem('mentora_pre_submitted', JSON.stringify(updatedPre));
+    localStorage.setItem('edugap_pre_submitted', JSON.stringify(updatedPre));
     
     try {
       const data = await surveyApiRequest<{ id: string }>('/api/v1/surveys', token, () => setToken(''), {
@@ -240,7 +240,7 @@ export function useSurveyHandlers(
       const copy = { ...prev };
       delete copy[setId];
       // Sync to local storage
-      localStorage.setItem('mentora_pre_submitted', JSON.stringify(copy));
+      localStorage.setItem('edugap_pre_submitted', JSON.stringify(copy));
       return copy;
     });
     setPreQuizRatings(prev => {

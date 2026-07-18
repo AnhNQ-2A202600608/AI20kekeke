@@ -76,7 +76,7 @@ export function QuizWorkspace({ quiz, aiSidebar, surveys }: QuizWorkspaceProps) 
     };
   }, [currentQuestion, quiz.currentHistory?.submitResult]);
 
-  const displayName = quiz.name || quiz.username || 'Học viên Mentora';
+  const displayName = quiz.name || quiz.username || 'Học viên EduGap';
   const activeTitle = quiz.activeSet?.topic_title || quiz.activeSet?.title || quiz.activeSetId;
   const titleMatch = String(activeTitle).match(/^Day\s*(\d+)\s*:\s*(.+)$/i);
   const daySubtitle = titleMatch

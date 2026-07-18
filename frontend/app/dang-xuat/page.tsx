@@ -7,7 +7,7 @@ export default function LogoutPage() {
   const router = useRouter();
 
   useEffect(() => {
-    window.localStorage.removeItem("mentora-sidebar-collapsed");
+    window.localStorage.removeItem("orbitlearn-sidebar-collapsed");
     window.sessionStorage.clear();
     router.replace("/auth");
   }, [router]);

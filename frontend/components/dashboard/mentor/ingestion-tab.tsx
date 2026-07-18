@@ -1463,7 +1463,6 @@ Tuyệt đối không bao quanh đầu ra bằng các ký tự định dạng ma
                         <h5 className="text-xs font-black text-stone-800">{chunk.title}</h5>
                         {chunk.image_url && (
                           <div className="my-2 max-w-full overflow-hidden rounded-lg border border-stone-100">
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img src={chunk.image_url} alt={chunk.title} className="w-full h-auto object-contain max-h-[200px]" />
                           </div>
                         )}

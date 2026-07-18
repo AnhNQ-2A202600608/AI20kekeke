@@ -57,7 +57,7 @@ function AppAuthGate({ children }: { children: ReactNode }) {
       <main className="flex min-h-screen items-center justify-center bg-background px-6 text-on-background font-be-vietnam-pro">
         <MascotLoadingBlock
           title="Sofi đang mở trang giới thiệu..."
-          description="Đang điều hướng về Mentora"
+          description="Đang điều hướng về EduGap"
           className="max-w-sm border-2 border-gray-border border-b-[5px]"
           mascotClassName="scale-[0.82]"
         />

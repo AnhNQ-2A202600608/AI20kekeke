@@ -3,7 +3,7 @@ title: Multi-Skill Graph Propagation
 description: Định vị lỗi sai khi câu hỏi chứa nhiều kỹ năng và lan truyền độ thành thạo trên đồ thị khái niệm.
 ---
 
-Trong thực tế giáo dục, một câu hỏi kiểm tra thường yêu cầu học sinh kết hợp đồng thời nhiều kỹ năng thành phần. Để theo dõi chính xác trạng thái năng lực, **Mentora** triển khai hai thuật toán đồ thị cốt lõi:
+Trong thực tế giáo dục, một câu hỏi kiểm tra thường yêu cầu học sinh kết hợp đồng thời nhiều kỹ năng thành phần. Để theo dõi chính xác trạng thái năng lực, **EduGap** triển khai hai thuật toán đồ thị cốt lõi:
 1.  **Phân bổ Trách nhiệm (Credit & Blame Assignment):** Xác định kỹ năng nào chịu trách nhiệm chính khi học sinh làm sai một câu hỏi chứa nhiều kỹ năng.
 2.  **Lan truyền Đồ thị 1-Bước (Local 1-Step Propagation):** Cập nhật xác suất làm chủ của các khái niệm liên quan trực tiếp trên cây đồ thị tiên quyết (được trích xuất và tối ưu từ tài liệu học tập thô bằng khung nghiên cứu **[Graphusion](/docs/academic-citations#6-graphusion-scientific-knowledge-graph-construction)**).
 
@@ -46,7 +46,7 @@ $$M(c)_{\text{new}} = M(c)_{\text{old}} + \beta \cdot \Delta M(s) \cdot w_{s \ri
 
 ## 3. Bộ nhớ Đồ thị Hai thời gian (Bitemporal Graph Memory)
 
-Để đánh giá chính xác tốc độ tiếp thu và mức độ phù hợp của các phương pháp sư phạm đối với từng học viên, **Mentora** không chỉ ghi nhận lịch sử học tập tĩnh mà triển khai cấu trúc **Bộ nhớ Đồ thị Hai thời gian (Bitemporal Graph Memory)** làm nền tảng lưu trữ dữ liệu thích ứng cốt lõi.
+Để đánh giá chính xác tốc độ tiếp thu và mức độ phù hợp của các phương pháp sư phạm đối với từng học viên, **EduGap** không chỉ ghi nhận lịch sử học tập tĩnh mà triển khai cấu trúc **Bộ nhớ Đồ thị Hai thời gian (Bitemporal Graph Memory)** làm nền tảng lưu trữ dữ liệu thích ứng cốt lõi.
 
 ### A. Hai Trục Thời Gian Độc Lập
 

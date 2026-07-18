@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState, Suspense } from "react";
+import { useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import {
   ArrowCounterClockwise,
@@ -35,9 +35,6 @@ type SkillNode = {
 
 const skillBySubject = {
   TO: ["Khái niệm", "Quy đồng", "Tính toán", "So sánh", "Vận dụng", "Kiểm tra"],
-  NV: ["Đọc hiểu", "Chủ đề", "Luận điểm", "Dẫn chứng", "Diễn đạt", "Tổng kết"],
-  TA: ["Vocabulary", "Grammar", "Reading", "Speaking", "Writing", "Review"],
-  KH: ["Quan sát", "Giả thuyết", "Mô hình", "Thí nghiệm", "Kết luận", "Vận dụng"],
 } as const;
 
 const stateLabel: Record<SkillState, string> = {
@@ -75,7 +72,7 @@ function buildSkillNodes(subjectCode: keyof typeof skillBySubject, program: (typ
   );
 }
 
-function SkillGraphContent() {
+export default function SkillGraphPage() {
   const searchParams = useSearchParams();
   const selectedSubjectCode = searchParams.get("subject") || "TO";
   const selectedSubject = subjects.find((subject) => subject.code === selectedSubjectCode) || subjects[0];
@@ -181,13 +178,5 @@ function SkillGraphContent() {
         </main>
       </section>
     </AppShell>
-  );
-}
-
-export default function SkillGraphPage() {
-  return (
-    <Suspense fallback={<div>Đang tải...</div>}>
-      <SkillGraphContent />
-    </Suspense>
   );
 }

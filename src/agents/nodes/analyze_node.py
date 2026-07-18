@@ -121,7 +121,7 @@ def is_general_query_heuristic(query: str) -> bool:
 
 
 def is_academic_query_heuristic(query: str) -> bool:
-    """Detect obvious in-syllabus technical queries without paying an LLM routing call."""
+    """Detect obvious in-syllabus technical or math queries without paying an LLM routing call."""
     normalized = query.strip().lower()
     academic_terms = {
         "rag",
@@ -148,6 +148,11 @@ def is_academic_query_heuristic(query: str) -> bool:
         "bkt",
         "supabase",
         "postgres",
+        # Math 6 & 7 terms
+        "phân số", "phan so", "tỉ số", "ti so", "tỉ lệ thức", "ti le thuc", "số hữu tỉ", "so huu ti",
+        "quy đồng", "quy dong", "tử số", "tu so", "mẫu số", "mau so", "phép tính", "phep tinh",
+        "toán", "toan", "đại số", "dai so", "hình học", "hinh hoc", "số tự nhiên", "so tu nhien",
+        "ước chung", "uoc chung", "bội chung", "boi chung", "số nguyên", "so nguyen"
     }
     return any(term in normalized for term in academic_terms)
 
@@ -210,8 +215,8 @@ async def classify_query_intent(query: str, chat_history: list[dict] = None) -> 
 
     prompt = f"""Bạn là bộ phân tích ý định câu hỏi cho một Trợ lý Học tập Socratic AI.
 Nhiệm vụ của bạn là phân loại câu hỏi hiện tại của sinh viên thành 2 loại:
-- "academic": Nếu sinh viên hỏi về kiến thức chuyên môn, học thuật, lý thuyết, lập trình, công nghệ liên quan trực tiếp đến nội dung khóa học (như RAG, Vector DB, Prompt Engineering, Tool calling, LangChain, LangGraph, Docker, Data Pipeline, ETL/ELT, React, Next.js, đo lường Elo/BKT). Hãy ưu tiên "academic" nếu câu hỏi liên quan mật thiết hoặc tiếp nối ngữ cảnh chuyên môn từ lịch sử hội thoại phía trên.
-- "general": Nếu sinh viên chào hỏi, tạm biệt, cảm ơn, xã giao, hỏi thông tin cá nhân, hoặc hỏi về các chủ đề kỹ thuật/chuyên môn nằm ngoài giáo trình của khóa học này (ví dụ: "Cơ sở dữ liệu đồ thị vs cơ sở dữ liệu quan hệ", "Thuật toán A*", "AlphaFold", "mạng nơ-ron CNN/RNN", "điện toán đám mây", v.v.).
+- "academic": Nếu sinh viên hỏi về kiến thức chuyên môn, học thuật, lý thuyết, bài tập hoặc các khái niệm thuộc chương trình Toán học (đặc biệt là Toán học lớp 6/7 như Phân số, Số hữu tỉ, Tỉ lệ thức, Tỉ số, các phép tính và bài toán liên quan, hoặc các kiến thức hệ thống như RAG, Elo, BKT). Hãy ưu tiên "academic" nếu câu hỏi liên quan mật thiết hoặc tiếp nối ngữ cảnh chuyên môn từ lịch sử hội thoại phía trên.
+- "general": Nếu sinh viên chào hỏi, tạm biệt, cảm ơn, xã giao, hỏi thông tin cá nhân, hoặc hỏi về các chủ đề kỹ thuật/chuyên môn nằm ngoài giáo trình của khóa học này (ví dụ: các chủ đề không liên quan đến Toán học hay tính năng hệ thống).
 
 {history_context}Câu hỏi hiện tại cần phân loại: "{query}"
 

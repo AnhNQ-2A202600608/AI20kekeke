@@ -2,7 +2,7 @@
 
 ## Overview
 
-This directory contains the unified frontend documentation set for the Mentora Adaptive-first AI Tutor frontend.
+This directory contains the unified frontend documentation set for the EduGap Adaptive-first AI Tutor frontend.
 
 ## Documents
 

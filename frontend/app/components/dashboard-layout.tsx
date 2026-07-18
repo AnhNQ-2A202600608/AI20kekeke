@@ -139,9 +139,9 @@ export function DashboardLayout({ quiz, onOpenAuth }: DashboardLayoutProps) {
     ? '/app-backgrounds/code-bay-profile-bg.webp'
     : '/app-backgrounds/code-bay-app-shell-bg.webp';
   const averageElo = useMemo(() => getAggregateLearningElo(conceptMasteries), [conceptMasteries]);
-  const displayName = quiz.name || quiz.username || 'Học viên Mentora';
+  const displayName = quiz.name || quiz.username || 'Học viên EduGap';
   const sharedTopNavCopy = WORKSPACE_HEADER_COPY[quiz.activeTab] || {
-    title: 'Mentora Workspace',
+    title: 'EduGap Workspace',
     subtitle: 'Điều phối học tập và vận hành AI',
   };
   const contentShellClass = 'mx-auto w-full max-w-[1360px] px-3 lg:px-5 xl:px-6';
@@ -391,7 +391,7 @@ export function DashboardLayout({ quiz, onOpenAuth }: DashboardLayoutProps) {
       {/* Footer copyright */}
       {quiz.activeTab !== 'chat' && quiz.activeTab !== 'learn' && quiz.activeTab !== 'skills' && quiz.activeTab !== 'skill-graph' && (
         <footer className="w-full bg-warm-cream/50 border-t border-tertiary-yellow/15 py-4 text-center text-caption-tight font-mono text-stone-400 mt-auto">
-          Mentora &copy; 2026 {"->"} Nền tảng học tập cá nhân hóa
+          EduGap AI Thực Chiến &copy; 2026 {"->"} Nền tảng học tập cá nhân hóa
         </footer>
       )}
 

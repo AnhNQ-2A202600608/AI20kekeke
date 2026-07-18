@@ -522,7 +522,7 @@ export const LearningPath: React.FC<LearningPathProps> = ({
   return (
     <div className="mx-auto flex w-full max-w-[100dvw] flex-col overflow-x-hidden px-3 pb-28 pt-0 font-be-vietnam-pro lg:h-full lg:max-w-[82rem] lg:overflow-hidden lg:px-3 lg:pb-2">
       <MobileLearningTopBar
-        profileName={name || username || 'Học viên Mentora'}
+        profileName={name || username || 'Học viên EduGap'}
         streakDays={streak}
         profileInitial={(name || username || 'N').trim().charAt(0).toUpperCase() || 'N'}
         loggedIn={loggedIn}
@@ -541,7 +541,7 @@ export const LearningPath: React.FC<LearningPathProps> = ({
         title="Lộ trình học tập"
         subtitle={`${PROGRAM_DAY_COUNT} ngày • ${totalAvailableSets} bài luyện • ${devMode ? 'Dev mode' : `${overallProgress}% hoàn thành`}`}
         averageElo={averageElo}
-        displayName={name || username || 'Học viên Mentora'}
+        displayName={name || username || 'Học viên EduGap'}
         eloHistoryEvents={eloHistoryEvents}
         initial={(name || username || 'N').trim().charAt(0).toUpperCase() || 'N'}
         loggedIn={loggedIn}

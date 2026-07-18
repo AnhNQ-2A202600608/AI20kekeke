@@ -32,7 +32,7 @@ export function RpgProfileHero({
   const level = getProfileLevel(xp);
   const health = getLearningHealth(concepts, streak);
   const healthScore = Math.max(0, Math.min(100, health.score));
-  const displayName = name || 'Học viên Mentora';
+  const displayName = name || 'Học viên EduGap';
   const initials = displayName.substring(0, 2);
 
   return (

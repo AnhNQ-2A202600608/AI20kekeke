@@ -1,6 +1,6 @@
 # Academic Citations & Scientific Foundations
 
-This document provides the scientific citations, academic papers, and mathematical foundations for the adaptive learning algorithms implemented in the **Mentora** engine. These publications serve as the mathematical "Source of Truth" for both our production implementation and the verification gates in our evaluation suite.
+This document provides the scientific citations, academic papers, and mathematical foundations for the adaptive learning algorithms implemented in the **EduGap** engine. These publications serve as the mathematical "Source of Truth" for both our production implementation and the verification gates in our evaluation suite.
 
 ---
 
@@ -23,7 +23,7 @@ This document provides the scientific citations, academic papers, and mathematic
     }
     ```
 
-### Implementation in Mentora
+### Implementation in EduGap
 *   **Production Code:** [bkt.py](file:///d:/CODE/AITHUCCHIEN/PROJECT/C2-App-125/src/services/adaptive/bkt.py)
 *   **Mathematics:** Updates the latent mastery probability $P(L_t)$ based on binary observations (correct/incorrect):
     *   *Posterior Update:*
@@ -53,7 +53,7 @@ This document provides the scientific citations, academic papers, and mathematic
     }
     ```
 
-### Implementation in Mentora
+### Implementation in EduGap
 *   **Production Code:** [elo.py](file:///d:/CODE/AITHUCCHIEN/PROJECT/C2-App-125/src/services/adaptive/elo.py)
 *   **Mathematics:** Models the expected probability of correctness using a logistic function and updates parameters symmetrically or asymmetrically:
     *   *Expected Success:*
@@ -82,7 +82,7 @@ This document provides the scientific citations, academic papers, and mathematic
     }
     ```
 
-### Implementation in Mentora
+### Implementation in EduGap
 *   **Production Code:** [bandit.py](file:///d:/CODE/AITHUCCHIEN/PROJECT/C2-App-125/src/services/adaptive/bandit.py)
 *   **Mathematics:** Recommends questions (arms) using Upper Confidence Bound (UCB) on linear regression projections:
     $$a_t = \arg\max_{a \in \mathcal{A}_t} \left( x_{t,a}^\top \hat{\theta}_a + \alpha \sqrt{x_{t,a}^\top A_a^{-1} x_{t,a}} \right)$$
@@ -109,7 +109,7 @@ This document provides the scientific citations, academic papers, and mathematic
     }
     ```
 
-### Implementation in Mentora
+### Implementation in EduGap
 *   **Production Code:** [graph_propagation.py](file:///d:/CODE/AITHUCCHIEN/PROJECT/C2-App-125/src/services/adaptive/graph_propagation.py)
 *   **Mathematics:** Propagates delta updates to dependent/prerequisite concepts recursively with geometric decay coefficients:
     *   *Forward Propagation:*
@@ -139,7 +139,7 @@ This document provides the scientific citations, academic papers, and mathematic
     }
     ```
 
-### Implementation in Mentora
+### Implementation in EduGap
 *   **Production Code:** [forgetting.py](file:///d:/CODE/AITHUCCHIEN/PROJECT/C2-App-125/src/services/adaptive/forgetting.py)
 *   **Mathematics:** Models memory decay based on stability days:
     $$P_{\text{effective}} = P_{\text{stored}} \cdot 2^{-\Delta t / S}$$
@@ -170,7 +170,7 @@ This document provides the scientific citations, academic papers, and mathematic
     }
     ```
 
-### Implementation in Mentora
+### Implementation in EduGap
 *   **Production Code:** Graph relationships loaded into the database schema and traversed via `propagate_mastery` inside [graph_propagation.py](file:///d:/CODE/AITHUCCHIEN/PROJECT/C2-App-125/src/services/adaptive/graph_propagation.py) are grounded in Graphusion's hierarchical concept modeling (using the LectureBankCD dataset) and Socratic learning pathways.
 *   **Evaluation Suite:** Evaluated in [exp4_graph_propagation.py](file:///d:/CODE/AITHUCCHIEN/PROJECT/C2-App-125/eval/exp4_graph_propagation.py) which tests directed cyclic and acyclic graph traversals, representing the global-fusion sub-graph structures designed in the Graphusion framework.
 
@@ -191,7 +191,7 @@ This document provides the scientific citations, academic papers, and mathematic
     }
     ```
 
-### Implementation in Mentora
+### Implementation in EduGap
 *   **Production Code:** Configured in `config/prompts.yaml` and parsed via [config.py](file:///d:/CODE/AITHUCCHIEN/PROJECT/C2-App-125/src/config.py) (e.g. `EvolInstructInDepth` and `EvolInstructElimination`). The system uses the 6 operations defined in WizardLM's **Evol-Instruct** framework (`add_constraints`, `deepening`, `concretizing`, `increase_reasoning`, `complicate_input`, `in_breadth`) to dynamically evolve and mutate quiz questions to scale their cognitive difficulty.
 *   **Evaluation Suite:** The prompts and configurations are verified in unit tests ensuring template placeholder compliance (`student_elo`, `student_bkt`, etc.) to guarantee that evolved instructions can be safely parsed by LLM agents.
 

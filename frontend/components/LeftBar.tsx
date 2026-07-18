@@ -123,7 +123,7 @@ export const LeftBar: React.FC<LeftBarProps> = ({
                 exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 10, scale: 0.98 }}
                 transition={{ duration: 0.16 }}
                 className="w-[min(20rem,calc(100dvw-1.5rem))] rounded-2xl border border-gray-border bg-white/95 p-2 shadow-xl shadow-stone-900/10 backdrop-blur-md"
-                aria-label="Điều hướng Mentora"
+                aria-label="Điều hướng EduGap"
               >
                 <div className="flex items-center gap-2 border-b border-gray-border/70 px-2 pb-2">
                   <SofiMascot size={30} animated={false} />
@@ -173,7 +173,7 @@ export const LeftBar: React.FC<LeftBarProps> = ({
             <nav
               data-tour-id="app-navigation"
               className="hidden rounded-full border border-gray-border bg-white/95 p-1.5 shadow-xl shadow-stone-900/10 backdrop-blur-md lg:flex lg:flex-col lg:gap-1"
-              aria-label="Lối tắt Mentora"
+              aria-label="Lối tắt EduGap"
             >
               {canShowRoleDropdown && (
                 <>
