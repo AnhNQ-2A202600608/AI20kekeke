@@ -8,17 +8,6 @@ from dotenv import load_dotenv
 from langchain_openai import OpenAIEmbeddings
 
 # Reconfigure stdout/stderr to use UTF-8 for Windows console
-if sys.stdout:
-    try:
-        sys.stdout.reconfigure(encoding="utf-8")
-    except AttributeError:
-        pass
-if sys.stderr:
-    try:
-        sys.stderr.reconfigure(encoding="utf-8")
-    except AttributeError:
-        pass
-
 # Thêm parent dir vào sys.path để import src
 current_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.dirname(os.path.dirname(os.path.dirname(current_dir)))
