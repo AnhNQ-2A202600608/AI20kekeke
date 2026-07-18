@@ -50,7 +50,10 @@ export function AppShell({ children, compact = false }: { children: ReactNode; c
   const subjectProfiles = useSubjectProfiles();
 
   useEffect(() => {
-    setSidebarCollapsed(window.localStorage.getItem("mentora-sidebar-collapsed") === "true");
+    const isCollapsed = window.localStorage.getItem("mentora-sidebar-collapsed") === "true";
+    setTimeout(() => {
+      setSidebarCollapsed(isCollapsed);
+    }, 0);
   }, []);
 
   const handleToggleSidebar = () => {

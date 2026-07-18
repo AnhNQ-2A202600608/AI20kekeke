@@ -580,6 +580,7 @@ export const ClassInsightsTab: React.FC = () => {
     }
     fetchStudents();
     return () => { active = false; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [token, studentBaseSkills]);
 
   const _students_dummy = useMemo<StudentData[]>(() => {  // kept to avoid restructuring; data comes from useState above

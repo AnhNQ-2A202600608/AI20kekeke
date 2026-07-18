@@ -384,7 +384,7 @@ export default function AiQuestionPage() {
     } finally {
       setIsLoading(false);
     }
-  }, []);
+  }, [selectedSubject.code]);
 
   const handleAsk = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
