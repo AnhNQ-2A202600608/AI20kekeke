@@ -1,5 +1,6 @@
-import type {Metadata} from 'next';
+import type { Metadata } from 'next';
 import { Be_Vietnam_Pro, Fraunces } from 'next/font/google';
+import "@fontsource-variable/plus-jakarta-sans";
 import './globals.css'; // Global styles
 import 'katex/dist/katex.min.css'; // KaTeX styles for math formulas
 import { Analytics } from '@vercel/analytics/react';
@@ -82,10 +83,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({children}: {children: React.ReactNode}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="vi" className={`${beVietnamPro.variable} ${fraunces.variable}`} suppressHydrationWarning>
-      <body className="font-be-vietnam-pro bg-background text-on-background min-h-screen">
+      <body className="font-be-vietnam-pro bg-background text-on-background min-h-screen" suppressHydrationWarning>
         {children}
         <Analytics />
       </body>
