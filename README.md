@@ -8,7 +8,7 @@
 
 | Component | URL |
 |---|---|
-| **Frontend** | [https://ai20kekeke.vercel.app/login](https://ai20kekeke.vercel.app/login) |
+| **Frontend** | [https://mentora-vaic.vercel.app](https://mentora-vaic.vercel.app) |
 | **Backend** | [https://vaic-backend.onrender.com](https://vaic-backend.onrender.com) |
 | **Health check** | [https://vaic-backend.onrender.com/health](https://vaic-backend.onrender.com/health) |
 
