@@ -1,45 +1,119 @@
-import Link from "next/link";
-import { AppShell, LevelBadge, ProgressBar } from "../components/AppShell";
+"use client";
 
-const chapters = [
+import Link from "next/link";
+import { useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { AppShell, ProgressBar } from "../components/AppShell";
+import { subjectPrograms, subjects } from "../data";
+import { useOnboardingProfile } from "../hooks/useOnboardingProfile";
+
+const mathFullRoute = [
   { number: "01", title: "Phân số và số hữu tỉ", summary: "Khái niệm phân số, quy đồng, phép tính và bài toán vận dụng.", progress: 62, types: 4, xp: 1640, active: true, unlock: "Đang học" },
   { number: "02", title: "Tỉ lệ thức", summary: "Tỉ số, tính chất tỉ lệ thức và các bài toán thực tế.", progress: 0, types: 2, xp: 1320, active: false, unlock: "Hoàn thành Chương 1 để mở khóa" },
   { number: "03", title: "Biểu thức đại số", summary: "Biến, biểu thức đại số và các phép biến đổi cơ bản.", progress: 0, types: 3, xp: 1480, active: false, unlock: "Hoàn thành Chương 2 để mở khóa" },
+  { number: "04", title: "Đa thức một biến", summary: "Cộng, trừ, nhân đa thức và nhận diện bậc của đa thức.", progress: 0, types: 3, xp: 1420, active: false, unlock: "Khóa theo tiến độ" },
+  { number: "05", title: "Tam giác", summary: "Các yếu tố của tam giác, quan hệ cạnh góc và bài toán chứng minh.", progress: 0, types: 4, xp: 1560, active: false, unlock: "Khóa theo tiến độ" },
+  { number: "06", title: "Đường thẳng song song", summary: "Góc so le trong, đồng vị và cách suy luận khi có hai đường thẳng song song.", progress: 0, types: 3, xp: 1360, active: false, unlock: "Khóa theo tiến độ" },
+  { number: "07", title: "Xác suất và thống kê", summary: "Thu thập dữ liệu, biểu đồ, biến cố và xác suất đơn giản.", progress: 0, types: 3, xp: 1280, active: false, unlock: "Khóa theo tiến độ" },
+  { number: "08", title: "Ôn tập tổng hợp cuối năm", summary: "Tổng hợp các mạch kiến thức, luyện đề và sửa lỗi thường gặp.", progress: 0, types: 5, xp: 1800, active: false, unlock: "Chương cuối" },
 ];
 
 export default function LearningWorkspace() {
+  const [showFullRoute, setShowFullRoute] = useState(false);
+  const searchParams = useSearchParams();
+  const selectedSubjectCode = searchParams.get("subject") || "TO";
+  const selectedSubject = subjects.find((subject) => subject.code === selectedSubjectCode) || subjects[0];
+  const program = subjectPrograms[selectedSubject.code as keyof typeof subjectPrograms] || subjectPrograms.TO;
+  const activeChapter = program.chapters.find((chapter) => chapter.active) || program.chapters[0];
+  const learningLevel = useOnboardingProfile(selectedSubject.code);
+  const currentGrade = learningLevel.grade || program.grade;
+  const isMathProgram = selectedSubject.code === "TO";
+  const baseRouteChapters = isMathProgram && showFullRoute ? mathFullRoute : program.chapters;
+  const routeChapters = baseRouteChapters.map((chapter) => (
+    chapter.active ? { ...chapter, progress: learningLevel.progress } : chapter
+  ));
+
   return (
     <AppShell>
-      <section className="workspace-topline">
-        <div><span className="overline">Thứ Sáu, 17 tháng 7</span><h1>Chào buổi chiều, Nam.</h1><p>Hôm nay bạn chỉ cần 28 phút để hoàn thành mục tiêu.</p></div>
-        <aside className="today-focus"><div><span>Mục tiêu hôm nay</span><strong>2 / 3</strong></div><p>Hoàn thành dạng Quy đồng mẫu số</p><div className="progress-track"><span style={{ width: "67%" }} /></div></aside>
+      <section className="learning-hero">
+        <div className="learning-hero-copy">
+          <span className="overline">{currentGrade} · {program.title}</span>
+          <h1>{activeChapter.title}</h1>
+          <p>
+            Lộ trình {program.title.toLowerCase()} đang ưu tiên {activeChapter.title.toLowerCase()}.
+            Hoàn thành mục tiêu hôm nay để mở nhịp luyện tập tiếp theo.
+          </p>
+          <div className="hero-xp-strip">
+            <div>
+              <span>{learningLevel.title}</span>
+              <strong>{learningLevel.xp.toLocaleString("vi-VN")} / {learningLevel.nextXp.toLocaleString("vi-VN")} XP</strong>
+            </div>
+            <ProgressBar value={learningLevel.progress} label="Tiến độ kinh nghiệm hiện tại" />
+          </div>
+          <div className="hero-meta-line" aria-label="Thông tin học tập hiện tại">
+            <span>{program.title}</span>
+            <span>{learningLevel.name}</span>
+            <strong>{learningLevel.placementScore ? `Test xếp level ${learningLevel.placementScore}` : "Kiểm tra mở khóa 86 / 100"}</strong>
+          </div>
+          <div className="hero-actions">
+            <Link className="primary-action" href={`/chuong/phan-so?subject=${selectedSubject.code}`}>Vào chương đang học <span>→</span></Link>
+            <Link className="secondary-action" href="/ho-so">Xem hồ sơ</Link>
+          </div>
+        </div>
+
+        <aside className="today-focus hero-focus">
+          <div>
+            <span>Mục tiêu hôm nay</span>
+            <strong>2 / 3</strong>
+          </div>
+          <p>{program.goal}</p>
+          <div className="goal-highlight">
+            <span>{activeChapter.title}</span>
+            <strong>{learningLevel.progress}%</strong>
+          </div>
+          <ProgressBar value={learningLevel.progress} label="Tiến độ mục tiêu hôm nay" />
+        </aside>
       </section>
 
-      <section className="xp-banner level-explorer-bg">
-        <div className="xp-level"><LevelBadge level="explorer"/><div><strong>Cấp 8 · Nhà thám hiểm</strong><span>Còn 560 XP để lên Challenger</span></div></div>
-        <div className="xp-progress"><div><span>Kinh nghiệm hiện tại</span><strong>1.840 / 2.400 XP</strong></div><ProgressBar value={77} /></div>
-        <div className="xp-stats"><div><strong>+320</strong><span>XP tuần này</span></div><div><strong>12</strong><span>Ngày liên tiếp</span></div></div>
-      </section>
-
-      <section className="learning-context" aria-label="Bộ lọc lộ trình học">
-        <article className="context-card"><span>Môn đang học</span><strong>Toán học</strong><small>Lớp 7 · học theo thứ tự chương</small></article>
-        <div className="context-selectors"><label>Lớp<select defaultValue="Lớp 7"><option>Lớp 6</option><option>Lớp 7</option><option>Lớp 8</option></select></label><label>Trình độ<select defaultValue="Explorer"><option>Beginner</option><option>Explorer</option><option>Challenger</option><option>Expert</option><option>Master</option></select></label></div>
-        <article className="context-card compact"><span>Bài kiểm tra mở khóa</span><strong>86 / 100</strong><small>Đạt chuẩn Explorer</small></article>
-      </section>
-
-      <section className="section-block learning-path">
-        <div className="section-title"><div><h2>Lộ trình Toán học lớp 7</h2><p>Hoàn thành bài kiểm tra cuối chương để mở chương kế tiếp.</p></div><span className="status-note">Đang học · Chương 1</span></div>
+      <section className={`section-block learning-path learning-path-focused ${showFullRoute ? "learning-path-full" : ""}`}>
+        <div className="section-title">
+          <div>
+            <h2>Lộ trình {program.title} {currentGrade.toLowerCase()}</h2>
+            <p>{showFullRoute ? "Toàn bộ chương trình từ chương đầu đến chương cuối. Chương đang học vẫn được giữ nổi bật để bạn không mất trọng tâm." : "Chương đang học được highlight rõ hơn; các chương sau mở theo kết quả cuối chương."}</p>
+          </div>
+          <div className="route-title-actions">
+            <span className="status-note">{showFullRoute ? `${routeChapters.length} chương` : `Đang học · Chương ${Number(activeChapter.number)}`}</span>
+            {isMathProgram && (
+              <button className="route-toggle" onClick={() => setShowFullRoute((value) => !value)} type="button">
+                {showFullRoute ? "Thu gọn lộ trình" : "Xem toàn bộ lộ trình"}
+              </button>
+            )}
+          </div>
+        </div>
         <div className="chapter-browser">
-          {chapters.map((chapter) => (
-            <article className={`chapter-card ${chapter.active ? "active" : "locked"}`} key={chapter.number}>
-              <div className="chapter-card-number">{chapter.active ? chapter.number : "K"}</div>
-              <div className="chapter-card-copy"><span className="hierarchy-label">Chương {Number(chapter.number)} · {chapter.unlock}</span><h3>{chapter.title}</h3><p>{chapter.summary}</p><div className="chapter-card-meta"><span>{chapter.types} dạng bài</span><span>{chapter.xp.toLocaleString("vi-VN")} XP</span>{chapter.active && <span>{chapter.progress}% hoàn thành</span>}</div>{chapter.active && <ProgressBar value={chapter.progress} />}</div>
-              {chapter.active ? <Link className="chapter-open" href="/chuong/phan-so">Chi tiết chương <span>→</span></Link> : <span className="chapter-locked">{chapter.unlock}</span>}
+          {routeChapters.map((chapter) => (
+            <article className={`chapter-card ${chapter.active ? "active current-chapter" : showFullRoute ? "route-upcoming" : "locked collapsed"}`} key={chapter.number}>
+              <div className="chapter-card-number">{chapter.number}</div>
+              <div className="chapter-card-copy">
+                <span className="hierarchy-label">Chương {Number(chapter.number)} · {chapter.unlock}</span>
+                <h3>{chapter.title}</h3>
+                <p>{chapter.summary}</p>
+                <div className="chapter-card-meta">
+                  <span>{chapter.types} dạng bài</span>
+                  <span>{chapter.xp.toLocaleString("vi-VN")} XP</span>
+                  {chapter.active && <span>{chapter.progress}% hoàn thành</span>}
+                </div>
+                {chapter.active && <ProgressBar value={chapter.progress} />}
+              </div>
+              {chapter.active ? (
+                <Link className="chapter-open" href={`/chuong/phan-so?subject=${selectedSubject.code}`}>Chi tiết chương <span>→</span></Link>
+              ) : (
+                <span className="chapter-locked">{chapter.unlock}</span>
+              )}
             </article>
           ))}
         </div>
       </section>
-
     </AppShell>
   );
 }
