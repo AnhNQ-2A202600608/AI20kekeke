@@ -100,48 +100,47 @@ export default function ExamPreparationPage() {
   const termAssignments = rootAssignments.filter((item) => item.assignment.kind === "midterm_review" || item.assignment.kind === "final_review");
   const availableCount = rootAssignments.filter((item) => item.access.canStart).length;
   const availableChildCount = rootAssignments.flatMap((item) => examWorkflowRepository.getChildAssignments(item.assignment.id, studentId)).filter((item) => item.access.canStart).length;
+  const availableExamCount = availableCount + availableChildCount;
 
   return (
     <AppShell compact>
       <main className={styles.page}>
-        <section className={styles.intro + " " + styles.assignedHero}>
-          <div>
-            <span className={styles.eyebrow}>ÔN THI THEO ĐỀ ĐƯỢC GIAO</span>
-            <h1>Đề của giáo viên, lộ trình dành riêng cho bạn</h1>
-            <p>Đề ôn theo chương củng cố kiến thức nền. Đề giữa kỳ và cuối kỳ kiểm tra khả năng tổng hợp theo đúng phạm vi được giao.</p>
+        <section className={styles.assignedHero}>
+          <div className={styles.assignedHeroCopy}>
+            <span className={styles.assignedKicker}>Ôn thi</span>
+            <h1>Đề kiểm tra</h1>
+            <p>Đề theo chương và đề tổng hợp do giáo viên giao.</p>
           </div>
-          <aside className={styles.readinessCard}>
-            <div><span>Đề đang có thể làm</span><strong>{availableCount}</strong></div>
-            <div className={styles.metricTrack}><i style={{ width: Math.min(100, (availableCount + availableChildCount) * 25) + "%" }} /></div>
-            <div className={styles.metricRow}><span>Đề lớn đang mở</span><strong>{availableCount}</strong></div>
-            <div className={styles.metricRow}><span>Đề con đã mở</span><strong>{availableChildCount}</strong></div>
-          </aside>
+          <p className={styles.assignedAvailability} aria-label={availableExamCount + " đề đang mở"}>
+            <strong>{availableExamCount}</strong>
+            <span>đề sẵn sàng</span>
+          </p>
         </section>
 
-        <section className={styles.assignmentBoard} aria-labelledby="assigned-exams-title">
-          <header className={styles.sectionHead}>
+        <section className={styles.assignmentCollection} aria-labelledby="assigned-exams-title">
+          <header className={styles.sectionHead + " " + styles.assignmentCollectionHead}>
             <div>
-              <h2 id="assigned-exams-title">Đề giáo viên đã giao</h2>
-              <p>Trạng thái của mỗi đề được xác định từ lịch mở, hạn nộp, lượt làm và điều kiện hoàn thành đề trước.</p>
+              <h2 id="assigned-exams-title">Làm bài kiểm tra</h2>
+              <p>Chọn đúng bảng theo mục tiêu ôn tập. Trạng thái mỗi đề được xác định từ lịch mở, hạn nộp, lượt làm và kết quả đề trước.</p>
             </div>
             <BookOpenText size={25} weight="regular" />
           </header>
 
-          <div className={styles.assignmentGroups}>
-            <section className={styles.assignmentGroup}>
+          <div className={styles.assignmentTableGrid}>
+            <section className={styles.assignmentBoard + " " + styles.assignmentTable + " " + styles.assignmentTableChapter} aria-labelledby="chapter-exams-title">
               <header className={styles.assignmentGroupHead}>
-                <div><span>ÔN LUYỆN THEO CHƯƠNG</span><h3>Chọn một chương để luyện đúng phần đang học</h3><p>Đề con chỉ xuất hiện sau khi đề gốc đã được chấm; AI tạo đề theo đúng kỹ năng cần cải thiện.</p></div>
+                <div><span>ÔN LUYỆN THEO CHƯƠNG</span><h3 id="chapter-exams-title">Đề kiểm tra từng chương</h3><p>Củng cố đúng phần đang học. Đề con chỉ xuất hiện sau khi AI chấm đề gốc.</p></div>
                 <strong>{chapterAssignments.length} chương</strong>
               </header>
-              <div className={styles.assignedExamList}>{chapterAssignments.map((item, index) => <AssignedExamCard item={item} key={item.assignment.id} number={index + 1} studentId={studentId} />)}</div>
+              <div className={styles.assignedExamList}>{chapterAssignments.length > 0 ? chapterAssignments.map((item, index) => <AssignedExamCard item={item} key={item.assignment.id} number={index + 1} studentId={studentId} />) : <p className={styles.assignmentEmpty}>Chưa có đề theo chương được giao.</p>}</div>
             </section>
 
-            <section className={styles.assignmentGroup + " " + styles.assignmentGroupTerm}>
+            <section className={styles.assignmentBoard + " " + styles.assignmentTable + " " + styles.assignmentTableTerm} aria-labelledby="term-exams-title">
               <header className={styles.assignmentGroupHead}>
-                <div><span>ĐỀ KIỂM TRA THEO KỲ</span><h3>Đề ôn tập giữa kỳ và cuối kỳ</h3><p>Đề tổng hợp nhiều chương theo lịch và phạm vi mà giáo viên đã giao cho lớp.</p></div>
+                <div><span>ĐỀ KIỂM TRA THEO KỲ</span><h3 id="term-exams-title">Đề ôn tập giữa kỳ và cuối kỳ</h3><p>Đề tổng hợp nhiều chương theo đúng lịch và phạm vi giáo viên giao cho lớp.</p></div>
                 <strong>{termAssignments.length} đề</strong>
               </header>
-              <div className={styles.assignedExamList}>{termAssignments.map((item, index) => <AssignedExamCard item={item} key={item.assignment.id} number={index + 1} studentId={studentId} />)}</div>
+              <div className={styles.assignedExamList}>{termAssignments.length > 0 ? termAssignments.map((item, index) => <AssignedExamCard item={item} key={item.assignment.id} number={index + 1} studentId={studentId} />) : <p className={styles.assignmentEmpty}>Chưa có đề giữa kỳ hoặc cuối kỳ được giao.</p>}</div>
             </section>
           </div>
         </section>

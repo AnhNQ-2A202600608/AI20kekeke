@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { AppShell, ProgressBar } from "../components/AppShell";
-import { subjectPrograms, subjects } from "../data";
+import { chapterLessonPreviews, subjectPrograms, subjects } from "../data";
 import { useOnboardingProfile } from "../hooks/useOnboardingProfile";
 
 const mathFullRoute = [
@@ -25,6 +25,9 @@ export default function LearningWorkspace() {
   const selectedSubject = subjects.find((subject) => subject.code === selectedSubjectCode) || subjects[0];
   const program = subjectPrograms[selectedSubject.code as keyof typeof subjectPrograms] || subjectPrograms.TO;
   const activeChapter = program.chapters.find((chapter) => chapter.active) || program.chapters[0];
+  const chapterLessons = chapterLessonPreviews[activeChapter.number] || [];
+  const currentLesson = chapterLessons.find((lesson) => lesson.state === "current") || chapterLessons[0];
+  const completedLessonCount = chapterLessons.filter((lesson) => lesson.state === "completed").length;
   const learningLevel = useOnboardingProfile(selectedSubject.code);
   const currentGrade = learningLevel.grade || program.grade;
   const isMathProgram = selectedSubject.code === "TO";
@@ -40,8 +43,8 @@ export default function LearningWorkspace() {
           <span className="overline">{currentGrade} · {program.title}</span>
           <h1>{activeChapter.title}</h1>
           <p>
-            Lộ trình {program.title.toLowerCase()} đang ưu tiên {activeChapter.title.toLowerCase()}.
-            Hoàn thành mục tiêu hôm nay để mở nhịp luyện tập tiếp theo.
+            Hoàn thành các bài học theo thứ tự để mở bài kiểm tra chương.
+            Mỗi bài tập trung vào một kỹ năng và được mở theo tiến độ của bạn.
           </p>
           <div className="hero-xp-strip">
             <div>
@@ -56,22 +59,44 @@ export default function LearningWorkspace() {
             <strong>{learningLevel.placementScore ? `Test xếp level ${learningLevel.placementScore}` : "Kiểm tra mở khóa 86 / 100"}</strong>
           </div>
           <div className="hero-actions">
-            <Link className="primary-action" href={`/chuong/phan-so?subject=${selectedSubject.code}`}>Vào chương đang học <span>→</span></Link>
+            <Link className="primary-action" href={currentLesson?.href || `/chuong/phan-so?subject=${selectedSubject.code}`}>
+              {currentLesson ? `Tiếp tục bài ${currentLesson.order}` : "Vào chương đang học"} <span>→</span>
+            </Link>
             <Link className="secondary-action" href={`/hoi-dap-ai?subject=${selectedSubject.code}`}>Hỏi đáp AI về chương</Link>
           </div>
         </div>
 
-        <aside className="today-focus hero-focus">
-          <div>
+        <aside className="chapter-lessons-preview hero-focus" aria-label="Bài học trong chương">
+          <div className="chapter-lessons-heading">
+            <div>
+              <span>Chương {Number(activeChapter.number)}</span>
+              <strong>Bài học trong chương</strong>
+            </div>
+            <small>{completedLessonCount} / {chapterLessons.length} hoàn thành</small>
+          </div>
+          <ol className="chapter-lesson-list">
+            {chapterLessons.map((lesson) => (
+              <li className={`chapter-lesson-item ${lesson.state}`} key={lesson.id}>
+                {lesson.href ? (
+                  <Link className="chapter-lesson-link" href={lesson.href}>
+                    <span className="chapter-lesson-order">{lesson.order}</span>
+                    <strong>{lesson.title}</strong>
+                    <small>{lesson.stateLabel}</small>
+                  </Link>
+                ) : (
+                  <div className="chapter-lesson-link" aria-disabled="true">
+                    <span className="chapter-lesson-order">{lesson.order}</span>
+                    <strong>{lesson.title}</strong>
+                    <small>{lesson.stateLabel}</small>
+                  </div>
+                )}
+              </li>
+            ))}
+          </ol>
+          <div className="chapter-lessons-goal">
             <span>Mục tiêu hôm nay</span>
-            <strong>2 / 3</strong>
+            <strong>{currentLesson ? `Hoàn thành bài ${currentLesson.order}: ${currentLesson.title}` : program.goal}</strong>
           </div>
-          <p>{program.goal}</p>
-          <div className="goal-highlight">
-            <span>{activeChapter.title}</span>
-            <strong>{learningLevel.progress}%</strong>
-          </div>
-          <ProgressBar value={learningLevel.progress} label="Tiến độ mục tiêu hôm nay" />
         </aside>
       </section>
 
@@ -79,10 +104,13 @@ export default function LearningWorkspace() {
         <div className="section-title">
           <div>
             <h2>Lộ trình {program.title} {currentGrade.toLowerCase()}</h2>
-            <p>{showFullRoute ? "Toàn bộ chương trình từ chương đầu đến chương cuối. Chương đang học vẫn được giữ nổi bật để bạn không mất trọng tâm." : "Chương đang học được highlight rõ hơn; các chương sau mở theo kết quả cuối chương."}</p>
+            <p className="route-current-context">
+              <span>Đang học</span>
+              <strong>Chương {Number(activeChapter.number)}: {activeChapter.title}</strong>
+              <b>{learningLevel.progress}% hoàn thành</b>
+            </p>
           </div>
           <div className="route-title-actions">
-            <span className="status-note">{showFullRoute ? `${routeChapters.length} chương` : `Đang học · Chương ${Number(activeChapter.number)}`}</span>
             {isMathProgram && (
               <button className="route-toggle" onClick={() => setShowFullRoute((value) => !value)} type="button">
                 {showFullRoute ? "Thu gọn lộ trình" : "Xem toàn bộ lộ trình"}
@@ -91,25 +119,17 @@ export default function LearningWorkspace() {
           </div>
         </div>
         <div className="chapter-browser">
-          {routeChapters.map((chapter) => (
-            <article className={`chapter-card ${chapter.active ? "active current-chapter" : showFullRoute ? "route-upcoming" : "locked collapsed"}`} key={chapter.number}>
+          {routeChapters.filter((chapter) => !chapter.active).map((chapter) => (
+            <article className="chapter-card locked upcoming-chapter" key={chapter.number}>
               <div className="chapter-card-number">{chapter.number}</div>
               <div className="chapter-card-copy">
-                <span className="hierarchy-label">Chương {Number(chapter.number)} · {chapter.unlock}</span>
                 <h3>{chapter.title}</h3>
-                <p>{chapter.summary}</p>
                 <div className="chapter-card-meta">
                   <span>{chapter.types} dạng bài</span>
                   <span>{chapter.xp.toLocaleString("vi-VN")} XP</span>
-                  {chapter.active && <span>{chapter.progress}% hoàn thành</span>}
                 </div>
-                {chapter.active && <ProgressBar value={chapter.progress} />}
               </div>
-              {chapter.active ? (
-                <Link className="chapter-open" href={`/chuong/phan-so?subject=${selectedSubject.code}`}>Chi tiết chương <span>→</span></Link>
-              ) : (
-                <span className="chapter-locked">{chapter.unlock}</span>
-              )}
+              <span className="chapter-locked">{chapter.unlock}</span>
             </article>
           ))}
         </div>
