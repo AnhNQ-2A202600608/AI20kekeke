@@ -402,4 +402,14 @@
 
 ---
 
+## 2026-07-18
+
+| Member | Task | Status | Output | Time |
+|--------|------|--------|--------|------|
+| Nguyễn Phương Nam | Align math concepts, purge ML leak terms, and fix CI/CD & SQL tests | ✅ Done | Đồng bộ 100% tên các concept Toán học GDPT 2018; xóa 230 dòng mock code trùng lặp ở frontend dashboard; thanh lọc các thuật ngữ ML ra khỏi activity pool; đưa questions.json và knowledge_graph.json vào git tracking để xanh CI; tối ưu hóa test_adaptive_sql_contracts.py; và tạo công cụ run_demo.ps1. | 6h |
+
+**Tổng kết ngày:** Hoàn thiện chất lượng và đồng bộ 100% các concept Toán học trên toàn bộ hệ thống; loại bỏ triệt để các tệp mock thừa và các thuật ngữ máy học để đảm bảo uy tín demo sư phạm; cấu hình git tracking dữ liệu câu hỏi giải quyết lỗi CI/CD từ xa; hoàn thành bộ kiểm thử tự động đạt 331 tests (100% pass trên local và CI).
+
+---
+
 <!-- Format: copy block trên cho mỗi ngày làm việc -->
