@@ -38,9 +38,9 @@ COURSE_ID = "cf76850d-0738-50c3-bf34-1c464fa3b4d3"
 COURSE_CODE = "math-k6"
 RELATION_TYPE = "Prerequisite_of"
 
-# Define the 80 prerequisite relations (source -> target)
+# Define prerequisite relations (source -> target)
 RAW_EDGES = [
-    # Mạch 1: Số tự nhiên (15 edges)
+    # Mạch 1: Số tự nhiên (15 edges gốc + 8 edges bổ sung)
     ("tap-hop", "khai-niem-so-tu-nhien"),
     ("khai-niem-so-tu-nhien", "phep-cong"),
     ("khai-niem-so-tu-nhien", "phep-tru"),
@@ -56,8 +56,16 @@ RAW_EDGES = [
     ("uoc", "ucln"),
     ("boi", "boi-chung"),
     ("boi-chung", "boi-chung-nho-nhat"),
+    ("tap-hop", "phan-tu-cua-tap-hop"),
+    ("tap-hop", "mo-ta-tap-hop"),
+    ("tap-hop", "giao-cua-hai-tap-hop"),
+    ("phep-cong", "tinh-chat-giao-hoan"),
+    ("phep-cong", "tinh-chat-ket-hop"),
+    ("phep-nhan", "tinh-chat-phan-phoi"),
+    ("chia-het", "tinh-chat-chia-het"),
+    ("khai-niem-so-tu-nhien", "so-lien-truoc-so-lien-sau"),
 
-    # Mạch 2: Số nguyên (8 edges)
+    # Mạch 2: Số nguyên (8 edges gốc + 4 edges bổ sung)
     ("khai-niem-so-tu-nhien", "so-nguyen-am"),
     ("so-nguyen-am", "so-nguyen"),
     ("so-nguyen", "cong-hai-so-nguyen-cung-dau"),
@@ -66,8 +74,13 @@ RAW_EDGES = [
     ("so-nguyen", "nhan-hai-so-nguyen-cung-dau"),
     ("so-nguyen", "nhan-hai-so-nguyen-khac-dau"),
     ("so-nguyen", "so-sanh-hai-so-nguyen"),
+    ("so-nguyen-am", "truc-so"),
+    ("so-nguyen", "tap-hop-so-nguyen"),
+    ("so-nguyen", "quy-tac-dau-ngoc"),
+    ("so-nguyen-am", "so-doi"),
+    ("so-doi", "cong-hai-so-nguyen-khac-dau"),
 
-    # Mạch 3: Phân số (18 edges)
+    # Mạch 3: Phân số (18 edges gốc + 4 edges bổ sung)
     ("phep-chia", "phan-so"),
     ("phan-so", "tu-so-mau-so"),
     ("phan-so", "phan-so-bang-nhau"),
@@ -86,8 +99,12 @@ RAW_EDGES = [
     ("phan-so", "phan-so-thap-phan"),
     ("ti-so-phan-tram", "tim-gia-tri-phan-so-cua-mot-so-cho-truoc"),
     ("ti-so-phan-tram", "tim-mot-so-biet-gia-tri-phan-so-cua-no"),
+    ("phan-so-bang-nhau", "tinh-chat-phan-so"),
+    ("boi-chung-nho-nhat", "mau-so-chung"),
+    ("phan-so", "so-doi-cua-phan-so"),
+    ("so-doi-cua-phan-so", "phep-tru-hai-phan-so"),
 
-    # Mạch 4: Số thập phân (8 edges)
+    # Mạch 4: Số thập phân (8 edges gốc + 2 edges bổ sung)
     ("phan-so-thap-phan", "so-thap-phan-duong"),
     ("so-thap-phan-duong", "lam-tron-so-thap-phan"),
     ("so-thap-phan-duong", "phep-cong-so-thap-phan"),
@@ -95,9 +112,10 @@ RAW_EDGES = [
     ("so-thap-phan-duong", "phep-nhan-so-thap-phan"),
     ("so-thap-phan-duong", "phep-chia-so-thap-phan"),
     ("so-thap-phan-duong", "so-thap-phan-am"),
-    ("so-thap-phan-duong", "tinh-chat-bang-cau"),
+    ("so-thap-phan-duong", "tinh-chat-bac-cau"),  # Đã sửa typo ở đây
+    ("so-thap-phan-duong", "uoc-luong-ket-qua"),
 
-    # Mạch 5: Hình học phẳng (23 edges)
+    # Mạch 5: Hình học phẳng (23 edges gốc + 10 edges bổ sung)
     ("khai-niem-so-tu-nhien", "doan-thang"),
     ("doan-thang", "do-dai-doan-thang"),
     ("doan-thang", "duong-thang-di-qua-hai-diem"),
@@ -121,8 +139,19 @@ RAW_EDGES = [
     ("dien-tich-hinh-binh-hanh", "dien-tich-hinh-thang"),
     ("hinh-vuong", "tam-doi-xung"),
     ("tam-doi-xung", "hinh-co-tam-doi-xung"),
+    ("duong-thang-di-qua-hai-diem", "diem-thuoc-duong-thang"),
+    ("duong-thang-di-qua-hai-diem", "diem-khong-thuoc-duong-thang"),
+    ("doan-thang", "diem-nam-giua-hai-diem"),
+    ("doan-thang", "chu-vi-hinh-thang"),
+    ("doan-thang", "chu-vi-hinh-thoi"),
+    ("tia", "hai-tia-doi-nhau"),
+    ("goc", "dinh-cua-goc"),
+    ("goc", "canh-cua-goc"),
+    ("dien-tich-hinh-binh-hanh", "chu-vi-hinh-binh-hanh"),
+    ("dien-tich-hinh-binh-hanh", "dien-tich-hinh-thoi"),
+    ("tam-doi-xung", "hinh-tam-giac-deu"),
 
-    # Mạch 6: Thống kê & Xác suất (8 edges)
+    # Mạch 6: Thống kê & Xác suất (8 edges gốc + 1 edge bổ sung)
     ("du-lieu", "thu-thap-du-lieu"),
     ("thu-thap-du-lieu", "bang-thong-ke"),
     ("bang-thong-ke", "bieu-do-tranh"),
@@ -130,7 +159,8 @@ RAW_EDGES = [
     ("bieu-do-cot", "bieu-do-cot-kep"),
     ("ket-qua-co-the", "su-kien"),
     ("su-kien", "ti-so-xac-suat-thuc-nghiem"),
-    ("ti-so-xac-suat-thuc-nghiem", "xac-suat-thuc-nghiem")
+    ("ti-so-xac-suat-thuc-nghiem", "xac-suat-thuc-nghiem"),
+    ("du-lieu", "so-lieu")
 ]
 
 def get_relation_uuid(course_code: str, source_code: str, relation_type: str, target_code: str) -> str:
