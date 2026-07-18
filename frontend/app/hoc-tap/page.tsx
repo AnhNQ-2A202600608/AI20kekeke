@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { AppShell, ProgressBar } from "../components/AppShell";
 import { subjectPrograms, subjects } from "../data";
@@ -18,7 +18,7 @@ const mathFullRoute = [
   { number: "08", title: "Ôn tập tổng hợp cuối năm", summary: "Tổng hợp các mạch kiến thức, luyện đề và sửa lỗi thường gặp.", progress: 0, types: 5, xp: 1800, active: false, unlock: "Chương cuối" },
 ];
 
-export default function LearningWorkspace() {
+function LearningWorkspaceContent() {
   const [showFullRoute, setShowFullRoute] = useState(false);
   const searchParams = useSearchParams();
   const selectedSubjectCode = searchParams.get("subject") || "TO";
@@ -34,7 +34,7 @@ export default function LearningWorkspace() {
   ));
 
   return (
-    <AppShell>
+    <div className="learning-workspace-content-inner">
       <section className="learning-hero">
         <div className="learning-hero-copy">
           <span className="overline">{currentGrade} · {program.title}</span>
@@ -43,39 +43,34 @@ export default function LearningWorkspace() {
             Lộ trình {program.title.toLowerCase()} đang ưu tiên {activeChapter.title.toLowerCase()}.
             Hoàn thành mục tiêu hôm nay để mở nhịp luyện tập tiếp theo.
           </p>
-          <div className="hero-xp-strip">
-            <div>
-              <span>{learningLevel.title}</span>
-              <strong>{learningLevel.xp.toLocaleString("vi-VN")} / {learningLevel.nextXp.toLocaleString("vi-VN")} XP</strong>
-            </div>
-            <ProgressBar value={learningLevel.progress} label="Tiến độ kinh nghiệm hiện tại" />
-          </div>
-          <div className="hero-meta-line" aria-label="Thông tin học tập hiện tại">
-            <span>{program.title}</span>
-            <span>{learningLevel.name}</span>
-            <strong>{learningLevel.placementScore ? `Test xếp level ${learningLevel.placementScore}` : "Kiểm tra mở khóa 86 / 100"}</strong>
-          </div>
-          <div className="hero-actions">
-            <Link className="primary-action" href={`/chuong/phan-so?subject=${selectedSubject.code}`}>Vào chương đang học <span>→</span></Link>
+          <div className="learning-hero-actions">
+            <Link className="primary-action" href={`/chuong/phan-so?subject=${selectedSubject.code}`}>Học tiếp <span>→</span></Link>
+            <Link className="secondary-action" href={`/on-thi?subject=${selectedSubject.code}`}>Ôn thi cuối kỳ</Link>
           </div>
         </div>
-
-        <aside className="today-focus hero-focus">
-          <div>
-            <span>Mục tiêu hôm nay</span>
-            <strong>2 / 3</strong>
+        <aside className="learning-daily">
+          <div className="learning-daily-head">
+            <div>
+              <span className="overline">Mục tiêu ngày</span>
+              <h3>Luyện tập hôm nay</h3>
+            </div>
+            <strong>+10 XP</strong>
           </div>
-          <p>{program.goal}</p>
-          <div className="goal-highlight">
-            <span>{activeChapter.title}</span>
-            <strong>{learningLevel.progress}%</strong>
+          <div className="daily-list">
+            <Link className="daily-task active" href={`/hoi-dap-ai?subject=${selectedSubject.code}`}>
+              <div className="task-mark"></div>
+              <div><h4>Giải đáp với Lucy</h4><p>Nhận 1 gợi ý hướng giải từ AI.</p></div>
+            </Link>
+            <Link className="daily-task" href={`/chuong/phan-so?subject=${selectedSubject.code}`}>
+              <div className="task-mark"></div>
+              <div><h4>Đạt 80% độ chính xác</h4><p>Hoàn thành 1 bài luyện tập.</p></div>
+            </Link>
           </div>
-          <ProgressBar value={learningLevel.progress} label="Tiến độ mục tiêu hôm nay" />
         </aside>
       </section>
 
-      <section className={`section-block learning-path learning-path-focused ${showFullRoute ? "learning-path-full" : ""}`}>
-        <div className="section-title">
+      <section className="learning-route">
+        <div className="route-title">
           <div>
             <h2>Lộ trình {program.title} {currentGrade.toLowerCase()}</h2>
             <p>{showFullRoute ? "Toàn bộ chương trình từ chương đầu đến chương cuối. Chương đang học vẫn được giữ nổi bật để bạn không mất trọng tâm." : "Chương đang học được highlight rõ hơn; các chương sau mở theo kết quả cuối chương."}</p>
@@ -113,6 +108,16 @@ export default function LearningWorkspace() {
           ))}
         </div>
       </section>
-    </AppShell>
+    </div>
+  );
+}
+
+export default function LearningWorkspace() {
+  return (
+    <Suspense fallback={<div className="p-6 text-center text-muted">Đang tải lộ trình...</div>}>
+      <AppShell>
+        <LearningWorkspaceContent />
+      </AppShell>
+    </Suspense>
   );
 }

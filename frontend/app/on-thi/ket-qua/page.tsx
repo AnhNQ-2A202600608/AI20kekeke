@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { ArrowRight, CheckCircle, ClipboardText, Sparkle, Target, TrendUp, WarningCircle } from "@phosphor-icons/react";
 import { AppShell } from "../../components/AppShell";
 import { MathText } from "../../components/MathText";
@@ -13,7 +13,7 @@ function scoreLabel(score: number) {
   return String(score).replace(".", ",");
 }
 
-export default function ExamResultPage() {
+function ExamResultPageContent() {
   const searchParams = useSearchParams();
   const assignmentId = searchParams.get("assignment") || searchParams.get("exam") || "";
   const studentId = examWorkflowSession.getCurrentStudentId();
@@ -25,16 +25,14 @@ export default function ExamResultPage() {
 
   if (!workspace || !result) {
     return (
-      <AppShell compact>
-        <main className={styles.examStatePage}>
-          <section className={styles.examStateCard}>
-            <WarningCircle size={28} weight="regular" />
-            <h1>Chưa có kết quả để hiển thị</h1>
-            <p>Kết quả sẽ xuất hiện sau khi bài làm được gửi và hệ thống hoàn tất chấm điểm.</p>
-            <Link className={styles.primaryLink} href="/on-thi">Quay lại danh sách đề <ArrowRight size={16} weight="bold" /></Link>
-          </section>
-        </main>
-      </AppShell>
+      <main className={styles.examStatePage}>
+        <section className={styles.examStateCard}>
+          <WarningCircle size={28} weight="regular" />
+          <h1>Chưa có kết quả để hiển thị</h1>
+          <p>Kết quả sẽ xuất hiện sau khi bài làm được gửi và hệ thống hoàn tất chấm điểm.</p>
+          <Link className={styles.primaryLink} href="/on-thi">Quay lại danh sách đề <ArrowRight size={16} weight="bold" /></Link>
+        </section>
+      </main>
     );
   }
 
@@ -58,8 +56,7 @@ export default function ExamResultPage() {
   };
 
   return (
-    <AppShell compact>
-      <main className={styles.page}>
+    <main className={styles.page}>
         <section className={styles.resultHero}>
           <div>
             <span className={styles.eyebrow}>KẾT QUẢ ĐÃ CHẤM</span>
@@ -170,6 +167,15 @@ export default function ExamResultPage() {
           </article>
         </section>
       </main>
-    </AppShell>
+  );
+}
+
+export default function ExamResultPage() {
+  return (
+    <Suspense fallback={<div className="p-6 text-center text-muted">Đang tải kết quả thi...</div>}>
+      <AppShell compact>
+        <ExamResultPageContent />
+      </AppShell>
+    </Suspense>
   );
 }

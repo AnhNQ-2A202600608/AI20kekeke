@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import { AppShell, LevelBadge, ProgressBar } from "../components/AppShell";
 import { activeLearningLevel } from "../data";
+import { Suspense } from "react";
 
 const activity = [
   { title: "Quy đồng hai phân số", kind: "Bài học", when: "Hôm nay · 16:20", progress: 60, href: "/bai-hoc/phan-so" },
@@ -14,9 +17,9 @@ const stats = [
   { label: "Cần ôn", value: "1", note: "kỹ năng vận dụng", tone: "review" },
 ];
 
-export default function ProfilePage() {
+function ProfilePageContent() {
   return (
-    <AppShell>
+    <>
       <section className="profile-studio">
         <div className="profile-hero-panel">
           <div className="profile-avatar-block">
@@ -85,6 +88,16 @@ export default function ProfilePage() {
           </aside>
         </section>
       </section>
-    </AppShell>
+    </>
+  );
+}
+
+export default function ProfilePage() {
+  return (
+    <Suspense fallback={null}>
+      <AppShell>
+        <ProfilePageContent />
+      </AppShell>
+    </Suspense>
   );
 }

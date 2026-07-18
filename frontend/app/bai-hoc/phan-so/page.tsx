@@ -2,19 +2,18 @@
 
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { AppShell, ProgressBar } from "../../components/AppShell";
 
 const sections = ["Mục tiêu dạng bài", "Quy đồng mẫu số", "Ví dụ minh họa", "Ghi nhớ"];
 
-export default function LessonPage() {
+function LessonPageContent() {
   const searchParams = useSearchParams();
   const subjectCode = searchParams.get("subject") || "TO";
   const [active, setActive] = useState(1);
 
   return (
-    <AppShell compact>
-      <div className="lesson-page">
+    <div className="lesson-page">
         <aside className="lesson-outline">
           <Link className="back-link" href={`/hoc-tap?subject=${subjectCode}`}>← Lộ trình học</Link>
           <div><span className="overline">Chương 1 · Dạng 2 · Bài học 2</span><h2>Quy đồng mẫu số</h2></div>
@@ -36,6 +35,15 @@ export default function LessonPage() {
           <div className="lesson-actions"><button type="button" onClick={() => setActive(Math.max(0, active - 1))}>← Phần trước</button><Link className="primary-action" href={`/luyen-tap?subject=${subjectCode}`}>Luyện tập bài học này<span>→</span></Link></div>
         </article>
       </div>
-    </AppShell>
+  );
+}
+
+export default function LessonPage() {
+  return (
+    <Suspense fallback={<div className="p-6 text-center text-muted">Đang tải bài học...</div>}>
+      <AppShell compact>
+        <LessonPageContent />
+      </AppShell>
+    </Suspense>
   );
 }

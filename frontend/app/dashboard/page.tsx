@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useState, type CSSProperties } from "react";
+import { useState, type CSSProperties, Suspense } from "react";
 import { ArrowRight, BookOpenText, ChartLineUp, Lightning, Target, TrendUp } from "@phosphor-icons/react";
 import { AppShell, ProgressBar } from "../components/AppShell";
 import { leaderboard, skills, subjectPrograms, subjects, weeklyScores } from "../data";
@@ -14,7 +14,7 @@ function scoreTone(value: number) {
   return "review";
 }
 
-export default function DashboardPage() {
+function DashboardPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [timeRange, setTimeRange] = useState<"7" | "30">("7");
@@ -30,7 +30,7 @@ export default function DashboardPage() {
   const nextLessonHref = selectedSubject.code === "TO" ? "/bai-hoc/phan-so" : `/hoc-tap?subject=${selectedSubject.code}`;
 
   return (
-    <AppShell>
+    <>
       <section className="dashboard-heading dashboard-hero">
         <div>
           <span className="overline">Tổng quan {program.title}</span>
@@ -134,6 +134,16 @@ export default function DashboardPage() {
           <div className="leader-list">{leaderboard.map((student) => <div className={student.isUser ? "leader-entry user" : "leader-entry"} key={student.name}><span>{student.rank}</span><div><strong>{student.name}</strong><small>{student.accuracy}% chính xác</small></div><b>{student.xp.toLocaleString("vi-VN")} XP</b></div>)}</div>
         </article>
       </section>
-    </AppShell>
+    </>
+  );
+}
+
+export default function DashboardPage() {
+  return (
+    <Suspense fallback={<div className="p-6 text-center text-muted">Đang tải dashboard...</div>}>
+      <AppShell>
+        <DashboardPageContent />
+      </AppShell>
+    </Suspense>
   );
 }
