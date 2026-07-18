@@ -15,7 +15,13 @@ function getViewFromSearch(searchParams: SearchParamsLike): QuizManagementView {
   return searchParams.get('quizView') === 'errors' ? 'errors' : 'review';
 }
 
-export function QuizManagementTab() {
+export function QuizManagementTab({
+  initialSourceFilter,
+  onClearSourceFilter,
+}: {
+  initialSourceFilter?: string;
+  onClearSourceFilter?: () => void;
+}) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const activeView = getViewFromSearch(searchParams);
@@ -81,7 +87,14 @@ export function QuizManagementTab() {
         </div>
       </div>
 
-      {activeView === 'review' ? <QuizEditorTab /> : <QuizErrorCasesTab />}
+      {activeView === 'review' ? (
+        <QuizEditorTab
+          initialSourceFilter={initialSourceFilter}
+          onClearSourceFilter={onClearSourceFilter}
+        />
+      ) : (
+        <QuizErrorCasesTab />
+      )}
     </div>
   );
 }

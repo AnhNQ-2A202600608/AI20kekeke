@@ -176,6 +176,25 @@ function LoginPageContent() {
     router.push('/app');
   };
 
+  const handleMentorBypass = () => {
+    if (!demoMode) {
+      setErrorMessage('Lớp demo chỉ khả dụng khi bật chế độ demo.');
+      return;
+    }
+    logIn({
+      name: 'Giảng Viên Sapia',
+      username: 'mentor',
+      mssv: '',
+      role: 'mentor',
+      userId: '55555555-5555-5555-5555-555555555555',
+      token: `fake-jwt-token-55555555-5555-5555-5555-555555555555`,
+      isDemoAccount: false,
+      demoProfileKey: null,
+    });
+
+    router.push('/mentor/ingestion');
+  };
+
   const switchMode = (nextMode: AuthMode) => {
     setMode(nextMode);
     setErrorMessage(null);
@@ -351,14 +370,24 @@ function LoginPageContent() {
             </p>
 
             {demoMode ? (
-              <button
-                type="button"
-                onClick={handleBypass}
-                className="inline-flex min-h-[40px] items-center gap-2 rounded-lg text-body-dense font-black text-on-background underline decoration-stone-300 underline-offset-4 transition-colors hover:text-primary-green-dark focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-green/20"
-              >
-                <Sparkles className="h-4 w-4 text-primary-green-dark" aria-hidden="true" />
-                Vào lớp demo
-              </button>
+              <div className="flex flex-wrap gap-4 mt-2">
+                <button
+                  type="button"
+                  onClick={handleBypass}
+                  className="inline-flex min-h-[40px] items-center gap-2 rounded-lg text-body-dense font-black text-on-background underline decoration-stone-300 underline-offset-4 transition-colors hover:text-primary-green-dark focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-green/20"
+                >
+                  <Sparkles className="h-4 w-4 text-primary-green-dark" aria-hidden="true" />
+                  Vào lớp demo (Học viên)
+                </button>
+                <button
+                  type="button"
+                  onClick={handleMentorBypass}
+                  className="inline-flex min-h-[40px] items-center gap-2 rounded-lg text-body-dense font-black text-on-background underline decoration-stone-300 underline-offset-4 transition-colors hover:text-primary-green-dark focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-green/20"
+                >
+                  <Sparkles className="h-4 w-4 text-primary-green" aria-hidden="true" />
+                  Vào Cổng Giảng viên (Mentor)
+                </button>
+              </div>
             ) : null}
           </div>
 
