@@ -67,7 +67,7 @@ async def test_respond_general_hybrid_calls_llm():
         # Test với lịch sử chat
         result_history = await respond_general_node(state_with_history)
         assert "Chào bạn" in result_history["response"]
-        
+
         # Test với Elo tùy chỉnh
         result_elo = await respond_general_node(state_with_custom_elo)
         assert "Chào bạn" in result_elo["response"]

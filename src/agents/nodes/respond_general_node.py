@@ -58,7 +58,7 @@ async def respond_general_node(state: AgentState) -> dict:
         has_active_concept = concept_id and str(concept_id).lower() != "general"
         has_custom_elo = student_profile.get("elo_score", 1200.0) != 1200.0 or student_profile.get("elo", 1200.0) != 1200.0
         has_custom_mastery = student_profile.get("mastery_state", "not_started") != "not_started"
-        
+
         is_new_session_greeting = not has_history and not has_active_concept and not has_custom_elo and not has_custom_mastery
 
         if is_new_session_greeting:
