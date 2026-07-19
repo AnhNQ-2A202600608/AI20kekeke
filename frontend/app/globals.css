@@ -2948,42 +2948,43 @@ body {
 /* Subject skill graph */
 .skill-graph-shell {
   display: grid;
-  grid-template-columns: minmax(280px, 320px) minmax(0, 1fr);
-  gap: clamp(14px, 1.8vw, 22px);
+  grid-template-columns: minmax(292px, 340px) minmax(0, 1fr);
+  gap: clamp(14px, 1.7vw, 22px);
   min-height: calc(100dvh - 126px);
 }
 
 .skill-node-panel,
 .skill-graph-board {
-  border-radius: 24px;
+  border-radius: 22px;
   background:
-    radial-gradient(circle at 100% 0, color-mix(in srgb, var(--accent) 8%, transparent), transparent 34%),
-    rgba(255,255,255,.86);
+    radial-gradient(circle at 100% 0, color-mix(in srgb, var(--accent) 11%, transparent), transparent 36%),
+    linear-gradient(145deg, rgba(255,255,255,.94), color-mix(in srgb, var(--subject-hero-b) 18%, #ffffff));
   box-shadow:
-    0 18px 55px color-mix(in srgb, var(--accent) 9%, transparent),
+    0 18px 52px color-mix(in srgb, var(--accent) 9%, transparent),
     inset 0 1px 0 rgba(255,255,255,.95),
-    inset 0 0 0 1px color-mix(in srgb, var(--accent) 12%, transparent);
+    inset 0 0 0 1px color-mix(in srgb, var(--accent) 15%, transparent);
 }
 
 .skill-node-panel {
   display: grid;
-  grid-template-rows: auto auto auto auto 1fr;
-  gap: 16px;
-  padding: clamp(18px, 2vw, 24px);
+  grid-template-rows: auto auto auto auto auto 1fr;
+  gap: 14px;
+  padding: clamp(18px, 1.8vw, 24px);
 }
 
 .skill-node-panel-head h1 {
+  max-width: 10ch;
   margin-top: 10px;
-  font-size: clamp(1.55rem, 2.4vw, 2.25rem);
-  line-height: 1.02;
-  letter-spacing: -.045em;
+  font-size: clamp(1.42rem, 2.1vw, 2rem);
+  line-height: 1.04;
+  letter-spacing: -.025em;
 }
 
 .skill-node-panel-head p {
-  margin-top: 14px;
+  margin-top: 12px;
   color: var(--muted);
-  font-size: .88rem;
-  line-height: 1.72;
+  font-size: .84rem;
+  line-height: 1.65;
 }
 
 .skill-node-stats {
@@ -2993,13 +2994,13 @@ body {
 }
 
 .skill-node-stats div {
-  min-height: 58px;
-  border-radius: 999px;
-  background: rgba(255,255,255,.82);
+  min-height: 56px;
+  border-radius: 16px;
+  background: rgba(255,255,255,.78);
   padding: 10px 14px;
   box-shadow:
-    inset 0 0 0 1px color-mix(in srgb, var(--accent) 12%, transparent),
-    0 10px 24px color-mix(in srgb, var(--accent) 8%, transparent);
+    inset 0 0 0 1px color-mix(in srgb, var(--accent) 13%, transparent),
+    0 10px 24px color-mix(in srgb, var(--accent) 7%, transparent);
 }
 
 .skill-node-stats span,
@@ -3015,7 +3016,7 @@ body {
   display: block;
   margin-top: 2px;
   color: var(--accent-dark);
-  font-size: .95rem;
+  font-size: .93rem;
   font-variant-numeric: tabular-nums;
 }
 
@@ -3042,22 +3043,96 @@ body {
   color: var(--accent-dark);
 }
 
+.skill-state-pill.needs_review {
+  background: #fff1c7;
+  color: #8a5d00;
+}
+
 .skill-state-pill.locked {
   background: #eef2ef;
   color: #78847f;
 }
 
-.skill-prereq-card {
+.skill-mastery-axis {
   display: grid;
   gap: 8px;
   border-radius: 16px;
   background: rgba(255,255,255,.7);
+  padding: 12px;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 10%, transparent);
+}
+
+.skill-mastery-axis span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: var(--muted);
+  font-size: .75rem;
+  font-weight: 850;
+}
+
+.skill-mastery-axis strong {
+  color: var(--accent-dark);
+  font-variant-numeric: tabular-nums;
+}
+
+.skill-prereq-card {
+  display: grid;
+  gap: 6px;
+  border-radius: 16px;
+  background: rgba(255,255,255,.72);
   padding: 14px;
   box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 10%, transparent);
 }
 
 .skill-prereq-card strong {
   font-size: .86rem;
+  line-height: 1.35;
+}
+
+.skill-prereq-card small {
+  color: var(--muted);
+  font-size: .74rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.skill-prereq-card.warning {
+  background: #fff8df;
+  box-shadow: inset 0 0 0 1px rgba(216,154,0,.18);
+}
+
+.skill-prereq-card.warning span,
+.skill-prereq-card.warning strong {
+  color: #8a5d00;
+}
+
+.skill-reason-trail {
+  display: grid;
+  gap: 7px;
+}
+
+.skill-reason-trail div {
+  display: grid;
+  gap: 3px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.62);
+  padding: 10px 12px;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 8%, transparent);
+}
+
+.skill-reason-trail span {
+  color: var(--accent-dark);
+  font-size: .62rem;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.skill-reason-trail strong {
+  color: var(--muted);
+  font-size: .74rem;
+  font-weight: 780;
   line-height: 1.35;
 }
 
@@ -3074,9 +3149,10 @@ body {
 
 .skill-graph-board {
   display: grid;
-  grid-template-rows: auto minmax(0, 1fr);
+  grid-template-rows: auto auto minmax(0, 1fr);
   gap: 12px;
   padding: clamp(16px, 2vw, 22px);
+  min-width: 0;
 }
 
 .skill-graph-topbar {
@@ -3088,7 +3164,7 @@ body {
 
 .skill-graph-topbar h2 {
   margin-top: 4px;
-  font-size: clamp(1.42rem, 2vw, 2rem);
+  font-size: clamp(1.3rem, 1.8vw, 1.8rem);
   line-height: 1.05;
 }
 
@@ -3118,6 +3194,28 @@ body {
   transition: transform .28s ease, background .28s ease, color .28s ease;
 }
 
+.skill-view-all-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 34px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--accent);
+  color: white;
+  padding: 0 12px;
+  font-size: .68rem;
+  font-weight: 950;
+  cursor: pointer;
+  box-shadow: 0 12px 24px color-mix(in srgb, var(--accent) 20%, transparent);
+  transition: transform .24s ease, box-shadow .24s ease;
+}
+
+.skill-view-all-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 30px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
 .skill-subject-switcher a:hover,
 .skill-subject-switcher a.active {
   background: color-mix(in srgb, var(--subject-card) 54%, #ffffff);
@@ -3125,32 +3223,161 @@ body {
   transform: translateY(-1px);
 }
 
+.skill-graph-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.skill-graph-summary div {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 3px 8px;
+  min-height: 62px;
+  border-radius: 16px;
+  background: rgba(255,255,255,.66);
+  padding: 11px 13px;
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--accent) 11%, transparent),
+    0 12px 24px color-mix(in srgb, var(--accent) 5%, transparent);
+}
+
+.skill-graph-summary svg {
+  grid-row: span 2;
+  color: var(--accent-dark);
+}
+
+.skill-graph-summary span {
+  color: var(--muted);
+  font-size: .66rem;
+  font-weight: 900;
+}
+
+.skill-graph-summary strong {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--ink);
+  font-size: .9rem;
+  font-weight: 950;
+  line-height: 1.1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.skill-graph-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  align-items: center;
+}
+
+.skill-graph-filters span,
+.skill-graph-filters button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255,255,255,.68);
+  color: color-mix(in srgb, var(--ink) 62%, transparent);
+  padding: 0 11px;
+  font-size: .67rem;
+  font-weight: 900;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 10%, transparent);
+}
+
+.skill-graph-filters button {
+  cursor: pointer;
+  transition: transform .22s ease, background .22s ease, color .22s ease;
+}
+
+.skill-graph-filters button:hover,
+.skill-graph-filters button.active {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.skill-link-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.skill-link-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 28px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.62);
+  color: var(--muted);
+  padding: 0 10px;
+  font-size: .66rem;
+  font-weight: 850;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 9%, transparent);
+}
+
+.skill-link-legend i {
+  display: block;
+  width: 28px;
+  border-top: 2px solid color-mix(in srgb, var(--accent) 36%, transparent);
+}
+
+.skill-link-legend i.chapter_bridge {
+  border-top-color: color-mix(in srgb, var(--accent) 62%, transparent);
+  border-top-style: dashed;
+  border-top-width: 3px;
+}
+
+.skill-link-legend i.locked {
+  border-top-color: rgba(111,126,119,.28);
+  border-top-style: dashed;
+}
+
 .skill-graph-canvas {
   position: relative;
-  min-height: min(680px, calc(100dvh - 245px));
-  overflow: hidden;
-  border-radius: 20px;
+  min-height: min(660px, calc(100dvh - 335px));
+  overflow: auto hidden;
+  border-radius: 19px;
   background:
-    radial-gradient(circle at 48% 42%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 28%),
-    radial-gradient(circle at 82% 10%, rgba(255,255,255,.78), transparent 28%),
+    radial-gradient(circle at 35% 30%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 25%),
     linear-gradient(color-mix(in srgb, var(--accent) 5%, transparent) 1px, transparent 1px),
     linear-gradient(90deg, color-mix(in srgb, var(--accent) 5%, transparent) 1px, transparent 1px),
-    color-mix(in srgb, var(--subject-hero-b) 42%, #ffffff);
-  background-size: auto, auto, 18px 18px, 18px 18px, auto;
+    color-mix(in srgb, var(--subject-hero-b) 34%, #ffffff);
+  background-size: auto, 18px 18px, 18px 18px, auto;
   box-shadow:
     inset 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent),
     inset 0 1px 0 rgba(255,255,255,.9);
+  scrollbar-color: color-mix(in srgb, var(--accent) 30%, #dfe8e3) transparent;
+}
+
+.skill-graph-canvas.focus-canvas {
+  min-height: min(560px, calc(100dvh - 292px));
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 58% 44%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 30%),
+    linear-gradient(135deg, color-mix(in srgb, var(--subject-card) 34%, #ffffff), #ffffff 68%);
+}
+
+.skill-graph-canvas.full-canvas {
+  height: calc(100dvh - 154px);
+  min-height: 560px;
 }
 
 .graph-toolbar {
-  position: absolute;
+  position: sticky;
   top: 14px;
-  right: 14px;
   left: 14px;
   z-index: 5;
   display: flex;
   gap: 8px;
   align-items: center;
+  width: calc(100% - 28px);
+  margin: 14px;
 }
 
 .graph-toolbar span,
@@ -3161,7 +3388,7 @@ body {
   min-height: 38px;
   border: 0;
   border-radius: 14px;
-  background: rgba(255,255,255,.82);
+  background: rgba(255,255,255,.86);
   color: var(--accent-dark);
   padding: 0 12px;
   font-size: .72rem;
@@ -3175,15 +3402,121 @@ body {
   margin-left: auto;
 }
 
+.skill-graph-stage {
+  position: relative;
+  width: max(1460px, 100%);
+  height: 610px;
+  margin-top: -52px;
+}
+
+.skill-graph-stage.focus-stage {
+  width: 100%;
+  height: min(520px, calc(100dvh - 330px));
+  min-height: 430px;
+  margin-top: -42px;
+}
+
+.skill-graph-stage.full-stage {
+  width: max(1460px, 100%);
+  height: 610px;
+}
+
+.skill-focus-band {
+  position: absolute;
+  inset: 108px 6% 34px;
+  z-index: 1;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 70% 22%, rgba(255,255,255,.78), transparent 30%),
+    color-mix(in srgb, var(--subject-card) 48%, rgba(255,255,255,.72));
+  box-shadow:
+    inset 0 0 0 2px color-mix(in srgb, var(--accent) 18%, transparent),
+    0 22px 54px color-mix(in srgb, var(--accent) 10%, transparent);
+}
+
+.skill-focus-band strong,
+.skill-focus-band span {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+}
+
+.skill-focus-band strong {
+  top: 14px;
+  color: color-mix(in srgb, var(--accent-dark) 68%, transparent);
+  font-size: .64rem;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.skill-focus-band span {
+  display: none;
+  top: 42px;
+  color: var(--ink);
+  font-size: clamp(1.1rem, 2vw, 1.55rem);
+  font-weight: 950;
+  letter-spacing: -.02em;
+}
+
+.skill-graph-lanes {
+  position: absolute;
+  inset: 72px 0 0;
+  z-index: 1;
+}
+
+.skill-graph-lane {
+  position: absolute;
+  top: 0;
+  width: 27.5%;
+  height: calc(100% - 20px);
+  border-radius: 18px;
+  background: rgba(255,255,255,.28);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 8%, transparent);
+  transition: background .24s ease, box-shadow .24s ease;
+}
+
+.skill-graph-lane.active {
+  background: color-mix(in srgb, var(--subject-card) 42%, rgba(255,255,255,.54));
+  box-shadow:
+    inset 0 0 0 2px color-mix(in srgb, var(--accent) 22%, transparent),
+    0 16px 32px color-mix(in srgb, var(--accent) 8%, transparent);
+}
+
+.skill-graph-lane strong,
+.skill-graph-lane span {
+  position: absolute;
+  left: 11px;
+  right: 11px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.skill-graph-lane strong {
+  top: 12px;
+  color: var(--accent-dark);
+  font-size: .65rem;
+  font-weight: 950;
+}
+
+.skill-graph-lane span {
+  top: 30px;
+  color: var(--muted);
+  font-size: .62rem;
+  font-weight: 850;
+}
+
 .skill-graph-links {
   position: absolute;
-  inset: 0;
+  inset: 0 0 0 0;
+  z-index: 2;
   width: 100%;
   height: 100%;
+  pointer-events: none;
 }
 
 .skill-graph-links line {
-  stroke-width: .24;
+  stroke-width: .2;
   vector-effect: non-scaling-stroke;
 }
 
@@ -3191,18 +3524,55 @@ body {
   stroke: color-mix(in srgb, var(--accent) 36%, transparent);
 }
 
+.skill-graph-links line.prerequisite {
+  stroke-width: .26;
+}
+
+.skill-graph-links line.related {
+  stroke: color-mix(in srgb, var(--accent) 22%, transparent);
+  stroke-width: .16;
+  stroke-dasharray: 1.5 2.5;
+}
+
+.skill-graph-links line.chapter_bridge {
+  stroke: color-mix(in srgb, var(--accent) 58%, transparent);
+  stroke-width: .46;
+  stroke-dasharray: 5 4;
+}
+
 .skill-graph-links line.locked {
   stroke: rgba(111,126,119,.18);
   stroke-dasharray: 2 3;
 }
 
+.skill-graph-links line.locked.chapter_bridge {
+  stroke: color-mix(in srgb, var(--accent) 26%, rgba(111,126,119,.28));
+  stroke-width: .38;
+  stroke-dasharray: 5 5;
+}
+
+.skill-graph-links line.active {
+  stroke: var(--accent);
+  stroke-width: .38;
+}
+
+.skill-graph-links line.active.related {
+  stroke: color-mix(in srgb, var(--accent) 48%, transparent);
+  stroke-width: .22;
+}
+
+.skill-graph-links line.active.chapter_bridge {
+  stroke: var(--accent);
+  stroke-width: .56;
+}
+
 .graph-node {
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   display: grid;
   place-items: center;
-  width: clamp(54px, 5.4vw, 72px);
-  height: clamp(54px, 5.4vw, 72px);
+  width: 74px;
+  height: 74px;
   border: 0;
   border-radius: 999px;
   background: rgba(255,255,255,.9);
@@ -3247,12 +3617,39 @@ body {
 }
 
 .graph-node.current {
-  color: #8a5d00;
-  background: #fff4d5;
+  width: 92px;
+  height: 92px;
+  color: var(--accent-dark);
+  background:
+    radial-gradient(circle at 72% 20%, rgba(255,255,255,.72), transparent 30%),
+    color-mix(in srgb, var(--accent) 20%, #ffffff);
   box-shadow:
-    0 12px 30px rgba(204,142,0,.16),
-    inset 0 0 0 2px #efc653,
+    0 18px 42px color-mix(in srgb, var(--accent) 24%, transparent),
+    inset 0 0 0 3px var(--accent),
     inset 0 1px 0 white;
+}
+
+.graph-node.current span {
+  font-size: .58rem;
+}
+
+.focus-stage .graph-node {
+  width: clamp(66px, 6.6vw, 84px);
+  height: clamp(66px, 6.6vw, 84px);
+}
+
+.focus-stage .graph-node span {
+  max-width: 72%;
+  font-size: .5rem;
+}
+
+.focus-stage .graph-node.current {
+  width: clamp(88px, 8.2vw, 108px);
+  height: clamp(88px, 8.2vw, 108px);
+}
+
+.focus-stage .graph-node.current span {
+  font-size: .58rem;
 }
 
 .graph-node.ready {
@@ -3265,8 +3662,17 @@ body {
 }
 
 .graph-node.locked {
-  opacity: .62;
-  filter: saturate(.4);
+  opacity: .46;
+  filter: saturate(.28);
+}
+
+.graph-node.review {
+  color: #8a5d00;
+  background: #fff4d5;
+  box-shadow:
+    0 10px 22px rgba(204,142,0,.1),
+    inset 0 0 0 2px #efc653,
+    inset 0 1px 0 white;
 }
 
 .graph-node:hover,
@@ -3281,18 +3687,75 @@ body {
 
 .graph-current-orbit {
   position: absolute;
-  left: 39%;
-  top: 27%;
   z-index: 1;
   display: grid;
   place-items: center;
-  width: 118px;
-  height: 118px;
+  width: 136px;
+  height: 136px;
   border-radius: 999px;
   border: 1px dashed color-mix(in srgb, var(--accent) 36%, transparent);
   color: var(--accent);
-  opacity: .5;
+  opacity: .58;
   transform: translate(-50%, -50%);
+}
+
+.skill-fullscreen {
+  position: fixed;
+  inset: 16px;
+  z-index: 80;
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr);
+  gap: 12px;
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at 86% 6%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 30%),
+    linear-gradient(145deg, rgba(255,255,255,.97), color-mix(in srgb, var(--subject-hero-b) 24%, #ffffff));
+  padding: clamp(16px, 2vw, 24px);
+  box-shadow:
+    0 30px 90px rgba(20,36,31,.24),
+    inset 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent),
+    inset 0 1px 0 rgba(255,255,255,.95);
+}
+
+.skill-fullscreen-head {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.skill-fullscreen-head h2 {
+  margin-top: 4px;
+  font-size: clamp(1.35rem, 2vw, 2rem);
+  line-height: 1.05;
+}
+
+.skill-fullscreen-head p {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: .82rem;
+  font-weight: 800;
+}
+
+.skill-fullscreen-close {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255,255,255,.86);
+  color: var(--accent-dark);
+  cursor: pointer;
+  box-shadow:
+    0 12px 28px color-mix(in srgb, var(--accent) 10%, transparent),
+    inset 0 0 0 1px color-mix(in srgb, var(--accent) 14%, transparent);
+  transition: transform .24s ease, background .24s ease;
+}
+
+.skill-fullscreen-close:hover {
+  background: white;
+  transform: translateY(-1px);
 }
 
 @media (max-width: 1180px) {
@@ -3305,8 +3768,16 @@ body {
     grid-template-rows: auto auto auto;
   }
 
+  .skill-prereq-card {
+    align-content: start;
+  }
+
   .skill-node-actions {
     grid-column: 1 / -1;
+  }
+
+  .skill-graph-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -3324,15 +3795,39 @@ body {
   }
 
   .skill-graph-canvas {
-    min-height: 560px;
+    min-height: 590px;
   }
 
   .graph-toolbar {
     flex-wrap: wrap;
+    width: auto;
   }
 
   .graph-toolbar button:nth-of-type(1) {
     margin-left: 0;
+  }
+
+  .skill-graph-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-graph-stage {
+    width: 1320px;
+    height: 620px;
+  }
+
+  .skill-graph-stage.focus-stage {
+    width: 100%;
+    height: 610px;
+  }
+
+  .skill-focus-band {
+    inset: 110px 3% 38px;
+  }
+
+  .skill-fullscreen {
+    inset: 8px;
+    border-radius: 20px;
   }
 }
 
