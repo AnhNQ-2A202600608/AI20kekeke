@@ -49,6 +49,9 @@ export default function AiQuestionPage() {
   const activeConversationIdRef = useRef<string | null>(null);
   const [question, setQuestion] = useState("");
   const [isReplying, setIsReplying] = useState(false);
+  const [expandedAnalysis, setExpandedAnalysis] = useState<Record<number, boolean>>({});
+  const [loadingStep, setLoadingStep] = useState(0);
+  const [showLoadingDetails, setShowLoadingDetails] = useState(false);
   const openingMessages = useMemo(() => [openingMessage(activeChapter.title)], [activeChapter.title]);
   const activeSession = chatSessions.find((session) => session.id === activeConversationId) || null;
   const messages = activeSession?.messages || openingMessages;
@@ -104,6 +107,11 @@ export default function AiQuestionPage() {
     }
 
     setIsReplying(true);
+    setLoadingStep(0);
+    const interval = setInterval(() => {
+      setLoadingStep((prev) => (prev < 2 ? prev + 1 : prev));
+    }, 1500);
+
     try {
       const reply = await askTutor({
         token: authSession.token,
@@ -119,13 +127,14 @@ export default function AiQuestionPage() {
         ? valCit.valid_citations.map(([source, page]) => ({ source, page }))
         : [];
         
-      appendChatMessage(session.id, { role: "ai", text: reply.response, citations });
+      appendChatMessage(session.id, { role: "ai", text: reply.response, citations, analysis: reply.analysis });
     } catch (requestError) {
       const message = requestError instanceof ApiClientError
         ? requestError.message
         : "Trợ lý AI chưa thể phản hồi lúc này. Vui lòng thử lại.";
       appendChatMessage(session.id, { role: "ai", text: message });
     } finally {
+      clearInterval(interval);
       setIsReplying(false);
     }
   };
@@ -183,9 +192,55 @@ export default function AiQuestionPage() {
                     </div>
                   </div>
                 )}
+                {message.role === "ai" && message.analysis && (
+                  <div className="ai-analysis-wrapper">
+                    <button
+                      type="button"
+                      className={`ai-analysis-btn ${expandedAnalysis[index] ? "active" : ""}`}
+                      onClick={() => setExpandedAnalysis(prev => ({ ...prev, [index]: !prev[index] }))}
+                    >
+                      💡 {expandedAnalysis[index] ? "Ẩn nhật ký suy nghĩ" : "Xem chi tiết tiến trình chạy AI"}
+                    </button>
+                    {expandedAnalysis[index] && (
+                      <div className="ai-analysis-content">
+                        {message.analysis}
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
             ))}
-            {isReplying && <div className="ai-message ai pending">Trợ lý AI đang chuẩn bị lời giải...</div>}
+            {isReplying && (
+              <div className="ai-message ai pending">
+                <div className="ai-pending-loader">
+                  <span className="ai-loader-spinner"></span>
+                  <span>Trợ lý AI đang chuẩn bị lời giải...</span>
+                  <button
+                    type="button"
+                    className="ai-loading-details-btn"
+                    onClick={() => setShowLoadingDetails(!showLoadingDetails)}
+                  >
+                    {showLoadingDetails ? "Ẩn chi tiết" : "Xem chi tiết đang chạy tới đâu"}
+                  </button>
+                </div>
+                {showLoadingDetails && (
+                  <div className="ai-pipeline-logs">
+                    <div className={`ai-log-step ${loadingStep >= 0 ? "active" : ""}`}>
+                      <span className="step-status">{loadingStep > 0 ? "✅" : "🔍"}</span>
+                      <span className="step-text">Định tuyến câu hỏi (Intent Routing)... {loadingStep > 0 ? "Hoàn tất" : "Đang chạy"}</span>
+                    </div>
+                    <div className={`ai-log-step ${loadingStep >= 1 ? "active" : ""}`}>
+                      <span className="step-status">{loadingStep > 1 ? "✅" : loadingStep === 1 ? "🔍" : "⏳"}</span>
+                      <span className="step-text">Truy xuất kiến thức học liệu (RAG)... {loadingStep > 1 ? "Hoàn tất" : loadingStep === 1 ? "Đang chạy" : "Chờ"}</span>
+                    </div>
+                    <div className={`ai-log-step ${loadingStep >= 2 ? "active" : ""}`}>
+                      <span className="step-status">{loadingStep >= 2 ? "🔍" : "⏳"}</span>
+                      <span className="step-text">Đang tổng hợp lời giải và kiểm định trích dẫn nguồn... {loadingStep >= 2 ? "Đang chạy" : "Chờ"}</span>
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
 
           <div className="ai-suggestion-row" aria-label="Gợi ý câu hỏi">

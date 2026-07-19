@@ -6,6 +6,7 @@ export type StoredChatMessage = {
   role: "ai" | "user";
   text: string;
   citations?: { source: string; page: number }[];
+  analysis?: string;
 };
 
 
