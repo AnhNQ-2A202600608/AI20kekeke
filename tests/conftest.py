@@ -9,6 +9,10 @@ from src.main import app
 
 @pytest.fixture(autouse=True)
 def allow_dev_tokens_in_tests(monkeypatch):
+    monkeypatch.setenv("APP_ENV", "test")
+    monkeypatch.setenv("RATE_LIMIT_ENABLED", "false")
+    from src.config import get_settings
+    get_settings.cache_clear()
     monkeypatch.setenv("AUTH_ALLOW_DEV_TOKENS", "true")
     monkeypatch.setenv("AUTH_ALLOW_SERVICE_ROLE_BYPASS", "true")
     monkeypatch.delenv("SUPABASE_URL", raising=False)

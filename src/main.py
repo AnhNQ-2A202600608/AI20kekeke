@@ -7,7 +7,10 @@ from fastapi import FastAPI, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
+from slowapi.errors import RateLimitExceeded
+from slowapi.middleware import SlowAPIMiddleware
 
+from src.api.rate_limit import limiter
 from src.config import get_settings
 from src.services.braintrust_observability import configure_braintrust_observability
 
@@ -49,6 +52,49 @@ app = FastAPI(
     version="1.0.0",
     lifespan=lifespan,
 )
+app.state.limiter = limiter
+
+# SlowAPIMiddleware
+app.add_middleware(SlowAPIMiddleware)
+
+# Custom middleware to parse email body for login rate limiting
+@app.middleware("http")
+async def parse_body_for_rate_limit(request: Request, call_next):
+    if request.url.path.endswith("/login") and request.method == "POST":
+        try:
+            body = await request.json()
+            if isinstance(body, dict):
+                request.state.login_email = body.get("email", "").strip().lower()
+        except Exception:
+            pass
+    return await call_next(request)
+
+@app.exception_handler(RateLimitExceeded)
+async def rate_limit_exceeded_handler(request: Request, exc: RateLimitExceeded):
+    retry_after = 60
+    view_rate_limit = getattr(request.state, "view_rate_limit", None)
+    if view_rate_limit:
+        try:
+            limiter_instance = request.app.state.limiter
+            window_stats = limiter_instance.limiter.get_window_stats(
+                view_rate_limit[0], *view_rate_limit[1]
+            )
+            reset_in = 1 + window_stats[0]
+            retry_after = max(0, int(reset_in - time.time()))
+        except Exception:
+            pass
+
+    response = JSONResponse(
+        status_code=429,
+        content={"detail": f"Too Many Requests: {exc.detail}"},
+        headers={"Retry-After": str(retry_after)}
+    )
+    try:
+        limiter_instance = request.app.state.limiter
+        response = limiter_instance._inject_headers(response, view_rate_limit)
+    except Exception:
+        pass
+    return response
 
 settings = get_settings()
 app.add_middleware(

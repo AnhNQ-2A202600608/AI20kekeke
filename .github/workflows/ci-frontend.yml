@@ -51,6 +51,10 @@ jobs:
         working-directory: ./frontend
         run: pnpm install --frozen-lockfile
 
+      - name: Audit dependencies
+        working-directory: ./frontend
+        run: pnpm audit --audit-level=high
+
       - name: Lint with ESLint
         working-directory: ./frontend
         run: pnpm lint

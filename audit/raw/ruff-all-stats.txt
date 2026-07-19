@@ -1,0 +1,121 @@
+warning: `incorrect-blank-line-before-class` (D203) and `no-blank-line-before-class` (D211) are incompatible. Ignoring `incorrect-blank-line-before-class`.
+warning: `multi-line-summary-first-line` (D212) and `multi-line-summary-second-line` (D213) are incompatible. Ignoring `multi-line-summary-second-line`.
+264	COM812  	[*] missing-trailing-comma
+180	D103    	[ ] undocumented-public-function
+162	E501    	[ ] line-too-long
+151	G004    	[ ] logging-f-string
+135	B008    	[ ] function-call-in-default-argument
+134	D101    	[ ] undocumented-public-class
+127	T201    	[ ] print
+119	D102    	[ ] undocumented-public-method
+112	BLE001  	[ ] blind-except
+105	FAST002 	[ ] fast-api-non-annotated-dependency
+104	ANN201  	[ ] missing-return-type-undocumented-public-function
+100	PLC0415 	[ ] import-outside-top-level
+ 90	ANN001  	[ ] missing-type-function-argument
+ 85	D212    	[*] multi-line-summary-first-line
+ 80	PLR2004 	[ ] magic-value-comparison
+ 66	D100    	[ ] undocumented-public-module
+ 61	B904    	[ ] raise-without-from-inside-except
+ 60	TRY003  	[ ] raise-vanilla-args
+ 52	TRY400  	[ ] error-instead-of-exception
+ 50	G201    	[ ] logging-exc-info
+ 50	PLR0913 	[ ] too-many-arguments
+ 49	PTH120  	[ ] os-path-dirname
+ 46	PIE790  	[*] unnecessary-placeholder
+ 44	D200    	[ ] unnecessary-multiline-docstring
+ 44	D205    	[ ] missing-blank-line-after-summary
+ 41	EM101   	[ ] raw-string-in-exception
+ 40	C901    	[ ] complex-structure
+ 38	TRY300  	[ ] try-consider-else
+ 37	PTH123  	[ ] builtin-open
+ 34	Q000    	[*] bad-quotes-inline-string
+ 30	ANN401  	[ ] any-type
+ 30	INP001  	[ ] implicit-namespace-package
+ 30	TRY301  	[ ] raise-within-try
+ 29	N806    	[ ] non-lowercase-variable-in-function
+ 28	ARG001  	[ ] unused-function-argument
+ 27	PLR0915 	[ ] too-many-statements
+ 27	RUF010  	[*] explicit-f-string-type-conversion
+ 26	PLR0912 	[ ] too-many-branches
+ 22	FBT001  	[ ] boolean-type-hint-positional-argument
+ 22	SLF001  	[ ] private-member-access
+ 19	EM102   	[ ] f-string-in-exception
+ 16	PTH100  	[ ] os-path-abspath
+ 15	C408    	[ ] unnecessary-collection-call
+ 15	S110    	[ ] try-except-pass
+ 15	TC003   	[ ] typing-only-standard-library-import
+ 14	D107    	[ ] undocumented-public-init
+ 14	PTH118  	[ ] os-path-join
+ 13	S113    	[ ] request-without-timeout
+ 12	FAST001 	[ ] fast-api-redundant-response-model
+ 11	ANN202  	[ ] missing-return-type-private-function
+ 11	ANN204  	[ ] missing-return-type-special-method
+ 11	D104    	[ ] undocumented-public-package
+ 10	A002    	[ ] builtin-argument-shadowing
+ 10	D400    	[ ] missing-trailing-period
+ 10	D415    	[ ] missing-terminal-punctuation
+ 10	TRY201  	[ ] verbose-raise
+  9	RET505  	[*] superfluous-else-return
+  8	PTH110  	[ ] os-path-exists
+  7	PERF401 	[ ] manual-list-comprehension
+  7	RUF015  	[ ] unnecessary-iterable-allocation-for-first-element
+  7	SIM105  	[ ] suppressible-exception
+  7	TC001   	[ ] typing-only-first-party-import
+  6	D401    	[ ] non-imperative-mood
+  6	DTZ005  	[ ] call-datetime-now-without-tzinfo
+  6	RET504  	[ ] unnecessary-assign
+  6	RUF013  	[ ] implicit-optional
+  5	ASYNC210	[ ] blocking-http-call-in-async-function
+  5	PLW0603 	[ ] global-statement
+  5	PTH103  	[ ] os-makedirs
+  5	RUF001  	[ ] ambiguous-unicode-character-string
+  5	RUF059  	[ ] unused-unpacked-variable
+  4	C420    	[*] unnecessary-dict-comprehension-for-iterable
+  4	D413    	[*] missing-blank-line-after-last-section
+  4	FURB162 	[ ] fromisoformat-replace-z
+  4	PLR1714 	[ ] repeated-equality-comparison
+  4	PTH119  	[ ] os-path-basename
+  4	SIM108  	[ ] if-else-block-instead-of-if-exp
+  3	ARG002  	[ ] unused-method-argument
+  3	ASYNC240	[ ] blocking-path-method-in-async-function
+  3	C401    	[ ] unnecessary-generator-set
+  3	FBT002  	[ ] boolean-default-value-positional-argument
+  3	FURB110 	[*] if-exp-instead-of-or-operator
+  3	FURB188 	[*] slice-to-remove-prefix-or-suffix
+  3	PLR0911 	[ ] too-many-return-statements
+  3	PLR5501 	[*] collapsible-else-if
+  3	RUF019  	[*] unnecessary-key-check
+  3	S311    	[ ] suspicious-non-cryptographic-random-usage
+  3	SIM118  	[-] in-dict-keys
+  2	ASYNC230	[ ] blocking-open-call-in-async-function
+  2	B007    	[ ] unused-loop-control-variable
+  2	FBT003  	[ ] boolean-positional-value-in-call
+  2	PTH117  	[ ] os-path-isabs
+  2	PTH202  	[ ] os-path-getsize
+  2	PYI041  	[*] redundant-numeric-union
+  2	RET508  	[*] superfluous-else-break
+  2	S105    	[ ] hardcoded-password-string
+  2	SIM102  	[ ] collapsible-if
+  2	TRY401  	[ ] verbose-log-message
+  1	ARG003  	[ ] unused-class-method-argument
+  1	B033    	[*] duplicate-value
+  1	B905    	[ ] zip-without-explicit-strict
+  1	NPY002  	[ ] numpy-legacy-random
+  1	PD011   	[ ] pandas-use-of-dot-values
+  1	PERF402 	[ ] manual-list-copy
+  1	PLW2901 	[ ] redefined-loop-name
+  1	PTH107  	[ ] os-remove
+  1	RET506  	[*] superfluous-else-raise
+  1	RUF005  	[ ] collection-literal-concatenation
+  1	RUF051  	[*] if-key-in-dict-del
+  1	S104    	[ ] hardcoded-bind-all-interfaces
+  1	S324    	[ ] hashlib-insecure-hash-function
+  1	S607    	[ ] start-process-with-partial-path
+  1	S608    	[ ] hardcoded-sql-expression
+  1	SIM110  	[ ] reimplemented-builtin
+  1	SIM115  	[ ] open-file-with-context-handler
+  1	TRY002  	[ ] raise-vanilla-class
+  1	TRY004  	[ ] type-check-without-type-error
+Found 3327 errors.
+[*] 494 fixable with the `--fix` option (552 hidden fixes can be enabled with the `--unsafe-fixes` option).

@@ -78,15 +78,9 @@ def detect_test_framework(project_path: Path) -> dict:
             if not python_exe.exists():
                 python_exe = Path(sys.executable)
                 
-        # Force absolute path isolation by filtering sys.path in an inline python script
-        inline_script = (
-            "import sys, os; "
-            "sys.path = [p for p in sys.path if 'site-packages' not in p.lower() or '.venv' in p]; "
-            "import pytest; "
-            "sys.exit(pytest.main())"
-        )
-        result["cmd"] = [str(python_exe), "-I", "-c", inline_script, "-v", "-s"]
-        result["coverage_cmd"] = [str(python_exe), "-I", "-c", inline_script, "--cov", "--cov-report=term-missing", "-v", "-s"]
+        # Use standard module execution to avoid Windows stream conflicts
+        result["cmd"] = [str(python_exe), "-m", "pytest", "-v", "-s"]
+        result["coverage_cmd"] = [str(python_exe), "-m", "coverage", "run", "-m", "pytest", "-v", "-s"]
     
     return result
 
@@ -116,12 +110,13 @@ def run_tests(cmd: list, cwd: Path) -> dict:
         if "PYTHONHOME" in env:
             del env["PYTHONHOME"]
         env["UV_NO_PROGRESS"] = "1"
-        env["PYTEST_DISABLE_PLUGIN_AUTOLOAD"] = "1"
+        env["PYTHONIOENCODING"] = "utf-8"
 
         proc = subprocess.run(
             cmd,
             cwd=str(cwd),
-            capture_output=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
             text=True,
             encoding='utf-8',
             errors='replace',
@@ -130,7 +125,7 @@ def run_tests(cmd: list, cwd: Path) -> dict:
         )
         
         result["output"] = proc.stdout[:3000] if proc.stdout else ""
-        result["error"] = proc.stderr[:500] if proc.stderr else ""
+        result["error"] = ""
         result["passed"] = proc.returncode == 0
         
         # Try to parse test counts from output

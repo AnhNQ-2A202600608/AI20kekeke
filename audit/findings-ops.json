@@ -1,0 +1,73 @@
+{
+  "commit": "c939220c60f4f63a34b7a6cf6dc843023dc09e20",
+  "phase": "C7-data-ops",
+  "generated_at": "2026-07-19T00:00:00Z",
+  "note": "Nhiều mục không trả lời được bằng code → đánh dấu needs_human, đưa vào 'Câu hỏi cho đội phát triển'. KHÔNG đoán.",
+  "findings": [
+    {
+      "id": "DATA-001",
+      "severity": "MEDIUM",
+      "category": "pii-to-llm",
+      "title": "Nội dung sinh viên (bài làm, câu hỏi chat) gửi lên OpenAI, không thấy bước redact/ẩn danh",
+      "file": "src/agents/nodes/respond_node.py",
+      "line": 313,
+      "evidence": "query của học sinh (và lịch sử chat, có thể chứa tên/thông tin cá nhân do các em tự gõ) được gửi tới OpenAI qua respond_node/respond_general. Không thấy bước redact PII trước khi gửi prompt. student_answer cũng đi vào chấm điểm (local) nhưng chat content ra bên thứ ba.",
+      "repro": "Đọc respond_node.py:313, rag.py embedding query gửi text-embedding-3-small (OpenAI).",
+      "exploit": "PII rời hệ thống sang OpenAI. OpenAI API mặc định không train trên dữ liệu API nhưng cần xác nhận cấu hình + thông báo cho người dùng (có thể là trẻ vị thành niên — system prompt tự nêu).",
+      "fix": "(1) Xác nhận opt-out training. (2) Cân nhắc redact PII rõ ràng (tên, MSSV) trước khi gửi. (3) Thông báo/consent cho sinh viên rằng nội dung gửi bên thứ ba.",
+      "impact": 3, "likelihood": 3, "effort": "M", "confidence": "confirmed"
+    },
+    {
+      "id": "DATA-002",
+      "severity": "MEDIUM",
+      "category": "pii-inventory",
+      "title": "PII sinh viên: email, họ tên, MSSV, bài làm, hội thoại — cần vòng đời & quyền xoá",
+      "file": "db/supabase/migrations/20260616_add_dev_role_and_mssv.sql",
+      "line": 1,
+      "evidence": "Bảng chứa PII: app.users (email, full_name, mssv), app.quiz_attempts (student_answer jsonb), chat_sessions/messages (nội dung học sinh gõ), student_concept_mastery (hồ sơ năng lực). Không thấy cơ chế xoá theo yêu cầu / hết hạn lưu trữ trong repo.",
+      "repro": "grep -rn 'mssv\\|full_name\\|email' db/supabase/migrations/",
+      "exploit": "N/A — rủi ro tuân thủ dữ liệu.",
+      "fix": "Lập bản đồ PII; định nghĩa retention + quy trình xoá; ẩn danh cho dev/staging.",
+      "impact": 3, "likelihood": 2, "effort": "L", "confidence": "confirmed"
+    },
+    {
+      "id": "DATA-003",
+      "severity": "HIGH",
+      "category": "backup-recovery",
+      "title": "[NEEDS_HUMAN] Backup & khôi phục Supabase — không xác định được từ repo",
+      "file": "N/A",
+      "line": 0,
+      "evidence": "Không có tài liệu/script backup/restore trong repo. Supabase free/pro backup, tần suất, retention, đã test restore chưa, RPO/RTO — đều không rõ. Với dữ liệu học tập thật, đây là rủi ro cao nếu chưa có.",
+      "repro": "N/A",
+      "exploit": "Mất DB = mất toàn bộ tiến độ học tập nếu không có backup đã test.",
+      "fix": "Xác nhận backup Supabase bật + test restore; viết docs/INCIDENT-RESPONSE.md.",
+      "impact": 5, "likelihood": 2, "effort": "M", "confidence": "needs_human"
+    },
+    {
+      "id": "DATA-004",
+      "severity": "MEDIUM",
+      "category": "access-mgmt",
+      "title": "[NEEDS_HUMAN] Quản lý SUPABASE_SECRET_KEY & quyền production, xoay key, quy trình sự cố",
+      "file": "N/A",
+      "line": 0,
+      "evidence": "render.yaml đặt secret thủ công (sync:false) — tốt. Nhưng ai giữ SUPABASE_SECRET_KEY, ai có quyền Supabase/Render/Vercel prod, có tài khoản dùng chung, lịch xoay key, quy trình khi lộ key — không xác định từ repo. Không có docs/INCIDENT-RESPONSE.md.",
+      "repro": "N/A",
+      "exploit": "N/A",
+      "fix": "Tài liệu hoá quyền truy cập + checklist xoay key + INCIDENT-RESPONSE.md.",
+      "impact": 3, "likelihood": 2, "effort": "M", "confidence": "needs_human"
+    },
+    {
+      "id": "DATA-005",
+      "severity": "LOW",
+      "category": "logging-pii",
+      "title": "Log có thể ghi nội dung request/prompt — cần kiểm PII trong log",
+      "file": "src/main.py",
+      "line": 99,
+      "evidence": "main.py log REQ method/path (không body) — tốt. Nhưng nhiều logger.error(f\"...{e}\") và braintrust span input={'query': query} (rag.py:428) ghi nội dung query học sinh vào observability bên thứ ba (Braintrust). .ai-log jsonl từng chứa prompt trong lịch sử git.",
+      "repro": "grep -rn 'input={\"query\"' src/; git log -p .ai-log",
+      "exploit": "PII/nội dung học sinh trong log observability.",
+      "fix": "Xác nhận Braintrust là môi trường được phép; cân nhắc redact query trong span input.",
+      "impact": 2, "likelihood": 2, "effort": "M", "confidence": "suspected"
+    }
+  ]
+}
