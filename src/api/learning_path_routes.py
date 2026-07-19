@@ -14,6 +14,7 @@ from src.api.adaptive_routes import (
 from src.models.learning_path_schemas import (
     GeneratePathRequest,
     GeneratePathResponse,
+    LearningPathHistoryItem,
     MentorAssignRequest,
     UpdateMilestoneStatusRequest,
 )
@@ -79,7 +80,7 @@ async def generate_learning_path(
         raise HTTPException(status_code=500, detail=f"Internal Server Error: {str(e)}")
 
 
-@router.get("/{student_id}")
+@router.get("/{student_id}", response_model=list[LearningPathHistoryItem])
 async def list_learning_paths(
     student_id: UUID,
     course_id: UUID,
@@ -106,7 +107,47 @@ async def list_learning_paths(
         if not member_resp.data:
             raise HTTPException(status_code=403, detail="Bạn không phải mentor của khóa học này.")
 
-    return LearningPathRepository.get_instances_by_student(student_id, course_id)
+    instances = LearningPathRepository.get_instances_by_student(student_id, course_id)
+    history_items = []
+    for inst in instances:
+        path_data = inst.get("path_data") or {}
+        milestones = path_data.get("milestones") or []
+
+        created_at_val = inst.get("created_at")
+        if isinstance(created_at_val, str):
+            from datetime import datetime
+
+            try:
+                created_at_dt = datetime.fromisoformat(created_at_val.replace("Z", "+00:00"))
+            except ValueError:
+                created_at_dt = datetime.now()
+        else:
+            created_at_dt = created_at_val or datetime.now()
+
+        history_items.append(
+            LearningPathHistoryItem(
+                instance_id=UUID(str(inst["id"])),
+                exam_attempt_id=UUID(str(inst["exam_attempt_id"])) if inst.get("exam_attempt_id") else None,
+                trigger_type=inst.get("trigger_type") or "midterm",
+                source=inst.get("source") or "auto",
+                status=inst.get("status") or "active",
+                milestone_count=len(milestones),
+                created_at=created_at_dt,
+            )
+        )
+    return history_items
+
+
+@router.get("/history/{student_id}", response_model=list[LearningPathHistoryItem])
+async def list_learning_path_history(
+    student_id: UUID,
+    course_id: UUID,
+    current_user: AuthenticatedUser = Depends(get_current_user),
+    db: AdaptiveDatabaseInterface = Depends(get_adaptive_db),
+):
+    """Lấy lịch sử tất cả lộ trình của học viên, sắp xếp theo thời gian tạo mới nhất."""
+    # Tương tự như list_learning_paths nhưng phục vụ riêng giao diện lịch sử
+    return await list_learning_paths(student_id=student_id, course_id=course_id, current_user=current_user, db=db)
 
 
 @router.get("/instance/{id}")

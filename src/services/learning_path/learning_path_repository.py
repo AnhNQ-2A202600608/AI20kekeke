@@ -59,7 +59,37 @@ class LearningPathRepository:
     def get_instances_by_student(student_id: UUID, course_id: UUID) -> list[dict]:
         db = get_adaptive_db()
         if db._stub_mode or db.app_client is None:
-            return []
+            import datetime
+            import uuid
+
+            logger.info("Stub mode: Mocking get_instances_by_student list.")
+            return [
+                {
+                    "id": str(uuid.uuid4()),
+                    "student_id": str(student_id),
+                    "course_id": str(course_id),
+                    "source": "auto",
+                    "trigger_type": "midterm",
+                    "exam_attempt_id": str(uuid.uuid4()),
+                    "mentor_id": None,
+                    "path_data": {
+                        "milestones": [
+                            {
+                                "id": "concept-1",
+                                "concept_id": "00000000-0000-0000-0000-999999999999",
+                                "concept_name": "Phép nhân phân số",
+                                "status": "unlocked",
+                                "error_type": "conceptual",
+                                "prerequisites": [],
+                                "tasks": [],
+                            }
+                        ]
+                    },
+                    "status": "active",
+                    "created_at": datetime.datetime.now(datetime.UTC).isoformat(),
+                    "updated_at": datetime.datetime.now(datetime.UTC).isoformat(),
+                }
+            ]
         try:
             resp = (
                 db.app_client.table("learning_path_instances")

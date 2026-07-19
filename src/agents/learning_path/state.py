@@ -25,6 +25,7 @@ class LearningPathState(TypedDict, total=False):
 
     # Critic node output
     draft_milestones: list[dict]  # list milestones thô trước khi persist
+    critic_reasoning: str  # nhận xét giải thích của Critic Agent
 
     # Final output
     path_instance_id: str

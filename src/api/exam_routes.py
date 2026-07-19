@@ -3,8 +3,9 @@ import uuid
 from datetime import UTC, datetime, timedelta
 from uuid import UUID
 
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException
 
+from src.agents.learning_path.graph import learning_path_agent
 from src.api.adaptive_routes import (
     AuthenticatedUser,
     get_adaptive_db,
@@ -25,6 +26,23 @@ from src.services.adaptive.database_interface import AdaptiveDatabaseInterface
 from src.services.adaptive.elo import calculate_expected_success
 
 logger = logging.getLogger(__name__)
+
+
+async def generate_learning_path_background(student_id: UUID, course_id: UUID, exam_attempt_id: UUID):
+    """Helper chạy trong nền để tự động sinh lộ trình học tập sau khi nộp bài thi."""
+    try:
+        initial_state = {
+            "student_id": str(student_id),
+            "course_id": str(course_id),
+            "exam_attempt_id": str(exam_attempt_id),
+            "timings_ms": {},
+        }
+        await learning_path_agent.ainvoke(initial_state)
+        logger.info("Tự động sinh lộ trình học tập trong nền thành công cho lượt thi %s", exam_attempt_id)
+    except Exception as e:
+        logger.error("Lỗi khi tự động sinh lộ trình học tập trong nền: %s", e, exc_info=True)
+
+
 router = APIRouter(prefix="/exams", tags=["Exam Sets"])
 
 
@@ -269,6 +287,7 @@ async def start_exam(
 async def submit_exam(
     attempt_id: UUID,
     request: ExamSubmitRequest,
+    background_tasks: BackgroundTasks,
     current_user: AuthenticatedUser = Depends(get_current_user),
     db: AdaptiveDatabaseInterface = Depends(get_adaptive_db),
 ):
@@ -276,6 +295,13 @@ async def submit_exam(
     # Stub mode fallback
     if db._stub_mode or db.app_client is None:
         submitted_at = datetime.now(UTC)
+        # Sinh lộ trình mẫu trong nền khi ở stub mode
+        background_tasks.add_task(
+            generate_learning_path_background,
+            student_id=current_user.id,
+            course_id=UUID("00000000-0000-0000-0000-000000000000"),
+            exam_attempt_id=attempt_id,
+        )
         return ExamResultResponse(
             attempt_id=attempt_id,
             final_score=8.5,
@@ -453,7 +479,11 @@ async def submit_exam(
 
             # 4. Tính toán điểm quy đổi và kết thúc lượt làm bài thi
             exam_resp = (
-                db.app_client.table("exam_sets").select("max_score").eq("id", str(exam_set_id)).maybe_single().execute()
+                db.app_client.table("exam_sets")
+                .select("max_score, exam_type")
+                .eq("id", str(exam_set_id))
+                .maybe_single()
+                .execute()
             )
             max_score = float(exam_resp.data.get("max_score", 10.0)) if exam_resp.data else 10.0
 
@@ -466,6 +496,18 @@ async def submit_exam(
             ).eq("id", str(attempt_id)).execute()
 
             db.commit()
+
+            # Tự động kích hoạt sinh lộ trình thích ứng trong nền cho midterm/final
+            first_q = next(iter(questions_map.values())) if questions_map else {}
+            course_id = first_q.get("course_id")
+            exam_type = exam_resp.data.get("exam_type", "midterm") if exam_resp.data else "midterm"
+            if course_id and exam_type in ("midterm", "final"):
+                background_tasks.add_task(
+                    generate_learning_path_background,
+                    student_id=current_user.id,
+                    course_id=course_id,
+                    exam_attempt_id=attempt_id,
+                )
 
             # Trả về kết quả
             return ExamResultResponse(

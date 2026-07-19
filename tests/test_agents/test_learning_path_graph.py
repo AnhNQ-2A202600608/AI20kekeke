@@ -28,6 +28,8 @@ async def test_learning_path_agent_basic_flow(mock_llm):
     assert "path_data" in result
     assert "milestones" in result["path_data"]
     assert len(result["path_data"]["milestones"]) > 0
+    assert "critic_reasoning" in result
+    assert len(result["critic_reasoning"]) > 0
 
 
 def test_topo_sort_node_respects_prerequisites(monkeypatch):

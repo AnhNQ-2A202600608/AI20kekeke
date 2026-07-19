@@ -1,3 +1,4 @@
+from datetime import datetime
 from uuid import UUID
 
 from pydantic import BaseModel, Field
@@ -27,6 +28,7 @@ class Milestone(BaseModel):
 
 class PathData(BaseModel):
     milestones: list[Milestone] = Field(default_factory=list, description="Danh sách các milestone trong đồ thị")
+    critic_reasoning: str | None = Field(default=None, description="Giải thích/Nhận xét của Critic Agent")
 
 
 class GeneratePathResponse(BaseModel):
@@ -43,3 +45,13 @@ class MentorAssignRequest(BaseModel):
 
 class UpdateMilestoneStatusRequest(BaseModel):
     status: str = Field(..., description="Trạng thái mới của milestone: locked | unlocked | completed")
+
+
+class LearningPathHistoryItem(BaseModel):
+    instance_id: UUID = Field(..., description="ID của phiên bản lộ trình")
+    exam_attempt_id: UUID | None = Field(default=None, description="ID lượt thi gốc")
+    trigger_type: str = Field(..., description="Loại trigger: midterm | final | mentor_manual")
+    source: str = Field(..., description="Nguồn tạo: auto | mentor")
+    status: str = Field(..., description="Trạng thái: active | archived | completed")
+    milestone_count: int = Field(..., description="Số lượng milestone trong lộ trình")
+    created_at: datetime = Field(..., description="Thời gian tạo")

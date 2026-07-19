@@ -56,7 +56,8 @@ async def persist_node(state: LearningPathState) -> dict:
                 logger.warning(f"Failed to detect exam type for attempt {exam_attempt_id}: {ex_err}")
 
         # 2. Đóng gói path_data
-        path_data = {"milestones": draft_milestones}
+        critic_reasoning = state.get("critic_reasoning") or ""
+        path_data = {"milestones": draft_milestones, "critic_reasoning": critic_reasoning}
 
         # 3. Tạo instance mới trong database
         created = LearningPathRepository.create_instance(

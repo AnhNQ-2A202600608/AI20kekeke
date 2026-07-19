@@ -63,9 +63,10 @@ async def evaluation_critic_node(state: LearningPathState) -> dict:
                         "tasks": tasks,
                     }
                 )
+            critic_reasoning = "STUB: Lộ trình thích ứng mẫu đã được phê duyệt thành công bởi Critic Agent."
             elapsed_ms = (time.perf_counter() - start_time) * 1000
             timings["evaluation_critic_node"] = elapsed_ms
-            return {"draft_milestones": draft_milestones, "timings_ms": timings}
+            return {"draft_milestones": draft_milestones, "critic_reasoning": critic_reasoning, "timings_ms": timings}
 
         # 1. Fetch thông tin tên của tất cả concepts trong khóa học
         concepts_resp = db.app_client.table("concepts").select("id, name").eq("course_id", str(course_id)).execute()
@@ -160,10 +161,64 @@ async def evaluation_critic_node(state: LearningPathState) -> dict:
                     )
                     # Sửa lại index topo của parent cho lên trước child (nhưng thực tế Kahn algorithm đã đảm bảo tính đúng đắn này)
 
+        # 6. Gọi LLM Critic để phê duyệt lộ trình học tập và đưa ra phản hồi định tính
+        critic_reasoning = (
+            "Lộ trình học tập đã được phân tích và phê duyệt tự động dựa trên mức độ tiên quyết của cấu trúc concept."
+        )
+        try:
+            if draft_milestones:
+                import json
+
+                from src.agents.learning_path.nodes.llm_path_generator_node import clean_json_response
+                from src.services.llm import get_llm
+
+                milestones_summary = []
+                for m in draft_milestones:
+                    milestones_summary.append(
+                        {
+                            "concept_id": m["concept_id"],
+                            "concept_name": m["concept_name"],
+                            "error_type": m["error_type"],
+                            "prerequisites": m["prerequisites"],
+                            "tasks": [t["type"] for t in m["tasks"]],
+                        }
+                    )
+
+                system_prompt = (
+                    "Bạn là Chuyên gia Đánh giá Sư phạm (Pedagogical Critic Agent) cho học sinh lớp 6.\n"
+                    "Nhiệm vụ của bạn là kiểm tra, đánh giá đồ thị lộ trình học tập thích ứng được sinh ra.\n"
+                    "Hãy thẩm định lộ trình đề xuất này dựa trên độ khó, trình tự khái niệm và các loại nhiệm vụ được giao.\n"
+                    "Sau đó, trả về một chuỗi JSON duy nhất đại diện cho phản hồi của bạn có cấu trúc như sau:\n"
+                    "{\n"
+                    '  "approved": true,\n'
+                    '  "reasoning": "Tóm tắt nhận xét và lý do lộ trình này tối ưu cho học sinh (1-2 câu)"\n'
+                    "}"
+                )
+
+                user_content = (
+                    f"Đồ thị lộ trình đề xuất:\n"
+                    f"Thứ tự sắp xếp Topo: {topo_sorted_concepts}\n"
+                    f"Chi tiết phân loại lỗi: {llm_analysis}\n"
+                    f"Cấu trúc Milestone DAG: {json.dumps(milestones_summary, ensure_ascii=False)}\n"
+                )
+
+                llm = get_llm()
+                messages = [{"role": "system", "content": system_prompt}, {"role": "user", "content": user_content}]
+                llm_resp = await llm.ainvoke(messages)
+                resp_content = clean_json_response(llm_resp.content)
+
+                try:
+                    critic_data = json.loads(resp_content)
+                    critic_reasoning = critic_data.get("reasoning", critic_reasoning)
+                except Exception as json_err:
+                    logger.error(f"Failed to parse Critic LLM JSON response: {resp_content}. Error: {json_err}")
+        except Exception as critic_err:
+            logger.error(f"Failed to invoke Critic LLM: {critic_err}", exc_info=True)
+
         elapsed_ms = (time.perf_counter() - start_time) * 1000
         timings["evaluation_critic_node"] = elapsed_ms
 
-        return {"draft_milestones": draft_milestones, "timings_ms": timings}
+        return {"draft_milestones": draft_milestones, "critic_reasoning": critic_reasoning, "timings_ms": timings}
 
     except Exception as e:
         logger.error(f"Error in evaluation_critic_node: {e}", exc_info=True)
