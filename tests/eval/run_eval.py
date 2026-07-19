@@ -5,11 +5,8 @@ import sqlite3
 import sys
 from pathlib import Path
 
-# Reconfigure stdout/stderr to support Vietnamese Unicode printing on Windows
-if hasattr(sys.stdout, "reconfigure"):
-    sys.stdout.reconfigure(encoding="utf-8")
-if hasattr(sys.stderr, "reconfigure"):
-    sys.stderr.reconfigure(encoding="utf-8")
+# NOTE: stdout/stderr reconfigure moved to __main__ block (OPS-005)
+# to prevent pytest crash on Windows when collecting this module.
 
 # Thêm root dir vào sys.path để import các module của dự án
 sys.path.append(str(Path(__file__).parent.parent.parent))
@@ -226,7 +223,6 @@ def run_evaluation(ci_gate: bool = False, force_fail_test: bool = False) -> int:
                     import asyncio
 
                     from src.agents.graph import agent
-
                     # Chạy agent thực tế lấy câu trả lời
                     res = asyncio.run(agent.ainvoke({"query": query}))
                     response_text = res.get("response", "")
@@ -360,6 +356,12 @@ def run_evaluation(ci_gate: bool = False, force_fail_test: bool = False) -> int:
 
 
 if __name__ == "__main__":
+    # Reconfigure stdout/stderr for Vietnamese Unicode on Windows (OPS-005)
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
+    if hasattr(sys.stderr, "reconfigure"):
+        sys.stderr.reconfigure(encoding="utf-8")
+
     # Nhận cờ --ci hoặc --force-fail để chạy đối kháng kiểm thử CI
     is_ci = "--ci" in sys.argv
     force_fail = "--force-fail" in sys.argv

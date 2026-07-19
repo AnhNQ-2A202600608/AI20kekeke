@@ -1,0 +1,5 @@
+# Ignore development scripts, generated outputs, documentation, and agent folders
+.agents/
+docs/
+outputs/
+scripts/

@@ -46,6 +46,6 @@ def test_live_auth_fallback_still_accepts_supabase_get_user(monkeypatch):
 
 def test_symmetric_or_legacy_jwt_does_not_use_local_jwks(monkeypatch):
     monkeypatch.setenv("SUPABASE_JWT_VERIFICATION", "auto")
-    token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkM2IwNzM4NC1kMTEzLTRlYzUtYTU4ZS0wZjJkODdlMDc2NjEifQ.signature"
+    token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkM2IwNzM4NC1kMTEzLTRlYzUtYTU4ZS0wZjJkODdlMDc2NjEifQ.signature"  # nosemgrep
 
     assert verify_supabase_jwt_locally(token, "https://project.supabase.co") is None

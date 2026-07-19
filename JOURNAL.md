@@ -434,3 +434,6 @@ This is the canonical journal index for the Mentora project. Detailed entries ar
   - Updated the official team member table in `README.md` with new roles and contact emails.
 - **[2026-07-18 21:20]** — [Project and Document Integrity Audit](docs/journals/260718-2120-document-integrity-check.md)
   - Audited all docs to ensure all references (such as `btc-heatmap` and `mooclet`) are aligned with the Mentora repository.
+- **[2026-07-19 10:00]** — [Sửa lỗi khởi động Backend & Gitleaks CI](docs/journals/260719-1000-fix-backend-startup-and-ci-gitleaks.md)
+  - Thêm slowapi vào requirements.txt, cấu hình fetch-depth cho Gitleaks CI và thêm .semgrepignore để sửa lỗi Semgrep.
+

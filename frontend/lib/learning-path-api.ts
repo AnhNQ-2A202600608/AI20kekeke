@@ -1,6 +1,4 @@
-import { fetchApi } from "./api";
-import { useBoundStore } from "../hooks/useBoundStore";
-import { isDemoMode } from "./demo-mode";
+import { readSession } from "../app/lib/session";
 
 export interface LearningPathHistoryItem {
   instance_id: string;
@@ -43,12 +41,17 @@ export interface LearningPathInstance {
 
 const DEFAULT_COURSE_ID = "00000000-0000-0000-0000-000000000001";
 
+const isDemoMode = () => {
+  if (typeof window === "undefined") return false;
+  return process.env.NEXT_PUBLIC_DEMO_MODE === "true";
+};
+
 export async function getLearningPathHistory(
   studentId: string,
   courseId: string = DEFAULT_COURSE_ID,
 ): Promise<LearningPathHistoryItem[]> {
-  const store = useBoundStore.getState();
-  const token = store.token;
+  const session = readSession();
+  const token = session?.token;
 
   if (isDemoMode() || !token) {
     // Trả về mock data lịch sử cho chế độ demo
@@ -75,14 +78,18 @@ export async function getLearningPathHistory(
   }
 
   try {
-    return await fetchApi<LearningPathHistoryItem[]>(
-      `/learning-path/history/${studentId}?course_id=${courseId}`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
+    const response = await fetch(`/api/backend/learning-path/history/${studentId}?course_id=${courseId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
       },
-    );
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    return await response.json();
   } catch (error) {
     console.error("Error in getLearningPathHistory, falling back to mock:", error);
     return [
@@ -102,8 +109,8 @@ export async function getLearningPathHistory(
 export async function getLearningPathDetail(
   instanceId: string,
 ): Promise<LearningPathInstance> {
-  const store = useBoundStore.getState();
-  const token = store.token;
+  const session = readSession();
+  const token = session?.token;
 
   if (isDemoMode() || !token || instanceId.startsWith("demo-instance-")) {
     const isMidterm = instanceId.includes("midterm");
@@ -221,11 +228,18 @@ export async function getLearningPathDetail(
   }
 
   try {
-    return await fetchApi<LearningPathInstance>(`/learning-path/instance/${instanceId}`, {
+    const response = await fetch(`/api/backend/learning-path/instance/${instanceId}`, {
       headers: {
         Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
       },
     });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    return await response.json();
   } catch (error) {
     console.error("Error in getLearningPathDetail, falling back to mock:", error);
     return {

@@ -54,14 +54,14 @@ async def generate_learning_path(
         result = await learning_path_agent.ainvoke(initial_state)
 
         if "error" in result and result["error"]:
-            raise HTTPException(status_code=500, detail=result["error"])
+            raise HTTPException(status_code=400, detail=result["error"])
 
         path_instance_id = result.get("path_instance_id")
         path_data = result.get("path_data")
 
         if not path_instance_id or not path_data:
             raise HTTPException(
-                status_code=500,
+                status_code=400,
                 detail="Không thể tạo lộ trình học tập thích ứng. Hãy kiểm tra lại lượt thi.",
             )
 
@@ -77,7 +77,10 @@ async def generate_learning_path(
         raise
     except Exception as e:
         logger.exception("Lỗi trong quá trình sinh lộ trình học tập: %s", e)
-        raise HTTPException(status_code=500, detail=f"Internal Server Error: {str(e)}")
+        raise HTTPException(
+            status_code=400,
+            detail="Đã xảy ra lỗi trong quá trình sinh lộ trình học tập.",
+        )
 
 
 @router.get("/{student_id}", response_model=list[LearningPathHistoryItem])
@@ -256,6 +259,6 @@ async def mentor_assign_learning_path(
     )
 
     if not created:
-        raise HTTPException(status_code=500, detail="Không thể tạo lộ trình học tập tùy chỉnh.")
+        raise HTTPException(status_code=400, detail="Không thể tạo lộ trình học tập tùy chỉnh.")
 
     return created

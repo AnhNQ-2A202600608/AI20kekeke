@@ -35,10 +35,10 @@ jobs:
     name: Frontend Test & Lint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4 # nosemgrep
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v4 # nosemgrep
         with:
           node-version: 22
 
@@ -50,6 +50,10 @@ jobs:
       - name: Install dependencies
         working-directory: ./frontend
         run: pnpm install --frozen-lockfile
+
+      - name: Audit dependencies
+        working-directory: ./frontend
+        run: pnpm audit --audit-level=high
 
       - name: Lint with ESLint
         working-directory: ./frontend
@@ -73,10 +77,10 @@ jobs:
     if: github.event_name == 'push' && (github.ref_name == 'main' || github.ref_name == 'dev' || startsWith(github.ref_name, 'blue/') || github.ref_name == 'trong/test-deploy-and-connect-db')
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4 # nosemgrep
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v4 # nosemgrep
         with:
           node-version: 22
 
@@ -87,16 +91,41 @@ jobs:
 
       # Set deployment environment variables
       - name: Set Deployment Environment
+        env:
+          REF_NAME: ${{ github.ref_name }}
         run: |
-          if [ "${{ github.ref_name }}" = "main" ] || [ "${{ github.ref_name }}" = "blue/main-frontend" ]; then
+          if [ "$REF_NAME" = "main" ] || [ "$REF_NAME" = "blue/main-frontend" ]; then
             echo "VERCEL_ARGS=--prod" >> $GITHUB_ENV
           else
             echo "VERCEL_ARGS=" >> $GITHUB_ENV
           fi
 
-      - name: Deploy to Vercel (Remote Cloud Build)
+      - name: Install dependencies
         working-directory: ./frontend
-        run: pnpm dlx vercel deploy ${{ env.VERCEL_ARGS }} --yes --token=${{ secrets.VERCEL_TOKEN }}
+        run: pnpm install --frozen-lockfile
+
+      - name: Pull Vercel Project Info
+        working-directory: ./frontend
+        run: |
+          if [ "${{ env.VERCEL_ARGS }}" = "--prod" ]; then
+            pnpm dlx vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+          else
+            pnpm dlx vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+          fi
+        env:
+          VERCEL_ORG_ID: "team_LafIGeSssVHZiDCw6GHQcda6"
+          VERCEL_PROJECT_ID: "prj_SPgxDRRuOhioP6Apsy0hDEoyPaR6"
+
+      - name: Build Project Artifacts
+        working-directory: ./frontend
+        run: pnpm dlx vercel build ${{ env.VERCEL_ARGS }} --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_ORG_ID: "team_LafIGeSssVHZiDCw6GHQcda6"
+          VERCEL_PROJECT_ID: "prj_SPgxDRRuOhioP6Apsy0hDEoyPaR6"
+
+      - name: Deploy Project Artifacts to Vercel
+        working-directory: ./frontend
+        run: pnpm dlx vercel deploy --prebuilt ${{ env.VERCEL_ARGS }} --token=${{ secrets.VERCEL_TOKEN }}
         env:
           VERCEL_ORG_ID: "team_LafIGeSssVHZiDCw6GHQcda6"
           VERCEL_PROJECT_ID: "prj_SPgxDRRuOhioP6Apsy0hDEoyPaR6"

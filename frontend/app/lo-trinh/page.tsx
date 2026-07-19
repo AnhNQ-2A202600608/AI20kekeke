@@ -3,7 +3,7 @@
 import React, { useEffect, useState, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { AppShell } from "../components/AppShell";
-import { useBoundStore } from "../hooks/useBoundStore";
+import { useAuthSession } from "../lib/session";
 import { subjects } from "../data";
 import {
   getLearningPathHistory,
@@ -22,9 +22,9 @@ import Link from "next/link";
 function AdaptiveRoadmapContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
-  const store = useBoundStore();
+  const session = useAuthSession();
   
-  const studentId = store.userId || "00000000-0000-0000-0000-000000000000";
+  const studentId = session?.user?.id || "00000000-0000-0000-0000-000000000000";
   const selectedSubjectCode = searchParams.get("subject") || "TO";
   const currentSubject = subjects.find((s) => s.code === selectedSubjectCode) || subjects[0];
   const courseId = currentSubject.courseId || "00000000-0000-0000-0000-000000000001";

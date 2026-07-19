@@ -1,0 +1,78 @@
+{
+  "commit": "c939220c60f4f63a34b7a6cf6dc843023dc09e20",
+  "phase": "C4-database",
+  "generated_at": "2026-07-19T00:00:00Z",
+  "blind_axes": ["db-state.txt (RLS/index/pg_stat_statements live) — không query được production", "EXPLAIN ANALYZE — cần chạy trên Supabase"],
+  "findings": [
+    {
+      "id": "DB-001",
+      "severity": "HIGH",
+      "category": "sql-privilege-escalation",
+      "title": "RPC SECURITY DEFINER không SET search_path (xem SEC-001)",
+      "file": "db/supabase/migrations/20260621_security_and_correctness_fixes.sql",
+      "line": 27,
+      "evidence": "Cross-list với SEC-001. Áp dụng cho submit_attempt_v3 và mọi hàm prosecdef=true khác (10 hàm SECURITY DEFINER trong migrations).",
+      "repro": "SELECT proname, proconfig FROM pg_proc p JOIN pg_namespace n ON n.oid=p.pronamespace WHERE p.prosecdef AND proconfig IS NULL;",
+      "exploit": "Xem SEC-001.",
+      "fix": "Thêm SET search_path cho tất cả hàm SECURITY DEFINER qua migration mới.",
+      "impact": 4, "likelihood": 3, "effort": "M", "confidence": "confirmed",
+      "test_to_prove": "migration assert proconfig",
+      "related": ["SEC-001"]
+    },
+    {
+      "id": "DB-002",
+      "severity": "MEDIUM",
+      "category": "migration-fragility",
+      "title": "submit_attempt_v3 được redefine 5 lần, 3 file CÙNG NGÀY 20260621 — định nghĩa live phụ thuộc thứ tự sắp xếp tên file",
+      "file": "db/supabase/migrations/20260621_dynamic_elo_calibration.sql",
+      "line": 121,
+      "evidence": "5 migration định nghĩa lại v3: 0618, 0620, và ba file 0621 (concurrency_and_async_outbox, dynamic_elo_calibration, security_and_correctness_fixes). Lỗi ép kiểu UUID `SELECT to_jsonb(qa) INTO attempt_id` bị SỬA ở concurrency_and_async_outbox:103 (qa.id), rồi TÁI XUẤT HIỆN ở dynamic_elo_calibration:121 (to_jsonb), rồi lại sửa ở security_and_correctness_fixes:83. Kết quả cuối đúng CHỈ KHI thứ tự áp dụng theo tên file (security_* sắp cuối). Nếu Supabase áp theo timestamp áp dụng khác thứ tự này → hàm live có thể là bản lỗi.",
+      "repro": "Chạy `pg_get_functiondef('app.submit_attempt_v3'::regproc)` trên production và so với security_and_correctness_fixes.sql. Kiểm tra dòng idempotency có phải `SELECT qa.id INTO attempt_id` (đúng) hay `to_jsonb(qa)` (lỗi).",
+      "exploit": "Nếu bản lỗi đang live: khi client retry (timeout mạng) trên decision đã consumed, nhánh idempotency chạy `to_jsonb(qa) INTO attempt_id` (uuid) → lỗi ép kiểu → 500 thay vì trả kết quả cũ. Trải nghiệm hỏng, không mất dữ liệu (transaction rollback).",
+      "fix": "(1) Xác minh bản live bằng pg_get_functiondef. (2) Gộp về MỘT migration canonical, đặt tên có thứ tự rõ ràng (timestamp đầy đủ). (3) Không bao giờ để nhiều file cùng ngày redefine cùng hàm.",
+      "impact": 3, "likelihood": 2, "effort": "M", "confidence": "suspected",
+      "test_to_prove": "Restore DB rỗng, apply toàn bộ migration theo thứ tự CI, assert định nghĩa hàm cuối."
+    },
+    {
+      "id": "DB-003",
+      "severity": "MEDIUM",
+      "category": "durability-concurrency",
+      "title": "Graph propagation chuyển sang FastAPI background_task — mất khi worker chết, không khoá FOR UPDATE trên concept lân cận",
+      "file": "src/api/adaptive_routes.py",
+      "line": 805,
+      "evidence": "RPC cuối (security_and_correctness_fixes.sql:9) CỐ Ý bỏ propagation đồng bộ ('loại bỏ graph propagation đồng bộ', trả propagated_concepts=[]). submit_attempt() thay bằng background_tasks.add_task(run_async_propagation,...) SAU db.commit() (dòng 805). propagate_mastery (graph_propagation.py) đọc-sửa-ghi BKT concept lân cận KHÔNG trong transaction có FOR UPDATE.",
+      "repro": "(1) Durability: submit thành công (commit) rồi worker Render restart/scale-down trước khi background task chạy → propagation MẤT vĩnh viễn, mastery concept lân cận không cập nhật. (2) Concurrency: 2 submit đồng thời chạm cùng concept cha → hai lần đọc-sửa-ghi propagate_mastery → lost update.",
+      "exploit": "Sai lệch dữ liệu mastery (không phải bảo mật). Under load hoặc lúc redeploy sẽ mất propagation.",
+      "fix": "Dùng outbox bền vững (đã có SQLite offline_outbox pattern + concurrency_and_async_outbox migration!) hoặc job queue có retry; hoặc đưa propagation về trong RPC transaction với FOR UPDATE (bản 0618 từng làm vậy). Xác định vì sao lại tách ra async và đánh đổi có chủ đích chưa.",
+      "impact": 3, "likelihood": 3, "effort": "L", "confidence": "confirmed",
+      "test_to_prove": "tests/test_adaptive_graph.py::test_propagation_survives_worker_restart (mô phỏng)"
+    },
+    {
+      "id": "DB-004",
+      "severity": "LOW",
+      "category": "cache-consistency",
+      "title": "Cache write-through sau commit — cần xác minh xử lý lỗi khi ghi cache thất bại",
+      "file": "src/api/adaptive_routes.py",
+      "line": 816,
+      "evidence": "Sau db.commit() (dòng 802) có khối 'Ghi lại vào Cache (Write-through cache - H5)' bọc try (818). Nếu ghi cache lỗi sau khi transaction đã commit, cache có thể lệch tới khi TTL hết. Chưa đọc hết khối để khẳng định mức độ.",
+      "repro": "Redis down ngay sau commit → mastery cache giữ giá trị cũ tới khi TTL.",
+      "exploit": "Recommend/mastery đọc giá trị cũ tạm thời. Không mất dữ liệu (nguồn chân lý là DB).",
+      "fix": "Đảm bảo cache lỗi chỉ log + bỏ qua (fail-open đọc lại DB), và mastery_cache có TTL ngắn. Xác minh khối 816-840.",
+      "impact": 2, "likelihood": 2, "effort": "S", "confidence": "suspected",
+      "test_to_prove": "test cache invalidation on redis error"
+    },
+    {
+      "id": "DB-POS",
+      "severity": "INFO",
+      "category": "positive",
+      "title": "[POSITIVE] RPC submit_attempt_v3 làm ĐÚNG nhiều thứ khó",
+      "file": "db/supabase/migrations/20260618_submit_attempt_v3.sql",
+      "line": 179,
+      "evidence": "(1) Chống lost-update bằng SELECT ... FOR UPDATE trên student_concept_mastery & questions (RPC:179,193). (2) Idempotency check consumed_at (bản cuối:83 dùng qa.id đúng). (3) BKT clamp [0.0001,0.9999], chống chia 0 (RPC:261,268). (4) Elo exponent clamp [-20,20] (RPC:198). (5) Replay chặn qua consumed_at + RAISE P0409. (6) Audit trail đầy đủ (quiz_attempts, mastery_events, question_elo_events, adaptive_rewards). (7) Propagation depth=1 có giới hạn, không lặp vô hạn.",
+      "repro": "N/A",
+      "exploit": "N/A",
+      "fix": "Giữ nguyên các bất biến này khi refactor DB-003.",
+      "impact": 0, "likelihood": 0, "effort": "S", "confidence": "confirmed"
+    }
+  ]
+}

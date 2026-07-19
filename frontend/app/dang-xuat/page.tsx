@@ -2,11 +2,14 @@
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { clearAuthSession } from "../lib/session";
 
 export default function LogoutPage() {
   const router = useRouter();
 
   useEffect(() => {
+    clearAuthSession();
+    window.localStorage.removeItem("mentora-sidebar-collapsed");
     window.localStorage.removeItem("orbitlearn-sidebar-collapsed");
     window.sessionStorage.clear();
     router.replace("/auth");

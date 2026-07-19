@@ -121,13 +121,15 @@ def run_tests(cmd: list, cwd: Path) -> dict:
         if "PYTHONHOME" in env:
             del env["PYTHONHOME"]
         env["UV_NO_PROGRESS"] = "1"
+        env["PYTHONIOENCODING"] = "utf-8"
         env.setdefault("APP_ENV", "test")
         env.setdefault("OPENAI_API_KEY", "test-key")
 
         proc = subprocess.run(
             cmd,
             cwd=str(cwd),
-            capture_output=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
             text=True,
             encoding='utf-8',
             errors='replace',
@@ -136,7 +138,7 @@ def run_tests(cmd: list, cwd: Path) -> dict:
         )
         
         result["output"] = proc.stdout[:3000] if proc.stdout else ""
-        result["error"] = proc.stderr[:500] if proc.stderr else ""
+        result["error"] = ""
         result["passed"] = proc.returncode == 0
         
         # Try to parse test counts from output

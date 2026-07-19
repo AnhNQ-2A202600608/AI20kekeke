@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState, Suspense } from "react";
+import { useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import {
   ArrowCounterClockwise,
@@ -72,7 +72,7 @@ function buildSkillNodes(subjectCode: keyof typeof skillBySubject, program: (typ
   );
 }
 
-function SkillGraphPageContent() {
+export default function SkillGraphPage() {
   const searchParams = useSearchParams();
   const selectedSubjectCode = searchParams.get("subject") || "TO";
   const selectedSubject = subjects.find((subject) => subject.code === selectedSubjectCode) || subjects[0];
@@ -86,7 +86,8 @@ function SkillGraphPageContent() {
   const links = nodes.slice(0, -1).map((node, index) => ({ from: node, to: nodes[index + 1] }));
 
   return (
-    <section className="skill-graph-shell">
+    <AppShell>
+      <section className="skill-graph-shell">
         <aside className="skill-node-panel">
           <div className="skill-node-panel-head">
             <span className="overline">{program.grade} · {program.title}</span>
@@ -176,15 +177,6 @@ function SkillGraphPageContent() {
           </div>
         </main>
       </section>
-  );
-}
-
-export default function SkillGraphPage() {
-  return (
-    <Suspense fallback={<div className="p-6 text-center text-muted">Đang tải sơ đồ kỹ năng...</div>}>
-      <AppShell>
-        <SkillGraphPageContent />
-      </AppShell>
-    </Suspense>
+    </AppShell>
   );
 }

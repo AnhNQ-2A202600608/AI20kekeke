@@ -1,9 +1,9 @@
 "use client";
 
+import { Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { AppShell, ProgressBar } from "../components/AppShell";
-import { Suspense } from "react";
 
 function ResultPageContent() {
   const searchParams = useSearchParams();

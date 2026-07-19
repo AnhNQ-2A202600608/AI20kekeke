@@ -1,5 +1,129 @@
+import base64
 import os
 from datetime import datetime
+
+# Prompt dùng cho vision-LLM đọc trang scan (Gemini/OpenRouter đọc nguyên PDF;
+# GPT-4o/Groq vision đọc từng ảnh trang - xem convert_pdf_to_markdown_openai_vision).
+# Đã test và tinh chỉnh trên SGV Toán 8 KNTT (xem docs/domain-knowledge/PDF_to_Knowledge_Graph.md
+# mục 2.3): việc chèn <!-- page: N --> và yêu cầu giữ nguyên số dòng bảng rowspan là bắt buộc,
+# thiếu 2 yêu cầu này sẽ làm mất nội dung ở bảng phức tạp và mất khả năng trace provenance.
+VISION_PAGE_PROMPT = """Convert these scanned textbook pages to clean, well-formatted Markdown.
+Each image is one page, given in order with a label "[Image below is page N]" before it.
+
+Requirements:
+- For each page, start with an HTML comment marker exactly like: <!-- page: N -->
+- Preserve ALL content faithfully. Do not summarize, paraphrase, translate, or normalize any text or symbol.
+- Maintain the original Vietnamese language and diacritics EXACTLY as shown. Double-check tone marks carefully
+  (e.g. "dễ" vs "để" are different words with different tone marks - read the diacritic shape precisely).
+- Convert math formulas to LaTeX using $...$ or $$...$$, transcribing symbols exactly as printed
+  (e.g. if the page shows "N*" keep it as N^{*} or \\mathbb{N}^{*}, do NOT change it to \\mathbb{N}^{+} or any
+  other "equivalent" form).
+- TABLES ARE CRITICAL - many pages have tables with merged/spanning cells (a label in the left column
+  applies to multiple rows below it). For these tables:
+  - Output ONE markdown table row for EACH visual row in the original table, even if a left-column
+    cell visually spans multiple rows.
+  - Never drop a cell's text content when reconstructing merged cells. If unsure which row content
+    belongs to, keep it in its own row rather than merging it with an adjacent row.
+- If a page contains a worked math problem with both an equation and a final numeric answer, keep both
+  the full equation and the final answer verbatim - downstream code will use them for automated verification.
+- Convert tables to markdown table format, maintain heading hierarchy (# ## ### etc), preserve lists,
+  code blocks, and quotes.
+Output only the markdown content for all pages concatenated, without any preamble or explanation."""
+
+
+def _render_pdf_pages_to_base64_png(pdf_path, page_indices, zoom=2.0):
+    """Render các trang PDF (0-indexed) thành ảnh PNG base64 bằng PyMuPDF."""
+    import fitz
+
+    doc = fitz.open(pdf_path)
+    mat = fitz.Matrix(zoom, zoom)
+    images = {}
+    for p in page_indices:
+        pix = doc[p].get_pixmap(matrix=mat)
+        images[p] = base64.b64encode(pix.tobytes("png")).decode("utf-8")
+    return images
+
+
+def convert_pdf_to_markdown_openai_vision(
+    pdf_path,
+    md_path,
+    api_key,
+    model="gpt-4o",
+    batch_size=3,
+    page_range=None,
+    base_url=None,
+):
+    """
+    Chuyển PDF (đặc biệt là scan, không có text layer) sang Markdown bằng vision-LLM
+    tương thích OpenAI API (GPT-4o mặc định; truyền base_url trỏ sang Groq +
+    model vision của Groq, vd "meta-llama/llama-4-scout-17b-16e-instruct", để
+    dùng Groq thay OpenAI khi hết quota - cùng client OpenAI SDK, chỉ đổi
+    base_url/api_key, giống pattern GroqKnowledgeExtractor trong extractor.py).
+    Xử lý theo batch trang vì API vision chỉ nhận ảnh, không nhận file PDF
+    trực tiếp như Gemini.
+
+    page_range: tuple (start, end) 0-indexed, inclusive-exclusive, để test/chạy
+    một phần tài liệu thay vì toàn bộ. None = toàn bộ tài liệu.
+
+    Đã kiểm chứng: model có thể transcribe sai công thức toán dù đã yêu cầu
+    "transcribe faithfully" (xem docs/domain-knowledge/PDF_to_Knowledge_Graph.md
+    mục 2.2). Riêng model vision của Groq (llama-4-scout) đã được test và xác
+    nhận LÀM HỎNG bảng có ô gộp nhiều dòng (rowspan) - xem mục 2.1 cùng tài
+    liệu. Output của hàm này KHÔNG được coi là publish-ready - phải qua bước
+    verify (src/pipeline/graphusion/formula_verifier.py) và review trước khi
+    đưa vào Knowledge Graph/Content KB.
+    """
+    print(f"[*] Đang sử dụng {'Groq' if base_url else 'OpenAI'} API (model {model}) để chuyển đổi PDF (vision, theo batch trang)...")
+    try:
+        from openai import OpenAI
+    except ImportError:
+        print("[!] Không tìm thấy thư viện openai. Fallback về pypdf...")
+        return False
+
+    if not os.path.exists(pdf_path):
+        print(f"[!] File PDF đầu vào không tồn tại: {pdf_path}")
+        return False
+
+    try:
+        import fitz
+
+        doc = fitz.open(pdf_path)
+        n_pages = len(doc)
+        start, end = page_range if page_range else (0, n_pages)
+        end = min(end, n_pages)
+        page_indices = list(range(start, end))
+
+        client = OpenAI(api_key=api_key, base_url=base_url)
+        all_markdown = []
+
+        for batch_start in range(0, len(page_indices), batch_size):
+            batch = page_indices[batch_start : batch_start + batch_size]
+            print(f"[*] Đang xử lý trang {batch[0] + 1}-{batch[-1] + 1}/{n_pages}...")
+            images = _render_pdf_pages_to_base64_png(pdf_path, batch)
+
+            content = [{"type": "text", "text": VISION_PAGE_PROMPT}]
+            for p in batch:
+                page_num = p + 1
+                content.append({"type": "text", "text": f"[Image below is page {page_num}]"})
+                content.append({"type": "image_url", "image_url": {"url": f"data:image/png;base64,{images[p]}"}})
+
+            response = client.chat.completions.create(
+                model=model,
+                messages=[{"role": "user", "content": content}],
+                temperature=0.0,
+            )
+            batch_markdown = response.choices[0].message.content or ""
+            all_markdown.append(batch_markdown)
+
+        markdown_text = "\n\n".join(all_markdown)
+        with open(md_path, "w", encoding="utf-8") as f:
+            f.write(markdown_text)
+
+        print(f"[+] Chuyển đổi bằng OpenAI vision thành công! File lưu tại: {md_path}")
+        return True
+    except Exception as e:
+        print(f"[!] Lỗi khi gọi {'Groq' if base_url else 'OpenAI'} vision API: {str(e)}")
+        return False
 
 
 def convert_pdf_to_markdown_gemini(pdf_path, md_path, api_key):

@@ -1,8 +1,5 @@
-"use client";
-
 import Link from "next/link";
 import { AppShell, LevelBadge, ProgressBar } from "../../components/AppShell";
-import { Suspense } from "react";
 
 const types = [
   { id: "D1", title: "Khái niệm phân số", level: "explorer" as const, progress: 100, state: "done", lessons: [] },
@@ -16,9 +13,9 @@ const types = [
   { id: "D4", title: "Nhân chia phân số", level: "challenger" as const, progress: 0, state: "locked", lessons: [] },
 ];
 
-function FractionChapterPageContent() {
+export default function FractionChapterPage() {
   return (
-    <>
+    <AppShell>
       <section className="chapter-page-head">
         <Link className="back-link" href="/hoc-tap">← Lộ trình học</Link>
         <div><span className="overline">Toán học lớp 7 · Chương 1</span><h1>Phân số và số hữu tỉ</h1><p>4 dạng bài · 16 bài học và bài kiểm tra · tối đa 1.640 XP</p></div>
@@ -37,16 +34,6 @@ function FractionChapterPageContent() {
         </div>
         <footer className="chapter-detail-footer"><span>62% hoàn thành chương</span><Link href="/bai-hoc/phan-so">Tiếp tục bài học hiện tại →</Link></footer>
       </section>
-    </>
-  );
-}
-
-export default function FractionChapterPage() {
-  return (
-    <Suspense fallback={null}>
-      <AppShell>
-        <FractionChapterPageContent />
-      </AppShell>
-    </Suspense>
+    </AppShell>
   );
 }
