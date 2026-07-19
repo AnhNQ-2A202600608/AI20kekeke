@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useSyncExternalStore } from "react";
 
 export type StoredChatMessage = {
   role: "ai" | "user";
@@ -51,32 +51,28 @@ function sessionTitle(message: string) {
   return compactMessage.length > 54 ? `${compactMessage.slice(0, 51)}...` : compactMessage;
 }
 
-export function useChatSessions(subjectCode?: string) {
-  const [sessions, setSessions] = useState<StoredChatSession[]>([]);
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setSessions(readSessions());
-
-    const handleStorageChange = () => {
-      setSessions(readSessions());
-    };
-
-    window.addEventListener("storage", handleStorageChange);
-    window.addEventListener(CHANGE_EVENT, handleStorageChange);
-
-    return () => {
-      window.removeEventListener("storage", handleStorageChange);
-      window.removeEventListener(CHANGE_EVENT, handleStorageChange);
-    };
-  }, []);
-
-  return useMemo(() => {
-    return sessions
-      .filter((session) => !subjectCode || session.subjectCode === subjectCode)
-      .sort((first, second) => second.updatedAt.localeCompare(first.updatedAt));
-  }, [sessions, subjectCode]);
+function getSnapshot() {
+  if (typeof window === "undefined") return "";
+  return window.localStorage.getItem(STORAGE_KEY) || "";
 }
 
+function subscribe(listener: () => void) {
+  if (typeof window === "undefined") return () => {};
+  window.addEventListener("storage", listener);
+  window.addEventListener(CHANGE_EVENT, listener);
+  return () => {
+    window.removeEventListener("storage", listener);
+    window.removeEventListener(CHANGE_EVENT, listener);
+  };
+}
+
+export function useChatSessions(subjectCode?: string) {
+  const rawSessions = useSyncExternalStore(subscribe, getSnapshot, () => "");
+
+  return useMemo(() => parseSessions(rawSessions)
+    .filter((session) => !subjectCode || session.subjectCode === subjectCode)
+    .sort((first, second) => second.updatedAt.localeCompare(first.updatedAt)), [rawSessions, subjectCode]);
+}
 export function createChatSession(input: {
   subjectCode: string;
   chapterTitle: string;
