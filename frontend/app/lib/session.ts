@@ -29,7 +29,7 @@ function parseSession(value: string | null): AuthSession | null {
   }
 }
 
-function readSession() {
+export function readSession() {
   return parseSession(window.sessionStorage.getItem(SESSION_KEY))
     || parseSession(window.localStorage.getItem(SESSION_KEY))
     || parseSession(window.sessionStorage.getItem(LEGACY_SESSION_KEY))

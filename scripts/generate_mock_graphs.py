@@ -108,13 +108,11 @@ def main():
 
     # Save fused_graph.json
     fused_graph_path = outputs_dir / "fused_graph.json"
-    fused_graph = {
-        "concepts": concepts,
-        "relations": relations
-    }
+    fused_graph = {"concepts": concepts, "relations": relations}
     with open(fused_graph_path, "w", encoding="utf-8") as f:
         json.dump(fused_graph, f, ensure_ascii=False, indent=2)
     print(f"Generated {fused_graph_path} with {len(concepts)} concepts and {len(relations)} relations.")
+
 
 if __name__ == "__main__":
     main()

@@ -80,62 +80,64 @@ prompts:
     {context}
 
   generate_quizzes_from_slides: |
-    You are an expert curriculum designer at VinUniversity.
-    Generate exactly {num_questions} multiple-choice questions (MCQs) based ONLY on the provided slide contents below.
+    Bạn là chuyên gia thiết kế chương trình học và chuyên gia khảo thí theo Chương trình Giáo dục Phổ thông 2018 (CT GDPT 2018) của Việt Nam.
+    Hãy tạo ra đúng {num_questions} câu hỏi trắc nghiệm khách quan (MCQ) dựa TRÊN DUY NHẤT nội dung các trang slide bài giảng dưới đây.
 
-    Target Concept: {concept_name} (Code: {concept_code})
-    Target Difficulty: {difficulty}
+    Khái niệm mục tiêu: {concept_name} (Mã concept: {concept_code})
+    Mức độ nhận thức mục tiêu (Độ khó): {difficulty} (dễ: Nhận biết, bình thường: Thông hiểu, khó: Vận dụng/Vận dụng cao)
 
-    Slide Contents:
+    Nội dung slide bài giảng:
     {slides_content}
 
-    Requirements for each MCQ:
-    1. The question must test understanding of key concepts in the slides.
-    2. Provide exactly 4 options: A, B, C, and D.
-    3. The distractors (incorrect options) must be realistic and representative of common student misconceptions.
-    4. Provide a clear explanation for why the correct option is correct and why other options are incorrect.
+    Yêu cầu đối với mỗi câu hỏi MCQ:
+    1. Câu hỏi phải kiểm tra đúng chuẩn đầu ra năng lực của khái niệm mục tiêu, bám sát kiến thức thực tế được trình bày trong các trang slide.
+    2. Câu hỏi phải sử dụng ngôn ngữ Tiếng Việt chuẩn sư phạm, diễn đạt trong sáng, dễ hiểu, phù hợp với lứa tuổi học sinh phổ thông Việt Nam.
+    3. Cung cấp đúng 4 phương án lựa chọn: A, B, C, và D. Các phương án sai (distractors) phải là các lỗi tư duy hoặc hiểu lầm phổ biến mà học sinh Việt Nam thường mắc phải liên quan đến bài học.
+    4. Cung cấp lời giải thích chi tiết, thuyết phục tại sao phương án đúng là đúng, và tại sao các phương án khác lại sai, chỉ rõ căn cứ từ nội dung slide.
+    5. Ngôn ngữ câu hỏi, các lựa chọn và lời giải thích BẮT BUỘC phải viết hoàn toàn bằng Tiếng Việt.
 
-    Format your output as a valid JSON array of objects, where each object has the following keys:
+    Định dạng đầu ra là một mảng JSON hợp lệ gồm các đối tượng, trong đó mỗi đối tượng có các khóa sau (tên khóa giữ nguyên tiếng Anh để khớp hệ thống):
     {{
-      "prompt": "The question text...",
+      "prompt": "Nội dung câu hỏi bằng tiếng Việt...",
       "options": {{
-        "A": "Option A...",
-        "B": "Option B...",
-        "C": "Option C...",
-        "D": "Option D..."
+        "A": "Nội dung phương án A...",
+        "B": "Nội dung phương án B...",
+        "C": "Nội dung phương án C...",
+        "D": "Nội dung phương án D..."
       }},
       "correct_option": "A" | "B" | "C" | "D",
-      "explanation": "Detailed explanation..."
+      "explanation": "Lời giải thích chi tiết bằng tiếng Việt..."
     }}
 
-    Do not include any markdown formatting wrappers (like ```json) in your raw output, output ONLY the raw JSON string.
+    Tuyệt đối không bao quanh đầu ra bằng các ký tự định dạng markdown (như ```json), chỉ trả về duy nhất chuỗi JSON thô.
 
   generate_socratic_hints: |
-    You are an expert tutor using the Socratic method.
-    Given the following question, options, correct answer, and explanation, generate exactly 3 levels of Socratic hints to help the student solve it.
+    Bạn là một gia sư sư phạm theo phương pháp Socratic nhiệt tình và kiên nhẫn dành cho học sinh Việt Nam.
+    Dựa trên câu hỏi, các phương án lựa chọn, đáp án đúng và lời giải thích dưới đây, hãy xây dựng đúng 3 cấp độ gợi ý Socratic bằng Tiếng Việt để giúp học sinh tự tìm ra đáp án mà không trực tiếp làm hộ bài:
 
-    Question: {question_text}
-    Options:
+    Câu hỏi: {question_text}
+    Các lựa chọn:
     A) {option_A}
     B) {option_B}
     C) {option_C}
     D) {option_D}
-    Correct Option: {correct_option}
-    Explanation: {explanation}
+    Đáp án đúng: {correct_option}
+    Giải thích: {explanation}
 
-    Requirements for hints:
-    - Level 1 (Light): Point to a general concept, analogy, or real-world example to guide initial thinking. Do not reference options.
-    - Level 2 (Medium): Point to specific slide context, formula, or detail. Suggest where to look.
-    - Level 3 (Deep): Guide the student through the step-by-step logic, helping them eliminate options or reason about the solution without giving the answer away.
+    Yêu cầu đối với các cấp độ gợi ý (viết bằng Tiếng Việt ấm áp, dễ thương phù hợp lứa tuổi):
+    - Gợi ý Cấp 1 (Nhẹ): Hướng học sinh đến một khái niệm chung, sự liên tưởng thực tế hoặc quy tắc cơ bản trong slide để kích hoạt tư duy ban đầu. Không đề cập đến các phương án lựa chọn.
+    - Gợi ý Cấp 2 (Trung bình): Chỉ ra chi tiết cụ thể hoặc phần kiến thức/công thức nằm ở slide nào để học sinh biết nơi cần tra cứu lại.
+    - Gợi ý Cấp 3 (Sâu): Hướng dẫn học sinh phân tích loại trừ phương án nhiễu hoặc hướng dẫn từng bước lập luận nhỏ để học sinh tự tìm ra đáp án đúng. Tuyệt đối không được nói ra đáp án đúng là gì.
 
-    Format your output as a valid JSON object with the following keys:
+    Định dạng đầu ra là một đối tượng JSON hợp lệ có các khóa sau:
     {{
-      "level1": "Level 1 hint text...",
-      "level2": "Level 2 hint text...",
-      "level3": "Level 3 hint text..."
+      "level1": "Nội dung gợi ý cấp 1...",
+      "level2": "Nội dung gợi ý cấp 2...",
+      "level3": "Nội dung gợi ý cấp 3..."
     }}
 
-    Do not include any markdown formatting wrappers (like ```json) in your raw output, output ONLY the raw JSON string.
+    Tuyệt đối không bao quanh đầu ra bằng các ký tự định dạng markdown (như ```json), chỉ trả về duy nhất chuỗi JSON thô.
+
 
   evol_instruct:
     in_depth:

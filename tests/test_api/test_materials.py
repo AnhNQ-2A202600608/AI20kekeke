@@ -192,3 +192,59 @@ async def test_list_materials_regex_extraction(client, monkeypatch):
         assert item_15["dayLabel"] == "Day 15"
         assert item_28["dayLabel"] == "Day 28"
         assert item_no["dayLabel"] == "Unknown"
+
+
+@pytest.mark.asyncio
+async def test_generate_quizzes_by_weakness_trigger(client, monkeypatch):
+    monkeypatch.setattr(
+        "src.api.material_routes.get_backend_supabase_config",
+        lambda allow_stub=True: MagicMock(url="https://fake.supabase.co", secret_key="fake-key", is_stub=False),
+    )
+
+    mock_resp_concept = MagicMock()
+    mock_resp_concept.status_code = 200
+    mock_resp_concept.json.return_value = [{"id": "concept-123", "name": "RAG Pipeline"}]
+
+    mock_resp_questions = MagicMock()
+    mock_resp_questions.status_code = 200
+    mock_resp_questions.json.return_value = []
+
+    mock_resp_materials = MagicMock()
+    mock_resp_materials.status_code = 200
+    mock_resp_materials.json.return_value = [
+        {"source_filename": "Day 08 - Production RAG.pdf", "title": "RAG Pipeline"}
+    ]
+
+    def mock_get(url, *args, **kwargs):
+        if "concepts" in url:
+            return mock_resp_concept
+        if "questions" in url:
+            return mock_resp_questions
+        if "course_materials" in url:
+            return mock_resp_materials
+        return MagicMock(status_code=404)
+
+    # Mock generate task
+    with (
+        patch("src.api.material_routes.generate_quizzes_from_slides_task") as mock_task,
+        patch("requests.get", side_effect=mock_get),
+    ):
+        response = await client.post(
+            "/api/v1/materials/generate-by-weakness",
+            json={
+                "student_id": "4a3563f3-7531-4921-a02a-c16392f91f19",
+                "concept_code": "d8-rag-pipeline",
+                "num_questions": 3,
+                "difficulty": "bình thường",
+                "socratic_hints": True,
+            },
+            headers={"Authorization": "Bearer service_role"},
+        )
+        assert response.status_code == 202
+        data = response.json()
+        assert data["status"] == "accepted"
+        assert data["student_id"] == "4a3563f3-7531-4921-a02a-c16392f91f19"
+        assert data["concept_code"] == "d8-rag-pipeline"
+        assert data["document_name"] == "Day 08 - Production RAG.pdf"
+        assert data["num_questions_requested"] == 3
+        mock_task.assert_called_once()

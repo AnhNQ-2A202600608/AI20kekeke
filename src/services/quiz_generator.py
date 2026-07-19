@@ -11,61 +11,62 @@ from src.services.supabase_config import get_backend_supabase_config
 logger = logging.getLogger(__name__)
 
 # Fallback templates if settings.prompts is not fully populated
-DEFAULT_QUIZ_PROMPT = """You are an expert curriculum designer at VinUniversity.
-Generate exactly {num_questions} multiple-choice questions (MCQs) based ONLY on the provided slide contents below.
+DEFAULT_QUIZ_PROMPT = """Bạn là chuyên gia thiết kế chương trình học và chuyên gia khảo thí theo Chương trình Giáo dục Phổ thông 2018 (CT GDPT 2018) của Việt Nam.
+Hãy tạo ra đúng {num_questions} câu hỏi trắc nghiệm khách quan (MCQ) dựa TRÊN DUY NHẤT nội dung các trang slide bài giảng dưới đây.
 
-Target Concept: {concept_name} (Code: {concept_code})
-Target Difficulty: {difficulty}
+Khái niệm mục tiêu: {concept_name} (Mã concept: {concept_code})
+Mức độ nhận thức mục tiêu (Độ khó): {difficulty} (dễ: Nhận biết, bình thường: Thông hiểu, khó: Vận dụng/Vận dụng cao)
 
-Slide Contents:
+Nội dung slide bài giảng:
 {slides_content}
 
-Requirements for each MCQ:
-1. The question must test understanding of key concepts in the slides.
-2. Provide exactly 4 options: A, B, C, and D.
-3. The distractors (incorrect options) must be realistic and representative of common student misconceptions.
-4. Provide a clear explanation for why the correct option is correct and why other options are incorrect.
+Yêu cầu đối với mỗi câu hỏi MCQ:
+1. Câu hỏi phải kiểm tra đúng chuẩn đầu ra năng lực của khái niệm mục tiêu, bám sát kiến thức thực tế được trình bày trong các trang slide.
+2. Câu hỏi phải sử dụng ngôn ngữ Tiếng Việt chuẩn sư phạm, diễn đạt trong sáng, dễ hiểu, phù hợp với lứa tuổi học sinh phổ thông Việt Nam.
+3. Cung cấp đúng 4 phương án lựa chọn: A, B, C, và D. Các phương án sai (distractors) phải là các lỗi tư duy hoặc hiểu lầm phổ biến mà học sinh Việt Nam thường mắc phải liên quan đến bài học.
+4. Cung cấp lời giải thích chi tiết, thuyết phục tại sao phương án đúng là đúng, và tại sao các phương án khác lại sai, chỉ rõ căn cứ từ nội dung slide.
+5. Ngôn ngữ câu hỏi, các lựa chọn và lời giải thích BẮT BUỘC phải viết hoàn toàn bằng Tiếng Việt.
 
-Format your output as a valid JSON array of objects, where each object has the following keys:
+Định dạng đầu ra là một mảng JSON hợp lệ gồm các đối tượng, trong đó mỗi đối tượng có các khóa sau (tên khóa giữ nguyên tiếng Anh để khớp hệ thống):
 {{
-  "prompt": "The question text...",
+  "prompt": "Nội dung câu hỏi bằng tiếng Việt...",
   "options": {{
-    "A": "Option A...",
-    "B": "Option B...",
-    "C": "Option C...",
-    "D": "Option D..."
+    "A": "Nội dung phương án A...",
+    "B": "Nội dung phương án B...",
+    "C": "Nội dung phương án C...",
+    "D": "Nội dung phương án D..."
   }},
   "correct_option": "A" | "B" | "C" | "D",
-  "explanation": "Detailed explanation..."
+  "explanation": "Lời giải thích chi tiết bằng tiếng Việt..."
 }}
 
-Do not include any markdown formatting wrappers (like ```json) in your raw output, output ONLY the raw JSON string."""
+Tuyệt đối không bao quanh đầu ra bằng các ký tự định dạng markdown (như ```json), chỉ trả về duy nhất chuỗi JSON thô."""
 
-DEFAULT_HINT_PROMPT = """You are an expert tutor using the Socratic method.
-Given the following question, options, correct answer, and explanation, generate exactly 3 levels of Socratic hints to help the student solve it.
+DEFAULT_HINT_PROMPT = """Bạn là một gia sư sư phạm theo phương pháp Socratic nhiệt tình và kiên nhẫn dành cho học sinh Việt Nam.
+Dựa trên câu hỏi, các phương án lựa chọn, đáp án đúng và lời giải thích dưới đây, hãy xây dựng đúng 3 cấp độ gợi ý Socratic bằng Tiếng Việt để giúp học sinh tự tìm ra đáp án mà không trực tiếp làm hộ bài:
 
-Question: {question_text}
-Options:
+Câu hỏi: {question_text}
+Các lựa chọn:
 A) {option_A}
 B) {option_B}
 C) {option_C}
 D) {option_D}
-Correct Option: {correct_option}
-Explanation: {explanation}
+Đáp án đúng: {correct_option}
+Giải thích: {explanation}
 
-Requirements for hints:
-- Level 1 (Light): Point to a general concept, analogy, or real-world example to guide initial thinking. Do not reference options.
-- Level 2 (Medium): Point to specific slide context, formula, or detail. Suggest where to look.
-- Level 3 (Deep): Guide the student through the step-by-step logic, helping them eliminate options or reason about the solution without giving the answer away.
+Yêu cầu đối với các cấp độ gợi ý (viết bằng Tiếng Việt ấm áp, dễ thương phù hợp lứa tuổi):
+- Gợi ý Cấp 1 (Nhẹ): Hướng học sinh đến một khái niệm chung, sự liên tưởng thực tế hoặc quy tắc cơ bản trong slide để kích hoạt tư duy ban đầu. Không đề cập đến các phương án lựa chọn.
+- Gợi ý Cấp 2 (Trung bình): Chỉ ra chi tiết cụ thể hoặc phần kiến thức/công thức nằm ở slide nào để học sinh biết nơi cần tra cứu lại.
+- Gợi ý Cấp 3 (Sâu): Hướng dẫn học sinh phân tích loại trừ phương án nhiễu hoặc hướng dẫn từng bước lập luận nhỏ để học sinh tự tìm ra đáp án đúng. Tuyệt đối không được nói ra đáp án đúng là gì.
 
-Format your output as a valid JSON object with the following keys:
+Định dạng đầu ra là một đối tượng JSON hợp lệ có các khóa sau:
 {{
-  "level1": "Level 1 hint text...",
-  "level2": "Level 2 hint text...",
-  "level3": "Level 3 hint text..."
+  "level1": "Nội dung gợi ý cấp 1...",
+  "level2": "Nội dung gợi ý cấp 2...",
+  "level3": "Nội dung gợi ý cấp 3..."
 }}
 
-Do not include any markdown formatting wrappers (like ```json) in your raw output, output ONLY the raw JSON string."""
+Tuyệt đối không bao quanh đầu ra bằng các ký tự định dạng markdown (như ```json), chỉ trả về duy nhất chuỗi JSON thô."""
 
 
 def clean_json_response(content: str) -> str:
@@ -80,6 +81,193 @@ def clean_json_response(content: str) -> str:
     return content.strip()
 
 
+CRITIC_PROMPT = """Bạn là một chuyên gia khảo thí độc lập theo Chương trình Giáo dục Phổ thông 2018 của Việt Nam.
+Nhiệm vụ của bạn là thẩm định độ khó thực tế của danh sách câu hỏi trắc nghiệm dưới đây.
+Với mỗi câu hỏi, hãy phân tích kỹ yêu cầu tư duy của nó để giải và phân loại vào một trong ba mức độ nhận thức:
+- "dễ" (Nhận biết): Học sinh chỉ cần nhớ lại kiến thức, nhận diện công thức, hoặc đọc trực tiếp từ slide.
+- "bình thường" (Thông hiểu): Học sinh cần hiểu ý nghĩa khái niệm, thực hiện các phép biến đổi đơn giản, hoặc giải thích được hiện tượng.
+- "khó" (Vận dụng): Học sinh cần liên kết nhiều khái niệm, giải quyết tình huống mới, hoặc thực hiện tính toán nhiều bước phức tạp.
+
+Danh sách câu hỏi cần thẩm định:
+{questions_formatted}
+
+Định dạng đầu ra là một mảng JSON chứa chính xác mức độ khó dự đoán ("dễ", "bình thường", hoặc "khó") cho từng câu hỏi tương ứng theo đúng thứ tự.
+Ví dụ:
+[
+  "dễ",
+  "bình thường",
+  "dễ",
+  "khó"
+]
+
+Chỉ trả về duy nhất mảng JSON thô, không kèm định dạng markdown hay văn bản giải thích nào khác."""
+
+
+def validate_option_balance(options: dict[str, str]) -> bool:
+    """
+    Validates option lengths with tolerance for math formulas and short values.
+    Returns True if valid or if all options are short/math-based.
+    Returns False if descriptive text options differ in length by > 50%.
+    """
+    import re
+
+    if not isinstance(options, dict) or len(options) < 4:
+        return False
+
+    vals = [str(v).strip() for v in options.values()]
+
+    # Identify math expressions or short option texts
+    math_pattern = re.compile(r"[0-9+\-*/=<>\\\{\}\^_\$]")
+
+    is_all_math_or_short = True
+    lengths = []
+    for val in vals:
+        val_len = len(val)
+        is_math = bool(math_pattern.search(val))
+        is_short = val_len < 20
+        if not (is_math or is_short):
+            is_all_math_or_short = False
+        lengths.append(val_len)
+
+    if is_all_math_or_short:
+        return True
+
+    min_len = max(1, min(lengths))
+    max_len = max(lengths)
+    return (max_len / min_len) <= 1.5
+
+
+def shuffle_single_question_options(q: dict) -> None:
+    """Shuffles the options of a single question and updates correct_option accordingly."""
+    import random
+
+    options = q.get("options")
+    correct = q.get("correct_option")
+    if not options or not correct or correct not in options:
+        return
+
+    correct_text = options[correct]
+    texts = list(options.values())
+    random.shuffle(texts)
+
+    keys = ["A", "B", "C", "D"]
+    new_options = {}
+    new_correct = None
+    for k, text in zip(keys, texts):
+        new_options[k] = text
+        if text == correct_text:
+            new_correct = k
+
+    q["options"] = new_options
+    q["correct_option"] = new_correct
+
+
+def rebalance_and_shuffle_options(questions: list[dict]) -> list[dict]:
+    """
+    Shuffles options for each question and balances correct option (A, B, C, D) distribution
+    to ensure no option is overrepresented (>40% of the total quiz set).
+    """
+    if not questions:
+        return []
+
+    # First shuffle options randomly for all questions
+    for q in questions:
+        shuffle_single_question_options(q)
+
+    if len(questions) < 5:
+        return questions
+
+    max_allowed = max(2, int(len(questions) * 0.40))
+
+    # Iteratively swap overrepresented correct answers to underrepresented keys
+    for _ in range(100):
+        counts = {"A": 0, "B": 0, "C": 0, "D": 0}
+        for q in questions:
+            correct = q.get("correct_option")
+            if correct in counts:
+                counts[correct] += 1
+
+        overrepresented = [k for k, v in counts.items() if v > max_allowed]
+        underrepresented = [k for k, v in counts.items() if v < max_allowed]
+
+        if not overrepresented or not underrepresented:
+            break
+
+        source_key = overrepresented[0]
+        target_key = underrepresented[0]
+
+        # Find a question to swap correct_option from source_key to target_key
+        swapped = False
+        for q in questions:
+            if q.get("correct_option") == source_key:
+                options = q.get("options", {})
+                if source_key in options and target_key in options:
+                    options[source_key], options[target_key] = options[target_key], options[source_key]
+                    q["correct_option"] = target_key
+                    swapped = True
+                    break
+        if not swapped:
+            break
+
+    return questions
+
+
+async def verify_batch_difficulty(questions: list[dict], target_difficulty: str) -> list[bool]:
+    """
+    Uses Critic Agent to assess the difficulty of a batch of questions.
+    Returns a list of booleans representing whether each question fits within 1 cognitive level of the target difficulty.
+    """
+    if not questions:
+        return []
+
+    # Format questions for the Critic prompt
+    questions_formatted = ""
+    for idx, q in enumerate(questions):
+        questions_formatted += f"--- Câu hỏi {idx + 1} ---\n"
+        questions_formatted += f"Câu hỏi: {q.get('prompt')}\n"
+        options = q.get("options", {}) or {}
+        questions_formatted += "Các phương án:\n"
+        for k, v in options.items():
+            questions_formatted += f"  {k}. {v}\n"
+        questions_formatted += f"Đáp án đúng: {q.get('correct_option')}\n"
+        questions_formatted += f"Giải thích: {q.get('explanation')}\n\n"
+
+    prompt = CRITIC_PROMPT.format(questions_formatted=questions_formatted)
+
+    messages = [
+        SystemMessage(content="You are an expert curriculum auditor who outputs raw JSON arrays of strings."),
+        HumanMessage(content=prompt),
+    ]
+
+    try:
+        llm = get_llm()
+        resp = await llm.ainvoke(messages)
+        content = clean_json_response(resp.content)
+        classified = json.loads(content)
+
+        if not isinstance(classified, list) or len(classified) != len(questions):
+            logger.warning(
+                f"Critic response size mismatch. Expected {len(questions)}, got {len(classified) if isinstance(classified, list) else type(classified)}"
+            )
+            return [True] * len(questions)
+
+        difficulty_levels = {"dễ": 1, "bình thường": 2, "khó": 3}
+        target_level = difficulty_levels.get(target_difficulty.lower(), 2)
+
+        results = []
+        for idx, item in enumerate(classified):
+            pred = str(item).strip().lower()
+            pred_level = difficulty_levels.get(pred, 2)
+            passed = abs(pred_level - target_level) <= 1
+            questions[idx]["critic_difficulty"] = pred
+            results.append(passed)
+
+        return results
+    except Exception as e:
+        logger.exception(f"Error in verify_batch_difficulty: {e}")
+        return [True] * len(questions)
+
+
 async def generate_quizzes_from_slides_task(
     document_name: str,
     num_questions: int,
@@ -87,6 +275,8 @@ async def generate_quizzes_from_slides_task(
     socratic_hints: bool,
     concept_code: str,
     user_id: str | None = None,
+    prompt_override: str | None = None,
+    is_weakness_targeted: bool = False,
 ) -> None:
     """
     Background pipeline to generate quiz questions using OpenAI LLM based on slide contents.
@@ -176,44 +366,101 @@ async def generate_quizzes_from_slides_task(
             logger.error("Could not resolve concept_id or course_id. Aborting quiz generation.")
             return
 
-        # 3. Call LLM to generate questions
+        # 3. Call LLM to generate questions with retry and validation logic
         llm = get_llm()
-        quiz_template = (
-            settings.prompts.generate_quizzes_from_slides
-            if settings.prompts and settings.prompts.generate_quizzes_from_slides
-            else DEFAULT_QUIZ_PROMPT
-        )
+        if prompt_override:
+            quiz_template = prompt_override
+        else:
+            quiz_template = (
+                settings.prompts.generate_quizzes_from_slides
+                if settings.prompts and settings.prompts.generate_quizzes_from_slides
+                else DEFAULT_QUIZ_PROMPT
+            )
 
-        formatted_quiz_prompt = quiz_template.format(
-            num_questions=num_questions,
-            concept_name=concept_name,
-            concept_code=concept_code,
-            difficulty=difficulty,
-            slides_content=slides_content,
-        )
+        if is_weakness_targeted:
+            weakness_instruction = "\n\nIMPORTANT: This concept is currently a learning gap / weakness for the student. Focus questions on clarifying common student misconceptions, providing extremely clear educational explanations, and helping the student bridge their knowledge gap through targeted Socratic hints.\n"
+            quiz_template = quiz_template + weakness_instruction
 
-        messages = [
-            SystemMessage(
-                content="You are an expert curriculum designer who outputs raw JSON arrays matching the requested schema."
-            ),
-            HumanMessage(content=formatted_quiz_prompt),
-        ]
+        valid_questions = []
+        retry_count = 0
+        max_retries = 2
 
-        logger.info("Calling LLM to generate questions...")
-        llm_resp = await llm.ainvoke(messages)
-        content_str = clean_json_response(llm_resp.content)
+        while len(valid_questions) < num_questions and retry_count <= max_retries:
+            needed = num_questions - len(valid_questions)
+            logger.info(f"Attempting to generate {needed} questions (retry_count={retry_count})...")
 
-        try:
-            questions_json = json.loads(content_str)
-        except Exception as e:
-            logger.error(f"Failed to parse LLM output as JSON: {e}. Raw content: {content_str}")
+            formatted_quiz_prompt = quiz_template.format(
+                num_questions=needed,
+                concept_name=concept_name,
+                concept_code=concept_code,
+                difficulty=difficulty,
+                slides_content=slides_content,
+            )
+
+            messages = [
+                SystemMessage(
+                    content="You are an expert curriculum designer who outputs raw JSON arrays matching the requested schema."
+                ),
+                HumanMessage(content=formatted_quiz_prompt),
+            ]
+
+            logger.info("Calling LLM to generate questions...")
+            llm_resp = await llm.ainvoke(messages)
+            content_str = clean_json_response(llm_resp.content)
+
+            try:
+                candidates = json.loads(content_str)
+            except Exception as e:
+                logger.error(f"Failed to parse LLM output as JSON: {e}. Raw content: {content_str}")
+                retry_count += 1
+                continue
+
+            if not isinstance(candidates, list):
+                logger.error(f"LLM output is not a list. Received: {type(candidates)}")
+                retry_count += 1
+                continue
+
+            # First filter candidates by validate_option_balance
+            valid_candidates = []
+            for c in candidates:
+                if not c.get("prompt") or not c.get("options") or not c.get("correct_option"):
+                    continue
+
+                c["option_balance_passed"] = validate_option_balance(c.get("options"))
+                if c["option_balance_passed"]:
+                    valid_candidates.append(c)
+                else:
+                    logger.info(f"Question failed option length balance validation: {c.get('prompt')}")
+
+            if not valid_candidates:
+                logger.info("No candidates passed option balance validation in this batch.")
+                retry_count += 1
+                continue
+
+            # Run batch difficulty verification on candidates that passed option balance
+            passed_difficulty = await verify_batch_difficulty(valid_candidates, difficulty)
+
+            for c, passed in zip(valid_candidates, passed_difficulty):
+                c["retry_count"] = retry_count
+                if passed:
+                    valid_questions.append(c)
+                    if len(valid_questions) >= num_questions:
+                        break
+                else:
+                    logger.info(
+                        f"Question failed Critic difficulty check: {c.get('prompt')} (predicted: {c.get('critic_difficulty')})"
+                    )
+
+            retry_count += 1
+
+        if not valid_questions:
+            logger.error("Failed to generate any valid questions after max retries.")
             return
 
-        if not isinstance(questions_json, list):
-            logger.error(f"LLM output is not a list. Received: {type(questions_json)}")
-            return
+        valid_questions = valid_questions[:num_questions]
 
-        logger.info(f"LLM successfully generated {len(questions_json)} question candidates.")
+        # Apply option rebalancing and shuffling
+        valid_questions = rebalance_and_shuffle_options(valid_questions)
 
         # Mapping of difficulty input to ELO value
         difficulty_elo_map = {"dễ": 1050.0, "bình thường": 1200.0, "khó": 1350.0}
@@ -238,19 +485,20 @@ async def generate_quizzes_from_slides_task(
             else DEFAULT_HINT_PROMPT
         )
 
-        for idx, q_data in enumerate(questions_json):
-            logger.info(f"Processing question {idx + 1}/{len(questions_json)}...")
+        for idx, q_data in enumerate(valid_questions):
+            logger.info(f"Processing question {idx + 1}/{len(valid_questions)}...")
             prompt = q_data.get("prompt")
             options = q_data.get("options")
             correct_option = q_data.get("correct_option")
             explanation = q_data.get("explanation")
 
-            if not prompt or not options or not correct_option:
-                logger.warning(f"Skipping invalid question structure: {q_data}")
-                continue
+            validation_metadata = {
+                "critic_difficulty": q_data.get("critic_difficulty"),
+                "option_balance_passed": q_data.get("option_balance_passed", True),
+                "retry_count": q_data.get("retry_count", 0),
+            }
 
             # Construct answer_key payload matching database schema expectations
-            # answer_key format is: {"options": {"A": ..., "B": ...}, "correct": "A", "explanation": "..."}
             answer_key = {"options": options, "correct": correct_option, "explanation": explanation}
 
             question_payload = {
@@ -262,6 +510,7 @@ async def generate_quizzes_from_slides_task(
                 "difficulty_elo": target_elo,
                 "calibration_status": "draft",
                 "source_document_name": document_name,
+                "validation_metadata": validation_metadata,
             }
             if user_id:
                 question_payload["created_by"] = user_id

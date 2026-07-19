@@ -228,9 +228,7 @@ class SupabaseRagRepository:
             )
 
     def upload_preview(self, material_id: str, page_number: int, content: bytes) -> str:
-        return self._upload(
-            f"materials/{material_id}/pages/{page_number}.webp", content, "image/webp"
-        )
+        return self._upload(f"materials/{material_id}/pages/{page_number}.webp", content, "image/webp")
 
     def insert_pages(self, material_id: str, records: list[dict[str, Any]]) -> dict[int, str]:
         page_ids: dict[int, str] = {}
@@ -245,14 +243,9 @@ class SupabaseRagRepository:
             page_ids.update({int(row["page_number"]): str(row["id"]) for row in rows})
         return page_ids
 
-    def insert_chunks(
-        self, material_id: str, course_id: str, records: list[dict[str, Any]]
-    ) -> None:
+    def insert_chunks(self, material_id: str, course_id: str, records: list[dict[str, Any]]) -> None:
         for batch in self._batches(records, 25):
-            payload = [
-                {"material_id": material_id, "course_id": course_id, **record}
-                for record in batch
-            ]
+            payload = [{"material_id": material_id, "course_id": course_id, **record} for record in batch]
             self._request(
                 "POST",
                 "/rest/v1/material_chunks",

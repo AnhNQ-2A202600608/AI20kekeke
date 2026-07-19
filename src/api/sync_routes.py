@@ -80,6 +80,7 @@ def trigger_sync(
         # Xóa các bản ghi đã đồng bộ thành công
         if synced_ids:
             placeholders = ",".join(["?"] * len(synced_ids))
+            # nosemgrep: python.sqlalchemy.security.sqlalchemy-execute-raw-query.sqlalchemy-execute-raw-query
             cursor.execute(f"DELETE FROM offline_outbox WHERE id IN ({placeholders})", synced_ids)
             conn.commit()
 

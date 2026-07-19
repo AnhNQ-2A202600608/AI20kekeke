@@ -15,7 +15,11 @@ async function proxyRequest(request: Request, params: Promise<{ path: string[] }
   const { path } = await params;
   const pathName = path.join("/");
 
-  if (!ALLOWED_PATHS.has(pathName)) {
+  if (
+    !ALLOWED_PATHS.has(pathName) &&
+    !pathName.startsWith("learning-path/history/") &&
+    !pathName.startsWith("learning-path/instance/")
+  ) {
     return NextResponse.json({ detail: "Endpoint backend chưa được hỗ trợ." }, { status: 404 });
   }
 

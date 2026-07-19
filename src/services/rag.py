@@ -374,6 +374,7 @@ class RAGService:
                 if not concept_code:
                     try:
                         from uuid import UUID
+
                         try:
                             UUID(str(concept_id))
                             concept_url = f"{self.supabase_url}/rest/v1/concepts?id=eq.{concept_id}&select=code"
@@ -594,13 +595,21 @@ class RAGService:
 
             # Lọc theo môn học Toán học (chỉ giữ lại các tài liệu Toán)
             is_math_concept = concept_id in [
-                "ti-le-thuc", "ti-so", "tinh-chat-co-ban-cua-phan-so", "phan-so",
-                "rut-gon-phan-so", "phan-so-bang-nhau", "ti-so-phan-tram", "quy-dong-mau-nhieu-phan-so"
+                "ti-le-thuc",
+                "ti-so",
+                "tinh-chat-co-ban-cua-phan-so",
+                "phan-so",
+                "rut-gon-phan-so",
+                "phan-so-bang-nhau",
+                "ti-so-phan-tram",
+                "quy-dong-mau-nhieu-phan-so",
             ]
             if is_math_concept:
                 sorted_results = [
-                    item for item in sorted_results
-                    if "math" in str(item.get("document_name")).lower() or "fused" in str(item.get("document_name")).lower()
+                    item
+                    for item in sorted_results
+                    if "math" in str(item.get("document_name")).lower()
+                    or "fused" in str(item.get("document_name")).lower()
                 ]
 
             sorted_results = self._dedupe_logical_versions(sorted_results)

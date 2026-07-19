@@ -1,0 +1,8 @@
+    out = self.out.snap() if self.out else ""
+          ~~~~~~~~~~~~~^^
+  File "D:\code\AI20kekeke\.venv\Lib\site-packages\_pytest\capture.py", line 591, in snap
+    self.tmpfile.seek(0)
+    ~~~~~~~~~~~~~~~~~^^^
+ValueError: I/O operation on closed file.
+
+no tests ran in 0.22s

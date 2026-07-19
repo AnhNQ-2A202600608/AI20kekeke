@@ -19,6 +19,8 @@ from src.api import (
     quiz_review_routes,
     sync_routes,
 )
+from src.api.rate_limit import limiter
+from src.config import get_settings
 from src.models.chat_contracts import (
     AgentChatMessage,
     AgentChatMetadata,
@@ -49,6 +51,7 @@ from src.services.llm import get_llm
 from src.services.quiz_error_cases import create_or_update_quiz_error_case
 from src.services.timing import TimingCollector, core_timing_metadata, merge_timing_metadata
 
+settings = get_settings()
 logger = logging.getLogger(__name__)
 
 router = APIRouter()
@@ -241,7 +244,9 @@ async def load_student_profile(request: ChatRequest) -> tuple[dict, str | None]:
             }
             cache.set(cache_key, json.dumps(student_profile), ttl=300)
         except ValueError as ve:
-            logger.info(f"Invalid UUID in student_id, course_id, or concept_id. Falling back to default profile. Error: {ve}")
+            logger.info(
+                f"Invalid UUID in student_id, course_id, or concept_id. Falling back to default profile. Error: {ve}"
+            )
             return student_profile, None
         except Exception as de:
             logger.error(f"Lỗi đọc DB chính cho chat profile: {de}", exc_info=True)
@@ -296,6 +301,7 @@ Chỉ trả về chuỗi JSON hợp lệ, không kèm theo ``` hay bất kỳ đ
         content = llm_response.content.strip()
 
         import re
+
         json_match = re.search(r"\{[\s\S]*\}", content)
         if json_match:
             try:
@@ -316,6 +322,7 @@ Chỉ trả về chuỗi JSON hợp lệ, không kèm theo ``` hay bất kỳ đ
 async def delayed_flush_memory_buffer(student_id_str: str, version_token: str, delay_seconds: int = 60):
     """Trì hoãn flush bộ đệm tin nhắn để thực hiện debounce."""
     import asyncio
+
     await asyncio.sleep(delay_seconds)
     try:
         cache = get_cache_store()
@@ -347,6 +354,7 @@ async def buffer_and_update_student_memory(
     """Lưu lượt chat mới vào bộ đệm và lập lịch trích xuất trí nhớ dài hạn một cách tối ưu."""
     try:
         import uuid
+
         cache = get_cache_store()
         buffer_key = f"student_chat_buffer:{student_id_str}"
         concept_key = f"student_last_concept:{student_id_str}"
@@ -381,7 +389,7 @@ async def buffer_and_update_student_memory(
                 delayed_flush_memory_buffer,
                 student_id_str,
                 current_version,
-                delay_seconds=60, # Trì hoãn 60 giây chờ thêm tin nhắn mới
+                delay_seconds=0 if get_settings().app_env == "test" else 60, # Trì hoãn 60 giây chờ thêm tin nhắn mới
             )
     except Exception as e:
         logger.error(f"Lỗi khi xử lý bộ đệm trí nhớ: {e}", exc_info=True)
@@ -787,61 +795,62 @@ async def stream_chat_response(
 
 
 @router.post("/chat")
+@limiter.limit(settings.rate_limit_chat)
 async def chat(
-    request: ChatRequest,
-    http_request: Request,
+    chat_request: ChatRequest,
+    request: Request,
     background_tasks: BackgroundTasks,
     user: adaptive_routes.AuthenticatedUser = Depends(adaptive_routes.get_current_user),
 ):
     """Chat với AI agent được cá nhân hóa qua Elo & BKT."""
-    if user.role == "student" and str(request.student_id) != str(user.id):
+    if user.role == "student" and str(chat_request.student_id) != str(user.id):
         raise HTTPException(status_code=403, detail="Sinh viên chỉ có quyền truy cập vào hội thoại của chính mình.")
     try:
         timings = TimingCollector()
 
-        if request.stream:
+        if chat_request.stream:
             return StreamingResponse(
                 stream_chat_response(
-                    request,
+                    chat_request,
                     None,
                     None,
                     background_tasks,
                     timings,
-                    protocol_v1=wants_v1_stream(request, http_request),
+                    protocol_v1=wants_v1_stream(chat_request, request),
                 ),
                 media_type="text/event-stream",
                 background=background_tasks,
             )
 
         with braintrust_span("chat.profile_load"):
-            student_profile, cache_key = await load_student_profile(request)
+            student_profile, cache_key = await load_student_profile(chat_request)
 
         from src.api.adaptive_routes import get_adaptive_db
 
         db = get_adaptive_db()
 
         with braintrust_span(
-            "chat.request", input={"mode": request.mode, "stream": False}, metadata={"mode": request.mode}
+            "chat.request", input={"mode": chat_request.mode, "stream": False}, metadata={"mode": chat_request.mode}
         ) as chat_span:
             session_uuid = None
-            if request.session_id:
+            if chat_request.session_id:
                 with braintrust_span("chat.session_validate", metadata={"has_session_id": True}):
                     try:
-                        temp_uuid = UUID(request.session_id)
+                        temp_uuid = UUID(chat_request.session_id)
                     except ValueError:
-                        logger.warning(f"Invalid session_id: {request.session_id}")
+                        logger.warning(f"Invalid session_id: {chat_request.session_id}")
                     else:
                         query = db.app_client.table("chat_sessions").select("id").eq("id", str(temp_uuid))
-                        if request.student_id:
-                            query = query.eq("student_id", str(request.student_id))
+                        if chat_request.student_id:
+                            query = query.eq("student_id", str(chat_request.student_id))
                         res = query.execute()
                         if res.data:
                             session_uuid = temp_uuid
 
-            if not session_uuid and request.student_id and request.course_id:
-                with braintrust_span("chat.session_create", metadata={"mode": request.mode}):
+            if not session_uuid and chat_request.student_id and chat_request.course_id:
+                with braintrust_span("chat.session_create", metadata={"mode": chat_request.mode}):
                     session_uuid = db.create_chat_session(
-                        UUID(request.student_id), UUID(request.course_id), request.mode
+                        UUID(chat_request.student_id), UUID(chat_request.course_id), chat_request.mode
                     )
 
             chat_history = []
@@ -850,20 +859,20 @@ async def chat(
                     chat_history = db.get_chat_history(session_uuid, limit=10)
 
             long_term_facts = {}
-            if request.student_id:
+            if chat_request.student_id:
                 with braintrust_span("chat.memory_load"):
-                    long_term_facts = db.get_student_memory(UUID(request.student_id))
+                    long_term_facts = db.get_student_memory(UUID(chat_request.student_id))
 
             from src.agents.graph import agent
 
             with braintrust_span("chat.graph", metadata={"stream": False}):
                 result = await agent.ainvoke(
                     {
-                        "query": request.message,
+                        "query": chat_request.message,
                         "student_profile": student_profile,
-                        "mode": request.mode,
-                        "course_id": request.course_id,
-                        "concept_id": request.concept_id,
+                        "mode": chat_request.mode,
+                        "course_id": chat_request.course_id,
+                        "concept_id": chat_request.concept_id,
                         "session_id": str(session_uuid) if session_uuid else None,
                         "chat_history": chat_history,
                         "long_term_facts": long_term_facts,
@@ -881,40 +890,40 @@ async def chat(
                         db.add_chat_message(
                             session_uuid,
                             "student",
-                            request.message,
-                            UUID(request.concept_id) if request.concept_id else None,
+                            chat_request.message,
+                            UUID(chat_request.concept_id) if chat_request.concept_id else None,
                         )
                         assistant_message_id = db.add_chat_message(
                             session_uuid,
                             "assistant",
                             response_text,
-                            UUID(request.concept_id) if request.concept_id else None,
+                            UUID(chat_request.concept_id) if chat_request.concept_id else None,
                         )
                     except Exception as db_err:
                         logger.error(f"Error saving chat messages to DB: {db_err}")
 
             # Đăng ký background task trích xuất thông tin dài hạn
-            if request.student_id:
+            if chat_request.student_id:
                 background_tasks.add_task(
                     buffer_and_update_student_memory,
-                    request.student_id,
-                    request.message,
+                    chat_request.student_id,
+                    chat_request.message,
                     response_text,
-                    request.concept_id,
+                    chat_request.concept_id,
                     background_tasks,
                 )
 
             updated_profile = result.get("student_profile")
-            has_context = bool(request.student_id and request.course_id and request.concept_id)
+            has_context = bool(chat_request.student_id and chat_request.course_id and chat_request.concept_id)
             if updated_profile and has_context and updated_profile != student_profile:
                 cache = get_cache_store()
                 if cache_key:
                     cache.set(cache_key, json.dumps(updated_profile), ttl=300)
                 background_tasks.add_task(
                     sync_mastery_to_db,
-                    request.student_id,
-                    request.course_id,
-                    request.concept_id,
+                    chat_request.student_id,
+                    chat_request.course_id,
+                    chat_request.concept_id,
                     updated_profile,
                 )
 
@@ -926,7 +935,7 @@ async def chat(
             metadata = core_timing_metadata(metadata, timings.snapshot())
             log_chat_timing(
                 path="chat.request",
-                request=request,
+                request=chat_request,
                 metadata=metadata,
                 answer_chars=len(response_text),
                 session_id=str(session_uuid) if session_uuid else None,
@@ -1029,65 +1038,38 @@ async def get_student_recent_sessions(
         return []
 
     try:
-        events_resp = (
-            db.app_client.table("student_recent_events")
-            .select("id, created_at, elo_delta, concept_id, source_type, source_id")
+        attempts_resp = (
+            db.app_client.table("quiz_attempts")
+            .select("id, submitted_at, concept_id, hint_count, is_correct, concepts(name)")
             .eq("student_id", str(student_id))
-            .order("created_at", desc=True)
+            .order("submitted_at", desc=True)
             .limit(5)
             .execute()
         )
 
-        events = events_resp.data or []
-        if not events:
+        attempts = attempts_resp.data or []
+        if not attempts:
             return []
 
-        concept_ids = list(set(str(e["concept_id"]) for e in events if e.get("concept_id")))
-        source_ids = list(
-            set(str(e["source_id"]) for e in events if e.get("source_id") and e.get("source_type") == "quiz_attempt")
-        )
-
-        concepts_map = {}
-        if concept_ids:
-            concepts_resp = db.app_client.table("concepts").select("id, name").in_("id", concept_ids).execute()
-            for c in concepts_resp.data or []:
-                concepts_map[str(c["id"])] = c["name"]
-
-        quiz_attempts_map = {}
-        if source_ids:
-            attempts_resp = (
-                db.app_client.table("quiz_attempts")
-                .select("id, hint_count, is_correct")
-                .in_("id", source_ids)
-                .execute()
-            )
-            for a in attempts_resp.data or []:
-                quiz_attempts_map[str(a["id"])] = a
-
         result = []
-        for e in events:
-            concept_name = concepts_map.get(str(e["concept_id"]), "Chủ đề ẩn")
-            hint_count = 0
-            questions_count = 1
+        for a in attempts:
+            concept_name = "Chủ đề ẩn"
+            if "concepts" in a and isinstance(a["concepts"], dict):
+                concept_name = a["concepts"].get("name", "Chủ đề ẩn")
 
-            if e["source_type"] == "quiz_attempt" and str(e["source_id"]) in quiz_attempts_map:
-                attempt_info = quiz_attempts_map[str(e["source_id"])]
-                hint_count = attempt_info.get("hint_count") or 0
-
+            hint_count = a.get("hint_count") or 0
             hint_penalty = min(100, hint_count * 15)
 
-            try:
-                elo_delta_val = float(e["elo_delta"])
-            except Exception:
-                elo_delta_val = 0.0
+            is_correct = bool(a.get("is_correct"))
+            elo_delta_val = 15.0 if is_correct else -10.0
 
             result.append(
                 {
-                    "id": str(e["id"]),
+                    "id": str(a["id"]),
                     "conceptName": concept_name,
-                    "type": "quiz" if e["source_type"] == "quiz_attempt" else "tutor_chat",
-                    "date": e["created_at"],
-                    "questionsCount": questions_count,
+                    "type": "quiz",
+                    "date": a["submitted_at"],
+                    "questionsCount": 1,
                     "hintsUsed": hint_count,
                     "hintPenaltyPct": hint_penalty,
                     "eloDelta": round(elo_delta_val, 1),

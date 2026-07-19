@@ -30,6 +30,7 @@ const navItems = [
 
 const profileMenuItems = [
   { href: "/dashboard", label: "Dashboard", description: "Tiến độ và nhận xét", icon: ChartBar },
+  { href: "/lo-trinh", label: "Lộ trình AI", description: "Lộ trình học thích ứng", icon: Graph },
   { href: "/skill-graph", label: "Kỹ năng", description: "Bản đồ năng lực", icon: Graph },
   { href: "/hoi-dap-ai", label: "Hỏi đáp AI", description: "Giải đáp theo bài học", icon: ChatCircleDots },
   { href: "/thanh-tich", label: "Thành tích", description: "Huy hiệu và bảng xếp hạng", icon: Trophy },
@@ -65,8 +66,9 @@ export function AppShell({ children, compact = false }: { children: ReactNode; c
   const isProfilePage = pathname.startsWith("/ho-so");
   const isAiQuestionPage = pathname.startsWith("/hoi-dap-ai");
   const isSkillGraphPage = pathname.startsWith("/skill-graph");
+  const isLoTrinhPage = pathname.startsWith("/lo-trinh");
   const isExamPage = pathname.startsWith("/on-thi");
-  const hideSidebar = compact || isProfilePage || isAiQuestionPage || isSkillGraphPage || isExamPage;
+  const hideSidebar = compact || isProfilePage || isAiQuestionPage || isSkillGraphPage || isExamPage || isLoTrinhPage;
   const selectedSubjectCode = searchParams.get("subject") || "TO";
   const selectedSubject = subjects.find((subject) => subject.code === selectedSubjectCode) || subjects[0];
   const currentProgram = subjectPrograms[selectedSubject.code as keyof typeof subjectPrograms] || subjectPrograms.TO;

@@ -29,4 +29,5 @@ COPY --from=builder /app/package.json /app/package.json
 
 EXPOSE 3000
 
+USER node
 CMD ["npm", "run", "start"]

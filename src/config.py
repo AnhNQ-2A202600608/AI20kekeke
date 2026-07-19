@@ -102,6 +102,14 @@ class Settings(BaseSettings):
     redis_url: str = "redis://localhost:6379/0"
     redis_token: str = ""
 
+    # Rate Limiting
+    rate_limit_chat: str = "20/minute"
+    rate_limit_login: str = "5/minute"
+    rate_limit_login_ip: str = "30/minute"
+    rate_limit_signup: str = "3/minute"
+    rate_limit_adaptive: str = "60/minute"
+    rate_limit_default: str = "120/minute"
+
     # Vector Store
     chroma_persist_dir: str = "./data/chroma"
 

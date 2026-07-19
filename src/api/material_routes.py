@@ -74,6 +74,17 @@ class QuizGenRequest(BaseModel):
     difficulty: str = "bình thường"
     socratic_hints: bool = True
     concept_code: str
+    prompt_override: str | None = None
+
+
+class WeaknessQuizGenRequest(BaseModel):
+    student_id: str
+    concept_code: str
+    document_name: str | None = None
+    num_questions: int = 5
+    difficulty: str = "bình thường"
+    socratic_hints: bool = True
+    prompt_override: str | None = None
 
 
 @router.get("")
@@ -449,10 +460,140 @@ async def generate_quizzes(
         socratic_hints=req.socratic_hints,
         concept_code=req.concept_code,
         user_id=str(user.id),
+        prompt_override=req.prompt_override,
     )
     return {
         "status": "accepted",
         "document_name": document_name,
         "num_questions_requested": req.num_questions,
         "message": "AI quiz generation pipeline has been triggered in the background.",
+    }
+
+
+def get_document_name_for_concept(concept_code: str) -> str | None:
+    """
+    Dynamically resolves a material/document name for a given concept code
+    by checking existing questions, course materials, and slide embeddings content.
+    """
+    config = get_backend_supabase_config(allow_stub=True)
+    if config.is_stub:
+        return None
+
+    supabase_url = config.url
+    supabase_api_key = config.secret_key
+    headers = {
+        "apikey": supabase_api_key,
+        "Authorization": f"Bearer {supabase_api_key}",
+        "Accept": "application/json",
+    }
+
+    # 1. Resolve concept_id and concept_name from app.concepts
+    concept_url = f"{supabase_url}/rest/v1/concepts"
+    concept_headers = headers.copy()
+    concept_headers["Accept-Profile"] = "app"
+    concept_params = {
+        "code": f"eq.{concept_code}",
+        "select": "id,name",
+    }
+    concept_resp = requests.get(concept_url, headers=concept_headers, params=concept_params)
+    if concept_resp.status_code != 200 or not concept_resp.json():
+        logger.warning(f"Concept code '{concept_code}' not found in concepts table.")
+        return None
+
+    concept_data = concept_resp.json()[0]
+    concept_id = concept_data.get("id")
+    concept_name = concept_data.get("name")
+
+    # 2. Check existing questions for this concept_id to find source_document_name
+    questions_url = f"{supabase_url}/rest/v1/questions"
+    questions_headers = headers.copy()
+    questions_headers["Accept-Profile"] = "app"
+    questions_params = {
+        "concept_id": f"eq.{concept_id}",
+        "source_document_name": "not.is.null",
+        "select": "source_document_name",
+        "limit": "1",
+    }
+    q_resp = requests.get(questions_url, headers=questions_headers, params=questions_params)
+    if q_resp.status_code == 200 and q_resp.json():
+        doc_name = q_resp.json()[0].get("source_document_name")
+        if doc_name:
+            logger.info(f"Resolved document name '{doc_name}' from existing questions for concept: {concept_code}")
+            return doc_name
+
+    # 3. Check app.course_materials for a match in source_filename or title
+    materials_url = f"{supabase_url}/rest/v1/course_materials"
+    materials_headers = headers.copy()
+    materials_headers["Accept-Profile"] = "app"
+    m_resp = requests.get(materials_url, headers=materials_headers)
+    if m_resp.status_code == 200 and m_resp.json():
+        materials = m_resp.json()
+        for m in materials:
+            filename = m.get("source_filename") or ""
+            title = m.get("title") or ""
+            if (
+                concept_code.lower() in filename.lower()
+                or concept_code.lower() in title.lower()
+                or (concept_name and concept_name.lower() in filename.lower())
+                or (concept_name and concept_name.lower() in title.lower())
+            ):
+                logger.info(
+                    f"Resolved document name '{filename}' from course materials match for concept: {concept_code}"
+                )
+                return filename
+
+    # 4. Check public.slide_embeddings for slide content matching the concept name/code
+    slides_url = f"{supabase_url}/rest/v1/slide_embeddings"
+    search_term = concept_name or concept_code
+    slides_params = {
+        "select": "document_name",
+        "content": f"ilike.%{search_term}%",
+        "limit": "1",
+    }
+    s_resp = requests.get(slides_url, headers=headers, params=slides_params)
+    if s_resp.status_code == 200 and s_resp.json():
+        doc_name = s_resp.json()[0].get("document_name")
+        if doc_name:
+            logger.info(f"Resolved document name '{doc_name}' from slide content match for concept: {concept_code}")
+            return doc_name
+
+    return None
+
+
+@router.post("/generate-by-weakness", status_code=202)
+async def generate_quizzes_by_weakness(
+    req: WeaknessQuizGenRequest,
+    background_tasks: BackgroundTasks,
+    user: AuthenticatedUser = Depends(require_role(["mentor", "admin", "dev"])),
+):
+    """
+    Trigger background task to generate quiz questions tailored for a student's weak concept.
+    """
+    doc_name = req.document_name
+    if not doc_name:
+        doc_name = get_document_name_for_concept(req.concept_code)
+        if not doc_name:
+            raise HTTPException(
+                status_code=400,
+                detail=f"Could not resolve teaching material/document name for concept '{req.concept_code}'. Please supply document_name explicitly.",
+            )
+
+    background_tasks.add_task(
+        generate_quizzes_from_slides_task,
+        document_name=doc_name,
+        num_questions=req.num_questions,
+        difficulty=req.difficulty,
+        socratic_hints=req.socratic_hints,
+        concept_code=req.concept_code,
+        user_id=str(user.id),
+        prompt_override=req.prompt_override,
+        is_weakness_targeted=True,
+    )
+    return {
+        "status": "accepted",
+        "student_id": req.student_id,
+        "concept_code": req.concept_code,
+        "document_name": doc_name,
+        "num_questions_requested": req.num_questions,
+        "message": "AI targeted quiz generation pipeline for student weakness has been triggered in the background.",
     }
