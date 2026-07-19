@@ -5,7 +5,9 @@ import { useMemo, useSyncExternalStore } from "react";
 export type StoredChatMessage = {
   role: "ai" | "user";
   text: string;
+  citations?: { source: string; page: number }[];
 };
+
 
 export type StoredChatSession = {
   id: string;

@@ -113,7 +113,13 @@ export default function AiQuestionPage() {
         mode: "Explain",
       });
       saveBackendChatSessionId(session.id, reply.session_id);
-      appendChatMessage(session.id, { role: "ai", text: reply.response });
+      
+      const valCit = reply.metadata?.citation_validation as { valid_citations?: [string, number][] } | undefined;
+      const citations = (valCit?.valid_citations && Array.isArray(valCit.valid_citations))
+        ? valCit.valid_citations.map(([source, page]) => ({ source, page }))
+        : [];
+        
+      appendChatMessage(session.id, { role: "ai", text: reply.response, citations });
     } catch (requestError) {
       const message = requestError instanceof ApiClientError
         ? requestError.message
@@ -162,7 +168,23 @@ export default function AiQuestionPage() {
           </header>
 
           <div className="ai-chat-messages" aria-live="polite">
-            {messages.map((message, index) => <div className={`ai-message ${message.role}`} key={`${message.role}-${index}`}>{message.text}</div>)}
+            {messages.map((message, index) => (
+              <div className={`ai-message ${message.role}`} key={`${message.role}-${index}`}>
+                <div className="message-text">{message.text}</div>
+                {message.role === "ai" && message.citations && message.citations.length > 0 && (
+                  <div className="ai-citations-list">
+                    <span className="ai-citations-title">Nguồn tài liệu tham khảo:</span>
+                    <div className="ai-citations-container">
+                      {message.citations.map((cit, cIdx) => (
+                        <span key={cIdx} className="ai-citation-item">
+                          📄 {cit.source} (Trang {cit.page})
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
             {isReplying && <div className="ai-message ai pending">Trợ lý AI đang chuẩn bị lời giải...</div>}
           </div>
 

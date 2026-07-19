@@ -7096,3 +7096,51 @@ body {
 .ai-history-item .ai-history-delete { display: grid; width: 28px; height: 28px; place-items: center; border: 0; border-radius: 8px; background: transparent; color: color-mix(in srgb, var(--ink) 42%, transparent); padding: 0; }
 .ai-history-item .ai-history-delete:hover { background: #fff0ee; color: #b54d48; }
 @media (max-width: 760px) { .ai-history-item { grid-template-columns: minmax(175px, 1fr) 30px; } }
+
+/* Citations styling */
+.ai-citations-list {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px dashed rgba(26, 46, 40, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+.ai-citations-title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--accent-dark);
+  font-size: 0.72rem;
+  font-weight: 850;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.ai-citations-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+.ai-citation-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: white;
+  border: 1px solid color-mix(in srgb, var(--accent) 15%, var(--line));
+  border-radius: 6px;
+  padding: 3px 7px;
+  font-size: 0.72rem;
+  font-weight: 760;
+  color: var(--muted);
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+.ai-citation-item:hover {
+  background: color-mix(in srgb, var(--accent) 6%, white);
+  color: var(--accent-dark);
+  border-color: var(--accent);
+  transform: translateY(-0.5px);
+}
+
