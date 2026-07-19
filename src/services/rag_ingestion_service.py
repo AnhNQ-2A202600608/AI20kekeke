@@ -97,9 +97,7 @@ class IngestionRepository(Protocol):
 
     def insert_pages(self, material_id: str, records: list[dict[str, Any]]) -> dict[int, str]: ...
 
-    def insert_chunks(
-        self, material_id: str, course_id: str, records: list[dict[str, Any]]
-    ) -> None: ...
+    def insert_chunks(self, material_id: str, course_id: str, records: list[dict[str, Any]]) -> None: ...
 
     def mark_ready(self, material_id: str, *, page_count: int) -> None: ...
 
@@ -247,8 +245,7 @@ class RagIngestionRunner:
             page_count = pdf.page_count
         if page_count != document.expected_pages:
             raise RuntimeError(
-                f"PDF page count mismatch for {document.title}: "
-                f"expected {document.expected_pages}, got {page_count}"
+                f"PDF page count mismatch for {document.title}: expected {document.expected_pages}, got {page_count}"
             )
         checksum = sha256_file(document.pdf_path)
         scope_id = self.repository.resolve_scope(

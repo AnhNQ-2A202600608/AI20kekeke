@@ -849,14 +849,18 @@ async def test_memory_buffering_and_debounce(monkeypatch):
     class DictCache:
         def __init__(self):
             self.store = {}
+
         def get(self, key):
             return self.store.get(key)
+
         def set(self, key, value, ttl=None):
             self.store[key] = value
             return True
+
         def delete(self, key):
             self.store.pop(key, None)
             return True
+
         def exists(self, key):
             return key in self.store
 
@@ -865,6 +869,7 @@ async def test_memory_buffering_and_debounce(monkeypatch):
 
     # Track calls to update_long_term_memories_job
     calls = []
+
     async def mock_update_job(student_id_str, turns):
         calls.append((student_id_str, turns))
 
@@ -874,6 +879,7 @@ async def test_memory_buffering_and_debounce(monkeypatch):
     class FakeBackgroundTasks:
         def __init__(self):
             self.tasks = []
+
         def add_task(self, func, *args, **kwargs):
             self.tasks.append((func, args, kwargs))
 
@@ -881,13 +887,7 @@ async def test_memory_buffering_and_debounce(monkeypatch):
     student_id = "test-student-uuid"
     bg_tasks = FakeBackgroundTasks()
 
-    await buffer_and_update_student_memory(
-        student_id,
-        "Hello",
-        "Hi there",
-        "concept-1",
-        bg_tasks
-    )
+    await buffer_and_update_student_memory(student_id, "Hello", "Hi there", "concept-1", bg_tasks)
 
     # Should be in cache
     assert fake_cache.exists(f"student_chat_buffer:{student_id}")
@@ -899,13 +899,7 @@ async def test_memory_buffering_and_debounce(monkeypatch):
 
     # Test case 2: Adding up to BATCH_SIZE (5 turns) triggers update immediately
     for i in range(4):
-        await buffer_and_update_student_memory(
-            student_id,
-            f"Query {i}",
-            f"Response {i}",
-            "concept-1",
-            bg_tasks
-        )
+        await buffer_and_update_student_memory(student_id, f"Query {i}", f"Response {i}", "concept-1", bg_tasks)
 
     # Now len(buffer) == 5. Should have triggered update_long_term_memories_job immediately
     # And cleared the cache keys
@@ -923,24 +917,13 @@ async def test_memory_buffering_and_debounce(monkeypatch):
     # Test case 3: Concept change triggers immediate flush
     bg_tasks_concept = FakeBackgroundTasks()
     # Add first turn under concept-1
-    await buffer_and_update_student_memory(
-        student_id,
-        "Math query",
-        "Math response",
-        "concept-1",
-        bg_tasks_concept
-    )
+    await buffer_and_update_student_memory(student_id, "Math query", "Math response", "concept-1", bg_tasks_concept)
     # Add second turn under concept-2 (changed!)
     await buffer_and_update_student_memory(
-        student_id,
-        "Science query",
-        "Science response",
-        "concept-2",
-        bg_tasks_concept
+        student_id, "Science query", "Science response", "concept-2", bg_tasks_concept
     )
     # Should trigger update immediately due to concept change
     concept_job_calls = [t for t in bg_tasks_concept.tasks if t[0] == mock_update_job]
     assert len(concept_job_calls) == 1
     turns_concept = concept_job_calls[0][1][1]
     assert len(turns_concept) == 2
-

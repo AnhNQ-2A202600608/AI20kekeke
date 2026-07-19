@@ -23,11 +23,7 @@ def test_legacy_rag_ingestion_import_does_not_reconfigure_stdio(monkeypatch):
 def test_parse_markdown_pages_reports_missing_page_75(tmp_path: Path):
     from src.services.rag_ingestion_service import parse_markdown_pages
 
-    markdown = "\n".join(
-        f"<!-- page: {page} -->\nNội dung trang {page}."
-        for page in range(1, 115)
-        if page != 75
-    )
+    markdown = "\n".join(f"<!-- page: {page} -->\nNội dung trang {page}." for page in range(1, 115) if page != 75)
     path = tmp_path / "toan-6-tap-2.md"
     path.write_text(markdown, encoding="utf-8")
 
@@ -298,18 +294,14 @@ class _RecordingSession:
 def test_supabase_repository_uses_app_profile_and_service_key():
     from src.services.rag_supabase_repository import SupabaseRagRepository
 
-    session = _RecordingSession(
-        [_FakeResponse([{"id": "subject-1"}]), _FakeResponse([{"id": "scope-1"}])]
-    )
+    session = _RecordingSession([_FakeResponse([{"id": "subject-1"}]), _FakeResponse([{"id": "scope-1"}])])
     repository = SupabaseRagRepository(
         url="https://example.supabase.co",
         secret_key="sb_secret_test",
         session=session,
     )
 
-    scope_id = repository.resolve_scope(
-        course_id="course-1", grade_level=6, subject_code="mathematics"
-    )
+    scope_id = repository.resolve_scope(course_id="course-1", grade_level=6, subject_code="mathematics")
 
     assert scope_id == "scope-1"
     _, subject_url, subject_kwargs = session.calls[0]

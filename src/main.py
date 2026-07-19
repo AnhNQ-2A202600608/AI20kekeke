@@ -14,6 +14,7 @@ from src.services.braintrust_observability import configure_braintrust_observabi
 configure_braintrust_observability()
 
 from src.api.exam_routes import router as exam_router  # noqa: E402
+from src.api.learning_path_routes import router as learning_path_router  # noqa: E402
 from src.api.routes import router  # noqa: E402
 
 
@@ -62,6 +63,7 @@ app.add_middleware(
 
 app.include_router(router, prefix="/api/v1")
 app.include_router(exam_router, prefix="/api/v1")
+app.include_router(learning_path_router, prefix="/api/v1")
 
 
 logger = logging.getLogger("main")

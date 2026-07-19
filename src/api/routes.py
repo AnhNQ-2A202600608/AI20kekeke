@@ -241,7 +241,9 @@ async def load_student_profile(request: ChatRequest) -> tuple[dict, str | None]:
             }
             cache.set(cache_key, json.dumps(student_profile), ttl=300)
         except ValueError as ve:
-            logger.info(f"Invalid UUID in student_id, course_id, or concept_id. Falling back to default profile. Error: {ve}")
+            logger.info(
+                f"Invalid UUID in student_id, course_id, or concept_id. Falling back to default profile. Error: {ve}"
+            )
             return student_profile, None
         except Exception as de:
             logger.error(f"Lỗi đọc DB chính cho chat profile: {de}", exc_info=True)
@@ -296,6 +298,7 @@ Chỉ trả về chuỗi JSON hợp lệ, không kèm theo ``` hay bất kỳ đ
         content = llm_response.content.strip()
 
         import re
+
         json_match = re.search(r"\{[\s\S]*\}", content)
         if json_match:
             try:
@@ -316,6 +319,7 @@ Chỉ trả về chuỗi JSON hợp lệ, không kèm theo ``` hay bất kỳ đ
 async def delayed_flush_memory_buffer(student_id_str: str, version_token: str, delay_seconds: int = 60):
     """Trì hoãn flush bộ đệm tin nhắn để thực hiện debounce."""
     import asyncio
+
     await asyncio.sleep(delay_seconds)
     try:
         cache = get_cache_store()
@@ -347,6 +351,7 @@ async def buffer_and_update_student_memory(
     """Lưu lượt chat mới vào bộ đệm và lập lịch trích xuất trí nhớ dài hạn một cách tối ưu."""
     try:
         import uuid
+
         cache = get_cache_store()
         buffer_key = f"student_chat_buffer:{student_id_str}"
         concept_key = f"student_last_concept:{student_id_str}"
@@ -381,7 +386,7 @@ async def buffer_and_update_student_memory(
                 delayed_flush_memory_buffer,
                 student_id_str,
                 current_version,
-                delay_seconds=60, # Trì hoãn 60 giây chờ thêm tin nhắn mới
+                delay_seconds=60,  # Trì hoãn 60 giây chờ thêm tin nhắn mới
             )
     except Exception as e:
         logger.error(f"Lỗi khi xử lý bộ đệm trí nhớ: {e}", exc_info=True)

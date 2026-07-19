@@ -95,6 +95,33 @@ sequenceDiagram
   API-->>UI: Feedback and next learning step
 ```
 
+## Adaptive Learning Path Loop
+
+```mermaid
+sequenceDiagram
+  autonumber
+  actor Learner
+  participant UI as Next.js App
+  participant API as FastAPI API
+  participant Agent as LangGraph Path Agent
+  participant DB as Supabase PostgreSQL
+
+  Learner->>UI: Submit Exam
+  UI->>API: POST /exams/attempts/{id}/submit
+  API->>DB: Calculate score & identify weak concepts
+  DB-->>API: Exam results & weak concept list
+  API->>Agent: Invoke Path Graph (student_id, attempt_id)
+  Agent->>DB: Fetch quiz attempts & active concepts
+  DB-->>Agent: Quiz attempts data
+  Note over Agent: asyncio.gather parallel run:
+  Note over Agent: 1. Kahn's Topological Sort (quant)
+  Note over Agent: 2. LLM Qualitative Mistake Analysis (qual)
+  Agent->>DB: Save path_data to learning_path_instances (JSONB DAG)
+  DB-->>Agent: New path instance created
+  Agent-->>API: Return instance_id & DAG path
+  API-->>UI: Learning path generated successfully
+```
+
 ## CI/CD and Runtime Operations
 
 ```mermaid
@@ -115,8 +142,8 @@ flowchart LR
 |---|---|---|
 | Frontend | Next.js 16, React 19, Tailwind CSS 4, Zustand | Student, mentor, and admin product surfaces |
 | Backend | FastAPI, Python 3.13, Pydantic v2 | API, chat, adaptive learning, auth, ingestion |
-| AI tutor | LangGraph + LangChain + OpenAI/Gemini | Course-grounded Socratic tutoring and tool routing |
-| Database | Supabase PostgreSQL 17 with RLS, app/audit schemas, RPC | User, quiz, mastery, audit, and learning telemetry state |
+| AI tutor / Agents | LangGraph + LangChain + OpenAI/Gemini | Socratic tutoring & Socratic hints (Tutor Graph); mistake-analysis & path DAG generation (Path Graph) |
+| Database | Supabase PostgreSQL 17 with RLS, app/audit schemas, RPC | User, quiz, mastery, learning path instances, audit, and learning telemetry state |
 | Retrieval | Supabase `pgvector` | Course slide retrieval for cited tutor responses |
 | Cache | Redis with in-memory fallback | Semantic cache and production app caching |
 | Observability | Braintrust, AI logs, pytest/RAGAS evidence | Traces, feedback, latency, and evaluation evidence |
