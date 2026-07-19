@@ -1,5 +1,9 @@
 # Mentora (AI20Kekeke) | Adaptive Socratic Tutor
 
+[![Backend CI](https://github.com/AnhNQ-2A202600608/AI20kekeke/actions/workflows/ci-backend.yml/badge.svg)](https://github.com/AnhNQ-2A202600608/AI20kekeke/actions/workflows/ci-backend.yml)
+[![Frontend CI/CD](https://github.com/AnhNQ-2A202600608/AI20kekeke/actions/workflows/ci-frontend.yml/badge.svg)](https://github.com/AnhNQ-2A202600608/AI20kekeke/actions/workflows/ci-frontend.yml)
+![Coverage](https://img.shields.io/badge/Coverage-70%25-success)
+
 ![Mentora application banner](banner2.png)
 
 > **Mentora** là hệ thống gia sư học thuật cá nhân hóa 24/7 dành cho môi trường Đại học quy mô lớn, tích hợp phản hồi Socratic RAG, kiểm thử thích ứng theo vùng phát triển gần nhất (ZPD), và các rào chắn học tập bảo vệ tính toàn vẹn học thuật.
