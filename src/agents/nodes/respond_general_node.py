@@ -48,15 +48,28 @@ async def respond_general_node(state: AgentState) -> dict:
     chat_history = state.get("chat_history") or []
     long_term_facts = state.get("long_term_facts") or {}
 
+    student_profile = state.get("student_profile") or {}
+    concept_id = state.get("concept_id")
+
     try:
-        static_response = static_general_response(query)
-        if static_response:
-            timings.add("llm_first_token", 0.0)
-            timings.add("llm_total", 0.0)
-            await safe_adispatch_custom_event("token", {"delta": static_response})
-            metadata = merge_timing_metadata(state.get("metadata") or {}, timings.snapshot())
-            metadata["intent"] = "general"
-            return {"response": static_response, "metadata": metadata, "timings_ms": metadata.get("timings_ms", {})}
+        # Quyết định dùng Fast Path tĩnh hay LLM (Hybrid approach):
+        # Chỉ dùng Fast Path tĩnh khi mới bắt đầu phiên (chưa có lịch sử, chưa chọn concept học thuật, và elo ở mức mặc định 1200.0).
+        has_history = len(chat_history) > 0
+        has_active_concept = concept_id and str(concept_id).lower() != "general"
+        has_custom_elo = student_profile.get("elo_score", 1200.0) != 1200.0 or student_profile.get("elo", 1200.0) != 1200.0
+        has_custom_mastery = student_profile.get("mastery_state", "not_started") != "not_started"
+        
+        is_new_session_greeting = not has_history and not has_active_concept and not has_custom_elo and not has_custom_mastery
+
+        if is_new_session_greeting:
+            static_response = static_general_response(query)
+            if static_response:
+                timings.add("llm_first_token", 0.0)
+                timings.add("llm_total", 0.0)
+                await safe_adispatch_custom_event("token", {"delta": static_response})
+                metadata = merge_timing_metadata(state.get("metadata") or {}, timings.snapshot())
+                metadata["intent"] = "general"
+                return {"response": static_response, "metadata": metadata, "timings_ms": metadata.get("timings_ms", {})}
 
         llm = get_llm()
         messages = [SystemMessage(content=SYSTEM_PROMPT)]
