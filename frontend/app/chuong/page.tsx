@@ -643,7 +643,7 @@ function ChapterDetailPageContent() {
                 {lesson.difficulties.map((diff) => (
                   <Link
                     className={`chapter-lesson ${diff.state}`}
-                    href={`/bai-hoc/phan-so?subject=${subjectCode}`}
+                    href={`/luyen-tap?subject=${subjectCode}&id=${chapterId}`}
                     key={diff.title}
                   >
                     <span>
@@ -667,7 +667,7 @@ function ChapterDetailPageContent() {
         </div>
         <footer className="chapter-detail-footer">
           <span>{chapter.progress}% hoàn thành chương</span>
-          <Link href={`/bai-hoc/phan-so?subject=${subjectCode}`}>Tiếp tục bài học hiện tại →</Link>
+          <Link href={`/luyen-tap?subject=${subjectCode}&id=${chapterId}`}>Tiếp tục bài học hiện tại →</Link>
         </footer>
       </section>
     </>

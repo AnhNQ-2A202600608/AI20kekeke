@@ -17,6 +17,7 @@ export function ExerciseExperience({ mode }: { mode: "practice" | "test" }) {
   const searchParams = useSearchParams();
   const subjectCode = searchParams.get("subject") || "TO";
   const learningLevel = useOnboardingProfile(subjectCode);
+  const chapterId = searchParams.get("id") || "06";
   const [selected, setSelected] = useState<number | null>(null);
   const [checked, setChecked] = useState(false);
   const [savedTestProgress, setSavedTestProgress] = useState(false);
@@ -45,7 +46,7 @@ export function ExerciseExperience({ mode }: { mode: "practice" | "test" }) {
     <AppShell compact>
       <div className={`exercise-page ${isPractice ? "practice-mode" : "test-mode"}`}>
         <header className="exercise-header">
-          <Link className="back-link" href={isPractice ? `/bai-hoc/phan-so?subject=${subjectCode}` : `/hoc-tap?subject=${subjectCode}`}>
+          <Link className="back-link" href={isPractice ? `/chuong?subject=${subjectCode}&id=${chapterId}` : `/hoc-tap?subject=${subjectCode}`}>
             ← {isPractice ? "Quay lại bài học" : "Rời bài kiểm tra"}
           </Link>
           <div>
