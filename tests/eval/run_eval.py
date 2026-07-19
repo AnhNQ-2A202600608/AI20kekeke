@@ -226,7 +226,6 @@ def run_evaluation(ci_gate: bool = False, force_fail_test: bool = False) -> int:
                     import asyncio
 
                     from src.agents.graph import agent
-
                     # Chạy agent thực tế lấy câu trả lời
                     res = asyncio.run(agent.ainvoke({"query": query}))
                     response_text = res.get("response", "")

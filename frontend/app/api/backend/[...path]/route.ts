@@ -3,8 +3,13 @@ import { NextResponse } from "next/server";
 const ALLOWED_PATHS = new Set(["auth/login", "auth/signup", "auth/me", "chat"]);
 
 function backendBaseUrl() {
-  return (process.env.BACKEND_API_URL || "http://127.0.0.1:8000/api/v1").replace(/\/$/, "");
+  let url = (process.env.BACKEND_API_URL || "http://127.0.0.1:8000/api/v1").replace(/\/$/, "");
+  if (url && !url.endsWith("/api/v1") && !url.includes("/api/v1/")) {
+    url = `${url}/api/v1`;
+  }
+  return url;
 }
+
 
 async function proxyRequest(request: Request, params: Promise<{ path: string[] }>) {
   const { path } = await params;
