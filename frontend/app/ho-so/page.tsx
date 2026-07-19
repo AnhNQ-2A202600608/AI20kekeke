@@ -27,7 +27,7 @@ function ProfilePageContent() {
             <div>
               <span className="overline">Hồ sơ học tập</span>
               <h1>Hoàng Nam</h1>
-              <p>Lớp 7A · Toán học · đang học Chương 1</p>
+              <p>Lớp 6A · Toán học · đang học Chương VI Phân số</p>
             </div>
           </div>
           <div className="profile-level-card">
@@ -57,7 +57,7 @@ function ProfilePageContent() {
             </div>
             <dl className="profile-detail-list">
               <div><dt>Email</dt><dd>nam@school.edu.vn</dd></div>
-              <div><dt>Lớp hiện tại</dt><dd>7A</dd></div>
+              <div><dt>Lớp hiện tại</dt><dd>6A</dd></div>
               <div><dt>Level</dt><dd>Intermediate</dd></div>
               <div><dt>Nhịp học</dt><dd>30 phút mỗi ngày</dd></div>
             </dl>

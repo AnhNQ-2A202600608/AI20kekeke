@@ -56,9 +56,8 @@ const teacherNavGroups: Array<{ label: string; isFooter?: boolean; items: Array<
 ];
 
 const classes = [
-  { id: "7A", name: "Lớp 7A", subject: "Toán học", students: 34, completion: 72, average: 8.1, risk: 5 },
-  { id: "7B", name: "Lớp 7B", subject: "Toán học", students: 31, completion: 64, average: 7.4, risk: 8 },
-  { id: "8A", name: "Lớp 8A", subject: "Toán học", students: 29, completion: 69, average: 7.8, risk: 4 },
+  { id: "6A", name: "Lớp 6A", subject: "Toán học", students: 34, completion: 72, average: 8.1, risk: 5 },
+  { id: "6B", name: "Lớp 6B", subject: "Toán học", students: 31, completion: 64, average: 7.4, risk: 8 },
 ];
 
 const students = [
@@ -69,9 +68,9 @@ const students = [
 ];
 
 const upcoming = [
-  { title: "Quiz phân số", due: "Thứ 3", scope: "7A · toàn lớp", status: "Đã lên lịch" },
-  { title: "Ôn tỉ lệ thức", due: "Thứ 5", scope: "Nhóm cần hỗ trợ", status: "Nháp" },
-  { title: "Bài tự luận vận dụng", due: "Thứ 6", scope: "7B · cá nhân hóa", status: "Cần duyệt" },
+  { title: "Quiz phân số", due: "Thứ 3", scope: "6A · toàn lớp", status: "Đã lên lịch" },
+  { title: "Ôn tập phép tính số tự nhiên", due: "Thứ 5", scope: "Nhóm cần hỗ trợ", status: "Nháp" },
+  { title: "Bài tự luận vận dụng", due: "Thứ 6", scope: "6B · cá nhân hóa", status: "Cần duyệt" },
 ];
 
 const weakSkills = [
@@ -82,20 +81,20 @@ const weakSkills = [
 ];
 
 const contentItems = [
-  { title: "Chương: Phân số và số hữu tỉ", meta: "6 bài học · 4 dạng bài · mở khóa tuần này" },
-  { title: "Tài liệu: Quy đồng mẫu số", meta: "Đã gắn 8 kỹ năng · dùng cho AI tutor" },
+  { title: "Chương: Phân số", meta: "5 bài học · 3 mức độ khó · mở khóa tuần này" },
+  { title: "Tài liệu: Quy đồng và so sánh", meta: "Đã gắn 8 kỹ năng · dùng cho AI tutor" },
   { title: "Bài tập: Vận dụng phân số", meta: "24 câu · 3 mức độ khó" },
 ];
 
 const reviewItems = [
-  { question: "Vì sao phải quy đồng mẫu?", source: "Tài liệu Quy đồng mẫu số · trang 2", quality: "Đúng nguồn" },
-  { question: "Cách nhận biết tỉ lệ thức?", source: "Manifest chương 2 · node 04", quality: "Cần sửa ví dụ" },
-  { question: "Tóm tắt lỗi lớp 7B", source: "Lịch sử làm bài 7 ngày", quality: "Tốt" },
+  { question: "Vì sao phải rút gọn phân số?", source: "Tài liệu Phân số · trang 4", quality: "Đúng nguồn" },
+  { question: "Cách so sánh hai phân số?", source: "Manifest chương 6 · node 04", quality: "Cần sửa ví dụ" },
+  { question: "Tóm tắt lỗi lớp 6B", source: "Lịch sử làm bài 7 ngày", quality: "Tốt" },
 ];
 
 export default function TeacherWorkspace() {
   const [activeSection, setActiveSection] = useState<TeacherSection>("dashboard");
-  const [selectedClassId, setSelectedClassId] = useState("7A");
+  const [selectedClassId, setSelectedClassId] = useState("6A");
   const currentClass = useMemo(() => classes.find((item) => item.id === selectedClassId) || classes[0], [selectedClassId]);
   const section = teacherSections.find((item) => item.id === activeSection) || teacherSections[0];
 

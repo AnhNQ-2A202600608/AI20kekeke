@@ -27,15 +27,21 @@ export const activeLearningLevel = {
 export const subjectPrograms = {
   TO: {
     title: "Toán học",
-    grade: "Lớp 7",
-    goal: "Hoàn thành dạng Quy đồng mẫu số",
+    grade: "Lớp 6",
+    goal: "Đạt chuẩn kiến thức Phân số",
     assistantName: "Trợ giảng Toán",
-    assistantPrompt: "Mình đang theo dõi Chương 1 · Phân số và số hữu tỉ. Cần mình gợi ý từng bước không?",
+    assistantPrompt: "Mình đang theo dõi Chương VI · Phân số. Cần mình gợi ý từng bước không?",
     accent: "math",
     chapters: [
-      { number: "01", title: "Phân số và số hữu tỉ", summary: "Khái niệm phân số, quy đồng, phép tính và bài toán vận dụng.", progress: 62, types: 4, xp: 1640, active: true, unlock: "Đang học" },
-      { number: "02", title: "Tỉ lệ thức", summary: "Tỉ số, tính chất tỉ lệ thức và các bài toán thực tế.", progress: 0, types: 2, xp: 1320, active: false, unlock: "Hoàn thành Chương 1 để mở khóa" },
-      { number: "03", title: "Biểu thức đại số", summary: "Biến, biểu thức đại số và các phép biến đổi cơ bản.", progress: 0, types: 3, xp: 1480, active: false, unlock: "Hoàn thành Chương 2 để mở khóa" },
+      { number: "01", title: "Tập hợp các số tự nhiên", summary: "Tập hợp, cách ghi số tự nhiên, các phép tính và lũy thừa.", progress: 0, types: 7, xp: 1400, active: true, unlock: "Đang học" },
+      { number: "02", title: "Tính chia hết trong tập hợp các số tự nhiên", summary: "Quan hệ chia hết, dấu hiệu chia hết, số nguyên tố, ước chung và bội chung.", progress: 0, types: 5, xp: 1200, active: true, unlock: "Đang học" },
+      { number: "03", title: "Số nguyên", summary: "Tập hợp số nguyên, các phép tính và quy tắc dấu ngoặc.", progress: 0, types: 5, xp: 1300, active: true, unlock: "Đang học" },
+      { number: "04", title: "Một số hình phẳng trong thực tiễn", summary: "Tam giác đều, hình vuông, lục giác đều, hình chữ nhật, hình thoi, hình bình hành.", progress: 0, types: 3, xp: 1100, active: true, unlock: "Đang học" },
+      { number: "05", title: "Tính đối xứng của hình phẳng trong tự nhiên", summary: "Trục đối xứng và tâm đối xứng của các hình phẳng.", progress: 0, types: 2, xp: 1000, active: true, unlock: "Đang học" },
+      { number: "06", title: "Phân số", summary: "Khái niệm phân số, phân số bằng nhau, so sánh phân số và các phép tính phân số.", progress: 62, types: 5, xp: 1500, active: true, unlock: "Đang học" },
+      { number: "07", title: "Số thập phân", summary: "Tính toán số thập phân, làm tròn, ước lượng và các bài toán tỉ số.", progress: 0, types: 4, xp: 1250, active: true, unlock: "Đang học" },
+      { number: "08", title: "Những hình hình học cơ bản", summary: "Điểm, đường thẳng, tia, đoạn thẳng, trung điểm và góc.", progress: 0, types: 6, xp: 1350, active: true, unlock: "Đang học" },
+      { number: "09", title: "Dữ liệu và xác suất thực nghiệm", summary: "Thu thập dữ liệu, biểu đồ tranh, biểu đồ cột, cột kép và xác suất thực nghiệm.", progress: 0, types: 6, xp: 1450, active: true, unlock: "Chương cuối" },
     ],
   },
 } as const;
