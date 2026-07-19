@@ -53,8 +53,8 @@ function sessionTitle(message: string) {
 
 export function useChatSessions(subjectCode?: string) {
   const [sessions, setSessions] = useState<StoredChatSession[]>([]);
-
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setSessions(readSessions());
 
     const handleStorageChange = () => {
