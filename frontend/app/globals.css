@@ -340,7 +340,7 @@ input::placeholder { color: #82908b; }
 .header-leading { display: flex; align-items: center; gap: 8px; }
 .brand { gap: 12px; font-size: .96rem; font-weight: 760; }
 .brand-symbol { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(145deg,#17231f,#2c3d37); box-shadow: inset 0 1px 1px rgba(255,255,255,.2), 0 8px 20px rgba(22,32,29,.14); }
-.main-nav { padding: 4px; border-radius: 999px; background: rgba(225,232,229,.62); box-shadow: inset 0 1px 2px rgba(25,47,40,.06); }
+.main-nav { justify-self: center; padding: 4px; border-radius: 999px; background: rgba(225,232,229,.62); box-shadow: inset 0 1px 2px rgba(25,47,40,.06); }
 .main-nav a { display: inline-flex; min-width: 112px; align-items: center; justify-content: center; gap: 7px; border-radius: 999px; padding: 9px 16px; text-align: center; font-size: .8rem; }
 .main-nav a:hover, .main-nav a.active { background: white; color: var(--ink); box-shadow: 0 7px 20px rgba(35,57,50,.08), inset 0 1px 0 white; }
 .shell-toggle { display: grid; place-items: center; width: 36px; height: 36px; border: 0; border-radius: 50%; background: transparent; color: var(--muted); transition: transform .45s cubic-bezier(.32,.72,0,1), background .45s cubic-bezier(.32,.72,0,1), color .45s cubic-bezier(.32,.72,0,1); }
