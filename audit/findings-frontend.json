@@ -1,0 +1,86 @@
+{
+  "commit": "c939220c60f4f63a34b7a6cf6dc843023dc09e20",
+  "phase": "C3-frontend",
+  "generated_at": "2026-07-19T00:00:00Z",
+  "tool_basis": ["audit/raw/tsc.txt (0 lỗi)", "0 any/ts-ignore trong app/hooks", "knip/madge KHÔNG chạy được (không cài)"],
+  "findings": [
+    {
+      "id": "FE-001",
+      "severity": "MEDIUM",
+      "category": "token-storage",
+      "title": "JWT trong localStorage (xem SEC-004 / DOC-003)",
+      "file": "frontend/app/lib/session.ts",
+      "line": 39,
+      "evidence": "Cross-ref SEC-004. Giảm nhẹ: BFF proxy chỉ forward authorization+content-type (route.ts:22-26), không rò cookie; không có XSS sink (0 dangerouslySetInnerHTML/eval).",
+      "repro": "localStorage.getItem('mentora-auth-session')",
+      "exploit": "Xem SEC-004.",
+      "fix": "Cookie httpOnly + middleware.",
+      "impact": 3, "likelihood": 2, "effort": "L", "confidence": "confirmed",
+      "related": ["SEC-004", "DOC-003"]
+    },
+    {
+      "id": "FE-002",
+      "severity": "LOW",
+      "category": "no-request-cancellation",
+      "title": "api-client không có AbortController — không huỷ request cũ khi param đổi/unmount (race condition)",
+      "file": "frontend/app/lib/api-client.ts",
+      "line": 28,
+      "evidence": "requestApi() gọi fetch không truyền signal. Không thấy AbortController/EventSource nào trong frontend/app. Khi đổi nhanh concept/tab, response cũ có thể ghi đè state mới. Đây đúng là ví dụ 'memory leak useEffect' mà README tự nêu.",
+      "repro": "Bấm nhanh giữa 2 concept → phản hồi đến không đúng thứ tự.",
+      "exploit": "N/A — lỗi UX/race, không bảo mật.",
+      "fix": "Thêm AbortController vào requestApi + huỷ trong cleanup useEffect.",
+      "impact": 2, "likelihood": 2, "effort": "S", "confidence": "confirmed"
+    },
+    {
+      "id": "FE-003",
+      "severity": "LOW",
+      "category": "docs-mismatch",
+      "title": "README nói chat streaming SSE; frontend đọc response.json() (không streaming)",
+      "file": "frontend/app/lib/api-client.ts",
+      "line": 43,
+      "evidence": "requestApi luôn `await response.json()` (dòng 43) — không đọc stream/getReader. Backend /chat có hỗ trợ stream nhưng client không tiêu thụ SSE. Không có leak connection vì không mở stream.",
+      "repro": "N/A",
+      "exploit": "N/A",
+      "fix": "Hoặc bỏ tuyên bố streaming ở README, hoặc triển khai đọc stream + huỷ khi unmount.",
+      "impact": 1, "likelihood": 2, "effort": "M", "confidence": "confirmed",
+      "related": ["DOC-001"]
+    },
+    {
+      "id": "FE-004",
+      "severity": "MEDIUM",
+      "category": "test-coverage",
+      "title": "Frontend KHÔNG có test nào; CI chỉ lint + build, không có bước test/E2E",
+      "file": ".github/workflows/ci-frontend.yml",
+      "line": 56,
+      "evidence": "ci-frontend.yml chạy pnpm install → pnpm lint → pnpm build. Không có bước test. Không tồn tại file test (*.test.tsx/spec) trong frontend/. Không Playwright.",
+      "repro": "find frontend -name '*.test.*' -o -name '*.spec.*' | grep -v node_modules  # trống",
+      "exploit": "N/A",
+      "fix": "Thêm smoke test (Vitest/RTL) cho session.ts, api-client, và 1 E2E Playwright cho luồng login→chat.",
+      "impact": 2, "likelihood": 3, "effort": "M", "confidence": "confirmed"
+    },
+    {
+      "id": "FE-005",
+      "severity": "LOW",
+      "category": "maintainability",
+      "title": "giao-vien/page.tsx 600 dòng — component lớn",
+      "file": "frontend/app/giao-vien/page.tsx",
+      "line": 1,
+      "evidence": "600 dòng, lớn gấp ~3 lần các page khác. Ứng viên tách nhỏ.",
+      "repro": "wc -l frontend/app/giao-vien/page.tsx",
+      "exploit": "N/A",
+      "fix": "Tách thành sub-component + hook dữ liệu.",
+      "impact": 1, "likelihood": 2, "effort": "M", "confidence": "confirmed"
+    },
+    {
+      "id": "FE-POS",
+      "severity": "INFO",
+      "category": "positive",
+      "title": "[POSITIVE] Frontend type-clean và BFF proxy an toàn",
+      "file": "frontend/app/api/backend/[...path]/route.ts",
+      "line": 3,
+      "evidence": "(1) tsc --noEmit 0 lỗi; 0 `any`/`@ts-ignore`/`as unknown` trong app/hooks. (2) BFF proxy có ALLOWED_PATHS allowlist (route.ts:3), chỉ forward content-type+authorization, cache no-store, bắt lỗi upstream → 503. (3) Không có dangerouslySetInnerHTML/eval/innerHTML. (4) session.ts validate cấu trúc token trước khi dùng.",
+      "repro": "N/A", "exploit": "N/A", "fix": "Giữ nguyên.",
+      "impact": 0, "likelihood": 0, "effort": "S", "confidence": "confirmed"
+    }
+  ]
+}

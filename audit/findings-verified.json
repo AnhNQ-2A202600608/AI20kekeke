@@ -1,0 +1,47 @@
+{
+  "commit": "c939220c60f4f63a34b7a6cf6dc843023dc09e20",
+  "phase": "D-verified",
+  "generated_at": "2026-07-19T00:00:00Z",
+  "summary": {
+    "critical": 0,
+    "high": 5,
+    "medium": 21,
+    "low": 12,
+    "false_positives_removed": 8,
+    "note": "Bản gộp đã lọc. Chi tiết đầy đủ ở findings-{security,database,ai,backend,frontend,testing,ops,docs}.json. Trường verification thêm sau Phase D."
+  },
+  "false_positives_removed": [
+    {"claim": "IDOR body student_id tin client", "reason": "role==student && id!=sub → 403 nhất quán mọi endpoint"},
+    {"claim": "client hint_count phá chống gian lận", "reason": "live mode đếm hint từ DB (submit:688)"},
+    {"claim": "idempotency to_jsonb(qa)->uuid lỗi (live)", "reason": "bản áp cuối security_fixes.sql:83 dùng qa.id"},
+    {"claim": "double propagation RPC+async", "reason": "RPC cuối bỏ propagation đồng bộ (security_fixes.sql:9)"},
+    {"claim": "S608 SQL injection sync_routes:83", "reason": "placeholder ?,?,? tham số hoá"},
+    {"claim": "SSE connection leak frontend", "reason": "client dùng response.json(), không streaming"},
+    {"claim": "CI không chặn (|| true)", "reason": "không có continue-on-error"},
+    {"claim": "test suite chết", "reason": "crash đặc thù Windows; CI ubuntu chạy được"}
+  ],
+  "findings": [
+    {"id": "SEC-002", "severity": "HIGH", "title": "Không rate limit /chat, /login", "file": "src/main.py", "line": 54, "confidence": "confirmed", "verification": {"status": "confirmed", "reason": "grep 0 rate-limit trong code; chỉ comment render.yaml", "verified_at": "phase-D"}},
+    {"id": "AI-001", "severity": "HIGH", "title": "used_ai_help luôn False", "file": "src/api/adaptive_routes.py", "line": 690, "confidence": "confirmed", "verification": {"status": "confirmed", "reason": "đọc code: hardcode False cả 2 nhánh; RPC dùng cờ để zero Elo", "verified_at": "phase-D"}},
+    {"id": "SEC-001", "severity": "HIGH", "title": "RPC SECURITY DEFINER thiếu SET search_path", "file": "db/supabase/migrations/20260621_security_and_correctness_fixes.sql", "line": 27, "confidence": "confirmed", "verification": {"status": "confirmed", "reason": "migration cuối thiếu search_path; NÊN xác minh proconfig trên production", "verified_at": "phase-D"}},
+    {"id": "BE-001", "severity": "HIGH", "title": "requests blocking trong async", "file": "src/services/quiz_generator.py", "line": 118, "confidence": "confirmed", "verification": {"status": "confirmed", "reason": "ruff ASYNC210 x5", "verified_at": "phase-D"}},
+    {"id": "DATA-003", "severity": "HIGH", "title": "Backup/restore không xác định", "file": "N/A", "line": 0, "confidence": "needs_human", "verification": {"status": "needs_human", "reason": "không có bằng chứng trong repo", "verified_at": "phase-D"}},
+    {"id": "SEC-003", "severity": "MEDIUM", "title": "requests không timeout", "file": "src/api/material_routes.py", "line": 104, "confidence": "confirmed", "verification": {"status": "confirmed", "reason": "ruff S113 x13", "verified_at": "phase-D"}},
+    {"id": "AI-002", "severity": "MEDIUM", "title": "Thiếu citation vẫn cho qua (TC-001)", "file": "src/services/citation_validator.py", "line": 72, "confidence": "confirmed", "verification": {"status": "confirmed", "reason": "đọc code nhánh not citations→passthrough", "verified_at": "phase-D"}},
+    {"id": "DB-003", "severity": "MEDIUM", "title": "Propagation async không bền/không khoá", "file": "src/api/adaptive_routes.py", "line": 805, "confidence": "confirmed", "verification": {"status": "confirmed", "reason": "background_tasks sau commit; propagate_mastery không FOR UPDATE", "verified_at": "phase-D"}},
+    {"id": "OPS-001", "severity": "MEDIUM", "title": "CI không quét bảo mật (Trivy comment)", "file": ".github/workflows/ci-backend.yml", "line": 58, "confidence": "confirmed", "verification": {"status": "confirmed", "reason": "đọc workflow", "verified_at": "phase-D"}},
+    {"id": "OPS-003", "severity": "MEDIUM", "title": "/health cứng, Render trỏ /health", "file": "src/main.py", "line": 122, "confidence": "confirmed", "verification": {"status": "confirmed", "reason": "main.py:122 + render.yaml:16", "verified_at": "phase-D"}},
+    {"id": "SEC-004", "severity": "MEDIUM", "title": "JWT localStorage", "file": "frontend/app/lib/session.ts", "line": 39, "confidence": "confirmed", "verification": {"status": "confirmed", "reason": "đọc session.ts; giảm nhẹ do 0 XSS sink", "verified_at": "phase-D"}},
+    {"id": "BE-003", "severity": "MEDIUM", "title": "P(T) BKT lệch Python/SQL", "file": "src/services/adaptive/bkt.py", "line": 19, "confidence": "confirmed", "verification": {"status": "confirmed", "reason": "0.06 vs 0.10", "verified_at": "phase-D"}},
+    {"id": "DB-002", "severity": "MEDIUM", "title": "v3 redefine 5×, thứ tự migration mong manh", "file": "db/supabase/migrations/20260621_dynamic_elo_calibration.sql", "line": 121, "confidence": "suspected", "verification": {"status": "needs_human", "reason": "cần pg_get_functiondef production", "verified_at": "phase-D"}},
+    {"id": "AI-003", "severity": "MEDIUM", "title": "<student_query> chỉ ở respond_node", "file": "src/agents/nodes/respond_general_node.py", "line": 85, "confidence": "confirmed", "verification": {"status": "confirmed", "reason": "đọc 3 node", "verified_at": "phase-D"}},
+    {"id": "BE-004", "severity": "MEDIUM", "title": "blind-except tràn lan", "file": "src/services/adaptive/supabase_database.py", "line": 146, "confidence": "confirmed", "verification": {"status": "confirmed", "reason": "ruff BLE001 x112 + S110 x29", "verified_at": "phase-D"}},
+    {"id": "BE-005", "severity": "MEDIUM", "title": "God routers 2000+ dòng", "file": "src/api/adaptive_routes.py", "line": 1, "confidence": "confirmed", "verification": {"status": "confirmed", "reason": "wc -l + ruff C901", "verified_at": "phase-D"}},
+    {"id": "BE-006", "severity": "MEDIUM", "title": "mypy tắt toàn cục", "file": "pyproject.toml", "line": 40, "confidence": "confirmed", "verification": {"status": "confirmed", "reason": "ignore_errors=true; --strict vẫn 0 lỗi", "verified_at": "phase-D"}},
+    {"id": "OPS-002", "severity": "MEDIUM", "title": "Auto-CD prod không gate", "file": ".github/workflows/ci-backend.yml", "line": 74, "confidence": "confirmed", "verification": {"status": "confirmed", "reason": "deploy hook on push main", "verified_at": "phase-D"}},
+    {"id": "OPS-004", "severity": "MEDIUM", "title": "Coverage mù", "file": "pyproject.toml", "line": 20, "confidence": "confirmed", "verification": {"status": "confirmed", "reason": "pytest-cov thiếu ở cả 2 env", "verified_at": "phase-D"}},
+    {"id": "DATA-001", "severity": "MEDIUM", "title": "PII gửi OpenAI không redact", "file": "src/agents/nodes/respond_node.py", "line": 313, "confidence": "confirmed", "verification": {"status": "confirmed", "reason": "query+history gửi LLM, không thấy redact", "verified_at": "phase-D"}},
+    {"id": "SEC-006", "severity": "MEDIUM", "title": "RLS live chưa xác nhận; service_role bỏ qua RLS", "file": "db/supabase/migrations/20260627_disable_rls_feedback_events.sql", "line": 1, "confidence": "needs_human", "verification": {"status": "needs_human", "reason": "db-state không query được", "verified_at": "phase-D"}},
+    {"id": "AI-004", "severity": "MEDIUM", "title": "Indirect injection qua slide", "file": "src/agents/nodes/respond_node.py", "line": 198, "confidence": "suspected", "verification": {"status": "needs_human", "reason": "chưa chạy attack eval", "verified_at": "phase-D"}}
+  ]
+}

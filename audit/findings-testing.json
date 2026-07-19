@@ -1,0 +1,97 @@
+{
+  "commit": "c939220c60f4f63a34b7a6cf6dc843023dc09e20",
+  "phase": "C6-testing-ops",
+  "generated_at": "2026-07-19T00:00:00Z",
+  "blind_axes": ["coverage.json (pytest-cov không cài) — không đo được coverage", "pytest full-run crash cục bộ Windows"],
+  "findings": [
+    {
+      "id": "OPS-001",
+      "severity": "MEDIUM",
+      "category": "ci-security-gap",
+      "title": "Không có quét bảo mật trong CI — Trivy bị comment 'TODO re-enable before production', không gitleaks/semgrep/pip-audit",
+      "file": ".github/workflows/ci-backend.yml",
+      "line": 58,
+      "evidence": "ci-backend.yml: khối Trivy scanner bị comment với '# TODO: Re-enable Trivy scanner before production deployment'. Không có bước gitleaks/semgrep/pip-audit/pnpm audit ở bất kỳ workflow nào. Dự án đang deploy production nhưng không quét lỗ hổng/secret tự động.",
+      "repro": "grep -n Trivy .github/workflows/ci-backend.yml",
+      "exploit": "CVE/secret lọt qua không bị chặn.",
+      "fix": "Bật lại Trivy (fs scan), thêm job security: gitleaks + pip-audit + pnpm audit, exit-code=1 cho CRITICAL/HIGH.",
+      "impact": 3, "likelihood": 3, "effort": "M", "confidence": "confirmed"
+    },
+    {
+      "id": "OPS-002",
+      "severity": "MEDIUM",
+      "category": "cd-no-gate",
+      "title": "Auto-CD lên Render (prod/staging) và Vercel khi push main/dev — không có cổng phê duyệt, không bước backup/migration an toàn",
+      "file": ".github/workflows/ci-backend.yml",
+      "line": 74,
+      "evidence": "ci-backend.yml: push main → curl RENDER_DEPLOY_HOOK_URL (production); push dev → staging hook. ci-frontend.yml:73 deploy Vercel tương tự. Không có manual approval/environment protection, không bước migrate DB có kiểm soát/backup trước.",
+      "repro": "Đọc workflow.",
+      "exploit": "Một merge lỗi vào main → deploy thẳng production. Nếu kèm migration phá dữ liệu → mất mát.",
+      "fix": "Thêm GitHub Environment protection (required reviewers) cho production; tách bước migration có backup + rollback.",
+      "impact": 3, "likelihood": 2, "effort": "M", "confidence": "confirmed"
+    },
+    {
+      "id": "OPS-003",
+      "severity": "MEDIUM",
+      "category": "healthcheck",
+      "title": "/health trả 200 cứng (không kiểm DB/Redis); Render healthCheckPath trỏ /health thay vì /ready",
+      "file": "src/main.py",
+      "line": 122,
+      "evidence": "main.py:122 @app.get('/health') trả {'status':'ok'} vô điều kiện. /ready (main.py:128) MỚI kiểm DB + Redis thật. render.yaml:16 healthCheckPath: /health → Render coi service khoẻ ngay cả khi DB/Redis chết.",
+      "repro": "curl $BACKEND/health → luôn 200 dù DB down.",
+      "exploit": "Render không restart/không cảnh báo khi phụ thuộc chết → downtime âm thầm.",
+      "fix": "Đổi render.yaml healthCheckPath sang /ready (đã có sẵn kiểm tra thật).",
+      "impact": 3, "likelihood": 2, "effort": "S", "confidence": "confirmed"
+    },
+    {
+      "id": "OPS-004",
+      "severity": "MEDIUM",
+      "category": "coverage-blind",
+      "title": "Không đo được coverage: pytest-cov không có trong deps; CI không có ngưỡng coverage",
+      "file": "pyproject.toml",
+      "line": 20,
+      "evidence": "pyproject deps có pytest, pytest-asyncio nhưng KHÔNG có pytest-cov/coverage. `pytest --cov` lỗi 'unrecognized arguments' ở cả .venv lẫn uv env. CI chạy pytest -v không đo coverage, không gate.",
+      "repro": "uv run pytest --cov=src → error unrecognized arguments.",
+      "exploit": "N/A — không biết vùng nào chưa test (đặc biệt adaptive/auth).",
+      "fix": "Thêm pytest-cov; CI đo coverage + đặt ngưỡng sàn cho src/services/adaptive & src/services/auth (bằng mức hiện tại, nâng dần).",
+      "impact": 2, "likelihood": 3, "effort": "S", "confidence": "confirmed"
+    },
+    {
+      "id": "OPS-005",
+      "severity": "LOW",
+      "category": "dev-experience",
+      "title": "pytest full-run crash trên Windows (tests/eval/run_eval.py reconfigure stderr lúc import)",
+      "file": "tests/eval/run_eval.py",
+      "line": 11,
+      "evidence": "run_eval.py:9-12 gọi sys.stdout/sys.stderr.reconfigure() ở cấp module. Khi pytest collect (Windows) → 'ValueError: I/O operation on closed file', 'no tests ran'. Chạy subset với -s thì PASS. CI trên ubuntu nhiều khả năng KHÔNG dính (bug đặc thù Windows console).",
+      "repro": "uv run pytest -q  (trên Windows) → crash collection.",
+      "exploit": "N/A — dev Windows không chạy được full suite cục bộ.",
+      "fix": "Chuyển reconfigure vào khối `if __name__=='__main__'` hoặc guard bằng biến môi trường; đảm bảo file eval không side-effect lúc import.",
+      "impact": 2, "likelihood": 3, "effort": "S", "confidence": "confirmed"
+    },
+    {
+      "id": "OPS-006",
+      "severity": "LOW",
+      "category": "ops-cost",
+      "title": "keep-awake workflow chạy mỗi 10 phút (~4320 lần/tháng) — tốn Actions minutes; Render free ngủ đông",
+      "file": ".github/workflows/keep-awake.yml",
+      "line": 6,
+      "evidence": "cron '*/10 * * * *' curl health_url. Render plan free (render.yaml:15) ngủ đông → keep-awake để tránh cold start, nhưng đốt quota Actions và che giấu vấn đề free-tier.",
+      "repro": "Đọc keep-awake.yml.",
+      "exploit": "N/A — chi phí/quota.",
+      "fix": "Cân nhắc plan starter cho backend nếu phục vụ người dùng thật; hoặc chấp nhận cold start.",
+      "impact": 1, "likelihood": 3, "effort": "S", "confidence": "confirmed"
+    },
+    {
+      "id": "OPS-POS",
+      "severity": "INFO",
+      "category": "positive",
+      "title": "[POSITIVE] CI có chặn thật, không có || true; test suite backend khá lớn (tỷ lệ test/src ~0.49)",
+      "file": ".github/workflows/ci-backend.yml",
+      "line": 50,
+      "evidence": "(1) Không có continue-on-error/|| true ở bước kiểm tra; ruff + pytest chặn merge. (2) permissions: contents:read; secrets qua GH secrets, không echo. (3) frozen-lockfile frontend. (4) concurrency cancel-in-progress. (5) 40+ file test backend (test_api, test_agents, services), có test RBAC/equivalence/bitemporal/robustness — không chỉ happy path. (6) /ready kiểm DB+Redis thật.",
+      "repro": "N/A", "exploit": "N/A", "fix": "Giữ nguyên.",
+      "impact": 0, "likelihood": 0, "effort": "S", "confidence": "confirmed"
+    }
+  ]
+}
