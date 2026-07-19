@@ -7144,3 +7144,105 @@ body {
   transform: translateY(-0.5px);
 }
 
+/* Analysis thinking block styling */
+.ai-analysis-wrapper {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(26, 46, 40, 0.08);
+}
+.ai-analysis-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: color-mix(in srgb, var(--accent) 7%, white);
+  border: 1px solid color-mix(in srgb, var(--accent) 15%, var(--line));
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: var(--accent-dark);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.ai-analysis-btn:hover {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+.ai-analysis-content {
+  margin-top: 10px;
+  background: color-mix(in srgb, var(--muted) 4%, white);
+  border-left: 3px solid var(--accent);
+  padding: 10px 14px;
+  border-radius: 0 10px 10px 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--muted);
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+/* Loading details block styling */
+.ai-pending-loader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.ai-loader-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid color-mix(in srgb, var(--accent) 25%, transparent);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: ai-spin 1s linear infinite;
+}
+@keyframes ai-spin {
+  to { transform: rotate(360deg); }
+}
+.ai-loading-details-btn {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 850;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-left: auto;
+}
+.ai-loading-details-btn:hover {
+  color: var(--accent-dark);
+}
+.ai-pipeline-logs {
+  margin-top: 12px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid color-mix(in srgb, var(--accent) 10%, var(--line));
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.ai-log-step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.76rem;
+  color: color-mix(in srgb, var(--ink) 40%, transparent);
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+.ai-log-step.active {
+  color: var(--ink);
+}
+.ai-log-step .step-status {
+  font-size: 0.85rem;
+}
+.ai-log-step .step-text {
+  line-height: 1.4;
+}
+
+
