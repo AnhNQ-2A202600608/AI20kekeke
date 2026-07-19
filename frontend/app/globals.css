@@ -7488,6 +7488,33 @@ body {
 .header-ai-link:hover,
 .header-ai-link.active { background: var(--accent); color: white; box-shadow: 0 8px 18px color-mix(in srgb, var(--accent) 20%, transparent); transform: translateY(-1px); }
 
+/* Keep the sticky app header sealed to the viewport while scrolling. */
+.app-shell .app-header {
+  top: 0;
+  margin-top: 0;
+}
+
+.app-shell .app-header::before {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 12px;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(252,255,253,.96), rgba(252,255,253,.82));
+}
+
+@media (max-width: 760px) {
+  .app-shell .app-header {
+    margin-top: 10px;
+  }
+
+  .app-shell .app-header::before {
+    display: none;
+  }
+}
+
 .ai-chat-page {
   display: grid;
   grid-template-columns: minmax(228px, 270px) minmax(0, 1fr);
