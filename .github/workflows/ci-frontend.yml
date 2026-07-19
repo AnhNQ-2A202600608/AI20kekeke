@@ -100,9 +100,32 @@ jobs:
             echo "VERCEL_ARGS=" >> $GITHUB_ENV
           fi
 
-      - name: Deploy to Vercel (Remote Cloud Build)
+      - name: Install dependencies
         working-directory: ./frontend
-        run: pnpm dlx vercel deploy ${{ env.VERCEL_ARGS }} --yes --token=${{ secrets.VERCEL_TOKEN }}
+        run: pnpm install --frozen-lockfile
+
+      - name: Pull Vercel Project Info
+        working-directory: ./frontend
+        run: |
+          if [ "${{ env.VERCEL_ARGS }}" = "--prod" ]; then
+            pnpm dlx vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+          else
+            pnpm dlx vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+          fi
+        env:
+          VERCEL_ORG_ID: "team_LafIGeSssVHZiDCw6GHQcda6"
+          VERCEL_PROJECT_ID: "prj_SPgxDRRuOhioP6Apsy0hDEoyPaR6"
+
+      - name: Build Project Artifacts
+        working-directory: ./frontend
+        run: pnpm dlx vercel build ${{ env.VERCEL_ARGS }} --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_ORG_ID: "team_LafIGeSssVHZiDCw6GHQcda6"
+          VERCEL_PROJECT_ID: "prj_SPgxDRRuOhioP6Apsy0hDEoyPaR6"
+
+      - name: Deploy Project Artifacts to Vercel
+        working-directory: ./frontend
+        run: pnpm dlx vercel deploy --prebuilt ${{ env.VERCEL_ARGS }} --token=${{ secrets.VERCEL_TOKEN }}
         env:
           VERCEL_ORG_ID: "team_LafIGeSssVHZiDCw6GHQcda6"
           VERCEL_PROJECT_ID: "prj_SPgxDRRuOhioP6Apsy0hDEoyPaR6"
