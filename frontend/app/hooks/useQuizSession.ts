@@ -752,7 +752,7 @@ export function useQuizSession(resetSurveys: (setId: string) => void, initialTab
     }
 
     const masteryFetchTimer = window.setTimeout(() => {
-      fetchConceptMasteries(userId, '00000000-0000-0000-0000-000000000001');
+      fetchConceptMasteries(userId, 'cf76850d-0738-50c3-bf34-1c464fa3b4d3');
     }, 250);
 
     return () => window.clearTimeout(masteryFetchTimer);

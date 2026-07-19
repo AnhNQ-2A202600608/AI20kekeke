@@ -63,6 +63,11 @@ class AdaptiveDatabaseInterface(ABC):
         """Cập nhật hoặc chèn mới trạng thái LinUCB của một arm."""
         pass
 
+    def upsert_bandit_arms_batch(self, policy_id: UUID, arms_data: list[dict[str, Any]]) -> None:
+        """Cập nhật hoặc chèn mới trạng thái LinUCB của nhiều arm cùng lúc."""
+        for arm in arms_data:
+            self.upsert_bandit_arm(policy_id, arm["arm_id"], arm["a_inv"], arm["b"])
+
     @abstractmethod
     def submit_attempt_v3(self, payload: dict) -> dict:
         """Gọi RPC submit_attempt_v3 để xử lý giao dịch nộp bài nguyên tử tích hợp BKT, Bandit và lan truyền đồ thị."""

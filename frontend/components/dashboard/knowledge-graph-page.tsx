@@ -45,7 +45,7 @@ import type {
   KnowledgeGraphRelationRow,
 } from './socratic-chat/components/knowledge-graph/types';
 
-const COURSE_UUID = '00000000-0000-0000-0000-000000000001';
+const COURSE_UUID = 'cf76850d-0738-50c3-bf34-1c464fa3b4d3';
 const GRAPH_VIEWPORT_STORAGE_KEY = 'edugap.skillGraph.viewport.v1';
 const DETAIL_PANEL_STORAGE_KEY = 'edugap.skillGraph.detailPanelCollapsed.v1';
 const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;

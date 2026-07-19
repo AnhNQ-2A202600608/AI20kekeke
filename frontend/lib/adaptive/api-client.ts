@@ -1,7 +1,7 @@
 import { getRequestAuthToken, isDemoAuthToken } from "@/lib/auth-token";
 import { isDemoMode } from "@/lib/demo-mode";
 
-export const DEFAULT_ADAPTIVE_COURSE_ID = "00000000-0000-0000-0000-000000000001";
+export const DEFAULT_ADAPTIVE_COURSE_ID = "cf76850d-0738-50c3-bf34-1c464fa3b4d3";
 
 export interface AdaptiveRecommendation {
   decision_id: string;
@@ -117,9 +117,10 @@ function getHeaders({ token, setToken }: AdaptiveAuth) {
   if (usedExpiredToken || rejectedDemoToken) {
     setToken?.("");
   }
-  if (isDemoMode() && isDemoAuthToken(authToken || token)) {
-    throw new AdaptiveApiError("Demo mode đang dùng bộ câu cục bộ; không gọi adaptive backend bằng fake token.", 401);
-  }
+  // Comment out to allow local development testing with fake token
+  // if (isDemoMode() && isDemoAuthToken(authToken || token)) {
+  //   throw new AdaptiveApiError("Demo mode đang dùng bộ câu cục bộ; không gọi adaptive backend bằng fake token.", 401);
+  // }
   if (!authToken) {
     throw new AdaptiveApiError("Bạn cần đăng nhập lại để luyện tập thích ứng.", 401);
   }

@@ -449,6 +449,25 @@ class SupabaseAdaptiveDatabase(AdaptiveDatabaseInterface):
             logger.error(f"Error upserting bandit arm: {e}")
             raise RuntimeError("Unable to save bandit arm state.") from e
 
+    def upsert_bandit_arms_batch(self, policy_id: UUID, arms_data: list[dict[str, Any]]) -> None:
+        if self._stub_mode or self.audit_client is None or not arms_data:
+            return
+        try:
+            payload = [
+                {
+                    "policy_id": str(policy_id),
+                    "arm_id": arm["arm_id"],
+                    "a_inv": arm["a_inv"],
+                    "b": arm["b"],
+                    "updated_at": datetime.now(UTC).isoformat(),
+                }
+                for arm in arms_data
+            ]
+            self.audit_client.table("bandit_arms").upsert(payload).execute()
+        except Exception as e:
+            logger.error(f"Error batch upserting bandit arms: {e}")
+            raise RuntimeError("Unable to save batch bandit arm states.") from e
+
     def upsert_bandit_arm_v3(
         self, policy_id: UUID, arm_id: str, a: list, a_inv: list, b: list, update_count: int
     ) -> None:

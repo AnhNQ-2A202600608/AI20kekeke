@@ -4,7 +4,7 @@ import { createTraceId, diagnosticsLog, elapsedMs, nowMs } from '@/lib/diagnosti
 
 export const dynamic = 'force-dynamic';
 
-const DEFAULT_COURSE_ID = '00000000-0000-0000-0000-000000000001';
+const DEFAULT_COURSE_ID = 'cf76850d-0738-50c3-bf34-1c464fa3b4d3';
 
 export async function GET(request: NextRequest) {
   const totalStartMs = nowMs();

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, Suspense } from "react";
+import { useState, useMemo, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import {
   Brain,
@@ -160,6 +160,13 @@ function AiQuestionPageContent() {
     activeTab: "chat",
     courseId: selectedSubject.courseId,
   });
+
+  useEffect(() => {
+    const promptParam = searchParams.get("prompt");
+    if (promptParam && inputValue === "") {
+      setInputValue(promptParam);
+    }
+  }, [searchParams, inputValue, setInputValue]);
 
   return (
     <div className="chatgpt-layout">

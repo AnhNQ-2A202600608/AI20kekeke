@@ -370,18 +370,22 @@ def recommend_question(
         saved_arms = db.get_bandit_arms(policy_id, candidate_ids)
         arms_ms = (time.perf_counter() - arms_start) * 1000
         arms_states = {}
+        missing_arms = []
         for qid_str in candidate_ids:
             arm_data = saved_arms.get(qid_str)
             if arm_data and isinstance(arm_data, dict) and "a_inv" in arm_data and "b" in arm_data:
                 arms_states[qid_str] = {"A_inv": arm_data["a_inv"], "b": arm_data["b"]}
             else:
-                arms_states[qid_str] = bandit.get_default_arm_state()
-                db.upsert_bandit_arm(
-                    policy_id=policy_id,
-                    arm_id=qid_str,
-                    a_inv=arms_states[qid_str]["A_inv"],
-                    b=arms_states[qid_str]["b"],
-                )
+                default_state = bandit.get_default_arm_state()
+                arms_states[qid_str] = default_state
+                missing_arms.append({
+                    "arm_id": qid_str,
+                    "a_inv": default_state["A_inv"],
+                    "b": default_state["b"]
+                })
+        
+        if missing_arms:
+            db.upsert_bandit_arms_batch(policy_id, missing_arms)
 
         # Chọn arm (câu hỏi)
         selected_qid_str, expected_reward = bandit.select_arm(

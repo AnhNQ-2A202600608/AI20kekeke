@@ -26,7 +26,7 @@ import {
 } from '@/lib/mentor/ai-response-feedback';
 import { SocraticMarkdown } from '../socratic-chat/student/components/ai-message-item';
 
-const COURSE_ID = '00000000-0000-0000-0000-000000000001';
+const COURSE_ID = 'cf76850d-0738-50c3-bf34-1c464fa3b4d3';
 
 type RatingFilter = 'all' | 'positive' | 'negative';
 type StatusFilter = 'all' | AiResponseReviewStatus;

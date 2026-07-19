@@ -502,7 +502,7 @@ export const ClassInsightsTab: React.FC = () => {
       setIsLoadingStats(true);
       try {
         const response = await fetch(
-          '/api/v1/adaptive/class-stats?course_id=00000000-0000-0000-0000-000000000001',
+          '/api/v1/adaptive/class-stats?course_id=cf76850d-0738-50c3-bf34-1c464fa3b4d3',
           { headers: { Authorization: `Bearer ${token || 'service_role'}` } }
         );
         if (response.ok && active) {
@@ -557,7 +557,7 @@ export const ClassInsightsTab: React.FC = () => {
       if (students.length === 0) setIsLoadingStudents(true);
       try {
         const response = await fetch(
-          '/api/v1/adaptive/class-insights?course_id=00000000-0000-0000-0000-000000000001&limit=100',
+          '/api/v1/adaptive/class-insights?course_id=cf76850d-0738-50c3-bf34-1c464fa3b4d3&limit=100',
           { headers: { Authorization: `Bearer ${token || 'service_role'}` } }
         );
         if (!response.ok) throw new Error(`API returned ${response.status}`);

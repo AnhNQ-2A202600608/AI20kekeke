@@ -85,9 +85,15 @@ export type ChatAction =
       optionText: string;
     };
 
-const CONCEPT_UUID_MAP: { [key: string]: string } = {};
+const CONCEPT_UUID_MAP: { [key: string]: string } = {
+  'tap-hop': 'ab17c195-7f0c-5e6d-8df1-d281ea313768',
+  'chia-het': '2982ab90-c7c8-53ad-8ca1-2cf97bdfc69f',
+  'so-nguyen': '7a80d73c-c742-50c3-aa99-1aa9ced54b53',
+  'phan-so': '67f5affc-64a9-54f5-b51f-82f3a856ce6c',
+  'ti-so': '7fa28126-b4ac-5af4-99d9-54d3eb9588e0',
+};
 
-const COURSE_UUID = '00000000-0000-0000-0000-000000000001';
+const COURSE_UUID = 'cf76850d-0738-50c3-bf34-1c464fa3b4d3';
 
 const generateMsgId = (prefix: string): string => {
   const randomStr = Math.random().toString(36).substring(2, 9);
@@ -246,10 +252,11 @@ export const useSocraticChat = ({
 
   const [concepts] = useState<Concept[]>([
     { id: 'general', name: 'Sofi học cùng bạn', status: 'MASTERED', elo: 1200 },
-    { id: 'docker-basics', name: 'Docker Basics', status: 'MASTERED', elo: 1420 },
-    { id: 'docker-compose', name: 'Docker Compose', status: 'LEARNING', elo: 1100 },
-    { id: 'rest-api', name: 'REST API Call', status: 'WEAK', elo: 850 },
-    { id: 'nextjs-rsc', name: 'Next.js RSC', status: 'NOT_STARTED', elo: 1000 },
+    { id: 'tap-hop', name: 'Tập hợp', status: 'MASTERED', elo: 1200 },
+    { id: 'chia-het', name: 'Tính chia hết', status: 'LEARNING', elo: 1100 },
+    { id: 'so-nguyen', name: 'Số nguyên', status: 'WEAK', elo: 850 },
+    { id: 'phan-so', name: 'Phân số', status: 'NOT_STARTED', elo: 1000 },
+    { id: 'ti-so', name: 'Tỉ số', status: 'NOT_STARTED', elo: 1000 },
   ]);
 
   const [messages, setMessages] = useState<Message[]>([]);
