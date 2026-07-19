@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useSyncExternalStore } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 export type StoredChatMessage = {
   role: "ai" | "user";
@@ -35,26 +35,15 @@ function parseSessions(raw: string | null): StoredChatSession[] {
   }
 }
 
-function readSessions() {
+function readSessions(): StoredChatSession[] {
+  if (typeof window === "undefined") return [];
   return parseSessions(window.localStorage.getItem(STORAGE_KEY));
 }
 
 function writeSessions(sessions: StoredChatSession[]) {
+  if (typeof window === "undefined") return;
   window.localStorage.setItem(STORAGE_KEY, JSON.stringify(sessions));
   window.dispatchEvent(new Event(CHANGE_EVENT));
-}
-
-function getSnapshot() {
-  return window.localStorage.getItem(STORAGE_KEY) || "";
-}
-
-function subscribe(listener: () => void) {
-  window.addEventListener("storage", listener);
-  window.addEventListener(CHANGE_EVENT, listener);
-  return () => {
-    window.removeEventListener("storage", listener);
-    window.removeEventListener(CHANGE_EVENT, listener);
-  };
 }
 
 function sessionTitle(message: string) {
@@ -63,11 +52,29 @@ function sessionTitle(message: string) {
 }
 
 export function useChatSessions(subjectCode?: string) {
-  const rawSessions = useSyncExternalStore(subscribe, getSnapshot, () => "");
+  const [sessions, setSessions] = useState<StoredChatSession[]>([]);
 
-  return useMemo(() => parseSessions(rawSessions)
-    .filter((session) => !subjectCode || session.subjectCode === subjectCode)
-    .sort((first, second) => second.updatedAt.localeCompare(first.updatedAt)), [rawSessions, subjectCode]);
+  useEffect(() => {
+    setSessions(readSessions());
+
+    const handleStorageChange = () => {
+      setSessions(readSessions());
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+    window.addEventListener(CHANGE_EVENT, handleStorageChange);
+
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+      window.removeEventListener(CHANGE_EVENT, handleStorageChange);
+    };
+  }, []);
+
+  return useMemo(() => {
+    return sessions
+      .filter((session) => !subjectCode || session.subjectCode === subjectCode)
+      .sort((first, second) => second.updatedAt.localeCompare(first.updatedAt));
+  }, [sessions, subjectCode]);
 }
 
 export function createChatSession(input: {
