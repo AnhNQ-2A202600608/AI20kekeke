@@ -27,7 +27,7 @@ function AdaptiveRoadmapContent() {
   const studentId = session?.user?.id || "00000000-0000-0000-0000-000000000000";
   const selectedSubjectCode = searchParams.get("subject") || "TO";
   const currentSubject = subjects.find((s) => s.code === selectedSubjectCode) || subjects[0];
-  const courseId = currentSubject.courseId || "00000000-0000-0000-0000-000000000001";
+  const courseId = (currentSubject as any).courseId || "00000000-0000-0000-0000-000000000001";
 
   const [historyList, setHistoryList] = useState<LearningPathHistoryItem[]>([]);
   const [selectedInstanceId, setSelectedInstanceId] = useState<string | null>(null);
@@ -59,12 +59,13 @@ function AdaptiveRoadmapContent() {
 
   // 2. Fetch Detail Lộ trình khi chọn instance_id khác
   useEffect(() => {
-    if (!selectedInstanceId) return;
+    const instanceId = selectedInstanceId;
+    if (!instanceId) return;
 
     async function loadDetail() {
       try {
         setLoadingGraph(true);
-        const detail = await getLearningPathDetail(selectedInstanceId);
+        const detail = await getLearningPathDetail(instanceId as string);
         const fetchedMilestones = detail.path_data.milestones || [];
         setMilestones(fetchedMilestones);
         setCriticReasoning(detail.path_data.critic_reasoning || null);
