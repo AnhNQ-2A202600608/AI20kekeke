@@ -14,3 +14,4 @@ outputs/fused_graph_interactive.html
 scripts/export-excalidraw-images.mjs
 scripts/submit_log.py
 src/api/sync_routes.py
+tests/test_api/test_auth_verification_performance.py
