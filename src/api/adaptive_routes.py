@@ -8,8 +8,12 @@ from functools import lru_cache
 from typing import Any
 from uuid import UUID
 
-from fastapi import APIRouter, BackgroundTasks, Depends, Header, HTTPException
+from fastapi import APIRouter, BackgroundTasks, Depends, Header, HTTPException, Request
 from pydantic import BaseModel
+from src.api.rate_limit import limiter
+from src.config import get_settings
+
+settings = get_settings()
 
 from src.models.adaptive_schemas import (
     ConceptRelationCreate,
@@ -302,15 +306,17 @@ def is_day_16_or_later(set_id: str | None) -> bool:
 
 
 @router.post("/recommend", response_model=RecommendResponse)
+@limiter.limit(settings.rate_limit_adaptive)
 def recommend_question(
-    request: RecommendRequest,
+    recommend_request: RecommendRequest,
+    request: Request,
     auth_user: AuthenticatedUser = Depends(get_current_user),
     db: AdaptiveDatabaseInterface = Depends(get_adaptive_db),
 ):
     """
     Gợi ý câu hỏi tối ưu tiếp theo cho học viên trong một Concept sử dụng LinUCB.
     """
-    if auth_user.role == "student" and request.student_id != auth_user.id:
+    if auth_user.role == "student" and recommend_request.student_id != auth_user.id:
         raise HTTPException(status_code=403, detail="Sinh viên chỉ có quyền yêu cầu gợi ý cho chính mình.")
     route_start = time.perf_counter()
     try:
@@ -318,26 +324,26 @@ def recommend_question(
 
         # 1. Truy vấn thông tin năng lực học sinh
         mastery_start = time.perf_counter()
-        mastery = db.get_student_mastery(request.student_id, request.course_id, request.concept_id)
+        mastery = db.get_student_mastery(recommend_request.student_id, recommend_request.course_id, recommend_request.concept_id)
         mastery_ms = (time.perf_counter() - mastery_start) * 1000
         p_mastery = mastery["bkt_mastery_probability"]
         elo_score = mastery["elo_score"]
 
         # 2. Truy vấn danh sách rút gọn (metadata) các câu hỏi ứng viên
         candidates_start = time.perf_counter()
-        candidates = db.get_candidate_questions_meta(request.course_id, request.concept_id)
-        excluded_question_ids = {str(question_id) for question_id in request.excluded_question_ids}
+        candidates = db.get_candidate_questions_meta(recommend_request.course_id, recommend_request.concept_id)
+        excluded_question_ids = {str(question_id) for question_id in recommend_request.excluded_question_ids}
         if excluded_question_ids:
             candidates = [q for q in candidates if str(q["id"]) not in excluded_question_ids]
 
         # Lọc tiếp danh sách ứng viên theo set_id nếu Frontend truyền lên và đề từ ngày 16 trở đi
-        if request.set_id and is_day_16_or_later(request.set_id):
+        if recommend_request.set_id and is_day_16_or_later(recommend_request.set_id):
             candidates = [
                 q
                 for q in candidates
                 if q.get("answer_key")
                 and isinstance(q["answer_key"], dict)
-                and q["answer_key"].get("set_id") == request.set_id
+                and q["answer_key"].get("set_id") == recommend_request.set_id
             ]
 
         candidates_ms = (time.perf_counter() - candidates_start) * 1000
@@ -349,7 +355,7 @@ def recommend_question(
 
         # 3. Đọc trạng thái chính sách Bandit
         policy_start = time.perf_counter()
-        policy_id, policy_config = db.get_bandit_policy_state(request.course_id)
+        policy_id, policy_config = db.get_bandit_policy_state(recommend_request.course_id)
         alpha = policy_config.get("alpha", 1.0)
         policy_ms = (time.perf_counter() - policy_start) * 1000
 
@@ -409,9 +415,9 @@ def recommend_question(
         decision_start = time.perf_counter()
         decision_id = db.log_adaptive_decision(
             policy_id=policy_id,
-            student_id=request.student_id,
-            course_id=request.course_id,
-            concept_id=request.concept_id,
+            student_id=recommend_request.student_id,
+            course_id=recommend_request.course_id,
+            concept_id=recommend_request.concept_id,
             selected_action_id=selected_qid,
             candidate_action_ids=candidate_ids,
             context_snapshot=X,
@@ -427,7 +433,7 @@ def recommend_question(
             "ADAPTIVE_RECOMMEND %.0fms concept=%s q=%s candidates=%s excluded=%s success=%.2f "
             "db=[mastery %.0f,cand %.0f,policy %.0f,arms %.0f,question %.0f,decision %.0f]ms bandit=%.0fms",
             total_ms,
-            request.concept_id,
+            recommend_request.concept_id,
             selected_qid,
             len(candidate_ids),
             len(excluded_question_ids),
@@ -500,13 +506,13 @@ def recommend_question(
             from src.services.diagnostic_engine import DiagnosticEngine
 
             engine = DiagnosticEngine()
-            concept_id_str = str(request.concept_id)
+            concept_id_str = str(recommend_request.concept_id)
 
             # Find candidate questions matching this concept YCCD
             candidates = [
                 q
                 for q in engine.questions_data
-                if concept_id_str in q.get("yccd", []) and q.get("question_id") not in request.excluded_question_ids
+                if concept_id_str in q.get("yccd", []) and q.get("question_id") not in recommend_request.excluded_question_ids
             ]
             if not candidates:
                 candidates = [q for q in engine.questions_data if concept_id_str in q.get("yccd", [])]
@@ -591,31 +597,33 @@ def run_async_propagation(
 
 
 @router.post("/hints/log")
+@limiter.limit(settings.rate_limit_adaptive)
 def log_hint_usage(
-    request: HintLogRequest,
+    hint_request: HintLogRequest,
+    request: Request,
     auth_user: AuthenticatedUser = Depends(get_current_user),
     db: AdaptiveDatabaseInterface = Depends(get_adaptive_db),
 ):
-    if auth_user.role == "student" and request.student_id != auth_user.id:
+    if auth_user.role == "student" and hint_request.student_id != auth_user.id:
         raise HTTPException(status_code=403, detail="Sinh viên chỉ có quyền ghi gợi ý của chính mình.")
 
     try:
-        decision = db.get_adaptive_decision(request.decision_id)
+        decision = db.get_adaptive_decision(hint_request.decision_id)
         if not decision:
             raise HTTPException(status_code=404, detail="Không tìm thấy thông tin quyết định gợi ý tương ứng.")
-        if str(decision["student_id"]) != str(request.student_id):
+        if str(decision["student_id"]) != str(hint_request.student_id):
             raise HTTPException(status_code=403, detail="Vết quyết định không thuộc về học sinh mở gợi ý.")
-        if str(decision["selected_action_id"]) != str(request.question_id):
+        if str(decision["selected_action_id"]) != str(hint_request.question_id):
             raise HTTPException(status_code=400, detail="Mã câu hỏi mở gợi ý không trùng khớp với câu hỏi được gợi ý.")
         if decision.get("consumed_at") is not None:
             raise HTTPException(status_code=409, detail="Lượt làm bài đã được nộp trước đó.")
 
         hint_id = db.log_hint_usage(
-            request.student_id,
-            request.course_id,
-            request.question_id,
-            request.decision_id,
-            request.hint_level,
+            hint_request.student_id,
+            hint_request.course_id,
+            hint_request.question_id,
+            hint_request.decision_id,
+            hint_request.hint_level,
         )
         return {"id": str(hint_id)}
     except HTTPException:
@@ -626,16 +634,18 @@ def log_hint_usage(
 
 
 @router.post("/submit", response_model=SubmitResponse)
+@limiter.limit(settings.rate_limit_adaptive)
 def submit_attempt(
-    request: SubmitRequest,
+    submit_request: SubmitRequest,
     background_tasks: BackgroundTasks,
+    request: Request,
     auth_user: AuthenticatedUser = Depends(get_current_user),
     db: AdaptiveDatabaseInterface = Depends(get_adaptive_db),
 ):
     """
     Nộp bài, tự động cập nhật Elo học sinh & câu hỏi, cập nhật BKT và tối ưu hóa ma trận Bandit.
     """
-    if auth_user.role == "student" and request.student_id != auth_user.id:
+    if auth_user.role == "student" and submit_request.student_id != auth_user.id:
         raise HTTPException(status_code=403, detail="Sinh viên chỉ có quyền nộp bài làm của chính mình.")
     route_start = time.perf_counter()
     try:
@@ -643,14 +653,14 @@ def submit_attempt(
 
         # 1. Đọc vết quyết định để kiểm tra chéo (Cross-validation chặn Replay Attack)
         decision_start = time.perf_counter()
-        decision = db.get_adaptive_decision(request.decision_id)
+        decision = db.get_adaptive_decision(submit_request.decision_id)
         decision_ms = (time.perf_counter() - decision_start) * 1000
         if not decision:
             raise HTTPException(status_code=404, detail="Không tìm thấy thông tin quyết định gợi ý tương ứng.")
 
-        if str(decision["student_id"]) != str(request.student_id):
+        if str(decision["student_id"]) != str(submit_request.student_id):
             raise HTTPException(status_code=403, detail="Vết quyết định không thuộc về học sinh nộp bài.")
-        if str(decision["selected_action_id"]) != str(request.question_id):
+        if str(decision["selected_action_id"]) != str(submit_request.question_id):
             raise HTTPException(status_code=400, detail="Mã câu hỏi nộp bài không trùng khớp với câu hỏi được gợi ý.")
 
         # Chống replay attack ở API layer
@@ -662,21 +672,21 @@ def submit_attempt(
 
         # 2. Lấy trạng thái năng lực hiện tại
         mastery_start = time.perf_counter()
-        mastery = db.get_student_mastery(request.student_id, request.course_id, request.concept_id)
+        mastery = db.get_student_mastery(submit_request.student_id, submit_request.course_id, submit_request.concept_id)
         mastery_ms = (time.perf_counter() - mastery_start) * 1000
         old_elo = mastery["elo_score"]
         old_bkt = mastery["bkt_mastery_probability"]
 
         # 3. Lấy câu hỏi để tự động chấm điểm phía máy chủ (Server-side grading - B4)
         question_start = time.perf_counter()
-        question = db.get_question_by_id(request.question_id)
+        question = db.get_question_by_id(submit_request.question_id)
         question_ms = (time.perf_counter() - question_start) * 1000
         if not question:
             raise HTTPException(status_code=404, detail="Không tìm thấy câu hỏi.")
 
         # Tự động chấm điểm
         grade_start = time.perf_counter()
-        actual_score = grade_answer(question, request.student_answer)
+        actual_score = grade_answer(question, submit_request.student_answer)
         is_correct = actual_score >= 0.75
         grade_ms = (time.perf_counter() - grade_start) * 1000
 
@@ -686,23 +696,23 @@ def submit_attempt(
         # Đếm hint & cờ AI từ server log (không tin client)
         signal_start = time.perf_counter()
         if not db._stub_mode:
-            hint_count = db.count_hints(request.decision_id)
+            hint_count = db.count_hints(submit_request.decision_id)
             used_ai_help = False
         else:
-            hint_count = request.hint_count
+            hint_count = submit_request.hint_count
             used_ai_help = False
         signal_ms = (time.perf_counter() - signal_start) * 1000
 
         # Clamp response_time_ms: min 300ms, max 3600000ms (1 hour)
-        clamped_response_time = max(300, min(3600000, request.response_time_ms or 30000))
+        clamped_response_time = max(300, min(3600000, submit_request.response_time_ms or 30000))
 
         payload = {
-            "p_decision_id": str(request.decision_id),
-            "p_student_id": str(request.student_id),
-            "p_course_id": str(request.course_id),
-            "p_concept_id": str(request.concept_id),
-            "p_question_id": str(request.question_id),
-            "p_student_answer": request.student_answer,
+            "p_decision_id": str(submit_request.decision_id),
+            "p_student_id": str(submit_request.student_id),
+            "p_course_id": str(submit_request.course_id),
+            "p_concept_id": str(submit_request.concept_id),
+            "p_question_id": str(submit_request.question_id),
+            "p_student_answer": submit_request.student_answer,
             "p_actual_score": actual_score,
             "p_hint_count": hint_count,
             "p_used_ai_help": used_ai_help,
@@ -805,9 +815,9 @@ def submit_attempt(
         background_tasks.add_task(
             run_async_propagation,
             db,
-            request.student_id,
-            request.course_id,
-            request.concept_id,
+            submit_request.student_id,
+            submit_request.course_id,
+            submit_request.concept_id,
             old_bkt,
             new_bkt,
             source_attempt_id,
@@ -818,7 +828,7 @@ def submit_attempt(
         try:
             cache_start = time.perf_counter()
             cache = get_cache_store()
-            cache_key = mastery_cache_key(str(request.student_id), str(request.course_id), str(request.concept_id))
+            cache_key = mastery_cache_key(str(submit_request.student_id), str(submit_request.course_id), str(submit_request.concept_id))
             updated_profile = {
                 "elo_score": new_student_elo,
                 "bkt_mastery_probability": new_bkt,
@@ -862,8 +872,8 @@ def submit_attempt(
             "ADAPTIVE_SUBMIT %.0fms concept=%s q=%s correct=%s score=%.2f response=%sms hints=%s ai=%s "
             "db=[decision %.0f,mastery %.0f,question %.0f,signal %.0f,txn %.0f,cache %.0f]ms grade=%.0fms",
             total_ms,
-            request.concept_id,
-            request.question_id,
+            submit_request.concept_id,
+            submit_request.question_id,
             is_correct,
             actual_score,
             clamped_response_time,
@@ -924,9 +934,11 @@ class SyncMasteryRequest(BaseModel):
 
 
 @router.get("/mastery")
+@limiter.limit(settings.rate_limit_adaptive)
 def get_all_mastery(
     student_id: UUID,
     course_id: UUID,
+    request: Request,
     auth_user: AuthenticatedUser = Depends(get_current_user),
     db: AdaptiveDatabaseInterface = Depends(get_adaptive_db),
 ):
@@ -944,31 +956,33 @@ def get_all_mastery(
 
 
 @router.post("/sync-mastery")
+@limiter.limit(settings.rate_limit_adaptive)
 def sync_mastery(
-    request: SyncMasteryRequest,
+    sync_request: SyncMasteryRequest,
+    request: Request,
     auth_user: AuthenticatedUser = Depends(get_current_user),
     db: AdaptiveDatabaseInterface = Depends(get_adaptive_db),
 ):
     """
     Cập nhật trực tiếp tiến trình Elo & BKT của học sinh cho một Concept cụ thể (sau khi làm bài tập tự luyện).
     """
-    if auth_user.role == "student" and request.student_id != auth_user.id:
+    if auth_user.role == "student" and sync_request.student_id != auth_user.id:
         raise HTTPException(status_code=403, detail="Sinh viên chỉ có quyền đồng bộ tiến trình học tập của chính mình.")
     try:
-        concept_id = db.get_concept_id_by_code(request.concept_code)
+        concept_id = db.get_concept_id_by_code(sync_request.concept_code)
         if not concept_id:
-            raise HTTPException(status_code=404, detail=f"Không tìm thấy Concept với mã code: {request.concept_code}")
+            raise HTTPException(status_code=404, detail=f"Không tìm thấy Concept với mã code: {sync_request.concept_code}")
 
         db.begin()
         db.update_student_mastery(
-            student_id=request.student_id,
-            course_id=request.course_id,
+            student_id=sync_request.student_id,
+            course_id=sync_request.course_id,
             concept_id=concept_id,
-            elo_score=request.elo_score,
-            bkt_mastery_probability=request.bkt_mastery_probability,
-            mastery_state=request.mastery_state,
-            weakness_flag=request.weakness_flag,
-            is_correct=request.is_correct,
+            elo_score=sync_request.elo_score,
+            bkt_mastery_probability=sync_request.bkt_mastery_probability,
+            mastery_state=sync_request.mastery_state,
+            weakness_flag=sync_request.weakness_flag,
+            is_correct=sync_request.is_correct,
         )
         db.commit()
         return {"status": "success"}

@@ -2,11 +2,15 @@ import logging
 import re
 import uuid
 
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Request
 from pydantic import BaseModel, Field
 
 from src.api.adaptive_routes import AuthenticatedUser, get_adaptive_db, get_current_user
 from src.services.adaptive.database_interface import AdaptiveDatabaseInterface
+from src.api.rate_limit import limiter, get_login_key, get_remote_address
+from src.config import get_settings
+
+settings = get_settings()
 
 logger = logging.getLogger(__name__)
 
@@ -162,11 +166,17 @@ def me(
 
 
 @router.post("/login")
-def login(request: LoginRequest, db: AdaptiveDatabaseInterface = Depends(get_adaptive_db)):
+@limiter.limit(settings.rate_limit_login, key_func=get_login_key)
+@limiter.limit(settings.rate_limit_login_ip, key_func=get_remote_address)
+def login(
+    login_request: LoginRequest,
+    request: Request,
+    db: AdaptiveDatabaseInterface = Depends(get_adaptive_db),
+):
     """
     Đăng nhập bằng Email và Mật khẩu thông qua Supabase Auth.
     """
-    email_clean = request.email.strip().lower()
+    email_clean = login_request.email.strip().lower()
 
     # 1. Kiểm tra định dạng Email cơ bản
     if not re.match(r"[^@]+@[^@]+\.[^@]+", email_clean):
@@ -221,7 +231,7 @@ def login(request: LoginRequest, db: AdaptiveDatabaseInterface = Depends(get_ada
                 },
             }
 
-            if email_clean in mock_users and request.password == "Password123!":
+            if email_clean in mock_users and login_request.password == "Password123!":
                 user_info = mock_users[email_clean]
                 return {
                     "id": user_info["id"],
@@ -238,7 +248,7 @@ def login(request: LoginRequest, db: AdaptiveDatabaseInterface = Depends(get_ada
         # 2. Xác thực với Supabase Auth
         try:
             auth_response = db.app_client.auth.sign_in_with_password(
-                {"email": email_clean, "password": request.password}
+                {"email": email_clean, "password": login_request.password}
             )
             reset_backend_supabase_auth(db)
         except Exception as auth_err:
@@ -293,11 +303,16 @@ class SignupRequest(BaseModel):
 
 
 @router.post("/signup")
-def signup(request: SignupRequest, db: AdaptiveDatabaseInterface = Depends(get_adaptive_db)):
+@limiter.limit(settings.rate_limit_signup, key_func=get_remote_address)
+def signup(
+    signup_request: SignupRequest,
+    request: Request,
+    db: AdaptiveDatabaseInterface = Depends(get_adaptive_db),
+):
     """
     Đăng ký tài khoản học viên mới bằng Email và Mật khẩu.
     """
-    email_clean = request.email.strip().lower()
+    email_clean = signup_request.email.strip().lower()
 
     # 1. Kiểm tra định dạng Email
     if not re.match(r"[^@]+@[^@]+\.[^@]+", email_clean):
@@ -305,8 +320,8 @@ def signup(request: SignupRequest, db: AdaptiveDatabaseInterface = Depends(get_a
 
     # 2. Kiểm tra định dạng MSSV nếu có nhập
     mssv_upper = None
-    if request.mssv and request.mssv.strip():
-        mssv_upper = request.mssv.strip().upper()
+    if signup_request.mssv and signup_request.mssv.strip():
+        mssv_upper = signup_request.mssv.strip().upper()
         if not re.match(r"^2A2026\d{5}$", mssv_upper):
             raise HTTPException(
                 status_code=400, detail="Họ tên hoặc mã số sinh viên không chính xác (Định dạng MSSV sai)."
@@ -319,7 +334,7 @@ def signup(request: SignupRequest, db: AdaptiveDatabaseInterface = Depends(get_a
             return {
                 "id": new_id,
                 "email": email_clean,
-                "full_name": request.full_name,
+                "full_name": signup_request.full_name,
                 "mssv": mssv_upper,
                 "role": "student",
                 "token": f"fake-jwt-token-{new_id}",
@@ -344,8 +359,8 @@ def signup(request: SignupRequest, db: AdaptiveDatabaseInterface = Depends(get_a
             auth_response = db.app_client.auth.sign_up(
                 {
                     "email": email_clean,
-                    "password": request.password,
-                    "options": {"data": {"full_name": request.full_name, "mssv": mssv_upper}},
+                    "password": signup_request.password,
+                    "options": {"data": {"full_name": signup_request.full_name, "mssv": mssv_upper}},
                 }
             )
             reset_backend_supabase_auth(db)
@@ -360,7 +375,7 @@ def signup(request: SignupRequest, db: AdaptiveDatabaseInterface = Depends(get_a
         user_data = {
             "id": user_id,
             "email": email_clean,
-            "full_name": request.full_name,
+            "full_name": signup_request.full_name,
             "mssv": mssv_upper,
             "status": "active",
         }
@@ -396,7 +411,7 @@ def signup(request: SignupRequest, db: AdaptiveDatabaseInterface = Depends(get_a
         # Tự động đăng nhập để lấy JWT ngay sau khi đăng ký thành công
         token = ""
         try:
-            login_resp = db.app_client.auth.sign_in_with_password({"email": email_clean, "password": request.password})
+            login_resp = db.app_client.auth.sign_in_with_password({"email": email_clean, "password": signup_request.password})
             reset_backend_supabase_auth(db)
             token = login_resp.session.access_token
         except Exception:
@@ -406,7 +421,7 @@ def signup(request: SignupRequest, db: AdaptiveDatabaseInterface = Depends(get_a
         return {
             "id": user_id,
             "email": email_clean,
-            "full_name": request.full_name,
+            "full_name": signup_request.full_name,
             "mssv": mssv_upper,
             "role": "student",
             "token": token,
