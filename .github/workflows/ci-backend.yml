@@ -85,7 +85,7 @@ jobs:
           uv run pip-audit
 
       - name: Run Trivy vulnerability scanner
-        uses: aquasecurity/trivy-action@v0.28.0 # nosemgrep
+        uses: aquasecurity/trivy-action@v0.36.0 # nosemgrep
         with:
           scan-type: 'fs'
           scan-ref: '.'
