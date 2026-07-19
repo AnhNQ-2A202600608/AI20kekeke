@@ -27,7 +27,7 @@ function DashboardPageContent() {
   const levelNumber = learningLevel.title.match(/Level\s+(\d+)/)?.[1] || "0";
   const trendScores = timeRange === "7" ? weeklyScores : [46, 54, 61, 68, 74];
   const trendLabels = timeRange === "7" ? ["T2", "T3", "T4", "T5", "T6", "T7", "CN"] : ["Tuần 1", "Tuần 2", "Tuần 3", "Tuần 4", "Hiện tại"];
-  const nextLessonHref = selectedSubject.code === "TO" ? "/bai-hoc/phan-so" : `/hoc-tap?subject=${selectedSubject.code}`;
+  const nextLessonHref = selectedSubject.code === "TO" ? `/luyen-tap?subject=TO&id=${activeChapter.number}` : `/hoc-tap?subject=${selectedSubject.code}`;
 
   return (
     <>
@@ -119,7 +119,7 @@ function DashboardPageContent() {
         <article className="upcoming-lessons">
           <div className="panel-heading"><div><h2>Bài học sắp tới</h2><p>Ưu tiên theo kết quả gần nhất của {program.title}</p></div><Link href={`/hoc-tap?subject=${selectedSubject.code}`}>Xem lộ trình</Link></div>
           <div className="upcoming-list">
-            <Link href="/bai-hoc/phan-so"><span className="subject-code">01</span><div><strong>{activeChapter.title}</strong><small>{program.title} · 18 phút</small></div><b>Hôm nay</b></Link>
+            <Link href={`/luyen-tap?subject=TO&id=${activeChapter.number}`}><span className="subject-code">01</span><div><strong>{activeChapter.title}</strong><small>{program.title} · 18 phút</small></div><b>Hôm nay</b></Link>
             {program.chapters.slice(1).map((chapter) => (
               <Link href={`/hoc-tap?subject=${selectedSubject.code}`} key={chapter.number}>
                 <span className="subject-code warm">{chapter.number}</span>

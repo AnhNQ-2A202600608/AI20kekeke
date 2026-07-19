@@ -6,7 +6,7 @@ import { activeLearningLevel } from "../data";
 import { Suspense } from "react";
 
 const activity = [
-  { title: "Quy đồng hai phân số", kind: "Bài học", when: "Hôm nay · 16:20", progress: 60, href: "/bai-hoc/phan-so" },
+  { title: "Quy đồng hai phân số", kind: "Bài học", when: "Hôm nay · 16:20", progress: 60, href: "/luyen-tap?subject=TO&id=06" },
   { title: "Luyện tập có gợi ý", kind: "Luyện tập", when: "Hôm qua · 19:10", progress: 100, href: "/luyen-tap" },
   { title: "Khái niệm phân số", kind: "Dạng bài", when: "15 tháng 7", progress: 100, href: "/chuong/phan-so" },
 ];
