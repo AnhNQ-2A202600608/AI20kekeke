@@ -7,11 +7,11 @@ from fastapi import FastAPI, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
-from slowapi.middleware import SlowAPIMiddleware
 from slowapi.errors import RateLimitExceeded
+from slowapi.middleware import SlowAPIMiddleware
 
-from src.config import get_settings
 from src.api.rate_limit import limiter
+from src.config import get_settings
 from src.services.braintrust_observability import configure_braintrust_observability
 
 configure_braintrust_observability()

@@ -6,9 +6,9 @@ from fastapi import APIRouter, Depends, HTTPException, Request
 from pydantic import BaseModel, Field
 
 from src.api.adaptive_routes import AuthenticatedUser, get_adaptive_db, get_current_user
-from src.services.adaptive.database_interface import AdaptiveDatabaseInterface
-from src.api.rate_limit import limiter, get_login_key, get_remote_address
+from src.api.rate_limit import get_login_key, get_remote_address, limiter
 from src.config import get_settings
+from src.services.adaptive.database_interface import AdaptiveDatabaseInterface
 
 settings = get_settings()
 

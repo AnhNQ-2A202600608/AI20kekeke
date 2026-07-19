@@ -21,8 +21,6 @@ from src.api import (
 )
 from src.api.rate_limit import limiter
 from src.config import get_settings
-
-settings = get_settings()
 from src.models.chat_contracts import (
     AgentChatMessage,
     AgentChatMetadata,
@@ -53,6 +51,7 @@ from src.services.llm import get_llm
 from src.services.quiz_error_cases import create_or_update_quiz_error_case
 from src.services.timing import TimingCollector, core_timing_metadata, merge_timing_metadata
 
+settings = get_settings()
 logger = logging.getLogger(__name__)
 
 router = APIRouter()

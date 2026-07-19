@@ -10,11 +10,9 @@ from uuid import UUID
 
 from fastapi import APIRouter, BackgroundTasks, Depends, Header, HTTPException, Request
 from pydantic import BaseModel
+
 from src.api.rate_limit import limiter
 from src.config import get_settings
-
-settings = get_settings()
-
 from src.models.adaptive_schemas import (
     ConceptRelationCreate,
     ConceptRelationResponse,
@@ -35,6 +33,7 @@ from src.services.cache import get_cache_store
 from src.services.cache_keys import mastery_cache_key
 from src.services.supabase_config import get_backend_supabase_config
 
+settings = get_settings()
 logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/adaptive", tags=["Adaptive Engine"])
 

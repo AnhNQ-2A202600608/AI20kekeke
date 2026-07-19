@@ -1,10 +1,13 @@
-import os
 import logging
-from typing import Callable, Any, Optional
+import os
+from collections.abc import Callable
+from typing import Any
+
 from fastapi import Request
 from slowapi import Limiter
-from slowapi.util import get_remote_address
 from slowapi.errors import RateLimitExceeded
+from slowapi.util import get_remote_address
+
 from src.config import get_settings
 
 logger = logging.getLogger("api.rate_limit")
@@ -17,7 +20,7 @@ def get_limiter_key(request: Request) -> str:
     user = getattr(request.state, "user", None)
     if user and hasattr(user, "id"):
         return str(user.id)
-    
+
     # Fallback to authorization header parse to get sub if state.user is not set yet
     auth_header = request.headers.get("Authorization")
     if auth_header and auth_header.startswith("Bearer "):
@@ -66,7 +69,7 @@ class FailOpenLimiter(Limiter):
     def enabled(self, value):
         pass
 
-    def _check_request_limit(self, request: Request, endpoint_func: Optional[Callable[..., Any]], in_middleware: bool = True) -> None:
+    def _check_request_limit(self, request: Request, endpoint_func: Callable[..., Any] | None, in_middleware: bool = True) -> None:
         global _redis_warning_logged
         if not hasattr(request.state, "view_rate_limit"):
             request.state.view_rate_limit = None
@@ -102,7 +105,7 @@ limiter = FailOpenLimiter(
 if hasattr(limiter, "_limiter") and limiter._limiter:
     original_hit = limiter._limiter.hit
     original_test = limiter._limiter.test
-    
+
     def safe_hit(*args, **kwargs):
         global _redis_warning_logged
         try:
@@ -112,7 +115,7 @@ if hasattr(limiter, "_limiter") and limiter._limiter:
                 logger.warning(f"Rate limit storage unreachable (Redis error: {exc}). Failing open.")
                 _redis_warning_logged = True
             return True  # Fail-open
-            
+
     def safe_test(*args, **kwargs):
         global _redis_warning_logged
         try:
@@ -122,6 +125,6 @@ if hasattr(limiter, "_limiter") and limiter._limiter:
                 logger.warning(f"Rate limit storage unreachable (Redis error: {exc}). Failing open.")
                 _redis_warning_logged = True
             return True  # Fail-open
-            
+
     limiter._limiter.hit = safe_hit
     limiter._limiter.test = safe_test

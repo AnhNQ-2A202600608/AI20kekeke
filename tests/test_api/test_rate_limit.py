@@ -1,7 +1,7 @@
+from unittest.mock import AsyncMock
+
 import pytest
-from unittest.mock import AsyncMock, patch, MagicMock
-from fastapi import HTTPException
-from src.main import app
+
 
 # autouse fixture to reset storage
 @pytest.fixture(autouse=True)
@@ -29,7 +29,7 @@ def mock_chat_agent(monkeypatch):
 @pytest.mark.asyncio
 async def test_chat_rate_limit_429(client, monkeypatch):
     monkeypatch.setenv("RATE_LIMIT_ENABLED", "true")
-    
+
     headers = {"Authorization": "Bearer d3b07384-d113-4ec5-a58e-0f2d87e07661"}
     # Send 20 requests
     for i in range(20):
@@ -60,7 +60,7 @@ async def test_chat_rate_limit_429(client, monkeypatch):
 @pytest.mark.asyncio
 async def test_login_brute_force_429(client, monkeypatch):
     monkeypatch.setenv("RATE_LIMIT_ENABLED", "true")
-    
+
     # We send 5 login requests with the same email and IP
     # They should fail with 400/401, but not 429
     for i in range(5):
@@ -80,7 +80,7 @@ async def test_login_brute_force_429(client, monkeypatch):
 @pytest.mark.asyncio
 async def test_login_different_email_same_ip_not_blocked(client, monkeypatch):
     monkeypatch.setenv("RATE_LIMIT_ENABLED", "true")
-    
+
     # 5 failed login attempts for email A
     for i in range(5):
         res = await client.post(
@@ -99,18 +99,18 @@ async def test_login_different_email_same_ip_not_blocked(client, monkeypatch):
 @pytest.mark.asyncio
 async def test_normal_request_not_blocked(client, monkeypatch):
     monkeypatch.setenv("RATE_LIMIT_ENABLED", "true")
-    
+
     # Send a few normal requests to different endpoints
     res = await client.get("/health")
     assert res.status_code == 200
-    
+
     res = await client.get("/ready")
     assert res.status_code == 200
 
 @pytest.mark.asyncio
 async def test_429_has_retry_after_header(client, monkeypatch):
     monkeypatch.setenv("RATE_LIMIT_ENABLED", "true")
-    
+
     # Trigger 429 on signup (limit is 3/minute per IP)
     for i in range(3):
         res = await client.post(
@@ -131,16 +131,16 @@ async def test_429_has_retry_after_header(client, monkeypatch):
 @pytest.mark.asyncio
 async def test_redis_down_allows_request(client, monkeypatch):
     monkeypatch.setenv("RATE_LIMIT_ENABLED", "true")
-    
+
     # Mock limiter._limiter.hit to raise ConnectionError to simulate Redis down
     from src.api.rate_limit import limiter
-    
+
     def mock_hit(*args, **kwargs):
         raise ConnectionError("Mocked Redis Connection Error")
-        
+
     if hasattr(limiter, "_limiter"):
         monkeypatch.setattr(limiter._limiter, "hit", mock_hit)
-        
+
     headers = {"Authorization": "Bearer d3b07384-d113-4ec5-a58e-0f2d87e07661"}
     res = await client.post(
         "/api/v1/chat",
